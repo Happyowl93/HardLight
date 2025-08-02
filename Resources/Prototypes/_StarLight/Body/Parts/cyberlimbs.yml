@@ -498,7 +498,7 @@
       graph: RipperRightGraph
       node: right
 
-#Spacer
+# Spacer
 - type: entity
   id: LeftArmCyberSpacer
   name: "left spacer arm"
@@ -551,7 +551,7 @@
         - WeaponGrapplingGunCyber
         - WeaponCrusherDaggerCyber
     - type: LimbItemDeployer
-      action: ActionToggleCyberHandLeft
+      action: ActionToggleCyberHandRight
       sound:
         path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
       handWhitelist:
