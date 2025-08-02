@@ -64,6 +64,56 @@
           0.3
         ]
       ]
+    },
+    {
+      "name": "protokineticaccelerator",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "grapplinghook",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "grapplinghook-loaded",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "grapplinghook-unloaded",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "crusherdagger",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
     }
   ]
 }

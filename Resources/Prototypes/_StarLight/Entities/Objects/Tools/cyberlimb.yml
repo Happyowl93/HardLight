@@ -1,3 +1,4 @@
+# Mechwright
 - type: entity
   name: wrench
   parent: Wrench
@@ -252,3 +253,119 @@
   - type: Tag
     tags:
       - CyberHandItem
+
+
+# Spacer
+- type: entity
+  id: ProtokineticAcceleratorCyber
+  name: cyber protokinetic accelerator
+  description: Fires low-damage kinetic bolts at a short range. The lack of stabilisation leads to decreased accuracy when firing in short succession.
+  parent: BaseItem
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      state: protokineticaccelerator
+    - type: Gun
+      fireRate: 0.5
+      selectedMode: SemiAuto
+      angleDecay: 20
+      minAngle: 1
+      maxAngle: 60
+      angleIncrease: 15
+      availableModes:
+      - SemiAuto
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
+    - type: AmmoCounter
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.AmmoVisuals.HasAmmo:
+          empty-icon:
+            True: { visible: False }
+            False: { visible: True }
+          #todo: add other 'empty' animations
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 0.75
+      rechargeSound:
+        path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
+    - type: BasicEntityAmmoProvider
+      proto: BulletKinetic
+      capacity: 1
+      count: 1
+    - type: Clothing
+      sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+      quickEquip: false
+      slots:
+      - suitStorage
+      - Belt
+    - type: UseDelay
+      delay: 1
+    - type: UpgradeableGun
+      whitelist:
+        tags:
+        - PKAUpgrade
+    - type: ContainerContainer
+      containers:
+        upgrades: !type:Container
+    - type: Tag
+      tags:
+        - CyberHandItem
+
+
+- type: entity
+  name: cyber grappling gun
+  parent: BaseItem
+  id: WeaponGrapplingGunCyber
+  components:
+    - type: AmmoCounter
+    - type: GrapplingGun
+    - type: Gun
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/harpoon.ogg
+      fireRate: 0.5
+      clumsyProof: true
+    - type: BasicEntityAmmoProvider
+      proto: GrapplingHook
+      capacity: 1
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      layers:
+        - state: grapplinghook
+        - state: grapplinghook-loaded
+          map: [ "unshaded" ]
+          visible: true
+    - type: UseDelay
+      delay: 1.5
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.TetherVisualsStatus.Key:
+          unshaded:
+            True: { state: grapplinghook-loaded }
+            False: { state: grapplinghook-unloaded }
+    - type: PacifismAllowedGun
+    - type: Tag
+      tags:
+        - CyberHandItem
+
+- type: entity
+  parent: [ BaseKnife, BaseWeaponCrusher]
+  id: WeaponCrusherDaggerCyber
+  name: cyber crusher dagger
+  description: A scaled down version of a proto-kinetic crusher. Uses kinetic energy to vibrate the blade at high speeds.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      state: crusherdagger
+    - type: MeleeWeapon
+      autoAttack: true
+      wideAnimationRotation: -135
+      attackRate: 2
+      damage:
+        types:
+          Slash: 12
+    - type: DisarmMalus
+      malus: 0.225
+    - type: Tag
+      tags:
+        - CyberHandItem

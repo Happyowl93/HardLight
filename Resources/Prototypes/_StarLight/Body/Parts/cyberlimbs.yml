@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   id: PartCyber
   parent: [BaseItem, BasePart]
   name: "cyber body part"
@@ -155,7 +155,7 @@
       state: "r_foot"
     - type: RoundstartImplantable
       cost: 1
-      
+
 #reaper
 - type: entity
   id: LeftArmCyberReaper
@@ -230,6 +230,7 @@
     - type: WithAttachedBodyParts
       parts:
         right hand: RightHandCyber
+
 #Mechwright
 - type: entity
   id: LeftArmCyberMechwright
@@ -295,7 +296,8 @@
     - type: WithAttachedBodyParts
       parts:
         right hand: RightHandCyber
-#Bulwark 
+
+#Bulwark
 - type: entity
   id: LeftArmCyberBulwark
   name: "left bulwark arm"
@@ -317,7 +319,7 @@
         - CyberEnergyChainsword
     - type: LimbItemDeployer
       action: ActionToggleCyberHandLeft
-      sound: 
+      sound:
         path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
       handWhitelist:
         tags:
@@ -365,7 +367,7 @@
     - type: BaseLayerId
       layer: CyberLArmMantisBlade
     - type: BaseLayerIdToggled
-      layer: CyberLArmMantisBladeToggled 
+      layer: CyberLArmMantisBladeToggled
     - type: Sprite
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_mantis_blade_arm"
@@ -495,3 +497,66 @@
     - type: Construction
       graph: RipperRightGraph
       node: right
+
+#Spacer
+- type: entity
+  id: LeftArmCyberSpacer
+  name: "left spacer arm"
+  parent: [PartCyber, BaseLeftArm]
+  components:
+    - type: BaseLayerId
+      layer: CyberLArmSpacer
+    - type: BaseLayerIdToggled
+      layer: CyberLArmSpacerTools
+    - type: Sprite
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "l_spacer_arm"
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "l_spacer_arm"
+    - type: LimbItemStorage
+      items:
+        - ProtokineticAcceleratorCyber
+        - WeaponGrapplingGunCyber
+        - WeaponCrusherDaggerCyber
+    - type: LimbItemDeployer
+      action: ActionToggleCyberHandLeft
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      handWhitelist:
+        tags:
+          - CyberHandItem
+    - type: WithAttachedBodyParts
+      parts:
+        left hand: LeftHandCyber
+
+- type: entity
+  id: RightArmCyberSpacer
+  name: "right spacer arm"
+  parent: [PartCyber, BaseRightArm]
+  components:
+    - type: BaseLayerId
+      layer: CyberRArmSpacer
+    - type: BaseLayerIdToggled
+      layer: CyberRArmSpacerTools
+    - type: Sprite
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "r_spacer_arm"
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "r_spacer_arm"
+    - type: LimbItemStorage
+      items:
+        - ProtokineticAcceleratorCyber
+        - WeaponGrapplingGunCyber
+        - WeaponCrusherDaggerCyber
+    - type: LimbItemDeployer
+      action: ActionToggleCyberHandLeft
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      handWhitelist:
+        tags:
+          - CyberHandItem
+    - type: WithAttachedBodyParts
+      parts:
+        right hand: RightHandCyber
