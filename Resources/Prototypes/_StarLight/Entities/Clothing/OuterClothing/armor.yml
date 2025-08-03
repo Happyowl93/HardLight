@@ -36,7 +36,7 @@
     size: Normal
   - type: AbductorVest
   - type: ItemSwitch
-    state: stealth
+    state: Stealth
     states:
       Stealth: !type:ItemSwitchState
         verb: Stealth
@@ -59,6 +59,24 @@
           staminaModifier: 0.85
         - type: ExplosionResistance
           damageCoefficient: 0.85
+        - type: ItemToggle
+          predictable: false
+          onUse: false
+          soundActivate:
+            path: /Audio/_Starlight/Items/Goggles/activate.ogg
+          soundDeactivate:
+            path: /Audio/_Starlight/Items/Goggles/deactivate.ogg
+          soundFailToActivate:
+            path: /Audio/Machines/button.ogg
+        - type: ToggleClothing
+          action: AbductorVestToggleStealth
+          mustEquip: true
+          disableOnUnequip: true
+        - type: ComponentToggler
+          parent: true
+          components:
+          - type: Stealth
+          - type: StealthOnMove
 
       Combat: !type:ItemSwitchState
         verb: Combat
@@ -154,7 +172,7 @@
     sprite: _Starlight/Clothing/OuterClothing/Armor/makeshift.rsi
   - type: Clothing
     sprite: _Starlight/Clothing/OuterClothing/Armor/makeshift.rsi
-  - type: Armor 
+  - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.90
@@ -180,7 +198,7 @@
     sprite: _Starlight/Clothing/OuterClothing/Armor/improvised.rsi
   - type: Clothing
     sprite: _Starlight/Clothing/OuterClothing/Armor/improvised.rsi
-  - type: Armor 
+  - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.85
@@ -205,7 +223,7 @@
     sprite: _Starlight/Clothing/OuterClothing/Armor/forged.rsi
   - type: Pierceable
     level: Metal
-  - type: Armor 
+  - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.75
@@ -227,7 +245,7 @@
     sprite: _Starlight/Clothing/OuterClothing/Armor/paladin.rsi
   - type: Pierceable
     level: Metal
-  - type: Armor 
+  - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.70
@@ -268,7 +286,7 @@
     damageCoefficient: 0.5
   - type: FireProtection
     reduction: 0.85
-    
+
 - type: entity
   parent: [ClothingOuterArmorBase, BaseCentcommContraband]
   id: ClothingOuterVestNTCC
