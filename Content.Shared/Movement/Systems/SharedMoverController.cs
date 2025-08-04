@@ -5,6 +5,7 @@ using System.Numerics;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Bed.Sleep;
+using Content.Shared.Body.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Friction;
@@ -39,6 +40,7 @@ namespace Content.Shared.Movement.Systems;
 /// </summary>
 public abstract partial class SharedMoverController : VirtualController
 {
+    [Dependency] private readonly IEntityManager _entities = default!;
     [Dependency] private   readonly IConfigurationManager _configManager = default!;
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] protected readonly ITileDefinitionManager _tileDefinitionManager = default!;
@@ -545,7 +547,19 @@ public abstract partial class SharedMoverController : VirtualController
             return sound != null;
         }
 
-        // STARLIGHT: Check for outer clothing (hardsuits) before shoes
+        // STARLIGHT: Check cyberlegs before outer clothing
+        if (TryComp<BodyComponent>(uid, out var body) && body != null && body.RequiredLegs <= 0)
+        {
+            foreach (var legEntity in body.LegEntities)
+            {
+                if (!TryComp<FootstepModifierComponent>(legEntity, out var legFootstep))
+                    continue;
+                sound = legFootstep.FootstepSoundCollection;
+                return sound != null;
+            }
+        }
+
+        // Check for outer clothing (hardsuits) before shoes
         if (_inventory.TryGetSlotEntity(uid, "outerClothing", out var outerClothing) &&
             FootstepModifierQuery.TryComp(outerClothing, out var outerModifier))
         {

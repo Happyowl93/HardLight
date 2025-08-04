@@ -474,6 +474,8 @@ public partial class SharedBodySystem
         var sprintSpeed = 0f;
         var acceleration = 0f;
         var maxDensity = 0f; // 🌟Starlight🌟
+        var minSpeedMod = 0f; // 🌟Starlight🌟
+        var maxSpeedMod = 0f; // 🌟Starlight🌟
         foreach (var legEntity in body.LegEntities)
         {
             if (!TryComp<MovementBodyPartComponent>(legEntity, out var legModifier))
@@ -483,11 +485,13 @@ public partial class SharedBodySystem
             sprintSpeed += legModifier.SprintSpeed;
             acceleration += legModifier.Acceleration;
             maxDensity += legModifier.MaxDensity; // 🌟Starlight🌟
+            minSpeedMod += legModifier.MinSpeedMod; // 🌟Starlight🌟
+            maxSpeedMod += legModifier.MaxSpeedMod; // 🌟Starlight🌟
         }
 
         // 🌟Starlight🌟 Start
         var density = TryComp<FixturesComponent>(bodyId, out var fixtures)
-            && fixtures.Fixtures.TryGetValue("fix1", out var fixture) 
+            && fixtures.Fixtures.TryGetValue("fix1", out var fixture)
             ? fixture.Density : 185f;
 
         var speedFactor = density > maxDensity && maxDensity > 0f
@@ -498,12 +502,15 @@ public partial class SharedBodySystem
         sprintSpeed *= speedFactor;
         acceleration *= speedFactor;
 
+
+        minSpeedMod /= body.RequiredLegs;
+        maxSpeedMod /= body.RequiredLegs;
         // 🌟Starlight🌟 End
 
         walkSpeed /= body.RequiredLegs;
         sprintSpeed /= body.RequiredLegs;
         acceleration /= body.RequiredLegs;
-        Movement.ChangeBaseSpeed(bodyId, walkSpeed, sprintSpeed, acceleration, movement);
+        Movement.ChangeBaseSpeed(bodyId, walkSpeed, sprintSpeed, acceleration, movement, minSpeedMod, maxSpeedMod);
     }
 
     #endregion
