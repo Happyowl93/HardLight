@@ -548,7 +548,7 @@ public abstract partial class SharedMoverController : VirtualController
         }
 
         // STARLIGHT: Check cyberlegs before outer clothing
-        if (TryComp<BodyComponent>(uid, out var body) && body != null && body.RequiredLegs <= 0)
+        if (TryComp<BodyComponent>(uid, out var body) && body != null && body.RequiredLegs >= 0)
         {
             foreach (var legEntity in body.LegEntities)
             {
