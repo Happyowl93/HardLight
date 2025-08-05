@@ -243,3 +243,16 @@
   baseSprite:
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: r_spacer_arm_TOOLS
+
+# Hydraulic
+- type: humanoidBaseSprite
+  id: CyberLLegHydraulic
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: l_leg_hydraulic
+
+- type: humanoidBaseSprite
+  id: CyberRLegHydraulic
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: r_leg_hydraulic
