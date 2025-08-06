@@ -114,6 +114,42 @@
           0.3
         ]
       ]
+    },
+    {
+      "name": "gorillagauntlet",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "chimphandcannon",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "mag-unshaded-1"
+    },
+    {
+      "name": "mag-unshaded-2"
+    },
+    {
+      "name": "anomalyscanner",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
     }
   ]
 }

@@ -561,6 +561,61 @@
       parts:
         right hand: RightHandCyber
 
+# GORILLA
+- type: entity
+  id: LeftArmCyberGorilla
+  name: "left G.O.R.I.L.L.A arm"
+  parent: [PartCyber, BaseLeftArm]
+  components:
+    - type: BaseLayerId
+      layer: CyberLArmGorilla
+    - type: BaseLayerIdToggled
+      layer: CyberLArmGorillaTools
+    - type: Sprite
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "l_gorilla_arm"
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "l_gorilla_arm"
+    - type: LimbWithItems
+      action: ActionToggleCyberHandLeft
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      items:
+        - WeaponGauntletGorillaCyber
+        - WeaponPistolCHIMPCyber
+        - AnomalyScannerCyber
+    - type: WithAttachedBodyParts
+      parts:
+        left hand: LeftHandCyber
+
+- type: entity
+  id: RightArmCyberGorilla
+  name: "right G.O.R.I.L.L.A arm"
+  parent: [PartCyber, BaseRightArm]
+  components:
+    - type: BaseLayerId
+      layer: CyberRArmGorilla
+    - type: BaseLayerIdToggled
+      layer: CyberRArmGorillaTools
+    - type: Sprite
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "r_gorilla_arm"
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "r_gorilla_arm"
+    - type: LimbWithItems
+      action: ActionToggleCyberHandRight
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      items:
+        - WeaponGauntletGorillaCyber
+        - WeaponPistolCHIMPCyber
+        - AnomalyScannerCyber
+    - type: WithAttachedBodyParts
+      parts:
+        right hand: RightHandCyber
+
 # Hydraulic Legs
 - type: entity
   id: LeftLegCyberHydraulic

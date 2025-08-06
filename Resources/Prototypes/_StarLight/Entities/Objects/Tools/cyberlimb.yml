@@ -369,3 +369,121 @@
     - type: Tag
       tags:
         - CyberHandItem
+
+# Gorilla
+- type: entity
+  name: G.O.R.I.L.L.A. gauntlet arm attachment
+  parent: BaseItem
+  id: WeaponGauntletGorillaCyber
+  description: A robust piece of research equipment. When powered with an anomaly core, a single blow can launch anomalous objects through the air.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      state: gorillagauntlet
+    - type: MeleeWeapon
+      attackRate: 0.5
+      angle: 0
+      animation: WeaponArcFist
+      wideAnimationRotation: -135
+      damage:
+        types:
+          Blunt: 20
+      soundHit:
+        path: "/Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg"
+    - type: CorePoweredThrower
+    - type: MeleeThrowOnHit
+      unanchorOnHit: true
+    - type: ItemSlots
+      slots:
+        core_slot:
+          name: anomaly-gorilla-core-slot-name
+          insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+          whitelist:
+            components:
+            - AnomalyCore
+    - type: ContainerContainer
+      containers:
+        core_slot: !type:ContainerSlot
+    - type: DamageOnAttackedProtection
+      damageProtection:
+        flatReductions:
+          Heat: 100
+          Cold: 100
+          Radiation: 100
+      slots: NONE
+    - type: Tag
+      tags:
+        - CyberHandItem
+
+- type: entity
+  name: C.H.I.M.P. handcannon arm attachment
+  parent: BaseWeaponBatterySmall
+  id: WeaponPistolCHIMPCyber
+  description: Just because it's a little C.H.I.M.P. doesn't mean it can't punch like an A.P.E.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      layers:
+        - state: chimphandcannon
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-unshaded-1
+          visible: false
+          map: ["enum.GunVisualLayers.MagUnshaded"]
+          shader: unshaded
+    - type: Appearance
+    - type: MagazineVisuals
+      magState: mag
+      steps: 3
+      zeroVisible: false
+    - type: Gun
+      projectileSpeed: 10
+      fireRate: 1.5
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+    - type: ProjectileBatteryAmmoProvider
+      proto: AnomalousParticleDeltaStrong
+      fireCost: 100
+    - type: BatteryWeaponFireModes
+      fireModes:
+      - proto: AnomalousParticleDeltaStrong
+        fireCost: 100
+      - proto: AnomalousParticleEpsilonStrong
+        fireCost: 100
+      - proto: AnomalousParticleZetaStrong
+        fireCost: 100
+      - proto: AnomalousParticleSigmaStrong
+        fireCost: 100
+    - type: StaticPrice
+      price: 0
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 2 # takes 6 minutes to charge itself back to full
+    - type: Tag
+      tags:
+        - CyberHandItem
+
+- type: entity
+  parent: BaseItem
+  id: AnomalyScannerCyber
+  name: anomaly scanner arm attachment
+  description: An arm-mounted scanner built to collect information on various anomalous objects.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      state: anomalyscanner
+    - type: ActivatableUI
+      key: enum.AnomalyScannerUiKey.Key
+      requireActiveHand: false
+      inHandsOnly: true
+    - type: UserInterface
+      interfaces:
+        enum.AnomalyScannerUiKey.Key:
+          type: AnomalyScannerBoundUserInterface
+    - type: AnomalyScanner
+    - type: GuideHelp
+      guides:
+      - ScannersAndVessel
+    - type: Tag
+      tags:
+        - CyberHandItem
