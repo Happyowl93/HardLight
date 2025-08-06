@@ -487,3 +487,161 @@
     - type: Tag
       tags:
         - CyberHandItem
+
+# Responder
+- type: entity
+  name: autoinjector cybernetic arm attachment
+  parent: BaseItem
+  description: A sterile injector for rapid administration of drugs to patients.
+  id: AutoinjectorCyber
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      layers:
+        - state: autoinjector
+          map: ["enum.SolutionContainerLayers.Base"]
+        - state: autoinjector-fill-1
+          map: ["enum.SolutionContainerLayers.Fill"]
+          visible: false
+    - type: SolutionContainerManager
+      solutions:
+        hypospray:
+          maxVol: 15
+    - type: ExaminableSolution
+      solution: hypospray
+    - type: Hypospray
+      onlyAffectsMobs: false
+      transferAmount: 15
+    - type: StaticPrice
+      price: 0
+    - type: Appearance
+    - type: SolutionContainerVisuals
+      maxFillLevels: 1
+      fillBaseName: autoinjector-fill-
+      solutionName: hypospray
+    - type: Tag
+      tags:
+        - CyberHandItem
+
+- type: entity
+  name: tricordrazine cyber autoinjector
+  parent: AutoinjectorCyber
+  description: A sterile injector for rapid administration of drugs to patients.
+  id: AutoinjectorCyberTricordrazine
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        hypospray:
+          maxVol: 15
+    - type: Hypospray
+      onlyAffectsMobs: false
+      transferAmount: 15
+      reagentWhitelist:
+        - Tricordrazine
+
+- type: entity
+  name: inaprovaline cyber autoinjector
+  parent: AutoinjectorCyber
+  description: A sterile injector for rapid administration of drugs to patients.
+  id: AutoinjectorCyberInaprovaline
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        hypospray:
+          maxVol: 15
+    - type: Hypospray
+      onlyAffectsMobs: false
+      transferAmount: 15
+      reagentWhitelist:
+        - Inaprovaline
+
+- type: entity
+  id: DefibrillatorCyber
+  parent: BaseDefibrillator
+  name: cyber defibrillator
+  description: Arm-mounted device that can save lives, and act as a weapon in a pinch.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      layers:
+        - state: defibrillator
+        - state: defibrillator-ready
+          map: [ "enum.ToggleableVisuals.Layer" ]
+          visible: false
+          shader: unshaded
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 4
+    - type: ToggleCellDraw
+    - type: PowerCellDraw
+      useRate: 50
+    - type: Defibrillator
+      zapHeal:
+        types:
+          Asphyxiation: -40
+      doAfterDuration: 6
+    - type: DoAfter
+    - type: UseDelay
+    - type: ItemToggleMeleeWeapon
+      activatedSoundOnHit:
+        path: /Audio/Items/Defib/defib_zap.ogg
+        params:
+          variation: 0.250
+      activatedSoundOnHitNoDamage:
+        path: /Audio/Items/Defib/defib_zap.ogg
+        params:
+          variation: 0.250
+          volume: -10
+      activatedDamage:
+        types:
+          Blunt: 4
+          Shock: 7
+    - type: ContainerContainer
+      containers:
+        cell_slot: !type:ContainerSlot { }
+    - type: PowerCellSlot
+      cellSlotId: cell_slot
+    - type: ItemSlots
+      slots:
+        cell_slot:
+          insertOnInteract: false
+          disableEject: true
+          whitelist:
+            components:
+              - PowerCell
+            requireAll: true
+          name: power-cell-slot-component-slot-name-default
+          startingItem: PowerCellTinyCyber
+    - type: Tag
+      tags:
+        - CyberHandItem
+
+- type: entity
+  name: Cyber Defibrillator Battery Cell
+  description: A tiny microreactor... Has some startup lag after use.
+  id: PowerCellTinyCyber
+  suffix: Full
+  parent: BasePowerCell
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Power/power_cells.rsi
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: tiny
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+  - type: Item
+    size: Small
+  - type: Battery
+    maxCharge: 250 #while in theory this could give five uses, in practice it gives 2-3 uses (between charge-up time, cooldown and idle-time). Any lower and the margins are too narrow to get more than 1 use out of the defib.
+    startingCharge: 250
+  - type: Tag
+    tags:
+      - PowerCellTiny
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 3 # Full charge in two minutes
+    autoRechargePause: true
+    autoRechargePauseTime: 30

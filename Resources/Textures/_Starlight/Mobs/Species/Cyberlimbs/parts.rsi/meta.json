@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "https://github.com/GentleButter, *_silver_* by darkrell, bulwark by Killer Tamashi",
+  "copyright": "https://github.com/GentleButter, *_silver_* by darkrell, bulwark by Killer Tamashi, programmer art by Citrea(please replace)",
   "size": {
     "x": 32,
     "y": 32
@@ -274,6 +274,22 @@
     },
     {
       "name": "r_gorilla_arm_TOOLS",
+      "directions": 4
+    },
+    {
+      "name": "l_angel_arm",
+      "directions": 4
+    },
+    {
+      "name": "l_angel_arm_TOOLS",
+      "directions": 4
+    },
+    {
+      "name": "r_angel_arm",
+      "directions": 4
+    },
+    {
+      "name": "r_angel_arm_TOOLS",
       "directions": 4
     },
     {

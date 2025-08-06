@@ -16,6 +16,7 @@ using Content.Shared.Timing;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio.Systems;
+using System.Linq;
 
 namespace Content.Shared.Chemistry.EntitySystems;
 
@@ -206,6 +207,19 @@ public sealed class HypospraySystem : EntitySystem
                 entity.Owner, user);
             return false;
         }
+
+        // 🌟Starlight🌟 start
+        if (!(entity.Comp.ReagentWhitelist.Count == 0 ||
+         targetSolution.Comp.Solution.Contents.Where(x => entity.Comp.ReagentWhitelist.Contains(x.Reagent.Prototype))
+            .Count() == targetSolution.Comp.Solution.Contents.Count))
+        {
+            _popup.PopupClient(
+                Loc.GetString("injector-component-target-has-disallowed-contents",
+                    ("target", Identity.Entity(target, EntityManager))),
+                entity.Owner, user);
+            return false;
+        }
+        // 🌟Starlight🌟 end
 
         var removedSolution = _solutionContainers.Draw(target, targetSolution, realTransferAmount);
 

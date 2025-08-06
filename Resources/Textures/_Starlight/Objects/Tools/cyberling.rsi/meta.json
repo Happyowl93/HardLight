@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation",
+  "copyright": "Taken from tgstation, programmer art by Citrea (please replace)",
   "size": {
     "x": 32,
     "y": 32
@@ -150,6 +150,32 @@
           0.3
         ]
       ]
+    },
+    {
+      "name": "autoinjector",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "autoinjector-fill-1"
+    },
+    {
+      "name": "defibrillator",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "defibrillator-ready"
     }
   ]
 }
