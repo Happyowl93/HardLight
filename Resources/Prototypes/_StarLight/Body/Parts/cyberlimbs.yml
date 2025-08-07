@@ -9,6 +9,8 @@
       reagents:
       - ReagentId: Iron
         Quantity: 30
+  - type: RoundstartImplantable
+    cost: 0
 
 - type: entity
   id: LeftArmCyber
@@ -721,3 +723,32 @@
     - type: FootstepModifier
       footstepSoundCollection:
         path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+
+# Shock Hands
+- type: entity
+  id: LeftHandCyberShock
+  name: "left shock hand"
+  parent: [PartCyber, BaseLeftHand]
+  components:
+    - type: BaseLayerId
+      layer: CyberLHandShock
+    - type: Sprite
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "l_hand_shock"
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "l_hand_shock"
+
+- type: entity
+  id: RightHandCyberShock
+  name: "right shock hand"
+  parent: [PartCyber, BaseRightHand]
+  components:
+    - type: BaseLayerId
+      layer: CyberRHandShock
+    - type: Sprite
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "r_hand_shock"
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "r_hand_shock"
