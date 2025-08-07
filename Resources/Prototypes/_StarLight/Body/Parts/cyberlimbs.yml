@@ -9,8 +9,6 @@
       reagents:
       - ReagentId: Iron
         Quantity: 30
-  - type: RoundstartImplantable
-    cost: 0
 
 - type: entity
   id: LeftArmCyber
