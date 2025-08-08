@@ -323,15 +323,15 @@
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: r_leg_hydraulic
 
-# Shock Hands
+# Zeus
 - type: humanoidBaseSprite
-  id: CyberLHandShock
+  id: CyberLArmZeus
   baseSprite:
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: l_hand_shock
+    state: l_zeus_arm
 
 - type: humanoidBaseSprite
-  id: CyberRHandShock
+  id: CyberRArmZeus
   baseSprite:
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: r_hand_shock
+    state: r_zeus_arm

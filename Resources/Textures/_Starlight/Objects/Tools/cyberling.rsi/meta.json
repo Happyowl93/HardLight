@@ -176,6 +176,26 @@
     },
     {
       "name": "defibrillator-ready"
+    },
+    {
+      "name": "zeusfist_off",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "zeusfist_on",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
     }
   ]
 }

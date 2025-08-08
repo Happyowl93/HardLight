@@ -2,19 +2,29 @@ using Content.Server.Power.EntitySystems;
 using Content.Server.Radio;
 using Content.Server.SurveillanceCamera;
 using Content.Shared.Emp;
+using Content.Server._Starlight.Emp;
+using Content.Shared.Examine;
+using Content.Shared.Weapons.Melee.Events;
+using Robust.Server.GameObjects;
 using Robust.Shared.Map;
+using Content.Shared.Item.ItemToggle;
+using Content.Server.PowerCell;
 
 namespace Content.Server.Emp;
 
 public sealed class EmpSystem : SharedEmpSystem
 {
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly PowerCellSystem _powerCell = default!;
+    [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
 
     public const string EmpPulseEffectPrototype = "EffectEmpPulse";
 
     public override void Initialize()
     {
         base.Initialize();
+        SubscribeLocalEvent<EmpOnMeleeHitComponent, MeleeHitEvent>(HandleMeleeHitTrigger);
         SubscribeLocalEvent<EmpImmuneComponent, EmpAttemptEvent>(OnEmpAttempt); //SL edit
 
         SubscribeLocalEvent<EmpDisabledComponent, RadioSendAttemptEvent>(OnRadioSendAttempt);
@@ -106,12 +116,26 @@ public sealed class EmpSystem : SharedEmpSystem
         args.Cancelled = true;
     }
 
+    // 🌟Starlight🌟
+    private void HandleMeleeHitTrigger(EntityUid uid, EmpOnMeleeHitComponent comp, MeleeHitEvent args)
+    {
+        if (args.HitEntities.Count <= 0)
+            return;
+
+        if (_itemToggle.IsActivated(uid) &&
+            _powerCell.TryUseActivatableCharge(uid))
+        {
+            foreach (var target in args.HitEntities)
+                EmpPulse(_transform.GetMapCoordinates(target), comp.Range, comp.EnergyConsumption, comp.DisableDuration);
+        }
+    }
+
     private void OnRadioReceiveAttempt(EntityUid uid, EmpDisabledComponent component, ref RadioReceiveAttemptEvent args) => args.Cancelled = true;
 
     private void OnApcToggleMainBreaker(EntityUid uid, EmpDisabledComponent component, ref ApcToggleMainBreakerAttemptEvent args) => args.Cancelled = true;
 
     private void OnCameraSetActive(EntityUid uid, EmpDisabledComponent component, ref SurveillanceCameraSetActiveAttemptEvent args) => args.Cancelled = true;
-    
+
     private void OnEmpAttempt(EntityUid uid, EmpImmuneComponent comp, EmpAttemptEvent args) => args.Cancel();
 }
 

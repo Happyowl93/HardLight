@@ -337,48 +337,12 @@
       ]
     },
     {
-      "name": "l_hand_shock",
-      "directions": 4,
-      "delays": [
-        [
-          0.3,
-          2.0
-        ],
-        [
-          0.3,
-          2.0
-        ],
-        [
-          0.3,
-          2.0
-        ],
-        [
-          0.3,
-          2.0
-        ]
-      ]
+      "name": "l_zeus_arm",
+      "directions": 4
     },
     {
-      "name": "r_hand_shock",
-      "directions": 4,
-      "delays": [
-        [
-          0.3,
-          2.0
-        ],
-        [
-          0.3,
-          2.0
-        ],
-        [
-          0.3,
-          2.0
-        ],
-        [
-          0.3,
-          2.0
-        ]
-      ]
+      "name": "r_zeus_arm",
+      "directions": 4
     }
   ]
 }
