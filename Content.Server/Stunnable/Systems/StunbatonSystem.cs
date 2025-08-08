@@ -1,6 +1,7 @@
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Power.Events;
+using Content.Server.PowerCell;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage.Events;
 using Content.Shared.Examine;
@@ -16,6 +17,7 @@ namespace Content.Server.Stunnable.Systems
         [Dependency] private readonly RiggableSystem _riggableSystem = default!;
         [Dependency] private readonly SharedPopupSystem _popup = default!;
         [Dependency] private readonly BatterySystem _battery = default!;
+        [Dependency] private readonly PowerCellSystem _powerCell = default!;
         [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
 
         public override void Initialize()
@@ -30,8 +32,11 @@ namespace Content.Server.Stunnable.Systems
 
         private void OnStaminaHitAttempt(Entity<StunbatonComponent> entity, ref StaminaDamageOnHitAttemptEvent args)
         {
+            EntityUid? batteryEntity = null;
             if (!_itemToggle.IsActivated(entity.Owner) ||
-            !TryComp<BatteryComponent>(entity.Owner, out var battery) || !_battery.TryUseCharge(entity.Owner, entity.Comp.EnergyPerUse, battery))
+            !(TryComp<BatteryComponent>(entity.Owner, out var battery) ||
+            _powerCell.TryGetBatteryFromSlot(entity.Owner, out batteryEntity, out battery)) ||
+            !_battery.TryUseCharge(batteryEntity ?? entity.Owner, entity.Comp.EnergyPerUse, battery))
             {
                 args.Cancelled = true;
             }
@@ -44,8 +49,9 @@ namespace Content.Server.Stunnable.Systems
             : Loc.GetString("comp-stunbaton-examined-off");
             args.PushMarkup(onMsg);
 
-            if (TryComp<BatteryComponent>(entity.Owner, out var battery))
+            if (TryComp<BatteryComponent>(entity.Owner, out var battery) || _powerCell.TryGetBatteryFromSlot(entity.Owner, out battery))
             {
+
                 var count = (int) (battery.CurrentCharge / entity.Comp.EnergyPerUse);
                 args.PushMarkup(Loc.GetString("melee-battery-examine", ("color", "yellow"), ("count", count)));
             }
@@ -55,7 +61,7 @@ namespace Content.Server.Stunnable.Systems
         {
             base.TryTurnOn(entity, ref args);
 
-            if (!TryComp<BatteryComponent>(entity, out var battery) || battery.CurrentCharge < entity.Comp.EnergyPerUse)
+            if (!(TryComp<BatteryComponent>(entity, out var battery) || _powerCell.TryGetBatteryFromSlot(entity.Owner, out battery)) || battery.CurrentCharge < entity.Comp.EnergyPerUse)
             {
                 args.Cancelled = true;
                 if (args.User != null)
@@ -94,7 +100,7 @@ namespace Content.Server.Stunnable.Systems
 
         private void OnChargeChanged(Entity<StunbatonComponent> entity, ref ChargeChangedEvent args)
         {
-            if (TryComp<BatteryComponent>(entity.Owner, out var battery) &&
+            if ((TryComp<BatteryComponent>(entity.Owner, out var battery) || _powerCell.TryGetBatteryFromSlot(entity.Owner, out battery)) &&
                 battery.CurrentCharge < entity.Comp.EnergyPerUse)
             {
                 _itemToggle.TryDeactivate(entity.Owner, predicted: false);

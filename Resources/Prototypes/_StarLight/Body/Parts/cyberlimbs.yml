@@ -175,13 +175,13 @@
     - type: LimbItemStorage
       items:
         - ScalpelCyber
+        - HemostatCyber
         - RetractorCyber
+        - BoneSetterCyber
+        - BoneGelCyber
         - CauteryCyber
         - DrillCyber
         - SawCyber
-        - HemostatCyber
-        - BoneSetterCyber
-        - BoneGel
     - type: LimbItemDeployer
       action: ActionToggleCyberHandLeft
       sound: 
@@ -189,7 +189,6 @@
       handWhitelist:
         tags:
           - CyberHandItem
-          - BoneGel
     - type: WithAttachedBodyParts
       parts:
         left hand: LeftHandCyber
@@ -212,13 +211,13 @@
     - type: LimbItemStorage
       items:
         - ScalpelCyber
+        - HemostatCyber
         - RetractorCyber
+        - BoneSetterCyber
+        - BoneGelCyber
         - CauteryCyber
         - DrillCyber
         - SawCyber
-        - HemostatCyber
-        - BoneSetterCyber
-        - BoneGel
     - type: LimbItemDeployer
       action: ActionToggleCyberHandRight
       sound: 
@@ -226,7 +225,6 @@
       handWhitelist:
         tags:
           - CyberHandItem
-          - BoneGel
     - type: WithAttachedBodyParts
       parts:
         right hand: RightHandCyber
@@ -743,6 +741,7 @@
       sound:
         path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
       items:
+        - MeleeWeaponCyberStunFist
         - MeleeWeaponCyberEmpFist
     - type: WithAttachedBodyParts
       parts:
@@ -768,6 +767,7 @@
       sound:
         path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
       items:
+        - MeleeWeaponCyberStunFist
         - MeleeWeaponCyberEmpFist
     - type: WithAttachedBodyParts
       parts:
