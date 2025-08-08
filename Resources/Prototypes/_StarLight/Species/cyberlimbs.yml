@@ -310,6 +310,19 @@
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: r_angel_arm_TOOLS
 
+# Zeus
+- type: humanoidBaseSprite
+  id: CyberLArmZeus
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: l_zeus_arm
+
+- type: humanoidBaseSprite
+  id: CyberRArmZeus
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: r_zeus_arm
+
 # Hydraulic
 - type: humanoidBaseSprite
   id: CyberLLegHydraulic
@@ -323,15 +336,15 @@
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: r_leg_hydraulic
 
-# Zeus
+# Pilebunker
 - type: humanoidBaseSprite
-  id: CyberLArmZeus
+  id: CyberLLegPilebunker
   baseSprite:
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: l_zeus_arm
+    state: l_leg_pilebunker
 
 - type: humanoidBaseSprite
-  id: CyberRArmZeus
+  id: CyberRLegPilebunker
   baseSprite:
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: r_zeus_arm
+    state: r_leg_pilebunker
