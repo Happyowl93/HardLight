@@ -731,7 +731,7 @@
     - type: BaseLayerId
       layer: CyberLArmRiplet
     - type: BaseLayerIdToggled
-      layer: CyberLArmRipletTOOLS
+      layer: CyberLArmRipletTools
     - type: Sprite
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_riplet_arm"
@@ -756,7 +756,7 @@
     - type: BaseLayerId
       layer: CyberRArmRiplet
     - type: BaseLayerIdToggled
-      layer: CyberRArmRipletTOOLS
+      layer: CyberRArmRipletTools
     - type: Sprite
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_riplet_arm"
