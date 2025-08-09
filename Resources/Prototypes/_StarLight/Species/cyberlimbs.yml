@@ -323,6 +323,35 @@
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: r_zeus_arm
 
+# Riplet
+- type: humanoidBaseSprite
+  id: CyberLArmRiplet
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: l_riplet_arm
+
+- type: humanoidBaseSprite
+  id: CyberRArmRiplet
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: r_riplet_arm
+
+- type: humanoidBaseSprite
+  id: CyberLArmRipletTools
+  matchSkin: false
+  markingsMatchSkin: false
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: l_riplet_arm_TOOLS
+
+- type: humanoidBaseSprite
+  id: CyberRArmRipletTools
+  matchSkin: false
+  markingsMatchSkin: false
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: r_riplet_arm_TOOLS
+
 # Hydraulic
 - type: humanoidBaseSprite
   id: CyberLLegHydraulic

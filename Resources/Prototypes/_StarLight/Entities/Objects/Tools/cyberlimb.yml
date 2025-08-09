@@ -644,3 +644,50 @@
     autoRechargeRate: 3 # Full charge in two minutes
     autoRechargePause: true
     autoRechargePauseTime: 30
+
+# Riplet
+- type: entity
+  id: CyberEquipmentGrabber
+  parent: BaseItem
+  name: riplet clamp
+  description: Gives you the ability to carry things, like a tiny Ripley!
+  components:
+    - type: LargeGrabber
+      maxContents: 1
+    - type: ContainerContainer
+      containers:
+        item-container: !type:Container
+        cell_slot: !type:ContainerSlot { }
+    - type: PowerCellSlot
+      cellSlotId: cell_slot
+    - type: ItemSlots
+      slots:
+        cell_slot:
+          whitelist:
+            components:
+              - PowerCell
+            requireAll: true
+          name: power-cell-slot-component-slot-name-default
+          startingItem: PowerCellMedium
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      layers:
+        - state: ripletclaw
+        - state: ripletclaw-full
+          map: [ "enum.ToggleableVisuals.Layer" ]
+          visible: false
+    - type: DoAfter
+    - type: ItemToggle
+      onActivate: false
+      onUse: false
+      soundActivate:
+        path: /Audio/Items/change_jaws.ogg
+      soundDeactivate:
+        path: /Audio/Items/change_jaws.ogg
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.ToggleableVisuals.Enabled:
+          enum.ToggleableVisuals.Layer:
+            True: { visible: true }
+            False: { visible: false }

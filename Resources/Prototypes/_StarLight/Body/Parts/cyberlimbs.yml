@@ -722,6 +722,57 @@
       parts:
         right hand: RightHandCyber
 
+# Riplet
+- type: entity
+  id: LeftArmCyberRiplet
+  name: "left riplet arm"
+  parent: [PartCyber, BaseLeftArm]
+  components:
+    - type: BaseLayerId
+      layer: CyberLArmRiplet
+    - type: BaseLayerIdToggled
+      layer: CyberLArmRipletTOOLS
+    - type: Sprite
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "l_riplet_arm"
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "l_riplet_arm"
+    - type: LimbWithItems
+      action: ActionToggleCyberHandLeft
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      items:
+        - CyberEquipmentGrabber
+    - type: WithAttachedBodyParts
+      parts:
+        right hand: LeftHandCyber
+
+- type: entity
+  id: RightArmCyberRiplet
+  name: "right riplet arm"
+  parent: [PartCyber, BaseRightArm]
+  components:
+    - type: BaseLayerId
+      layer: CyberRArmRiplet
+    - type: BaseLayerIdToggled
+      layer: CyberRArmRipletTOOLS
+    - type: Sprite
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "r_riplet_arm"
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "r_riplet_arm"
+    - type: LimbWithItems
+      action: ActionToggleCyberHandRight
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      items:
+        - CyberEquipmentGrabber
+    - type: WithAttachedBodyParts
+      parts:
+        right hand: RightHandCyber
+
 # Hydraulic Legs
 - type: entity
   id: LeftLegCyberHydraulic

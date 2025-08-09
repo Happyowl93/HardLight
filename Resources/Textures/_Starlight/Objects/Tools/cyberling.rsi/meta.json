@@ -216,6 +216,19 @@
           0.3
         ]
       ]
+    },
+    {
+      "name": "ripletclaw",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "ripletclaw-full"
     }
   ]
 }
