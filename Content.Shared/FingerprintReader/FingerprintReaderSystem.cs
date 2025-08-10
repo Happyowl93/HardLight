@@ -37,6 +37,7 @@ public sealed class FingerprintReaderSystem : EntitySystem
 
         // Check fingerprint match
         if (!TryComp<FingerprintComponent>(user, out var fingerprint) || fingerprint.Fingerprint == null ||
+            TryComp<FingerprintMaskComponent>(user, out _) || // 🌟Starlight🌟
             !target.Comp.AllowedFingerprints.Contains(fingerprint.Fingerprint))
         {
             if (target.Comp.FailPopup != null && showPopup)

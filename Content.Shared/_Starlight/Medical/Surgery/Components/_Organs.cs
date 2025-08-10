@@ -6,6 +6,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Starlight.Medical.Surgery.Steps.Parts;
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class EyeImplantComponent : Component;
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class HandImplantComponent : Component;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class OrganBrainComponent : Component;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class OrganAppendixComponent : Component;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class OrganEarsComponent : Component;
@@ -14,14 +15,14 @@ namespace Content.Shared.Starlight.Medical.Surgery.Steps.Parts;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class OrganStomachComponent : Component;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class OrganLiverComponent : Component;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class OrganKidneysComponent : Component;
-[RegisterComponent, NetworkedComponent] 
+[RegisterComponent, NetworkedComponent]
 public sealed partial class OrganTongueComponent : Component
 {
     [DataField]
     public bool IsMuted;
 }
 
-[RegisterComponent, NetworkedComponent] 
+[RegisterComponent, NetworkedComponent]
 public sealed partial class OrganEyesComponent : Component
 {
     [DataField]
@@ -38,7 +39,7 @@ public sealed partial class OrganVisualizationComponent : Component
     public ProtoId<HumanoidSpeciesSpriteLayer> Prototype;
 }
 
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] 
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class FunctionalOrganComponent : Component
 {
     [DataField("comps")]

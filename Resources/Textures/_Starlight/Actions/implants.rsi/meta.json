@@ -10,6 +10,9 @@
   "states": [
     {
       "name": "gorilla_rampage"
+    },
+    {
+      "name": "toggle_claws"
     }
   ]
 }
