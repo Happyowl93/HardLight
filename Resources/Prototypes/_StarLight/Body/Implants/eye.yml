@@ -71,7 +71,7 @@
   id: EyeImplantSyndie
   name: Syndie Implant
   description: Enables you to see information about station crew, humanoids and syndie without any glasses.
-  parent: BaseEntityEyeImplant
+  parent: [ BaseEntityEyeImplant, BaseSyndicateContraband ]
   components:
   - type: Sprite
     state: eye_implant_syndicate
