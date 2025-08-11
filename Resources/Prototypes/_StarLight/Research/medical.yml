@@ -86,7 +86,7 @@
 
 - type: technology
   id: CyberImplantsTech
-  name: research-technology-basic-eye-implants
+  name: research-technology-basic-implants
   icon:
     sprite: _Starlight/Objects/Specific/Medical/implants.rsi
     state: eye_implant_welding
@@ -96,12 +96,19 @@
   recipeUnlocks:
     - EyeImplantWelding
     - EyeImplantMedical
+    - EyeImplantDiagnostic
     - EyeImplantSecurity
+    - HandImplantInsulated
+    - HandImplantThrusters
+    - HandImplantForensics
+    - HandImplantClaws
   technologyPrerequisites:
     - CyberLimbsTech
   radioChannels:
   - Security
   - Medical
+  - Engineering
+  - Supply
 
 #starlight, moved from civilian to medical
 - type: technology
@@ -148,15 +155,27 @@
   recipeUnlocks:
     - LeftArmCyberReaper
     - RightArmCyberReaper
+    - LeftArmCyberAngel
+    - RightArmCyberAngel
+    - LeftArmCyberGorilla
+    - RightArmCyberGorilla
     - LeftArmCyberMechwright
     - RightArmCyberMechwright
+    - LeftArmCyberSpacer
+    - RightArmCyberSpacer
+    - LeftArmCyberRiplet
+    - RightArmCyberRiplet
     - LeftArmCyberBulwark
     - RightArmCyberBulwark
+    - LeftArmCyberZeus
+    - RightArmCyberZeus
   technologyPrerequisites:
     - CyberLimbsTech
   radioChannels:
   - Security
   - Medical
+  - Engineering
+  - Supply
 
 - type: technology
   id: CyberEyeNightVision
@@ -174,7 +193,7 @@
   radioChannels:
   - Security
   - Medical
-  
+
 - type: technology
   id: CyberEyeThermalVision
   name: research-technology-thermalvision-eyes

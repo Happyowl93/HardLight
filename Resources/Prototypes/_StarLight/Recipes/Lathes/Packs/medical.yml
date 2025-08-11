@@ -42,6 +42,14 @@
   - RightArmCyberReaper
   - LeftArmCyberMechwright
   - RightArmCyberMechwright
+  - LeftArmCyberSpacer
+  - RightArmCyberSpacer
+  - LeftArmCyberRiplet
+  - RightArmCyberRiplet
+  - LeftArmCyberAngel
+  - RightArmCyberAngel
+  - LeftArmCyberGorilla
+  - RightArmCyberGorilla
 
 #
 
@@ -58,7 +66,11 @@
   recipes:
   - EyeImplantWelding
   - EyeImplantMedical
+  - EyeImplantDiagnostic
   - EyeImplantSecurity
+  - HandImplantInsulated
+  - HandImplantThrusters
+
 
 - type: latheRecipePack
   id: StarlightBudgetCyberOrgansDynamic

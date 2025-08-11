@@ -129,7 +129,7 @@ public sealed partial class OrganSystem : EntitySystem
 
     //
 
-    private void OnVisualizationExtracted(Entity<OrganVisualizationComponent> ent, ref SurgeryOrganExtracted args) 
+    private void OnVisualizationExtracted(Entity<OrganVisualizationComponent> ent, ref SurgeryOrganExtracted args)
         => _humanoidAppearanceSystem.SetLayersVisibility(args.Body, [ent.Comp.Layer], false);
     private void OnVisualizationImplanted(Entity<OrganVisualizationComponent> ent, ref SurgeryOrganImplantationCompleted args)
     {

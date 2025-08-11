@@ -25,21 +25,20 @@
     - type: EyeProtection
     - type: WeldingMask
 
-# needs arguments system
-#- type: entity
-#  id: EyeImplantDiagnostic
-#  name: Diagnostic Implant
-#  description: Enables you to see information about mechanisms without diagnostic glasses.
-#  parent: BaseEntityEyeImplant
-#  components:
-#  - type: Sprite
-#    state: eye_implant_diagnostic
-#  - type: FunctionalOrgan
-#    comps:
-#    - type: ShowHealthBars
-#      damageContainers:
-#      - Inorganic
-#      - Silicon
+- type: entity
+  id: EyeImplantDiagnostic
+  name: Diagnostic Implant
+  description: Enables you to see information about mechanisms without diagnostic glasses.
+  parent: BaseEntityEyeImplant
+  components:
+  - type: Sprite
+    state: eye_implant_diagnostic
+  - type: FunctionalOrgan
+    comps:
+    - type: ShowHealthBars
+      damageContainers:
+      - Inorganic
+      - Silicon
 
 - type: entity
   id: EyeImplantMedical

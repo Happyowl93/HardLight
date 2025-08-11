@@ -37,7 +37,7 @@
   materials:
     Steel: 300
     Plastic: 100
-    
+
 - type: latheRecipe
   id: BoneSetterAdvanced
   result: BoneSetterAdvanced
@@ -128,7 +128,7 @@
   materials:
     Plastic: 200
     Steel: 200
-      
+
 - type: latheRecipe
   id: LeftFootCyber
   result: LeftFootCyber
@@ -196,6 +196,162 @@
     Steel: 550
     Silver: 100
     Glass: 100
+
+#
+- type: latheRecipe
+  id: LeftArmCyberAngel
+  result: LeftArmCyberAngel
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+    Gold: 250
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberAngel
+  result: RightArmCyberAngel
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+    Gold: 250
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+#
+- type: latheRecipe
+  id: LeftArmCyberGorilla
+  result: LeftArmCyberGorilla
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+    Plasma: 250
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberGorilla
+  result: RightArmCyberGorilla
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+    Plasma: 250
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+#
+- type: latheRecipe
+  id: LeftArmCyberSpacer
+  result: LeftArmCyberSpacer
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+    Plasteel: 250
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberSpacer
+  result: RightArmCyberSpacer
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+    Plasteel: 250
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+#
+- type: latheRecipe
+  id: LeftArmCyberRiplet
+  result: LeftArmCyberRiplet
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberRiplet
+  result: RightArmCyberRiplet
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+#
+- type: latheRecipe
+  id: LeftLegCyberHydraulic
+  result: LeftLegCyberHydraulic
+  categories:
+  - Cyberlimbs
+  completetime: 5
+  materials:
+    Plasteel: 500
+    Plastic: 250
+    Steel: 250
+    Silver: 50
+
+- type: latheRecipe
+  id: RightLegCyberHydraulic
+  result: RightLegCyberHydraulic
+  categories:
+  - Cyberlimbs
+  completetime: 5
+  materials:
+    Plasteel: 500
+    Plastic: 250
+    Steel: 250
+    Silver: 50
+
+#
+- type: latheRecipe
+  id: LeftLegCyberPilebunker
+  result: LeftLegCyberPilebunker
+  categories:
+  - Cyberlimbs
+  completetime: 3
+  materials:
+    Plasteel: 500
+    Plastic: 250
+    Steel: 250
+    Silver: 50
+
+- type: latheRecipe
+  id: RightLegCyberPilebunker
+  result: RightLegCyberPilebunker
+  categories:
+  - Cyberlimbs
+  completetime: 3
+  materials:
+    Plasteel: 500
+    Plastic: 250
+    Steel: 250
+    Silver: 50
 # IMPLANTS
 
 # Eye
@@ -222,7 +378,19 @@
     Steel: 200
     Plasma: 300
     Glass: 100
-    
+
+- type: latheRecipe
+  id: EyeImplantDiagnostic
+  result: EyeImplantDiagnostic
+  categories:
+  - Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 250
+    Glass: 100
+
 - type: latheRecipe
   id: EyeImplantSecurity
   result: EyeImplantSecurity
@@ -258,7 +426,31 @@
     Gold: 300
     Plasma: 300
     Glass: 100
-    
+
+# Hands
+
+- type: latheRecipe
+  id: HandImplantInsulated
+  result: HandImplantInsulated
+  categories:
+  - Implants
+  completetime: 4
+  materials:
+    Steel: 200
+    Plasma: 300
+    Glass: 150
+
+- type: latheRecipe
+  id: HandImplantThrusters
+  result: HandImplantThrusters
+  categories:
+  - Implants
+  completetime: 4
+  materials:
+    Steel: 200
+    Plasma: 300
+    Glass: 150
+
 # Automenders
 
 - type: latheRecipe
@@ -271,7 +463,7 @@
     Plastic: 200
     Steel: 100
     Silver: 50
-    
+
 - type: latheRecipe
   id: AutoMenderBurn
   result: AutoMenderBurn
