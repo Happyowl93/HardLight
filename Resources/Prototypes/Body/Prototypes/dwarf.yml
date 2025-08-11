@@ -37,11 +37,11 @@
     right hand:
       part: RightHandHuman
       organs:
-        hand_implant: null
+        hand_implant: null # 🌟Starlight🌟
     left hand:
       part: LeftHandHuman
       organs:
-        hand_implant: null
+        hand_implant: null # 🌟Starlight🌟
     right leg:
       part: RightLegHuman
       connections:

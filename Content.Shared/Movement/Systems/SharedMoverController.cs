@@ -40,7 +40,6 @@ namespace Content.Shared.Movement.Systems;
 /// </summary>
 public abstract partial class SharedMoverController : VirtualController
 {
-    [Dependency] private readonly IEntityManager _entities = default!;
     [Dependency] private   readonly IConfigurationManager _configManager = default!;
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] protected readonly ITileDefinitionManager _tileDefinitionManager = default!;

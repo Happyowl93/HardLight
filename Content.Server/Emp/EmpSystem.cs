@@ -16,15 +16,15 @@ public sealed class EmpSystem : SharedEmpSystem
 {
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
-    [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
+    [Dependency] private readonly PowerCellSystem _powerCell = default!; // 🌟Starlight🌟
+    [Dependency] private readonly ItemToggleSystem _itemToggle = default!; // 🌟Starlight🌟
 
     public const string EmpPulseEffectPrototype = "EffectEmpPulse";
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<EmpOnMeleeHitComponent, MeleeHitEvent>(HandleMeleeHitTrigger);
+        SubscribeLocalEvent<EmpOnMeleeHitComponent, MeleeHitEvent>(HandleMeleeHitTrigger); // 🌟Starlight🌟
         SubscribeLocalEvent<EmpImmuneComponent, EmpAttemptEvent>(OnEmpAttempt); //SL edit
 
         SubscribeLocalEvent<EmpDisabledComponent, RadioSendAttemptEvent>(OnRadioSendAttempt);

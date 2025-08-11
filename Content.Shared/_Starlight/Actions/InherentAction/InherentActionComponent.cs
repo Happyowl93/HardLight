@@ -8,7 +8,7 @@ namespace Content.Shared._Starlight.Actions.InherentAction;
 public sealed partial class InherentActionComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public EntProtoId Action = "ActionRetractableItemAdvancedClaws";
+    public EntProtoId Action = "ActionScream";
 
     [DataField, AutoNetworkedField]
     public EntityUid? ActionEntity;

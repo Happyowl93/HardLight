@@ -37,11 +37,11 @@
     right hand:
       part: RightHandReptilian
       organs:
-        hand_implant: null
+        hand_implant: null # 🌟Starlight🌟
     left hand:
       part: LeftHandReptilian
       organs:
-        hand_implant: null
+        hand_implant: null # 🌟Starlight🌟
     right leg:
       part: RightLegReptilian
       connections:
