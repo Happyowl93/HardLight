@@ -678,6 +678,8 @@
           visible: false
     - type: DoAfter
     - type: ItemToggle
+      onActivate: false
+      onUse: false
       soundActivate:
         path: /Audio/Items/change_jaws.ogg
       soundDeactivate:
