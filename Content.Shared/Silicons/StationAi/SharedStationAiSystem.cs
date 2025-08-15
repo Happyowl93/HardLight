@@ -11,6 +11,7 @@ using Content.Shared.Intellicard;
 using Content.Shared.Interaction;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Mind;
+using Content.Shared.Mind.Components; // Starlight-edit
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
@@ -33,6 +34,7 @@ using Robust.Shared.Utility;
 using Content.Shared.Starlight.TextToSpeech;
 using System.Linq;
 using Content.Shared._Starlight.Silicons.Borgs;//Starlight
+using Content.Shared.Silicons.Borgs.Components; // Starlight
 
 namespace Content.Shared.Silicons.StationAi;
 
@@ -102,6 +104,8 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         SubscribeLocalEvent<StationAiHolderComponent, EntInsertedIntoContainerMessage>(OnHolderConInsert);
         SubscribeLocalEvent<StationAiHolderComponent, EntRemovedFromContainerMessage>(OnHolderConRemove);
         SubscribeLocalEvent<StationAiHolderComponent, IntellicardDoAfterEvent>(OnIntellicardDoAfter);
+
+        SubscribeLocalEvent<BorgBrainComponent, IntellicardDoAfterEvent>(OnIntellicardBorgDoAfter); // Starlight-edit
 
         SubscribeLocalEvent<StationAiCoreComponent, EntInsertedIntoContainerMessage>(OnAiInsert);
         SubscribeLocalEvent<StationAiCoreComponent, EntRemovedFromContainerMessage>(OnAiRemove);
@@ -230,8 +234,11 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         args.InRange = _vision.IsAccessible((targetXform.GridUid.Value, broadphase, grid), targetTile);
     }
 
+    private void OnIntellicardDoAfter(Entity<StationAiHolderComponent> ent, ref IntellicardDoAfterEvent args) => IntellicardTransfer(ent.Owner, ent.Comp, args); // Starlight-edit
 
-    private void OnIntellicardDoAfter(Entity<StationAiHolderComponent> ent, ref IntellicardDoAfterEvent args)
+    private void OnIntellicardBorgDoAfter(Entity<BorgBrainComponent> ent, ref IntellicardDoAfterEvent args) => IntellicardTransfer(ent.Owner, null, args); // Starlight-edit
+
+    private void IntellicardTransfer(EntityUid uid, StationAiHolderComponent? component, IntellicardDoAfterEvent args) // Starlight-edit
     {
         if (args.Cancelled)
             return;
@@ -239,24 +246,29 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (!TryComp(args.Args.Target, out StationAiHolderComponent? targetHolder))
+        if (args.Args.Target == null) // Starlight-edit
+            return;
+
+        if (!TryComp(args.Args.Target.Value, out StationAiHolderComponent? targetHolder)) // Starlight-edit
             return;
 
         //#region Starlight
+
+        var isBorg = HasComp<BorgBrainComponent>(uid);
+        var borgHaveMind = TryComp<MindContainerComponent>(uid, out var mindContainer) && _mind.GetMind(uid, mindContainer) != null;
+        var isBorgTarget = HasComp<BorgBrainComponent>(args.Args.Target.Value);
+        var borgHaveMindTarget = TryComp<MindContainerComponent>(args.Args.Target.Value, out var targetMindContainer) && _mind.GetMind(args.Args.Target.Value, targetMindContainer) != null;
+
         // basically if the AI is off shunting we wanna force them BACK. simplest way to do that is to fake the event to send them back.
-        var item = ent.Comp.Slot.Item;
-        if (item.HasValue && TryComp<StationAIShuntableComponent>(item.Value, out var shuntable))
-            if (shuntable.Inhabited.HasValue)
-            {
-                var returnEvent = new AIUnShuntActionEvent();
-                RaiseLocalEvent(shuntable.Inhabited.Value, returnEvent);
-            }
+        var slot = component?.Slot;
+        if (slot?.Item is { } item && TryComp<StationAIShuntableComponent>(item, out var shuntable) && shuntable.Inhabited is { } inhabited)
+            RaiseLocalEvent(inhabited, new AIUnShuntActionEvent());
         //#endregion Starlight
-        
+
         // Try to insert our thing into them
-        if (_slots.CanEject(ent.Owner, args.User, ent.Comp.Slot))
+        if (slot != null && _slots.CanEject(uid, args.User, slot)) // Starlight-edit
         {
-            if (!_slots.TryInsert(args.Args.Target.Value, targetHolder.Slot, ent.Comp.Slot.Item!.Value, args.User, excludeUserAudio: true))
+            if (!_slots.TryInsert(args.Args.Target.Value, targetHolder.Slot, slot.Item!.Value, args.User, excludeUserAudio: true)) // Starlight-edit
             {
                 return;
             }
@@ -264,17 +276,31 @@ public abstract partial class SharedStationAiSystem : EntitySystem
             args.Handled = true;
             return;
         }
+        // Starlight-start: borgs can be downloaded/uploaded
+        else if (isBorgTarget && borgHaveMindTarget && slot?.ContainerSlot is { } containerSlot && containerSlot.ContainedEntity != null)
+        {
+            _mind.ControlMob(args.Args.Target.Value, uid);
+            Del(containerSlot.ContainedEntity);
+        }
+        // Starlight-end
 
         // Otherwise try to take from them
-        if (_slots.CanEject(args.Args.Target.Value, args.User, targetHolder.Slot))
+        if (slot != null && _slots.CanEject(args.Args.Target.Value, args.User, targetHolder.Slot)) // Starlight-edit
         {
-            if (!_slots.TryInsert(ent.Owner, ent.Comp.Slot, targetHolder.Slot.Item!.Value, args.User, excludeUserAudio: true))
+            if (!_slots.TryInsert(uid, slot, targetHolder.Slot.Item!.Value, args.User, excludeUserAudio: true)) // Starlight-edit
             {
                 return;
             }
 
             args.Handled = true;
         }
+        // Starlight-start: borgs can be downloaded/uploaded
+        else if (isBorg && borgHaveMind && targetHolder.Slot.ContainerSlot != null)
+        {
+            var brain = SpawnInContainerOrDrop(DefaultAi, args.Args.Target.Value, targetHolder.Slot.ContainerSlot.ID);
+            _mind.ControlMob(uid, brain);
+        }
+        // Starlight-end
     }
 
     private void OnHolderInteract(Entity<StationAiHolderComponent> ent, ref AfterInteractEvent args)
@@ -282,8 +308,10 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         if (args.Handled || !args.CanReach || args.Target == null)
             return;
 
-        if (!TryComp(args.Target, out StationAiHolderComponent? targetHolder))
-            return;
+        var coreHasAi = false; // Starlight-edit
+
+        if (TryComp(args.Target, out StationAiHolderComponent? targetHolder)) // Starlight-edit
+            coreHasAi = _slots.CanEject(args.Target.Value, args.User, targetHolder.Slot); // Starlight-edit
 
         //Don't want to download/upload between several intellicards. You can just pick it up at that point.
         if (HasComp<IntellicardComponent>(args.Target))
@@ -293,26 +321,35 @@ public abstract partial class SharedStationAiSystem : EntitySystem
             return;
 
         var cardHasAi = _slots.CanEject(ent.Owner, args.User, ent.Comp.Slot);
-        var coreHasAi = _slots.CanEject(args.Target.Value, args.User, targetHolder.Slot);
 
-        if (cardHasAi && coreHasAi)
+        var isBorg = HasComp<BorgBrainComponent>(args.Target.Value); // Starlight-edit
+        var borgHaveMind = TryComp<MindContainerComponent>(args.Target.Value, out var mindContainer) && _mind.GetMind(args.Target.Value, mindContainer) != null; // Starlight-edit
+
+        if (cardHasAi && (coreHasAi || borgHaveMind)) // Starlight-edit
         {
             _popup.PopupClient(Loc.GetString("intellicard-core-occupied"), args.User, args.User, PopupType.Medium);
             args.Handled = true;
             return;
         }
-        if (!cardHasAi && !coreHasAi)
+        if (!cardHasAi && !coreHasAi && !isBorg) // Starlight-edit
         {
             _popup.PopupClient(Loc.GetString("intellicard-core-empty"), args.User, args.User, PopupType.Medium);
             args.Handled = true;
             return;
         }
 
-        if (TryGetHeld((args.Target.Value, targetHolder), out var held) && _timing.CurTime > intelliComp.NextWarningAllowed)
+        if (targetHolder != null && TryGetHeld((args.Target.Value, targetHolder), out var held) && _timing.CurTime > intelliComp.NextWarningAllowed) // Starlight-edit
         {
             intelliComp.NextWarningAllowed = _timing.CurTime + intelliComp.WarningDelay;
             AnnounceIntellicardUsage(held, intelliComp.WarningSound);
         }
+        // Starlight-start: borgs can be downloaded/uploaded
+        else if (isBorg && _timing.CurTime > intelliComp.NextWarningAllowed)
+        {
+            intelliComp.NextWarningAllowed = _timing.CurTime + intelliComp.WarningDelay;
+            AnnounceIntellicardUsage(args.Target.Value, intelliComp.WarningSound);
+        }
+        // Starlight-end
 
         var doAfterArgs = new DoAfterArgs(EntityManager, args.User, cardHasAi ? intelliComp.UploadTime : intelliComp.DownloadTime, new IntellicardDoAfterEvent(), args.Target, ent.Owner)
         {
@@ -500,7 +537,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         _metadata.SetEntityName(ent.Owner, MetaData(args.Entity).EntityName);
 
         AttachEye(ent);
-	}
+    }
 
     private void OnAiRemove(Entity<StationAiCoreComponent> ent, ref EntRemovedFromContainerMessage args)
     {
