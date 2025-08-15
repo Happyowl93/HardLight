@@ -90,6 +90,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         InitializeHeld();
         InitializeLight();
         InitializeCustomization();
+        InitializeLinking(); // Starlight-edit
 
         SubscribeLocalEvent<StationAiWhitelistComponent, BoundUserInterfaceCheckRangeEvent>(OnAiBuiCheck);
 

@@ -1599,8 +1599,8 @@
   - type: Lock
     unlockOnClick: false
   - type: SiliconLawUpdater
-    components:
-    - type: StationAiHeld
+#    components: Changed to core linking
+#    - type: StationAiHeld
   - type: ItemSlotsLock
     slots:
     - circuit_holder
@@ -1619,3 +1619,11 @@
     containers:
       circuit_holder: !type:ContainerSlot
       board: !type:Container
+# Starlight-start: Link console to core
+  - type: DeviceList
+  - type: DeviceNetwork
+    deviceNetId: Wired
+  - type: DeviceLinkSink
+    ports:
+      - AiLawConsoleReceiver
+# Starlight-end

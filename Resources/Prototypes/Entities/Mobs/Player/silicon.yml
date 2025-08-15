@@ -241,6 +241,15 @@
         type: HolopadBoundUserInterface
       enum.StationAiCustomizationUiKey.Key:
         type: StationAiCustomizationBoundUserInterface
+# Starlight-start: Changed to core linking
+  - type: DeviceList
+  - type: DeviceNetwork
+    deviceNetId: Wired
+  - type: DeviceLinkSource
+    range: 20
+    ports:
+      - AiLawConsoleSender
+# Starlight-end
 
 # The job-ready version of an AI spawn.
 - type: entity

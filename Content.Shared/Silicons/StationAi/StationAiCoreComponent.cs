@@ -1,5 +1,6 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Content.Shared.DeviceLinking; // Starlight-edit
 
 namespace Content.Shared.Silicons.StationAi;
 
@@ -39,6 +40,19 @@ public sealed partial class StationAiCoreComponent : Component
     public EntProtoId? PhysicalEntityProto = "StationAiHoloLocal";
 
     public const string Container = "station_ai_mind_slot";
+    
+    // Starlight-start: Linking with ai upload console
+    
+    [DataField, AutoNetworkedField]
+    public NetEntity? LawConsole;
+    
+    /// <summary>
+    /// The machine linking port
+    /// </summary>
+    [DataField]
+    public ProtoId<SourcePortPrototype> LinkingPort = "AiLawConsoleSender";
+    
+    // Starlight-end
 }
 
 /// <summary>

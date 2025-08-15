@@ -13,6 +13,7 @@ using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
+using Content.Shared.Silicons.StationAi; // Starlight-edit
 using Content.Shared.Wires;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -323,12 +324,17 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
             return;
 
         var lawset = GetLawset(provider.Laws).Laws;
-        var query = EntityManager.CompRegistryQueryEnumerator(ent.Comp.Components);
+        if (ent.Comp.Core != null // Starlight-edit
+            && TryComp<StationAiHolderComponent>(GetEntity(ent.Comp.Core.Value), out var holder)  // Starlight-edit
+            && holder.Slot.ContainerSlot?.ContainedEntity is { } update) // Starlight-edit
+            SetLaws(lawset, update, provider.LawUploadSound); // Starlight-edit
+            
+//        var query = EntityManager.CompRegistryQueryEnumerator(ent.Comp.Components); Starlight-edit: Changed to device linking
 
-        while (query.MoveNext(out var update))
-        {
-            SetLaws(lawset, update, provider.LawUploadSound);
-        }
+//        while (query.MoveNext(out var update)) Starlight-edit: Changed to device linking
+//        {
+//            SetLaws(lawset, update, provider.LawUploadSound);
+//        }
     }
 }
 
