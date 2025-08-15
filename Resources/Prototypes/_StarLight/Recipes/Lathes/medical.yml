@@ -226,6 +226,33 @@
 
 #
 - type: latheRecipe
+  id: LeftArmCyberPersephone
+  result: LeftArmCyberPersephone
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberPersephone
+  result: RightArmCyberPersephone
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+#
+- type: latheRecipe
   id: LeftArmCyberGorilla
   result: LeftArmCyberGorilla
   categories:

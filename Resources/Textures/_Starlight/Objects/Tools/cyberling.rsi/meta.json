@@ -229,6 +229,95 @@
     },
     {
       "name": "ripletclaw-full"
+    },
+    {
+      "name": "handheldgrinder",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "handheldgrinder-empty"
+    },
+    {
+      "name": "handheldgrinder-beaker-attached"
+    },
+    {
+      "name": "minihoe",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "spade",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "clippers",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "hatchet",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "scythe",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "dropper",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "dropper1"
+    },
+    {
+      "name": "spraybottle",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
     }
   ]
 }

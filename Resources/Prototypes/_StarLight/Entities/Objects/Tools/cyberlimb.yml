@@ -691,3 +691,119 @@
           enum.ToggleableVisuals.Layer:
             True: { visible: true }
             False: { visible: false }
+
+# Persephone
+- type: entity
+  id: CyberReagentGrinder
+  parent: BaseItem
+  name: integrated reagent grinder
+  description: From BlenderTech. Will It Blend? Let's find out!
+  suffix: grinder/juicer
+  components:
+    - type: ReagentGrinder
+      needsPower: false
+      storageMaxEntities: 2
+    - type: ActivatableUI
+      key: enum.ReagentGrinderUiKey.Key
+    - type: UserInterface
+      interfaces:
+        enum.ReagentGrinderUiKey.Key:
+          type: ReagentGrinderBoundUserInterface
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.ReagentGrinderVisualState.BeakerAttached:
+          grinder:
+            True: {state: "handheldgrinder-beaker-attached"}
+            False: {state: "handheldgrinder-empty"}
+    - type: Physics
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      layers:
+        - state: handheldgrinder
+        - state: handheldgrinder-empty
+          map: [ "enum.ToggleableVisuals.Layer" ]
+    - type: ItemSlots
+      slots:
+        beakerSlot:
+          whitelist:
+            components:
+            - FitsInDispenser
+    - type: Machine
+      board: ReagentGrinderMachineCircuitboard
+    - type: ContainerContainer
+      containers:
+        beakerSlot: !type:ContainerSlot
+        inputContainer: !type:Container
+        machine_board: !type:Container
+        machine_parts: !type:Container
+
+- type: entity
+  name: mini hoe cybernetic arm attachment
+  parent: HydroponicsToolMiniHoe
+  id: CyberToolMiniHoe
+  description: It's used for removing weeds or scratching your back.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      state: minihoe
+
+- type: entity
+  name: plant clippers cybernetic arm attachment
+  parent: HydroponicsToolClippers
+  id: CyberToolClippers
+  description: A tool used to take samples from plants.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      state: clippers
+
+- type: entity
+  name: scythe cybernetic arm attachment
+  parent: HydroponicsToolScythe
+  id: CyberToolScythe
+  description: A sharp and curved blade on a long fibremetal handle, this tool makes it easy to reap what you sow.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      state: scythe
+
+- type: entity
+  name: hatchet cybernetic arm attachment
+  parent: HydroponicsToolHatchet
+  id: CyberToolHatchet
+  description: A very sharp axe blade upon a short fibremetal handle. It has a long history of chopping things, but now it is used for chopping wood.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      state: hatchet
+
+- type: entity
+  name: spade cybernetic arm attachment
+  parent: HydroponicsToolSpade
+  id: CyberToolSpade
+  description: A small tool for digging and moving dirt.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      state: spade
+
+
+- type: entity
+  parent: Dropper
+  id: CyberToolDropper
+  name: hydraulic pipette cybernetic arm attachment
+  description: State-of-the-art hydraulic dropper built into a cybernetic arm. It features a higher capacity than hand-powered droppers, able to hold 15 units of liquid.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      layers:
+        - state: dropper
+          map: ["enum.SolutionContainerLayers.Base"]
+        - state: dropper1
+          map: ["enum.SolutionContainerLayers.Fill"]
+          visible: false
+    - type: SolutionContainerManager
+      solutions:
+        injector:
+          maxVol: 15
