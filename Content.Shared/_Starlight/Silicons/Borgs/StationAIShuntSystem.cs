@@ -51,13 +51,15 @@ public sealed class StationAIShuntSystem : EntitySystem
                 return; //Chassis has no posibrian so cant shunt into it.
             if (!TryComp<StationAIShuntComponent>(brain, out var brainShunt))
                 return; //Chassis brain is not able to be shunted into so obviously we cant.
-            brainShunt.Return = uid;
-            brainShunt.ReturnAction = _actionSystem.AddAction(brain.Value, shuntable.UnshuntAction.Id);
+            brainShunt.Return = GetNetEntity(uid);
+            brainShunt.ReturnAction = GetNetEntity(_actionSystem.AddAction(brain.Value, shuntable.UnshuntAction.Id));
+            
+            Dirty(uid, brainShunt);
         }
 
-        shunt.Return = uid;
+        shunt.Return = GetNetEntity(uid);
         _mindSystem.TransferTo(mindId, target);
-        shunt.ReturnAction = _actionSystem.AddAction(target, shuntable.UnshuntAction.Id);
+        shunt.ReturnAction = GetNetEntity(_actionSystem.AddAction(target, shuntable.UnshuntAction.Id));
         shuntable.Inhabited = target;
 
         if (TryComp<SiliconLawProviderComponent>(uid, out var coreLaws))
@@ -81,6 +83,7 @@ public sealed class StationAIShuntSystem : EntitySystem
                 _follower.StartFollowingEntity(follower, target);
             }
         }
+        Dirty(target, shunt);
 
         ev.Handled = true;
     }
@@ -92,11 +95,14 @@ public sealed class StationAIShuntSystem : EntitySystem
 
         if (!_mindSystem.TryGetMind(uid, out var mindId, out var _))
             return;
+        
+        var shuntActionUid = GetEntity(shunt.ReturnAction);
+        var shuntReturnUid = GetEntity(shunt.Return);
 
-        if (!TryComp<ActionComponent>(shunt.ReturnAction, out var act))
+        if (!TryComp<ActionComponent>(shuntActionUid, out var act))
             return; //Somehow the action does not have action component? invalid perhaps?
 
-        if (!TryComp<StationAIShuntableComponent>(shunt.Return, out var shuntable))
+        if (!TryComp<StationAIShuntableComponent>(shuntReturnUid, out var shuntable))
             return; //trying to return to a body you cant leave from? weird...
 
         if (TryComp<BorgChassisComponent>(uid, out var chassisComp))
@@ -106,15 +112,18 @@ public sealed class StationAIShuntSystem : EntitySystem
                 return; //Chassis has no brain... how is the AI controlling it???
             if (!TryComp<StationAIShuntComponent>(brain, out var brainShunt))
                 return; //Chassis brain is not able to be shunted into so how is AI controlling it???
-            if (!TryComp<ActionComponent>(brainShunt.ReturnAction, out var brainAct))
+            
+            var brainActionUid = GetEntity(brainShunt.ReturnAction);
+            
+            if (!TryComp<ActionComponent>(brainActionUid, out var brainAct))
                 return; //Somehow the action does not have action component? invalid perhaps?
-            _actionSystem.RemoveAction(new Entity<ActionComponent?>(brainShunt.ReturnAction.Value, brainAct));
+            _actionSystem.RemoveAction(new Entity<ActionComponent?>(brainActionUid.Value, brainAct));
             brainShunt.Return = null; //cause we are returning now
             brainShunt.ReturnAction = null;
         }
 
-        _actionSystem.RemoveAction(new Entity<ActionComponent?>(shunt.ReturnAction.Value, act));
-        var target = shunt.Return.Value;
+        _actionSystem.RemoveAction(new Entity<ActionComponent?>(shuntActionUid.Value, act));
+        var target = shuntReturnUid.Value;
         _mindSystem.TransferTo(mindId, target);
         RemComp<UncryoableComponent>(target);
 
