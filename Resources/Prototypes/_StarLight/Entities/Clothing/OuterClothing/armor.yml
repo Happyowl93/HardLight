@@ -59,24 +59,6 @@
           staminaModifier: 0.85
         - type: ExplosionResistance
           damageCoefficient: 0.85
-        - type: ItemToggle
-          predictable: false
-          onUse: false
-          soundActivate:
-            path: /Audio/_Starlight/Items/Goggles/activate.ogg
-          soundDeactivate:
-            path: /Audio/_Starlight/Items/Goggles/deactivate.ogg
-          soundFailToActivate:
-            path: /Audio/Machines/button.ogg
-        - type: ToggleClothing
-          action: AbductorVestToggleStealth
-          mustEquip: true
-          disableOnUnequip: true
-        - type: ComponentToggler
-          parent: true
-          components:
-          - type: Stealth
-          - type: StealthOnMove
 
       Combat: !type:ItemSwitchState
         verb: Combat

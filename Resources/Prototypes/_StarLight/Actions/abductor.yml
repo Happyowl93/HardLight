@@ -69,21 +69,6 @@
   - type: InstantAction
     event: !type:AbductorReturnToShipEvent
 
-- type: entity
-  id: AbductorVestToggleStealth
-  name: Toggle invisibility
-  description: toggles the invisibility of the suit. Don't forget to set stealth mode!
-  components:
-  - type: Action
-    useDelay: 5
-    priority: -18
-    itemIconStyle: BigAction
-    icon:
-      sprite: _Starlight/Clothing/OuterClothing/Armor/abductor.rsi
-      state: icon
-  - type: InstantAction
-    event: !type:ToggleActionEvent
-
 #- type: entity
 #  id: ActionShowJobIcons
 #  name: Show job icons
