@@ -301,6 +301,7 @@
     - HideContextMenu
     - StationAi
     - NoConsoleSound
+    - CanPilot
   - type: StartingMindRole
     mindRole: "MindRoleSiliconBrain"
     silent: true
