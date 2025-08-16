@@ -323,8 +323,13 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
         var cardHasAi = _slots.CanEject(ent.Owner, args.User, ent.Comp.Slot);
 
-        var isBorg = HasComp<BorgBrainComponent>(args.Target.Value); // Starlight-edit
-        var borgHaveMind = TryComp<MindContainerComponent>(args.Target.Value, out var mindContainer) && _mind.GetMind(args.Target.Value, mindContainer) != null; // Starlight-edit
+        // Starlight-start: Downloadable borgs
+
+        var isBorg = HasComp<BorgBrainComponent>(args.Target.Value);
+        var isShunted = TryComp<StationAIShuntComponent>(args.Target.Value, out var shunt) && shunt.Return != null;
+        var borgHaveMind = TryComp<MindContainerComponent>(args.Target.Value, out var mindContainer) && _mind.GetMind(args.Target.Value, mindContainer) != null;
+        
+        // Starlight-end
 
         if (cardHasAi && (coreHasAi || borgHaveMind)) // Starlight-edit
         {
@@ -338,6 +343,14 @@ public abstract partial class SharedStationAiSystem : EntitySystem
             args.Handled = true;
             return;
         }
+        // Starlight-start: Downloadable borgs
+        if (isShunted)
+        {
+            _popup.PopupClient(Loc.GetString("intellicard-shunted"), args.User, args.User, PopupType.Medium);
+            args.Handled = true;
+            return;
+        }
+        // Starlight-end
 
         if (targetHolder != null && TryGetHeld((args.Target.Value, targetHolder), out var held) && _timing.CurTime > intelliComp.NextWarningAllowed) // Starlight-edit
         {
