@@ -64,7 +64,19 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
         EntityUid eye;
 
-        _opener = args.Actor;
+        ent.Comp.Opener = args.Actor;
+
+        if (!TryComp<UserInterfaceComponent>(ent, out var bound))
+            return;
+
+        foreach (var uids in bound.Actors.Values)
+        {
+            foreach (var uid in uids)
+            {
+                _uiSystem.CloseUserUis<AbductorCameraConsoleUIKey>(uid);
+            }
+        }
+
         var beacon = _entityManager.GetEntity(args.Beacon.NetEnt);
         var beaconCoords = Transform(beacon).Coordinates;
 
@@ -109,10 +121,13 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         if (console == null)
             return;
 
+        if (!TryComp<AbductorHumanObservationConsoleComponent>(console, out var comp))
+            return;
+
+        comp.Opener = null;
+
         RemoveEye(actor);
         _virtualItem.DeleteInHandsMatching(actor, console.Value);
-
-        _opener = null;
     }
 
     private void OnActivatableUIOpenAttemptEvent(Entity<AbductorHumanObservationConsoleComponent> ent, ref ActivatableUIOpenAttemptEvent args)
@@ -120,7 +135,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         if (!HasComp<AbductorScientistComponent>(args.User) && !HasComp<AbductorAgentComponent>(args.User))
             args.Cancel();
 
-        if (_opener != null && _opener != args.User)
+        if (ent.Comp.Opener != null && ent.Comp.Opener != args.User)
         {
             _popup.PopupEntity(Loc.GetString("console-occupied"), args.User, args.User);
             args.Cancel();
@@ -190,15 +205,13 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
     private void AddVirtualItems(EntityUid uid, EntityUid console)
     {
-        foreach (var hand in _hands.EnumerateHands(uid))
+        foreach (var hand in _hands.EnumerateHands((uid, hands)))
         {
-            if (!_hands.TryGetHeldItem(uid, hand, out var heldItem))
+            var heldItem = _hands.GetHeldItem((uid, hands), hand);
+            if (HasComp<UnremoveableComponent>(heldItem))
                 continue;
 
-            if (heldItem == null || HasComp<UnremoveableComponent>(heldItem))
-                continue;
-
-            _hands.DoDrop(uid, hand, true, false);
+            _hands.DoDrop(uid, hand);
         }
 
         if (_virtualItem.TrySpawnVirtualItemInHand(console, uid, out var virtItem1))
