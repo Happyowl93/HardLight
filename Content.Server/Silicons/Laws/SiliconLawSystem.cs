@@ -34,6 +34,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly EmagSystem _emag = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -121,6 +122,21 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
     {
         if (args.Handled)
             return;
+        
+        // Starlight-start: AI upload console linking
+        if (HasComp<StationAiHeldComponent>(uid) && TryComp<StationAiCoreComponent>(Transform(uid).ParentUid, out var aiCore))
+        {
+            if (aiCore.LawConsole == null 
+                || !_container.TryGetContainer(GetEntity(aiCore.LawConsole.Value), "circuit_holder", out var container) 
+                || container.ContainedEntities.Count == 0
+                || !TryComp(container.ContainedEntities.First(), out SiliconLawProviderComponent? provider) 
+                || provider == null)
+                return;
+            component.Laws = provider.Laws;
+            var lawset = GetLawset(provider.Laws).Laws;
+            SetLaws(lawset, uid, provider.LawUploadSound);
+        }
+        // Starlight-end
 
         if (component.Lawset == null)
             component.Lawset = GetLawset(component.Laws);

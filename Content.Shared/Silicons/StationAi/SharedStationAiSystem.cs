@@ -332,7 +332,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
             args.Handled = true;
             return;
         }
-        if (!cardHasAi && !coreHasAi && !isBorg) // Starlight-edit
+        if (!cardHasAi && !coreHasAi && !(isBorg && borgHaveMind)) // Starlight-edit
         {
             _popup.PopupClient(Loc.GetString("intellicard-core-empty"), args.User, args.User, PopupType.Medium);
             args.Handled = true;
