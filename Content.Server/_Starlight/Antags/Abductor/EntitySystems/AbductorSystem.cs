@@ -15,6 +15,7 @@ using Content.Shared.Hands.EntitySystems;
 using Robust.Server.GameObjects;
 using Content.Shared.Tag;
 using Robust.Server.Containers;
+using Content.Shared.Hands.Components;
 
 namespace Content.Server.Starlight.Antags.Abductor;
 
@@ -205,6 +206,9 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
     private void AddVirtualItems(EntityUid uid, EntityUid console)
     {
+        if (!TryComp<HandsComponent>(uid, out var hands))
+            return;
+
         foreach (var hand in _hands.EnumerateHands((uid, hands)))
         {
             var heldItem = _hands.GetHeldItem((uid, hands), hand);
