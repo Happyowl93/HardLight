@@ -43,14 +43,14 @@ public sealed partial class MassDriverConsoleMenu : DefaultWindow
         {
             var ThrowDistance = Normalize(ThrowDistanceSlider.Value);
             OnThrowDistance?.Invoke(ThrowDistance);
-            ThrowDistanceCurrentValue.Text = ThrowDistance.ToString();
+            ThrowDistanceCurrentValue.Text = ThrowDistance.ToString() + " m/s";
         };
 
         ThrowSpeedSlider.OnValueChanged += _ =>
         {
             var ThrowSpeed = Normalize(ThrowSpeedSlider.Value);
             OnThrowSpeed?.Invoke(ThrowSpeed);
-            ThrowSpeedCurrentValue.Text = ThrowSpeed.ToString();
+            ThrowSpeedCurrentValue.Text = ThrowSpeed.ToString() + " m/s";
         };
     }
 
