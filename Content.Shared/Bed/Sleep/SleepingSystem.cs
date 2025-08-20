@@ -18,6 +18,7 @@ using Content.Shared.Slippery;
 using Content.Shared.Sound;
 using Content.Shared.Sound.Components;
 using Content.Shared.Speech;
+using Content.Shared.SSDIndicator;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.Stunnable;
 using Content.Shared.Traits.Assorted;
@@ -338,6 +339,14 @@ public sealed partial class SleepingSystem : EntitySystem
         {
             _audio.PlayPredicted(ent.Comp.WakeAttemptSound, ent, user);
             _popupSystem.PopupClient(Loc.GetString("wake-other-success", ("target", Identity.Entity(ent, EntityManager))), ent, user);
+        }
+
+        /// Starlight
+        /// Ensures that people who are SSD cannot be woken up by others.
+        if (TryComp(ent, out SSDIndicatorComponent? SSDComp))
+        {
+            if (SSDComp.IsSSD)
+                return false;
         }
 
         Wake((ent, ent.Comp));
