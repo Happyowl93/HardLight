@@ -1,6 +1,7 @@
-# UI Title
+# UI
 
 mass-driver-ui-title = Mass Driver Control
+mass-driver-ui-link = [color=red][font size=16]You need to link mass driver![/font][/color]
 
 # UI Labels
 
