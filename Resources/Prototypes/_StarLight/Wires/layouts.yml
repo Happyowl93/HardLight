@@ -15,3 +15,11 @@
   dummyWires: 9
   wires:
   - !type:SpeechWireAction
+
+- type: wireLayout
+  id: MassDriver
+  dummyWires: 9
+  wires:
+  - !type:PowerWireAction
+  - !type:PowerWireAction
+    pulseTimeout: 15
