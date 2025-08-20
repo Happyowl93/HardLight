@@ -30,6 +30,7 @@ using Robust.Shared.Utility;
 using Robust.Shared.Map.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
+using Content.Shared.SSDIndicator;
 
 namespace Content.Server.Revenant.EntitySystems;
 
@@ -148,7 +149,15 @@ public sealed partial class RevenantSystem
             return;
         }
 
-        if(_physics.GetEntitiesIntersectingBody(uid, (int) CollisionGroup.Impassable).Count > 0)
+        // Starlight start
+        if (TryComp(target, out SSDIndicatorComponent? SSDComp) && HasComp<SleepingComponent>(target))
+        {
+            if (SSDComp!.IsSSD)
+                return;
+        }
+        // Starlight end
+
+        if (_physics.GetEntitiesIntersectingBody(uid, (int)CollisionGroup.Impassable).Count > 0)
         {
             _popup.PopupEntity(Loc.GetString("revenant-in-solid"), uid, uid);
             return;
