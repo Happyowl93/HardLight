@@ -36,6 +36,8 @@ namespace Content.Server.Voting.Managers
         private RoleSystem? _roleSystem;
         private GameTicker? _gameTicker;
 
+        private string? _lastSelectedMode; // Starlight-edit
+
         private static readonly Dictionary<StandardVoteType, CVarDef<bool>> VoteTypesToEnableCVars = new()
         {
             {StandardVoteType.Restart, CCVars.VoteRestartEnabled},
@@ -254,16 +256,19 @@ namespace Content.Server.Voting.Managers
                 string picked;
                 if (args.Winner == null)
                 {
-                    picked = (string) _random.Pick(args.Winners);
+                    picked = (string)_random.Pick(args.Winners);
                     _chatManager.DispatchServerAnnouncement(
                         Loc.GetString("ui-vote-gamemode-tie", ("picked", Loc.GetString(presets[picked]))));
                 }
                 else
                 {
-                    picked = (string) args.Winner;
+                    picked = (string)args.Winner;
                     _chatManager.DispatchServerAnnouncement(
                         Loc.GetString("ui-vote-gamemode-win", ("winner", Loc.GetString(presets[picked]))));
                 }
+
+                _lastSelectedMode = picked; // Starlight-edit
+
                 _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Preset vote finished: {picked}");
                 var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
                 ticker.SetGamePreset(picked);
@@ -626,10 +631,13 @@ namespace Content.Server.Voting.Managers
                 if (_playerManager.PlayerCount > (preset.MaxPlayers ?? int.MaxValue))
                     continue;
 
+                if (preset.ID == _lastSelectedMode) // Starlight-edit
+                    continue;
+
                 if (chancesPrototype.Chances.TryGetValue(preset.ID, out var chance))
-                {
-                    validPresets.Add((preset, chance));
-                }
+                    {
+                        validPresets.Add((preset, chance));
+                    }
             }
 
             if (validPresets.Count == 0)
