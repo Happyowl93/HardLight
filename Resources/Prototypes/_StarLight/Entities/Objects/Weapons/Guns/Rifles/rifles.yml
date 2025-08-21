@@ -275,6 +275,10 @@
       gun_chamber:
         name: Chamber
         startingItem: CartridgeMagnumSP
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
 
 
 - type: entity
