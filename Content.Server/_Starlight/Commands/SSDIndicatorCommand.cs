@@ -45,7 +45,7 @@ public sealed class SSDIndicatorCommand : IConsoleCommand
             return;
         }
 
-        if (indicatorComponent.IsSSD is true)
+        if (indicatorComponent.IsSSD)
         {
             shell.WriteLine(Loc.GetString("ssd-indicator-command-denied"));
             return;
