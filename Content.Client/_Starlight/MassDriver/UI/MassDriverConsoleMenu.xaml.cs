@@ -43,7 +43,7 @@ public sealed partial class MassDriverConsoleMenu : DefaultWindow
         {
             var ThrowDistance = Normalize(ThrowDistanceSlider.Value);
             OnThrowDistance?.Invoke(ThrowDistance);
-            ThrowDistanceCurrentValue.Text = ThrowDistance.ToString() + " m/s";
+            ThrowDistanceCurrentValue.Text = ThrowDistance.ToString() + " m";
         };
 
         ThrowSpeedSlider.OnValueChanged += _ =>
@@ -87,8 +87,8 @@ public sealed partial class MassDriverConsoleMenu : DefaultWindow
         }
 
         // Sliders Current Value Label
-        ThrowDistanceCurrentValue.Text = state.CurrentThrowDistance.ToString();
-        ThrowSpeedCurrentValue.Text = state.CurrentThrowSpeed.ToString();
+        ThrowDistanceCurrentValue.Text = state.CurrentThrowDistance.ToString() + " m";
+        ThrowSpeedCurrentValue.Text = state.CurrentThrowSpeed.ToString() + " m/s";
 
         // Distance Slider Labels
         ThrowDistanceMaxValue.Text = state.MaxThrowDistance.ToString();
