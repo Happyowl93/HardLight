@@ -36,26 +36,14 @@ public sealed class SSDIndicatorSystem : EntitySystem
         _cfg.OnValueChanged(CCVars.ICSSDSleepTime, obj => _icSsdSleepTime = obj, true);
     }
 
-    private void OnPlayerAttached(EntityUid uid, SSDIndicatorComponent component, PlayerAttachedEvent args)
-    {
-        TryRemoveSSD(uid, component); // Starlight
-    }
-
-    private void OnPlayerDetached(EntityUid uid, SSDIndicatorComponent component, PlayerDetachedEvent args)
-    {
-        TrySSD(uid, component); // Starlight
-    }
-
     // Starlight start
-    private void OnMoveInput(EntityUid uid, SSDIndicatorComponent comp, MoveInputEvent args)
-    {
-        TryRemoveSSD(uid, comp);
-    }
+    private void OnPlayerAttached(EntityUid uid, SSDIndicatorComponent component, PlayerAttachedEvent args) => TryRemoveSSD(uid, component);
 
-    private void OnWakeAction(EntityUid uid, SSDIndicatorComponent comp, WakeActionEvent args)
-    {
-        TryRemoveSSD(uid, comp);
-    }
+    private void OnPlayerDetached(EntityUid uid, SSDIndicatorComponent component, PlayerDetachedEvent args) => TrySSD(uid, component);
+
+    private void OnMoveInput(EntityUid uid, SSDIndicatorComponent comp, MoveInputEvent args) => TryRemoveSSD(uid, comp);
+
+    private void OnWakeAction(EntityUid uid, SSDIndicatorComponent comp, WakeActionEvent args) => TryRemoveSSD(uid, comp);
     // Starlight end (for now :P)
 
     // Prevents mapped mobs to go to sleep immediately
@@ -94,7 +82,7 @@ public sealed class SSDIndicatorSystem : EntitySystem
         }
     }
 
-     #region Starlight
+    #region Starlight
 
     /// <summary>
     /// STARLIGHT
