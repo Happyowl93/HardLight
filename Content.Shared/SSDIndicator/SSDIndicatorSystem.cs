@@ -131,10 +131,11 @@ public sealed class SSDIndicatorSystem : EntitySystem
     /// <returns>True if succesful</returns>
     public bool TryRemoveSSD(EntityUid uid, SSDIndicatorComponent? comp)
     {
-        bool success = false;
-
         if (comp == null)
-            return success;
+            return false;
+
+        if (!comp.IsSSD)
+            return false;
 
         comp.IsSSD = false;
 
@@ -142,11 +143,10 @@ public sealed class SSDIndicatorSystem : EntitySystem
         {
             comp.FallAsleepTime = TimeSpan.Zero;
             _statusEffects.TryRemoveStatusEffect(uid, StatusEffectSSDSleeping);
-            success = true;
         }
 
         Dirty(uid, comp);
-        return success;
+        return true;
     }
     
     #endregion
