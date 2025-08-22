@@ -357,10 +357,10 @@ public abstract partial class SharedStationAiSystem : EntitySystem
             RaiseLocalEvent(held, ref ev);
         }
         // Starlight-start: borgs can be downloaded/uploaded
-        else if (isBorg && _timing.CurTime > intelliComp.NextWarningAllowed)
+        else if (isBorg)
         {
-            intelliComp.NextWarningAllowed = _timing.CurTime + intelliComp.WarningDelay;
-            AnnounceIntellicardUsage(args.Target.Value, intelliComp.WarningSound);
+            var ev = new ChatNotificationEvent(_downloadChatNotificationPrototype, args.Used, args.User);
+            RaiseLocalEvent(args.Target.Value, ref ev);
         }
         // Starlight-end
 
