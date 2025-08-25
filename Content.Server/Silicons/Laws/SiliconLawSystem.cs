@@ -127,7 +127,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         if (HasComp<StationAiHeldComponent>(uid) && TryComp<StationAiCoreComponent>(Transform(uid).ParentUid, out var aiCore))
         {
             if (aiCore.LawConsole == null 
-                || !_container.TryGetContainer(GetEntity(aiCore.LawConsole.Value), "circuit_holder", out var container) 
+                || !_container.TryGetContainer(aiCore.LawConsole.Value, "circuit_holder", out var container) 
                 || container.ContainedEntities.Count == 0
                 || !TryComp(container.ContainedEntities.First(), out SiliconLawProviderComponent? provider) 
                 || provider == null)
@@ -346,7 +346,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
 
         var lawset = GetLawset(provider.Laws).Laws;
         if (ent.Comp.Core != null // Starlight-edit
-            && TryComp<StationAiHolderComponent>(GetEntity(ent.Comp.Core.Value), out var holder)  // Starlight-edit
+            && TryComp<StationAiHolderComponent>(ent.Comp.Core.Value, out var holder)  // Starlight-edit
             && holder.Slot.ContainerSlot?.ContainedEntity is { } update) // Starlight-edit
             SetLaws(lawset, update, provider.LawUploadSound); // Starlight-edit
             

@@ -19,20 +19,19 @@ public abstract partial class SharedStationAiSystem
         if (!TryComp<SiliconLawUpdaterComponent>(args.Sink, out var lawUpdater))
             return;
 
-        ent.Comp.LawConsole = GetNetEntity(args.Sink);
+        ent.Comp.LawConsole = args.Sink;
 
-        lawUpdater.Core = GetNetEntity(ent.Owner);
+        lawUpdater.Core = ent.Owner;
         Dirty(args.Sink, lawUpdater);
         Dirty(ent);
     }
     
     private void OnPortDisconnected(Entity<StationAiCoreComponent> ent, ref PortDisconnectedEvent args)
     {
-        var consoleNetEntity = ent.Comp.LawConsole;
-        if (args.Port != ent.Comp.LinkingPort || consoleNetEntity == null)
+        var lawConsoleEntityUid = ent.Comp.LawConsole;
+        if (args.Port != ent.Comp.LinkingPort || lawConsoleEntityUid == null)
             return;
 
-        var lawConsoleEntityUid = GetEntity(consoleNetEntity);
         if (TryComp<SiliconLawUpdaterComponent>(lawConsoleEntityUid, out var lawUpdater))
         {
             lawUpdater.Core = null;

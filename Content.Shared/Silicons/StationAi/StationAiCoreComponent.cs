@@ -44,7 +44,7 @@ public sealed partial class StationAiCoreComponent : Component
     // Starlight-start: Linking with ai upload console
     
     [DataField, AutoNetworkedField]
-    public NetEntity? LawConsole;
+    public EntityUid? LawConsole;
     
     /// <summary>
     /// The machine linking port
