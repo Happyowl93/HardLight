@@ -21,7 +21,7 @@
         },
         {
             "name": "vampire_starving",
-            "delays": [ [0.1, 0.1] ]
+            "delays": [ [0.3, 0.3] ]
         },
         {
             "name": "vampire_fat"

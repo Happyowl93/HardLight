@@ -309,16 +309,16 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
                     continue;
                 }
                 
-                if (session != null && HasComp<VampireRuleComponent>(ent))
-                {
-                    var playerEntity = session.AttachedEntity;
+                // if (session != null && HasComp<VampireRuleComponent>(ent))
+                // {
+                //     var playerEntity = session.AttachedEntity;
                     
-                    if (playerEntity == null 
-                        || HasComp<BibleUserComponent>(playerEntity)
-                        || !TryComp<BodyComponent>(playerEntity, out var body) 
-                        || !_body.TryGetBodyOrganEntityComps<StomachComponent>((playerEntity.Value, body), out var stomachs))
-                        continue;
-                }
+                //     if (playerEntity == null 
+                //         || HasComp<BibleUserComponent>(playerEntity)
+                //         || !TryComp<BodyComponent>(playerEntity, out var body) 
+                //         || !_body.TryGetBodyOrganEntityComps<StomachComponent>((playerEntity.Value, body), out var stomachs))
+                //         continue;
+                // }
             }
 
             if (session == null)

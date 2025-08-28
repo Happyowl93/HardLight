@@ -1,19 +1,10 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Content.Shared.Actions;
+using Content.Shared.DoAfter;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._Starlight.Antags.Vampires;
-
-/// <summary>
-/// Visual layer mapping for the Vampire blood counter alert view entity.
-/// Shared so YAML can reference enum.VampireVisualLayers.* and client can use it to set layers.
-/// Not net-serialized.
-/// </summary>
-public enum VampireVisualLayers : byte
-{
-    Digit1,
-    Digit2,
-    Digit3,
-}
 
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]
@@ -66,4 +57,40 @@ public sealed partial class VampireComponent : Component
     /// </summary>
     [DataField]
     public EntityUid? ToggleFangsActionEntity;
+
+    /// <summary>
+    /// Action prototype id for the glare ability.
+    /// </summary>
+    [DataField]
+    public EntProtoId GlareAction = "ActionVampireGlare";
+
+    /// <summary>
+    /// Runtime action entity for glare.
+    /// </summary>
+    [DataField]
+    public EntityUid? GlareActionEntity;
+
+    /// <summary>
+    /// Server-side state: whether a bite do-after loop is currently active.
+    /// Not networked; used to avoid stacking and to auto-repeat drinking.
+    /// </summary>
+    [DataField]
+    public bool IsDrinking = false;
 }
+
+/// <summary>
+/// Visual layer mapping for the Vampire blood counter alert view entity.
+/// Shared so YAML can reference enum.VampireVisualLayers.* and client can use it to set layers.
+/// Not net-serialized.
+/// </summary>
+public enum VampireVisualLayers : byte
+{
+    Digit1,
+    Digit2,
+    Digit3,
+}
+
+public sealed partial class VampireToggleFangsActionEvent : InstantActionEvent;
+public sealed partial class VampireGlareActionEvent : InstantActionEvent {}
+[Serializable, NetSerializable]
+public sealed partial class VampireDrinkBloodDoAfterEvent : SimpleDoAfterEvent;

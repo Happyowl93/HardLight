@@ -10,16 +10,27 @@ using Content.Server.Body.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Nutrition.Components;
+using Content.Shared.DoAfter;
+using Content.Shared.Popups;
+using Content.Shared.Stunnable;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Components;
+using Robust.Shared.GameObjects;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
-public sealed class VampireSystem : EntitySystem
+public sealed partial class VampireSystem : EntitySystem
 {
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly BloodstreamSystem _blood = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedStunSystem _stun = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
     private const string VampireBloodAlertId = "VampireBlood";
     private const string VampireFedAlertId = "VampireFed";
@@ -32,8 +43,7 @@ public sealed class VampireSystem : EntitySystem
 
         SubscribeLocalEvent<VampireComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<VampireComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<VampireComponent, ToggleActionEvent>(OnToggleFangs);
-        SubscribeLocalEvent<VampireComponent, AfterInteractEvent>(OnAfterInteract);
+        SubscribeAbilities();
     }
 
     public override void Update(float frameTime)
@@ -48,8 +58,8 @@ public sealed class VampireSystem : EntitySystem
 
         _nextDecay = _timing.CurTime + _decayInterval;
 
-    var query = EntityQueryEnumerator<VampireComponent>();
-    while (query.MoveNext(out var uid, out var comp))
+        var query = EntityQueryEnumerator<VampireComponent>();
+        while (query.MoveNext(out var uid, out var comp))
         {
             var before = comp.BloodFullness;
             if (before > 0)
@@ -58,7 +68,7 @@ public sealed class VampireSystem : EntitySystem
                 if (!MathF.Abs(comp.BloodFullness - before).Equals(0f))
                 {
                     Dirty(uid, comp);
-            UpdateVampireFedAlert(uid, comp);
+                    UpdateVampireFedAlert(uid, comp);
                 }
             }
         }
@@ -68,6 +78,9 @@ public sealed class VampireSystem : EntitySystem
     {
         // Grant the toggle fangs action.
         _actions.AddAction(uid, ref comp.ToggleFangsActionEntity, comp.ToggleFangsAction, uid);
+
+        // Grant the glare action.
+        _actions.AddAction(uid, ref comp.GlareActionEntity, comp.GlareAction, uid);
 
         // Replace standard hunger with vampire blood fullness: remove HungerComponent and clear its alert category.
         if (HasComp<HungerComponent>(uid))
@@ -86,57 +99,8 @@ public sealed class VampireSystem : EntitySystem
         // Action cleanup is handled by ActionsSystem when owner is deleted; nothing special here.
     }
 
-    private void OnToggleFangs(EntityUid uid, VampireComponent comp, ref ToggleActionEvent args)
-    {
-        if (args.Handled)
-            return;
-
-        if (comp.ToggleFangsActionEntity == null || args.Action != comp.ToggleFangsActionEntity)
-            return;
-
-        comp.FangsExtended = !comp.FangsExtended;
-        Dirty(uid, comp);
-        args.Handled = true;
-    }
-
-    private void OnAfterInteract(EntityUid uid, VampireComponent comp, ref AfterInteractEvent args)
-    {
-        if (args.Handled || !args.CanReach || !comp.FangsExtended)
-            return;
-
-        if (args.Target == null)
-            return;
-
-        var target = args.Target.Value;
-        if (!HasComp<BloodstreamComponent>(target))
-            return;
-
-        // Drain blood from target
-        if (_blood.TryModifyBloodLevel(target, -comp.SipAmount))
-        {
-            comp.DrunkBlood += (int) comp.SipAmount;
-            comp.BloodFullness = MathF.Min(comp.MaxBloodFullness, comp.BloodFullness + comp.SipAmount);
-            Dirty(uid, comp);
-            UpdateVampireAlert(uid);
-            UpdateVampireFedAlert(uid, comp);
-            args.Handled = true;
-        }
-    }
-
-    private void UpdateVampireAlert(EntityUid uid)
-        => _alerts.ShowAlert(uid, VampireBloodAlertId);
-
-    private void UpdateVampireFedAlert(EntityUid uid, VampireComponent? comp = null)
-    {
-        if (!Resolve(uid, ref comp, false))
-            return;
-
-        var frac = comp.MaxBloodFullness <= 0f ? 0f : comp.BloodFullness / comp.MaxBloodFullness;
-        // 0 hungry, 1 fed, 2 well-fed, 3 full
-        short severity = 0;
-        if (frac >= 0.9f) severity = 3;
-        else if (frac >= 0.6f) severity = 2;
-        else if (frac >= 0.25f) severity = 1;
-        _alerts.ShowAlert(uid, VampireFedAlertId, severity);
-    }
+    // Method hooks implemented in VampireSystem.Abilities.cs
+    partial void SubscribeAbilities();
+    partial void UpdateVampireAlert(EntityUid uid);
+    partial void UpdateVampireFedAlert(EntityUid uid, VampireComponent? comp);
 }

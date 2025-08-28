@@ -1,15 +1,34 @@
 - type: entity
-	parent: BaseToggleAction
-	id: ActionVampireToggleFangs
-	name: action-vampire-toggle-fangs-name
-	description: action-vampire-toggle-fangs-desc
-	components:
-	- type: Action
-		itemIconStyle: NoItem
-		priority: 1
-		icon:
-			sprite: _Starlight/Interface/Actions/actions_vampire.rsi
-			state: fangs_retracted
-		iconOn:
-			sprite: _Starlight/Interface/Actions/actions_vampire.rsi
-			state: fangs_extended
+  parent: BaseAction
+  id: ActionVampireToggleFangs
+  name: action-vampire-toggle-fangs-name
+  description: action-vampire-toggle-fangs-desc
+  components:
+  - type: Action
+    useDelay: 5
+    itemIconStyle: NoItem
+    priority: 1
+    icon:
+      sprite: _Starlight/Interface/Actions/actions_vampire.rsi
+      state: fangs_retracted
+    iconOn:
+      sprite: _Starlight/Interface/Actions/actions_vampire.rsi
+      state: fangs_extended
+  - type: InstantAction
+    event: !type:VampireToggleFangsActionEvent {}
+    
+- type: entity
+  parent: BaseAction
+  id: ActionVampireGlare
+  name: action-vampire-glare-name
+  description: action-vampire-glare-desc
+  components:
+  - type: Action
+    useDelay: 30 
+    itemIconStyle: NoItem
+    priority: 2
+    icon:
+      sprite: _Starlight/Interface/Actions/actions_vampire.rsi
+      state: glare
+  - type: InstantAction
+    event: !type:VampireGlareActionEvent {}
