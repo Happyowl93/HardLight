@@ -24,6 +24,8 @@ using Robust.Shared.IoC;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 using Robust.Shared.Map.Events;
+using Robust.Packaging.AssetProcessing;
+using Content.Shared.Mobs;
 
 namespace Content.IntegrationTests.Tests
 {
@@ -78,6 +80,15 @@ namespace Content.IntegrationTests.Tests
             "/Maps/_Starlight/Stations/Starboard.yml"
             #endregion
         };
+
+        // starlight start
+        private static readonly ProtoId<EntityCategoryPrototype> ShouldMapCategory = "ShouldMapStation";
+        
+        /// <summary>
+        /// list of map filenames that shouldn't be checked against necessary entities
+        /// </summary>
+        private static readonly string[] ShouldMapWhitelist = { };
+        // starlight end
 
         private static readonly string[] GameMaps =
         {
@@ -249,6 +260,14 @@ namespace Content.IntegrationTests.Tests
                 .Where(filePath => filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
                 .ToArray();
 
+            // starlight start
+            // which entities are an absolute requirement? computed outside loop for performance
+            var shouldMapStationEntities = protoManager.EnumeratePrototypes<EntityPrototype>()
+                .Where(p => p.Categories.Any(x => x.ID == ShouldMapCategory))
+                .Select(x => x.ID)
+                .ToArray();
+            // starlight end
+
             var v7Maps = new List<ResPath>();
             Assert.Multiple(() =>
             {
@@ -279,6 +298,15 @@ namespace Content.IntegrationTests.Tests
                     // TODO MAP TESTS
                     // Move this to some separate test?
                     CheckDoNotMap(map, root, protoManager);
+
+                    // starlight start
+
+                    // is this a station? if so, perform the required entities check
+                    if (map.Directory.ToString().Contains("Stations") && !ShouldMapWhitelist.Contains(map.ToString()))
+                    {
+                        CheckForEntitiesOfID(map, root, shouldMapStationEntities);
+                    }
+                    // starlight end
 
                     if (version >= 7)
                     {
@@ -347,6 +375,24 @@ namespace Content.IntegrationTests.Tests
                 }
             });
         }
+
+        // starlight start
+        private void CheckForEntitiesOfID(ResPath map, YamlNode node, string[] requiredProtos)
+        {
+            var allMapEntityIds = ((YamlSequenceNode)node["entities"])
+                .Select(x => x["proto"].AsString())
+                .ToArray();
+
+            Assert.Multiple(() =>
+            {
+                foreach (var requiredProto in requiredProtos)
+                {
+                    Assert.That(allMapEntityIds.Contains(requiredProto),
+                        $"\nMap {map} does not contain required entity {requiredProto}");
+                }
+            });
+        }
+        // starlight end
 
         private bool IsPreInit(ResPath map,
             MapLoaderSystem loader,
