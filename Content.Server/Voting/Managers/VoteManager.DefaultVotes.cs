@@ -22,11 +22,26 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Prometheus; //Starlight
 
 namespace Content.Server.Voting.Managers
 {
     public sealed partial class VoteManager
     {
+
+        #region Starlight data collection
+        private static readonly Histogram _gamemode_vote = Metrics.CreateHistogram(
+            "sl_gamemode_vote",
+            "Gamemode vote results",
+            [ "option" ]
+        );
+
+        private static readonly Histogram _map_vote = Metrics.CreateHistogram(
+            "sl_map_vote",
+            "Map/Station vote results",
+            [ "option" ]
+        );
+        #endregion
         [Dependency] private readonly IPlayerLocator _locator = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
         [Dependency] private readonly IBanManager _bans = default!;
@@ -294,6 +309,14 @@ namespace Content.Server.Voting.Managers
                     }
                 }
 
+                #region Starlight
+                for (int i = 0; i < options.Options.Count; i++)
+                {
+                    _gamemode_vote.WithLabels(
+                        options.Options[i].text
+                    ).Observe(args.Votes[i]);
+                }
+                #endregion
                 //add the key we picked to the cooldown list
                 _presetCooldown.Add(picked, pickedPreset.VoteCooldown);
                 //starlight end
@@ -353,6 +376,14 @@ namespace Content.Server.Voting.Managers
                 var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
                 if (ticker.CanUpdateMap())
                 {
+                    #region Starlight
+                    for (int i = 0; i < options.Options.Count; i++)
+                    {
+                        _map_vote.WithLabels(
+                            options.Options[i].text
+                        ).Observe(args.Votes[i]);
+                    }
+                    #endregion
                     if (_gameMapManager.TrySelectMapIfEligible(picked.ID))
                     {
                         ticker.UpdateInfoText();
