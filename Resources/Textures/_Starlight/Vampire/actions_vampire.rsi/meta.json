@@ -21,6 +21,12 @@
         },
         {
             "name": "fangs_extended"
+        },
+	    {
+	        "name": "select_class"	
+	    },
+        {
+            "name": "blood_objective"
         }
     ]
 }

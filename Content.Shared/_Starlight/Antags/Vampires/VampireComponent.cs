@@ -8,89 +8,260 @@ namespace Content.Shared._Starlight.Antags.Vampires;
 
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]
+
 public sealed partial class VampireComponent : Component
 {
-    /// <summary>
-    /// Whether fangs are currently extended (drinking enabled).
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool FangsExtended = false;
+    [DataField]
+    public List<ProtoId<EntityPrototype>> BaseVampireActions = new()
+    {
+        "ActionVampireToggleFangs",
+        "ActionVampireGlare",
+        "ActionVampireRejuvenateI"
+    };
 
     /// <summary>
-    /// Total blood drunk by this vampire (units).
+    /// Lifetime total blood drunk. Used for unlocking abilities
+    /// </summary>
+    [ DataField, AutoNetworkedField]
+    public int TotalBlood = 0;
+
+    /// <summary>
+    /// Total blood drunk by this vampire, used for blood cost calculations
     /// </summary>
     [DataField, AutoNetworkedField]
     public int DrunkBlood = 0;
 
-    /// <summary>
-    /// Amount removed per sip when clicking a target with bloodstream.
-    /// </summary>
-    [DataField]
-    public float SipAmount = 5f;
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
+    public bool FangsExtended = false;
+
+    public float SipAmount = 10f;
 
     /// <summary>
-    /// Current blood fullness used instead of normal food need.
+    /// Current blood fullness used instead of normal food needs
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public float BloodFullness = 0f;
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
+    public float BloodFullness = 90f;
+    [DataField]
+    public float MaxBloodFullness = 200f; // keep configurable
 
     /// <summary>
-    /// Max fullness cap.
+    /// Decay rate per second for blood fullness
     /// </summary>
-    [DataField]
-    public float MaxBloodFullness = 100f;
-
-    /// <summary>
-    /// Decay rate per second for blood fullness.
-    /// </summary>
-    [DataField]
     public float FullnessDecayPerSecond = 0.25f;
 
-    /// <summary>
-    /// Action prototype id for toggling fangs.
-    /// </summary>
-    [DataField]
-    public EntProtoId ToggleFangsAction = "ActionVampireToggleFangs";
-
-    /// <summary>
-    /// Runtime action entity for toggling fangs.
-    /// </summary>
-    [DataField]
-    public EntityUid? ToggleFangsActionEntity;
-
-    /// <summary>
-    /// Action prototype id for the glare ability.
-    /// </summary>
-    [DataField]
-    public EntProtoId GlareAction = "ActionVampireGlare";
-
-    /// <summary>
-    /// Runtime action entity for glare.
-    /// </summary>
-    [DataField]
-    public EntityUid? GlareActionEntity;
-
-    /// <summary>
-    /// Server-side state: whether a bite do-after loop is currently active.
-    /// Not networked; used to avoid stacking and to auto-repeat drinking.
-    /// </summary>
-    [DataField]
+    public VampireActionEntities Actions = new();
     public bool IsDrinking = false;
+
+    /// <summary>
+    /// tracking how much blood was drunk from each target
+    /// </summary>
+    public Dictionary<EntityUid, int> BloodDrunkFromTargets = new();
+
+    public int MaxBloodPerTarget = 200;
+    public EntityUid? SpawnedClaws = null;
+    [AutoNetworkedField]
+    public bool InSanguinePool = false;
+    public int? OriginalCollisionMask = null;
+    public int? OriginalCollisionLayer = null;
+    [DataField]
+    public int ClassSelectThreshold = 150;
+    [DataField]
+    public int RejuvenateIIThreshold = 200;
+    [DataField]
+    public int ActionRefreshThreshold = 5;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public int LastRefreshedBloodLevel = -1;
+
+    [AutoNetworkedField]
+    public bool BloodBringersRiteActive = false;
+    [AutoNetworkedField]
+    public bool CloakOfDarknessActive = false;
+    [AutoNetworkedField]
+    public bool EternalDarknessActive = false;
+    public EntityUid? EternalDarknessAuraEntity = null;
+    [AutoNetworkedField]
+    public bool ShadowBoxingActive = false;
+
+    [AutoNetworkedField]
+    public EntityUid? ShadowBoxingTarget = null;
+    public TimeSpan? ShadowBoxingEndTime = null;
+    public bool ShadowBoxingLoopRunning = false;
+
+
+    public Dictionary<string, int>? PoolOriginalMasks = null;
+    public Dictionary<string, int>? PoolOriginalLayers = null;
+    public bool PoolOwnedGodmode = false;
+
+    public int BloodBringersRiteLoopId = 0;
+    public int CloakOfDarknessLoopId = 0;
+    public int EternalDarknessLoopId = 0;
+
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
+    public bool FullPower = false;
+
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
+    public int UniqueHumanoidVictims = 0;
+
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
+    public VampireClassType ChosenClass = VampireClassType.None;
+
+    [AutoNetworkedField]
+    public EntityUid? SpawnedShadowAnchorBeacon = null;
 }
 
 /// <summary>
-/// Visual layer mapping for the Vampire blood counter alert view entity.
-/// Shared so YAML can reference enum.VampireVisualLayers.* and client can use it to set layers.
-/// Not net-serialized.
+/// Holds all runtime action entity Uids for a vampire
 /// </summary>
+[Serializable]
+public sealed class VampireActionEntities
+{
+    [DataField]
+    public EntityUid? ToggleFangsActionEntity;
+    [DataField]
+    public EntityUid? GlareActionEntity;
+
+    [DataField]
+    public EntityUid? RejuvenateIActionEntity;
+
+    [DataField]
+    public EntityUid? RejuvenateIIActionEntity;
+
+    [DataField]
+    public EntityUid? ClassSelectActionEntity;
+
+    [DataField]
+    public EntityUid? HemomancerClawsActionEntity;
+
+    [DataField]
+    public EntityUid? HemomancerTendrilsActionEntity;
+
+    [DataField]
+    public EntityUid? BloodBarrierActionEntity;
+
+    [DataField]
+    public EntityUid? SanguinePoolActionEntity;
+
+    [DataField]
+    public EntityUid? BloodEruptionActionEntity;
+
+    [DataField]
+    public EntityUid? BloodBringersRiteActionEntity;
+    [DataField]
+    public EntityUid? VampireCloakOfDarknessActionEntity;
+    [DataField]
+    public EntityUid? ShadowSnareActionEntity;
+    [DataField]
+    public EntityUid? DarkPassageActionEntity;
+    [DataField]
+    public EntityUid? ExtinguishActionEntity;
+    [DataField]
+    public EntityUid? EternalDarknessActionEntity;
+    [DataField]
+    public EntityUid? ShadowAnchorActionEntity;
+    [DataField]
+    public EntityUid? ShadowBoxingActionEntity;
+
+    [DataField]
+    public bool ShadowBoxingActive = false;
+}
 public enum VampireVisualLayers : byte
 {
     Digit1,
     Digit2,
     Digit3,
+    Digit4,
 }
 
 public sealed partial class VampireToggleFangsActionEvent : InstantActionEvent;
-public sealed partial class VampireGlareActionEvent : InstantActionEvent {}
+public sealed partial class VampireGlareActionEvent : InstantActionEvent { }
 [Serializable, NetSerializable]
 public sealed partial class VampireDrinkBloodDoAfterEvent : SimpleDoAfterEvent;
+public sealed partial class VampireRejuvenateIActionEvent : InstantActionEvent { }
+public sealed partial class VampireRejuvenateIIActionEvent : InstantActionEvent { }
+public sealed partial class VampireClassSelectActionEvent : InstantActionEvent { }
+public sealed partial class VampireHemomancerClawsActionEvent : InstantActionEvent { }
+public sealed partial class VampireSanguinePoolActionEvent : InstantActionEvent { }
+public sealed partial class VampireBloodEruptionActionEvent : InstantActionEvent { }
+public sealed partial class VampireBloodBringersRiteActionEvent : InstantActionEvent { }
+public sealed partial class VampireCloakOfDarknessActionEvent : InstantActionEvent { }
+public sealed partial class VampireShadowSnareActionEvent : WorldTargetActionEvent { }
+public sealed partial class VampireDarkPassageActionEvent : WorldTargetActionEvent { }
+public sealed partial class VampireExtinguishActionEvent : InstantActionEvent { }
+public sealed partial class VampireEternalDarknessActionEvent : InstantActionEvent { }
+public sealed partial class VampireShadowAnchorActionEvent : InstantActionEvent { }
+public sealed partial class VampireShadowBoxingActionEvent : EntityTargetActionEvent { }
+
+[Serializable, NetSerializable]
+public sealed partial class VampireClassClosedBuiMsg : BoundUserInterfaceMessage
+{
+}
+
+[Serializable, NetSerializable]
+public sealed class VampireShadowBoxingPunchEvent : EntityEventArgs
+{
+    public NetEntity Source { get; }
+    public NetEntity Target { get; }
+
+    public VampireShadowBoxingPunchEvent(NetEntity source, NetEntity target)
+    {
+        Source = source;
+        Target = target;
+    }
+}
+
+public sealed partial class VampireHemomancerTendrilsActionEvent : WorldTargetActionEvent
+{
+    [DataField]
+    public float Delay = 1.0f;
+
+    [DataField]
+    public float SlowMultiplier = 0.3f;
+
+    [DataField]
+    public float SlowDuration = 2.0f;
+
+    [DataField]
+    public float ToxinDamage = 33.0f;
+
+    [DataField]
+    public bool SpawnVisuals = true;
+}
+
+public sealed partial class VampireBloodBarrierActionEvent : WorldTargetActionEvent
+{
+    [DataField]
+    public int BarrierCount = 3;
+}
+
+[Serializable, NetSerializable]
+public enum VampireClassUiKey : byte
+{
+    Key
+}
+
+[Serializable, NetSerializable]
+public enum VampireClassType : byte
+{
+    None = 0,
+    Hemomancer = 1,
+    Umbrae = 2,
+    Gargantua = 3,
+    Dantalion = 4
+}
+
+[Serializable, NetSerializable]
+public sealed class VampireClassChosenBuiMsg : BoundUserInterfaceMessage
+{
+    public VampireClassType Choice { get; init; }
+}
+
+[RegisterComponent]
+public sealed partial class ShadowSnareBlindMarkerComponent : Component { }
+
+[RegisterComponent]
+public sealed partial class ShadowSnareEnsnareComponent : Component
+{
+    [DataField]
+    public EntityUid Victim;
+}

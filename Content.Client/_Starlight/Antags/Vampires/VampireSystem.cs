@@ -1,6 +1,4 @@
-using System;
 using Content.Client.Alerts;
-using Content.Client.UserInterface.Systems.Alerts.Controls;
 using Content.Shared._Starlight.Antags.Vampires;
 using Robust.Client.GameObjects;
 
@@ -22,21 +20,20 @@ public sealed class VampireSystem : EntitySystem
 
         if (key == "VampireBlood")
         {
-            // Background is set by the alert; only set the three digit layers from the counter value.
-            var value = Math.Clamp(comp.DrunkBlood, 0, 999);
-            var d1 = value / 100 % 10;
-            var d2 = value / 10 % 10;
-            var d3 = value % 10;
+            var value = Math.Clamp(comp.DrunkBlood, 0, 9999);
+            var d1 = value / 1000 % 10;
+            var d2 = value / 100 % 10;
+            var d3 = value / 10 % 10;
+            var d4 = value % 10;
 
             _sprite.LayerSetRsiState((args.SpriteViewEnt, args.SpriteViewEnt.Comp), VampireVisualLayers.Digit1, d1.ToString());
             _sprite.LayerSetRsiState((args.SpriteViewEnt, args.SpriteViewEnt.Comp), VampireVisualLayers.Digit2, d2.ToString());
             _sprite.LayerSetRsiState((args.SpriteViewEnt, args.SpriteViewEnt.Comp), VampireVisualLayers.Digit3, d3.ToString());
+            _sprite.LayerSetRsiState((args.SpriteViewEnt, args.SpriteViewEnt.Comp), VampireVisualLayers.Digit4, d4.ToString());
         }
         else if (key == "VampireFed")
         {
-            // Choose icon index based on fullness. 0..3 correspond to hungry..full
             var pct = comp.MaxBloodFullness <= 0 ? 0 : comp.BloodFullness / comp.MaxBloodFullness;
-            // The icon is selected by server-side alert severity; nothing to set on client here.
         }
     }
 }

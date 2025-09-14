@@ -1,34 +1,396 @@
+#Base abilities
+
 - type: entity
   parent: BaseAction
   id: ActionVampireToggleFangs
   name: action-vampire-toggle-fangs-name
   description: action-vampire-toggle-fangs-desc
   components:
-  - type: Action
-    useDelay: 5
-    itemIconStyle: NoItem
-    priority: 1
-    icon:
-      sprite: _Starlight/Interface/Actions/actions_vampire.rsi
-      state: fangs_retracted
-    iconOn:
-      sprite: _Starlight/Interface/Actions/actions_vampire.rsi
-      state: fangs_extended
-  - type: InstantAction
-    event: !type:VampireToggleFangsActionEvent {}
-    
+    - type: Action
+      useDelay: 2
+      itemIconStyle: NoItem
+      priority: 1
+      icon:
+        sprite: _Starlight/Vampire/actions_vampire.rsi
+        state: fangs_retracted
+      iconOn:
+        sprite: _Starlight/Vampire/actions_vampire.rsi
+        state: fangs_extended
+    - type: InstantAction
+      event: !type:VampireToggleFangsActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 0
+      bloodCost: 0
+
 - type: entity
   parent: BaseAction
   id: ActionVampireGlare
   name: action-vampire-glare-name
   description: action-vampire-glare-desc
   components:
-  - type: Action
-    useDelay: 30 
-    itemIconStyle: NoItem
-    priority: 2
-    icon:
-      sprite: _Starlight/Interface/Actions/actions_vampire.rsi
-      state: glare
-  - type: InstantAction
-    event: !type:VampireGlareActionEvent {}
+    - type: Action
+      useDelay: 90
+      itemIconStyle: NoItem
+      priority: 2
+      icon:
+        sprite: _Starlight/Vampire/actions_vampire.rsi
+        state: glare
+    - type: InstantAction
+      event: !type:VampireGlareActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 0
+      bloodCost: 0
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireRejuvenateI
+  name: action-vampire-rejuvenate-i-name
+  description: action-vampire-rejuvenate-i-desc
+  components:
+    - type: Action
+      useDelay: 35
+      itemIconStyle: NoItem
+      priority: 3
+      checkCanInteract: false
+      icon:
+        sprite: _Starlight/Vampire/actions_vampire.rsi
+        state: rejuvinate
+    - type: InstantAction
+      event: !type:VampireRejuvenateIActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 0
+      bloodCost: 0
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireRejuvenateII
+  name: action-vampire-rejuvenate-ii-name
+  description: action-vampire-rejuvenate-ii-desc
+  components:
+    - type: Action
+      useDelay: 30
+      itemIconStyle: NoItem
+      priority: 4
+      checkCanInteract: false
+      icon:
+        sprite: _Starlight/Vampire/actions_vampire.rsi
+        state: rejuvinate
+    - type: InstantAction
+      event: !type:VampireRejuvenateIIActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 0
+      bloodCost: 0
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireClassSelect
+  name: action-vampire-class-select-name
+  description: action-vampire-class-select-desc
+  components:
+    - type: Action
+      useDelay: 2
+      itemIconStyle: NoItem
+      priority: 5
+      icon:
+        sprite: _Starlight/Vampire/actions_vampire.rsi
+        state: select_class
+    - type: InstantAction
+      event: !type:VampireClassSelectActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 150
+      bloodCost: 0
+
+# Haemomancer abilities
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireHemomancerClaws
+  name: Vampiric Claws
+  description: Create undroppable claws of blood. Each hit grants +5 blood. Has 15 swings. Use in hand to dispel.
+  components:
+    - type: Action
+      useDelay: 30
+      itemIconStyle: NoItem
+      priority: 10
+      icon:
+        sprite: _Starlight/Vampire/Haemomancer.rsi
+        state: claws
+    - type: InstantAction
+      event: !type:VampireHemomancerClawsActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 150
+      bloodCost: 30
+      requiredClass: Hemomancer
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireSanguinePool
+  name: Sanguine Pool
+  description: Transform into a pool of blood for 8 seconds, allowing movement through doors and windows.
+  components:
+    - type: Action
+      useDelay: 25
+      itemIconStyle: NoItem
+      priority: 13
+      icon:
+        sprite: _Starlight/Vampire/Haemomancer.rsi
+        state: blood_pool
+    - type: InstantAction
+      event: !type:VampireSanguinePoolActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 400
+      bloodCost: 30
+      requiredClass: Hemomancer
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireHemomancerTendrils
+  name: Blood Tendrils
+  description: After a short delay, tendrils erupt in a 3x3 area, poisoning and heavily slowing victims.
+  components:
+    - type: Action
+      useDelay: 10
+      itemIconStyle: NoItem
+      priority: 11
+      icon:
+        sprite: _Starlight/Vampire/Haemomancer.rsi
+        state: blood_tendrils
+    - type: TargetAction
+      checkCanAccess: false
+      range: 7
+    - type: WorldTargetAction
+      range: 7
+      event: !type:VampireHemomancerTendrilsActionEvent
+        delay: 1.0
+        slowMultiplier: 0.3
+        slowDuration: 2.0
+        toxinDamage: 33
+        spawnVisuals: true
+    - type: VampireAction
+      bloodToUnlock: 250
+      bloodCost: 25
+      requiredClass: Hemomancer
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireBloodBarrier
+  name: Blood Barrier
+  description: Creates 3 blood barriers at the target location. Vampires can pass through them.
+  components:
+    - type: Action
+      useDelay: 15
+      itemIconStyle: NoItem
+      priority: 12
+      icon:
+        sprite: _Starlight/Vampire/Haemomancer.rsi
+        state: blood_barrier
+    - type: TargetAction
+      checkCanAccess: false
+      range: 6
+    - type: WorldTargetAction
+      range: 6
+      event: !type:VampireBloodBarrierActionEvent
+        barrierCount: 3
+    - type: VampireAction
+      bloodToUnlock: 250
+      bloodCost: 40
+      requiredClass: Hemomancer
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireBloodEruption
+  name: action-vampire-blood-eruption-name
+  description: action-vampire-blood-eruption-desc
+  components:
+    - type: Action
+      useDelay: 120
+      itemIconStyle: NoItem
+      priority: 13
+      icon:
+        sprite: _Starlight/Vampire/Haemomancer.rsi
+        state: blood_spikes
+    - type: InstantAction
+      event: !type:VampireBloodEruptionActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 800
+      bloodCost: 100
+      requiredClass: Hemomancer
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireBloodBringersRite
+  name: action-vampire-blood-bringers-rite-name
+  description: action-vampire-blood-bringers-rite-desc
+  components:
+    - type: Action
+      useDelay: 1
+      itemIconStyle: NoItem
+      priority: 14
+      icon:
+        sprite: _Starlight/Vampire/Haemomancer.rsi
+        state: blood_rite
+    - type: InstantAction
+      event: !type:VampireBloodBringersRiteActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 1000
+      bloodCost: 0
+      requiredClass: Hemomancer
+
+# Umbrae
+- type: entity
+  parent: BaseAction
+  id: ActionVampireCloakOfDarkness
+  name: action-vampire-cloak-of-darkness-name
+  description: action-vampire-cloak-of-darkness-desc
+  components:
+    - type: Action
+      useDelay: 0
+      itemIconStyle: NoItem
+      priority: 15
+      icon:
+        sprite: _Starlight/Vampire/Umbrae.rsi
+        state: cloak_of_darkness
+    - type: InstantAction
+      event: !type:VampireCloakOfDarknessActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 150
+      bloodCost: 0
+      requiredClass: Umbrae
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireShadowSnare
+  name: action-vampire-shadow-snare-name
+  description: action-vampire-shadow-snare-desc
+  components:
+    - type: Action
+      useDelay: 10
+      itemIconStyle: NoItem
+      priority: 16
+      icon:
+        sprite: _Starlight/Vampire/Umbrae.rsi
+        state: shadow_snare
+    - type: TargetAction
+      checkCanAccess: false
+      range: 6
+    - type: WorldTargetAction
+      range: 15
+      itemIconStyle: NoItem
+      canTargetSelf: false
+      checkCanAccess: false
+      event: !type:VampireShadowSnareActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 200
+      bloodCost: 20
+      requiredClass: Umbrae
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireShadowAnchor
+  name: action-vampire-shadow-anchor-name
+  description: action-vampire-shadow-anchor-desc
+  components:
+    - type: Action
+      useDelay: 10
+      itemIconStyle: NoItem
+      priority: 20
+      icon:
+        sprite: _Starlight/Vampire/Umbrae.rsi
+        state: shadow_anchor
+    - type: InstantAction
+      event: !type:VampireShadowAnchorActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 200
+      bloodCost: 20
+      requiredClass: Umbrae
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireShadowBoxing
+  name: action-vampire-shadow-boxing-name
+  description: action-vampire-shadow-boxing-desc
+  components:
+    - type: Action
+      useDelay: 30
+      itemIconStyle: NoItem
+      priority: 21
+      icon:
+        sprite: _Starlight/Vampire/Umbrae.rsi
+        state: shadow_boxing
+    - type: TargetAction
+      interactOnMiss: false
+    - type: EntityTargetAction
+      canTargetSelf: false
+      range: 2
+      whitelist:
+        components:
+          - MobState
+      event: !type:VampireShadowBoxingActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 800
+      bloodCost: 50
+      requiredClass: Umbrae
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireDarkPassage
+  name: action-vampire-dark-passage-name
+  description: action-vampire-dark-passage-desc
+  components:
+    - type: Action
+      useDelay: 30
+      itemIconStyle: NoItem
+      priority: 17
+      icon:
+        sprite: _Starlight/Vampire/Umbrae.rsi
+        state: dark_passage
+    - type: TargetAction
+      range: 15
+      repeat: false
+      checkCanAccess: false
+    - type: WorldTargetAction
+      event: !type:VampireDarkPassageActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 300
+      bloodCost: 20
+      requiredClass: Umbrae
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireExtinguish
+  name: action-vampire-extinguish-name
+  description: action-vampire-extinguish-desc
+  components:
+    - type: Action
+      useDelay: 30
+      itemIconStyle: NoItem
+      priority: 18
+      icon:
+        sprite: _Starlight/Vampire/Umbrae.rsi
+        state: extinguish
+    - type: InstantAction
+      event: !type:VampireExtinguishActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 400
+      bloodCost: 0
+      requiredClass: Umbrae
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireEternalDarkness
+  name: action-vampire-eternal-darkness-name
+  description: action-vampire-eternal-darkness-desc
+  components:
+    - type: Action
+      useDelay: 10
+      itemIconStyle: NoItem
+      priority: 19
+      icon:
+        sprite: _Starlight/Vampire/Umbrae.rsi
+        state: eternal_darkness
+    - type: InstantAction
+      event: !type:VampireEternalDarknessActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 1000
+      bloodCost: 0
+      requiredClass: Umbrae

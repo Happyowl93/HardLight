@@ -1,0 +1,292 @@
+- type: entity
+  id: VampireBloodTendrilVisual
+  name: blood tendrils
+  noSpawn: true
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      state: blood_tendril_ent
+      drawdepth: Effects
+    - type: TimedDespawn
+      lifetime: 1.05
+    - type: Clickable
+    - type: Physics
+      canCollide: false
+    - type: Transform
+      noRot: true
+
+# Shadow Boxing shadow punch visual
+- type: entity
+  id: VampireShadowBoxingPunch
+  name: shadow punch
+  noSpawn: true
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      state: shadow_box_atack_effect
+      drawdepth: Effects
+      directionOffset: 0
+    - type: TimedDespawn
+      lifetime: 0.4
+    - type: Physics
+      canCollide: false
+    - type: Transform
+      noRot: false
+
+- type: entity
+  id: VampireBloodBarrier
+  name: blood barrier
+  description: A barrier made of solidified blood that blocks movement.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      state: blood_barrier_ent
+      drawdepth: Walls
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.5"
+          mask:
+            - Impassable
+          layer:
+            - Impassable
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Destructible
+      thresholds:
+        - trigger: !type:DamageTrigger
+            damage: 130
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+
+- type: entity
+  id: VampireSanguinePoolOut
+  name: vampire transformation out
+  noSpawn: true
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      state: vampout
+      drawdepth: Effects
+    - type: TimedDespawn
+      lifetime: 1.2
+    - type: Clickable
+    - type: Physics
+      canCollide: false
+    - type: Transform
+      noRot: true
+
+- type: entity
+  id: VampireSanguinePoolIn
+  name: vampire transformation in
+  noSpawn: true
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      state: vampin
+      drawdepth: Effects
+    - type: TimedDespawn
+      lifetime: 1.2
+    - type: Physics
+      canCollide: false
+    - type: Transform
+      noRot: true
+    - type: Tag
+      tags:
+        - Wall
+        - VampireBarrier
+
+# - type: entity
+#   id: VampireBloodEruptionVisual
+#   name: blood eruption
+#   noSpawn: true
+#   categories: [HideSpawnMenu]
+#   components:
+#     - type: Sprite
+#       sprite: _Starlight/Vampire/Haemomancer.rsi
+#       state: :(
+#       drawdepth: Effects
+#     - type: TimedDespawn
+#       lifetime: 2.0
+#     - type: Clickable
+#     - type: Physics
+#       canCollide: false
+#     - type: Transform
+#       noRot: true
+#
+# - type: entity
+#   id: VampireBloodSpikesVisual
+#   name: blood spikes
+#   noSpawn: true
+#   categories: [HideSpawnMenu]
+#   components:
+#     - type: Sprite
+#       sprite: _Starlight/Vampire/Haemomancer.rsi
+#       state: :(
+#       drawdepth: Effects
+#     - type: TimedDespawn
+#       lifetime: 1.5
+#     - type: Clickable
+#     - type: Physics
+#       canCollide: false
+#     - type: Transform
+#       noRot: true
+
+- type: entity
+  id: VampireDrainBeam
+  name: drain beam
+  description: A crimson beam of life-draining energy.
+  noSpawn: true
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      layers:
+        - state: drainbeam
+          map: ["enum.EffectLayers.Unshaded"]
+      drawdepth: Effects
+    - type: AnimationPlayer
+    - type: Clickable
+    - type: Physics
+      canCollide: false
+    - type: Transform
+      noRot: false
+
+- type: entity
+  id: VampireDrainBeamVisual
+  name: drain beam visual
+  description: A smooth client-side vampire drain beam.
+  noSpawn: true
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      layers:
+        - state: drainbeam
+          map: ["enum.EffectLayers.Unshaded"]
+          offset: 0, 0
+      drawdepth: BelowMobs
+    - type: Transform
+      noRot: false
+
+- type: entity
+  id: VampireShadowSnareTrap
+  name: shadow snare
+  description: A nearly invisible snare of condensed darkness.
+  noSpawn: true
+  components:
+    - type: Transform
+      anchored: true
+    - type: Sprite
+      sprite: _Starlight/Vampire/Effects.rsi
+      state: shadow_snare_base
+      drawdepth: Items
+      noRot: true
+    - type: Clickable
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        slips:
+          shape: !type:PhysShapeAabb
+            bounds: "-0.25,-0.25,0.25,0.25"
+          hard: false
+          layer:
+            - LowImpassable
+    - type: InteractionOutline
+      enabled: false
+
+- type: entity
+  id: VampireDarkPassageMistIn
+  noSpawn: true
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      state: mist_in
+      drawdepth: Effects
+    - type: TimedDespawn
+      lifetime: 1.45
+    - type: Physics
+      canCollide: false
+    - type: Transform
+      noRot: true
+
+- type: entity
+  id: VampireDarkPassageMistOut
+  noSpawn: true
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      state: mist_out
+      drawdepth: Effects
+    - type: TimedDespawn
+      lifetime: 0.65
+    - type: Physics
+      canCollide: false
+    - type: Transform
+      noRot: true
+
+- type: entity
+  id: VampireShadowAnchorBeacon
+  name: shadow anchor
+  description: A pulsing knot of shadow you can return to.
+  noSpawn: true
+  categories: [HideSpawnMenu]
+  components:
+    - type: Transform
+      anchored: true
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      state: pylon
+      drawdepth: Effects
+    - type: TimedDespawn
+      lifetime: 120
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeAabb
+            bounds: "-0.3,-0.3,0.3,0.3"
+          hard: false
+    - type: Clickable
+    - type: InteractionOutline
+      enabled: false
+    - type: Stealth
+      visibility: -0.8
+
+- type: entity
+  id: VampireEternalDarknessAura
+  name: vampiric darkness aura
+  noSpawn: true
+  components:
+    - type: Transform
+      anchored: false
+    - type: PointLight
+      enabled: true
+      radius: 6.0  
+      energy: 1.0         
+      softness: 4.0        
+      color: "#6d00ff"     
+      castShadows: false
+      autoBrightness: false
+    - type: Sprite
+      sprite: Effects/blank.rsi
+      state: blank
+      draws: false
+    - type: MetaData
+      entityClass: Effect
+    - type: Tag
+      tags:
+        - HideContextMenu

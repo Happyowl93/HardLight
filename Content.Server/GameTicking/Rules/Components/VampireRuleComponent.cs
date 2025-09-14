@@ -1,10 +1,35 @@
 using Robust.Shared.Prototypes;
+using Content.Shared.Vampire.Components;
 
 namespace Content.Server.GameTicking.Rules.Components;
 
-/// <summary>
-/// Game rule marker component for handling Vampire antagonist selection/rule state.
-/// Exists so YAML `- type: VampireRule` attaches a component and systems can check for it.
-/// </summary>
+
 [RegisterComponent]
-public sealed partial class VampireRuleComponent : Component;
+public sealed partial class VampireRuleComponent : Component
+{
+    public readonly List<EntityUid> VampireMinds = new();
+
+    public readonly List<ProtoId<EntityPrototype>> BaseObjectives = new()
+    {
+        "VampireKillRandomPersonObjective",
+        "VampireDrainObjective"
+    };
+
+    public readonly List<ProtoId<EntityPrototype>> EscapeObjectives = new()
+    {
+        "VampireSurviveObjective",
+        "VampireEscapeObjective"
+    };
+
+    public readonly List<ProtoId<EntityPrototype>> StealObjectives = new()
+    {
+        "CMOHyposprayVampireStealObjective",
+        "RDHardsuitVampireStealObjective",
+        "EnergyShotgunVampireStealObjective",
+        "MagbootsVampireStealObjective",
+        "ClipboardVampireStealObjective",
+        "CaptainIDVampireStealObjective",
+        "CaptainJetpackVampireStealObjective",
+        "CaptainGunVampireStealObjective"
+    };
+}
