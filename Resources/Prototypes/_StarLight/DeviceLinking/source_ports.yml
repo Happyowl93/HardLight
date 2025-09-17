@@ -9,3 +9,13 @@
   name: signal-port-name-ai-law-console-sender
   description: signal-port-description-ai-law-console-sender
   defaultLinks: [ AiLawConsoleReceiver ]
+
+- type: sourcePort
+  id: ScanGateSuccess
+  name: signal-port-name-scan-gate-success
+  description: signal-port-description-scan-gate-success
+
+- type: sourcePort
+  id: ScanGateFail
+  name: signal-port-name-scan-gate-fail
+  description: signal-port-description-scan-gate-fail
