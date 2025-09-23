@@ -5,7 +5,7 @@
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      sprite: /Textures/_Starlight/Vampire/effects.rsi
       state: blood_tendril_ent
       drawdepth: Effects
     - type: TimedDespawn
@@ -24,7 +24,7 @@
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      sprite: /Textures/_Starlight/Vampire/effects.rsi
       state: shadow_box_atack_effect
       drawdepth: Effects
       directionOffset: 0
@@ -42,7 +42,7 @@
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      sprite: /Textures/_Starlight/Vampire/effects.rsi
       state: blood_barrier_ent
       drawdepth: Walls
     - type: Physics
@@ -73,7 +73,7 @@
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      sprite: /Textures/_Starlight/Vampire/effects.rsi
       state: vampout
       drawdepth: Effects
     - type: TimedDespawn
@@ -91,7 +91,7 @@
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      sprite: /Textures/_Starlight/Vampire/effects.rsi
       state: vampin
       drawdepth: Effects
     - type: TimedDespawn
@@ -149,7 +149,7 @@
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      sprite: /Textures/_Starlight/Vampire/effects.rsi
       layers:
         - state: drainbeam
           map: ["enum.EffectLayers.Unshaded"]
@@ -169,7 +169,7 @@
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      sprite: /Textures/_Starlight/Vampire/effects.rsi
       layers:
         - state: drainbeam
           map: ["enum.EffectLayers.Unshaded"]
@@ -187,7 +187,7 @@
     - type: Transform
       anchored: true
     - type: Sprite
-      sprite: _Starlight/Vampire/Effects.rsi
+      sprite: _Starlight/Vampire/effects.rsi
       state: shadow_snare_base
       drawdepth: Items
       noRot: true
@@ -211,7 +211,7 @@
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      sprite: /Textures/_Starlight/Vampire/effects.rsi
       state: mist_in
       drawdepth: Effects
     - type: TimedDespawn
@@ -227,7 +227,7 @@
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      sprite: /Textures/_Starlight/Vampire/effects.rsi
       state: mist_out
       drawdepth: Effects
     - type: TimedDespawn
@@ -247,7 +247,7 @@
     - type: Transform
       anchored: true
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      sprite: /Textures/_Starlight/Vampire/effects.rsi
       state: pylon
       drawdepth: Effects
     - type: TimedDespawn

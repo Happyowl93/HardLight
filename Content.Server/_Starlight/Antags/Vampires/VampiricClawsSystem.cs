@@ -9,9 +9,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
-using Content.Shared.Wieldable.Components;
 using Content.Shared.Wieldable;
-using Robust.Shared.GameObjects;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 

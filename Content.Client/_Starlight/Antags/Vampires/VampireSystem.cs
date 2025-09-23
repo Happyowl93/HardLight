@@ -16,10 +16,10 @@ public sealed class VampireSystem : EntitySystem
     private void OnUpdateAlert(EntityUid uid, VampireComponent comp, ref UpdateAlertSpriteEvent args)
     {
         var key = args.Alert.AlertKey.AlertType;
-        var sprite = args.SpriteViewEnt.Comp;
 
         if (key == "VampireBlood")
         {
+            // Background is set by the alert -> only set the digit layers from the counter value.
             var value = Math.Clamp(comp.DrunkBlood, 0, 9999);
             var d1 = value / 1000 % 10;
             var d2 = value / 100 % 10;
@@ -30,10 +30,6 @@ public sealed class VampireSystem : EntitySystem
             _sprite.LayerSetRsiState((args.SpriteViewEnt, args.SpriteViewEnt.Comp), VampireVisualLayers.Digit2, d2.ToString());
             _sprite.LayerSetRsiState((args.SpriteViewEnt, args.SpriteViewEnt.Comp), VampireVisualLayers.Digit3, d3.ToString());
             _sprite.LayerSetRsiState((args.SpriteViewEnt, args.SpriteViewEnt.Comp), VampireVisualLayers.Digit4, d4.ToString());
-        }
-        else if (key == "VampireFed")
-        {
-            var pct = comp.MaxBloodFullness <= 0 ? 0 : comp.BloodFullness / comp.MaxBloodFullness;
         }
     }
 }

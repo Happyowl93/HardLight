@@ -1,38 +1,42 @@
 using Content.Shared._Starlight.Antags.Vampires;
-using Content.Shared.Interaction;
 using Content.Shared.Body.Components;
-using Content.Shared.DoAfter;
-using Content.Shared.IdentityManagement;
+using Content.Shared.Charges.Components;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
-using Content.Shared.Speech.Muting;
-using Robust.Shared.Timing;
-using Content.Shared.FixedPoint;
-using Content.Shared.Wieldable.Components;
-using Content.Shared.Physics;
-using Robust.Shared.Physics;
-using Robust.Shared.Physics.Events;
-using System.Numerics;
-using Content.Shared.Humanoid;
-using Robust.Shared.Physics.Components;
-using System.Linq;
-using Content.Shared.Stealth.Components;
-using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
-using Content.Shared.Mobs.Components;
-using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.DoAfter;
 using Content.Shared.Ensnaring.Components;
+using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.FixedPoint;
 using Content.Shared.Flash.Components;
-using Content.Shared.Charges.Components;
-using Content.Shared.Hands.Components; 
-using Robust.Shared.Containers;
+using Content.Shared.Hands.Components;
+using Content.Shared.Humanoid;
+using Content.Shared.IdentityManagement;
+using Content.Shared.Interaction;
+using Content.Shared.Inventory;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Nutrition.Components;
+using Content.Shared.Physics;
+using Content.Shared.Speech.Muting;
+using Content.Shared.Stealth.Components;
+using Content.Shared.Stunnable;
+using Content.Shared.Wieldable.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Content.Shared.Inventory;
-using Content.Shared.Nutrition.Components;
+using Robust.Shared.Containers;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Events;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Numerics;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -42,9 +46,12 @@ public sealed partial class VampireSystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     // Ability constants
     private const float GlareRange = 1f;
-    private const float GlareInitialStaminaDamage = 30f;
+    private const float GlareFrontStaminaDamage = 30f;
+    private const float GlareBehindStaminaDamage = 30f;
+    private const float GlareSideStaminaDamage = 40f;
     private const float GlareDotStaminaDamage = 15f;
     private const int GlareMuteDuration = 8;
     private const float BloodEruptionRange = 10f;
@@ -394,7 +401,7 @@ public sealed partial class VampireSystem
         var maxCanDrink = comp.MaxBloodPerTarget - drunkFromTarget;
         var actualSipAmount = MathF.Min(comp.SipAmount, maxCanDrink);
 
-        if (_blood.TryModifyBloodLevel(target, (-actualSipAmount * 2)))
+        if (_blood.TryModifyBloodLevel(target, -actualSipAmount * 2))
         {
             comp.DrunkBlood += (int)actualSipAmount;
             comp.TotalBlood += (int)actualSipAmount;
@@ -505,17 +512,6 @@ public sealed partial class VampireSystem
         }
     }
 
-    // Rinary если сможешь поиграться с worldvec и сделать это, то вообще будешь зайкой
-    /*
-    Слепит в радиусе 1 тайла. Имеет два использования с интервалом в 2-3 секунды.
-    В зависимости от направления взгляда и расстояния будут разные эффекты:
-
-    Если жертва на том же месте, что и вампир, или сбоку, или лежит - она оглушиться на 4 секунды и нанесётся 40 стаминоурона
-
-    Если жертва за спиной вампира - ей нанесётся 30 стаминоурона
-
-    Если жертва перед вампиром - она оглушиться на 2 секунды, нанесётся 30 стаминоурона с последующим уроном (10 урона) по стамине до стаминокрита и не даст жертве говорить 8 секунд
-    */
     private void OnGlare(EntityUid uid, VampireComponent comp, ref VampireGlareActionEvent args)
     {
         if (args.Handled)
@@ -525,48 +521,77 @@ public sealed partial class VampireSystem
             return;
 
         // Find targets within 1 tile around the vampire
-        var targets = _lookup.GetEntitiesInRange(uid, GlareRange, Robust.Shared.GameObjects.LookupFlags.Dynamic | Robust.Shared.GameObjects.LookupFlags.Sundries);
+        var targets = _lookup.GetEntitiesInRange(uid, GlareRange, LookupFlags.Dynamic | LookupFlags.Sundries);
+
+        var ourXform = Transform(uid);
+        var ourDirection = ourXform.LocalRotation.ToVec();
+        var ourPosition = _transform.GetWorldPosition(ourXform);
 
         foreach (var target in targets)
         {
             if (target == uid)
                 continue;
 
+            var targetXform = Transform(target);
+            var targetPosition = _transform.GetWorldPosition(targetXform);
+            var vectorToTarget = targetPosition - ourPosition;
+            vectorToTarget = Vector2.Normalize(vectorToTarget);
+            var dot = Vector2.Dot(ourDirection, vectorToTarget);
+            
             if (!TryComp<StaminaComponent>(target, out var stam))
                 continue;
 
-            _stun.TryAddParalyzeDuration(target, TimeSpan.FromSeconds(2));
+            var knockedDown = HasComp<KnockedDownComponent>(target);
 
-            _stamina.TakeStaminaDamage(target, GlareInitialStaminaDamage, stam, source: uid);
-
-            // Mute for 8 second
-            EnsureComp<MutedComponent>(target);
-            Timer.Spawn(TimeSpan.FromSeconds(GlareMuteDuration), () =>
+            // If target in front
+            if (dot > 0.7f && !knockedDown)
             {
-                if (Exists(target))
-                    RemComp<MutedComponent>(target);
-            });
+                _stun.TryAddParalyzeDuration(target, TimeSpan.FromSeconds(2));
+
+                _stamina.TakeStaminaDamage(target, GlareFrontStaminaDamage, stam, source: uid);
+
+                // Mute for 8 second
+                EnsureComp<MutedComponent>(target);
+                Timer.Spawn(TimeSpan.FromSeconds(GlareMuteDuration), () =>
+                {
+                    if (Exists(target))
+                        RemComp<MutedComponent>(target);
+                });
+
+                StartGlareDotEffect(target, uid, 0, true);
+
+                return; 
+            }
+            // If target behind
+            else if (dot < -0.7f && !knockedDown)
+            {
+                _stamina.TakeStaminaDamage(target, GlareBehindStaminaDamage, stam, source: uid);
+            }
+            else
+            {
+                _stun.TryAddParalyzeDuration(target, TimeSpan.FromSeconds(4));
+
+                _stamina.TakeStaminaDamage(target, GlareSideStaminaDamage, stam, source: uid);
+            }
 
             // Start DOT effect with limited ticks
-            StartGlareDotEffect(target, uid, 0);
+            StartGlareDotEffect(target, uid, 0, false);
         }
 
         args.Handled = true;
     }
 
-    private void StartGlareDotEffect(EntityUid target, EntityUid source, int tickCount)
+    private void StartGlareDotEffect(EntityUid target, EntityUid source, int tickCount, bool doStaminaDamage)
     {
         const int MaxTicks = 10;
 
         if (tickCount >= MaxTicks || !Exists(target) || !Exists(source))
             return;
 
-        if (!TryComp<StaminaComponent>(target, out var stam) || stam.Critical)
-            return;
+        if (doStaminaDamage && TryComp<StaminaComponent>(target, out var stam) && !stam.Critical)
+            _stamina.TakeStaminaDamage(target, GlareDotStaminaDamage, stam, source: source);
 
-        _stamina.TakeStaminaDamage(target, GlareDotStaminaDamage, stam, source: source);
-
-        Timer.Spawn(TimeSpan.FromSeconds(1), () => StartGlareDotEffect(target, source, tickCount + 1));
+        Timer.Spawn(TimeSpan.FromSeconds(1), () => StartGlareDotEffect(target, source, tickCount + 1, doStaminaDamage));
     }
 
     private void OnRejuvenateI(EntityUid uid, VampireComponent comp, ref VampireRejuvenateIActionEvent args)
@@ -577,8 +602,14 @@ public sealed partial class VampireSystem
         if (!CheckAndConsumeActionCost(uid, comp, comp.Actions.RejuvenateIActionEntity))
             return;
 
+        if (TryComp<StaminaComponent>(uid, out var stamina))
+        {
+            stamina.StaminaDamage = 0f;
+            _stamina.AdjustStatus(uid);
+            _stamina.ExitStamCrit(uid);
+        }
         _stun.TryUnstun(uid);
-        _stun.TryStanding(uid);
+        _stun.ForceStandUp(uid);
 
         args.Handled = true;
     }
@@ -591,52 +622,41 @@ public sealed partial class VampireSystem
         if (!CheckAndConsumeActionCost(uid, comp, comp.Actions.RejuvenateIIActionEntity))
             return;
 
-        // Rinary не ебу что не так, помоги.
-        // Пинаешь себя стан дубинкой, нажимаешь абилку и нихуя не происходит)
-        // С первым rejivenate также
-        _stun.TryUnstun(uid);
-        _stun.TryStanding(uid);
-
-        // Rinary супер не оптимизированнаное дерьмо код, зарефакторь пж пж
-        // Не сможешь да и похуй
-        // у меня лапки
-        // Purge 10u of harmful reagents
-        if (TryComp<BloodstreamComponent>(uid, out var blood))
+        if (TryComp<StaminaComponent>(uid, out var stamina))
         {
-            var solEnt = blood.ChemicalSolution;
-            if (solEnt != null && TryComp(solEnt.Value, out Shared.Chemistry.Components.SolutionComponent? solution))
-            {
-                var toRemove = FixedPoint2.Zero;
-                foreach (var quant in solution.Solution.Contents.ToArray())
-                {
-                    if (toRemove >= FixedPoint2.New(10))
-                        break;
+            stamina.StaminaDamage = 0f;
+            _stamina.AdjustStatus(uid);
+            _stamina.ExitStamCrit(uid);
+        }
+        _stun.TryUnstun(uid);
+        _stun.ForceStandUp(uid);
 
-                    if (!_proto.TryIndex<Shared.Chemistry.Reagent.ReagentPrototype>(quant.Reagent.Prototype, out var proto))
-                        continue;
+        // Purge 10u of harmful reagents
+        FixedPoint2 MaxRemove = FixedPoint2.New(10);
 
-                    var harmful = false;
-                    if (proto.Metabolisms != null)
-                    {
-                        foreach (var kv in proto.Metabolisms)
-                        {
-                            if (kv.Key.Id.Equals("Poison", StringComparison.OrdinalIgnoreCase))
-                            {
-                                harmful = true;
-                                break;
-                            }
-                        }
-                    }
+        if (!TryComp<BloodstreamComponent>(uid, out var blood)
+            || blood.ChemicalSolution is not { } solEnt
+            || !TryComp(solEnt, out SolutionComponent? solution))
+            return;
 
-                    if (!harmful)
-                        continue;
+        var toRemove = FixedPoint2.Zero;
 
-                    var remaining = FixedPoint2.New(10) - toRemove;
-                    var removeAmt = FixedPoint2.Min(quant.Quantity, remaining);
-                    EntityManager.System<Shared.Chemistry.EntitySystems.SharedSolutionContainerSystem>().RemoveReagent(solEnt.Value, quant.Reagent, removeAmt);
-                    toRemove += removeAmt;
-                }
-            }
+        foreach (var quant in solution.Solution.Contents.ToArray())
+        {
+            if (toRemove >= MaxRemove)
+                break;
+
+            if (!_proto.TryIndex<ReagentPrototype>(quant.Reagent.Prototype, out var proto))
+                continue;
+
+            if (proto.Metabolisms == null || !proto.Metabolisms.Keys.Any(k => k.Id.Equals("Poison", StringComparison.OrdinalIgnoreCase)))
+                continue;
+
+            var remaining = MaxRemove - toRemove;
+            var removeAmt = FixedPoint2.Min(quant.Quantity, remaining);
+
+            _solution.RemoveReagent(solEnt, quant.Reagent, removeAmt);
+            toRemove += removeAmt;
         }
 
         // Heal over-time in 5 cycles, 3.5s apart: per tick heal Oxy 5, Brute/Burn/Toxin 4

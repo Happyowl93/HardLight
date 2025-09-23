@@ -1,7 +1,7 @@
 - type: alert
   id: VampireBlood
   icons:
-  - sprite: /Textures/Interface/Alerts/blood_counter.rsi
+  - sprite: _Starlight/Interface/Alerts/blood_counter.rsi
     state: background
   alertViewEntity: AlertVampireBloodSpriteView
   name: alerts-vampire-blood-name
@@ -12,7 +12,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: /Textures/Interface/Alerts/blood_counter.rsi
+    sprite: _Starlight/Interface/Alerts/blood_counter.rsi
     layers:
     - map: [ "enum.AlertVisualLayers.Base" ]
     - map: [ "enum.VampireVisualLayers.Digit1" ]
