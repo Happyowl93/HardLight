@@ -7,6 +7,7 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.Ensnaring.Components;
 using Content.Shared.Eye.Blinding.Components;
@@ -21,6 +22,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Physics;
 using Content.Shared.Speech.Muting;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Stealth.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Wieldable.Components;
@@ -47,6 +49,7 @@ public sealed partial class VampireSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private readonly StatusEffectsSystem _status = default!;
     // Ability constants
     private const float GlareRange = 1f;
     private const float GlareFrontStaminaDamage = 30f;
@@ -237,22 +240,16 @@ public sealed partial class VampireSystem
         if (actionEntity != null && TryComp<VampireActionComponent>(actionEntity.Value, out var vac))
         {
             if (comp.TotalBlood < vac.BloodToUnlock)
-            {
                 return false;
-            }
 
             if (vac.BloodCost > 0)
                 bloodCost = (int)vac.BloodCost;
         }
         else
-        {
             _popup.PopupEntity("DEBUG: No action entity or no VampireActionComponent found!", uid, uid);
-        }
 
         if (bloodCost <= 0)
-        {
             return true;
-        }
 
         if (comp.DrunkBlood < bloodCost)
         {
@@ -525,17 +522,16 @@ public sealed partial class VampireSystem
 
         var ourXform = Transform(uid);
         var ourDirection = ourXform.LocalRotation.ToVec();
-        var ourPosition = _transform.GetWorldPosition(ourXform);
+        var ourPosition = ourXform.LocalPosition;
 
         foreach (var target in targets)
         {
             if (target == uid)
                 continue;
 
-            var targetXform = Transform(target);
-            var targetPosition = _transform.GetWorldPosition(targetXform);
-            var vectorToTarget = targetPosition - ourPosition;
-            vectorToTarget = Vector2.Normalize(vectorToTarget);
+            var targetPosition = Transform(target).LocalPosition;
+            var vectorToTarget = Vector2.Normalize(targetPosition - ourPosition);
+
             var dot = Vector2.Dot(ourDirection, vectorToTarget);
             
             if (!TryComp<StaminaComponent>(target, out var stam))
@@ -605,8 +601,12 @@ public sealed partial class VampireSystem
         if (TryComp<StaminaComponent>(uid, out var stamina))
         {
             stamina.StaminaDamage = 0f;
-            _stamina.AdjustStatus(uid);
-            _stamina.ExitStamCrit(uid);
+            _stamina.ExitStamCrit(uid, stamina);
+            _stamina.AdjustStatus((uid, stamina));
+            RemComp<ActiveStaminaComponent>(uid);
+            _status.TryRemoveStatusEffect(uid, SharedStaminaSystem.StaminaLow);
+            _stamina.UpdateStaminaVisuals((uid, stamina));
+            Dirty(uid, stamina);
         }
         _stun.TryUnstun(uid);
         _stun.ForceStandUp(uid);
@@ -625,8 +625,12 @@ public sealed partial class VampireSystem
         if (TryComp<StaminaComponent>(uid, out var stamina))
         {
             stamina.StaminaDamage = 0f;
-            _stamina.AdjustStatus(uid);
-            _stamina.ExitStamCrit(uid);
+            _stamina.ExitStamCrit(uid, stamina);
+            _stamina.AdjustStatus((uid, stamina));
+            RemComp<ActiveStaminaComponent>(uid);
+            _status.TryRemoveStatusEffect(uid, SharedStaminaSystem.StaminaLow);
+            _stamina.UpdateStaminaVisuals((uid, stamina));
+            Dirty(uid, stamina);
         }
         _stun.TryUnstun(uid);
         _stun.ForceStandUp(uid);
