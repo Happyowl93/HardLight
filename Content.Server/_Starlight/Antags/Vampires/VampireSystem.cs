@@ -52,7 +52,7 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly VisibilitySystem _visibilitySystem = default!;
     [Dependency] private readonly SharedStealthSystem _stealth = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
-    [Dependency] private readonly Robust.Shared.GameObjects.SharedMapSystem _map = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly SharedEnsnareableSystem _ensnare = default!;

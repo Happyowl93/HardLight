@@ -49,7 +49,6 @@ public sealed partial class VampireSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private readonly StatusEffectsSystem _status = default!;
     // Ability constants
     private const float GlareRange = 1f;
     private const float GlareFrontStaminaDamage = 30f;
@@ -429,6 +428,10 @@ public sealed partial class VampireSystem
                     case VampireClassType.Umbrae:
                         TryBreakRandomLightNear(uid, 8f);
                         break;
+                    case VampireClassType.Gargantua:
+                        ApplyHealing(uid, _bruteGroupId, 3, true);
+                        ApplyHealing(uid, _burnGroupId, 3, true);
+                        break;
                 }
             }
 
@@ -604,7 +607,7 @@ public sealed partial class VampireSystem
             _stamina.ExitStamCrit(uid, stamina);
             _stamina.AdjustStatus((uid, stamina));
             RemComp<ActiveStaminaComponent>(uid);
-            _status.TryRemoveStatusEffect(uid, SharedStaminaSystem.StaminaLow);
+            _statusEffects.TryRemoveStatusEffect(uid, SharedStaminaSystem.StaminaLow);
             _stamina.UpdateStaminaVisuals((uid, stamina));
             Dirty(uid, stamina);
         }
@@ -628,7 +631,7 @@ public sealed partial class VampireSystem
             _stamina.ExitStamCrit(uid, stamina);
             _stamina.AdjustStatus((uid, stamina));
             RemComp<ActiveStaminaComponent>(uid);
-            _status.TryRemoveStatusEffect(uid, SharedStaminaSystem.StaminaLow);
+            _statusEffects.TryRemoveStatusEffect(uid, SharedStaminaSystem.StaminaLow);
             _stamina.UpdateStaminaVisuals((uid, stamina));
             Dirty(uid, stamina);
         }
