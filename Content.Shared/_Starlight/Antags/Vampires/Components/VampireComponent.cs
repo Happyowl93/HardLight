@@ -1,8 +1,5 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-using Content.Shared.Actions;
-using Content.Shared.DoAfter;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared._Starlight.Antags.Vampires;
 
@@ -87,8 +84,6 @@ public sealed partial class VampireComponent : Component
     public EntityUid? ShadowBoxingTarget = null;
     public TimeSpan? ShadowBoxingEndTime = null;
     public bool ShadowBoxingLoopRunning = false;
-
-
     public Dictionary<string, int>? PoolOriginalMasks = null;
     public Dictionary<string, int>? PoolOriginalLayers = null;
     public bool PoolOwnedGodmode = false;
@@ -164,96 +159,6 @@ public sealed class VampireActionEntities
 
     [DataField]
     public bool ShadowBoxingActive = false;
-}
-public enum VampireVisualLayers : byte
-{
-    Digit1,
-    Digit2,
-    Digit3,
-    Digit4,
-}
-
-public sealed partial class VampireToggleFangsActionEvent : InstantActionEvent;
-public sealed partial class VampireGlareActionEvent : InstantActionEvent { }
-[Serializable, NetSerializable]
-public sealed partial class VampireDrinkBloodDoAfterEvent : SimpleDoAfterEvent;
-public sealed partial class VampireRejuvenateIActionEvent : InstantActionEvent { }
-public sealed partial class VampireRejuvenateIIActionEvent : InstantActionEvent { }
-public sealed partial class VampireClassSelectActionEvent : InstantActionEvent { }
-public sealed partial class VampireHemomancerClawsActionEvent : InstantActionEvent { }
-public sealed partial class VampireSanguinePoolActionEvent : InstantActionEvent { }
-public sealed partial class VampireBloodEruptionActionEvent : InstantActionEvent { }
-public sealed partial class VampireBloodBringersRiteActionEvent : InstantActionEvent { }
-public sealed partial class VampireCloakOfDarknessActionEvent : InstantActionEvent { }
-public sealed partial class VampireShadowSnareActionEvent : WorldTargetActionEvent { }
-public sealed partial class VampireDarkPassageActionEvent : WorldTargetActionEvent { }
-public sealed partial class VampireExtinguishActionEvent : InstantActionEvent { }
-public sealed partial class VampireEternalDarknessActionEvent : InstantActionEvent { }
-public sealed partial class VampireShadowAnchorActionEvent : InstantActionEvent { }
-public sealed partial class VampireShadowBoxingActionEvent : EntityTargetActionEvent { }
-
-[Serializable, NetSerializable]
-public sealed partial class VampireClassClosedBuiMsg : BoundUserInterfaceMessage
-{
-}
-
-[Serializable, NetSerializable]
-public sealed class VampireShadowBoxingPunchEvent : EntityEventArgs
-{
-    public NetEntity Source { get; }
-    public NetEntity Target { get; }
-
-    public VampireShadowBoxingPunchEvent(NetEntity source, NetEntity target)
-    {
-        Source = source;
-        Target = target;
-    }
-}
-
-public sealed partial class VampireHemomancerTendrilsActionEvent : WorldTargetActionEvent
-{
-    [DataField]
-    public float Delay = 1.0f;
-
-    [DataField]
-    public float SlowMultiplier = 0.3f;
-
-    [DataField]
-    public float SlowDuration = 2.0f;
-
-    [DataField]
-    public float ToxinDamage = 33.0f;
-
-    [DataField]
-    public bool SpawnVisuals = true;
-}
-
-public sealed partial class VampireBloodBarrierActionEvent : WorldTargetActionEvent
-{
-    [DataField]
-    public int BarrierCount = 3;
-}
-
-[Serializable, NetSerializable]
-public enum VampireClassUiKey : byte
-{
-    Key
-}
-
-[Serializable, NetSerializable]
-public enum VampireClassType : byte
-{
-    None = 0,
-    Hemomancer = 1,
-    Umbrae = 2,
-    Gargantua = 3,
-    Dantalion = 4
-}
-
-[Serializable, NetSerializable]
-public sealed class VampireClassChosenBuiMsg : BoundUserInterfaceMessage
-{
-    public VampireClassType Choice { get; init; }
 }
 
 [RegisterComponent]
