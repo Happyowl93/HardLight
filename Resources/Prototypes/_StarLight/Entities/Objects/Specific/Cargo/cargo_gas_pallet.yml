@@ -13,12 +13,12 @@
   - type: CargoGasPallet
   - type: Sprite
     drawdepth: FloorObjects
-    sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
+    sprite: _Starlight/Structures/cargo_gas_pallet.rsi
     layers:
       - sprite: Structures/Piping/Atmospherics/pipe.rsi
         state: pipeUnaryConnectors
         map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasCanisterPort
+      - state: cargoGasPallet
         map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: AtmosPipeLayers
     spriteRsiPaths: {}
