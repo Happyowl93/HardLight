@@ -57,6 +57,9 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly SharedEnsnareableSystem _ensnare = default!;
     [Dependency] private readonly SharedChargesSystem _charges = default!;
+    [Dependency] private readonly ILogManager _log = default!;
+
+    private ISawmill? _sawmill;
 
     private const string VampireBloodAlertId = "VampireBlood";
     private const string VampireFedAlertId = "VampireFed";
@@ -93,10 +96,12 @@ public sealed partial class VampireSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        _sawmill = _log.GetSawmill("Vampire");
 
         SubscribeLocalEvent<VampireComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<VampireComponent, ComponentShutdown>(OnShutdown);
-        SubscribeAbilities();
+        InitializeAbilities();
+        InitializeHemomancer();
         InitializeObjectives();
     }
 
@@ -265,7 +270,6 @@ public sealed partial class VampireSystem : EntitySystem
             }
             _playerShadowSnares.Remove(uid);
         }
-
     }
 
     partial void SubscribeAbilities();

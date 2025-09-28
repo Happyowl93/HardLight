@@ -2,8 +2,6 @@ using Content.Client.UserInterface.Controls;
 using Content.Shared._Starlight.Antags.Vampires;
 using JetBrains.Annotations;
 using Robust.Shared.Utility;
-using Robust.Shared.IoC;
-using Robust.Shared.GameObjects;
 
 namespace Content.Client._Starlight.Antags.Vampires;
 
@@ -55,28 +53,28 @@ public sealed class VampireClassBui : BoundUserInterface
         base.Dispose(disposing);
     }
 
-    private IEnumerable<RadialMenuActionOption> CreateClassButtons()
+    private IEnumerable<RadialMenuActionOption<VampireClassType>> CreateClassButtons()
     {
-        return new List<RadialMenuActionOption>
+        return new List<RadialMenuActionOption<VampireClassType>>
         {
-            new RadialMenuActionOption<VampireClassType>(HandleClassChoice, VampireClassType.Hemomancer)
+            new(HandleClassChoice, VampireClassType.Hemomancer)
             {
-                Sprite = new SpriteSpecifier.Rsi(new ResPath("_Starlight/Vampire/Haemomancer.rsi"), "claws"),
+                IconSpecifier = RadialMenuIconSpecifier.With(new SpriteSpecifier.Rsi(new ResPath("_Starlight/Vampire/Haemomancer.rsi"), "claws")),
                 ToolTip = Loc.GetString("vampire-class-hemomancer-tooltip")
             },
-            new RadialMenuActionOption<VampireClassType>(HandleClassChoice, VampireClassType.Umbrae)
+            new(HandleClassChoice, VampireClassType.Umbrae)
             {
-                Sprite = new SpriteSpecifier.Rsi(new ResPath("_Starlight/Vampire/Umbrae.rsi"), "cloak_of_darkness"),
+                IconSpecifier = RadialMenuIconSpecifier.With(new SpriteSpecifier.Rsi(new ResPath("_Starlight/Vampire/Umbrae.rsi"), "cloak_of_darkness")),
                 ToolTip = Loc.GetString("vampire-class-umbrae-tooltip")
             },
-            new RadialMenuActionOption<VampireClassType>(HandleClassChoice, VampireClassType.Gargantua)
+            new(HandleClassChoice, VampireClassType.Gargantua)
             {
-                Sprite = new SpriteSpecifier.Rsi(new ResPath("_Starlight/Vampire/actions_vampire.rsi"), "rejuvinate"),
+                IconSpecifier = RadialMenuIconSpecifier.With(new SpriteSpecifier.Rsi(new ResPath("_Starlight/Vampire/actions_vampire.rsi"), "rejuvinate")),
                 ToolTip = Loc.GetString("vampire-class-gargantua-tooltip")
             },
-            new RadialMenuActionOption<VampireClassType>(HandleClassChoice, VampireClassType.Dantalion)
+            new(HandleClassChoice, VampireClassType.Dantalion)
             {
-                Sprite = new SpriteSpecifier.Rsi(new ResPath("_Starlight/Vampire/actions_vampire.rsi"), "fangs_extended"),
+                IconSpecifier = RadialMenuIconSpecifier.With(new SpriteSpecifier.Rsi(new ResPath("_Starlight/Vampire/actions_vampire.rsi"), "fangs_extended")),
                 ToolTip = Loc.GetString("vampire-class-dantalion-tooltip")
             }
         };
