@@ -342,24 +342,17 @@ public sealed partial class VampireSystem : EntitySystem
     {
         if (_proto.TryIndex<EntityPrototype>(actionId, out var proto) &&
             proto.TryGetComponent<VampireActionComponent>(out var vac, _componentFactory))
-        {
             return vac.BloodToUnlock;
-        }
         return 0;
     }
     private void EnsureRejuvenateUpgrade(EntityUid uid, VampireComponent comp)
     {
-        if (comp.Actions.RejuvenateIIActionEntity != null &&
-            TryComp<VampireActionComponent>(comp.Actions.RejuvenateIIActionEntity.Value, out var rejuvII))
-        {
-            if (comp.TotalBlood < rejuvII.BloodToUnlock)
-                return;
-        }
-        else
-        {
-            if (comp.TotalBlood < comp.RejuvenateIIThreshold)
-                return;
-        }
+        if (comp.Actions.RejuvenateIIActionEntity != null
+            && TryComp<VampireActionComponent>(comp.Actions.RejuvenateIIActionEntity.Value, out var rejuvII)
+            && comp.TotalBlood < rejuvII.BloodToUnlock)
+            return;
+        else if (comp.TotalBlood < comp.RejuvenateIIThreshold)
+            return;
 
         if (comp.Actions.RejuvenateIIActionEntity == null)
             _actions.AddAction(uid, ref comp.Actions.RejuvenateIIActionEntity, ActionRejuvenateIIId, uid);
@@ -418,7 +411,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (comp.ChosenClass != VampireClassType.None)
             return;
 
-        Log.Debug($"Vampire class UI closed without selection for {ToPrettyString(uid)} (blood={comp.TotalBlood})");
+        _sawmill?.Debug($"Vampire class UI closed without selection for {ToPrettyString(uid)} (blood={comp.TotalBlood})");
     }
 
     #region Objectives
@@ -429,18 +422,9 @@ public sealed partial class VampireSystem : EntitySystem
     {
         var target = _number.GetTarget(uid);
         if (args.Mind.OwnedEntity != null && TryComp<VampireComponent>(args.Mind.OwnedEntity.Value, out var vampComp))
-        {
-            if (target > 0)
-            {
-                args.Progress = MathF.Min(vampComp.TotalBlood / target, 1f);
-            }
-            else
-                args.Progress = 1f;
-        }
+            args.Progress = target > 0 ? MathF.Min(vampComp.TotalBlood / target, 1f) : 1f;
         else
-        {
             args.Progress = 0f;
-        }
     }
 
     #endregion

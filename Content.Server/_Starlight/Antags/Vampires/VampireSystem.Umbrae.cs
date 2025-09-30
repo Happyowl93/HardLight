@@ -16,6 +16,7 @@ using System.Numerics;
 using Content.Shared.Physics;
 using Content.Server.Light.EntitySystems;
 using Content.Server.Temperature.Systems;
+using Content.Shared.Light.Components;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -42,10 +43,9 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnCloackOfDarkness(EntityUid uid, VampireComponent comp, ref VampireCloakOfDarknessActionEvent args)
     {
-        if (args.Handled || !TryComp<UmbraeComponent>(uid, out var umbrae))
-            return;
-
-        if (!ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
+        if (args.Handled
+            || !TryComp<UmbraeComponent>(uid, out var umbrae)
+            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
             return;
 
         if (umbrae.CloakOfDarknessActive)
@@ -87,16 +87,15 @@ public sealed partial class VampireSystem : EntitySystem
     {
         const int MaxTicks = 3000; // +-100 minutes // Rinary - move to resources
 
-        if (tickCount >= MaxTicks || !Exists(uid))
-            return;
-
-        if (!TryComp<UmbraeComponent>(uid, out var umbrae)
+        if (tickCount >= MaxTicks
+            || !Exists(uid)
+            || !TryComp<UmbraeComponent>(uid, out var umbrae)
             || !TryComp<VampireComponent>(uid, out var vampire)
             || !umbrae.CloakOfDarknessActive)
             return;
 
-        if (TryComp<MobStateComponent>(uid, out var mobState) &&
-            mobState.CurrentState == Shared.Mobs.MobState.Dead)
+        if (TryComp<MobStateComponent>(uid, out var mobState)
+            && mobState.CurrentState == Shared.Mobs.MobState.Dead)
         {
             DeactivateCloakOfDarkness(uid, umbrae);
             if (_actions.GetAction(vampire.Actions.VampireCloakOfDarknessActionEntity) is { } action)
@@ -151,13 +150,9 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnShadowSnare(EntityUid uid, VampireComponent comp, ref VampireShadowSnareActionEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
-            return;
-
-        if (!CheckAndConsumeBloodCost(uid, comp, comp.Actions.ShadowSnareActionEntity))
+        if (args.Handled
+            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
+            || !CheckAndConsumeBloodCost(uid, comp, comp.Actions.ShadowSnareActionEntity))
             return;
 
         if (!_playerShadowSnares.TryGetValue(uid, out var playerTraps))
@@ -177,10 +172,9 @@ public sealed partial class VampireSystem : EntitySystem
 
         var target = args.Target;
         var place = target.WithPosition(target.Position.Floored() + new Vector2(args.PositionOffset, args.PositionOffset));
+
         if (!_transform.GetGrid(place).HasValue)
-        {
             return;
-        }
 
         var trap = EntityManager.SpawnEntity("VampireShadowSnareTrap", place);
         EnsureComp<ShadowSnareTrapComponent>(trap);
@@ -196,49 +190,39 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnDarkPassage(EntityUid uid, VampireComponent comp, ref VampireDarkPassageActionEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
-            return;
-
-        if (!CheckAndConsumeBloodCost(uid, comp, comp.Actions.DarkPassageActionEntity))
+        if (args.Handled
+            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
+            || !CheckAndConsumeBloodCost(uid, comp, comp.Actions.DarkPassageActionEntity))
             return;
 
         var target = args.Target;
         var curXform = Transform(uid);
-        if (curXform.MapID != _transform.GetMapId(target))
-            return;
-
-        if (!_transform.GetGrid(target).HasValue)
+        if (curXform.MapID != _transform.GetMapId(target)
+            || !_transform.GetGrid(target).HasValue)
             return;
 
         if (!IsValidTile(target) || !_interaction.InRangeUnobstructed(uid, target, range: 1000f, collisionMask: CollisionGroup.Opaque, popup: false))
         {
-            _popup.PopupEntity("The darkness here is impenetrable...", uid, uid);
+            _popup.PopupEntity("The darkness here is impenetrable...", uid, uid); // Rinary - move to locale
             return;
         }
 
-        EntityManager.SpawnEntity("VampireDarkPassageMistIn", curXform.Coordinates);
+        EntityManager.SpawnEntity("VampireDarkPassageMistIn", curXform.Coordinates); // Rinary - move to resources
 
         _transform.SetCoordinates(uid, target);
         _transform.AttachToGridOrMap(uid, curXform);
 
-        EntityManager.SpawnEntity("VampireDarkPassageMistOut", target);
+        EntityManager.SpawnEntity("VampireDarkPassageMistOut", target); // Rinary - move to resources
 
-        _popup.PopupEntity("You slipped through the darkness...", uid, uid);
+        _popup.PopupEntity("You slipped through the darkness...", uid, uid); // Rinary - move to locale
         args.Handled = true;
     }
 
     private void OnExtinguish(EntityUid uid, VampireComponent comp, ref VampireExtinguishActionEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
-            return;
-
-        if (!CheckAndConsumeBloodCost(uid, comp, comp.Actions.ExtinguishActionEntity))
+        if (args.Handled
+            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
+            || !CheckAndConsumeBloodCost(uid, comp, comp.Actions.ExtinguishActionEntity))
             return;
 
         var center = Transform(uid).Coordinates;
@@ -250,39 +234,36 @@ public sealed partial class VampireSystem : EntitySystem
             if (ent == uid)
                 continue;
 
-            if (TryComp<Shared.Light.Components.PoweredLightComponent>(ent, out var light))
+            if (TryComp<PoweredLightComponent>(ent, out var light))
             {
                 _poweredLightSystem.SetState(ent, false, light);
                 count++;
             }
         }
 
-        _popup.PopupEntity($"You absorbed the light around you...({count})", uid, uid);
+        _popup.PopupEntity($"You absorbed the light around you...({count})", uid, uid); // Rinary - move to locale
         args.Handled = true;
     }
 
     private void OnEternalDarkness(EntityUid uid, VampireComponent comp, ref VampireEternalDarknessActionEvent args)
     {
-        if (args.Handled || !TryComp<UmbraeComponent>(uid, out var umbrae))
-            return;
-
-        if (!ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
+        if (args.Handled
+            || !TryComp<UmbraeComponent>(uid, out var umbrae)
+            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
             return;
 
         if (!umbrae.EternalDarknessActive)
         {
             if (!comp.FullPower)
             {
-                _popup.PopupEntity("Your power is insufficient (need >1000 total blood & 8 unique victims).", uid, uid);
+                _popup.PopupEntity("Your power is insufficient (need >1000 total blood & 8 unique victims).", uid, uid); // Rinary - move to locale
                 args.Handled = true;
                 return;
             }
             umbrae.EternalDarknessActive = true;
         }
         else
-        {
             umbrae.EternalDarknessActive = false;
-        }
         Dirty(uid, comp);
 
         if (_actions.GetAction(comp.Actions.EternalDarknessActionEntity) is { } action)
@@ -290,44 +271,38 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (umbrae.EternalDarknessActive)
         {
-            _popup.PopupEntity("You conjured eternal darkness...", uid, uid);
+            _popup.PopupEntity("You conjured eternal darkness...", uid, uid); // Rinary - move to locale
             umbrae.EternalDarknessLoopId++;
             if (umbrae.EternalDarknessAuraEntity == null || !Exists(umbrae.EternalDarknessAuraEntity))
             {
-                var aura = Spawn("VampireEternalDarknessAura", Transform(uid).Coordinates);
+                var aura = Spawn("VampireEternalDarknessAura", Transform(uid).Coordinates); // Rinary - move to locale
                 umbrae.EternalDarknessAuraEntity = aura;
                 _transform.SetParent(aura, uid);
             }
-            StartEternalDarknessLoop(uid, args.MaxTicks, 0, args.BloodPerTick, args.TempDropInterval, args.FreezeRadius, args.TargetFreezeTemp, args.TempDropPerInterval, args.LightOffRadius);
+            StartEternalDarknessLoop(uid, comp, args.MaxTicks, 0, args.BloodPerTick, args.TempDropInterval, args.FreezeRadius, args.TargetFreezeTemp, args.TempDropPerInterval, args.LightOffRadius);
         }
         else
         {
-            _popup.PopupEntity("The eternal darkness has dissipated...", uid, uid);
+            _popup.PopupEntity("The eternal darkness has dissipated...", uid, uid); // Rinary - move to locale
             if (umbrae.EternalDarknessAuraEntity != null && Exists(umbrae.EternalDarknessAuraEntity))
-            {
                 QueueDel(umbrae.EternalDarknessAuraEntity.Value);
-            }
             umbrae.EternalDarknessAuraEntity = null;
         }
 
         args.Handled = true;
     }
-    private void StartEternalDarknessLoop(EntityUid uid, int maxTicks, int tick, int bloodPerTick, int dropInterval, float freezeRadius, float targetTemp, float tempDrop, float radius)
+    private void StartEternalDarknessLoop(EntityUid uid, VampireComponent comp, int maxTicks, int tick, int bloodPerTick, int dropInterval, float freezeRadius, float targetTemp, float tempDrop, float radius)
     {
-        if (tick >= maxTicks || !Exists(uid))
-            return;
-
-        if (!TryComp<VampireComponent>(uid, out var comp) || !TryComp<UmbraeComponent>(uid, out var umbrae) || !umbrae.EternalDarknessActive)
-            return;
-
-        if (!ValidateEternalDarknessConditions(uid, comp, umbrae))
-            return;
-
-        if (!ConsumeEternalDarknessBlood(uid, comp, umbrae, bloodPerTick))
+        if (tick >= maxTicks
+            || !Exists(uid)
+            || !TryComp<UmbraeComponent>(uid, out var umbrae)
+            || !umbrae.EternalDarknessActive
+            || !ValidateEternalDarknessConditions(uid, comp, umbrae)
+            || !ConsumeEternalDarknessBlood(uid, comp, umbrae, bloodPerTick))
             return;
 
         ProcessEternalDarknessEffects(uid, tick, dropInterval, freezeRadius, targetTemp, tempDrop, radius);
-        ScheduleNextEternalDarknessTick(uid, umbrae, maxTicks, tick, bloodPerTick, dropInterval, freezeRadius, targetTemp, tempDrop, radius);
+        ScheduleNextEternalDarknessTick(uid, comp, umbrae, maxTicks, tick, bloodPerTick, dropInterval, freezeRadius, targetTemp, tempDrop, radius);
     }
 
     private bool ValidateEternalDarknessConditions(EntityUid uid, VampireComponent comp, UmbraeComponent umbrae)
@@ -405,15 +380,13 @@ public sealed partial class VampireSystem : EntitySystem
     private void ProcessLightEffects(TransformComponent vampXform, float radius)
     {
         foreach (var ent in _lookup.GetEntitiesInRange(vampXform.Coordinates, radius))
-        {
-            if (TryComp<Shared.Light.Components.PoweredLightComponent>(ent, out var light))
+            if (TryComp<PoweredLightComponent>(ent, out var light))
                 _poweredLightSystem.SetState(ent, false, light);
-        }
     }
 
-    private void ScheduleNextEternalDarknessTick(EntityUid uid, UmbraeComponent comp, int maxTicks, int tick, int bloodPerTick, int dropInterval, float freezeRadius, float targetTemp, float tempDrop, float radius)
+    private void ScheduleNextEternalDarknessTick(EntityUid uid, VampireComponent comp, UmbraeComponent umbrae, int maxTicks, int tick, int bloodPerTick, int dropInterval, float freezeRadius, float targetTemp, float tempDrop, float radius)
     {
-        var expectedLoopId = comp.EternalDarknessLoopId;
+        var expectedLoopId = umbrae.EternalDarknessLoopId;
         Timer.Spawn(TimeSpan.FromSeconds(1), () =>
         {
             if (!Exists(uid) || !TryComp<UmbraeComponent>(uid, out var c2))
@@ -422,7 +395,7 @@ public sealed partial class VampireSystem : EntitySystem
             if (!c2.EternalDarknessActive || c2.EternalDarknessLoopId != expectedLoopId)
                 return;
 
-            StartEternalDarknessLoop(uid, maxTicks, tick + 1, bloodPerTick, dropInterval, freezeRadius, targetTemp, tempDrop, radius);
+            StartEternalDarknessLoop(uid, comp, maxTicks, tick + 1, bloodPerTick, dropInterval, freezeRadius, targetTemp, tempDrop, radius);
         });
     }
 
@@ -458,9 +431,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (_shadowSnares.Remove(trap))
         {
             foreach (var playerTraps in _playerShadowSnares.Values)
-            {
                 playerTraps.Remove(trap);
-            }
 
             if (Exists(trap))
                 QueueDel(trap);
@@ -487,13 +458,8 @@ public sealed partial class VampireSystem : EntitySystem
         if (used == EntityUid.Invalid || !HasComp<FlashComponent>(used))
             return;
 
-        if (TryComp<LimitedChargesComponent>(used, out var charges))
-        {
-            if (!_charges.IsEmpty((used, charges)))
-            {
-                _charges.TryUseCharge((used, charges));
-            }
-        }
+        if (TryComp<LimitedChargesComponent>(used, out var charges) && !_charges.IsEmpty((used, charges)))
+            _charges.TryUseCharge((used, charges));
         args.Handled = true;
         DeleteShadowSnare(uid);
         var user = args.User;
@@ -507,13 +473,10 @@ public sealed partial class VampireSystem : EntitySystem
             return;
 
         var ent = args.OtherEntity;
-        if (ent == uid)
-            return;
-        if (HasComp<VampireComponent>(ent))
-            return;
-        if (!HasComp<HumanoidAppearanceComponent>(ent))
-            return;
-        if (!TryComp<DamageableComponent>(ent, out var _))
+        if (ent == uid
+            || HasComp<VampireComponent>(ent)
+            || !HasComp<HumanoidAppearanceComponent>(ent)
+            || !TryComp<DamageableComponent>(ent, out var _))
             return;
 
         ApplyDamage(ent, _bruteGroupId, comp.ShadowSnareTriggerBrute);
@@ -542,26 +505,18 @@ public sealed partial class VampireSystem : EntitySystem
         EnsureComp<EnsnareableComponent>(ent);
 
         if (_ensnare.TryEnsnare(ent, ensnareEnt, ensnaringComponent))
-        {
             Timer.Spawn(TimeSpan.FromSeconds(0.25f), () => ShadowSnareBlindPoll(ent));
-        }
         else
-        {
             QueueDel(ensnareEnt);
-        }
 
         DeleteShadowSnare(uid);
     }
 
     private void TryClearShadowSnareBlind(EntityUid victim)
     {
-        if (!Exists(victim))
-            return;
-
-        if (!HasComp<ShadowSnareBlindMarkerComponent>(victim))
-            return;
-
-        if (TryComp<EnsnareableComponent>(victim, out var ens) && ens.IsEnsnared)
+        if (!Exists(victim)
+            || !HasComp<ShadowSnareBlindMarkerComponent>(victim)
+            || (TryComp<EnsnareableComponent>(victim, out var ens) && ens.IsEnsnared))
             return;
 
         if (HasComp<TemporaryBlindnessComponent>(victim))
@@ -572,9 +527,8 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void ShadowSnareBlindPoll(EntityUid victim)
     {
-        if (!Exists(victim))
-            return;
-        if (!HasComp<ShadowSnareBlindMarkerComponent>(victim))
+        if (!Exists(victim)
+            || !HasComp<ShadowSnareBlindMarkerComponent>(victim))
             return;
         if (TryComp<EnsnareableComponent>(victim, out var ens) && ens.IsEnsnared)
         {
@@ -586,13 +540,9 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnShadowAnchor(EntityUid uid, VampireComponent comp, ref VampireShadowAnchorActionEvent args)
     {
-        if (args.Handled || !TryComp<UmbraeComponent>(uid, out var umbrae))
-            return;
-
-        if (!ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
-            return;
-
-        if (!CheckAndConsumeBloodCost(uid, comp, comp.Actions.ShadowAnchorActionEntity))
+        if (args.Handled || !TryComp<UmbraeComponent>(uid, out var umbrae)
+            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
+            || !CheckAndConsumeBloodCost(uid, comp, comp.Actions.ShadowAnchorActionEntity))
             return;
 
         if (umbrae.SpawnedShadowAnchorBeacon != null && Exists(umbrae.SpawnedShadowAnchorBeacon))
@@ -624,11 +574,10 @@ public sealed partial class VampireSystem : EntitySystem
             return;
 
         var target = args.Target;
-        if (target == EntityUid.Invalid || target == uid)
-            return;
-        if (!Exists(target) || !HasComp<HumanoidAppearanceComponent>(target))
-            return;
-        if (!TryComp<DamageableComponent>(target, out _))
+        if (target == uid
+            || !Exists(target)
+            || !HasComp<HumanoidAppearanceComponent>(target)
+            || !TryComp<DamageableComponent>(target, out _))
             return;
 
         var now = _timing.CurTime;

@@ -150,13 +150,9 @@ public sealed partial class VampireSystem : EntitySystem
     private bool IsValidTile(EntityCoordinates coords, EntityUid? gridUid = null, MapGridComponent? gridComp = null)
     {
         gridUid ??= _transform.GetGrid(coords);
-        if (gridUid == null)
-            return false;
-
-        if (gridComp == null && !TryComp(gridUid.Value, out gridComp))
-            return false;
-
-        if (!_map.TryGetTileRef(gridUid.Value, gridComp, coords, out var tileRef))
+        if (gridUid == null
+            || (gridComp == null && !TryComp(gridUid.Value, out gridComp))
+            || !_map.TryGetTileRef(gridUid.Value, gridComp, coords, out var tileRef))
             return false;
 
         return !_turf.IsSpace(tileRef) &&
@@ -167,14 +163,7 @@ public sealed partial class VampireSystem : EntitySystem
     /// <summary>
     /// Validates if vampire has required class for the ability
     /// </summary>
-    private bool ValidateVampireClass(EntityUid uid, VampireComponent comp, VampireClassType requiredClass)
-    {
-        if (comp.ChosenClass != requiredClass)
-        {
-            return false;
-        }
-        return true;
-    }
+    private bool ValidateVampireClass(EntityUid uid, VampireComponent comp, VampireClassType requiredClass) => comp.ChosenClass == requiredClass;
 
     /// <summary>
     /// Common validation for vampire abilities 
@@ -248,18 +237,12 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnAfterInteract(EntityUid uid, VampireComponent comp, ref AfterInteractEvent args)
     {
-        if (args.Handled || !args.CanReach || !comp.FangsExtended)
-            return;
-
-        if (args.Target == null)
+        if (args.Handled || !args.CanReach || !comp.FangsExtended || !Exists(args.Target))
             return;
 
         var target = args.Target.Value;
 
-        if (target == uid)
-            return;
-
-        if (!HasComp<BloodstreamComponent>(target))
+        if (target == uid || !HasComp<BloodstreamComponent>(target))
             return;
 
         if (IsMouthBlocked(uid))
@@ -278,10 +261,9 @@ public sealed partial class VampireSystem : EntitySystem
             return;
 
         var target = args.Target;
-        if (!Exists(target) || !HasComp<BloodstreamComponent>(target))
-            return;
-
-        if (target == uid)
+        if (!Exists(target)
+            || target == uid
+            || !HasComp<BloodstreamComponent>(target))
             return;
 
         if (IsMouthBlocked(uid))
@@ -315,7 +297,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (drunkFromTarget >= comp.MaxBloodPerTarget)
         {
-            _popup.PopupEntity($"You have already drunk {comp.MaxBloodPerTarget} units of blood from this target.", uid, uid, Shared.Popups.PopupType.MediumCaution);
+            _popup.PopupEntity($"You have already drunk {comp.MaxBloodPerTarget} units of blood from this target.", uid, uid, Shared.Popups.PopupType.MediumCaution); // Rinary - move to locale
             comp.IsDrinking = false;
             return;
         }
@@ -384,13 +366,11 @@ public sealed partial class VampireSystem : EntitySystem
             {
                 comp.IsDrinking = false;
                 if (currentDrunkFromTarget >= comp.MaxBloodPerTarget)
-                    _popup.PopupEntity($"You have drunk the maximum amount of blood from this target ({comp.MaxBloodPerTarget} units).", uid, uid);
+                    _popup.PopupEntity($"You have drunk the maximum amount of blood from this target ({comp.MaxBloodPerTarget} units).", uid, uid); // Rinary - move to locale
             }
         }
         else
-        {
             comp.IsDrinking = false;
-        }
     }
 
     partial void UpdateVampireAlert(EntityUid uid)
@@ -487,9 +467,7 @@ public sealed partial class VampireSystem : EntitySystem
             }
             // If target behind
             else if (dot < -0.7f && !knockedDown)
-            {
                 _stamina.TakeStaminaDamage(target, args.BehindStaminaDamage, stam, source: uid);
-            }
             else
             {
                 _stun.TryAddParalyzeDuration(target, TimeSpan.FromSeconds(4));
@@ -519,10 +497,7 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnRejuvenateI(EntityUid uid, VampireComponent comp, ref VampireRejuvenateIActionEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!CheckAndConsumeBloodCost(uid, comp, comp.Actions.RejuvenateIActionEntity))
+        if (args.Handled || !CheckAndConsumeBloodCost(uid, comp, comp.Actions.RejuvenateIActionEntity))
             return;
 
         if (TryComp<StaminaComponent>(uid, out var stamina))
@@ -543,10 +518,7 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnRejuvenateII(EntityUid uid, VampireComponent comp, ref VampireRejuvenateIIActionEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!CheckAndConsumeBloodCost(uid, comp, comp.Actions.RejuvenateIIActionEntity))
+        if (args.Handled || !CheckAndConsumeBloodCost(uid, comp, comp.Actions.RejuvenateIIActionEntity))
             return;
 
         if (TryComp<StaminaComponent>(uid, out var stamina))
@@ -577,10 +549,9 @@ public sealed partial class VampireSystem : EntitySystem
             if (toRemove >= MaxRemove)
                 break;
 
-            if (!_proto.TryIndex<ReagentPrototype>(quant.Reagent.Prototype, out var proto))
-                continue;
-
-            if (proto.Metabolisms == null || !proto.Metabolisms.Keys.Any(k => k.Id.Equals("Poison", StringComparison.OrdinalIgnoreCase)))
+            if (!_proto.TryIndex<ReagentPrototype>(quant.Reagent.Prototype, out var proto)
+                || proto.Metabolisms == null
+                || !proto.Metabolisms.Keys.Any(k => k.Id.Equals("Poison", StringComparison.OrdinalIgnoreCase)))
                 continue;
 
             var remaining = MaxRemove - toRemove;
@@ -646,15 +617,11 @@ public sealed partial class VampireSystem : EntitySystem
             if (TryComp<PhysicsComponent>(ent, out var physics) &&
                 physics.CanCollide &&
                 (physics.CollisionMask & (int)(CollisionGroup.Impassable | CollisionGroup.Opaque)) != 0)
-            {
                 return true;
-            }
 
             // Check for door components that typically block movement
             if (HasComp<Shared.Doors.Components.DoorComponent>(ent))
-            {
                 return true;
-            }
 
             // Check entity prototype names for common wall/structure types
             if (TryComp(ent, out MetaDataComponent? meta) &&
@@ -663,9 +630,7 @@ public sealed partial class VampireSystem : EntitySystem
                 var id = meta.EntityPrototype.ID.ToLower();
                 if (id.Contains("wall") || id.Contains("grille") || id.Contains("window") ||
                     id.Contains("reinforced") || id.Contains("solid"))
-                {
                     return true;
-                }
             }
         }
         return false;
@@ -677,17 +642,13 @@ public sealed partial class VampireSystem : EntitySystem
     {
         int uniqueHumanoids = 0;
         foreach (var kv in comp.BloodDrunkFromTargets.Keys)
-        {
-            if (!Exists(kv))
-                continue;
-            if (HasComp<HumanoidAppearanceComponent>(kv))
-                uniqueHumanoids++;
-        }
+            if (Exists(kv) && HasComp<HumanoidAppearanceComponent>(kv))
+                uniqueHumanoids++; 
         comp.UniqueHumanoidVictims = uniqueHumanoids;
         var prev = comp.FullPower;
         comp.FullPower = comp.TotalBlood > 1000 && uniqueHumanoids >= 8;
         if (!prev && comp.FullPower)
-            _popup.PopupEntity("Your vampiric essence surges – full power achieved!", uid, uid);
+            _popup.PopupEntity("Your vampiric essence surges – full power achieved!", uid, uid); // Rinary - move to locale
         Dirty(uid, comp);
     }
 
@@ -696,10 +657,8 @@ public sealed partial class VampireSystem : EntitySystem
         var center = Transform(uid).Coordinates;
         var list = new List<EntityUid>();
         foreach (var ent in _lookup.GetEntitiesInRange(center, range))
-        {
             if (TryComp<Shared.Light.Components.PoweredLightComponent>(ent, out var light) && light.On)
                 list.Add(ent);
-        }
         if (list.Count == 0)
             return;
         var pick = _rand.Pick(list);
@@ -713,10 +672,8 @@ public sealed partial class VampireSystem : EntitySystem
             return false;
         var slots = new[] { "mask", "head" };
         foreach (var slot in slots)
-        {
             if (_inventory.TryGetSlotEntity(uid, slot, out var ent) && HasComp<IngestionBlockerComponent>(ent.Value))
                 return true;
-        }
         return false;
     }
 

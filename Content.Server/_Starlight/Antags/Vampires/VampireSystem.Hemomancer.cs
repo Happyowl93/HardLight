@@ -76,9 +76,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         // Auto-wield if the claws have a wieldable component and are in hand now.
         if (TryComp<WieldableComponent>(claws, out var wieldable) && _hands.IsHolding(uid, claws, out _))
-        {
             _wieldable.TryWield(claws, wieldable, uid);
-        }
 
         args.Handled = true;
     }
@@ -88,13 +86,9 @@ public sealed partial class VampireSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (!TryComp<VampireComponent>(args.Performer, out var comp))
-            return;
-
-        if (!ValidateVampireClass(args.Performer, comp, VampireClassType.Hemomancer))
-            return;
-
-        if (!CheckAndConsumeActionCost(args.Performer, comp, comp.Actions.HemomancerTendrilsActionEntity))
+        if (!TryComp<VampireComponent>(args.Performer, out var comp)
+            || !ValidateVampireClass(args.Performer, comp, VampireClassType.Hemomancer)
+            || !CheckAndConsumeActionCost(args.Performer, comp, comp.Actions.HemomancerTendrilsActionEntity))
             return;
 
         args.Handled = true;
@@ -106,9 +100,7 @@ public sealed partial class VampireSystem : EntitySystem
             return;
 
         if (args.SpawnVisuals)
-        {
             SpawnTendrilVisuals(tileCoords);
-        }
 
         ScheduleTendrilEffect(args, tileCoords);
     }
@@ -162,18 +154,14 @@ public sealed partial class VampireSystem : EntitySystem
 
         // Spawn blood puddle at center
         if (IsValidTile(targetCoords, gridUid, gridComp))
-        {
             Spawn("PuddleBlood", targetCoords);
-        }
 
         // Process damage and effects
         var hitEnemies = ProcessTendrilDamage(performerUid, targetCoords, gridUid, gridComp, toxinDamage, slowDuration, slowMultiplier, targetRange);
 
         // Schedule visual effects for hit enemies
         if (hitEnemies.Count > 0)
-        {
             Timer.Spawn(TimeSpan.FromSeconds(spawnDelay), () => SpawnTendrilEffectsOnEnemies(hitEnemies, gridUid, gridComp, positionOffset));
-        }
     }
 
     private List<EntityUid> ProcessTendrilDamage(EntityUid performerUid, EntityCoordinates targetCoords, EntityUid gridUid,
@@ -214,9 +202,7 @@ public sealed partial class VampireSystem : EntitySystem
 
             var enemyTileCoords = enemyCoords.WithPosition(enemyCoords.Position.Floored() + new Vector2(positionOffset, positionOffset));
             if (IsValidTile(enemyTileCoords, gridUid, gridComp))
-            {
                 Spawn("PuddleBlood", enemyTileCoords);
-            }
         }
     }
 
@@ -253,9 +239,9 @@ public sealed partial class VampireSystem : EntitySystem
 
         var barrierPositions = new Vector2[]
         {
-        tileCoords.Position + perpendicular,
-        tileCoords.Position,
-        tileCoords.Position - perpendicular
+            tileCoords.Position + perpendicular,
+            tileCoords.Position,
+            tileCoords.Position - perpendicular
         };
 
         int successfulBarriers = 0;
@@ -276,9 +262,7 @@ public sealed partial class VampireSystem : EntitySystem
         }
 
         if (successfulBarriers == 0)
-        {
             _popup.PopupEntity("Cannot place barriers there.", args.Performer, args.Performer);
-        }
     }
 
     // Rinary у меня лапки, помоги с этим говном пж
@@ -329,9 +313,7 @@ public sealed partial class VampireSystem : EntitySystem
             comp.PoolOwnedGodmode = true;
         }
         else
-        {
             comp.PoolOwnedGodmode = false;
-        }
 
         if (TryComp<FixturesComponent>(uid, out var fixtures) && fixtures.FixtureCount > 0)
         {
@@ -460,9 +442,7 @@ public sealed partial class VampireSystem : EntitySystem
             // Spawn("VampireBloodSpikesVisual", puddleCoords);
 
             foreach (var targetUid in targets)
-            {
                 ApplyDamage(targetUid, "Blunt", args.Damage, uid);
-            }
         }
 
         _popup.PopupEntity("You cause blood to erupt in spikes around you!", uid, uid);
@@ -568,14 +548,8 @@ public sealed partial class VampireSystem : EntitySystem
         var nearbyEntities = _lookup.GetEntitiesInRange(coords, range);
 
         foreach (var entity in nearbyEntities)
-        {
-            if (entity == uid) continue;
-
-            if (HasComp<HumanoidAppearanceComponent>(entity) && HasComp<BloodstreamComponent>(entity))
-            {
+            if (entity != uid && HasComp<HumanoidAppearanceComponent>(entity) && HasComp<BloodstreamComponent>(entity))
                 currentTargets.Add(entity);
-            }
-        }
 
         UpdateDrainBeamNetwork(uid, currentTargets, range);
 
@@ -586,9 +560,7 @@ public sealed partial class VampireSystem : EntitySystem
             ApplyHealing(uid, _bruteGroupId, healBrute, true);
             ApplyHealing(uid, _burnGroupId, healBurn, true);
             if (TryComp<StaminaComponent>(uid, out var stam))
-            {
                 _stamina.TakeStaminaDamage(uid, -healStamina, stam);
-            }
         }
 
         var expectedLoopId = hemomancer.BloodBringersRiteLoopId;
@@ -629,9 +601,7 @@ public sealed partial class VampireSystem : EntitySystem
         }
 
         foreach (var key in toRemove)
-        {
             drainBeamComp.ActiveBeams.Remove(key);
-        }
 
         foreach (var target in requiredTargets)
         {
