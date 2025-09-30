@@ -1,5 +1,6 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
@@ -22,7 +23,7 @@ public sealed partial class VampireComponent : Component
     /// <summary>
     /// Lifetime total blood drunk. Used for unlocking abilities.
     /// </summary>
-    [ DataField, AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public int TotalBlood = 0;
 
     /// <summary>
@@ -70,10 +71,6 @@ public sealed partial class VampireComponent : Component
 
     public int MaxBloodPerTarget = 200;
     public EntityUid? SpawnedClaws = null;
-    [AutoNetworkedField]
-    public bool InSanguinePool = false;
-    public int? OriginalCollisionMask = null;
-    public int? OriginalCollisionLayer = null;
     [DataField]
     public int ClassSelectThreshold = 150;
     [DataField]
@@ -84,14 +81,6 @@ public sealed partial class VampireComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public int LastRefreshedBloodLevel = -1;
 
-    [AutoNetworkedField]
-    public bool BloodBringersRiteActive = false;
-    public Dictionary<string, int>? PoolOriginalMasks = null;
-    public Dictionary<string, int>? PoolOriginalLayers = null;
-    public bool PoolOwnedGodmode = false;
-
-    public int BloodBringersRiteLoopId = 0;
-
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public bool FullPower = false;
 
@@ -100,6 +89,13 @@ public sealed partial class VampireComponent : Component
 
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public VampireClassType ChosenClass = VampireClassType.None;
+
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
+    [AutoPausedField]
+    public TimeSpan NextUpdate;
+
+    [DataField]
+    public TimeSpan UpdateDelay = TimeSpan.FromSeconds(1);
 }
 
 /// <summary>

@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared._Starlight.Antags.Vampires;
+using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Wieldable.Components;
 using Content.Shared.Damage;
@@ -15,6 +16,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
 using Content.Shared.Stealth.Components;
 using Robust.Shared.Audio;
+using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -287,10 +289,10 @@ public sealed partial class VampireSystem : EntitySystem
     // Jaunt в теории надо оформить, но как сделать так чтобы он через стены не проходил я хз
     private void OnSanguinePool(EntityUid uid, VampireComponent comp, ref VampireSanguinePoolActionEvent args)
     {
-        if (args.Handled)
+        if (args.Handled || !TryComp<HemomancerComponent>(uid, out var hemomancer))
             return;
 
-        if (comp.InSanguinePool)
+        if (hemomancer.InSanguinePool)
         {
             _popup.PopupEntity("You are already in sanguine pool form!", uid, uid);
             return;
@@ -307,11 +309,11 @@ public sealed partial class VampireSystem : EntitySystem
         if (!CheckAndConsumeBloodCost(uid, comp, comp.Actions.SanguinePoolActionEntity))
             return;
 
-        EnterSanguinePool(uid, comp, args.Duration, args.BloodDripInterval);
+        EnterSanguinePool(uid, hemomancer, args.Duration, args.BloodDripInterval);
         args.Handled = true;
     }
 
-    private void EnterSanguinePool(EntityUid uid, VampireComponent comp, int duration, float interval)
+    private void EnterSanguinePool(EntityUid uid, HemomancerComponent comp, int duration, float interval)
     {
         comp.InSanguinePool = true;
         Dirty(uid, comp);
@@ -348,8 +350,8 @@ public sealed partial class VampireSystem : EntitySystem
 
         Timer.Spawn(TimeSpan.FromSeconds(duration), () =>
         {
-            if (Exists(uid) && TryComp<VampireComponent>(uid, out var vampComp))
-                ExitSanguinePool(uid, vampComp);
+            if (Exists(uid) && TryComp<HemomancerComponent>(uid, out var hemomancer))
+                ExitSanguinePool(uid, hemomancer);
         });
 
         _popup.PopupEntity("You transform into a pool of blood!", uid, uid);
@@ -360,7 +362,7 @@ public sealed partial class VampireSystem : EntitySystem
         StartSanguinePoolBloodDrip(uid, interval, 0);
     }
 
-    private void ExitSanguinePool(EntityUid uid, VampireComponent comp)
+    private void ExitSanguinePool(EntityUid uid, HemomancerComponent comp)
     {
         if (!comp.InSanguinePool)
             return;
@@ -404,7 +406,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (tickCount >= MaxTicks || !Exists(uid))
             return;
 
-        if (!TryComp<VampireComponent>(uid, out var v) || !v.InSanguinePool)
+        if (!TryComp<HemomancerComponent>(uid, out var h) || !h.InSanguinePool)
             return;
 
         var coords = Transform(uid).Coordinates;
@@ -469,38 +471,38 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnBloodBringersRite(EntityUid uid, VampireComponent comp, ref VampireBloodBringersRiteActionEvent args)
     {
-        if (args.Handled)
+        if (args.Handled || !TryComp<HemomancerComponent>(uid, out var hemomancer))
             return;
 
-        if (comp.BloodBringersRiteActive)
+        if (hemomancer.BloodBringersRiteActive)
         {
-            DeactivateBloodBringersRite(uid, comp);
-            _popup.PopupEntity("Blood Bringers Rite deactivated", uid, uid);
+            DeactivateBloodBringersRite(uid, hemomancer);
+            _popup.PopupEntity("Blood Bringers Rite deactivated", uid, uid); // Rinary - move to locale
         }
         else
         {
             if (!comp.FullPower)
             {
-                _popup.PopupEntity("You lack full vampiric power (need above 1000 total blood & 8 unique victims)", uid, uid);
+                _popup.PopupEntity("You lack full vampiric power (need above 1000 total blood & 8 unique victims)", uid, uid); // Rinary - move to locale
                 return;
             }
             if (comp.DrunkBlood < args.Cost)
             {
-                _popup.PopupEntity("Not enough blood to activate Blood Bringers Rite", uid, uid);
+                _popup.PopupEntity("Not enough blood to activate Blood Bringers Rite", uid, uid); // Rinary - move to locale
                 return;
             }
 
-            ActivateBloodBringersRite(uid, comp, args.ToggleInterval, args.Cost, args.Range, args.Damage, args.HealBrute, args.HealBurn, args.HealStamina);
-            _popup.PopupEntity("Blood Bringers Rite activated!", uid, uid);
+            ActivateBloodBringersRite(uid, hemomancer, args.ToggleInterval, args.Cost, args.Range, args.Damage, args.HealBrute, args.HealBurn, args.HealStamina);
+            _popup.PopupEntity("Blood Bringers Rite activated!", uid, uid); // Rinary - move to locale
         }
 
         if (_actions.GetAction(comp.Actions.BloodBringersRiteActionEntity) is { } action)
-            _actions.SetToggled(action.AsNullable(), comp.BloodBringersRiteActive);
+            _actions.SetToggled(action.AsNullable(), hemomancer.BloodBringersRiteActive);
 
         args.Handled = true;
     }
 
-    private void ActivateBloodBringersRite(EntityUid uid, VampireComponent comp, float interval, int cost, float range, float damage, float healBrute, float healBurn, float healStamina)
+    private void ActivateBloodBringersRite(EntityUid uid, HemomancerComponent comp, float interval, int cost, float range, float damage, float healBrute, float healBurn, float healStamina)
     {
         comp.BloodBringersRiteActive = true;
         comp.BloodBringersRiteLoopId++;
@@ -513,7 +515,7 @@ public sealed partial class VampireSystem : EntitySystem
         StartBloodBringersRiteLoop(uid, interval, 0, cost, range, damage, healBrute, healBurn, healStamina);
     }
 
-    private void DeactivateBloodBringersRite(EntityUid uid, VampireComponent comp)
+    private void DeactivateBloodBringersRite(EntityUid uid, HemomancerComponent comp)
     {
         comp.BloodBringersRiteActive = false;
 
@@ -537,19 +539,19 @@ public sealed partial class VampireSystem : EntitySystem
         if (tickCount >= MaxTicks || !Exists(uid))
             return;
 
-        if (!TryComp<VampireComponent>(uid, out var comp) || !comp.BloodBringersRiteActive)
+        if (!TryComp<VampireComponent>(uid, out var comp) || !TryComp<HemomancerComponent>(uid, out var hemomancer) || !hemomancer.BloodBringersRiteActive)
             return;
 
         if (TryComp<MobStateComponent>(uid, out var mobState) &&
             mobState.CurrentState == Shared.Mobs.MobState.Dead)
         {
-            DeactivateBloodBringersRite(uid, comp);
+            DeactivateBloodBringersRite(uid, hemomancer);
             return;
         }
 
         if (comp.DrunkBlood < cost)
         {
-            DeactivateBloodBringersRite(uid, comp);
+            DeactivateBloodBringersRite(uid, hemomancer);
             _popup.PopupEntity("Blood Bringers Rite deactivated - not enough blood", uid, uid);
 
             if (_actions.GetAction(comp.Actions.BloodBringersRiteActionEntity) is { } action)
@@ -589,11 +591,11 @@ public sealed partial class VampireSystem : EntitySystem
             }
         }
 
-        var expectedLoopId = comp.BloodBringersRiteLoopId;
+        var expectedLoopId = hemomancer.BloodBringersRiteLoopId;
 
         Timer.Spawn(TimeSpan.FromSeconds(interval), () =>
         {
-            if (!Exists(uid) || !TryComp<VampireComponent>(uid, out var c2)) return;
+            if (!Exists(uid) || !TryComp<HemomancerComponent>(uid, out var c2)) return;
             if (!c2.BloodBringersRiteActive || c2.BloodBringersRiteLoopId != expectedLoopId) return;
             StartBloodBringersRiteLoop(uid, interval, tickCount + 1, cost, range, damage, healBrute, healBurn, healStamina);
         });

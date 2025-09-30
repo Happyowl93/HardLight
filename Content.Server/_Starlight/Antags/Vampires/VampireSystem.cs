@@ -85,9 +85,6 @@ public sealed partial class VampireSystem : EntitySystem
     private const string ActionEternalDarknessId = "ActionVampireEternalDarkness";
     private const string ActionShadowAnchorId = "ActionVampireShadowAnchor";
     private const string ActionShadowBoxingId = "ActionVampireShadowBoxing";
-
-    private TimeSpan _nextDecay; // Rinary -  move to resources
-    private readonly TimeSpan _decayInterval = TimeSpan.FromSeconds(1); // Rinary -  move to resources
     private static readonly ProtoId<DamageGroupPrototype> _bruteGroupId = "Brute";
     private static readonly ProtoId<DamageGroupPrototype> _burnGroupId = "Burn";
     private static readonly ProtoId<DamageTypePrototype> _poisonTypeId = "Poison";
@@ -112,17 +109,14 @@ public sealed partial class VampireSystem : EntitySystem
         if (!_timing.IsFirstTimePredicted)
             return;
 
-        var needsDecay = _timing.CurTime >= _nextDecay;
-        if (needsDecay)
-            _nextDecay = _timing.CurTime + _decayInterval;
-
         var query = EntityQueryEnumerator<VampireComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            var bloodChanged = false;
+            if (_timing.CurTime <= comp.NextUpdate)
+                return;
 
-            if (needsDecay)
-                bloodChanged = ProcessBloodDecay(uid, comp);
+            comp.NextUpdate = _timing.CurTime + comp.UpdateDelay;
+            var bloodChanged = ProcessBloodDecay(uid, comp);
 
             if (bloodChanged || ShouldRefreshActions(comp))
                 RefreshAllActions(uid, comp);
@@ -397,6 +391,16 @@ public sealed partial class VampireSystem : EntitySystem
         }
 
         comp.ChosenClass = msg.Choice;
+
+        switch (msg.Choice)
+        {
+            case VampireClassType.Umbrae:
+                AddComp<UmbraeComponent>(uid);
+                break;
+            case VampireClassType.Hemomancer:
+                AddComp<HemomancerComponent>(uid);
+                break;
+        }
 
         if (comp.Actions.ClassSelectActionEntity != null)
         {
