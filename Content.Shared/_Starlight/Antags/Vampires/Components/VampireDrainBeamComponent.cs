@@ -1,7 +1,7 @@
 using Robust.Shared.GameObjects;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Starlight.Antags.Vampires;
+namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
 /// <summary>
 /// Tracks active vampire drain beam connections for Blood Bringers Rite

@@ -1,4 +1,5 @@
 using Content.Shared._Starlight.Antags.Vampires;
+using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;

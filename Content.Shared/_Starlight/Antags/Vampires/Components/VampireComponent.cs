@@ -1,13 +1,16 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Starlight.Antags.Vampires;
+namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
 [RegisterComponent, NetworkedComponent]
-[AutoGenerateComponentState]
+[AutoGenerateComponentState, AutoGenerateComponentPause]
 
 public sealed partial class VampireComponent : Component
 {
+    /// <summary>
+    /// Default abilities, they will be added at start.
+    /// </summary>
     [DataField]
     public List<ProtoId<EntityPrototype>> BaseVampireActions = new()
     {
@@ -17,40 +20,51 @@ public sealed partial class VampireComponent : Component
     };
 
     /// <summary>
-    /// Lifetime total blood drunk. Used for unlocking abilities
+    /// Lifetime total blood drunk. Used for unlocking abilities.
     /// </summary>
     [ DataField, AutoNetworkedField]
     public int TotalBlood = 0;
 
     /// <summary>
-    /// Total blood drunk by this vampire, used for blood cost calculations
+    /// Total blood drunk by this vampire, used for blood cost calculations.
     /// </summary>
     [DataField, AutoNetworkedField]
     public int DrunkBlood = 0;
 
+    /// <summary>
+    /// Determines whether the fangs are extended or not.
+    /// </summary>
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public bool FangsExtended = false;
 
     public float SipAmount = 10f;
 
     /// <summary>
-    /// Current blood fullness used instead of normal food needs
+    /// Current blood fullness used instead of normal food needs.
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public float BloodFullness = 90f;
-    [DataField]
-    public float MaxBloodFullness = 200f; // keep configurable
 
     /// <summary>
-    /// Decay rate per second for blood fullness
+    /// Max amount of blood which can be drained from one person.
+    /// </summary>
+    [DataField]
+    public float MaxBloodFullness = 200f;
+
+    /// <summary>
+    /// Decay rate per second for blood fullness.
     /// </summary>
     public float FullnessDecayPerSecond = 0.25f;
 
     public VampireActionEntities Actions = new();
+
+    /// <summary>
+    /// Determines whether the vampire is drinking at the moment
+    /// </summary>
     public bool IsDrinking = false;
 
     /// <summary>
-    /// tracking how much blood was drunk from each target
+    /// tracking how much blood was drunk from each target.
     /// </summary>
     public Dictionary<EntityUid, int> BloodDrunkFromTargets = new();
 
@@ -72,25 +86,11 @@ public sealed partial class VampireComponent : Component
 
     [AutoNetworkedField]
     public bool BloodBringersRiteActive = false;
-    [AutoNetworkedField]
-    public bool CloakOfDarknessActive = false;
-    [AutoNetworkedField]
-    public bool EternalDarknessActive = false;
-    public EntityUid? EternalDarknessAuraEntity = null;
-    [AutoNetworkedField]
-    public bool ShadowBoxingActive = false;
-
-    [AutoNetworkedField]
-    public EntityUid? ShadowBoxingTarget = null;
-    public TimeSpan? ShadowBoxingEndTime = null;
-    public bool ShadowBoxingLoopRunning = false;
     public Dictionary<string, int>? PoolOriginalMasks = null;
     public Dictionary<string, int>? PoolOriginalLayers = null;
     public bool PoolOwnedGodmode = false;
 
     public int BloodBringersRiteLoopId = 0;
-    public int CloakOfDarknessLoopId = 0;
-    public int EternalDarknessLoopId = 0;
 
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public bool FullPower = false;
@@ -100,9 +100,6 @@ public sealed partial class VampireComponent : Component
 
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public VampireClassType ChosenClass = VampireClassType.None;
-
-    [AutoNetworkedField]
-    public EntityUid? SpawnedShadowAnchorBeacon = null;
 }
 
 /// <summary>

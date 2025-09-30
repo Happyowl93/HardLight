@@ -1,4 +1,6 @@
 using Content.Shared._Starlight.Antags.Vampires;
+using Content.Shared._Starlight.Antags.Vampires.Components;
+using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Content.Shared.Alert;
 using Content.Server.Actions;
 using Content.Server.Body.Systems;
@@ -61,6 +63,8 @@ public sealed partial class VampireSystem : EntitySystem
 
     private ISawmill? _sawmill;
 
+    // Rinary - move to resources
+
     private const string VampireBloodAlertId = "VampireBlood";
     private const string VampireFedAlertId = "VampireFed";
     private const string ActionToggleFangsId = "ActionVampireToggleFangs";
@@ -68,10 +72,6 @@ public sealed partial class VampireSystem : EntitySystem
     private const string ActionRejuvenateIId = "ActionVampireRejuvenateI";
     private const string ActionRejuvenateIIId = "ActionVampireRejuvenateII";
     private const string ActionClassSelectId = "ActionVampireClassSelect";
-    private const string ActionClassHemomancerId = "ActionVampireHemomancer";
-    private const string ActionClassUmbraeId = "ActionVampireUmbrae";
-    private const string ActionClassGargantuaId = "ActionVampireGargantua";
-    private const string ActionClassDantalionId = "ActionVampireDantalion";
     private const string ActionHemomancerClawsId = "ActionVampireHemomancerClaws";
     private const string ActionHemomancerTendrilsId = "ActionVampireHemomancerTendrils";
     private const string ActionBloodBarrierId = "ActionVampireBloodBarrier";
@@ -86,8 +86,8 @@ public sealed partial class VampireSystem : EntitySystem
     private const string ActionShadowAnchorId = "ActionVampireShadowAnchor";
     private const string ActionShadowBoxingId = "ActionVampireShadowBoxing";
 
-    private TimeSpan _nextDecay;
-    private readonly TimeSpan _decayInterval = TimeSpan.FromSeconds(1);
+    private TimeSpan _nextDecay; // Rinary -  move to resources
+    private readonly TimeSpan _decayInterval = TimeSpan.FromSeconds(1); // Rinary -  move to resources
     private static readonly ProtoId<DamageGroupPrototype> _bruteGroupId = "Brute";
     private static readonly ProtoId<DamageGroupPrototype> _burnGroupId = "Burn";
     private static readonly ProtoId<DamageTypePrototype> _poisonTypeId = "Poison";
@@ -127,7 +127,8 @@ public sealed partial class VampireSystem : EntitySystem
             if (bloodChanged || ShouldRefreshActions(comp))
                 RefreshAllActions(uid, comp);
 
-            UpdateCloakToggleState(comp);
+            if (TryComp<UmbraeComponent>(uid, out var umbrae))
+                UpdateCloakToggleState(comp, umbrae);
 
             if (bloodChanged)
             {
@@ -188,12 +189,12 @@ public sealed partial class VampireSystem : EntitySystem
             TryRefreshVampireAction(uid, actionEntity);
     }
 
-    private void UpdateCloakToggleState(VampireComponent comp)
+    private void UpdateCloakToggleState(VampireComponent vampire, UmbraeComponent umbrae)
     {
-        if (comp.Actions.VampireCloakOfDarknessActionEntity != null)
+        if (vampire.Actions.VampireCloakOfDarknessActionEntity != null)
         {
-            if (_actions.GetAction(comp.Actions.VampireCloakOfDarknessActionEntity) is { } cloakAction)
-                _actions.SetToggled(cloakAction.AsNullable(), comp.CloakOfDarknessActive);
+            if (_actions.GetAction(vampire.Actions.VampireCloakOfDarknessActionEntity) is { } cloakAction)
+                _actions.SetToggled(cloakAction.AsNullable(), umbrae.CloakOfDarknessActive);
         }
     }
 
@@ -255,10 +256,13 @@ public sealed partial class VampireSystem : EntitySystem
             drainBeamComp.ActiveBeams.Clear();
         }
 
-        comp.ShadowBoxingActive = false;
-        comp.ShadowBoxingTarget = null;
-        comp.ShadowBoxingEndTime = null;
-        comp.ShadowBoxingLoopRunning = false;
+        if (TryComp<UmbraeComponent>(uid, out var umbrae))
+        {
+            umbrae.ShadowBoxingActive = false;
+            umbrae.ShadowBoxingTarget = null;
+            umbrae.ShadowBoxingEndTime = null;
+            umbrae.ShadowBoxingLoopRunning = false;
+        }
 
         if (_playerShadowSnares.TryGetValue(uid, out var snares))
         {

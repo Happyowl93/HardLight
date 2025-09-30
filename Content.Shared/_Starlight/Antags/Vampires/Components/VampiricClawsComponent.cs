@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Starlight.Antags.Vampires;
+namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class VampiricClawsComponent : Component

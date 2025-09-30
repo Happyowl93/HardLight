@@ -1,4 +1,4 @@
-using Content.Shared._Starlight.Antags.Vampires;
+using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Events;
@@ -32,8 +32,7 @@ public sealed class VampiricClawsSystem : EntitySystem
         SubscribeLocalEvent<VampiricClawsComponent, ItemUnwieldedEvent>(OnUnwielded);
     }
 
-    private void OnInit(Entity<VampiricClawsComponent> ent, ref MapInitEvent args)
-        => EnsureComp<UnremoveableComponent>(ent);
+    private void OnInit(Entity<VampiricClawsComponent> ent, ref MapInitEvent args) => EnsureComp<UnremoveableComponent>(ent);
 
     private void OnUseInHand(Entity<VampiricClawsComponent> ent, ref UseInHandEvent args)
     {
@@ -42,7 +41,8 @@ public sealed class VampiricClawsSystem : EntitySystem
 
         args.Handled = true;
 
-        ClearClawsReference(ent.Owner, args.User);
+        if (TryComp<VampireComponent>(args.User, out var vamp))
+            ClearClawsReference(ent.Owner, vamp);
 
         QueueDel(ent);
     }
@@ -54,15 +54,10 @@ public sealed class VampiricClawsSystem : EntitySystem
 
         var bloodGained = 0;
         foreach (var hitEntity in args.HitEntities)
-        {
-            if (HasComp<HumanoidAppearanceComponent>(hitEntity) && TryComp<BloodstreamComponent>(hitEntity, out var victimBlood))
-            {
-                if (_bloodstream.TryModifyBloodLevel((hitEntity, victimBlood), -ent.Comp.BloodPerHit))
-                {
-                    bloodGained += ent.Comp.BloodPerHit;
-                }
-            }
-        }
+            if (HasComp<HumanoidAppearanceComponent>(hitEntity)
+                && TryComp<BloodstreamComponent>(hitEntity, out var victimBlood)
+                && _bloodstream.TryModifyBloodLevel((hitEntity, victimBlood), -ent.Comp.BloodPerHit))
+                bloodGained += ent.Comp.BloodPerHit;
 
         if (bloodGained > 0 && TryComp<VampireComponent>(args.User, out var vamp))
         {
@@ -73,36 +68,26 @@ public sealed class VampiricClawsSystem : EntitySystem
             Dirty(args.User, vamp);
 
             if (TryComp<HungerComponent>(args.User, out var hunger))
-            {
                 _hunger.ModifyHunger(args.User, bloodGained * 2, hunger);
-            }
 
             ent.Comp.HitsRemaining--;
             Dirty(ent);
             if (ent.Comp.HitsRemaining <= 0)
             {
-                ClearClawsReference(ent.Owner, args.User);
+                ClearClawsReference(ent.Owner, vamp);
                 QueueDel(ent);
             }
         }
     }
 
-    private void ClearClawsReference(EntityUid claws, EntityUid user)
-    {
-        if (TryComp<VampireComponent>(user, out var vampire) &&
-            vampire.SpawnedClaws == claws)
-        {
-            vampire.SpawnedClaws = null;
-        }
-    }
+    private void ClearClawsReference(EntityUid claws, VampireComponent vampire)
+        => vampire.SpawnedClaws = vampire.SpawnedClaws == claws ? null : vampire.SpawnedClaws;
 
     private void OnUnwielded(Entity<VampiricClawsComponent> ent, ref ItemUnwieldedEvent args)
     {
         if (TryComp<VampireComponent>(args.User, out var vampire) &&
             vampire.SpawnedClaws == ent.Owner)
-        {
             vampire.SpawnedClaws = null;
-        }
 
         QueueDel(ent);
     }

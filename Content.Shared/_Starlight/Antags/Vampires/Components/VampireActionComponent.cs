@@ -1,7 +1,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Starlight.Antags.Vampires;
+namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
 /// <summary>
 /// Attach to a spawned action entity to define Vampire-specific gating and costs

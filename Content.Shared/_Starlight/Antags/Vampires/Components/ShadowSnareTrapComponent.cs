@@ -1,6 +1,6 @@
 using Robust.Shared.GameObjects;
 
-namespace Content.Shared._Starlight.Antags.Vampires;
+namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
 [RegisterComponent]
 public sealed partial class ShadowSnareTrapComponent : Component
