@@ -97,6 +97,8 @@
   - MagicCrayon #SL
   - HappyHonk #SL
   - leftripperarm #SL
+  - PersonalAI #SL
+  - GoldenPersonalAI #SL
 
 - type: loadoutGroup
   id: Glasses

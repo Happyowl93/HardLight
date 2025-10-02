@@ -447,3 +447,25 @@
   storage:
     back: 
       - LeftArmCyberRipper
+
+- type: loadout
+  id: PersonalAI
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 72000 #20hr
+  storage:
+    back: 
+      - PersonalAI
+
+- type: loadout
+  id: GoldenPersonalAI
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+        time: 180000 # 50hr # TODO: Replace with pAI 2.5hr when implemented
+  storage:
+    back: 
+      - GoldenPersonalAI
