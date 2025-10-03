@@ -480,14 +480,7 @@ public partial class SharedBodySystem
                 continue;
 
             walkSpeed += legModifier.WalkSpeed;
-
-            // 🌟Starlight🌟 Start
-            if (TryComp<MovementBodyPartHinderedByClothingComponent>(legEntity, out var hinderModifier))
-                sprintSpeed += legModifier.SprintSpeed * (1 - hinderModifier.HinderAmount);
-            else
-                sprintSpeed += legModifier.SprintSpeed;
-            // 🌟Starlight🌟 End
-
+            sprintSpeed += legModifier.SprintSpeed;
             acceleration += legModifier.Acceleration;
             maxDensity += legModifier.MaxDensity; // 🌟Starlight🌟
         }
