@@ -3,7 +3,7 @@ using Content.Shared._Starlight.UI;
 using Content.Shared.Alert;
 using Content.Shared.PowerCell.Components;
 
-namespace Content.Server._Starlight.UI;
+namespace Content.Server._Starlight.Alert;
 
 public sealed partial class BatteryStatusSystem : EntitySystem
 {
