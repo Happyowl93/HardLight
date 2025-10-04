@@ -1,5 +1,5 @@
 - type: entity
-  parent: [BaseMob, StripableInventoryBase]
+  parent: [BaseMob, StripableInventoryBase, BaseSiliconLanguages] #Starlight Languages
   id: BaseBorgChassisNotIonStormable
   name: cyborg
   description: A man-machine hybrid that assists in station activity. They love being asked to state their laws over and over.
@@ -274,7 +274,7 @@
     - Scratch
     - SolCommon
     - Thaveyan
-  # Starlight-end
+  #endregion
 
 - type: entity
   abstract: true
