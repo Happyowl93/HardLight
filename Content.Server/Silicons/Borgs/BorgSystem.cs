@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Server._Starlight.UI;
 using Content.Server.Actions;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -65,6 +66,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
+    [Dependency] private readonly BatteryStatusSystem _batteryStatus = default!; // Starlight
 
     public static readonly ProtoId<JobPrototype> BorgJobId = "Borg";
 
@@ -96,7 +98,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
     private void OnMapInit(EntityUid uid, BorgChassisComponent component, MapInitEvent args)
     {
-        UpdateBatteryAlert((uid, component));
+        _batteryStatus.UpdateBatteryAlert(uid);
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
     }
 
@@ -278,7 +280,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
     private void OnPowerCellChanged(EntityUid uid, BorgChassisComponent component, PowerCellChangedEvent args)
     {
-        UpdateBatteryAlert((uid, component));
+        _batteryStatus.UpdateBatteryAlert((uid));
 
         // if we aren't drawing and suddenly get enough power to draw again, reeanble.
         if (_powerCell.HasDrawCharge(uid))
@@ -358,28 +360,6 @@ public sealed partial class BorgSystem : SharedBorgSystem
     private void OnBrainPointAttempt(EntityUid uid, BorgBrainComponent component, PointAttemptEvent args)
     {
         args.Cancel();
-    }
-
-    private void UpdateBatteryAlert(Entity<BorgChassisComponent> ent, PowerCellSlotComponent? slotComponent = null)
-    {
-        if (!_powerCell.TryGetBatteryFromSlot(ent, out var battery, slotComponent))
-        {
-            _alerts.ClearAlert(ent.Owner, ent.Comp.BatteryAlert);
-            _alerts.ShowAlert(ent.Owner, ent.Comp.NoBatteryAlert);
-            return;
-        }
-
-        var chargePercent = (short) MathF.Round(battery.CurrentCharge / battery.MaxCharge * 10f);
-
-        // we make sure 0 only shows if they have absolutely no battery.
-        // also account for floating point imprecision
-        if (chargePercent == 0 && _powerCell.HasDrawCharge(ent, cell: slotComponent))
-        {
-            chargePercent = 1;
-        }
-
-        _alerts.ClearAlert(ent.Owner, ent.Comp.NoBatteryAlert);
-        _alerts.ShowAlert(ent.Owner, ent.Comp.BatteryAlert, chargePercent);
     }
 
     public bool TryEjectPowerCell(EntityUid uid, BorgChassisComponent component, [NotNullWhen(true)] out List<EntityUid>? ents)

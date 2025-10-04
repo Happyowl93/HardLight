@@ -252,8 +252,7 @@
   - type: CyborgSparkEffect
   - type: StationAIShunt
   - type: Crawler
-  #endregion
-  # Starlight-start: Languages
+  - type: BatteryStatus
   - type: LanguageKnowledge
     speaks:
     - GalacticCommon
