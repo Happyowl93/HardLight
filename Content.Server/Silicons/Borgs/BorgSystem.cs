@@ -204,13 +204,13 @@ public sealed partial class BorgSystem : SharedBorgSystem
             //#region Starlight
             //re-target the station-AI's shunt target to the chassis insteaf of the brain
             if (TryComp<StationAIShuntComponent>(args.Entity, out var shunt) &&
-                TryComp<StationAIShuntableComponent>(GetEntity(shunt.Return), out var shuntable) &&
+                TryComp<StationAIShuntableComponent>(shunt.Return, out var shuntable) &&
                 EnsureComp<StationAIShuntComponent>(uid, out var borgShunt)
                 )
                 {
                     shuntable.Inhabited = uid;
                     borgShunt.Return = shunt.Return;
-                    borgShunt.ReturnAction = GetNetEntity(_actions.AddAction(uid, shuntable.UnshuntAction));
+                    borgShunt.ReturnAction = _actions.AddAction(uid, shuntable.UnshuntAction);
                 }
             //#endregion Starlight
             _mind.TransferTo(mindId, uid, mind: mind);
@@ -226,11 +226,11 @@ public sealed partial class BorgSystem : SharedBorgSystem
             //#region Starlight
             //re-target the station-AI's shunt target to the brain instead of the borg. so it doesn't get lost.
             if (TryComp<StationAIShuntComponent>(args.Entity, out var shunt) &&
-                TryComp<StationAIShuntableComponent>(GetEntity(shunt.Return), out var shuntable) &&
+                TryComp<StationAIShuntableComponent>(shunt.Return, out var shuntable) &&
                 TryComp<StationAIShuntComponent>(uid, out var borgShunt))
                 {
                     shuntable.Inhabited = args.Entity;
-                    var shuntActionUid = GetEntity(borgShunt.ReturnAction);
+                    var shuntActionUid = borgShunt.ReturnAction;
                     if (TryComp<ActionComponent>(shuntActionUid, out var action))
                         _actions.RemoveAction((shuntActionUid.Value, action)); //delete the action as we leave the body
                     borgShunt.Return = null;

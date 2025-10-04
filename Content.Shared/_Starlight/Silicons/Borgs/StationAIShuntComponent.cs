@@ -15,14 +15,14 @@ public sealed partial class StationAIShuntComponent : Component
     /// </summary>
     [ViewVariables]
     [DataField, AutoNetworkedField]
-    public NetEntity? Return = null;
+    public EntityUid? Return = null;
 
     /// <summary>
     /// Holds the euid of the action so we can delete it when shunting out.
     /// </summary>
     [ViewVariables]
     [DataField, AutoNetworkedField]
-    public NetEntity? ReturnAction = null;
+    public EntityUid? ReturnAction = null;
 
     /// <summary>
     /// what was the lawset of the chassis before the AI shunted into it.

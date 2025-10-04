@@ -75,7 +75,7 @@ public sealed class StationAIShuntSystem : EntitySystem
         }
         shunt.Return = uid;
         _mindSystem.TransferTo(mindId, target);
-        shunt.ReturnAction = GetNetEntity(_actionSystem.AddAction(target, shuntable.UnshuntAction.Id));
+        shunt.ReturnAction = _actionSystem.AddAction(target, shuntable.UnshuntAction.Id);
         shuntable.Inhabited = target;
 
         if (TryComp<SiliconLawProviderComponent>(uid, out var coreLaws))
@@ -112,8 +112,8 @@ public sealed class StationAIShuntSystem : EntitySystem
         if (!_mindSystem.TryGetMind(uid, out var mindId, out var _))
             return;
         
-        var shuntActionUid = GetEntity(shunt.ReturnAction);
-        var shuntReturnUid = GetEntity(shunt.Return);
+        var shuntActionUid = shunt.ReturnAction;
+        var shuntReturnUid = shunt.Return;
 
         if (!TryComp<ActionComponent>(shuntActionUid, out var act))
             return; //Somehow the action does not have action component? invalid perhaps?
@@ -129,7 +129,7 @@ public sealed class StationAIShuntSystem : EntitySystem
             if (!TryComp<StationAIShuntComponent>(brain, out var brainShunt))
                 return; //Chassis brain is not able to be shunted into so how is AI controlling it???
             
-            var brainActionUid = GetEntity(brainShunt.ReturnAction);
+            var brainActionUid = brainShunt.ReturnAction;
             
             if (!TryComp<ActionComponent>(brainActionUid, out var brainAct))
                 return; //Somehow the action does not have action component? invalid perhaps?
