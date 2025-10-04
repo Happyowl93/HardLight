@@ -98,7 +98,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
     private void OnMapInit(EntityUid uid, BorgChassisComponent component, MapInitEvent args)
     {
-        _batteryStatus.UpdateBatteryAlert(uid);
+        _batteryStatus.UpdateBatteryAlert(uid); // Starlight
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
     }
 
@@ -280,7 +280,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
     private void OnPowerCellChanged(EntityUid uid, BorgChassisComponent component, PowerCellChangedEvent args)
     {
-        _batteryStatus.UpdateBatteryAlert((uid));
+        _batteryStatus.UpdateBatteryAlert((uid));// Starlight
 
         // if we aren't drawing and suddenly get enough power to draw again, reeanble.
         if (_powerCell.HasDrawCharge(uid))
