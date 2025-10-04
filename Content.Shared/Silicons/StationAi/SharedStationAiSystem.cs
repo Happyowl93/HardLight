@@ -323,7 +323,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         var coreHasAi = false; // Starlight-edit
 
         if (TryComp(args.Target, out StationAiHolderComponent? targetHolder)) // Starlight-edit
-            coreHasAi = _slots.CanEject(args.Target.Value, args.User, targetHolder.Slot); // Starlight-edit
+            coreHasAi = targetHolder.Slot.Item != null; // Starlight-edit
 
         //Don't want to download/upload between several intellicards. You can just pick it up at that point.
         if (HasComp<IntellicardComponent>(args.Target))
@@ -333,7 +333,6 @@ public abstract partial class SharedStationAiSystem : EntitySystem
             return;
 
         var cardHasAi = ent.Comp.Slot.Item != null;
-        var coreHasAi = targetHolder.Slot.Item != null;
 
         // Starlight-start: Downloadable borgs
 
