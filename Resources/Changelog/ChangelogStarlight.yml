@@ -16822,5 +16822,40 @@ Entries:
   id: 179600
   time: '2025-10-02T05:41:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1796
+- author: CrazyPhantom
+  changes:
+  - message: Fixes ID card consoles not being able to change access
+    type: Fix
+  id: 180900
+  time: '2025-10-03T02:17:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1809
+- author: CommanderAlex365
+  changes:
+  - message: Thaven emotes now have sounds (screaming, laughing, etc.)
+    type: Fix
+  id: 168200
+  time: '2025-10-03T03:48:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1682
+- author: CawsForConcern
+  changes:
+  - message: Updated label on one TTS voice
+    type: Tweak
+  id: 182600
+  time: '2025-10-04T03:58:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1826
+- author: walksanatora
+  changes:
+  - message: Added upstream content
+    type: Add
+  id: 181200
+  time: '2025-10-04T05:01:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1812
+- author: walksanatora
+  changes:
+  - message: Sans antag rolebans (we need more time to bake those)
+    type: Remove
+  id: 181201
+  time: '2025-10-04T05:01:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1812
 Order: -1
 
