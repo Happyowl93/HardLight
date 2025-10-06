@@ -113,6 +113,7 @@
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "neck" ]
+    - map: [ "misc" ]
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
@@ -147,7 +148,7 @@
     #        state: hair
   - type: Inventory
     speciesId: vulpkanin
-    displacements: 
+    displacements:
       head:
         sizeMaps:
           32:
@@ -226,7 +227,7 @@
   - type: Inventory
     speciesId: vulpkanin
     # Starlight start
-    displacements: 
+    displacements:
       jumpsuit:
         sizeMaps:
           32:
