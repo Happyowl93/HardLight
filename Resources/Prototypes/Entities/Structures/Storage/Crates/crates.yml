@@ -608,7 +608,7 @@
   - type: OverrideSell
     overrideAccount: Security
   - type: AccessReader
-    access: [["Security"]]
+    access: [["Security"], ["Cadet"]] # Starlight: add cadet
 
 - type: entity
   id: CrateLockBoxService

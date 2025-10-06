@@ -84,56 +84,22 @@ public sealed class IdClothingBlockerSystem : SharedIdClothingBlockerSystem
     {
         if (component.AllowedJobs == null)
             return true;
-
+        
         if (!_accessReader.FindAccessItemsInventory(wearer, out var items))
         {
             return false;
         }
 
+        AccessComponent? access = null;
+
         foreach (var item in items)
         {
-            if (TryComp<PresetIdCardComponent>(item, out var preset))
-            {
-                if (preset.JobName != null && component.AllowedJobs.Contains(preset.JobName))
-                {
-                    return true;
-                }
-            }
-
-            // ID Card
-            if (TryComp<IdCardComponent>(item, out var id))
-            {
-                if (id.JobPrototype != null && component.AllowedJobs.Contains(id.JobPrototype.Value))
-                {
-                    return true;
-                }
-            }
-
-            // PDA
-            if (TryComp<PdaComponent>(item, out var pda))
-            {
-                if (pda.ContainedId != null)
-                {
-                    if (TryComp(pda.ContainedId, out preset))
-                    {
-                        if (preset.JobName != null && component.AllowedJobs.Contains(preset.JobName))
-                        {
-                            return true;
-                        }
-                    }
-                    
-                    if (TryComp(pda.ContainedId, out id))
-                    {
-                        if (id.JobPrototype != null && component.AllowedJobs.Contains(id.JobPrototype.Value))
-                        {
-                            return true;
-                        }
-                    }
-                }
-            }
+            Log.Error($"Checking item UID {item}");
+            if (TryComp<PdaComponent>(item, out var pda) && pda.ContainedId != null && TryComp(pda.ContainedId, out access)) {}
+            if (TryComp<IdCardComponent>(item, out _) && TryComp(item, out access)) {}
         }
-
-        return false;
+        
+        return access != null && access.Tags.Overlaps(component.AllowedJobs);
     }
 
     // We assume access might have changed when a hand or inventory is equipped or unequipped
@@ -171,6 +137,7 @@ public sealed class IdClothingBlockerSystem : SharedIdClothingBlockerSystem
             if (!TryComp<IdClothingBlockerComponent>(clothing, out var blocker))
                 continue;
 
+            Log.Error("Checking for accesss...");
             var hasAccess = HasJobAccess(wearer, blocker);
             SetBlocked(clothing.Value, blocker, !hasAccess);
         }
