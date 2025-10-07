@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Starlight.IdClothingBlocker;
+namespace Content.Shared._Starlight.Access;
 
 /// <summary>
 /// Component put on players who are blocked due to lack of access to equipment.

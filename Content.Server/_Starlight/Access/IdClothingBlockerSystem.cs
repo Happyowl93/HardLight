@@ -1,9 +1,6 @@
 using Content.Server.Popups;
-using Content.Shared.Popups;
-using Content.Shared._Starlight.IdClothingBlocker;
-using Content.Server.Access.Components;
+using Content.Shared._Starlight.Access;
 using Content.Shared.Access.Components;
-using Content.Shared.PDA;
 using Content.Shared.Access.Systems;
 using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
@@ -11,9 +8,9 @@ using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
-using Robust.Shared.Localization;
+using Content.Shared.Popups;
 
-namespace Content.Server._Starlight.IdClothingBlocker;
+namespace Content.Server._Starlight.Access;
 
 public sealed class IdClothingBlockerSystem : SharedIdClothingBlockerSystem
 {

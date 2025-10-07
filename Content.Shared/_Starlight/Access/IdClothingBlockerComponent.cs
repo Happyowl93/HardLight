@@ -1,11 +1,9 @@
 using Content.Shared.Access;
-using Content.Shared.Roles;
 using Robust.Shared.Audio;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Starlight.IdClothingBlocker;
+namespace Content.Shared._Starlight.Access;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class IdClothingBlockerComponent : Component
