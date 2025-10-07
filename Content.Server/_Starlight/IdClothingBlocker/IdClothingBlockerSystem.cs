@@ -18,7 +18,7 @@ namespace Content.Server._Starlight.IdClothingBlocker;
 public sealed class IdClothingBlockerSystem : SharedIdClothingBlockerSystem
 {
     [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly AccessReaderSystem _accessReader = default!;
+    [Dependency] private readonly SharedIdCardSystem _card = default!;
     
     public override void Initialize()
     {
@@ -85,20 +85,8 @@ public sealed class IdClothingBlockerSystem : SharedIdClothingBlockerSystem
         if (component.AllowedJobs == null)
             return true;
         
-        if (!_accessReader.FindAccessItemsInventory(wearer, out var items))
-        {
-            return false;
-        }
-
-        AccessComponent? access = null;
-
-        foreach (var item in items)
-        {
-            Log.Error($"Checking item UID {item}");
-            if (TryComp<PdaComponent>(item, out var pda) && pda.ContainedId != null && TryComp(pda.ContainedId, out access)) {}
-            if (TryComp<IdCardComponent>(item, out _) && TryComp(item, out access)) {}
-        }
-        
+        _card.TryFindIdCard(wearer, out var card);
+        TryComp<AccessComponent>(card.Owner, out var access);
         return access != null && access.Tags.Overlaps(component.AllowedJobs);
     }
 
@@ -137,7 +125,6 @@ public sealed class IdClothingBlockerSystem : SharedIdClothingBlockerSystem
             if (!TryComp<IdClothingBlockerComponent>(clothing, out var blocker))
                 continue;
 
-            Log.Error("Checking for accesss...");
             var hasAccess = HasJobAccess(wearer, blocker);
             SetBlocked(clothing.Value, blocker, !hasAccess);
         }
