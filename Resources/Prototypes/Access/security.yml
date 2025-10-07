@@ -2,10 +2,6 @@
   id: HeadOfSecurity
   name: id-card-access-level-head-of-security
 
-- type: accessLevel # Starlight start
-  id: Cadet
-  name: id-card-access-level-cadet # Starlight end
-
 - type: accessLevel
   id: Security
   name: id-card-access-level-security
