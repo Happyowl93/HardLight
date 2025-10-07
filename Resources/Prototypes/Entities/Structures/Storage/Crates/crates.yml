@@ -202,7 +202,7 @@
   - type: Sprite
     sprite: Structures/Storage/Crates/sec_gear.rsi
   - type: AccessReader
-    access: [["Security", ["Cadet"]]]
+    access: [["Security"], ["Cadet"]]
 
 - type: entity
   parent: CrateBaseSecure
