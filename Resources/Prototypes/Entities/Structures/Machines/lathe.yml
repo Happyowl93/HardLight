@@ -132,10 +132,10 @@
     - ServiceStatic
     - PowerCellsStatic
     - ElectronicsStatic
-  - type: EmagLatheRecipes
+  - type: EmagLatheRecipes # Starlight start
     emagStaticPacks:
     - StarlightSecurityEmagWeaponsStatic
-    - StarlightSecurityAmmoStatic
+    - StarlightSecurityAmmoStatic # Starlight end
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -210,19 +210,21 @@
     - Instruments
     - Equipment
     - FauxTiles
-  - type: EmagLatheRecipes
+  - type: EmagLatheRecipes # Starlight start
     emagDynamicPacks:
     - StarlightSurgeryDynamic
     - StarlightCyberlimbDynamic
     - StarlightCyberOrgansDynamic
     - StarlightImplantDynamic
     - StarlightBudgetCyberOrgansDynamic
-
     - StarlightSecurityAmmoDynamic
     - StarlightSecurityExplosives
     - StarlightSecurityEquipment
     - StarlightSecurityWeapons
     - StarlightDefenseStatic
+    emagStaticPacks:
+    - StarlightSecurityEmagWeaponsStatic
+    - StarlightSecurityAmmoStatic # Starlight end
 
 - type: entity
   id: ProtolatheHyperConvection
