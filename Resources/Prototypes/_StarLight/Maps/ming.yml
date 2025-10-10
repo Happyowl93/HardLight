@@ -13,7 +13,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'MW'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/_Starlight/Shuttles/emergency_bucket.yml
+          emergencyShuttlePath: /Maps/_Starlight/Shuttles/emergency_ming.yml
         - type: StationJobs
           availableJobs:
             #service
