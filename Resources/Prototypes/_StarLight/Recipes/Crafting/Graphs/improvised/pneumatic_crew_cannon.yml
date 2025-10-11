@@ -1,5 +1,5 @@
 - type: constructionGraph
-  id: PneumaticResomiCannon
+  id: PneumaticCrewCannon
   start: start
   graph:
   - node: start
@@ -21,4 +21,4 @@
         amount: 10
         doAfter: 10
   - node: cannon
-    entity: WeaponImprovisedPneumaticResomiCannon
+    entity: WeaponImprovisedPneumaticCrewCannon
