@@ -106,62 +106,6 @@ public sealed partial class VampireComponent : Component
     public TimeSpan UpdateDelay = TimeSpan.FromSeconds(1);
 }
 
-/// <summary>
-/// Holds all runtime action entity Uids for a vampire
-/// </summary>
-[Serializable]
-public sealed class VampireActionEntities // Rinary - change custom type to just Dictionary: string(actionID) -> EntityUid(actionEntity)
-{
-    [DataField]
-    public EntityUid? ToggleFangsActionEntity;
-    [DataField]
-    public EntityUid? GlareActionEntity;
-
-    [DataField]
-    public EntityUid? RejuvenateIActionEntity;
-
-    [DataField]
-    public EntityUid? RejuvenateIIActionEntity;
-
-    [DataField]
-    public EntityUid? ClassSelectActionEntity;
-
-    [DataField]
-    public EntityUid? HemomancerClawsActionEntity;
-
-    [DataField]
-    public EntityUid? HemomancerTendrilsActionEntity;
-
-    [DataField]
-    public EntityUid? BloodBarrierActionEntity;
-
-    [DataField]
-    public EntityUid? SanguinePoolActionEntity;
-
-    [DataField]
-    public EntityUid? BloodEruptionActionEntity;
-
-    [DataField]
-    public EntityUid? BloodBringersRiteActionEntity;
-    [DataField]
-    public EntityUid? VampireCloakOfDarknessActionEntity;
-    [DataField]
-    public EntityUid? ShadowSnareActionEntity;
-    [DataField]
-    public EntityUid? DarkPassageActionEntity;
-    [DataField]
-    public EntityUid? ExtinguishActionEntity;
-    [DataField]
-    public EntityUid? EternalDarknessActionEntity;
-    [DataField]
-    public EntityUid? ShadowAnchorActionEntity;
-    [DataField]
-    public EntityUid? ShadowBoxingActionEntity;
-
-    [DataField]
-    public bool ShadowBoxingActive = false; // Rinary - Move this to umbrae component
-}
-
 [RegisterComponent]
 public sealed partial class ShadowSnareBlindMarkerComponent : Component { }
 
