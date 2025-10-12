@@ -151,45 +151,20 @@ public sealed partial class VampireSystem : EntitySystem
         return changed;
     }
 
-    private bool ShouldRefreshActions(VampireComponent comp)
-    {
-        return Math.Abs(comp.TotalBlood - comp.LastRefreshedBloodLevel) >= comp.ActionRefreshThreshold;
-    }
+    private bool ShouldRefreshActions(VampireComponent comp) => Math.Abs(comp.TotalBlood - comp.LastRefreshedBloodLevel) >= comp.ActionRefreshThreshold;
 
     private void RefreshAllActions(EntityUid uid, VampireComponent comp)
     {
         comp.LastRefreshedBloodLevel = comp.TotalBlood;
-
-        var actionEntities = new[]
-        {
-            comp.Actions.ToggleFangsActionEntity,
-            comp.Actions.GlareActionEntity,
-            comp.Actions.RejuvenateIActionEntity,
-            comp.Actions.RejuvenateIIActionEntity,
-            comp.Actions.HemomancerClawsActionEntity,
-            comp.Actions.HemomancerTendrilsActionEntity,
-            comp.Actions.BloodBarrierActionEntity,
-            comp.Actions.SanguinePoolActionEntity,
-            comp.Actions.BloodEruptionActionEntity,
-            comp.Actions.VampireCloakOfDarknessActionEntity,
-            comp.Actions.ShadowSnareActionEntity,
-            comp.Actions.DarkPassageActionEntity,
-            comp.Actions.ExtinguishActionEntity,
-            comp.Actions.EternalDarknessActionEntity,
-            comp.Actions.ClassSelectActionEntity
-        };
-
-        foreach (var actionEntity in actionEntities)
+        foreach (var (_, actionEntity) in comp.ActionEntities)
             TryRefreshVampireAction(uid, actionEntity);
     }
 
     private void UpdateCloakToggleState(VampireComponent vampire, UmbraeComponent umbrae)
     {
-        if (vampire.Actions.VampireCloakOfDarknessActionEntity != null)
-        {
-            if (_actions.GetAction(vampire.Actions.VampireCloakOfDarknessActionEntity) is { } cloakAction)
-                _actions.SetToggled(cloakAction.AsNullable(), umbrae.CloakOfDarknessActive);
-        }
+        if (vampire.ActionEntities.TryGetValue("ActionVampireCloakOfDarkness", out var actionEntity) 
+            && _actions.GetAction(actionEntity) is { } cloakAction)
+            _actions.SetToggled(cloakAction.AsNullable(), umbrae.CloakOfDarknessActive);
     }
 
     private void HandleClassSelection(EntityUid uid, VampireComponent comp)
@@ -197,36 +172,31 @@ public sealed partial class VampireSystem : EntitySystem
         if (comp.ChosenClass != VampireClassType.None)
             return;
 
-        if (comp.TotalBlood >= comp.ClassSelectThreshold && comp.Actions.ClassSelectActionEntity == null)
+        if (comp.TotalBlood >= comp.ClassSelectThreshold && !comp.ActionEntities.ContainsKey("ActionClassSelectId"))
         {
-            _actions.AddAction(uid, ref comp.Actions.ClassSelectActionEntity, ActionClassSelectId, uid);
-            Dirty(uid, comp);
+            EntityUid? actionEntity = null;
+            _actions.AddAction(uid, ref actionEntity, "ActionClassSelectId", uid);
+            if (actionEntity != null)
+            {
+                comp.ActionEntities["ActionClassSelectId"] = actionEntity.Value;
+                Dirty(uid, comp);
+            }
         }
-        TryRefreshVampireAction(uid, comp.Actions.ClassSelectActionEntity);
+
+        if(comp.ActionEntities.TryGetValue("ActionClassSelectId", out var classSelectAction))
+            TryRefreshVampireAction(uid, classSelectAction);
     }
 
     private void OnStartup(EntityUid uid, VampireComponent comp, ComponentStartup args)
     {
         foreach (var actionId in comp.BaseVampireActions)
         {
-            switch (actionId)
-            {
-                case ActionToggleFangsId:
-                    _actions.AddAction(uid, ref comp.Actions.ToggleFangsActionEntity, ActionToggleFangsId, uid);
-                    break;
-                case ActionGlareId:
-                    _actions.AddAction(uid, ref comp.Actions.GlareActionEntity, ActionGlareId, uid);
-                    break;
-                case ActionRejuvenateIId:
-                    _actions.AddAction(uid, ref comp.Actions.RejuvenateIActionEntity, ActionRejuvenateIId, uid);
-                    break;
-                case ActionRejuvenateIIId:
-                    _actions.AddAction(uid, ref comp.Actions.RejuvenateIIActionEntity, ActionRejuvenateIIId, uid);
-                    break;
-                default:
-                    _actions.AddAction(uid, actionId);
-                    break;
-            }
+            EntityUid? action = null;
+
+            _actions.AddAction(uid, ref action, actionId, uid);
+
+            if (action != null)
+                comp.ActionEntities[actionId] = action.Value;
         }
         RemComp<HungerComponent>(uid);
         RemComp<ThirstComponent>(uid);
@@ -276,13 +246,9 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void TryRefreshVampireAction(EntityUid owner, EntityUid? actionEntity)
     {
-        if (actionEntity == null)
-            return;
-
-        if (_actions.GetAction(actionEntity) is not { } action)
-            return;
-
-        if (!TryComp<VampireComponent>(owner, out var vamp))
+        if (actionEntity == null 
+            || _actions.GetAction(actionEntity) is not { } action 
+            || !TryComp<VampireComponent>(owner, out var vamp))
             return;
 
         if (!TryComp<VampireActionComponent>(actionEntity.Value, out var vac))
@@ -301,40 +267,41 @@ public sealed partial class VampireSystem : EntitySystem
     {
         if (comp.ChosenClass == VampireClassType.None)
             return;
-            
-        void Grant(ref EntityUid? field, string actionId)
-        {
-            if (field != null)
-                return;
-
-            var threshold = GetActionBloodThreshold(actionId);
-
-            if (comp.TotalBlood >= threshold)
-            {
-                _actions.AddAction(uid, ref field, actionId, uid);
-                Dirty(uid, comp);
-            }
-        }
 
         switch (comp.ChosenClass)
         {
             case VampireClassType.Hemomancer:
-                Grant(ref comp.Actions.HemomancerClawsActionEntity, ActionHemomancerClawsId);
-                Grant(ref comp.Actions.HemomancerTendrilsActionEntity, ActionHemomancerTendrilsId);
-                Grant(ref comp.Actions.BloodBarrierActionEntity, ActionBloodBarrierId);
-                Grant(ref comp.Actions.SanguinePoolActionEntity, ActionSanguinePoolId);
-                Grant(ref comp.Actions.BloodEruptionActionEntity, ActionBloodEruptionId);
-                Grant(ref comp.Actions.BloodBringersRiteActionEntity, ActionBloodBringersRiteId);
+                foreach (var actionId in comp.Actions.GetValueOrDefault("Hemomancer", []))
+                    GrantAbility(uid, comp, actionId);
                 break;
             case VampireClassType.Umbrae:
-                Grant(ref comp.Actions.VampireCloakOfDarknessActionEntity, ActionCloakOfDarknessId);
-                Grant(ref comp.Actions.ShadowSnareActionEntity, ActionShadowSnareId);
-                Grant(ref comp.Actions.DarkPassageActionEntity, ActionDarkPassageId);
-                Grant(ref comp.Actions.ExtinguishActionEntity, ActionExtinguishId);
-                Grant(ref comp.Actions.EternalDarknessActionEntity, ActionEternalDarknessId);
-                Grant(ref comp.Actions.ShadowAnchorActionEntity, ActionShadowAnchorId);
-                Grant(ref comp.Actions.ShadowBoxingActionEntity, ActionShadowBoxingId);
+                foreach (var actionId in comp.Actions.GetValueOrDefault("Umbrae", []))
+                    GrantAbility(uid, comp, actionId);
                 break;
+        }
+    }
+
+    private void GrantAbility(EntityUid uid, VampireComponent comp, string actionId)
+    {
+        EntityUid? field = null;
+        GrantAbility(uid, comp, ref field, actionId);
+    }
+    
+    private void GrantAbility(EntityUid uid, VampireComponent comp, ref EntityUid? field, string actionId)
+    {
+        if (field != null)
+            return;
+
+        var threshold = GetActionBloodThreshold(actionId);
+
+        if (comp.TotalBlood >= threshold)
+        {
+            _actions.AddAction(uid, ref field, actionId, uid);
+            if (field != null)
+            {
+                comp.ActionEntities[actionId] = field.Value;
+                Dirty(uid, comp);
+            }
         }
     }
 
@@ -347,21 +314,26 @@ public sealed partial class VampireSystem : EntitySystem
     }
     private void EnsureRejuvenateUpgrade(EntityUid uid, VampireComponent comp)
     {
-        if (comp.Actions.RejuvenateIIActionEntity != null
-            && TryComp<VampireActionComponent>(comp.Actions.RejuvenateIIActionEntity.Value, out var rejuvII)
+        if (comp.ActionEntities.TryGetValue("ActionVampireRejuvenateII", out var actionEntity)
+            && TryComp<VampireActionComponent>(actionEntity, out var rejuvII)
             && comp.TotalBlood < rejuvII.BloodToUnlock)
             return;
         else if (comp.TotalBlood < comp.RejuvenateIIThreshold)
             return;
 
-        if (comp.Actions.RejuvenateIIActionEntity == null)
-            _actions.AddAction(uid, ref comp.Actions.RejuvenateIIActionEntity, ActionRejuvenateIIId, uid);
-
-        TryRefreshVampireAction(uid, comp.Actions.RejuvenateIIActionEntity);
-        if (comp.Actions.RejuvenateIActionEntity != null)
+        if (!comp.ActionEntities.ContainsKey("ActionVampireRejuvenateII"))
         {
-            _actions.RemoveAction(uid, comp.Actions.RejuvenateIActionEntity);
-            comp.Actions.RejuvenateIActionEntity = null;
+            EntityUid? action = null;
+            _actions.AddAction(uid, ref action, ActionRejuvenateIIId, uid);
+            if (action != null)
+                comp.ActionEntities["ActionVampireRejuvenateII"] = action.Value;
+        }
+
+        TryRefreshVampireAction(uid, comp.ActionEntities["ActionVampireRejuvenateII"]);
+        if (comp.ActionEntities.TryGetValue("ActionVampireRejuvenateI", out var firstAction))
+        {
+            _actions.RemoveAction(uid, firstAction);
+            comp.ActionEntities.Remove("ActionVampireRejuvenateI");
         }
 
         Dirty(uid, comp);
@@ -395,10 +367,10 @@ public sealed partial class VampireSystem : EntitySystem
                 break;
         }
 
-        if (comp.Actions.ClassSelectActionEntity != null)
+        if (comp.ActionEntities.TryGetValue("ActionClassSelectId", out var actionEntity))
         {
-            _actions.RemoveAction(uid, comp.Actions.ClassSelectActionEntity);
-            comp.Actions.ClassSelectActionEntity = null;
+            _actions.RemoveAction(uid, actionEntity);
+            comp.ActionEntities.Remove("ActionClassSelectId");
         }
 
         _ui.CloseUi(uid, VampireClassUiKey.Key);

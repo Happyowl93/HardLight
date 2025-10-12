@@ -41,10 +41,9 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnHemomancerClaws(EntityUid uid, VampireComponent comp, ref VampireHemomancerClawsActionEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!ValidateVampireAbility(uid, out var validatedComp, VampireClassType.Hemomancer, comp.Actions.HemomancerClawsActionEntity))
+        if (args.Handled 
+            || !comp.ActionEntities.TryGetValue("ActionVampireHemomancerClaws", out var action) 
+            || !ValidateVampireAbility(uid, out var validatedComp, VampireClassType.Hemomancer, action))
             return;
 
         comp = validatedComp;
@@ -86,9 +85,11 @@ public sealed partial class VampireSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (!TryComp<VampireComponent>(args.Performer, out var comp)
+        if (args.Handled 
+            || !TryComp<VampireComponent>(args.Performer, out var comp) 
+            || !comp.ActionEntities.TryGetValue("ActionVampireHemomancerTendrils", out var action) 
             || !ValidateVampireClass(args.Performer, comp, VampireClassType.Hemomancer)
-            || !CheckAndConsumeActionCost(args.Performer, comp, comp.Actions.HemomancerTendrilsActionEntity))
+            || !CheckAndConsumeActionCost(args.Performer, comp, action))
             return;
 
         args.Handled = true;
@@ -208,16 +209,11 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnBloodBarrier(VampireBloodBarrierActionEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!TryComp<VampireComponent>(args.Performer, out var comp))
-            return;
-
-        if (!ValidateVampireClass(args.Performer, comp, VampireClassType.Hemomancer))
-            return;
-
-        if (!CheckAndConsumeBloodCost(args.Performer, comp, comp.Actions.BloodBarrierActionEntity))
+        if (args.Handled 
+            || !TryComp<VampireComponent>(args.Performer, out var comp) 
+            || !comp.ActionEntities.TryGetValue("ActionVampireBloodBarrier", out var action)
+            || !ValidateVampireClass(args.Performer, comp, VampireClassType.Hemomancer) 
+            || !CheckAndConsumeBloodCost(args.Performer, comp, action))
             return;
 
         args.Handled = true;
@@ -290,7 +286,8 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        if (!CheckAndConsumeBloodCost(uid, comp, comp.Actions.SanguinePoolActionEntity))
+        if (!comp.ActionEntities.TryGetValue("ActionVampireSanguinePool", out var action) 
+            || !CheckAndConsumeBloodCost(uid, comp, action))
             return;
 
         EnterSanguinePool(uid, hemomancer, args.Duration, args.BloodDripInterval);
@@ -400,10 +397,9 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnBloodEruption(EntityUid uid, VampireComponent comp, ref VampireBloodEruptionActionEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!CheckAndConsumeBloodCost(uid, comp, comp.Actions.BloodEruptionActionEntity))
+        if (args.Handled 
+            || !comp.ActionEntities.TryGetValue("ActionVampireBloodEruption", out var action)
+            || !CheckAndConsumeBloodCost(uid, comp, action))
             return;
 
         var coords = Transform(uid).Coordinates;
@@ -451,7 +447,7 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnBloodBringersRite(EntityUid uid, VampireComponent comp, ref VampireBloodBringersRiteActionEvent args)
     {
-        if (args.Handled || !TryComp<HemomancerComponent>(uid, out var hemomancer))
+        if (args.Handled || !comp.ActionEntities.TryGetValue("ActionVampireBloodBringersRite", out var actionEntity) || !TryComp<HemomancerComponent>(uid, out var hemomancer))
             return;
 
         if (hemomancer.BloodBringersRiteActive)
@@ -476,7 +472,7 @@ public sealed partial class VampireSystem : EntitySystem
             _popup.PopupEntity("Blood Bringers Rite activated!", uid, uid); // Rinary - move to locale
         }
 
-        if (_actions.GetAction(comp.Actions.BloodBringersRiteActionEntity) is { } action)
+        if (_actions.GetAction(actionEntity) is { } action)
             _actions.SetToggled(action.AsNullable(), hemomancer.BloodBringersRiteActive);
 
         args.Handled = true;
@@ -516,10 +512,12 @@ public sealed partial class VampireSystem : EntitySystem
     {
         const int MaxTicks = 150;
 
-        if (tickCount >= MaxTicks || !Exists(uid))
-            return;
-
-        if (!TryComp<VampireComponent>(uid, out var comp) || !TryComp<HemomancerComponent>(uid, out var hemomancer) || !hemomancer.BloodBringersRiteActive)
+        if (tickCount >= MaxTicks 
+            || !Exists(uid) 
+            || !TryComp<VampireComponent>(uid, out var comp) 
+            || !comp.ActionEntities.TryGetValue("ActionVampireBloodBringersRite", out var actionEntity)
+            || !TryComp<HemomancerComponent>(uid, out var hemomancer) 
+            || !hemomancer.BloodBringersRiteActive)
             return;
 
         if (TryComp<MobStateComponent>(uid, out var mobState) &&
@@ -532,9 +530,9 @@ public sealed partial class VampireSystem : EntitySystem
         if (comp.DrunkBlood < cost)
         {
             DeactivateBloodBringersRite(uid, hemomancer);
-            _popup.PopupEntity("Blood Bringers Rite deactivated - not enough blood", uid, uid);
+            _popup.PopupEntity("Blood Bringers Rite deactivated - not enough blood", uid, uid); // Rinary - move to locale
 
-            if (_actions.GetAction(comp.Actions.BloodBringersRiteActionEntity) is { } action)
+            if (_actions.GetAction(actionEntity) is { } action)
                 _actions.SetToggled(action.AsNullable(), false);
             return;
         }

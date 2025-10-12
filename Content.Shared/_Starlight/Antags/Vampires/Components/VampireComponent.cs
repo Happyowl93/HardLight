@@ -57,7 +57,15 @@ public sealed partial class VampireComponent : Component
     /// </summary>
     public float FullnessDecayPerSecond = 0.25f;
 
-    public VampireActionEntities Actions = new();
+    /// <summary>
+    /// Action ids of the vampire, used as VampireClassID -> ActionID's.
+    /// </summary>
+    public Dictionary<string, List<string>> Actions = new();
+
+    /// <summary>
+    /// Action entities of the vampire, used as ActionId -> EntityUid.
+    /// </summary>
+    public Dictionary<string, EntityUid> ActionEntities = new();
 
     /// <summary>
     /// Determines whether the vampire is drinking at the moment
@@ -102,7 +110,7 @@ public sealed partial class VampireComponent : Component
 /// Holds all runtime action entity Uids for a vampire
 /// </summary>
 [Serializable]
-public sealed class VampireActionEntities
+public sealed class VampireActionEntities // Rinary - change custom type to just Dictionary: string(actionID) -> EntityUid(actionEntity)
 {
     [DataField]
     public EntityUid? ToggleFangsActionEntity;
@@ -151,7 +159,7 @@ public sealed class VampireActionEntities
     public EntityUid? ShadowBoxingActionEntity;
 
     [DataField]
-    public bool ShadowBoxingActive = false;
+    public bool ShadowBoxingActive = false; // Rinary - Move this to umbrae component
 }
 
 [RegisterComponent]
