@@ -231,8 +231,9 @@
   - PowerCageSmall
   - PowerCageMedium
   - MagazineGrenadeEmpty
-  - GrenadeFlash
+  - GrenadeBaton # starlight TODO move to riot control or smth if a sec nade launcher is added?
   - GrenadeBlast
+  - GrenadeFlash
   - ShuttleGunSvalinnMachineGunCircuitboard
   - ShuttleGunPerforatorCircuitboard
   - ShuttleGunFriendshipCircuitboard
@@ -298,6 +299,7 @@
   cost: 15000
   recipeUnlocks:
   - GrenadeEMP
+  - GrenadeFrag # starlight
   - PowerCageHigh
   - ShuttleGunDusterCircuitboard
   technologyPrerequisites:
