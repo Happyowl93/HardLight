@@ -1,0 +1,7 @@
+- type: entity
+  id: MagazineGrenadeCleanade
+  name: cleanade grenade cartridge
+  parent: [ BaseMagazineGrenade, BaseJanitorContraband ]
+  components:
+  - type: BallisticAmmoProvider
+    proto: GrenadeCleanade
