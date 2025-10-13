@@ -105,7 +105,7 @@
   - MagazineShotgun
   - MagazineShotgunEmpty
   - MagazineShotgunSlug
-  
+
   - SpeedLoaderMagnumBasic
   - SpeedLoaderShotgunEmpty
   - SpeedLoaderShotgunSlug
@@ -145,6 +145,7 @@
   - ShuttleGunFriendshipCircuitboard
   - ShuttleGunPerforatorCircuitboard
   - ShuttleGunSvalinnMachineGunCircuitboard
+  - ScanGateMachineCircuitboard
 
 - type: latheRecipePack
   parent:
@@ -285,3 +286,17 @@
   recipes:
   - LeftArmCyberBulwark
   - RightArmCyberBulwark
+
+- type: latheRecipePack
+  id: StarlightSecurityGrenades
+  recipes:
+  - MagazineGrenadeEMP
+  - MagazineGrenadeFlash
+  - MagazineGrenadeBaton
+
+- type: latheRecipePack
+  id: StarlightSecurityGrenadesEmag
+  recipes:
+  - MagazineGrenadeFrag
+  - MagazineGrenadeBlast
+

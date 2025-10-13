@@ -25,6 +25,8 @@
     - id: RadioHandheldExpedition #starlight
     - id: ClothingOuterHardsuitLuxmax #starlight
     - id: SalvageShuttleConsoleCircuitboard #starlight
+    - id: MiningShuttleConsoleCircuitboard #starlight
+    - id: EncryptionKeySalvage #starlight
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -61,9 +63,18 @@
     - id: ClothingEyesGlassesCommand
     - id: ClothingEyesHudCommand
     - id: HeadSkeleton # A skull to accompany your skeleton crew
+    - id: EncryptionKeyExpedition #starlight
       conditions:
       - !type:PlayerCountCondition
         max: 15
+    #region Starlight
+    # - id: PaperEndGreenshift
+    #   conditions:
+    #   - !type:GamemodeCondition
+    #     presets:
+    #     - Greenshift
+    #     - Sandbox
+    #endregion Starlight
 
 
 # No laser table + Laser table
@@ -84,6 +95,7 @@
     - id: ClothingMaskGasCaptain
     - id: JetpackCaptainFilled
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Starlight - vox gang
 
 # No laser locker, used when the antique laser is placed in the special display crate
 - type: entity
@@ -195,6 +207,7 @@
     - id: ClothingShoesBootsMagAdv
     - id: JetpackVoidFilled
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Starlight - vox gang
 
 # No hardsuit locker
 - type: entity
@@ -256,6 +269,7 @@
     - id: ClothingMaskBreathMedical
     - id: ClothingOuterHardsuitMedical
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Starlight - vox gang
 
 # No hardsuit locker
 - type: entity
@@ -299,8 +313,13 @@
     - id: ProtolatheMachineCircuitboard
     - id: ResearchComputerCircuitboard
     - id: CargoRequestScienceComputerCircuitboard
+    - id: StationAiFixerCircuitboard
     - id: RubberStampRd
-    - id: RDDiploma #STARLIGHT
+    #region Starlight
+    - id: RDDiploma
+    #- id: PaperIonstormBorgs
+    #  prob: 0.10 #1/10 rounds will have this paper that can be signed repeatedly for no discernable effect!
+    #endregion Starlight
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -310,6 +329,7 @@
     - id: ClothingMaskBreath
     - id: ClothingOuterHardsuitRd
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Starlight - vox gang
 
 # No hardsuit locker
 - type: entity
@@ -373,6 +393,7 @@
     - id: ClothingOuterHardsuitSecurityRed
     - id: JetpackSecurityFilled
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Starlight - vox gang
     - id: ClothingShoesBootsMagSec
 
 # No hardsuit locker
