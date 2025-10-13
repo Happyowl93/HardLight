@@ -128,7 +128,7 @@
   - GyroscopeMachineCircuitboard
   - MiniGravityGeneratorCircuitboard
   technologyPrerequisites:
-  - SpaceScanning
+  - SpaceScanning # starlight
   radioChannels:
   - Engineering
 
