@@ -12,7 +12,7 @@
     whitelist:
       tags:
         - Grenade
-    capacity: 5
+    capacity: 6 # starlight change: 5 -> 6 to fit the hydra
     soundRack:
       path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
       params:
