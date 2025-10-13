@@ -111,7 +111,6 @@
   - type: ContainerContainer
     containers:
       revolver-ammo: !type:Container
-  - type: MagazineAmmoProvider # SL: Speedload a magazine into it.
   - type: BallisticAmmoProvider # SL: Revolver -> Ballistic
     whitelist:
       tags:

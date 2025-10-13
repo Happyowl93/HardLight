@@ -5,3 +5,11 @@
   components:
   - type: BallisticAmmoProvider
     proto: GrenadeCleanade
+
+- type: entity
+  id: MagazineGrenadeCleanadeSyndicate
+  name: '"cleanade" grenade cartridge'
+  parent: [ BaseMagazineGrenade, BaseSyndicateContraband ]
+  components:
+  - type: BallisticAmmoProvider
+    proto: GrenadeCleanadeSyndicate
