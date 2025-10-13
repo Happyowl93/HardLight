@@ -10,13 +10,13 @@
       - material: Steel
         amount: 2
         doAfter: 1
-  
+
     - to: filterflipped
       steps:
       - material: Steel
         amount: 2
         doAfter: 1
-        
+
     # Mixer
     - to: mixer
       steps:
@@ -52,7 +52,7 @@
       steps:
       - tool: Welding
         doAfter: 1
-  
+
   - node: filterflipped
     entity: GasFilterFlipped
     edges:
@@ -68,7 +68,7 @@
       steps:
       - tool: Welding
         doAfter: 1
-  
+
   # Mixer
   - node: mixer
     entity: GasMixer
