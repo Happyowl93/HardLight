@@ -3,7 +3,7 @@
   abstract: true
   id: GasTrinaryBase
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers # starlight
   components:
     - type: AtmosDevice
     - type: Tag
@@ -34,7 +34,7 @@
   name: gas filter
   description: Very useful for filtering gases.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers # starlight
   components:
     - type: SubFloorHide
       visibleLayers:
@@ -47,6 +47,13 @@
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: gasFilter
           map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    # region starlight
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasFilter
+        Secondary: GasFilterAlt1
+        Tertiary: GasFilterAlt2
+    # end region
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -108,6 +115,13 @@
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasFilterF
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    # region starlight
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasFilterFlipped
+        Secondary: GasFilterFlippedAlt1
+        Tertiary: GasFilterFlippedAlt2
+    # end region
   - type: Flippable
     mirrorEntity: GasFilter
   - type: Appearance
