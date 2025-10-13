@@ -196,7 +196,7 @@
   - WeaponXrayCannon
   radioChannels:
   - Security
-
+  
 - type: technology
   id: KineticModifications
   name: research-technology-kinetic-modifications
