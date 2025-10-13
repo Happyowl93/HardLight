@@ -62,9 +62,11 @@
       DisposalTube: !type:Container
   - type: StaticPrice
     price: 30
-  - type: Tag # Starlight-edit: Add disposal pipe tag
-    tags: # Starlight-edit: Add disposal pipe tag
-    - DisposalPipe # Starlight-edit: Add disposal pipe tag
+  # Starlight-start: add disposal pipe tag
+  - type: Tag
+    tags:
+    - DisposalPipe
+  # Starlight-end: add disposal pipe tag
 
 - type: entity
   id: DisposalHolder
