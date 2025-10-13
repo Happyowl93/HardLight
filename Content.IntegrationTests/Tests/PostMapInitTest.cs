@@ -90,7 +90,7 @@ namespace Content.IntegrationTests.Tests
             "/Maps/bagel.yml", // Contains mime's rubber stamp --> Either fix this, remove the category, or remove this comment if intentional.
             "/Maps/reach.yml", // Contains handheld crew monitor
            #region starlight
-            "/Maps/_Starlight/Shuttles/Radiotower.yml", // Command stamps. TODO: Why?
+            "/Maps/_Starlight/Shuttles/Radiotower.yml", // Command stamps - listening post.
             "/Maps/_Starlight/Stations/Remix.yml", // Admeme map
             #endregion
         };
