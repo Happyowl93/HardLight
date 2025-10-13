@@ -66,6 +66,14 @@ namespace Content.IntegrationTests.Tests
             {"/Maps/Shuttles/ShuttleEvent/syndie_evacpod.yml", ["RubberStampSyndicate"]},
             {"/Maps/Shuttles/ShuttleEvent/cruiser.yml", ["ShuttleGunPerforator"]},
             {"/Maps/Shuttles/ShuttleEvent/instigator.yml", ["ShuttleGunFriendship"]},
+            {"/Maps/_Starlight/Stations/Cork.yml", ["RubberStampSyndicate"]}, // Starlight start
+            {"/Maps/_Starlight/Shuttles/RecluseClassSHC.yml", ["RubberStampSyndicate"]},
+            {"/Maps/_Starlight/Shuttles/Signaleer.yml", ["RubberStampSyndicate"]},
+            {"/Maps/_Starlight/nukieplanet.yml", ["RubberStampSyndicate"]},
+            {"/Maps/_Starlight/Dungeon/syndie.yml", ["RubberStampSyndicate"]},
+            {"/Maps/_Starlight/Shuttles/scarletSHCdefenderFinal.yml", ["RubberStampSyndicate", "TraitorCodePaper"]},
+            {"/Maps/_Starlight/Centcomms/CC_Outpost_SC17.yml", ["BoxFolderCentCom", "RubberStampCentcom"]},
+            {"/Maps/_Starlight/Centcomms/CC_Outpost_G24.yml", ["BoxFolderCentCom", "RubberStampCentcom", "RubberStampQm"]},
         };
 
         /// <summary>
@@ -82,24 +90,8 @@ namespace Content.IntegrationTests.Tests
             "/Maps/bagel.yml", // Contains mime's rubber stamp --> Either fix this, remove the category, or remove this comment if intentional.
             "/Maps/reach.yml", // Contains handheld crew monitor
            #region starlight
-            "/Maps/nanoStation.yml",
-            "/Maps/_Starlight/nukieplanet.yml", //starlight nukie spawn map
-            "/Maps/_Starlight/Centcomms/CC_Outpost_G24.yml", //starlight centcomm map
-            "/Maps/_Starlight/Centcomms/CC_Outpost_SC17.yml", //starlight centcomm map
-            "/Maps/_Starlight/Dungeon/syndie.yml",
-            "/Maps/_Starlight/Shuttles/Radiotower.yml",
-            "/Maps/_Starlight/Shuttles/scarletSHCdefenderFinal.yml",
-            "/Maps/_Starlight/Shuttles/Signaleer.yml",
-            //TODO: Review these, either remove the do not map from the offending entities or remove the entities from the map
-            "/Maps/_Starlight/Stations/Bagel.yml",
-            "/Maps/_Starlight/Stations/Barratry.yml",
-            "/Maps/_Starlight/Stations/Cork.yml",
-            "/Maps/_Starlight/Stations/Lagan.yml",
-            "/Maps/_Starlight/Stations/Lobster.yml",
-            "/Maps/_Starlight/Stations/Orwell.yml",
-            "/Maps/_Starlight/Stations/Remix.yml",
-            "/Maps/_Starlight/Stations/Starboard.yml",
-            "/Maps/_Starlight/Shuttles/RecluseClassSHC.yml"
+            "/Maps/_Starlight/Shuttles/Radiotower.yml", // Command stamps. TODO: Why?
+            "/Maps/_Starlight/Stations/Remix.yml", // Admeme map
             #endregion
         };
 
@@ -236,7 +228,7 @@ namespace Content.IntegrationTests.Tests
                 .Where(filePath =>
                     filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
                 .ToArray();
-            
+
             shuttles = shuttles.Concat(starlightShuttles).ToArray();
 
             await server.WaitPost(() =>
@@ -387,7 +379,7 @@ namespace Content.IntegrationTests.Tests
                         continue;
 
                     Assert.That(!proto.Categories.Contains(dnmCategory) || IsWhitelistedForMap(protoId, map),
-                        $"\nMap {map} contains entities in the DO NOT MAP category ({proto.Name})");
+                        $"\nMap {map} contains entities in the DO NOT MAP category: {proto.Name} ({proto.ID})"); // SL change, helps for debugging
 
                     // The proto id is used on this map, so remove it from the set
                     unusedExemptions.Remove(protoId);
