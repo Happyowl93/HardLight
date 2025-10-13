@@ -196,10 +196,6 @@
   name: evil cleanade grenade round
   categories: [ HideSpawnMenu ]
   components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-    - state: cleanade
   - type: SmokeOnTrigger
     duration: 6
     spreadAmount: 45
@@ -208,13 +204,3 @@
       reagents:
       - ReagentId: SyndicateSpaceCleaner
         Quantity: 30
-  - type: EmitSoundOnTrigger
-    sound: /Audio/Items/smoke_grenade_smoke.ogg
-    positional: true
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Default
-    totalIntensity: 0.01 # a little pop
-    intensitySlope: 1
-    maxIntensity: 0.01
-    tileBreakScale: 0.01
