@@ -91,10 +91,10 @@
   id: SecurityExplosives
   recipes:
   - ExplosivePayload
-  - GrenadeBlast
-  - GrenadeEMP
-  - GrenadeFlash
-  - MagazineGrenadeEmpty
+  # - GrenadeBlast # SL removal
+  # - GrenadeEMP
+  # - GrenadeFlash
+  # - MagazineGrenadeEmpty
 
 # Shared between secfab and emagged protolathe
 # - type: latheRecipePack
