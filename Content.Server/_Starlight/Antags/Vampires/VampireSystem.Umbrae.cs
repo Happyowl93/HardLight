@@ -44,6 +44,7 @@ public sealed partial class VampireSystem : EntitySystem
     private void OnCloackOfDarkness(EntityUid uid, VampireComponent comp, ref VampireCloakOfDarknessActionEvent args)
     {
         if (args.Handled
+            || !comp.ActionEntities.TryGetValue("ActionVampireCloakOfDarkness", out var actionEntity)
             || !TryComp<UmbraeComponent>(uid, out var umbrae)
             || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
             return;
@@ -59,7 +60,7 @@ public sealed partial class VampireSystem : EntitySystem
             _popup.PopupEntity("You blend into the shadows!", uid, uid); // Rinary - move to locale
         }
 
-        if (_actions.GetAction(comp.Actions.VampireCloakOfDarknessActionEntity) is { } action)
+        if (_actions.GetAction(actionEntity) is { } action)
             _actions.SetToggled(action.AsNullable(), umbrae.CloakOfDarknessActive);
 
         args.Handled = true;
@@ -91,6 +92,7 @@ public sealed partial class VampireSystem : EntitySystem
             || !Exists(uid)
             || !TryComp<UmbraeComponent>(uid, out var umbrae)
             || !TryComp<VampireComponent>(uid, out var vampire)
+            || !vampire.ActionEntities.TryGetValue("VampireCloakOfDarkness", out var actionEntity)
             || !umbrae.CloakOfDarknessActive)
             return;
 
@@ -98,7 +100,7 @@ public sealed partial class VampireSystem : EntitySystem
             && mobState.CurrentState == Shared.Mobs.MobState.Dead)
         {
             DeactivateCloakOfDarkness(uid, umbrae);
-            if (_actions.GetAction(vampire.Actions.VampireCloakOfDarknessActionEntity) is { } action)
+            if (_actions.GetAction(actionEntity) is { } action)
                 _actions.SetToggled(action.AsNullable(), false);
             return;
         }
@@ -151,8 +153,9 @@ public sealed partial class VampireSystem : EntitySystem
     private void OnShadowSnare(EntityUid uid, VampireComponent comp, ref VampireShadowSnareActionEvent args)
     {
         if (args.Handled
+            || !comp.ActionEntities.TryGetValue("ActionVampireShadowSnare", out var actionEntity)
             || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
-            || !CheckAndConsumeBloodCost(uid, comp, comp.Actions.ShadowSnareActionEntity))
+            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
             return;
 
         if (!_playerShadowSnares.TryGetValue(uid, out var playerTraps))
@@ -191,8 +194,9 @@ public sealed partial class VampireSystem : EntitySystem
     private void OnDarkPassage(EntityUid uid, VampireComponent comp, ref VampireDarkPassageActionEvent args)
     {
         if (args.Handled
+            || !comp.ActionEntities.TryGetValue("ActionVampireDarkPassage", out var actionEntity)
             || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
-            || !CheckAndConsumeBloodCost(uid, comp, comp.Actions.DarkPassageActionEntity))
+            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
             return;
 
         var target = args.Target;
@@ -221,8 +225,9 @@ public sealed partial class VampireSystem : EntitySystem
     private void OnExtinguish(EntityUid uid, VampireComponent comp, ref VampireExtinguishActionEvent args)
     {
         if (args.Handled
+            || !comp.ActionEntities.TryGetValue("ActionVampireExtinguish", out var actionEntity)
             || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
-            || !CheckAndConsumeBloodCost(uid, comp, comp.Actions.ExtinguishActionEntity))
+            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
             return;
 
         var center = Transform(uid).Coordinates;
@@ -248,6 +253,7 @@ public sealed partial class VampireSystem : EntitySystem
     private void OnEternalDarkness(EntityUid uid, VampireComponent comp, ref VampireEternalDarknessActionEvent args)
     {
         if (args.Handled
+            || !comp.ActionEntities.TryGetValue("ActionVampireEternalDarkness", out var actionEntity)
             || !TryComp<UmbraeComponent>(uid, out var umbrae)
             || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
             return;
@@ -266,7 +272,7 @@ public sealed partial class VampireSystem : EntitySystem
             umbrae.EternalDarknessActive = false;
         Dirty(uid, comp);
 
-        if (_actions.GetAction(comp.Actions.EternalDarknessActionEntity) is { } action)
+        if (_actions.GetAction(actionEntity) is { } action)
             _actions.SetToggled(action.AsNullable(), umbrae.EternalDarknessActive);
 
         if (umbrae.EternalDarknessActive)
@@ -333,7 +339,7 @@ public sealed partial class VampireSystem : EntitySystem
     {
         umbrae.EternalDarknessActive = false;
 
-        if (_actions.GetAction(comp.Actions.EternalDarknessActionEntity) is { } action)
+        if (comp.ActionEntities.TryGetValue("ActionVampireEternalDarkness", out var actionEntity) && _actions.GetAction(actionEntity) is { } action)
             _actions.SetToggled(action.AsNullable(), false);
 
         if (message != null)
@@ -540,9 +546,11 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnShadowAnchor(EntityUid uid, VampireComponent comp, ref VampireShadowAnchorActionEvent args)
     {
-        if (args.Handled || !TryComp<UmbraeComponent>(uid, out var umbrae)
+        if (args.Handled 
+            || !comp.ActionEntities.TryGetValue("ActionVampireShadowAnchor", out var actionEntity)
+            || !TryComp<UmbraeComponent>(uid, out var umbrae)
             || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
-            || !CheckAndConsumeBloodCost(uid, comp, comp.Actions.ShadowAnchorActionEntity))
+            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
             return;
 
         if (umbrae.SpawnedShadowAnchorBeacon != null && Exists(umbrae.SpawnedShadowAnchorBeacon))
@@ -567,7 +575,9 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnShadowBoxing(EntityUid uid, VampireComponent comp, ref VampireShadowBoxingActionEvent args)
     {
-        if (args.Handled || !TryComp<UmbraeComponent>(uid, out var umbrae))
+        if (args.Handled 
+            || !comp.ActionEntities.TryGetValue("ActionVampireShadowBoxing", out var actionEntity)
+            || !TryComp<UmbraeComponent>(uid, out var umbrae))
             return;
 
         if (!ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
@@ -585,7 +595,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (!umbrae.ShadowBoxingActive)
         {
-            if (!CheckAndConsumeBloodCost(uid, comp, comp.Actions.ShadowBoxingActionEntity))
+            if (!CheckAndConsumeBloodCost(uid, comp, actionEntity))
                 return;
 
             umbrae.ShadowBoxingActive = true;
