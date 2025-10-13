@@ -13,6 +13,8 @@
   - WeaponProtoKineticAccelerator
   - ShuttleGunKineticCircuitboard
   - MechEquipmentKineticAccelerator
+  technologyPrerequisites:
+  - SalvageEquipment # starlight
   radioChannels:
   - Supply
   # These are roundstart but not replenishable for salvage
@@ -146,11 +148,6 @@
   - FlashPayload
   - ExplosivePayload
   - ChemicalPayload
-  - MagazineGrenadeEMP # SL start
-  - MagazineGrenadeFrag
-  - MagazineGrenadeBlast
-  - MagazineGrenadeBaton
-  - MagazineGrenadeFlash # SL end
   radioChannels:
   - Security
 
@@ -213,6 +210,12 @@
   - PKAUpgradeDamage
   - PKAUpgradeRange
   - PKAUpgradeFireRate
+  # region starlight
+  technologyPrerequisites:
+  - SalvageWeapons
+  radioChannels:
+  - Supply
+  # end region
 
 - type: technology
   id: BasicShuttleArmament
