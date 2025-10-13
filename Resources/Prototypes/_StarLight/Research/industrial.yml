@@ -75,5 +75,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponTurretPointDefenseMachineCircuitboard
+  technologyPrerequisites:
+  - SpaceScanning
   radioChannels:
   - Engineering

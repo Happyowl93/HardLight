@@ -127,6 +127,8 @@
   - ThrusterMachineCircuitboard
   - GyroscopeMachineCircuitboard
   - MiniGravityGeneratorCircuitboard
+  technologyPrerequisites:
+  - SpaceScanning
   radioChannels:
   - Engineering
 
