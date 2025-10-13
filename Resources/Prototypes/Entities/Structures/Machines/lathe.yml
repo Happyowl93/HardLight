@@ -438,7 +438,6 @@
     - StarlightSecurityAmmoDynamic
     - StarlightSecurityWeapons
     - StarlightSecurityMechsWeapons
-    - StarlightSecurityGrenades
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - StarlightSecurityGrenadesEmag # starlight end

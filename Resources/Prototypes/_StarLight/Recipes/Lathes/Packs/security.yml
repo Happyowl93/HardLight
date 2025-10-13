@@ -153,9 +153,9 @@
   id: StarlightSecurityExplosives
   recipes:
   - ExplosivePayload
-  - GrenadeBlast
-  - GrenadeEMP
-  - GrenadeFlash
+  - MagazineGrenadeEMP
+  - MagazineGrenadeFlash
+  - MagazineGrenadeBaton
   - MagazineGrenadeEmpty
 
 # Shared between secfab and emagged protolathe
@@ -286,14 +286,6 @@
   recipes:
   - LeftArmCyberBulwark
   - RightArmCyberBulwark
-
-- type: latheRecipePack
-  id: StarlightSecurityGrenades
-  recipes:
-  - MagazineGrenadeEMP
-  - MagazineGrenadeFlash
-  - MagazineGrenadeBaton
-  - MagazineGrenadeEmpty
 
 - type: latheRecipePack
   id: StarlightSecurityGrenadesEmag
