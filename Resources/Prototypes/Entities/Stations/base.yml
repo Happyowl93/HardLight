@@ -65,8 +65,8 @@
 #          nameGrid: false # Starlight - honors entityName in mining.yml
         cargo_salvage_reclaimer: !type:GridSpawnGroup
           paths:
-            - /Maps/_Starlight/Shuttles/Salvage/reclaimer.yml
-          nameGrid: false # Starlight - honors entityName in mining.yml
+            - /Maps/_Starlight/Shuttles/Salvage/cargo_salvage_pioneer.yml
+          nameGrid: false # Starlight - honors entityName
         cargo_mining_breaker: !type:GridSpawnGroup
           paths:
             - /Maps/_Starlight/Shuttles/Mining/breaker.yml

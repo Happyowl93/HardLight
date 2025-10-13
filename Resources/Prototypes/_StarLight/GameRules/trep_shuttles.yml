@@ -1,0 +1,8 @@
+- type: entity
+  parent: BaseGameRule
+  id: shuttle_empty_pioneer_fuel
+  components:
+    - type: StationEvent
+      startAnnouncement: null # It should be silent.
+    - type: LoadMapRule
+      gridPath: /Maps/_Starlight/Shuttles/Salvage/cargo_salvage_pioneer_fuel.yml # no preload cause that leads to a warp point in shuttle space
