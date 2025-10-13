@@ -73,7 +73,7 @@ namespace Content.IntegrationTests.Tests
             {"/Maps/_Starlight/Dungeon/syndie.yml", ["RubberStampSyndicate"]},
             {"/Maps/_Starlight/Shuttles/scarletSHCdefenderFinal.yml", ["RubberStampSyndicate", "TraitorCodePaper"]},
             {"/Maps/_Starlight/Centcomms/CC_Outpost_SC17.yml", ["BoxFolderCentCom", "RubberStampCentcom"]},
-            {"/Maps/_Starlight/Centcomms/CC_Outpost_G24.yml", ["BoxFolderCentCom", "RubberStampCentcom", "RubberStampQm"]},
+            {"/Maps/_Starlight/Centcomms/CC_Outpost_G24.yml", ["BoxFolderCentCom", "RubberStampCentcom", "RubberStampQm"]} // Starlight end
         };
 
         /// <summary>
