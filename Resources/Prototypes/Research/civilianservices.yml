@@ -91,6 +91,7 @@
   - BiomassReclaimerMachineCircuitboard
   radioChannels:
   - Service
+  - Medical # starlight
 
 # Tier 2
 
@@ -151,6 +152,8 @@
   - HonkerPeripheralsElectronics
   - HonkerTargetingElectronics
   - MechEquipmentHorn
+  technologyPrerequisites:
+  - RipleyAPLU # starlight
 
 - type: technology
   id: HONKWeapons
@@ -164,6 +167,8 @@
   recipeUnlocks:
   - MechEquipmentHonkerBananaMortar
   - MechEquipmentHonkerMousetrapMortar
+  technologyPrerequisites:
+  - HONKMech # starlight
 
 - type: technology
   id: AdvancedSpray

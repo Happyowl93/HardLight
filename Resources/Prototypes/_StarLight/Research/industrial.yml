@@ -18,6 +18,8 @@
   - RipleyCentralElectronics
   - RipleyPeripheralsElectronics
   - MechEquipmentGrabber
+  technologyPrerequisites:
+  - CritterMechs # starlight
   radioChannels:
   - Supply
 
