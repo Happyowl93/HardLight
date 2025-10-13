@@ -17,6 +17,7 @@
 
 - type: construction
   id: GasFilterInlineAlt1
+  hide: true
   name: inline-gas-filter
   description: inline-gas-filter-desc
   graph: GasTrinaryStarlight
@@ -34,6 +35,7 @@
 
 - type: construction
   id: GasFilterInlineAlt2
+  hide: true
   name: inline-gas-filter
   description: inline-gas-filter-desc
   graph: GasTrinaryStarlight
@@ -187,6 +189,7 @@
 
 - type: construction
   id: PressureControlledValveAlt1
+  hide: true
   graph: GasTrinaryStarlight
   startNode: start
   targetNode: pneumaticvalveAlt1
@@ -202,6 +205,7 @@
 
 - type: construction
   id: PressureControlledValveAlt2
+  hide: true
   graph: GasTrinaryStarlight
   startNode: start
   targetNode: pneumaticvalveAlt2

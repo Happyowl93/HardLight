@@ -180,7 +180,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/inlinegasfilter.rsi
+    sprite: _Starlight/Structures/Piping/Atmospherics/inlinegasfilter.rsi
     layers:
       - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
         state: pipeTrinaryConnectors
@@ -196,7 +196,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/inlinegasfilter.rsi
+    sprite: _Starlight/Structures/Piping/Atmospherics/inlinegasfilter.rsi
     layers:
       - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
         state: pipeTrinaryConnectors
