@@ -60,4 +60,4 @@ uplink-glue-grenade-name = Glue Grenade
 uplink-glue-grenade-desc = Special grenade for shenanigans, releasing large cloud of glue foam.
 
 uplink-hydra-name = Hydra
-uplink-hydra-desc = A hydra grenade launcher, filled with syndicate cleanade grenades instead of normal ones.
+uplink-hydra-desc = A modified Hydra capable of taking both cleanades and standard grenades. Excellent for when you need to clean up the security department. Comes pre-filled with special syndicate cleanades.

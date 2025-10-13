@@ -15,5 +15,8 @@
   suffix: Syndicate
   description: PLOOP... AAAAAAAA
   components:
-  - type: RevolverAmmoProvider
-    proto: GrenadeCleanadeSyndicate
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - Grenade
+    proto: GrenadeSyndicateCleanade
