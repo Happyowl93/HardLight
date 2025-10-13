@@ -861,10 +861,16 @@
   startNode: start
   targetNode: port
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # starlight
   canBuildInImpassable: false
   conditions:
     - !type:NoUnstackableInTile
+  # region starlight
+  alternativePrototypes:
+  - GasPort
+  - GasPortAlt1
+  - GasPortAlt2
+  # end starlight
 
 - type: construction
   id: GasDualPortVentPump
@@ -872,8 +878,14 @@
   startNode: start
   targetNode: dualportventpump
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # starlight
   canBuildInImpassable: false
+  # region starlight
+  alternativePrototypes:
+  - GasDualPortVentPump
+  - GasDualPortVentPumpAlt1
+  - GasDualPortVentPumpAlt2
+  # end starlight
 
 - type: construction
   id: HeatExchanger
@@ -881,8 +893,14 @@
   startNode: start
   targetNode: radiator
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # starlight
   canBuildInImpassable: false
+  # region starlight
+  alternativePrototypes:
+  - HeatExchanger
+  - HeatExchangerAlt1
+  - HeatExchangerAlt2
+  # end starlight
 
 - type: construction
   id: HeatExchangerBend
@@ -891,8 +909,14 @@
   startNode: start
   targetNode: bendradiator
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # starlight
   canBuildInImpassable: false
+  # region starlight
+  alternativePrototypes:
+  - HeatExchangerBend
+  - HeatExchangerBendAlt1
+  - HeatExchangerBendAlt2
+  # end starlight
 
 # ATMOS TRINARY
 - type: construction
