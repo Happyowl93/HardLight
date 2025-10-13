@@ -119,6 +119,8 @@
     capacity: 6
     # chambers: [ True, True, True, True, True, True ] # SL: Revolver -> Ballistic
     # ammoSlots: [ null, null, null, null, null, null ] # SL: Revolver -> Ballistic
+    # soundEject: # SL: Revolver -> Ballistic
+    #   path: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg # SL: Revolver -> Ballistic
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/sfrifle_magin.ogg
 
