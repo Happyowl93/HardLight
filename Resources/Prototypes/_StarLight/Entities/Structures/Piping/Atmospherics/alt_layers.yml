@@ -69,3 +69,107 @@
     mirrorEntity: GasFilterAlt2
   - type: Construction
     node: filterflippedAlt2
+
+- type: entity
+  parent: [GasPipeLayerAlt1, GasMixer]
+  id: GasMixerAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/gasmixer.rsi
+    layers:
+      - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+        state: pipeTrinaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: gasMixer
+        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: Flippable
+    mirrorEntity: GasMixerFlippedAlt1
+  - type: Construction
+    node: mixerAlt1
+
+- type: entity
+  parent: [GasPipeLayerAlt2, GasMixer]
+  id: GasMixerAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/gasmixer.rsi
+    layers:
+      - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+        state: pipeTrinaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: gasMixer
+        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: Flippable
+    mirrorEntity: GasMixerFlippedAlt2
+  - type: Construction
+    node: mixerAlt2
+
+- type: entity
+  parent: [GasPipeLayerAlt1, GasMixerFlipped]
+  id: GasMixerFlippedAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/gasmixer.rsi
+    layers:
+      - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+        state: pipeTrinaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: gasMixerF
+        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: Flippable
+    mirrorEntity: GasMixerAlt1
+  - type: Construction
+    node: mixerflippedAlt1
+
+- type: entity
+  parent: [GasPipeLayerAlt2, GasMixerFlipped]
+  id: GasMixerFlippedAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/gasmixer.rsi
+    layers:
+      - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+        state: pipeTrinaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: gasMixerF
+        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: Flippable
+    mirrorEntity: GasMixerAlt2
+  - type: Construction
+    node: mixerflippedAlt2
+
+- type: entity
+  parent: [GasPipeLayerAlt1, PressureControlledValve]
+  id: PressureControlledValveAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/pneumaticvalve.rsi
+    layers:
+      - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+        state: pipeTrinaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: off
+        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: Construction
+    node: pneumaticvalveAlt1
+
+- type: entity
+  parent: [GasPipeLayerAlt2, PressureControlledValve]
+  id: PressureControlledValveAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/pneumaticvalve.rsi
+    layers:
+      - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+        state: pipeTrinaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: off
+        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: Construction
+    node: pneumaticvalveAlt2

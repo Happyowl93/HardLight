@@ -938,11 +938,17 @@
   startNode: start
   targetNode: mixer
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # starlight
   canBuildInImpassable: false
   mirror: GasMixerFlipped
   conditions:
     - !type:NoUnstackableInTile
+  # region starlight
+  alternativePrototypes:
+  - GasMixer
+  - GasMixerAlt1
+  - GasMixerAlt2
+  # end starlight
 
 - type: construction
   id: GasMixerFlipped
@@ -951,11 +957,17 @@
   startNode: start
   targetNode: mixerflipped
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # starlight
   canBuildInImpassable: false
   mirror: GasMixer
   conditions:
     - !type:NoUnstackableInTile
+  # region starlight
+  alternativePrototypes:
+  - GasMixerFlipped
+  - GasMixerFlippedAlt1
+  - GasMixerFlippedAlt2
+  # end starlight
 
 - type: construction
   id: PressureControlledValve
@@ -963,10 +975,16 @@
   startNode: start
   targetNode: pneumaticvalve
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # starlight
   canBuildInImpassable: false
   conditions:
     - !type:NoUnstackableInTile
+  # region starlight
+  alternativePrototypes:
+  - PressureControlledValve
+  - PressureControlledValveAlt1
+  - PressureControlledValveAlt2
+  # end starlight
 
 # INTERCOM
 - type: construction
