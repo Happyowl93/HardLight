@@ -293,10 +293,10 @@
   - MagazineGrenadeEMP
   - MagazineGrenadeFlash
   - MagazineGrenadeBaton
+  - MagazineGrenadeEmpty
 
 - type: latheRecipePack
   id: StarlightSecurityGrenadesEmag
   recipes:
   - MagazineGrenadeFrag
   - MagazineGrenadeBlast
-

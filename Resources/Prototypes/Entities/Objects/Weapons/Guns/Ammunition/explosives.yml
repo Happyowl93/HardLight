@@ -139,6 +139,10 @@
   - type: SpentAmmoVisuals
     state: cleanade # Starlight edit: frag -> cleanade (bugfix)
     suffix: false
+  - type: Tag # Starlight start
+    tags:
+    - Grenade
+    - Cleanade # Starlight end - hydra whitelist
 
 - type: entity
   id: GrenadeEMP

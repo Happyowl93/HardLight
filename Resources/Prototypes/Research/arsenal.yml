@@ -146,7 +146,10 @@
   - FlashPayload
   - ExplosivePayload
   - ChemicalPayload
-  - MagazineGrenadeEMP # SL start
+  - ShuttleGunFriendshipCircuitboard  # SL start
+  - ShuttleGunDusterCircuitboard
+  - MagazineGrenadeEmpty
+  - MagazineGrenadeEMP
   - MagazineGrenadeFrag
   - MagazineGrenadeBlast
   - MagazineGrenadeBaton
@@ -227,12 +230,13 @@
   - PowerCageRechargerCircuitboard
   - PowerCageSmall
   - PowerCageMedium
-  - MagazineGrenadeEmpty
-  - GrenadeFlash
-  - GrenadeBlast
+  - PowerCageHigh # SL start
+  # - MagazineGrenadeEmpty
+  # - GrenadeFlash
+  # - GrenadeBlast
+  # - ShuttleGunFriendshipCircuitboard # SL end
   - ShuttleGunSvalinnMachineGunCircuitboard
   - ShuttleGunPerforatorCircuitboard
-  - ShuttleGunFriendshipCircuitboard
   technologyPrerequisites:
   - SalvageWeapons
   radioChannels:
@@ -283,20 +287,21 @@
   radioChannels:
   - Security
 
-- type: technology
-  id: AdvancedShuttleWeapon
-  name: research-technology-advanced-shuttle-weapon
-  icon:
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi
-    state: icon
-  discipline: Arsenal
-  tier: 3
-  cost: 15000
-  recipeUnlocks:
-  - GrenadeEMP
-  - PowerCageHigh
-  - ShuttleGunDusterCircuitboard
-  technologyPrerequisites:
-  - BasicShuttleArmament
-  radioChannels:
-  - Security
+# Removing the EMP and moving the board made this basically useless.
+# - type: technology # SL start
+#   id: AdvancedShuttleWeapon
+#   name: research-technology-advanced-shuttle-weapon
+#   icon:
+#     sprite: Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi
+#     state: icon
+#   discipline: Arsenal
+#   tier: 3
+#   cost: 15000
+#   recipeUnlocks:
+#   - GrenadeEMP
+#   - PowerCageHigh
+#   - ShuttleGunDusterCircuitboard
+#   technologyPrerequisites:
+#   - BasicShuttleArmament
+#   radioChannels:
+#   - Security # SL end

@@ -49,8 +49,11 @@
   id: CentcommVibroblade
 
 - type: Tag
+  id: Cleanade
+
+- type: Tag
   id: ClownKudzu
-  
+
 - type: Tag
   id: CyberHandItem
 
@@ -173,7 +176,7 @@
 
 - type: Tag
   id: Skating
-  
+
 - type: Tag
   id: SovietDungeon
 
@@ -233,10 +236,10 @@
 
 - type: Tag
   id: PettyCriminalTraitBackground
-  
+
 - type: Tag
   id: ThermiteIgnitor
-  
+
 - type: Tag
   id: UnDissolvable
 

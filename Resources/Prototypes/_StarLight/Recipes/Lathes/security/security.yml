@@ -81,7 +81,7 @@
 - type: latheRecipe
   id: MagazineGrenadeEMP
   result: MagazineGrenadeEMP
-  completetime: 6 # one second per grenade
+  completetime: 8 # one second per grenade, plus two for the cartridge
   materials:
     Plastic: 600
     Steel: 1200
@@ -91,7 +91,7 @@
 - type: latheRecipe
   id: MagazineGrenadeBaton
   result: MagazineGrenadeBaton
-  completetime: 6
+  completetime: 8
   materials:
     Plastic: 600
     Steel: 1650
@@ -99,7 +99,7 @@
 - type: latheRecipe
   id: MagazineGrenadeFlash
   result: MagazineGrenadeFlash
-  completetime: 6
+  completetime: 8
   materials:
     Plastic: 1650
     Steel: 1200
@@ -108,16 +108,23 @@
 - type: latheRecipe
   id: MagazineGrenadeBlast
   result: MagazineGrenadeBlast
-  completetime: 6
+  completetime: 8
   materials:
     Plastic: 600
     Steel: 1200
-    Uranium: 300
+    Uranium: 600
 
 - type: latheRecipe
   id: MagazineGrenadeFrag
   result: MagazineGrenadeFrag
-  completetime: 6
+  completetime: 8
   materials:
     Plastic: 600
     Steel: 2000
+
+- type: latheRecipe
+  id: MagazineGrenadeEmpty
+  result: MagazineGrenadeEmpty
+  completetime: 2
+  materials:
+    Plastic: 600
