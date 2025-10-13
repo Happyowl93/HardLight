@@ -238,6 +238,7 @@
   - ShuttleGunFriendshipCircuitboard
   technologyPrerequisites:
   - SalvageWeapons
+  - Shuttlecraft # starlight
   radioChannels:
   - Security
 

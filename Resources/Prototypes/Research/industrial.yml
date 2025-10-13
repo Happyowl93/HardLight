@@ -165,7 +165,7 @@
     - Fulton
     - FultonBeacon
   radioChannels:
-  - Supply
+  - Engineering # starlight
 
 - type: technology
   id: MassExcavation
@@ -182,6 +182,8 @@
     - AdvancedMineralScannerEmpty
     - MechEquipmentDrillDiamond
     - BorgModuleAdvancedMining
+  technologyPrerequisites:
+  - SalvageEquipment # starlight
   radioChannels:
   - Supply
 
@@ -200,6 +202,8 @@
   - ClothingBackpackHolding
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
+  radioChannels:
+  - Supply # starlight
 
 - type: technology
   id: OptimizedMicrogalvanism
@@ -215,3 +219,6 @@
   - PowerCellHyper
   technologyPrerequisites:
   - AdvancedPowercells
+  - PowerGeneration # starlight
+  radioChannels:
+  - Engineering # starlight
