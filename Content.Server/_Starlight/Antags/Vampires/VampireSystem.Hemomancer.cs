@@ -112,7 +112,7 @@ public sealed partial class VampireSystem : EntitySystem
             !TryComp<MapGridComponent>(gridUid, out var gridComp) ||
             !IsValidTile(tileCoords, gridUid, gridComp))
         {
-            _popup.PopupEntity("Cannot cast there.", performer, performer);
+            _popup.PopupEntity("Cannot cast there.", performer, performer); // Rinary - move to locale
             return false;
         }
         return true;
@@ -128,7 +128,7 @@ public sealed partial class VampireSystem : EntitySystem
         {
             var coords = tileCoords.Offset(offset);
             if (IsValidTile(coords, gridUid.Value, gridComp))
-                EntityManager.SpawnEntity("VampireBloodTendrilVisual", coords);
+                EntityManager.SpawnEntity("VampireBloodTendrilVisual", coords); // Rinary - move to resources
         }
     }
 
@@ -155,7 +155,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         // Spawn blood puddle at center
         if (IsValidTile(targetCoords, gridUid, gridComp))
-            Spawn("PuddleBlood", targetCoords);
+            Spawn("PuddleBlood", targetCoords); // Rinary - move to resources
 
         // Process damage and effects
         var hitEnemies = ProcessTendrilDamage(performerUid, targetCoords, gridUid, gridComp, toxinDamage, slowDuration, slowMultiplier, targetRange);
@@ -199,11 +199,11 @@ public sealed partial class VampireSystem : EntitySystem
                 continue;
 
             var enemyCoords = Transform(enemy).Coordinates;
-            EntityManager.SpawnEntity("VampireBloodTendrilVisual", enemyCoords);
+            EntityManager.SpawnEntity("VampireBloodTendrilVisual", enemyCoords); // Rinary - move to resources
 
             var enemyTileCoords = enemyCoords.WithPosition(enemyCoords.Position.Floored() + new Vector2(positionOffset, positionOffset));
             if (IsValidTile(enemyTileCoords, gridUid, gridComp))
-                Spawn("PuddleBlood", enemyTileCoords);
+                Spawn("PuddleBlood", enemyTileCoords); // Rinary - move to resources
         }
     }
 
@@ -224,7 +224,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (_transform.GetGrid(tileCoords) is not { } gridUid ||
             !TryComp<MapGridComponent>(gridUid, out var gridComp))
         {
-            _popup.PopupEntity("Cannot place barriers there", args.Performer, args.Performer);
+            _popup.PopupEntity("Cannot place barriers there", args.Performer, args.Performer); // Rinary - move to locale
             return;
         }
 
@@ -248,7 +248,7 @@ public sealed partial class VampireSystem : EntitySystem
             if (!IsValidTile(barrierCoords, gridUid, gridComp))
                 continue;
 
-            var barrier = EntityManager.SpawnEntity("VampireBloodBarrier", barrierCoords);
+            var barrier = EntityManager.SpawnEntity("VampireBloodBarrier", barrierCoords); // Rinary - move to resources
 
             var preventCollide = EnsureComp<PreventCollideComponent>(barrier);
             preventCollide.Uid = args.Performer;
@@ -258,15 +258,10 @@ public sealed partial class VampireSystem : EntitySystem
         }
 
         if (successfulBarriers == 0)
-            _popup.PopupEntity("Cannot place barriers there.", args.Performer, args.Performer);
+            _popup.PopupEntity("Cannot place barriers there.", args.Performer, args.Performer); // Rinary - move to locale
     }
 
-    // Rinary у меня лапки, помоги с этим говном пж
-    // Сделай так, чтобы вампир мог превратиться в кровавую лужу на 8 секунд
-    // В этой форме он невидим, неуязвим и может проходить через всё, кроме стен и тайлов космоса
-    // Но не может атаковать, пить кровь и использовать способности
-    // Реализация ниже, ну говно если так выразится
-    // Jaunt в теории надо оформить, но как сделать так чтобы он через стены не проходил я хз
+    // Rinary - rework on polymorph
     private void OnSanguinePool(EntityUid uid, VampireComponent comp, ref VampireSanguinePoolActionEvent args)
     {
         if (args.Handled || !TryComp<HemomancerComponent>(uid, out var hemomancer))
@@ -441,7 +436,7 @@ public sealed partial class VampireSystem : EntitySystem
                 ApplyDamage(targetUid, "Blunt", args.Damage, uid);
         }
 
-        _popup.PopupEntity("You cause blood to erupt in spikes around you!", uid, uid);
+        _popup.PopupEntity("You cause blood to erupt in spikes around you!", uid, uid);// Rinary - move to locale
         args.Handled = true;
     }
 

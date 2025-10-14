@@ -85,8 +85,28 @@ action-vampire-blood-bringers-rite-desc = todo
 # Umbrae abilities
 action-vampire-cloak-of-darkness-name = Cloak of Darkness(Toggle)
 action-vampire-cloak-of-darkness-desc = Toggle invisibility and speed boost that scales with darkness. More effective in dark areas, less effective in bright light.
+action-vampire-cloak-of-darkness-start = You blend into the shadows!
+action-vampire-cloak-of-darkness-stop = You step out of the shadows.
+
 
 action-vampire-shadow-snare-name = Shadow Snare(20/10)
 action-vampire-shadow-snare-desc = Place a fragile shadow trap at target location. Damages, blinds (20s) and heavily slows a non-vampire humanoid that steps on it. Trap health decays in brighter light and is destroyed by flashes.
+
 action-vampire-shadow-anchor-name = Shadow Anchor(20/10)
 action-vampire-shadow-anchor-desc = First use: place a shadow anchor beacon (lasts 2 min). Second use while it exists: instantly return to it and consume the beacon.
+action-vampire-shadow-anchor-returned = You returned to the shadow anchor
+action-vampire-shadow-anchor-installed = You've secured a spot in the shadows
+
+
+action-vampire-shadow-boxing-start = You begin shadow boxing.
+action-vampire-shadow-boxing-stop = Shadow boxing has been stoped.
+
+action-vampire-dark-passage-wrong-place = The darkness here is impenetrable...
+action-vampire-dark-passage-activated = You slipped through the darkness...
+
+action-vampire-extinguish-activated = You absorbed the light around you...({$count})
+
+action-vampire-eternal-darkness-not-enough-power = Your power is insufficient (need >1000 total blood & 8 unique victims).
+action-vampire-eternal-darkness-not-enough-blood = You have run out of blood to sustain eternal darkness.
+action-vampire-eternal-darkness-start = You conjured eternal darkness...
+action-vampire-eternal-darkness-stop = The eternal darkness has dissipated...

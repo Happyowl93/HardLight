@@ -52,12 +52,12 @@ public sealed partial class VampireSystem : EntitySystem
         if (umbrae.CloakOfDarknessActive)
         {
             DeactivateCloakOfDarkness(uid, umbrae);
-            _popup.PopupEntity("You step out of the shadows", uid, uid); // Rinary - move to locale
+            _popup.PopupEntity(Loc.GetString("action-vampire-cloak-of-darkness-start"), uid, uid);
         }
         else
         {
             ActivateCloakOfDarkness(uid, umbrae);
-            _popup.PopupEntity("You blend into the shadows!", uid, uid); // Rinary - move to locale
+            _popup.PopupEntity(Loc.GetString("action-vampire-cloak-of-darkness-stop"), uid, uid);
         }
 
         if (_actions.GetAction(actionEntity) is { } action)
@@ -81,12 +81,12 @@ public sealed partial class VampireSystem : EntitySystem
         Dirty(uid, comp);
 
         RemComp<StealthComponent>(uid);
-        _movementMod.TryUpdateMovementSpeedModDuration(uid, "VampireCloakSpeedBoost", TimeSpan.Zero, 1f); // Rinary - move to resources
+        _movementMod.TryUpdateMovementSpeedModDuration(uid, comp.CloakOfDarknessMovementEffect, TimeSpan.Zero, 1f);
     }
 
     private void StartCloakOfDarknessLoop(EntityUid uid, int tickCount)
     {
-        const int MaxTicks = 3000; // +-100 minutes // Rinary - move to resources
+        const int MaxTicks = 3000; // +-100 minutes // Rinary - rework to TimeSpan, make in update instead of timer loop.
 
         if (tickCount >= MaxTicks
             || !Exists(uid)
@@ -194,6 +194,7 @@ public sealed partial class VampireSystem : EntitySystem
     private void OnDarkPassage(EntityUid uid, VampireComponent comp, ref VampireDarkPassageActionEvent args)
     {
         if (args.Handled
+            || !TryComp<UmbraeComponent>(uid, out var umbrae)
             || !comp.ActionEntities.TryGetValue("ActionVampireDarkPassage", out var actionEntity)
             || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
             || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
@@ -207,18 +208,18 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (!IsValidTile(target) || !_interaction.InRangeUnobstructed(uid, target, range: 1000f, collisionMask: CollisionGroup.Opaque, popup: false))
         {
-            _popup.PopupEntity("The darkness here is impenetrable...", uid, uid); // Rinary - move to locale
+            _popup.PopupEntity(Loc.GetString("action-vampire-dark-passage-wrong-place"), uid, uid);
             return;
         }
 
-        EntityManager.SpawnEntity("VampireDarkPassageMistIn", curXform.Coordinates); // Rinary - move to resources
+        EntityManager.SpawnEntity(umbrae.DarkPassageMistIn, curXform.Coordinates);
 
         _transform.SetCoordinates(uid, target);
         _transform.AttachToGridOrMap(uid, curXform);
 
-        EntityManager.SpawnEntity("VampireDarkPassageMistOut", target); // Rinary - move to resources
+        EntityManager.SpawnEntity(umbrae.DarkPassageMistOut, target);
 
-        _popup.PopupEntity("You slipped through the darkness...", uid, uid); // Rinary - move to locale
+        _popup.PopupEntity(Loc.GetString("action-vampire-dark-passage-activated"), uid, uid);
         args.Handled = true;
     }
 
@@ -246,7 +247,7 @@ public sealed partial class VampireSystem : EntitySystem
             }
         }
 
-        _popup.PopupEntity($"You absorbed the light around you...({count})", uid, uid); // Rinary - move to locale
+        _popup.PopupEntity(Loc.GetString("action-vampire-extinguish-activated", ("count", count)), uid, uid);
         args.Handled = true;
     }
 
@@ -262,7 +263,7 @@ public sealed partial class VampireSystem : EntitySystem
         {
             if (!comp.FullPower)
             {
-                _popup.PopupEntity("Your power is insufficient (need >1000 total blood & 8 unique victims).", uid, uid); // Rinary - move to locale
+                _popup.PopupEntity(Loc.GetString("action-vampire-eternal-darkness-not-enough-power"), uid, uid);
                 args.Handled = true;
                 return;
             }
@@ -277,11 +278,11 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (umbrae.EternalDarknessActive)
         {
-            _popup.PopupEntity("You conjured eternal darkness...", uid, uid); // Rinary - move to locale
+            _popup.PopupEntity(Loc.GetString("action-vampire-eternal-darkness-start"), uid, uid);
             umbrae.EternalDarknessLoopId++;
             if (umbrae.EternalDarknessAuraEntity == null || !Exists(umbrae.EternalDarknessAuraEntity))
             {
-                var aura = Spawn("VampireEternalDarknessAura", Transform(uid).Coordinates); // Rinary - move to locale
+                var aura = Spawn(umbrae.EternalDarknessAura, Transform(uid).Coordinates);
                 umbrae.EternalDarknessAuraEntity = aura;
                 _transform.SetParent(aura, uid);
             }
@@ -289,7 +290,7 @@ public sealed partial class VampireSystem : EntitySystem
         }
         else
         {
-            _popup.PopupEntity("The eternal darkness has dissipated...", uid, uid); // Rinary - move to locale
+            _popup.PopupEntity(Loc.GetString("action-vampire-eternal-darkness-stop"), uid, uid);
             if (umbrae.EternalDarknessAuraEntity != null && Exists(umbrae.EternalDarknessAuraEntity))
                 QueueDel(umbrae.EternalDarknessAuraEntity.Value);
             umbrae.EternalDarknessAuraEntity = null;
@@ -325,7 +326,7 @@ public sealed partial class VampireSystem : EntitySystem
     {
         if (comp.DrunkBlood < bloodPerTick)
         {
-            DeactivateEternalDarkness(uid, comp, umbrae, "You have run out of blood to sustain eternal darkness."); // Rinary - move to locale
+            DeactivateEternalDarkness(uid, comp, umbrae, Loc.GetString("action-vampire-eternal-darkness-not-enough-blood"));
             return false;
         }
 
@@ -561,15 +562,15 @@ public sealed partial class VampireSystem : EntitySystem
             _transform.AttachToGridOrMap(uid, Transform(uid));
             QueueDel(beacon);
             umbrae.SpawnedShadowAnchorBeacon = null;
-            _popup.PopupEntity("You returned to the shadow anchor", uid, uid); // Rinary move to locale
+            _popup.PopupEntity(Loc.GetString("action-vampire-shadow-anchor-returned"), uid, uid);
             args.Handled = true;
             return;
         }
 
         var cur = Transform(uid).Coordinates;
-        var newBeacon = EntityManager.SpawnEntity("VampireShadowAnchorBeacon", cur); // Rinary move to resources
+        var newBeacon = EntityManager.SpawnEntity(umbrae.ShadowAnchorBeacon, cur);
         umbrae.SpawnedShadowAnchorBeacon = newBeacon;
-        _popup.PopupEntity("You've secured a spot in the shadows", uid, uid); // Rinary move to locale
+        _popup.PopupEntity(Loc.GetString("action-vampire-shadow-anchor-installed"), uid, uid);
         args.Handled = true;
     }
 
@@ -600,7 +601,7 @@ public sealed partial class VampireSystem : EntitySystem
 
             umbrae.ShadowBoxingActive = true;
             umbrae.ShadowBoxingEndTime = now + totalDuration;
-            _popup.PopupEntity("You begin shadow boxing", uid, uid); // Rinary move to locale
+            _popup.PopupEntity(Loc.GetString("action-vampire-shadow-boxing-start"), uid, uid);
         }
         else
         {
@@ -610,7 +611,7 @@ public sealed partial class VampireSystem : EntitySystem
                 umbrae.ShadowBoxingTarget = null;
                 umbrae.ShadowBoxingEndTime = null;
                 Dirty(uid, comp);
-                _popup.PopupEntity("Shadow boxing has been stoped", uid, uid); // Rinary move to locale
+                _popup.PopupEntity(Loc.GetString("action-vampire-shadow-boxing-stop"), uid, uid);
                 return;
             }
         }
