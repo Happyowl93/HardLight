@@ -255,6 +255,11 @@
   - WeaponMechCombatShotgun
   - WeaponMechCombatShotgunIncendiary
   - WeaponMechCombatUltraRifle
+  - WeaponMechCombatXray
+  - WeaponMechChainSword
+  - WeaponMechCombatIon
+  - WeaponMechCombatAMLG90
+  - WeaponMechCombatTaser
 
 - type: latheRecipePack
   id: StarlightSecurityMechs

@@ -340,7 +340,6 @@
     - MechParts
     - MechEquipment
     - StarlightMechEquipment
-    - StarlightMechWeapon
     - StarlightSecurityMechs
     - StarlightMechParts
   - type: EmagLatheRecipes

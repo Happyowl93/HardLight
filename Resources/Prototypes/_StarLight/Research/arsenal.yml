@@ -36,8 +36,7 @@
   - GygaxPeripheralsElectronics
   - GygaxTargetingElectronics
   - WeaponMechCombatUltraRifle
-  technologyPrerequisites:
-  - Paddy
+  - WeaponMechChainSword
   radioChannels:
   - Security
 
@@ -92,6 +91,7 @@
   recipeUnlocks:
   - WeaponIonRifle
   - WeaponIonCarbine
+  - WeaponMechCombatIon
   radioChannels:
   - Security
   
