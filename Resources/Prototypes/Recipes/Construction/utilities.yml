@@ -534,10 +534,16 @@
   startNode: start
   targetNode: ventpump
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # starlight
   canBuildInImpassable: false
   conditions:
   - !type:NoUnstackableInTile
+  # region starlight
+  alternativePrototypes:
+  - GasVentPump
+  - GasVentPumpAlt1
+  - GasVentPumpAlt2
+  # end region
 
 - type: construction
   id: GasPassiveVent
@@ -545,10 +551,16 @@
   startNode: start
   targetNode: passivevent
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # starlight
   canBuildInImpassable: false
   conditions:
   - !type:NoUnstackableInTile
+  # region starlight
+  alternativePrototypes:
+  - GasPassiveVent
+  - GasPassiveVentAlt1
+  - GasPassiveVentAlt2
+  # end region
 
 - type: construction
   id: GasVentScrubber
@@ -556,10 +568,16 @@
   startNode: start
   targetNode: ventscrubber
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # starlight
   canBuildInImpassable: false
   conditions:
   - !type:NoUnstackableInTile
+  # region starlight
+  alternativePrototypes:
+  - GasVentScrubber
+  - GasVentScrubberAlt1
+  - GasVentScrubberAlt2
+  # end region
 
 - type: construction
   id: GasOutletInjector
@@ -567,10 +585,16 @@
   startNode: start
   targetNode: outletinjector
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # starlight
   canBuildInImpassable: false
   conditions:
   - !type:NoUnstackableInTile
+  # region starlight
+  alternativePrototypes:
+  - GasOutletInjector
+  - GasOutletInjectorAlt1
+  - GasOutletInjectorAlt2
+  # end region
 
 # ATMOS BINARY
 - type: construction
