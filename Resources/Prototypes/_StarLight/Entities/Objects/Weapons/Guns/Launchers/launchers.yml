@@ -5,7 +5,7 @@
   suffix: EMP
   description: PLOOP... ZAP
   components:
-  - type: RevolverAmmoProvider
+  - type: BallisticAmmoProvider
     proto: GrenadeEMP
 
 - type: entity
