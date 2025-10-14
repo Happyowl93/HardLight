@@ -17,6 +17,7 @@ using Content.Shared.Physics;
 using Content.Shared.Stealth.Components;
 using Robust.Shared.Audio;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -87,6 +88,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (args.Handled 
             || !TryComp<VampireComponent>(args.Performer, out var comp) 
+            || !TryComp<HemomancerComponent>(args.Performer, out var hemomancer)
             || !comp.ActionEntities.TryGetValue("ActionVampireHemomancerTendrils", out var action) 
             || !ValidateVampireClass(args.Performer, comp, VampireClassType.Hemomancer)
             || !CheckAndConsumeActionCost(args.Performer, comp, action))
@@ -101,7 +103,7 @@ public sealed partial class VampireSystem : EntitySystem
             return;
 
         if (args.SpawnVisuals)
-            SpawnTendrilVisuals(tileCoords);
+            SpawnTendrilVisuals(tileCoords, hemomancer.BloodTendrilsVisual);
 
         ScheduleTendrilEffect(args, tileCoords);
     }
@@ -112,13 +114,13 @@ public sealed partial class VampireSystem : EntitySystem
             !TryComp<MapGridComponent>(gridUid, out var gridComp) ||
             !IsValidTile(tileCoords, gridUid, gridComp))
         {
-            _popup.PopupEntity("Cannot cast there.", performer, performer); // Rinary - move to locale
+            _popup.PopupEntity(Loc.GetString("action-vampire-hemomancer-tendrils-wrong-place"), performer, performer);
             return false;
         }
         return true;
     }
 
-    private void SpawnTendrilVisuals(EntityCoordinates tileCoords)
+    private void SpawnTendrilVisuals(EntityCoordinates tileCoords, EntProtoId tendrilVisualId)
     {
         var gridUid = _transform.GetGrid(tileCoords);
         if (gridUid == null || !TryComp<MapGridComponent>(gridUid.Value, out var gridComp))
@@ -128,7 +130,7 @@ public sealed partial class VampireSystem : EntitySystem
         {
             var coords = tileCoords.Offset(offset);
             if (IsValidTile(coords, gridUid.Value, gridComp))
-                EntityManager.SpawnEntity("VampireBloodTendrilVisual", coords); // Rinary - move to resources
+                EntityManager.SpawnEntity(tendrilVisualId, coords);
         }
     }
 
@@ -150,19 +152,19 @@ public sealed partial class VampireSystem : EntitySystem
     private void ExecuteTendrilEffect(EntityUid performerUid, EntityCoordinates targetCoords, EntityUid gridUid, MapGridComponent gridComp,
         float toxinDamage, TimeSpan slowDuration, float slowMultiplier, float spawnDelay, float targetRange, float positionOffset)
     {
-        if (!Exists(performerUid))
+        if (!Exists(performerUid) || !TryComp<HemomancerComponent>(performerUid, out var hemomancer))
             return;
 
         // Spawn blood puddle at center
         if (IsValidTile(targetCoords, gridUid, gridComp))
-            Spawn("PuddleBlood", targetCoords); // Rinary - move to resources
+            Spawn(hemomancer.BloodTendrilsPuddle, targetCoords);
 
         // Process damage and effects
         var hitEnemies = ProcessTendrilDamage(performerUid, targetCoords, gridUid, gridComp, toxinDamage, slowDuration, slowMultiplier, targetRange);
 
         // Schedule visual effects for hit enemies
         if (hitEnemies.Count > 0)
-            Timer.Spawn(TimeSpan.FromSeconds(spawnDelay), () => SpawnTendrilEffectsOnEnemies(hitEnemies, gridUid, gridComp, positionOffset));
+            Timer.Spawn(TimeSpan.FromSeconds(spawnDelay), () => SpawnTendrilEffectsOnEnemies(hitEnemies, gridUid, gridComp, positionOffset, hemomancer.BloodTendrilsVisual, hemomancer.BloodTendrilsPuddle));
     }
 
     private List<EntityUid> ProcessTendrilDamage(EntityUid performerUid, EntityCoordinates targetCoords, EntityUid gridUid,
@@ -191,7 +193,7 @@ public sealed partial class VampireSystem : EntitySystem
         return hitEnemies;
     }
 
-    private void SpawnTendrilEffectsOnEnemies(List<EntityUid> hitEnemies, EntityUid gridUid, MapGridComponent gridComp, float positionOffset)
+    private void SpawnTendrilEffectsOnEnemies(List<EntityUid> hitEnemies, EntityUid gridUid, MapGridComponent gridComp, float positionOffset, EntProtoId tendrilVisualId, EntProtoId puddleId)
     {
         foreach (var enemy in hitEnemies)
         {
@@ -199,17 +201,18 @@ public sealed partial class VampireSystem : EntitySystem
                 continue;
 
             var enemyCoords = Transform(enemy).Coordinates;
-            EntityManager.SpawnEntity("VampireBloodTendrilVisual", enemyCoords); // Rinary - move to resources
+            EntityManager.SpawnEntity(tendrilVisualId, enemyCoords);
 
             var enemyTileCoords = enemyCoords.WithPosition(enemyCoords.Position.Floored() + new Vector2(positionOffset, positionOffset));
             if (IsValidTile(enemyTileCoords, gridUid, gridComp))
-                Spawn("PuddleBlood", enemyTileCoords); // Rinary - move to resources
+                Spawn(puddleId, enemyTileCoords);
         }
     }
 
     private void OnBloodBarrier(VampireBloodBarrierActionEvent args)
     {
         if (args.Handled 
+            || !TryComp<HemomancerComponent>(args.Performer, out var hemomancer)
             || !TryComp<VampireComponent>(args.Performer, out var comp) 
             || !comp.ActionEntities.TryGetValue("ActionVampireBloodBarrier", out var action)
             || !ValidateVampireClass(args.Performer, comp, VampireClassType.Hemomancer) 
@@ -224,7 +227,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (_transform.GetGrid(tileCoords) is not { } gridUid ||
             !TryComp<MapGridComponent>(gridUid, out var gridComp))
         {
-            _popup.PopupEntity("Cannot place barriers there", args.Performer, args.Performer); // Rinary - move to locale
+            _popup.PopupEntity(Loc.GetString("action-vampire-blood-barrier-wrong-place"), args.Performer, args.Performer);
             return;
         }
 
@@ -248,7 +251,7 @@ public sealed partial class VampireSystem : EntitySystem
             if (!IsValidTile(barrierCoords, gridUid, gridComp))
                 continue;
 
-            var barrier = EntityManager.SpawnEntity("VampireBloodBarrier", barrierCoords); // Rinary - move to resources
+            var barrier = EntityManager.SpawnEntity(hemomancer.BloodBarrier, barrierCoords);
 
             var preventCollide = EnsureComp<PreventCollideComponent>(barrier);
             preventCollide.Uid = args.Performer;
@@ -258,7 +261,7 @@ public sealed partial class VampireSystem : EntitySystem
         }
 
         if (successfulBarriers == 0)
-            _popup.PopupEntity("Cannot place barriers there.", args.Performer, args.Performer); // Rinary - move to locale
+            _popup.PopupEntity(Loc.GetString("action-vampire-blood-barrier-wrong-place"), args.Performer, args.Performer);
     }
 
     // Rinary - rework on polymorph
@@ -436,7 +439,7 @@ public sealed partial class VampireSystem : EntitySystem
                 ApplyDamage(targetUid, "Blunt", args.Damage, uid);
         }
 
-        _popup.PopupEntity("You cause blood to erupt in spikes around you!", uid, uid);// Rinary - move to locale
+        _popup.PopupEntity(Loc.GetString("action-vampire-blood-eruption-activated"), uid, uid);
         args.Handled = true;
     }
 
@@ -448,23 +451,23 @@ public sealed partial class VampireSystem : EntitySystem
         if (hemomancer.BloodBringersRiteActive)
         {
             DeactivateBloodBringersRite(uid, hemomancer);
-            _popup.PopupEntity("Blood Bringers Rite deactivated", uid, uid); // Rinary - move to locale
+            _popup.PopupEntity(Loc.GetString("action-vampire-blood-bringers-rite-stop"), uid, uid);
         }
         else
         {
             if (!comp.FullPower)
             {
-                _popup.PopupEntity("You lack full vampiric power (need above 1000 total blood & 8 unique victims)", uid, uid); // Rinary - move to locale
+                _popup.PopupEntity(Loc.GetString("action-vampire-blood-bringers-rite-not-enough-power"), uid, uid);
                 return;
             }
             if (comp.DrunkBlood < args.Cost)
             {
-                _popup.PopupEntity("Not enough blood to activate Blood Bringers Rite", uid, uid); // Rinary - move to locale
+                _popup.PopupEntity(Loc.GetString("action-vampire-blood-brighters-rite-not-enough-blood"), uid, uid);
                 return;
             }
 
             ActivateBloodBringersRite(uid, hemomancer, args.ToggleInterval, args.Cost, args.Range, args.Damage, args.HealBrute, args.HealBurn, args.HealStamina);
-            _popup.PopupEntity("Blood Bringers Rite activated!", uid, uid); // Rinary - move to locale
+            _popup.PopupEntity(Loc.GetString("action-vampire-blood-bringers-rite-start"), uid, uid);
         }
 
         if (_actions.GetAction(actionEntity) is { } action)
@@ -525,7 +528,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (comp.DrunkBlood < cost)
         {
             DeactivateBloodBringersRite(uid, hemomancer);
-            _popup.PopupEntity("Blood Bringers Rite deactivated - not enough blood", uid, uid); // Rinary - move to locale
+            _popup.PopupEntity(Loc.GetString("action-vampire-blood-bringers-rite-stop-blood"), uid, uid);
 
             if (_actions.GetAction(actionEntity) is { } action)
                 _actions.SetToggled(action.AsNullable(), false);

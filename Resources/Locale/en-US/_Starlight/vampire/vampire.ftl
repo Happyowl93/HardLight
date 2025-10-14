@@ -69,18 +69,26 @@ action-vampire-hemomancer-claws-desc = Extend blood-infused claws, increasing yo
 
 action-vampire-hemomancer-tendrils-name = Blood Tendrils()
 action-vampire-hemomancer-tendrils-desc = Send blood tendrils to a target location, slowing and poisoning enemies.
+action-vampire-hemomancer-tendrils-wrong-place = Cannot cast there.
 
 action-vampire-blood-barrier-name = Blood Barrier()
 action-vampire-blood-barrier-desc = Creates 3 blood barriers at the target location. Vampires can pass through them.
+action-vampire-blood-barrier-wrong-place = Cannot place barriers there.
 
 action-vampire-sanguine-pool-name = Sanguine Pool()
 action-vampire-sanguine-pool-desc = Briefly transform into a sentient blood puddle, increasing movement speed and allowing you to move through anything except walls and space.
 
 action-vampire-blood-eruption-name = Blood Eruption()
 action-vampire-blood-eruption-desc = Cause any blood within 4 tiles of you to erupt, dealing 50 brute damage to anyone standing on it.
+action-vampire-blood-eruption-activated = You cause blood to erupt in spikes around you!
 
 action-vampire-blood-bringers-rite-name = Blood Bringers Rite(10/2 sec)
 action-vampire-blood-bringers-rite-desc = todo
+action-vampire-blood-bringers-rite-not-enough-power = You lack full vampiric power (need above 1000 total blood & 8 unique victims)
+action-vampire-blood-brighters-rite-not-enough-blood = Not enough blood to activate blood bringers rite
+action-vampire-blood-bringers-rite-start = Blood Bringers Rite activated!
+action-vampire-blood-bringers-rite-stop = Blood bringers rite deactivated
+action-vampire-blood-bringers-rite-stop-blood = Blood Bringers Rite deactivated - not enough blood
 
 # Umbrae abilities
 action-vampire-cloak-of-darkness-name = Cloak of Darkness(Toggle)
