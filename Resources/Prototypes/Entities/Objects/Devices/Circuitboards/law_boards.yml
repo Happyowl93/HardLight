@@ -1,6 +1,5 @@
 - type: entity
   id: NTDefaultCircuitBoard
-  categories: [ ShouldMapStation ] # Starlight
   parent: BaseElectronics
   name: law board (NT Default)
   # Starlight-edit: Dynamic lawbord descriptions. description: An electronics board containing the NT Default lawset.
