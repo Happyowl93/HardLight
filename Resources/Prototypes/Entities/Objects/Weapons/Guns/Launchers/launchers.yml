@@ -108,9 +108,6 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
   - type: GunRequiresWield
-  - type: ContainerContainer
-    containers:
-      revolver-ammo: !type:Container
   - type: BallisticAmmoProvider # SL: Revolver -> Ballistic
     whitelist:
       tags:
