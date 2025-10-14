@@ -2,6 +2,62 @@
 
 # region binary
 
+- type: construction
+  id: GasPortAlt1
+  graph: GasBinaryStarlight
+  startNode: start
+  targetNode: portAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+    - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPort
+  - GasPortAlt1
+  - GasPortAlt2
+
+- type: construction
+  id: GasPortAlt2
+  graph: GasBinaryStarlight
+  startNode: start
+  targetNode: portAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+    - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPort
+  - GasPortAlt1
+  - GasPortAlt2
+
+- type: construction
+  id: GasDualPortVentPumpAlt1
+  graph: GasBinaryStarlight
+  startNode: start
+  targetNode: dualportventpumpAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  alternativePrototypes:
+  - GasDualPortVentPump
+  - GasDualPortVentPumpAlt1
+  - GasDualPortVentPumpAlt2
+
+- type: construction
+  id: GasDualPortVentPumpAlt2
+  graph: GasBinaryStarlight
+  startNode: start
+  targetNode: dualportventpumpAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  alternativePrototypes:
+  - GasDualPortVentPump
+  - GasDualPortVentPumpAlt1
+  - GasDualPortVentPumpAlt2
+
 # region trinary
 - type: construction
   id: GasFilterInline
