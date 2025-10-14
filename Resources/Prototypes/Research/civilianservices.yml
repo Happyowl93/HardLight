@@ -129,6 +129,7 @@
   - AdvMopItem
   - MegaSprayBottle
   - BorgModuleAdvancedCleaning
+  - Hydra # Starlight
   radioChannels:
   - Service
 

@@ -1,7 +1,6 @@
 - type: entity
-  parent: WeaponLauncherHydra
+  parent: WeaponLauncherHydraSyndicate
   id: WeaponLauncherHydraEMP
-  name: hydra
   suffix: EMP
   description: PLOOP... ZAP
   components:
@@ -9,9 +8,9 @@
     proto: GrenadeEMP
 
 - type: entity
-  parent: WeaponLauncherHydra
+  parent: [ WeaponLauncherHydra, BaseSyndicateContraband ]
   id: WeaponLauncherHydraSyndicate
-  name: hydra
+  name: modified hydra
   suffix: Syndicate
   description: PLOOP... AAAAAAAA
   components:
@@ -20,3 +19,10 @@
       tags:
       - Grenade
     proto: GrenadeCleanadeSyndicate
+
+- type: entity
+  parent: WeaponLauncherHydra
+  id: WeaponLauncherHydraFilled
+  components:
+  - type: BallisticAmmoProvider
+    proto: GrenadeCleanade

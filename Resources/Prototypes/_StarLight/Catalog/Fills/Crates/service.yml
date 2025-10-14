@@ -8,16 +8,3 @@
     contents:
       - id: MagazineGrenadeCleanade
         amount: 2
-
-- type: entity
-  id: CrateServiceHydra
-  parent: CratePlastic
-  name: hydra crate
-  description: Contains a Hydra grenade launcher with one spare magazine.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazineGrenadeCleanade
-        amount: 1
-      - id: WeaponLauncherHydra
-        amount: 1

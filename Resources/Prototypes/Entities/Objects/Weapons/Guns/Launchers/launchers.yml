@@ -112,7 +112,7 @@
     whitelist:
       tags:
       - Cleanade # Starlight change
-    proto: GrenadeCleanade
+    # proto: GrenadeCleanade # Starlight change -> comes empty
     capacity: 6
     # chambers: [ True, True, True, True, True, True ] # SL: Revolver -> Ballistic
     # ammoSlots: [ null, null, null, null, null, null ] # SL: Revolver -> Ballistic
