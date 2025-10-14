@@ -448,6 +448,7 @@
           map: [ "enum.SubfloorLayers.FirstLayer" ]
     # region starlight
     - type: AtmosPipeLayers
+      spriteRsiPaths: {}
       alternativePrototypes:
         Primary: GasPort
         Secondary: GasPortAlt1
@@ -500,6 +501,7 @@
           map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
     # region starlight
     - type: AtmosPipeLayers
+      spriteRsiPaths: {}
       alternativePrototypes:
         Primary: GasDualPortVentPump
         Secondary: GasDualPortVentPumpAlt1
@@ -625,7 +627,7 @@
   name: radiator
   description: Transfers heat between the pipe and its surroundings.
   placement:
-    mode: AlignAtmosPipeLayers # starlight
+    mode: SnapgridCenter
   components:
   - type: Rotatable
   - type: Transform
@@ -638,14 +640,9 @@
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: heStraight
       map: [ "enum.SubfloorLayers.FirstLayer" ]
-  # region starlight
   - type: AtmosPipeLayers
-    alternativePrototypes:
-      Primary: HeatExchanger
-      Secondary: HeatExchangerAlt1
-      Tertiary: HeatExchangerAlt2
-    # numberOfPipeLayers: 1
-  # end region
+    spriteRsiPaths: {}
+    numberOfPipeLayers: 1
   - type: SubFloorHide
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
@@ -677,7 +674,7 @@
   id: HeatExchangerBend
   suffix: Bend
   placement:
-    mode: AlignAtmosPipeLayers # starlight
+    mode: SnapgridCenter
   components:
     - type: SubFloorHide
       visibleLayers:
@@ -689,13 +686,6 @@
         map: [ "enum.PipeVisualLayers.Pipe" ]
       - state: heBend
         map: [ "enum.SubfloorLayers.FirstLayer" ]
-    # region starlight
-    - type: AtmosPipeLayers
-      alternativePrototypes:
-        Primary: HeatExchangerBend
-        Secondary: HeatExchangerBendAlt1
-        Tertiary: HeatExchangerBendAlt2
-    # end region
     - type: NodeContainer
       nodes:
         inlet:
