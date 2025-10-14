@@ -4,6 +4,7 @@
 
 - type: construction
   id: GasPortAlt1
+  hide: true
   graph: GasBinaryStarlight
   startNode: start
   targetNode: portAlt1
@@ -19,6 +20,7 @@
 
 - type: construction
   id: GasPortAlt2
+  hide: true
   graph: GasBinaryStarlight
   startNode: start
   targetNode: portAlt2
@@ -34,6 +36,7 @@
 
 - type: construction
   id: GasDualPortVentPumpAlt1
+  hide: true
   graph: GasBinaryStarlight
   startNode: start
   targetNode: dualportventpumpAlt1
@@ -47,6 +50,7 @@
 
 - type: construction
   id: GasDualPortVentPumpAlt2
+  hide: true
   graph: GasBinaryStarlight
   startNode: start
   targetNode: dualportventpumpAlt2

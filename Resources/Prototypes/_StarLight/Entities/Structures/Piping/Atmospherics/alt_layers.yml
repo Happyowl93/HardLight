@@ -39,7 +39,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
+    sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
       - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
         state: pipeBinaryConnectors
@@ -55,7 +55,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
+    sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
       - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
         state: pipeBinaryConnectors
