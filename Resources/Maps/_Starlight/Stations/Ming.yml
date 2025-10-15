@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 10/10/2025 14:09:13
-  entityCount: 29313
+  time: 10/15/2025 17:24:52
+  entityCount: 29317
 maps:
 - 1
 grids:
@@ -10228,7 +10228,7 @@ entities:
       pos: -63.5,-31.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -172585.69
+      secondsUntilStateChange: -172656.83
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10253,7 +10253,7 @@ entities:
       pos: -58.5,-45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -170983.19
+      secondsUntilStateChange: -171054.33
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10394,7 +10394,7 @@ entities:
       pos: -32.5,-52.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -178238.22
+      secondsUntilStateChange: -178309.36
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10857,7 +10857,7 @@ entities:
       pos: -71.5,-38.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -173096.02
+      secondsUntilStateChange: -173167.16
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -11101,7 +11101,7 @@ entities:
     - type: GridFill
       path: /Maps/_Starlight/Shuttles/KillerTamashi-SecShuttle.yml
     - type: Door
-      secondsUntilStateChange: -53467.37
+      secondsUntilStateChange: -53538.508
       state: Opening
 - proto: AirlockExternalGlassShuttleLocked
   entities:
@@ -12409,7 +12409,7 @@ entities:
       pos: 34.5,43.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -251443.69
+      secondsUntilStateChange: -251514.83
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -152546,6 +152546,28 @@ entities:
     components:
     - type: Transform
       pos: -9.5,0.5
+      parent: 2
+- proto: SpawnPointBorg
+  entities:
+  - uid: 10320
+    components:
+    - type: Transform
+      pos: 0.5,-51.5
+      parent: 2
+  - uid: 10321
+    components:
+    - type: Transform
+      pos: 1.5,-51.5
+      parent: 2
+  - uid: 10322
+    components:
+    - type: Transform
+      pos: 1.5,-53.5
+      parent: 2
+  - uid: 10323
+    components:
+    - type: Transform
+      pos: 0.5,-53.5
       parent: 2
 - proto: SpawnPointBotanist
   entities:
