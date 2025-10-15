@@ -38,6 +38,9 @@ public sealed partial class MechGrabberComponent : Component
     [DataField("maxContents")]
     public int MaxContents = 10;
 
+    [DataField("CanGrabMobs")]
+    public bool CanGrabMobs = false;
+
     /// <summary>
     /// The sound played when a mech is grabbing something
     /// </summary>

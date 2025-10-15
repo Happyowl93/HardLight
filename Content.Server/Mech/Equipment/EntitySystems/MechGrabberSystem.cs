@@ -133,8 +133,8 @@ public sealed class MechGrabberSystem : EntitySystem
             return;
 
         if (TryComp<PhysicsComponent>(target, out var physics) && physics.BodyType == BodyType.Static ||
-            HasComp<WallMountComponent>(target) ||
-            HasComp<MobStateComponent>(target))
+            HasComp<WallMountComponent>(target))
+        ///    HasComp<MobStateComponent>(target))
         {
             return;
         }
@@ -153,6 +153,11 @@ public sealed class MechGrabberSystem : EntitySystem
 
         if (!_interaction.InRangeUnobstructed(args.User, target))
             return;
+
+        if (!component.CanGrabMobs && HasComp<MobStateComponent>(target))
+        {
+          return;
+        }
 
         args.Handled = true;
         component.AudioStream = _audio.PlayPvs(component.GrabSound, uid)?.Entity;
