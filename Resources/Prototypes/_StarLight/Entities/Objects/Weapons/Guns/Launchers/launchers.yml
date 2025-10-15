@@ -1,4 +1,20 @@
 - type: entity
+  parent: WeaponLauncherHydra
+  id: WeaponLauncherHydraSyndicate
+  name: modified hydra
+  suffix: Syndicate
+  description: A modified Hydra capable of taking both cleanades and standard grenades. Excellent for when you need to clean up the security department.
+  components:
+  - type: ScanDetectable
+  - type: Contraband
+    severity: Syndicate
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - Grenade
+    proto: GrenadeCleanadeSyndicate
+
+- type: entity
   parent: WeaponLauncherHydraSyndicate
   id: WeaponLauncherHydraEMP
   suffix: EMP
@@ -8,21 +24,9 @@
     proto: GrenadeEMP
 
 - type: entity
-  parent: [ WeaponLauncherHydra, BaseSyndicateContraband ]
-  id: WeaponLauncherHydraSyndicate
-  name: modified hydra
-  suffix: Syndicate
-  description: PLOOP... AAAAAAAA
-  components:
-  - type: BallisticAmmoProvider
-    whitelist:
-      tags:
-      - Grenade
-    proto: GrenadeCleanadeSyndicate
-
-- type: entity
   parent: WeaponLauncherHydra
   id: WeaponLauncherHydraFilled
+  suffix: Filled
   components:
   - type: BallisticAmmoProvider
     proto: GrenadeCleanade
