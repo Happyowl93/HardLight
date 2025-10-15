@@ -262,6 +262,11 @@
   - WeaponMechCombatTaser
 
 - type: latheRecipePack
+  id: StarlightSecurityMechsSystems
+  recipes:
+  - MechEquipmentSecGrabber
+  
+- type: latheRecipePack
   id: StarlightSecurityMechs
   recipes:
   - GygaxHarness

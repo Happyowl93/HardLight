@@ -437,6 +437,7 @@
     - SecurityDisablers
     - SecurityCyberLimbs
     - StarlightSecurityMechsWeapons
+    - StarlightSecurityMechsSystems
   - type: MaterialStorage
     whitelist:
       tags:

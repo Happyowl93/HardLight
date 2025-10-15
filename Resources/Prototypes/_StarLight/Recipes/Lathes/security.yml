@@ -168,3 +168,14 @@
     Plastic: 1000
     Plasma: 1000
     Glass: 700    
+
+- type: latheRecipe
+  id: MechEquipmentSecGrabber
+  result: MechEquipmentSecGrabber
+  categories:
+  - Mech
+  completetime: 3
+  materials:
+    Steel: 500
+    Glass: 250
+    Plastic: 200
