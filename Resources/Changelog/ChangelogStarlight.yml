@@ -17929,5 +17929,85 @@ Entries:
   id: 156005
   time: '2025-10-16T15:22:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1560
+- author: walksanatora
+  changes:
+  - message: the L6C in the exosuit fab emag has been replaced with c20r
+    type: Tweak
+  id: 165500
+  time: '2025-10-16T15:27:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1655
+- author: CorruptOmega
+  changes:
+  - message: SuperSynth is now a Musician EXCLUSIVE Instrument - They are experienced
+      enough to handle this amazing instrument!
+    type: Tweak
+  id: 172800
+  time: '2025-10-16T15:38:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1728
+- author: CorruptOmega
+  changes:
+  - message: New Trinket - Harmonica - Requires 100 Hours of playtime on the server
+    type: Add
+  id: 172801
+  time: '2025-10-16T15:38:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1728
+- author: CorruptOmega
+  changes:
+  - message: New Trinket - Flute - Requires 10 Hours of Musician Playtime
+    type: Add
+  id: 172802
+  time: '2025-10-16T15:38:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1728
+- author: CorruptOmega
+  changes:
+  - message: New Trinket - Acoustic Guitar - Requires 15 Hours of Musician Playtime
+    type: Add
+  id: 172803
+  time: '2025-10-16T15:38:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1728
+- author: CorruptOmega
+  changes:
+  - message: New Trinket - Trumpet - Requires 20 Hours of Musician Playtime
+    type: Add
+  id: 172804
+  time: '2025-10-16T15:38:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1728
+- author: mikeysaurus
+  changes:
+  - message: Added Veteran Mining, Salvage, and Salvage Lead PDAs, requiring 60 hours
+      in the corresponding job
+    type: Add
+  id: 191900
+  time: '2025-10-16T16:09:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1919
+- author: mikeysaurus
+  changes:
+  - message: Added a new Salvage Lead report document, printable from document printer
+    type: Add
+  id: 191901
+  time: '2025-10-16T16:09:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1919
+- author: mikeysaurus
+  changes:
+  - message: Replaced Salvage Lead's locker spawn clipboard with a 'salvage lead clipboard',
+      spawns with 7 Salvage Lead reports in it
+    type: Tweak
+  id: 191902
+  time: '2025-10-16T16:09:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1919
+- author: mikeysaurus
+  changes:
+  - message: Visually renames the Salvage Cyborg to Mining Cyborg
+    type: Tweak
+  id: 191903
+  time: '2025-10-16T16:09:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1919
+- author: Happyrobot33
+  changes:
+  - message: Vote cooldown back again, this time fixed hopefully
+    type: Add
+  id: 195100
+  time: '2025-10-16T16:12:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1951
 Order: -1
 
