@@ -149,11 +149,11 @@
           32:
             sprite: Mobs/Species/Resomi/displacement.rsi
             state: neck
-      misc:
+      misc: # Starlight start
         sizeMaps:
           32:
             sprite: Mobs/Species/Resomi/displacement.rsi
-            state: neck
+            state: neck # Starlight end
       mask:
         sizeMaps:
           32:
@@ -215,11 +215,11 @@
           32:
             sprite: Mobs/Species/Resomi/displacement.rsi
             state: neck
-      misc:
+      misc: # Starlight start
         sizeMaps:
           32:
             sprite: Mobs/Species/Resomi/displacement.rsi
-            state: neck
+            state: neck # Starlight end
       mask:
         sizeMaps:
           32:
@@ -313,6 +313,11 @@
           32:
             sprite: Mobs/Species/Resomi/displacement.rsi
             state: neck
+      misc: # Starlight start
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Resomi/displacement.rsi
+            state: neck # Starlight end
       mask:
         sizeMaps:
           32:
@@ -374,6 +379,11 @@
           32:
             sprite: Mobs/Species/Resomi/displacement.rsi
             state: neck
+      misc: # Starlight start
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Resomi/displacement.rsi
+            state: neck # Starlight end
       mask:
         sizeMaps:
           32:
