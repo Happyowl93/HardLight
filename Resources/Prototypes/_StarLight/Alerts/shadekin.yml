@@ -1,6 +1,5 @@
 - type: alert
   id: Shadekin
-  clickEvent: !type:ShadekinAlertEvent { }
   icons:
   - sprite: /Textures/_Starlight/Interface/Alerts/shadekin.rsi
     state: dark
