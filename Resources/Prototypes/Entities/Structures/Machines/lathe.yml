@@ -440,7 +440,8 @@
     - StarlightSecurityMechsWeapons
   - type: EmagLatheRecipes
     emagDynamicPacks:
-    - StarlightSecurityGrenadesEmag # starlight end
+    - StarlightSecurityGrenadesEmag
+    - StarlightSyndicateModulesSecfab # starlight end
   - type: MaterialStorage
     whitelist:
       tags:
