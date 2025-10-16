@@ -24,4 +24,11 @@ public sealed partial class LobbyBackgroundPrototype : IPrototype
 
     [DataField("artist")]
     public string? Artist;
+
+    /// <summary>
+    /// If true, this background will not be shown in the lobby background selection menu.
+    /// Useful for gamemode forced backgrounds.
+    /// </summary>
+    [DataField("excludeFromMenu")]
+    public bool ExcludeFromMenu = false;
 }

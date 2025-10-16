@@ -28,6 +28,9 @@ public sealed partial class GameTicker
             var ext = proto.Background.Extension;
             if (WhitelistedBackgroundExtensions.Contains(ext))
             {
+                //filter out ones with exclude from menu
+                if (proto.ExcludeFromMenu)
+                    continue;
                 //create a protoid and add it to the list
                 _lobbyBackgrounds ??= new List<ProtoId<LobbyBackgroundPrototype>>();
                 _lobbyBackgrounds.Add(new ProtoId<LobbyBackgroundPrototype>(proto.ID));
