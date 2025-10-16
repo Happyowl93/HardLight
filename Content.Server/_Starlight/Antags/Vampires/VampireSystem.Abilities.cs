@@ -229,7 +229,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (!comp.FangsExtended)
             comp.IsDrinking = false;
 
-        if (_actions.GetAction(comp.Actions.ToggleFangsActionEntity) is { } action)
+        if (comp.ActionEntities.TryGetValue("ActionVampireToggleFangs", out var actionEntity) && _actions.GetAction(actionEntity) is { } action)
             _actions.SetToggled(action.AsNullable(), comp.FangsExtended);
         Dirty(uid, comp);
         args.Handled = true;
@@ -374,7 +374,7 @@ public sealed partial class VampireSystem : EntitySystem
     }
 
     partial void UpdateVampireAlert(EntityUid uid)
-        => _alerts.ShowAlert(uid, VampireBloodAlertId);
+        => _alerts.ShowAlert(uid, "VampireBlood");
 
     partial void UpdateVampireFedAlert(EntityUid uid, VampireComponent? comp)
     {
@@ -383,7 +383,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         var frac = comp.MaxBloodFullness <= 0f ? 0f : comp.BloodFullness / comp.MaxBloodFullness;
         var sev = (short)Math.Clamp((int)MathF.Ceiling(frac * 4f) + 1, 1, 5);
-        _alerts.ShowAlert(uid, VampireFedAlertId, sev);
+        _alerts.ShowAlert(uid, "VampireFed", sev);
     }
 
     private void StartDrinkDoAfter(EntityUid uid, VampireComponent comp, EntityUid target, bool showPopup)
@@ -418,10 +418,9 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnGlare(EntityUid uid, VampireComponent comp, ref VampireGlareActionEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!CheckAndConsumeBloodCost(uid, comp, comp.Actions.GlareActionEntity))
+        if (args.Handled 
+            || !comp.ActionEntities.TryGetValue("ActionVampireGlare", out var actionEntity) 
+            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
             return;
 
         // Find targets within 1 tile around the vampire
@@ -497,7 +496,9 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnRejuvenateI(EntityUid uid, VampireComponent comp, ref VampireRejuvenateIActionEvent args)
     {
-        if (args.Handled || !CheckAndConsumeBloodCost(uid, comp, comp.Actions.RejuvenateIActionEntity))
+        if (args.Handled 
+            || !comp.ActionEntities.TryGetValue("ActionVampireRejuvenateI", out var actionEntity) 
+            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
             return;
 
         if (TryComp<StaminaComponent>(uid, out var stamina))
@@ -518,7 +519,9 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnRejuvenateII(EntityUid uid, VampireComponent comp, ref VampireRejuvenateIIActionEvent args)
     {
-        if (args.Handled || !CheckAndConsumeBloodCost(uid, comp, comp.Actions.RejuvenateIIActionEntity))
+        if (args.Handled 
+            || !comp.ActionEntities.TryGetValue("ActionVampireRejuvenateII", out var actionEntity) 
+            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
             return;
 
         if (TryComp<StaminaComponent>(uid, out var stamina))

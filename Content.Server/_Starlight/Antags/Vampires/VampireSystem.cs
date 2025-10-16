@@ -1,31 +1,32 @@
+using Content.Server.Actions;
+using Content.Server.Body.Systems;
+using Content.Server.Objectives.Components;
+using Content.Server.Objectives.Systems;
+using Content.Server.Polymorph.Systems;
 using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Content.Shared.Alert;
-using Content.Server.Actions;
-using Content.Server.Body.Systems;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
-using Content.Shared.Nutrition.Components;
-using Content.Shared.DoAfter;
-using Content.Shared.Popups;
-using Content.Shared.Stunnable;
-using Content.Shared.Damage.Systems;
+using Content.Shared.Charges.Systems;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
+using Content.Shared.DoAfter;
+using Content.Shared.Ensnaring;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Maps;
+using Content.Shared.Movement.Systems;
+using Content.Shared.Nutrition.Components;
+using Content.Shared.Objectives.Components;
+using Content.Shared.Popups;
+using Content.Shared.StatusEffectNew;
+using Content.Shared.Stealth;
+using Content.Shared.Stunnable;
+using Content.Shared.Wieldable;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics.Systems;
-using Content.Server.Objectives.Components;
-using Content.Server.Objectives.Systems;
-using Content.Shared.Objectives.Components;
-using Content.Shared.Wieldable;
-using Content.Shared.Movement.Systems;
-using Content.Shared.Maps;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Content.Shared.Stealth;
-using Content.Shared.StatusEffectNew;
-using Content.Shared.Ensnaring;
-using Content.Shared.Charges.Systems;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -60,31 +61,9 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly SharedEnsnareableSystem _ensnare = default!;
     [Dependency] private readonly SharedChargesSystem _charges = default!;
     [Dependency] private readonly ILogManager _log = default!;
+    [Dependency] private readonly PolymorphSystem _polymorph = default!;
 
     private ISawmill? _sawmill;
-
-    // Rinary - move to resources
-
-    private const string VampireBloodAlertId = "VampireBlood";
-    private const string VampireFedAlertId = "VampireFed";
-    private const string ActionToggleFangsId = "ActionVampireToggleFangs";
-    private const string ActionGlareId = "ActionVampireGlare";
-    private const string ActionRejuvenateIId = "ActionVampireRejuvenateI";
-    private const string ActionRejuvenateIIId = "ActionVampireRejuvenateII";
-    private const string ActionClassSelectId = "ActionVampireClassSelect";
-    private const string ActionHemomancerClawsId = "ActionVampireHemomancerClaws";
-    private const string ActionHemomancerTendrilsId = "ActionVampireHemomancerTendrils";
-    private const string ActionBloodBarrierId = "ActionVampireBloodBarrier";
-    private const string ActionSanguinePoolId = "ActionVampireSanguinePool";
-    private const string ActionBloodEruptionId = "ActionVampireBloodEruption";
-    private const string ActionBloodBringersRiteId = "ActionVampireBloodBringersRite";
-    private const string ActionCloakOfDarknessId = "ActionVampireCloakOfDarkness";
-    private const string ActionShadowSnareId = "ActionVampireShadowSnare";
-    private const string ActionDarkPassageId = "ActionVampireDarkPassage";
-    private const string ActionExtinguishId = "ActionVampireExtinguish";
-    private const string ActionEternalDarknessId = "ActionVampireEternalDarkness";
-    private const string ActionShadowAnchorId = "ActionVampireShadowAnchor";
-    private const string ActionShadowBoxingId = "ActionVampireShadowBoxing";
     private static readonly ProtoId<DamageGroupPrototype> _bruteGroupId = "Brute";
     private static readonly ProtoId<DamageGroupPrototype> _burnGroupId = "Burn";
     private static readonly ProtoId<DamageTypePrototype> _poisonTypeId = "Poison";
@@ -324,7 +303,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (!comp.ActionEntities.ContainsKey("ActionVampireRejuvenateII"))
         {
             EntityUid? action = null;
-            _actions.AddAction(uid, ref action, ActionRejuvenateIIId, uid);
+            _actions.AddAction(uid, ref action, "ActionVampireRejuvenateII", uid);
             if (action != null)
                 comp.ActionEntities["ActionVampireRejuvenateII"] = action.Value;
         }

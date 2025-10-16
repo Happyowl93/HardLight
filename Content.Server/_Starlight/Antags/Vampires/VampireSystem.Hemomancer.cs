@@ -352,7 +352,6 @@ public sealed partial class VampireSystem : EntitySystem
         if (HasComp<StealthComponent>(uid))
             RemComp<StealthComponent>(uid);
 
-        // invul
         if (comp.PoolOwnedGodmode && HasComp<GodmodeComponent>(uid))
             RemComp<GodmodeComponent>(uid);
         comp.PoolOwnedGodmode = false;
