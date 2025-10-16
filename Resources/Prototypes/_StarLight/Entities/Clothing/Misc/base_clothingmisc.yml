@@ -1,0 +1,35 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: ClothingMiscBase
+  components:
+  - type: Item
+    size: Small
+  - type: Clothing
+    quickEquip: true
+    slots:
+    - misc
+  - type: Sprite
+    state: icon
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialCloth1
+      amount: 2
+  - type: PhysicalComposition # 50% of the amount of cloth you'd obtain upon butchering
+    materialComposition:
+      Cloth: 100
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon

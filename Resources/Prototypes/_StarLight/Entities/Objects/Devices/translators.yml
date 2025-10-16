@@ -24,7 +24,7 @@
   - type: HandheldTranslator
     enabled: false
   - type: Clothing
-    slots: [neck]
+    slots: [misc]
 
 - type: entity
   id: TranslatorPoweredBase

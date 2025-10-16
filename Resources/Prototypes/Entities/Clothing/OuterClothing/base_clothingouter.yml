@@ -43,6 +43,10 @@
   - type: SwitchableEquipMode # Starlight
   - type: StaticPrice
     price: 70
+  - type: Tag
+    tags:
+      - WhitelistChameleon
+      - ScurretWearable # starlight
 
 - type: entity
   abstract: true

@@ -76,7 +76,7 @@
     speaks:
       - GalacticCommon
       - Thaveyan
-    understands: 
+    understands:
       - GalacticCommon
       - Thaveyan
       - Carptongue
@@ -112,6 +112,11 @@
         sizeMaps:
           32:
             sprite: _Starlight/Mobs/Species/Thaven/displacement.rsi
+            state: neck
+      misc:
+        sizeMaps:
+          32:
+            sprite: _Starlight/Mobs/Species/Cyclorite/displacement.rsi
             state: neck
       outerClothing:
         sizeMaps:
@@ -164,6 +169,11 @@
         sizeMaps:
           32:
             sprite: _Starlight/Mobs/Species/Thaven/displacement.rsi
+            state: neck
+      misc:
+        sizeMaps:
+          32:
+            sprite: _Starlight/Mobs/Species/Cyclorite/displacement.rsi
             state: neck
       outerClothing:
         sizeMaps:
