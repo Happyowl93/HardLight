@@ -1,61 +1,43 @@
 - type: entity
   parent: BaseStructureComputer
-  id: SyndBath
-  name: netrunner bathroom
-  description: A netrunner bathroom manufactured by CyberSun—about 50%, with the rest cobbled together from whatever was lying around.
+  id: Masterchair
+  name: observation masterchair
+  description: If you think you are safe from prying eyes, you would be dead wrong— Big Brother from 1984 trembles whenever John Nanotrasen sits in this, watching every move, fining you for each inconsistency, and noting down collective failures.
   placement:
     mode: SnapgridCenter
   components:
   - type: Physics
     bodyType: Static
+  - type: Rotatable
+  - type: Transform
+    anchored: true
   - type: Fixtures
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeAabb
-          bounds: "-0.45,-0.45,0.45,0.05"
-        density: 190
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 100
         mask:
         - TableMask
   - type: Animateable
-  - type: MeleeSound
-    soundGroups:
-      Brute:
-        collection: WaterHit
-  - type: EmitSoundOnUIOpen
-    sound:
-      collection: IntoWater
   - type: LightningTarget
     priority: 1
   - type: RequireProjectileTarget
   - type: Electrified
     enabled: false
     usesApcPower: true
-  - type: HealOnBuckle
-    damage:
-      types:
-        Heat: -0.1
   - type: Sprite
-    sprite: _Starlight/Structures/Machines/netbath.rsi
+    sprite: _Starlight/Structures/Machines/masterchair.rsi
     layers:
     - state: base
-    - state: enabled
-      shader: unshaded
     noRot: true
   - type: Strap
-    position: Down
-    rotation: -60
-    xformRotation: -90
-    loweredDrawdepthDirections: 15 # 1111
-    loweredDrawdepth: BelowMobs
-    buckleSound:
-      collection: IntoWater
-    unbuckleSound:
-      collection: IntoWater
-    buckleOffset: "0.05,-0.15"
+    position: Stand
+    buckleOffset: "0,-0.05"
   - type: RemoteEyeConsole
-    remoteEntityProto: SyndicateConsoleEye
-    color: "#650000"
+    remoteEntityProto: CentcommConsoleEye
+    color: "#00FF00"
     actions:
     - SyntrunnerActionExitConsole
   - type: UserInterface
@@ -66,16 +48,16 @@
     key: enum.RemoteEyeUIKey.Key
   - type: ChildEntities
     childPrototypes:
-      - prototype: SyndBathOverlay
+      - prototype: MasterchairOverlay
         
 - type: entity
-  id: SyndBathOverlay
-  name: netrunner bathroom
+  id: MasterchairOverlay
+  name: observation masterchair
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: _Starlight/Structures/Machines/netbath.rsi
+    sprite: _Starlight/Structures/Machines/masterchair.rsi
     layers:
     - state: overlay
     noRot: true
@@ -87,7 +69,7 @@
   parent:
   - Incorporeal
   - BaseMob
-  id: SyndicateConsoleEye
+  id: CentcommConsoleEye
   name: "???"
   description: "ERROR"
   categories: [ HideSpawnMenu ]
@@ -112,13 +94,13 @@
     localEntityWhitelist:
       tags:
         - Syndicate
-        - Ghost
+        - Abductor
     passedLayers:
       base:
-        state: syndicate
+        state: enemy
     failedLayers:
       base:
-        state: enemy
+        state: centcomm
   - type: Tag
     tags:
     - CantInteract
