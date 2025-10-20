@@ -1,10 +1,9 @@
-// Starlight
 using System;
 using Content.Shared.Silicons.StationAi;
 using Robust.Client.Player;
 using Robust.Shared.Player;
 
-namespace Content.Client.Silicons.StationAi; // Starlight
+namespace Content.Client.Silicons.StationAi;
 
 public sealed partial class StationAiSystem
 {

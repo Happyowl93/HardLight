@@ -1,4 +1,3 @@
-// Starlight
 using System;
 using System.Linq;
 using System.Numerics;
@@ -8,7 +7,7 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Localization;
 using Robust.Shared.Maths;
 
-namespace Content.Client.Silicons.StationAi; // Starlight
+namespace Content.Client.Silicons.StationAi;
 
 public sealed class StationAiWarpWindow : DefaultWindow
 {

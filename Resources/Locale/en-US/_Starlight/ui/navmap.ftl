@@ -1,1 +1,2 @@
-# Starlight\nnavmap-unknown-target = Unknown
+# Starlight
+navmap-unknown-target = Unknown

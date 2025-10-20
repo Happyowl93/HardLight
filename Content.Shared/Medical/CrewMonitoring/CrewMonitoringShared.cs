@@ -1,5 +1,5 @@
 using Content.Shared.Medical.SuitSensor;
-using Robust.Shared.Map;
+using Robust.Shared.Map; // Starlight
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Medical.CrewMonitoring;
