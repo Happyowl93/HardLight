@@ -272,7 +272,7 @@
   parent: PosterBase
   id: PosterContrabandWantedFreak
   name: "Wanted, Freak"
-  description: "A wanted poster for Freak the Clown. Its outdated, you think."
+  description: "A wanted poster for Freak the Clown. It's outdated, you think."
   components:
   - type: Sprite
     sprite: _Starlight/Structures/Wallmounts/posters/wanted.rsi
@@ -302,7 +302,7 @@
   parent: PosterBase
   id: PosterContrabandWantedMimeSexy
   name: "Wanted, Mime"
-  description: "A wanted poster for a rather attractive looking Mime... Theyve been convicted of ERP and sentenced to death."
+  description: "A wanted poster for a rather attractive looking Mime... They've been convicted of ERP and sentenced to death."
   components:
   - type: Sprite
     sprite: _Starlight/Structures/Wallmounts/posters/wanted.rsi
@@ -312,7 +312,7 @@
   parent: PosterBase
   id: PosterContrabandWantedPunPun
   name: "Wanted, Pun Pun"
-  description: "A wanted poster for Pun Pun the Bar Monkey. Broke into EVA and then tried to steal Captain's spair ID. Classic."
+  description: "A wanted poster for Pun Pun the Bar Monkey. Broke into EVA and then tried to steal Captain's spare ID. Classic."
   components:
   - type: Sprite
     sprite: _Starlight/Structures/Wallmounts/posters/wanted.rsi
@@ -322,7 +322,7 @@
   parent: PosterBase
   id: PosterContrabandWantedStirStir
   name: "Wanted, Stir Stir"
-  description: "A wanted poster for Stir Stir, Puns cousin. Hes a real cell stuffer, been in and out of Genpop almost every day for years. You dont know why Sec hasnt just executed him already."
+  description: "A wanted poster for Stir Stir, Pun's cousin. He's a real cell stuffer, been in and out of Genpop almost every day for years. You dont know why Sec hasn't just executed him already."
   components:
   - type: Sprite
     sprite: _Starlight/Structures/Wallmounts/posters/wanted.rsi
