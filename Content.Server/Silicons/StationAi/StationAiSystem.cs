@@ -31,6 +31,7 @@ using Content.Shared.Power.Components;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Roles;
 using Content.Shared.Silicons.StationAi;
+using Content.Shared.Humanoid; // Starlight
 using Content.Shared.Speech.Components;
 using Content.Shared.StationAi;
 using Content.Shared.Turrets;
@@ -175,6 +176,11 @@ public sealed class StationAiSystem : SharedStationAiSystem
             if (!processed.Add(ownerUid))
                 continue;
 
+            // Starlight-start
+            if (!HasComp<HumanoidAppearanceComponent>(ownerUid))
+                continue;
+            // Starlight-end
+
             if (aiStation is { } station)
             {
                 var ownerStation = _station.GetOwningStation(ownerUid);
@@ -201,6 +207,11 @@ public sealed class StationAiSystem : SharedStationAiSystem
                 _warpSawmill.Debug($"Skipping remote entity {uid} while building warp locations for Station AI {Name(actor)} ({actor}).");
                 continue;
             }
+
+            // Starlight-start
+            if (string.IsNullOrWhiteSpace(warp.Location))
+                continue;
+            // Starlight-end
 
             if (aiStation is { } station)
             {
