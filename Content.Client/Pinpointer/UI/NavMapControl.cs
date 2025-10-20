@@ -39,7 +39,7 @@ public partial class NavMapControl : MapGridControl
 
     // Actions
     public event Action<NetEntity?>? TrackedEntitySelectedAction;
-    public event Action<EntityCoordinates>? MapClickedAction;
+    public event Action<EntityCoordinates>? MapClickedAction; // Starlight
     public event Action<DrawingHandleScreen>? PostWallDrawingAction;
 
     // Tracked data
@@ -204,7 +204,8 @@ public partial class NavMapControl : MapGridControl
 
         if (args.Function == EngineKeyFunctions.UIClick)
         {
-            if (_xform == null || _physics == null)
+            if (_xform == null || _physics == null) // Starlight
+
                 return;
 
             // If the cursor has moved a significant distance, exit
@@ -219,6 +220,7 @@ public partial class NavMapControl : MapGridControl
             var unscaledPosition = (localPosition - MidPointVector) / MinimapScale;
             var worldPosition = Vector2.Transform(new Vector2(unscaledPosition.X, -unscaledPosition.Y) + offset, _transformSystem.GetWorldMatrix(_xform));
 
+            // Starlight-start
             EntityCoordinates? clickCoords = null;
             if (MapClickedAction != null)
             {
@@ -228,6 +230,7 @@ public partial class NavMapControl : MapGridControl
                 if (_transformSystem.IsValid(coordinates))
                     clickCoords = coordinates;
             }
+            // Starlight-end
 
             var invokedSelection = false;
 
@@ -258,8 +261,10 @@ public partial class NavMapControl : MapGridControl
                 }
             }
 
+            // Starlight-start
             if (clickCoords != null)
                 MapClickedAction?.Invoke(clickCoords.Value);
+            // Starlight-end
 
             if (!invokedSelection && clickCoords == null)
                 return;

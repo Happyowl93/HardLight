@@ -20,7 +20,7 @@ public sealed class CrewMonitoringState : BoundUserInterfaceState
         Sensors = sensors;
     }
 }
-
+// Starlight-start
 [Serializable, NetSerializable]
 public sealed partial class CrewMonitoringWarpRequestMessage : BoundUserInterfaceMessage
 {
@@ -31,3 +31,4 @@ public sealed partial class CrewMonitoringWarpRequestMessage : BoundUserInterfac
         Coordinates = coordinates;
     }
 }
+// Starlight-end
