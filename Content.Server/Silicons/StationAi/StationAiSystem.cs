@@ -176,10 +176,8 @@ public sealed class StationAiSystem : SharedStationAiSystem
             if (!processed.Add(ownerUid))
                 continue;
 
-            // Starlight-start
             if (!HasComp<HumanoidAppearanceComponent>(ownerUid))
                 continue;
-            // Starlight-end
 
             if (aiStation is { } station)
             {
@@ -208,10 +206,8 @@ public sealed class StationAiSystem : SharedStationAiSystem
                 continue;
             }
 
-            // Starlight-start
             if (string.IsNullOrWhiteSpace(warp.Location))
                 continue;
-            // Starlight-end
 
             if (aiStation is { } station)
             {
@@ -312,7 +308,8 @@ public sealed class StationAiSystem : SharedStationAiSystem
 
         if ((TryComp(target, out WarpPointComponent? warp) && warp.Follow) || HasComp<MobStateComponent>(target))
         {
-            _followerSystem.StartFollowingEntity(remoteEye, target);
+            var orbit = !HasComp<StationAiHeldComponent>(user);
+            _followerSystem.StartFollowingEntity(remoteEye, target, orbit);
             return true;
         }
 
