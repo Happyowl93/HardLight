@@ -1,0 +1,125 @@
+- type: decal
+  id: arrowupsl
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/marks.rsi
+    state: arrowup
+
+- type: decal
+  id: hazardmiddle
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/marks.rsi
+    state: hazard_middle
+
+- type: decal
+  id: roadcorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/marks.rsi
+    state: road_corner
+
+- type: decal
+  id: roadstraight
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/marks.rsi
+    state: road_straight
+
+- type: decal
+  id: stopline
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/marks.rsi
+    state: stop_line
+
+- type: decal
+  id: aisign
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/signage.rsi
+    state: ai
+
+- type: decal
+  id: barsign
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/signage.rsi
+    state: bar
+
+- type: decal
+  id: bridgesign
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/signage.rsi
+    state: bridge
+
+- type: decal
+  id: cargosign
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/signage.rsi
+    state: cargo
+
+- type: decal
+  id: centcommsign
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/signage.rsi
+    state: cct
+
+- type: decal
+  id: cybersunsign
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/signage.rsi
+    state: cybersunt
+
+- type: decal
+  id: engsign
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/signage.rsi
+    state: eng
+
+- type: decal
+  id: evacsign
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/signage.rsi
+    state: evact
+
+- type: decal
+  id: hopsign
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/signage.rsi
+    state: hop
+
+- type: decal
+  id: medsign
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/signage.rsi
+    state: med
+
+- type: decal
+  id: ntsign
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/signage.rsi
+    state: ntt
+
+- type: decal
+  id: scisign
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/signage.rsi
+    state: sci
+
+- type: decal
+  id: secsign
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/signage.rsi
+    state: sec
