@@ -348,13 +348,13 @@ public sealed class StationAiSystem : SharedStationAiSystem
         if (args.Mode == SuitSensorMode.SensorCords)
             return;
 
-        if (!_activeFollowTargets.TryGetValue(ent.Owner, out var follower))
+        if (ent.Comp.User is not { } wearer || !_activeFollowTargets.TryGetValue(wearer, out var follower))
             return;
 
-        if (TryComp(follower, out FollowerComponent? followerComp) && followerComp.Following == ent.Owner)
-            _followerSystem.StopFollowingEntity(follower, ent.Owner);
+        if (TryComp(follower, out FollowerComponent? followerComp) && followerComp.Following == wearer)
+            _followerSystem.StopFollowingEntity(follower, wearer);
 
-        _activeFollowTargets.Remove(ent.Owner);
+        _activeFollowTargets.Remove(wearer);
     }
 
     private void OnFollowerStoppedFollowing(Entity<FollowerComponent> ent, ref StoppedFollowingEntityEvent args)
