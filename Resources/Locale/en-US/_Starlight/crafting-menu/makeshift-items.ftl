@@ -196,3 +196,6 @@ crafting-menu-name-RIPRR = right ripperdoc arm
 crafting-menu-text-RIPRR = A poorly made replica of a coveted "Reaper" arm, cobbled together from scrap found lying around in maintenance.
 
 crafting-menu-name-BNGE = bottle of bone gel
+
+crafting-menu-name-ASSFP = assorted forge parts
+crafting-menu-text-ASSFP = A small pile of components for making a forge for an anvil, contains an igniter and valves.
