@@ -7,7 +7,7 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Localization;
 using Robust.Shared.Maths;
 
-namespace Content.Client.Silicons.StationAi;
+namespace Content.Client._Starlight.Silicons.StationAi;
 
 public sealed class StationAiWarpWindow : DefaultWindow
 {

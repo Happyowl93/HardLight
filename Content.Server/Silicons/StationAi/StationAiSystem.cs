@@ -76,6 +76,11 @@ public sealed class StationAiSystem : SharedStationAiSystem
 
     private readonly HashSet<Entity<StationAiCoreComponent>> _stationAiCores = new();
 
+    // Starlight-start
+    private readonly Dictionary<EntityUid, EntityUid> _activeFollowTargets = new();
+    // Starlight-end
+
+
     private readonly ProtoId<ChatNotificationPrototype> _turretIsAttackingChatNotificationPrototype = "TurretIsAttacking";
     private readonly ProtoId<ChatNotificationPrototype> _aiWireSnippedChatNotificationPrototype = "AiWireSnipped";
     private readonly ProtoId<ChatNotificationPrototype> _aiLosingPowerChatNotificationPrototype = "AiLosingPower";
@@ -102,6 +107,8 @@ public sealed class StationAiSystem : SharedStationAiSystem
 
         SubscribeLocalEvent<ExpandICChatRecipientsEvent>(OnExpandICChatRecipients);
         SubscribeLocalEvent<StationAiTurretComponent, AmmoShotEvent>(OnAmmoShot);
+        SubscribeLocalEvent<SuitSensorComponent, SuitSensorModeChangedEvent>(OnSuitSensorModeChanged); // Starlight
+        SubscribeLocalEvent<FollowerComponent, StoppedFollowingEntityEvent>(OnFollowerStoppedFollowing); // Starlight
         SubscribeNetworkEvent<StationAiWarpRequestEvent>(OnStationAiWarpRequest); // Starlight
         SubscribeNetworkEvent<StationAiWarpToTargetEvent>(OnStationAiWarpToTarget); // Starlight
     }
@@ -310,6 +317,12 @@ public sealed class StationAiSystem : SharedStationAiSystem
         {
             var orbit = !HasComp<StationAiHeldComponent>(user);
             _followerSystem.StartFollowingEntity(remoteEye, target, orbit);
+            // Starlight-start
+            if (!orbit)
+                _activeFollowTargets[target] = remoteEye;
+            else
+                _activeFollowTargets.Remove(target);
+            // Starlight-end
             return true;
         }
 
@@ -317,13 +330,39 @@ public sealed class StationAiSystem : SharedStationAiSystem
         {
             var parent = remoteXform.ParentUid;
             if (parent.IsValid())
+            {
                 _followerSystem.StopFollowingEntity(remoteEye, parent);
+                // Starlight-start
+                if (_activeFollowTargets.TryGetValue(parent, out var follower) && follower == remoteEye)
+                    _activeFollowTargets.Remove(parent);
+                // Starlight-end
+            }
         }
 
         return TryWarpEyeToCoordinates(user, Transform(target).Coordinates, popupOnFailure);
     }
-    // Starlight-end
+    // Starlight-start
 
+    private void OnSuitSensorModeChanged(Entity<SuitSensorComponent> ent, ref SuitSensorModeChangedEvent args)
+    {
+        if (args.Mode == SuitSensorMode.SensorCords)
+            return;
+
+        if (!_activeFollowTargets.TryGetValue(ent.Owner, out var follower))
+            return;
+
+        if (TryComp(follower, out FollowerComponent? followerComp) && followerComp.Following == ent.Owner)
+            _followerSystem.StopFollowingEntity(follower, ent.Owner);
+
+        _activeFollowTargets.Remove(ent.Owner);
+    }
+
+    private void OnFollowerStoppedFollowing(Entity<FollowerComponent> ent, ref StoppedFollowingEntityEvent args)
+    {
+        if (_activeFollowTargets.TryGetValue(args.Following, out var follower) && follower == args.Follower)
+            _activeFollowTargets.Remove(args.Following);
+    }
+    // Starlight-end
     private void AfterConstructionChangeEntity(Entity<StationAiCoreComponent> ent, ref AfterConstructionChangeEntityEvent args)
     {
         if (!_container.TryGetContainer(ent, StationAiCoreComponent.BrainContainer, out var container) ||
