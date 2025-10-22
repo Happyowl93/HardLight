@@ -71,6 +71,8 @@
     access: [ [ "BlueShield" ] ]
   - type: WiresPanelSecurity
     securityLevel: medSecurity
+  - type: WiresPanelSecurity # Starlight: Maintenance panel
+    securityLevel: medSecurity
 
 # Salvage Lead
 - type: entity
