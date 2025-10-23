@@ -14,8 +14,8 @@
   naming: First
   minAge: 18
   maxAge: 300
-  youngAge: 30
-  oldAge: 250
+  youngAge: 100
+  oldAge: 200
   customName: true
 
 - type: speciesBaseSprites
