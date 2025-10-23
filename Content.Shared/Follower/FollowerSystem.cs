@@ -22,6 +22,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.Strip.Components;
 
 namespace Content.Shared.Follower;
 
@@ -102,7 +103,7 @@ public sealed class FollowerSystem : EntitySystem
         {
             var verb = new AlternativeVerb()
             {
-                Priority = 10,
+                Priority = -10, // Starlight edit: Prioritize actions over follow for Aghost
                 Act = () => StartFollowingEntity(ev.User, ev.Target),
                 Impact = LogImpact.Low,
                 Text = Loc.GetString("verb-follow-text"),
