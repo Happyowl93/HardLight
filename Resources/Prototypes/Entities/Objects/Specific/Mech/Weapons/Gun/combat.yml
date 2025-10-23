@@ -205,7 +205,7 @@
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
   - type: ProjectileBatteryAmmoProvider
     proto: ShellShotgunMech
-    fireCost: 50
+    fireCost: 80
   - type: Appearance
   - type: AmmoCounter
   # region starlight
@@ -233,7 +233,7 @@
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
   - type: ProjectileBatteryAmmoProvider
     proto: ShellShotgunMechIncendiary
-    fireCost: 50
+    fireCost: 80
   - type: Appearance
   - type: AmmoCounter
 
