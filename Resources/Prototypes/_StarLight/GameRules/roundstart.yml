@@ -36,3 +36,16 @@
     rules:
     - id: Thief
       prob: 1
+
+- type: entity
+  abstract: true
+  parent: BaseGameRule
+  id: BrighteyeRule
+  components:
+  - type: AntagObjectives
+    objectives:
+    - BrighteyeSurviveObjective
+  - type: AntagLoadProfileRule
+    speciesOverride: Shadekin
+  - type: AntagRandomSpawn
+  - type: AntagSelection

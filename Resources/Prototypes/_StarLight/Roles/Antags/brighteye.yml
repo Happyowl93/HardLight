@@ -4,3 +4,10 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-brighteye-description
+  guides: [ Shadekin ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 172800 # 48h
+  - !type:SpeciesRequirement
+    species:
+    - Shadekin

@@ -1,0 +1,23 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseBrighteyeObjective
+  components:
+  - type: Objective
+    # difficulty isn't used since all objectives are picked
+    difficulty: 1.5
+    issuer: objective-issuer-brighteye
+  - type: RoleRequirement
+    roles:
+    - BrighteyeRole
+
+- type: entity
+  parent: [BaseBrighteyeObjective, BaseSurviveObjective]
+  id: BrighteyeSurviveObjective
+  name: Survive
+  description: You wouldn't be a very good ninja if you died, now would you?
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Mask/ninja.rsi
+      state: icon
