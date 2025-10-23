@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 10/23/2025 06:45:52
+  time: 10/23/2025 06:57:30
   entityCount: 7343
 maps: []
 grids:
@@ -6458,12 +6458,16 @@ entities:
   entities:
   - uid: 111
     components:
+    - type: MetaData
+      name: button frame (entry bolt)
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 6.5,5.5
       parent: 1
   - uid: 338
     components:
+    - type: MetaData
+      name: button frame (entry bolt)
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 6.5,7.5
@@ -6503,12 +6507,17 @@ entities:
   entities:
   - uid: 335
     components:
+    - type: MetaData
+      desc: It's a frame to help distinguish switches visually.
+      name: button frame (exit)
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 4.5,7.5
       parent: 1
   - uid: 337
     components:
+    - type: MetaData
+      name: button frame (exit)
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 4.5,5.5
@@ -40358,6 +40367,9 @@ entities:
   entities:
   - uid: 112
     components:
+    - type: MetaData
+      desc: Bolts the entry door to the checkpoint.
+      name: signal switch (entry bolt)
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 6.5,7.5
@@ -40376,6 +40388,9 @@ entities:
       fixtures: {}
   - uid: 113
     components:
+    - type: MetaData
+      desc: Bolts the entry door to the checkpoint.
+      name: signal switch (entry bolt)
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 6.5,5.5
@@ -40394,6 +40409,9 @@ entities:
       fixtures: {}
   - uid: 261
     components:
+    - type: MetaData
+      desc: Opens and closes the exit door.
+      name: signal switch (exit)
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 4.5,5.5
@@ -40418,6 +40436,9 @@ entities:
       fixtures: {}
   - uid: 6060
     components:
+    - type: MetaData
+      desc: Opens and closes the exit door.
+      name: signal switch (exit)
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 4.5,7.5
@@ -48890,7 +48911,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -2433.2576
+      secondsUntilStateChange: -3127.0637
       state: Opening
     - type: Airlock
       autoClose: False
@@ -48906,7 +48927,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -2434.6243
+      secondsUntilStateChange: -3128.4304
       state: Opening
     - type: Airlock
       autoClose: False
