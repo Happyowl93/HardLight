@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 10/23/2025 06:33:46
-  entityCount: 7319
+  time: 10/23/2025 06:37:16
+  entityCount: 7325
 maps: []
 grids:
 - 1
@@ -39784,6 +39784,48 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
+  - uid: 7320
+    components:
+    - type: Transform
+      pos: 9.5,1.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7321
+    components:
+    - type: Transform
+      pos: 9.5,11.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7322
+    components:
+    - type: Transform
+      pos: 9.5,7.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7323
+    components:
+    - type: Transform
+      pos: -32.5,18.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7324
+    components:
+    - type: Transform
+      pos: -40.5,18.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7325
+    components:
+    - type: Transform
+      pos: -8.5,-0.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: SecurityTechFab
   entities:
   - uid: 5456
@@ -48758,7 +48800,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -1712.6654
+      secondsUntilStateChange: -1921.8983
       state: Opening
     - type: Airlock
       autoClose: False
@@ -48774,7 +48816,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -1714.0321
+      secondsUntilStateChange: -1923.265
       state: Opening
     - type: Airlock
       autoClose: False
