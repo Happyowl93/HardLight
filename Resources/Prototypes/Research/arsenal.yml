@@ -262,6 +262,7 @@
   - WeaponAdvancedLaser
   - PortableRecharger
   - WeaponMechCombatImmolationGun
+  - WeaponMechCombatAMLG90
   radioChannels:
   - Security
 

@@ -152,6 +152,7 @@ public sealed class MechGrabberSystem : EntitySystem
 
         if (!_interaction.InRangeUnobstructed(args.User, target))
             return;
+
         if (!component.CanGrabMobs && HasComp<MobStateComponent>(target))
         {
             return;
