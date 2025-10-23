@@ -264,6 +264,8 @@
   - WeaponMechChainSword
   - WeaponMechCombatIon
   - WeaponMechCombatAMLG90
+  - WeaponMechCombatDisabler
+  - WeaponMechCombatFlashbangLauncher
   - WeaponMechCombatTaser
 
 - type: latheRecipePack

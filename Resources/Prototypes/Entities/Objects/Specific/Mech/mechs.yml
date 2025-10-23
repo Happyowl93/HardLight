@@ -638,6 +638,10 @@
       types:
         Blunt: 30 #THWACK
         Structural: 180
+  - type: MeleeThrowOnHit
+    speed: 20
+    distance: 5
+    stunTime: .5
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.4
     baseSprintSpeed: 3.7
@@ -697,6 +701,10 @@
       types:
         Blunt: 40
         Structural: 220
+  - type: MeleeThrowOnHit
+    speed: 20
+    distance: 8
+    stunTime: .5
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.5
     baseSprintSpeed: 2
@@ -762,6 +770,10 @@
       types:
         Blunt: 40
         Structural: 200
+  - type: MeleeThrowOnHit
+    speed: 20
+    distance: 8
+    stunTime: .5
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
     baseSprintSpeed: 1.5
@@ -831,6 +843,10 @@
       types:
         Blunt: 60
         Structural: 400
+  - type: MeleeThrowOnHit
+    speed: 20
+    distance: 8
+    stunTime: .5
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 3.7
@@ -903,6 +919,10 @@
       types:
         Blunt: 30
         Structural: 200
+  - type: MeleeThrowOnHit
+    speed: 20
+    distance: 5
+    stunTime: .5
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
     baseSprintSpeed: 4.0
@@ -978,6 +998,10 @@
       types:
         Blunt: 50
         Structural: 400
+  - type: MeleeThrowOnHit
+    speed: 20
+    distance: 8
+    stunTime: .5
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
     baseSprintSpeed: 1.5
