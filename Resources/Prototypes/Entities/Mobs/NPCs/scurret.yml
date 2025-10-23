@@ -152,6 +152,8 @@
   - type: Deathgasp
     prototype: ScurretDeathgasp # You monster
   - type: AlwaysRevolutionaryConvertible
+  - type: StatusIcon # marks them as crew
+    bounds: -0.5,-0.5,0.5,0.5
   - type: Tag
     tags:
     - DoorBumpOpener
@@ -209,7 +211,7 @@
       prototypes: [ EmotionalSupportScurretGear ]
     - type: NpcFactionMember
       factions:
-      - Passive
+      - Nanotrasen
     - type: GhostRole
       makeSentient: true
       name: ghost-role-information-emotional-support-scurret-name
