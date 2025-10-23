@@ -91,6 +91,8 @@ public sealed class AlertArmorySystem : EntitySystem
             armoryComp.Station = uid;
             armoryComp.Announcement = armory.Announcement;
             armoryComp.AnnouncementColor = armory.AnnouncementColor;
+            armoryComp.RecallAnnouncement = armory.RecallAnnouncement;
+            armoryComp.RecallAnnouncementColor = armory.RecallAnnouncementColor;
             armoryComp.CoordsCache = eCoords;
             armoryComp.ArmorySpaceUid = map;
 
@@ -108,6 +110,17 @@ public sealed class AlertArmorySystem : EntitySystem
         if (ev.FromMapUid != ent.Comp.ArmorySpaceUid) //if we are not coming from armory space. drop people. this allows including eg: ERT on a armory if you want.
         {
             DumpChildren(ent.Owner, ref ev);
+
+            // Announce recall at the start of FTL back to armory space
+            var xform = Transform(ent.Owner);
+            var location = FormattedMessage.RemoveMarkupPermissive(_nav.GetNearestBeaconString((ent.Owner, xform)));
+
+            if (ent.Comp.RecallAnnouncement != null)
+            {
+                _chat.DispatchGlobalAnnouncement(
+                    Loc.GetString(ent.Comp.RecallAnnouncement, ("location", location)),
+                    colorOverride: ent.Comp.RecallAnnouncementColor ?? Color.PaleVioletRed);
+            }
         }
 
         // Mark as in transit
@@ -133,16 +146,16 @@ public sealed class AlertArmorySystem : EntitySystem
     {
         comp.InTransit = false;
 
-        if (ev.MapUid == comp.ArmorySpaceUid)
-            return; // if we came from armory space announce our arrival.
-
         var xform = Transform(uid);
         var location = FormattedMessage.RemoveMarkupPermissive(_nav.GetNearestBeaconString((uid, xform)));
 
-        if (comp.Announcement != null)
+        // Announce arrival at station
+        if (ev.MapUid != comp.ArmorySpaceUid && comp.Announcement != null)
+        {
             _chat.DispatchGlobalAnnouncement(
                 Loc.GetString(comp.Announcement, ("location", location)),
                 colorOverride: comp.AnnouncementColor ?? Color.PaleVioletRed);
+        }
 
         comp.InTransit = false;
     }
@@ -182,10 +195,17 @@ public sealed class AlertArmorySystem : EntitySystem
         if (!comp.Grids.TryGetValue(armoryKey, out var shuttle))
             return false;
 
+        var shuttleComp = Comp<AlertArmoryShuttleComponent>(shuttle);
+        var xform = Transform(shuttle);
+
+        // Check if already in armory space
+        if (xform.MapUid == shuttleComp.ArmorySpaceUid)
+            return false;
+
         _shuttles.FTLToCoordinates(
             shuttle,
             Comp<ShuttleComponent>(shuttle),
-            Comp<AlertArmoryShuttleComponent>(shuttle).CoordsCache,
+            shuttleComp.CoordsCache,
             0);
 
         return true;
