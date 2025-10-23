@@ -60,14 +60,8 @@ public sealed class ShadekinSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<ShadekinComponent, ComponentStartup>(OnInit);
         SubscribeLocalEvent<ShadekinComponent, EyeColorInitEvent>(OnEyeColorChange);
         SubscribeLocalEvent<ShadekinComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
-    }
-
-    private void OnInit(EntityUid uid, ShadekinComponent component, ComponentStartup args)
-    {
-        UpdateAlert(uid, component);
     }
 
     private void OnEyeColorChange(EntityUid uid, ShadekinComponent component, EyeColorInitEvent args)
@@ -79,9 +73,9 @@ public sealed class ShadekinSystem : EntitySystem
         Dirty(uid, humanoid);
     }
 
-    public void UpdateAlert(EntityUid uid, ShadekinComponent component)
+    public void UpdateAlert(EntityUid uid, ShadekinComponent component, short state)
     {
-        _alerts.ShowAlert(uid, component.ShadekinAlert, 1); // (short)component.LightExposure
+        _alerts.ShowAlert(uid, component.ShadekinAlert, state);
     }
 
     private Angle GetAngle(EntityUid lightUid, SharedPointLightComponent lightComp, EntityUid targetUid)
@@ -166,23 +160,25 @@ public sealed class ShadekinSystem : EntitySystem
         return illumination;
     }
 
-    private void SetPassiveBuff(EntityUid uid, float state)
+    private void SetPassiveBuff(EntityUid uid, ShadekinState shadekinState)
     {
         if (!TryComp<PassiveDamageComponent>(uid, out var passive))
             return;
 
-        if (state >= 2)
+        if (shadekinState == ShadekinState.Annoying ||
+            shadekinState == ShadekinState.High ||
+            shadekinState == ShadekinState.Extreme)
         {
             passive.DamageCap = 1;
         }
-        else if (state == 1)
+        else if (shadekinState == ShadekinState.Low)
         {
             passive.DamageCap = 20;
             passive.AllowedStates.Clear();
             passive.AllowedStates.Add(MobState.Alive);
             passive.Interval = 1f;
         }
-        else
+        else if (shadekinState == ShadekinState.Dark)
         {
             passive.DamageCap = 0;
             passive.AllowedStates.Clear();
@@ -193,19 +189,8 @@ public sealed class ShadekinSystem : EntitySystem
         }
     }
 
-    private void ToggleNightVision(EntityUid uid, float state)
+    private void ApplyLightDamage(EntityUid uid)
     {
-        if (state > 0)
-            RemComp<NightVisionComponent>(uid);
-        else
-            EnsureComp<NightVisionComponent>(uid);
-    }
-
-    private void ApplyLightDamage(EntityUid uid, float state)
-    {
-        if (state < 4)
-            return;
-
         var damage = new DamageSpecifier();
         damage.DamageDict.Add("Heat", 1);
         _damageable.TryChangeDamage(uid, damage, true, false);
@@ -214,26 +199,39 @@ public sealed class ShadekinSystem : EntitySystem
 
     private void OnRefreshMovementSpeedModifiers(EntityUid uid, ShadekinComponent component, RefreshMovementSpeedModifiersEvent args)
     {
-        if (component.CurrentState != ShadekinState.High)
-            return;
+        if (component.CurrentState == ShadekinState.High || component.CurrentState == ShadekinState.Extreme)
+        {
+            if (!TryComp<MovementSpeedModifierComponent>(uid, out var movement))
+                return;
 
-        if (!TryComp<MovementSpeedModifierComponent>(uid, out var movement))
-            return;
+            var sprintDif = movement.BaseWalkSpeed / movement.BaseSprintSpeed;
+            args.ModifySpeed(1f, sprintDif);
+        }
+    }
 
-        var sprintDif = movement.BaseWalkSpeed / movement.BaseSprintSpeed;
-        args.ModifySpeed(1f, sprintDif);
+    private void ToggleNightVision(EntityUid uid, ShadekinState shadekinState)
+    {
+        if (shadekinState == ShadekinState.Dark)
+            EnsureComp<NightVisionComponent>(uid);
+        else
+            RemComp<NightVisionComponent>(uid);
     }
 
     private void CheckThresholds(EntityUid uid, ShadekinComponent component, float lightExposure)
     {
         foreach (var (threshold, shadekinState) in component.Thresholds.Reverse())
         {
-            // ShadekinState.Dark does not need to have lightExposure checked.
+            var selectedstate = shadekinState;
+            if (lightExposure < threshold)
+            {
+                if (selectedstate == ShadekinState.Low) // If Low is below the threshold, then we auto-jump to Dark.
+                    selectedstate = ShadekinState.Dark;
+                else
+                    continue;
+            }
 
-            if (shadekinState != ShadekinState.Dark && lightExposure > threshold)
-                continue;
-
-            component.CurrentState = shadekinState;
+            component.CurrentState = selectedstate;
+            UpdateAlert(uid, component, (short)selectedstate);
             Dirty(uid, component);
             break;
         }
@@ -258,12 +256,12 @@ public sealed class ShadekinSystem : EntitySystem
 
             CheckThresholds(uid, component, lightExposure);
 
-            // SetPassiveBuff(uid, component.LightExposure);
-            // ToggleNightVision(uid, component.LightExposure);
-            // ApplyLightDamage(uid, component.LightExposure);
-            // _speed.RefreshMovementSpeedModifiers(uid);
+            ToggleNightVision(uid, component.CurrentState);
+            SetPassiveBuff(uid, component.CurrentState);
+            _speed.RefreshMovementSpeedModifiers(uid);
 
-            UpdateAlert(uid, component);
+            if (component.CurrentState == ShadekinState.Extreme)
+                ApplyLightDamage(uid);
         }
     }
 }
