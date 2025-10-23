@@ -21,6 +21,12 @@ public sealed partial class AlertArmoryShuttleComponent : Component
     [ViewVariables]
     public Color? AnnouncementColor = null;
 
+    /// <summary>
+    /// True while the shuttle is in FTL.
+    /// </summary>
+    [ViewVariables]
+    public bool InTransit = false;
+
     #region Return to "Armory Space"
     [ViewVariables]
     public EntityCoordinates CoordsCache;
