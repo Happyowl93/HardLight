@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 10/23/2025 06:37:16
-  entityCount: 7325
+  time: 10/23/2025 06:45:52
+  entityCount: 7343
 maps: []
 grids:
 - 1
@@ -11619,6 +11619,96 @@ entities:
     components:
     - type: Transform
       pos: 14.5,6.5
+      parent: 1
+  - uid: 7326
+    components:
+    - type: Transform
+      pos: 9.5,4.5
+      parent: 1
+  - uid: 7327
+    components:
+    - type: Transform
+      pos: 9.5,8.5
+      parent: 1
+  - uid: 7328
+    components:
+    - type: Transform
+      pos: 3.5,8.5
+      parent: 1
+  - uid: 7329
+    components:
+    - type: Transform
+      pos: 3.5,4.5
+      parent: 1
+  - uid: 7330
+    components:
+    - type: Transform
+      pos: 4.5,1.5
+      parent: 1
+  - uid: 7331
+    components:
+    - type: Transform
+      pos: 5.5,1.5
+      parent: 1
+  - uid: 7332
+    components:
+    - type: Transform
+      pos: 6.5,1.5
+      parent: 1
+  - uid: 7333
+    components:
+    - type: Transform
+      pos: 7.5,1.5
+      parent: 1
+  - uid: 7334
+    components:
+    - type: Transform
+      pos: 8.5,1.5
+      parent: 1
+  - uid: 7335
+    components:
+    - type: Transform
+      pos: 4.5,11.5
+      parent: 1
+  - uid: 7336
+    components:
+    - type: Transform
+      pos: 5.5,11.5
+      parent: 1
+  - uid: 7337
+    components:
+    - type: Transform
+      pos: 6.5,11.5
+      parent: 1
+  - uid: 7338
+    components:
+    - type: Transform
+      pos: 7.5,11.5
+      parent: 1
+  - uid: 7339
+    components:
+    - type: Transform
+      pos: 8.5,11.5
+      parent: 1
+  - uid: 7340
+    components:
+    - type: Transform
+      pos: 8.5,10.5
+      parent: 1
+  - uid: 7341
+    components:
+    - type: Transform
+      pos: 4.5,10.5
+      parent: 1
+  - uid: 7342
+    components:
+    - type: Transform
+      pos: 8.5,2.5
+      parent: 1
+  - uid: 7343
+    components:
+    - type: Transform
+      pos: 4.5,2.5
       parent: 1
 - proto: CableHV
   entities:
@@ -48800,7 +48890,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -1921.8983
+      secondsUntilStateChange: -2433.2576
       state: Opening
     - type: Airlock
       autoClose: False
@@ -48816,7 +48906,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -1923.265
+      secondsUntilStateChange: -2434.6243
       state: Opening
     - type: Airlock
       autoClose: False
