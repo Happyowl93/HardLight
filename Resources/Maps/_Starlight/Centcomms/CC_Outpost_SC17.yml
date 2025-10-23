@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 10/23/2025 06:57:30
+  time: 10/23/2025 07:08:45
   entityCount: 7343
 maps: []
 grids:
@@ -40379,11 +40379,6 @@ entities:
         7017:
         - - Status
           - DoorBolt
-        7090:
-        - - On
-          - On
-        - - Off
-          - Off
     - type: Fixtures
       fixtures: {}
   - uid: 113
@@ -40400,11 +40395,6 @@ entities:
         7020:
         - - Status
           - DoorBolt
-        7088:
-        - - On
-          - On
-        - - Off
-          - Off
     - type: Fixtures
       fixtures: {}
   - uid: 261
@@ -40431,6 +40421,11 @@ entities:
         - - Off
           - On
         - - On
+          - Off
+        7088:
+        - - On
+          - On
+        - - Off
           - Off
     - type: Fixtures
       fixtures: {}
@@ -40459,6 +40454,11 @@ entities:
           - Off
         - - Off
           - On
+        7090:
+        - - On
+          - On
+        - - Off
+          - Off
     - type: Fixtures
       fixtures: {}
 - proto: SignAtmos
@@ -48911,7 +48911,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -3127.0637
+      secondsUntilStateChange: -3794.8306
       state: Opening
     - type: Airlock
       autoClose: False
@@ -48927,7 +48927,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -3128.4304
+      secondsUntilStateChange: -3796.1973
       state: Opening
     - type: Airlock
       autoClose: False
