@@ -333,6 +333,7 @@
     brokenState: base-broken
     mechToPilotDamageMultiplier: 0.60
     airtight: true
+    maxEquipmentAmount: 4
     pilotWhitelist:
       components:
         - HumanoidAppearance
@@ -340,6 +341,7 @@
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
+    bluntStaminaDamageFactor: 1.5
     damage:
       types:
         Blunt: 30 #intentionally shit so people realize that going into combat with the ripley is usually a bad idea.
@@ -374,6 +376,7 @@
     startingEquipment:
       - WeaponMechCombatDisabler
       - WeaponMechCombatFlashbangLauncher
+      - MechEquipmentSecGrabber
 
 # Clarke
 - type: entity
@@ -633,11 +636,13 @@
     attackRate: 1
     damage:
       types:
-        Blunt: 25
+        Blunt: 30 #THWACK
         Structural: 180
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2
-    baseSprintSpeed: 2.6
+    baseWalkSpeed: 2.4
+    baseSprintSpeed: 3.7
+  - type: Damageable
+    damageModifierSet: LightArmor
   - type: MechThrusters
   - type: PointLight
     mask: /Textures/Effects/LightMasks/cone.png
@@ -900,7 +905,7 @@
         Structural: 200
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
-    baseSprintSpeed: 3.7
+    baseSprintSpeed: 4.0
   - type: Damageable
     damageModifierSet: MediumArmorSyndi
   - type: MechThrusters

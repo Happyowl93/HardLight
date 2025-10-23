@@ -260,7 +260,17 @@
   - WeaponMechCombatShotgun
   - WeaponMechCombatShotgunIncendiary
   - WeaponMechCombatUltraRifle
+  - WeaponMechCombatXray
+  - WeaponMechChainSword
+  - WeaponMechCombatIon
+  - WeaponMechCombatAMLG90
+  - WeaponMechCombatTaser
 
+- type: latheRecipePack
+  id: StarlightSecurityMechsSystems
+  recipes:
+  - MechEquipmentSecGrabber
+  
 - type: latheRecipePack
   id: StarlightSecurityMechs
   recipes:

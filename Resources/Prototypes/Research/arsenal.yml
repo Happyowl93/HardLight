@@ -75,6 +75,7 @@
   - WeaponDisabler
   - WeaponMechCombatDisabler
   - WeaponMechCombatFlashbangLauncher
+  - WeaponMechCombatTaser
   - CartridgePistolRubber
   - CartridgeMagnumRubber
   - CartridgeLightRifleRubber
@@ -192,6 +193,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponXrayCannon
+  - WeaponMechCombatXray
   radioChannels:
   - Security
   

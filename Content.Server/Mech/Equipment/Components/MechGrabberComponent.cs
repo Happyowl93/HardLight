@@ -39,6 +39,12 @@ public sealed partial class MechGrabberComponent : Component
     public int MaxContents = 10;
 
     /// <summary>
+    /// Allows to grab mobs and people
+    /// </summary>
+    [DataField("CanGrabMobs")]
+    public bool CanGrabMobs = false;
+
+    /// <summary>
     /// The sound played when a mech is grabbing something
     /// </summary>
     [DataField("grabSound")]
