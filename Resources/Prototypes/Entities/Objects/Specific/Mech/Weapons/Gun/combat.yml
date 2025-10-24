@@ -208,11 +208,6 @@
     fireCost: 80
   - type: Appearance
   - type: AmmoCounter
-  # region starlight
-  - type: Tag
-    tags:
-    - PaddyMech
-  # end region
 
 - type: entity
   id: WeaponMechCombatShotgunIncendiary
