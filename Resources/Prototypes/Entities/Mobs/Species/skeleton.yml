@@ -26,6 +26,9 @@
         color: "#555555AA"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
+  - type: Tag
+    tags:
+    - Skeleton
   - type: MobState
   - type: MobThresholds
     thresholds:
