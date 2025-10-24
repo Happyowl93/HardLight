@@ -32,8 +32,8 @@
     activatedDamage:
       types:
         Blunt: 0
-    deactivatedSoundOnHit:
-      collection: GenericHit
+    deactivatedSoundOnHit: #starlight
+      collection: GenericHit #starlight
   - type: MeleeWeapon
     wideAnimationRotation: -135
     damage:
@@ -42,8 +42,8 @@
     bluntStaminaDamageFactor: 2.0
     angle: 60
     animation: WeaponArcThrust
-    soundHit:
-      collection: GenericHit
+    soundHit: #starlight
+      collection: GenericHit #starlight
   - type: StaminaDamageOnHit
     damage: 35
     sound: /Audio/Weapons/egloves.ogg
