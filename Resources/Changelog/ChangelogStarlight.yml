@@ -18287,5 +18287,77 @@ Entries:
   id: 192200
   time: '2025-10-17T15:00:15.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1922
+- author: CorruptOmega
+  changes:
+  - message: Missing sentience event localization.
+    type: Add
+  id: 200800
+  time: '2025-10-22T13:34:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2008
+- author: Way
+  changes:
+  - message: Changed shunt button sprite to be more visually consistent with the other
+      AI buttons.
+    type: Tweak
+  id: 200100
+  time: '2025-10-22T13:39:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2001
+- author: Trep_Maul
+  changes:
+  - message: (Leth) Hamlet
+    type: Add
+  id: 200200
+  time: '2025-10-22T13:36:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2002
+- author: Trep_Maul
+  changes:
+  - message: (Leth) Named Unknown faxes
+    type: Fix
+  id: 200201
+  time: '2025-10-22T13:36:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2002
+- author: Trep_Maul
+  changes:
+  - message: (Leth) Linked Arti pads
+    type: Fix
+  id: 200202
+  time: '2025-10-22T13:36:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2002
+- author: Trep_Maul
+  changes:
+  - message: (Leth) Added missing escape pod fans
+    type: Fix
+  id: 200203
+  time: '2025-10-22T13:36:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2002
+- author: Trep_Maul
+  changes:
+  - message: (Leth) Adjusted mining layout
+    type: Tweak
+  id: 200204
+  time: '2025-10-22T13:36:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2002
+- author: STARLIGHT TEAM, orks_are_da_best
+  changes:
+  - message: Added an in-game Bug Report button.
+    type: Add
+  id: 201000
+  time: '2025-10-22T22:23:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2010
+- author: CrazyPhantom
+  changes:
+  - message: Roundstart and Built Station AI's now understand the correct languages.
+    type: Fix
+  id: 201300
+  time: '2025-10-23T17:36:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2013
+- author: CrazyPhantom
+  changes:
+  - message: Medical, Mining and Janitor borgs will no longer force you to use the
+      default sprite.
+    type: Fix
+  id: 202900
+  time: '2025-10-24T11:11:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2029
 Order: -1
 
