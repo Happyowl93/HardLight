@@ -34,13 +34,13 @@
     - Binary
     # Starlight-start
     availableTypes:
-    - generic
-    - mining
     - engineering
+    - generic
     - janitor
     - medical
-    - service
+    - mining
     - purrfus
+    - service
  #   - security Currently admeme only
   # Starlight-end
 
