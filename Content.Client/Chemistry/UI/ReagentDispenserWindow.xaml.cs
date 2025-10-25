@@ -72,8 +72,7 @@ namespace Content.Client.Chemistry.UI
             EjectButton.Disabled = castState.OutputContainer is null;
 
             // Starlight-start
-            EnergyDisplayBar.Value = castState.EnergyAmount;
-            EnergyDisplay.Text = Loc.GetString("mech-energy-display", ("amount", (int)Math.Round(castState.EnergyAmount * 100)));
+            UpdateEnergyDisplay(castState.EnergyAmount);
             // Starlight-end
 
             AmountGrid.Selected = ((int)castState.SelectedDispenseAmount).ToString();
