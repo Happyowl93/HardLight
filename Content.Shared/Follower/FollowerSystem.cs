@@ -98,11 +98,11 @@ public sealed class FollowerSystem : EntitySystem
         if (ev.User == ev.Target || IsClientSide(ev.Target))
             return;
 
-        if (HasComp<GhostComponent>(ev.User))
+        if (TryComp<GhostComponent>(ev.User, out var ghost)) // Starlight edit
         {
             var verb = new AlternativeVerb()
             {
-                Priority = -10, // Starlight edit: Prioritize actions over follow for Aghost
+                Priority = ghost.CanGhostInteract ? -10 : 10, // Starlight edit: Prioritize actions over follow for Aghost
                 Act = () => StartFollowingEntity(ev.User, ev.Target),
                 Impact = LogImpact.Low,
                 Text = Loc.GetString("verb-follow-text"),
