@@ -28,7 +28,7 @@
         sprite: Mobs/Effects/burn_damage.rsi
   - type: Tag
     tags:
-    - Unimplantable
+    - Unimplantable # _Starlight
   - type: MobState
   - type: MobThresholds
     thresholds:
