@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 10/27/2025 07:02:39
-  entityCount: 25362
+  time: 10/27/2025 07:28:56
+  entityCount: 25430
 maps:
 - 1
 grids:
@@ -12864,7 +12864,7 @@ entities:
       pos: -29.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -108452.49
+      secondsUntilStateChange: -108582.55
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12876,7 +12876,7 @@ entities:
       pos: 30.5,-28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -108458.99
+      secondsUntilStateChange: -108589.05
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12888,7 +12888,7 @@ entities:
       pos: 30.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -108459.69
+      secondsUntilStateChange: -108589.74
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14039,7 +14039,7 @@ entities:
       pos: 36.5,0.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -200155.81
+      secondsUntilStateChange: -200285.86
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -40721,6 +40721,201 @@ entities:
     - type: Transform
       pos: -40.5,23.5
       parent: 2
+  - uid: 23564
+    components:
+    - type: Transform
+      pos: -0.5,-51.5
+      parent: 2
+  - uid: 23568
+    components:
+    - type: Transform
+      pos: -0.5,-52.5
+      parent: 2
+  - uid: 23570
+    components:
+    - type: Transform
+      pos: -0.5,-53.5
+      parent: 2
+  - uid: 23571
+    components:
+    - type: Transform
+      pos: 0.5,-53.5
+      parent: 2
+  - uid: 23572
+    components:
+    - type: Transform
+      pos: 1.5,-53.5
+      parent: 2
+  - uid: 23573
+    components:
+    - type: Transform
+      pos: 2.5,-53.5
+      parent: 2
+  - uid: 23582
+    components:
+    - type: Transform
+      pos: 3.5,-53.5
+      parent: 2
+  - uid: 23583
+    components:
+    - type: Transform
+      pos: 4.5,-53.5
+      parent: 2
+  - uid: 23588
+    components:
+    - type: Transform
+      pos: 5.5,-53.5
+      parent: 2
+  - uid: 23589
+    components:
+    - type: Transform
+      pos: 5.5,-52.5
+      parent: 2
+  - uid: 23590
+    components:
+    - type: Transform
+      pos: 5.5,-51.5
+      parent: 2
+  - uid: 23591
+    components:
+    - type: Transform
+      pos: 5.5,-50.5
+      parent: 2
+  - uid: 23592
+    components:
+    - type: Transform
+      pos: 5.5,-49.5
+      parent: 2
+  - uid: 23723
+    components:
+    - type: Transform
+      pos: -1.5,-53.5
+      parent: 2
+  - uid: 23724
+    components:
+    - type: Transform
+      pos: -2.5,-53.5
+      parent: 2
+  - uid: 23728
+    components:
+    - type: Transform
+      pos: -3.5,-53.5
+      parent: 2
+  - uid: 23729
+    components:
+    - type: Transform
+      pos: -4.5,-53.5
+      parent: 2
+  - uid: 23730
+    components:
+    - type: Transform
+      pos: -5.5,-53.5
+      parent: 2
+  - uid: 23731
+    components:
+    - type: Transform
+      pos: -6.5,-53.5
+      parent: 2
+  - uid: 23732
+    components:
+    - type: Transform
+      pos: -7.5,-53.5
+      parent: 2
+  - uid: 23733
+    components:
+    - type: Transform
+      pos: -8.5,-53.5
+      parent: 2
+  - uid: 23734
+    components:
+    - type: Transform
+      pos: -9.5,-53.5
+      parent: 2
+  - uid: 23735
+    components:
+    - type: Transform
+      pos: -10.5,-53.5
+      parent: 2
+  - uid: 23736
+    components:
+    - type: Transform
+      pos: -11.5,-53.5
+      parent: 2
+  - uid: 23737
+    components:
+    - type: Transform
+      pos: -12.5,-53.5
+      parent: 2
+  - uid: 23738
+    components:
+    - type: Transform
+      pos: -13.5,-53.5
+      parent: 2
+  - uid: 23739
+    components:
+    - type: Transform
+      pos: -14.5,-53.5
+      parent: 2
+  - uid: 23740
+    components:
+    - type: Transform
+      pos: -17.5,-53.5
+      parent: 2
+  - uid: 23741
+    components:
+    - type: Transform
+      pos: -18.5,-53.5
+      parent: 2
+  - uid: 23742
+    components:
+    - type: Transform
+      pos: -19.5,-53.5
+      parent: 2
+  - uid: 23743
+    components:
+    - type: Transform
+      pos: -20.5,-53.5
+      parent: 2
+  - uid: 23744
+    components:
+    - type: Transform
+      pos: -21.5,-53.5
+      parent: 2
+  - uid: 23745
+    components:
+    - type: Transform
+      pos: -22.5,-53.5
+      parent: 2
+  - uid: 23746
+    components:
+    - type: Transform
+      pos: -23.5,-53.5
+      parent: 2
+  - uid: 23747
+    components:
+    - type: Transform
+      pos: -24.5,-53.5
+      parent: 2
+  - uid: 23748
+    components:
+    - type: Transform
+      pos: -25.5,-53.5
+      parent: 2
+  - uid: 23749
+    components:
+    - type: Transform
+      pos: -26.5,-53.5
+      parent: 2
+  - uid: 23750
+    components:
+    - type: Transform
+      pos: -17.5,-52.5
+      parent: 2
+  - uid: 23751
+    components:
+    - type: Transform
+      pos: -17.5,-51.5
+      parent: 2
 - proto: CableApcStack
   entities:
   - uid: 5530
@@ -56854,6 +57049,151 @@ entities:
     components:
     - type: Transform
       pos: 19.5,34.5
+      parent: 2
+  - uid: 20298
+    components:
+    - type: Transform
+      pos: -0.5,-53.5
+      parent: 2
+  - uid: 20459
+    components:
+    - type: Transform
+      pos: -0.5,-52.5
+      parent: 2
+  - uid: 20471
+    components:
+    - type: Transform
+      pos: -0.5,-51.5
+      parent: 2
+  - uid: 20472
+    components:
+    - type: Transform
+      pos: -1.5,-53.5
+      parent: 2
+  - uid: 20969
+    components:
+    - type: Transform
+      pos: -2.5,-53.5
+      parent: 2
+  - uid: 20970
+    components:
+    - type: Transform
+      pos: -3.5,-53.5
+      parent: 2
+  - uid: 20971
+    components:
+    - type: Transform
+      pos: -4.5,-53.5
+      parent: 2
+  - uid: 20972
+    components:
+    - type: Transform
+      pos: -5.5,-53.5
+      parent: 2
+  - uid: 20975
+    components:
+    - type: Transform
+      pos: -6.5,-53.5
+      parent: 2
+  - uid: 20976
+    components:
+    - type: Transform
+      pos: -7.5,-53.5
+      parent: 2
+  - uid: 21586
+    components:
+    - type: Transform
+      pos: -8.5,-53.5
+      parent: 2
+  - uid: 21588
+    components:
+    - type: Transform
+      pos: -9.5,-53.5
+      parent: 2
+  - uid: 21593
+    components:
+    - type: Transform
+      pos: -10.5,-53.5
+      parent: 2
+  - uid: 21594
+    components:
+    - type: Transform
+      pos: -11.5,-53.5
+      parent: 2
+  - uid: 21644
+    components:
+    - type: Transform
+      pos: -12.5,-53.5
+      parent: 2
+  - uid: 21645
+    components:
+    - type: Transform
+      pos: -13.5,-53.5
+      parent: 2
+  - uid: 21647
+    components:
+    - type: Transform
+      pos: -14.5,-53.5
+      parent: 2
+  - uid: 21786
+    components:
+    - type: Transform
+      pos: -15.5,-53.5
+      parent: 2
+  - uid: 21799
+    components:
+    - type: Transform
+      pos: -16.5,-53.5
+      parent: 2
+  - uid: 21813
+    components:
+    - type: Transform
+      pos: -17.5,-53.5
+      parent: 2
+  - uid: 23560
+    components:
+    - type: Transform
+      pos: -17.5,-52.5
+      parent: 2
+  - uid: 23561
+    components:
+    - type: Transform
+      pos: -17.5,-51.5
+      parent: 2
+  - uid: 23593
+    components:
+    - type: Transform
+      pos: 0.5,-53.5
+      parent: 2
+  - uid: 23595
+    components:
+    - type: Transform
+      pos: 1.5,-53.5
+      parent: 2
+  - uid: 23599
+    components:
+    - type: Transform
+      pos: 2.5,-53.5
+      parent: 2
+  - uid: 23600
+    components:
+    - type: Transform
+      pos: 3.5,-53.5
+      parent: 2
+  - uid: 23601
+    components:
+    - type: Transform
+      pos: 4.5,-53.5
+      parent: 2
+  - uid: 23663
+    components:
+    - type: Transform
+      pos: 5.5,-53.5
+      parent: 2
+  - uid: 23722
+    components:
+    - type: Transform
+      pos: 5.5,-52.5
       parent: 2
 - proto: CableMVStack
   entities:
@@ -140842,8 +141182,8 @@ entities:
   - uid: 20297
     components:
     - type: Transform
-      pos: 3.046875,-52
-      parent: 1
+      pos: 3.5,-51.5
+      parent: 2
     - type: Fixtures
       fixtures: {}
 - proto: SignShock
