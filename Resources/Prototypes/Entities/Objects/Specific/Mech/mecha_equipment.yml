@@ -192,6 +192,7 @@
   - type: ContainerContainer
     containers:
       item-container: !type:Container
+  - type: ChildBlockVision
   - type: Tag
     tags:
     - PaddyMech
