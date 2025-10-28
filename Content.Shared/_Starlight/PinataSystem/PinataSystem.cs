@@ -40,8 +40,7 @@ public sealed class PinataSystem : EntitySystem
         
         guts.Clear();
 
-        for (int i = 0; i < _random.Next(12, 21); i++)
-            SpawnItem(ent);
+        SpawnItem(ent);
     }
 
     private void OnHit(Entity<PinataComponent> ent, ref DamageModifyEvent args)
