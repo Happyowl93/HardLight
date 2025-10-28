@@ -54,7 +54,10 @@ public sealed class PinataSystem : EntitySystem
             SpawnItem(ent);
     }
 
-    public void SpawnItem(Entity<PinataComponent> entity)
+    /// <summary>
+    /// Custom method which spawns entities in random range.
+    /// </summary>
+    private void SpawnItem(Entity<PinataComponent> entity)
     {
         var spawns = _entityTable.GetSpawns(entity.Comp.Table);
         var coords = Transform(entity).Coordinates;
