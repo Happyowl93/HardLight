@@ -62,8 +62,6 @@
     sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
     state: pinata
   - type: Item
-    sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
-    state: pinata
     size: Normal
 
 - type: entity
@@ -71,7 +69,7 @@
   id: ClownPinataDamaged
   name: Clown Pinata
   suffix: Damaged
-  Description: Looks kinda sad. Show no mercy.
+  description: Looks kinda sad. Show no mercy.
   components:
   - type: Pinata
     hitTable: !type:NestedSelector
@@ -104,8 +102,6 @@
     sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
     state: damaged
   - type: Item
-    sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
-    state: damaged
     size: Normal
 
 - type: entity
