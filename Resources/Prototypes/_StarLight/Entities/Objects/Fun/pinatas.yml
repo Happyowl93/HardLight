@@ -114,8 +114,6 @@
     sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
     state: destroyed
   - type: Item
-    sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
-    state: destroyed
     size: Tiny
   - type: Tag
     tags:

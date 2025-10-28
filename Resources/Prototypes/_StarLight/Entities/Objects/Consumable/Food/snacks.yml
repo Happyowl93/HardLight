@@ -59,8 +59,6 @@
     state: wrapper
     color: "#ff63be"
   - type: Item
-    sprite: _Starlight/Objects/Consumable/Food/hardcandy.rsi
-    state: wrapper
     size: Tiny
   - type: Tag
     tags:
