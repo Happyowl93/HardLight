@@ -30,7 +30,10 @@
   - type: Pinata
     hitTable: !type:NestedSelector
       tableId: PinataCandyTable
-    #gibTable: PinataCandyTable if you want to drop items at gib
+    # gibTable: !type:NestedSelector
+      # tableId: PinataLoot
+      # rolls: !type:RangeNumberSelector
+        # range: 5, 10
   - type: Destructible # Same as parent, but spawns BrokenBottle instead of ShardGlass
     thresholds:
     - trigger: # Overkill threshold
@@ -67,6 +70,10 @@
   - type: Pinata
     hitTable: !type:NestedSelector
       tableId: PinataCandyTable
+    gibTable: !type:NestedSelector
+      tableId: PinataLoot
+      rolls: !type:RangeNumberSelector
+        range: 5, 7
   - type: Destructible # Same as parent, but spawns BrokenBottle instead of ShardGlass
     thresholds:
     - trigger: # Overkill threshold
