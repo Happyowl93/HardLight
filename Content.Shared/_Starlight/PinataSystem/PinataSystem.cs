@@ -62,7 +62,7 @@ public sealed class PinataSystem : EntitySystem
         foreach (var spawn in spawns)
         {
             var spawnedEntity = Spawn(spawn, coords);
-            _throwing.TryThrow(entity , _random.NextVector2(), baseThrowSpeed: 5f);
+            _throwing.TryThrow(spawnedEntity , _random.NextVector2(), baseThrowSpeed: 5f);
         }
 
     }
