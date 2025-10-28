@@ -5,7 +5,8 @@
   name: Base Pinata
   components:
   - type: Pinata
-    table: PinataCandyTable
+    hitTable: !type:NestedSelector
+      tableId: PinataCandyTable
   - type: PhysicalComposition
     materialComposition:
       Cloth: 100
@@ -24,6 +25,8 @@
   - type: Sprite
     sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
     state: pinata
+  - type: Damageable
+    damageContainer: Inorganic
 
 - type: entity
   parent: BasePinata
@@ -48,7 +51,7 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 100
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
@@ -88,7 +91,7 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 80
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
