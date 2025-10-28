@@ -28,7 +28,8 @@
   description: Looks kinda funny. Do the real ones also explode into candy when you beat them?
   components:
   - type: Pinata
-    table: PinataCandyTable
+    hitTable: PinataCandyTable
+    #gibTable: PinataCandyTable if you want to drop items at gib
   - type: Destructible # Same as parent, but spawns BrokenBottle instead of ShardGlass
     thresholds:
     - trigger: # Overkill threshold
