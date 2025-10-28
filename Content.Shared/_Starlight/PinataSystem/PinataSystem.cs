@@ -26,21 +26,7 @@ public sealed class PinataSystem : EntitySystem
     }
 
     //This is from most explicit gib effects
-    private void OnGibAlt(Entity<PinataComponent> ent, ref EntityGibbedEvent args)
-    {
-        var guts = args.DroppedEntities;
-        foreach (var organ in guts)
-        {
-            QueueDel(organ);
-        }
-        args.DroppedEntities.Clear();
-
-        var coords = Transform(ent).Coordinates;
-        for (int i = 0; i < _random.Next(12, 21); i++)
-        {
-            SpawnItem(ent);
-        }
-    }
+    private void OnGibAlt(Entity<PinataComponent> ent, ref EntityGibbedEvent args) => RemoveGibbedParts(ent, args.DroppedEntities);
 
     //This is from taking too much damage and gibbing.
     private void OnGib(Entity<PinataComponent> ent, ref BeingGibbedEvent args) => RemoveGibbedParts(ent, args.GibbedParts);
