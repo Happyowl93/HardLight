@@ -12,8 +12,5 @@ public sealed partial class PinataComponent : Component
     public EntityTableSelector Table = default!;
 
     [DataField]
-    public int MinSpawn = 1;
-
-    [DataField]
     public int MaxSpawn = 4;
 }
