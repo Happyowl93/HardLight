@@ -5,7 +5,7 @@
   description: So many flavors of sugar!
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Consumable/Food/snacks.rsi
+    sprite: _Starlight/Objects/Consumable/Food/hardcandy.rsi
     state: candy_wrapped
     color: "#ff63be"
   - type: Item
@@ -28,7 +28,7 @@
   description: So many flavors of sugar! Tastes even better with the skin off.
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Consumable/Food/snacks.rsi
+    sprite: _Starlight/Objects/Consumable/Food/hardcandy.rsi
     state: candy
     color: "#ff7dc9"
   - type: Item
@@ -55,11 +55,11 @@
   name: candy wrapper
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Consumable/Food/snacks.rsi
+    sprite: _Starlight/Objects/Consumable/Food/hardcandy.rsi
     state: wrapper
     color: "#ff63be"
   - type: Item
-    sprite: _Starlight/Objects/Consumable/Food/snacks.rsi
+    sprite: _Starlight/Objects/Consumable/Food/hardcandy.rsi
     state: wrapper
     size: Tiny
   - type: Tag

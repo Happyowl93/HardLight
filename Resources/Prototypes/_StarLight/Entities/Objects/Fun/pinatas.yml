@@ -91,6 +91,7 @@
   id: ClownPinataDamaged
   name: Clown Pinata Remains
   description: Like stealing candy from a clown.
+  components:
   - type: Sprite
     sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
     state: destroyed
