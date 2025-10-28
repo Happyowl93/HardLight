@@ -43,21 +43,7 @@ public sealed class PinataSystem : EntitySystem
     }
 
     //This is from taking too much damage and gibbing.
-    private void OnGib(Entity<PinataComponent> ent, ref BeingGibbedEvent args)
-    {
-        var guts = args.GibbedParts;
-        foreach (var organ in guts)
-        {
-            QueueDel(organ);
-        }
-        args.GibbedParts.Clear();
-
-        var coords = Transform(ent).Coordinates;
-        for (int i = 0; i < _random.Next(12, 21); i++)
-        {
-            SpawnItem(ent);
-        }
-    }
+    private void OnGib(Entity<PinataComponent> ent, ref BeingGibbedEvent args) => RemoveGibbedParts(ent, args.GibbedParts);
 
     private void OnHit(Entity<PinataComponent> ent, ref DamageModifyEvent args)
     {
