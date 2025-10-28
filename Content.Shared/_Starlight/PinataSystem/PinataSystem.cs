@@ -15,6 +15,8 @@ public sealed class PinataSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem Physics = default!;
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly ThrowingSystem _throwing = default!;
+    [Dependency] private readonly EntityTableSystem _entityTable =  default!;
 
     public override void Initialize()
     {
