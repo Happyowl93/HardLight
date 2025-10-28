@@ -10,7 +10,7 @@ namespace Content.Server.BPL.Pinata;
 public sealed class PinataSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] protected readonly SharedPhysicsSystem Physics = default!;
+    [Dependency] private readonly SharedPhysicsSystem Physics = default!;
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
