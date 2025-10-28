@@ -10,10 +10,6 @@ namespace Content.Server._Starlight.PinataSystem;
 public sealed partial class PinataComponent : Component
 {
     /// <summary>
-    /// The entity table to select loot from.
-    /// </summary>
-    [DataField(required: true)]
-    /// <summary>
     /// The entity table to select loot from when entity hitten by someone.
     /// </summary>
     [DataField]
