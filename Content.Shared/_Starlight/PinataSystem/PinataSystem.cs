@@ -1,6 +1,8 @@
 using Content.Shared.Body.Events;
 using Content.Shared.Damage;
 using Content.Shared.Gibbing.Events;
+using Content.Shared.Throwing;
+using Content.Shared.EntityTable;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
