@@ -18,6 +18,7 @@ public sealed class PinataSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly EntityTableSystem _entityTable =  default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {
