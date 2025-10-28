@@ -71,9 +71,13 @@ public sealed class PinataSystem : EntitySystem
 
     public void SpawnItem(Entity<PinataComponent> entity)
     {
+        var spawns = _entityTable.GetSpawns(entity.Comp.Table);
         var coords = Transform(entity).Coordinates;
-        var newCandy = Spawn(entity.Comp.SpawnOnHit, coords);
-        var physics = EnsureComp<PhysicsComponent>(newCandy);
+        foreach (var spawn in spawns)
+        {
+            var entity = Spawn(spawn, coords);
+            _throwing.TryThrow(entity , _random.NextVector2(), baseThrowSpeed: 5f);
+        }
 
         var targetMapVelocity = _random.NextVector2().Normalized() * _random.Next(8, 20);
         var currentMapVelocity = Physics.GetMapLinearVelocity(newCandy, physics);
