@@ -382,7 +382,7 @@
     startingEquipment:
       - WeaponMechCombatDisabler
       - WeaponMechCombatFlashbangLauncher
-      - MechEquipmentSecGrabber
+#      - MechEquipmentSecGrabber
 
 # Clarke
 - type: entity

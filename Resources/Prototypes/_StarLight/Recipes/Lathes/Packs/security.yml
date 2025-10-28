@@ -267,6 +267,9 @@
   - WeaponMechCombatDisabler
   - WeaponMechCombatFlashbangLauncher
   - WeaponMechCombatTaser
+  - WeaponMechCombatImmolationGun
+  - WeaponMechCombatSolarisLaser
+  - WeaponMechCombatFiredartLaser
 
 - type: latheRecipePack
   id: StarlightSecurityMechsSystems

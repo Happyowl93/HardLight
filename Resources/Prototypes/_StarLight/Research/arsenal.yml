@@ -10,7 +10,7 @@
   cost: 8500
   recipeUnlocks:
   - PaddyUpgradeKit
-  - MechEquipmentSecGrabber
+#  - MechEquipmentSecGrabber
   technologyPrerequisites:
   - Ripley2
   radioChannels:
