@@ -1,0 +1,103 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BasePinata
+  components:
+  - type: Pinata
+    table: PinataCandyTable
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 100
+  - type: StaticPrice
+    price: 10
+  - type: Food
+    requiresSpecialDigestion: true
+    delay: 2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+
+- type: entity
+  parent: BasePinata
+  id: ClownPinata
+  name: Clown Pinata
+  description: Looks kinda funny. Do the real ones also explode into candy when you beat them?
+  components:
+  - type: Pinata
+    table: PinataCandyTable
+  - type: Destructible # Same as parent, but spawns BrokenBottle instead of ShardGlass
+    thresholds:
+    - trigger: # Overkill threshold
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ClownPinataDamaged:
+            min: 1
+            max: 1
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Sprite
+    sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
+    state: pinata
+
+- type: entity
+  parent: ClownPinata
+  id: ClownPinataDamaged
+  name: Clown Pinata
+  suffix: Damaged
+  Description: Looks kinda sad. Show no mercy.
+  components:
+  - type: Pinata
+    table: PinataCandyTable
+  - type: Destructible # Same as parent, but spawns BrokenBottle instead of ShardGlass
+    thresholds:
+    - trigger: # Overkill threshold
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ClownPinataDestroyed:
+            min: 1
+            max: 1
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Sprite
+    sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
+    state: damaged
+
+- type: entity
+  parent: BaseItem
+  id: ClownPinataDamaged
+  name: Clown Pinata Remains
+  description: Like stealing candy from a clown.
+  - type: Sprite
+    sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
+    state: destroyed
+  - type: Item
+    sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
+    state: destroyed
+    size: Tiny
+  - type: Tag
+    tags:
+    - Trash
