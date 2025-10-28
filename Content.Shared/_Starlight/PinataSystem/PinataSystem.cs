@@ -52,7 +52,7 @@ public sealed class PinataSystem : EntitySystem
         if (!damPerGroup.TryGetValue("Brute", out var brute) || brute <= 5 || ent.Comp.HitTable == null) //Has to be a decent hit
             return;
             
-        SpawnItem(ent);
+        SpawnItem(ent, ent.Comp.HitTable.Value);
     }
 
     /// <summary>
