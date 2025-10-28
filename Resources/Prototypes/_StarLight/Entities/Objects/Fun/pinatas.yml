@@ -2,7 +2,7 @@
   parent: BaseItem
   id: BasePinata
   abstract: true
-  suffix: Do Not Map
+  name: Base Pinata
   components:
   - type: Pinata
     table: PinataCandyTable
