@@ -62,10 +62,5 @@ public sealed class PinataSystem : EntitySystem
             _throwing.TryThrow(entity , _random.NextVector2(), baseThrowSpeed: 5f);
         }
 
-        var targetMapVelocity = _random.NextVector2().Normalized() * _random.Next(8, 20);
-        var currentMapVelocity = Physics.GetMapLinearVelocity(newCandy, physics);
-        var finalLinear = physics.LinearVelocity + targetMapVelocity - currentMapVelocity;
-        Physics.SetLinearVelocity(newCandy, finalLinear, body: physics);
-        TransformSystem.SetWorldRotation(newCandy, _random.NextVector2().ToWorldAngle());
     }
 }
