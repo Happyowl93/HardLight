@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ BaseItem, HideSpawnMenu ]
+  parent: BaseItem
   id: BasePinata
   abstract: true
   components:
