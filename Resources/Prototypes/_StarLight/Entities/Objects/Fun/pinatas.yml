@@ -1,7 +1,7 @@
 - type: entity
-  abstract: true
-  parent: BaseItem
+  parent: [ BaseItem, HideSpawnMenu ]
   id: BasePinata
+  abstract: true
   components:
   - type: Pinata
     table: PinataCandyTable
@@ -52,6 +52,8 @@
   - type: Sprite
     sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
     state: pinata
+  - type: Item
+    size: Normal
 
 - type: entity
   parent: ClownPinata
@@ -85,10 +87,12 @@
   - type: Sprite
     sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
     state: damaged
+  - type: Item
+    size: Normal
 
 - type: entity
   parent: BaseItem
-  id: ClownPinataDamaged
+  id: ClownPinataDestroyed
   name: Clown Pinata Remains
   description: Like stealing candy from a clown.
   components:
