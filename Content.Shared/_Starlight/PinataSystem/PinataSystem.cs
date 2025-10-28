@@ -3,19 +3,16 @@ using Content.Shared.Damage;
 using Content.Shared.Gibbing.Events;
 using Content.Shared.Throwing;
 using Content.Shared.EntityTable;
-﻿using Content.Shared.EntityTable.EntitySelectors;
-using Robust.Shared.Physics.Components;
-using Robust.Shared.Physics.Systems;
+using Content.Shared.EntityTable.EntitySelectors;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Network;
 
 namespace Content.Server._Starlight.PinataSystem;
+
 public sealed class PinataSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedPhysicsSystem Physics = default!;
-    [Dependency] private readonly SharedTransformSystem TransformSystem = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly EntityTableSystem _entityTable =  default!;
@@ -46,7 +43,7 @@ public sealed class PinataSystem : EntitySystem
         if (ent.Comp.GibTable == null)
             return;
 
-        SpawnItem(ent, ent.Comp.GibTable.Value);
+        SpawnItem(ent, ent.Comp.GibTable);
     }
 
     private void OnHit(Entity<PinataComponent> ent, ref DamageModifyEvent args)
@@ -55,7 +52,7 @@ public sealed class PinataSystem : EntitySystem
         if (!damPerGroup.TryGetValue("Brute", out var brute) || brute <= 5 || ent.Comp.HitTable == null) //Has to be a decent hit
             return;
             
-        SpawnItem(ent, ent.Comp.HitTable.Value);
+        SpawnItem(ent, ent.Comp.HitTable);
     }
 
     /// <summary>
@@ -65,6 +62,7 @@ public sealed class PinataSystem : EntitySystem
     {
         if (_net.IsClient) // No prediction for entity table.
           return;
+
         var spawns = _entityTable.GetSpawns(entitiesToSpawn);
         var coords = Transform(entity).Coordinates;
         foreach (var spawn in spawns)
