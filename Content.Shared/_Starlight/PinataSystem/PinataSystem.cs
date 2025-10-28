@@ -60,6 +60,8 @@ public sealed class PinataSystem : EntitySystem
     /// </summary>
     private void SpawnItem(Entity<PinataComponent> entity, EntityTableSelector entitiesToSpawn)
     {
+        if (_net.IsClient) // No prediction for entity table.
+          return;
         var spawns = _entityTable.GetSpawns(entity.Comp.Table);
         var coords = Transform(entity).Coordinates;
         foreach (var spawn in spawns)
