@@ -13,5 +13,15 @@ public sealed partial class PinataComponent : Component
     /// The entity table to select loot from.
     /// </summary>
     [DataField(required: true)]
-    public EntityTableSelector Table = default!;
+    /// <summary>
+    /// The entity table to select loot from when entity hitten by someone.
+    /// </summary>
+    [DataField]
+    public EntityTableSelector? HitTable;
+    
+    /// <summary>
+    /// The entity table to select loot from when entity gibbed.
+    /// </summary>
+    [DataField]
+    public EntityTableSelector? GibTable;
 }
