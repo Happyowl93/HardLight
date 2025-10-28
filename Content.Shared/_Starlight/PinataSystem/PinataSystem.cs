@@ -8,7 +8,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server.BPL.Pinata;
+namespace Content.Server._Starlight.PinataSystem;
 public sealed class PinataSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
