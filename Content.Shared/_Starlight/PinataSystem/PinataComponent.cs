@@ -5,8 +5,11 @@ namespace Content.Server.BPL.Pinata;
 [RegisterComponent]
 public sealed partial class PinataComponent : Component
 {
-    [DataField]
-    public EntProtoId SpawnOnHit = "FoodSnackMREBrownieOpen";
+    /// <summary>
+    /// The entity table to select loot from.
+    /// </summary>
+    [DataField(required: true)]
+    public EntityTableSelector Table = default!;
 
     [DataField]
     public int MinSpawn = 1;
