@@ -56,7 +56,7 @@
   name: wrapper pizza
   parent: FoodPizzaCotton
   id: FoodPizzaWrapper
-  description: \'Tastes like cardboard\' taken too literally.
+  description: The phrase 'tastes like cardboard' taken too literally.
   components:
   - type: FlavorProfile
     flavors:
@@ -84,7 +84,7 @@
     requiresSpecialDigestion: true
 
 - type: entity
-  name: slice of nutribrick pizza
+  name: slice of wrapper pizza
   parent: FoodPizzaCottonSlice
   id: FoodPizzaWrapperSlice
   description: Just one slice of sadness.
