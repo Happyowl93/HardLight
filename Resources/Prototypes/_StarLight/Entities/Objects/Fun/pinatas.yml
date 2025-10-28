@@ -2,6 +2,7 @@
   parent: BaseItem
   id: BasePinata
   abstract: true
+  suffix: Do Not Map
   components:
   - type: Pinata
     table: PinataCandyTable
@@ -20,6 +21,9 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 10
+  - type: Sprite
+    sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
+    state: pinata
 
 - type: entity
   parent: BasePinata
@@ -58,6 +62,8 @@
     sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
     state: pinata
   - type: Item
+    sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
+    state: pinata
     size: Normal
 
 - type: entity
@@ -98,6 +104,8 @@
     sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
     state: damaged
   - type: Item
+    sprite: _Starlight/Objects/Fun/Pinatas/clown.rsi
+    state: damaged
     size: Normal
 
 - type: entity
