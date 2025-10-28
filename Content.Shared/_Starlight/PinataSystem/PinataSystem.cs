@@ -31,6 +31,17 @@ public sealed class PinataSystem : EntitySystem
     //This is from taking too much damage and gibbing.
     private void OnGib(Entity<PinataComponent> ent, ref BeingGibbedEvent args) => RemoveGibbedParts(ent, args.GibbedParts);
 
+    private void RemoveGibbedParts(Entity<PinataComponent> ent, ICollection<EntityUid> guts)
+    {
+        foreach (var organ in guts)
+            QueueDel(organ);
+        
+        guts.Clear();
+
+        for (int i = 0; i < _random.Next(12, 21); i++)
+            SpawnItem(ent);
+    }
+
     private void OnHit(Entity<PinataComponent> ent, ref DamageModifyEvent args)
     {
         var damPerGroup = args.Damage.GetDamagePerGroup(_proto);
