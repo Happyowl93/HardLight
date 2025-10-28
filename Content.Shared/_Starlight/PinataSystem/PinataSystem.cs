@@ -62,7 +62,7 @@ public sealed class PinataSystem : EntitySystem
     {
         if (_net.IsClient) // No prediction for entity table.
           return;
-        var spawns = _entityTable.GetSpawns(entity.Comp.Table);
+        var spawns = _entityTable.GetSpawns(entitiesToSpawn);
         var coords = Transform(entity).Coordinates;
         foreach (var spawn in spawns)
         {
