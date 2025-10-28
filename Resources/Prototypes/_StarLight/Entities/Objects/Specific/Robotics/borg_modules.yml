@@ -1,0 +1,170 @@
+- type: entity
+  id: BaseBorgModuleSecurity
+  parent: BaseBorgModule
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - BorgModuleSecurity
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#a0322c"
+      - state: base-module-inhand-left
+        color: "#444444"
+      - state: base-part-inhand-left
+      - state: base-stripes-inhand-left
+        color: "#5b5b5b"
+      right:
+      - state: base-icon-inhand-right
+        color: "#a0322c"
+      - state: base-module-inhand-right
+        color: "#444444"
+      - state: base-part-inhand-right
+      - state: base-stripes-inhand-right
+        color: "#5b5b5b"
+
+# generic modules
+- type: entity
+  id: BorgModuleSecurity
+  parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
+  name: security cyborg module
+  description: A security cyborg module which allows the unit to use unlethal equipment.
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-nt
+  - type: ItemBorgModule
+    hands:
+    - item: Flash
+      hand:
+        emptyRepresentative: Flash
+        emptyLabel: borg-slot-flash-empty
+        whitelist:
+          components:
+          - Flash
+    - item: Crowbar
+    - item: Zipties
+      hand:
+        emptyRepresentative: Zipties
+        emptyLabel: borg-slot-zipties-empty
+        whitelist:
+          tags:
+          - Handcuffs # Can be replaced by handcuffs or zipties
+    - item: Stunbaton
+      hand:
+        emptyRepresentative: Stunbaton
+        emptyLabel: borg-slot-stunbaton-empty
+        whitelist:
+          components:
+          - Stunbaton
+    - item: WeaponDisabler
+      hand:
+        emptyRepresentative: WeaponDisabler
+        emptyLabel: borg-slot-disabler-empty
+        whitelist:
+          tags:
+          - Disabler
+    - item: HoloprojectorSecurity
+      hand:
+        emptyRepresentative: HoloprojectorSecurity
+        emptyLabel: borg-slot-holoprojector-empty
+        whitelist:
+          components:
+          - HolosignProjector
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: security-unlethal-module }
+    
+- type: entity
+  id: BorgModuleUppies
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: personnel transport cyborg module
+  description: A universal cyborg module which allows the unit to carry small personnel.
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-hands
+  - type: ItemBorgModule
+    hands:
+    - hand:
+        emptyRepresentative: MobResomi
+        emptyLabel: borg-slot-uppies-empty
+        whitelist:
+          components:
+          - HumanoidAppearance
+    - hand:
+        emptyRepresentative: MobResomi
+        emptyLabel: borg-slot-uppies-empty
+        whitelist:
+          components:
+          - HumanoidAppearance
+  - type: BorgModuleIcon
+    icon: { sprite: _Starlight/Interface/Actions/actions_borg.rsi, state: hands }
+
+
+# purrfus
+- type: entity
+  id: BaseBorgModulePurrfus
+  parent: BaseBorgModule
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - BorgModulePurrfus
+  - type: Sprite
+    sprite: Objects/Specific/Robotics/borgmodule.rsi
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#616161"
+      - state: base-module-inhand-left
+        color: "#067aa8"
+      - state: base-stripes-inhand-left
+        color: "#ffffff"
+      right:
+      - state: base-icon-inhand-right
+        color: "#616161"
+      - state: base-module-inhand-right
+        color: "#067aa8"
+      - state: base-stripes-inhand-right
+        color: "#ffffff"
+
+- type: entity
+  id: BorgModulePaperStampPlaceholder
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Misc/stamp-paper-borg.rsi
+    state: stamp-paper-borg
+
+- type: entity
+  id: BorgModulePaperwork
+  parent: [ BaseBorgModulePurrfus, BaseProviderBorgModule ]
+  name: paperwork cyborg module
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Specific/Robotics/borgmodule.rsi
+    layers:
+    - state: command
+    - state: icon-paperwork
+  - type: ItemBorgModule
+    hands:
+    - item: LuxuryPen
+    - item: BoxFolderCyborgClipboard
+    - item: RubberStampApproved
+    - item: RubberStampDenied
+    - item: HandLabeler
+    - hand:
+        emptyLabel: borg-slot-papers-empty
+        emptyRepresentative: BorgModulePaperStampPlaceholder
+        whitelist:
+          tags:
+          - Document
+          components:
+          - Stamp
+  - type: BorgModuleIcon
+    icon: { sprite: _Starlight/Interface/Actions/actions_borg.rsi, state: paperwork-module }

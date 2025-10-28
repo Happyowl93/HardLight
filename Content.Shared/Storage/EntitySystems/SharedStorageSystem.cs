@@ -67,6 +67,7 @@ public abstract class SharedStorageSystem : EntitySystem
     [Dependency] protected readonly SharedItemSystem ItemSystem = default!;
     [Dependency] private   readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private   readonly SharedHandsSystem _sharedHandsSystem = default!;
+    [Dependency] private   readonly SharedMaterialStorageSystem MaterialStorage = default!; // Starlight-edit
     [Dependency] private   readonly SharedStackSystem _stack = default!;
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
     [Dependency] protected readonly SharedUserInterfaceSystem UI = default!;
@@ -232,7 +233,14 @@ public abstract class SharedStorageSystem : EntitySystem
             StoredItems = storedItems,
             SavedLocations = component.SavedLocations,
             Whitelist = component.Whitelist,
-            Blacklist = component.Blacklist
+            Blacklist = component.Blacklist,
+            QuickInsert = component.QuickInsert,
+            AreaInsert = component.AreaInsert,
+            StorageInsertSound = component.StorageInsertSound,
+            StorageRemoveSound = component.StorageRemoveSound,
+            StorageOpenSound = component.StorageOpenSound,
+            StorageCloseSound = component.StorageCloseSound,
+            DefaultStorageOrientation = component.DefaultStorageOrientation,
         };
     }
 
@@ -349,6 +357,44 @@ public abstract class SharedStorageSystem : EntitySystem
     }
 
     /// <summary>
+    /// Copy this component's datafields from one entity to another.
+    /// This can't use CopyComp because we don't want to copy the references to the items inside the storage.
+    /// <summary>
+    public void CopyComponent(Entity<StorageComponent?> source, EntityUid target)
+    {
+        if (!Resolve(source, ref source.Comp))
+            return;
+
+        var targetComp = EnsureComp<StorageComponent>(target);
+        targetComp.Grid = new List<Box2i>(source.Comp.Grid);
+        targetComp.MaxItemSize = source.Comp.MaxItemSize;
+        targetComp.QuickInsert = source.Comp.QuickInsert;
+        targetComp.QuickInsertCooldown = source.Comp.QuickInsertCooldown;
+        targetComp.OpenUiCooldown = source.Comp.OpenUiCooldown;
+        targetComp.ClickInsert = source.Comp.ClickInsert;
+        targetComp.OpenOnActivate = source.Comp.OpenOnActivate;
+        targetComp.AreaInsert = source.Comp.AreaInsert;
+        targetComp.AreaInsertRadius = source.Comp.AreaInsertRadius;
+        targetComp.Whitelist = source.Comp.Whitelist;
+        targetComp.Blacklist = source.Comp.Blacklist;
+        targetComp.StorageInsertSound = source.Comp.StorageInsertSound;
+        targetComp.StorageRemoveSound = source.Comp.StorageRemoveSound;
+        targetComp.StorageOpenSound = source.Comp.StorageOpenSound;
+        targetComp.StorageCloseSound = source.Comp.StorageCloseSound;
+        targetComp.DefaultStorageOrientation = source.Comp.DefaultStorageOrientation;
+        targetComp.HideStackVisualsWhenClosed = source.Comp.HideStackVisualsWhenClosed;
+        targetComp.SilentStorageUserTag = source.Comp.SilentStorageUserTag;
+        targetComp.ShowVerb = source.Comp.ShowVerb;
+
+        UpdateOccupied((target, targetComp));
+        Dirty(target, targetComp);
+
+        var targetUI = EnsureComp<UserInterfaceComponent>(target);
+
+        UI.SetUi((target, targetUI), StorageComponent.StorageUiKey.Key, new InterfaceData("StorageBoundUserInterface"));
+    }
+
+    /// <summary>
     /// Tries to get the storage location of an item.
     /// </summary>
     public bool TryGetStorageLocation(Entity<ItemComponent?> itemEnt, [NotNullWhen(true)] out BaseContainer? container, [NotNullWhen(true)] out StorageComponent? storage, out ItemStorageLocation loc)
@@ -441,6 +487,22 @@ public abstract class SharedStorageSystem : EntitySystem
 
             args.Verbs.Add(verb);
         }
+
+        // Starlight-begin: transfer all to material storage
+        // if the target is a material storage, add a verb to transfer storage.
+        if (TryComp(args.Target, out MaterialStorageComponent? materialTargetStorage)
+            && (!TryComp(args.Target, out LockComponent? materialTargetLock) || !materialTargetLock.Locked))
+        {
+            UtilityVerb verb = new()
+            {
+                Text = Loc.GetString("storage-component-transfer-verb"),
+                IconEntity = GetNetEntity(args.Using),
+                Act = () => TransferMaterialEntities(uid, args.Target, args.User, component, null, materialTargetStorage, materialTargetLock)
+            };
+
+            args.Verbs.Add(verb);
+        }
+        // Starlight-end: transfer all to material storage
     }
 
     /// <summary>
@@ -534,7 +596,7 @@ public abstract class SharedStorageSystem : EntitySystem
             {
                 if (entity == args.User
                     || !_itemQuery.TryGetComponent(entity, out var itemComp) // Need comp to get item size to get weight
-                    || !_prototype.TryIndex(itemComp.Size, out var itemSize)
+                    || !_prototype.Resolve(itemComp.Size, out var itemSize)
                     || !CanInsert(uid, entity, out _, storageComp, item: itemComp)
                     || !_interactionSystem.InRangeUnobstructed(args.User, entity))
                 {
@@ -980,6 +1042,39 @@ public abstract class SharedStorageSystem : EntitySystem
             Audio.PlayPredicted(sourceComp.StorageInsertSound, target, user, _audioParams);
     }
 
+    // Starlight-begin: transfer to material storage
+    /// <summary>
+    ///     Move entities from one storage to a material storage.
+    /// </summary>
+    public void TransferMaterialEntities(EntityUid source, EntityUid target, EntityUid? user = null,
+        StorageComponent? sourceComp = null, LockComponent? sourceLock = null,
+        MaterialStorageComponent? targetComp = null, LockComponent? targetLock = null)
+    {
+        if (!Resolve(source, ref sourceComp) || !Resolve(target, ref targetComp))
+            return;
+
+        var entities = sourceComp.Container.ContainedEntities;
+        if (entities.Count == 0)
+            return;
+
+        if (Resolve(source, ref sourceLock, false) && sourceLock.Locked
+            || Resolve(target, ref targetLock, false) && targetLock.Locked)
+            return;
+
+        // Check needed because TryInsertMaterialEntity requires a non-null user.
+        if (user is null)
+            return;
+
+        foreach (var entity in entities.ToArray())
+        {
+            MaterialStorage.TryInsertMaterialEntity((EntityUid)user, entity, target, targetComp);
+        }
+        if (user != null
+            && !_tag.HasTag(user.Value, sourceComp.SilentStorageUserTag))
+            Audio.PlayPredicted(sourceComp.StorageInsertSound, target, user, _audioParams);
+    }
+    // Starlight-end: transfer to material storage
+
     /// <summary>
     ///     Verifies if an entity can be stored and if it fits
     /// </summary>
@@ -1296,7 +1391,7 @@ public abstract class SharedStorageSystem : EntitySystem
         Angle startAngle;
         if (storageEnt.Comp.DefaultStorageOrientation == null)
         {
-            startAngle = Angle.FromDegrees(-itemEnt.Comp.StoredRotation);
+            startAngle = Angle.Zero;
         }
         else
         {
@@ -1777,7 +1872,7 @@ public abstract class SharedStorageSystem : EntitySystem
         // If we specify a max item size, use that
         if (uid.Comp.MaxItemSize != null)
         {
-            if (_prototype.TryIndex(uid.Comp.MaxItemSize.Value, out var proto))
+            if (_prototype.Resolve(uid.Comp.MaxItemSize.Value, out var proto))
                 return proto;
 
             Log.Error($"{ToPrettyString(uid.Owner)} tried to get invalid item size prototype: {uid.Comp.MaxItemSize.Value}. Stack trace:\\n{Environment.StackTrace}");
@@ -1957,15 +2052,17 @@ public abstract class SharedStorageSystem : EntitySystem
     protected sealed class StorageComponentState : ComponentState
     {
         public Dictionary<NetEntity, ItemStorageLocation> StoredItems = new();
-
         public Dictionary<string, List<ItemStorageLocation>> SavedLocations = new();
-
         public List<Box2i> Grid = new();
-
         public ProtoId<ItemSizePrototype>? MaxItemSize;
-
         public EntityWhitelist? Whitelist;
-
         public EntityWhitelist? Blacklist;
+        public bool QuickInsert;
+        public bool AreaInsert;
+        public SoundSpecifier? StorageInsertSound;
+        public SoundSpecifier? StorageRemoveSound;
+        public SoundSpecifier? StorageOpenSound;
+        public SoundSpecifier? StorageCloseSound;
+        public StorageDefaultOrientation? DefaultStorageOrientation;
     }
 }

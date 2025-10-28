@@ -56,6 +56,8 @@
     ClothingShoesBootsCowboyBlack: 1
     ClothingShoesBootsCowboyWhite: 1
     #Starlight
+    ClothingUniformJumpsuitRisk: 1
+    ClothingHeadHelmetRisk: 1
     CandyClownUniformSuit: 1
     StripedClownUniformSuit: 1
     DruidRobesUniformSuit: 1
@@ -82,7 +84,6 @@
     CamoUniformSuit: 1 #Starlight
     TatteredClothesUniformSuit: 1 #Starlight
     ClothingNeckTatteredHood: 1 #Starlight
-  emaggedInventory:
     ClothingShoesBling: 1
     ClothingShoesBootsCowboyFancy: 1
     ClothingOuterDogi: 1

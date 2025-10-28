@@ -217,6 +217,8 @@
           - ImprovisedWrench
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
+  - type: StealTarget
+    stealGroup: ChiefEngineerToolBelt
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -281,6 +283,7 @@
         - WetFloorSign
         - HolosignProjector
         - Plunger
+        - GoldenPlunger
         - WireBrush
       components:
         - LightReplacer

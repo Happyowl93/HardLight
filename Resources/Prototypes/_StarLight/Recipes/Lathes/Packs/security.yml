@@ -19,10 +19,16 @@
   - MagazineBoxLightRiflePractice
   - MagazineBoxMagnumPractice
   - MagazineBoxPistolPractice
+  - MagazineBoxCaselessRiflePractice
   - MagazineBoxRiflePractice
   - WeaponDisablerPractice
   - WeaponLaserCarbinePractice
   - WeaponFlareGunSecurity
+
+- type: latheRecipePack
+  id: StarlightSecurityAmmoEmagStatic
+  recipes:
+  - L6SawMagazine
 
 # Shared between secfab and emagged autolathe
 - type: latheRecipePack
@@ -38,6 +44,8 @@
   - MagazineBoxMagnumHP
   - MagazineBoxMagnumFMJ
 # Pistol
+  - MagazineBoxCaselessRifle
+  - MagazineBoxCaselessRifleRubber
   - MagazineBoxPistolSP
   - MagazineBoxPistolHP
   - MagazineBoxPistolFMJ
@@ -62,13 +70,20 @@
   - MagazineLightRifleSP
   - MagazineLightRifleHP
   - MagazineLightRifleFMJ
+  - MagazineLightRifleMaxim
+  - SpeedLoaderLightRifle
   - MagazineLightRifleEmpty
 # Magnum
   - SpeedLoaderMagnumSP
   - SpeedLoaderMagnumHP
   - SpeedLoaderMagnumFMJ
+  - MagazineMagnum
+  - MagazineMagnumRifleSP
+  - MagazineMagnumEmpty
   - SpeedLoaderMagnumEmpty
 # Pistol
+  - MagazinePistolCaselessRifle
+  - MagazineCaselessRifleRubber
   - MagazinePistolSP
   - MagazinePistolHP
   - MagazinePistolFMJ
@@ -84,6 +99,8 @@
   - MagazinePistolSubMachineGunEmpty
   - MagazinePistolSubMachineGunTopMounted
   - MagazinePistolSubMachineGunTopMountedEmpty
+  - MagazinePistolSubMachineGunUzi
+  - MagazinePistolSubMachineGunPPSH
 # Rifle
   - MagazineRifleSP
   - MagazineRifleHP
@@ -93,7 +110,7 @@
   - MagazineShotgun
   - MagazineShotgunEmpty
   - MagazineShotgunSlug
-  
+
   - SpeedLoaderMagnumBasic
   - SpeedLoaderShotgunEmpty
   - SpeedLoaderShotgunSlug
@@ -133,6 +150,7 @@
   - ShuttleGunFriendshipCircuitboard
   - ShuttleGunPerforatorCircuitboard
   - ShuttleGunSvalinnMachineGunCircuitboard
+  - ScanGateMachineCircuitboard
 
 - type: latheRecipePack
   parent:
@@ -232,6 +250,8 @@
   - WeaponIonCarbine
   - WeaponDecloner
   - WeaponLaserImmolator
+  - WeaponLaserSvalinn
+  - WeaponTemperatureGun
 
 - type: latheRecipePack
   id: StarlightSecurityMechsWeapons

@@ -29,6 +29,11 @@ uplink-thermalvision-eyes-desc = Allows you to see in the dark and detect creatu
 uplink-mantis-blade-arms-name = Mantis Blade Arms Bundle
 uplink-mantis-blade-arms-desc = Originally used as a simple construction tool, now turned into hidden blades that can extend from your arm while still keeping its destructive prying skill. Truly a sight to behold. (Warning: You will need a surgical assistant for the procedure.)
 
+uplink-uzi-bundle-name = Type U3 Uzi Bundle
+uplink-uzi-bundle-desc = Contains the Type U3 Uzi, with two additional magazines.
+
+uplink-uzi-magazine-name = Uzi Magazine (.35 auto)
+uplink-uzi-magazine-desc = Submachine gun magazine with 32 cartridges. Compatible with the Type U3 Uzi
 
 uplink-breaching-magazine-name = Shotgun Magazine (.50 breaching)
 uplink-breaching-magazine-desc = A magazine loaded with breaching shells, for breaking down airlocks, windows and walls. Less effective on people.
@@ -37,7 +42,20 @@ uplink-syndicate-borgi-name = Syndicate Borgi
 uplink-syndicate-borgi-desc = A basic syndicate borgi
 
 uplink-syndicate-borgi-kitted-name = Kitted Syndicate Borgi
-uplink-syndicate-borgi-kitted-desc = A syndicate borgi, with assault modules
+uplink-syndicate-borgi-kitted-desc = A syndicate borgi, outfitted with an L6 module, operative module and E-sword module.
 
 uplink-syndicate-borgi-speed-name = Speed Syndicate Borgi
 uplink-syndicate-borgi-speed-desc = A syndicate borgi, with dagger modules and additional speed
+
+
+uplink-syndimov-law-name = Syndimov Law Circuit
+uplink-syndimov-law-desc = A modified version of crewismov that defines syndicate agents as crew.
+
+uplink-ecronizer-name = Ecronizer
+uplink-ecronizer-desc = A small device that can be used to bypass most scanning devices, making you and your items invisible to them.
+
+uplink-lube-grenade-name = Lube Grenade
+uplink-lube-grenade-desc = Special grenade for shenanigans, releasing large cloud of lube foam.
+
+uplink-glue-grenade-name = Glue Grenade
+uplink-glue-grenade-desc = Special grenade for shenanigans, releasing large cloud of glue foam.
