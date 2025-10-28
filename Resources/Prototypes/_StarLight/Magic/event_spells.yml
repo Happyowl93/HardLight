@@ -39,7 +39,7 @@
 - type: entity
   parent: BaseAction
   id: ActionRetractableItemManaBlade
-  name: Manifest Mana Blade
+  name: Manifest Spectral Blade
   description: Channel your power into your hand and create a sword out of hardened mana.
   components:
     - type: Action

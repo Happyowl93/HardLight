@@ -178,7 +178,7 @@
       path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
 
 - type: entity
-  name: Mana Blade
+  name: Spectral Blade
   parent: [ BaseSword, BaseMagicalContraband ]
   id: ManaBlade
   description: A sword formed from hardened mana.
