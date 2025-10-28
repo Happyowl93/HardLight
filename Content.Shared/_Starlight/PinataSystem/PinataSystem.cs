@@ -39,8 +39,11 @@ public sealed class PinataSystem : EntitySystem
             QueueDel(organ);
         
         guts.Clear();
+        
+        if (ent.Comp.GibTable == null)
+            return;
 
-        SpawnItem(ent);
+        SpawnItem(ent, ent.Comp.GibTable.Value);
     }
 
     private void OnHit(Entity<PinataComponent> ent, ref DamageModifyEvent args)
