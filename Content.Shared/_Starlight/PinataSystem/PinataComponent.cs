@@ -3,6 +3,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.BPL.Pinata;
 
+/// <summary>
+/// Makes the entity throw items when someone hits it.
+/// </summary>
 [RegisterComponent]
 public sealed partial class PinataComponent : Component
 {
