@@ -64,7 +64,7 @@
   Description: Looks kinda sad. Show no mercy.
   components:
   - type: Pinata
-    table: PinataCandyTable
+    hitTable: PinataCandyTable
   - type: Destructible # Same as parent, but spawns BrokenBottle instead of ShardGlass
     thresholds:
     - trigger: # Overkill threshold
