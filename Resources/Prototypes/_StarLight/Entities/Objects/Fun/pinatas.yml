@@ -77,7 +77,7 @@
     hitTable: !type:NestedSelector
       tableId: PinataCandyTable
     gibTable: !type:NestedSelector
-      tableId: PinataLoot
+      tableId: PinataCandyTable
       rolls: !type:RangeNumberSelector
         range: 5, 7
   - type: Destructible # Same as parent, but spawns BrokenBottle instead of ShardGlass
