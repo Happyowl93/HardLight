@@ -1,7 +1,7 @@
 using System.Linq;
 using Content.Server._Starlight.Antags;
 using Content.Server.Antag;
-using Content.Server.Chat.Managers; // SL add
+using Content.Server.Chat.Managers;
 using Content.Server.Cloning;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Medical.SuitSensors;
@@ -38,7 +38,6 @@ public sealed class ParadoxCloneRuleSystem : GameRuleSystem<ParadoxCloneRuleComp
     {
         base.Started(uid, component, gameRule, args);
         
-        // SL | not adding anything here other than this comment, i just wanna make fun of the comment below this one since it's just a straight up lie lmao
         // check if we got enough potential cloning targets, otherwise cancel the gamerule so that the ghost role does not show up
         var allHumans = _mind.GetAliveHumans();
 
