@@ -24,11 +24,11 @@ public sealed class PickObjectiveTargetSystem : EntitySystem
 
         SubscribeLocalEvent<PickSpecificPersonComponent, ObjectiveAssignedEvent>(OnSpecificPersonAssigned);
         SubscribeLocalEvent<PickRandomPersonComponent, ObjectiveAssignedEvent>(OnRandomPersonAssigned);
-        SubscribeLocalEvent<PickRandomPersonComponent, ComponentStartup>(OnComponentStartup); // SL add
+        SubscribeLocalEvent<PickRandomPersonComponent, MapInitEvent>(OnMapInit); // SL add
     }
 
     // SL start
-    private void OnComponentStartup(Entity<PickRandomPersonComponent> ent, ref ComponentStartup args)
+    private void OnMapInit(Entity<PickRandomPersonComponent> ent, ref MapInitEvent args)
     {
         // inject new filter blacklisting NoObjectiveTargetComponent
         var filter = new BodyMindFilter { Whitelist = { Components = ["NoObjectiveTarget"] }, Inverted = true };
