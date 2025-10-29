@@ -197,8 +197,8 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: SmokeOnTrigger
-        duration: 3
-        spreadAmount: 10
+    duration: 3
+    spreadAmount: 10
     smokePrototype: Foam
     solution:
       reagents:
