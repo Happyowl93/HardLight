@@ -197,10 +197,10 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: SmokeOnTrigger
-    duration: 3
-    spreadAmount: 10
-    smokePrototype: Foam
-    solution:
-      reagents:
-      - ReagentId: SyndicateSpaceCleaner
-        Quantity: 15
+      duration: 3.5
+      spreadAmount: 10
+      smokePrototype: Foam
+      solution:
+        reagents:
+          - ReagentId: SyndicateSpaceCleaner
+            Quantity: 15
