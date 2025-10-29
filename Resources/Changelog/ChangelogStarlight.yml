@@ -18446,5 +18446,12 @@ Entries:
   id: 205802
   time: '2025-10-28T18:10:31.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2058
+- author: CrazyPhantom
+  changes:
+  - message: Shadekin and Skeletons can now social interact either way.
+    type: Fix
+  id: 206100
+  time: '2025-10-29T16:28:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2061
 Order: -1
 
