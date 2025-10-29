@@ -107,9 +107,11 @@
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
-    - map: [ "back" ] # Starlight: swap neck and back
-    - map: [ "neck" ] # Starlight: swap neck and back
-    - map: [ "misc" ] # Starlight: add misc slot
+    # Starlight-start
+    - map: [ "back" ]
+    - map: [ "neck" ]
+    - map: [ "misc" ]
+    # Starlight-end
     - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
