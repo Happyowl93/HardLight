@@ -15,7 +15,7 @@
       - !type:HealthChange
         damage:
           types:
-            Caustic: 15
+            Poison: 7.5
   tileReactions:
     - !type:CleanTileReaction {}
     - !type:CleanDecalsReaction {}

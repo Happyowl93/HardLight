@@ -196,11 +196,11 @@
   name: evil cleanade grenade round
   categories: [ HideSpawnMenu ]
   components:
-  - type: SmokeOnTrigger
-    duration: 6
-    spreadAmount: 45
+    - type: SmokeOnTrigger
+        duration: 3
+        spreadAmount: 10
     smokePrototype: Foam
     solution:
       reagents:
       - ReagentId: SyndicateSpaceCleaner
-        Quantity: 30
+        Quantity: 15
