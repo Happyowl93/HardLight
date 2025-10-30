@@ -18460,5 +18460,19 @@ Entries:
   id: 206700
   time: '2025-10-30T17:54:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2067
+- author: CawsForConcern & degnut
+  changes:
+  - message: Nutribrick pizza, made with real nutribricks!
+    type: Add
+  id: 205600
+  time: '2025-10-30T18:04:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2056
+- author: CawsForConcern & degnut
+  changes:
+  - message: Wrapper pizza, made with real nutribrick wrappers!
+    type: Add
+  id: 205601
+  time: '2025-10-30T18:04:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2056
 Order: -1
 
