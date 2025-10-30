@@ -2,7 +2,7 @@ using Content.Server.Body.Components;
 using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
 using Content.Shared.ActionBlocker;
-using Content.Shared.Mobs.Systems;
+using Content.Shared.Mobs.Systems; // Starlight edit
 using Robust.Shared.Timing;
 
 namespace Content.Server.Body.Systems;
@@ -12,7 +12,7 @@ public sealed class ThermalRegulatorSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly TemperatureSystem _tempSys = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlockerSys = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;  // Starlight edit
 
     public override void Initialize()
     {
@@ -53,9 +53,11 @@ public sealed class ThermalRegulatorSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp2, logMissing: false))
             return;
 
-        // Don't regulate temperature if the entity is dead
+        // Starlight edit start - Don't regulate temperature if the entity is dead
+        // Fixes Avali not rotting
         if (_mobState.IsDead(ent))
             return;
+        // Starlight edit end
 
         // TODO: Why do we have two datafields for this if they are only ever used once here?
         var totalMetabolismTempChange = ent.Comp1.MetabolismHeat - ent.Comp1.RadiatedHeat;
