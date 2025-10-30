@@ -18474,5 +18474,13 @@ Entries:
   id: 205601
   time: '2025-10-30T18:04:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2056
+- author: Clone0401
+  changes:
+  - message: The wizard now has access to a manablade, a weapon that can cause little
+      destruction, but still keep your lil tootsies safe
+    type: Add
+  id: 205200
+  time: '2025-10-30T18:08:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2052
 Order: -1
 
