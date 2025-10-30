@@ -18887,5 +18887,12 @@ Entries:
   id: 202504
   time: '2025-10-30T21:23:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2025
+- author: STARLIGHT TEAM
+  changes:
+  - message: Smart corgis and scurrets can now be revolutionaries.
+    type: Fix
+  id: 201800
+  time: '2025-10-30T21:28:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2018
 Order: -1
 
