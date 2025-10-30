@@ -110358,8 +110358,6 @@ entities:
       pos: 24.5,-25.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 104
     - type: AtmosPipeLayers
