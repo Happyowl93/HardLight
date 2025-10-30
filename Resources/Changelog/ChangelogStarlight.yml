@@ -18684,5 +18684,21 @@ Entries:
   id: 204923
   time: '2025-10-30T18:14:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: Cerol, Conflee, Rinary, and Orks
+  changes:
+  - message: Added the Pinata System. Adds a component that makes entities spawn items
+      when they take blunt damage, like a pinata
+    type: Add
+  id: 205400
+  time: '2025-10-30T18:21:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2054
+- author: Cerol, Conflee, Rinary, and Orks
+  changes:
+  - message: Added the Pinata Crate to the Fun tab in the Request Computer. Comes
+      with 1 Clown Pinata and 1 Baseball Bat
+    type: Add
+  id: 205401
+  time: '2025-10-30T18:21:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2054
 Order: -1
 
