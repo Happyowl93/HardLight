@@ -19161,5 +19161,33 @@ Entries:
   id: 201600
   time: '2025-10-30T19:20:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2016
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Lawboards to AI Core
+    type: Add
+  id: 202000
+  time: '2025-10-30T21:29:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2020
+- author: CawsForConcern
+  changes:
+  - message: (Origin) AI Upload Sign to AI Core
+    type: Add
+  id: 202001
+  time: '2025-10-30T21:29:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2020
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Cyborg Rechargers to AI Core
+    type: Add
+  id: 202002
+  time: '2025-10-30T21:29:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2020
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Mining Ticket Machine
+    type: Add
+  id: 202003
+  time: '2025-10-30T21:29:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2020
 Order: -1
 
