@@ -19203,5 +19203,21 @@ Entries:
   id: 203200
   time: '2025-10-30T19:17:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2032
+- author: aneyeforsecrets
+  changes:
+  - message: Station AI warp menu lists coordinate-broadcasting crew and station POIs,
+      with follow support for moving targets.
+    type: Add
+  id: 199400
+  time: '2025-10-30T21:48:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1994
+- author: aneyeforsecrets
+  changes:
+  - message: Station AI can now jump its eye to any location by clicking the Crew
+      Monitoring map.
+    type: Add
+  id: 199401
+  time: '2025-10-30T21:48:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1994
 Order: -1
 
