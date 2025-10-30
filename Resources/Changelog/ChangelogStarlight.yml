@@ -18837,5 +18837,12 @@ Entries:
   id: 200001
   time: '2025-10-30T21:07:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2000
+- author: Vonte
+  changes:
+  - message: Fixed the original paramed windbreaker not being openable
+    type: Fix
+  id: 202300
+  time: '2025-10-30T21:19:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2023
 Order: -1
 
