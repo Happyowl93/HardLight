@@ -18482,5 +18482,22 @@ Entries:
   id: 205200
   time: '2025-10-30T18:08:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2052
+- author: Conflee
+  changes:
+  - message: Added a chance for; MediBot, CleanBot, FireBot, Ghost Plushie, Revenant
+      Plushie, Fake Nuke Disk, and the Inspector Revolver to become sentient with
+      random sentience events.
+    type: Add
+  id: 205300
+  time: '2025-10-30T18:08:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2053
+- author: Conflee
+  changes:
+  - message: Increased the odds of Captain's Sword becoming sentient from 0.02% to
+      0.05%
+    type: Tweak
+  id: 205301
+  time: '2025-10-30T18:08:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2053
 Order: -1
 
