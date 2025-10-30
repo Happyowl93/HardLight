@@ -19038,5 +19038,23 @@ Entries:
   id: 201401
   time: '2025-10-30T21:38:54.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2014
+- author: Conflee
+  changes:
+  - message: Added tons of decals for department signage, half and quarter tiles,
+      diagonals to go under/alongside diagonal walls, thin directions trims, and some
+      for graffiti. Available for mappers, or through using crayons or spray painters
+      in rounds
+    type: Add
+  id: 199600
+  time: '2025-10-30T21:43:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1996
+- author: Conflee
+  changes:
+  - message: 'Added 8 new Wanted Posters to the Contraband Posters pool: Clown, Freak,
+      Ian, John Toe, Sexy Mime, Punpun, Stirstir, and Traitor'
+    type: Add
+  id: 199601
+  time: '2025-10-30T21:43:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1996
 Order: -1
 
