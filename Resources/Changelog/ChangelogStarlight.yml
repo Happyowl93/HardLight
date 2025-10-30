@@ -18506,5 +18506,183 @@ Entries:
   id: 204800
   time: '2025-10-30T18:14:07.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2048
+- author: CawsForConcern
+  changes:
+  - message: (Silica) A new and much larger evac shuttle!
+    type: Add
+  id: 204900
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) More minifigs, particularly around Departmental breakrooms and
+      Head's rooms
+    type: Add
+  id: 204901
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Cell recharger in Chemistry
+    type: Add
+  id: 204902
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Vox-friendly dorm above Maints Bar, complete with a proper nitrogen
+      atmos
+    type: Add
+  id: 204903
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Camera for HOS' office
+    type: Add
+  id: 204904
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) APPROVED / DENIED stamps for Warden so they can get sassy about
+      permits
+    type: Add
+  id: 204905
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Thin firelocks to some windows around evac to help mitigate
+      spacing chokepoints
+    type: Add
+  id: 204906
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Surgery Airlocks for Surgery
+    type: Add
+  id: 204907
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Robotics Airlocks for Robotics
+    type: Add
+  id: 204908
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) The greenway outside of Botany now has a cow and a chicken crate
+    type: Add
+  id: 204909
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Toy hammer to SEC
+    type: Add
+  id: 204910
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Civilian Nanomeds around the station
+    type: Add
+  id: 204911
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Public wall defibrillators
+    type: Add
+  id: 204912
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Wall defibrillator for Brigmedic
+    type: Add
+  id: 204913
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Way better roundstart piping for Sauna! You won't have to bug
+      Atmos to set it correctly anymore
+    type: Tweak
+  id: 204914
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Widened evacuation dock to support the new evacuation shuttle
+    type: Tweak
+  id: 204915
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Made Robotics garage-facing side more secure, you can't break
+      in with just a crowbar anymore
+    type: Tweak
+  id: 204916
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Made SEC's doors more consistent access-wise, should be easier
+      to move through the department with Brig access in general
+    type: Tweak
+  id: 204917
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) The windows on the inside-face of the Science artifact test
+      chambers are now also plasma windows
+    type: Tweak
+  id: 204918
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Improved tile decoration in SEC Locker Room
+    type: Tweak
+  id: 204919
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Added some more glass floors to the Bridge
+    type: Tweak
+  id: 204920
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Added some more glass floors to Dorms Hallway and an aesthetic
+      staircase
+    type: Tweak
+  id: 204921
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Moved the disposal bin further away from the Materials Silo
+      so you don't accidentally dunk your materials into the bin instead of the silo
+    type: Tweak
+  id: 204922
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Missing and mislayered decals inside GenPop
+    type: Fix
+  id: 204923
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
 Order: -1
 
