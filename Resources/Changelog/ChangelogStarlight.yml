@@ -18764,5 +18764,21 @@ Entries:
   id: 199100
   time: '2025-10-30T19:52:21.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1991
+- author: Conflee
+  changes:
+  - message: Removed NukeOPs, Red Tide, Zombies, and Zombeteors from the vote pool
+    type: Remove
+  id: 204600
+  time: '2025-10-30T21:02:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2046
+- author: Conflee
+  changes:
+  - message: Changed odds of every gamemode in the Secret pools. Secret averages 51%
+      'RDM' modes and Secret LP averages 34% 'RDM' modes (Nukies, Zombies, Revs, Survival,
+      Extended).
+    type: Tweak
+  id: 204601
+  time: '2025-10-30T21:02:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2046
 Order: -1
 
