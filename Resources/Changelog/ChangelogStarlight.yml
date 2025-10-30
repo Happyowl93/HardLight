@@ -18359,5 +18359,330 @@ Entries:
   id: 202900
   time: '2025-10-24T11:11:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2029
+- author: STARLIGHT TEAM
+  changes:
+  - message: Fixed PDA light being too dim.
+    type: Fix
+  id: 204200
+  time: '2025-10-26T16:07:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2042
+- author: CrazyPhantom
+  changes:
+  - message: Zombies no longer slowly die to nothing!
+    type: Fix
+  id: 200500
+  time: '2025-10-26T16:13:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2005
+- author: Vonte
+  changes:
+  - message: adds "The mid-round antag's bane" lobby art by @voy0099
+    type: Add
+  id: 204000
+  time: '2025-10-26T16:45:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2040
+- author: Revelation
+  changes:
+  - message: Syndicate Assault Borgs get the Double Esword once more, as intended.
+    type: Fix
+  id: 203400
+  time: '2025-10-28T16:49:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2034
+- author: Revelation
+  changes:
+  - message: Syndicate cyborgs in general don't get overloaded with modules anymore.
+    type: Fix
+  id: 203401
+  time: '2025-10-28T16:49:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2034
+- author: Revelation
+  changes:
+  - message: Syndicate cyborgs are no longer able to accept more modules than they
+      start with.
+    type: Fix
+  id: 203402
+  time: '2025-10-28T16:49:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2034
+- author: Revelation
+  changes:
+  - message: Syndicate cyborg teleporter now works again and has a better description.
+    type: Fix
+  id: 203403
+  time: '2025-10-28T16:49:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2034
+- author: Revelation
+  changes:
+  - message: Syndicate borgis have been brought down in price now that the L6 module
+      got massively nerfed. They don't get the Double ESword though. Buy a proper
+      borg for that.
+    type: Tweak
+  id: 203404
+  time: '2025-10-28T16:49:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2034
+- author: Rinary
+  changes:
+  - message: Added new tts voice.
+    type: Add
+  id: 205500
+  time: '2025-10-28T16:47:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2055
+- author: Rinary
+  changes:
+  - message: Changed some of Felionoid emote sounds to fix license issues.
+    type: Tweak
+  id: 205800
+  time: '2025-10-28T18:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2058
+- author: Rinary
+  changes:
+  - message: Removed one of Felionoid hiss sound to fix license issue.
+    type: Remove
+  id: 205801
+  time: '2025-10-28T18:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2058
+- author: Rinary
+  changes:
+  - message: Reverted resomi cry to old variant to fix license issue.
+    type: Remove
+  id: 205802
+  time: '2025-10-28T18:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2058
+- author: CrazyPhantom
+  changes:
+  - message: Shadekin and Skeletons can now social interact either way.
+    type: Fix
+  id: 206100
+  time: '2025-10-29T16:28:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2061
+- author: CommanderAlex365
+  changes:
+  - message: Salvagers, Salvage Leads, and Miners no longer get two PDAs
+    type: Fix
+  id: 206700
+  time: '2025-10-30T17:54:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2067
+- author: CawsForConcern & degnut
+  changes:
+  - message: Nutribrick pizza, made with real nutribricks!
+    type: Add
+  id: 205600
+  time: '2025-10-30T18:04:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2056
+- author: CawsForConcern & degnut
+  changes:
+  - message: Wrapper pizza, made with real nutribrick wrappers!
+    type: Add
+  id: 205601
+  time: '2025-10-30T18:04:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2056
+- author: Clone0401
+  changes:
+  - message: The wizard now has access to a manablade, a weapon that can cause little
+      destruction, but still keep your lil tootsies safe
+    type: Add
+  id: 205200
+  time: '2025-10-30T18:08:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2052
+- author: Conflee
+  changes:
+  - message: Added a chance for; MediBot, CleanBot, FireBot, Ghost Plushie, Revenant
+      Plushie, Fake Nuke Disk, and the Inspector Revolver to become sentient with
+      random sentience events.
+    type: Add
+  id: 205300
+  time: '2025-10-30T18:08:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2053
+- author: Conflee
+  changes:
+  - message: Increased the odds of Captain's Sword becoming sentient from 0.02% to
+      0.05%
+    type: Tweak
+  id: 205301
+  time: '2025-10-30T18:08:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2053
+- author: Trep_Maul
+  changes:
+  - message: Reworked Admin Testing Arena
+    type: Tweak
+  id: 204800
+  time: '2025-10-30T18:14:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2048
+- author: CawsForConcern
+  changes:
+  - message: (Silica) A new and much larger evac shuttle!
+    type: Add
+  id: 204900
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) More minifigs, particularly around Departmental breakrooms and
+      Head's rooms
+    type: Add
+  id: 204901
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Cell recharger in Chemistry
+    type: Add
+  id: 204902
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Vox-friendly dorm above Maints Bar, complete with a proper nitrogen
+      atmos
+    type: Add
+  id: 204903
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Camera for HOS' office
+    type: Add
+  id: 204904
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) APPROVED / DENIED stamps for Warden so they can get sassy about
+      permits
+    type: Add
+  id: 204905
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Thin firelocks to some windows around evac to help mitigate
+      spacing chokepoints
+    type: Add
+  id: 204906
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Surgery Airlocks for Surgery
+    type: Add
+  id: 204907
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Robotics Airlocks for Robotics
+    type: Add
+  id: 204908
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) The greenway outside of Botany now has a cow and a chicken crate
+    type: Add
+  id: 204909
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Toy hammer to SEC
+    type: Add
+  id: 204910
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Civilian Nanomeds around the station
+    type: Add
+  id: 204911
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Public wall defibrillators
+    type: Add
+  id: 204912
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Wall defibrillator for Brigmedic
+    type: Add
+  id: 204913
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Way better roundstart piping for Sauna! You won't have to bug
+      Atmos to set it correctly anymore
+    type: Tweak
+  id: 204914
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Widened evacuation dock to support the new evacuation shuttle
+    type: Tweak
+  id: 204915
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Made Robotics garage-facing side more secure, you can't break
+      in with just a crowbar anymore
+    type: Tweak
+  id: 204916
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Made SEC's doors more consistent access-wise, should be easier
+      to move through the department with Brig access in general
+    type: Tweak
+  id: 204917
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) The windows on the inside-face of the Science artifact test
+      chambers are now also plasma windows
+    type: Tweak
+  id: 204918
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Improved tile decoration in SEC Locker Room
+    type: Tweak
+  id: 204919
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Added some more glass floors to the Bridge
+    type: Tweak
+  id: 204920
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Added some more glass floors to Dorms Hallway and an aesthetic
+      staircase
+    type: Tweak
+  id: 204921
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Moved the disposal bin further away from the Materials Silo
+      so you don't accidentally dunk your materials into the bin instead of the silo
+    type: Tweak
+  id: 204922
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Missing and mislayered decals inside GenPop
+    type: Fix
+  id: 204923
+  time: '2025-10-30T18:14:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2049
 Order: -1
 
