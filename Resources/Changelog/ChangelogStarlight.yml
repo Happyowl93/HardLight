@@ -18729,5 +18729,33 @@ Entries:
   id: 203602
   time: '2025-10-30T19:19:15.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2036
+- author: STARLIGHT TEAM
+  changes:
+  - message: Unimplantable Tag To Skeletons
+    type: Add
+  id: 203300
+  time: '2025-10-30T19:19:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2033
+- author: STARLIGHT TEAM
+  changes:
+  - message: Removed SS13.
+    type: Remove
+  id: 203301
+  time: '2025-10-30T19:19:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2033
+- author: STARLIGHT TEAM
+  changes:
+  - message: Changed SS14.
+    type: Tweak
+  id: 203302
+  time: '2025-10-30T19:19:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2033
+- author: STARLIGHT TEAM
+  changes:
+  - message: Fixed Rinary.
+    type: Fix
+  id: 203303
+  time: '2025-10-30T19:19:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2033
 Order: -1
 
