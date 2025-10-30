@@ -4,6 +4,8 @@
   name: exosuit AI control beacon
   description: A device used to transmit exosuit data. Also allows active AI units to take control of said exosuit.
   components:
+  - type: MechEquipment
+    equipmentType: Passive
   - type: Sprite
     sprite: _Starlight/Objects/Specific/Mechs/equipment.rsi
     state: exosuit_beacon

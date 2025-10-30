@@ -179,6 +179,10 @@
     drawRate: 1
     delay: 3
   - type: ActiveInputMover
+  - type: Prying
+    pryPowered: false
+    force: false
+    useSound: /Audio/Items/jaws_pry.ogg
 
 # Ripley MK-I
 - type: entity
@@ -290,6 +294,8 @@
     graph: PaddyUpgrade
     node: start
     defaultTarget: paddy
+  - type: Prying
+    pryPowered: true
 
 - type: entity
   id: MechRipley2Battery
@@ -333,6 +339,7 @@
     brokenState: base-broken
     mechToPilotDamageMultiplier: 0.60
     airtight: true
+    maxEquipmentAmount: 4
     pilotWhitelist:
       components:
         - HumanoidAppearance
@@ -340,9 +347,10 @@
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
+    bluntStaminaDamageFactor: 1.5
     damage:
       types:
-        Blunt: 30 #intentionally shit so people realize that going into combat with the ripley is usually a bad idea.
+        Blunt: 30 #Decent for a loader, but without the high structural damage of a combat mech.
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
     baseSprintSpeed: 4
@@ -374,6 +382,7 @@
     startingEquipment:
       - WeaponMechCombatDisabler
       - WeaponMechCombatFlashbangLauncher
+#      - MechEquipmentSecGrabber
 
 # Clarke
 - type: entity
@@ -633,11 +642,13 @@
     attackRate: 1
     damage:
       types:
-        Blunt: 25
+        Blunt: 30 #THWACK
         Structural: 180
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2
-    baseSprintSpeed: 2.6
+    baseWalkSpeed: 2.4
+    baseSprintSpeed: 3.7
+  - type: Damageable
+    damageModifierSet: LightArmor
   - type: MechThrusters
   - type: PointLight
     mask: /Textures/Effects/LightMasks/cone.png
@@ -645,6 +656,8 @@
     radius: 6
     energy: 5
     enabled: false
+  - type: Prying
+    pryPowered: true
 
 - type: entity
   id: MechGygaxBattery
@@ -707,6 +720,8 @@
     radius: 7
     energy: 5
     enabled: false
+  - type: Prying
+    pryPowered: true
 
 - type: entity
   id: MechDurandBattery
@@ -766,6 +781,8 @@
   - type: Repairable
     fuelCost: 30
     doAfterDelay: 15
+  - type: Prying
+    pryPowered: true
 
 - type: entity
   id: MechMarauderBattery
@@ -835,6 +852,8 @@
   - type: Repairable
     fuelCost: 30
     doAfterDelay: 20
+  - type: Prying
+    pryPowered: true
 
 - type: entity
   id: MechSeraphBattery
@@ -900,7 +919,7 @@
         Structural: 200
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
-    baseSprintSpeed: 3.7
+    baseSprintSpeed: 4.0
   - type: Damageable
     damageModifierSet: MediumArmorSyndi
   - type: MechThrusters
@@ -913,6 +932,8 @@
     radius: 7
     energy: 6
     enabled: false
+  - type: Prying
+    pryPowered: true
 
 - type: entity
   id: MechGygaxSyndieBattery
@@ -982,6 +1003,8 @@
   - type: Repairable
     fuelCost: 50
     doAfterDelay: 25
+  - type: Prying
+    pryPowered: true
 
 - type: entity
   id: MechMaulerSyndieBattery
