@@ -476,6 +476,14 @@
           map: [ "enum.SubfloorLayers.FirstLayer" ]
     # region starlight
     - type: AtmosPipeLayers
+    # Carpmosia-start - Atmos Alt Prototypes
+      alternativePrototypes:
+        Primary: GasPort
+        Secondary: GasPortAlt1
+        Tertiary: GasPortAlt2
+        Quaternary: GasPortAlt3
+        Quinary: GasPortAlt4
+    # Carpmosia-end - Atmos Alt Prototypes
       spriteRsiPaths: {}
       alternativePrototypes:
         Primary: GasPort
@@ -529,6 +537,14 @@
           map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
     # region starlight
     - type: AtmosPipeLayers
+    # Carpmosia-start - Atmos Alt Prototypes
+      alternativePrototypes:
+        Primary: GasDualPortVentPump
+        Secondary: GasDualPortVentPumpAlt1
+        Tertiary: GasDualPortVentPumpAlt2
+        Quaternary: GasDualPortVentPumpAlt3
+        Quinary: GasDualPortVentPumpAlt4
+    # Carpmosia-end - Atmos Alt Prototypes
       spriteRsiPaths: {}
       alternativePrototypes:
         Primary: GasDualPortVentPump

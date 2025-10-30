@@ -606,16 +606,18 @@
   startNode: start
   targetNode: ventpump
   category: construction-category-utilities
-  placementMode: AlignAtmosPipeLayers # starlight
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   conditions:
   - !type:NoUnstackableInTile
-  # region starlight
+  # Carpmosia-start - Atmos Alt Prototypes
   alternativePrototypes:
   - GasVentPump
   - GasVentPumpAlt1
   - GasVentPumpAlt2
-  # end region
+  - GasVentPumpAlt3
+  - GasVentPumpAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: GasPassiveVent
@@ -623,16 +625,18 @@
   startNode: start
   targetNode: passivevent
   category: construction-category-utilities
-  placementMode: AlignAtmosPipeLayers # starlight
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   conditions:
   - !type:NoUnstackableInTile
-  # region starlight
+  # Carpmosia-start - Atmos Alt Prototypes
   alternativePrototypes:
   - GasPassiveVent
   - GasPassiveVentAlt1
   - GasPassiveVentAlt2
-  # end region
+  - GasPassiveVentAlt3
+  - GasPassiveVentAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: GasVentScrubber
@@ -640,16 +644,18 @@
   startNode: start
   targetNode: ventscrubber
   category: construction-category-utilities
-  placementMode: AlignAtmosPipeLayers # starlight
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   conditions:
   - !type:NoUnstackableInTile
-  # region starlight
+  # Carpmosia-start - Atmos Alt Prototypes
   alternativePrototypes:
   - GasVentScrubber
   - GasVentScrubberAlt1
   - GasVentScrubberAlt2
-  # end region
+  - GasVentScrubberAlt3
+  - GasVentScrubberAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: GasOutletInjector
@@ -657,16 +663,18 @@
   startNode: start
   targetNode: outletinjector
   category: construction-category-utilities
-  placementMode: AlignAtmosPipeLayers # starlight
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   conditions:
   - !type:NoUnstackableInTile
-  # region starlight
+  # Carpmosia-start - Atmos Alt Prototypes
   alternativePrototypes:
   - GasOutletInjector
   - GasOutletInjectorAlt1
   - GasOutletInjectorAlt2
-  # end region
+  - GasOutletInjectorAlt3
+  - GasOutletInjectorAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 # ATMOS BINARY
 - type: construction
@@ -1029,16 +1037,18 @@
   startNode: start
   targetNode: port
   category: construction-category-utilities
-  placementMode: AlignAtmosPipeLayers # starlight
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   conditions:
     - !type:NoUnstackableInTile
-  # region starlight
+  # Carpmosia-start - Atmos Alt Prototypes
   alternativePrototypes:
   - GasPort
   - GasPortAlt1
   - GasPortAlt2
-  # end starlight
+  - GasPortAlt3
+  - GasPortAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: GasDualPortVentPump
@@ -1046,14 +1056,16 @@
   startNode: start
   targetNode: dualportventpump
   category: construction-category-utilities
-  placementMode: AlignAtmosPipeLayers # starlight
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
-  # region starlight
+  # Carpmosia-start - Atmos Alt Prototypes
   alternativePrototypes:
   - GasDualPortVentPump
   - GasDualPortVentPumpAlt1
   - GasDualPortVentPumpAlt2
-  # end starlight
+  - GasDualPortVentPumpAlt3
+  - GasDualPortVentPumpAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: HeatExchanger
@@ -1086,13 +1098,15 @@
   mirror: GasFilterFlipped
   conditions:
     - !type:NoUnstackableInTile
-  # region starlight
+  # Carpmosia-start - Atmos Alt Prototypes
   alternativePrototypes:
   - GasFilter
   - GasFilterAlt1
   - GasFilterAlt2
-  # end starlight
-  
+  - GasFilterAlt3
+  - GasFilterAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
+
 - type: construction
   id: GasFilterFlipped
 #  hide: true starlight let me build the flipped version
@@ -1105,12 +1119,14 @@
   mirror: GasFilter
   conditions:
     - !type:NoUnstackableInTile
-  # region starlight
+  # Carpmosia-start - Atmos Alt Prototypes
   alternativePrototypes:
   - GasFilterFlipped
   - GasFilterFlippedAlt1
   - GasFilterFlippedAlt2
-  # end region
+  - GasFilterFlippedAlt3
+  - GasFilterFlippedAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: GasMixer
@@ -1123,12 +1139,14 @@
   mirror: GasMixerFlipped
   conditions:
     - !type:NoUnstackableInTile
-  # region starlight
+  # Carpmosia-start - Atmos Alt Prototypes
   alternativePrototypes:
   - GasMixer
   - GasMixerAlt1
   - GasMixerAlt2
-  # end starlight
+  - GasMixerAlt3
+  - GasMixerAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: GasMixerFlipped
@@ -1142,12 +1160,14 @@
   mirror: GasMixer
   conditions:
     - !type:NoUnstackableInTile
-  # region starlight
+  # Carpmosia-start - Atmos Alt Prototypes
   alternativePrototypes:
   - GasMixerFlipped
   - GasMixerFlippedAlt1
   - GasMixerFlippedAlt2
-  # end starlight
+  - GasMixerFlippedAlt3
+  - GasMixerFlippedAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: PressureControlledValve
@@ -1155,16 +1175,18 @@
   startNode: start
   targetNode: pneumaticvalve
   category: construction-category-utilities
-  placementMode: AlignAtmosPipeLayers # starlight
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   conditions:
     - !type:NoUnstackableInTile
-  # region starlight
+  # Carpmosia-start - Atmos Alt Prototypes
   alternativePrototypes:
   - PressureControlledValve
   - PressureControlledValveAlt1
   - PressureControlledValveAlt2
-  # end starlight
+  - PressureControlledValveAlt3
+  - PressureControlledValveAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 # INTERCOM
 - type: construction

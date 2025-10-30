@@ -63,6 +63,10 @@
         Secondary: GasVentPumpAlt1
         Tertiary: GasVentPumpAlt2
     # end region
+    # Carpmosia-start - Atmos Alt Prototypes
+        Quaternary: GasVentPumpAlt3
+        Quinary: GasVentPumpAlt4
+    # Carpmosia-end - Atmos Alt Prototypes
     - type: Appearance
     - type: PipeColorVisuals
     - type: GenericVisualizer
@@ -119,6 +123,10 @@
         Secondary: GasPassiveVentAlt1
         Tertiary: GasPassiveVentAlt2
     # end region
+    # Carpmosia-start - Atmos Alt Prototypes
+        Quaternary: GasPassiveVentAlt3
+        Quinary: GasPassiveVentAlt4
+    # Carpmosia-end - Atmos Alt Prototypes
     - type: Appearance
     - type: PipeColorVisuals
     - type: GasPassiveVent
@@ -173,6 +181,10 @@
         Secondary: GasVentScrubberAlt1
         Tertiary: GasVentScrubberAlt2
     # end region
+    # Carpmosia-start - Atmos Alt Prototypes
+        Quaternary: GasVentScrubberAlt3
+        Quinary: GasVentScrubberAlt4
+    # Carpmosia-end - Atmos Alt Prototypes
     - type: Appearance
     - type: PipeColorVisuals
     - type: GenericVisualizer
@@ -212,7 +224,7 @@
   components:
     - type: Sprite
       drawdepth: FloorObjects
-      sprite: Structures/Piping/Atmospherics/outletinjector.rsi
+      sprite: _Carpmosia/Structures/Piping/Atmospherics/outletinjector.rsi # Carpmosia-edit - 5 pipe layers
       layers:
         - state: pipeUnaryConnectors
           sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
@@ -230,6 +242,10 @@
         Secondary: GasOutletInjectorAlt1
         Tertiary: GasOutletInjectorAlt2
     # end region
+    # Carpmosia-start - Atmos Alt Prototypes
+        Quaternary: GasOutletInjectorAlt3
+        Quinary: GasOutletInjectorAlt4
+    # Carpmosia-end - Atmos Alt Prototypes
     - type: Appearance
     - type: GenericVisualizer
       visuals:
