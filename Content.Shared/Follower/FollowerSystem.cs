@@ -182,7 +182,7 @@ public sealed class FollowerSystem : EntitySystem
     /// </summary>
     /// <param name="follower">The entity that should follow</param>
     /// <param name="entity">The entity to be followed</param>
-    public void StartFollowingEntity(EntityUid follower, EntityUid entity)
+    public void StartFollowingEntity(EntityUid follower, EntityUid entity, bool orbit = true)
     {
         if (follower == entity || TerminatingOrDeleted(entity))
             return;
@@ -198,6 +198,7 @@ public sealed class FollowerSystem : EntitySystem
         }
 
         // Cleanup old following.
+        bool useOrbit = orbit; // Starlight
         if (TryComp<FollowerComponent>(follower, out var followerComp))
         {
             // Already following you goob
@@ -205,6 +206,7 @@ public sealed class FollowerSystem : EntitySystem
                 return;
 
             StopFollowingEntity(follower, followerComp.Following, deparent: false, removeComp: false);
+            useOrbit = followerComp.Orbit; // Starlight
         }
         else
         {
@@ -212,6 +214,7 @@ public sealed class FollowerSystem : EntitySystem
         }
 
         followerComp.Following = entity;
+        followerComp.Orbit = useOrbit; // Starlight
 
         var followedComp = EnsureComp<FollowedComponent>(entity);
 
@@ -232,7 +235,16 @@ public sealed class FollowerSystem : EntitySystem
 
         _physicsSystem.SetLinearVelocity(follower, Vector2.Zero);
 
-        EnsureComp<OrbitVisualsComponent>(follower);
+         // Starlight-start
+        if (useOrbit)
+        {
+            EnsureComp<OrbitVisualsComponent>(follower);
+        }
+        else if (HasComp<OrbitVisualsComponent>(follower))
+        {
+            RemComp<OrbitVisualsComponent>(follower);
+        }
+         // Starlight-end
 
         var followerEv = new StartedFollowingEntityEvent(entity, follower);
         var entityEv = new EntityStartedFollowingEvent(entity, follower);
