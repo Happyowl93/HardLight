@@ -18757,5 +18757,12 @@ Entries:
   id: 203303
   time: '2025-10-30T19:19:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2033
+- author: FoxxoTrystan
+  changes:
+  - message: Added the MASTERCHAIR.
+    type: Add
+  id: 199100
+  time: '2025-10-30T19:52:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1991
 Order: -1
 
