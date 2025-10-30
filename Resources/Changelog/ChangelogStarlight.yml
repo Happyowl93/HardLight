@@ -19153,5 +19153,13 @@ Entries:
   id: 202106
   time: '2025-10-30T21:37:21.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2021
+- author: CrazyPhantom
+  changes:
+  - message: You can no longer duplicate uranium by breaking Uranium Directional Reinforced
+      Windows.
+    type: Fix
+  id: 201600
+  time: '2025-10-30T19:20:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2016
 Order: -1
 
