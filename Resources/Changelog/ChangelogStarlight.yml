@@ -18707,5 +18707,27 @@ Entries:
   id: 203000
   time: '2025-10-30T19:12:11.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2030
+- author: CrazyPhantom
+  changes:
+  - message: Many bugs with Chemical, Booze and Soda dispensers.
+    type: Fix
+  id: 203600
+  time: '2025-10-30T19:19:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2036
+- author: CrazyPhantom
+  changes:
+  - message: Dispensers now work during a blackout at the cost of power to the cell
+      inside slowly draining with the UI open.
+    type: Tweak
+  id: 203601
+  time: '2025-10-30T19:19:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2036
+- author: CrazyPhantom
+  changes:
+  - message: Cells inside dispensers now charge slowly at 5w when powered by LV.
+    type: Add
+  id: 203602
+  time: '2025-10-30T19:19:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2036
 Order: -1
 
