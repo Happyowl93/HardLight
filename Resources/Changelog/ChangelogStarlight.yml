@@ -18700,5 +18700,12 @@ Entries:
   id: 205401
   time: '2025-10-30T18:21:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2054
+- author: CrazyPhantom
+  changes:
+  - message: Purrfus is now selectable again.
+    type: Fix
+  id: 203000
+  time: '2025-10-30T19:12:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2030
 Order: -1
 
