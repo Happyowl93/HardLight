@@ -19080,5 +19080,27 @@ Entries:
   id: 206402
   time: '2025-10-30T18:08:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2064
+- author: CrazyPhantom
+  changes:
+  - message: Gamma and Psi armory are no longer automatically called during their
+      alerts.
+    type: Tweak
+  id: 202600
+  time: '2025-10-30T19:16:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2026
+- author: CrazyPhantom
+  changes:
+  - message: '"Amory" command to call Psi or Gamma armory.'
+    type: Add
+  id: 202601
+  time: '2025-10-30T19:16:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2026
+- author: CrazyPhantom
+  changes:
+  - message: Armory recall Announcements.
+    type: Add
+  id: 202602
+  time: '2025-10-30T19:16:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2026
 Order: -1
 
