@@ -19056,5 +19056,29 @@ Entries:
   id: 199601
   time: '2025-10-30T21:43:28.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1996
+- author: neomoth
+  changes:
+  - message: NoObjectiveTargetComponent
+    type: Add
+  id: 206400
+  time: '2025-10-30T18:08:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2064
+- author: neomoth
+  changes:
+  - message: ParadoxCloneRuleSystem filters entities with NoObjectiveTargetComponent
+      from available targets.
+    type: Tweak
+  id: 206401
+  time: '2025-10-30T18:08:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2064
+- author: neomoth
+  changes:
+  - message: PickObjectiveTargetSystem adds a blacklist filter to all PickRandomPersonComponents
+      that get added on component startup, aka all objective targets inherently blacklist
+      this.
+    type: Tweak
+  id: 206402
+  time: '2025-10-30T18:08:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2064
 Order: -1
 
