@@ -18844,5 +18844,13 @@ Entries:
   id: 202300
   time: '2025-10-30T21:19:53.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2023
+- author: CrazyPhantom
+  changes:
+  - message: Aghost's now prioritize unlocking/locking or signing with Alt + M1 Instead
+      of following.
+    type: Tweak
+  id: 202400
+  time: '2025-10-30T21:22:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2024
 Order: -1
 
