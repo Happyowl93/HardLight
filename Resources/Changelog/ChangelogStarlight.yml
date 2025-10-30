@@ -19023,5 +19023,20 @@ Entries:
   id: 202806
   time: '2025-10-30T21:36:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2028
+- author: CrazyPhantom
+  changes:
+  - message: All normal sized lockers are now hackable
+    type: Fix
+  id: 201400
+  time: '2025-10-30T21:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2014
+- author: CrazyPhantom
+  changes:
+  - message: Quartermaster and NTR Normal sized lockers are now correctly protected
+      by a welded steel plate
+    type: Fix
+  id: 201401
+  time: '2025-10-30T21:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2014
 Order: -1
 
