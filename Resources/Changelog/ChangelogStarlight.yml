@@ -18780,5 +18780,43 @@ Entries:
   id: 204601
   time: '2025-10-30T21:02:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2046
+- author: Conflee
+  changes:
+  - message: Added color variants for the Comfy Chair (Gray, White, Blue, Green, Red,
+      Brown) and Comfy Bench (Red, Blue, White, Gray, Green, Red).
+    type: Add
+  id: 205000
+  time: '2025-10-30T21:02:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2050
+- author: Conflee
+  changes:
+  - message: Added modular Benches and Sofas, for multi-tile seating arrangements.
+      Come in all the same colors as the solo Comfy Benches and solo Comfy Chairs.
+      Includes a 'Fancy Sofa' which is made of leather.
+    type: Add
+  id: 205001
+  time: '2025-10-30T21:02:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2050
+- author: Conflee
+  changes:
+  - message: Added the Regal Chair, Regal Throne, and Sleek Office Chair.
+    type: Add
+  id: 205002
+  time: '2025-10-30T21:02:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2050
+- author: Conflee
+  changes:
+  - message: Added modular Chapel Pews, for chapel specific seating.
+    type: Add
+  id: 205003
+  time: '2025-10-30T21:02:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2050
+- author: Conflee
+  changes:
+  - message: Added modular Diner Booths, for cafe/kitchen specific seating.
+    type: Add
+  id: 205004
+  time: '2025-10-30T21:02:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2050
 Order: -1
 
