@@ -53,33 +53,35 @@ public sealed class ThermalRegulatorSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp2, logMissing: false))
             return;
 
-        // Starlight edit start - Don't regulate temperature if the entity is dead
-        // Fixes Avali not rotting
-        if (_mobState.IsDead(ent))
-            return;
-        // Starlight edit end
-
         // TODO: Why do we have two datafields for this if they are only ever used once here?
         var totalMetabolismTempChange = ent.Comp1.MetabolismHeat - ent.Comp1.RadiatedHeat;
 
-        // implicit heat regulation
-        var tempDiff = Math.Abs(ent.Comp2.CurrentTemperature - ent.Comp1.NormalBodyTemperature);
+        // Starlight edit start - Don't do implicit heat regulation if the entity is dead
+        // Fixes Avali not rotting
         var heatCapacity = _tempSys.GetHeatCapacity(ent, ent);
-        var targetHeat = tempDiff * heatCapacity;
-        if (ent.Comp2.CurrentTemperature > ent.Comp1.NormalBodyTemperature)
+        if (!_mobState.IsDead(ent))
         {
-            totalMetabolismTempChange -= Math.Min(targetHeat, ent.Comp1.ImplicitHeatRegulation);
+            // implicit heat regulation
+            var implicitTempDiff = Math.Abs(ent.Comp2.CurrentTemperature - ent.Comp1.NormalBodyTemperature);
+            var implicitTargetHeat = implicitTempDiff * heatCapacity;
+            if (ent.Comp2.CurrentTemperature > ent.Comp1.NormalBodyTemperature)
+            {
+                totalMetabolismTempChange -= Math.Min(implicitTargetHeat, ent.Comp1.ImplicitHeatRegulation);
+            }
+            else
+            {
+                totalMetabolismTempChange += Math.Min(implicitTargetHeat, ent.Comp1.ImplicitHeatRegulation);
+            }
         }
-        else
-        {
-            totalMetabolismTempChange += Math.Min(targetHeat, ent.Comp1.ImplicitHeatRegulation);
-        }
+        // Starlight edit end
 
         _tempSys.ChangeHeat(ent, totalMetabolismTempChange, ignoreHeatResistance: true, ent);
 
         // recalc difference and target heat
-        tempDiff = Math.Abs(ent.Comp2.CurrentTemperature - ent.Comp1.NormalBodyTemperature);
-        targetHeat = tempDiff * heatCapacity;
+        // Starlight edit start
+        var tempDiff = Math.Abs(ent.Comp2.CurrentTemperature - ent.Comp1.NormalBodyTemperature);
+        var targetHeat = tempDiff * heatCapacity;
+        // Starlight edit end
 
         // if body temperature is not within comfortable, thermal regulation
         // processes starts
