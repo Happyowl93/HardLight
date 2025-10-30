@@ -18894,5 +18894,82 @@ Entries:
   id: 201800
   time: '2025-10-30T21:28:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2018
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Nanomed Civilian vending machines sprinkled around the station
+    type: Add
+  id: 201900
+  time: '2025-10-30T21:31:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2019
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Document printer to Medical Reception
+    type: Add
+  id: 201901
+  time: '2025-10-30T21:31:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2019
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Document printer to Engineering Breakroom
+    type: Add
+  id: 201902
+  time: '2025-10-30T21:31:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2019
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Stasis bed to Brigmedic
+    type: Add
+  id: 201903
+  time: '2025-10-30T21:31:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2019
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Cell recharger to Chemistry
+    type: Add
+  id: 201904
+  time: '2025-10-30T21:31:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2019
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Cell recharger to Brigmedic
+    type: Add
+  id: 201905
+  time: '2025-10-30T21:31:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2019
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Brigmedic bed + bedsheet to Brigmedic
+    type: Add
+  id: 201906
+  time: '2025-10-30T21:31:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2019
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Fax machine to Library
+    type: Add
+  id: 201907
+  time: '2025-10-30T21:31:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2019
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Surgery doors for Surgery
+    type: Tweak
+  id: 201908
+  time: '2025-10-30T21:31:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2019
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Some Robotics doors for Robotics stuff
+    type: Tweak
+  id: 201909
+  time: '2025-10-30T21:31:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2019
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Evac chairs and floor tiles now line up with the Greenway
+    type: Tweak
+  id: 201910
+  time: '2025-10-30T21:31:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2019
 Order: -1
 
