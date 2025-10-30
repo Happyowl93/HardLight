@@ -18971,5 +18971,57 @@ Entries:
   id: 201910
   time: '2025-10-30T21:31:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2019
+- author: CMDROverwerk
+  changes:
+  - message: Mounted Shotguns now actually work
+    type: Fix
+  id: 202800
+  time: '2025-10-30T21:36:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2028
+- author: CMDROverwerk
+  changes:
+  - message: Mech Idle/Destroyed sprites now actually show
+    type: Fix
+  id: 202801
+  time: '2025-10-30T21:36:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2028
+- author: CMDROverwerk
+  changes:
+  - message: PBT "Pacifier" Taser, MK.IV Ion Cannon, S-1 Xray Cannon are now research-able
+      in their corresponding handheld equivalent techs
+    type: Add
+  id: 202802
+  time: '2025-10-30T21:36:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2028
+- author: CMDROverwerk
+  changes:
+  - message: Exosuit Chainsword research-able alongside Gygax
+    type: Add
+  id: 202803
+  time: '2025-10-30T21:36:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2028
+- author: CMDROverwerk
+  changes:
+  - message: AMLG-90 "Reaver" research-able in Portable-Microfusion Weaponry
+    type: Add
+  id: 202804
+  time: '2025-10-30T21:36:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2028
+- author: CMDROverwerk
+  changes:
+  - message: Firedart now has equivalent effectiveness as the handheld laser carbine
+      (it was lesser before)
+    type: Tweak
+  id: 202805
+  time: '2025-10-30T21:36:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2028
+- author: CMDROverwerk
+  changes:
+  - message: Solaris now has identical effectiveness to the firedart (was even less
+      powerful... somehow) but is far more power-efficient.
+    type: Tweak
+  id: 202806
+  time: '2025-10-30T21:36:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2028
 Order: -1
 
