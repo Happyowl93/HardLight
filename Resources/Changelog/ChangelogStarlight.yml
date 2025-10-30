@@ -18852,5 +18852,40 @@ Entries:
   id: 202400
   time: '2025-10-30T21:22:54.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2024
+- author: Vonte
+  changes:
+  - message: Added Engineering Windbreaker.
+    type: Add
+  id: 202500
+  time: '2025-10-30T21:23:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2025
+- author: Vonte
+  changes:
+  - message: Added Science Windbreaker.
+    type: Add
+  id: 202501
+  time: '2025-10-30T21:23:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2025
+- author: Vonte
+  changes:
+  - message: Added Medical Windbreaker.
+    type: Add
+  id: 202502
+  time: '2025-10-30T21:23:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2025
+- author: Vonte
+  changes:
+  - message: Added Security Windbreaker.
+    type: Add
+  id: 202503
+  time: '2025-10-30T21:23:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2025
+- author: Vonte
+  changes:
+  - message: Added Cargo Windbreaker.
+    type: Add
+  id: 202504
+  time: '2025-10-30T21:23:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2025
 Order: -1
 
