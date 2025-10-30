@@ -19102,5 +19102,56 @@ Entries:
   id: 202602
   time: '2025-10-30T19:16:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2026
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm G24) CC Security checkpoint between Arrivals and Lobby
+    type: Add
+  id: 202100
+  time: '2025-10-30T21:37:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2021
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm G24) Sink to kitchen
+    type: Add
+  id: 202101
+  time: '2025-10-30T21:37:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2021
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm G24) Added more rechargers, useful for charging your translators
+      and other gadgets
+    type: Add
+  id: 202102
+  time: '2025-10-30T21:37:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2021
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm G24) Disconnected APC by Armory
+    type: Fix
+  id: 202103
+  time: '2025-10-30T21:37:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2021
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm SC17) CC Security checkpoint between Arrivals and Lobby
+    type: Add
+  id: 202104
+  time: '2025-10-30T21:37:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2021
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm SC17) Added more rechargers, useful for charging your translators
+      and other gadgets
+    type: Add
+  id: 202105
+  time: '2025-10-30T21:37:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2021
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm SC17) Two more mindshields in CC Debrief
+    type: Add
+  id: 202106
+  time: '2025-10-30T21:37:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2021
 Order: -1
 
