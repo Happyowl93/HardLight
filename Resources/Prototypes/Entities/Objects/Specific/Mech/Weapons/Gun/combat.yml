@@ -11,11 +11,11 @@
   - type: Gun
     fireRate: 1.5
 # 🌟Starlight-start🌟
-    selectedMode: FullAuto 
+    selectedMode: FullAuto
     availableModes:
       - FullAuto
-# 🌟Starlight-end🌟    
-  - soundGunshot:
+# 🌟Starlight-end🌟
+    soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
     proto: Pulse
