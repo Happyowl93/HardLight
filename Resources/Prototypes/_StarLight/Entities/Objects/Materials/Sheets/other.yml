@@ -49,7 +49,6 @@
       state: cheapinsulativefabric
     - type: Item
       sprite: _Starlight/Objects/Misc/insults.rsi
-      state: cheapinsulativefabric
     - type: Butcherable
       butcheringType: Knife
       spawned:
@@ -69,7 +68,6 @@
       state: plasteelfilament
     - type: Item
       sprite: _Starlight/Objects/Misc/insults.rsi
-      state: plasteelfilament
     - type: Tag
       tags:
         - PlasteelFilament
@@ -85,7 +83,6 @@
       state: insulativethread
     - type: Item
       sprite: _Starlight/Objects/Misc/insults.rsi
-      state: insulativethread
     - type: Tag
       tags:
         - InsulatedThread
@@ -101,7 +98,6 @@
       state: insulativefabric
     - type: Item
       sprite: _Starlight/Objects/Misc/insults.rsi
-      state: insulativefabric
     - type: Tag
       tags:
         - InsulatedFabric
