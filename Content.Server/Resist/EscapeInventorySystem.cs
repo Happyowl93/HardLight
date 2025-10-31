@@ -101,7 +101,9 @@ public sealed class EscapeInventorySystem : EntitySystem
         if (_containerSystem.TryGetContainingContainer((uid, null, null), out var container) &&
             _tagSystem.HasTag(container.Owner, "PersonnelStorage"))
         {
-            EscapeFromPersonnelStorage(uid);
+            // Remove from the container and put on the floor
+            _containerSystem.Remove((uid, Transform(uid)), container, reparent: false);
+            _transformSystem.AttachToGridOrMap(uid, Transform(uid));
         }
         else
         {
@@ -110,40 +112,6 @@ public sealed class EscapeInventorySystem : EntitySystem
         // Starlight edit end
         args.Handled = true;
     }
-    // Starlight edit start - Special handling for borg modules
-    /// <summary>
-    /// Special handling for borg modules, it is required because in some cases borgs and their modules are two separate containers,
-    /// we recursively remove them from those containers until we hit a container that is not an escape source.
-    /// This is kinda needed to handle a case where a borg would be inside of a locker and someone tried to escape for it, to make it so they stay inside of the locker.
-    /// </summary>
-    private void EscapeFromPersonnelStorage(EntityUid uid)
-    {
-        while (true)
-        {
-            if (!_containerSystem.TryGetContainingContainer((uid, null, null), out var container))
-            {
-                var transform = Transform(uid);
-                _transformSystem.AttachToGridOrMap(uid, transform);
-                return;
-            }
-            
-            bool isEscapeTarget = _handsSystem.IsHolding(container.Owner, uid, out _) ||
-                                  HasComp<StorageComponent>(container.Owner) ||
-                                  HasComp<InventoryComponent>(container.Owner) ||
-                                  HasComp<SecretStashComponent>(container.Owner) ||
-                                  _tagSystem.HasTag(container.Owner, "PersonnelStorage");
-            
-            if (isEscapeTarget)
-            {
-                _containerSystem.Remove(uid, container, force: true);
-                continue;
-            }
-            
-            _containerSystem.Insert(uid, container);
-            return;
-        }
-    }
-    // Starlight edit end
 
     private void OnDropped(EntityUid uid, CanEscapeInventoryComponent component, DroppedEvent args)
     {
