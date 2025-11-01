@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseWallmountMetallic
-  id: StationMapBroken
-  name: station map
-  description: A virtual map of the surrounding station.
+  id: WallmountMassScannerBroken
+  name: mass scanner
+  description: A computer for detecting nearby bodies, displaying them by position and mass.
   suffix: Wall broken
   components:
     - type: Sprite
@@ -24,27 +24,27 @@
 
 - type: entity
   parent: BaseWallmountMachine
-  id: StationMap
-  name: station map
-  description: A virtual map of the surrounding station.
+  id: WallmountMassScanner
+  name: mass scanner
+  description: A computer for detecting nearby bodies, displaying them by position and mass.
   suffix: Wall
   components:
     - type: WallMount
       arc: 360
     - type: Appearance
-    - type: StationMap
+    - type: RadarConsole
     - type: Sprite
-      sprite: Structures/Machines/station_map.rsi
+      sprite: _Starlight/Structures/Machines/wall_mount_mass_scanner.rsi
       layers:
-      - state: station_map0
+      - state: mass_scanner0
       - state: unshaded
         shader: unshaded
     - type: Icon
-      sprite: Structures/Machines/station_map.rsi
-      state: station_map0
+      sprite: _Starlight/Structures/Machines/wall_mount_mass_scanner.rsi
+      state: mass_scanner0
     - type: ContainerFill
       containers:
-        board: [ StationMapCircuitboard ]
+        board: [ WallmountMassScannerCircuitboard ]
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -52,10 +52,10 @@
       powerLoad: 200
     - type: Construction
       graph: StationMap
-      node: station_map
+      node: mass_scanner
     - type: ActivatableUIRequiresPower
     - type: ActivatableUI
-      key: enum.StationMapUiKey.Key
+      key: enum.RadarConsoleUiKey.Key
     - type: Destructible
       thresholds:
       - trigger: # Excess damage, don't spawn entities
@@ -76,15 +76,15 @@
             collection: GlassBreak
         - !type:SpawnEntitiesBehavior
           spawn:
-            StationMapBroken:
+            WallmountMassScannerBroken:
               min: 1
               max: 1
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
     - type: UserInterface
       interfaces:
-        enum.StationMapUiKey.Key:
-          type: StationMapBoundUserInterface
+        enum.RadarConsoleUiKey.Key:
+          type: RadarConsoleBoundUserInterface
     - type: EmitSoundOnUIOpen
       sound:
         collection: Keyboard
@@ -95,29 +95,3 @@
       blacklist:
         tags:
         - NoConsoleSound
-
-- type: entity
-  parent: BaseWallmountMetallic
-  id: StationMapAssembly
-  name: station map assembly
-  description: A station map assembly.
-  components:
-  - type: WallMount
-    arc: 360
-  - type: Sprite
-    sprite: Structures/Machines/station_map.rsi
-    layers:
-    - state: station_map_frame1
-      map: [ "enum.ConstructionVisuals.Layer" ]
-  - type: Appearance
-  - type: GenericVisualizer
-    visuals:
-      enum.ConstructionVisuals.Key:
-        enum.ConstructionVisuals.Layer:
-          assembly: { state: station_map_frame0 }
-          wired: { state: station_map_frame1 }
-          electronics: { state: station_map_frame2 }
-          scanner_electronics: { state: station_map_frame2 } # Starlight
-  - type: Construction
-    graph: StationMap
-    node: assembly
