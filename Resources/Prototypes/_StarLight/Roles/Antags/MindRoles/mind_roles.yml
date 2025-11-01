@@ -15,6 +15,6 @@
   components:
   - type: MindRole
     antagPrototype: Brighteye
-    subtype: role-subtype-brighteye
+    subtype: roles-antag-brighteye-name
     exclusiveAntag: true
   - type: BrighteyeRole

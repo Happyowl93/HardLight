@@ -11,8 +11,7 @@
     - type: Fixtures
       fixtures:
         fix1:
-          shape:
-            !type:PhysShapeAabb
+          shape: !type:PhysShapeAabb
             bounds: "-0.5,-0.5,0.5,0.5"
           layer:
             - SlipLayer
@@ -26,6 +25,7 @@
     - type: Transform
       anchored: true
     - type: Sprite
+      noRot: true
       drawdepth: FloorTiles
       sprite: _Starlight/Tiles/dark.rsi
       layers:
@@ -33,7 +33,10 @@
           shader: unshaded
         - state: overlay-1
           shader: unshaded
-          map: [ "overlay" ]
+          map: ["overlay"]
+    - type: Tag
+      tags:
+        - TheDark
     - type: SpeedModifierContacts
       walkSpeedModifier: 0.3
       sprintSpeedModifier: 0.3
@@ -53,7 +56,7 @@
           shader: unshaded
         - state: overlay-2
           shader: unshaded
-          map: [ "overlay" ]
+          map: ["overlay"]
 
 - type: entity
   id: DarkTile3
@@ -67,7 +70,7 @@
           shader: unshaded
         - state: overlay-3
           shader: unshaded
-          map: [ "overlay" ]
+          map: ["overlay"]
 
 - type: entity
   id: DarkTile4
@@ -81,7 +84,7 @@
           shader: unshaded
         - state: overlay-4
           shader: unshaded
-          map: [ "overlay" ]
+          map: ["overlay"]
 
 - type: entity
   id: DarkTile5
@@ -95,7 +98,7 @@
           shader: unshaded
         - state: overlay-5
           shader: unshaded
-          map: [ "overlay" ]
+          map: ["overlay"]
 
 - type: entity
   id: DarkTile6
@@ -109,7 +112,7 @@
           shader: unshaded
         - state: overlay-6
           shader: unshaded
-          map: [ "overlay" ]
+          map: ["overlay"]
 
 - type: entity
   id: DarkTile7
@@ -123,7 +126,7 @@
           shader: unshaded
         - state: overlay-7
           shader: unshaded
-          map: [ "overlay" ]
+          map: ["overlay"]
 
 - type: entity
   id: DarkTile8
@@ -137,7 +140,7 @@
           shader: unshaded
         - state: overlay-8
           shader: unshaded
-          map: [ "overlay" ]
+          map: ["overlay"]
 
 - type: entity
   id: DarkTile9
@@ -151,7 +154,7 @@
           shader: unshaded
         - state: overlay-9
           shader: unshaded
-          map: [ "overlay" ]
+          map: ["overlay"]
 
 - type: entity
   id: DarkTile10
@@ -165,7 +168,7 @@
           shader: unshaded
         - state: overlay-10
           shader: unshaded
-          map: [ "overlay" ]
+          map: ["overlay"]
 
 - type: entity
   id: DarkTile11
@@ -179,7 +182,7 @@
           shader: unshaded
         - state: overlay-11
           shader: unshaded
-          map: [ "overlay" ]
+          map: ["overlay"]
 
 - type: entity
   id: DarkTile12
@@ -193,7 +196,7 @@
           shader: unshaded
         - state: overlay-12
           shader: unshaded
-          map: [ "overlay" ]
+          map: ["overlay"]
 
 - type: entity
   id: DarkRandom

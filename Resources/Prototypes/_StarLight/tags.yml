@@ -254,3 +254,6 @@
 
 - type: Tag
   id: ScanGateMachineBoard
+
+- type: Tag
+  id: TheDark

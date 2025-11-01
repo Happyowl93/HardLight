@@ -28,7 +28,7 @@
     - type: Tag
       tags:
         - HideContextMenu
-        - SpookyFog
+        - TheDark
     - type: OptionsVisualizer
       visuals:
         base:
@@ -55,7 +55,7 @@
       drawdepth: Effects
 
 - type: entity
-  id: ShadekinPhaseInEffect
+  id: ShadekinPhaseInEffect2
   name: shadekin Phase in 2
   components:
     - type: EmitSoundOnSpawn
