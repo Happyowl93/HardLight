@@ -1,9 +1,11 @@
+using Robust.Shared.GameStates;
+
 namespace Content.Shared._Starlight.Shadekin;
 
 /// <summary>
 /// Will Autolink to a DarkHubComponent, This comp also has custom anomaly code for the pulse and shadekin link.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class DarkPortalComponent : Component
 {
     [DataField]

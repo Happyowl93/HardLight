@@ -6,7 +6,7 @@ using Content.Server.Light.EntitySystems;
 
 namespace Content.Server._Starlight.Shadekin;
 
-public abstract class DarkPortalSystem : EntitySystem
+public sealed class DarkPortalSystem : EntitySystem
 {
     [Dependency] private readonly LinkedEntitySystem _link = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
@@ -18,6 +18,7 @@ public abstract class DarkPortalSystem : EntitySystem
         SubscribeLocalEvent<DarkPortalComponent, ComponentStartup>(OnInit);
         SubscribeLocalEvent<DarkPortalComponent, AnomalyPulseEvent>(OnPulse);
         SubscribeLocalEvent<DarkPortalComponent, AnomalySupercriticalEvent>(OnSupercritical);
+        SubscribeLocalEvent<DarkPortalComponent, AnomalyShutdownEvent>(OnShutdown);
     }
 
     private void OnInit(EntityUid uid, DarkPortalComponent component, ComponentStartup args)
@@ -47,5 +48,10 @@ public abstract class DarkPortalSystem : EntitySystem
         var newportal = SpawnAtPosition("PortalShadekin", Transform(uid).Coordinates);
         if (TryComp<DarkPortalComponent>(newportal, out var portal))
             portal.Brighteye = component.Brighteye;
+    }
+
+    private void OnShutdown(EntityUid uid, DarkPortalComponent component, ref AnomalyShutdownEvent args)
+    {
+        // TODO: Alert the Brighteye that his portal has been killed.
     }
 }
