@@ -56,10 +56,8 @@
 - type: entity
   name: sleek office chair
   id: ChairOfficeSleek
-  parent: OfficeChairBase
+  parent: StoolBase
   components:
-  - type: Transform
-    anchored: true
   - type: Sprite
     sprite: _Starlight/Structures/Furniture/Chairs/sleek_office_chair.rsi
     state: base
