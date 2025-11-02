@@ -19227,5 +19227,20 @@ Entries:
   id: 207800
   time: '2025-10-31T17:54:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2078
+- author: CMDROverwerk
+  changes:
+  - message: Fixed bug when you can't open doors via click/interaction
+    type: Fix
+  id: 207900
+  time: '2025-11-02T20:33:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2079
+- author: CMDROverwerk
+  changes:
+  - message: Unmaps SecGrabber from laithe so it does not cause validation failure
+      (until re-implementation)
+    type: Fix
+  id: 207901
+  time: '2025-11-02T20:33:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2079
 Order: -1
 
