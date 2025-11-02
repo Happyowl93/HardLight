@@ -19242,5 +19242,12 @@ Entries:
   id: 207901
   time: '2025-11-02T20:33:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2079
+- author: Conflee
+  changes:
+  - message: Fixed Pew camera rotation error with sprites
+    type: Fix
+  id: 210100
+  time: '2025-11-02T20:33:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2101
 Order: -1
 
