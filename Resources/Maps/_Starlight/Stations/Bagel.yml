@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 11/02/2025 09:58:14
+  time: 11/02/2025 10:17:43
   entityCount: 25884
 maps:
 - 943
@@ -11178,8 +11178,40 @@ entities:
     - type: Transform
       pos: 10.5,-33.5
       parent: 60
+- proto: AirlockBrigGlassLocked
+  entities:
+  - uid: 25
+    components:
+    - type: Transform
+      pos: -29.5,-11.5
+      parent: 60
+  - uid: 36
+    components:
+    - type: Transform
+      pos: -25.5,-13.5
+      parent: 60
+  - uid: 51
+    components:
+    - type: Transform
+      pos: -25.5,-11.5
+      parent: 60
+  - uid: 67
+    components:
+    - type: Transform
+      pos: -29.5,-13.5
+      parent: 60
 - proto: AirlockBrigLocked
   entities:
+  - uid: 134
+    components:
+    - type: Transform
+      pos: -21.5,-12.5
+      parent: 60
+  - uid: 177
+    components:
+    - type: Transform
+      pos: -35.5,-3.5
+      parent: 60
   - uid: 1856
     components:
     - type: Transform
@@ -13759,44 +13791,12 @@ entities:
     - type: Transform
       pos: -21.5,-6.5
       parent: 60
-- proto: AirlockSecurityLawyerGlassLocked
-  entities:
-  - uid: 25
-    components:
-    - type: Transform
-      pos: -25.5,-13.5
-      parent: 60
-  - uid: 36
-    components:
-    - type: Transform
-      pos: -29.5,-13.5
-      parent: 60
-  - uid: 51
-    components:
-    - type: Transform
-      pos: -29.5,-11.5
-      parent: 60
-  - uid: 67
-    components:
-    - type: Transform
-      pos: -25.5,-11.5
-      parent: 60
 - proto: AirlockSecurityLawyerLocked
   entities:
   - uid: 72
     components:
     - type: Transform
       pos: -31.5,-17.5
-      parent: 60
-  - uid: 134
-    components:
-    - type: Transform
-      pos: -21.5,-12.5
-      parent: 60
-  - uid: 177
-    components:
-    - type: Transform
-      pos: -35.5,-3.5
       parent: 60
 - proto: AirlockSecurityLocked
   entities:
@@ -131891,14 +131891,6 @@ entities:
     - type: Transform
       pos: -29.684803,-14.48136
       parent: 60
-    - type: DeviceLinkSource
-      linkedPorts:
-        36:
-        - - Pressed
-          - Open
-        51:
-        - - Pressed
-          - Open
     - type: Label
     - type: Fixtures
       fixtures: {}
@@ -131909,14 +131901,6 @@ entities:
     - type: Transform
       pos: -29.345129,-14.48136
       parent: 60
-    - type: DeviceLinkSource
-      linkedPorts:
-        67:
-        - - Pressed
-          - Open
-        25:
-        - - Pressed
-          - Open
     - type: Fixtures
       fixtures: {}
   - uid: 14913
