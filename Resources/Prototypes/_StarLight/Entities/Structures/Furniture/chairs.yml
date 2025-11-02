@@ -58,6 +58,8 @@
   id: ChairOfficeSleek
   parent: OfficeChairBase
   components:
+  - type: Transform
+    anchored: true
   - type: Sprite
     sprite: _Starlight/Structures/Furniture/Chairs/sleek_office_chair.rsi
     state: base
