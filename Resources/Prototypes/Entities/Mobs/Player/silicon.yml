@@ -40,6 +40,7 @@
     - ActionSurvCameraLights
     - ActionAIViewLaws
     - ActionAIShunt # Starlight AI Shunt ability
+    - ActionAIWarp # Starlight
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:
@@ -150,16 +151,18 @@
     sprite: Objects/Devices/ai_card.rsi
     layers:
     - state: base
-    - state: full
+    - state: empty
       map: ["unshaded"]
+      shader: unshaded
+    - state: full
+      map: ["enum.StationAiVisualLayers.Icon"]
       shader: unshaded
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.StationAiVisualLayers.Icon:
+      enum.StationAiVisualLayers.Base:
         unshaded:
           Empty: { state: empty }
-          Occupied: { state: full }
           Rebooting: { state: dead }
           Dead: { state: dead }
   - type: Intellicard
@@ -169,7 +172,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Mobs/Silicon/station_ai.rsi
+    sprite: _Starlight/Mobs/Silicon/station_ai.rsi
     layers:
     - state: base
     - state: ai
@@ -261,7 +264,7 @@
   - type: InteractionOutline
   - type: Sprite
     snapCardinals: true
-    sprite: Mobs/Silicon/station_ai.rsi
+    sprite: _Starlight/Mobs/Silicon/station_ai.rsi
     layers:
     - state: base
     - state: ai_empty
@@ -348,7 +351,7 @@
   - type: Rotatable
   - type: Sprite
     snapCardinals: true
-    sprite: Mobs/Silicon/station_ai.rsi
+    sprite: _Starlight/Mobs/Silicon/station_ai.rsi
     layers:
     - state: frame_0
       map: [ "enum.ConstructionVisuals.Layer" ]
@@ -409,7 +412,7 @@
 # The actual brain inside the core
 - type: entity
   id: StationAiBrain
-  parent: PositronicBrain
+  parent: [ BaseSiliconLanguages, PositronicBrain ] # Starlight edit: Languages
   categories: [ HideSpawnMenu, DoNotMap ]
   components:
   - type: Sprite
@@ -466,6 +469,7 @@
   - type: NameIdentifier
     group: StationAi
     #region Starlight
+  - type: ContentEye
   - type: IonStormTarget
     chance: 0.6 # lets just try it at 3/4th the chance of a borg and see how bad it gets
     #endregion
@@ -547,18 +551,18 @@
 - type: entity
   id: PlayerBorgSyndicateAssaultBattery
   parent: BorgChassisSyndicateAssault
-  suffix: Battery, Module, Operative
+  suffix: Battery, Operative # Starlight
   components:
   - type: NukeOperative
   - type: ContainerFill
     containers:
       borg_brain:
         - PositronicBrain
-      borg_module:
-        - BorgModuleTool
-        - BorgModuleOperative
-        - BorgModuleL6C
-        - BorgModuleDoubleEsword
+      # borg_module: Starlight, these are switchable so no need to specify their modules
+      #   - BorgModuleTool
+      #   - BorgModuleOperative
+      #   - BorgModuleL6C
+      #   - BorgModuleDoubleEsword
   - type: ItemSlots
     slots:
       cell_slot:
@@ -581,18 +585,18 @@
 - type: entity
   id: PlayerBorgSyndicateSaboteurBattery
   parent: BorgChassisSyndicateSaboteur
-  suffix: Battery, Module, Operative
+  suffix: Battery, Operative # Starlight
   components:
   - type: NukeOperative
   - type: ContainerFill
     containers:
       borg_brain:
         - PositronicBrain
-      borg_module:
-        - BorgModuleTool
-        - BorgModuleRCD
-        - BorgModuleOperative
-        - BorgModuleSyndicateWeapon
+      # borg_module: Starlight, these are switchable so no need to specify their modules.
+      #   - BorgModuleTool
+      #   - BorgModuleRCD
+      #   - BorgModuleOperative
+      #   - BorgModuleSyndicateWeapon
   - type: ItemSlots
     slots:
       cell_slot:
@@ -615,18 +619,18 @@
 - type: entity
   id: PlayerBorgSyndicateMedicalBattery
   parent: BorgChassisSyndicateMedical
-  suffix: Battery, Module, Operative
+  suffix: Battery, Operative # Starlight
   components:
   - type: NukeOperative
   - type: ContainerFill
     containers:
       borg_brain:
         - PositronicBrain
-      borg_module:
-        - BorgModuleTool
-        - BorgModuleChemical
-        - BorgModuleTopicals
-        - BorgModuleSyndicateWeapon
+      # borg_module: Starlight, these are switchable so no need to specify their modules.
+      #   - BorgModuleTool
+      #   - BorgModuleChemical
+      #   - BorgModuleTopicals
+      #   - BorgModuleSyndicateWeapon
   - type: ItemSlots
     slots:
       cell_slot:
