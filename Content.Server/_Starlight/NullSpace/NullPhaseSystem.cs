@@ -6,7 +6,7 @@ using Content.Shared.Maps;
 using Robust.Server.GameObjects;
 using Content.Shared.Popups;
 using Content.Shared.Physics;
-using Content.Shared._Starlight;
+using Content.Shared._Starlight.Shadekin;
 using System.Linq;
 using Content.Server.Light.Components;
 using Content.Server.Ghost;

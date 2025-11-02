@@ -142,12 +142,13 @@
             - MobClownLover
             - ClownKudzu
 
-- type: entity # TODO: When portal goes SUPERCRITICAL, a new portal should be spawned however this new portal cannot be spawned with EntitySpawnAnomaly but need something more special as we need to link it still to the Shadekin that spawned it.
+- type: entity
   id: PortalShadekin
   suffix: Dark
   description: The portal to the dark...
   parent: AnomalyShadow
   components:
+    - type: DarkPortal
     - type: Anomaly
       corePrototype: null
       coreInertPrototype: null # TODO: When they destroy the portal, something should be dropped?
@@ -181,7 +182,6 @@
     - type: GuideHelp
       guides:
         - AnomalousResearch
-        - Brighteye
         - Shadekin
     - type: EntitySpawnAnomaly
       entries:
@@ -195,9 +195,9 @@
             - ShadekinShadow
         - settings:
             spawnOnSuperCritical: true
-            minAmount: 50
-            maxAmount: 100
-            maxRange: 5
+            minAmount: 100
+            maxAmount: 200
+            maxRange: 10
           spawns:
             - DarkRandom
         - settings:
@@ -213,6 +213,7 @@
   name: dark hub
   description: This portal is used by shadekins to go nearly anywhere in the universe!
   components:
+    - type: DarkHub
     - type: Sprite
       noRot: true
       sprite: _Starlight/Structures/Specific/Anomalies/dark.rsi
@@ -235,5 +236,4 @@
     - type: DarkLight
     - type: GuideHelp
       guides:
-        - Brighteye
         - Shadekin

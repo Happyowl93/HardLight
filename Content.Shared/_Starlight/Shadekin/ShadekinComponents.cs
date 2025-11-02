@@ -4,8 +4,9 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Starlight;
+namespace Content.Shared._Starlight.Shadekin;
 
+#region Shadekin
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentPause, AutoGenerateComponentState]
 public sealed partial class ShadekinComponent : Component
 {
@@ -25,13 +26,6 @@ public sealed partial class ShadekinComponent : Component
     public SortedDictionary<FixedPoint2, ShadekinState> Thresholds = new();
 }
 
-[RegisterComponent]
-public sealed partial class BrighteyeComponent : Component
-{
-
-}
-
-
 [Serializable, NetSerializable]
 public enum ShadekinState : byte
 {
@@ -43,3 +37,12 @@ public enum ShadekinState : byte
     Extreme = 5
 
 }
+#endregion
+
+#region Brighteye
+[RegisterComponent]
+public sealed partial class BrighteyeComponent : Component
+{
+
+}
+#endregion

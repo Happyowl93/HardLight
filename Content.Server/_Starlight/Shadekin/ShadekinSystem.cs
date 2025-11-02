@@ -2,27 +2,21 @@ using Content.Shared.Humanoid;
 using Content.Shared.Alert;
 using Content.Shared.Actions;
 using System.Linq;
-using Microsoft.CodeAnalysis;
 using Content.Shared.Mobs.Systems;
 using Robust.Server.GameObjects;
 using Content.Shared.Examine;
 using Robust.Server.Containers;
-using Content.Shared._Starlight;
-using Content.Server._Starlight;
+using Content.Shared._Starlight.Shadekin;
 using Content.Shared.Damage.Components;
-using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Damage;
 using Content.Server.Chat.Managers;
-using Robust.Shared.Player;
-using Content.Shared.Chat;
 using Robust.Shared.Timing;
 
-
-namespace Content.Server._Starlight;
+namespace Content.Server._Starlight.Shadekin;
 
 public sealed class ShadekinSystem : EntitySystem
 {
@@ -33,7 +27,7 @@ public sealed class ShadekinSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
-    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _speed = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
