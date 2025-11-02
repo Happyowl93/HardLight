@@ -175,6 +175,7 @@
   - CaptainFormalSkirt
   - CapTurtleneckJumpskirt
   - CapTurtleneckJumpsuit
+  - CaptainJumpsuitNoble
 
 - type: loadoutGroup
   id: CaptainNeck
