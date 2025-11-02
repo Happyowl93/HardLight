@@ -275,7 +275,7 @@
 - type: entity
   parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, BaseCentcommContraband]
   id: ClothingOuterCoatWardenCentcomm
-  name: Central Command winter coat
+  name: Central Command Armored Winter Coat
   description: A extremely durable, stylish winter coat made for central command Operators to survive even in the coldest of winter
   components:
   - type: Sprite
