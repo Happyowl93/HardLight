@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 11/02/2025 11:21:49
-  entityCount: 25887
+  time: 11/02/2025 12:54:49
+  entityCount: 25896
 maps:
 - 943
 grids:
@@ -8278,7 +8278,7 @@ entities:
             1: 39408
           -12,8:
             4: 12
-            6: 3072
+            5: 3072
           -11,5:
             0: 63351
           -11,6:
@@ -8289,7 +8289,7 @@ entities:
           -11,8:
             4: 1
             1: 17476
-            6: 256
+            5: 256
           -10,5:
             0: 62139
           -10,6:
@@ -8385,10 +8385,10 @@ entities:
             0: 255
             1: 57344
           -8,11:
-            5: 816
+            6: 816
             1: 34952
           -9,11:
-            5: 2176
+            6: 2176
             1: 8738
           -8,12:
             1: 34959
@@ -8424,10 +8424,10 @@ entities:
             1: 57344
           -5,12:
             0: 200
-            5: 29488
+            6: 29488
           -4,12:
             0: 16
-            5: 65248
+            6: 65248
           -4,13:
             1: 61680
           -5,13:
@@ -8443,7 +8443,7 @@ entities:
           -4,16:
             1: 3276
           -3,12:
-            5: 13104
+            6: 13104
             1: 32904
           -3,13:
             1: 45240
@@ -8524,7 +8524,7 @@ entities:
             0: 752
           -12,9:
             0: 16
-            5: 3084
+            6: 3084
           -13,9:
             1: 39305
           -13,10:
@@ -8534,18 +8534,18 @@ entities:
             0: 12544
           -12,10:
             3: 12
-            5: 3072
+            6: 3072
           -12,11:
-            5: 12
+            6: 12
           -11,9:
-            5: 257
+            6: 257
             1: 17476
           -11,10:
             3: 1
-            5: 256
+            6: 256
             1: 17476
           -11,11:
-            5: 1
+            6: 1
             1: 17476
           -11,12:
             1: 17487
@@ -8611,7 +8611,7 @@ entities:
             1: 15
           -13,12:
             1: 34952
-            6: 48
+            5: 48
             4: 12288
           -12,13:
             1: 61455
@@ -8645,11 +8645,11 @@ entities:
             1: 62671
           -7,14:
             1: 244
-            5: 57344
+            6: 57344
             0: 1024
           -7,15:
             1: 61440
-            5: 238
+            6: 238
             0: 1024
           -7,16:
             1: 65524
@@ -8660,7 +8660,7 @@ entities:
           -6,15:
             1: 29774
           -6,12:
-            5: 61152
+            6: 61152
           -5,16:
             1: 30068
           1,9:
@@ -8709,7 +8709,7 @@ entities:
           -14,12:
             0: 1
             1: 8738
-            6: 128
+            5: 128
             4: 32768
           -17,12:
             0: 52232
@@ -9263,11 +9263,11 @@ entities:
             Nitrogen: 6666.982
         - volume: 2500
           temperature: 293.15
-          moles: {}
-        - volume: 2500
-          temperature: 293.15
           moles:
             Oxygen: 6666.982
+        - volume: 2500
+          temperature: 293.15
+          moles: {}
         chunkSize: 4
     - type: OccluderTree
     - type: Shuttle
@@ -14412,7 +14412,7 @@ entities:
   - uid: 23051
     components:
     - type: Transform
-      pos: -111.5,10.5
+      pos: -111.5,12.5
       parent: 60
   - uid: 23054
     components:
@@ -16655,7 +16655,7 @@ entities:
   - uid: 5377
     components:
     - type: Transform
-      pos: -46.5,4.5
+      pos: -47.5,4.5
       parent: 60
   - uid: 6505
     components:
@@ -16669,11 +16669,6 @@ entities:
     components:
     - type: Transform
       pos: 39.5,-22.5
-      parent: 60
-  - uid: 5369
-    components:
-    - type: Transform
-      pos: -47.5,4.5
       parent: 60
 - proto: BenchGrayComfy
   entities:
@@ -61170,32 +61165,24 @@ entities:
       rot: 3.141592653589793 rad
       pos: 7.5,-27.5
       parent: 60
-    - type: Physics
-      bodyType: Static
   - uid: 17265
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -1.5,2.5
       parent: 60
-    - type: Physics
-      bodyType: Static
   - uid: 17266
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,2.5
       parent: 60
-    - type: Physics
-      bodyType: Static
   - uid: 17267
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 2.5,2.5
       parent: 60
-    - type: Physics
-      bodyType: Static
 - proto: ChairPilotSeat
   entities:
   - uid: 9301
@@ -66302,10 +66289,10 @@ entities:
       parent: 60
 - proto: DefaultStationBeaconRobotics
   entities:
-  - uid: 24248
+  - uid: 25303
     components:
     - type: Transform
-      pos: -37.5,13.5
+      pos: -32.5,13.5
       parent: 60
 - proto: DefaultStationBeaconSalvage
   entities:
@@ -115131,6 +115118,13 @@ entities:
     - type: Physics
       canCollide: False
       bodyType: Static
+- proto: LootSpawnerMaterials
+  entities:
+  - uid: 24248
+    components:
+    - type: Transform
+      pos: -51.5,-4.5
+      parent: 60
 - proto: LubeGrenade
   entities:
   - uid: 15338
@@ -115229,10 +115223,10 @@ entities:
       parent: 60
 - proto: MachineMaterialSilo
   entities:
-  - uid: 17154
+  - uid: 5369
     components:
     - type: Transform
-      pos: -51.5,-4.5
+      pos: -46.5,4.5
       parent: 60
 - proto: MagazinePistolSubMachineGunTopMounted
   entities:
@@ -122844,6 +122838,11 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -8.5,31.5
+      parent: 60
+  - uid: 17154
+    components:
+    - type: Transform
+      pos: -51.5,-4.5
       parent: 60
   - uid: 17155
     components:
@@ -161082,6 +161081,98 @@ entities:
     - type: Transform
       pos: -26.465147,-6.285799
       parent: 60
+- proto: WeaponEnergyTurretAI
+  entities:
+  - uid: 25281
+    components:
+    - type: Transform
+      pos: -111.5,10.5
+      parent: 60
+    - type: DeviceNetwork
+      deviceLists:
+      - 25298
+  - uid: 25294
+    components:
+    - type: Transform
+      pos: -115.5,30.5
+      parent: 60
+    - type: DeviceNetwork
+      deviceLists:
+      - 25298
+  - uid: 25295
+    components:
+    - type: Transform
+      pos: -107.5,30.5
+      parent: 60
+    - type: DeviceNetwork
+      deviceLists:
+      - 25298
+  - uid: 25296
+    components:
+    - type: Transform
+      pos: -107.5,21.5
+      parent: 60
+    - type: DeviceNetwork
+      deviceLists:
+      - 25298
+  - uid: 25297
+    components:
+    - type: Transform
+      pos: -115.5,21.5
+      parent: 60
+    - type: DeviceNetwork
+      deviceLists:
+      - 25298
+  - uid: 25299
+    components:
+    - type: Transform
+      pos: -117.5,17.5
+      parent: 60
+    - type: DeviceNetwork
+      deviceLists:
+      - 25298
+  - uid: 25300
+    components:
+    - type: Transform
+      pos: -112.5,17.5
+      parent: 60
+    - type: DeviceNetwork
+      deviceLists:
+      - 25298
+  - uid: 25301
+    components:
+    - type: Transform
+      pos: -105.5,17.5
+      parent: 60
+    - type: DeviceNetwork
+      deviceLists:
+      - 25298
+  - uid: 25302
+    components:
+    - type: Transform
+      pos: -110.5,17.5
+      parent: 60
+    - type: DeviceNetwork
+      deviceLists:
+      - 25298
+- proto: WeaponEnergyTurretAIControlPanel
+  entities:
+  - uid: 25298
+    components:
+    - type: Transform
+      pos: -108.5,20.5
+      parent: 60
+    - type: DeviceList
+      devices:
+      - 25297
+      - 25294
+      - 25295
+      - 25296
+      - 25299
+      - 25300
+      - 25302
+      - 25301
+      - 25281
 - proto: WeaponEnergyTurretSecurity
   entities:
   - uid: 1506
@@ -161835,22 +161926,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -106.5,26.5
-      parent: 60
-    - type: DeltaPressure
-      gridUid: 60
-  - uid: 25384
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -113.5,8.5
-      parent: 60
-    - type: DeltaPressure
-      gridUid: 60
-  - uid: 25385
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -112.5,8.5
       parent: 60
     - type: DeltaPressure
       gridUid: 60
