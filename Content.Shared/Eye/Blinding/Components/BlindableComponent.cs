@@ -47,6 +47,6 @@ public sealed partial class BlindableComponent : Component
     [DataField, Access(typeof(PermanentBlindnessSystem), typeof(BlurryVisionSystem))] // starlight
     public bool GlassesFixable = false; // starlight
 
-    [DataField, Access(typeof(PermanentBlindnessSystem), typeof(BlurryVisionSystem))] // starlight
+    [AutoNetworkedField, Access(typeof(PermanentBlindnessSystem), typeof(BlurryVisionSystem))] // starlight
     public bool IsWearingGlasses = false; // starlight
 }
