@@ -24,6 +24,7 @@
   components:
     - type: PermanentBlindness
       blindness: 4
+      glassesFixable: true
 
 - type: trait
   id: Narcolepsy

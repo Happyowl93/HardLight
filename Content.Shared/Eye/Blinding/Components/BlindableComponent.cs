@@ -1,4 +1,5 @@
 using Content.Shared.Eye.Blinding.Systems;
+using Content.Shared.Traits.Assorted;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Eye.Blinding.Components;
@@ -42,4 +43,10 @@ public sealed partial class BlindableComponent : Component
     /// </description>
     [Access(Other = AccessPermissions.ReadWriteExecute)]
     public bool GraceFrame = false;
+
+    [DataField, Access(typeof(PermanentBlindnessSystem), typeof(BlurryVisionSystem))] // starlight
+    public bool GlassesFixable = false; // starlight
+
+    [DataField, Access(typeof(PermanentBlindnessSystem), typeof(BlurryVisionSystem))] // starlight
+    public bool IsWearingGlasses = false; // starlight
 }
