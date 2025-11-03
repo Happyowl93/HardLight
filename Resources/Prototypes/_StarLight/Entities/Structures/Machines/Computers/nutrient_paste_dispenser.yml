@@ -1,23 +1,20 @@
-﻿- type: entity
+- type: entity
   id: SlopDispenser
   parent: BaseLathe
   name: nutrient paste dispenser
   description: Produces tha slop using biomass. Can also convert plants to biomass for direct use.
   components:
     - type: Sprite
-      sprite: Structures/Machines/biofabricator.rsi
+      sprite: _Starlight/Structures/Machines/slop_machine.rsi
       snapCardinals: true
       layers:
         - state: icon
           map: ["enum.LatheVisualLayers.IsRunning"]
-          color: "#ffaa99"
         - state: unlit
           shader: unshaded
           map: ["enum.PowerDeviceVisualLayers.Powered"]
-          color: "#ffaaaa"
         - state: inserting
           map: ["enum.MaterialStorageVisualLayers.Inserting"]
-          color: "#ffaaaa"
         - state: panel
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
     - type: Machine
