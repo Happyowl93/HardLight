@@ -1316,16 +1316,8 @@
       - state: icon-syndicate
     - type: ItemBorgModule
       hands:
-      # starlight start: Letting cyborgs wield.
       - item: WeaponLightMachineGunL6C
-      - hand:
-          emptyRepresentative: WeaponLightMachineGunL6
-          emptyLabel: borg-slot-l6-empty
-          whitelist:
-            tags:
-            - BorgWeapon
       - item: PinpointerSyndicateNuclear
-      # Starlight end
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
 
