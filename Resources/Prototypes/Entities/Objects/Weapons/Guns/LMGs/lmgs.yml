@@ -104,16 +104,11 @@
   - type: Appearance
   - type: StaticPrice
     price: 10000
-  # Starlight-start
-  - type: Tag
-    tags:
-    - L6Saw
-  # Starlight-end
 
 - type: entity
   name: L6C ROW
   id: WeaponLightMachineGunL6C
-  parent: BaseItem
+  parent: [BaseItem, BaseSyndicateContraband] # Starlight marking as syndie contra in an attempt to make it compatible with the scan gates.
   description: A L6 SAW for use by cyborgs. Creates .30 rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges.
   components:
     - type: Gun
@@ -136,6 +131,12 @@
           map: [ "enum.GunVisualLayers.Base" ]
         - state: mag-3
           map: [ "enum.GunVisualLayers.Mag" ]
+    #region Starlight: L6 mag visuals
+    - type: MagazineVisuals
+      magState: mag
+      steps: 4
+      zeroVisible: true
+    #end region
     - type: Item
       size: Huge
     - type: ContainerContainer
