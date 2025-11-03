@@ -47,6 +47,9 @@ uplink-syndicate-borgi-kitted-desc = A syndicate borgi, outfitted with an L6 mod
 uplink-syndicate-borgi-speed-name = Speed Syndicate Borgi
 uplink-syndicate-borgi-speed-desc = A syndicate borgi, with dagger modules and additional speed
 
+uplink-reinforcement-radio-support-cyborg-name = Syndicate Assault Cyborg Teleporter
+uplink-reinforcement-radio-support-cyborg-desc = Radio in a syndicate support cyborg, with the option to specialize into a saboteur, a medic or a stealth chassis capable of vent crawling (inform them which one to choose!)
+
 
 uplink-syndimov-law-name = Syndimov Law Circuit
 uplink-syndimov-law-desc = A modified version of crewismov that defines syndicate agents as crew.
