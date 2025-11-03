@@ -52591,8 +52591,6 @@ entities:
       pos: 5.5,34.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7710
   - uid: 1018
@@ -53249,8 +53247,6 @@ entities:
       pos: 6.5,34.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7710
 - proto: Fireplace
@@ -69151,8 +69147,6 @@ entities:
       pos: 5.5,37.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7710
     - type: AtmosPipeColor
@@ -70060,8 +70054,6 @@ entities:
       pos: 5.5,36.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7710
     - type: AtmosPipeColor
