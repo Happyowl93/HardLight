@@ -7,3 +7,8 @@
   id: draganspecial
   flavorType: Complex
   description: flavor-complex-dragan-special
+
+- type: flavor
+  id: thaslop
+  flavorType: complex
+  description: flavor-complex-tha-slop
