@@ -1,8 +1,6 @@
 using Content.Shared.Humanoid;
 using Content.Shared.Alert;
-using Content.Shared.Actions;
 using System.Linq;
-using Content.Shared.Mobs.Systems;
 using Robust.Server.GameObjects;
 using Content.Shared.Examine;
 using Robust.Server.Containers;
@@ -13,8 +11,8 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Damage;
-using Content.Server.Chat.Managers;
 using Robust.Shared.Timing;
+using Content.Shared._Starlight.NullSpace;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -53,6 +51,8 @@ public sealed partial class ShadekinSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<ShadekinComponent, EyeColorInitEvent>(OnEyeColorChange);
         SubscribeLocalEvent<ShadekinComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
+
+        InitializeBrighteye();
     }
 
     private void OnEyeColorChange(EntityUid uid, ShadekinComponent component, EyeColorInitEvent args)
@@ -242,8 +242,9 @@ public sealed partial class ShadekinSystem : EntitySystem
 
             var lightExposure = 0f;
 
-            if (!_container.IsEntityInContainer(uid))
-                lightExposure = GetLightExposure(uid);
+            if (!HasComp<NullSpaceComponent>(uid)) // Were in NullSpace, NullSpace is dark. // TODO: If were also in "The Dark", this no light exposure should also be applied.
+                if (!_container.IsEntityInContainer(uid))
+                    lightExposure = GetLightExposure(uid);
 
             CheckThresholds(uid, component, lightExposure);
 
@@ -253,6 +254,9 @@ public sealed partial class ShadekinSystem : EntitySystem
 
             if (component.CurrentState == ShadekinState.Extreme)
                 ApplyLightDamage(uid);
+
+            if (TryComp<BrighteyeComponent>(uid, out var brighteye))
+                UpdateEnergy(uid, component, brighteye);
         }
     }
 }

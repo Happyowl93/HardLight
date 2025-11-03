@@ -40,9 +40,28 @@ public enum ShadekinState : byte
 #endregion
 
 #region Brighteye
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentPause, AutoGenerateComponentState]
 public sealed partial class BrighteyeComponent : Component
 {
+    [DataField]
+    public ProtoId<AlertPrototype> BrighteyeAlert { get; set; } = "ShadekinEnergy";
 
+    /// <summary>
+    /// How many Energy the brighteye has.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public int Energy = 0;
+
+    /// <summary>
+    /// The Max Energy the brighteye can have.
+    /// </summary>
+    [DataField]
+    public int MaxEnergy = 200;
+
+    /// <summary>
+    /// Shadekin Portal, if null then the portal does not exist.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntityUid Portal;
 }
 #endregion

@@ -1,6 +1,9 @@
 alerts-shadekin-name = Light Exposure
 alerts-shadekin-desc = How much light is around you.
 
+alerts-shadekin-energy-name = Energy
+alerts-shadekin-energy-desc = Your energy level.
+
 roles-antag-brighteye-name = Brighteye
 roles-antag-brighteye-description = WIP
 
