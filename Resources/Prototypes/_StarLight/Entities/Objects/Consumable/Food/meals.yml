@@ -76,7 +76,7 @@
         - thaslop
     - type: Food
       trash:
-        - FoodPlate
+        - FoodPacketMRETrash
     - type: Sprite
       sprite: _Starlight/Objects/Consumable/Food/thaslop.rsi
       layers:
