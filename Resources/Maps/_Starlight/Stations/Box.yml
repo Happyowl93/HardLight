@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 11/02/2025 16:12:58
-  entityCount: 29262
+  time: 11/03/2025 16:00:41
+  entityCount: 29266
 maps:
 - 1
 grids:
@@ -23427,6 +23427,11 @@ entities:
     - type: Transform
       pos: 76.50828,-54.33026
       parent: 2
+  - uid: 29265
+    components:
+    - type: Transform
+      pos: 8.540478,31.46446
+      parent: 2
 - proto: BoxBeanbag
   entities:
   - uid: 1654
@@ -23820,6 +23825,11 @@ entities:
     - type: Transform
       pos: 38.5,-59.5
       parent: 2
+  - uid: 29264
+    components:
+    - type: Transform
+      pos: 8.384228,31.698835
+      parent: 2
 - proto: BoxTearGas
   entities:
   - uid: 1720
@@ -23843,6 +23853,13 @@ entities:
     components:
     - type: Transform
       pos: 2.4019985,-33.752228
+      parent: 2
+- proto: BoxVial
+  entities:
+  - uid: 29266
+    components:
+    - type: Transform
+      pos: 8.681103,31.68321
       parent: 2
 - proto: BoxWarmLightbulb
   entities:
@@ -136732,69 +136749,31 @@ entities:
       parent: 2
 - proto: PewEndLeft
   entities:
-  - uid: 11039
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 66.5,-5.5
-      parent: 2
-  - uid: 11042
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 66.5,-6.5
-      parent: 2
-  - uid: 11043
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 71.5,-6.5
-      parent: 2
-  - uid: 11044
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 71.5,-7.5
-      parent: 2
-  - uid: 11045
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 66.5,-7.5
-      parent: 2
-  - uid: 11046
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 71.5,-5.5
-      parent: 2
-- proto: PewEndRight
-  entities:
   - uid: 9742
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 72.5,-7.5
-      parent: 2
-  - uid: 11035
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 72.5,-6.5
-      parent: 2
-  - uid: 11036
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 72.5,-5.5
-      parent: 2
-  - uid: 11040
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 67.5,-6.5
       parent: 2
-  - uid: 11041
+  - uid: 11035
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 67.5,-7.5
+      parent: 2
+  - uid: 11040
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 72.5,-7.5
+      parent: 2
+  - uid: 11045
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 72.5,-5.5
+      parent: 2
+  - uid: 11046
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -136804,7 +136783,45 @@ entities:
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 67.5,-7.5
+      pos: 72.5,-6.5
+      parent: 2
+- proto: PewEndRight
+  entities:
+  - uid: 11036
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 66.5,-7.5
+      parent: 2
+  - uid: 11039
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 66.5,-6.5
+      parent: 2
+  - uid: 11041
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 71.5,-7.5
+      parent: 2
+  - uid: 11042
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 66.5,-5.5
+      parent: 2
+  - uid: 11043
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 71.5,-5.5
+      parent: 2
+  - uid: 11044
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 71.5,-6.5
       parent: 2
 - proto: PhoneInstrument
   entities:
@@ -136923,6 +136940,14 @@ entities:
     components:
     - type: Transform
       pos: 14.5,-44.5
+      parent: 2
+- proto: PlasmaChemistryVial
+  entities:
+  - uid: 29263
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 5.4623523,29.386335
       parent: 2
 - proto: PlasmaReinforcedWindowDirectional
   entities:
@@ -188943,7 +188968,7 @@ entities:
       pos: 73.5,-3.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4318.74
+      secondsUntilStateChange: -4453.5073
       state: Opening
   - uid: 29241
     components:
