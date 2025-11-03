@@ -1,12 +1,12 @@
 - type: entity
   parent: ReinforcementRadio
-  id: ReinforcementRadioSyndicateCyborg # Reinforcement radio exclusive to nukeops uplink
-  name: syndicate cyborg reinforcement radio
-  description: Call in a assault cyborg, instantly!
+  id: ReinforcementRadioSyndicateCyborgSupport # Reinforcement radio exclusive to nukeops uplink
+  name: syndicate support cyborg reinforcement radio
+  description: Call in a support cyborg, instantly!
   suffix: NukeOps
   components:
     - type: GhostRole
-      name: ghost-role-information-syndicate-cyborg-name
+      name: ghost-role-information-syndicate-support-cyborg-name
       description: ghost-role-information-syndicate-cyborg-description
       rules: ghost-role-information-silicon-rules
       mindRoles:

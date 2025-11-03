@@ -1282,10 +1282,10 @@
           - NukeOpsUplink
 
 - type: listing
-  id: ReinforcementRadioSyndicateAssaultCyborg
+  id: UplinkReinforcementRadioSyndicateCyborgAssault
   name:  uplink-reinforcement-radio-assault-cyborg-name
   description: uplink-reinforcement-radio-assault-cyborg-desc
-  productEntity: ReinforcementRadioSyndicateAssaultCyborg
+  productEntity: ReinforcementRadioSyndicateCyborgAssault
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-assault }
   cost:
     Telecrystal: 65

@@ -381,10 +381,10 @@
       - NukeOpsUplink
 
 - type: listing
-  id: ReinforcementRadioSyndicateSupportCyborg
+  id: UplinkReinforcementRadioSyndicateCyborgSupport
   name:  uplink-reinforcement-radio-support-cyborg-name
   description: uplink-reinforcement-radio-support-cyborg-desc
-  productEntity: ReinforcementRadioSyndicateSupportCyborg
+  productEntity: ReinforcementRadioSyndicateCyborgSupport
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-assault }
   cost:
     Telecrystal: 30
