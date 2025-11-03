@@ -32,7 +32,6 @@
   - type: BorgSwitchableType
     inherentRadioChannels:
     - Binary
-    - Syndicate
     availableTypes:
     - SyndicateMedical
     - SyndicateSaboteur
