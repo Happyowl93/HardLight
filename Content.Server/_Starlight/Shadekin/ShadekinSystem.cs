@@ -18,19 +18,16 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._Starlight.Shadekin;
 
-public sealed class ShadekinSystem : EntitySystem
+public sealed partial class ShadekinSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
-    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _speed = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
 
     private sealed class LightCone
     {
