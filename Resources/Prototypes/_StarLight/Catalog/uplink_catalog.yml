@@ -329,6 +329,7 @@
   categories:
   - UplinkWearables
 
+# Allies
 - type: listing
   id: UplinkSyndicateBorgi
   name: uplink-syndicate-borgi-name
@@ -350,7 +351,7 @@
   icon: { sprite:  Objects/Fun/Balloons/corgi.rsi, state: icon }
   productEntity: SyndiBorgiKit1
   cost:
-    Telecrystal: 30
+    Telecrystal: 60
   categories:
     - UplinkAllies
   conditions:
@@ -368,7 +369,7 @@
   icon: { sprite:  Objects/Fun/Balloons/corgi.rsi, state: icon }
   productEntity: SyndiBorgiKit2
   cost:
-    Telecrystal: 30
+    Telecrystal: 40
   categories:
     - UplinkAllies
   conditions:
@@ -378,6 +379,22 @@
     whitelist:
       tags:
       - NukeOpsUplink
+
+- type: listing
+  id: ReinforcementRadioSyndicateSupportCyborg
+  name:  uplink-reinforcement-radio-support-cyborg-name
+  description: uplink-reinforcement-radio-support-cyborg-desc
+  productEntity: ReinforcementRadioSyndicateSupportCyborg
+  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-assault }
+  cost:
+    Telecrystal: 30
+  categories:
+    - UplinkAllies
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
 
 #Dunnow about upstream. but we L O V E our stealth traitors.
 - type: listing
