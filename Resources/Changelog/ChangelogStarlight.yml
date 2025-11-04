@@ -19323,5 +19323,13 @@ Entries:
   id: 210301
   time: '2025-11-04T17:06:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2103
+- author: Conflee
+  changes:
+  - message: (Box) Made use of new Furniture and decals on Box. Added Surgery and
+      Robotics doors.
+    type: Tweak
+  id: 210200
+  time: '2025-11-04T17:07:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2102
 Order: -1
 
