@@ -17,17 +17,29 @@ public sealed partial class ShadekinSystem : EntitySystem
     private void OnInit(EntityUid uid, BrighteyeComponent component, ComponentStartup args)
     {
         _alerts.ShowAlert(uid, component.BrighteyeAlert);
+        _alerts.ShowAlert(uid, component.PortalAlert);
 
         if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
             SetBrighteyes(uid, humanoid);
+
+        _actionsSystem.AddAction(uid, ref component.PortalAction, _brighteyePortalAction, uid);
     }
 
     private void OnShutdown(EntityUid uid, BrighteyeComponent component, ComponentShutdown args)
     {
         _alerts.ClearAlert(uid, component.BrighteyeAlert);
+        _alerts.ClearAlert(uid, component.PortalAlert);
+
+        if (component.Portal is not null)
+        {
+            SpawnAtPosition(_shadekinShadow, Transform(component.Portal.Value).Coordinates);
+            QueueDel(component.Portal);
+        }
 
         if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
             SetBlackeyes(uid, humanoid);
+
+        _actionsSystem.RemoveAction(uid, component.PortalAction);
     }
 
     private void OnRejuvenate(EntityUid uid, BrighteyeComponent component, RejuvenateEvent args)
@@ -62,6 +74,38 @@ public sealed partial class ShadekinSystem : EntitySystem
         humanoid.EyeGlowing = false;
 
         Dirty(uid, humanoid);
+    }
+
+    /// <summary>
+    /// When triggered, will check if we have enough energy and if yes drain the energy and return the value.
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <param name="component"></param>
+    /// <param name="cost">cost of energy</param>
+    /// <returns></returns>
+    public bool OnAttemptEnergyUse(EntityUid uid, BrighteyeComponent component, int? cost = null)
+    {
+        var ev = new OnAttemptEnergyUseEvent(uid);
+        RaiseLocalEvent(uid, ev);
+
+        if (ev.Cancelled)
+            return false;
+
+        if (cost is null)
+            return true;
+
+        if (component.Energy >= cost)
+        {
+            component.Energy -= (int)cost;
+            Dirty(uid, component);
+        }
+        else
+        {
+            // TODO: Do a poppup or warning message that we dont have enough energy!
+            return false;
+        }
+
+        return true;
     }
 
     private void UpdateEnergy(EntityUid uid, ShadekinComponent component, BrighteyeComponent brighteye)

@@ -1,3 +1,4 @@
+using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
@@ -46,6 +47,9 @@ public sealed partial class BrighteyeComponent : Component
     [DataField]
     public ProtoId<AlertPrototype> BrighteyeAlert { get; set; } = "ShadekinEnergy";
 
+    [DataField]
+    public ProtoId<AlertPrototype> PortalAlert { get; set; } = "ShadekinPortalAlert";
+
     /// <summary>
     /// How many Energy the brighteye has.
     /// </summary>
@@ -55,13 +59,36 @@ public sealed partial class BrighteyeComponent : Component
     /// <summary>
     /// The Max Energy the brighteye can have.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public int MaxEnergy = 200;
 
     /// <summary>
     /// Shadekin Portal, if null then the portal does not exist.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public EntityUid Portal;
+    public EntityUid? Portal;
+
+    [DataField]
+    public EntityUid? PortalAction;
 }
+
+public sealed class OnAttemptEnergyUseEvent : CancellableEntityEventArgs
+{
+    /// <summary>
+    /// The user attempting.
+    /// </summary>
+    public EntityUid User { get; }
+
+    /// <summary>
+    /// Triggers when a Brighteye attempt to use their energy.
+    /// </summary>
+    /// <param name="user"></param>
+    public OnAttemptEnergyUseEvent(EntityUid user)
+    {
+        User = user;
+    }
+}
+#endregion
+#region Abilities
+public sealed partial class BrighteyePortalActionEvent : InstantActionEvent { }
 #endregion

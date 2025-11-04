@@ -314,6 +314,7 @@
         "!type:NoiseDunGen mapping",
         "!type:NotekeeperUi mapping",
         "!type:NullPhaseActionEvent mapping",
+        "!type:BrighteyePortalActionEvent mapping",
         "!type:ObjectiveMindFilter mapping",
         "!type:OfferItemAlertEvent mapping",
         "!type:OnItemRecallActionEvent mapping",

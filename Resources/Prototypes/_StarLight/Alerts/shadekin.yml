@@ -42,3 +42,11 @@
     - map: [ "10" ]
       offset: 0.125, 0
     - map: [ "100" ]
+
+- type: alert
+  id: ShadekinPortalAlert
+  icons:
+    - sprite: /Textures/_Starlight/Interface/Alerts/shadekin.rsi
+      state: noportal
+  name: alerts-shadekin-noportal-name
+  description: alerts-shadekin-noportal-desc

@@ -9,7 +9,7 @@ namespace Content.Shared._Starlight.Shadekin;
 public sealed partial class DarkPortalComponent : Component
 {
     [DataField]
-    public EntityUid Brighteye;
+    public EntityUid? Brighteye;
 
     [DataField]
     public float PulseRange = 5f;

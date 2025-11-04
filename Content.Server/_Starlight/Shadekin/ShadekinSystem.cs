@@ -13,6 +13,8 @@ using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Damage;
 using Robust.Shared.Timing;
 using Content.Shared._Starlight.NullSpace;
+using Robust.Shared.Prototypes;
+using Content.Shared.Actions;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -26,6 +28,13 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _speed = default!;
+    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+
+    private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
+    private readonly EntProtoId _shadekinPortal = "PortalShadekin";
+
+    // Abilities
+    private readonly EntProtoId _brighteyePortalAction = "BrighteyePortalAction";
 
     private sealed class LightCone
     {
@@ -53,6 +62,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         SubscribeLocalEvent<ShadekinComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
 
         InitializeBrighteye();
+        InitializeAbilities();
     }
 
     private void OnEyeColorChange(EntityUid uid, ShadekinComponent component, EyeColorInitEvent args)
