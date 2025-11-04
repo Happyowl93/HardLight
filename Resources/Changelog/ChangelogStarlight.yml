@@ -19331,5 +19331,14 @@ Entries:
   id: 210200
   time: '2025-11-04T17:07:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2102
+- author: Conflee
+  changes:
+  - message: Changed Secret Weights to be what was actually listed in the PR, discussed
+      for the majority of a week, and voted on, instead of the changed values that
+      got merged.
+    type: Tweak
+  id: 207300
+  time: '2025-11-04T17:18:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2073
 Order: -1
 
