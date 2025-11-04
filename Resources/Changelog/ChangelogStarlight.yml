@@ -19308,5 +19308,20 @@ Entries:
   id: 211601
   time: '2025-11-04T17:05:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2116
+- author: Trep_Maul
+  changes:
+  - message: (Guidebook/SOP) Permit Acquisition clarifies when armory permits are
+      allowed.
+    type: Tweak
+  id: 210300
+  time: '2025-11-04T17:06:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2103
+- author: Trep_Maul
+  changes:
+  - message: (Guidebook/SOP) BSO clarifies when armory permits are allowed.
+    type: Tweak
+  id: 210301
+  time: '2025-11-04T17:06:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2103
 Order: -1
 
