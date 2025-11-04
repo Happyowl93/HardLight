@@ -15,6 +15,8 @@ using Robust.Shared.Timing;
 using Content.Shared._Starlight.NullSpace;
 using Robust.Shared.Prototypes;
 using Content.Shared.Actions;
+using Content.Shared.Station;
+using Content.Shared.Popups;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -29,6 +31,8 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _speed = default!;
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private readonly SharedStationSystem _station = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
     private readonly EntProtoId _shadekinPortal = "PortalShadekin";

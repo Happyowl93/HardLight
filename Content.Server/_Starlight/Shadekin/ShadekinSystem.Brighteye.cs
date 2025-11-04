@@ -1,6 +1,7 @@
 using Content.Shared._Starlight.Shadekin;
 using Content.Shared.Humanoid;
 using Content.Shared.Rejuvenate;
+using Content.Shared.Popups;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -81,7 +82,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="component"></param>
-    /// <param name="cost">cost of energy</param>
+    /// <param name="cost">cost of energy (if null then no cost needed)</param>
     /// <returns></returns>
     public bool OnAttemptEnergyUse(EntityUid uid, BrighteyeComponent component, int? cost = null)
     {
@@ -101,7 +102,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         }
         else
         {
-            // TODO: Do a poppup or warning message that we dont have enough energy!
+            _popup.PopupEntity(Loc.GetString("shadekin-noenergy"), uid, uid, PopupType.LargeCaution);
             return false;
         }
 

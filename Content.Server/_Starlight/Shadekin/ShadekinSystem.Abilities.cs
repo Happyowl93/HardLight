@@ -20,7 +20,15 @@ public sealed partial class ShadekinSystem : EntitySystem
             return;
         }
 
-        // TODO: Before even trying to put down the portal, we need to make sure were on station.
+        foreach (var station in _station.GetStations()) // Lets make sure the Portal **IS ON STATION!**
+        {
+            if (_station.GetLargestGrid(station) is not { } grid)
+                return;
+
+            if (Transform(uid).GridUid != grid)
+                return;
+        }
+
         if (OnAttemptEnergyUse(uid, component, _portalCost))
         {
             _actionsSystem.RemoveAction(uid, component.PortalAction);
