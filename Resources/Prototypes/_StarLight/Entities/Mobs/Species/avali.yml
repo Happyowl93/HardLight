@@ -22,6 +22,8 @@
     - type: Absorbable
     - type: HumanoidAppearance
       species: Avali
+      hideLayersOnEquip:
+    - Tail
     - type: Hunger # on 2x more
       thresholds:
         Overfed: 250
