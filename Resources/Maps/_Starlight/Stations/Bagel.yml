@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 11/02/2025 12:54:49
+  time: 11/04/2025 02:21:44
   entityCount: 25896
 maps:
 - 943
@@ -117010,6 +117010,106 @@ entities:
     - type: Transform
       pos: 35.351814,-37.57748
       parent: 60
+- proto: PewEndLeft
+  entities:
+  - uid: 19514
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -23.5,17.5
+      parent: 60
+  - uid: 19620
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -23.5,15.5
+      parent: 60
+  - uid: 19806
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -26.5,14.5
+      parent: 60
+  - uid: 19807
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -26.5,15.5
+      parent: 60
+  - uid: 19887
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -23.5,14.5
+      parent: 60
+  - uid: 20003
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -26.5,17.5
+      parent: 60
+  - uid: 20081
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -26.5,13.5
+      parent: 60
+  - uid: 20998
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -23.5,13.5
+      parent: 60
+- proto: PewEndRight
+  entities:
+  - uid: 18570
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -27.5,15.5
+      parent: 60
+  - uid: 19130
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -27.5,13.5
+      parent: 60
+  - uid: 19445
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -24.5,15.5
+      parent: 60
+  - uid: 19450
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -27.5,17.5
+      parent: 60
+  - uid: 19633
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -24.5,14.5
+      parent: 60
+  - uid: 19804
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -24.5,13.5
+      parent: 60
+  - uid: 19866
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -27.5,14.5
+      parent: 60
+  - uid: 20080
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -24.5,17.5
+      parent: 60
 - proto: PhoneInstrument
   entities:
   - uid: 21040
@@ -165980,102 +166080,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -45.5,-21.5
-      parent: 60
-  - uid: 18570
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -27.5,14.5
-      parent: 60
-  - uid: 19130
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -26.5,13.5
-      parent: 60
-  - uid: 19445
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -24.5,14.5
-      parent: 60
-  - uid: 19450
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -26.5,14.5
-      parent: 60
-  - uid: 19514
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -26.5,15.5
-      parent: 60
-  - uid: 19620
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -27.5,17.5
-      parent: 60
-  - uid: 19633
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -23.5,14.5
-      parent: 60
-  - uid: 19804
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -23.5,13.5
-      parent: 60
-  - uid: 19806
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -23.5,15.5
-      parent: 60
-  - uid: 19807
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -23.5,17.5
-      parent: 60
-  - uid: 19866
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -27.5,13.5
-      parent: 60
-  - uid: 19887
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -26.5,17.5
-      parent: 60
-  - uid: 20003
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -27.5,15.5
-      parent: 60
-  - uid: 20080
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -24.5,13.5
-      parent: 60
-  - uid: 20081
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -24.5,15.5
-      parent: 60
-  - uid: 20998
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -24.5,17.5
       parent: 60
 - proto: Wrench
   entities:
