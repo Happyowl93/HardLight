@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 11/04/2025 06:32:32
+  time: 11/04/2025 06:43:03
   entityCount: 31541
 maps:
 - 1
@@ -10732,7 +10732,7 @@ entities:
       pos: 18.5,53.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -136624.69
+      secondsUntilStateChange: -137250.75
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10996,11 +10996,6 @@ entities:
       parent: 2
 - proto: AirlockMaintRnDLocked
   entities:
-  - uid: 536
-    components:
-    - type: Transform
-      pos: 49.5,30.5
-      parent: 2
   - uid: 537
     components:
     - type: Transform
@@ -11010,6 +11005,14 @@ entities:
     components:
     - type: Transform
       pos: 72.5,10.5
+      parent: 2
+- proto: AirlockMaintRoboticsLocked
+  entities:
+  - uid: 536
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 49.5,30.5
       parent: 2
 - proto: AirlockMaintSalvageMiningLocked
   entities:
@@ -17533,6 +17536,12 @@ entities:
       parent: 2
 - proto: BenchGrayComfyEndLeft
   entities:
+  - uid: 12736
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -18.5,0.5
+      parent: 2
   - uid: 12740
     components:
     - type: Transform
@@ -17606,6 +17615,12 @@ entities:
       parent: 2
 - proto: BenchGrayComfyEndRight
   entities:
+  - uid: 12737
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -18.5,-0.5
+      parent: 2
   - uid: 12738
     components:
     - type: Transform
@@ -76127,18 +76142,6 @@ entities:
     components:
     - type: Transform
       pos: -32.5,-24.5
-      parent: 2
-  - uid: 12736
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -18.5,0.5
-      parent: 2
-  - uid: 12737
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -18.5,-0.5
       parent: 2
   - uid: 12754
     components:
