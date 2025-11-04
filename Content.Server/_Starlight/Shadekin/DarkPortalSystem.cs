@@ -9,6 +9,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Anomaly;
 using Content.Shared.Alert;
 using Content.Shared.Actions;
+using Robust.Shared.Random;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -21,6 +22,7 @@ public sealed class DarkPortalSystem : EntitySystem
     [Dependency] private readonly SharedAnomalySystem _sharedAnomalySystem = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
     private readonly EntProtoId _shadekinPortal = "PortalShadekin";
@@ -48,37 +50,41 @@ public sealed class DarkPortalSystem : EntitySystem
 
     private void OnPulse(EntityUid uid, DarkPortalComponent component, ref AnomalyPulseEvent args)
     {
-        var lights = GetEntityQuery<PoweredLightComponent>();
+        var range = component.PulseRange * args.Stability * args.PowerModifier;
 
-        foreach (var ent in _lookup.GetEntitiesInRange(uid, component.PulseRange))
-            if (lights.HasComponent(ent))
-                _light.TryDestroyBulb(ent);
+        foreach (var ent in _lookup.GetEntitiesInRange(Transform(uid).Coordinates, range))
+            _light.TryDestroyBulb(ent);
+
+        int newenergy = _random.Next(5, 30) * (int)args.Stability * (int)args.PowerModifier;
+
+        foreach (var ent in _lookup.GetEntitiesInRange<BrighteyeComponent>(Transform(uid).Coordinates, range))
+        {
+            ent.Comp.Energy = Math.Clamp(ent.Comp.Energy + newenergy, 0, ent.Comp.MaxEnergy);
+            Dirty(ent.Owner, ent.Comp);
+        }
     }
 
     private void OnSupercritical(EntityUid uid, DarkPortalComponent component, ref AnomalySupercriticalEvent args)
     {
-        var lights = GetEntityQuery<PoweredLightComponent>();
+        var range = component.PulseRange * 3 * args.PowerModifier;
 
-        foreach (var ent in _lookup.GetEntitiesInRange(uid, component.SupercriticalRange))
-            if (lights.HasComponent(ent))
-                _light.TryDestroyBulb(ent);
+        foreach (var ent in _lookup.GetEntitiesInRange(Transform(uid).Coordinates, range))
+            _light.TryDestroyBulb(ent);
 
-        var newportal = SpawnAtPosition(_shadekinPortal, Transform(uid).Coordinates);
-        if (component.Brighteye is not null)
+        foreach (var ent in _lookup.GetEntitiesInRange<BrighteyeComponent>(Transform(uid).Coordinates, range))
         {
-            if (TryComp<DarkPortalComponent>(newportal, out var portal))
-            {
-                portal.Brighteye = component.Brighteye;
-                if (TryComp<BrighteyeComponent>(portal.Brighteye.Value, out var brighteye))
-                    brighteye.Portal = newportal;
-            }
+            ent.Comp.Energy = ent.Comp.MaxEnergy;
+            Dirty(ent.Owner, ent.Comp);
         }
     }
 
     private void OnShutdown(EntityUid uid, DarkPortalComponent component, ref AnomalyShutdownEvent args)
     {
-        if (component.Brighteye is not null && TryComp<BrighteyeComponent>(component.Brighteye.Value, out var brighteye))
-            OnPortalShutdown(component.Brighteye.Value, brighteye);
+        if (args.Supercritical || component.Brighteye is null || !TryComp<BrighteyeComponent>(component.Brighteye.Value, out var brighteye))
+            return;
+
+        OnPortalShutdown(component.Brighteye.Value, brighteye);
+        QueueDel(uid);
     }
 
     private void OnPortalShutdown(EntityUid uid, BrighteyeComponent component)
@@ -122,12 +128,7 @@ public sealed class DarkPortalSystem : EntitySystem
             Act = () =>
             {
                 if (TryComp<BrighteyeComponent>(user, out var brighteye))
-                {
-                    brighteye.Portal = null;
-                    _alerts.ShowAlert(uid, brighteye.PortalAlert);
-                    _actionsSystem.AddAction(uid, ref brighteye.PortalAction, _brighteyePortalAction, uid);
-                    _actionsSystem.SetCooldown(brighteye.PortalAction, TimeSpan.FromSeconds(300));
-                }
+                    OnPortalShutdown(user, brighteye);
 
                 SpawnAtPosition(_shadekinShadow, Transform(uid).Coordinates);
                 QueueDel(uid);

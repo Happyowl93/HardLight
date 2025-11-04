@@ -158,6 +158,7 @@
       minPulseLength: 60
       maxPulseLength: 120
       decayhreshold: 0
+      deleteEntity: false
     - type: SecretDataAnomaly
       randomStartSecretMin: 2
       randomStartSecretMax: 5

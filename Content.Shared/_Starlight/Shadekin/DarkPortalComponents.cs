@@ -13,9 +13,6 @@ public sealed partial class DarkPortalComponent : Component
 
     [DataField]
     public float PulseRange = 5f;
-
-    [DataField]
-    public float SupercriticalRange = 10f;
 }
 
 /// <summary>
