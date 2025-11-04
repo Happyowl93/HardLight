@@ -19291,5 +19291,22 @@ Entries:
   id: 211703
   time: '2025-11-04T17:03:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2117
+- author: R3v3l4t1on
+  changes:
+  - message: Lawboards can now add (but not remove, yet) components to the station
+      AI upon law upload.
+    type: Add
+  id: 211600
+  time: '2025-11-04T17:05:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2116
+- author: R3v3l4t1on
+  changes:
+  - message: You can now spread communism to the AI for 18 conversions by buying the
+      commiemov lawboard (revolutionary identification algorithm included)! Glory
+      to the USSP!
+    type: Add
+  id: 211601
+  time: '2025-11-04T17:05:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2116
 Order: -1
 
