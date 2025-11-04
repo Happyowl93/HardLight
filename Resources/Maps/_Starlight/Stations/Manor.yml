@@ -192482,8 +192482,6 @@ entities:
       pos: 32.5,85.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30771
       - 31508
@@ -192493,8 +192491,6 @@ entities:
       pos: 32.5,93.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30771
       - 31508
@@ -192504,8 +192500,6 @@ entities:
       pos: 23.5,93.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30771
       - 31508
@@ -192515,8 +192509,6 @@ entities:
       pos: 23.5,85.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30771
       - 31508
@@ -192526,8 +192518,6 @@ entities:
       pos: 40.5,74.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30771
       - 31508
@@ -192537,8 +192527,6 @@ entities:
       pos: 40.5,82.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30771
       - 31508
@@ -192548,8 +192536,6 @@ entities:
       pos: 35.5,74.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30771
       - 31508
@@ -192559,8 +192545,6 @@ entities:
       pos: 35.5,82.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30771
       - 31508
