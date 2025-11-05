@@ -68,7 +68,7 @@
 - type: entity
   name: nutrient paste meal
   parent: FoodMealBase
-  id: FoodThaSlop
+  id: FoodThaSlop #tha slop
   description: A synthetic mixture of protein, carbohydrates, and vitamins, amino acids and minerals. Everything the body needs, and absolutely disgusting.
   components:
     - type: FlavorProfile
