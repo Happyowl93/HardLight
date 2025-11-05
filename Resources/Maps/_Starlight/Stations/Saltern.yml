@@ -78197,8 +78197,6 @@ entities:
       pos: 0.5,48.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 12218
       - 12571
@@ -78208,8 +78206,6 @@ entities:
       pos: -5.5,48.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 12218
       - 12571
