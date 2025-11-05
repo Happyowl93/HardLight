@@ -19383,5 +19383,105 @@ Entries:
   id: 208100
   time: '2025-11-04T17:16:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2081
+- author: CawsForConcern
+  changes:
+  - message: (Manor) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 211400
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 211401
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Robotics access doors in Science
+    type: Add
+  id: 211402
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Surgery access doors in Medical
+    type: Add
+  id: 211403
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) HV cables to shuttle docks
+    type: Add
+  id: 211404
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 211405
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Cell Recharger to Chemistry
+    type: Add
+  id: 211406
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Cell Recharger to Brigmedic
+    type: Add
+  id: 211407
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Document printer to Library
+    type: Add
+  id: 211408
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Document printer to Medical
+    type: Add
+  id: 211409
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Crew records computer to HOP
+    type: Add
+  id: 211410
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Freezer to Kitchen
+    type: Add
+  id: 211411
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 211412
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Freezer between Kitchen and Botany now uses the freezer air alarm/air
+      vents/scrubber
+    type: Fix
+  id: 211413
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
 Order: -1
 
