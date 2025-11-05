@@ -19263,5 +19263,233 @@ Entries:
   id: 200401
   time: '2025-11-03T19:13:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2004
+- author: Vonte
+  changes:
+  - message: CC poncho
+    type: Add
+  id: 211700
+  time: '2025-11-04T17:03:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2117
+- author: Vonte
+  changes:
+  - message: CED mantle
+    type: Add
+  id: 211701
+  time: '2025-11-04T17:03:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2117
+- author: Vonte
+  changes:
+  - message: CC beret
+    type: Add
+  id: 211702
+  time: '2025-11-04T17:03:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2117
+- author: Vonte
+  changes:
+  - message: CC sheriff's hat
+    type: Add
+  id: 211703
+  time: '2025-11-04T17:03:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2117
+- author: R3v3l4t1on
+  changes:
+  - message: Lawboards can now add (but not remove, yet) components to the station
+      AI upon law upload.
+    type: Add
+  id: 211600
+  time: '2025-11-04T17:05:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2116
+- author: R3v3l4t1on
+  changes:
+  - message: You can now spread communism to the AI for 18 conversions by buying the
+      commiemov lawboard (revolutionary identification algorithm included)! Glory
+      to the USSP!
+    type: Add
+  id: 211601
+  time: '2025-11-04T17:05:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2116
+- author: Trep_Maul
+  changes:
+  - message: (Guidebook/SOP) Permit Acquisition clarifies when armory permits are
+      allowed.
+    type: Tweak
+  id: 210300
+  time: '2025-11-04T17:06:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2103
+- author: Trep_Maul
+  changes:
+  - message: (Guidebook/SOP) BSO clarifies when armory permits are allowed.
+    type: Tweak
+  id: 210301
+  time: '2025-11-04T17:06:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2103
+- author: Conflee
+  changes:
+  - message: (Box) Made use of new Furniture and decals on Box. Added Surgery and
+      Robotics doors.
+    type: Tweak
+  id: 210200
+  time: '2025-11-04T17:07:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2102
+- author: Conflee
+  changes:
+  - message: Changed Secret Weights to be what was actually listed in the PR, discussed
+      for the majority of a week, and voted on, instead of the changed values that
+      got merged.
+    type: Tweak
+  id: 207300
+  time: '2025-11-04T17:18:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2073
+- author: Conflee
+  changes:
+  - message: (Oasis) Added Robotics and Surgery Airlocks
+    type: Tweak
+  id: 211100
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: Conflee
+  changes:
+  - message: (Oasis) Added new furniture and decals in various spots
+    type: Tweak
+  id: 211101
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: Conflee
+  changes:
+  - message: (Oasis) Fixed missing beacon and sign for the Newsroom
+    type: Fix
+  id: 211102
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: Conflee
+  changes:
+  - message: (Oasis) Fixed unnamed Detective and NT Rep fax machines
+    type: Fix
+  id: 211103
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: Conflee
+  changes:
+  - message: (Oasis) Detective's office is no longer free to access from space for
+      anyone with External access
+    type: Fix
+  id: 211104
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: neurovermi
+  changes:
+  - message: You can now see the sides of the HONK mech. As honkmother intended.
+    type: Fix
+  id: 208100
+  time: '2025-11-04T17:16:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2081
+- author: CawsForConcern
+  changes:
+  - message: (Manor) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 211400
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 211401
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Robotics access doors in Science
+    type: Add
+  id: 211402
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Surgery access doors in Medical
+    type: Add
+  id: 211403
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) HV cables to shuttle docks
+    type: Add
+  id: 211404
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 211405
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Cell Recharger to Chemistry
+    type: Add
+  id: 211406
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Cell Recharger to Brigmedic
+    type: Add
+  id: 211407
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Document printer to Library
+    type: Add
+  id: 211408
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Document printer to Medical
+    type: Add
+  id: 211409
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Crew records computer to HOP
+    type: Add
+  id: 211410
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Freezer to Kitchen
+    type: Add
+  id: 211411
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 211412
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Freezer between Kitchen and Botany now uses the freezer air alarm/air
+      vents/scrubber
+    type: Fix
+  id: 211413
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: R3v3l4t1on
+  changes:
+  - message: Using strip as a borg will now actually work. Finally you can steal CE's
+      magboots after murdering them.
+    type: Add
+  id: 212400
+  time: '2025-11-05T20:26:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2124
 Order: -1
 
