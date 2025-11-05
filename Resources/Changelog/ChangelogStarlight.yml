@@ -19483,5 +19483,13 @@ Entries:
   id: 211413
   time: '2025-11-05T20:26:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: R3v3l4t1on
+  changes:
+  - message: Using strip as a borg will now actually work. Finally you can steal CE's
+      magboots after murdering them.
+    type: Add
+  id: 212400
+  time: '2025-11-05T20:26:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2124
 Order: -1
 
