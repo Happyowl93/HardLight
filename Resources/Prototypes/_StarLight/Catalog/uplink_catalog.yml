@@ -381,13 +381,45 @@
       - NukeOpsUplink
 
 - type: listing
-  id: UplinkReinforcementRadioSyndicateCyborgSupport
-  name: uplink-reinforcement-radio-support-cyborg-name
-  description: uplink-reinforcement-radio-support-cyborg-desc
-  productEntity: ReinforcementRadioSyndicateCyborgSupport
-  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-assault }
+  id: UplinkReinforcementRadioSyndicateCyborgMedical
+  name: uplink-reinforcement-radio-medical-cyborg-name
+  description: uplink-reinforcement-radio-medical-cyborg-desc
+  productEntity: ReinforcementRadioSyndicateCyborgMedical
+  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-assault } # TODO BETTER ICON
+  cost:
+    Telecrystal: 20
+  categories:
+    - UplinkAllies
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
+
+- type: listing
+  id: UplinkReinforcementRadioSyndicateCyborgSabotur
+  name: uplink-reinforcement-radio-saboteur-cyborg-name
+  description: uplink-reinforcement-radio-saboteur-cyborg-desc
+  productEntity: ReinforcementRadioSyndicateCyborgSaboteur
+  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-assault } # TODO BETTER ICON
   cost:
     Telecrystal: 30
+  categories:
+    - UplinkAllies
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
+
+- type: listing
+  id: UplinkReinforcementRadioSyndicateCyborgStealth
+  name: uplink-reinforcement-radio-stealth-cyborg-name
+  description: uplink-reinforcement-radio-stealth-cyborg-desc
+  productEntity: ReinforcementRadioSyndicateCyborgStealth
+  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-assault } # TODO BETTER ICON
+  cost:
+    Telecrystal: 20
   categories:
     - UplinkAllies
   conditions:
