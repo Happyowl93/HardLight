@@ -19340,5 +19340,41 @@ Entries:
   id: 207300
   time: '2025-11-04T17:18:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2073
+- author: Conflee
+  changes:
+  - message: (Oasis) Added Robotics and Surgery Airlocks
+    type: Tweak
+  id: 211100
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: Conflee
+  changes:
+  - message: (Oasis) Added new furniture and decals in various spots
+    type: Tweak
+  id: 211101
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: Conflee
+  changes:
+  - message: (Oasis) Fixed missing beacon and sign for the Newsroom
+    type: Fix
+  id: 211102
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: Conflee
+  changes:
+  - message: (Oasis) Fixed unnamed Detective and NT Rep fax machines
+    type: Fix
+  id: 211103
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: Conflee
+  changes:
+  - message: (Oasis) Detective's office is no longer free to access from space for
+      anyone with External access
+    type: Fix
+  id: 211104
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
 Order: -1
 
