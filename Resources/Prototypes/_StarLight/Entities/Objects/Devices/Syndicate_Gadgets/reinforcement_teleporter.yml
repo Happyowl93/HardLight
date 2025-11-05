@@ -18,7 +18,7 @@
 
 - type: entity
   parent: ReinforcementRadio
-  id: ReinforcementRadioSyndicateCyborgSupport # Reinforcement radio exclusive to nukeops uplink
+  id: ReinforcementRadioSyndicateCyborgSaboteur # Reinforcement radio exclusive to nukeops uplink
   name: syndicate support saboteur reinforcement radio
   description: Call in a saboteur cyborg, instantly!
   suffix: NukeOps
@@ -36,7 +36,7 @@
 
 - type: entity
   parent: ReinforcementRadio
-  id: ReinforcementRadioSyndicateCyborgSupport # Reinforcement radio exclusive to nukeops uplink
+  id: ReinforcementRadioSyndicateCyborgStealth # Reinforcement radio exclusive to nukeops uplink
   name: syndicate stealth cyborg reinforcement radio
   description: Call in a stealth cyborg, instantly!
   suffix: NukeOps
