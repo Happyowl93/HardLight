@@ -19376,5 +19376,12 @@ Entries:
   id: 211104
   time: '2025-11-05T20:12:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: neurovermi
+  changes:
+  - message: You can now see the sides of the HONK mech. As honkmother intended.
+    type: Fix
+  id: 208100
+  time: '2025-11-04T17:16:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2081
 Order: -1
 
