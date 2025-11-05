@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 11/05/2025 02:13:47
-  entityCount: 12570
+  time: 11/05/2025 02:18:07
+  entityCount: 12571
 maps:
 - 1
 grids:
@@ -78197,22 +78197,38 @@ entities:
       pos: 0.5,48.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 12218
+      - 12571
   - uid: 12217
     components:
     - type: Transform
       pos: -5.5,48.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 12218
+      - 12571
 - proto: WeaponEnergyTurretAIControlPanel
   entities:
   - uid: 12218
     components:
     - type: Transform
       pos: -3.5,50.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 12217
+      - 12216
+  - uid: 12571
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.5,38.5
       parent: 2
     - type: DeviceList
       devices:
