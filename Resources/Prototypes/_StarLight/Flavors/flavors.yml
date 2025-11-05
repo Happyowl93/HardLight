@@ -12,3 +12,13 @@
   id: thaslop
   flavorType: complex
   description: flavor-complex-tha-slop
+
+- type: flavor
+  id: wrong
+  flavorType: Base
+  description: flavor-base-wrong
+
+- type: flavor
+  id: struggle
+  flavorType: Complex
+  description: flavor-complex-struggle
