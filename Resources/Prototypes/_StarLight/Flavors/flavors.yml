@@ -12,3 +12,13 @@
   id: evil
   flavorType: Base
   description: flavor-basic-evil
+  
+- type: flavor
+  id: wrong
+  flavorType: Base
+  description: flavor-base-wrong
+
+- type: flavor
+  id: struggle
+  flavorType: Complex
+  description: flavor-complex-struggle

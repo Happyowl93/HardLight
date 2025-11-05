@@ -47,6 +47,9 @@
 
 - type: Tag
   id: CentcommVibroblade
+  
+- type: Tag
+  id: CheapInsulatedFabric
 
 - type: Tag
   id: Cleanade
@@ -74,6 +77,9 @@
 
 - type: Tag
   id: Felionoid
+  
+- type: Tag
+  id: fingerlessinsuls
 
 - type: Tag
   id: HiltPlasteel
@@ -98,6 +104,12 @@
 
 - type: Tag
   id: ImprovisedWrench
+  
+- type: Tag
+  id: InsulatedFabric
+
+- type: Tag
+  id: InsulatedThread
 
 - type: Tag
   id: LightRifleHeavy
@@ -149,6 +161,9 @@
 
 - type: Tag
   id: PatchPack
+  
+- type: Tag
+  id: PlasteelFilament
 
 - type: Tag
   id: PowerCellTiny
@@ -206,6 +221,12 @@
 
 - type: Tag
   id: Table
+
+- type: Tag
+  id: TiderAnvilMats
+
+- type: Tag
+  id: TiderAnvilParts
 
 - type: Tag
   id: SecuredLocker
