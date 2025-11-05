@@ -58,7 +58,10 @@
   - TowelColorSilver
   - TowelColorWhite
   - TowelColorYellow
-  - SuperSynthesizerInstrument # 🌟Starlight🌟
+  - HarmonicaInstrument # 🌟Starlight🌟
+  - FluteInstrument #Starlight
+  - AcousticGuitarInstrument #Starlight
+  - TrumpetInstrument #Starlight
   - ClothingUnderSocksCoder # 🌟Starlight🌟
   - ClothWrap # 🌟Starlight🌟
   - ClothingUniformJumpskirtElegantMaid # 🌟Starlight🌟
@@ -99,6 +102,8 @@
   - leftripperarm #SL
   - PersonalAI #SL
   - GoldenPersonalAI #SL
+  - CigPackBub #SL
+  - PillCanisterPsicodine #SL
 
 - type: loadoutGroup
   id: Glasses
@@ -722,6 +727,7 @@
   - PanFlute
   - Ocarina
   - Bagpipe
+  - SuperSynth #Starlight
 
 # Cargo
 - type: loadoutGroup
@@ -784,6 +790,7 @@
   - CargoTechnicianJumpsuitFormal # afterlight
   - CargoTechnicianJumpskirt
   - CargoTechnicianJumpskirtFormal # afterlight
+  - CargoTechnicianOveralls #Starlight
 
 - type: loadoutGroup
   id: CargoTechnicianBackpack
@@ -800,6 +807,7 @@
   minLimit: 0
   loadouts:
   - CargoTechnicianWintercoat
+  - WindbreakerCargo #Starlight
 
 - type: loadoutGroup
   id: CargoTechnicianShoes
@@ -938,6 +946,7 @@
   loadouts:
   - StationEngineerOuterVest
   - StationEngineerWintercoat
+  - WindbreakerEngineering #Starlight
 
 - type: loadoutGroup
   id: StationEngineerShoes
@@ -1091,6 +1100,7 @@
   - RoboticistLabCoat
   - RoboticistWintercoat
   - SeniorResearcherLabCoat
+  - WindbreakerScience #Starlight
 
 - type: loadoutGroup
   id: ScientistShoes
@@ -1155,6 +1165,7 @@
   name: loadout-group-head-of-security-neck
   minLimit: 0
   loadouts:
+  - ClothingNeckCloakHosVar #STARLIGHT
   - HeadofSecurityCloak
   - HeadofSecurityMantle
 
@@ -1279,6 +1290,7 @@
   - SeniorOfficerJumpskirt
   - TrooperUniform
   - SecurityJumpsuitBlue
+  - SecurityTshirt #Starlight
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -1306,6 +1318,8 @@
   - ArmorVestStab
   - ArmorVestHeatAbsorb
   - SecurityOfficerWintercoat
+  - SecurityBomber #Starlight
+  - WindbreakerSecurity #Starlight
 
 - type: loadoutGroup
   id: SecurityShoes
@@ -1360,6 +1374,7 @@
   loadouts:
   - RedJumpsuit
   - RedJumpskirt
+  - SecurityCadetTshirt #Starlight
 
 - type: loadoutGroup
   id: SurvivalSecurity
@@ -1461,6 +1476,7 @@
   - RegularLabCoat
   - MedicalDoctorWintercoat
   - SeniorPhysicianLabCoat
+  - WindbreakerMedical #Starlight
 
 - type: loadoutGroup
   id: MedicalBackpack
@@ -1594,8 +1610,8 @@
   name: loadout-group-reporter-jumpsuit
   loadouts:
   - ReporterJumpsuit
-  - JournalistJumpsuit
   - ReporterJumpskirt
+  - JournalistJumpsuit
   - JournalistJumpskirt
 
 - type: loadoutGroup
