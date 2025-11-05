@@ -65,12 +65,25 @@
     - WeaponMechCombatDisabler
     - WeaponMechCombatFlashbangLauncher
     - WeaponMechCombatMissileRack8
+    - WeaponMechCombatXray
+    - WeaponMechChainSword
+    - WeaponMechCombatIon
+    - WeaponMechCombatAMLG90
+    - WeaponMechCombatTaser
 
 - type: latheRecipePack
   id: StarlightSyndicateModules
   recipes:
     - BorgModuleMartyr
     - BorgModuleSyndicateWeapon
+    - BorgModuleC20r
+
+- type: latheRecipePack
+  id: StarlightSyndicateModulesSecfab
+  recipes:
+    - BorgModuleMartyr
+    - BorgModuleSyndicateWeapon
+    - BorgModuleC20r
     - BorgModuleL6C
 
 # Lawboards

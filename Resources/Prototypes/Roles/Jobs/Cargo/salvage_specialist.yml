@@ -16,6 +16,8 @@
   - Salvage
   - Maintenance
   - External
+  extendedAccess:
+  - Mining # Starlight
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -23,7 +25,7 @@
 - type: startingGear
   id: SalvageSpecialistGear
   equipment:
-    id: SalvagePDA
+   # id: SalvagePDA #Starlight
     ears: ClothingHeadsetCargo
   #storage:
     #back:
