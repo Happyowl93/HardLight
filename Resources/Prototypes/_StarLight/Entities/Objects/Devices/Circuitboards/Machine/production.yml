@@ -75,6 +75,7 @@
       stackRequirements:
         Manipulator: 4
         Glass: 1
+        
 - type: entity
   parent: BaseMachineCircuitboard
   id: AssortedForgeParts
