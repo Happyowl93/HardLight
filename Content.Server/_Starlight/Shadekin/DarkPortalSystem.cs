@@ -1,15 +1,16 @@
 using Content.Shared.Teleportation.Systems;
 using Content.Shared._Starlight.Shadekin;
 using Content.Shared.Anomaly.Components;
-using Content.Shared.Light.Components;
 using Content.Server.Light.EntitySystems;
-using Content.Shared.Examine;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 using Content.Shared.Anomaly;
 using Content.Shared.Alert;
 using Content.Shared.Actions;
 using Robust.Shared.Random;
+using Content.Shared.Teleportation.Components;
+using Content.Shared.Movement.Pulling.Components;
+using Content.Shared.Examine;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -25,7 +26,6 @@ public sealed class DarkPortalSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
 
     private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
-    private readonly EntProtoId _shadekinPortal = "PortalShadekin";
     private readonly int _stabilizeCost = 50;
     private readonly EntProtoId _brighteyePortalAction = "BrighteyePortalAction";
 
@@ -37,8 +37,9 @@ public sealed class DarkPortalSystem : EntitySystem
         SubscribeLocalEvent<DarkPortalComponent, AnomalySupercriticalEvent>(OnSupercritical);
         SubscribeLocalEvent<DarkPortalComponent, AnomalyShutdownEvent>(OnShutdown);
 
-        SubscribeLocalEvent<DarkPortalComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<DarkPortalComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
+        SubscribeLocalEvent<DarkPortalComponent, OnAttemptPortalEvent>(OnAttemptPortal);
+        SubscribeLocalEvent<DarkPortalComponent, ExaminedEvent>(OnExamined);
     }
 
     private void OnInit(EntityUid uid, DarkPortalComponent component, ComponentStartup args)
@@ -116,6 +117,20 @@ public sealed class DarkPortalSystem : EntitySystem
         }
     }
 
+    // APPRENTLY... MOVING THIS TO SHARED IS NOT TRIGGERED? SO I HAVE TO FUCKING COPY/PASTE ON CLIENT? WTF?
+    private void OnAttemptPortal(EntityUid uid, DarkPortalComponent component, OnAttemptPortalEvent args)
+    {
+        if (HasComp<BrighteyeComponent>(args.Subject))
+            return;
+
+        // TODO: Check if we have the Nullspace Suit?
+
+        if (TryComp<PullableComponent>(args.Subject, out var pullablea) && pullablea.BeingPulled && HasComp<BrighteyeComponent>(pullablea.Puller))
+            return;
+
+        args.Cancel();
+    }
+    
     private void OnGetInteractionVerbs(EntityUid uid, DarkPortalComponent component, ref GetVerbsEvent<InteractionVerb> args)
     {
         if (!args.CanAccess || component.Brighteye != args.User || !TryComp<AnomalyComponent>(uid, out var anomaly))

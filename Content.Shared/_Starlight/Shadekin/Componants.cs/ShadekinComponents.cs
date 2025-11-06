@@ -63,6 +63,12 @@ public sealed partial class BrighteyeComponent : Component
     public int MaxEnergy = 200;
 
     /// <summary>
+    /// Shadekin Rejuvenating Bool
+    /// </summary>
+    [DataField]
+    public bool Rejuvenating = false;
+
+    /// <summary>
     /// Shadekin Portal, if null then the portal does not exist.
     /// </summary>
     [DataField, AutoNetworkedField]
