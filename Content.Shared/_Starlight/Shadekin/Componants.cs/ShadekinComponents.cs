@@ -40,6 +40,18 @@ public enum ShadekinState : byte
 }
 #endregion
 
+#region OrganShadekinCoreComponent
+[RegisterComponent, NetworkedComponent]
+public sealed partial class OrganShadekinCoreComponent : Component
+{
+    [DataField]
+    public EntityUid? OrganOwner;
+
+    [DataField]
+    public bool Damaged = true;
+}
+#endregion
+
 #region Brighteye
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentPause, AutoGenerateComponentState]
 public sealed partial class BrighteyeComponent : Component

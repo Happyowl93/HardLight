@@ -17,6 +17,9 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Actions;
 using Content.Shared.Station;
 using Content.Shared.Popups;
+using Content.Shared.Body.Systems;
+using Content.Shared.Body.Events;
+using Content.Shared.Body.Components;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -33,6 +36,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly SharedStationSystem _station = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedBodySystem _bodySystem = default!;
 
     private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
     private readonly EntProtoId _shadekinPortal = "PortalShadekin";
@@ -62,11 +66,29 @@ public sealed partial class ShadekinSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        SubscribeLocalEvent<OrganShadekinCoreComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<OrganShadekinCoreComponent, OrganAddedToBodyEvent>(CoreOrganInit);
+
         SubscribeLocalEvent<ShadekinComponent, EyeColorInitEvent>(OnEyeColorChange);
         SubscribeLocalEvent<ShadekinComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
 
         InitializeBrighteye();
         InitializeAbilities();
+    }
+
+    private void CoreOrganInit(EntityUid uid, OrganShadekinCoreComponent component, OrganAddedToBodyEvent args)
+    {
+        if (component.OrganOwner is null)
+            component.OrganOwner = args.Body;
+    }
+
+    private void OnExamined(EntityUid uid, OrganShadekinCoreComponent component, ref ExaminedEvent args)
+    {
+        if (!component.Damaged)
+            args.PushMarkup(Loc.GetString("shadekin-core-undamaged"));
+
+        if (component.OrganOwner == args.Examiner)
+            args.PushMarkup(Loc.GetString("shadekin-core-owner"));
     }
 
     private void OnEyeColorChange(EntityUid uid, ShadekinComponent component, EyeColorInitEvent args)
@@ -199,7 +221,13 @@ public sealed partial class ShadekinSystem : EntitySystem
         var damage = new DamageSpecifier();
         damage.DamageDict.Add("Heat", 1);
         _damageable.TryChangeDamage(uid, damage, true, false);
+    }
 
+    private void ApplyInvalidCoreDamage(EntityUid uid)
+    {
+        var damage = new DamageSpecifier();
+        damage.DamageDict.Add("Cellular", 1);
+        _damageable.TryChangeDamage(uid, damage, false, false);
     }
 
     private void OnRefreshMovementSpeedModifiers(EntityUid uid, ShadekinComponent component, RefreshMovementSpeedModifiersEvent args)
@@ -268,6 +296,11 @@ public sealed partial class ShadekinSystem : EntitySystem
 
             if (component.CurrentState == ShadekinState.Extreme)
                 ApplyLightDamage(uid);
+
+            if (TryComp<BodyComponent>(uid, out var body))
+                foreach (var core in _bodySystem.GetBodyOrganEntityComps<OrganShadekinCoreComponent>((uid, body)))
+                    if (core.Comp1.OrganOwner != uid)
+                        ApplyInvalidCoreDamage(uid);
 
             if (TryComp<BrighteyeComponent>(uid, out var brighteye))
                 UpdateEnergy(uid, component, brighteye);

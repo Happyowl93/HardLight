@@ -2,6 +2,8 @@ using Content.Shared._Starlight.Shadekin;
 using Content.Shared.Humanoid;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Popups;
+using Content.Shared.Starlight.Medical.Surgery.Events;
+using Content.Shared.Body.Components;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -11,8 +13,10 @@ public sealed partial class ShadekinSystem : EntitySystem
     {
         SubscribeLocalEvent<BrighteyeComponent, ComponentStartup>(OnInit);
         SubscribeLocalEvent<BrighteyeComponent, ComponentShutdown>(OnShutdown);
-
         SubscribeLocalEvent<BrighteyeComponent, RejuvenateEvent>(OnRejuvenate);
+
+        SubscribeLocalEvent<OrganShadekinCoreComponent, SurgeryOrganImplantationCompleted>(OnCoreOrganImplanted);
+        SubscribeLocalEvent<OrganShadekinCoreComponent, SurgeryOrganExtracted>(OnCoreOrganExtracted);
     }
 
     private void OnInit(EntityUid uid, BrighteyeComponent component, ComponentStartup args)
@@ -20,10 +24,26 @@ public sealed partial class ShadekinSystem : EntitySystem
         _alerts.ShowAlert(uid, component.BrighteyeAlert);
         _alerts.ShowAlert(uid, component.PortalAlert);
 
+        if(TryComp<BodyComponent>(uid, out var body))
+            foreach (var core in _bodySystem.GetBodyOrganEntityComps<OrganShadekinCoreComponent>((uid, body)))
+                core.Comp1.Damaged = false;
+
         if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
             SetBrighteyes(uid, humanoid);
 
         _actionsSystem.AddAction(uid, ref component.PortalAction, _brighteyePortalAction, uid);
+    }
+
+    private void OnCoreOrganImplanted(Entity<OrganShadekinCoreComponent> ent, ref SurgeryOrganImplantationCompleted args)
+    {
+        if (!ent.Comp.Damaged && ent.Comp.OrganOwner == args.Body)
+            EnsureComp<BrighteyeComponent>(args.Body);
+    }
+
+    private void OnCoreOrganExtracted(Entity<OrganShadekinCoreComponent> ent, ref SurgeryOrganExtracted args)
+    {
+        if (HasComp<BrighteyeComponent>(args.Body) && !ent.Comp.Damaged)
+            RemComp<BrighteyeComponent>(args.Body);
     }
 
     private void OnShutdown(EntityUid uid, BrighteyeComponent component, ComponentShutdown args)
@@ -36,6 +56,10 @@ public sealed partial class ShadekinSystem : EntitySystem
             SpawnAtPosition(_shadekinShadow, Transform(component.Portal.Value).Coordinates);
             QueueDel(component.Portal);
         }
+
+        if(TryComp<BodyComponent>(uid, out var body))
+            foreach (var core in _bodySystem.GetBodyOrganEntityComps<OrganShadekinCoreComponent>((uid, body)))
+                core.Comp1.Damaged = true;
 
         if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
             SetBlackeyes(uid, humanoid);

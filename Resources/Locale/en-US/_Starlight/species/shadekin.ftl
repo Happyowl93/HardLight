@@ -22,3 +22,6 @@ shadekin-noenergy = Not enough energy to perform that action.
 phase-fail-generic = I can't phase!
 hubportal-rejuvenate = You can't use this so soon after an emergency warp!
 shadekin-rejuvenate-compleated = You feel like you can leave the Dark again
+
+shadekin-core-undamaged = [color=yellow]The core flows with power![/color]
+shadekin-core-owner = [color=yellow]This core belongs to you.[/color]
