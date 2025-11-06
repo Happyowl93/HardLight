@@ -71831,14 +71831,6 @@ entities:
       inSlot: head
     - type: Physics
       canCollide: False
-- proto: ClothingHeadHatCatEars
-  entities:
-  - uid: 1152
-    components:
-    - type: Transform
-      parent: 1149
-    - type: Physics
-      canCollide: False
 - proto: ClothingHeadHatFlowerWreath
   entities:
   - uid: 12003
