@@ -19498,5 +19498,36 @@ Entries:
   id: 212800
   time: '2025-11-06T04:13:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2128
+- author: stickycheZ101
+  changes:
+  - message: added tha slop, in the form of nutrient paste meals that is more resource
+      efficient to produce than actual food (they taste horrible)
+    type: Add
+  id: 212200
+  time: '2025-11-06T04:14:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2122
+- author: stickycheZ101
+  changes:
+  - message: added the nutrient paste dispenser, a machine that can fabricate tha
+      slop from raw biomass or produce
+    type: Add
+  id: 212201
+  time: '2025-11-06T04:14:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2122
+- author: stickycheZ101
+  changes:
+  - message: added a NPD flatpack to the bottom of the chef vend
+    type: Add
+  id: 212202
+  time: '2025-11-06T04:14:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2122
+- author: stickycheZ101
+  changes:
+  - message: jacked up the price of the chefvend restock box to account for the newly
+      added nutrient paste dispenser flatpack added to it (850 to 1150)
+    type: Tweak
+  id: 212203
+  time: '2025-11-06T04:14:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2122
 Order: -1
 
