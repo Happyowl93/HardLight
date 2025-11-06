@@ -19491,5 +19491,263 @@ Entries:
   id: 212400
   time: '2025-11-05T20:26:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2124
+- author: AndrewTateOfficialSS14
+  changes:
+  - message: Lobster atmos updated. Returned o2 and n2 gas miners.
+    type: Tweak
+  id: 212800
+  time: '2025-11-06T04:13:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2128
+- author: stickycheZ101
+  changes:
+  - message: added tha slop, in the form of nutrient paste meals that is more resource
+      efficient to produce than actual food (they taste horrible)
+    type: Add
+  id: 212200
+  time: '2025-11-06T04:14:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2122
+- author: stickycheZ101
+  changes:
+  - message: added the nutrient paste dispenser, a machine that can fabricate tha
+      slop from raw biomass or produce
+    type: Add
+  id: 212201
+  time: '2025-11-06T04:14:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2122
+- author: stickycheZ101
+  changes:
+  - message: added a NPD flatpack to the bottom of the chef vend
+    type: Add
+  id: 212202
+  time: '2025-11-06T04:14:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2122
+- author: stickycheZ101
+  changes:
+  - message: jacked up the price of the chefvend restock box to account for the newly
+      added nutrient paste dispenser flatpack added to it (850 to 1150)
+    type: Tweak
+  id: 212203
+  time: '2025-11-06T04:14:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2122
+- author: Fractalflower
+  changes:
+  - message: Increase hivemind garble chance
+    type: Tweak
+  id: 213100
+  time: '2025-11-06T04:13:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2131
+- author: Happyrobot33
+  changes:
+  - message: Added main menu art credits
+    type: Add
+  id: 197500
+  time: '2025-11-06T05:15:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1975
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 211800
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 211801
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Robotics access doors in Science
+    type: Add
+  id: 211802
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) HV cables to shuttle docks
+    type: Add
+  id: 211803
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 211804
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Cell Recharger to Chemistry
+    type: Add
+  id: 211805
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Cell Recharger to Brigmedic
+    type: Add
+  id: 211806
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Document printer to Medical
+    type: Add
+  id: 211807
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Extended dock for Salvage and Mining
+    type: Add
+  id: 211808
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Nanomed Civilian vending machines around the station
+    type: Add
+  id: 211809
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Nudged the "Security" and "Evac Pod S" map beacons a little
+      so they overlap on the Station Map less.
+    type: Tweak
+  id: 211810
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 211811
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Wrong backdoor for EVA Storage (was HOP door, fixed to Command
+      door)
+    type: Fix
+  id: 211812
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Disposal bin in Maints Bar wasn't connected to disposal system
+    type: Fix
+  id: 211813
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Docking Arm, Evac, Arrivals, docks were unpowered at round
+      start due to missing LV cables
+    type: Fix
+  id: 211814
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: Cigarette packs now only accept smokables and lighters.
+    type: Remove
+  id: 212900
+  time: '2025-11-06T17:18:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2129
+- author: Way
+  changes:
+  - message: Added missing in-hand sprites for some pistols.
+    type: Add
+  id: 213400
+  time: '2025-11-06T17:31:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2134
+- author: Way
+  changes:
+  - message: Tweaked m1911 sprite overall.
+    type: Tweak
+  id: 213401
+  time: '2025-11-06T17:31:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2134
+- author: CawsForConcern
+  changes:
+  - message: (Silica) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 213000
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 213001
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Robotics access doors in Science
+    type: Add
+  id: 213002
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Surgery access doors in Medical
+    type: Add
+  id: 213003
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) HV cables to shuttle docks
+    type: Add
+  id: 213004
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 213005
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Bar layout changed so you don't have to jump on the counter
+      to get to the liquor cabinet (you could get stuck on the Booze-o-Mat previously)
+    type: Tweak
+  id: 213006
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Removed tables in Cargo that Cargoilla would sometimes jump
+      on and hurt himself :-(
+    type: Tweak
+  id: 213007
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: PubliclyExecutedPig
+  changes:
+  - message: Added THE NEW best map OF ALL TIME I PROMISE, Ming!
+    type: Add
+  id: 191300
+  time: '2025-11-06T17:53:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1913
+- author: Conflee
+  changes:
+  - message: Split Rule 12 in two parts, Silicon Laws and Thaven Moods. Thaven Moods
+      are not 1 to 1 Silicon Laws, and the previous wording was a bit of a patch job
+      that didn't account for how Moods should actually be treated. This new wording
+      does. Reflects change on the Wiki.
+    type: Tweak
+  id: 182500
+  time: '2025-11-06T18:56:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1825
 Order: -1
 
