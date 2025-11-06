@@ -19652,5 +19652,12 @@ Entries:
   id: 211814
   time: '2025-11-06T17:17:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: Cigarette packs now only accept smokables and lighters.
+    type: Remove
+  id: 212900
+  time: '2025-11-06T17:18:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2129
 Order: -1
 
