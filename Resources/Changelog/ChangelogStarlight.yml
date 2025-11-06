@@ -19732,5 +19732,12 @@ Entries:
   id: 213007
   time: '2025-11-06T17:41:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: PubliclyExecutedPig
+  changes:
+  - message: Added THE NEW best map OF ALL TIME I PROMISE, Ming!
+    type: Add
+  id: 191300
+  time: '2025-11-06T17:53:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1913
 Order: -1
 
