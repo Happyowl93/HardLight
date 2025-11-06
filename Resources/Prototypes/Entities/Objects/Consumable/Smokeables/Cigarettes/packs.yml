@@ -125,6 +125,12 @@
   - type: Storage
     grid:
     - 0,0,4,1
+    # 🌟Starlight - Start🌟
+    whitelist:
+      components:
+        - Smokable
+        - Welder
+    # 🌟Starlight - End🌟
   - type: ItemCounter
     count:
       tags: [Cigarette]
