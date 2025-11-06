@@ -19659,5 +19659,19 @@ Entries:
   id: 212900
   time: '2025-11-06T17:18:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2129
+- author: Way
+  changes:
+  - message: Added missing in-hand sprites for some pistols.
+    type: Add
+  id: 213400
+  time: '2025-11-06T17:31:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2134
+- author: Way
+  changes:
+  - message: Tweaked m1911 sprite overall.
+    type: Tweak
+  id: 213401
+  time: '2025-11-06T17:31:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2134
 Order: -1
 
