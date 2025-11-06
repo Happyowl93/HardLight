@@ -19543,5 +19543,114 @@ Entries:
   id: 197500
   time: '2025-11-06T05:15:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1975
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 211800
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 211801
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Robotics access doors in Science
+    type: Add
+  id: 211802
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) HV cables to shuttle docks
+    type: Add
+  id: 211803
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 211804
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Cell Recharger to Chemistry
+    type: Add
+  id: 211805
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Cell Recharger to Brigmedic
+    type: Add
+  id: 211806
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Document printer to Medical
+    type: Add
+  id: 211807
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Extended dock for Salvage and Mining
+    type: Add
+  id: 211808
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Nanomed Civilian vending machines around the station
+    type: Add
+  id: 211809
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Nudged the "Security" and "Evac Pod S" map beacons a little
+      so they overlap on the Station Map less.
+    type: Tweak
+  id: 211810
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 211811
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Wrong backdoor for EVA Storage (was HOP door, fixed to Command
+      door)
+    type: Fix
+  id: 211812
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Disposal bin in Maints Bar wasn't connected to disposal system
+    type: Fix
+  id: 211813
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Docking Arm, Evac, Arrivals, docks were unpowered at round
+      start due to missing LV cables
+    type: Fix
+  id: 211814
+  time: '2025-11-06T17:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2118
 Order: -1
 
