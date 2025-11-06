@@ -66,9 +66,11 @@
                         <PanelContainer StyleClasses="AngleRect">
                             <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" />
                         </PanelContainer>
+                        <!-- Starlight start-->
                         <PanelContainer StyleClasses="AngleRect">
                             <RichTextLabel Name="LobbyBackground" Access="Public" HorizontalAlignment="Center" />
                         </PanelContainer>
+                        <!-- Starlight end-->
                     </BoxContainer>
                   </BoxContainer>
                   <!-- NullLink end -->

@@ -290,9 +290,9 @@ namespace Content.Client.Lobby
 
         private void UpdateLobbyBackground()
         {
+            //starlight start, art credit system
             if (_protoMan.TryIndex(_gameTicker.LobbyBackground, out LobbyBackgroundPrototype? proto))
             {
-                Logger.Info($"Setting lobby background to {proto.ID}");
                 Lobby!.Background.Texture = _resourceCache.GetResource<TextureResource>(proto.Background);
 
                 var background = _gameTicker.LobbyBackground;
@@ -314,12 +314,12 @@ namespace Content.Client.Lobby
                 return;
             }
             else
-            { 
-                Logger.Info($"No valid lobby background found for {_gameTicker.LobbyBackground}, clearing background.");
+            {
                 Lobby!.Background.Texture = null;
 
                 Lobby!.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text"));
             }
+            //starlight end
         }
 
         private void SetReady(bool newReady)

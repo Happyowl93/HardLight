@@ -1,4 +1,6 @@
-﻿using Robust.Shared.Prototypes;
+﻿//starlight, file moved from server to shared
+
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.GameTicking.Prototypes;
@@ -19,6 +21,7 @@ public sealed partial class LobbyBackgroundPrototype : IPrototype
     [DataField("background", required: true)]
     public ResPath Background = default!;
 
+    //starlight start
     [DataField("title")]
     public string? Title;
 
@@ -31,4 +34,5 @@ public sealed partial class LobbyBackgroundPrototype : IPrototype
     /// </summary>
     [DataField("excludeFromMenu")]
     public bool ExcludeFromMenu = false;
+    //starlight end
 }

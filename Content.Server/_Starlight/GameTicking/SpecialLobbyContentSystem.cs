@@ -22,7 +22,7 @@ public sealed class SpecialLobbyContentSystem : EntitySystem
     /// <param name="music">The special music track, if any</param>
     /// <param name="background">The special background image, if any</param>
     /// <returns>True if the game rule has special lobby content</returns>
-    public bool TryGetSpecialLobbyContent(EntityUid gameRule, out string? music, out ProtoId<LobbyBackgroundPrototype>? background)
+    public bool TryGetSpecialLobbyContent(EntityUid gameRule, out string? music, out ProtoId<LobbyBackgroundPrototype>? background) //starlight, art credit system
     {
         music = null;
         background = null;
@@ -31,10 +31,13 @@ public sealed class SpecialLobbyContentSystem : EntitySystem
             return false;
 
         music = specialContent.Music;
+
+        //starlight start, art credit system
         if (_protoMan.TryIndex<LobbyBackgroundPrototype>(specialContent.Background, out var proto))
         {
             background = proto;
         }
+        //starlight end
 
         return !string.IsNullOrEmpty(music) || background != null;
     }
@@ -56,7 +59,7 @@ public sealed class SpecialLobbyContentSystem : EntitySystem
         }
 
         // Set special background if specified
-        if (background.HasValue)
+        if (background.HasValue) //starlight, nullable
         {
             _gameTicker.SetLobbyBackground(background.Value);
         }

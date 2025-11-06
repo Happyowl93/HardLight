@@ -22,5 +22,5 @@ public sealed partial class SpecialLobbyContentComponent : Component
     /// If null, no special background will be set.
     /// </summary>
     [DataField("background")]
-    public ProtoId<LobbyBackgroundPrototype>? Background;
+    public ProtoId<LobbyBackgroundPrototype>? Background; //starlight type
 }
