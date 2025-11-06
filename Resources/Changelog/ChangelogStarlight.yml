@@ -19536,5 +19536,12 @@ Entries:
   id: 213100
   time: '2025-11-06T04:13:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2131
+- author: Happyrobot33
+  changes:
+  - message: Added main menu art credits
+    type: Add
+  id: 197500
+  time: '2025-11-06T05:15:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1975
 Order: -1
 
