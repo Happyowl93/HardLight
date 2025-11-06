@@ -19739,5 +19739,15 @@ Entries:
   id: 191300
   time: '2025-11-06T17:53:15.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1913
+- author: Conflee
+  changes:
+  - message: Split Rule 12 in two parts, Silicon Laws and Thaven Moods. Thaven Moods
+      are not 1 to 1 Silicon Laws, and the previous wording was a bit of a patch job
+      that didn't account for how Moods should actually be treated. This new wording
+      does. Reflects change on the Wiki.
+    type: Tweak
+  id: 182500
+  time: '2025-11-06T18:56:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1825
 Order: -1
 
