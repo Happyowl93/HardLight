@@ -1,71 +1,71 @@
 - type: lobbyBackground
   id: Warden
   background: /Textures/LobbyScreens/warden.webp
-  title: Warden
-  artist: Solbusaur
+  title: Warden #starlight
+  artist: Solbusaur #starlight
 
 - type: lobbyBackground
   id: Pharmacy
   background: /Textures/LobbyScreens/pharmacy.webp
-  title: Pharmacy
-  artist: Solbusaur
+  title: Pharmacy #starlight
+  artist: Solbusaur #starlight
 
 - type: lobbyBackground
   id: SSXIV
   background: /Textures/LobbyScreens/ssxiv.webp
-  title: SSXIV
-  artist: Abyssal
+  title: SSXIV #starlight
+  artist: Abyssal #starlight
 
 - type: lobbyBackground
   id: SkellyVsTheRev
   background: /Textures/LobbyScreens/skellyvstherev.webp
-  title: Skelly VS the Rev
-  artist: ?????
+  title: Skelly VS the Rev #starlight
+  artist: ????? #starlight
 
 - type: lobbyBackground
   id: mime
   background: /Textures/LobbyScreens/mime.webp
-  title: Mime
-  artist: Darkrell
+  title: Mime #starlight
+  artist: Darkrell #starlight
 
 - type: lobbyBackground
   id: Doomed
   background: /Textures/LobbyScreens/doomed.webp
-  title: Doomed
-  artist: brainfood1183
+  title: Doomed #starlight
+  artist: brainfood1183 #starlight
 
 - type: lobbyBackground
   id: Blueprint
   background: /Textures/LobbyScreens/blueprint.webp
-  title: Blueprint
-  artist: data_redacted
+  title: Blueprint #starlight
+  artist: data_redacted #starlight
 
 - type: lobbyBackground
   id: Behonker
   background: /Textures/LobbyScreens/behonker.webp
-  title: Behonker
-  artist: InCrah
+  title: Behonker #starlight
+  artist: InCrah #starlight
 
 - type: lobbyBackground
   id: TerminalStation
   background: /Textures/LobbyScreens/terminalstation.webp
-  title: Terminal Station
-  artist: aserovich
+  title: Terminal Station #starlight
+  artist: aserovich #starlight
 
 - type: lobbyBackground
   id: JustAWeekAway
   background: /Textures/LobbyScreens/justaweekaway.webp
-  title: Just a Week Away
-  artist: plantyfern
+  title: Just a Week Away #starlight
+  artist: plantyfern #starlight
 
 - type: lobbyBackground
   id: JaniShootout
   background: /Textures/LobbyScreens/janishootout.webp
-  title: Jani Shootout
-  artist: psychpsyo
+  title: Jani Shootout #starlight
+  artist: psychpsyo #starlight
 
 - type: lobbyBackground
   id: ReclaimerNuke
   background: /Textures/LobbyScreens/reclaimer-nuke.webp
-  title: Reclaimer Nuke
-  artist: GetOutMarutak
+  title: Reclaimer Nuke #starlight
+  artist: GetOutMarutak #starlight
