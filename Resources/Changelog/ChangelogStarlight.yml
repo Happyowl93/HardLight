@@ -19673,5 +19673,64 @@ Entries:
   id: 213401
   time: '2025-11-06T17:31:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2134
+- author: CawsForConcern
+  changes:
+  - message: (Silica) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 213000
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 213001
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Robotics access doors in Science
+    type: Add
+  id: 213002
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Surgery access doors in Medical
+    type: Add
+  id: 213003
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) HV cables to shuttle docks
+    type: Add
+  id: 213004
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 213005
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Bar layout changed so you don't have to jump on the counter
+      to get to the liquor cabinet (you could get stuck on the Booze-o-Mat previously)
+    type: Tweak
+  id: 213006
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Removed tables in Cargo that Cargoilla would sometimes jump
+      on and hurt himself :-(
+    type: Tweak
+  id: 213007
+  time: '2025-11-06T17:41:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2130
 Order: -1
 
