@@ -54,7 +54,8 @@
     whitelist:
       components:
         - Smokable
-        - Welder
+        - Welder # for lighters
+        - Crayon # they're ciggie shaped
     # 🌟Starlight - End🌟
   - type: StorageFill
     contents:
@@ -129,7 +130,8 @@
     whitelist:
       components:
         - Smokable
-        - Welder
+        - Welder # for lighters
+        - Crayon # they're ciggie shaped
     # 🌟Starlight - End🌟
   - type: ItemCounter
     count:
