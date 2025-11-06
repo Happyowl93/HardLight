@@ -63,6 +63,20 @@
       - ScanGateMachineBoard
 
 - type: entity
+  id: SlopDispenserMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: nutrient paste dispenser machine board
+  description: A machine printed circuit board for a nutrient paste dispenser.
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: SlopDispenser
+      stackRequirements:
+        Manipulator: 4
+        Glass: 1
+        
+- type: entity
   parent: BaseMachineCircuitboard
   id: AssortedForgeParts
   name: assorted forge parts

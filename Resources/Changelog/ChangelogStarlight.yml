@@ -19340,5 +19340,208 @@ Entries:
   id: 207300
   time: '2025-11-04T17:18:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2073
+- author: Conflee
+  changes:
+  - message: (Oasis) Added Robotics and Surgery Airlocks
+    type: Tweak
+  id: 211100
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: Conflee
+  changes:
+  - message: (Oasis) Added new furniture and decals in various spots
+    type: Tweak
+  id: 211101
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: Conflee
+  changes:
+  - message: (Oasis) Fixed missing beacon and sign for the Newsroom
+    type: Fix
+  id: 211102
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: Conflee
+  changes:
+  - message: (Oasis) Fixed unnamed Detective and NT Rep fax machines
+    type: Fix
+  id: 211103
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: Conflee
+  changes:
+  - message: (Oasis) Detective's office is no longer free to access from space for
+      anyone with External access
+    type: Fix
+  id: 211104
+  time: '2025-11-05T20:12:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2111
+- author: neurovermi
+  changes:
+  - message: You can now see the sides of the HONK mech. As honkmother intended.
+    type: Fix
+  id: 208100
+  time: '2025-11-04T17:16:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2081
+- author: CawsForConcern
+  changes:
+  - message: (Manor) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 211400
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 211401
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Robotics access doors in Science
+    type: Add
+  id: 211402
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Surgery access doors in Medical
+    type: Add
+  id: 211403
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) HV cables to shuttle docks
+    type: Add
+  id: 211404
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 211405
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Cell Recharger to Chemistry
+    type: Add
+  id: 211406
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Cell Recharger to Brigmedic
+    type: Add
+  id: 211407
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Document printer to Library
+    type: Add
+  id: 211408
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Document printer to Medical
+    type: Add
+  id: 211409
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Crew records computer to HOP
+    type: Add
+  id: 211410
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Freezer to Kitchen
+    type: Add
+  id: 211411
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 211412
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: CawsForConcern
+  changes:
+  - message: (Manor) Freezer between Kitchen and Botany now uses the freezer air alarm/air
+      vents/scrubber
+    type: Fix
+  id: 211413
+  time: '2025-11-05T20:26:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2114
+- author: R3v3l4t1on
+  changes:
+  - message: Using strip as a borg will now actually work. Finally you can steal CE's
+      magboots after murdering them.
+    type: Add
+  id: 212400
+  time: '2025-11-05T20:26:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2124
+- author: AndrewTateOfficialSS14
+  changes:
+  - message: Lobster atmos updated. Returned o2 and n2 gas miners.
+    type: Tweak
+  id: 212800
+  time: '2025-11-06T04:13:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2128
+- author: stickycheZ101
+  changes:
+  - message: added tha slop, in the form of nutrient paste meals that is more resource
+      efficient to produce than actual food (they taste horrible)
+    type: Add
+  id: 212200
+  time: '2025-11-06T04:14:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2122
+- author: stickycheZ101
+  changes:
+  - message: added the nutrient paste dispenser, a machine that can fabricate tha
+      slop from raw biomass or produce
+    type: Add
+  id: 212201
+  time: '2025-11-06T04:14:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2122
+- author: stickycheZ101
+  changes:
+  - message: added a NPD flatpack to the bottom of the chef vend
+    type: Add
+  id: 212202
+  time: '2025-11-06T04:14:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2122
+- author: stickycheZ101
+  changes:
+  - message: jacked up the price of the chefvend restock box to account for the newly
+      added nutrient paste dispenser flatpack added to it (850 to 1150)
+    type: Tweak
+  id: 212203
+  time: '2025-11-06T04:14:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2122
+- author: Fractalflower
+  changes:
+  - message: Increase hivemind garble chance
+    type: Tweak
+  id: 213100
+  time: '2025-11-06T04:13:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2131
+- author: Happyrobot33
+  changes:
+  - message: Added main menu art credits
+    type: Add
+  id: 197500
+  time: '2025-11-06T05:15:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1975
 Order: -1
 
