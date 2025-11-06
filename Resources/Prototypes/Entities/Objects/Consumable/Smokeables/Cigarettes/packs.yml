@@ -53,6 +53,7 @@
     whitelist:
       components:
         - Smokable
+        - Welder
   - type: StorageFill
     contents:
     - id: Cigarette
