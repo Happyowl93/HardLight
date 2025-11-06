@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Server.Shuttles.Components;
 using Content.Server.Station.Events;
 using Content.Shared.CCVar;
+using Content.Shared.Random.Helpers; // Starlight
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Station.Components;
 using Robust.Shared.Collections;
@@ -22,6 +23,7 @@ public sealed partial class ShuttleSystem
         SubscribeLocalEvent<StationCargoShuttleComponent, StationPostInitEvent>(OnCargoSpawnPostInit);
 
         SubscribeLocalEvent<GridFillComponent, MapInitEvent>(OnGridFillMapInit);
+        SubscribeLocalEvent<RandomGridFillComponent, MapInitEvent>(OnRandomGridFillMapInit); // Starlight
 
         Subs.CVar(_cfg, CCVars.GridFill, OnGridFillChange);
     }
@@ -306,6 +308,81 @@ public sealed partial class ShuttleSystem
 
         _mapSystem.DeleteMap(mapId);
     }
+
+    // Starlight begin
+    private void OnRandomGridFillMapInit(EntityUid uid, RandomGridFillComponent component, MapInitEvent args)
+    {
+        if (!_cfg.GetCVar(CCVars.GridFill))
+            return;
+
+        if (!TryComp<DockingComponent>(uid, out var dock) ||
+            !TryComp(uid, out TransformComponent? xform) ||
+            xform.GridUid == null)
+        {
+            return;
+        }
+
+        if (component.PathWeights.Count == 0) {
+            Log.Error($"Error loading gridfill dock for {ToPrettyString(uid)} due to lacking any PathWeights");
+            return;
+        }
+
+        var untriedGrids = new Dictionary<ResPath, float>(component.PathWeights);
+
+        while (untriedGrids.Count > 0) {
+            ResPath selectedGridPath = _random.Pick(untriedGrids);
+
+            untriedGrids.Remove(selectedGridPath);
+
+            // Spawn on a dummy map and try to dock if possible, otherwise dump it.
+            _mapSystem.CreateMap(out var mapId);
+            var valid = false;
+
+            if (_loader.TryLoadGrid(mapId, selectedGridPath, out var grid))
+            {
+                var escape = GetSingleDock(grid.Value);
+
+                if (escape != null)
+                {
+                    var config = _dockSystem.GetDockingConfig(grid.Value, xform.GridUid.Value, escape.Value.Entity, escape.Value.Component, uid, dock);
+
+                    if (config != null)
+                    {
+                        var shuttleXform = Transform(grid.Value);
+                        FTLDock((grid.Value, shuttleXform), config);
+
+                        if (TryComp<StationMemberComponent>(xform.GridUid, out var stationMember))
+                        {
+                            _station.AddGridToStation(stationMember.Station, grid.Value);
+                        }
+
+                        valid = true;
+                    }
+                }
+
+                foreach (var compReg in component.AddComponents.Values)
+                {
+                    var compType = compReg.Component.GetType();
+
+                    if (HasComp(grid.Value, compType))
+                        continue;
+
+                    var comp = Factory.GetComponent(compType);
+                    AddComp(grid.Value, comp, true);
+                }
+            }
+
+            _mapSystem.DeleteMap(mapId);
+
+            if (valid)
+            {
+                return;
+            }
+        }
+
+        Log.Error($"Error loading all possible gridfills for gridfill dock for {ToPrettyString(uid)}");
+    }
+    // Starlight end
 
     private (EntityUid Entity, DockingComponent Component)? GetSingleDock(EntityUid uid)
     {
