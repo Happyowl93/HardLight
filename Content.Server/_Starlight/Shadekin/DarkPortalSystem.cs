@@ -11,6 +11,7 @@ using Robust.Shared.Random;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Examine;
+using Content.Server.Anomaly;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -21,6 +22,7 @@ public sealed class DarkPortalSystem : EntitySystem
     [Dependency] private readonly PoweredLightSystem _light = default!;
     [Dependency] private readonly ShadekinSystem _shadekin = default!;
     [Dependency] private readonly SharedAnomalySystem _sharedAnomalySystem = default!;
+    [Dependency] private readonly AnomalySystem _anomalySystem = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -76,6 +78,13 @@ public sealed class DarkPortalSystem : EntitySystem
         {
             ent.Comp.Energy = ent.Comp.MaxEnergy;
             Dirty(ent.Owner, ent.Comp);
+        }
+
+        if (TryComp<AnomalyComponent>(uid, out var anomaly))
+        {
+            _sharedAnomalySystem.ChangeAnomalyStability(uid, _random.NextFloat(anomaly.InitialStabilityRange.Item1 , anomaly.InitialStabilityRange.Item2), anomaly);
+            _sharedAnomalySystem.ChangeAnomalySeverity(uid, _random.NextFloat(anomaly.InitialSeverityRange.Item1, anomaly.InitialSeverityRange.Item2), anomaly);
+            _anomalySystem.ShuffleParticlesEffect((uid, anomaly));
         }
     }
 
