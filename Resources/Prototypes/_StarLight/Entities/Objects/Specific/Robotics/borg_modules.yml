@@ -25,6 +25,33 @@
       - state: base-stripes-inhand-right
         color: "#5b5b5b"
 
+- type: entity
+  id: BaseBorgModuleSyndicateStealth
+  parent: BaseBorgModule
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - BorgModuleSyndicateStealth
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#FF0000"
+      - state: base-module-inhand-left
+        color: "#891417"
+      - state: base-part-inhand-left
+      - state: base-stripes-inhand-left
+        color: "#7B0F12"
+      right:
+      - state: base-icon-inhand-right
+        color: "#FF0000"
+      - state: base-module-inhand-right
+        color: "#891417"
+      - state: base-part-inhand-right
+      - state: base-stripes-inhand-right
+        color: "#7B0F12"
+
 # generic modules
 - type: entity
   id: BorgModuleSecurity
@@ -186,7 +213,7 @@
     - item: WelderExperimental
     - item: Multitool
     - item: RemoteSignallerAdvanced
-    - item: SprayPainterBorg # Starlight
+    - item: SprayPainterBorg
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-tools-module }
 
@@ -274,7 +301,7 @@
 
 - type: entity
   id: BorgModuleSyndicateStealth
-  parent: [BaseBorgModuleSyndicate, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [BaseBorgModuleSyndicateStealth, BaseProviderBorgModule, BaseSyndicateContraband ]
   name: syndicate stealth module
   description: Contains an adaptation of the infiltration suit's cloaking device for the syndicate stealth cyborg.
   components:
@@ -290,7 +317,7 @@
 
 - type: entity
   id: BorgModuleSyndicateChameleonProjector
-  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModuleSyndicateStealth, BaseProviderBorgModule, BaseSyndicateContraband ]
   name: syndicate chameleon projector module.
   description: Contains an adaptation of the chameleon projector for the syndicate stealth cyborg.
   components:

@@ -22,6 +22,7 @@
       tags:
       - BorgModuleGeneric
       - BorgModuleSyndicate
+      - BorgModuleSyndicateStealth
     hasMindState: borg_e
     noMindState: borg_e_r
   - type: InteractionPopup
@@ -30,6 +31,7 @@
   - type: VentCrawler
   - type: Thieving
     stealthy: true
+  - type: Pacified # THE STEALTH BORG DOES NOT FUCKING GET GUNS
 
 - type: entity
   id: BorgChassisSecurity

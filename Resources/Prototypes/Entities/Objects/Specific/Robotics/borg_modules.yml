@@ -1316,13 +1316,8 @@
       - state: icon-syndicate
     - type: ItemBorgModule
       hands:
-      - item: WeaponLightMachineGunL6
-      - hand:
-          emptyRepresentative: WeaponLightMachineGunL6
-          emptyLabel: borg-slot-l6-empty
-          whitelist:
-            tags:
-                  - L6Saw
+      - item: WeaponLightMachineGunL6C
+      # region starlight - L6C uses ammo
       - item: MagazineLightRifleBoxSP
         hand:
           emptyRepresentative: MagazineLightRifleBoxSP
@@ -1337,6 +1332,7 @@
           whitelist:
             tags:
             - MagazineLightRifleBox
+      # end region starlight
       - item: PinpointerSyndicateNuclear
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
