@@ -275,6 +275,9 @@
 
 - type: Tag
   id: ScanGateMachineBoard
+  
+- type: Tag
+  id: PersonnelStorage
 
 - type: Tag
   id: TheDark
