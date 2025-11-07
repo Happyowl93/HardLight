@@ -20438,5 +20438,133 @@ Entries:
   id: 212012
   time: '2025-11-07T04:38:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2120
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) New furniture! But not too much. It's Barratry, after all.
+    type: Add
+  id: 209700
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Added a singular Station Map by Bar. There's unfinished Station
+      Maps around the station that we ran out of budget for, sorry.
+    type: Add
+  id: 209701
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Nanomed civilian machines
+    type: Add
+  id: 209702
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 209703
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Surgery access doors in Medical
+    type: Add
+  id: 209704
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Robotics access doors in Science
+    type: Add
+  id: 209705
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) HV cables to shuttle docks
+    type: Add
+  id: 209706
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 209707
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Way more signage in general - Cryosleep, Janitor, Arcade,
+      Engineering, Power, Chapel, Evac, etc.
+    type: Add
+  id: 209708
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Cell Recharger to Chemistry
+    type: Add
+  id: 209709
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Cell Recharger to Brigmedic
+    type: Add
+  id: 209710
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Document printer to Library
+    type: Add
+  id: 209711
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Document printer to Medical
+    type: Add
+  id: 209712
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Funding allocation computer to HOP
+    type: Add
+  id: 209713
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Crew records computer to HOP
+    type: Add
+  id: 209714
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Fixed wrong door on EVA Storage (was Command door)
+    type: Fix
+  id: 209715
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Fixed every single airlock not being round-start wired!
+    type: Fix
+  id: 209716
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: CawsForConcern
+  changes:
+  - message: (Barratry) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 209717
+  time: '2025-11-07T04:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2097
 Order: -1
 
