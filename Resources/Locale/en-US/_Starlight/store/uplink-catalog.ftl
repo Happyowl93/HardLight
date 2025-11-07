@@ -54,7 +54,7 @@ uplink-reinforcement-radio-saboteur-cyborg-name = Syndicate Saboteur Cyborg Tele
 uplink-reinforcement-radio-saboteur-cyborg-desc = A saboteur cyborg, complete with syndicate advanced tools, standard hacking equipment and basic weapons
 
 uplink-reinforcement-radio-stealth-cyborg-name = Syndicate Stealth Cyborg Teleporter
-uplink-reinforcement-radio-stealth-cyborg-desc = A stealth cyborg. Whilst devoid of any ranged weapons, it has the ability to disguise, go invisible and move through vents. Comes with standard hacking tools.
+uplink-reinforcement-radio-stealth-cyborg-desc = A stealth cyborg. Whilst it is incapable of fighting, it has the ability to disguise, go invisible and move through vents. Comes with standard hacking tools.
 
 
 uplink-syndimov-law-name = Syndimov Law Circuit
