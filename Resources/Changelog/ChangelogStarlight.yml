@@ -20008,5 +20008,134 @@ Entries:
   id: 214112
   time: '2025-11-07T04:13:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 209500
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Nanomed civilian machines
+    type: Add
+  id: 209501
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 209502
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Surgery access doors in Medical
+    type: Add
+  id: 209503
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Robotics access doors in Science
+    type: Add
+  id: 209504
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) HV cables to shuttle docks
+    type: Add
+  id: 209505
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 209506
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Document printer to HOP
+    type: Add
+  id: 209507
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Document printer to Medical
+    type: Add
+  id: 209508
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Document printer to Library
+    type: Add
+  id: 209509
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Cell Recharger to Chemistry
+    type: Add
+  id: 209510
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Cell Recharger to Brigmedic
+    type: Add
+  id: 209511
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Turrets to AI Core
+    type: Add
+  id: 209512
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Turrets Control Panel to AI Core
+    type: Add
+  id: 209513
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Moved Science's Material Silo so it can reach Robotic's Exosuit
+      Fabricator
+    type: Tweak
+  id: 209514
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Moved the Robotics Beacon into Robotics (it wasn't in Robotics
+      before)
+    type: Tweak
+  id: 209515
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Fixed wrong door on EVA Storage (was HOP door)
+    type: Fix
+  id: 209516
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) SEC doors updated with Lawyer SEC doors where appropriate
+    type: Fix
+  id: 209517
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
 Order: -1
 
