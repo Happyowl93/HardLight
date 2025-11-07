@@ -20590,5 +20590,12 @@ Entries:
   id: 209400
   time: '2025-11-07T05:36:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2094
+- author: CrazyPhantom
+  changes:
+  - message: Singulo beacon is now disabled
+    type: Remove
+  id: 205100
+  time: '2025-11-07T05:36:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2051
 Order: -1
 
