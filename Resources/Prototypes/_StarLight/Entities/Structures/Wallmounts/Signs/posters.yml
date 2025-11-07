@@ -340,7 +340,7 @@
 
 - type: entity
   parent: PosterBase
-  id: PosterLegitCalendar
+  id: PosterLegitSaline
   name: "NO SALINE!"
   description: "An advisory from NanoTrasen's medical department reminding doctors to check their patients' species before administering airloss-related medicines. Saline can kill!"
   components:
