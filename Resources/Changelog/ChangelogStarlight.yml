@@ -20649,5 +20649,12 @@ Entries:
   id: 194602
   time: '2025-11-07T06:07:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1946
+- author: SCARLET LIGHTWEAVER
+  changes:
+  - message: Added a new stachel for central command officers!
+    type: Add
+  id: 209900
+  time: '2025-11-07T06:36:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2099
 Order: -1
 
