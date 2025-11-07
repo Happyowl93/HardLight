@@ -342,7 +342,7 @@
   parent: PosterBase
   id: PosterLegitCalendar
   name: "NO SALINE!"
-  description: "An advisory from NanoTrasen's medical department reminding doctors to check their patients' species before administering asphyx-related medicines. Saline can kill!"
+  description: "An advisory from NanoTrasen's medical department reminding doctors to check their patients' species before administering airloss-related medicines. Saline can kill!"
   components:
   - type: Sprite
     sprite: _Starlight/Structures/Wallmounts/posters/saline.rsi
