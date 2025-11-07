@@ -20344,5 +20344,99 @@ Entries:
   id: 211509
   time: '2025-11-07T04:38:54.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 212000
+  time: '2025-11-07T04:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2120
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 212001
+  time: '2025-11-07T04:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2120
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) Robotics access doors in Science
+    type: Add
+  id: 212002
+  time: '2025-11-07T04:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2120
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) Surgery access doors in Medical
+    type: Add
+  id: 212003
+  time: '2025-11-07T04:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2120
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) HV cables to shuttle docks
+    type: Add
+  id: 212004
+  time: '2025-11-07T04:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2120
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 212005
+  time: '2025-11-07T04:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2120
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) Cell Recharger to Chemistry
+    type: Add
+  id: 212006
+  time: '2025-11-07T04:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2120
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) Nanomed Civilian vending machines around the station
+    type: Add
+  id: 212007
+  time: '2025-11-07T04:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2120
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) AI Turret Control Panel
+    type: Add
+  id: 212008
+  time: '2025-11-07T04:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2120
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) Random disconnected disposal pipes around the map, particularly
+      under doors
+    type: Remove
+  id: 212009
+  time: '2025-11-07T04:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2120
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) Library's document printer is now unpacked instead of coyly
+      parked on a chair in the corner of the room
+    type: Tweak
+  id: 212010
+  time: '2025-11-07T04:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2120
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) Wrong doors on EVA
+    type: Fix
+  id: 212011
+  time: '2025-11-07T04:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2120
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) SEC's LV wiring is more sane now
+    type: Fix
+  id: 212012
+  time: '2025-11-07T04:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2120
 Order: -1
 
