@@ -20576,5 +20576,12 @@ Entries:
   id: 214000
   time: '2025-11-07T05:35:48.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2140
+- author: AthenaAI
+  changes:
+  - message: Makes the crew monitoring console coordinates actually gps coordinates.
+    type: Tweak
+  id: 199200
+  time: '2025-11-07T05:36:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1992
 Order: -1
 
