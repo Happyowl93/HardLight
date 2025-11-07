@@ -20604,5 +20604,12 @@ Entries:
   id: 199000
   time: '2025-11-07T05:36:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1990
+- author: Arkanic
+  changes:
+  - message: Eating soap causes you to be polite (suggested by nyanlinear)
+    type: Add
+  id: 206000
+  time: '2025-11-07T05:35:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2060
 Order: -1
 
