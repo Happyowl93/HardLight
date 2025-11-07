@@ -148,6 +148,11 @@
   description: The portal to the dark...
   parent: AnomalyShadow
   components:
+    - type: Portal
+      arrivalSound: /Audio/Items/hiss.ogg
+      departureSound: /Audio/Items/hiss.ogg
+      canTeleportToOtherMaps: true
+      randomTeleport: false
     - type: DarkPortal
     - type: Anomaly
       corePrototype: null

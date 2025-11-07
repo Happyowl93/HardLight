@@ -10,14 +10,3 @@
   - type: RoleRequirement
     roles:
     - BrighteyeRole
-
-- type: entity
-  parent: [BaseBrighteyeObjective, BaseSurviveObjective]
-  id: BrighteyeSurviveObjective
-  name: Survive
-  description: You wouldn't be a very good ninja if you died, now would you?
-  components:
-  - type: Objective
-    icon:
-      sprite: Clothing/Mask/ninja.rsi
-      state: icon
