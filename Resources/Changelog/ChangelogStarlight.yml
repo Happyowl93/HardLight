@@ -20597,5 +20597,12 @@ Entries:
   id: 205100
   time: '2025-11-07T05:36:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2051
+- author: redmushie
+  changes:
+  - message: Fixed Abductors rarely spawning
+    type: Fix
+  id: 199000
+  time: '2025-11-07T05:36:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1990
 Order: -1
 
