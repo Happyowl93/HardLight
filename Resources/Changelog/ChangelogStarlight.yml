@@ -20566,5 +20566,15 @@ Entries:
   id: 209717
   time: '2025-11-07T04:39:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2097
+- author: Conflee
+  changes:
+  - message: Changed brightness, range, and color of Emergency Lights for Delta and
+      Epsilon to be brighter, to improve visibility some while retaining the badass
+      strobe lighting fights in the dark vibe. Turning the lights off in an emergency
+      makes no sense anyway, but it is cool.
+    type: Tweak
+  id: 214000
+  time: '2025-11-07T05:35:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2140
 Order: -1
 
