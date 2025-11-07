@@ -48,8 +48,7 @@ jobs:
       continue-on-error: true
       if: always()
       run:  
-        dotnet tool update -g dotnet-trx
-        trx --output
+        dotnet tool install -g dotnet-trx
 
     - name: Run Content.Tests
       run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0 --logger trx; trx
