@@ -19749,5 +19749,88 @@ Entries:
   id: 182500
   time: '2025-11-06T18:56:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1825
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 211200
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 211201
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) HV cables to shuttle docks
+    type: Add
+  id: 211202
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 211203
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Crew records computer to HOP
+    type: Add
+  id: 211204
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Changed "AI" beacon to "AI Upload" Station Beacon near bridge
+      to make it more clear what that room is for
+    type: Tweak
+  id: 211205
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Changed the wiring around PA, pushed the SMES back in the right
+      airlock so they're flush against the wall (and don't trap unlucky paraclones)
+    type: Tweak
+  id: 211206
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Moved HoP's fax machine out of their backroom and gave them a
+      paperbin
+    type: Tweak
+  id: 211207
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Freezer is now using the freezer-specific air alarms / air vents
+      / air scrubbers, should no longer report false alarms
+    type: Fix
+  id: 211208
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 211209
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Distribution pipes were not connected from the fountain area
+      to Service (Bar, Botany, Kitchen, HOP, Theatre)
+    type: Fix
+  id: 211210
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
 Order: -1
 
