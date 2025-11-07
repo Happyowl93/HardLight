@@ -20611,5 +20611,12 @@ Entries:
   id: 206000
   time: '2025-11-07T05:35:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2060
+- author: Fasuh
+  changes:
+  - message: Smaller species being unable to escape from borgs holding them.
+    type: Fix
+  id: 207100
+  time: '2025-11-07T05:36:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2071
 Order: -1
 
