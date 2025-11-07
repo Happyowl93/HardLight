@@ -20625,5 +20625,29 @@ Entries:
   id: 214200
   time: '2025-11-07T06:06:54.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2142
+- author: RoadTrain
+  changes:
+  - message: Added support for layered building/spawning of most atmos entities (excluding
+      machine framed atmos machines & radiators). Atmosians and Mappers rejoice!
+    type: Add
+  id: 194600
+  time: '2025-11-07T06:07:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1946
+- author: RoadTrain
+  changes:
+  - message: You can now build/spawn the flipped versions of mixers and filters instead
+      of building the normal one, then flipping it.
+    type: Tweak
+  id: 194601
+  time: '2025-11-07T06:07:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1946
+- author: RoadTrain
+  changes:
+  - message: Signal valve pipes no longer show all 3 variants as buildable, only the
+      main one.
+    type: Fix
+  id: 194602
+  time: '2025-11-07T06:07:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1946
 Order: -1
 
