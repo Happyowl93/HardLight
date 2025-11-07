@@ -20583,5 +20583,12 @@ Entries:
   id: 199200
   time: '2025-11-07T05:36:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1992
+- author: CawsForConcern
+  changes:
+  - message: Sleek office chair is anchored by default now
+    type: Tweak
+  id: 209400
+  time: '2025-11-07T05:36:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2094
 Order: -1
 
