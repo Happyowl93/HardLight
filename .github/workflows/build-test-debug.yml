@@ -44,12 +44,6 @@ jobs:
     - name: Build Project
       run: dotnet build --configuration DebugOpt --no-restore /m
 
-    - name: Get dotnet-trx
-      continue-on-error: true
-      if: always()
-      run:  
-        dotnet tool install -g dotnet-trx
-
     - name: Run Content.Tests
       run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj --logger trx -- NUnit.ConsoleOut=0
 
@@ -59,9 +53,13 @@ jobs:
         $env:DOTNET_gcServer=1
         dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj --logger trx -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed
         
-    - name: Test Results
+    - name: Test results
+      continue-on-error: true
       if: always()
-      run: trx
+      run: |
+        dotnet tool install -g dotnet-trx
+        trx
+
   ci-success:
     name: Build & Test Debug
     needs:

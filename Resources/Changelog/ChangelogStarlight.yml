@@ -19749,5 +19749,600 @@ Entries:
   id: 182500
   time: '2025-11-06T18:56:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1825
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 211200
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 211201
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) HV cables to shuttle docks
+    type: Add
+  id: 211202
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 211203
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Crew records computer to HOP
+    type: Add
+  id: 211204
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Changed "AI" beacon to "AI Upload" Station Beacon near bridge
+      to make it more clear what that room is for
+    type: Tweak
+  id: 211205
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Changed the wiring around PA, pushed the SMES back in the right
+      airlock so they're flush against the wall (and don't trap unlucky paraclones)
+    type: Tweak
+  id: 211206
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Moved HoP's fax machine out of their backroom and gave them a
+      paperbin
+    type: Tweak
+  id: 211207
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Freezer is now using the freezer-specific air alarms / air vents
+      / air scrubbers, should no longer report false alarms
+    type: Fix
+  id: 211208
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 211209
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Distribution pipes were not connected from the fountain area
+      to Service (Bar, Botany, Kitchen, HOP, Theatre)
+    type: Fix
+  id: 211210
+  time: '2025-11-07T04:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2112
+- author: CawsForConcern
+  changes:
+  - message: (Exo) New furniture! Updated benches, chairs, sofas added at select locations
+    type: Add
+  id: 209800
+  time: '2025-11-07T04:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2098
+- author: CawsForConcern
+  changes:
+  - message: (Exo) Nanomed civilian machines
+    type: Add
+  id: 209801
+  time: '2025-11-07T04:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2098
+- author: CawsForConcern
+  changes:
+  - message: (Exo) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 209802
+  time: '2025-11-07T04:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2098
+- author: CawsForConcern
+  changes:
+  - message: (Exo) Robotics access doors in Science
+    type: Add
+  id: 209803
+  time: '2025-11-07T04:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2098
+- author: CawsForConcern
+  changes:
+  - message: (Exo) HV cables to shuttle docks
+    type: Add
+  id: 209804
+  time: '2025-11-07T04:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2098
+- author: CawsForConcern
+  changes:
+  - message: (Exo) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 209805
+  time: '2025-11-07T04:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2098
+- author: CawsForConcern
+  changes:
+  - message: (Exo) Cell Recharger to Chemistry
+    type: Add
+  id: 209806
+  time: '2025-11-07T04:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2098
+- author: CawsForConcern
+  changes:
+  - message: (Exo) Cell Recharger to Brigmedic
+    type: Add
+  id: 209807
+  time: '2025-11-07T04:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2098
+- author: CawsForConcern
+  changes:
+  - message: (Exo) Document printer to Library
+    type: Add
+  id: 209808
+  time: '2025-11-07T04:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2098
+- author: CawsForConcern
+  changes:
+  - message: (Exo) Document printer to Medical
+    type: Add
+  id: 209809
+  time: '2025-11-07T04:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2098
+- author: CawsForConcern
+  changes:
+  - message: (Exo) Crew records computer to HOP
+    type: Add
+  id: 209810
+  time: '2025-11-07T04:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2098
+- author: CawsForConcern
+  changes:
+  - message: (Exo) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 209811
+  time: '2025-11-07T04:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2098
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 214100
+  time: '2025-11-07T04:13:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 214101
+  time: '2025-11-07T04:13:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) Robotics access doors in Science
+    type: Add
+  id: 214102
+  time: '2025-11-07T04:13:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) Surgery access doors in Medical
+    type: Add
+  id: 214103
+  time: '2025-11-07T04:13:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) HV cables to shuttle docks
+    type: Add
+  id: 214104
+  time: '2025-11-07T04:13:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 214105
+  time: '2025-11-07T04:13:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) Cell Recharger to Chemistry
+    type: Add
+  id: 214106
+  time: '2025-11-07T04:13:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) Cell Recharger to Brigmedic
+    type: Add
+  id: 214107
+  time: '2025-11-07T04:13:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) Hotplate to Brigmedic
+    type: Add
+  id: 214108
+  time: '2025-11-07T04:13:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) Document printer to Library
+    type: Add
+  id: 214109
+  time: '2025-11-07T04:13:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) Fax machine to Library
+    type: Add
+  id: 214110
+  time: '2025-11-07T04:13:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) Crew records computer to HOP
+    type: Add
+  id: 214111
+  time: '2025-11-07T04:13:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 214112
+  time: '2025-11-07T04:13:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2141
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 209500
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Nanomed civilian machines
+    type: Add
+  id: 209501
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 209502
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Surgery access doors in Medical
+    type: Add
+  id: 209503
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Robotics access doors in Science
+    type: Add
+  id: 209504
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) HV cables to shuttle docks
+    type: Add
+  id: 209505
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 209506
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Document printer to HOP
+    type: Add
+  id: 209507
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Document printer to Medical
+    type: Add
+  id: 209508
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Document printer to Library
+    type: Add
+  id: 209509
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Cell Recharger to Chemistry
+    type: Add
+  id: 209510
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Cell Recharger to Brigmedic
+    type: Add
+  id: 209511
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Turrets to AI Core
+    type: Add
+  id: 209512
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Turrets Control Panel to AI Core
+    type: Add
+  id: 209513
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Moved Science's Material Silo so it can reach Robotic's Exosuit
+      Fabricator
+    type: Tweak
+  id: 209514
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Moved the Robotics Beacon into Robotics (it wasn't in Robotics
+      before)
+    type: Tweak
+  id: 209515
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Fixed wrong door on EVA Storage (was HOP door)
+    type: Fix
+  id: 209516
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) SEC doors updated with Lawyer SEC doors where appropriate
+    type: Fix
+  id: 209517
+  time: '2025-11-07T04:23:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2095
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 213200
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 213201
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Robotics access doors in Science
+    type: Add
+  id: 213202
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Surrgery access doors in Medical
+    type: Add
+  id: 213203
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) HV cables to shuttle docks
+    type: Add
+  id: 213204
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 213205
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Cell Recharger to Chemistry
+    type: Add
+  id: 213206
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Cell Recharger to Brigmedic
+    type: Add
+  id: 213207
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Document printer to Library
+    type: Add
+  id: 213208
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Fax machine to Library
+    type: Add
+  id: 213209
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Document printer to Medical
+    type: Add
+  id: 213210
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Crew records computer to HOP
+    type: Add
+  id: 213211
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Button to open/close the radiation shutters in the Singularity
+      Chamber
+    type: Add
+  id: 213212
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Docking arm for Mining and Salvage ships to use
+    type: Add
+  id: 213213
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Atmospherics now has O2/N2 miners
+    type: Add
+  id: 213214
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Atmospherics now has a condesnor
+    type: Add
+  id: 213215
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Atmospherics now has N20 canister
+    type: Add
+  id: 213216
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Medical Bay directional windows moved so they don't interfere
+      with buckling patients
+    type: Tweak
+  id: 213217
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 213218
+  time: '2025-11-07T04:38:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 211500
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 211501
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Robotics access doors in Science
+    type: Add
+  id: 211502
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Surgery access doors in Medical
+    type: Add
+  id: 211503
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) HV cables to shuttle docks
+    type: Add
+  id: 211504
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 211505
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Cell Recharger to Chemistry
+    type: Add
+  id: 211506
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Cell Recharger to Brigmedic
+    type: Add
+  id: 211507
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Document printer to Medical
+    type: Add
+  id: 211508
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 211509
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
 Order: -1
 
