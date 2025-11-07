@@ -221,7 +221,7 @@
   id: BorgModuleSyndicateAdvancedChemical
   parent: [ BaseBorgModuleMedical, BaseProviderBorgModule, BaseSyndicateContraband]
   name: syndicate advanced chemical cyborg module
-  description: A syndicate version of the advanced chemical module, including a gorlex hypospray and an extra beaker slot rather than a dropper.
+  description: A syndicate version of the advanced chemical module, including a gorlex hypospray.
   components:
   - type: Sprite
     layers:
@@ -240,15 +240,7 @@
         whitelist:
           tags:
           - Syringe
-    - item: Beaker
-      hand:
-        emptyLabel: borg-slot-chemical-containers-empty
-        emptyRepresentative: Beaker
-        whitelist:
-          components:
-          - FitsInDispenser
-          tags:
-          - ChemDispensable
+    - item: BorgDropper
     - item: Beaker
       hand:
         emptyLabel: borg-slot-chemical-containers-empty
