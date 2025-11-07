@@ -20273,5 +20273,76 @@ Entries:
   id: 213218
   time: '2025-11-07T04:38:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2132
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 211500
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 211501
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Robotics access doors in Science
+    type: Add
+  id: 211502
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Surgery access doors in Medical
+    type: Add
+  id: 211503
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) HV cables to shuttle docks
+    type: Add
+  id: 211504
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 211505
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Cell Recharger to Chemistry
+    type: Add
+  id: 211506
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Cell Recharger to Brigmedic
+    type: Add
+  id: 211507
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Document printer to Medical
+    type: Add
+  id: 211508
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 211509
+  time: '2025-11-07T04:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2115
 Order: -1
 
