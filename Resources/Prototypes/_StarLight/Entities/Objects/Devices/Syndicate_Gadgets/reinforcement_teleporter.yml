@@ -6,7 +6,7 @@
   suffix: NukeOps
   components:
     - type: GhostRole
-      name: ghost-role-information-syndicate-medical-cyborg-name
+      name: ghost-role-information-syndicate-cyborg-medical-name
       description: ghost-role-information-syndicate-cyborg-description
       rules: ghost-role-information-silicon-rules
       mindRoles:
@@ -24,7 +24,7 @@
   suffix: NukeOps
   components:
     - type: GhostRole
-      name: ghost-role-information-syndicate-saboteur-cyborg-name
+      name: ghost-role-information-syndicate-cyborg-saboteur-name
       description: ghost-role-information-syndicate-cyborg-description
       rules: ghost-role-information-silicon-rules
       mindRoles:
@@ -42,7 +42,7 @@
   suffix: NukeOps
   components:
     - type: GhostRole
-      name: ghost-role-information-syndicate-stealth-cyborg-name
+      name: ghost-role-information-syndicate-cyborg-stealth-name
       description: ghost-role-information-syndicate-cyborg-description
       rules: ghost-role-information-silicon-rules
       mindRoles:

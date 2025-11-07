@@ -26,4 +26,4 @@ ghost-role-information-corporate-aligned-rules = You are [color={role-type-corpo
                                              You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                              You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
-ghost-role-information-syndicate-stealth-cyborg-name = syndicate stealth cyborg
+ghost-role-information-syndicate-cyborg-stealth-name = syndicate stealth cyborg
