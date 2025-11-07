@@ -20618,5 +20618,12 @@ Entries:
   id: 207100
   time: '2025-11-07T05:36:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2071
+- author: rhet0rica
+  changes:
+  - message: Added "NO SALINE!" medical PSA poster about birbs
+    type: Add
+  id: 214200
+  time: '2025-11-07T06:06:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2142
 Order: -1
 
