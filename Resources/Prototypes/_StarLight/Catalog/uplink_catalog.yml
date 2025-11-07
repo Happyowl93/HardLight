@@ -387,7 +387,7 @@
   productEntity: ReinforcementRadioSyndicateCyborgMedical
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-assault } # TODO BETTER ICON
   cost:
-    Telecrystal: 20
+    Telecrystal: 30
   categories:
     - UplinkAllies
   conditions:
