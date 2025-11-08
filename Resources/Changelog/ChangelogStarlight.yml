@@ -20769,5 +20769,78 @@ Entries:
   id: 214914
   time: '2025-11-08T18:05:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Cork) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 214800
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) HV cables to shuttle docks
+    type: Add
+  id: 214801
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 214802
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Cell Recharger to Chemistry
+    type: Add
+  id: 214803
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Document printer to Library
+    type: Add
+  id: 214804
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Document printer to Medical
+    type: Add
+  id: 214805
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Docking area for Mining / Salvage extended
+    type: Tweak
+  id: 214806
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Nanotrasen Representative role re-enabled (was already mapped,
+      just not enabled)
+    type: Fix
+  id: 214807
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Blueshield Officer role re-enabled (was already mapped, just not
+      enabled)
+    type: Fix
+  id: 214808
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 214809
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
 Order: -1
 
