@@ -21048,5 +21048,113 @@ Entries:
   id: 201201
   time: '2025-11-08T18:56:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2012
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 214600
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 214601
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Robotics access doors in Science
+    type: Add
+  id: 214602
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Surgery access doors in Medical
+    type: Add
+  id: 214603
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) HV cables to shuttle docks
+    type: Add
+  id: 214604
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 214605
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Cell Recharger to Chemistry
+    type: Add
+  id: 214606
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Cell Recharger to Brigmedic
+    type: Add
+  id: 214607
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Document printer to Library
+    type: Add
+  id: 214608
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Document printer to Medical
+    type: Add
+  id: 214609
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Evidence Lock up / West side of Brig changed from airlocks to
+      turnstiles
+    type: Tweak
+  id: 214610
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Mail Technician roles re-enabled
+    type: Fix
+  id: 214611
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Mail Technician spawnpoints added
+    type: Fix
+  id: 214612
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 214613
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Typo fix on mapNameTemplate where it said "Cidatel" instead
+      of "Citadel" (mapName was spelled Citadel)
+    type: Fix
+  id: 214614
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
 Order: -1
 
