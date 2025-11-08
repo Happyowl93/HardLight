@@ -139,7 +139,7 @@ namespace Content.IntegrationTests.Tests
             "Manor",
             #region Starlight
             "Gateway",
-            "Leth",
+            "StarlightLeth",
             "Ming",
             "Origin",
             "Orwell",

@@ -1,5 +1,5 @@
 - type: gameMap
-  id: Leth
+  id: StarlightLeth
   mapName: 'Leth Vessel'
   mapPath: /Maps/_Starlight/Stations/Leth.yml
   minPlayers: 15
