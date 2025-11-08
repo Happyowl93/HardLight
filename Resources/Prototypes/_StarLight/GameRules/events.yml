@@ -249,6 +249,11 @@
   parent: BaseGameRule
   id: Brighteye
   components:
+  - type: StationEvent
+    weight: 1
+    earliestStart: 30
+    reoccurrenceDelay: 60
+    minimumPlayers: 30
   - type: RuleGrids
   - type: GameRule
     minPlayers: 10
