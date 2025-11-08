@@ -264,6 +264,7 @@
     - CargoBoardsStatic
     - MedicalBoardsStatic
     - EngineeringBoardsStatic
+    - StarlightVendorBoards # Starlight
     dynamicPacks:
     - EngineeringBoards
     - CargoBoards
@@ -280,6 +281,7 @@
     - StarlightSecurityBoards
     emagStaticPacks: # Starlight
     - StarlightDangerousLawboards # Starlight
+    - StarlightSyndicateVendorBoards # Starlight
   - type: MaterialStorage
     whitelist:
       tags:
@@ -439,7 +441,7 @@
     - SecurityDisablers
     - SecurityCyberLimbs
     - StarlightSecurityMechsWeapons
-    - StarlightSecurityMechsSystems
+#    - StarlightSecurityMechsSystems
   #region Starlight secfab emagging
   - type: EmagLatheRecipes
     emagStaticPacks:
