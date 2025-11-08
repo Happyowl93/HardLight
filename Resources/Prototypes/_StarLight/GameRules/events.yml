@@ -256,6 +256,7 @@
     mapPath: /Maps/_Starlight/TheDark/Hideout.yml
   - type: AntagLoadProfileRule
     speciesHardOverride: Shadekin
+    applyCharacterProfile: true
   - type: AntagSelection
     selectionTime: PrePlayerSpawn
     definitions:
