@@ -21191,5 +21191,15 @@ Entries:
   id: 198003
   time: '2025-11-08T19:18:54.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1980
+- author: nomad.marshall
+  changes:
+  - message: adjusted fuel consumption costs of the flippo lighters that come in the
+      mystery lighter box. NT, donk and honk co lighters no longer drain at extremely
+      fast rates. bloodred, cybersun, interdyne and waffle co lighters now slowly
+      consume fuel.
+    type: Tweak
+  id: 208300
+  time: '2025-11-08T19:24:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2083
 Order: -1
 
