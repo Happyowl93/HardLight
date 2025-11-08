@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 11/08/2025 07:42:13
-  entityCount: 29259
+  time: 11/08/2025 07:57:47
+  entityCount: 29260
 maps:
 - 1
 grids:
@@ -544,6 +544,9 @@ entities:
             5942: 38,-2
             5956: 42,-1
             5959: 23,-1
+            5972: -10,0
+            5973: -7,0
+            5974: 5,0
         - node:
             angle: 3.141592653589793 rad
             color: '#FFFFFFFF'
@@ -10025,6 +10028,8 @@ entities:
     - type: Transform
       pos: -14.5,-1.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
 - proto: AirlockCaptainLocked
   entities:
   - uid: 164
@@ -10302,7 +10307,7 @@ entities:
       pos: -57.5,40.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -31650.057
+      secondsUntilStateChange: -32582.242
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10709,7 +10714,7 @@ entities:
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: Door
-      secondsUntilStateChange: -168489.38
+      secondsUntilStateChange: -169421.56
       state: Opening
     - type: DeviceLinkSource
       linkedPorts:
@@ -12436,7 +12441,7 @@ entities:
       pos: 18.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -57446.453
+      secondsUntilStateChange: -58378.637
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12447,7 +12452,7 @@ entities:
       pos: 17.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -57441.387
+      secondsUntilStateChange: -58373.57
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -17222,12 +17227,6 @@ entities:
       parent: 2
 - proto: BenchGrayComfyEndLeft
   entities:
-  - uid: 11085
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 40.5,-0.5
-      parent: 2
   - uid: 11102
     components:
     - type: Transform
@@ -17235,12 +17234,6 @@ entities:
       parent: 2
 - proto: BenchGrayComfyEndRight
   entities:
-  - uid: 11084
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 40.5,1.5
-      parent: 2
   - uid: 11104
     components:
     - type: Transform
@@ -17248,12 +17241,6 @@ entities:
       parent: 2
 - proto: BenchGrayComfyMiddle
   entities:
-  - uid: 11083
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 40.5,0.5
-      parent: 2
   - uid: 11103
     components:
     - type: Transform
@@ -17286,6 +17273,12 @@ entities:
       parent: 2
 - proto: BenchRedComfyEndLeft
   entities:
+  - uid: 11084
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 40.5,-0.5
+      parent: 2
   - uid: 11098
     components:
     - type: Transform
@@ -17359,6 +17352,12 @@ entities:
       parent: 2
 - proto: BenchRedComfyEndRight
   entities:
+  - uid: 11083
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 40.5,1.5
+      parent: 2
   - uid: 11099
     components:
     - type: Transform
@@ -17432,6 +17431,12 @@ entities:
       parent: 2
 - proto: BenchRedComfyMiddle
   entities:
+  - uid: 11085
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 40.5,0.5
+      parent: 2
   - uid: 11100
     components:
     - type: Transform
@@ -86514,7 +86519,7 @@ entities:
       pos: -43.5,-6.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -32966.855
+      secondsUntilStateChange: -33899.04
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -140709,6 +140714,11 @@ entities:
     components:
     - type: Transform
       pos: 60.5,-18.5
+      parent: 2
+  - uid: 29260
+    components:
+    - type: Transform
+      pos: -69.5,-4.5
       parent: 2
 - proto: PoweredLEDSmallLight
   entities:
