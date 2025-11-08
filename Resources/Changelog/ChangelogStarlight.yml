@@ -20842,5 +20842,145 @@ Entries:
   id: 214809
   time: '2025-11-08T18:08:52.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: Rhetorica
+  changes:
+  - message: New inhand art for Bible
+    type: Fix
+  id: 214500
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Stray pixel on holy book inhand art
+    type: Fix
+  id: 214501
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Hebrew Torah
+    type: Add
+  id: 214502
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Orthodox Bible
+    type: Add
+  id: 214503
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Book of Hadith
+    type: Add
+  id: 214504
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Druze Kitab al-Hikma
+    type: Add
+  id: 214505
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Book of Mormon (for Blort and Glort the grottlings)
+    type: Add
+  id: 214506
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Malleus Maleficarum (witch-hunting manual)
+    type: Add
+  id: 214507
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Norse Poetic Edda
+    type: Add
+  id: 214508
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Tao Te Ching
+    type: Add
+  id: 214509
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Buddhist Tripitaka
+    type: Add
+  id: 214510
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Hindu Rig Veda
+    type: Add
+  id: 214511
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Zen Buddhist Koans
+    type: Add
+  id: 214512
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Principia Discordia
+    type: Add
+  id: 214513
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Liber Chaotica (to match Chaos altar)
+    type: Add
+  id: 214514
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Book of Grudges (for angry dwarfs)
+    type: Add
+  id: 214515
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Book of Ancestors (for nice dwarfs)
+    type: Add
+  id: 214516
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Book of Ages (for high elves and nice fantasy creatures)
+    type: Add
+  id: 214517
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Tome of Dread (for dark elves and grumpy fantasy creatures)
+    type: Add
+  id: 214518
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: All of the above to Chaplain loadout options
+    type: Add
+  id: 214519
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
 Order: -1
 
