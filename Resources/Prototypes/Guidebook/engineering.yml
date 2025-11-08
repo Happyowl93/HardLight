@@ -319,6 +319,7 @@
   - PortableGenerator
   - AME
   - SingularityTeslaEngine
+  - NuclearReactor # FarHorizons
   - TEG
   - RTG
   - SolarPanels
@@ -365,3 +366,4 @@
   id: SolarPanels
   name: guide-entry-solarpanels
   text: "/ServerInfo/Guidebook/Engineering/SolarPanels.xml"
+
