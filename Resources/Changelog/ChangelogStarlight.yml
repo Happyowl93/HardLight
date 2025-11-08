@@ -21034,5 +21034,19 @@ Entries:
   id: 169100
   time: '2025-11-08T18:56:44.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1691
+- author: CrazyPhantom
+  changes:
+  - message: Shiva is now butcher-able.
+    type: Tweak
+  id: 201200
+  time: '2025-11-08T18:56:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2012
+- author: CrazyPhantom
+  changes:
+  - message: Shiva now contains 5tc just like Renault.
+    type: Tweak
+  id: 201201
+  time: '2025-11-08T18:56:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2012
 Order: -1
 
