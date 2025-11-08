@@ -3,6 +3,7 @@ using Content.Server.Atmos.Piping.Components;
 using Content.Server.Cargo.Components;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
+using Content.Shared.Atmos;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -27,14 +28,25 @@ public sealed class CargoGasPalletSystem : EntitySystem
     /// </summary>
     private void OnAtmosDeviceUpdateEvent(EntityUid uid, CargoGasPalletComponent pallet, ref AtmosDeviceUpdateEvent args)
     {
-        if (!_nodeContainer.TryGetNode(uid, pallet.InletName, out PipeNode? inlet)) {
+        if (!_nodeContainer.TryGetNode(uid, pallet.InletName, out PipeNode? inlet))
+        {
             return;
         }
 
-        // We're effectively venting into a wormhole - if there's gas, it's moving.
-        if (inlet.Air.Pressure > 0) {
-            _atmosphereSystem.Merge(pallet.Air, inlet.Air);
-            inlet.Air.Clear();
+        var outputStartingPressure = pallet.Air.Pressure;
+
+        if (outputStartingPressure >= pallet.MaxPressure)
+        {
+            return;
+        }
+
+        // Vent into a large but finite internal buffer
+        if (inlet.Air.TotalMoles > 0 && inlet.Air.Pressure > 0)
+        {
+            var pressureDelta = pallet.MaxPressure - outputStartingPressure;
+            var transferMoles = (pressureDelta * pallet.Air.Volume) / (inlet.Air.Temperature * Atmospherics.R);
+            var removed = inlet.Air.Remove(transferMoles);
+            _atmosphereSystem.Merge(pallet.Air, removed);
         }
     }
 

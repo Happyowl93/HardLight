@@ -11,6 +11,8 @@
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
   - type: CargoGasPallet
+    gasMixture:
+      volume: 3000
   - type: Sprite
     drawdepth: FloorObjects
     sprite: _Starlight/Structures/cargo_gas_pallet.rsi

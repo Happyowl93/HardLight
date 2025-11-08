@@ -17,6 +17,12 @@ public sealed partial class CargoGasPalletComponent : Component, IGasMixtureHold
     /// <summary>
     /// A gas mixture representing the remote resivoir.
     /// </summary>
-    [DataField("air")]
+    [DataField("gasMixture")]
     public GasMixture Air { get; set; } = new GasMixture();
+
+    /// <summary>
+    /// The maximum pressure to which this will accept gasses
+    /// </summary>
+    [DataField("maxPressure")]
+    public float MaxPressure { get; set; } = 4500;
 }
