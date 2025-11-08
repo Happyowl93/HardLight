@@ -20989,5 +20989,26 @@ Entries:
   id: 207200
   time: '2025-11-08T18:56:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2072
+- author: Penuinwizzard
+  changes:
+  - message: Sustenance Vendor restock box is now purchasable to keep prisoners fed.
+    type: Add
+  id: 207400
+  time: '2025-11-08T18:56:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2074
+- author: Penuinwizzard
+  changes:
+  - message: PietyVend and PrideVend can now be restocked with wardrobe restock boxes.
+    type: Add
+  id: 207401
+  time: '2025-11-08T18:56:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2074
+- author: Penuinwizzard
+  changes:
+  - message: AmmoVends can now be restocked with SecTech restock boxes.
+    type: Add
+  id: 207402
+  time: '2025-11-08T18:56:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2074
 Order: -1
 
