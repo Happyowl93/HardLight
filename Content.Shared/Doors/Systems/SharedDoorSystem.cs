@@ -203,11 +203,10 @@ public abstract partial class SharedDoorSystem : EntitySystem
     #region Interactions
     protected void OnActivate(EntityUid uid, DoorComponent door, ActivateInWorldEvent args)
     {
-        if (args.Handled || !args.Complex || !door.ClickOpen)
-            return;
 
-        if (!TryToggleDoor(uid, door, args.User, predicted: true))
-            _pryingSystem.TryPry(uid, args.User, out _);
+        var pryingCapable = args.Complex || HasComp<PryingComponent>(args.User);
+        if (args.Handled || !pryingCapable || !door.ClickOpen)
+            return;
 
         args.Handled = true;
     }
