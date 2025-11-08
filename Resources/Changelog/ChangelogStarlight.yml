@@ -21010,5 +21010,13 @@ Entries:
   id: 207402
   time: '2025-11-08T18:56:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2074
+- author: Penguinwizzard
+  changes:
+  - message: Vending machines can now be constructed, and vending machine circuit
+      boards are now imprintable.
+    type: Add
+  id: 189200
+  time: '2025-11-08T18:56:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1892
 Order: -1
 
