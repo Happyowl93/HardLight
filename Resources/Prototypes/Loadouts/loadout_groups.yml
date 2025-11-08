@@ -175,7 +175,7 @@
   - CaptainFormalSkirt
   - CapTurtleneckJumpskirt
   - CapTurtleneckJumpsuit
-  - CaptainJumpsuitNoble
+  - CaptainJumpsuitNoble #starlight
 
 - type: loadoutGroup
   id: CaptainNeck
