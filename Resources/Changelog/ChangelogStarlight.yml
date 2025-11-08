@@ -20656,5 +20656,557 @@ Entries:
   id: 209900
   time: '2025-11-07T06:36:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2099
+- author: R3v3l4t1on
+  changes:
+  - message: The power of communism no longer allows borgs/AI to detect hivemind changelings.
+    type: Fix
+  id: 215100
+  time: '2025-11-08T16:56:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2151
+- author: CawsForConcern
+  changes:
+  - message: (Omega) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 214900
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 214901
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Robotics access doors in Science
+    type: Add
+  id: 214902
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Surgery access doors in Medical
+    type: Add
+  id: 214903
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) HV cables to shuttle docks
+    type: Add
+  id: 214904
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 214905
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Cell Recharger to Chemistry
+    type: Add
+  id: 214906
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Cell Recharger to Brigmedic
+    type: Add
+  id: 214907
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Document printer to Library
+    type: Add
+  id: 214908
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Document printer to Medical
+    type: Add
+  id: 214909
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Added turrets to AI Core
+    type: Add
+  id: 214910
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Added Turert Controls to AI Core
+    type: Add
+  id: 214911
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Renovated the Courtroom to look nicer / more integrated
+    type: Tweak
+  id: 214912
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) GenPop processing's doors are less weird now
+    type: Tweak
+  id: 214913
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) EVA replaced with the correct ones
+    type: Fix
+  id: 214914
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Cork) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 214800
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) HV cables to shuttle docks
+    type: Add
+  id: 214801
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 214802
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Cell Recharger to Chemistry
+    type: Add
+  id: 214803
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Document printer to Library
+    type: Add
+  id: 214804
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Document printer to Medical
+    type: Add
+  id: 214805
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Docking area for Mining / Salvage extended
+    type: Tweak
+  id: 214806
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Nanotrasen Representative role re-enabled (was already mapped,
+      just not enabled)
+    type: Fix
+  id: 214807
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Blueshield Officer role re-enabled (was already mapped, just not
+      enabled)
+    type: Fix
+  id: 214808
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: CawsForConcern
+  changes:
+  - message: (Cork) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 214809
+  time: '2025-11-08T18:08:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2148
+- author: Rhetorica
+  changes:
+  - message: New inhand art for Bible
+    type: Fix
+  id: 214500
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Stray pixel on holy book inhand art
+    type: Fix
+  id: 214501
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Hebrew Torah
+    type: Add
+  id: 214502
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Orthodox Bible
+    type: Add
+  id: 214503
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Book of Hadith
+    type: Add
+  id: 214504
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Druze Kitab al-Hikma
+    type: Add
+  id: 214505
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Book of Mormon (for Blort and Glort the grottlings)
+    type: Add
+  id: 214506
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Malleus Maleficarum (witch-hunting manual)
+    type: Add
+  id: 214507
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Norse Poetic Edda
+    type: Add
+  id: 214508
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Tao Te Ching
+    type: Add
+  id: 214509
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Buddhist Tripitaka
+    type: Add
+  id: 214510
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Hindu Rig Veda
+    type: Add
+  id: 214511
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Zen Buddhist Koans
+    type: Add
+  id: 214512
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Principia Discordia
+    type: Add
+  id: 214513
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Liber Chaotica (to match Chaos altar)
+    type: Add
+  id: 214514
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Book of Grudges (for angry dwarfs)
+    type: Add
+  id: 214515
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Book of Ancestors (for nice dwarfs)
+    type: Add
+  id: 214516
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Book of Ages (for high elves and nice fantasy creatures)
+    type: Add
+  id: 214517
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: Tome of Dread (for dark elves and grumpy fantasy creatures)
+    type: Add
+  id: 214518
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Rhetorica
+  changes:
+  - message: All of the above to Chaplain loadout options
+    type: Add
+  id: 214519
+  time: '2025-11-08T18:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2145
+- author: Fasuh
+  changes:
+  - message: Avali not rotting.
+    type: Fix
+  id: 207200
+  time: '2025-11-08T18:56:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2072
+- author: Penuinwizzard
+  changes:
+  - message: Sustenance Vendor restock box is now purchasable to keep prisoners fed.
+    type: Add
+  id: 207400
+  time: '2025-11-08T18:56:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2074
+- author: Penuinwizzard
+  changes:
+  - message: PietyVend and PrideVend can now be restocked with wardrobe restock boxes.
+    type: Add
+  id: 207401
+  time: '2025-11-08T18:56:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2074
+- author: Penuinwizzard
+  changes:
+  - message: AmmoVends can now be restocked with SecTech restock boxes.
+    type: Add
+  id: 207402
+  time: '2025-11-08T18:56:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2074
+- author: Penguinwizzard
+  changes:
+  - message: Vending machines can now be constructed, and vending machine circuit
+      boards are now imprintable.
+    type: Add
+  id: 189200
+  time: '2025-11-08T18:56:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1892
+- author: Penguinwizzard and Conflee
+  changes:
+  - message: Added wall-mounted mass scanner consoles; craft them using a new board
+      from the shuttlecraft tech in place of a station map board.
+    type: Add
+  id: 208200
+  time: '2025-11-08T18:56:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2082
+- author: mikeysaurus
+  changes:
+  - message: Reduces required alcohol consumed for railroading to let vulps spill
+      (up to 4 times) without being penalized because of their messy drinking.
+    type: Tweak
+  id: 169100
+  time: '2025-11-08T18:56:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1691
+- author: CrazyPhantom
+  changes:
+  - message: Shiva is now butcher-able.
+    type: Tweak
+  id: 201200
+  time: '2025-11-08T18:56:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2012
+- author: CrazyPhantom
+  changes:
+  - message: Shiva now contains 5tc just like Renault.
+    type: Tweak
+  id: 201201
+  time: '2025-11-08T18:56:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2012
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 214600
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 214601
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Robotics access doors in Science
+    type: Add
+  id: 214602
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Surgery access doors in Medical
+    type: Add
+  id: 214603
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) HV cables to shuttle docks
+    type: Add
+  id: 214604
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 214605
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Cell Recharger to Chemistry
+    type: Add
+  id: 214606
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Cell Recharger to Brigmedic
+    type: Add
+  id: 214607
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Document printer to Library
+    type: Add
+  id: 214608
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Document printer to Medical
+    type: Add
+  id: 214609
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Evidence Lock up / West side of Brig changed from airlocks to
+      turnstiles
+    type: Tweak
+  id: 214610
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Mail Technician roles re-enabled
+    type: Fix
+  id: 214611
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Mail Technician spawnpoints added
+    type: Fix
+  id: 214612
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Brig / Lawyer doors in the right places for SEC Department
+    type: Fix
+  id: 214613
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Typo fix on mapNameTemplate where it said "Cidatel" instead
+      of "Citadel" (mapName was spelled Citadel)
+    type: Fix
+  id: 214614
+  time: '2025-11-08T18:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: Conflee
+  changes:
+  - message: Added 2 new Shuttle Wrecks to the Magnet pool, and 1 new massive Ruin
+      'Sus'.
+    type: Add
+  id: 198000
+  time: '2025-11-08T19:18:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1980
+- author: Conflee
+  changes:
+  - message: Upped the max ruin count from 2 to 3, with 2 being the minimum still,
+      to account for more people being out in space scrapping wrecks on ultra high
+      pop
+    type: Tweak
+  id: 198001
+  time: '2025-11-08T19:18:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1980
+- author: Conflee
+  changes:
+  - message: Edited Empty Flagship and Whiteship Ancient to be more interesting. Empty
+      Flagship's "departments" are now actually decorated like departments instead
+      of being empty rooms with shit piled next to walls, and the warehouse in the
+      back is subdivided into more sub-rooms to feel less unfinished
+    type: Tweak
+  id: 198002
+  time: '2025-11-08T19:18:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1980
+- author: Conflee
+  changes:
+  - message: Edited the rooms VGroid's Science Lab generates with to use decal spawners
+      and overall look slightly more beaten up and weathered
+    type: Tweak
+  id: 198003
+  time: '2025-11-08T19:18:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1980
+- author: nomad.marshall
+  changes:
+  - message: adjusted fuel consumption costs of the flippo lighters that come in the
+      mystery lighter box. NT, donk and honk co lighters no longer drain at extremely
+      fast rates. bloodred, cybersun, interdyne and waffle co lighters now slowly
+      consume fuel.
+    type: Tweak
+  id: 208300
+  time: '2025-11-08T19:24:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2083
+- author: Penguinwizzard
+  changes:
+  - message: Added Improvised Pneumatic Crew Cannon.
+    type: Add
+  id: 192300
+  time: '2025-11-08T19:24:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1923
 Order: -1
 

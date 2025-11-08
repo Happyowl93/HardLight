@@ -284,3 +284,12 @@
 
 - type: Tag
   id: TheDarkMap
+  
+- type: Tag
+  id: PersonnelStorage
+
+- type: Tag
+  id: DisposalPipe
+
+- type: Tag
+  id: WallmountMassScannerElectronics
