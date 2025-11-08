@@ -34,10 +34,10 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitDecimus
     shoes: ClothingShoesBootsMagAdv
-    id: DeathsquadPDA
-    pocket1: EnergySword
+    id: DecimusPDA
+    pocket1: AccessOveriderUnlimited
     pocket2: EnergyShield
-    belt: ClothingBeltNTNCRigFilled
+    belt: PrototypeVibrobladeSheath
     suitstorage: WeaponPulseRifle
   storage:
     back:
@@ -51,7 +51,6 @@
     - Hypospray
     - DeathAcidifierImplanter # crew will try to steal their amazing hardsuits
     - FreedomImplanter
-  inhand:
-  - CentcommVibroblade
+
 
 

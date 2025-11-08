@@ -34,10 +34,10 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitNTSF
     shoes: ClothingShoesBootsMagAdv
-    id: DeathsquadPDA
-    pocket1: EnergySword
+    id: NTSFPDA
+    pocket1: AccessOveriderUnlimited
     pocket2: EnergyShield
-    belt: ClothingBeltMilitaryWebbingMedFilled
+    belt: PrototypeVibrobladeSheath
     neck: ClothingNeckCapeNTSF1
     suitstorage: WeaponPulseRifle
   storage:
@@ -52,7 +52,5 @@
     - Hypospray
     - DeathAcidifierImplanter # crew will try to steal their amazing hardsuits
     - FreedomImplanter
-  inhand:
-  - CentcommVibroblade
 
 

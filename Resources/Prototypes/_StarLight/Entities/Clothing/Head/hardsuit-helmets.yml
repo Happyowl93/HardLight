@@ -507,14 +507,14 @@
 # NanoTrasen Special Forces
 
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadSuitWithLightBase ]
+  parent: [ BaseCentcommContraband, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitNTSF
   name: nanotrasen special forces hardsuit helmet
   description: A robust helmet for special operations.
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/NTSF_Helm.rsi
+    sprite: _Starlight/Clothing/Head/Hardsuits/NTSF_Helm.rsi
     layers:
     - state: icon
     - state: icon-unshaded
@@ -529,9 +529,10 @@
     spriteLayer: light
     clothingVisuals:
       head:
-      - state: equipped-head-light
-        shader: unshaded
+        - state: equipped-head-light
+          shader: unshaded
   - type: Clothing
+    sprite: _Starlight/Clothing/Head/Hardsuits/NTSF_Helm.rsi
     clothingVisuals:
       head:
       - state: equipped-head
@@ -557,7 +558,7 @@
         Caustic: 0.80
 
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadSuitWithLightBase ]
+  parent: [ BaseCentcommContraband, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitDecimus
   name: decimus hardsuit helmet
   description: A robust helmet for special operations.
@@ -579,9 +580,10 @@
     spriteLayer: light
     clothingVisuals:
       head:
-      - state: equipped-head-light
-        shader: unshaded
+        - state: equipped-head-light
+          shader: unshaded
   - type: Clothing
+    sprite: _Starlight/Clothing/Head/Hardsuits/Decimus_Helm.rsi
     clothingVisuals:
       head:
       - state: equipped-head
