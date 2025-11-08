@@ -21208,5 +21208,12 @@ Entries:
   id: 192300
   time: '2025-11-08T19:24:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1923
+- author: Way
+  changes:
+  - message: Captain's Noble Jumpsuit, obtainable via the loadout menu.
+    type: Add
+  id: 209300
+  time: '2025-11-08T19:34:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2093
 Order: -1
 
