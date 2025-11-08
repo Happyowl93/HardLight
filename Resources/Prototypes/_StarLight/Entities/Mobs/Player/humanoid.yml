@@ -142,17 +142,30 @@
   suffix: ERTRole, NTSF
   components:
     - type: Sprite
-      sprite: _Starlight/Clothing/OuterClothing/Hardsuits/NTSF_Hardsuit.rsi
-      state: icon
+      sprite: _Starlight/Markers/jobs.rsi
+      state: ntsficon
     - type: RandomMetadata
       nameSegments:
         - NamesMilitaryFirstLeader
         - NamesMilitaryLast
       nameFormat: name-format-ert
+    - type: RandomHumanoidSpawner
+      settings: NTSFoperative
 
 - type: randomHumanoidSettings
   id: NTSFoperative
   parent: EventHumanoidCentcomm
+  speciesBlacklist:
+  - Arachnid
+  - Diona
+  - Reptilian
+  - Resomi
+  - Vox
+  - Vulpkanin
+  - Avali
+  - Felionoid
+  - Shadekin
+  - Thaven
   components:
     - type: GhostRole
       name: ghost-role-information-nanotrasen-special-forces-name
@@ -178,18 +191,6 @@
         - NamesMilitaryFirstLeader
         - NamesMilitaryLast
       nameFormat: name-format-ert
-    - type: speciesBlacklist
-      - arachnid
-      - diona
-      - reptilian
-      - resomi
-      - vox
-      - vulpkanin
-      - avali
-      - cyclorites
-      - felionoid
-      - shadekin
-      - thaven
 
 
 - type: entity
@@ -198,8 +199,8 @@
   suffix: ERTRole, Decimus
   components:
     - type: Sprite
-      sprite: _Starlight/Clothing/OuterClothing/Hardsuits/Decimus_Hardsuit.rsi
-      state: icon
+      sprite: _Starlight/Markers/jobs.rsi
+      state: decimusicon
     - type: RandomMetadata
       nameSegments:
         - NamesMilitaryFirstLeader
@@ -211,6 +212,17 @@
 - type: randomHumanoidSettings
   id: Decimusoperative
   parent: EventHumanoidCentcomm
+  speciesBlacklist:
+  - Arachnid
+  - Diona
+  - Reptilian
+  - Resomi
+  - Vox
+  - Vulpkanin
+  - Avali
+  - Felionoid
+  - Shadekin
+  - Thaven
   components:
     - type: GhostRole
       name: ghost-role-information-decimus-name
@@ -236,16 +248,4 @@
         - NamesMilitaryFirstLeader
         - NamesMilitaryLast
       nameFormat: name-format-ert
-    - type: speciesBlacklist
-      - arachnid
-      - diona
-      - reptilian
-      - resomi
-      - vox
-      - vulpkanin
-      - avali
-      - cyclorites
-      - felionoid
-      - shadekin
-      - thaven
 

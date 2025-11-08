@@ -281,9 +281,10 @@
     damageCoefficient: 0.1 #SL
   - type: Sprite #SL
     sprite: _Starlight/Clothing/Back/Backpacks/ntnc_bag.rsi #SL
-  - type: Storage #SL
+  - type: Storage
+    maxItemSize: Huge #SL
     grid: #SL
-    - 0,0,8,4 #SL
+    - 0,0,8,5 #SL
 
 #Syndicate
 - type: entity

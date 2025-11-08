@@ -51,6 +51,7 @@
     - Hypospray
     - DeathAcidifierImplanter # crew will try to steal their amazing hardsuits
     - FreedomImplanter
-
+  inhand:
+  - PrototypeVibroblade
 
 
