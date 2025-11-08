@@ -281,3 +281,6 @@
 
 - type: Tag
   id: DisposalPipe
+
+- type: Tag
+  id: WallmountMassScannerElectronics
