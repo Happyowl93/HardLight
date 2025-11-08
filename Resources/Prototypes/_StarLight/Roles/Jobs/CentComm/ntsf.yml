@@ -38,6 +38,7 @@
     pocket1: EnergySword
     pocket2: EnergyShield
     belt: ClothingBeltMilitaryWebbingMedFilled
+    neck: ClothingNeckCapeNTSF1
     suitstorage: WeaponPulseRifle
   storage:
     back:
