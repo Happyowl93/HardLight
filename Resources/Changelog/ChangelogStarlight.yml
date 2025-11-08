@@ -21018,5 +21018,13 @@ Entries:
   id: 189200
   time: '2025-11-08T18:56:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1892
+- author: Penguinwizzard and Conflee
+  changes:
+  - message: Added wall-mounted mass scanner consoles; craft them using a new board
+      from the shuttlecraft tech in place of a station map board.
+    type: Add
+  id: 208200
+  time: '2025-11-08T18:56:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2082
 Order: -1
 
