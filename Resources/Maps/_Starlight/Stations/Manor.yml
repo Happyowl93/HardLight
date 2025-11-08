@@ -6909,7 +6909,7 @@ entities:
     - type: NavMap
     - type: RadiationGridResistance
     - type: BecomesStation
-      id: Manor
+      id: StarlightManor
     - type: ImplicitRoof
   - uid: 5
     components:
