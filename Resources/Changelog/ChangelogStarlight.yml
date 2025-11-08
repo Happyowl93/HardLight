@@ -19196,7 +19196,7 @@ Entries:
   id: 206500
   time: '2025-10-30T21:33:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2065
-- author: STARLIGHT TEAM
+- author: maxim6263
   changes:
   - message: The Stunbaton has a new sound when harmbatoning a player.
     type: Tweak
