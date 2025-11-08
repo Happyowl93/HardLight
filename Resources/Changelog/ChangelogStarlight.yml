@@ -21026,5 +21026,13 @@ Entries:
   id: 208200
   time: '2025-11-08T18:56:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2082
+- author: mikeysaurus
+  changes:
+  - message: Reduces required alcohol consumed for railroading to let vulps spill
+      (up to 4 times) without being penalized because of their messy drinking.
+    type: Tweak
+  id: 169100
+  time: '2025-11-08T18:56:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1691
 Order: -1
 
