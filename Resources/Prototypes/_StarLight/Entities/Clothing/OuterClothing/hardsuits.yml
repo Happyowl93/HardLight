@@ -607,6 +607,13 @@
     walkModifier: 1.0
     sprintModifier: 1.0
   - type: HeldSpeedModifier
+  - type: FootstepModifier #starlight
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+      params:
+        volume: -7
+        pitch: 0.7
+        variation: 0.025
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitNTSF
 
@@ -648,6 +655,13 @@
     walkModifier: 1.0
     sprintModifier: 1.0
   - type: HeldSpeedModifier
+  - type: FootstepModifier #starlight
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+      params:
+        volume: -7
+        pitch: 0.7
+        variation: 0.025
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitDecimus
 
