@@ -507,7 +507,7 @@
 # NanoTrasen Special Forces
 
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHardsuitBase ]
+  parent: [ BaseCentcommContraband, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitNTSF
   name: nanotrasen special forces hardsuit helmet
   description: A robust helmet for special operations.
@@ -535,7 +535,7 @@
         Caustic: 0.80
 
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHardsuitBase ]
+  parent: [ BaseCentcommContraband, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitDecimus
   name: decimus hardsuit helmet
   description: A robust helmet for special operations.

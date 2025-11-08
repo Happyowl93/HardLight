@@ -2,7 +2,7 @@
   id: NanoTrasenSpecialForces
   name: job-name-nanotrasen-special-forces
   description: job-description-nanotrasen-special-forces
-  playTimeTracker: JobDeathSquad
+  playTimeTracker: JobNTSF
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
@@ -13,7 +13,7 @@
   startingGear: NanoTrasenSpecialForcesGear
   icon: JobIconNanotrasen
   rules: job-rules-corporate-aligned
-  supervisors: job-supervisors-centcom
+  supervisors: job-supervisors-nanotrasen
   canBeAntag: false
   accessGroups:
   - AllAccess

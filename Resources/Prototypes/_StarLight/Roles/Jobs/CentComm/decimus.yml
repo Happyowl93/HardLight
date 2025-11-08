@@ -2,7 +2,7 @@
   id: Decimus
   name: job-name-decimus
   description: job-description-decimus
-  playTimeTracker: JobDeathSquad
+  playTimeTracker: JobDecimus
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
@@ -13,7 +13,7 @@
   startingGear: DecimusGear
   icon: JobIconNanotrasen
   rules: job-rules-corporate-aligned
-  supervisors: job-supervisors-centcom
+  supervisors: job-supervisors-none
   canBeAntag: false
   accessGroups:
   - AllAccess
