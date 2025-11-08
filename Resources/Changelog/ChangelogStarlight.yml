@@ -20663,5 +20663,111 @@ Entries:
   id: 215100
   time: '2025-11-08T16:56:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2151
+- author: CawsForConcern
+  changes:
+  - message: (Omega) New furniture! Updated benches, chairs, sofas added at select
+      locations
+    type: Add
+  id: 214900
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) AI Lawboard crate (replaces old loose lawboards)
+    type: Add
+  id: 214901
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Robotics access doors in Science
+    type: Add
+  id: 214902
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Surgery access doors in Medical
+    type: Add
+  id: 214903
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) HV cables to shuttle docks
+    type: Add
+  id: 214904
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Gas pipes to cargo shuttle docks
+    type: Add
+  id: 214905
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Cell Recharger to Chemistry
+    type: Add
+  id: 214906
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Cell Recharger to Brigmedic
+    type: Add
+  id: 214907
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Document printer to Library
+    type: Add
+  id: 214908
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Document printer to Medical
+    type: Add
+  id: 214909
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Added turrets to AI Core
+    type: Add
+  id: 214910
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Added Turert Controls to AI Core
+    type: Add
+  id: 214911
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) Renovated the Courtroom to look nicer / more integrated
+    type: Tweak
+  id: 214912
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) GenPop processing's doors are less weird now
+    type: Tweak
+  id: 214913
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
+- author: CawsForConcern
+  changes:
+  - message: (Omega) EVA replaced with the correct ones
+    type: Fix
+  id: 214914
+  time: '2025-11-08T18:05:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2149
 Order: -1
 
