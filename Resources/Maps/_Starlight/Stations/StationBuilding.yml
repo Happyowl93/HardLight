@@ -17864,6 +17864,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -4.5,-1.5
       parent: 2
+- proto: SpawnPointJanitor
+  entities:
+  - uid: 4365
+    components:
+    - type: Transform
+      pos: -4.5,-1.5
+      parent: 2
 - proto: JetpackVoidFilled
   entities:
   - uid: 294
