@@ -24,7 +24,6 @@
           tags:
             - PowerCell
             - PowerCellSmall
-            - PowerCellMedium
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
@@ -64,7 +63,6 @@
           tags:
             - PowerCell
             - PowerCellSmall
-            - PowerCellMedium
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
@@ -104,7 +102,6 @@
           tags:
             - PowerCell
             - PowerCellSmall
-            - PowerCellMedium
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
@@ -144,7 +141,6 @@
           tags:
             - PowerCell
             - PowerCellSmall
-            - PowerCellMedium
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
@@ -184,7 +180,6 @@
           tags:
             - PowerCell
             - PowerCellSmall
-            - PowerCellMedium
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
@@ -224,7 +219,6 @@
           tags:
             - PowerCell
             - PowerCellSmall
-            - PowerCellMedium
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
@@ -264,7 +258,6 @@
           tags:
             - PowerCell
             - PowerCellSmall
-            - PowerCellMedium
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
@@ -304,7 +297,6 @@
           tags:
             - PowerCell
             - PowerCellSmall
-            - PowerCellMedium
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
@@ -344,7 +336,6 @@
           tags:
             - PowerCell
             - PowerCellSmall
-            - PowerCellMedium
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
@@ -384,7 +375,6 @@
           tags:
             - PowerCell
             - PowerCellSmall
-            - PowerCellMedium
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
