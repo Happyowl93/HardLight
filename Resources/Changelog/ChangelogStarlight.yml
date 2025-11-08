@@ -21156,5 +21156,40 @@ Entries:
   id: 214614
   time: '2025-11-08T18:56:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2146
+- author: Conflee
+  changes:
+  - message: Added 2 new Shuttle Wrecks to the Magnet pool, and 1 new massive Ruin
+      'Sus'.
+    type: Add
+  id: 198000
+  time: '2025-11-08T19:18:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1980
+- author: Conflee
+  changes:
+  - message: Upped the max ruin count from 2 to 3, with 2 being the minimum still,
+      to account for more people being out in space scrapping wrecks on ultra high
+      pop
+    type: Tweak
+  id: 198001
+  time: '2025-11-08T19:18:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1980
+- author: Conflee
+  changes:
+  - message: Edited Empty Flagship and Whiteship Ancient to be more interesting. Empty
+      Flagship's "departments" are now actually decorated like departments instead
+      of being empty rooms with shit piled next to walls, and the warehouse in the
+      back is subdivided into more sub-rooms to feel less unfinished
+    type: Tweak
+  id: 198002
+  time: '2025-11-08T19:18:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1980
+- author: Conflee
+  changes:
+  - message: Edited the rooms VGroid's Science Lab generates with to use decal spawners
+      and overall look slightly more beaten up and weathered
+    type: Tweak
+  id: 198003
+  time: '2025-11-08T19:18:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1980
 Order: -1
 
