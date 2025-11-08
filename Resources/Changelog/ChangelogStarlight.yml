@@ -20656,5 +20656,12 @@ Entries:
   id: 209900
   time: '2025-11-07T06:36:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2099
+- author: R3v3l4t1on
+  changes:
+  - message: The power of communism no longer allows borgs/AI to detect hivemind changelings.
+    type: Fix
+  id: 215100
+  time: '2025-11-08T16:56:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2151
 Order: -1
 
