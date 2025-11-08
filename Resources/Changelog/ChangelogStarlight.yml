@@ -21201,5 +21201,12 @@ Entries:
   id: 208300
   time: '2025-11-08T19:24:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2083
+- author: Penguinwizzard
+  changes:
+  - message: Added Improvised Pneumatic Crew Cannon.
+    type: Add
+  id: 192300
+  time: '2025-11-08T19:24:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1923
 Order: -1
 
