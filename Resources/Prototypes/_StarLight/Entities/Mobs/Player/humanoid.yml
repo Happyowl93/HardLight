@@ -149,8 +149,6 @@
         - NamesMilitaryFirstLeader
         - NamesMilitaryLast
       nameFormat: name-format-ert
-    - type: RandomHumanoidSpawner
-      settings: NTSFoperative
 
 - type: randomHumanoidSettings
   id: NTSFoperative
@@ -180,6 +178,19 @@
         - NamesMilitaryFirstLeader
         - NamesMilitaryLast
       nameFormat: name-format-ert
+    - type: speciesBlacklist
+      - arachnid
+      - diona
+      - reptilian
+      - resomi
+      - vox
+      - vulpkanin
+      - avali
+      - cyclorites
+      - felionoid
+      - shadekin
+      - thaven
+
 
 - type: entity
   id: RandomHumanoidSpawnerDecimus
@@ -225,5 +236,16 @@
         - NamesMilitaryFirstLeader
         - NamesMilitaryLast
       nameFormat: name-format-ert
-
+    - type: speciesBlacklist
+      - arachnid
+      - diona
+      - reptilian
+      - resomi
+      - vox
+      - vulpkanin
+      - avali
+      - cyclorites
+      - felionoid
+      - shadekin
+      - thaven
 
