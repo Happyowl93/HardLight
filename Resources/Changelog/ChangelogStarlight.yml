@@ -21215,5 +21215,12 @@ Entries:
   id: 209300
   time: '2025-11-08T19:34:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2093
+- author: Trep_Maul
+  changes:
+  - message: (Admin) All working maps now have Starlight prefix.
+    type: Tweak
+  id: 216200
+  time: '2025-11-08T23:29:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2162
 Order: -1
 
