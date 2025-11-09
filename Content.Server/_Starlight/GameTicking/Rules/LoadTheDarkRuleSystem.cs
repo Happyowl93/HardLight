@@ -17,7 +17,7 @@ public sealed class LoadTheDarkRuleSystem : StationEventSystem<LoadTheDarkRuleCo
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
     [Dependency] private readonly IMapManager _maps = default!;
     [Dependency] private readonly TagSystem _tag = default!;
-    private static readonly ProtoId<TagPrototype> _theDarkMapTag = "TheDarkMap";
+    private static readonly ProtoId<TagPrototype> _theDarkTag = "TheDark";
 
     protected override void Added(EntityUid uid, LoadTheDarkRuleComponent comp, GameRuleComponent rule, GameRuleAddedEvent args)
     {
@@ -30,7 +30,7 @@ public sealed class LoadTheDarkRuleSystem : StationEventSystem<LoadTheDarkRuleCo
             if (mapcomp.MapPaused)
                 continue;
 
-            if (_tag.HasTag(mapuid, _theDarkMapTag))
+            if (_tag.HasTag(mapuid, _theDarkTag))
             {
                 mapId = mapcomp.MapId;
 
@@ -58,7 +58,7 @@ public sealed class LoadTheDarkRuleSystem : StationEventSystem<LoadTheDarkRuleCo
 
             grids = gridSet.Select(x => x.Owner).ToList();
             mapId = map.Value.Comp.MapId;
-            _tag.AddTag(map.Value, _theDarkMapTag);
+            _tag.AddTag(map.Value, _theDarkTag);
         }
         else
         {

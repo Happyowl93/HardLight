@@ -236,6 +236,8 @@
   parent: BasePortal
   name: dark hub
   description: This portal is used by shadekins to go nearly anywhere in the universe!
+  placement:
+    mode: SnapgridCenter
   components:
     - type: DarkHub
     - type: Sprite
@@ -261,3 +263,6 @@
     - type: GuideHelp
       guides:
         - Shadekin
+    - type: Tag
+      tags:
+        - TheDark

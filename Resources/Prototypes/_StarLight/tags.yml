@@ -275,15 +275,9 @@
 
 - type: Tag
   id: ScanGateMachineBoard
-  
-- type: Tag
-  id: PersonnelStorage
 
 - type: Tag
   id: TheDark
-
-- type: Tag
-  id: TheDarkMap
   
 - type: Tag
   id: PersonnelStorage
