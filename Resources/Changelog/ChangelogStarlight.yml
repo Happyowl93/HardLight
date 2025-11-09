@@ -21288,5 +21288,26 @@ Entries:
   id: 216700
   time: '2025-11-09T19:37:32.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2167
+- author: PubliclyExecutedPig
+  changes:
+  - message: Slightly redecorated the sec shuttle on Ming
+    type: Tweak
+  id: 216500
+  time: '2025-11-09T19:38:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2165
+- author: PubliclyExecutedPig
+  changes:
+  - message: Updated Ming according to player feedback, fixed some issues.
+    type: Tweak
+  id: 216501
+  time: '2025-11-09T19:38:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2165
+- author: PubliclyExecutedPig
+  changes:
+  - message: Ming Station's evac shuttle now has gravity.
+    type: Fix
+  id: 216502
+  time: '2025-11-09T19:38:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2165
 Order: -1
 
