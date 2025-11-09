@@ -9126,7 +9126,7 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: BecomesStation
-      id: Ming
+      id: StarlightMing
     - type: RadiationGridResistance
     - type: NavMap
   - uid: 4

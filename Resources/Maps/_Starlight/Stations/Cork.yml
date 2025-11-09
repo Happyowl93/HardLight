@@ -4076,7 +4076,7 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: BecomesStation
-      id: Cork
+      id: StarlightCork
     - type: NavMap
     - type: Joint
       joints: {}

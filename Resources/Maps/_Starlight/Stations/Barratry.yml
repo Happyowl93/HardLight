@@ -11342,7 +11342,7 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: BecomesStation
-      id: Barratry
+      id: StarlightBarratry
     - type: SpreaderGrid
     - type: GridPathfinding
     - type: ImplicitRoof
