@@ -19196,7 +19196,7 @@ Entries:
   id: 206500
   time: '2025-10-30T21:33:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2065
-- author: STARLIGHT TEAM
+- author: maxim6263
   changes:
   - message: The Stunbaton has a new sound when harmbatoning a player.
     type: Tweak
@@ -21215,5 +21215,99 @@ Entries:
   id: 209300
   time: '2025-11-08T19:34:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2093
+- author: Trep_Maul
+  changes:
+  - message: (Admin) All working maps now have Starlight prefix.
+    type: Tweak
+  id: 216200
+  time: '2025-11-08T23:29:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2162
+- author: CawsForConcern
+  changes:
+  - message: New Central Commands somehow got lost in the merge sauce, should now
+      show up again
+    type: Fix
+  id: 216300
+  time: '2025-11-09T16:40:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2163
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm G24) CC Security checkpoint between Arrivals and Lobby
+    type: Add
+  id: 216301
+  time: '2025-11-09T16:40:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2163
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm G24) Sink to kitchen
+    type: Add
+  id: 216302
+  time: '2025-11-09T16:40:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2163
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm G24) Added more rechargers, useful for charging your translators
+      and other gadgets
+    type: Add
+  id: 216303
+  time: '2025-11-09T16:40:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2163
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm G24) Disconnected APC by Armory
+    type: Fix
+  id: 216304
+  time: '2025-11-09T16:40:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2163
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm SC17) CC Security checkpoint between Arrivals and Lobby
+    type: Add
+  id: 216305
+  time: '2025-11-09T16:40:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2163
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm SC17) Added more rechargers, useful for charging your translators
+      and other gadgets
+    type: Add
+  id: 216306
+  time: '2025-11-09T16:40:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2163
+- author: CawsForConcern
+  changes:
+  - message: (Centcomm SC17) Two more mindshields in CC Debrief
+    type: Add
+  id: 216307
+  time: '2025-11-09T16:40:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2163
+- author: Happyrobot33
+  changes:
+  - message: More fixes to vote cooldown, hopefully no more 10 secret in a row
+    type: Fix
+  id: 216700
+  time: '2025-11-09T19:37:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2167
+- author: PubliclyExecutedPig
+  changes:
+  - message: Slightly redecorated the sec shuttle on Ming
+    type: Tweak
+  id: 216500
+  time: '2025-11-09T19:38:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2165
+- author: PubliclyExecutedPig
+  changes:
+  - message: Updated Ming according to player feedback, fixed some issues.
+    type: Tweak
+  id: 216501
+  time: '2025-11-09T19:38:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2165
+- author: PubliclyExecutedPig
+  changes:
+  - message: Ming Station's evac shuttle now has gravity.
+    type: Fix
+  id: 216502
+  time: '2025-11-09T19:38:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2165
 Order: -1
 
