@@ -280,5 +280,8 @@
         - Wizard
       mindRoles:
       - MindRoleBrighteye
+  - type: SubGamemodes
+    rules:
+    - id: RailroadingBrighteye
   - type: DynamicRuleCost
     cost: 150
