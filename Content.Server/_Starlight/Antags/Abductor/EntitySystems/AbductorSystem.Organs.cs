@@ -67,7 +67,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
                 victim.LastActivation = _time.CurTime;
                 _damageable.TryChangeDamage(uid, _passiveHealing);
                 break;
-            case AbductorOrganType.Plasma:
+            case AbductorOrganType.NitrousOxide:
                 if (_time.CurTime - victim.LastActivation < TimeSpan.FromSeconds(120))
                     return;
                 victim.LastActivation = _time.CurTime;
