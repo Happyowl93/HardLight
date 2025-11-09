@@ -671,7 +671,11 @@ namespace Content.Server.Voting.Managers
                 if (preset.VoteCooldown > 0)
                 {
                     if (_presetCooldown.ContainsKey(preset.ID))
+                    {
+                        //admin log it
+                        _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Preset {preset.ID} skipped for vote selection due to being on cooldown ({_presetCooldown[preset.ID]} votes remaining).");
                         continue;
+                    }
                 }
                 //STARLIGHT END
 
