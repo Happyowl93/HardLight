@@ -167,7 +167,7 @@ namespace Content.IntegrationTests.Tests
             "StarlightSaltern",
             "StarlightSilica",
             "StarlightCluster",
-			"StationBuilding"
+			"StarlightStationBuilding"
             #endregion
         };
 

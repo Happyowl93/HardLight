@@ -1,11 +1,11 @@
 - type: gameMap
-  id: StationBuilding
+  id: StarlightStationBuilding
   mapName: 'Under Construction'
   mapPath: /Maps/_Starlight/Stations/StationBuilding.yml
   minPlayers: 20
   maxPlayers: 100
   stations:
-    StationBuilding:
+    StarlightStationBuilding:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
