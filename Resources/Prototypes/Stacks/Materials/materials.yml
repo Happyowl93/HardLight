@@ -110,9 +110,3 @@
   spawn: MaterialGoliathHide1
   maxCount: 30
 
-- type: stack
-  id: CrushedPhosphorus
-  name: stack-crushed-phosphorus
-  icon: { sprite: /Textures/Objects/Materials/phosphorus.rsi, state: phosphorus }
-  spawn: MaterialCrushedPhosphorus1
-  maxCount: 30
