@@ -5,6 +5,8 @@ alerts-shadekin-energy-name = Energy
 alerts-shadekin-energy-desc = Your energy level.
 alerts-shadekin-noportal-name = Missing Portal
 alerts-shadekin-noportal-desc = [color=red]You have no portal, you will be unable to rejuvenate![/color]
+alerts-shadekin-rejuvenate-name = Rejuvenating
+alerts-shadekin-rejuvenate-desc = You are currently rejuvenating, you will be able to leave the dark until your at full energy.
 
 roles-antag-brighteye-name = Brighteye
 roles-antag-brighteye-description = WIP

@@ -62,6 +62,9 @@ public sealed partial class BrighteyeComponent : Component
     [DataField]
     public ProtoId<AlertPrototype> PortalAlert { get; set; } = "ShadekinPortalAlert";
 
+    [DataField]
+    public ProtoId<AlertPrototype> RejuvenationAlert { get; set; } = "ShadekinRejuvenateAlert";
+
     /// <summary>
     /// How many Energy the brighteye has.
     /// </summary>

@@ -4,6 +4,9 @@ using Content.Shared.Rejuvenate;
 using Content.Shared.Popups;
 using Content.Shared.Starlight.Medical.Surgery.Events;
 using Content.Shared.Body.Components;
+using Content.Shared.Mobs;
+using Content.Shared.Inventory;
+using Content.Server.Spawners.Components;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -14,6 +17,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         SubscribeLocalEvent<BrighteyeComponent, ComponentStartup>(OnInit);
         SubscribeLocalEvent<BrighteyeComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<BrighteyeComponent, RejuvenateEvent>(OnRejuvenate);
+        SubscribeLocalEvent<BrighteyeComponent, MobStateChangedEvent>(OnMobStateChanged);
 
         SubscribeLocalEvent<OrganShadekinCoreComponent, SurgeryOrganImplantationCompleted>(OnCoreOrganImplanted);
         SubscribeLocalEvent<OrganShadekinCoreComponent, SurgeryOrganExtracted>(OnCoreOrganExtracted);
@@ -50,6 +54,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     {
         _alerts.ClearAlert(uid, component.BrighteyeAlert);
         _alerts.ClearAlert(uid, component.PortalAlert);
+        _alerts.ClearAlert(uid, component.RejuvenationAlert);
 
         if (component.Portal is not null)
         {
@@ -70,6 +75,60 @@ public sealed partial class ShadekinSystem : EntitySystem
     private void OnRejuvenate(EntityUid uid, BrighteyeComponent component, RejuvenateEvent args)
     {
         component.Energy = component.MaxEnergy;
+        Dirty(uid, component);
+    }
+
+    private void OnMobStateChanged(EntityUid uid, BrighteyeComponent component, MobStateChangedEvent args)
+    {
+        if (args.NewMobState == MobState.Alive)
+            return;
+
+        // We hit Crit/Death we lose energy... EVERYTIME!
+        component.Energy = 0;
+        Dirty(uid, component);
+
+        // Do we have a portal? if no... WE DIE!
+        if (component.Portal is null)
+            return;
+
+        // Get a valid Location to get TP at.
+        var spawns = new List<EntityUid>();
+        var query = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
+        while (query.MoveNext(out var spawnUid, out _, out var xform))
+            if (_mapSystem.TryGetMap(xform.MapID, out var spawnmap))
+                if (_tag.HasTag(spawnmap.Value, _theDarkTag))
+                    spawns.Add(spawnUid);
+
+        // If no valid spawnpoint... we just... DIE!
+        if (spawns.Count <= 0)
+            return;
+
+        _random.Shuffle(spawns);
+
+        // First, Drop Everything we have.
+        if (TryComp<InventoryComponent>(uid, out var inventoryComponent) && _inventorySystem.TryGetSlots(uid, out var slots))
+            foreach (var slot in slots)
+                _inventorySystem.TryUnequip(uid, slot.Name, true, true, false, inventoryComponent);
+
+        // Spawn the Shadow.
+        SpawnAtPosition(_shadekinShadow, Transform(uid).Coordinates);
+
+        // Teleport to "The Dark"
+        foreach (var spawnUid in spawns)
+        {
+            _transform.SetCoordinates(uid, Transform(spawnUid).Coordinates);
+            break;
+        }
+
+        var effect = SpawnAtPosition(_shadekinPhaseInEffect2, Transform(uid).Coordinates);
+        Transform(effect).LocalRotation = Transform(uid).LocalRotation;
+
+        RaiseLocalEvent(uid, new RejuvenateEvent());
+        _sleeping.TrySleeping(uid);
+
+        component.Energy = 0;
+        component.Rejuvenating = true;
+        _alerts.ShowAlert(uid, component.RejuvenationAlert);
         Dirty(uid, component);
     }
 
@@ -135,6 +194,13 @@ public sealed partial class ShadekinSystem : EntitySystem
 
     private void UpdateEnergy(EntityUid uid, ShadekinComponent component, BrighteyeComponent brighteye)
     {
+        if (brighteye.Rejuvenating && brighteye.Energy >= brighteye.MaxEnergy)
+        {
+            brighteye.Rejuvenating = false;
+            _popup.PopupEntity(Loc.GetString("shadekin-rejuvenate-compleated"), uid, uid, PopupType.LargeCaution);
+            _alerts.ClearAlert(uid, brighteye.RejuvenationAlert);
+        }
+
         if (component.CurrentState == ShadekinState.Low) // On Low State, we gain and lose nothing!
             return;
 

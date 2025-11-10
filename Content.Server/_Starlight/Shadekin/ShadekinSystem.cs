@@ -20,6 +20,10 @@ using Content.Shared.Popups;
 using Content.Shared.Body.Systems;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Components;
+using Content.Shared.Inventory;
+using Content.Shared.Tag;
+using Robust.Shared.Random;
+using Content.Shared.Bed.Sleep;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -37,9 +41,16 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private readonly SharedStationSystem _station = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedBodySystem _bodySystem = default!;
+    [Dependency] private readonly InventorySystem _inventorySystem = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SleepingSystem _sleeping = default!;
 
     private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
+    private readonly EntProtoId _shadekinPhaseInEffect2 = "ShadekinPhaseInEffect2";
     private readonly EntProtoId _shadekinPortal = "PortalShadekin";
+    private static readonly ProtoId<TagPrototype> _theDarkTag = "TheDark";
 
     // Abilities
     private readonly EntProtoId _brighteyePortalAction = "BrighteyePortalAction";

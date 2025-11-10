@@ -50,3 +50,11 @@
       state: noportal
   name: alerts-shadekin-noportal-name
   description: alerts-shadekin-noportal-desc
+
+- type: alert
+  id: ShadekinRejuvenateAlert
+  icons:
+    - sprite: /Textures/_Starlight/Interface/Alerts/shadekin.rsi
+      state: rejuvenate
+  name: alerts-shadekin-rejuvenate-name
+  description: alerts-shadekin-rejuvenate-desc

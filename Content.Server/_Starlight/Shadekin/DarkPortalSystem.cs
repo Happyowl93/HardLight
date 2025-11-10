@@ -27,6 +27,7 @@ public sealed class DarkPortalSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
+
     private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
     private readonly int _stabilizeCost = 50;
     private readonly EntProtoId _brighteyePortalAction = "BrighteyePortalAction";
