@@ -213,6 +213,7 @@
     Steel: 1300
     Plastic: 300
     Cloth: 20
+    CrushedPhosphorus: 700
 
 - type: latheRecipe
   id: MagazineBoxImprovisedRifleTA
@@ -222,6 +223,7 @@
     Steel: 1300
     Plastic: 600
     Cloth: 20
+    CrushedPhosphorus: 1500
 
 - type: latheRecipe
   id: MagazineBoxImprovisedMagnumTA
@@ -231,6 +233,7 @@
     Steel: 1300
     Plastic: 600
     Cloth: 20
+    CrushedPhosphorus: 1500
 
 - type: latheRecipe
   id: MagazineBoxImprovisedShotgunTA
@@ -241,3 +244,4 @@
     Plastic: 600
     Glass: 700
     Cloth: 20
+    CrushedPhosphorus: 1500
