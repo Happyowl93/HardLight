@@ -100,9 +100,11 @@
   parent: Medkit
   id: MedkitCombat
   components:
+  #Starlight start
   - type: Storage
     whitelist:
        tags:
+        - GlassBeaker
         - Bottle
         - Spray
         - Brutepack
@@ -120,6 +122,7 @@
         - Injector
         - Pill
         - HandLabeler
+    #Starlight end
   - type: Sprite
     sprite: _Starlight/Objects/Specific/Medical/firstaidkits.rsi
     state: blackkit
