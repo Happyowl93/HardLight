@@ -100,6 +100,26 @@
   parent: Medkit
   id: MedkitCombat
   components:
+  - type: Storage
+    whitelist:
+       tags:
+        - Bottle
+        - Spray
+        - Brutepack
+        - Bloodpack
+        - Gauze
+        - Ointment
+        - CigPack
+        - PillCanister
+        - Radio
+        - DiscreteHealthAnalyzer
+        - SurgeryTool
+        - Dropper
+       components:
+        - Hypospray
+        - Injector
+        - Pill
+        - HandLabeler
   - type: Sprite
     sprite: _Starlight/Objects/Specific/Medical/firstaidkits.rsi
     state: blackkit
