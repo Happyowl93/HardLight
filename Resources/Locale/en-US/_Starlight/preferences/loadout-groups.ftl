@@ -55,3 +55,4 @@ loadout-group-salvage-id = Salvage Specialist ID
 # Other
 
 loadout-group-scarves = Scarf
+loadout-group-pens = Pen
