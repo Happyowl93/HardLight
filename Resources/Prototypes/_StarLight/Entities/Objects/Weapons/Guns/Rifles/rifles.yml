@@ -390,7 +390,7 @@
     - type: Gun
       minAngle: 21
       maxAngle: 32
-      fireRate: 6
+      fireRate: 2.7
       burstFireRate: 18
       soundGunshot:
         path: /Audio/_Starlight/Weapons/Guns/Gunshots/m16.ogg
@@ -399,7 +399,7 @@
       - Burst
       - SemiAuto
       shotsPerBurst: 2
-      burstCooldown: 0.7
+      burstCooldown: 0.45
     - type: ItemSlots
       slots:
         gun_magazine:
