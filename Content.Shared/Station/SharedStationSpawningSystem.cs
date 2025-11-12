@@ -9,6 +9,7 @@ using Content.Shared.Roles;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Collections;
+using Robust.Shared.Map; // Starlight
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
@@ -371,7 +372,11 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 foundSlot = _itemSlots.TryGetAvailableSlot(typed, entity, null, out var writeSlotSwap, false, true);
                 if (foundSlot)
                 {
-                    var gotDeletable = _itemSlots.TryEject(typed, writeSlotSwap!, null, out var removedItem, false);
+                    var xform = _xformQuery.GetComponent(entity);
+                    // If we don't specify that we're ejecting it to invalid coordinates, then
+                    // when demo entities are loaded for the profile view in testing we'll try
+                    // to eject into a nonexistent map coordinate space, which fails the test.
+                    var gotDeletable = _itemSlots.TryEject(typed, writeSlotSwap!, null, out var removedItem, false, xform.Coordinates);
                     if (gotDeletable)
                     {
                         QueueDel(removedItem);
