@@ -427,4 +427,4 @@
     - type: CursorOffsetRequiresWield
     - type: EyeCursorOffset
       maxOffset: 0.5
-      pvsIncrease: 0.5
+      pvsIncrease: 1.4
