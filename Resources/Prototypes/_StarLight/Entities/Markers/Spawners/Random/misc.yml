@@ -1,0 +1,57 @@
+- type: entity
+  id: SolidWallSpawner
+  name: solid wall spawner
+  parent: MarkerBase
+  suffix: 50%
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - WallSolid
+    chance: 0.5
+
+- type: entity
+  id: ReinforcedWallSpawner
+  name: reinforced wall spawner
+  parent: MarkerBase
+  suffix: 50%
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: RandomSpawner
+    prototypes:
+    - WallReinforced
+    chance: 0.5
+
+- type: entity
+  id: StarlightGrilleSpawner # Not to be confused with upstreams 'GrilleSpawner'
+  name: grille spawner
+  parent: MarkerBase
+  suffix: 50%
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: RandomSpawner
+    prototypes:
+    - grille
+    chance: 0.5
+
+- type: entity
+  id: SecretDoorSpawner
+  name: secret door spawner
+  parent: MarkerBase
+  suffix: 50%
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - WallSolid
+    - SolidSecretDoor
