@@ -21468,5 +21468,13 @@ Entries:
   id: 216002
   time: '2025-11-13T15:58:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2160
+- author: R3v3l4t1on
+  changes:
+  - message: Plasma Gland is now a NitrousOxide Gland. Begone medbay/evac plasma fires.
+      Instead, it's nap time.
+    type: Tweak
+  id: 216400
+  time: '2025-11-13T16:08:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2164
 Order: -1
 
