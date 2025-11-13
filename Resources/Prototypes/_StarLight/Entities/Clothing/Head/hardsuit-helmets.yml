@@ -87,7 +87,7 @@
 
 #Space Hazard Suit
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSpaceHazard
   name: space hazard helmet
   description: Keeps the cold sulfuric embrace of space out.
@@ -96,6 +96,8 @@
     sprite: _Starlight/Clothing/Head/Hardsuits/spacehazard.rsi
   - type: Clothing
     sprite: _Starlight/Clothing/Head/Hardsuits/spacehazard.rsi
+  - type: PointLight
+    color: "#ffeead"
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
