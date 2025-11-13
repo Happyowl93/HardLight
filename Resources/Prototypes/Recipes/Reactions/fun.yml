@@ -172,6 +172,7 @@
     - !type:CreateEntityReactionEffect
       entity: MaterialGunpowder
 
+#starlight start
 - type: reaction
   id: CrushedPhosphorus
   impact: Low
@@ -187,6 +188,7 @@
   effects:
     - !type:CreateEntityReactionEffect
       entity: CrushedPhosphorus1
+#starlight end
 
 - type: reaction
   id: SolidifyGold
