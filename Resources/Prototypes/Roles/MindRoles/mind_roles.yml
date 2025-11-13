@@ -328,13 +328,13 @@
     antagPrototype: Changeling
   - type: SLChangelingRole
   
-# Vampire
+# Vampire - 🌟Starlight🌟 Disabled until they get reworked
 
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleVampire
-  name: Vampire Role
-  components:
-  - type: MindRole
-    antagPrototype: Vampire
-  - type: VampireRole
+#- type: entity
+#  parent: BaseMindRoleAntag
+#  id: MindRoleVampire
+#  name: Vampire Role
+#  components:
+#  - type: MindRole
+#    antagPrototype: Vampire
+#  - type: VampireRole

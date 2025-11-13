@@ -58,22 +58,22 @@
         - type: ChangelingIdentity
         - type: ChangelingTransform
 
-- type: entity
-  parent: BaseGameRule
-  id: Vampire
-  components:
-  - type: VampireRule
-  - type: AntagSelection
-    agentName: vampire-roundend-name
-    definitions:
-    - prefRoles: [ Vampire ]
-      max: 7
-      playerRatio: 10
-      lateJoinAdditional: true
-      allowNonHumans: false
-      multiAntagSetting: None
-      mindRoles:
-      - MindRoleVampire
+#- type: entity # 🌟Starlight🌟 Disabled until they get reworked
+#  parent: BaseGameRule
+#  id: Vampire
+#  components:
+#  - type: VampireRule
+#  - type: AntagSelection
+#    agentName: vampire-roundend-name
+#    definitions:
+#    - prefRoles: [ Vampire ]
+#      max: 7
+#      playerRatio: 10
+#      lateJoinAdditional: true
+#      allowNonHumans: false
+#      multiAntagSetting: None
+#      mindRoles:
+#      - MindRoleVampire
 
 # Needs testing
 - type: entity
