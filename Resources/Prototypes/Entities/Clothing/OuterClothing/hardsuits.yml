@@ -141,9 +141,9 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.75
+        Blunt: 0.8 #Starlight edit
+        Slash: 0.8 #Starlight edit
+        Piercing: 0.75 #Starlight edit
         Heat: 0.7
         Radiation: 0.3
         Caustic: 0.7
@@ -204,7 +204,7 @@
   parent: [ ClothingOuterHardsuitBase, BaseSalvageContraband ] #Starlight salvContra
   id: ClothingOuterHardsuitMaxim
   name: salvager maxim hardsuit
-  description: Fire. Heat. These things forge great weapons, they also forge great salvagers. 
+  description: Fire. Heat. These things forge great weapons, they also forge great salvagers. #Has built-in battery-powered energy barrier technology.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/maxim.rsi
@@ -218,18 +218,18 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.65
-        Slash: 0.65
-        Piercing: 0.65
-        Heat: 0.6
-        Radiation: 0.3
-        Caustic: 0.8
+        Blunt: 0.65 #Starlight edit
+        Slash: 0.65 #Starlight edit
+        Piercing: 0.65 #Starlight edit
+        Heat: 0.6 #Starlight edit
+        Radiation: 0.3 #Starlight edit
+        Caustic: 0.8 #Starlight edit
   - type: ClothingSpeedModifier
-    walkModifier: 0.90
-    sprintModifier: 0.90
+    walkModifier: 0.85 #Starlight edit
+    sprintModifier: 0.85 #Starlight edit
   - type: ExplosionResistance
-    damageCoefficient: 0.4
-  - type: HeldSpeedModifier
+    damageCoefficient: 0.4 #Starlight edit
+  - type: HeldSpeedModifier #Starlight edit
   - type: TemperatureProtection
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
@@ -260,7 +260,7 @@
   #- type: UseDelay
     #delay: 10.0
 
-# maxim bubble shield was buggy, made no sense for salvs, and was on a suit with better stats than a blood red.
+#Starlight edit. maxim bubble shield was buggy, made no sense for salvs, and was on a suit with better stats than a blood red.
 
 #Security Hardsuit
 - type: entity
