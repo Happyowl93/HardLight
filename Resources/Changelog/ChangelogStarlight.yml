@@ -21519,5 +21519,19 @@ Entries:
   id: 217600
   time: '2025-11-13T16:07:48.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2176
+- author: mikeysaurus, Hanz
+  changes:
+  - message: Added Cargo Beret, available in loadout equipment, and cargo wardrobe.
+    type: Add
+  id: 218500
+  time: '2025-11-13T16:06:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2185
+- author: mikeysaurus, Hanz
+  changes:
+  - message: Added Formal Cargo Beret, requiring 60H in Cargo for equipping from loadout.
+    type: Add
+  id: 218501
+  time: '2025-11-13T16:06:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2185
 Order: -1
 
