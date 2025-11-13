@@ -21433,5 +21433,12 @@ Entries:
   id: 219202
   time: '2025-11-13T15:51:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2192
+- author: CawsForConcern
+  changes:
+  - message: Vulpkanins now use upscreams-- I mean, upstream screams
+    type: Tweak
+  id: 218700
+  time: '2025-11-13T15:58:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2187
 Order: -1
 
