@@ -122,16 +122,6 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorMiningAdvancedMineralScanner
-  productEntity: AdvancedMineralScanner
-  cost:
-    SalvageTicket: 500
-  categories:
-  - MiningEquipment
-  conditions:
-  - !type:BuyerAccessCondition
-
-- type: listing
   id: VendorMiningMassScanner
   productEntity: HandHeldMassScanner
   cost:

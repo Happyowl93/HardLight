@@ -195,23 +195,22 @@
 
 - type: entity
   name: stechkin pistol
-  parent: [BaseSecuritySalvageContraband, WeaponPistolMk58]
+  parent: [BaseSecurityContraband, WeaponPistolMk58]
   id: WeaponPistolStechkin
-  description: A small, easily concealable .40 handgun. Has a threaded barrel for suppressors. Uses .40 ammo. Likely picked off some poor, low ranking SNKVD agents corpse and resold.
+  description: A small, easily concealable .40 handgun. Has a threaded barrel for suppressors. Uses .40 ammo.
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Pistols/stechkin.rsi
   - type: Clothing
     sprite: _Starlight/Objects/Weapons/Guns/Pistols/stechkin.rsi
   - type: Gun
-    fireRate: 3.5
     soundGunshot:
       path: /Audio/_Starlight/Weapons/Guns/Gunshots/1suppres.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazinePistol40SP
+        startingItem: MagazinePistol40FMJ
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
@@ -221,7 +220,7 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgePistol40SP
+        startingItem: CartridgePistol40FMJ
         priority: 1
         whitelist:
           tags:

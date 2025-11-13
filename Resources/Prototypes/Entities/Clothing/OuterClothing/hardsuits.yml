@@ -141,9 +141,11 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8 #Starlight edit
-        Slash: 0.8 #Starlight edit
-        Piercing: 0.75 #Starlight edit
+      # region starlight: lowered values
+        Blunt: 0.8 
+        Slash: 0.8 
+        Piercing: 0.75 
+        # end region starlight
         Heat: 0.7
         Radiation: 0.3
         Caustic: 0.7
@@ -218,23 +220,26 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.65 #Starlight edit
-        Slash: 0.65 #Starlight edit
-        Piercing: 0.65 #Starlight edit
-        Heat: 0.6 #Starlight edit
-        Radiation: 0.3 #Starlight edit
-        Caustic: 0.8 #Starlight edit
+      # region starlight: maxim lowered values
+        Blunt: 0.65 
+        Slash: 0.65 
+        Piercing: 0.65 
+        Heat: 0.6 
+        Radiation: 0.3 
+        Caustic: 0.8 
   - type: ClothingSpeedModifier
-    walkModifier: 0.85 #Starlight edit
-    sprintModifier: 0.85 #Starlight edit
+    walkModifier: 0.85 
+    sprintModifier: 0.85 
   - type: ExplosionResistance
-    damageCoefficient: 0.4 #Starlight edit
-  - type: HeldSpeedModifier #Starlight edit
+    damageCoefficient: 0.4 
+    # end region starlight
+  - type: HeldSpeedModifier #Starlight addition
   - type: TemperatureProtection
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMaxim
+    # region starlight: bubble shield removal
   #- type: ContainerContainer
     #containers:
       #cell_slot: !type:ContainerSlot
@@ -261,6 +266,7 @@
     #delay: 10.0
 
 #Starlight edit. maxim bubble shield was buggy, made no sense for salvs, and was on a suit with better stats than a blood red.
+# end region starlight
 
 #Security Hardsuit
 - type: entity

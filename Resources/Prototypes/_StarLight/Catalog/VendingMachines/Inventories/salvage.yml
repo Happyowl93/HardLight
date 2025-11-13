@@ -195,8 +195,8 @@
   #- !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageWeaponPistolStechkin
-  productEntity: WeaponPistolStechkin
+  id: VendorSalvageWeaponPistolMK58
+  productEntity: WeaponPistolMk58
   cost:
     SalvageTicket: 250
   categories:
@@ -256,8 +256,8 @@
   #- !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageMagazineStetchkin
-  productEntity: MagazinePistol40SP
+  id: VendorSalvageMagazineMK58
+  productEntity: MagazinePistolSP
   cost:
     SalvageTicket: 75
   categories:
