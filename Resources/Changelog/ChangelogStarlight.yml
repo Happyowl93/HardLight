@@ -21440,5 +21440,12 @@ Entries:
   id: 218700
   time: '2025-11-13T15:58:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2187
+- author: CommanderAlex365
+  changes:
+  - message: restricted combat medkits to only store medical items
+    type: Tweak
+  id: 218600
+  time: '2025-11-13T15:58:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2186
 Order: -1
 
