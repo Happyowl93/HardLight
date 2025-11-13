@@ -21407,5 +21407,31 @@ Entries:
   id: 217313
   time: '2025-11-13T15:47:54.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2173
+- author: Conflee
+  changes:
+  - message: Added Hazard Decals, useful for Engineers to mark specific hazards when
+      doing repairs on areas of the station; High Pressure, High Temp, Low Oxygen,
+      Anomaly, Clown, Fire, Gas, Shock, Hull Breach, Radiation, Low Pressure, Low
+      Temp, Poison Gas, and Flammable Gas
+    type: Add
+  id: 219200
+  time: '2025-11-13T15:51:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2192
+- author: Conflee
+  changes:
+  - message: Added a Starlight Sector logo, for mapping use. Intended mainly for the
+      Arrivals Terminal
+    type: Add
+  id: 219201
+  time: '2025-11-13T15:51:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2192
+- author: Conflee
+  changes:
+  - message: Added Circle, a 3x3 decal set for putting a Circle behind your logos,
+      or whatever else you want to use it for you sick freaks
+    type: Add
+  id: 219202
+  time: '2025-11-13T15:51:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2192
 Order: -1
 
