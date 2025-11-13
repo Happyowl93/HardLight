@@ -21447,5 +21447,26 @@ Entries:
   id: 218600
   time: '2025-11-13T15:58:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2186
+- author: Trep_Maul
+  changes:
+  - message: (Leth) Feature Catchup
+    type: Fix
+  id: 216000
+  time: '2025-11-13T15:58:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2160
+- author: Trep_Maul
+  changes:
+  - message: (Leth) QM windows fixed
+    type: Fix
+  id: 216001
+  time: '2025-11-13T15:58:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2160
+- author: Trep_Maul
+  changes:
+  - message: (Leth) Missing HV redundant paths fixed.
+    type: Fix
+  id: 216002
+  time: '2025-11-13T15:58:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2160
 Order: -1
 
