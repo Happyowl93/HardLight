@@ -21533,5 +21533,98 @@ Entries:
   id: 218501
   time: '2025-11-13T16:06:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2185
+- author: Roro
+  changes:
+  - message: Removed maxim bubble shield
+    type: Remove
+  id: 219500
+  time: '2025-11-13T16:28:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2195
+- author: Roro
+  changes:
+  - message: Removed Jhawk and its ammo from Salv ticket vendor, changed its contra
+      label back to syndicate
+    type: Tweak
+  id: 219501
+  time: '2025-11-13T16:28:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2195
+- author: Roro
+  changes:
+  - message: Tweaked resist for maxim, 40% blunt to 35%, 40% slash to 35%, 50% pierce
+      to 35%, 70% heat to 40%, 90% rad to 70%, 80% explosive resist to 60%, also added
+      20% caustic since it had none
+    type: Tweak
+  id: 219502
+  time: '2025-11-13T16:28:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2195
+- author: Roro
+  changes:
+  - message: Gave Maxim some actual slowdown as well as some slowdown for holding
+      it.
+    type: Tweak
+  id: 219503
+  time: '2025-11-13T16:28:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2195
+- author: Roro
+  changes:
+  - message: Tweaked resist for Salvager hardsuit, 30% blunt to 20%, 40% slash to
+      20%, 35% pierce to 25%
+    type: Tweak
+  id: 219504
+  time: '2025-11-13T16:28:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2195
+- author: Roro
+  changes:
+  - message: Tweaked resists for Mining hardsuit, 15% blunt to 25%, 15% slash to 25%
+    type: Tweak
+  id: 219505
+  time: '2025-11-13T16:28:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2195
+- author: Roro
+  changes:
+  - message: Tweaked resists and speed for Advanced Mining hardsuit, 25% blunt to
+      35%, 25% slash to 35%, 10% slowdown to 15%, also added slowdown when holding
+      it in hand
+    type: Tweak
+  id: 219506
+  time: '2025-11-13T16:28:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2195
+- author: Roro
+  changes:
+  - message: Tweaked Merc web vest resists and price, from 200 tickets to 350, 50%
+      pierce to 40%, 45% stam resist to 15%
+    type: Tweak
+  id: 219507
+  time: '2025-11-13T16:28:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2195
+- author: Roro
+  changes:
+  - message: Lowered ammo for cycler shotgun from 9 to 7
+    type: Tweak
+  id: 219508
+  time: '2025-11-13T16:28:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2195
+- author: Roro
+  changes:
+  - message: Changed Immolators description so its not the same as Laser Carbines
+    type: Tweak
+  id: 219509
+  time: '2025-11-13T16:28:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2195
+- author: Roro
+  changes:
+  - message: Space Hazard suit can now be used to craft a goliath hardsuit
+    type: Tweak
+  id: 219510
+  time: '2025-11-13T16:28:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2195
+- author: Roro
+  changes:
+  - message: Added MK58 and its ammo to salv ticket vendor to replace the Jhawk, MK58
+      now has SalvSec contra label
+    type: Tweak
+  id: 219511
+  time: '2025-11-13T16:28:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2195
 Order: -1
 
