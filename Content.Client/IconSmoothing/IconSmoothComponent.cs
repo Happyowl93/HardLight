@@ -1,3 +1,4 @@
+using System.Linq;
 using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
@@ -51,6 +52,27 @@ namespace Content.Client.IconSmoothing
         ///     Used by <see cref="IconSmoothSystem"/> to reduce redundant updates.
         /// </summary>
         internal int UpdateGeneration { get; set; }
+
+        // Starlight Start: Contitional Smoothing
+        #region Conditional Smoothing
+        [ViewVariables(VVAccess.ReadWrite), DataField("disabledStates")]
+        public HashSet<string>? DisabledStates { get; set; }
+        internal string? _cachedState;
+
+        public bool ShouldSmooth(string? currentState = null)
+        {
+            if (DisabledStates == null || DisabledStates.Count == 0)
+                return Enabled;
+
+            var stateToCheck = currentState ?? _cachedState;
+            if (string.IsNullOrEmpty(stateToCheck))
+                return Enabled;
+
+            // Case-insensitive
+            return Enabled && !DisabledStates.Any(s => string.Equals(s, stateToCheck, StringComparison.OrdinalIgnoreCase));
+        }
+        #endregion
+        // Starlight End
     }
 
     /// <summary>
