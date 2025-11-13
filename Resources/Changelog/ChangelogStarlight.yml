@@ -21512,5 +21512,12 @@ Entries:
   id: 217802
   time: '2025-11-13T16:07:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2178
+- author: CrazyPhantom
+  changes:
+  - message: Emergency Restart Crate.
+    type: Add
+  id: 217600
+  time: '2025-11-13T16:07:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2176
 Order: -1
 
