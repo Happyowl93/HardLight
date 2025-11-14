@@ -21930,5 +21930,30 @@ Entries:
   id: 220300
   time: '2025-11-14T21:40:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2203
+- author: nomad.marshall
+  changes:
+  - message: fixed novelty lighters inability to be used as a weapon while lit. they
+      now do the same damage as the basic flippo, with two exceptions
+    type: Fix
+  id: 217900
+  time: '2025-11-14T21:50:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2179
+- author: nomad.marshall
+  changes:
+  - message: adjusted damage of blood-red and nanotrasen flippos to do more heat damage
+      (8 for blood-red, 4 for NT) while lit and used as a weapon
+    type: Tweak
+  id: 217901
+  time: '2025-11-14T21:50:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2179
+- author: nomad.marshall
+  changes:
+  - message: equalized roll chances of (most) novelty lighters. blood-red flippo and
+      gorlex matches have the lowest chance to roll but everything else has the same
+      chance to spawn
+    type: Tweak
+  id: 217902
+  time: '2025-11-14T21:50:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2179
 Order: -1
 
