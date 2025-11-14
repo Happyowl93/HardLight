@@ -21955,5 +21955,21 @@ Entries:
   id: 217902
   time: '2025-11-14T21:50:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2179
+- author: mikeysaurus
+  changes:
+  - message: Add's Treps new ship, the Salvage Pioneer, which is a slightly larger
+      salvage shuttle. Replaces the Reclaimer
+    type: Add
+  id: 173100
+  time: '2025-11-14T21:41:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1731
+- author: mikeysaurus
+  changes:
+  - message: Adds a gamerule to spawn in the fuel-dependent Pioneer that has plasma
+      and uranium generators
+    type: Add
+  id: 173101
+  time: '2025-11-14T21:41:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1731
 Order: -1
 
