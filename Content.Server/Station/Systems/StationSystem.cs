@@ -13,6 +13,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Station.Systems;
@@ -288,6 +289,21 @@ public sealed partial class StationSystem : SharedStationSystem
         return filter;
     }
 
+    //SL start
+    public EntityUid InitializeNewStationMidRound(EntityUid gridId, EntProtoId stationProtoId)
+    {
+        var station = EntityManager.SpawnEntity(stationProtoId, MapCoordinates.Nullspace);
+        var data = Comp<StationDataComponent>(station);
+        var name = MetaData(station).EntityName;
+        AddGridToStation(station, gridId, null, data, name);
+        // so far can't find any instance where anything that listens for this not running would cause the entire game server to shit and die
+        // var ev = new StationPostInitEvent((station, data));
+        // RaiseLocalEvent(station, ref ev, true);
+
+        return station;
+    }
+    //SL end
+    
     /// <summary>
     /// Initializes a new station with the given information.
     /// </summary>
