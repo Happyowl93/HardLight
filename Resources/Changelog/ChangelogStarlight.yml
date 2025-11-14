@@ -21838,5 +21838,83 @@ Entries:
   id: 210901
   time: '2025-11-14T20:59:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2109
+- author: R3v3l4t1on
+  changes:
+  - message: '5 new modules: Syndicate advanced tools/Syndicate advanced chems/Syndicate
+      rescue/Syndicate stealth/Syndicate chameleon.'
+    type: Add
+  id: 212500
+  time: '2025-11-14T21:12:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2125
+- author: R3v3l4t1on
+  changes:
+  - message: The stealth borg now has innate thieving gloves.
+    type: Add
+  id: 212501
+  time: '2025-11-14T21:12:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2125
+- author: R3v3l4t1on
+  changes:
+  - message: The syndi hypo is now syndicate contraband.
+    type: Fix
+  id: 212502
+  time: '2025-11-14T21:12:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2125
+- author: R3v3l4t1on
+  changes:
+  - message: The 4 syndicate borgs have been split into distinct purchases and had
+      their prices changed. Assault 30>40, Stealth 30>20
+    type: Tweak
+  id: 212503
+  time: '2025-11-14T21:12:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2125
+- author: R3v3l4t1on
+  changes:
+  - message: L6 module holds 2 less magazine slots.
+    type: Tweak
+  id: 212504
+  time: '2025-11-14T21:12:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2125
+- author: R3v3l4t1on
+  changes:
+  - message: L6 in the L6 module is replaced with a mag-fed L6C, meaning it no longer
+      requires wielding.
+    type: Tweak
+  id: 212505
+  time: '2025-11-14T21:12:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2125
+- author: R3v3l4t1on
+  changes:
+  - message: Syndicate saboteur now has syndicate advanced tools instead of tools
+      (syndie jaws instead of normal, but disguised as normal) and gains construction
+      module (the electronics slot holds law boards, you know)
+    type: Tweak
+  id: 212506
+  time: '2025-11-14T21:12:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2125
+- author: R3v3l4t1on
+  changes:
+  - message: Syndicate medical now has syndicate advanced chem instead of basic chem
+      (syndi hypo instead of borghypo) and gains syndicate rescue module (syndicate
+      defib instead of normal)
+    type: Tweak
+  id: 212507
+  time: '2025-11-14T21:12:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2125
+- author: R3v3l4t1on
+  changes:
+  - message: The stealth borg is no longer innately stealthed, but gains stealth module
+      and chameleon module.
+    type: Tweak
+  id: 212508
+  time: '2025-11-14T21:12:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2125
+- author: R3v3l4t1on
+  changes:
+  - message: The stealth borg is innately pacified for balance reasons.
+    type: Tweak
+  id: 212509
+  time: '2025-11-14T21:12:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2125
 Order: -1
 
