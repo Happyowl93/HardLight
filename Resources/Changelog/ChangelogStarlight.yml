@@ -21824,5 +21824,19 @@ Entries:
   id: 208001
   time: '2025-11-14T20:59:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2080
+- author: Conflee
+  changes:
+  - message: (Cog) Swapped some airlocks for Robotics and Surgery variants
+    type: Tweak
+  id: 210900
+  time: '2025-11-14T20:59:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2109
+- author: Conflee
+  changes:
+  - message: (Cog) Added in new furniture and decals in some areas
+    type: Tweak
+  id: 210901
+  time: '2025-11-14T20:59:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2109
 Order: -1
 
