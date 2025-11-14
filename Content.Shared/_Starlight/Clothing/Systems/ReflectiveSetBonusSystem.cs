@@ -1,27 +1,23 @@
-using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Reflect;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Clothing.Systems;
+namespace Content.Shared._Starlight.Clothing.Systems;
 
 /// <summary>
-/// Starlight: Manages the reflective armor set bonus - grants 100% reflection when both vest and helmet are equipped.
-/// </summary>
-/// STARLIGHT: This file was added for the reflective armor set bonus system.
+/// Manages the reflective armor set bonus - grants 100% reflection when both vest and helmet are equipped.
 /// This system grants 100% reflection to the vest and helmet only when both are equipped.
 /// Uses tags to detect matching items and listens to global equip/unequip events.
+/// </summary>
 public sealed class ReflectiveSetBonusSystem : EntitySystem
 {
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly TagSystem _tag = default!;
 
     private static readonly ProtoId<TagPrototype> _vestTag = "ReflectiveArmorVest";
-        // Tag for reflective vest, defined in tags.yml
     private static readonly ProtoId<TagPrototype> _helmetTag = "ReflectiveArmorHelmet";
-    // Tag for reflective helmet, defined in tags.yml
 
     public override void Initialize()
     {
@@ -33,7 +29,6 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
 
     private void OnDidEquip(DidEquipEvent args)
     {
-        // Check if the equipped item is part of the reflective set
         if (_tag.HasTag(args.Equipment, _vestTag) || _tag.HasTag(args.Equipment, _helmetTag))
         {
             CheckAllReflectiveSets(args.Equipee);
@@ -42,7 +37,6 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
 
     private void OnDidUnequip(DidUnequipEvent args)
     {
-        // Check if the unequipped item was part of the reflective set
         if (_tag.HasTag(args.Equipment, _vestTag) || _tag.HasTag(args.Equipment, _helmetTag))
         {
             CheckAllReflectiveSets(args.Equipee);
@@ -50,7 +44,6 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
     }
 
     private void CheckAllReflectiveSets(EntityUid wearer)
-        // Checks all equipped items for the set bonus and applies correct reflection probability.
     {
         if (!TryComp<InventoryComponent>(wearer, out var inventory))
             return;
