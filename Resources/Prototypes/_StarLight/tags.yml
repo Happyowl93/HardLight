@@ -175,6 +175,14 @@
   id: Resomi
 
 - type: Tag
+  id: ReflectiveArmorHelmet
+    # Tag for reflective helmet, used for set bonus detection by ReflectiveSetBonusSystem
+
+- type: Tag
+  id: ReflectiveArmorVest
+    # Tag for reflective vest, used for set bonus detection by ReflectiveSetBonusSystem
+
+- type: Tag
   id: SecCyberEyes
 
 - type: Tag
