@@ -21702,5 +21702,13 @@ Entries:
   id: 201705
   time: '2025-11-14T02:30:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2017
+- author: mikeysaurus
+  changes:
+  - message: Removes Vampires from the voting pool, subgamemodes, and antag selection
+      screen, effectively taking them out of the game until they get reworked.
+    type: Remove
+  id: 219300
+  time: '2025-11-14T20:27:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2193
 Order: -1
 
