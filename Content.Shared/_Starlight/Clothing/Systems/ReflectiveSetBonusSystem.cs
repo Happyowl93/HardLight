@@ -40,9 +40,7 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
         {
             // Store original reflection probability if not already stored
             if (TryComp<ReflectComponent>(args.Equipment, out var reflect) && !_originalReflectProbs.ContainsKey(args.Equipment))
-            {
                 _originalReflectProbs[args.Equipment] = reflect.ReflectProb;
-            }
             
             CheckAllReflectiveSets(args.Equipee);
         }
