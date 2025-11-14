@@ -35,9 +35,7 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
     {
         // Check if the equipped item is part of the reflective set
         if (_tag.HasTag(args.Equipment, _vestTag) || _tag.HasTag(args.Equipment, _helmetTag))
-        {
             CheckAllReflectiveSets(args.Equipee);
-        }
     }
 
     private void OnDidUnequip(DidUnequipEvent args)
