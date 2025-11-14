@@ -8,14 +8,14 @@ namespace Content.Shared._Starlight.Clothing.Components;
 /// Component for items that are part of the reflective armor set.
 /// Stores the original reflection probability from the prototype.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, AutoGenerateComponentState]
 public sealed partial class ReflectiveSetBonusComponent : Component
 {
     /// <summary>
     /// The original reflection probability from the prototype.
     /// Used to restore the value when the set bonus is lost.
     /// </summary>
-    [DataField]
+    [AutoNetworkedField]
     public float OriginalReflectProb;
 
     /// <summary>
