@@ -2,6 +2,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Reflect;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.Clothing.Systems;
@@ -21,6 +22,9 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
     // Tag for reflective helmet, defined in tags.yml
     private static readonly ProtoId<TagPrototype> _helmetTag = "ReflectiveArmorHelmet";
 
+    // Store original reflection probabilities to restore when set is broken
+    private readonly Dictionary<EntityUid, float> _originalReflectProbs = new();
+
     public override void Initialize()
     {
         base.Initialize();
@@ -34,6 +38,12 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
         // Check if the equipped item is part of the reflective set
         if (_tag.HasTag(args.Equipment, _vestTag) || _tag.HasTag(args.Equipment, _helmetTag))
         {
+            // Store original reflection probability if not already stored
+            if (TryComp<ReflectComponent>(args.Equipment, out var reflect) && !_originalReflectProbs.ContainsKey(args.Equipment))
+            {
+                _originalReflectProbs[args.Equipment] = reflect.ReflectProb;
+            }
+            
             CheckAllReflectiveSets(args.Equipee);
         }
     }
@@ -41,20 +51,19 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
     private void OnDidUnequip(DidUnequipEvent args)
     {
         // Check if the unequipped item was part of the reflective set
-        if (_tag.HasTag(args.Equipment, _vestTag) || _tag.HasTag(args.Equipment, _helmetTag))
+        if (!_tag.HasTag(args.Equipment, _vestTag) && !_tag.HasTag(args.Equipment, _helmetTag))
+            return;
+
+        // Restore original reflection probability for unequipped item
+        if (_originalReflectProbs.TryGetValue(args.Equipment, out var originalProb) && 
+            TryComp<ReflectComponent>(args.Equipment, out var reflect))
         {
-            // Reset the unequipped item to its base value
-            if (TryComp<ReflectComponent>(args.Equipment, out var reflect))
-            {
-                if (_tag.HasTag(args.Equipment, _vestTag))
-                    reflect.ReflectProb = 0.65f;
-                else if (_tag.HasTag(args.Equipment, _helmetTag))
-                    reflect.ReflectProb = 0.35f;
-                Dirty(args.Equipment, reflect);
-            }
-            
-            CheckAllReflectiveSets(args.Equipee);
+            reflect.ReflectProb = originalProb;
+            Dirty(args.Equipment, reflect);
         }
+
+        // Update remaining equipped items
+        CheckAllReflectiveSets(args.Equipee);
     }
 
     /// <summary>
@@ -98,27 +107,34 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
         // Apply set bonus if both pieces are equipped
         if (hasVest && hasHelmet && vestEntity.HasValue && helmetEntity.HasValue)
         {
+            // Set both items to 100% reflection when full set is worn
             if (TryComp<ReflectComponent>(vestEntity.Value, out var vestReflect))
             {
-                vestReflect.ReflectProb = 1.0f; // 100% reflection when both pieces equipped
+                vestReflect.ReflectProb = 1.0f;
                 Dirty(vestEntity.Value, vestReflect);
             }
             if (TryComp<ReflectComponent>(helmetEntity.Value, out var helmetReflect))
             {
-                helmetReflect.ReflectProb = 1.0f; // 100% reflection when both pieces equipped
+                helmetReflect.ReflectProb = 1.0f;
                 Dirty(helmetEntity.Value, helmetReflect);
             }
         }
         else
         {
-            if (vestEntity.HasValue && TryComp<ReflectComponent>(vestEntity.Value, out var vestReflect))
+            // Restore original reflection values when set is incomplete
+            if (vestEntity.HasValue && 
+                _originalReflectProbs.TryGetValue(vestEntity.Value, out var vestOriginal) &&
+                TryComp<ReflectComponent>(vestEntity.Value, out var vestReflect))
             {
-                vestReflect.ReflectProb = 0.65f; // Vest only
+                vestReflect.ReflectProb = vestOriginal;
                 Dirty(vestEntity.Value, vestReflect);
             }
-            if (helmetEntity.HasValue && TryComp<ReflectComponent>(helmetEntity.Value, out var helmetReflect))
+            
+            if (helmetEntity.HasValue && 
+                _originalReflectProbs.TryGetValue(helmetEntity.Value, out var helmetOriginal) &&
+                TryComp<ReflectComponent>(helmetEntity.Value, out var helmetReflect))
             {
-                helmetReflect.ReflectProb = 0.35f; // Helmet only
+                helmetReflect.ReflectProb = helmetOriginal;
                 Dirty(helmetEntity.Value, helmetReflect);
             }
         }
