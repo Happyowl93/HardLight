@@ -50,20 +50,16 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
 
     private void OnDidUnequip(DidUnequipEvent args)
     {
-        // Check if the unequipped item was part of the reflective set
-        if (!_tag.HasTag(args.Equipment, _vestTag) && !_tag.HasTag(args.Equipment, _helmetTag))
-            return;
-
-        // Restore original reflection probability for unequipped item
+        // Restore original reflection probability for unequipped item (only stored if it was part of the set)
         if (_originalReflectProbs.TryGetValue(args.Equipment, out var originalProb) && 
             TryComp<ReflectComponent>(args.Equipment, out var reflect))
         {
             reflect.ReflectProb = originalProb;
             Dirty(args.Equipment, reflect);
+            
+            // Update remaining equipped items
+            CheckAllReflectiveSets(args.Equipee);
         }
-
-        // Update remaining equipped items
-        CheckAllReflectiveSets(args.Equipee);
     }
 
     /// <summary>
