@@ -21633,5 +21633,14 @@ Entries:
   id: 218800
   time: '2025-11-13T17:04:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2188
+- author: Conflee
+  changes:
+  - message: Buffed Traitors starting Telecrystal balance from 20 to 25. This should
+      allow Traitors to get a little more done despite the increased number of Security
+      on Starlight's maps.
+    type: Tweak
+  id: 219700
+  time: '2025-11-14T00:43:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2197
 Order: -1
 
