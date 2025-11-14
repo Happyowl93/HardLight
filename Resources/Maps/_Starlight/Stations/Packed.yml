@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 11/07/2025 04:56:05
-  entityCount: 16857
+  time: 11/14/2025 01:51:10
+  entityCount: 16859
 maps:
 - 1
 grids:
@@ -46386,7 +46386,7 @@ entities:
       pos: 59.5,39.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -48643.875
+      secondsUntilStateChange: -48757.406
       state: Closing
 - proto: d6Dice
   entities:
@@ -52125,7 +52125,7 @@ entities:
       pos: 26.5,37.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -95937.66
+      secondsUntilStateChange: -96051.19
       state: Closing
   - uid: 9362
     components:
@@ -78027,6 +78027,13 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+- proto: LockerSalvageLeadFilledHardsuit
+  entities:
+  - uid: 12381
+    components:
+    - type: Transform
+      pos: 4.5,40.5
+      parent: 2
 - proto: LockerSalvageSpecialistFilledHardsuit
   entities:
   - uid: 697
@@ -78970,11 +78977,6 @@ entities:
     - type: Transform
       pos: 43.5,-38.5
       parent: 2
-  - uid: 4322
-    components:
-    - type: Transform
-      pos: 4.5,40.5
-      parent: 2
   - uid: 4571
     components:
     - type: Transform
@@ -79024,6 +79026,11 @@ entities:
     components:
     - type: Transform
       pos: 54.5,-48.5
+      parent: 2
+  - uid: 16858
+    components:
+    - type: Transform
+      pos: 0.5,40.5
       parent: 2
 - proto: NitrogenTankFilled
   entities:
@@ -79163,11 +79170,6 @@ entities:
     - type: Transform
       pos: 88.5,3.5
       parent: 2
-  - uid: 12381
-    components:
-    - type: Transform
-      pos: 5.5,40.5
-      parent: 2
   - uid: 12997
     components:
     - type: Transform
@@ -79182,6 +79184,11 @@ entities:
     components:
     - type: Transform
       pos: 47.5,28.5
+      parent: 2
+  - uid: 16859
+    components:
+    - type: Transform
+      pos: 0.5,39.5
       parent: 2
 - proto: OxygenTankFilled
   entities:
@@ -92491,6 +92498,13 @@ entities:
     components:
     - type: Transform
       pos: 51.5,9.5
+      parent: 2
+- proto: SpawnPointSalvageLead
+  entities:
+  - uid: 4322
+    components:
+    - type: Transform
+      pos: 5.5,40.5
       parent: 2
 - proto: SpawnPointSalvageSpecialist
   entities:

@@ -53,7 +53,8 @@
             Brigmedic: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 5, 5 ]
+            SalvageLead: [ 1, 1 ]
+            SalvageSpecialist: [ 4, 4 ]
             CargoTechnician: [ 2, 2 ]
             MailTech: [ 1, 2 ]
             MiningSpecialist: [ 2, 3 ]
