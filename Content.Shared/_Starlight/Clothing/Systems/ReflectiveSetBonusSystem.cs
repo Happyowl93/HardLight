@@ -30,19 +30,18 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
     private void OnDidEquip(DidEquipEvent args)
     {
         if (_tag.HasTag(args.Equipment, _vestTag) || _tag.HasTag(args.Equipment, _helmetTag))
-        {
             CheckAllReflectiveSets(args.Equipee);
-        }
     }
 
     private void OnDidUnequip(DidUnequipEvent args)
     {
         if (_tag.HasTag(args.Equipment, _vestTag) || _tag.HasTag(args.Equipment, _helmetTag))
-        {
             CheckAllReflectiveSets(args.Equipee);
-        }
     }
 
+    /// <summary>
+    /// Checks all equipped items for the set bonus and applies correct reflection probability.
+    /// </summary>
     private void CheckAllReflectiveSets(EntityUid wearer)
     {
         if (!TryComp<InventoryComponent>(wearer, out var inventory))
