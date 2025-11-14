@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._Starlight.Station;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Station.Components;
@@ -57,6 +58,7 @@ public sealed partial class StationSystem : SharedStationSystem
         SubscribeLocalEvent<StationDataComponent, ComponentShutdown>(OnStationDeleted);
         SubscribeLocalEvent<StationMemberComponent, ComponentShutdown>(OnStationGridDeleted);
         SubscribeLocalEvent<StationMemberComponent, PostGridSplitEvent>(OnStationSplitEvent);
+        SubscribeLocalEvent<GridInitializeEvent>(OnGridInit);
 
         SubscribeLocalEvent<StationGridAddedEvent>(OnStationGridAdded);
         SubscribeLocalEvent<StationGridRemovedEvent>(OnStationGridRemoved);
@@ -186,6 +188,29 @@ public sealed partial class StationSystem : SharedStationSystem
     {
         // When a grid is removed from a station, update all trackers on that grid to null
         UpdateTrackersOnGrid(ev.GridId, null);
+    }
+
+    private void OnGridInit(GridInitializeEvent ev)
+    {
+        if (!TryComp<BecomesStationMidRoundComponent>(ev.EntityUid, out var becomesStation)) return;
+        if (becomesStation.Id is not null)
+        {
+            var midroundStations = EntityManager.GetAllComponents(typeof(BecomesStationMidRoundComponent));
+            foreach (var midroundStation in midroundStations)
+            {
+                // if i did this right this should never trigger its just for code completion purposes
+                if (midroundStation.Component is not BecomesStationMidRoundComponent comp) continue;
+                if (comp.InitializedId != becomesStation.Id) continue;
+                becomesStation.InitializedId = comp.InitializedId;
+                var station = Comp<StationMemberComponent>(midroundStation.Uid).Station;
+                var data = Comp<StationDataComponent>(station);
+                var name = MetaData(station).EntityName;
+                AddGridToStation(station, ev.EntityUid, null, data, name);
+                return;
+            }
+        }
+        becomesStation.InitializedId = becomesStation.Id;
+        InitializeNewStationMidRound(ev.EntityUid, becomesStation.StationProto);
     }
 
     #endregion Event handlers
