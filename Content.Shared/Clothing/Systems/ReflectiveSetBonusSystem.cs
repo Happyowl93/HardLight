@@ -47,8 +47,10 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Checks all equipped items for the set bonus and applies correct reflection probability.
+    /// </summary>
     private void CheckAllReflectiveSets(EntityUid wearer)
-        // Checks all equipped items for the set bonus and applies correct reflection probability.
     {
         if (!TryComp<InventoryComponent>(wearer, out var inventory))
             return;
