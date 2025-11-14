@@ -21659,5 +21659,48 @@ Entries:
   id: 217200
   time: '2025-11-14T02:25:39.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2172
+- author: Fasuh
+  changes:
+  - message: Add magnet to ore boxes
+    type: Add
+  id: 201700
+  time: '2025-11-14T02:30:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2017
+- author: Fasuh
+  changes:
+  - message: Add magnet to ore processors
+    type: Add
+  id: 201701
+  time: '2025-11-14T02:30:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2017
+- author: Fasuh
+  changes:
+  - message: Add magnet indicator to ore bags and ore boxes
+    type: Add
+  id: 201702
+  time: '2025-11-14T02:30:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2017
+- author: Fasuh
+  changes:
+  - message: Add magnet sound on toggle to ore bags, ore boxes, and ore processors
+    type: Add
+  id: 201703
+  time: '2025-11-14T02:30:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2017
+- author: Fasuh
+  changes:
+  - message: Removed magnet belt slot restriction - it now works even on the ground
+    type: Remove
+  id: 201704
+  time: '2025-11-14T02:30:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2017
+- author: Fasuh
+  changes:
+  - message: Change actions used to open ore bags(interact) and toggle magnets (alt
+      click)
+    type: Tweak
+  id: 201705
+  time: '2025-11-14T02:30:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2017
 Order: -1
 
