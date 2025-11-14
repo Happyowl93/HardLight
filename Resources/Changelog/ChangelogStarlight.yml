@@ -21916,5 +21916,12 @@ Entries:
   id: 212509
   time: '2025-11-14T21:12:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2125
+- author: Happyrobot33
+  changes:
+  - message: Removed ability for players to start gamemode and map votes
+    type: Remove
+  id: 220400
+  time: '2025-11-14T21:40:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2204
 Order: -1
 
