@@ -21783,5 +21783,30 @@ Entries:
   id: 198800
   time: '2025-11-14T20:59:14.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1988
+- author: Conflee
+  changes:
+  - message: (Fland) Replaced relevant airlocks with Roboticist, Surgeon, and Paramedic
+      Airlocks
+    type: Tweak
+  id: 208500
+  time: '2025-11-14T20:59:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2085
+- author: Conflee
+  changes:
+  - message: (Fland) Redid exterior department decals to use Trimlines, as an experiment
+      to see how players like this style of decaling
+    type: Tweak
+  id: 208501
+  time: '2025-11-14T20:59:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2085
+- author: Conflee
+  changes:
+  - message: (Fland) Replaced many chairs and benches with new multi-tile ones where
+      applicable, swapped comfy chairs to fitting color variants, and gave Staff Heads
+      fancy office chairs
+    type: Tweak
+  id: 208502
+  time: '2025-11-14T20:59:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2085
 Order: -1
 
