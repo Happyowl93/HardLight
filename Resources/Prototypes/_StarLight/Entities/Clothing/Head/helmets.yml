@@ -110,11 +110,13 @@
     reflectProb: 0.35 # STARLIGHT: Helmet base reflect probability, adds with vest to 100%
     reflects:
       - Energy  
+  # STARLIGHT: Component for set bonus system. Stores original reflection and tag for helmet piece.
+  - type: ReflectiveSetBonus
+    helmetTag: ReflectiveArmorHelmet
   - type: Tag
     tags:
-      # Tag for set bonus system. Used by ReflectiveSetBonusSystem to detect helmet for bonus.
     - SecurityHelmet
-    - ReflectiveArmorHelmet
+    - ReflectiveArmorHelmet # STARLIGHT: Tag for set bonus system detection
 
 - type: entity
   parent: [ClothingHeadHelmetBase, BaseSecurityContraband]

@@ -96,10 +96,12 @@
     reflects:
       - Energy
     reflectingInHands: false
+  # STARLIGHT: Component for set bonus system. Stores original reflection and tag for vest piece.
+  - type: ReflectiveSetBonus
+    vestTag: ReflectiveArmorVest
   - type: Tag
     tags:
-      # STARLIGHT: Tag for set bonus system. Used by ReflectiveSetBonusSystem to detect vest for bonus.
-    - ReflectiveArmorVest # Starlight: Tag for set bonus system
+    - ReflectiveArmorVest # STARLIGHT: Tag for set bonus system detection
 
 #Detective's vest
 - type: entity
