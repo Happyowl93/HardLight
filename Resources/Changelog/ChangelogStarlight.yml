@@ -21724,5 +21724,35 @@ Entries:
   id: 218301
   time: '2025-11-14T20:35:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2183
+- author: Darius
+  changes:
+  - message: Changed saline damage to avali and resomi from 30 damage per unit to
+      8 damage per unit
+    type: Tweak
+  id: 197200
+  time: '2025-11-14T20:52:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1972
+- author: Darius
+  changes:
+  - message: Changed damage type from poison/caustic/slash to caustic/heat to reflect
+      body temperature difference
+    type: Tweak
+  id: 197201
+  time: '2025-11-14T20:52:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1972
+- author: Darius
+  changes:
+  - message: Removed bleed effect from saline
+    type: Tweak
+  id: 197202
+  time: '2025-11-14T20:52:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1972
+- author: Darius
+  changes:
+  - message: Updated guidebook entries to reflect this
+    type: Tweak
+  id: 197203
+  time: '2025-11-14T20:52:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1972
 Order: -1
 
