@@ -16,7 +16,9 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly TagSystem _tag = default!;
 
+    // Tag for reflective vest, defined in tags.yml
     private static readonly ProtoId<TagPrototype> _vestTag = "ReflectiveArmorVest";
+    // Tag for reflective helmet, defined in tags.yml
     private static readonly ProtoId<TagPrototype> _helmetTag = "ReflectiveArmorHelmet";
 
     public override void Initialize()
@@ -29,14 +31,30 @@ public sealed class ReflectiveSetBonusSystem : EntitySystem
 
     private void OnDidEquip(DidEquipEvent args)
     {
+        // Check if the equipped item is part of the reflective set
         if (_tag.HasTag(args.Equipment, _vestTag) || _tag.HasTag(args.Equipment, _helmetTag))
+        {
             CheckAllReflectiveSets(args.Equipee);
+        }
     }
 
     private void OnDidUnequip(DidUnequipEvent args)
     {
+        // Check if the unequipped item was part of the reflective set
         if (_tag.HasTag(args.Equipment, _vestTag) || _tag.HasTag(args.Equipment, _helmetTag))
+        {
+            // Reset the unequipped item to its base value
+            if (TryComp<ReflectComponent>(args.Equipment, out var reflect))
+            {
+                if (_tag.HasTag(args.Equipment, _vestTag))
+                    reflect.ReflectProb = 0.65f;
+                else if (_tag.HasTag(args.Equipment, _helmetTag))
+                    reflect.ReflectProb = 0.35f;
+                Dirty(args.Equipment, reflect);
+            }
+            
             CheckAllReflectiveSets(args.Equipee);
+        }
     }
 
     /// <summary>
