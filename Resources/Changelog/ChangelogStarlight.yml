@@ -21650,5 +21650,14 @@ Entries:
   id: 169500
   time: '2025-11-14T01:51:53.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1695
+- author: Conflee
+  changes:
+  - message: Swapped Xenos spawners for Space Spider spawners on the Sus wreck, since
+      there is no spawner for non-ghost role Xenos. Also removed the comms server,
+      to make it so common comms can be sabotaged still.
+    type: Tweak
+  id: 217200
+  time: '2025-11-14T02:25:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2172
 Order: -1
 
