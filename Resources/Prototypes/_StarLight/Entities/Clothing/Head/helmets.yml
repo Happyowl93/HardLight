@@ -107,7 +107,7 @@
         Piercing: 0.95
         Heat: 0.80
   - type: Reflect
-    reflectProb: 0.2
+    reflectProb: 0.3
     reflects:
       - Energy  
   - type: Tag
