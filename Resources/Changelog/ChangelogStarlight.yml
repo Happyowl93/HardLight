@@ -21754,5 +21754,26 @@ Entries:
   id: 197203
   time: '2025-11-14T20:52:06.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1972
+- author: DocMoth
+  changes:
+  - message: Avali Hardsuit and Eva Sprites.
+    type: Add
+  id: 217500
+  time: '2025-11-14T20:52:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2175
+- author: DocMoth
+  changes:
+  - message: Zeyria's new Avali displacements for gloves and outerclothing.
+    type: Add
+  id: 217501
+  time: '2025-11-14T20:52:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2175
+- author: DocMoth
+  changes:
+  - message: Fixed missing component preventing Hardsuits from hiding Avali Tails.
+    type: Fix
+  id: 217502
+  time: '2025-11-14T20:52:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2175
 Order: -1
 
