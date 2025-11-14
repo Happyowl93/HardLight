@@ -152,7 +152,9 @@
         groups:
           Brute: 6
       bleedHealPerUpdate: 1.0
-      critDamageResistance: 2.0
+      critHealingModifier: 2.0
+      stasisDamageReduction: 0.5
+
 # Chirp!
 
 - type: entity

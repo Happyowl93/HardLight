@@ -82,7 +82,7 @@ public sealed class StasisSystem : SharedStasisSystem
         var updatedDamage = new DamageSpecifier();
         foreach (var damage in args.Damage.DamageDict)
         {
-            var scaler = ent.Comp.CritDamageResistance;
+            var scaler = ent.Comp.StasisDamageReduction;
             updatedDamage.DamageDict[damage.Key] = damage.Value > 0 ? scaler * damage.Value : damage.Value;
         }
 

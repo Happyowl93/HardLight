@@ -78,7 +78,7 @@ public sealed partial class StasisComponent : Component
     /// Flat percentage damage resistance against ALL positive damage taken (Healing is not effected)
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float CritDamageResistance = 0.5f;
+    public float StasisDamageReduction = 0.5f;
 
     /// <summary>
     /// The prototype ID of the stasis effect to spawn when entering stasis.
