@@ -21642,5 +21642,13 @@ Entries:
   id: 219700
   time: '2025-11-14T00:43:44.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2197
+- author: CawsForConcern
+  changes:
+  - message: SP-8T to BSO's Locker as a ballistic alternative to the X-01 Multiphase
+      energy gun
+    type: Add
+  id: 169500
+  time: '2025-11-14T01:51:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1695
 Order: -1
 
