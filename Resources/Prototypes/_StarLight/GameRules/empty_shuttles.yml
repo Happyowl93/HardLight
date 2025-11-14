@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseGameRule
-  id: shuttle_empty_pioneer_fuel
+  id: shuttle_empty_salvage_pioneer-requiresfuel
   components:
     - type: StationEvent
       startAnnouncement: null # It should be silent.
