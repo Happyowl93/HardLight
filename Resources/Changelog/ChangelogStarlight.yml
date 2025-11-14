@@ -21923,5 +21923,12 @@ Entries:
   id: 220400
   time: '2025-11-14T21:40:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2204
+- author: Arkanic
+  changes:
+  - message: Increment the damage required to stunlock someone in crawl to 15
+    type: Tweak
+  id: 220300
+  time: '2025-11-14T21:40:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2203
 Order: -1
 
