@@ -21808,5 +21808,21 @@ Entries:
   id: 208502
   time: '2025-11-14T20:59:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2085
+- author: Conflee
+  changes:
+  - message: (Kiloton) Changed furniture in several areas to use new multi-tile benches,
+      sofas, and colored comfy chairs. Also employed new Tiles and Decals in several
+      places.
+    type: Tweak
+  id: 208000
+  time: '2025-11-14T20:59:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2080
+- author: Conflee
+  changes:
+  - message: (Kiloton) Added Roboticist and Surgery Airlocks where needed.
+    type: Tweak
+  id: 208001
+  time: '2025-11-14T20:59:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2080
 Order: -1
 
