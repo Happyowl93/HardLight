@@ -293,3 +293,18 @@
         - Recyclable
         - HamsterWearable
         - WhitelistChameleon
+
+- type: entity
+  parent: [ ClothingHeadBase , BaseSalvageContraband ]
+  id: ClothingHeadHatBeretSalvageMerc
+  name: scrapper beret
+  description: An olive beret with a badge depicting a jackal on a rock.
+  components:
+    - type: Sprite
+      sprite: Clothing/Head/Hats/beret_merc.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Hats/beret_merc.rsi
+    - type: Tag
+      tags:
+        - PetWearable
+        - CorgiWearable

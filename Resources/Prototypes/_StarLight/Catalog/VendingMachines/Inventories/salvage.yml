@@ -37,7 +37,7 @@
   id: VendorSalvageClothingOuterHardsuitMaxim
   productEntity: ClothingOuterHardsuitMaxim
   cost:
-    SalvageTicket: 1500
+    SalvageTicket: 1300
   categories:
   - SalvageEquipment
   conditions:
@@ -317,8 +317,8 @@
 
 #Merc Stuff
 - type: listing
-  id: VendorSalvageClothingBackpackMerc
-  productEntity: ClothingBackpackMerc
+  id: VendorSalvageClothingBackpackSalvageMerc
+  productEntity: ClothingBackpackSalvageMerc
   cost:
     SalvageTicket: 150
   categories:
@@ -327,8 +327,8 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageClothingMaskBandMerc
-  productEntity: ClothingMaskBandMerc
+  id: VendorSalvageClothingMaskBandSalvageMerc
+  productEntity: ClothingMaskBandSalvageMerc
   cost:
     SalvageTicket: 25
   categories:
@@ -337,8 +337,8 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageClothingHeadBandMerc
-  productEntity: ClothingHeadBandMerc
+  id: VendorSalvageClothingHeadBandSalvageMerc
+  productEntity: ClothingHeadBandSalvageMerc
   cost:
     SalvageTicket: 25
   categories:
@@ -347,8 +347,8 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageClothingHeadHatBeretMerc
-  productEntity: ClothingHeadHatBeretMerc
+  id: VendorSalvageClothingHeadHatBeretSalvageMerc
+  productEntity: ClothingHeadHatBeretSalvageMerc
   cost:
     SalvageTicket: 25
   categories:
@@ -357,8 +357,8 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageClothingShoesBootsMerc
-  productEntity: ClothingShoesBootsMerc
+  id: VendorSalvageClothingShoesBootsSalvageMerc
+  productEntity: ClothingShoesBootsSalvageMerc
   cost:
     SalvageTicket: 150
   categories:
@@ -367,8 +367,8 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageClothingHandsMercGlovesCombat
-  productEntity: ClothingHandsMercGlovesCombat
+  id: VendorSalvageClothingHandsSalvageMercGlovesCombat
+  productEntity: ClothingHandsSalvageMercGlovesCombat
   cost:
     SalvageTicket: 150
   categories:
@@ -377,8 +377,8 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageClothingHandsGlovesMercFingerless
-  productEntity: ClothingHandsGlovesMercFingerless
+  id: VendorSalvageClothingHandsGlovesSalvageMercFingerless
+  productEntity: ClothingHandsGlovesSalvageMercFingerless
   cost:
     SalvageTicket: 25
   categories:
@@ -387,8 +387,8 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageClothingMaskGasMerc
-  productEntity: ClothingMaskGasMerc
+  id: VendorSalvageClothingMaskGasSalvageMerc
+  productEntity: ClothingMaskGasSalvageMerc
   cost:
     SalvageTicket: 150
   categories:
@@ -397,8 +397,8 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageClothingEyesGlassesMercenary
-  productEntity: ClothingEyesGlassesMercenary
+  id: VendorSalvageClothingEyesGlassesSalvageMercenary
+  productEntity: ClothingEyesGlassesSalvageMercenary
   cost:
     SalvageTicket: 25
   categories:
@@ -417,8 +417,8 @@
 #  - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageClothingHeadHelmetMerc
-  productEntity: ClothingHeadHelmetMerc
+  id: VendorSalvageClothingHeadHelmetSalvageMerc
+  productEntity: ClothingHeadHelmetSalvageMerc
   cost:
     SalvageTicket: 150
   categories:
@@ -427,8 +427,8 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageClothingUniformJumpsuitMercenary
-  productEntity: ClothingUniformJumpsuitMercenary
+  id: VendorSalvageClothingUniformJumpsuitSalvageMercenary
+  productEntity: ClothingUniformJumpsuitSalvageMercenary
   cost:
     SalvageTicket: 25
   categories:
@@ -437,8 +437,8 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageClothingOuterVestWebMerc
-  productEntity: ClothingOuterVestWebMerc
+  id: VendorSalvageClothingOuterVestWebSalvageMerc
+  productEntity: ClothingOuterVestWebSalvageMerc
   cost:
     SalvageTicket: 350
   categories:
@@ -447,8 +447,8 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSalvageClothingBeltMercWebbing
-  productEntity: ClothingBeltMercWebbing
+  id: VendorSalvageClothingBeltSalvageMercWebbing
+  productEntity: ClothingBeltSalvageMercWebbing
   cost:
     SalvageTicket: 150
   categories:

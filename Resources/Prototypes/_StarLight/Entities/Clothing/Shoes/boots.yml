@@ -1,0 +1,10 @@
+- type: entity
+  parent: [ ClothingShoesMilitaryBase, BaseSalvageContraband ]
+  id: ClothingShoesBootsSalvageMerc
+  name: scrapper boots
+  description: Boots that have gone through many conflicts and that have proven their combat reliability.
+  components:
+    - type: Sprite
+      sprite: Clothing/Shoes/Boots/mercboots.rsi
+    - type: Clothing
+      sprite: Clothing/Shoes/Boots/mercboots.rsi

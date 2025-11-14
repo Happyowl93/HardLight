@@ -282,3 +282,17 @@
         Blunt: 0.95
   - type: ExplosionResistance
     damageCoefficient: 0.95
+
+- type: entity
+  parent: [ ClothingHeadHelmetArmoredBase, BaseSalvageContraband ]
+  id: ClothingHeadHelmetSalvageMerc
+  name: scrapper helmet
+  description: The combat helmet is commonly used by mercenaries, is strong, light and smells like gunpowder and the jungle.
+  components:
+    - type: Sprite
+      sprite: Clothing/Head/Helmets/merc_helmet.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Helmets/merc_helmet.rsi
+    - type: HideLayerClothing
+      layers:
+        Hair: HEAD
