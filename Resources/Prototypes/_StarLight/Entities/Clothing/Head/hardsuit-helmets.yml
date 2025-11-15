@@ -96,8 +96,6 @@
     sprite: _Starlight/Clothing/Head/Hardsuits/spacehazard.rsi
   - type: Clothing
     sprite: _Starlight/Clothing/Head/Hardsuits/spacehazard.rsi
-  - type: PointLight
-    color: "#ffeead"
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
