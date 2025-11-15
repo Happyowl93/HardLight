@@ -76,9 +76,14 @@
     startingCharge: 360
   - type: Tag
     tags:
-      - PowerCageSmall
+      - PowerCellSmall
 
 - type: entity
+  id: PowerCellSmallPrinted
+  suffix: Empty
+  parent: PowerCellSmall
+  components:
+  - type: Sprite
     layers:
       - map: [ "enum.PowerCellVisualLayers.Base" ]
         state: small

@@ -735,6 +735,9 @@
   id: GygaxPeripheralsControlModule
 
 - type: Tag
+  id: GygaxTargetingControlModule
+
+- type: Tag
   id: GygaxHead
 
 - type: Tag
