@@ -205,7 +205,7 @@
       state: mcontroller
     - type: Tag
       tags:
-        - GygaxTargetingControlModule
+      - GygaxTargetingControlModule
     - type: GuideHelp
       guides:
       - Robotics
