@@ -114,8 +114,6 @@
   suffix: Full
   parent: BasePowerCell
   components:
-  - type: Tag
-    tags:
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -186,8 +184,6 @@
   suffix: Full
   parent: BasePowerCell
   components:
-  - type: Tag
-    tags:
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -223,8 +219,6 @@
   description: A rechargeable standardized microreactor cell. Has lower capacity but slowly recharges by itself.
   suffix: Full
   components:
-  - type: Tag
-    tags:
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -261,8 +255,6 @@
   id: PowerCellAntiqueProto
   parent: BasePowerCell
   components:
-    - type: Tag
-      tags:
     - type: Sprite
       layers:
       - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -313,7 +305,6 @@
   - type: Tag
     tags:
       - PowerCage
-      - PowerCageSmall
   - type: Sprite
     sprite: Objects/Power/power_cages.rsi
     layers:
@@ -335,7 +326,6 @@
   - type: Tag
     tags:
       - PowerCage
-      - PowerCageMedium
   - type: Sprite
     sprite: Objects/Power/power_cages.rsi
     layers:
@@ -357,7 +347,6 @@
   - type: Tag
     tags:
       - PowerCage
-      - PowerCageHigh
   - type: Sprite
     sprite: Objects/Power/power_cages.rsi
     layers:
