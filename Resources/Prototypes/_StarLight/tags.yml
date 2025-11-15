@@ -266,6 +266,18 @@
 
 - type: Tag
   id: PettyCriminalTraitBackground
+
+- type: Tag
+  id: PowerCageHigh
+
+- type: Tag
+  id: PowerCageMedium
+
+- type: Tag
+  id: PowerCageSmall
+
+- type: Tag
+  id: SmallPowerCell
   
 - type: Tag
   id: ThermiteIgnitor

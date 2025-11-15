@@ -265,7 +265,7 @@
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_uac2
   - type: Gun
-    fireRate: 4.3
+    fireRate: 3.2
     selectedMode: FullAuto
     availableModes:
       - FullAuto

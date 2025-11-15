@@ -646,6 +646,7 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
+# 🌟Starlight-start🌟: Battery whitelist to prevent large power cages
   - type: ItemSlots
     slots:
       mech-battery-slot:
@@ -653,8 +654,9 @@
         whitelist:
           tags:
             - SmallPowerCell
-        whitelistFailPopup: mech-power-cage-too-large
+        whitelistFailPopup: inventory-component-can-equip-does-not-fit
         insertOnInteract: true
+# 🌟Starlight-end🌟
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -922,6 +924,7 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
+# 🌟Starlight-start🌟: Battery whitelist to prevent large power cages
   - type: ItemSlots
     slots:
       mech-battery-slot:
@@ -929,8 +932,9 @@
         whitelist:
           tags:
             - SmallPowerCell
-        whitelistFailPopup: mech-power-cage-too-large
+        whitelistFailPopup: inventory-component-can-equip-does-not-fit
         insertOnInteract: true
+# 🌟Starlight-end🌟
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
