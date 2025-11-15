@@ -59,7 +59,7 @@
   id: VendorMiningClothingOuterHardsuitAdvancedMining
   productEntity: ClothingOuterHardsuitAdvancedMining
   cost:
-    SalvageTicket: 1300
+    SalvageTicket: 1200
   categories:
   - MiningEquipment
   conditions:
