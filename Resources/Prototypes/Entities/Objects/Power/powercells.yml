@@ -110,11 +110,14 @@
 
 - type: entity
   name: medium-capacity power cell
-  description: A rechargeable power cell. This is the popular and reliable version.
+  description: A rechargeable power cell. This is the kind of power cell you find in advanced machines.
   id: PowerCellMedium
   suffix: Full
   parent: BasePowerCell
   components:
+  - type: Tag
+    tags:
+      - SmallPowerCell
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -145,11 +148,14 @@
 
 - type: entity
   name: high-capacity power cell
-  description: A rechargeable standardized power cell. This premium brand stores up to 50% more energy than the competition.
+  description: A rechargeable power cell. This premium brand stores up to 50% more energy than the competition.
   id: PowerCellHigh
   suffix: Full
   parent: BasePowerCell
   components:
+  - type: Tag
+    tags:
+      - SmallPowerCell
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -223,6 +229,9 @@
   description: A rechargeable standardized microreactor cell. Has lower capacity but slowly recharges by itself.
   suffix: Full
   components:
+  - type: Tag
+    tags:
+      - SmallPowerCell
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -429,6 +438,9 @@
   suffix: Full
   parent: BasePowerCell
   components:
+  - type: Tag
+    tags:
+      - SmallPowerCell
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
