@@ -203,9 +203,6 @@
     - type: Sprite
       sprite: Objects/Misc/module.rsi
       state: mcontroller
-    - type: Tag
-      tags:
-      - GygaxTargetingControlModule
     - type: GuideHelp
       guides:
       - Robotics
