@@ -424,8 +424,6 @@
   suffix: Full
   parent: BasePowerCell
   components:
-  - type: Tag
-    tags:
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
