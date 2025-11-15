@@ -216,9 +216,9 @@
     state: mecha_scatter
   - type: Gun
     fireRate: 1
-    selectedMode: SemiAuto
+    selectedMode: FullAuto
     availableModes:
-      - SemiAuto
+      - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
   - type: ProjectileBatteryAmmoProvider
@@ -240,7 +240,7 @@
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_carbine
   - type: Gun
-    fireRate: 1.2
+    fireRate: 2.0
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
@@ -265,12 +265,10 @@
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_uac2
   - type: Gun
-    fireRate: 5
-    shotsPerBurst: 3
-    burstCooldown: 1.2
-    selectedMode: Burst
+    fireRate: 4.3
+    selectedMode: FullAuto
     availableModes:
-      - Burst
+      - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
   - type: HitscanBatteryAmmoProvider

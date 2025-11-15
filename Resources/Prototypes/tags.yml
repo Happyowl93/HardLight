@@ -735,9 +735,6 @@
   id: GygaxPeripheralsControlModule
 
 - type: Tag
-  id: GygaxTargetingControlModule
-
-- type: Tag
   id: GygaxHead
 
 - type: Tag
@@ -1237,10 +1234,22 @@
   id: PowerCage
 
 - type: Tag
+  id: PowerCageHigh
+
+- type: Tag
+  id: PowerCageMedium
+
+- type: Tag
+  id: PowerCageSmall
+
+- type: Tag
   id: PowerCell
 
 - type: Tag
   id: PowerCellSmall
+
+- type: Tag
+  id: SmallPowerCell
 
 - type: Tag
   id: Powerdrill

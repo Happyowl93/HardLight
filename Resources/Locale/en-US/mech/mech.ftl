@@ -20,4 +20,6 @@ mech-no-enter = You cannot pilot this.
 
 mech-eject-pilot-alert = {$user} is pulling the pilot out of the {$item}!
 
+mech-power-cage-too-large = That power cage won't fit inside!
+
 mech-construction-guide-string = All mech parts must be attached to the harness.

@@ -77,6 +77,7 @@
   - type: Tag
     tags:
       - PowerCellSmall
+      - SmallPowerCell
 
 - type: entity
   id: PowerCellSmallPrinted
@@ -184,6 +185,9 @@
   suffix: Full
   parent: BasePowerCell
   components:
+  - type: Tag
+    tags:
+      - SmallPowerCell
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -255,6 +259,9 @@
   id: PowerCellAntiqueProto
   parent: BasePowerCell
   components:
+    - type: Tag
+      tags:
+        - SmallPowerCell
     - type: Sprite
       layers:
       - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -302,6 +309,11 @@
   name: small-capacity power cage
   description: A rechargeable power cage for big devices. This is the cheapest kind you can find.
   components:
+  - type: Tag
+    tags:
+      - PowerCage
+      - PowerCageSmall
+      - SmallPowerCell
   - type: Sprite
     sprite: Objects/Power/power_cages.rsi
     layers:
@@ -320,6 +332,10 @@
   name: medium-capacity power cage
   description: A rechargeable power cage for big devices. The gold standard of capacity and cost.
   components:
+  - type: Tag
+    tags:
+      - PowerCage
+      - PowerCageMedium
   - type: Sprite
     sprite: Objects/Power/power_cages.rsi
     layers:
@@ -338,6 +354,10 @@
   name: high-capacity power cage
   description: A rechargeable power cage for big devices. Increased capacity for increased power levels.
   components:
+  - type: Tag
+    tags:
+      - PowerCage
+      - PowerCageHigh
   - type: Sprite
     sprite: Objects/Power/power_cages.rsi
     layers:
