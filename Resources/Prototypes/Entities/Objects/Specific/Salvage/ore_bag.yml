@@ -23,7 +23,7 @@
   - type: ComponentToggler
     components: 
     - type: MagnetPickup
-      slotFlags: 0  # Starlight Edit - make it work in slots other than belt - mostly for borgs but this just works better overall
+      slotFlags: All  # Starlight Edit - make it work in all slots
   - type: Sprite
     sprite: _Starlight/Objects/Specific/Mining/ore_bag.rsi
     state: icon
