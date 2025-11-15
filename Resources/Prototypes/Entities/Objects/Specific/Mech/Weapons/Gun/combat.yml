@@ -265,10 +265,12 @@
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_uac2
   - type: Gun
+    # Starlight-start
     fireRate: 3.2
     selectedMode: FullAuto
     availableModes:
       - FullAuto
+    # Starlight-end
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
   - type: HitscanBatteryAmmoProvider
