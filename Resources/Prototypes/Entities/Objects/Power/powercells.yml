@@ -76,15 +76,9 @@
     startingCharge: 360
   - type: Tag
     tags:
-      - PowerCellSmall
-      - SmallPowerCell
+      - PowerCageSmall
 
-- type: entity
-  id: PowerCellSmallPrinted
-  suffix: Empty
-  parent: PowerCellSmall
-  components:
-  - type: Sprite
+- type: entityte
     layers:
       - map: [ "enum.PowerCellVisualLayers.Base" ]
         state: small
@@ -117,7 +111,6 @@
   components:
   - type: Tag
     tags:
-      - SmallPowerCell
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -155,7 +148,6 @@
   components:
   - type: Tag
     tags:
-      - SmallPowerCell
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -193,7 +185,6 @@
   components:
   - type: Tag
     tags:
-      - SmallPowerCell
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -231,7 +222,6 @@
   components:
   - type: Tag
     tags:
-      - SmallPowerCell
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -270,7 +260,6 @@
   components:
     - type: Tag
       tags:
-        - SmallPowerCell
     - type: Sprite
       layers:
       - map: [ "enum.PowerCellVisualLayers.Base" ]
@@ -322,7 +311,6 @@
     tags:
       - PowerCage
       - PowerCageSmall
-      - SmallPowerCell
   - type: Sprite
     sprite: Objects/Power/power_cages.rsi
     layers:
@@ -440,7 +428,6 @@
   components:
   - type: Tag
     tags:
-      - SmallPowerCell
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]

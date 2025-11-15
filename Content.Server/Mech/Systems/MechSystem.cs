@@ -276,10 +276,6 @@ public sealed partial class MechSystem : SharedMechSystem
 
     private void OnInteractUsing(EntityUid uid, MechComponent component, InteractUsingEvent args)
     {
-        // Starlight: Check if event was already handled (e.g., by battery whitelist validation)
-        if (args.Handled)
-            return;
-
         if (TryComp<WiresPanelComponent>(uid, out var panel) && !panel.Open)
             return;
 

@@ -646,17 +646,6 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
-# 🌟Starlight-start🌟: Battery whitelist to prevent large power cages
-  - type: ItemSlots
-    slots:
-      mech-battery-slot:
-        name: Battery
-        whitelist:
-          tags:
-            - SmallPowerCell
-        whitelistFailPopup: inventory-component-can-equip-does-not-fit
-        insertOnInteract: true
-# 🌟Starlight-end🌟
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -666,8 +655,8 @@
         Structural: 180
   - type: MovementSpeedModifier
 # 🌟Starlight-start🌟
-    baseWalkSpeed: 2.8
-    baseSprintSpeed: 4.3
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4.0
 # 🌟Starlight-end🌟
   - type: Damageable
     damageModifierSet: GygaxArmor
@@ -924,17 +913,6 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
-# 🌟Starlight-start🌟: Battery whitelist to prevent large power cages
-  - type: ItemSlots
-    slots:
-      mech-battery-slot:
-        name: Battery
-        whitelist:
-          tags:
-            - SmallPowerCell
-        whitelistFailPopup: inventory-component-can-equip-does-not-fit
-        insertOnInteract: true
-# 🌟Starlight-end🌟
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
