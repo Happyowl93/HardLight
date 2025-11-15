@@ -216,7 +216,7 @@
     state: mecha_scatter
   - type: Gun
     fireRate: 1
-    selectedMode: FullAuto
+    selectedMode: FullAuto # Starlight-edit
     availableModes:
       - FullAuto # Starlight-edit
     soundGunshot:
