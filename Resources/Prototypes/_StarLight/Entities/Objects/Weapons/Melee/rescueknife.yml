@@ -20,7 +20,7 @@
         verb: sheathe
         sprite:
           sprite: _Starlight/Objects/Weapons/Melee/rescueknife.rsi
-          state: diagonal-in
+          state: folded
         components:
         - type: MeleeWeapon
           wideAnimationRotation: 45
@@ -41,7 +41,7 @@
         verb: unsheath
         sprite:
           sprite: _Starlight/Objects/Weapons/Melee/rescueknife.rsi
-          state: diagonal-out
+          state: icon
         components:
         - type: MeleeWeapon
           wideAnimationRotation: -135
@@ -59,13 +59,17 @@
           sound: /Audio/Weapons/star_hit.ogg
           offset: -0.15,0.0
         - type: LandAtCursor
-  - type: Tool
-    qualities:
-      - Screwing
-    speedModifier: 1
-    useSound:
-      collection: Screwdriver
   - type: ThrowingAngle
     angle: 225
+  - type: MultipleTool
+    statusShowBehavior: true
+    entries:
+      - behavior: Slicing
+        useSound: /Audio/Items/Culinary/chop.ogg
+        SpeedModifier: 1
+      - behavior: Screwing
+        useSound: /Audio/Items/screwdriver.ogg
+        SpeedModifier: 0.95
   - type: Tag
-    tags: ParaKnife
+    tags: 
+    - ParaKnife

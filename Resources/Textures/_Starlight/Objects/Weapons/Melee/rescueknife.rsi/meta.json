@@ -8,10 +8,10 @@
   },
   "states": [
     {
-      "name": "diagonal-in"
+      "name": "folded"
     },
     {
-      "name": "diagonal-out"
+      "name": "icon"
     },
     {
       "name": "stored"
