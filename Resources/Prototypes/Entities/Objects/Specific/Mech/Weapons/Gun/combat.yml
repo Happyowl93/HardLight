@@ -218,7 +218,7 @@
     fireRate: 1
     selectedMode: FullAuto
     availableModes:
-      - FullAuto
+      - FullAuto # Starlight-edit
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
   - type: ProjectileBatteryAmmoProvider
