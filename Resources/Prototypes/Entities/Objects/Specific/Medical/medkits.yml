@@ -118,6 +118,7 @@
         - DiscreteHealthAnalyzer
         - SurgeryTool
         - Dropper
+        - BodyBag
        components:
         - Hypospray
         - Injector

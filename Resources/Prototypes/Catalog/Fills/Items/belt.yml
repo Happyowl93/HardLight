@@ -109,10 +109,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: Brutepack
-      - id: Ointment
-      - id: Bloodpack
-      - id: Gauze
+      - id: MedkitFilledParamed #Starlight
       - id: EmergencyMedipen #You never know what people are going to latejoin into
         amount: 3
 

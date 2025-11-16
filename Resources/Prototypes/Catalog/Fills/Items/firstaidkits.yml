@@ -109,3 +109,15 @@
     contents:
       - id: StimpackMini
         amount: 6
+
+- type: entity 
+  id: MedkitFilledParamed #Starlight
+  suffix: Filled
+  parent: Medkit
+  components:
+  - type: StorageFill
+    contents:
+      - id: Brutepack
+      - id: Ointment
+      - id: Gauze
+      - id: Bloodpack

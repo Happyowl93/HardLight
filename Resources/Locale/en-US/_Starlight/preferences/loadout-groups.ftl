@@ -52,6 +52,9 @@ loadout-group-salvagelead-id = Salvage Lead ID
 loadout-group-mining-id = Mining Specialist ID
 loadout-group-salvage-id = Salvage Specialist ID
 
+#Medical
+loadout-group-paramedic-id = Paramedic ID
+
 # Other
 
 loadout-group-scarves = Scarf

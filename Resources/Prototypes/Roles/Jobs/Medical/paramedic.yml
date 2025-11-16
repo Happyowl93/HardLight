@@ -21,12 +21,14 @@
 - type: startingGear
   id: ParamedicGear
   equipment:
-    id: ParamedicPDA
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalEMTFilled
   storage:
     back:
     - EmergencyRollerBedSpawnFolded
+    - RescueKnife #Starlight start
+    - BodyBagLockableFolded
+    - DefibrillatorParamed #Starlight end
 
 - type: chameleonOutfit
   id: ParamedicChameleonOutfit
