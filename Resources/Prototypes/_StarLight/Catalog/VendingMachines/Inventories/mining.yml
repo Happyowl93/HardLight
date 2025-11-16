@@ -1,5 +1,17 @@
 #equipment
 - type: listing
+  id: VendorMiningBinoculars
+  productEntity: Binoculars
+  cost:
+    SalvageTicket: 75
+  categories:
+    - MiningEquipment
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 3
+    - !type:BuyerAccessCondition
+
+- type: listing
   id: VendorMiningGrapplingGun
   productEntity: WeaponGrapplingGun
   cost:
