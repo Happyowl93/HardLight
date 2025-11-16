@@ -401,6 +401,7 @@
         - Dropper
         - Medkit
         - BodyBag
+        - ParaKnife
       components:
         - Hypospray
         - Injector
