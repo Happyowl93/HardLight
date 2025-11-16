@@ -26,9 +26,8 @@
   storage:
     back:
     - EmergencyRollerBedSpawnFolded
-    - RescueKnife #Starlight start
-    - BodyBagLockableFolded
-    - DefibrillatorParamed #Starlight end
+    - BodyBagLockableFolded #Starlight
+    - DefibrillatorParamed #Starlight
 
 - type: chameleonOutfit
   id: ParamedicChameleonOutfit
