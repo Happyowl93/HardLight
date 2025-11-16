@@ -1,0 +1,36 @@
+- type: entity
+  name: paramedic handheld crew monitor
+  parent: [ BaseHandheldComputer, BaseMedicalContraband ]
+  id: HandheldCrewMonitorParamedic
+  description: A hand-held crew monitor used by paramedics to track down casualties.
+  components:
+  - type: Item
+    heldPrefix: scanner
+  - type: Sprite
+    sprite: _Starlight/Objects/Specific/Medical/handheld_para_crewmonitor.rsi
+    state: scanner
+  - type: ActivatableUI
+    key: enum.CrewMonitoringUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CrewMonitoringUIKey.Key:
+        type: CrewMonitoringBoundUserInterface
+  - type: CrewMonitoringConsole
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: CrewMonitor
+  - type: WirelessNetworkConnection
+    range: 500
+  - type: StationLimitedNetwork
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  id: HandheldCrewMonitorParamedicEmpty
+  parent: HandheldCrewMonitorParamedic
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
