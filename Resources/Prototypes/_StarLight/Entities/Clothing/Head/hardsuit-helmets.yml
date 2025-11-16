@@ -87,7 +87,7 @@
 
 #Space Hazard Suit
 - type: entity
-  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  parent: ClothingHeadHardsuitBase
   id: ClothingHeadHelmetHardsuitSpaceHazard
   name: space hazard helmet
   description: Keeps the cold sulfuric embrace of space out.
