@@ -18,6 +18,8 @@ public sealed class StationInitCommand : LocalizedCommands
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     
     public override string Command => "stationinit";
+    public override string Description => "Turns a grid into a new or existing station.";
+
     public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         if (args.Length < 2)

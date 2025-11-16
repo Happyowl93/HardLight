@@ -1,5 +1,6 @@
 using Content.Server.GameTicking;
 using Content.Server.Station.Systems;
+using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Starlight.Station;
@@ -11,8 +12,9 @@ namespace Content.Server._Starlight.Station;
 [Access(typeof(GameTicker), typeof(StationSystem))]
 public sealed partial class BecomesStationMidRoundComponent : Component
 {
-    [DataField] [ViewVariables(VVAccess.ReadOnly)]
-    public string? InitializedId = null;
+    [ViewVariables(VVAccess.ReadOnly)] public string? InitializedId = null;
     [DataField(required: true)] public string? Id = null;
     [DataField] public EntProtoId StationProto = new("StandardNanotrasenStation");
+    [DataField] public string? EmergencyShuttleOverridePath = null;
+    [DataField] public Dictionary<ProtoId<JobPrototype>, int>? AvailableJobs = null; // null = no jobs
 }

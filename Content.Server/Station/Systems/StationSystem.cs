@@ -2,11 +2,13 @@ using System.Linq;
 using Content.Server._Starlight.Station;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
+using Content.Server.Shuttles.Components;
 using Content.Server.Station.Components;
 using Content.Server.Station.Events;
 using Content.Shared.Station;
 using Content.Shared.Station.Components;
 using JetBrains.Annotations;
+using Robust.Server.GameObjects;
 using Robust.Server.GameStates;
 using Robust.Server.Player;
 using Robust.Shared.Collections;
@@ -15,6 +17,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Station.Systems;
@@ -33,6 +36,7 @@ public sealed partial class StationSystem : SharedStationSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly PvsOverrideSystem _pvsOverride = default!;
+    [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -58,7 +62,7 @@ public sealed partial class StationSystem : SharedStationSystem
         SubscribeLocalEvent<StationDataComponent, ComponentShutdown>(OnStationDeleted);
         SubscribeLocalEvent<StationMemberComponent, ComponentShutdown>(OnStationGridDeleted);
         SubscribeLocalEvent<StationMemberComponent, PostGridSplitEvent>(OnStationSplitEvent);
-        SubscribeLocalEvent<GridInitializeEvent>(OnGridInit);
+        SubscribeLocalEvent<BecomesStationMidRoundComponent, MapInitEvent>(OnGridInit);
 
         SubscribeLocalEvent<StationGridAddedEvent>(OnStationGridAdded);
         SubscribeLocalEvent<StationGridRemovedEvent>(OnStationGridRemoved);
@@ -190,27 +194,33 @@ public sealed partial class StationSystem : SharedStationSystem
         UpdateTrackersOnGrid(ev.GridId, null);
     }
 
-    private void OnGridInit(GridInitializeEvent ev)
+    private void OnGridInit(EntityUid uid, BecomesStationMidRoundComponent component, MapInitEvent ev)
     {
-        if (!TryComp<BecomesStationMidRoundComponent>(ev.EntityUid, out var becomesStation)) return;
-        if (becomesStation.Id is not null)
+        if (!HasComp<MapGridComponent>(uid)) return; // only grids can become stations
+        if (component.Id is not null)
         {
             var midroundStations = EntityManager.GetAllComponents(typeof(BecomesStationMidRoundComponent));
             foreach (var midroundStation in midroundStations)
             {
+                // don't take uninitialized grids into account.
+                if (_xformQuery.TryGetComponent(midroundStation.Uid, out var xform))
+                {
+                    var mapSystem = _entitySystemManager.GetEntitySystem<MapSystem>();
+                    if (!mapSystem.IsInitialized(xform.MapID)) continue;
+                }
                 // if i did this right this should never trigger its just for code completion purposes
                 if (midroundStation.Component is not BecomesStationMidRoundComponent comp) continue;
-                if (comp.InitializedId != becomesStation.Id) continue;
-                becomesStation.InitializedId = comp.InitializedId;
+                if (comp.InitializedId != component.Id) continue;
+                component.InitializedId = comp.InitializedId;
                 var station = Comp<StationMemberComponent>(midroundStation.Uid).Station;
                 var data = Comp<StationDataComponent>(station);
                 var name = MetaData(station).EntityName;
-                AddGridToStation(station, ev.EntityUid, null, data, name);
+                AddGridToStation(station, uid, null, data, name);
                 return;
             }
         }
-        becomesStation.InitializedId = becomesStation.Id;
-        InitializeNewStationMidRound(ev.EntityUid, becomesStation.StationProto);
+        component.InitializedId = component.Id;
+        InitializeNewStationMidRound(uid, component.StationProto, component);
     }
 
     #endregion Event handlers
@@ -315,16 +325,39 @@ public sealed partial class StationSystem : SharedStationSystem
     }
 
     //SL start
-    public EntityUid InitializeNewStationMidRound(EntityUid gridId, EntProtoId stationProtoId)
+    public EntityUid InitializeNewStationMidRound(EntityUid gridId, EntProtoId stationProtoId, BecomesStationMidRoundComponent? comp = null)
     {
-        var station = EntityManager.SpawnEntity(stationProtoId, MapCoordinates.Nullspace);
+        //logic for if was initialized via BecomesStationMidRoundComponent
+        ComponentRegistry? registry = null;
+        if (comp is not null)
+        {
+            registry = new ComponentRegistry();
+            if (comp.AvailableJobs is not null)
+            {
+                var jobs = new StationJobsComponent { SetupAvailableJobs = [] };
+                foreach (var job in comp.AvailableJobs) jobs.SetupAvailableJobs.Add(job.Key, [job.Value, job.Value]);
+                // from what I can tell the MappingDataNode doesn't actually need to have anything in it and from the looks of things seems to be primarily for setting up the entry in the first place.
+                // no idea why it's needed in the constructor but oh well
+                registry.Add("StationJobs", new EntityPrototype.ComponentRegistryEntry(jobs, new MappingDataNode()));
+            }
+
+            if (comp.EmergencyShuttleOverridePath is not null)
+            {
+                var shuttle = new StationEmergencyShuttleComponent
+                {
+                    EmergencyShuttlePath = new ResPath(comp.EmergencyShuttleOverridePath)
+                };
+                registry.Add("StationEmergencyShuttle", new EntityPrototype.ComponentRegistryEntry(shuttle, new MappingDataNode()));
+            }
+        }
+        
+        var station = EntityManager.SpawnEntity(stationProtoId, MapCoordinates.Nullspace, registry);
+        RenameStation(station, MetaData(gridId).EntityName, false);
         var data = Comp<StationDataComponent>(station);
         var name = MetaData(station).EntityName;
         AddGridToStation(station, gridId, null, data, name);
-        // so far can't find any instance where anything that listens for this not running would cause the entire game server to shit and die
-        // var ev = new StationPostInitEvent((station, data));
-        // RaiseLocalEvent(station, ref ev, true);
-
+        var ev = new StationPostInitEvent((station, data));
+        RaiseLocalEvent(station, ref ev, true);
         return station;
     }
     //SL end
@@ -450,6 +483,12 @@ public sealed partial class StationSystem : SharedStationSystem
         if (!Resolve(station, ref stationData))
             throw new ArgumentException("Tried to use a non-station entity as a station!", nameof(station));
 
+        foreach (var grid in stationData.Grids)
+        {
+            // need to check if any of the grids were from one of these, since its no longer a station this should be reset.
+            if (TryComp<BecomesStationMidRoundComponent>(grid, out var comp)) comp.InitializedId = null;
+        }
+        
         QueueDel(station);
     }
 }
