@@ -20,7 +20,7 @@
   - 1.0
   baseTurf: Plating # Starlight-edit - swap baseTurf to Plating, so when we weld it, we revert to that.
   deconstructTools: [ Welding ] # Starlight - add welding as a deconstruct interaction, so we have an easy way to mend it.
-  itemDrop: "" # Starlight - remove drop
+  itemDrop: NothingEntity # Starlight - remove drop
   isSubfloor: true
   footstepSounds:
     collection: FootstepPlating
