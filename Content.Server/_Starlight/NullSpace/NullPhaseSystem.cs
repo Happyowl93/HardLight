@@ -8,7 +8,6 @@ using Content.Shared.Popups;
 using Content.Shared.Physics;
 using Content.Shared._Starlight.Shadekin;
 using System.Linq;
-using Content.Server.Light.Components;
 using Content.Server.Ghost;
 using Robust.Server.Containers;
 using Robust.Shared.Prototypes;
@@ -16,7 +15,7 @@ using Content.Shared.Light.Components;
 
 namespace Content.Server._Starlight.NullSpace;
 
-public sealed class EtherealPhaseSystem : EntitySystem
+public sealed class NullSpacePhaseSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly PhysicsSystem _physics = default!;
@@ -26,7 +25,7 @@ public sealed class EtherealPhaseSystem : EntitySystem
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
 
-    private EntProtoId ShadekinShadow = "ShadekinShadow";
+    private EntProtoId _shadekinShadow = "ShadekinShadow";
     private EntProtoId ShadekinPhaseInEffect = "ShadekinPhaseInEffect";
     private EntProtoId ShadekinPhaseOutEffect = "ShadekinPhaseOutEffect";
 
@@ -80,7 +79,7 @@ public sealed class EtherealPhaseSystem : EntitySystem
 
     public bool Phase(EntityUid uid)
     {
-        if (TryComp<NullSpaceComponent>(uid, out var ethereal))
+        if (TryComp<NullSpaceComponent>(uid, out var nullspace))
         {
             var tileref = _turf.GetTileRef(Transform(uid).Coordinates);
             if (tileref != null
@@ -101,9 +100,9 @@ public sealed class EtherealPhaseSystem : EntitySystem
                 Transform(effect).LocalRotation = Transform(uid).LocalRotation;
             }
             else
-                SpawnAtPosition(ShadekinShadow, Transform(uid).Coordinates);
+                SpawnAtPosition(_shadekinShadow, Transform(uid).Coordinates);
 
-            RemComp(uid, ethereal);
+            RemComp(uid, nullspace);
         }
         else
         {
@@ -126,7 +125,7 @@ public sealed class EtherealPhaseSystem : EntitySystem
                 Transform(effect).LocalRotation = Transform(uid).LocalRotation;
             }
             else
-                SpawnAtPosition(ShadekinShadow, Transform(uid).Coordinates);
+                SpawnAtPosition(_shadekinShadow, Transform(uid).Coordinates);
         }
         return true;
     }

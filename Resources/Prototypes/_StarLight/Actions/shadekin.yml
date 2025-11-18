@@ -10,9 +10,18 @@
         sprite: _Starlight/Interface/Actions/shadekin.rsi
         state: phase
       itemIconStyle: BigItem
-      checkCanInteract: false
     - type: InstantAction
       event: !type:NullPhaseActionEvent
+
+- type: entity
+  id: BrighteyePhaseAction
+  parent: NullPhaseAction
+  categories: [HideSpawnMenu]
+  components:
+    - type: Action
+      checkCanInteract: false
+    - type: InstantAction
+      event: !type:BrighteyePhaseActionEvent
 
 - type: entity
   id: BrighteyePortalAction

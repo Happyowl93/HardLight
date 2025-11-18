@@ -58,6 +58,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using static Content.Server.Starlight.TextToSpeech.TTSManager;
 using Content.Shared.Atmos.Components;
+using Content.Server._Starlight.Weapons.Ranged;
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
@@ -281,6 +282,12 @@ public sealed partial class GunSystem : SharedGunSystem
                                 // Checks if the laser should pass over unless targeted by its user
                                 foreach (var collide in rayCastResults)
                                 {
+                                    var ev2 = new PreventHitscanEvent();
+                                    RaiseLocalEvent(collide.HitEntity, ev2);
+
+                                    if (ev2.Cancelled)
+                                        continue;
+
                                     if (collide.HitEntity != gun.Target &&
                                         CompOrNull<RequireProjectileTargetComponent>(collide.HitEntity)?.Active == true)
                                     {
@@ -513,6 +520,12 @@ public sealed partial class GunSystem : SharedGunSystem
                         // Checks if the laser should pass over unless targeted by its user
                         foreach (var collide in rayCastResults)
                         {
+                            var ev = new PreventHitscanEvent();
+                            RaiseLocalEvent(collide.HitEntity, ev);
+
+                            if (ev.Cancelled)
+                                continue;
+
                             if (collide.HitEntity != gun.Target &&
                                 CompOrNull<RequireProjectileTargetComponent>(collide.HitEntity)?.Active == true)
                                 continue;
@@ -648,7 +661,8 @@ public sealed partial class GunSystem : SharedGunSystem
         }
 
         //starlight check to see if bullet sound should play
-        if (bulletSoundCheck){
+        if (bulletSoundCheck)
+        {
             Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
         }
     }

@@ -24,6 +24,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Tag;
 using Robust.Shared.Random;
 using Content.Shared.Bed.Sleep;
+using Content.Server._Starlight.NullSpace;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -46,6 +47,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SleepingSystem _sleeping = default!;
+    [Dependency] private readonly NullSpacePhaseSystem _nullspace = default!;
 
     private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
     private readonly EntProtoId _shadekinPhaseInEffect2 = "ShadekinPhaseInEffect2";
@@ -54,6 +56,7 @@ public sealed partial class ShadekinSystem : EntitySystem
 
     // Abilities
     private readonly EntProtoId _brighteyePortalAction = "BrighteyePortalAction";
+    private readonly EntProtoId _brighteyePhaseAction = "BrighteyePhaseAction";
 
     private sealed class LightCone
     {

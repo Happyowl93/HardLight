@@ -28,7 +28,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         _alerts.ShowAlert(uid, component.BrighteyeAlert);
         _alerts.ShowAlert(uid, component.PortalAlert);
 
-        if(TryComp<BodyComponent>(uid, out var body))
+        if (TryComp<BodyComponent>(uid, out var body))
             foreach (var core in _bodySystem.GetBodyOrganEntityComps<OrganShadekinCoreComponent>((uid, body)))
                 core.Comp1.Damaged = false;
 
@@ -36,6 +36,7 @@ public sealed partial class ShadekinSystem : EntitySystem
             SetBrighteyes(uid, humanoid);
 
         _actionsSystem.AddAction(uid, ref component.PortalAction, _brighteyePortalAction, uid);
+        _actionsSystem.AddAction(uid, ref component.PhaseAction, _brighteyePhaseAction, uid);
     }
 
     private void OnCoreOrganImplanted(Entity<OrganShadekinCoreComponent> ent, ref SurgeryOrganImplantationCompleted args)
@@ -62,7 +63,7 @@ public sealed partial class ShadekinSystem : EntitySystem
             QueueDel(component.Portal);
         }
 
-        if(TryComp<BodyComponent>(uid, out var body))
+        if (TryComp<BodyComponent>(uid, out var body))
             foreach (var core in _bodySystem.GetBodyOrganEntityComps<OrganShadekinCoreComponent>((uid, body)))
                 core.Comp1.Damaged = true;
 
@@ -70,6 +71,7 @@ public sealed partial class ShadekinSystem : EntitySystem
             SetBlackeyes(uid, humanoid);
 
         _actionsSystem.RemoveAction(uid, component.PortalAction);
+        _actionsSystem.RemoveAction(uid, component.PhaseAction);
     }
 
     private void OnRejuvenate(EntityUid uid, BrighteyeComponent component, RejuvenateEvent args)
@@ -86,6 +88,13 @@ public sealed partial class ShadekinSystem : EntitySystem
         // We hit Crit/Death we lose energy... EVERYTIME!
         component.Energy = 0;
         Dirty(uid, component);
+
+        // Make shit modular! (Aka for future devs, this can be used to block Rejuvenation)
+        var ev = new OnBrighteyeRejuvenateAttemptEvent(uid);
+        RaiseLocalEvent(uid, ev);
+
+        if (ev.Cancelled)
+            return;
 
         // Do we have a portal? if no... WE DIE!
         if (component.Portal is null)

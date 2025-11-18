@@ -91,6 +91,9 @@ public sealed partial class BrighteyeComponent : Component
 
     [DataField]
     public EntityUid? PortalAction;
+
+    [DataField]
+    public EntityUid? PhaseAction;
 }
 
 public sealed class OnAttemptEnergyUseEvent : CancellableEntityEventArgs
@@ -109,7 +112,25 @@ public sealed class OnAttemptEnergyUseEvent : CancellableEntityEventArgs
         User = user;
     }
 }
+
+public sealed class OnBrighteyeRejuvenateAttemptEvent : CancellableEntityEventArgs
+{
+    /// <summary>
+    /// The user attempting.
+    /// </summary>
+    public EntityUid User { get; }
+
+    /// <summary>
+    /// Triggers when a Brighteye attempt to Rejuvenate.
+    /// </summary>
+    /// <param name="user"></param>
+    public OnBrighteyeRejuvenateAttemptEvent(EntityUid user)
+    {
+        User = user;
+    }
+}
 #endregion
 #region Abilities
 public sealed partial class BrighteyePortalActionEvent : InstantActionEvent { }
+public sealed partial class BrighteyePhaseActionEvent : InstantActionEvent { }
 #endregion
