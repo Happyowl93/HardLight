@@ -45,7 +45,7 @@
   - type: SpamEmitSoundRequirePower
   - type: SpamEmitSound
     minInterval: 180
-    maxInterval: 240
+    maxInterval: 210
     sound:
       collection: SpeakerAds
       params:
