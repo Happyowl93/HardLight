@@ -58,7 +58,10 @@
   - TowelColorSilver
   - TowelColorWhite
   - TowelColorYellow
-  - SuperSynthesizerInstrument # 🌟Starlight🌟
+  - HarmonicaInstrument # 🌟Starlight🌟
+  - FluteInstrument #Starlight
+  - AcousticGuitarInstrument #Starlight
+  - TrumpetInstrument #Starlight
   - ClothingUnderSocksCoder # 🌟Starlight🌟
   - ClothWrap # 🌟Starlight🌟
   - ClothingUniformJumpskirtElegantMaid # 🌟Starlight🌟
@@ -97,6 +100,8 @@
   - MagicCrayon #SL
   - HappyHonk #SL
   - leftripperarm #SL
+  - CigPackBub #SL
+  - PillCanisterPsicodine #SL
 
 - type: loadoutGroup
   id: Glasses
@@ -170,6 +175,7 @@
   - CaptainFormalSkirt
   - CapTurtleneckJumpskirt
   - CapTurtleneckJumpsuit
+  - CaptainJumpsuitNoble #starlight
 
 - type: loadoutGroup
   id: CaptainNeck
@@ -490,6 +496,23 @@
   - BibleNanoTrasen
   - BibleSatanic
   - BibleTanakh
+  - BibleAlHikma # starlight
+  - BibleBookOfAges # starlight
+  - BibleBookOfAncestors # starlight
+  - BibleTomeOfDread # starlight
+  - BibleBookOfGrudges # starlight
+  - BibleBookOfMormon # starlight
+  - BibleEdda # starlight
+  - BibleKoans # starlight
+  - BibleLiberChaotica # starlight
+  - BibleMalleus # starlight
+  - BibleOrthodox # starlight
+  - BiblePrincipiaDiscordia # starlight
+  - BibleHadith # starlight
+  - BibleTaoTeChing # starlight
+  - BibleTorah # starlight
+  - BibleTripitaka # starlight
+  - BibleRigVeda # starlight
 
 - type: loadoutGroup
   id: JanitorHead
@@ -720,6 +743,7 @@
   - PanFlute
   - Ocarina
   - Bagpipe
+  - SuperSynth #Starlight
 
 # Cargo
 - type: loadoutGroup
@@ -772,6 +796,8 @@
   minLimit: 0
   loadouts:
   - CargoTechnicianHead
+  - CargoTechnicianBeret # 🌟Starlight🌟
+  - CargoTechnicianBeretFormal # 🌟Starlight🌟
 
 - type: loadoutGroup
   id: CargoTechnicianJumpsuit
@@ -782,6 +808,7 @@
   - CargoTechnicianJumpsuitFormal # afterlight
   - CargoTechnicianJumpskirt
   - CargoTechnicianJumpskirtFormal # afterlight
+  - CargoTechnicianOveralls #Starlight
 
 - type: loadoutGroup
   id: CargoTechnicianBackpack
@@ -798,6 +825,7 @@
   minLimit: 0
   loadouts:
   - CargoTechnicianWintercoat
+  - WindbreakerCargo #Starlight
 
 - type: loadoutGroup
   id: CargoTechnicianShoes
@@ -936,6 +964,7 @@
   loadouts:
   - StationEngineerOuterVest
   - StationEngineerWintercoat
+  - WindbreakerEngineering #Starlight
 
 - type: loadoutGroup
   id: StationEngineerShoes
@@ -1089,6 +1118,7 @@
   - RoboticistLabCoat
   - RoboticistWintercoat
   - SeniorResearcherLabCoat
+  - WindbreakerScience #Starlight
 
 - type: loadoutGroup
   id: ScientistShoes
@@ -1278,6 +1308,7 @@
   - SeniorOfficerJumpskirt
   - TrooperUniform
   - SecurityJumpsuitBlue
+  - SecurityTshirt #Starlight
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -1305,6 +1336,8 @@
   - ArmorVestStab
   - ArmorVestHeatAbsorb
   - SecurityOfficerWintercoat
+  - SecurityBomber #Starlight
+  - WindbreakerSecurity #Starlight
 
 - type: loadoutGroup
   id: SecurityShoes
@@ -1359,6 +1392,7 @@
   loadouts:
   - RedJumpsuit
   - RedJumpskirt
+  - SecurityCadetTshirt #Starlight
 
 - type: loadoutGroup
   id: SurvivalSecurity
@@ -1460,6 +1494,7 @@
   - RegularLabCoat
   - MedicalDoctorWintercoat
   - SeniorPhysicianLabCoat
+  - WindbreakerMedical #Starlight
 
 - type: loadoutGroup
   id: MedicalBackpack
@@ -1593,8 +1628,8 @@
   name: loadout-group-reporter-jumpsuit
   loadouts:
   - ReporterJumpsuit
-  - JournalistJumpsuit
   - ReporterJumpskirt
+  - JournalistJumpsuit
   - JournalistJumpskirt
 
 - type: loadoutGroup
