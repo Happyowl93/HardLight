@@ -27,6 +27,7 @@ using Content.Shared.RetractableItemAction;
 using Content.Shared.Changeling.Systems;
 using Content.Shared.Changeling.Components;
 using Content.Server.Changeling.Systems;
+using Content.Shared.Humanoid;
 
 namespace Content.Server.Changeling;
 
@@ -140,11 +141,16 @@ public sealed partial class ChangelingSystem : EntitySystem
             bonusEvolutionPoints += 10;
             comp.MaxBiomass += targetComp.MaxBiomass / 2;
         }
-        else
+        else if (HasComp<HumanoidAppearanceComponent>(target))
         {
             popup = Loc.GetString("changeling-absorb-end-self");
             bonusChemicals += 10;
             bonusEvolutionPoints += 2;
+        }
+        else
+        {
+            popup = Loc.GetString("changeling-absorb-end-self");
+            bonusChemicals += 5;
         }
         TryStealDNA(uid, target, comp, true);
         comp.TotalAbsorbedEntities++;
