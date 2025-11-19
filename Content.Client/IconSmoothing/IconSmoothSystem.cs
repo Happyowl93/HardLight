@@ -41,6 +41,7 @@ namespace Content.Client.IconSmoothing
             SubscribeLocalEvent<IconSmoothComponent, AnchorStateChangedEvent>(OnAnchorChanged);
             SubscribeLocalEvent<IconSmoothComponent, ComponentShutdown>(OnShutdown);
             SubscribeLocalEvent<IconSmoothComponent, ComponentStartup>(OnStartup);
+            SubscribeLocalEvent<IconSmoothComponent, AppearanceChangeEvent>(OnAppearanceChanged); // Starlight: Conditional Smoothing
         }
 
         private void OnStartup(EntityUid uid, IconSmoothComponent component, ComponentStartup args)
@@ -59,6 +60,15 @@ namespace Content.Client.IconSmoothing
                 return;
 
             SetCornerLayers((uid, sprite), component);
+            // Starlight Start: Conditional Smoothing
+            if (!xform.Anchored)
+            {
+                _sprite.LayerSetVisible((uid, sprite), CornerLayers.NE, false);
+                _sprite.LayerSetVisible((uid, sprite), CornerLayers.SE, false);
+                _sprite.LayerSetVisible((uid, sprite), CornerLayers.SW, false);
+                _sprite.LayerSetVisible((uid, sprite), CornerLayers.NW, false);
+            }
+            // Starlight End
 
             if (component.Shader != null)
             {
@@ -204,6 +214,15 @@ namespace Content.Client.IconSmoothing
         {
             if (!args.Detaching)
                 _anchorChangedEntities.Enqueue(uid);
+            // Starlight Start: Conditional Smoothing
+            if (!args.Detaching && component.Mode == IconSmoothingMode.Corners && TryComp(uid, out SpriteComponent? sprite))
+            {
+                _sprite.LayerSetVisible((uid, sprite), CornerLayers.NE, true);
+                _sprite.LayerSetVisible((uid, sprite), CornerLayers.SE, true);
+                _sprite.LayerSetVisible((uid, sprite), CornerLayers.SW, true);
+                _sprite.LayerSetVisible((uid, sprite), CornerLayers.NW, true);
+            }
+            // Starlight End
         }
 
         private void CalculateNewSprite(EntityUid uid,
@@ -265,6 +284,29 @@ namespace Content.Client.IconSmoothing
 
             var spriteEnt = (uid, sprite);
 
+            // Starlight Start: Conditional Smoothing 
+            // Check entity for disabled states
+            if (smooth.DisabledStates != null && smooth.DisabledStates.Count > 0 && !smooth.ShouldSmooth())
+            {
+                // Hide corner corners when smoothing is disabled
+                if (smooth.Mode == IconSmoothingMode.Corners)
+                {
+                    _sprite.LayerSetVisible(spriteEnt, CornerLayers.NE, false);
+                    _sprite.LayerSetVisible(spriteEnt, CornerLayers.SE, false);
+                    _sprite.LayerSetVisible(spriteEnt, CornerLayers.SW, false);
+                    _sprite.LayerSetVisible(spriteEnt, CornerLayers.NW, false);
+                }
+                return;
+            }
+            if (smooth.Mode == IconSmoothingMode.Corners && smooth.DisabledStates != null && smooth.DisabledStates.Count > 0 && smooth.ShouldSmooth())
+            {
+                _sprite.LayerSetVisible(spriteEnt, CornerLayers.NE, true);
+                _sprite.LayerSetVisible(spriteEnt, CornerLayers.SE, true);
+                _sprite.LayerSetVisible(spriteEnt, CornerLayers.SW, true);
+                _sprite.LayerSetVisible(spriteEnt, CornerLayers.NW, true);
+            }
+            // Starlight End
+
             if (xform.Anchored)
             {
                 if (TryComp(xform.GridUid, out MapGridComponent? grid))
@@ -277,6 +319,19 @@ namespace Content.Client.IconSmoothing
                     return;
                 }
             }
+            // Starlight Start: Conditional Smoothing
+            else
+            {
+                if (smooth.Mode == IconSmoothingMode.Corners)
+                {
+                    _sprite.LayerSetVisible(spriteEnt, CornerLayers.NE, false);
+                    _sprite.LayerSetVisible(spriteEnt, CornerLayers.SE, false);
+                    _sprite.LayerSetVisible(spriteEnt, CornerLayers.SW, false);
+                    _sprite.LayerSetVisible(spriteEnt, CornerLayers.NW, false);
+                }
+                return;
+            }
+            // Starlight End
 
             switch (smooth.Mode)
             {
@@ -514,7 +569,6 @@ namespace Content.Client.IconSmoothing
             West = 8
         }
 
-
         [Flags]
         private enum CornerFill : byte
         {
@@ -539,5 +593,31 @@ namespace Content.Client.IconSmoothing
             NW,
             SW,
         }
+
+        // Starlight Start: Conditional Smoothing
+        private void OnAppearanceChanged(EntityUid uid, IconSmoothComponent component, ref AppearanceChangeEvent args)
+        {
+            // Get state from appearance
+            foreach (var (key, value) in args.AppearanceData)
+            {
+                var keyStr = key.ToString();
+                // Look for any appearance key with state info
+                if (keyStr.Contains("State", StringComparison.OrdinalIgnoreCase))
+                {
+                    component._cachedState = value.ToString();
+                    
+                    // Update this entity
+                    var spriteQuery = GetEntityQuery<SpriteComponent>();
+                    var smoothQuery = GetEntityQuery<IconSmoothComponent>();
+                    var xformQuery = GetEntityQuery<TransformComponent>();
+                    CalculateNewSprite(uid, spriteQuery, smoothQuery, xformQuery, component);
+                    
+                    // update neighbors in case they care about its sprite
+                    DirtyNeighbours(uid, component);
+                    break;
+                }
+            }
+        }
+        // Starlight End
     }
 }
