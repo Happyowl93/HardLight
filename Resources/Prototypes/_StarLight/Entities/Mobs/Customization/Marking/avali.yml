@@ -364,7 +364,7 @@
   - sprite: _Starlight/Mobs/Customization/Avali/avali_trim_two.rsi
     state: tail_avali_secondary
 
-#Avali Jewelry
+#Avali Earrings
 
 - type: marking
   id: AvaliEarringOne
@@ -417,6 +417,43 @@
     state: avali_earring4_2
   - sprite: _Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
     state: avali_earring4_3
+
+- type: marking
+  id: AvaliEarringCombined
+  bodyPart: HeadSide
+  markingCategory: Overlay
+  speciesRestriction: [ Avali ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring_combined_1
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring_combined_2
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring_combined_3
+
+- type: marking
+  id: AvaliEarring
+  bodyPart: HeadSide
+  markingCategory: Overlay
+  speciesRestriction: [ Avali ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring_combined_1
+
+#Avali Tailbands
+
+- type: marking
+  id: AvaliTailbandCombined
+  bodyPart: Tail
+  markingCategory: Overlay
+  speciesRestriction: [ Avali ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband_combined_1
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband_combined_2
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband_combined_3
 
 - type: marking
   id: AvaliTailbandOne
@@ -591,7 +628,7 @@
   - sprite: _Starlight/Mobs/Species/Avali/parts.rsi
     state: l_hand_wingtips
 
-#Additional tailtips
+#Additional Tail Tips
 
 - type: marking
   id: AvaliPointedTailtip

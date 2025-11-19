@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Sprites by Github AegisShield / Discord aegis_shield (230542392300666881)",
+  "copyright": "Sprites by Github AegisShieldDev / Discord aegis_shield (230542392300666881)",
   "size": {
     "x": 32,
     "y": 32
@@ -85,6 +85,30 @@
     },
     {
       "name": "avali_tailband3_3",
+      "directions": 4
+    },
+    {
+      "name": "avali_tailband_combined_1",
+      "directions": 4
+    },
+    {
+      "name": "avali_tailband_combined_2",
+      "directions": 4
+    },
+    {
+      "name": "avali_tailband_combined_3",
+      "directions": 4
+    },
+    {
+      "name": "avali_earring_combined_1",
+      "directions": 4
+    },
+    {
+      "name": "avali_earring_combined_2",
+      "directions": 4
+    },
+    {
+      "name": "avali_earring_combined_3",
       "directions": 4
     }
   ]

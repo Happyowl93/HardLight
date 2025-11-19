@@ -5,6 +5,13 @@ marking-AvaliEarsBase-ears_avalibase_secondary = Bottom Ears
 marking-AvaliTailBase = (Base) Avali Tail
 marking-AvaliTailBase-tail_avalibase = Base Tail
 
+marking-AvaliChevronTailtip = Chevron Avali Tail Tip
+marking-AvaliTailBase-tail_avalibase = Base Tail
+marking-AvaliChevronTailtip-tail_chevrontailtip = Tail Tip
+
+marking-AvaliPointedTailtip = Pointed Avali Tail Tip
+marking-AvaliTailBase-tail_avalibase = Base Tail
+marking-AvaliPointedTailtip-tail_pointedtailtip = Tail Tip
 
 marking-AvaliEarsStripeOne = (Type One) Striped Avali Ears
 marking-AvaliEarsStripeOne-ears_avalibase_primary = Top Ears
@@ -173,6 +180,16 @@ marking-AvaliBicoloredLeftHand-l_hand_front = Front feathers
 marking-AvaliBicoloredLeftHand-l_hand_back = Back feathers
 marking-AvaliBicoloredLeftHand-l_hand_isolated = Hand
 
+marking-AvaliBicoloredTipsLeftHand = Two Colored Wing with Tips Left Hand
+marking-AvaliBicoloredTipsLeftHand-l_hand_back = Under Side
+marking-AvaliBicoloredTipsLeftHand-l_hand_right = Outer Side
+marking-AvaliBicoloredTipsLeftHand-l_hand_isolated = Hand
+
+marking-AvaliBicoloredTipsRightHand = Two Colored Wing with Tips Right Hand
+marking-AvaliBicoloredTipsRightHand-r_hand_back = Under Side
+marking-AvaliBicoloredTipsRightHand-r_hand_right = Outer Side
+marking-AvaliBicoloredTipsRightHand-r_hand_isolated = Hand
+
 marking-AvaliEarringOne = Avali Earring One
 marking-AvaliEarringOne-avali_earring1_1 = Top
 marking-AvaliEarringOne-avali_earring1_2 = Middle
@@ -206,3 +223,16 @@ marking-AvaliTailbandThree = Avali Tailband Three
 marking-AvaliTailbandThree-avali_tailband3_1 = Top
 marking-AvaliTailbandThree-avali_tailband3_2 = Middle
 marking-AvaliTailbandThree-avali_tailband3_3 = Bottom
+
+marking-AvaliTailbandCombined = Avali Tailbands Combined
+marking-AvaliTailbandCombined-avali_tailband_combined_1 = Top
+marking-AvaliTailbandCombined-avali_tailband_combined_2 = Middle
+marking-AvaliTailbandCombined-avali_tailband_combined_3 = Bottom
+
+marking-AvaliEarringCombined = Avali Earrings Combined
+marking-AvaliEarringCombined-avali_earring_combined_1 = Top
+marking-AvaliEarringCombined-avali_earring_combined_2 = Middle
+marking-AvaliEarringCombined-avali_earring_combined_3 = Bottom
+
+marking-AvaliEarring = Avali Earrings
+marking-AvaliEarringCombined-avali_earring_combined_1 = Earring Color
