@@ -80526,77 +80526,77 @@ entities:
       pos: -24.5,-1.5
       parent: 2
     - type: FaxMachine
-      name: Medical - Breakroom
+      name: Medical Breakroom
   - uid: 12820
     components:
     - type: Transform
       pos: -21.5,-4.5
       parent: 2
     - type: FaxMachine
-      name: Command - CMO
+      name: CMO
   - uid: 12821
     components:
     - type: Transform
       pos: 12.5,-2.5
       parent: 2
     - type: FaxMachine
-      name: Service - Reporter
+      name: Reporter
   - uid: 12822
     components:
     - type: Transform
       pos: 19.5,-1.5
       parent: 2
     - type: FaxMachine
-      name: Security - Law
+      name: Law
   - uid: 12823
     components:
     - type: Transform
       pos: 14.5,4.5
       parent: 2
     - type: FaxMachine
-      name: Security - Warden
+      name: Warden
   - uid: 12824
     components:
     - type: Transform
       pos: 24.5,11.5
       parent: 2
     - type: FaxMachine
-      name: Security - Lobby
+      name: Security
   - uid: 12825
     components:
     - type: Transform
       pos: 27.5,-1.5
       parent: 2
     - type: FaxMachine
-      name: Command - HOS
+      name: HOS
   - uid: 12826
     components:
     - type: Transform
       pos: 39.5,-1.5
       parent: 2
     - type: FaxMachine
-      name: Security - Detective
+      name: Detective
   - uid: 12827
     components:
     - type: Transform
       pos: 14.5,-24.5
       parent: 2
     - type: FaxMachine
-      name: Command - HOP
+      name: HOP
   - uid: 12828
     components:
     - type: Transform
       pos: 18.5,12.5
       parent: 2
     - type: FaxMachine
-      name: Security - Gen Pop
+      name: Gen Pop
   - uid: 12829
     components:
     - type: Transform
       pos: -9.5,-21.5
       parent: 2
     - type: FaxMachine
-      name: Command - Bridge
+      name: Bridge
   - uid: 12830
     components:
     - type: Transform
@@ -80610,35 +80610,35 @@ entities:
       pos: -22.5,-18.5
       parent: 2
     - type: FaxMachine
-      name: Command - Meeting Room
+      name: Conference Room
   - uid: 12832
     components:
     - type: Transform
       pos: 12.5,-40.5
       parent: 2
     - type: FaxMachine
-      name: Service - Library
+      name: Library
   - uid: 12833
     components:
     - type: Transform
       pos: 25.5,-43.5
       parent: 2
     - type: FaxMachine
-      name: Service - Chaplain
+      name: Chaplain
   - uid: 12834
     components:
     - type: Transform
       pos: 2.5,40.5
       parent: 2
     - type: FaxMachine
-      name: Command - RD
+      name: RD
   - uid: 12835
     components:
     - type: Transform
       pos: 0.5,26.5
       parent: 2
     - type: FaxMachine
-      name: Science - Lobby
+      name: Science
   - uid: 12836
     components:
     - type: Transform
@@ -80647,7 +80647,7 @@ entities:
     - type: Pullable
       prevFixedRotation: True
     - type: FaxMachine
-      name: Cargo - Bay
+      name: Cargo Bay
     - type: Conveyed
   - uid: 12837
     components:
@@ -80655,28 +80655,28 @@ entities:
       pos: -9.5,31.5
       parent: 2
     - type: FaxMachine
-      name: Fax - QM
+      name: QM
   - uid: 12838
     components:
     - type: Transform
       pos: 39.5,43.5
       parent: 2
     - type: FaxMachine
-      name: Engineering - SMES Array
+      name: Engineering
   - uid: 12839
     components:
     - type: Transform
       pos: 21.5,40.5
       parent: 2
     - type: FaxMachine
-      name: Command - CE
+      name: CE
   - uid: 12840
     components:
     - type: Transform
       pos: -21.5,15.5
       parent: 2
     - type: FaxMachine
-      name: Medical - Psychologist
+      name: Psychologist
 - proto: FenceMetalCorner
   entities:
   - uid: 12841
