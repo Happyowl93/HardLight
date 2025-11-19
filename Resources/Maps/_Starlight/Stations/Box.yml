@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 11/19/2025 12:07:27
+  time: 11/19/2025 12:46:41
   entityCount: 29268
 maps:
 - 1
@@ -88529,6 +88529,8 @@ entities:
     - type: Transform
       pos: -10.5,-21.5
       parent: 2
+    - type: FaxMachine
+      name: HOP
   - uid: 13766
     components:
     - type: Transform
@@ -133423,6 +133425,9 @@ entities:
     - type: Transform
       pos: 6.5,29.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal:
+      - - Chemistry
 - proto: LockerChiefEngineerFilled
   entities:
   - uid: 20097
@@ -189322,7 +189327,7 @@ entities:
       pos: 73.5,-3.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4580.306
+      secondsUntilStateChange: -6913.695
       state: Opening
   - uid: 29249
     components:
