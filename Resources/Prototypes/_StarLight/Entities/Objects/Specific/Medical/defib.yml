@@ -85,7 +85,7 @@
 
 - type: entity
   id: DefibrillatorParamed
-  parent: [ BaseDefibrillator, PowerCellSlotMediumItem ]
+  parent: Defibrillator
   name: paramedic defibrillator
   description: A more compact defibrilator for paramedics to carry, with a small storage compartment for medical supplies and spare cells
   components:
@@ -104,14 +104,10 @@
     size: Large
     shape:
     - 0,0,2,1
-  - type: MultiHandedItem
   - type: MeleeWeapon
     damage:
       types:
         Blunt: 4
-  - type: ToggleCellDraw
-  - type: PowerCellDraw
-    useRate: 100
   - type: DoAfter
   - type: UseDelay
   - type: ItemToggleMeleeWeapon
@@ -135,5 +131,5 @@
   - type: Storage
     maxItemSize: Small
     grid:
-    - 0,0,1,1
+    - 0,0,1,2
 
