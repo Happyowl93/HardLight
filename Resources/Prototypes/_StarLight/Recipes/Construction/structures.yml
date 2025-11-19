@@ -40,18 +40,3 @@
     - !type:NoWindowsInTile
   objectType: Structure
   placementMode: SnapgridCenter
-
-- type: construction
-  id: ReinforcedSecretDoor
-  name: reinforced secret door
-  description: A hidden reinforced door disguised as a reinforced wall.
-  graph: ReinforcedSecretDoor
-  startNode: start
-  targetNode: ReinforcedSecretDoor
-  state: assembly
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
