@@ -10,6 +10,7 @@ alerts-shadekin-rejuvenate-desc = You are currently rejuvenating, you will be ab
 
 roles-antag-brighteye-name = Brighteye
 roles-antag-brighteye-description = WIP
+objective-issuer-brighteye = [color=#6c15ae]Brighteye[/color]
 
 shadekin-portal-owner = This is your portal
 shadekin-portal-stability-stable = Current state: [color=forestgreen]Stable[/color]
@@ -18,7 +19,6 @@ shadekin-portal-health-percentage = Current health: [color=red]{$percent}[/color
 shadekin-portal-destroy = [color=red]Destroy Portal[/color]
 shadekin-portal-stabilize = Stabilize Portal
 shadekin-portal-stabilize-info = Stabilize and heal your portal using your energy. (Costs 50 energy)
-
 
 shadekin-noenergy = Not enough energy to perform that action.
 phase-fail-generic = I can't phase!

@@ -277,9 +277,13 @@
       - type: Brighteye
       - type: NpcFactionMember
         factions:
-        - Wizard
+        - SimpleHostile
       mindRoles:
       - MindRoleBrighteye
+  - type: AntagObjectives
+    objectives:
+    - BirghteyeSurviveObjective
+    - BirghteyePortalObjective
   - type: SubGamemodes
     rules:
     - id: RailroadingBrighteye

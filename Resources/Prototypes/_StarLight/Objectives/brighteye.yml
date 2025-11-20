@@ -10,3 +10,27 @@
   - type: RoleRequirement
     roles:
     - BrighteyeRole
+
+- type: entity
+  parent: [BaseBrighteyeObjective]
+  id: BirghteyeSurviveObjective
+  name: Protect your core
+  description: Ensure your core is not damaged or removed!
+  components:
+  - type: BrighteyeSurviveCondition
+  - type: Objective
+    icon:
+      sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
+      state: core
+
+- type: entity
+  parent: [BaseBrighteyeObjective]
+  id: BirghteyePortalObjective
+  name: Open a portal to the dark
+  description: Open and keep a portal open to the dark.
+  components:
+  - type: BrighteyePortalCondition
+  - type: Objective
+    icon:
+      sprite: _Starlight/Structures/Specific/Anomalies/dark.rsi
+      state: portal
