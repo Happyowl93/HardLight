@@ -27,7 +27,7 @@ using Content.Shared.Screen.Components;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Events;
 using Content.Shared.Shuttles.Systems;
-using Content.Shared.Station.Components;
+using Content.Shared.Station.Components; // Starlight
 using Content.Shared.Tag;
 using Content.Shared.Tiles;
 using Robust.Server.GameObjects;
