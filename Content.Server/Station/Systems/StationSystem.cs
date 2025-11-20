@@ -64,7 +64,7 @@ public sealed partial class StationSystem : SharedStationSystem
         SubscribeLocalEvent<StationDataComponent, ComponentShutdown>(OnStationDeleted);
         SubscribeLocalEvent<StationMemberComponent, ComponentShutdown>(OnStationGridDeleted);
         SubscribeLocalEvent<StationMemberComponent, PostGridSplitEvent>(OnStationSplitEvent);
-        SubscribeLocalEvent<BecomesStationMidRoundComponent, MapInitEvent>(OnGridInit);
+        SubscribeLocalEvent<BecomesStationMidRoundComponent, MapInitEvent>(OnGridInit); // Starlight
 
         SubscribeLocalEvent<StationGridAddedEvent>(OnStationGridAdded);
         SubscribeLocalEvent<StationGridRemovedEvent>(OnStationGridRemoved);
