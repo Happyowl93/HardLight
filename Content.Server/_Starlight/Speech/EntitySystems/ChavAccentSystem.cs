@@ -53,7 +53,7 @@ namespace Content.Server.Speech.EntitySystems
             { "friends", "mates" },
             { "sister", "sista" },
             { "sir", "guv" },
-            { "security", "copper" },
+            { "security", "po-po" },
             { "shitsec", "filth" },
             { "secoff", "bobby" },
             { "secoffs", "bobbies" },
