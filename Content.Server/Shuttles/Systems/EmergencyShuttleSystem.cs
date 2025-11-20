@@ -124,6 +124,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
 
     private void OnCentcommShutdown(EntityUid uid, StationCentcommComponent component, ComponentShutdown args)
     {
+        // Starlight Start
         foreach(var station in EntityManager.GetAllComponents(typeof(StationCentcommComponent)))
         {
             if (station.Component is not StationCentcommComponent centcommComponent) continue;
@@ -135,6 +136,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             QueueDel(Comp<StationEmergencyShuttleComponent>(station.Uid).EmergencyShuttle);
             return;
         }
+        // Starlight End
         ClearCentcomm(component);
     }
 
