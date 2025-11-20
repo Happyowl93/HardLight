@@ -206,6 +206,7 @@
     - type: GuideHelp
       guides:
         - AnomalousResearch
+        - Brighteye
         - Shadekin
     - type: EntitySpawnAnomaly
       entries:
@@ -263,6 +264,7 @@
     - type: GuideHelp
       guides:
         - Shadekin
+        - Brighteye
     - type: Tag
       tags:
         - TheDark
