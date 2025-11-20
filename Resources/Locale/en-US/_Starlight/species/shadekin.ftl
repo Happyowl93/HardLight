@@ -11,6 +11,9 @@ alerts-shadekin-rejuvenate-desc = You are currently rejuvenating, you will be ab
 roles-antag-brighteye-name = Brighteye
 roles-antag-brighteye-description = WIP
 objective-issuer-brighteye = [color=#6c15ae]Brighteye[/color]
+brighteye-role-greeting = 
+    You are a Brighteye!
+    WIP
 
 shadekin-portal-owner = This is your portal
 shadekin-portal-stability-stable = Current state: [color=forestgreen]Stable[/color]
