@@ -483,12 +483,13 @@ public sealed partial class StationSystem : SharedStationSystem
         if (!Resolve(station, ref stationData))
             throw new ArgumentException("Tried to use a non-station entity as a station!", nameof(station));
 
+        // Starlight Start
         foreach (var grid in stationData.Grids)
         {
             // need to check if any of the grids were from one of these, since its no longer a station this should be reset.
             if (TryComp<BecomesStationMidRoundComponent>(grid, out var comp)) comp.InitializedId = null;
         }
-        
+        // Starlight End
         QueueDel(station);
     }
 }
