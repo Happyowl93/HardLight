@@ -196,6 +196,7 @@ public sealed partial class StationSystem : SharedStationSystem
         UpdateTrackersOnGrid(ev.GridId, null);
     }
 
+    // Starlight Start
     private void OnGridInit(EntityUid uid, BecomesStationMidRoundComponent component, MapInitEvent ev)
     {
         if (!HasComp<MapGridComponent>(uid)) return; // only grids can become stations
@@ -224,7 +225,7 @@ public sealed partial class StationSystem : SharedStationSystem
         component.InitializedId = component.Id;
         InitializeNewStationMidRound(uid, component.StationProto, component);
     }
-
+    // Starlight End
     #endregion Event handlers
 
     /// <summary>
