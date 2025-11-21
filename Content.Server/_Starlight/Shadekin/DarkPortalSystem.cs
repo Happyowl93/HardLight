@@ -12,6 +12,8 @@ using Content.Shared.Teleportation.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Examine;
 using Content.Server.Anomaly;
+using Content.Shared._Starlight.Railroading;
+using Content.Server._Starlight.Railroading;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -26,8 +28,7 @@ public sealed class DarkPortalSystem : EntitySystem
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-
-
+    [Dependency] private readonly RailroadingSupercritPortalSystem _railroadingSupercritPortal = default!;
     private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
     private readonly int _stabilizeCost = 50;
     private readonly EntProtoId _brighteyePortalAction = "BrighteyePortalAction";
@@ -80,6 +81,10 @@ public sealed class DarkPortalSystem : EntitySystem
             ent.Comp.Energy = ent.Comp.MaxEnergy;
             Dirty(ent.Owner, ent.Comp);
         }
+
+        // Objectives
+        if (component.Brighteye is not null && HasComp<RailroadSupercritPortalWatcherComponent>(component.Brighteye.Value))
+            _railroadingSupercritPortal.SupercriticalTask(component.Brighteye.Value);
 
         if (TryComp<AnomalyComponent>(uid, out var anomaly))
         {

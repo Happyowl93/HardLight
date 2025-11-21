@@ -27,6 +27,10 @@
   parent: [BrighteyeCondition]
   categories: [ HideSpawnMenu ]
   components:
+  - type: RailroadSpawnFlow
+    count:
+      min: 1
+      max: 2
   - type: RailroadCard
     title: rr-brighteye-portal-crit
     icon: 
@@ -34,6 +38,7 @@
     color: "#6c15ae"
     image: /Textures/_Starlight/Railroading/shadekin.png
     description: rr-brighteye-portal-crit-desc
+  - type: RailroadSupercritPortalTask
 
 - type: entity
   id: RRCardBrighteyePortalKill
