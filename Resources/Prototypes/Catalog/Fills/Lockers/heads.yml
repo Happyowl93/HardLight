@@ -450,8 +450,8 @@
     - id: WeaponDisabler
     - id: WantedListCartridge
     - id: DrinkHosFlask
-    - id: PrintedDocumentGreenshiftAlert #SL
     - id: SecurityShuttleConsoleCircuitboard #SL
+    - id: PrintedDocumentGreenshiftAlert #SL
       conditions: #SL
       - !type:GamemodeCondition #SL
         presets: #SL
