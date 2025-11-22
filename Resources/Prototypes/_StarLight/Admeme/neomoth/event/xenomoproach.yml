@@ -49,6 +49,10 @@
         0: Alive
         125: Critical
         250: Dead
+      stateAlertDict:
+        Alive: BorgHealth
+        Critical: BorgCrit
+        Dead: BorgDead
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.5
       baseSprintSpeed: 4
