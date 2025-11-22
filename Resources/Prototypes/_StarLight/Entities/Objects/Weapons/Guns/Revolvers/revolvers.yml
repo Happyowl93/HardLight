@@ -116,3 +116,32 @@
     #capacity: 6
     #chambers: [ True, True, True, True, True, True ]
     #ammoSlots: [ null, null, null, null, null, null ]
+
+- type: entity
+  name: NT Model-7 'Dispatcher' Service Revolver
+  parent: [BaseWeaponRevolver, BaseSecurityContraband]
+  id: WeaponRevolverDispatcher
+  description: A Nanotrasen-issued, top-tier service weapon reserved for spacefaring Senior Officers, Wardens, and Heads of Security of standard corporate stations and correctional facilities. The Model 7, known unofficially as the 'Dispatcher.' Is chambered in .44 Magnum with robust stopping power for putting an end to any non-compliance. The Dispatcher features a comfortable synthetic-rubber grip, chrome cylinder with 6-round capacity, and solid-plasteel irons to ensure you are never off-target. It is a symbol of prestige and accomplishment among Nanotrasen security, reserved only for those who have proven their dedication to corporate law.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Weapons/Guns/Revolvers/Dispatcher.rsi
+  - type: Clothing
+    sprite: _Starlight/Objects/Weapons/Guns/Revolvers/Dispatcher.rsi
+  - type: Item
+    storedOffset: 0,-2
+  - type: Gun
+    fireRate: 1.25
+    availableModes:
+    - SemiAuto
+    selectedMode: SemiAuto
+    soundGunshot:
+      path: /Audio/_Starlight/Weapons/Guns/Gunshots/revolver_stronger.ogg
+  - type: RevolverAmmoProvider
+    capacity: 6
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+  - type: StealTarget
+    stealGroup: OfficerHandgun
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-inanimate 
+    weight: 0.01 
