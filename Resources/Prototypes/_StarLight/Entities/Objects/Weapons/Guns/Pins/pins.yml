@@ -1,0 +1,85 @@
+- type: entity
+  parent: [BaseItem, BaseSecurityContraband]
+  id: FiringPin
+  name: firing pin
+  description: Somebody probably really needs this right now...
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
+    state: rifle
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Weapons/Guns/Casings/casing_fall_2.ogg
+      params:
+        volume: -1
+
+- type: entity
+  parent: FiringPin
+  id: FiringPinPistol
+  name: pistol firing pin
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
+    state: pistol
+
+- type: entity
+  parent: FiringPin
+  id: FiringPinSmartLMG
+  name: smartgun bolt assembly
+  description: One of a kind, unreplaceable.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
+    state: pistol
+
+- type: entity
+  parent: FiringPin
+  id: FiringPinLaser
+  name: laser crystal
+  description: Fragile, not unlike the assistants killed by it.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
+    state: laser
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -3
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PlasmaGlassShard:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: FiringPinLaser
+  id: FiringPinAdvancedLaser
+  name: prototype laser crystal
+  description:  \"DO NOT DROP\" is inscribed on the side. whatever.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
+    state: adv-laser
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 80 # slightly more impressive than a welding tank explosion
