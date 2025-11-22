@@ -45,7 +45,14 @@
     state: laser
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Glass
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
   - type: Destructible
     thresholds:
     - trigger:
@@ -56,13 +63,24 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 5
       behaviors:
       - !type:PlaySoundBehavior
         sound:
           collection: GlassBreak
           params:
-            volume: -3
+            volume: -8
+      - !type:DoActsBehavior
+        acts: [ "Breakage" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -8
       - !type:SpawnEntitiesBehavior
         spawn:
           PlasmaGlassShard:
