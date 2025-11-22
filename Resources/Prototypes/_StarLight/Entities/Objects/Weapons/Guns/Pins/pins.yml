@@ -6,6 +6,7 @@
   components:
   - type: Item
     size: Small
+  - type: Appearance
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
     state: rifle
@@ -14,6 +15,8 @@
       path: /Audio/Weapons/Guns/Casings/casing_fall_2.ogg
       params:
         volume: -1
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: FiringPin
@@ -83,7 +86,7 @@
             volume: -8
       - !type:SpawnEntitiesBehavior
         spawn:
-          PlasmaGlassShard:
+          ShardGlassPlasma:
             min: 1
             max: 1
       - !type:DoActsBehavior
