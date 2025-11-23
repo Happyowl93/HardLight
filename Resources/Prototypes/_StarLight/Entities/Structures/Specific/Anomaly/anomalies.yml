@@ -156,7 +156,7 @@
     - type: DarkPortal
     - type: Anomaly
       corePrototype: null
-      coreInertPrototype: null # TODO: When they destroy the portal, something should be dropped?
+      coreInertPrototype: ArtificialBluespaceCrystal3
       minPointsPerSecond: 0
       maxPointsPerSecond: 0
       animationTime: 5

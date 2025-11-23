@@ -197,8 +197,10 @@
     unlitIdleState: unlit
     unlitRunningState: unlit-building
     staticPacks:
+    - ScienceBlueSpaceStatic # Starlight
     - ChemistryStatic
     dynamicPacks:
+    - ScienceBlueSpace # Starlight
     - AdvancedTools
     - ScienceEquipment
     - ScienceExplosives

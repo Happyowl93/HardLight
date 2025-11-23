@@ -1,0 +1,9 @@
+- type: latheRecipePack
+  id: ScienceBlueSpaceStatic
+  recipes:
+  - BluespaceCrystalScience
+
+- type: latheRecipePack
+  id: ScienceBlueSpace
+  recipes:
+  - ArtificialBluespaceCrystal
