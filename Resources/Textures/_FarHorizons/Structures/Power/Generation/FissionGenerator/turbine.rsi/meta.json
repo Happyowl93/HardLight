@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "license": "CC-BY-SA-3.0",
+    "license": "CC-BY-NC-SA-3.0",
     "copyright": "State based Copyright",
     "size": {
         "x": 96,
@@ -9,27 +9,27 @@
     "states": [
         {
             "name": "static",
-            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/master/icons/obj/large/96x160.dmi"
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
         },
         {
             "name": "turbine",
-            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/master/icons/obj/large/96x160.dmi"
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
         },
         {
             "name": "turbinebroken",
-            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/master/icons/obj/large/96x160.dmi"
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
         },
         {
             "name": "turbine_sparks",
-            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/master/icons/obj/large/96x160.dmi"
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
         },
         {
             "name": "turbine_smoke",
-            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/master/icons/obj/large/96x160.dmi"
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
         },
         {
             "name": "turbinerun",
-            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/master/icons/obj/large/96x160.dmi",
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi",
             "delays": [
                 [
                     0.05,
