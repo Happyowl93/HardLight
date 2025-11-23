@@ -432,6 +432,9 @@
     - type: Loadout
       prototypes: [ XenomoproachGear ]
     - type: Hands
+      showInHands: true
+      disableExplosionRecursion: true
+      canBeStripped: false
     - type: ComplexInteraction
     - type: Buckle
     
