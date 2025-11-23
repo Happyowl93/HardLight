@@ -737,12 +737,10 @@
   flavor: salty
   color: "#0064C8"
   metabolisms:
-    Drink:
-      effects:
-        - !type:SatiateThirst
-          factor: 6
     Medicine: #Starlight
       effects:
+        - !type:SatiateThirst
+           factor: 6
         - !type:ModifyBloodLevel
           conditions:
           - !type:OrganType
