@@ -1,0 +1,14 @@
+- type: firingPinClass
+  id: Rifle
+
+- type: firingPinClass
+  id: Pistol
+
+- type: firingPinClass
+  id: Laser
+
+- type: firingPinClass
+  id: AdvancedLaser
+
+- type: firingPinClass
+  id: SmartLMG

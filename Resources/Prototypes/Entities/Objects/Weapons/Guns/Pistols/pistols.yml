@@ -65,6 +65,7 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+      firing_pin: !type:Container # Starlight
   - type: AmmoCounter
   - type: MagazineVisuals
     magState: mag
@@ -73,6 +74,12 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  # starlight start
+  - type: ContainerFill
+    containers:
+      firing_pin:
+      - FiringPinPistol
+  # starlight end
 
 - type: entity
   name: viper
