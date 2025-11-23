@@ -58,7 +58,7 @@ highlights-station-ai = Station AI, Silicon, "AI", "sAI"
 
 
 # Starlight start
-#Command
+# Command
 
 # NanoTrasen
 highlights-officer-blue-shield = Blue Shield, "BSO" # DOES NOT WORK WHATSOEVER
