@@ -14,7 +14,6 @@
     jumpsuit: ClothingUniformJumpsuitPsychologist
     ears: ClothingHeadsetMedical
     shoes: ClothingShoesColorWhite
-    pocket1: RandomFillStrangePill
 
 - type: startingGear
   id: DoctorCorpseGear
@@ -24,6 +23,13 @@
     shoes: ClothingShoesColorWhite
     belt: ClothingBeltMedicalFilled
     pocket1: Gauze
+
+- type: startingGear
+  id: MedicalInternCorpseGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+    ears: ClothingHeadsetMedical
+    shoes: ClothingShoesColorWhite
 
 - type: startingGear
   id: ChemistCorpseGear

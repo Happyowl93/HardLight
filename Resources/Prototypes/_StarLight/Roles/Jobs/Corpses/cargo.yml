@@ -22,7 +22,7 @@
     pocket1: AppraisalTool
 
 - type: startingGear
-  id: SalvagerCorpseGear
+  id: SalvageSpecialistCorpseGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
     ears: ClothingHeadsetCargo
