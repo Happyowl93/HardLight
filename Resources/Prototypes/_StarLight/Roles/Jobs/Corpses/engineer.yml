@@ -19,7 +19,7 @@
     pocket1: CableApcStack10
 
 - type: startingGear
-  id: StationEngineerCorpseGear
+  id: AtmosphericTechnicianCorpseGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitAtmos
     ears: ClothingHeadsetEngineering
