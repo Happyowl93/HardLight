@@ -25,6 +25,9 @@ using Content.Shared.Tag;
 using Robust.Shared.Random;
 using Content.Shared.Bed.Sleep;
 using Content.Server._Starlight.NullSpace;
+using Content.Server._Starlight.Bluespace;
+using Content.Server.Stunnable;
+using Content.Server.Body.Systems;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -48,6 +51,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SleepingSystem _sleeping = default!;
     [Dependency] private readonly NullSpacePhaseSystem _nullspace = default!;
+    [Dependency] private readonly StunSystem _stunSystem = default!;
 
     private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
     private readonly EntProtoId _shadekinPhaseInEffect2 = "ShadekinPhaseInEffect2";
@@ -85,6 +89,7 @@ public sealed partial class ShadekinSystem : EntitySystem
 
         SubscribeLocalEvent<ShadekinComponent, EyeColorInitEvent>(OnEyeColorChange);
         SubscribeLocalEvent<ShadekinComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
+        SubscribeLocalEvent<ShadekinComponent, NullSpaceShuntEvent>(NullSpaceShunt);
 
         InitializeBrighteye();
         InitializeAbilities();
@@ -112,6 +117,16 @@ public sealed partial class ShadekinSystem : EntitySystem
 
         humanoid.EyeGlowing = false;
         Dirty(uid, humanoid);
+    }
+
+    private void NullSpaceShunt(EntityUid uid, ShadekinComponent component, NullSpaceShuntEvent args)
+    {
+        if (TryComp<BodyComponent>(uid, out var body) && _bodySystem.TryGetBodyOrganEntityComps<OrganShadekinCoreComponent>((uid, body), out _))
+        {
+            _popup.PopupEntity(Loc.GetString("shadekin-shunt"), uid, uid, PopupType.LargeCaution);
+            _stunSystem.TryKnockdown(uid, TimeSpan.FromSeconds(1), autoStand: false);
+            ApplyCoreDamage(uid, 5);
+        }
     }
 
     public void UpdateAlert(EntityUid uid, ShadekinComponent component, short state)
@@ -230,17 +245,17 @@ public sealed partial class ShadekinSystem : EntitySystem
         }
     }
 
-    private void ApplyLightDamage(EntityUid uid)
+    private void ApplyLightDamage(EntityUid uid, float dmg)
     {
         var damage = new DamageSpecifier();
-        damage.DamageDict.Add("Heat", 1);
+        damage.DamageDict.Add("Heat", dmg);
         _damageable.TryChangeDamage(uid, damage, true, false);
     }
 
-    private void ApplyInvalidCoreDamage(EntityUid uid)
+    private void ApplyCoreDamage(EntityUid uid, float dmg)
     {
         var damage = new DamageSpecifier();
-        damage.DamageDict.Add("Cellular", 1);
+        damage.DamageDict.Add("Cellular", dmg);
         _damageable.TryChangeDamage(uid, damage, false, false);
     }
 
@@ -309,12 +324,12 @@ public sealed partial class ShadekinSystem : EntitySystem
             _speed.RefreshMovementSpeedModifiers(uid);
 
             if (component.CurrentState == ShadekinState.Extreme)
-                ApplyLightDamage(uid);
+                ApplyLightDamage(uid, 1);
 
             if (TryComp<BodyComponent>(uid, out var body))
                 foreach (var core in _bodySystem.GetBodyOrganEntityComps<OrganShadekinCoreComponent>((uid, body)))
                     if (core.Comp1.OrganOwner != uid)
-                        ApplyInvalidCoreDamage(uid);
+                        ApplyCoreDamage(uid, 1);
 
             if (TryComp<BrighteyeComponent>(uid, out var brighteye))
                 UpdateEnergy(uid, component, brighteye);

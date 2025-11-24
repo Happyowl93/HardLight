@@ -21,6 +21,7 @@ using Content.Shared.Hands;
 using Robust.Server.Player;
 using Robust.Shared.Player;
 using Robust.Shared.Enums;
+using Content.Server._Starlight.Bluespace;
 
 namespace Content.Server._Starlight.NullSpace;
 
@@ -42,6 +43,7 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
         SubscribeLocalEvent<NullSpaceComponent, AtmosExposedGetAirEvent>(OnExpose);
         SubscribeLocalEvent<NullSpaceComponent, PreventHitscanEvent>(PreventHitScan);
         SubscribeLocalEvent<NullSpaceComponent, VirtualItemDeletedEvent>(OnVirtualItemDeleted);
+        SubscribeLocalEvent<NullSpaceComponent, NullSpaceShuntEvent>(NullSpaceShunt);
 
         _player.PlayerStatusChanged += OnPlayerStatusChanged;
     }
@@ -156,6 +158,12 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
                     EnsureComp<UnremoveableComponent>(virtItem.Value);
             }
         }
+    }
+
+    private void NullSpaceShunt(EntityUid uid, NullSpaceComponent component, NullSpaceShuntEvent args)
+    {
+        SpawnAtPosition(_shadekinShadow, Transform(uid).Coordinates);
+        RemComp(uid, component);
     }
 
     public void SuppressFactions(EntityUid uid, NullSpaceComponent component, bool set)

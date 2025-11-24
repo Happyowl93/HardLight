@@ -7,6 +7,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Inventory;
 using Content.Server.Spawners.Components;
+using Content.Server._Starlight.Bluespace;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -18,6 +19,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         SubscribeLocalEvent<BrighteyeComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<BrighteyeComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<BrighteyeComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<BrighteyeComponent, NullSpaceShuntEvent>(NullSpaceShunt);
 
         SubscribeLocalEvent<OrganShadekinCoreComponent, SurgeryOrganImplantationCompleted>(OnCoreOrganImplanted);
         SubscribeLocalEvent<OrganShadekinCoreComponent, SurgeryOrganExtracted>(OnCoreOrganExtracted);
@@ -77,6 +79,12 @@ public sealed partial class ShadekinSystem : EntitySystem
     private void OnRejuvenate(EntityUid uid, BrighteyeComponent component, RejuvenateEvent args)
     {
         component.Energy = component.MaxEnergy;
+        Dirty(uid, component);
+    }
+
+    private void NullSpaceShunt(EntityUid uid, BrighteyeComponent component, NullSpaceShuntEvent args)
+    {
+        component.Energy = 0;
         Dirty(uid, component);
     }
 
