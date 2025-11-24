@@ -364,11 +364,11 @@
   - sprite: _Starlight/Mobs/Customization/Avali/avali_trim_two.rsi
     state: tail_avali_secondary
 
-#Avali Earrings
+#Avali Earrings - HeadTop is used to hide the earrings when helmet is up. Can be changed to HeadSide when avali hardsuit sprites are finished. Alternitives are having the earrings clip, adding a value to say if the ears are visible, or removing ears when hardsuit is up
 
 - type: marking
   id: AvaliEarringOne
-  bodyPart: HeadSide
+  bodyPart: HeadTop
   markingCategory: Overlay
   speciesRestriction: [ Avali ]
   sprites:
@@ -381,7 +381,7 @@
 
 - type: marking
   id: AvaliEarringTwo
-  bodyPart: HeadSide
+  bodyPart: HeadTop
   markingCategory: Overlay
   speciesRestriction: [ Avali ]
   sprites:
@@ -394,7 +394,7 @@
 
 - type: marking
   id: AvaliEarringThree
-  bodyPart: HeadSide
+  bodyPart: HeadTop
   markingCategory: Overlay
   speciesRestriction: [ Avali ]
   sprites:
@@ -407,7 +407,7 @@
 
 - type: marking
   id: AvaliEarringFour
-  bodyPart: HeadSide
+  bodyPart: HeadTop
   markingCategory: Overlay
   speciesRestriction: [ Avali ]
   sprites:
@@ -420,7 +420,7 @@
 
 - type: marking
   id: AvaliEarringCombined
-  bodyPart: HeadSide
+  bodyPart: HeadTop
   markingCategory: Overlay
   speciesRestriction: [ Avali ]
   sprites:
