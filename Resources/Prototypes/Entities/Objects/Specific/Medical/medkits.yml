@@ -120,7 +120,6 @@
         - Dropper
         - BodyBag
         - Vial
-        - PatchPack
         - AutoMender
        components:
         - Hypospray
