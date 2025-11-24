@@ -94,3 +94,6 @@
   - type: Construction
     graph: ImprovisedBow
     node: ImprovisedBow
+  - type: Tag
+    tags:
+    - Bow

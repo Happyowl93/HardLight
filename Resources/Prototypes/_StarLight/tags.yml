@@ -290,3 +290,6 @@
 
 - type: Tag
   id: WallmountMassScannerElectronics
+
+- type: Tag
+  id: Bow

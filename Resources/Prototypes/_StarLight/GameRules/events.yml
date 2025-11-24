@@ -278,6 +278,9 @@
       - type: NpcFactionMember
         factions:
         - SimpleHostile
+      - type: CombatMode
+        disarmFailChance: 0.5
+        canDisarm: true
       mindRoles:
       - MindRoleBrighteye
   - type: AntagObjectives
