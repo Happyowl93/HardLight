@@ -30,11 +30,4 @@ public sealed partial class FiringPinHolderComponent : Component
     [ViewVariables]
     public Container PinContainer = default!;
     public const string PinContainerName = "firing_pin";
-
-    /// <summary>
-    /// is the firing pin in a state that the gun can fire?
-    /// used instead of expensive checks every time the gun is fired
-    /// </summary>
-    [ViewVariables]
-    public bool CanFire = true;
 }

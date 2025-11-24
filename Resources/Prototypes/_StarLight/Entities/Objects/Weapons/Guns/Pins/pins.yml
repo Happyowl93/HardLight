@@ -39,7 +39,7 @@
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
-    state: pistol
+    state: lmg
   - type: FiringPin
     pinType: SmartLMG
 

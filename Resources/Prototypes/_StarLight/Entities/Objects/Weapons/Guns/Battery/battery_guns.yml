@@ -757,6 +757,15 @@
   - type: Battery
     maxCharge: 2640
     startingCharge: 2640
+  - type: ContainerContainer
+    containers:
+      firing_pin: !type:Container
+  - type: ContainerFill
+    containers:
+      firing_pin:
+      - FiringPinAdvancedLaser
+  - type: FiringPinHolder
+    supportedPins: [ AdvancedLaser ]
 
 - type: entity
   name: ANNIHILATOR
@@ -792,6 +801,15 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 500
+  - type: ContainerContainer
+    containers:
+      firing_pin: !type:Container
+  - type: ContainerFill
+    containers:
+      firing_pin:
+      - FiringPinAdvancedLaser
+  - type: FiringPinHolder
+    supportedPins: [ AdvancedLaser ]
 
 - type: entity
   parent: BaseWeaponBatterySmall
@@ -889,6 +907,15 @@
     autoRechargeRate: 80
     autoRechargePause: true
     autoRechargePauseTime: 10
+  - type: ContainerContainer
+    containers:
+      firing_pin: !type:Container
+  - type: ContainerFill
+    containers:
+      firing_pin:
+      - FiringPinAdvancedLaser
+  - type: FiringPinHolder
+    supportedPins: [ AdvancedLaser ]
 
 - type: entity
   name: pulse cannon
@@ -933,3 +960,12 @@
     autoRechargeRate: 50
     autoRechargePause: true
     autoRechargePauseTime: 10
+  - type: ContainerContainer
+    containers:
+      firing_pin: !type:Container
+  - type: ContainerFill
+    containers:
+      firing_pin:
+      - FiringPinLaser
+  - type: FiringPinHolder
+    supportedPins: [ Laser ]

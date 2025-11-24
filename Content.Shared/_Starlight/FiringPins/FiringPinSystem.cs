@@ -6,6 +6,9 @@ using Content.Shared.Tools.Systems;
 using Robust.Shared.Audio.Systems;
 using System.Linq;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.Weapons.Ranged.Systems;
+using Content.Shared.Weapons.Ranged.Components;
 
 namespace Content.Shared._Starlight.FiringPins;
 
@@ -25,7 +28,10 @@ public sealed partial class FiringPinSystem : EntitySystem
         SubscribeLocalEvent<FiringPinHolderComponent, InteractUsingEvent>(OnInteractUsing);
 
         SubscribeLocalEvent<FiringPinHolderComponent, FiringPinRemovalFinishEvent>(OnPinRemovalFinish);
+        SubscribeLocalEvent<FiringPinHolderComponent, AttemptShootEvent>(OnBeforeGunShot);
     }
+
+    public bool CanFire(Entity<FiringPinHolderComponent> ent) => ent.Comp.PinContainer.ContainedEntities.Count > 0;
 
     private void OnStartup(Entity<FiringPinHolderComponent> ent, ref ComponentStartup args)
     {
@@ -88,5 +94,17 @@ public sealed partial class FiringPinSystem : EntitySystem
         }
         _popup.PopupClient(Loc.GetString("firing-pin-removed"), ent.Owner, args.User);
         _audio.PlayPredicted(ent.Comp.PinExtractionSound, ent.Owner, args.User);
+    }
+
+    private void OnBeforeGunShot(Entity<FiringPinHolderComponent> ent, ref AttemptShootEvent args)
+    {
+        if(CanFire(ent)) return;
+
+        // no firing pin
+        args.Cancelled = true;
+        _popup.PopupClient(Loc.GetString("firing-pin-weapon-failure"), ent.Owner, args.User);
+
+        if(!TryComp<GunComponent>(ent.Owner, out var gun)) return;
+        _audio.PlayPredicted(gun.SoundEmpty, ent.Owner, args.User);
     }
 }

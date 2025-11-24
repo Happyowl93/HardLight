@@ -62,8 +62,17 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+      firing_pin: !type:Container
   - type: StaticPrice
     price: 500
+  # starlight start
+  - type: ContainerFill
+    containers:
+      firing_pin:
+      - FiringPin
+  - type: FiringPinHolder
+    supportedPins: [ Rifle ]
+  # starlight end
 
 - type: entity
   name: Atreides
