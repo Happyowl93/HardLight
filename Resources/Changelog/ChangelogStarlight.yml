@@ -21978,5 +21978,20 @@ Entries:
   id: 221500
   time: '2025-11-16T21:11:48.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2215
+- author: Trep_Maul
+  changes:
+  - message: Adjusted language costs. Foreigner traits now give more options.
+    type: Tweak
+  id: 223100
+  time: '2025-11-18T15:32:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2231
+- author: mikeysaurus
+  changes:
+  - message: Added a Security Shuttle Console for remote controlling any round-start
+      security shuttles. Circuitboard spawns in HOS locker.
+    type: Add
+  id: 225200
+  time: '2025-11-22T17:02:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2252
 Order: -1
 
