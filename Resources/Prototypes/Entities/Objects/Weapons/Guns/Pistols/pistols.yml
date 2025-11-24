@@ -79,6 +79,8 @@
     containers:
       firing_pin:
       - FiringPinPistol
+  - type: FiringPinHolder
+    supportedPins: [ Pistol ]
   # starlight end
 
 - type: entity

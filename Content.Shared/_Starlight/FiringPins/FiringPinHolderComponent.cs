@@ -19,7 +19,7 @@ public sealed partial class FiringPinHolderComponent : Component
     /// What pins actually fit this gun?
     /// </summary>
     [DataField]
-    public List<ProtoId<FiringPinClassPrototype>> SupportedPins = [ "Rifle" ];
+    public IReadOnlyList<ProtoId<FiringPinClassPrototype>> SupportedPins = [ "Rifle" ];
 
     [DataField]
     public SoundSpecifier PinExtractionSound = new SoundPathSpecifier("/Audio/Items/pistol_magout.ogg");
