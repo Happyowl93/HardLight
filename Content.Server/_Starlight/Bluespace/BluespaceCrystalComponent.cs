@@ -25,7 +25,7 @@ public sealed partial class BluespaceCrystalComponent : Component
     /// Nullspace shunt range.
     /// </summary>
     [DataField]
-    public float NullSpaceShuntRange = 5;
+    public float NullSpaceShuntRange = 8;
 }
 
 [ByRefEvent]
