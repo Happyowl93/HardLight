@@ -287,3 +287,6 @@
 
 - type: Tag
   id: WallmountMassScannerElectronics
+
+- type: Tag
+  id: AutoMender

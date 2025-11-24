@@ -121,6 +121,7 @@
         - BodyBag
         - Vial
         - PatchPack
+        - AutoMender
        components:
         - Hypospray
         - Injector
