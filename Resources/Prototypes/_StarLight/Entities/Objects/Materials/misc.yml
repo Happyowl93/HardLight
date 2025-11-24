@@ -153,6 +153,14 @@
 
 - type: entity
   parent: BluespaceCrystal
+  id: BluespaceCrystal3
+  suffix: 3
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: BluespaceCrystal
   id: BluespaceCrystal5
   suffix: 5
   components:
@@ -191,14 +199,6 @@
   components:
     - type: Stack
       count: 1
-
-- type: entity
-  parent: ArtificialBluespaceCrystal
-  id: ArtificialBluespaceCrystal3
-  suffix: 3
-  components:
-    - type: Stack
-      count: 3
 
 - type: entity
   parent: ArtificialBluespaceCrystal

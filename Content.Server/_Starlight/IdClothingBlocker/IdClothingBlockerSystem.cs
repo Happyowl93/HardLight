@@ -19,11 +19,11 @@ public sealed class IdClothingBlockerSystem : SharedIdClothingBlockerSystem
 {
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly AccessReaderSystem _accessReader = default!;
-    
+
     public override void Initialize()
     {
         base.Initialize();
-        
+
         SubscribeLocalEvent<HandsComponent, DidEquipHandEvent>(OnAnyHandEquipped);
         SubscribeLocalEvent<HandsComponent, DidUnequipHandEvent>(OnAnyHandUnequipped);
         SubscribeLocalEvent<InventoryComponent, DidEquipEvent>(OnAnyInventoryEquipped);
@@ -32,10 +32,14 @@ public sealed class IdClothingBlockerSystem : SharedIdClothingBlockerSystem
 
     protected override void OnUnauthorizedAccess(EntityUid clothingUid, IdClothingBlockerComponent component, EntityUid wearer)
     {
-        var blockedComponent = EntityManager.EnsureComponent<IdClothingFrozenComponent>(wearer);
-        blockedComponent.ClothingItem = clothingUid;
+        if (component.FreezeUser)
+        {
+            var blockedComponent = EntityManager.EnsureComponent<IdClothingFrozenComponent>(wearer);
+            blockedComponent.ClothingItem = clothingUid;
+            Dirty(wearer, blockedComponent);
+        }
+
         UpdateClothingBlockingState(wearer);
-        Dirty(wearer, blockedComponent);
 
         _popup.PopupEntity(Loc.GetString("access-clothing-blocker-notify-unauthorized-access"), clothingUid, PopupType.MediumCaution);
     }
@@ -121,7 +125,7 @@ public sealed class IdClothingBlockerSystem : SharedIdClothingBlockerSystem
                             return true;
                         }
                     }
-                    
+
                     if (TryComp(pda.ContainedId, out id))
                     {
                         if (id.JobPrototype != null && component.AllowedJobs.Contains(id.JobPrototype.Value))

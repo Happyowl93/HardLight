@@ -197,6 +197,7 @@
     unlitIdleState: unlit
     unlitRunningState: unlit-building
     staticPacks:
+    - NullSpaceDrainer # Starlight
     - ScienceBlueSpaceStatic # Starlight
     - ChemistryStatic
     dynamicPacks:
@@ -433,6 +434,7 @@
     runningState: icon
     staticPacks:
     - SecurityEquipmentStatic # Starlight start
+    - NullSpaceDrainer
     - SecurityPracticeStatic
     - StarlightSecurityAmmoStatic
     - StarlightSecurityAmmoEmagStatic

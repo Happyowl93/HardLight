@@ -1,0 +1,41 @@
+- type: entity
+  parent: [Clothing, BaseSecurityScienceCommandContraband]
+  id: ClothingNullSpaceDrainer
+  name: nullspace drainer
+  description: WIP
+  components:
+    - type: Tag
+      tags:
+        - WhitelistChameleon
+    - type: Sprite
+      sprite: _Starlight/Clothing/Back/nullspaceteleporter.rsi
+      state: icon
+    - type: Item
+      size: Huge
+    - type: Clothing
+      slots: BACK
+      sprite: _Starlight/Clothing/Back/nullspaceteleporter.rsi
+    - type: IdClothingBlocker
+      freezeUser: false
+      allowedJobs:
+        - SecurityOfficer
+        - Brigmedic
+        - Warden
+        - HeadOfSecurity
+        - Captain
+        - Detective
+        - ResearchDirector
+        - SecurityCadet
+    - type: NullSpaceDrainer
+    - type: ResearchClient
+    - type: ActivatableUI
+      inHandsOnly: true
+      key: enum.ResearchClientUiKey.Key
+    - type: UserInterface
+      interfaces:
+        enum.ResearchClientUiKey.Key:
+          type: ResearchClientBoundUserInterface
+    - type: GuideHelp
+      guides:
+        - Shadekin
+        - Brighteye

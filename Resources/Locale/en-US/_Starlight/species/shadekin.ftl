@@ -24,6 +24,7 @@ shadekin-portal-stabilize = Stabilize Portal
 shadekin-portal-stabilize-info = Stabilize and heal your portal using your energy. (Costs 50 energy)
 
 shadekin-noenergy = Not enough energy to perform that action.
+shadekin-fail-generic = I cant use my energy!
 phase-fail-generic = I can't phase!
 hubportal-rejuvenate = You can't use this so soon after an emergency warp!
 shadekin-rejuvenate-compleated = You feel like you can leave the Dark again

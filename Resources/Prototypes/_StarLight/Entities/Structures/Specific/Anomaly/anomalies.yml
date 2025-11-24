@@ -156,7 +156,7 @@
     - type: DarkPortal
     - type: Anomaly
       corePrototype: null
-      coreInertPrototype: ArtificialBluespaceCrystal3
+      coreInertPrototype: BluespaceCrystal3
       minPointsPerSecond: 0
       maxPointsPerSecond: 0
       animationTime: 5
