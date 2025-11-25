@@ -290,9 +290,9 @@
   description: The combat helmet is commonly used by mercenaries, is strong, light and smells like gunpowder and the jungle.
   components:
     - type: Sprite
-      sprite: Clothing/Head/Helmets/merc_helmet.rsi
+      sprite: _Starlight/Clothing/Head/Helmets/salvage.rsi
     - type: Clothing
-      sprite: Clothing/Head/Helmets/merc_helmet.rsi
+      sprite: _Starlight/Clothing/Head/Helmets/salvage.rsi
     - type: HideLayerClothing
       layers:
         Hair: HEAD

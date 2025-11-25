@@ -4,6 +4,8 @@
   id: HandheldBrigmedicCrewMonitor
   description: So advanced it only tracks security personnel! Does not monitor emotional stability or competence levels of security members. Use at your own risk!
   components:
+  - type: Item
+    heldPrefix: scanner
   - type: Tag
     tags:
       - BrigmedicBeltEquip

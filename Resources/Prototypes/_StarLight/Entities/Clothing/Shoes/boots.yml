@@ -5,6 +5,6 @@
   description: Boots that have gone through many conflicts and that have proven their combat reliability.
   components:
     - type: Sprite
-      sprite: Clothing/Shoes/Boots/mercboots.rsi
+      sprite: _Starlight/Clothing/Shoes/Boots/salvage.rsi
     - type: Clothing
-      sprite: Clothing/Shoes/Boots/mercboots.rsi
+      sprite: _Starlight/Clothing/Shoes/Boots/salvage.rsi

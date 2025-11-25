@@ -296,14 +296,44 @@
 
 - type: entity
   parent: [ ClothingHeadBase , BaseSalvageContraband ]
-  id: ClothingHeadHatBeretSalvageMerc
-  name: scrapper beret
-  description: An olive beret with a badge depicting a jackal on a rock.
+  id: ClothingHeadHatBeretSalvageMercBrown
+  name: brown scrapper beret
+  description: A brown beret.
   components:
     - type: Sprite
-      sprite: Clothing/Head/Hats/beret_merc.rsi
+      sprite: _Starlight/Clothing/Head/Hats/salvage-brown.rsi
     - type: Clothing
-      sprite: Clothing/Head/Hats/beret_merc.rsi
+      sprite: _Starlight/Clothing/Head/Hats/salvage-brown.rsi
+    - type: Tag
+      tags:
+        - PetWearable
+        - CorgiWearable
+
+- type: entity
+  parent: [ ClothingHeadBase , BaseSalvageContraband ]
+  id: ClothingHeadHatBeretSalvageMercGreen
+  name: green scrapper beret
+  description: A green beret.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Clothing/Head/Hats/salvage-green.rsi
+    - type: Clothing
+      sprite: _Starlight/Clothing/Head/Hats/salvage-green.rsi
+    - type: Tag
+      tags:
+        - PetWearable
+        - CorgiWearable
+
+- type: entity
+  parent: [ ClothingHeadBase , BaseSalvageContraband ]
+  id: ClothingHeadHatBeretSalvageMercPurple
+  name: purple scrapper beret
+  description: A purple beret.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Clothing/Head/Hats/salvage-purple.rsi
+    - type: Clothing
+      sprite: _Starlight/Clothing/Head/Hats/salvage-purple.rsi
     - type: Tag
       tags:
         - PetWearable

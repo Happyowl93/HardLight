@@ -26,12 +26,3 @@
     damageCoefficient: 0.1
   - type: Sprite
     sprite: _Starlight/Clothing/Back/Backpacks/ntnc_bag.rsi
-
-- type: entity
-  parent: [ ClothingBackpack, BaseSalvageContraband ]
-  id: ClothingBackpackSalvageMerc
-  name: scrapper bag
-  description: A backpack that has been in many dangerous places, a reliable combat backpack.
-  components:
-    - type: Sprite
-      sprite: Clothing/Back/Backpacks/merc.rsi

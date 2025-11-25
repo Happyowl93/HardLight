@@ -1,4 +1,0 @@
-- type: entity
-  parent: [ClothingHeadBandBase, ClothingMaskBandSalvageMerc, BaseSalvageContraband ]
-  id: ClothingHeadBandSalvageMerc
-  name: scrapper bandana

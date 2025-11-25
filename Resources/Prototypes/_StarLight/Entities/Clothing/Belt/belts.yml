@@ -338,19 +338,3 @@
     damageCoefficient: 0.1
   - type: StaticPrice
     price: 900
-
-- type: entity
-  parent: [ ClothingBeltStorageBase, BaseSalvageContraband ]
-  id: ClothingBeltSalvageMercWebbing
-  name: scrapper webbing
-  description: Ideal for storing everything from ammo to weapons and combat essentials.
-  components:
-    - type: Storage #Starlight
-      grid:
-        - 0,0,1,0 #left
-        - 0,1,0,1 #left - cube
-        - 3,0,10,1
-    - type: Sprite
-      sprite: Clothing/Belt/mercwebbing.rsi
-    - type: Clothing
-      sprite: Clothing/Belt/mercwebbing.rsi

@@ -179,23 +179,3 @@
   - type: Clothing
     sprite: _Starlight/Clothing/Mask/sec.rsi
 # Fashion-O-Mat-End
-
-- type: entity
-  parent: [ ClothingMaskGas, BaseSalvageContraband ]
-  id: ClothingMaskGasSalvageMerc
-  name: scrapper gas mask
-  description: Slightly outdated, but reliable military-style gas mask.
-  components:
-    - type: Sprite
-      sprite: Clothing/Mask/merc.rsi
-    - type: Clothing
-      sprite: Clothing/Mask/merc.rsi
-    - type: Pierceable
-      level: Metal
-    - type: Armor
-      modifiers:
-        coefficients:
-          Blunt: 0.90
-          Slash: 0.90
-          Piercing: 0.95
-          Heat: 0.95
