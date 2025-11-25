@@ -22022,5 +22022,22 @@ Entries:
   id: 223301
   time: '2025-11-25T21:41:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2233
+- author: Conflee
+  changes:
+  - message: Reduced opacity of the glass in airlocks, and the centers of windows,
+      dramatically. Also added a steel frame to airlock sides so they have a proper
+      outline on all sides.
+    type: Tweak
+  id: 228000
+  time: '2025-11-25T21:41:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2280
+- author: Conflee
+  changes:
+  - message: Adjusted every wall so the panels align with the borders of each tile,
+      and made the inner panel of reinforced walls much darker so they stand out more.
+    type: Tweak
+  id: 228001
+  time: '2025-11-25T21:41:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2280
 Order: -1
 
