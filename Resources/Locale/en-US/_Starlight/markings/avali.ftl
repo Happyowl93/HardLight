@@ -6,11 +6,11 @@ marking-AvaliTailBase = (Base) Avali Tail
 marking-AvaliTailBase-tail_avalibase = Base Tail
 
 marking-AvaliChevronTailtip = Chevron Avali Tail Tip
-marking-AvaliTailBase-tail_avalibase = Base Tail
+marking-AvaliChevronTailtip-tail_avalibase = Base Tail
 marking-AvaliChevronTailtip-tail_chevrontailtip = Tail Tip
 
 marking-AvaliPointedTailtip = Pointed Avali Tail Tip
-marking-AvaliTailBase-tail_avalibase = Base Tail
+marking-AvaliPointedTailtip-tail_avalibase = Base Tail
 marking-AvaliPointedTailtip-tail_pointedtailtip = Tail Tip
 
 marking-AvaliEarsStripeOne = (Type One) Striped Avali Ears
@@ -235,4 +235,4 @@ marking-AvaliEarringCombined-avali_earring_combined_2 = Middle
 marking-AvaliEarringCombined-avali_earring_combined_3 = Bottom
 
 marking-AvaliEarring = Avali Earrings
-marking-AvaliEarringCombined-avali_earring_combined_1 = Earring Color
+marking-AvaliEarring-avali_earring_combined_1 = Earring Color
