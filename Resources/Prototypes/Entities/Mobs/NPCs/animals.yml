@@ -1654,8 +1654,10 @@
   - type: LanguageKnowledge
     speaks:
     - Ancestor
+    - Draconic
     understands:
     - Ancestor
+    - Draconic
     - GalacticCommon
   # Starlight-End
   - type: MobThresholds
