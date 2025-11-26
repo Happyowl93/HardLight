@@ -131,7 +131,7 @@
   parent: [ ClothingEyesBase, BaseSalvageContraband ]
   id: ClothingEyesGlassesSalvageMercenary
   name: scrapper glasses
-  description: Glasses made for combat, to protect the eyes from bright blinding flashes.
+  description: Glasses made for salvaging. They provide protection from flashes and welding.
   components:
     - type: Sprite
       sprite: _Starlight/Clothing/Eyes/Glasses/salvage.rsi

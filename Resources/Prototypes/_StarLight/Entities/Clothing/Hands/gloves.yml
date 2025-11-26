@@ -116,7 +116,7 @@
   parent: [ BaseSalvageContraband, ClothingHandsGlovesCombat ]
   id: ClothingHandsSalvageMercGlovesCombat
   name: scrapper combat gloves
-  description: High-quality combat gloves to protect hands from mechanical damage during combat.
+  description: High-quality insulated gloves that provide protection while salvaging.
   components:
     - type: Sprite
       sprite: _Starlight/Clothing/Hands/Gloves/salvage.rsi

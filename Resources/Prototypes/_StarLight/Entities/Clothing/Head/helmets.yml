@@ -287,7 +287,7 @@
   parent: [ ClothingHeadHelmetArmoredBase, BaseSalvageContraband ]
   id: ClothingHeadHelmetSalvageMerc
   name: scrapper helmet
-  description: The combat helmet is commonly used by mercenaries, is strong, light and smells like gunpowder and the jungle.
+  description: A durable, lightweight helmet favored by salvagers.
   components:
     - type: Sprite
       sprite: _Starlight/Clothing/Head/Helmets/salvage.rsi

@@ -2,7 +2,7 @@
   parent: [ ClothingShoesMilitaryBase, BaseSalvageContraband ]
   id: ClothingShoesBootsSalvageMerc
   name: scrapper boots
-  description: Boots that have gone through many conflicts and that have proven their combat reliability.
+  description: Boots capable of withstanding any terrain that a salvager may encounter.
   components:
     - type: Sprite
       sprite: _Starlight/Clothing/Shoes/Boots/salvage.rsi
