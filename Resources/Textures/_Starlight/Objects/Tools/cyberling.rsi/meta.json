@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation, programmer art by Citrea (please replace)",
+  "copyright": "Mechwright tools taken from tgstation, remaining tools by Maitake",
   "size": {
     "x": 32,
     "y": 32
@@ -110,7 +110,6 @@
       "delays": [
         [
           0.3,
-          0.3,
           0.3
         ]
       ]
@@ -120,7 +119,6 @@
       "delays": [
         [
           0.3,
-          0.3,
           0.3
         ]
       ]
@@ -129,7 +127,6 @@
       "name": "chimphandcannon",
       "delays": [
         [
-          0.3,
           0.3,
           0.3
         ]
@@ -145,6 +142,7 @@
       "name": "anomalyscanner",
       "delays": [
         [
+          0.3,
           0.3,
           0.3,
           0.3
@@ -203,6 +201,7 @@
         [
           0.3,
           0.3,
+          0.3,
           0.3
         ]
       ]
@@ -213,6 +212,7 @@
         [
           0.3,
           0.3,
+          0.3,
           0.3
         ]
       ]
@@ -221,6 +221,7 @@
       "name": "ripletclaw",
       "delays": [
         [
+          0.3,
           0.3,
           0.3,
           0.3
@@ -251,7 +252,6 @@
       "delays": [
         [
           0.3,
-          0.3,
           0.3
         ]
       ]
@@ -260,7 +260,6 @@
       "name": "spade",
       "delays": [
         [
-          0.3,
           0.3,
           0.3
         ]
@@ -281,7 +280,6 @@
       "delays": [
         [
           0.3,
-          0.3,
           0.3
         ]
       ]
@@ -292,6 +290,8 @@
         [
           0.3,
           0.3,
+          0.3,
+          0.3,
           0.3
         ]
       ]
@@ -300,7 +300,6 @@
       "name": "dropper",
       "delays": [
         [
-          0.3,
           0.3,
           0.3
         ]
