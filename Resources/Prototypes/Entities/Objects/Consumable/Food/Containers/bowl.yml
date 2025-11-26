@@ -65,7 +65,7 @@
   - type: Tag
     tags:
     - Trash
-    - Dinnerware
+    - Dinnerware #Starlight
 
 - type: entity
   parent: BaseItem
@@ -103,6 +103,6 @@
     - map: ["enum.SolutionContainerLayers.Fill"]
       state: fill-1
       visible: false
-  - type: Tag
+  - type: Tag #Starlight
     tags:
     - Dinnerware
