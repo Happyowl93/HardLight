@@ -275,6 +275,7 @@
         sound: "/Audio/_Starlight/Ambiance/Antag/brighteye.ogg"
       components:
       - type: Brighteye
+        energy: 200 # THIS IS HARDCODED BULLSHIT... i wish i could set this auto to MaxEnergy.
       - type: NpcFactionMember
         factions:
         - SimpleHostile

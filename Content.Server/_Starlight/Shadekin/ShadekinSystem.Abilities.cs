@@ -60,9 +60,14 @@ public sealed partial class ShadekinSystem : EntitySystem
         int cost = _phaseCost;
         if (HasComp<NullSpaceComponent>(uid))
         {
-            cost = 0;
+            if (OnAttemptEnergyUse(uid, component))
+                _nullspace.Phase(uid);
+
+            args.Handled = true;
+            return;
         }
-        else if (!HasComp<NullSpaceComponent>(uid) && TryComp<ShadekinComponent>(uid, out var shadekin))
+
+        if (TryComp<ShadekinComponent>(uid, out var shadekin))
         {
             if (shadekin.CurrentState == ShadekinState.Extreme)
                 return;

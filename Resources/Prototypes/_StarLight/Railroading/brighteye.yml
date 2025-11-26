@@ -27,8 +27,8 @@
     description: rr-brighteye-dark-desc
   - type: RailroadDarkTask
     amount: 
-      min: 10
-      max: 100
+      min: 50
+      max: 300
 
 - type: entity
   id: RRCardBrighteyePortalCritical

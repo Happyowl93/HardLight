@@ -88,8 +88,9 @@ public sealed class DarkPortalSystem : EntitySystem
 
         if (TryComp<AnomalyComponent>(uid, out var anomaly))
         {
-            _sharedAnomalySystem.ChangeAnomalyStability(uid, -5f, anomaly);
-            _sharedAnomalySystem.ChangeAnomalySeverity(uid, -5f, anomaly);
+            _sharedAnomalySystem.ChangeAnomalyStability(uid, -0.5f, anomaly);
+            _sharedAnomalySystem.ChangeAnomalySeverity(uid, -0.5f, anomaly);
+            _sharedAnomalySystem.ChangeAnomalyHealth(uid, 1f, anomaly);
             _anomalySystem.ShuffleParticlesEffect((uid, anomaly));
         }
     }
