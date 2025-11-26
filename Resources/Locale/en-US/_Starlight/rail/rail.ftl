@@ -413,13 +413,8 @@ rr-mail-open-desc = Did they write to me? I really want to know.
 
 # Brighteye
 rr-brighteye-dark = Darkness
-rr-brighteye-dark-desc = Sread the dark to 10 tiles on the station.
+rr-brighteye-dark-desc = Spread the dark on the station.
+rr-brighteye-dark-task = Spread {$Amount} dark tiles.
 
 rr-brighteye-portal-crit = Portal
 rr-brighteye-portal-crit-desc = Make your potal supercritical!
-
-rr-brighteye-kill = Dangerous Lightwalker
-rr-brighteye-kill-desc = A Lightwalker is dangerous to kin, we must teach them a lesson!
-
-rr-brighteye-spear = Spear
-rr-brighteye-spear-desc = Own a spear.

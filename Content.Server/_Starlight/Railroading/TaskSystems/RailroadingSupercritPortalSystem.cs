@@ -1,18 +1,8 @@
-using System.Linq;
 using Content.Server._Starlight.Objectives.Events;
-using Content.Server.Administration.Managers;
-using Content.Server.Administration.Systems;
-using Content.Server.EUI;
 using Content.Shared._Starlight.Railroading;
 using Content.Shared._Starlight.Railroading.Events;
 using Content.Shared._Starlight.Shadekin;
-using Content.Shared.Administration.Logs;
-using Content.Shared.Alert;
-using Content.Shared.Anomaly.Components;
-using Content.Shared.Nutrition;
 using Content.Shared.Objectives;
-using Robust.Server.Player;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server._Starlight.Railroading;
 

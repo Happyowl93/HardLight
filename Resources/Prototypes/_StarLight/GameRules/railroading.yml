@@ -34,8 +34,6 @@
     cards:
     - RRCardBrighteyeDark
     - RRCardBrighteyePortalCritical
-    - RRCardBrighteyePortalKill
-    - RRCardBrighteyePortalSpear
     
 - type: entity
   parent: BaseGameRule

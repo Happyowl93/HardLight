@@ -10,10 +10,14 @@
       - Brighteye
 
 - type: entity
-  id: RRCardBrighteyeDarkLight
+  id: RRCardBrighteyeDark
   parent: [BrighteyeCondition]
   categories: [ HideSpawnMenu ]
   components:
+  - type: RailroadSpawnFlow
+    count:
+      min: 2
+      max: 3
   - type: RailroadCard
     title: rr-brighteye-dark
     icon: 
@@ -21,6 +25,10 @@
     color: "#6c15ae"
     image: /Textures/_Starlight/Railroading/shadekin.png
     description: rr-brighteye-dark-desc
+  - type: RailroadDarkTask
+    amount: 
+      min: 10
+      max: 100
 
 - type: entity
   id: RRCardBrighteyePortalCritical
@@ -39,29 +47,3 @@
     image: /Textures/_Starlight/Railroading/shadekin.png
     description: rr-brighteye-portal-crit-desc
   - type: RailroadSupercritPortalTask
-
-- type: entity
-  id: RRCardBrighteyePortalKill
-  parent: [BrighteyeCondition]
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: RailroadCard
-    title: rr-brighteye-kill
-    icon: 
-    iconColor: "#fd3f3f"
-    color: "#6c15ae"
-    image: /Textures/_Starlight/Railroading/shadekin.png
-    description: rr-brighteye-kill-desc
-
-- type: entity
-  id: RRCardBrighteyePortalSpear
-  parent: [BrighteyeCondition]
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: RailroadCard
-    title: rr-brighteye-spear
-    icon: 
-    iconColor: "#fd3f3f"
-    color: "#6c15ae"
-    image: /Textures/_Starlight/Railroading/shadekin.png
-    description: rr-brighteye-spear-desc
