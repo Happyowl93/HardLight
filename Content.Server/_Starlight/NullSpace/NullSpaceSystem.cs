@@ -59,6 +59,9 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
         {
             SpawnAtPosition(_shadekinShadow, Transform(args.Session.AttachedEntity.Value).Coordinates);
             RemComp(args.Session.AttachedEntity.Value, nullspacecomp);
+
+            if (TryComp<PullableComponent>(args.Session.AttachedEntity, out var pullable) && pullable.BeingPulled)
+                _pulling.TryStopPull(args.Session.AttachedEntity.Value, pullable);
         }
     }
 

@@ -5,11 +5,14 @@ using Content.Shared.Mobs;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
 using Content.Shared.Item;
+using Content.Shared.Movement.Pulling.Components;
+using Content.Shared.Movement.Pulling.Systems;
 
 namespace Content.Shared._Starlight.NullSpace;
 
 public abstract partial class SharedNullSpaceSystem : EntitySystem
 {
+    [Dependency] private readonly PullingSystem _pulling = default!;
     public EntProtoId _shadekinShadow = "ShadekinShadow";
 
     public override void Initialize()
@@ -32,6 +35,9 @@ public abstract partial class SharedNullSpaceSystem : EntitySystem
         {
             SpawnAtPosition(_shadekinShadow, Transform(uid).Coordinates);
             RemComp(uid, component);
+
+            if (TryComp<PullableComponent>(uid, out var pullable) && pullable.BeingPulled)
+                _pulling.TryStopPull(uid, pullable);
         }
     }
 
