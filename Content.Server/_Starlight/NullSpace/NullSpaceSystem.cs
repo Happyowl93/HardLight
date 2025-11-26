@@ -35,6 +35,7 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
     [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly NullSpacePhaseSystem _phaseSystem = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -91,6 +92,14 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
                     if (HasComp<UnremoveableComponent>(item))
                         continue;
 
+                    if (TryComp<VirtualItemComponent>(item, out var vcomp))
+                        if (TryComp<PullableComponent>(vcomp.BlockingEntity, out var pulling) && pulling.BeingPulled)
+                        {
+                            // safety check just to make sure you dont pull something out of nullspace by phasing in
+                            if (!HasComp<NullSpaceComponent>(vcomp.BlockingEntity)) _phaseSystem.Phase(vcomp.BlockingEntity);
+                            continue;
+                        }
+
                     _hands.DoDrop((uid, handsComponent), hand, true);
                 }
 
@@ -101,7 +110,9 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
 
         if (TryComp<PullableComponent>(uid, out var pullable) && pullable.BeingPulled)
         {
-            _pulling.TryStopPull(uid, pullable);
+            // if thing pulling is in nullspace, you're coming along with them.
+            if (!HasComp<NullSpaceComponent>(pullable.Puller!.Value))
+                _pulling.TryStopPull(uid, pullable);
         }
     }
 
@@ -128,16 +139,17 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
 
         _virtualItem.DeleteInHandsMatching(uid, uid);
 
-        if (TryComp<PullableComponent>(uid, out var pullable) && pullable.BeingPulled)
-        {
-            _pulling.TryStopPull(uid, pullable);
-        }
+        // AFAIK these are unneeded, leaving in but commented out in case im wrong and you need these for something, but commenting them out lets this work so yea
+        // if (TryComp<PullableComponent>(uid, out var pullable) && pullable.BeingPulled)
+        // {
+        //     _pulling.TryStopPull(uid, pullable);
+        // }
 
-        if (TryComp<PullerComponent>(uid, out var pullerComp)
-            && TryComp<PullableComponent>(pullerComp.Pulling, out var subjectPulling))
-        {
-            _pulling.TryStopPull(pullerComp.Pulling.Value, subjectPulling);
-        }
+        // if (TryComp<PullerComponent>(uid, out var pullerComp)
+        //     && TryComp<PullableComponent>(pullerComp.Pulling, out var subjectPulling))
+        // {
+        //     _pulling.TryStopPull(pullerComp.Pulling.Value, subjectPulling);
+        // }
     }
 
     private void OnVirtualItemDeleted(EntityUid uid, NullSpaceComponent component, VirtualItemDeletedEvent args)
@@ -151,9 +163,16 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
                     if (HasComp<UnremoveableComponent>(item))
                         continue;
 
+                    if (TryComp<VirtualItemComponent>(item, out var vcomp))
+                    {
+                        // safety check just to make sure you dont pull something into nullspace by phasing out
+                        if(HasComp<NullSpaceComponent>(vcomp.BlockingEntity)) _phaseSystem.Phase(vcomp.BlockingEntity);
+                        continue;
+                    }
+    
                     _hands.DoDrop((uid, handsComponent), hand, true);
                 }
-
+    
                 if (_virtualItem.TrySpawnVirtualItemInHand(uid, uid, out var virtItem))
                     EnsureComp<UnremoveableComponent>(virtItem.Value);
             }
