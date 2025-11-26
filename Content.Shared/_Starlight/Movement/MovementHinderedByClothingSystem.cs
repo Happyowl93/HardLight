@@ -21,12 +21,10 @@ public sealed class MovementHinderedByClothingSystem : EntitySystem
 
     private void OnRefreshSpeed(EntityUid uid, BodyComponent body, ref RefreshMovementSpeedModifiersEvent args)
     {
-        Logger.Info($"called RefreshMovementSpeedModifiersEvent on {uid}");
-
         // shoes check
         if (!_inventory.TryGetSlotEntity(uid, "shoes", out var _))
             return;
-        
+     
         float hinderModifier = 0f;
 
         foreach (var legEntity in body.LegEntities)
