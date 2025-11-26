@@ -37,7 +37,7 @@ public sealed class MovementHinderedByClothingSystem : EntitySystem
 
         if (hinderModifier > 0f)
         {
-            args.ModifySpeed(1 - hinderModifier);
+            args.ModifySpeed(1, 1 - hinderModifier);
         }
     }
 }
