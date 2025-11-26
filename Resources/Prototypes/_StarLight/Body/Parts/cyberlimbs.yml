@@ -694,7 +694,7 @@
         - MeleeWeaponCyberEmpFist
     - type: WithAttachedBodyParts
       parts:
-        right hand: LeftHandCyber
+        left hand: LeftHandCyber
 
 - type: entity
   id: RightArmCyberZeus
@@ -746,7 +746,7 @@
         - CyberEquipmentGrabber
     - type: WithAttachedBodyParts
       parts:
-        right hand: LeftHandCyber
+        left hand: LeftHandCyber
 
 - type: entity
   id: RightArmCyberRiplet
@@ -803,7 +803,7 @@
         - CyberReagentGrinder
     - type: WithAttachedBodyParts
       parts:
-        right hand: LeftHandCyber
+        left hand: LeftHandCyber
 
 - type: entity
   id: RightArmCyberPersephone
