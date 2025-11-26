@@ -1,5 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared.Alert;
+using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -133,4 +134,11 @@ public sealed class OnBrighteyeRejuvenateAttemptEvent : CancellableEntityEventAr
 #region Abilities
 public sealed partial class BrighteyePortalActionEvent : InstantActionEvent { }
 public sealed partial class BrighteyePhaseActionEvent : InstantActionEvent { }
+
+[Serializable, NetSerializable]
+public sealed partial class PhaseDoAfterEvent : SimpleDoAfterEvent
+{
+    public override DoAfterEvent Clone() => this;
+    public int Cost;
+}
 #endregion

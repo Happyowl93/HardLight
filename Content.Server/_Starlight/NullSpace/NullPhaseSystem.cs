@@ -77,7 +77,7 @@ public sealed class NullSpacePhaseSystem : EntitySystem
             _actionsSystem.RemoveAction(uid, component.PhaseAction);
     }
 
-    public bool Phase(EntityUid uid)
+    public void Phase(EntityUid uid)
     {
         if (TryComp<NullSpaceComponent>(uid, out var nullspace))
         {
@@ -86,7 +86,7 @@ public sealed class NullSpacePhaseSystem : EntitySystem
             && _physics.GetEntitiesIntersectingBody(uid, (int)CollisionGroup.Impassable).Count > 0)
             {
                 _popup.PopupEntity(Loc.GetString("revenant-in-solid"), uid, uid);
-                return false;
+                return;
             }
 
             if (HasComp<ShadekinComponent>(uid))
@@ -109,7 +109,7 @@ public sealed class NullSpacePhaseSystem : EntitySystem
             if (_container.IsEntityInContainer(uid))
             {
                 _popup.PopupEntity(Loc.GetString("phase-fail-generic"), uid, uid);
-                return false;
+                return;
             }
 
             EnsureComp<NullSpaceComponent>(uid);
@@ -127,6 +127,5 @@ public sealed class NullSpacePhaseSystem : EntitySystem
             else
                 SpawnAtPosition(_shadekinShadow, Transform(uid).Coordinates);
         }
-        return true;
     }
 }

@@ -93,8 +93,9 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
                         continue;
 
                     if (TryComp<VirtualItemComponent>(item, out var vcomp))
-                        if (TryComp<PullableComponent>(vcomp.BlockingEntity, out var pulling) && pulling.BeingPulled)
+                        if (HasComp<NullSpacePulledComponent>(vcomp.BlockingEntity) && TryComp<PullableComponent>(vcomp.BlockingEntity, out var pulling) && pulling.BeingPulled)
                         {
+                            RemComp<NullSpacePulledComponent>(vcomp.BlockingEntity);
                             // safety check just to make sure you dont pull something out of nullspace by phasing in
                             if (!HasComp<NullSpaceComponent>(vcomp.BlockingEntity)) _phaseSystem.Phase(vcomp.BlockingEntity);
                             continue;
@@ -138,18 +139,6 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
         RemComp<MovementIgnoreGravityComponent>(uid);
 
         _virtualItem.DeleteInHandsMatching(uid, uid);
-
-        // AFAIK these are unneeded, leaving in but commented out in case im wrong and you need these for something, but commenting them out lets this work so yea
-        // if (TryComp<PullableComponent>(uid, out var pullable) && pullable.BeingPulled)
-        // {
-        //     _pulling.TryStopPull(uid, pullable);
-        // }
-
-        // if (TryComp<PullerComponent>(uid, out var pullerComp)
-        //     && TryComp<PullableComponent>(pullerComp.Pulling, out var subjectPulling))
-        // {
-        //     _pulling.TryStopPull(pullerComp.Pulling.Value, subjectPulling);
-        // }
     }
 
     private void OnVirtualItemDeleted(EntityUid uid, NullSpaceComponent component, VirtualItemDeletedEvent args)
@@ -165,7 +154,7 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
 
                     if (TryComp<VirtualItemComponent>(item, out var vcomp))
                     {
-                        // safety check just to make sure you dont pull something into nullspace by phasing out
+                        // safety check just to make sure you dont pull something into nullspace by phasing out.
                         if(HasComp<NullSpaceComponent>(vcomp.BlockingEntity)) _phaseSystem.Phase(vcomp.BlockingEntity);
                         continue;
                     }

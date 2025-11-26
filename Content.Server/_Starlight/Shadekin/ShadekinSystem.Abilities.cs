@@ -1,17 +1,23 @@
+using Content.Server._Starlight.NullSpace;
+using Content.Server.DoAfter;
 using Content.Shared._Starlight.NullSpace;
 using Content.Shared._Starlight.Shadekin;
+using Content.Shared.DoAfter;
+using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Teleportation.Components;
 
 namespace Content.Server._Starlight.Shadekin;
 
 public sealed partial class ShadekinSystem : EntitySystem
 {
+    [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     private readonly int _portalCost = 150;
     private readonly int _phaseCost = 50;
     public void InitializeAbilities()
     {
         SubscribeLocalEvent<BrighteyeComponent, BrighteyePortalActionEvent>(OnPortalAction);
         SubscribeLocalEvent<BrighteyeComponent, BrighteyePhaseActionEvent>(OnPhaseAction);
+        SubscribeLocalEvent<BrighteyeComponent, PhaseDoAfterEvent>(OnPhaseDoAfter);
     }
 
     private void OnPortalAction(EntityUid uid, BrighteyeComponent component, BrighteyePortalActionEvent args)
@@ -68,9 +74,37 @@ public sealed partial class ShadekinSystem : EntitySystem
                 cost *= 2;
         }
 
-        if (OnAttemptEnergyUse(uid, component, cost))
+        if (TryComp<PullerComponent>(uid, out var puller) && puller.Pulling is not null)
+        {
+            var doAfter = new PhaseDoAfterEvent()
+            {
+                Cost = cost,
+            };
+
+            _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, uid, TimeSpan.FromSeconds(10), doAfter, uid, puller.Pulling)
+            {
+                BreakOnDamage = true,
+                BreakOnMove = true,
+                BlockDuplicate = true
+            });
+        }
+        else if (OnAttemptEnergyUse(uid, component, cost))
             _nullspace.Phase(uid);
-        
+
+        args.Handled = true;
+    }
+
+    private void OnPhaseDoAfter(EntityUid uid, BrighteyeComponent component, PhaseDoAfterEvent args)
+    {
+        if (!args.Args.Target.HasValue || args.Handled || args.Cancelled)
+            return;
+
+        if (!OnAttemptEnergyUse(uid, component, args.Cost))
+            return;
+
+        EnsureComp<NullSpacePulledComponent>(args.Args.Target.Value);
+        _nullspace.Phase(uid);
+
         args.Handled = true;
     }
 }
