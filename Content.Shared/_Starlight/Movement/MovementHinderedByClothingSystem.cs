@@ -1,34 +1,45 @@
 using Content.Shared.Inventory;
 using Content.Shared.Movement.Systems;
-using Content.Shared.Trigger.Systems;
+using Content.Shared.Body.Systems;
+using Content.Shared.Body.Components;
+using Content.Shared.Movement.Components;
 
 namespace Content.Shared.Movement;
 
 public sealed class MovementHinderedByClothingSystem : EntitySystem
 {
-    [Dependency] private readonly InventorySystem _invetory = default;
-    [Dependency] private readonly BodySystem _body = default;
-    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default;
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<MovementBodyPartHinderedByClothingComponent, GotEquippedEvent>(OnGotEquipped);
-        SubscribeLocalEvent<MovementBodyPartHinderedByClothingComponent, GotUnequippedEvent>(OnGotUnequipped);
+        SubscribeLocalEvent<BodyComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshSpeed);
     }
 
-    private void OnGotEquipped(EntityUid uid, Entity<MovementBodyPartHinderedByClothingComponent> ent, ref GotEquippedEvent args)
+    private void OnRefreshSpeed(EntityUid uid, BodyComponent body, ref RefreshMovementSpeedModifiersEvent args)
     {
-        // skip if equipped item wasn't shoes
-        if (!_invetory.TryGetSlotEntity(uid, "shoes", out var shoes))
-            return;
-    }
+        Logger.Info($"called RefreshMovementSpeedModifiersEvent on {uid}");
 
-    private void OnGotUnequipped(EntityUid uid, Entity<MovementBodyPartHinderedByClothingComponent> ent, ref GotUnequippedEvent args)
-    {
-        // skip if equipped item wasn't shoes
-        if (!_invetory.TryGetSlotEntity(uid, "shoes", out var shoes))
+        // shoes check
+        if (!_inventory.TryGetSlotEntity(uid, "shoes", out var _))
             return;
+        
+        float hinderModifier = 0f;
+
+        foreach (var legEntity in body.LegEntities)
+        {
+            if (!TryComp<MovementBodyPartHinderedByClothingComponent>(legEntity, out var legModifier))
+                continue;
+
+            hinderModifier += legModifier.HinderModifier;
+        }
+
+        if (hinderModifier > 0f)
+        {
+            args.ModifySpeed(1 - hinderModifier);
+        }
     }
 }
