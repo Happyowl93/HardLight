@@ -26,6 +26,7 @@ using Content.Shared.Zombies;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared._Starlight.Language.Components;
 
 namespace Content.Server.Zombies
 {
@@ -258,7 +259,7 @@ namespace Content.Server.Zombies
                 }
                 // Starlight Start
                 // Zombies cannot attack initial infected
-                if (HasComp<InitialInfectedComponent>(entity))
+                else if (HasComp<InitialInfectedComponent>(entity))
                 {
                     args.BonusDamage = -args.BaseDamage;
                     _popup.PopupEntity(Loc.GetString("zombie-bite-initialinfected-dissuade"), uid, uid);
@@ -311,7 +312,7 @@ namespace Content.Server.Zombies
             }
             _humanoidAppearance.SetSkinColor(target, zombiecomp.BeforeZombifiedSkinColor, false);
             _bloodstream.ChangeBloodReagent(target, zombiecomp.BeforeZombifiedBloodReagent);
-
+            _language.RestoreCache((target, EnsureComp<LanguageCacheComponent>(target))); //Starlight UnZombiby fix
             return true;
         }
 
