@@ -53,7 +53,8 @@ using Content.Shared.Implants.Components;
 using Robust.Shared.Player;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared._Starlight.Silicons.Borgs;
-using Content.Shared.Silicons.Laws.Components; //Starlight
+using Content.Shared.Silicons.Laws.Components;
+using Content.Shared._Starlight.Shadekin; //Starlight
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -342,6 +343,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
 
         if (HasComp<RevolutionaryComponent>(ev.Target) ||
             HasComp<MindShieldComponent>(ev.Target) ||
+            HasComp<BrighteyeComponent>(ev.Target) || // Starlight Addtion
             HasComp<BorgChassisComponent>(ev.Target) || // Starlight Addition - Borgis should be emagged not flashed
             !HasComp<HumanoidAppearanceComponent>(ev.Target) &&
             !alwaysConvertible ||
