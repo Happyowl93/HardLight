@@ -10,6 +10,10 @@ namespace Content.Server.Speech.EntitySystems
     {
         [Dependency] private readonly IRobustRandom _random = default!;
 
+        // Regex for splitting on words:
+        private static readonly Regex s_wordSplit = new(pattern: "([\\p{P}\\p{Z}])",
+            options: RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
         private static readonly IReadOnlyDictionary<string, string> SpecialWords = new Dictionary<string, string>()
         {
             // RESTRICTION: words with apostrophes in them (won't, don't, ma'am, etc. are processed as two tokens (e.g. won + t))
@@ -205,7 +209,7 @@ namespace Content.Server.Speech.EntitySystems
         public string Accentuate(string message)
         {
             // proper word replacement, considering word boundaries:
-            var tokens = Regex.Split(message, "([\\p{P}\\p{Z}])");
+            var tokens = s_wordSplit.Split(message);
             
             for (int ti = 0; ti < tokens.Length; ++ti) {
                 var token = tokens[ti];
