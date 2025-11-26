@@ -33,6 +33,8 @@ public sealed partial class FiringPinSystem : EntitySystem
 
     public bool CanFire(Entity<FiringPinHolderComponent> ent) => ent.Comp.PinContainer.ContainedEntities.Count > 0;
 
+    public EntityUid[] FiringPins(Entity<FiringPinHolderComponent> ent) => ent.Comp.PinContainer.ContainedEntities.ToArray();
+
     private void OnStartup(Entity<FiringPinHolderComponent> ent, ref ComponentStartup args)
     {
         ent.Comp.PinContainer = _container.EnsureContainer<Container>(ent.Owner, FiringPinHolderComponent.PinContainerName);
@@ -85,7 +87,7 @@ public sealed partial class FiringPinSystem : EntitySystem
     {
         if (args.Cancelled) return;
 
-        var firingPins = ent.Comp.PinContainer.ContainedEntities.ToArray();
+        var firingPins = FiringPins(ent);
         _container.EmptyContainer(ent.Comp.PinContainer, reparent: false);
         // sandbox gets mad at me when I .First(), so just going to loop through all
         foreach (var pin in firingPins)
@@ -98,9 +100,19 @@ public sealed partial class FiringPinSystem : EntitySystem
 
     private void OnBeforeGunShot(Entity<FiringPinHolderComponent> ent, ref AttemptShootEvent args)
     {
-        if(CanFire(ent)) return;
+        if(CanFire(ent))
+        {
+            var prefireEvent = new FiringPinFireAttemptEvent(args.User, ent.Owner);
+            var firingPins = FiringPins(ent);
+            foreach(var pin in firingPins)
+            {
+                RaiseLocalEvent(pin, ref prefireEvent);
+            }
 
-        // no firing pin
+            if(!args.Cancelled) return; // can fire
+        }
+
+        // firing fail
         args.Cancelled = true;
         _popup.PopupClient(Loc.GetString("firing-pin-weapon-failure"), ent.Owner, args.User);
 

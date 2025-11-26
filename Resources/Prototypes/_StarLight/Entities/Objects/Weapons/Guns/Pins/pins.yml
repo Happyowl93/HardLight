@@ -35,13 +35,14 @@
   parent: FiringPin
   id: FiringPinSmartLMG
   name: smartgun bolt assembly
-  description: One of a kind, unreplaceable.
+  description: One of a kind, unreplaceable. Includes a round counter.
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
     state: lmg
   - type: FiringPin
     pinType: SmartLMG
+  - type: FiringPinShotCounter
 
 - type: entity
   parent: FiringPin
