@@ -5,7 +5,7 @@ using Robust.Shared.Physics.Systems;
 namespace Content.Shared.Movement.Components;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class MovementBodyPartHinderedByClothingComponent : Component
+public sealed partial class MovementBodyPartHinderedByShoesComponent : Component
 {
     [DataField]
     public float HinderModifier = 0.0f;
