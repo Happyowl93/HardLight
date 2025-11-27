@@ -66,11 +66,13 @@ public sealed class StationAiOverlay : Overlay
         var worldBounds = args.WorldBounds;
         // var playerEnt = _player.LocalEntity;
 
+         // Starlight-start: moved to be after new playerEnt definition with edit
          var playerEnt = _player.LocalEntity;
-        _entManager.TryGetComponent(playerEnt, out TransformComponent? playerXform); //moved to be after new playerEnt definition with edit, SL
-        var gridUid = playerXform?.GridUid ?? EntityUid.Invalid; //moved to be after new playerEnt definition with edit, SL
-        _entManager.TryGetComponent(gridUid, out MapGridComponent? grid); //moved to be after new playerEnt definition with edit, SL
-        _entManager.TryGetComponent(gridUid, out BroadphaseComponent? broadphase);  //moved to be after new playerEnt definition with edit, SL
+        _entManager.TryGetComponent(playerEnt, out TransformComponent? playerXform);
+        var gridUid = playerXform?.GridUid ?? EntityUid.Invalid;
+        _entManager.TryGetComponent(gridUid, out MapGridComponent? grid);
+        _entManager.TryGetComponent(gridUid, out BroadphaseComponent? broadphase);
+        // Starlight-end
 
         if (_entManager.TryGetComponent(playerEnt, out StationAiOverlayComponent? stationAiOverlay) 
             && stationAiOverlay.AllowCrossGrid 
