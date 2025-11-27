@@ -150,7 +150,7 @@
       sprintSpeed : 5.625
       maxDensity: 55
     - type: MovementBodyPartHinderedByClothing
-      hinderModifier: 0.1
+      hinderModifier: 0.08
 
 - type: entity
   id: RightLegFelionoid
