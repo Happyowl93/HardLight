@@ -10,13 +10,13 @@ public abstract class SharedIdClothingBlockerSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<Access.IdClothingBlockerComponent, GotEquippedEvent>(OnGotEquipped);
-        SubscribeLocalEvent<Access.IdClothingBlockerComponent, GotUnequippedEvent>(OnGotUnequipped);
-        SubscribeLocalEvent<Access.IdClothingBlockerComponent, BeingUnequippedAttemptEvent>(OnUnequipAttempt);
-        SubscribeLocalEvent<Access.IdClothingBlockerComponent, DoAfterAttemptEvent<ClothingUnequipDoAfterEvent>>(OnUnequipDoAfterAttempt);
+        SubscribeLocalEvent<IdClothingBlockerComponent, GotEquippedEvent>(OnGotEquipped);
+        SubscribeLocalEvent<IdClothingBlockerComponent, GotUnequippedEvent>(OnGotUnequipped);
+        SubscribeLocalEvent<IdClothingBlockerComponent, BeingUnequippedAttemptEvent>(OnUnequipAttempt);
+        SubscribeLocalEvent<IdClothingBlockerComponent, DoAfterAttemptEvent<ClothingUnequipDoAfterEvent>>(OnUnequipDoAfterAttempt);
     }
 
-    protected virtual void OnUnequipAttempt(EntityUid uid, Access.IdClothingBlockerComponent component,
+    protected virtual void OnUnequipAttempt(EntityUid uid, IdClothingBlockerComponent component,
         BeingUnequippedAttemptEvent args)
     {
         var wearerHasAccess = HasJobAccess(args.Unequipee, component);
@@ -29,7 +29,7 @@ public abstract class SharedIdClothingBlockerSystem : EntitySystem
         }
     }
 
-    protected virtual void OnUnequipDoAfterAttempt(EntityUid uid, Access.IdClothingBlockerComponent component,
+    protected virtual void OnUnequipDoAfterAttempt(EntityUid uid, IdClothingBlockerComponent component,
         DoAfterAttemptEvent<ClothingUnequipDoAfterEvent> args)
     {
         if (args.DoAfter.Args.Target == null)
@@ -44,12 +44,9 @@ public abstract class SharedIdClothingBlockerSystem : EntitySystem
         PopupClient(Loc.GetString("access-clothing-blocker-notify-unauthorized-access"), uid);
     }
     
-    protected virtual bool HasJobAccess(EntityUid wearer, Access.IdClothingBlockerComponent component)
-    {
-        return !component.IsBlocked;
-    }
+    protected virtual bool HasJobAccess(EntityUid wearer, IdClothingBlockerComponent component) => !component.IsBlocked;
 
-    private void OnGotEquipped(EntityUid uid, Access.IdClothingBlockerComponent component, GotEquippedEvent args)
+    private void OnGotEquipped(EntityUid uid, IdClothingBlockerComponent component, GotEquippedEvent args)
     {
         var wearerHasAccess = HasJobAccess(args.Equipee, component);
 
@@ -59,12 +56,12 @@ public abstract class SharedIdClothingBlockerSystem : EntitySystem
         OnUnauthorizedAccess(uid, component, args.Equipee);
     }
 
-    protected virtual void OnUnauthorizedAccess(EntityUid clothingUid, Access.IdClothingBlockerComponent component,
+    protected virtual void OnUnauthorizedAccess(EntityUid clothingUid, IdClothingBlockerComponent component,
         EntityUid wearer)
     {
     }
 
-    private void OnGotUnequipped(EntityUid uid, Access.IdClothingBlockerComponent component, GotUnequippedEvent args)
+    private void OnGotUnequipped(EntityUid uid, IdClothingBlockerComponent component, GotUnequippedEvent args)
     {
         if (EntityManager.EntityExists(args.Equipee) &&
             EntityManager.HasComponent<IdClothingFrozenComponent>(args.Equipee))

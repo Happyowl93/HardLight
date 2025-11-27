@@ -26,7 +26,7 @@ public abstract class SharedIdClothingFrozenSystem : EntitySystem
     /// <summary>
     /// Handles component startup, stopping any active pulls and updating movement state.
     /// </summary>
-    private void OnStartup(EntityUid uid, Access.IdClothingFrozenComponent component, ComponentStartup args)
+    private void OnStartup(EntityUid uid, IdClothingFrozenComponent component, ComponentStartup args)
     {
         UpdateCanMove(uid, component, args);
     }
@@ -34,7 +34,7 @@ public abstract class SharedIdClothingFrozenSystem : EntitySystem
     /// <summary>
     /// Handles movement update events, preventing movement while frozen.
     /// </summary>
-    private void OnUpdateCanMove(EntityUid uid, Access.IdClothingFrozenComponent component, UpdateCanMoveEvent args)
+    private void OnUpdateCanMove(EntityUid uid, IdClothingFrozenComponent component, UpdateCanMoveEvent args)
     {
         if (component.LifeStage > ComponentLifeStage.Running)
             return;
@@ -45,7 +45,7 @@ public abstract class SharedIdClothingFrozenSystem : EntitySystem
     /// <summary>
     /// Updates the entity's movement state.
     /// </summary>
-    private void UpdateCanMove(EntityUid uid, Access.IdClothingFrozenComponent component, EntityEventArgs args)
+    private void UpdateCanMove(EntityUid uid, IdClothingFrozenComponent component, EntityEventArgs args)
     {
         _blocker.UpdateCanMove(uid);
     }
@@ -53,7 +53,7 @@ public abstract class SharedIdClothingFrozenSystem : EntitySystem
     /// <summary>
     /// Handles various cancellable attempts, blocking them all.
     /// </summary>
-    private void OnCancellableAttempt(EntityUid uid, Access.IdClothingFrozenComponent component,
+    private void OnCancellableAttempt(EntityUid uid, IdClothingFrozenComponent component,
         CancellableEntityEventArgs args)
     {
         args.Cancel();
@@ -62,7 +62,7 @@ public abstract class SharedIdClothingFrozenSystem : EntitySystem
     /// <summary>
     /// Handles use attempts, blocking all usage while frozen.
     /// </summary>
-    private void OnUseAttempt(EntityUid uid, Access.IdClothingFrozenComponent component, UseAttemptEvent args)
+    private void OnUseAttempt(EntityUid uid, IdClothingFrozenComponent component, UseAttemptEvent args)
     {
         args.Cancel();
     }
