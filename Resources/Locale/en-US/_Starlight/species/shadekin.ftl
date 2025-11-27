@@ -8,12 +8,13 @@ alerts-shadekin-noportal-desc = [color=red]You have no portal, you will be unabl
 alerts-shadekin-rejuvenate-name = Rejuvenating
 alerts-shadekin-rejuvenate-desc = You are currently rejuvenating, you will be able to leave the dark until your at full energy.
 
-roles-antag-brighteye-name = Brighteye
-roles-antag-brighteye-description = WIP
-objective-issuer-brighteye = [color=#6c15ae]Brighteye[/color]
+roles-antag-brighteye-name = Bright-eye
+roles-antag-brighteye-description = A visitor and interloper from “The Dark”. Interfering and observing from where the light does not reach.
+objective-issuer-brighteye = [color=#6c15ae]Bright-eye[/color]
 brighteye-role-greeting = 
-    You are a Brighteye!
-    WIP
+    You are a Bright-eye!
+    You are a Shadekin from The Dark, a creature of the shadows that is foreign and alien to this dimension.
+    Explore and implore your influence over where the light does not reach, breach the spaces between this one and the dark with your portal and learn of this world.
 
 shadekin-portal-owner = This is your portal
 shadekin-portal-stability-stable = Current state: [color=forestgreen]Stable[/color]
@@ -28,7 +29,7 @@ shadekin-fail-generic = I cant use my energy!
 phase-fail-generic = I can't phase!
 hubportal-rejuvenate = You can't use this so soon after an emergency warp!
 shadekin-rejuvenate-compleated = You feel like you can leave the Dark again
-shadekin-shunt = A strange energy hit your core and bring you to your knees.
+shadekin-shunt = Something resonates with your core and brings you to your knees.
 
 shadekin-core-undamaged = [color=yellow]The core flows with power![/color]
 shadekin-core-owner = [color=yellow]This core belongs to you.[/color]
