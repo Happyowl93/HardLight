@@ -11,9 +11,7 @@
     - id: CameraBug
     - id: SurveillanceCameraMonitorCircuitboard
     - id: SheetSteel
-      amount: 10
-    - id: CableApcStack1
-      amount: 5
+    - id: CableApcStack
     - id: Screwdriver
     - id: RemoteSignaller
     - id: ClothingHandsGlovesColorBlack
