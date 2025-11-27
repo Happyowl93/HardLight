@@ -36,7 +36,7 @@ public sealed class BlurryVisionSystem : EntitySystem
             return;
         }
 
-        ent.Comp.IsWearingGlasses = glasses && ent.Comp.GlassesFixable;
+        ent.Comp.IsWearingGlasses = glasses && ent.Comp.GlassesFixable; // Starlight-edit
         var blurry = EnsureComp<BlurryVisionComponent>(ent);
         blurry.Magnitude = glasses && ent.Comp.GlassesFixable ? 0 : blur; // starlight
         blurry.CorrectionPower = ev.CorrectionPower;

@@ -14,6 +14,7 @@ public sealed partial class PermanentBlindnessComponent : Component
     [DataField, AutoNetworkedField]
     public int Blindness = 0;
     
-    [DataField, AutoNetworkedField] public bool GlassesFixable = false; // starlight
+    [DataField, AutoNetworkedField] 
+    public bool GlassesFixable = false; // starlight
 }
 
