@@ -78,7 +78,7 @@ public sealed class StationAiOverlay : Overlay
             playerEnt = relay.RelayEntity;
 
         var invMatrix = args.Viewport.GetWorldToLocalMatrix();
-        _accumulator -= (float) _timing.FrameTime.TotalSeconds;
+        _accumulator -= (float)_timing.FrameTime.TotalSeconds;
 
         if (grid != null && broadphase != null)
         {
