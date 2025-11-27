@@ -119,11 +119,11 @@
           32:
             sprite: _Starlight/Mobs/Species/Cyclorite/displacement.rsi
             state: neck
-      misc: # Starlight start
+      misc:
         sizeMaps:
           32:
             sprite: _Starlight/Mobs/Species/Cyclorite/displacement.rsi
-            state: neck # Starlight end
+            state: neck
       belt:
         sizeMaps:
           32:
