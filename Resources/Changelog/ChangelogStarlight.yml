@@ -22000,5 +22000,52 @@ Entries:
   id: 226700
   time: '2025-11-24T01:43:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2267
+- author: Conflee
+  changes:
+  - message: Resprited all walls and windows (by Conflee) and every airlock (by Salem,
+      Abby, Conflee, Motherain, Cephalo, and taco_llama)
+    type: Tweak
+  id: 227600
+  time: '2025-11-25T02:44:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2276
+- author: Fasuh
+  changes:
+  - message: Fix damage stacking on changeling's devour.
+    type: Fix
+  id: 223300
+  time: '2025-11-25T21:41:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2233
+- author: Fasuh
+  changes:
+  - message: Fix animals giving full amount of points
+    type: Fix
+  id: 223301
+  time: '2025-11-25T21:41:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2233
+- author: Conflee
+  changes:
+  - message: Reduced opacity of the glass in airlocks, and the centers of windows,
+      dramatically. Also added a steel frame to airlock sides so they have a proper
+      outline on all sides.
+    type: Tweak
+  id: 228000
+  time: '2025-11-25T21:41:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2280
+- author: Conflee
+  changes:
+  - message: Adjusted every wall so the panels align with the borders of each tile,
+      and made the inner panel of reinforced walls much darker so they stand out more.
+    type: Tweak
+  id: 228001
+  time: '2025-11-25T21:41:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2280
+- author: Conflee
+  changes:
+  - message: Added bull testosterone to MagmAle. (Humans, Dwarves, and Arachnids can
+      now have body hair)
+    type: Add
+  id: 228600
+  time: '2025-11-27T01:33:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2286
 Order: -1
 
