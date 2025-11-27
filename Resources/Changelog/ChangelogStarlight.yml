@@ -22039,5 +22039,13 @@ Entries:
   id: 228001
   time: '2025-11-25T21:41:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2280
+- author: Conflee
+  changes:
+  - message: Added bull testosterone to MagmAle. (Humans, Dwarves, and Arachnids can
+      now have body hair)
+    type: Add
+  id: 228600
+  time: '2025-11-27T01:33:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2286
 Order: -1
 
