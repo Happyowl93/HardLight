@@ -1,10 +1,11 @@
 using Content.Shared.Inventory;
 using Content.Shared.Body.Components;
+using Content.Shared.Movement.Systems;
 using Content.Shared._Starlight.Movement.Components;
 
 namespace Content.Shared._Starlight.Movement;
 
-public sealed class MovementHinderedByClothingSystem : EntitySystem
+public sealed class MovementHinderedByShoesSystem : EntitySystem
 {
     [Dependency] private readonly InventorySystem _inventory = default!;
 
@@ -25,7 +26,7 @@ public sealed class MovementHinderedByClothingSystem : EntitySystem
 
         foreach (var legEntity in body.LegEntities)
         {
-            if (!TryComp<MovementBodyPartHinderedByClothingComponent>(legEntity, out var legModifier))
+            if (!TryComp<MovementBodyPartHinderedByShoesComponent>(legEntity, out var legModifier))
                 continue;
 
             hinderModifier += legModifier.HinderModifier;

@@ -149,7 +149,7 @@
     - type: MovementBodyPart
       sprintSpeed : 5.625
       maxDensity: 55
-    - type: MovementBodyPartHinderedByClothing
+    - type: MovementBodyPartHinderedByShoes
       hinderModifier: 0.08
 
 - type: entity
@@ -169,7 +169,7 @@
     - type: MovementBodyPart
       sprintSpeed : 5.625
       maxDensity: 55
-    - type: MovementBodyPartHinderedByClothing
+    - type: MovementBodyPartHinderedByShoes
       hinderModifier: 0.08
 
 - type: entity
