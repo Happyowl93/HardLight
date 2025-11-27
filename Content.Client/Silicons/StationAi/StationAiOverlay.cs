@@ -67,10 +67,10 @@ public sealed class StationAiOverlay : Overlay
         // var playerEnt = _player.LocalEntity;
 
          var playerEnt = _player.LocalEntity;
-        _entManager.TryGetComponent(playerEnt, out TransformComponent? playerXform);
-        var gridUid = playerXform?.GridUid ?? EntityUid.Invalid;
-        _entManager.TryGetComponent(gridUid, out MapGridComponent? grid);
-        _entManager.TryGetComponent(gridUid, out BroadphaseComponent? broadphase); 
+        _entManager.TryGetComponent(playerEnt, out TransformComponent? playerXform); //moved to be after new playerEnt definition with edit, SL
+        var gridUid = playerXform?.GridUid ?? EntityUid.Invalid; //moved to be after new playerEnt definition with edit, SL
+        _entManager.TryGetComponent(gridUid, out MapGridComponent? grid); //moved to be after new playerEnt definition with edit, SL
+        _entManager.TryGetComponent(gridUid, out BroadphaseComponent? broadphase);  //moved to be after new playerEnt definition with edit, SL
 
         if (_entManager.TryGetComponent(playerEnt, out StationAiOverlayComponent? stationAiOverlay) 
             && stationAiOverlay.AllowCrossGrid 
