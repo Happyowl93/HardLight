@@ -212,7 +212,6 @@
     - Janitor
     - Instruments
     - Equipment
-    - FauxTiles
     - StarlightProtolatheLootable # Starlight start
   - type: EmagLatheRecipes
     emagDynamicPacks:
