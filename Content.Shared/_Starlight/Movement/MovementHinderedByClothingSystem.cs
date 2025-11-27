@@ -1,6 +1,4 @@
 using Content.Shared.Inventory;
-using Content.Shared.Movement.Systems;
-using Content.Shared.Body.Systems;
 using Content.Shared.Body.Components;
 using Content.Shared.Movement.Components;
 
