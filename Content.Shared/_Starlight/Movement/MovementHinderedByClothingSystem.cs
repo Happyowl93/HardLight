@@ -2,7 +2,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Body.Components;
 using Content.Shared.Movement.Components;
 
-namespace Content.Shared.Movement;
+namespace Content.Shared._Starlight.Movement;
 
 public sealed class MovementHinderedByClothingSystem : EntitySystem
 {
