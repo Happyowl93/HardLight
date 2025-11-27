@@ -9,7 +9,6 @@ namespace Content.Shared.Movement;
 public sealed class MovementHinderedByClothingSystem : EntitySystem
 {
     [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
 
     public override void Initialize()
     {
