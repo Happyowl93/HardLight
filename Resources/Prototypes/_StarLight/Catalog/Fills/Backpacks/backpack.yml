@@ -1,0 +1,22 @@
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackSyndicateObserverBundle
+  name: backpack
+  suffix: Observer Bundle, Do Not Map
+  description: You wear this on your back and put items into it.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingEyesGlassesHiddenSecurity
+    - id: CameraBug
+    - id: SurveillanceCameraMonitorCircuitboard
+    - id: SheetSteel
+      amount: 10
+    - id: CableApcStack1
+      amount: 5
+    - id: Screwdriver
+    - id: RemoteSignaller
+    - id: ClothingHandsGlovesColorBlack
+    - id: ClothingMaskBandBlack
+    - id: BoxFolderBlack
+    - id: Pen
