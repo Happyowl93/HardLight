@@ -691,6 +691,9 @@
           enum.ToggleableVisuals.Layer:
             True: { visible: true }
             False: { visible: false }
+    - type: Tag
+      tags:
+        - CyberHandItem
 
 # Persephone
 - type: entity
@@ -737,6 +740,9 @@
         inputContainer: !type:Container
         machine_board: !type:Container
         machine_parts: !type:Container
+    - type: Tag
+      tags:
+        - CyberHandItem
 
 - type: entity
   name: mini hoe cybernetic arm attachment
@@ -747,6 +753,9 @@
     - type: Sprite
       sprite: _Starlight/Objects/Tools/cyberling.rsi
       state: minihoe
+    - type: Tag
+      tags:
+        - CyberHandItem
 
 - type: entity
   name: plant clippers cybernetic arm attachment
@@ -757,6 +766,9 @@
     - type: Sprite
       sprite: _Starlight/Objects/Tools/cyberling.rsi
       state: clippers
+    - type: Tag
+      tags:
+        - CyberHandItem
 
 - type: entity
   name: scythe cybernetic arm attachment
@@ -767,6 +779,9 @@
     - type: Sprite
       sprite: _Starlight/Objects/Tools/cyberling.rsi
       state: scythe
+    - type: Tag
+      tags:
+        - CyberHandItem
 
 - type: entity
   name: hatchet cybernetic arm attachment
@@ -777,6 +792,9 @@
     - type: Sprite
       sprite: _Starlight/Objects/Tools/cyberling.rsi
       state: hatchet
+    - type: Tag
+      tags:
+        - CyberHandItem
 
 - type: entity
   name: spade cybernetic arm attachment
@@ -787,6 +805,9 @@
     - type: Sprite
       sprite: _Starlight/Objects/Tools/cyberling.rsi
       state: spade
+    - type: Tag
+      tags:
+        - CyberHandItem
 
 
 - type: entity
@@ -807,3 +828,6 @@
       solutions:
         injector:
           maxVol: 15
+    - type: Tag
+      tags:
+        - CyberHandItem

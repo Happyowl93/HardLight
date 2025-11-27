@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Starlight;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public sealed partial class LimbWithActionComponent : Component, IImplantable, IWithAction
+public sealed partial class LimbWithActionComponent : Component, IWithAction
 {
     [DataField, AutoNetworkedField]
     public bool EntityIcon { get; set; } = false;

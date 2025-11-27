@@ -575,14 +575,18 @@
     - type: Icon
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_gorilla_arm"
-    - type: LimbWithItems
-      action: ActionToggleCyberHandLeft
-      sound:
-        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    - type: LimbItemStorage
       items:
         - WeaponGauntletGorillaCyber
         - WeaponPistolCHIMPCyber
         - AnomalyScannerCyber
+    - type: LimbItemDeployer
+      action: ActionToggleCyberHandLeft
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      handWhitelist:
+        tags:
+          - CyberHandItem
     - type: WithAttachedBodyParts
       parts:
         left hand: LeftHandCyber
@@ -602,14 +606,18 @@
     - type: Icon
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_gorilla_arm"
-    - type: LimbWithItems
-      action: ActionToggleCyberHandRight
-      sound:
-        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    - type: LimbItemStorage
       items:
         - WeaponGauntletGorillaCyber
         - WeaponPistolCHIMPCyber
         - AnomalyScannerCyber
+    - type: LimbItemDeployer
+      action: ActionToggleCyberHandRight
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      handWhitelist:
+        tags:
+          - CyberHandItem
     - type: WithAttachedBodyParts
       parts:
         right hand: RightHandCyber
@@ -630,14 +638,18 @@
     - type: Icon
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_angel_arm"
-    - type: LimbWithItems
-      action: ActionToggleCyberHandLeft
-      sound:
-        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    - type: LimbItemStorage
       items:
         - AutoinjectorCyberTricordrazine
         - AutoinjectorCyberInaprovaline
         - DefibrillatorCyber
+    - type: LimbItemDeployer
+      action: ActionToggleCyberHandLeft
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      handWhitelist:
+        tags:
+          - CyberHandItem
     - type: WithAttachedBodyParts
       parts:
         left hand: LeftHandCyber
@@ -657,14 +669,18 @@
     - type: Icon
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_angel_arm"
-    - type: LimbWithItems
-      action: ActionToggleCyberHandRight
-      sound:
-        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    - type: LimbItemStorage
       items:
         - AutoinjectorCyberTricordrazine
         - AutoinjectorCyberInaprovaline
         - DefibrillatorCyber
+    - type: LimbItemDeployer
+      action: ActionToggleCyberHandRight
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      handWhitelist:
+        tags:
+          - CyberHandItem
     - type: WithAttachedBodyParts
       parts:
         right hand: RightHandCyber
@@ -685,13 +701,17 @@
     - type: Icon
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_zeus_arm"
-    - type: LimbWithItems
-      action: ActionToggleCyberHandLeft
-      sound:
-        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    - type: LimbItemStorage
       items:
         - MeleeWeaponCyberStunFist
         - MeleeWeaponCyberEmpFist
+    - type: LimbItemDeployer
+      action: ActionToggleCyberHandLeft
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      handWhitelist:
+        tags:
+          - CyberHandItem
     - type: WithAttachedBodyParts
       parts:
         left hand: LeftHandCyber
@@ -711,13 +731,17 @@
     - type: Icon
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_zeus_arm"
-    - type: LimbWithItems
-      action: ActionToggleCyberHandRight
-      sound:
-        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    - type: LimbItemStorage
       items:
         - MeleeWeaponCyberStunFist
         - MeleeWeaponCyberEmpFist
+    - type: LimbItemDeployer
+      action: ActionToggleCyberHandRight
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      handWhitelist:
+        tags:
+          - CyberHandItem
     - type: WithAttachedBodyParts
       parts:
         right hand: RightHandCyber
@@ -738,12 +762,16 @@
     - type: Icon
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_riplet_arm"
-    - type: LimbWithItems
+    - type: LimbItemStorage
+      items:
+        - CyberEquipmentGrabber
+    - type: LimbItemDeployer
       action: ActionToggleCyberHandLeft
       sound:
         path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
-      items:
-        - CyberEquipmentGrabber
+      handWhitelist:
+        tags:
+          - CyberHandItem
     - type: WithAttachedBodyParts
       parts:
         left hand: LeftHandCyber
@@ -763,12 +791,16 @@
     - type: Icon
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_riplet_arm"
-    - type: LimbWithItems
+    - type: LimbItemStorage
+      items:
+        - CyberEquipmentGrabber
+    - type: LimbItemDeployer
       action: ActionToggleCyberHandRight
       sound:
         path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
-      items:
-        - CyberEquipmentGrabber
+      handWhitelist:
+        tags:
+          - CyberHandItem
     - type: WithAttachedBodyParts
       parts:
         right hand: RightHandCyber
@@ -789,10 +821,7 @@
     - type: Icon
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_persephone_arm"
-    - type: LimbWithItems
-      action: ActionToggleCyberHandLeft
-      sound:
-        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    - type: LimbItemStorage
       items:
         - CyberToolMiniHoe
         - CyberToolClippers
@@ -801,6 +830,13 @@
         - CyberToolScythe
         - CyberToolSpade
         - CyberReagentGrinder
+    - type: LimbItemDeployer
+      action: ActionToggleCyberHandLeft
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      handWhitelist:
+        tags:
+          - CyberHandItem
     - type: WithAttachedBodyParts
       parts:
         left hand: LeftHandCyber
@@ -820,10 +856,7 @@
     - type: Icon
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_persephone_arm"
-    - type: LimbWithItems
-      action: ActionToggleCyberHandRight
-      sound:
-        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    - type: LimbItemStorage
       items:
         - CyberToolMiniHoe
         - CyberToolClippers
@@ -832,6 +865,13 @@
         - CyberToolScythe
         - CyberToolSpade
         - CyberReagentGrinder
+    - type: LimbItemDeployer
+      action: ActionToggleCyberHandRight
+      sound:
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      handWhitelist:
+        tags:
+          - CyberHandItem
     - type: WithAttachedBodyParts
       parts:
         right hand: RightHandCyber
