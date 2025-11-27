@@ -1,6 +1,6 @@
 using Content.Shared.Inventory;
 using Content.Shared.Body.Components;
-using Content.Shared.Movement.Components;
+using Content.Shared._Starlight.Movement.Components;
 
 namespace Content.Shared._Starlight.Movement;
 
