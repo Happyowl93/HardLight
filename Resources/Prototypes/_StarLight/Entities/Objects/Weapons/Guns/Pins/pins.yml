@@ -44,6 +44,8 @@
     state: makeshift
   - type: FiringPin
     pinType: Makeshift
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   parent: FiringPin
@@ -71,6 +73,8 @@
     state: laser
   - type: FiringPin
     pinType: Laser
+  - type: StaticPrice
+    price: 50
   - type: Damageable
     damageContainer: Inorganic
   - type: DamageOnLand
