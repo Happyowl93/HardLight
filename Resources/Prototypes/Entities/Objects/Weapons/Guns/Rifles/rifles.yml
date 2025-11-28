@@ -359,6 +359,14 @@
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     clumsyProof: true
   - type: PacifismAllowedGun
+  # starlight start
+  - type: FiringPinHolder
+    supportedPins: [ Makeshift ]
+  - type: ContainerFill
+    containers:
+      firing_pin:
+      - FiringPinMakeshift
+  # starlight end
 
 - type: entity
   name: ForceableFollow AKMS
