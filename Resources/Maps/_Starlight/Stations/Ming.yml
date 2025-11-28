@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 11/28/2025 18:27:41
-  entityCount: 29409
+  time: 11/28/2025 18:51:26
+  entityCount: 29425
 maps:
 - 1
 grids:
@@ -10258,7 +10258,7 @@ entities:
       pos: -63.5,-31.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -177495.5
+      secondsUntilStateChange: -178283.22
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10283,7 +10283,7 @@ entities:
       pos: -58.5,-45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -175893
+      secondsUntilStateChange: -176680.72
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10418,7 +10418,7 @@ entities:
       pos: -32.5,-52.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -183148.03
+      secondsUntilStateChange: -183935.75
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10881,7 +10881,7 @@ entities:
       pos: -71.5,-38.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -178005.83
+      secondsUntilStateChange: -178793.55
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -11076,7 +11076,7 @@ entities:
       pos: -83.5,-42.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2567.0823
+      secondsUntilStateChange: -3354.7976
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11088,7 +11088,7 @@ entities:
       pos: -83.5,-46.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2567.6824
+      secondsUntilStateChange: -3355.3977
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11100,7 +11100,7 @@ entities:
       pos: -83.5,-50.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2568.449
+      secondsUntilStateChange: -3356.1643
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11112,7 +11112,7 @@ entities:
       pos: -83.5,-32.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2565.6824
+      secondsUntilStateChange: -3353.3977
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11124,7 +11124,7 @@ entities:
       pos: -83.5,-28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2565.1157
+      secondsUntilStateChange: -3352.831
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11136,7 +11136,7 @@ entities:
       pos: -83.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2564.6157
+      secondsUntilStateChange: -3352.331
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11148,7 +11148,7 @@ entities:
       pos: 47.5,53.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2589.9158
+      secondsUntilStateChange: -3377.631
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11160,7 +11160,7 @@ entities:
       pos: 47.5,57.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2589.2822
+      secondsUntilStateChange: -3376.9976
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11173,7 +11173,7 @@ entities:
     - type: GridFill
       path: /Maps/_Starlight/Shuttles/KillerTamashi-SecShuttle.yml
     - type: Door
-      secondsUntilStateChange: -58377.195
+      secondsUntilStateChange: -59164.91
       state: Opening
 - proto: AirlockExternalGlassShuttleLocked
   entities:
@@ -12481,7 +12481,7 @@ entities:
       pos: 34.5,43.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -256353.5
+      secondsUntilStateChange: -257141.22
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -72844,12 +72844,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 7.5,-65.5
       parent: 2
-  - uid: 12090
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -6.5,-65.5
-      parent: 2
 - proto: ComputerCargoOrdersEngineering
   entities:
   - uid: 12091
@@ -73102,6 +73096,12 @@ entities:
       parent: 2
 - proto: ComputerRadar
   entities:
+  - uid: 10315
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -6.5,-65.5
+      parent: 2
   - uid: 12128
     components:
     - type: Transform
@@ -74995,10 +74995,10 @@ entities:
       parent: 2
 - proto: DefaultStationBeaconCaptainsQuarters
   entities:
-  - uid: 12431
+  - uid: 24812
     components:
     - type: Transform
-      pos: 4.5,-4.5
+      pos: 2.5,-3.5
       parent: 2
 - proto: DefaultStationBeaconCargoBay
   entities:
@@ -75077,6 +75077,13 @@ entities:
     - type: Transform
       pos: 40.5,-20.5
       parent: 2
+- proto: DefaultStationBeaconDisposals
+  entities:
+  - uid: 24645
+    components:
+    - type: Transform
+      pos: 27.5,-74.5
+      parent: 2
 - proto: DefaultStationBeaconDockingArm
   entities:
   - uid: 12443
@@ -75098,12 +75105,24 @@ entities:
     - type: Transform
       pos: -25.5,-33.5
       parent: 2
+  - uid: 10349
+    components:
+    - type: Transform
+      pos: -25.5,-24.5
+      parent: 2
 - proto: DefaultStationBeaconEvac
   entities:
   - uid: 10345
     components:
     - type: Transform
       pos: 22.5,-55.5
+      parent: 2
+- proto: DefaultStationBeaconEVAStorage
+  entities:
+  - uid: 24580
+    components:
+    - type: Transform
+      pos: 21.5,-39.5
       parent: 2
 - proto: DefaultStationBeaconHOPOffice
   entities:
@@ -75118,11 +75137,6 @@ entities:
     components:
     - type: Transform
       pos: 41.5,-9.5
-      parent: 2
-  - uid: 10349
-    components:
-    - type: Transform
-      pos: -22.5,-8.5
       parent: 2
 - proto: DefaultStationBeaconJanitorsCloset
   entities:
@@ -75145,6 +75159,13 @@ entities:
     - type: Transform
       pos: 10.5,-31.5
       parent: 2
+- proto: DefaultStationBeaconLibrary
+  entities:
+  - uid: 12090
+    components:
+    - type: Transform
+      pos: -76.5,13.5
+      parent: 2
 - proto: DefaultStationBeaconMedbay
   entities:
   - uid: 3672
@@ -75159,12 +75180,89 @@ entities:
     - type: Transform
       pos: 14.5,28.5
       parent: 2
+- proto: DefaultStationBeaconMorgue
+  entities:
+  - uid: 17224
+    components:
+    - type: Transform
+      pos: 25.5,52.5
+      parent: 2
+- proto: DefaultStationBeaconPowerBank
+  entities:
+  - uid: 24878
+    components:
+    - type: Transform
+      pos: -43.5,-7.5
+      parent: 2
+- proto: DefaultStationBeaconPsychology
+  entities:
+  - uid: 24813
+    components:
+    - type: Transform
+      pos: 25.5,24.5
+      parent: 2
+- proto: DefaultStationBeaconQMRoom
+  entities:
+  - uid: 24871
+    components:
+    - type: Transform
+      pos: -4.5,-63.5
+      parent: 2
+- proto: DefaultStationBeaconRDRoom
+  entities:
+  - uid: 24872
+    components:
+    - type: Transform
+      pos: -15.5,-34.5
+      parent: 2
 - proto: DefaultStationBeaconRobotics
   entities:
   - uid: 10317
     components:
     - type: Transform
       pos: 0.5,-53.5
+      parent: 2
+- proto: DefaultStationBeaconSalvage
+  entities:
+  - uid: 24879
+    components:
+    - type: Transform
+      pos: -11.5,-70.5
+      parent: 2
+- proto: DefaultStationBeaconScience
+  entities:
+  - uid: 24882
+    components:
+    - type: Transform
+      pos: -10.5,-19.5
+      parent: 2
+- proto: DefaultStationBeaconSecurity
+  entities:
+  - uid: 24877
+    components:
+    - type: Transform
+      pos: 35.5,-15.5
+      parent: 2
+- proto: DefaultStationBeaconServerRoom
+  entities:
+  - uid: 24876
+    components:
+    - type: Transform
+      pos: -4.5,-24.5
+      parent: 2
+- proto: DefaultStationBeaconService
+  entities:
+  - uid: 24883
+    components:
+    - type: Transform
+      pos: -29.5,11.5
+      parent: 2
+- proto: DefaultStationBeaconSingularity
+  entities:
+  - uid: 24814
+    components:
+    - type: Transform
+      pos: -43.5,-19.5
       parent: 2
 - proto: DefaultStationBeaconSolarsN
   entities:
@@ -75180,9 +75278,23 @@ entities:
     - type: Transform
       pos: -79.5,24.5
       parent: 2
+- proto: DefaultStationBeaconSupply
+  entities:
+  - uid: 24884
+    components:
+    - type: Transform
+      pos: 11.5,-63.5
+      parent: 2
+- proto: DefaultStationBeaconTechVault
+  entities:
+  - uid: 12431
+    components:
+    - type: Transform
+      pos: -52.5,-47.5
+      parent: 2
 - proto: DefaultStationBeaconTEG
   entities:
-  - uid: 10315
+  - uid: 24966
     components:
     - type: Transform
       pos: -64.5,-26.5
@@ -75193,6 +75305,20 @@ entities:
     components:
     - type: Transform
       pos: -33.5,-57.5
+      parent: 2
+- proto: DefaultStationBeaconToolRoom
+  entities:
+  - uid: 25086
+    components:
+    - type: Transform
+      pos: -63.5,4.5
+      parent: 2
+- proto: DefaultStationBeaconVault
+  entities:
+  - uid: 25632
+    components:
+    - type: Transform
+      pos: 1.5,5.5
       parent: 2
 - proto: DefaultStationBeaconWardensOffice
   entities:
@@ -109723,12 +109849,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 17224
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 25.5,52.5
-      parent: 2
   - uid: 17225
     components:
     - type: Transform
@@ -131071,11 +131191,6 @@ entities:
     - type: Transform
       pos: 4.5,-65.5
       parent: 2
-  - uid: 20581
-    components:
-    - type: Transform
-      pos: 5.5,-65.5
-      parent: 2
   - uid: 20582
     components:
     - type: Transform
@@ -131085,11 +131200,6 @@ entities:
     components:
     - type: Transform
       pos: 4.5,-65.5
-      parent: 2
-  - uid: 20584
-    components:
-    - type: Transform
-      pos: 5.5,-65.5
       parent: 2
   - uid: 20585
     components:
@@ -133668,6 +133778,11 @@ entities:
     components:
     - type: Transform
       pos: 25.5,-12.5
+      parent: 2
+  - uid: 20581
+    components:
+    - type: Transform
+      pos: 5.5,-65.5
       parent: 2
   - uid: 20965
     components:
@@ -177994,16 +178109,6 @@ entities:
     - type: Transform
       pos: 2.5,-65.5
       parent: 2
-  - uid: 28500
-    components:
-    - type: Transform
-      pos: -5.5,-62.5
-      parent: 2
-  - uid: 28501
-    components:
-    - type: Transform
-      pos: -4.5,-62.5
-      parent: 2
   - uid: 28502
     components:
     - type: Transform
@@ -180164,6 +180269,16 @@ entities:
       parent: 2
 - proto: WallWood
   entities:
+  - uid: 20584
+    components:
+    - type: Transform
+      pos: -4.5,-62.5
+      parent: 2
+  - uid: 24509
+    components:
+    - type: Transform
+      pos: -5.5,-62.5
+      parent: 2
   - uid: 28914
     components:
     - type: Transform
