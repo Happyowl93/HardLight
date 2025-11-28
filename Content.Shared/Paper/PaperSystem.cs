@@ -288,7 +288,6 @@ public sealed class PaperSystem : EntitySystem
 
         SetContent((ent, paperComp), contents);
 
-        // Our work here is done
         RemCompDeferred(ent, ent.Comp);
     }
     // Starlight end
