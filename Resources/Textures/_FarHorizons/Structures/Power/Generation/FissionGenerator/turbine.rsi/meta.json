@@ -46,6 +46,54 @@
                     0.05
                 ]
             ]
+        },
+        {
+            "name": "turbinerun_00",
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
+        },
+        {
+            "name": "turbinerun_01",
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
+        },
+        {
+            "name": "turbinerun_02",
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
+        },
+        {
+            "name": "turbinerun_03",
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
+        },
+        {
+            "name": "turbinerun_04",
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
+        },
+        {
+            "name": "turbinerun_05",
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
+        },
+        {
+            "name": "turbinerun_06",
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
+        },
+        {
+            "name": "turbinerun_07",
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
+        },
+        {
+            "name": "turbinerun_08",
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
+        },
+        {
+            "name": "turbinerun_09",
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
+        },
+        {
+            "name": "turbinerun_10",
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
+        },
+        {
+            "name": "turbinerun_11",
+            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/obj/large/96x160.dmi"
         }
     ]
 }
