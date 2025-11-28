@@ -152,3 +152,17 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+
+# cool functionality ish pins
+- type: entity
+  parent: FiringPin
+  id: FiringPinExpedition
+  name: expedition firing pin
+  description: This universal pin prevents the gun from firing when on station, useful for managing weaponry used on offstation exploration.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
+    state: exped
+  - type: FiringPin
+    pinType: GunUpgrade
+  - type: FiringPinExpedition

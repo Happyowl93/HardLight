@@ -12,3 +12,6 @@
 
 - type: firingPinClass
   id: SmartLMG
+
+- type: firingPinClass
+  id: GunUpgrade

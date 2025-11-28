@@ -109,7 +109,7 @@ public sealed partial class FiringPinSystem : EntitySystem
                 RaiseLocalEvent(pin, ref prefireEvent);
             }
 
-            if(!args.Cancelled) return; // can fire
+            if(!prefireEvent.Cancelled) return; // can fire
         }
 
         // firing fail

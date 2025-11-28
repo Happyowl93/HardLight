@@ -80,7 +80,7 @@
       firing_pin:
       - FiringPinPistol
   - type: FiringPinHolder
-    supportedPins: [ Pistol ]
+    supportedPins: [ Pistol, GunUpgrade ]
   # starlight end
 
 - type: entity
