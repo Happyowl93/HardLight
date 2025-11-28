@@ -25,7 +25,7 @@ using Content.Client.UserInterface;
 using Content.Client.Viewport;
 using Content.Client.Voting;
 using Content.Shared._NullLink;
-using Content.Shared._Starlight.DocumentManager;
+using Content.Shared._Starlight.DocumentManager; // starlight
 using Content.Shared.Ame.Components;
 using Content.Shared.Gravity;
 using Content.Shared.Localizations;

@@ -29,7 +29,7 @@ using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
 using Content.Shared.Starlight;
 using Content.Client._NullLink;
-using Content.Shared._Starlight.DocumentManager;
+using Content.Shared._Starlight.DocumentManager; // starlight
 
 namespace Content.Client.IoC
 {
