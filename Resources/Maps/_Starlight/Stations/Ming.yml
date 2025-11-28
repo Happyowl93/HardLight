@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.1.0
   forkId: ""
   forkVersion: ""
-  time: 11/15/2025 11:05:21
-  entityCount: 29408
+  time: 11/28/2025 18:27:41
+  entityCount: 29409
 maps:
 - 1
 grids:
@@ -10258,7 +10258,7 @@ entities:
       pos: -63.5,-31.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -177270.67
+      secondsUntilStateChange: -177495.5
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10283,7 +10283,7 @@ entities:
       pos: -58.5,-45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -175668.17
+      secondsUntilStateChange: -175893
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10418,7 +10418,7 @@ entities:
       pos: -32.5,-52.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -182923.2
+      secondsUntilStateChange: -183148.03
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10881,7 +10881,7 @@ entities:
       pos: -71.5,-38.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -177781
+      secondsUntilStateChange: -178005.83
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -11076,7 +11076,7 @@ entities:
       pos: -83.5,-42.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2342.2498
+      secondsUntilStateChange: -2567.0823
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11088,7 +11088,7 @@ entities:
       pos: -83.5,-46.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2342.8499
+      secondsUntilStateChange: -2567.6824
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11100,7 +11100,7 @@ entities:
       pos: -83.5,-50.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2343.6165
+      secondsUntilStateChange: -2568.449
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11112,7 +11112,7 @@ entities:
       pos: -83.5,-32.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2340.8499
+      secondsUntilStateChange: -2565.6824
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11124,7 +11124,7 @@ entities:
       pos: -83.5,-28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2340.2832
+      secondsUntilStateChange: -2565.1157
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11136,7 +11136,7 @@ entities:
       pos: -83.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2339.7832
+      secondsUntilStateChange: -2564.6157
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11148,7 +11148,7 @@ entities:
       pos: 47.5,53.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2365.0833
+      secondsUntilStateChange: -2589.9158
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11160,7 +11160,7 @@ entities:
       pos: 47.5,57.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2364.4497
+      secondsUntilStateChange: -2589.2822
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11173,7 +11173,7 @@ entities:
     - type: GridFill
       path: /Maps/_Starlight/Shuttles/KillerTamashi-SecShuttle.yml
     - type: Door
-      secondsUntilStateChange: -58152.363
+      secondsUntilStateChange: -58377.195
       state: Opening
 - proto: AirlockExternalGlassShuttleLocked
   entities:
@@ -12481,7 +12481,7 @@ entities:
       pos: 34.5,43.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -256128.67
+      secondsUntilStateChange: -256353.5
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16914,15 +16914,20 @@ entities:
     - type: Transform
       pos: 51.5,44.5
       parent: 2
-  - uid: 9837
+  - uid: 20953
     components:
     - type: Transform
-      pos: 22.5,-7.5
+      pos: 22.5,-9.5
       parent: 2
   - uid: 21821
     components:
     - type: Transform
       pos: 26.5,-23.5
+      parent: 2
+  - uid: 24508
+    components:
+    - type: Transform
+      pos: -9.5,0.5
       parent: 2
 - proto: BedsheetBlack
   entities:
@@ -17079,6 +17084,13 @@ entities:
     - type: Transform
       pos: -40.5,24.5
       parent: 2
+- proto: BedsheetNT
+  entities:
+  - uid: 19327
+    components:
+    - type: Transform
+      pos: -9.5,0.5
+      parent: 2
 - proto: BedsheetQM
   entities:
   - uid: 1105
@@ -17122,11 +17134,10 @@ entities:
     - type: Transform
       pos: -4.5,16.5
       parent: 2
-  - uid: 17367
+  - uid: 9837
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 22.5,-7.5
+      pos: 22.5,-9.5
       parent: 2
 - proto: Bible
   entities:
@@ -72180,7 +72191,7 @@ entities:
   - uid: 12031
     components:
     - type: Transform
-      pos: -9.4967985,0.34394455
+      pos: -7.478658,0.6396102
       parent: 2
 - proto: ClothingNeckMantle
   entities:
@@ -81862,11 +81873,8 @@ entities:
       parent: 2
   - uid: 13609
     components:
-    - type: MetaData
-      desc: Woof woof you wanna sleep here NT dog.
-      name: BSO bed
     - type: Transform
-      pos: -9.5,0.5
+      pos: 22.5,-7.5
       parent: 2
   - uid: 13610
     components:
@@ -81912,11 +81920,6 @@ entities:
     components:
     - type: Transform
       pos: -10.5,-62.5
-      parent: 2
-  - uid: 19327
-    components:
-    - type: Transform
-      pos: 22.5,-9.5
       parent: 2
 - proto: Dresser
   entities:
@@ -133602,11 +133605,6 @@ entities:
     - type: Transform
       pos: -6.5,4.5
       parent: 2
-  - uid: 20953
-    components:
-    - type: Transform
-      pos: -7.5,0.5
-      parent: 2
   - uid: 20954
     components:
     - type: Transform
@@ -149773,15 +149771,6 @@ entities:
     - type: Transform
       pos: -56.46132,-13.551695
       parent: 2
-- proto: ShelfBar
-  entities:
-  - uid: 23621
-    components:
-    - type: Transform
-      pos: -24.5,20.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: ShelfWood
   entities:
   - uid: 1149
@@ -156972,6 +156961,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 19.5,59.5
       parent: 2
+  - uid: 17367
+    components:
+    - type: Transform
+      pos: -7.5,0.5
+      parent: 2
   - uid: 21961
     components:
     - type: Transform
@@ -160920,6 +160914,13 @@ entities:
     - type: Transform
       pos: 37.5,34.5
       parent: 2
+- proto: VendingMachineWallMedicalCivilian
+  entities:
+  - uid: 23621
+    components:
+    - type: Transform
+      pos: -24.5,20.5
+      parent: 2
 - proto: VendingMachineYouTool
   entities:
   - uid: 25273
@@ -161384,6 +161385,26 @@ entities:
     components:
     - type: Transform
       pos: 44.5,-22.5
+      parent: 2
+  - uid: 24153
+    components:
+    - type: Transform
+      pos: 29.5,-12.5
+      parent: 2
+  - uid: 24270
+    components:
+    - type: Transform
+      pos: 29.5,-6.5
+      parent: 2
+  - uid: 24288
+    components:
+    - type: Transform
+      pos: 29.5,-11.5
+      parent: 2
+  - uid: 24411
+    components:
+    - type: Transform
+      pos: 29.5,-7.5
       parent: 2
   - uid: 25330
     components:
@@ -163132,11 +163153,6 @@ entities:
     components:
     - type: Transform
       pos: 29.5,-13.5
-      parent: 2
-  - uid: 25665
-    components:
-    - type: Transform
-      pos: 29.5,-12.5
       parent: 2
   - uid: 25666
     components:
@@ -174620,11 +174636,6 @@ entities:
     - type: Transform
       pos: 18.5,-1.5
       parent: 2
-  - uid: 27861
-    components:
-    - type: Transform
-      pos: 29.5,-6.5
-      parent: 2
   - uid: 27862
     components:
     - type: Transform
@@ -174882,16 +174893,6 @@ entities:
     components:
     - type: Transform
       pos: 23.5,-13.5
-      parent: 2
-  - uid: 27909
-    components:
-    - type: Transform
-      pos: 29.5,-11.5
-      parent: 2
-  - uid: 27910
-    components:
-    - type: Transform
-      pos: 29.5,-7.5
       parent: 2
   - uid: 27911
     components:
