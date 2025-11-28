@@ -123,6 +123,7 @@
     containers:
       gun_magazine: !type:ContainerSlot ""
       gun_chamber: !type:ContainerSlot ""
+      firing_pin: !type:Container # starlight
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -167,6 +168,7 @@
     containers:
       gun_magazine: !type:ContainerSlot ""
       gun_chamber: !type:ContainerSlot ""
+      firing_pin: !type:Container # starlight
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -214,6 +216,7 @@
     containers:
       gun_magazine: !type:ContainerSlot ""
       gun_chamber: !type:ContainerSlot ""
+      firing_pin: !type:Container
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -309,6 +312,7 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+      firing_pin: !type:Container
   - type: MagazineVisuals
     magState: mag
     steps: 1
