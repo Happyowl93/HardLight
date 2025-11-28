@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared.Administration.Logs;
 using Content.Shared.UserInterface;
 using Content.Shared.Database;
+using Content.Shared.Documents;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Random.Helpers;
@@ -35,6 +36,7 @@ public sealed class PaperSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IdentitySystem _identitySystem = default!; // Starlight-edit
+    [Dependency] private readonly PreWrittenDocumentManager _documentManager = default!; // Starlight-edit
 
     private static readonly ProtoId<TagPrototype> WriteIgnoreStampsTag = "WriteIgnoreStamps";
     private static readonly ProtoId<TagPrototype> WriteTag = "Write";
@@ -53,6 +55,7 @@ public sealed class PaperSystem : EntitySystem
         SubscribeLocalEvent<PaperComponent, PaperInputTextMessage>(OnInputTextMessage);
 
         SubscribeLocalEvent<RandomPaperContentComponent, MapInitEvent>(OnRandomPaperContentMapInit);
+        SubscribeLocalEvent<TextFilePaperContentComponent, MapInitEvent>(OnTextFilePaperContentComponentInit); // Starlight
 
         SubscribeLocalEvent<ActivateOnPaperOpenedComponent, PaperWriteEvent>(OnPaperWrite);
 
@@ -274,6 +277,22 @@ public sealed class PaperSystem : EntitySystem
         RemCompDeferred(ent, ent.Comp);
     }
 
+    // Starlight start
+    private void OnTextFilePaperContentComponentInit(Entity<TextFilePaperContentComponent> ent, ref MapInitEvent args)
+    {
+        if (!_paperQuery.TryComp(ent, out var paperComp))
+            return;
+
+        if (!_documentManager.TryGetDocumentContents(ent.Comp.FileName, out var contents))
+            return;
+
+        SetContent((ent, paperComp), contents);
+
+        // Our work here is done
+        RemCompDeferred(ent, ent.Comp);
+    }
+    // Starlight end
+    
     private void OnPaperWrite(Entity<ActivateOnPaperOpenedComponent> entity, ref PaperWriteEvent args)
     {
         _interaction.UseInHandInteraction(args.User, entity);
