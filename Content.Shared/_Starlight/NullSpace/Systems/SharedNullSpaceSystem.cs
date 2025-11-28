@@ -77,6 +77,9 @@ public abstract partial class SharedNullSpaceSystem : EntitySystem
 
     private void PreventCollision(EntityUid uid, NullSpaceComponent component, ref PreventCollideEvent args)
     {
+        if (HasComp<NullSpaceBlockerComponent>(args.OtherEntity))
+            return;
+            
         args.Cancelled = true;
     }
 }

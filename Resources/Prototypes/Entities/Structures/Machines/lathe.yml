@@ -271,6 +271,7 @@
     - MedicalBoardsStatic
     - EngineeringBoardsStatic
     - StarlightVendorBoards # Starlight
+    - StarlightNullspaceStatic # Starlight
     dynamicPacks:
     - EngineeringBoards
     - CargoBoards
@@ -438,6 +439,7 @@
     - SecurityPracticeStatic
     - StarlightSecurityAmmoStatic
     - StarlightSecurityAmmoEmagStatic
+    - StarlightNullspaceStatic
     - SecurityWeaponsStatic # Starlight end
     dynamicPacks:
     - SalvageSecurityBoards

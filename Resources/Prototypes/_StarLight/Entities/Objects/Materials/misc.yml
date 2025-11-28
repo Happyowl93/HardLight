@@ -99,6 +99,7 @@
       materialComposition:
         BluespaceCrystal: 100
     - type: Stack
+      count: 10
       stackType: BluespaceCrystal
       baseLayer: base
       layerStates:
@@ -180,7 +181,8 @@
       materialComposition:
         BluespaceCrystal: 100
     - type: Stack
-      stackType: ArtificialBluespaceCrystal
+      count: 10
+      stackType: BluespaceCrystal
       baseLayer: base
       layerStates:
         - synthetic_bluespace_crystal

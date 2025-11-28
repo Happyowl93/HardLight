@@ -112,6 +112,15 @@ public sealed class NullSpacePhaseSystem : EntitySystem
                 return;
             }
 
+            foreach (var entity in _lookup.GetEntitiesIntersecting(Transform(uid).Coordinates))
+            {
+                if (HasComp<NullSpaceBlockerComponent>(entity))
+                {
+                    _popup.PopupEntity(Loc.GetString("phase-fail-generic"), uid, uid);
+                    return;
+                }
+            }
+
             EnsureComp<NullSpaceComponent>(uid);
 
             if (HasComp<ShadekinComponent>(uid))

@@ -25,10 +25,3 @@
   icon: { sprite: _Starlight/Objects/Materials/materials.rsi, state: refined_bluespace_crystal }
   spawn: BluespaceCrystal1
   maxCount: 10
-
-- type: stack
-  id: ArtificialBluespaceCrystal
-  name: stack-bluespacecrystal
-  icon: { sprite: _Starlight/Objects/Materials/materials.rsi, state: synthetic_bluespace_crystal }
-  spawn: ArtificialBluespaceCrystal1
-  maxCount: 10

@@ -47,7 +47,7 @@ public sealed class BluespaceCrystalSystem : EntitySystem
         QueueDel(uid);
     }
 
-    private void BluespaceEffect(EntityUid uid, BluespaceCrystalComponent component, EntityUid? target = null)
+    public void BluespaceEffect(EntityUid uid, BluespaceCrystalComponent component, EntityUid? target = null)
     {
         var EffectLocation = _transform.GetMapCoordinates(uid);
 
