@@ -15,8 +15,5 @@ public sealed partial class FiringPinExpeditionSystem : EntitySystem
 
     private bool CanFire(Entity<FiringPinExpeditionComponent> ent) => _station.GetOwningStation(ent.Owner) == null;
 
-    private void OnFireAttempt(Entity<FiringPinExpeditionComponent> ent, ref FiringPinFireAttemptEvent args)
-    {
-        if(!CanFire(ent)) args.Cancelled = true;
-    }
+    private void OnFireAttempt(Entity<FiringPinExpeditionComponent> ent, ref FiringPinFireAttemptEvent args) => args.Cancelled = !CanFire(ent) ? true : args.Cancelled;
 }
