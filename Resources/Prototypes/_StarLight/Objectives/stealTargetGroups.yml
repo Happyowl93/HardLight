@@ -52,7 +52,7 @@
     state: rifle
 
 - type: stealTargetGroup
-  id: FiringPin
+  id: FiringPinAdvancedLaser
   name: steal-target-groups-firing-pin-advanced-laser
   sprite:
     sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
