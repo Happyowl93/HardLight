@@ -88,6 +88,7 @@
     Proto5xStealObjective: 1                # Starlight // HoS Gun
     FiringPinStealObjective: 1              # Starlight
     FiringPinAdvancedLaserStealObjective: 1 # Starlight
+    FiringPinSmartLMGStealObjective: 1      # Starlight
     ClothingOuterHardsuitVoidParamedStealObjective: 1   #med
     MedicalTechFabCircuitboardStealObjective: 1
     FireAxeStealObjective: 1                            #eng
