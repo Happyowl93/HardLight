@@ -43,3 +43,17 @@
   sprite:
     sprite: _Starlight/Objects/Weapons/Guns/Battery/energy_smg.rsi
     state: icon
+
+- type: stealTargetGroup
+  id: FiringPin
+  name: steal-target-groups-firing-pin
+  sprite:
+    sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
+    state: rifle
+
+- type: stealTargetGroup
+  id: FiringPin
+  name: steal-target-groups-firing-pin-advanced-laser
+  sprite:
+    sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
+    state: adv-laser

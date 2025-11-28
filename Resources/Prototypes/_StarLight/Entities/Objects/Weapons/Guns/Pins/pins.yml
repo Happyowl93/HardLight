@@ -19,6 +19,8 @@
     price: 500
   - type: FiringPin
     pinType: Rifle
+  - type: StealTarget
+    stealGroup: FiringPin
 
 - type: entity
   parent: FiringPin
@@ -124,6 +126,8 @@
     state: adv-laser
   - type: FiringPin
     pinType: AdvancedLaser
+  - type: StealTarget
+    stealGroup: FiringPinAdvancedLaser
   - type: Explosive
     explosionType: Default
     totalIntensity: 100 # slightly more impressive than a welding tank explosion

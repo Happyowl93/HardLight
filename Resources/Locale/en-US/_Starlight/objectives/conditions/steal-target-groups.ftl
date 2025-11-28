@@ -7,3 +7,5 @@ steal-target-groups-hopboard = bureaucratic digiboard
 
 # Thief single items
 steal-target-groups-proto5x = Head Of Security's Proto-5x
+steal-target-groups-firing-pin = firing pin
+steal-target-groups-firing-pin-advanced-laser = prototype laser crystal
