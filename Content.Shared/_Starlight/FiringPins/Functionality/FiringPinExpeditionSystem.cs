@@ -13,10 +13,7 @@ public sealed partial class FiringPinExpeditionSystem : EntitySystem
         SubscribeLocalEvent<FiringPinExpeditionComponent, FiringPinFireAttemptEvent>(OnFireAttempt);
     }
 
-    private bool CanFire(Entity<FiringPinExpeditionComponent> ent)
-    {
-        return _station.GetOwningStation(ent.Owner) == null;
-    }
+    private bool CanFire(Entity<FiringPinExpeditionComponent> ent) => _station.GetOwningStation(ent.Owner) == null;
 
     private void OnFireAttempt(Entity<FiringPinExpeditionComponent> ent, ref FiringPinFireAttemptEvent args)
     {
