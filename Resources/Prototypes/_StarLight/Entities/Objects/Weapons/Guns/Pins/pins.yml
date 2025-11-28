@@ -33,6 +33,18 @@
 
 - type: entity
   parent: FiringPin
+  id: FiringPinMakeshift
+  name: makeshift firing pin
+  description: It's a nail. Welded to a bottle cap.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
+    state: makeshift
+  - type: FiringPin
+    pinType: Makeshift
+
+- type: entity
+  parent: FiringPin
   id: FiringPinSmartLMG
   name: smartgun bolt assembly
   description: One of a kind, unreplaceable. Includes a round counter.
@@ -105,7 +117,7 @@
   parent: FiringPinLaser
   id: FiringPinAdvancedLaser
   name: prototype laser crystal
-  description:  \"DO NOT DROP\" is inscribed on the side. whatever.
+  description: DO NOT DROP is inscribed on the side. whatever.
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi

@@ -14,4 +14,7 @@
   id: SmartLMG
 
 - type: firingPinClass
+  id: Makeshift
+
+- type: firingPinClass
   id: GunUpgrade
