@@ -9,6 +9,10 @@
   access:
   - Service
   - Maintenance
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: UniversalLanguageSpeaker #Lets them speak and understand all languages
 
 - type: startingGear
   id: LibrarianGear
