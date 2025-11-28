@@ -32,7 +32,7 @@ using Content.Server.ServerUpdates;
 using Content.Server.Starlight.TextToSpeech;
 using Content.Server.Voting.Managers;
 using Content.Shared._NullLink;
-using Content.Shared._Starlight.DocumentManager; // starlight
+using Content.Shared._Starlight.DocumentManager;
 using Content.Shared.CCVar;
 using Content.Shared.Kitchen;
 using Content.Shared.Localizations;
