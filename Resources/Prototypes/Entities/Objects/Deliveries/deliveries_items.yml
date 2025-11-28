@@ -10,22 +10,3 @@
   - type: RandomPaperContent
     dataset: DeliverySpamLetters
 
-- type: entity
-  id: TextLetterOne
-  name: text letter one
-  description: gfffffff
-  parent: Paper
-  components:
-    - type: Paper
-    - type: TextFilePaperContent
-      fileName: test_document_1.txt
-
-- type: entity
-  id: TextLetterTwo
-  name: text letter two
-  description: gfffffff
-  parent: Paper
-  components:
-    - type: Paper
-    - type: TextFilePaperContent
-      fileName: test_document_2.txt
