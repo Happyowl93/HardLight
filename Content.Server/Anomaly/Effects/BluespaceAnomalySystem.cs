@@ -42,16 +42,13 @@ public sealed class BluespaceAnomalySystem : EntitySystem
         var coords = new ValueList<Vector2>();
         foreach (var ent in allEnts)
         {
-            if (xformQuery.TryGetComponent(ent, out var allXform))
+            if (xformQuery.TryGetComponent(ent, out var allXform) && allXform.ParentUid.IsValid())
                 coords.Add(_xform.GetWorldPosition(allXform));
         }
 
         _random.Shuffle(coords);
         for (var i = 0; i < allEnts.Count; i++)
         {
-            if (!xformQuery.TryGetComponent(allEnts[i], out var entXform) || !entXform.ParentUid.IsValid())
-                continue;
-
             _adminLogger.Add(LogType.Teleport, $"{ToPrettyString(allEnts[i])} has been shuffled to {coords[i]} by the {ToPrettyString(uid)} at {xform.Coordinates}");
             _xform.SetWorldPosition(allEnts[i], coords[i]);
         }
