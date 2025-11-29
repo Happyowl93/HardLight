@@ -257,7 +257,9 @@
   - type: RuleGrids
   - type: GameRule
     minPlayers: 10
-  - type: LoadTheDarkRule
+  # - type: LoadTheDarkRule
+  #   mapPath: /Maps/_Starlight/TheDark/Hideout.yml
+  - type: LoadMapRule
     mapPath: /Maps/_Starlight/TheDark/Hideout.yml
   - type: AntagLoadProfileRule
     speciesHardOverride: Shadekin
