@@ -42,7 +42,7 @@ public sealed class BluespaceAnomalySystem : EntitySystem
         var coords = new ValueList<Vector2>();
         foreach (var ent in allEnts)
         {
-            if (xformQuery.TryGetComponent(ent, out var allXform) && allXform.ParentUid.IsValid())
+            if (xformQuery.TryGetComponent(ent, out var allXform))
                 coords.Add(_xform.GetWorldPosition(allXform));
         }
 
