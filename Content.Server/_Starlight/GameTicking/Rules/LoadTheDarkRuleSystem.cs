@@ -48,7 +48,7 @@ public sealed class LoadTheDarkRuleSystem : StationEventSystem<LoadTheDarkRuleCo
 
         if (comp.MapPath is { } path)
         {
-            var opts = DeserializationOptions.Default with { InitializeMaps = true };
+            var opts = DeserializationOptions.Default with { InitializeMaps = false };
             if (!_mapLoader.TryLoadMap(path, out var map, out var gridSet, opts))
             {
                 Log.Error($"Failed to load map from {path}!");

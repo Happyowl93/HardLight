@@ -271,7 +271,7 @@
       startingGear: BrighteyeGear
       briefing:
         text: brighteye-role-greeting
-        color: Purple
+        color: "#F200FF"
         sound: "/Audio/_Starlight/Ambiance/Antag/brighteye.ogg"
       components:
       - type: Brighteye
