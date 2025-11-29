@@ -1,0 +1,117 @@
+using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+
+namespace Content.Shared._Starlight.Antags.Vampires.Components;
+
+[RegisterComponent, NetworkedComponent]
+[AutoGenerateComponentState, AutoGenerateComponentPause]
+
+public sealed partial class VampireComponent : Component
+{
+    /// <summary>
+    /// Default abilities, they will be added at start.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<EntityPrototype>> BaseVampireActions = new()
+    {
+        "ActionVampireToggleFangs",
+        "ActionVampireGlare",
+        "ActionVampireRejuvenateI"
+    };
+
+    /// <summary>
+    /// Lifetime total blood drunk. Used for unlocking abilities.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public int TotalBlood = 0;
+
+    /// <summary>
+    /// Total blood drunk by this vampire, used for blood cost calculations.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public int DrunkBlood = 0;
+
+    /// <summary>
+    /// Determines whether the fangs are extended or not.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
+    public bool FangsExtended = false;
+
+    public float SipAmount = 10f;
+
+    /// <summary>
+    /// Current blood fullness used instead of normal food needs.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
+    public float BloodFullness = 90f;
+
+    /// <summary>
+    /// Max amount of blood which can be drained from one person.
+    /// </summary>
+    [DataField]
+    public float MaxBloodFullness = 200f;
+
+    /// <summary>
+    /// Decay rate per second for blood fullness.
+    /// </summary>
+    public float FullnessDecayPerSecond = 0.25f;
+
+    /// <summary>
+    /// Action ids of the vampire, used as VampireClassID -> ActionID's.
+    /// </summary>
+    public Dictionary<string, List<string>> Actions = new();
+
+    /// <summary>
+    /// Action entities of the vampire, used as ActionId -> EntityUid.
+    /// </summary>
+    public Dictionary<string, EntityUid> ActionEntities = new();
+
+    /// <summary>
+    /// Determines whether the vampire is drinking at the moment
+    /// </summary>
+    public bool IsDrinking = false;
+
+    /// <summary>
+    /// tracking how much blood was drunk from each target.
+    /// </summary>
+    public Dictionary<EntityUid, int> BloodDrunkFromTargets = new();
+
+    public int MaxBloodPerTarget = 200;
+    public EntityUid? SpawnedClaws = null;
+    [DataField]
+    public int ClassSelectThreshold = 150;
+    [DataField]
+    public int RejuvenateIIThreshold = 200;
+    [DataField]
+    public int ActionRefreshThreshold = 5;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public int LastRefreshedBloodLevel = -1;
+
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
+    public bool FullPower = false;
+
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
+    public int UniqueHumanoidVictims = 0;
+
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
+    public VampireClassType ChosenClass = VampireClassType.None;
+
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
+    [AutoPausedField]
+    public TimeSpan NextUpdate;
+
+    [DataField]
+    public TimeSpan UpdateDelay = TimeSpan.FromSeconds(1);
+}
+
+[RegisterComponent]
+public sealed partial class ShadowSnareBlindMarkerComponent : Component { }
+
+[RegisterComponent]
+public sealed partial class ShadowSnareEnsnareComponent : Component
+{
+    [DataField]
+    public EntityUid Victim;
+}

@@ -197,8 +197,8 @@
         type: StoreBoundUserInterface
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
-      enum.VampireMutationUiKey.Key:
-        type: VampireMutationBoundUserInterface
+      enum.VampireClassUiKey.Key: # SL
+        type: VampireClassBui
       enum.ThavenMoodsUiKey.Key: # impstation edit
         type: ThavenMoodsBoundUserInterface
         requireInputValidation: false

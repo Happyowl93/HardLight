@@ -232,6 +232,10 @@
   id: Locker
 
 - type: Tag
+  id: VampireBarrier
+
+
+- type: Tag
   id: BorgModuleSecurity
 
 - type: Tag
