@@ -22047,5 +22047,12 @@ Entries:
   id: 228600
   time: '2025-11-27T01:33:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2286
+- author: Arkanic
+  changes:
+  - message: Fix operating computers speaking while unanchored
+    type: Fix
+  id: 229700
+  time: '2025-11-28T23:10:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2297
 Order: -1
 
