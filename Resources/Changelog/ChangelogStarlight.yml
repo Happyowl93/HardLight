@@ -22726,5 +22726,34 @@ Entries:
   id: 224101
   time: '2025-11-30T23:11:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2241
+- author: CawsForConcern
+  changes:
+  - message: (Box) Chemical locker to Brigmedic (for plasma, labelers, etc)
+    type: Add
+  id: 224000
+  time: '2025-11-30T23:26:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2240
+- author: CawsForConcern
+  changes:
+  - message: (Box) Recharger in Brigmedic
+    type: Add
+  id: 224001
+  time: '2025-11-30T23:26:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2240
+- author: CawsForConcern
+  changes:
+  - message: (Box) Brigmedic was using the 'empty' Chemical dispenser instead of the
+      filled one
+    type: Fix
+  id: 224002
+  time: '2025-11-30T23:26:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2240
+- author: CawsForConcern
+  changes:
+  - message: (Box) HOP fax was unlabeled
+    type: Fix
+  id: 224003
+  time: '2025-11-30T23:26:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2240
 Order: -1
 
