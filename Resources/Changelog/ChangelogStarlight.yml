@@ -22777,5 +22777,13 @@ Entries:
   id: 223000
   time: '2025-11-30T23:26:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2230
+- author: nomad.marshall
+  changes:
+  - message: lowered TC cost of syndicate chemical kit down to 3tc (2tc discounted),
+      from 4tc (3tc discounted)
+    type: Tweak
+  id: 222500
+  time: '2025-11-30T23:26:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2225
 Order: -1
 
