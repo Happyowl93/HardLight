@@ -22430,5 +22430,16 @@ Entries:
   id: 225400
   time: '2025-11-30T22:51:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2254
+- author: Conflee
+  changes:
+  - message: Added 'Under Construction' Station, an admin-only station for event use.
+      "forcemap StarlightStationBuilding". Designed for events where crew builds the
+      station. Working power, atmos, bridge, and cargo, plus tons of supplies locked
+      up in rooms or heaped in the open for use. 20 unlocked Space Hazard Hardsuits
+      in the EVA room. 100k on Cargo's desk.
+    type: Add
+  id: 213300
+  time: '2025-11-30T22:51:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2133
 Order: -1
 
