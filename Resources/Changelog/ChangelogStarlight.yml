@@ -22598,5 +22598,118 @@ Entries:
   id: 224201
   time: '2025-11-30T23:11:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2242
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Missing Engineering request computer
+    type: Add
+  id: 224300
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Missing Medical request computer
+    type: Add
+  id: 224301
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Missing Service request computer
+    type: Add
+  id: 224302
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Missing Science request computer
+    type: Add
+  id: 224303
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Fax machine in Bridge
+    type: Add
+  id: 224304
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Robotics airlocks to Robotics
+    type: Add
+  id: 224305
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Surgery airlocks to Surgery
+    type: Add
+  id: 224306
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Recharger to Brigmedic
+    type: Add
+  id: 224307
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Cell recharger in Chemistry
+    type: Add
+  id: 224308
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) New furniture!
+    type: Add
+  id: 224309
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Document printer to Medical
+    type: Add
+  id: 224310
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Document printer to Library
+    type: Add
+  id: 224311
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Wrong EVA doors on EVA storage
+    type: Fix
+  id: 224312
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Wrong SEC doors throughout SEC
+    type: Fix
+  id: 224313
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Missing station beacon for Reporter's office
+    type: Fix
+  id: 224314
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Origin) Nanomed vending machine was mapped near evac (was meant to be
+      a Civilian variant)
+    type: Fix
+  id: 224315
+  time: '2025-11-30T23:11:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2243
 Order: -1
 
