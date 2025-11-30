@@ -17,3 +17,13 @@
   cost: 1000
   category: cargoproduct-category-name-service
   group: market
+
+- type: cargoProduct
+  id: CrateLabellerRefillPaper
+  icon:
+    sprite: _Starlight/Objects/Materials/paper_roll.rsi
+    state: icon_100
+  product: CrateLabellerRefillPaperFilled
+  cost: 1000
+  category: cargoproduct-category-name-service
+  group: market

@@ -5,3 +5,11 @@
   icon: { sprite: Objects/Misc/bureaucracy.rsi, state: paper }
   color: "#ffffff"
   price: 0.05
+
+- type: material
+  id: LabellerRefillPaper
+  stackEntity: LabellerRefillPaper
+  name: materials-labeller-refill-paper
+  icon: { sprite: _Starlight/Objects/Materials/paper_roll.rsi, state: icon_100 }
+  color: "#ffffff"
+  price: 100
