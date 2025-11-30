@@ -29,7 +29,7 @@ public sealed partial class StarlightCCVars
         CVarDef.Create("game.fuck_mapping", false, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
     /// <summary>
-    /// Whether the `mapping` command is disabled cause it fucks with the event scheduler and admins just cant stop touching it.
+    /// Amount of required fully charged rifts for automatic gamma calling
     /// </summary>
     public static readonly CVarDef<int> AutogammaRiftCount =
         CVarDef.Create("game.autogamma_minimum_rifts", 2, CVar.SERVERONLY);
