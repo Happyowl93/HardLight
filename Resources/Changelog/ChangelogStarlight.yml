@@ -22177,5 +22177,35 @@ Entries:
   id: 222101
   time: '2025-11-30T21:12:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2221
+- author: Conflee
+  changes:
+  - message: Added scratches to heavy use airlocks like the plain glass, plain, maints,
+      etc.
+    type: Tweak
+  id: 228400
+  time: '2025-11-30T21:27:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2284
+- author: Conflee
+  changes:
+  - message: Reduced saturation of very bright airlocks like engie/atmos, paramedic,
+      and security.
+    type: Tweak
+  id: 228401
+  time: '2025-11-30T21:27:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2284
+- author: Conflee
+  changes:
+  - message: Made all white airlocks slightly darker, science, medical, etc.
+    type: Tweak
+  id: 228402
+  time: '2025-11-30T21:27:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2284
+- author: Conflee
+  changes:
+  - message: (Note, airlocks pending potential redesign/edits still, subject to change)
+    type: Tweak
+  id: 228403
+  time: '2025-11-30T21:27:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2284
 Order: -1
 
