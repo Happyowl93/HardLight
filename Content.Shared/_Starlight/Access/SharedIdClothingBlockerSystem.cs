@@ -1,9 +1,8 @@
-using Content.Shared.Inventory.Events;
-using Content.Shared.DoAfter;
 using Content.Shared.Clothing.Components;
-using Robust.Shared.Localization;
+using Content.Shared.DoAfter;
+using Content.Shared.Inventory.Events;
 
-namespace Content.Shared._Starlight.IdClothingBlocker;
+namespace Content.Shared._Starlight.Access;
 
 public abstract class SharedIdClothingBlockerSystem : EntitySystem
 {
@@ -45,10 +44,7 @@ public abstract class SharedIdClothingBlockerSystem : EntitySystem
         PopupClient(Loc.GetString("access-clothing-blocker-notify-unauthorized-access"), uid);
     }
     
-    protected virtual bool HasJobAccess(EntityUid wearer, IdClothingBlockerComponent component)
-    {
-        return !component.IsBlocked;
-    }
+    protected virtual bool HasJobAccess(EntityUid wearer, IdClothingBlockerComponent component) => !component.IsBlocked;
 
     private void OnGotEquipped(EntityUid uid, IdClothingBlockerComponent component, GotEquippedEvent args)
     {

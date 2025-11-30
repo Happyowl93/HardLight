@@ -1,6 +1,6 @@
-using Content.Shared._Starlight.IdClothingBlocker;
+using Content.Shared._Starlight.Access;
 
-namespace Content.Server._Starlight.IdClothingBlocker;
+namespace Content.Server._Starlight.Access;
 
 /// <summary>
 /// Server-side implementation of IdClothingFrozenSystem

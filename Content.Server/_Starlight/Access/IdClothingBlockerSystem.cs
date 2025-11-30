@@ -1,9 +1,6 @@
 using Content.Server.Popups;
-using Content.Shared.Popups;
-using Content.Shared._Starlight.IdClothingBlocker;
-using Content.Server.Access.Components;
+using Content.Shared._Starlight.Access;
 using Content.Shared.Access.Components;
-using Content.Shared.PDA;
 using Content.Shared.Access.Systems;
 using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
@@ -11,15 +8,15 @@ using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
-using Robust.Shared.Localization;
+using Content.Shared.Popups;
 
-namespace Content.Server._Starlight.IdClothingBlocker;
+namespace Content.Server._Starlight.Access;
 
 public sealed class IdClothingBlockerSystem : SharedIdClothingBlockerSystem
 {
     [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly AccessReaderSystem _accessReader = default!;
-
+    [Dependency] private readonly SharedIdCardSystem _card = default!;
+    
     public override void Initialize()
     {
         base.Initialize();
@@ -88,56 +85,10 @@ public sealed class IdClothingBlockerSystem : SharedIdClothingBlockerSystem
     {
         if (component.AllowedJobs == null)
             return true;
-
-        if (!_accessReader.FindAccessItemsInventory(wearer, out var items))
-        {
-            return false;
-        }
-
-        foreach (var item in items)
-        {
-            if (TryComp<PresetIdCardComponent>(item, out var preset))
-            {
-                if (preset.JobName != null && component.AllowedJobs.Contains(preset.JobName))
-                {
-                    return true;
-                }
-            }
-
-            // ID Card
-            if (TryComp<IdCardComponent>(item, out var id))
-            {
-                if (id.JobPrototype != null && component.AllowedJobs.Contains(id.JobPrototype.Value))
-                {
-                    return true;
-                }
-            }
-
-            // PDA
-            if (TryComp<PdaComponent>(item, out var pda))
-            {
-                if (pda.ContainedId != null)
-                {
-                    if (TryComp(pda.ContainedId, out preset))
-                    {
-                        if (preset.JobName != null && component.AllowedJobs.Contains(preset.JobName))
-                        {
-                            return true;
-                        }
-                    }
-
-                    if (TryComp(pda.ContainedId, out id))
-                    {
-                        if (id.JobPrototype != null && component.AllowedJobs.Contains(id.JobPrototype.Value))
-                        {
-                            return true;
-                        }
-                    }
-                }
-            }
-        }
-
-        return false;
+        
+        _card.TryFindIdCard(wearer, out var card);
+        TryComp<AccessComponent>(card.Owner, out var access);
+        return access != null && access.Tags.Overlaps(component.AllowedJobs);
     }
 
     // We assume access might have changed when a hand or inventory is equipped or unequipped

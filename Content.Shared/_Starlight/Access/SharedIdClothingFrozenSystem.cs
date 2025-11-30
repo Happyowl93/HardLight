@@ -1,8 +1,8 @@
+using Content.Shared.ActionBlocker;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Movement.Events;
-using Content.Shared.ActionBlocker;
 
-namespace Content.Shared._Starlight.IdClothingBlocker;
+namespace Content.Shared._Starlight.Access;
 
 /// <summary>
 /// System handling being blocked by equipment and lack of permissions to use it.
