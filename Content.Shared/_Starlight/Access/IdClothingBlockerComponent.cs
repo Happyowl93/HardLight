@@ -1,9 +1,9 @@
-using Content.Shared.Roles;
+using Content.Shared.Access;
 using Robust.Shared.Audio;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Starlight.IdClothingBlocker;
+namespace Content.Shared._Starlight.Access;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class IdClothingBlockerComponent : Component
@@ -11,8 +11,8 @@ public sealed partial class IdClothingBlockerComponent : Component
     [DataField("isBlocked")] [AutoNetworkedField]
     public bool IsBlocked = false;
 
-    [DataField("allowedJobs", customTypeSerializer: typeof(PrototypeIdHashSetSerializer<JobPrototype>))]
-    public HashSet<string>? AllowedJobs = null;
+    [DataField("allowedJobs")]
+    public List<ProtoId<AccessLevelPrototype>>? AllowedJobs = new();
 
     [DataField("beepSound")]
     public SoundSpecifier BeepSound = new SoundPathSpecifier("/Audio/Effects/beep1.ogg");

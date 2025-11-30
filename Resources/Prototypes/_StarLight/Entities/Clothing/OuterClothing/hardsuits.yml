@@ -106,7 +106,7 @@
   parent: [ ClothingOuterHardsuitBase, BaseSalvageContraband ]
   id: ClothingOuterHardsuitMercenary
   name: mercenary hardsuit
-  description: It's a hardsuit. It could stop a bullet. It's sealed with top of the line duct tape. 
+  description: It's a hardsuit. It could stop a bullet. It's sealed with top of the line duct tape.
   components:
     - type: Sprite
       sprite: _Starlight/Clothing/OuterClothing/Hardsuits/mercenary.rsi
@@ -254,8 +254,8 @@
             - PowerCell
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitInfiltration
-    
-    
+
+
 #CCNT Consortium medics
 - type: entity
   parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndieMedic ] #sl Change
@@ -382,9 +382,8 @@
     zombificationResistanceCoefficient: 0.50
   - type: IdClothingBlocker
     allowedJobs:
-      - SecurityOfficer
-      - Brigmedic
-      - Warden
+      - Security
+      - Armory
       - HeadOfSecurity
       - Captain
       - Detective

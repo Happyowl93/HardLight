@@ -212,7 +212,7 @@
     - Janitor
     - Instruments
     - Equipment
-    - StarlightProtolatheLootable
+    - StarlightProtolatheLootable # Starlight start
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - StarlightSurgeryDynamic
@@ -220,12 +220,14 @@
     - StarlightCyberOrgansDynamic
     - StarlightImplantDynamic
     - StarlightBudgetCyberOrgansDynamic
-
     - StarlightSecurityAmmoDynamic
     - StarlightSecurityExplosives
     - StarlightSecurityEquipment
     - StarlightSecurityWeapons
     - StarlightDefenseStatic
+    emagStaticPacks:
+    - StarlightSecurityEmagWeaponsStatic
+    - StarlightSecurityAmmoStatic # Starlight end
 
 - type: entity
   id: ProtolatheHyperConvection

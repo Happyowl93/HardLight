@@ -343,7 +343,7 @@
 
 - type: entity
   id: BaseBorgChassisSyndicate
-  parent: BaseBorgChassis
+  parent: BaseBorgChassisNotIonStormable
   abstract: true
   components:
   - type: TextToSpeech
