@@ -22156,5 +22156,12 @@ Entries:
   id: 229300
   time: '2025-11-30T21:11:55.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2293
+- author: Penguinwizzard
+  changes:
+  - message: Librarians now can understand and speak all non-animal crew languages.
+    type: Add
+  id: 229100
+  time: '2025-11-30T21:12:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2291
 Order: -1
 
