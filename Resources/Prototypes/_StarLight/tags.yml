@@ -290,3 +290,9 @@
 
 - type: Tag
   id: WallmountMassScannerElectronics
+ 
+- type: Tag
+  id: SyndicateJawsOfLife
+  
+- type: Tag
+  id: PrototypeJawsOfLife
