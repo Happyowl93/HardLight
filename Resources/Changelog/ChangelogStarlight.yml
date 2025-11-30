@@ -22582,5 +22582,21 @@ Entries:
   id: 224405
   time: '2025-11-30T23:10:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2244
+- author: CawsForConcern
+  changes:
+  - message: (Exo) TEG now uses reinforced plasma windows instead of resin windows.
+      Should be harder to accidentally explode via Delta-P
+    type: Tweak
+  id: 224200
+  time: '2025-11-30T23:11:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2242
+- author: CawsForConcern
+  changes:
+  - message: (Exo) Moved the radiation collectors slightly closer to the chamber,
+      should make singularity power generation more reliable
+    type: Tweak
+  id: 224201
+  time: '2025-11-30T23:11:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2242
 Order: -1
 
