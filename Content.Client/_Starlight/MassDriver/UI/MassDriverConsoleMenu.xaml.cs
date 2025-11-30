@@ -50,7 +50,7 @@ public sealed partial class MassDriverConsoleMenu : DefaultWindow
         {
             var ThrowSpeed = Normalize(ThrowSpeedSlider.Value);
             OnThrowSpeed?.Invoke(ThrowSpeed);
-            ThrowSpeedCurrentValue.Text = ThrowSpeed.ToString() + " m/s";
+            ThrowSpeedCurrentValue.Text = ThrowSpeed.ToString() + Loc.GetString("mass-driver-ui-units-speed");
         };
     }
 
