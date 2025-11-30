@@ -225,9 +225,8 @@ public sealed class MassDriverSystem : EntitySystem
     /// </summary>
     private void OnModeChanged(EntityUid uid, MassDriverConsoleComponent component, MassDriverModeMessage args)
     {
-        foreach (var massDriverNetEntity in component.MassDrivers)
+        foreach (var massDriverUid in component.MassDrivers)
         {
-            var massDriverUid = massDriverNetEntity;
             if (!TryComp<MassDriverComponent>(massDriverUid, out var massDriverComponent))
                 continue;
 
@@ -236,7 +235,7 @@ public sealed class MassDriverSystem : EntitySystem
 
             if (massDriverComponent.Mode == MassDriverMode.Auto)
                 EnsureComp<ActiveMassDriverComponent>(massDriverUid);
-            else if (HasComp<ActiveMassDriverComponent>(massDriverUid))
+            else
                 RemComp<ActiveMassDriverComponent>(massDriverUid);
         }
 
