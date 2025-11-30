@@ -22770,5 +22770,12 @@ Entries:
   id: 223901
   time: '2025-11-30T23:26:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2239
+- author: Penguinwizzard
+  changes:
+  - message: Added the ability to repair damaged hull plates with a welder.
+    type: Add
+  id: 223000
+  time: '2025-11-30T23:26:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2230
 Order: -1
 
