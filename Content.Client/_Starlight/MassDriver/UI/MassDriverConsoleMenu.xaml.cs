@@ -14,6 +14,9 @@ public sealed partial class MassDriverConsoleMenu : DefaultWindow
     public event Action<float>? OnThrowSpeed;
     public event Action<float>? OnThrowDistance;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MassDriverConsoleMenu"/> class.
+    /// </summary>/
     public MassDriverConsoleMenu()
     {
         RobustXamlLoader.Load(this);
@@ -43,20 +46,23 @@ public sealed partial class MassDriverConsoleMenu : DefaultWindow
         {
             var ThrowDistance = Normalize(ThrowDistanceSlider.Value);
             OnThrowDistance?.Invoke(ThrowDistance);
-            ThrowDistanceCurrentValue.Text = ThrowDistance.ToString() + " m";
+            ThrowDistanceCurrentValue.Text = ThrowDistance.ToString() + $" {Loc.GetString("mass-driver-ui-units-distance")}";
         };
 
         ThrowSpeedSlider.OnValueChanged += _ =>
         {
             var ThrowSpeed = Normalize(ThrowSpeedSlider.Value);
             OnThrowSpeed?.Invoke(ThrowSpeed);
-            ThrowSpeedCurrentValue.Text = ThrowSpeed.ToString() + Loc.GetString("mass-driver-ui-units-speed");
+            ThrowSpeedCurrentValue.Text = ThrowSpeed.ToString() + $" {Loc.GetString("mass-driver-ui-units-speed")}";
         };
     }
 
+    /// <summary>
+    /// Update UI state
+    /// </summary>
     public void UpdateState(MassDriverComponentState state)
     {
-        if (state.MassDriverLinked)
+        if (state.Console != null)
         {
             DisabledPanel.Visible = false;
             DisabledPanel.MouseFilter = MouseFilterMode.Ignore;

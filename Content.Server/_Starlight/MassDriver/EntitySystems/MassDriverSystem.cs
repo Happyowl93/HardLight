@@ -5,6 +5,7 @@ using Content.Shared.MassDriver.EntitySystems;
 using Content.Shared._Starlight.MassDriver;
 using Content.Shared.DeviceLinking.Events;
 using Robust.Shared.Utility;
+using Robust.Shared.GameStates;
 
 namespace Content.Server._Starlight.MassDriver.EntitySystems;
 
@@ -18,12 +19,12 @@ public sealed class MassDriverSystem : SharedMassDriverSystem
         base.Initialize();
 
         // UI for console -_-
-        SubscribeLocalEvent<MassDriverConsoleComponent, ComponentInit>(OnInit); // Update state on init
-        SubscribeLocalEvent<MassDriverConsoleComponent, BoundUIOpenedEvent>(OnBoundUiOpened); // Update state on ui open
+        SubscribeLocalEvent<MassDriverComponent, ComponentGetState>(OnGetState);
         SubscribeLocalEvent<MassDriverConsoleComponent, MassDriverModeMessage>(OnModeChanged);
         SubscribeLocalEvent<MassDriverConsoleComponent, MassDriverLaunchMessage>(OnLaunch);
         SubscribeLocalEvent<MassDriverConsoleComponent, MassDriverThrowSpeedMessage>(OnThrowSpeedChanged);
         SubscribeLocalEvent<MassDriverConsoleComponent, MassDriverThrowDistanceMessage>(OnThrowDistanceChanged);
+        SubscribeLocalEvent<MassDriverConsoleComponent, BoundUIOpenedEvent>(OnUIOpen);
 
         // Device Linking
         SubscribeLocalEvent<MassDriverConsoleComponent, NewLinkEvent>(OnNewLink);
@@ -47,10 +48,9 @@ public sealed class MassDriverSystem : SharedMassDriverSystem
 
         component.MassDrivers.Add(args.Sink);
 
+        driver.Console = uid;
         Dirty(args.Sink, driver);
         Dirty(uid, component);
-
-        UpdateUserInterface(uid, component.MassDrivers.FirstOrNull());
     }
 
     /// <summary>
@@ -63,6 +63,12 @@ public sealed class MassDriverSystem : SharedMassDriverSystem
     {
         if (args.Port != component.LinkingPort || !component.MassDrivers.Contains(args.Sink))
             return;
+
+        if (TryComp<MassDriverComponent>(args.Sink, out var driver))
+        {
+            driver.Console = null;
+            Dirty(args.Sink, driver);
+        }
 
         component.MassDrivers.Remove(args.Sink);
         Dirty(uid, component);
@@ -84,6 +90,9 @@ public sealed class MassDriverSystem : SharedMassDriverSystem
 
     #region Logic
 
+    /// <summary>
+    /// Change power load of mass driver
+    /// </summary>
     public override void ChangePowerLoad(EntityUid uid, MassDriverComponent component, float powerLoad)
     {
         if (TryComp<ApcPowerReceiverComponent>(uid, out var receiver))
@@ -95,19 +104,22 @@ public sealed class MassDriverSystem : SharedMassDriverSystem
     #region UI
 
     /// <summary>
-    /// Update ui on init
+    /// Handles the component state being requested from the server.
     /// </summary>
-    private void OnInit(EntityUid uid, MassDriverConsoleComponent component, ComponentInit args)
+    private void OnGetState(EntityUid uid, MassDriverComponent component, ref ComponentGetState args)
     {
-        UpdateUserInterface(uid, component.MassDrivers.FirstOrNull());
-    }
-
-    /// <summary>
-    /// Update ui on ui open
-    /// </summary>
-    private void OnBoundUiOpened(EntityUid uid, MassDriverConsoleComponent component, BoundUIOpenedEvent args)
-    {
-        UpdateUserInterface(uid, component.MassDrivers.FirstOrNull());
+        args.State = new MassDriverComponentState()
+        {
+            MaxThrowSpeed = component.MaxThrowSpeed,
+            MaxThrowDistance = component.MaxThrowDistance,
+            MinThrowSpeed = component.MinThrowSpeed,
+            MinThrowDistance = component.MinThrowDistance,
+            CurrentThrowSpeed = component.CurrentThrowSpeed,
+            CurrentThrowDistance = component.CurrentThrowDistance,
+            CurrentMassDriverMode = component.Mode,
+            Console = GetNetEntity(component.Console),
+            Hacked = component.Hacked
+        };
     }
 
     /// <summary>
@@ -128,8 +140,6 @@ public sealed class MassDriverSystem : SharedMassDriverSystem
             else
                 RemComp<ActiveMassDriverComponent>(massDriverUid);
         }
-
-        UpdateUserInterface(uid, component.MassDrivers.FirstOrNull());
     }
 
     /// <summary>
@@ -148,7 +158,10 @@ public sealed class MassDriverSystem : SharedMassDriverSystem
     {
         foreach (var massDriverUid in component.MassDrivers)
             if (TryComp<MassDriverComponent>(massDriverUid, out var massDriverComponent))
+            {
                 massDriverComponent.CurrentThrowSpeed = Math.Clamp(args.Speed, massDriverComponent.MinThrowSpeed, massDriverComponent.MaxThrowSpeed);
+                Dirty(massDriverUid, massDriverComponent);
+            }
     }
 
     /// <summary>
@@ -158,46 +171,37 @@ public sealed class MassDriverSystem : SharedMassDriverSystem
     {
         foreach (var massDriverUid in component.MassDrivers)
             if (TryComp<MassDriverComponent>(massDriverUid, out var massDriverComponent))
+            {
                 massDriverComponent.CurrentThrowDistance = Math.Clamp(args.Distance, massDriverComponent.MinThrowDistance, massDriverComponent.MaxThrowDistance);
+                Dirty(massDriverUid, massDriverComponent);
+            }
     }
 
     /// <summary>
-    /// Updates Mass Driver Console UI
+    /// Handles the UI being opened to send the current state to the UI.
     /// </summary>
-    /// <param name="console">Mass Driver Console</param>
-    /// <param name="massDriver">Mass Driver</param>
-    /// <param name="component">Mass Driver Component</param>
-    private void UpdateUserInterface(EntityUid console, EntityUid? massDriver, MassDriverComponent? component = null)
+    private void OnUIOpen(EntityUid uid, MassDriverConsoleComponent component, BoundUIOpenedEvent args)
     {
-        if (!_ui.HasUi(console, MassDriverConsoleUiKey.Key))
+        if (!_ui.HasUi(uid, MassDriverConsoleUiKey.Key))
             return;
 
-        MassDriverComponentState state;
+        if (!TryComp<MassDriverComponent>(component.MassDrivers.FirstOrNull(), out var massDriver))
+            return;
 
-        if (massDriver != null && Resolve(massDriver.Value, ref component))
+        var state = new MassDriverComponentState()
         {
-            state = new MassDriverComponentState
-            {
-                MaxThrowSpeed = component.MaxThrowSpeed,
-                MaxThrowDistance = component.MaxThrowDistance,
-                MinThrowSpeed = component.MinThrowSpeed,
-                MinThrowDistance = component.MinThrowDistance,
-                CurrentThrowSpeed = component.CurrentThrowSpeed,
-                CurrentThrowDistance = component.CurrentThrowDistance,
-                CurrentMassDriverMode = component.Mode,
-                MassDriverLinked = true
+            MaxThrowSpeed = massDriver.MaxThrowSpeed,
+            MaxThrowDistance = massDriver.MaxThrowDistance,
+            MinThrowSpeed = massDriver.MinThrowSpeed,
+            MinThrowDistance = massDriver.MinThrowDistance,
+            CurrentThrowSpeed = massDriver.CurrentThrowSpeed,
+            CurrentThrowDistance = massDriver.CurrentThrowDistance,
+            CurrentMassDriverMode = massDriver.Mode,
+            Console = GetNetEntity(massDriver.Console),
+            Hacked = massDriver.Hacked
+        };
 
-            };
-        }
-        else
-        {
-            state = new MassDriverComponentState
-            {
-                MassDriverLinked = false
-            };
-        }
-
-        _ui.ServerSendUiMessage(console, MassDriverConsoleUiKey.Key, new MassDriverUpdateUIMessage(state));
+        _ui.ServerSendUiMessage(uid, MassDriverConsoleUiKey.Key, new MassDriverUpdateUIMessage(state)); // Update UI on Open
     }
     
     #endregion
