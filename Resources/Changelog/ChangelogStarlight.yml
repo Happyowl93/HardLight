@@ -22215,5 +22215,12 @@ Entries:
   id: 229000
   time: '2025-11-30T21:33:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2290
+- author: Fractalflower
+  changes:
+  - message: Tweaked vulpkanin drawlayers to bring them in line with other species
+    type: Fix
+  id: 228200
+  time: '2025-11-30T21:33:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2282
 Order: -1
 
