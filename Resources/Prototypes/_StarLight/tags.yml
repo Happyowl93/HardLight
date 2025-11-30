@@ -4,6 +4,9 @@
   id: Arachnid
 
 - type: Tag
+  id: AutoMender
+
+- type: Tag
   id: Avali
 
 - type: Tag
@@ -235,6 +238,9 @@
   id: BorgModuleSecurity
 
 - type: Tag
+  id: BorgModuleSyndicateStealth
+
+- type: Tag
   id: Disabler
 
 - type: Tag
@@ -284,3 +290,9 @@
 
 - type: Tag
   id: WallmountMassScannerElectronics
+ 
+- type: Tag
+  id: SyndicateJawsOfLife
+  
+- type: Tag
+  id: PrototypeJawsOfLife
