@@ -22540,5 +22540,47 @@ Entries:
   id: 224501
   time: '2025-11-30T23:10:15.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2245
+- author: CawsForConcern
+  changes:
+  - message: (Fland) Turret Controls for AI
+    type: Add
+  id: 224400
+  time: '2025-11-30T23:10:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2244
+- author: CawsForConcern
+  changes:
+  - message: (Fland) Edge firelocks instead of full firelocks on turnstiles
+    type: Tweak
+  id: 224401
+  time: '2025-11-30T23:10:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2244
+- author: CawsForConcern
+  changes:
+  - message: (Fland) Wrong doors on EVA Storage
+    type: Fix
+  id: 224402
+  time: '2025-11-30T23:10:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2244
+- author: CawsForConcern
+  changes:
+  - message: (Fland) Chief Engineer fax was unlabeled
+    type: Fix
+  id: 224403
+  time: '2025-11-30T23:10:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2244
+- author: CawsForConcern
+  changes:
+  - message: (Fland) Magistrate fax was unlabeled
+    type: Fix
+  id: 224404
+  time: '2025-11-30T23:10:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2244
+- author: CawsForConcern
+  changes:
+  - message: (Fland) Missing conveyor belt under Recycler in Disposals
+    type: Fix
+  id: 224405
+  time: '2025-11-30T23:10:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2244
 Order: -1
 
