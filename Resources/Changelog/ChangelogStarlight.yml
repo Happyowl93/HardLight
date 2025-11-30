@@ -22106,5 +22106,13 @@ Entries:
   id: 228701
   time: '2025-11-30T13:20:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2287
+- author: R3v3l4t1on
+  changes:
+  - message: Syndie borgs (except the derelict) can no longer be the victim of an
+      ion storm. Oops.
+    type: Fix
+  id: 222800
+  time: '2025-11-30T13:17:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2228
 Order: -1
 
