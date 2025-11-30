@@ -54,7 +54,7 @@ public sealed partial class MassDriverConsoleMenu : DefaultWindow
         };
     }
 
-    public void UpdateState(MassDriverUiState state)
+    public void UpdateState(MassDriverComponentState state)
     {
         if (state.MassDriverLinked)
         {

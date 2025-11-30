@@ -9,7 +9,6 @@ using Content.Shared.DeviceLinking.Events;
 using Content.Server.Power.Components;
 using Content.Shared.Audio;
 using Robust.Shared.Utility;
-using System.Diagnostics;
 
 namespace Content.Server._Starlight.MassDriver.EntitySystems;
 
@@ -31,7 +30,8 @@ public sealed class MassDriverSystem : EntitySystem
 
         // UI for console -_-
         SubscribeLocalEvent<MassDriverConsoleComponent, ComponentInit>(OnInit); // Update state on init
-        SubscribeLocalEvent<MassDriverConsoleComponent, MassDriverModeMessage>(OnModeChanged); // Update state on ui open
+        SubscribeLocalEvent<MassDriverConsoleComponent, BoundUIOpenedEvent>(OnBoundUiOpened); // Update state on ui open
+        SubscribeLocalEvent<MassDriverConsoleComponent, MassDriverModeMessage>(OnModeChanged);
         SubscribeLocalEvent<MassDriverConsoleComponent, MassDriverLaunchMessage>(OnLaunch);
         SubscribeLocalEvent<MassDriverConsoleComponent, MassDriverThrowSpeedMessage>(OnThrowSpeedChanged);
         SubscribeLocalEvent<MassDriverConsoleComponent, MassDriverThrowDistanceMessage>(OnThrowDistanceChanged);
@@ -61,7 +61,7 @@ public sealed class MassDriverSystem : EntitySystem
         Dirty(args.Sink, driver);
         Dirty(uid, component);
 
-        UpdateUserInterface(uid, args.Sink, driver);
+        UpdateUserInterface(uid, component.MassDrivers.FirstOrNull());
     }
 
     /// <summary>
@@ -133,7 +133,8 @@ public sealed class MassDriverSystem : EntitySystem
             }
             activeMassDriver.NextUpdateTime = _timing.CurTime + activeMassDriver.UpdateDelay;
 
-            Debug.Assert(_powerReceiver.IsPowered(uid));
+            if (!_powerReceiver.IsPowered(uid))
+                continue;
 
             var entities = new HashSet<EntityUid>();
             _lookup.GetEntitiesIntersecting(uid, entities);
@@ -201,11 +202,7 @@ public sealed class MassDriverSystem : EntitySystem
     /// </summary>
     private void OnInit(EntityUid uid, MassDriverConsoleComponent component, ComponentInit args)
     {
-        var massDriverUid = component.MassDrivers.FirstOrDefault(); // We use first mass driver to update UI state
-        if (TryComp<MassDriverComponent>(massDriverUid, out var driver))
-            UpdateUserInterface(uid, massDriverUid, driver);
-        else
-            UpdateUserInterface(uid, null, null);
+        UpdateUserInterface(uid, component.MassDrivers.FirstOrNull());
     }
 
     /// <summary>
@@ -213,11 +210,7 @@ public sealed class MassDriverSystem : EntitySystem
     /// </summary>
     private void OnBoundUiOpened(EntityUid uid, MassDriverConsoleComponent component, BoundUIOpenedEvent args)
     {
-        var massDriverUid = component.MassDrivers.FirstOrDefault(); // We use first mass driver to update UI state
-        if (TryComp<MassDriverComponent>(massDriverUid, out var driver))
-            UpdateUserInterface(uid, massDriverUid, driver);
-        else
-            UpdateUserInterface(uid, null, null);
+        UpdateUserInterface(uid, component.MassDrivers.FirstOrNull());
     }
 
     /// <summary>
@@ -239,9 +232,7 @@ public sealed class MassDriverSystem : EntitySystem
                 RemComp<ActiveMassDriverComponent>(massDriverUid);
         }
 
-        var firstMassDriver = component.MassDrivers.FirstOrDefault(); // We use first mass driver to update UI state
-        if (TryComp<MassDriverComponent>(firstMassDriver, out var driver))
-            UpdateUserInterface(uid, firstMassDriver, driver);
+        UpdateUserInterface(uid, component.MassDrivers.FirstOrNull());
     }
 
     /// <summary>
@@ -284,11 +275,11 @@ public sealed class MassDriverSystem : EntitySystem
         if (!_ui.HasUi(console, MassDriverConsoleUiKey.Key))
             return;
 
-        MassDriverUiState state;
+        MassDriverComponentState state;
 
         if (massDriver != null && Resolve(massDriver.Value, ref component))
         {
-            state = new MassDriverUiState
+            state = new MassDriverComponentState
             {
                 MaxThrowSpeed = component.MaxThrowSpeed,
                 MaxThrowDistance = component.MaxThrowDistance,
@@ -303,13 +294,13 @@ public sealed class MassDriverSystem : EntitySystem
         }
         else
         {
-            state = new MassDriverUiState
+            state = new MassDriverComponentState
             {
                 MassDriverLinked = false
             };
         }
 
-        _ui.SetUiState(console, MassDriverConsoleUiKey.Key, state);
+        _ui.ServerSendUiMessage(console, MassDriverConsoleUiKey.Key, new MassDriverUpdateUIMessage(state));
     }
     
     #endregion
