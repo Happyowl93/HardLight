@@ -7,3 +7,4 @@ stack-sepia-tile = sepia tile
 stack-terracotta-tile = terracotta tile
 stack-terracotta-diagonal-tile = diagonal terracotta tile
 stack-terracotta-small-tile = small terracotta tile
+stack-labeller-refill-paper = labeller refill paper

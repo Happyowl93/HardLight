@@ -65,7 +65,7 @@ public abstract class SharedTicketMachineSystem : EntitySystem
                 return;
             }
             component.dispenseEnabled = !component.dispenseEnabled;
-            _popupSystem.PopupPredicted("Dispense toggled.", args.User, null, PopupType.Medium);
+            _popupSystem.PopupPredicted(Loc.GetString("ticket-machine-dispense-toggled"), args.User, null, PopupType.Medium);
             args.Handled = true;
         }
     }
@@ -83,7 +83,7 @@ public abstract class SharedTicketMachineSystem : EntitySystem
 
         if (!component.dispenseEnabled)
         {
-            _popupSystem.PopupPredicted("Ticket dispensing is disabled.", args.User, null, PopupType.Medium);
+            _popupSystem.PopupPredicted(Loc.GetString("ticket-machine-dispense-disabled"), args.User, null, PopupType.Medium);
             args.Handled = true;
             return;
         }
@@ -183,14 +183,14 @@ public abstract class SharedTicketMachineSystem : EntitySystem
     {
         if (!args.IsInDetailsRange)
             return;
-        args.PushMarkup($"Displayed ticket: {component.displayNumber}");
+        args.PushMarkup(Loc.GetString("ticket-machine-displayed-ticket", ("number", component.displayNumber)));
     }
 
     private void OnTicketExamined(EntityUid uid, TicketComponent component, ref ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)
             return;
-        args.PushMarkup($"Ticket Number: {component.Number}");
+        args.PushMarkup(Loc.GetString("ticket-machine-ticket-number", ("number", component.Number == null ? "Unknown" : component.Number.Value.ToString())));
     }
 
     private void OnEjected(EntityUid uid, TicketMachineComponent component, EntRemovedFromContainerMessage args)
