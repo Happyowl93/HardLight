@@ -22261,5 +22261,13 @@ Entries:
   id: 228500
   time: '2025-11-30T21:46:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2285
+- author: Penguinwizzard
+  changes:
+  - message: Added emergency crew monitor to the paramedics' lockers, which can see
+      the status of wounded crew.
+    type: Add
+  id: 227300
+  time: '2025-11-30T21:46:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2273
 Order: -1
 
