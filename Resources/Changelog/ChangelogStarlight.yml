@@ -22232,5 +22232,12 @@ Entries:
   id: 228800
   time: '2025-11-30T21:46:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2288
+- author: Fractalflower
+  changes:
+  - message: Kobolds is lizards (They can now understand Draconic)
+    type: Add
+  id: 227700
+  time: '2025-11-30T21:46:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2277
 Order: -1
 
