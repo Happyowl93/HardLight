@@ -91,6 +91,14 @@
   - type: Storage
     grid:
     - 0,0,2,1
+  # 🌟Starlight - Start🌟
+    whitelist:
+      components:
+        - Smokable
+        - Matchstick
+        - Welder # for lighters
+        - Crayon # they're ciggie shaped
+    # 🌟Starlight - End🌟
   - type: StorageFill
     contents:
       - id: Matchstick
@@ -132,6 +140,9 @@
       - id: GorlexMatchstick
         amount: 24
   - type: Matchbox
+  - type: Tag
+    tags:
+    - Lighters #SL
 
 - type: entity
   name: match stick

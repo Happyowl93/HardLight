@@ -10,6 +10,7 @@
     understands:
     - GalacticCommon
     - Nekomimetic
+    - Cat
   - type: Absorbable
   - type: Speech
     speechVerb: Felionoid
@@ -33,12 +34,12 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      75: Critical
-      150: Dead
+      85: Critical
+      170: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      45: 0.7 
-      60: 0.5
+      51: 0.7 # 60%
+      68: 0.5 # 80%
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -81,7 +82,7 @@
     - AnomalyHost
     - Felionoid
   - type: Fixtures
-    fixtures: 
+    fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle

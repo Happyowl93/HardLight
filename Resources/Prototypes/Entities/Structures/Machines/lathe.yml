@@ -123,6 +123,7 @@
     - PartsStatic
     - AtmosStatic
     - CablesStatic
+    - PaperworkStatic
     - CargoStatic
     - MaterialsStatic
     - BasicChemistryStatic
@@ -131,10 +132,13 @@
     - ServiceStatic
     - PowerCellsStatic
     - ElectronicsStatic
+    dynamicPacks: # Starlight start
+    - StarlightAutolatheLootable
   - type: EmagLatheRecipes
     emagStaticPacks:
     - StarlightSecurityEmagWeaponsStatic
     - StarlightSecurityAmmoStatic
+    - StarlightSecurityAmmoEmagStatic # Starlight end
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -208,19 +212,22 @@
     - Janitor
     - Instruments
     - Equipment
-    - FauxTiles
+    - StarlightProtolatheLootable # Starlight start
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - StarlightSurgeryDynamic
     - StarlightCyberlimbDynamic
     - StarlightCyberOrgansDynamic
     - StarlightImplantDynamic
-
+    - StarlightBudgetCyberOrgansDynamic
     - StarlightSecurityAmmoDynamic
     - StarlightSecurityExplosives
     - StarlightSecurityEquipment
     - StarlightSecurityWeapons
     - StarlightDefenseStatic
+    emagStaticPacks:
+    - StarlightSecurityEmagWeaponsStatic
+    - StarlightSecurityAmmoStatic # Starlight end
 
 - type: entity
   id: ProtolatheHyperConvection
@@ -262,7 +269,7 @@
     - CargoBoardsStatic
     - MedicalBoardsStatic
     - EngineeringBoardsStatic
-    - CircuitFloorsStatic
+    - StarlightVendorBoards # Starlight
     dynamicPacks:
     - EngineeringBoards
     - CargoBoards
@@ -273,9 +280,14 @@
     - MechBoards
     - ShuttleBoards
     - StarlightMechBoards
+    - StarlightLawboards
+    - StarlightCircuitImprinterLootable
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - StarlightSecurityBoards
+    emagStaticPacks: # Starlight
+    - StarlightDangerousLawboards # Starlight
+    - StarlightSyndicateVendorBoards # Starlight
   - type: MaterialStorage
     whitelist:
       tags:
@@ -295,6 +307,17 @@
     sprite: Structures/Machines/circuit_imprinter_hypercon.rsi
   - type: Machine
     board: CircuitImprinterHyperConvectionMachineCircuitboard
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+  - type: EmagLatheRecipes
+    emagDynamicPacks:
+    - StarlightSecurityBoards
+    emagStaticPacks: # Starlight
+    - StarlightDangerousLawboards # Starlight
 
 - type: entity
   id: ExosuitFabricator
@@ -326,7 +349,6 @@
     - MechParts
     - MechEquipment
     - StarlightMechEquipment
-    - StarlightMechWeapon
     - StarlightSecurityMechs
     - StarlightMechParts
   - type: EmagLatheRecipes
@@ -379,6 +401,8 @@
     runningState: building
     staticPacks:
     - FriendlyCubesStatic
+    dynamicPacks:
+    - StarlightBiofabricatorLootable
   - type: EmagLatheRecipes
     emagStaticPacks:
     - HostileCubesStatic
@@ -408,10 +432,11 @@
     idleState: icon
     runningState: icon
     staticPacks:
-    - SecurityEquipmentStatic
+    - SecurityEquipmentStatic # Starlight start
     - SecurityPracticeStatic
     - StarlightSecurityAmmoStatic
-    - SecurityWeaponsStatic
+    - StarlightSecurityAmmoEmagStatic
+    - SecurityWeaponsStatic # Starlight end
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
@@ -424,6 +449,12 @@
     - SecurityDisablers
     - SecurityCyberLimbs
     - StarlightSecurityMechsWeapons
+    - StarlightSecurityTechFabLootable
+  #region Starlight secfab emagging
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - StarlightSyndicateModulesSecfab
+  #endregion Starlight secfab emagging
   - type: MaterialStorage
     whitelist:
       tags:
@@ -495,12 +526,15 @@
     - RollerBedsStatic
     - MedicalClothingStatic
     - EmptyMedkitsStatic
+    - StarlightMedicalStatic # Starlight
     dynamicPacks:
     - StarlightSurgeryDynamic
     - StarlightCyberlimbDynamic
     - StarlightCyberOrgansDynamic
     - StarlightImplantDynamic
     - Chemistry
+    - StarlightBudgetCyberOrgansDynamic
+    - StarlightMedicalTechFabLootable
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
@@ -541,6 +575,8 @@
     - Scarves
     - Carpets
     - Bedsheets
+    dynamicPacks:
+    - StarlightUniformPrinterLootable
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm
@@ -628,6 +664,27 @@
       staticPacks:
       - OreSmelting
       - RGlassSmelting
+    # starlight edit start - add magnet pickup to ore processors
+    - type: ItemToggle
+      onUse: false
+      onActivate: false
+      verbToggleOn: "Activate Magnet"
+      verbToggleOff: "Deactivate Magnet"
+      soundActivate:
+        collection: sparks
+        params:
+          variation: 0.250
+      soundDeactivate:
+        collection: sparks
+        params:
+          variation: 0.250
+    - type: AltUseToggle
+    - type: ComponentToggler
+      components: 
+      - type: MagnetPickup
+        range: 3
+        slotFlags: 0
+    # starlight edit end
 
 - type: entity
   parent: OreProcessor
@@ -704,7 +761,16 @@
     idleState: icon
     runningState: building
     staticPacks:
-    - FloorTilesStatic
+    - FloorDarkTilesStatic
+    - FloorSteelTilesStatic
+    - FloorWhiteTilesStatic
+    - FloorMaintsTilesStatic
+    - FloorWoodTilesStatic
+    - FloorConcreteTilesStatic
+    - CircuitFloorsStatic
+    - FloorMarbleTilesStatic
+    dynamicPacks:
+    - FauxTiles
   - type: MaterialStorage
     whitelist:
       tags:

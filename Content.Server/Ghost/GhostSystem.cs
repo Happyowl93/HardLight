@@ -1,9 +1,10 @@
-using System.Linq;
+﻿using System.Linq;
 using System.Numerics;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
+using Content.Server.Ghost.Roles;
 using Content.Server.Mind;
 using Content.Server.Roles.Jobs;
 using Content.Shared.Actions;
@@ -68,6 +69,8 @@ namespace Content.Server.Ghost
         [Dependency] private readonly TagSystem _tag = default!;
         [Dependency] private readonly NameModifierSystem _nameMod = default!;
 
+        [Dependency] private readonly NewLifeSystem _newLifeSystem = default!;
+
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
 
@@ -113,7 +116,7 @@ namespace Content.Server.Ghost
             // If component not deleting they can see ghosts.
             if (ent.Comp.LifeStage <= ComponentLifeStage.Running)
             {
-                args.VisibilityMask |= (int)VisibilityFlags.Ghost;
+                args.VisibilityMask |= (int)VisibilityFlags.Ghost | (int)VisibilityFlags.Net; // 🌟Starlight🌟
             }
         }
 
@@ -597,6 +600,15 @@ namespace Content.Server.Ghost
 
             if (ghost == null)
                 return false;
+
+            //starlight start
+            //if we got here, ghosting was successful
+            //we now need to update the new life system about the new time of ghosting
+            if (mind.UserId.HasValue)
+            {
+                _newLifeSystem.SaveGhostTime(mind.UserId.Value, _gameTiming.CurTime);
+            }
+            //starlight end
 
             return true;
         }

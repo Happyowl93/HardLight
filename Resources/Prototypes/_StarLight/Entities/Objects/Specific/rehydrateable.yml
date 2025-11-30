@@ -14,10 +14,10 @@
 
 - type: entity
   parent: RehydratableAnimalCube
-  id: ShadowBorgiCube
-  name: shadow borgi cube
-  description: Just add water! BORK!
+  id: ScurretCube
+  name: scurret cube
+  description: Just add rain!
   components:
   - type: Rehydratable
     possibleSpawns:
-    - ShadowBorgiChassis
+    - MobEmotionalSupportScurret

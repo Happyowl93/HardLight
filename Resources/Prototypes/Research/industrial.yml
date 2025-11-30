@@ -15,6 +15,7 @@
   - OreProcessorIndustrialMachineCircuitboard
   - ClothingMaskWeldingGas
   - ClothingShoesBootsJump
+  - MechEquipmentDrill
   radioChannels:
   - Supply
 
@@ -126,6 +127,7 @@
   - ThrusterMachineCircuitboard
   - GyroscopeMachineCircuitboard
   - MiniGravityGeneratorCircuitboard
+  - WallmountMassScannerElectronics # Starlight
   radioChannels:
   - Engineering
 

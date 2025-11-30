@@ -34,6 +34,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Server._NullLink.PlayerData;
+using Content.Shared._Starlight.Language.Components;
+using Content.Shared._Starlight.Language.Systems;
 
 namespace Content.Server.GameTicking
 {
@@ -367,14 +369,19 @@ namespace Content.Server.GameTicking
             {
                 AddComp<OwOAccentComponent>(mob);
             }
-            if (player.UserId == new Guid("{c69211d4-1a75-4e57-b539-c90243e2ceda}"))
+            if (player.UserId == new Guid("{c69211d4-1a75-4e57-b539-c90243e2ceda}")) // Sparlight Start
             {
                 EntityManager.EnsureComponent<PolymorphableComponent>(mob);
+                EntityManager.RemoveComponent<LanguageSpeakerComponent>(mob);
+                EntityManager.RemoveComponent<LanguageKnowledgeComponent>(mob);
                 mob = _polymorphSystem.PolymorphEntity(mob, "PermanentCorgiMorph") ?? mob;
                 EntityManager.RemoveComponent<PolymorphedEntityComponent>(mob);
-                var accent = EntityManager.EnsureComponent<ReplacementAccentComponent>(mob);
-                accent.Accent = "dog";
-            }
+                var speaker = EntityManager.EnsureComponent<LanguageSpeakerComponent>(mob);
+                var knowledge = EntityManager.EnsureComponent<LanguageKnowledgeComponent>(mob);
+                speaker.SpokenLanguages.Remove(SharedLanguageSystem.FallbackLanguagePrototype);
+                knowledge.SpokenLanguages = speaker.SpokenLanguages;
+                knowledge.UnderstoodLanguages = speaker.UnderstoodLanguages;
+            } // Starlight End
 
 
             _stationJobs.TryAssignJob(station, jobPrototype, player.UserId);

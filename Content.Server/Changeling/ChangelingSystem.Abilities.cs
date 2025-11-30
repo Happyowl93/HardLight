@@ -11,22 +11,23 @@ using Content.Shared.Damage;
 using Robust.Shared.Prototypes;
 using Content.Shared.Damage.Prototypes;
 using Content.Server.Objectives.Components;
-using Content.Server.Light.Components;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Stealth.Components;
 using Content.Shared.Damage.Components;
-using Content.Server.Radio.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Flash.Components;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Mindshield.FakeMindShield;
 using Content.Shared.StatusEffect;
 using Content.Shared.Light.Components;
-using Content.Shared.Changeling.Devour;
 using Content.Shared.Actions.Events;
 using Content.Shared.RetractableItemAction;
+using Content.Shared.Changeling.Systems;
+using Content.Shared.Changeling.Components;
+using Content.Server.Changeling.Systems;
+using Content.Shared.Humanoid; // Starlight edit
 
 namespace Content.Server.Changeling;
 
@@ -140,12 +141,19 @@ public sealed partial class ChangelingSystem : EntitySystem
             bonusEvolutionPoints += 10;
             comp.MaxBiomass += targetComp.MaxBiomass / 2;
         }
-        else
+        else if (HasComp<HumanoidAppearanceComponent>(target))  // Starlight edit
         {
             popup = Loc.GetString("changeling-absorb-end-self");
             bonusChemicals += 10;
             bonusEvolutionPoints += 2;
         }
+        // Starlight edit start
+        else
+        {
+            popup = Loc.GetString("changeling-absorb-end-self");
+            bonusChemicals += 5;
+        }
+        // Starlight edit end
         TryStealDNA(uid, target, comp, true);
         comp.TotalAbsorbedEntities++;
 

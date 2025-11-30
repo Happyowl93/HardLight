@@ -5,11 +5,13 @@
   description: Some cultures find them terrifying, others crunchy on the teeth.
   components:
   # Starlight-start: Languages
+  - type: LanguageSpeaker
   - type: LanguageKnowledge
     speaks:
-    - Mouse
+    - Bat
     understands:
-    - Mouse
+    - Bat
+    - GalacticCommon
   # Starlight-end
   - type: MovementSpeedModifier
     baseWalkSpeed : 3
@@ -437,8 +439,6 @@
       - !type:GibBehavior
         recursive: false
   - type: NonSpreaderZombie
-  - type: SentienceTarget
-    flavorKind: station-event-random-sentience-flavor-organic
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Effects/bite.ogg
@@ -489,9 +489,14 @@
   # Starlight-start: Languages
   - type: LanguageKnowledge
     speaks:
-    - Moffic
+    - Mothroach
     understands:
     - Moffic
+    - Mothroach
+  # Starlight-end
+  # Starlight-start: Body emotes (wing flap!)
+  - type: BodyEmotes
+    soundsId: MothroachBodyEmotes
   # Starlight-end
   - type: GhostRole
     makeSentient: true
@@ -517,7 +522,7 @@
   - type: Speech
     speechVerb: Moth
     speechSounds: Squeak
-    allowedEmotes: ['Chitter', 'Squeak']
+    allowedEmotes: ['Chitter', 'Squeak', 'FlapWings'] # Starlight: Add wing flap
   - type: FaxableObject
     insertingState: inserting_mothroach
   - type: MothAccent
@@ -664,9 +669,9 @@
   # Starlight-start: Languages
   - type: LanguageKnowledge
     speaks:
-    - Sylvan
+    - Duck
     understands:
-    - Sylvan
+    - Duck
   # Starlight-end
   - type: Sprite
     drawdepth: Mobs
@@ -861,6 +866,7 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  - type: ZombieImmune
 
 - type: entity
   name: cow
@@ -1228,8 +1234,6 @@
   - type: Vocal
     sounds:
       Unsexed: Kangaroo
-  - type: Puller
-    needsHands: false
   - type: StaminaDamageOnHit
     damage: 8 #Stam damage values seem a bit higher than regular damage because of the decay, etc
     # This needs to be moved to boxinggloves
@@ -1359,8 +1363,6 @@
     spawned:
     - id: FoodMeat
       amount: 3
-  - type: Puller
-    needsHands: false
   - type: CanHostGuardian
   - type: NPCRetaliation
     attackMemoryLength: 10
@@ -1432,14 +1434,15 @@
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
   suffix: syndicate base
   components:
-  # Starlight-start: Languages
+  # Starlight-Start
+  - type: LanguageSpeaker
   - type: LanguageKnowledge
     speaks:
     - Ancestor
     understands:
     - Ancestor
     - GalacticCommon
-  # Starlight-end
+  # Starlight-End
   - type: NameIdentifier
     group: Monkey
   - type: SentienceTarget
@@ -1473,6 +1476,15 @@
   components:
     # make the player a traitor once its taken
   - type: VentCrawler
+  # Starlight-Start
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - Ancestor
+    understands:
+    - Ancestor
+    - GalacticCommon
+  # Starlight-End
   - type: AutoTraitor
     profile: TraitorReinforcement
 
@@ -1482,6 +1494,15 @@
   suffix: NukeOps
   components:
   - type: VentCrawler
+  # Starlight-Start
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - Ancestor
+    understands:
+    - Ancestor
+    - GalacticCommon
+  # Starlight-End
   - type: NukeOperative
 
 - type: entity
@@ -1619,6 +1640,15 @@
   parent: MobBaseKobold
   suffix: syndicate base
   components:
+  # Starlight-Start
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - Ancestor
+    understands:
+    - Ancestor
+    - GalacticCommon
+  # Starlight-End
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -1635,6 +1665,15 @@
   parent: MobBaseSyndicateKobold
   suffix: syndicate agent
   components:
+  # Starlight-Start
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - Ancestor
+    understands:
+    - Ancestor
+    - GalacticCommon
+  # Starlight-End
     # make the player a traitor once its taken
   - type: AutoTraitor
     profile: TraitorReinforcement
@@ -1644,6 +1683,15 @@
   parent: MobBaseSyndicateKobold
   suffix: NukeOps
   components:
+  # Starlight-Start
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - Ancestor
+    understands:
+    - Ancestor
+    - GalacticCommon
+  # Starlight-End
   - type: NukeOperative
 
 - type: entity
@@ -2471,6 +2519,8 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/snake_hiss.ogg
+  - type: Puller
+    needsHands: false
   - type: NoSlip
   - type: Spider
   - type: IgnoreSpiderWeb
@@ -2689,6 +2739,8 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: Puller
+    needsHands: false
 
 - type: entity
   name: possum
@@ -2763,6 +2815,8 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: Puller
+    needsHands: false
 
 - type: entity
   name: fox
@@ -2776,6 +2830,7 @@
     - Fox
     understands:
     - Fox
+    - Canilunzt
   # Starlight-end
   - type: Sprite
     drawdepth: Mobs
@@ -2846,6 +2901,8 @@
     rootTask:
       task: RuminantHostileCompound
   - type: MessyDrinker
+  - type: Puller
+    needsHands: false
   - type: Tag
     tags:
     - VimPilot
@@ -2893,6 +2950,8 @@
   - type: MobPrice
     price: 200
   - type: MessyDrinker
+  - type: Puller
+    needsHands: false
 
 - type: entity
   parent: MobCorgiBase
@@ -2904,6 +2963,7 @@
     - Dog
     understands:
     - Dog
+    - Canilunzt
   # Starlight-end
   - type: DamageStateVisuals
     states:
@@ -2929,6 +2989,15 @@
   id: MobCorgiNarsi
   description: Ian! No!
   components:
+  # Starlight Start
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - Dog
+    understands:
+    - Dog
+    - GalacticCommon
+  # Starlight End
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Pets/corgi.rsi
@@ -3024,6 +3093,7 @@
     - Cat
     understands:
     - Cat
+    - Nekomimetic
   # Starlight-end
   - type: Sprite
     drawdepth: Mobs
@@ -3082,6 +3152,8 @@
       gender: epicene
   - type: MobPrice
     price: 200
+  - type: Puller
+    needsHands: false
   - type: Tag
     tags:
     - VimPilot
@@ -3114,6 +3186,14 @@
   parent: MobCatSpace
   description: Explosive kitten.
   components:
+# Starlight-start: Languages
+  - type: LanguageKnowledge
+    speaks:
+    - Cat
+    understands:
+    - Cat
+    - GalacticCommon
+# Starlight-end
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -3362,6 +3442,8 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: Puller
+    needsHands: false
 
 - type: entity
   name: hamster
@@ -3603,6 +3685,13 @@
   id: MobDionaNymph
   description: It's like a cat, only.... branch-ier.
   components:
+    # Starlight-start: Languages
+  - type: LanguageKnowledge
+    speaks:
+    - Sylvan
+    understands:
+    - Sylvan
+  # Starlight-end
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -3750,8 +3839,6 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
-  - type: Puller
-    needsHands: false
 
 - type: entity
   name: reindeer doe
@@ -3800,6 +3887,7 @@
     understands:
     - Dog
     - GalacticCommon
+    - Canilunzt
   # Starlight-end
   - type: Sprite
     layers:
@@ -3862,3 +3950,4 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
+  - type: AlwaysRevolutionaryConvertible

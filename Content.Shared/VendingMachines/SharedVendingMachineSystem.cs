@@ -42,6 +42,7 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
         SubscribeLocalEvent<VendingMachineComponent, ComponentGetState>(OnVendingGetState);
         SubscribeLocalEvent<VendingMachineComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<VendingMachineComponent, GotEmaggedEvent>(OnEmagged);
+        SubscribeLocalEvent<VendingMachineComponent, RestockDoAfterEvent>(OnRestockDoAfter);
 
         SubscribeLocalEvent<VendingMachineRestockComponent, AfterInteractEvent>(OnAfterInteract);
 
@@ -200,7 +201,7 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
 
     protected virtual void OnMapInit(EntityUid uid, VendingMachineComponent component, MapInitEvent args)
     {
-        RestockInventoryFromPrototype(uid, component, component.InitialStockQuality);
+        RestockInventoryFromPrototype(uid, component, component.InitialStockQuality, true); // Starlight-edit: added last parameter
     }
 
     protected virtual void EjectItem(EntityUid uid, VendingMachineComponent? vendComponent = null, bool forceEject = false) { }
@@ -276,12 +277,16 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
             return;
         }
 
-        // Start Ejecting, and prevent users from ordering while animation is playing
+        // Starlight-edit start:
         vendComponent.EjectEnd = Timing.CurTime + vendComponent.EjectDelay;
         vendComponent.NextItemToEject = entry.ID;
         vendComponent.ThrowNextItem = throwItem;
-        // 🌟Starlight🌟 Reserve the item immediately to avoid multiple charges mapping to a single ejection on spam clicks
+        vendComponent.CurrentItemType = type; // track inventory bucket for this operation
+        vendComponent.LastBuyer = user; // remember who initiated
+        vendComponent.DebitApplied = false; // clear applied flag in case previous op. didnt finish correctly
+        vendComponent.VendOperationId++; // bump operation id to mark a new vend
         entry.Amount--; 
+        // Starlight-edit end:
 
         if (TryComp(uid, out SpeakOnUIClosedComponent? speakComponent))
             _speakOn.TrySetFlag((uid, speakComponent));
@@ -362,7 +367,8 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
     }
 
     public void RestockInventoryFromPrototype(EntityUid uid,
-        VendingMachineComponent? component = null, float restockQuality = 1f)
+        VendingMachineComponent? component = null, float restockQuality = 1f,
+	bool initialRestock = false) // Starlight-edit: added last parameter
     {
         if (!Resolve(uid, ref component))
         {
@@ -371,6 +377,9 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
 
         if (!PrototypeManager.TryIndex(component.PackPrototypeId, out VendingMachineInventoryPrototype? packPrototype))
             return;
+
+        if (initialRestock && HasComp<EmptyVendingMachineComponent>(component.Owner)) // Starlight
+            return; // Starlight
 
         AddInventoryFromPrototype(uid, packPrototype.StartingInventory, InventoryType.Regular, component, restockQuality);
         AddInventoryFromPrototype(uid, packPrototype.EmaggedInventory, InventoryType.Emagged, component, restockQuality);

@@ -25,34 +25,6 @@
     BuzzochloricBees: 3
 
 - type: reaction
-  id: CreateSoap
-  impact: Low
-  quantized: true
-  reactants:
-    Fat:
-      amount: 15
-    Saline:
-      amount: 25
-  effects:
-    - !type:CreateEntityReactionEffect
-      entity: Soap
-
-- type: reaction
-  id: CreateSoapHomemade
-  impact: Low
-  quantized: true
-  reactants:
-    Fat:
-      amount: 15
-    TableSalt:
-      amount: 10
-    Blood:
-      amount: 10
-  effects:
-    - !type:CreateEntityReactionEffect
-      entity: SoapHomemade
-
-- type: reaction
   id: Meatification
   impact: Low
   quantized: true
@@ -199,6 +171,24 @@
   effects:
     - !type:CreateEntityReactionEffect
       entity: MaterialGunpowder
+
+#starlight start
+- type: reaction
+  id: CrushedPhosphorus
+  impact: Low
+  quantized: true
+  minTemp: 500
+  reactants:
+    Phosphorus:
+      amount: 4
+    Hydrogen:
+      amount: 2
+    Ethanol:
+      amount: 2
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: CrushedPhosphorus1
+#starlight end
 
 - type: reaction
   id: SolidifyGold
