@@ -22441,5 +22441,21 @@ Entries:
   id: 213300
   time: '2025-11-30T22:51:46.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2133
+- author: Conflee
+  changes:
+  - message: Added 1 new Lobby song and 6 new Jukebox songs that fit a more jazzy
+      smoke filled bar vibe
+    type: Add
+  id: 221000
+  time: '2025-11-30T22:51:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2210
+- author: Conflee
+  changes:
+  - message: Changed volume of all Jukebox songs to be about 30% lower, so they are
+      less overpowering and act more as background music
+    type: Tweak
+  id: 221001
+  time: '2025-11-30T22:51:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2210
 Order: -1
 
