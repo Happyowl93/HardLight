@@ -22471,5 +22471,15 @@ Entries:
   id: 215301
   time: '2025-11-30T22:52:07.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2153
+- author: Conflee
+  changes:
+  - message: Added Speaker. The Speaker plays a random sound from a list every 3 to
+      3 and a half minutes. The list is currently a collection of advertisements,
+      plus a Security PSA. Mapper only, to prevent players from building them to make
+      audio hell rooms.
+    type: Add
+  id: 223200
+  time: '2025-11-30T22:52:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2232
 Order: -1
 
