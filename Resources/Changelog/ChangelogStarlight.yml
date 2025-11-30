@@ -22061,5 +22061,19 @@ Entries:
   id: 188000
   time: '2025-11-30T12:57:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1880
+- author: Fractalflower
+  changes:
+  - message: Added cadet access, with some minor restrictions.
+    type: Add
+  id: 187900
+  time: '2025-11-30T13:05:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1879
+- author: Fractalflower
+  changes:
+  - message: The LMG suit now checks their access, not job.
+    type: Tweak
+  id: 187901
+  time: '2025-11-30T13:05:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1879
 Order: -1
 
