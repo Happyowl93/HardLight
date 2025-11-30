@@ -22163,5 +22163,19 @@ Entries:
   id: 229100
   time: '2025-11-30T21:12:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2291
+- author: Trep_Maul
+  changes:
+  - message: (Pioneer) Missing fans placed
+    type: Fix
+  id: 222100
+  time: '2025-11-30T21:12:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2221
+- author: Trep_Maul
+  changes:
+  - message: (Pioneer) Fireaxe cabinet now unlocked.
+    type: Fix
+  id: 222101
+  time: '2025-11-30T21:12:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2221
 Order: -1
 
