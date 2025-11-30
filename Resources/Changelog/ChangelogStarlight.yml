@@ -22387,5 +22387,12 @@ Entries:
   id: 222202
   time: '2025-11-30T22:11:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2222
+- author: CommanderAlex365
+  changes:
+  - message: Added automatic text highlights for Starlight roles (except for BSO)
+    type: Add
+  id: 226400
+  time: '2025-11-30T22:51:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2264
 Order: -1
 
