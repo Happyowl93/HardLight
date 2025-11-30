@@ -1,7 +1,7 @@
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._Starlight.MassDriver.Components;
-using Content.Shared.MassDriver.EntitySystems;
+using Content.Shared._Starlight.MassDriver.EntitySystems;
 using Content.Shared._Starlight.MassDriver;
 using Content.Shared.DeviceLinking.Events;
 using Robust.Shared.Utility;
