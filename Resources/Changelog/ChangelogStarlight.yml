@@ -22362,5 +22362,30 @@ Entries:
   id: 227500
   time: '2025-11-30T22:11:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2275
+- author: Conflee
+  changes:
+  - message: Added support for Rotations of the Fireplace, including the Festive overlay
+      that is added during December.
+    type: Add
+  id: 222200
+  time: '2025-11-30T22:11:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2222
+- author: Conflee
+  changes:
+  - message: Added a faint electric buzzing sound to the Bar Signs and Cryosleep Units,
+      to add more atmosphere and ambience.
+    type: Add
+  id: 222201
+  time: '2025-11-30T22:11:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2222
+- author: Conflee
+  changes:
+  - message: Changed the volume of some ambient sounds on machines like the APC, SMES,
+      and Substations to be slightly louder, to help industrial areas like Engineering
+      feel more industrial.
+    type: Tweak
+  id: 222202
+  time: '2025-11-30T22:11:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2222
 Order: -1
 
