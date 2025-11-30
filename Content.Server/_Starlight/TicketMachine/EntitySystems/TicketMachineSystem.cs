@@ -38,8 +38,8 @@ public sealed class TicketMachineSystem : SharedTicketMachineSystem
                     && ticketComp.Number > component.displayNumber) // Only burn tickets which are already served
                     continue;
                 _flammableSystem.Ignite(ticket, uid);
+                component.issuedTickets.Remove(ticket);
             }
-            component.issuedTickets.Clear();
             Dirty(uid, component);
         }
     }
