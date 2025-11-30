@@ -188,6 +188,9 @@
   id: ClothingOuterWizardBase
   components:
   - type: WizardClothes
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
 
 # Is this wizard wearing a fanny pack???
 - type: entity
