@@ -28,6 +28,8 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using System.Linq;
+using Content.Server.AlertLevel; // starlight
+using Content.Server.Station.Systems; // starlight
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
 using Robust.Shared.Audio.Systems;
@@ -50,6 +52,8 @@ public sealed class RevSupplyRiftSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
+    [Dependency] private readonly AlertLevelSystem _alert = default!; // Starlight
+    [Dependency] private readonly StationSystem _station = default!; // starlight
 
     private const string RevSupplyRiftListingId = "RevSupplyRiftListing";
     
@@ -477,12 +481,25 @@ public sealed class RevSupplyRiftSystem : EntitySystem
     {
         // Count active rifts (those that are in Finished state)
         int activeRiftCount = 0;
+        EntityUid rift = default; // there has to be a better way to do this?
         var riftsQuery = EntityQueryEnumerator<RevSupplyRiftComponent, DragonRiftComponent>();
         while (riftsQuery.MoveNext(out _, out var revRift, out var dragonRift))
         {
             if (revRift.State == DragonRiftState.Finished)
             {
+                rift = revRift.Owner;
                 activeRiftCount++;
+            }
+            
+        }
+
+        if (activeRiftCount >= 2) //#region Starlight Autogamma
+        {
+            var xform = Transform(rift);
+            var station = _station.GetStationInMap(xform.MapID);
+            if (station != null)
+            {
+                _alert.SetLevel(station.Value, "gamma", true, true, true, true);
             }
         }
         
