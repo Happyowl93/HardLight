@@ -22423,5 +22423,12 @@ Entries:
   id: 229903
   time: '2025-11-30T22:51:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2299
+- author: AthenaAI
+  changes:
+  - message: Armblade not being properly teleported to a ling's hand.
+    type: Fix
+  id: 225400
+  time: '2025-11-30T22:51:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2254
 Order: -1
 
