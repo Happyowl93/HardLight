@@ -22457,5 +22457,19 @@ Entries:
   id: 221001
   time: '2025-11-30T22:51:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2210
+- author: Conflee
+  changes:
+  - message: Added NanoTrasen Special Forces and [REDACTED]
+    type: Add
+  id: 215300
+  time: '2025-11-30T22:52:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2153
+- author: Conflee
+  changes:
+  - message: Removed DeatHSqu@ERR/:VM.asset.terminated
+    type: Remove
+  id: 215301
+  time: '2025-11-30T22:52:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2153
 Order: -1
 
