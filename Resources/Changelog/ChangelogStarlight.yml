@@ -22711,5 +22711,20 @@ Entries:
   id: 224315
   time: '2025-11-30T23:11:06.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2243
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) RD's fax machine was unlabeled
+    type: Fix
+  id: 224100
+  time: '2025-11-30T23:11:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2241
+- author: CawsForConcern
+  changes:
+  - message: (Elkridge) Directional windows in Bridge that made it impossible to press
+      the window shutter button
+    type: Remove
+  id: 224101
+  time: '2025-11-30T23:11:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2241
 Order: -1
 
