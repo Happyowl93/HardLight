@@ -22785,5 +22785,12 @@ Entries:
   id: 222500
   time: '2025-11-30T23:26:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2225
+- author: Fasuh
+  changes:
+  - message: Fixes an issue that caused ore bags to not work from belt slot.
+    type: Fix
+  id: 221900
+  time: '2025-11-30T23:26:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2219
 Order: -1
 
