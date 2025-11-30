@@ -188,7 +188,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         else if (prototype?.StartingGear != null)
         {
             var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
-            Log.Warning("Calling EquipStartingGear from SpawnPlayerMob");
             EquipStartingGear(entity.Value, startingGear, raiseEvent: false);
         }
         // Starlight end
