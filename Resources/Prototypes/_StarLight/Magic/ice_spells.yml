@@ -32,7 +32,6 @@
   parent: BaseBulletTrigger
   name: ice spike
   description: A freezing spike of magical ice!
-  noSpawn: true
   components:
   - type: Sprite
     sprite: Structures/Specific/Anomalies/ice_anom.rsi
