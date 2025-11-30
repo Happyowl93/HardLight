@@ -32,14 +32,17 @@ public sealed class TicketMachineSystem : SharedTicketMachineSystem
         }
         else if (args.Port == component.BurnPort && _powerReceiverSystem.IsPowered(uid))
         {
+            List<EntityUid> burnedTickets = new();
             foreach (var ticket in component.issuedTickets)
             {
                 if (TryComp<TicketComponent>(ticket, out var ticketComp) 
                     && ticketComp.Number > component.displayNumber) // Only burn tickets which are already served
                     continue;
                 _flammableSystem.Ignite(ticket, uid);
-                component.issuedTickets.Remove(ticket);
+                burnedTickets.Add(ticket);
             }
+            foreach (var burned in burnedTickets)
+                component.issuedTickets.Remove(burned);
             Dirty(uid, component);
         }
     }

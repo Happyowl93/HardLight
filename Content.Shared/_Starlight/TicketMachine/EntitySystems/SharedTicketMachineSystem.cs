@@ -53,7 +53,7 @@ public abstract class SharedTicketMachineSystem : EntitySystem
     /// </summary>
     private void OnInteract(EntityUid uid, TicketMachineComponent component, AfterInteractUsingEvent args)
     {
-        if (args.Handled || !args.CanReach)
+        if (!_gameTiming.IsFirstTimePredicted || args.Handled || !args.CanReach)
             return;
 
         if (TryComp<AccessReaderComponent>(uid, out var accessReader) && HasComp<IdCardComponent>(args.Used))
