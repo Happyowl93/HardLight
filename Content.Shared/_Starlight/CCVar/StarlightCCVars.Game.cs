@@ -27,4 +27,10 @@ public sealed partial class StarlightCCVars
     /// </summary>
     public static readonly CVarDef<bool> FuckMappingCommand =
         CVarDef.Create("game.fuck_mapping", false, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    /// Whether the `mapping` command is disabled cause it fucks with the event scheduler and admins just cant stop touching it.
+    /// </summary>
+    public static readonly CVarDef<int> AutogammaRiftCount =
+        CVarDef.Create("game.autogamma_minimum_rifts", 2, CVar.SERVERONLY);
 }
