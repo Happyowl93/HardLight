@@ -22239,5 +22239,12 @@ Entries:
   id: 227700
   time: '2025-11-30T21:46:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2277
+- author: r3d3mpt1on
+  changes:
+  - message: Included Body Bags, AutoMenders, and Vials in the Combat Medkit whitelist.
+    type: Tweak
+  id: 227200
+  time: '2025-11-30T21:46:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2272
 Order: -1
 
