@@ -22503,5 +22503,27 @@ Entries:
   id: 228302
   time: '2025-11-30T22:52:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2283
+- author: Rhetorica
+  changes:
+  - message: Replaced Salv Tech icon with a crusher to make it more obvious to non-Cargo
+      players what the job actually does
+    type: Tweak
+  id: 225800
+  time: '2025-11-30T23:10:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2258
+- author: Rhetorica
+  changes:
+  - message: Replaced Salv Lead icon with a flag to make it more unique
+    type: Tweak
+  id: 225801
+  time: '2025-11-30T23:10:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2258
+- author: Rhetorica
+  changes:
+  - message: Replaced Mail Tech icon with a diagonal envelope to make it more unique
+    type: Tweak
+  id: 225802
+  time: '2025-11-30T23:10:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2258
 Order: -1
 
