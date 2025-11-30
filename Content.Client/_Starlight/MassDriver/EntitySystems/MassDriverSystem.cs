@@ -4,7 +4,7 @@ using Content.Shared._Starlight.MassDriver.EntitySystems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
 
-namespace Content.Client.MassDriver.EntitySystems;
+namespace Content.Client._Starlight.MassDriver.EntitySystems;
 
 public sealed class MassDriverSystem : SharedMassDriverSystem
 {

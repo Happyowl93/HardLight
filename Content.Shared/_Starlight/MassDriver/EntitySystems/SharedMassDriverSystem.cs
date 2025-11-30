@@ -5,7 +5,7 @@ using Content.Shared.Power.EntitySystems;
 using Content.Shared.Audio;
 using Robust.Shared.Timing;
 
-namespace Content.Shared.MassDriver.EntitySystems;
+namespace Content.Shared._Starlight.MassDriver.EntitySystems;
 
 public abstract class SharedMassDriverSystem : EntitySystem
 {
