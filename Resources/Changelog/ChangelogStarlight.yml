@@ -22246,5 +22246,13 @@ Entries:
   id: 227200
   time: '2025-11-30T21:46:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2272
+- author: CawsForConcern
+  changes:
+  - message: Exomorph Vessel "Conquest" from the voting map pool (to be reworked down
+      the line)
+    type: Remove
+  id: 227000
+  time: '2025-11-30T21:46:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2270
 Order: -1
 
