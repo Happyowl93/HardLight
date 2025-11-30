@@ -22269,5 +22269,27 @@ Entries:
   id: 227300
   time: '2025-11-30T21:46:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2273
+- author: Conflee
+  changes:
+  - message: Fixed corpses spawned by wrecks and corpse markers being naked.
+    type: Fix
+  id: 226800
+  time: '2025-11-30T22:10:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2268
+- author: Conflee
+  changes:
+  - message: Added Starlight specific jobs to the corpse pool.
+    type: Add
+  id: 226801
+  time: '2025-11-30T22:10:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2268
+- author: Conflee
+  changes:
+  - message: Added antag corpse spawners for Syndicate, Nukie, Pirate, Mercenary,
+      and Soviet, for wreck/event use.
+    type: Add
+  id: 226802
+  time: '2025-11-30T22:10:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2268
 Order: -1
 
