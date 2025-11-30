@@ -22128,5 +22128,26 @@ Entries:
   id: 230200
   time: '2025-11-30T21:11:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2302
+- author: Rhetorica
+  changes:
+  - message: Corrected typos in the names and descriptions of various cargo crates
+    type: Tweak
+  id: 229400
+  time: '2025-11-30T21:11:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2294
+- author: Rhetorica
+  changes:
+  - message: Revised names of document printer documents
+    type: Tweak
+  id: 229401
+  time: '2025-11-30T21:11:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2294
+- author: Rhetorica
+  changes:
+  - message: Improved English localization of various documents
+    type: Fix
+  id: 229402
+  time: '2025-11-30T21:11:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2294
 Order: -1
 
