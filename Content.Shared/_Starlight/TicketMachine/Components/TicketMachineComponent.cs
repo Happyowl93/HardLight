@@ -34,7 +34,7 @@ public sealed partial class TicketMachineComponent : Component
     /// Maximum number of tickets that can be issued.
     /// </summary>
     [DataField]
-    public int maxTickets = 100;
+    public int maxTickets = 999;
 
     /// <summary>
     /// Whether dispensing tickets is enabled.
@@ -47,6 +47,12 @@ public sealed partial class TicketMachineComponent : Component
     /// </summary>
     [DataField]
     public EntProtoId TicketProtoId = "Ticket";
+
+    /// <summary>
+    /// Prototype ID of the refill paper item.
+    /// </summary>
+    [DataField]
+    public string PaperContainerId = "TicketMachinePaper";
 
     /// <summary>
     /// List of currently issued tickets, required to be able to burn them out.

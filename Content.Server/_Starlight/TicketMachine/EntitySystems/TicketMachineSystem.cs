@@ -1,7 +1,7 @@
 using Content.Shared._Starlight.TicketMachine.Components;
 using Content.Shared._Starlight.TicketMachine.EntitySystems;
-using Content.Shared.Power.EntitySystems;
 using Content.Shared.DeviceLinking.Events;
+using Content.Shared.Power.EntitySystems;
 using Content.Server.Atmos.EntitySystems;
 
 namespace Content.Server._Starlight.TicketMachine.EntitySystems;
@@ -11,10 +11,26 @@ public sealed class TicketMachineSystem : SharedTicketMachineSystem
     [Dependency] private readonly SharedPowerReceiverSystem _powerReceiverSystem = default!;
     [Dependency] private readonly FlammableSystem _flammableSystem = default!;
 
-    protected override void OnSignalReceived(EntityUid uid, TicketMachineComponent component, ref SignalReceivedEvent args)
+    public override void Initialize()
     {
-        base.OnSignalReceived(uid, component, ref args);
-        if (args.Port == component.BurnPort && _powerReceiverSystem.IsPowered(uid))
+        base.Initialize();
+    
+        //Device linking
+        SubscribeLocalEvent<TicketMachineComponent, SignalReceivedEvent>(OnSignalReceived);
+    }
+
+    #region Device Linking
+
+    private void OnSignalReceived(EntityUid uid, TicketMachineComponent component, ref SignalReceivedEvent args)
+    {
+        if (args.Port == component.NextNumberPort && _powerReceiverSystem.IsPowered(uid) 
+            && component.displayNumber < component.lastIssuedNumber) // You can't go higher than the number of issued tickets
+        {
+            component.displayNumber++;
+            UpdateVisuals(uid, component);
+            Dirty(uid, component);
+        }
+        else if (args.Port == component.BurnPort && _powerReceiverSystem.IsPowered(uid))
         {
             foreach (var ticket in component.issuedTickets)
                 _flammableSystem.Ignite(ticket, uid);
@@ -22,4 +38,6 @@ public sealed class TicketMachineSystem : SharedTicketMachineSystem
             Dirty(uid, component);
         }
     }
+
+    #endregion
 }

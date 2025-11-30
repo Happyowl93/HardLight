@@ -112,6 +112,9 @@
   id: LightRifleHeavy
 
 - type: Tag
+  id: LabellerRefillPaper
+
+- type: Tag
   id: MagazineBattery
 
 - type: Tag

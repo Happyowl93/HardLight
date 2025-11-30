@@ -24,10 +24,22 @@
   - type: DeviceList
   - type: DeviceNetwork
     deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
   - type: DeviceLinkSink
     ports:
       - TicketMachineNextNumber
       - TicketMachineBurnTickets
+  - type: ContainerContainer
+    containers:
+      TicketMachinePaper: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      TicketMachinePaper:
+        whitelist:
+          tags:
+          - LabellerRefillPaper
 
 - type: entity
   id: TicketMachine
@@ -35,6 +47,10 @@
   name: ticket machine
   description: It prints out numbered tickets for queue management.
   components:
+  - type: ContainerFill
+    containers:
+      TicketMachinePaper:
+        - LabellerRefillPaper
   - type: Sprite
     sprite: _Starlight/Structures/Machines/ticket_machine.rsi
     layers:

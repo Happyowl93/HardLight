@@ -7,10 +7,13 @@ using Content.Shared.Power.EntitySystems;
 using Content.Shared.Power;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Examine;
 using Robust.Shared.Timing;
-using Robust.Shared.Network;
+using Robust.Shared.Containers;
+using System.Linq;
+using Content.Shared.Stacks;
+using System.Diagnostics.CodeAnalysis;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.TicketMachine.EntitySystems;
 
@@ -23,7 +26,8 @@ public abstract class SharedTicketMachineSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     public override void Initialize()
     {
@@ -37,11 +41,9 @@ public abstract class SharedTicketMachineSystem : EntitySystem
         // Visuals
         SubscribeLocalEvent<TicketMachineComponent, PowerChangedEvent>(OnPowerChanged);
         SubscribeLocalEvent<TicketMachineComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<TicketMachineComponent, EntRemovedFromContainerMessage>(OnEjected);
+        SubscribeLocalEvent<TicketMachineComponent, EntInsertedIntoContainerMessage>(OnInserted);
         SubscribeLocalEvent<TicketComponent, ExaminedEvent>(OnTicketExamined);
-
-        //Device linking
-        SubscribeLocalEvent<TicketMachineComponent, SignalReceivedEvent>(OnSignalReceived);
-
     }
 
     #region Ticket Issuing
@@ -74,8 +76,7 @@ public abstract class SharedTicketMachineSystem : EntitySystem
     private void OnHandInteract(EntityUid uid, TicketMachineComponent component, InteractHandEvent args)
     {
         if (!_gameTiming.IsFirstTimePredicted || args.Handled 
-            || component.previousIssueTime + component.issueCooldown > _gameTiming.CurTime 
-            || component.lastIssuedNumber >= component.maxTickets || !_powerReceiverSystem.IsPowered(uid))
+            || !CanIssueTicket(uid, component, out var paper))
             return;
 
         component.previousIssueTime = _gameTiming.CurTime;
@@ -99,9 +100,37 @@ public abstract class SharedTicketMachineSystem : EntitySystem
             _handsSystem.TryPickup(args.User, ticket);
             UpdateVisuals(uid, component);
             UpdateTicketVisuals(ticket, ticketComponent);
+            if (paper != null && TryComp<StackComponent>(paper, out var stack))
+                stack.Count--;
         }
         else
             QueueDel(ticket);
+    }
+
+    private bool CanIssueTicket(EntityUid uid, TicketMachineComponent component, [NotNullWhen(true)] out EntityUid? paper)
+    {
+        paper = null;
+        if (component.lastIssuedNumber >= component.maxTickets || !component.dispenseEnabled || !_powerReceiverSystem.IsPowered(uid))
+            return false;
+
+        if (component.previousIssueTime + component.issueCooldown > _gameTiming.CurTime)
+            return false;
+
+        if (!_containerSystem.TryGetContainer(uid, component.PaperContainerId, out var container))
+            return false;
+
+        if (container.ContainedEntities.Count == 0)
+            return false;
+        
+        if (container.ContainedEntities.First() is not { Valid: true } paperEntity)
+            return false;
+        else
+            paper = paperEntity;
+
+        if (TryComp<StackComponent>(paper, out var stack) && stack.Count <= 0)
+            return false; // No paper
+
+        return true;
     }
 
     #endregion
@@ -113,12 +142,21 @@ public abstract class SharedTicketMachineSystem : EntitySystem
     /// </summary>
     private void OnPowerChanged(EntityUid uid, TicketMachineComponent component, ref PowerChangedEvent args) => UpdateVisuals(uid, component);
 
-    private void UpdateVisuals(EntityUid uid, TicketMachineComponent component)
+    /// <summary>
+    /// Updates the ticket machine's visuals. Protected for use in server/client side systems.
+    /// </summary>
+    protected void UpdateVisuals(EntityUid uid, TicketMachineComponent component)
     {
-        var paperState = CalculatePaperState(component.maxTickets, component.lastIssuedNumber, component.paperStateAmount);
+        int paperState = 0;
+        if (!_containerSystem.TryGetContainer(uid, component.PaperContainerId, out var container))
+            return;
+        if (container.ContainedEntities.Count == 0)
+            paperState = 0;
+        else if (TryComp<StackComponent>(container.ContainedEntities.First(), out var stack) && _prototypeManager.TryIndex<StackPrototype>(stack.StackTypeId, out var proto))
+            paperState = CalculatePaperState(proto.MaxCount == null ? 999 : proto.MaxCount.Value, stack.Count, component.paperStateAmount);
 
         _appearanceSystem.SetData(uid, TicketMachineVisuals.isPowered, _powerReceiverSystem.IsPowered(uid));
-        _appearanceSystem.SetData(uid, TicketMachineVisuals.isFilled, component.hasPaper);
+        _appearanceSystem.SetData(uid, TicketMachineVisuals.isFilled, container.ContainedEntities.Count > 0);
         _appearanceSystem.SetData(uid, TicketMachineVisuals.Paper, paperState);
         _appearanceSystem.SetData(uid, TicketMachineVisuals.DisplayNumber, component.displayNumber);
     }
@@ -136,33 +174,29 @@ public abstract class SharedTicketMachineSystem : EntitySystem
     {
         if (!args.IsInDetailsRange)
             return;
-
-        float percent = (float)(component.maxTickets - component.lastIssuedNumber) / component.maxTickets;
-        int percentInt = (int)(percent * 100);
-        args.PushMarkup($"<b>Displayed ticket:</b> {component.displayNumber}\n" +
-                        $"<b>Paper amount:</b> {(component.hasPaper ? $"{percentInt}%" : "Empty")}\n" +
-                        $"<b>Dispensing:</b> {(component.dispenseEnabled ? "Enabled" : "Disabled")}");
+        args.PushMarkup($"Displayed ticket: {component.displayNumber}");
     }
 
     private void OnTicketExamined(EntityUid uid, TicketComponent component, ref ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)
             return;
-
-        args.PushMarkup($"<b>Ticket Number:</b> {component.Number}");
+        args.PushMarkup($"Ticket Number: {component.Number}");
     }
 
-    #endregion
-
-    #region Device Linking
-    protected virtual void OnSignalReceived(EntityUid uid, TicketMachineComponent component, ref SignalReceivedEvent args)
+    private void OnEjected(EntityUid uid, TicketMachineComponent component, EntRemovedFromContainerMessage args)
     {
-        if (_gameTiming.IsFirstTimePredicted && args.Port == component.NextNumberPort && _powerReceiverSystem.IsPowered(uid) 
-            && component.displayNumber < component.lastIssuedNumber) // You can't go higher than the number of issued tickets
-        {
-            component.displayNumber++;
-            UpdateVisuals(uid, component);
-        }
+        if (args.Container.ID != component.PaperContainerId)
+            return;
+        UpdateVisuals(uid, component);
     }
+
+    private void OnInserted(EntityUid uid, TicketMachineComponent component, EntInsertedIntoContainerMessage args)
+    {
+        if (args.Container.ID != component.PaperContainerId)
+            return;
+        UpdateVisuals(uid, component);
+    }
+
     #endregion
 }
