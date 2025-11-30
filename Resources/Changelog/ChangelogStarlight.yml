@@ -22083,5 +22083,12 @@ Entries:
   id: 226900
   time: '2025-11-30T13:18:32.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2269
+- author: Trep_Maul
+  changes:
+  - message: Rule 10 adjusted
+    type: Tweak
+  id: 223500
+  time: '2025-11-30T13:16:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2235
 Order: -1
 
