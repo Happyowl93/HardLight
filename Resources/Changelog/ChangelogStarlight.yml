@@ -22149,5 +22149,12 @@ Entries:
   id: 229402
   time: '2025-11-30T21:11:48.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2294
+- author: Fasuh
+  changes:
+  - message: Laspi storage skipping a doAfter
+    type: Fix
+  id: 229300
+  time: '2025-11-30T21:11:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2293
 Order: -1
 
