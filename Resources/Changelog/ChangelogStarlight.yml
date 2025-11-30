@@ -22792,5 +22792,12 @@ Entries:
   id: 221900
   time: '2025-11-30T23:26:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2219
+- author: PubliclyExecutedPig
+  changes:
+  - message: Updated Ming station
+    type: Tweak
+  id: 221800
+  time: '2025-11-30T23:27:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2218
 Order: -1
 
