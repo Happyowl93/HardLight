@@ -44,3 +44,12 @@
     spawned:
     - id: DrinkChangelingStingCan
       amount: 1
+
+# Starlight
+- type: entity
+  id: MobMimicHostile
+  parent: MobMimic
+  components:
+    - type: HTN
+      rootTask:
+        task: SimpleHostileCompound

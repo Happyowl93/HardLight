@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.Antag.Mimic;
 using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking.Rules.Components;
@@ -32,7 +33,21 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
             var coordinates = entity.Coordinates;
             Del(entity.Entity);
 
-            Spawn(component.Proto, coordinates);
+            // Starlight start
+            if(component.Protos.Count == 1) Spawn(component.Protos.First().Key, coordinates);
+            else
+            {
+                var totalWeight = component.Protos.Values.Sum();
+                var roll = (float)_random.NextDouble() * totalWeight;
+                foreach (var proto in component.Protos)
+                {
+                    roll -= proto.Value;
+                    if (roll > 0) continue;
+                    Spawn(proto.Key, coordinates);
+                    break;
+                }
+            }
+            // Starlight end
         }
     }
 }
