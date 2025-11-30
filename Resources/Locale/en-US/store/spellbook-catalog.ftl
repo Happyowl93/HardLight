@@ -2,6 +2,10 @@
 spellbook-fireball-name = Fireball
 spellbook-fireball-desc = Get most crew exploding with rage when they see this fireball heading toward them! Upgradeable.
 
+# Starlight: Ice Storm spell
+spellbook-icestorm-name = Ice Storm
+spellbook-icestorm-desc = Unleash a freezing blast of ice that chills everything it touches to the bone!
+
 spellbook-blink-name = Blink
 spellbook-blink-desc = Don't blink or you'll miss yourself teleporting away.
 

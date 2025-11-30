@@ -13,6 +13,20 @@
   - !type:ListingLimitedStockCondition
     stock: 1
 
+# Starlight: Ice Storm spell
+- type: listing
+  id: SpellbookIceStorm
+  name: spellbook-icestorm-name
+  description: spellbook-icestorm-desc
+  productAction: ActionIceStorm
+  cost:
+    WizCoin: 4
+  categories:
+  - SpellbookOffensive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
 - type: listing
   id: SpellbookRodForm
   name: spellbook-polymorph-rod-name
