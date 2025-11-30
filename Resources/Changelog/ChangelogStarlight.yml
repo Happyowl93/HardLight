@@ -22755,5 +22755,20 @@ Entries:
   id: 224003
   time: '2025-11-30T23:26:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2240
+- author: CawsForConcern
+  changes:
+  - message: (Cog) Third ChemMaster and chemical dispenser to Chemistry, third-chemists-on-Cog
+      rejoice
+    type: Add
+  id: 223900
+  time: '2025-11-30T23:26:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2239
+- author: CawsForConcern
+  changes:
+  - message: (Cog) Every single fax machine being labeled strangely
+    type: Fix
+  id: 223901
+  time: '2025-11-30T23:26:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2239
 Order: -1
 
