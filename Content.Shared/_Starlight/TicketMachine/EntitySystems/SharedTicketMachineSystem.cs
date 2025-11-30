@@ -147,11 +147,11 @@ public abstract class SharedTicketMachineSystem : EntitySystem
     /// </summary>
     protected void UpdateVisuals(EntityUid uid, TicketMachineComponent component)
     {
-        int paperState = 0;
+        int paperState = 3;
         if (!_containerSystem.TryGetContainer(uid, component.PaperContainerId, out var container))
             return;
         if (container.ContainedEntities.Count == 0)
-            paperState = 0;
+            paperState = 3; // Empty
         else if (TryComp<StackComponent>(container.ContainedEntities.First(), out var stack) && _prototypeManager.TryIndex<StackPrototype>(stack.StackTypeId, out var proto))
             paperState = CalculatePaperState(proto.MaxCount == null ? 999 : proto.MaxCount.Value, stack.Count, component.paperStateAmount);
 
@@ -163,9 +163,18 @@ public abstract class SharedTicketMachineSystem : EntitySystem
 
     private void UpdateTicketVisuals(EntityUid uid, TicketComponent component) => _appearanceSystem.SetData(uid, TicketVisuals.Number, component.Number == null ? 0 : component.Number.Value);
 
-    private int CalculatePaperState(int maxTickets, int lastIssued, int paperStates)
+    private int CalculatePaperState(int maxTickets, int currentAmount, int paperStates)
     {
-        float percent = (float)(maxTickets - lastIssued) / maxTickets;
+        if (paperStates <= 0 || maxTickets <= 0)
+            return 1;
+
+        if (currentAmount <= 0)
+            return paperStates;
+
+        float percent = (float)currentAmount / (float)maxTickets;
+
+        if (percent >= 1f) return 1;
+
         int state = (int)Math.Floor(Math.Log(1f / percent, 2)) + 1;
         return Math.Clamp(state, 1, paperStates);
     }
