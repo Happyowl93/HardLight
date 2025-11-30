@@ -22341,5 +22341,19 @@ Entries:
   id: 228900
   time: '2025-11-30T22:11:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2289
+- author: wonderfulnewworld
+  changes:
+  - message: Added in-hand sprites for BridBuddy and CommandFriend
+    type: Add
+  id: 228100
+  time: '2025-11-30T22:11:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2281
+- author: wonderfulnewworld
+  changes:
+  - message: Added in-hand sprites for the unused Syndiscanner/Syndicate Crew Monitor.
+    type: Add
+  id: 228101
+  time: '2025-11-30T22:11:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2281
 Order: -1
 
