@@ -24,6 +24,7 @@
       species: Avali
       hideLayersOnEquip:
       - Tail
+      - HeadTop
     - type: Hunger # on 2x more
       thresholds:
         Overfed: 250
