@@ -22121,5 +22121,12 @@ Entries:
   id: 230900
   time: '2025-11-30T21:04:54.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2309
+- author: neomoth
+  changes:
+  - message: Fixed aghost interaction range for the crayon glyph preview.
+    type: Fix
+  id: 230200
+  time: '2025-11-30T21:11:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2302
 Order: -1
 
