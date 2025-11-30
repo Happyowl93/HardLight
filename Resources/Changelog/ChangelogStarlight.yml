@@ -22075,5 +22075,13 @@ Entries:
   id: 187901
   time: '2025-11-30T13:05:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1879
+- author: mikeysaurus
+  changes:
+  - message: Updated lobby observe warning text to make more sense with our New Life
+      system.
+    type: Tweak
+  id: 226900
+  time: '2025-11-30T13:18:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2269
 Order: -1
 
