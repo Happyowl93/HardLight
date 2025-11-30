@@ -22207,5 +22207,13 @@ Entries:
   id: 228403
   time: '2025-11-30T21:27:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2284
+- author: Conflee
+  changes:
+  - message: Changed the AI out of bounds static overlay to use the Navmap overlay
+      instead, to reduce eye strain and headaches. Ported from Carpmosia, MIT.
+    type: Tweak
+  id: 229000
+  time: '2025-11-30T21:33:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2290
 Order: -1
 
