@@ -22312,5 +22312,12 @@ Entries:
   id: 224600
   time: '2025-11-30T22:10:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2246
+- author: CorruptOmega
+  changes:
+  - message: Energy Shotgun now starts on the correct firing mode.
+    type: Fix
+  id: 224800
+  time: '2025-11-30T22:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2248
 Order: -1
 
