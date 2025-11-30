@@ -49,6 +49,7 @@
 - type: entity
   id: MobMimicHostile
   parent: MobMimic
+  suffix: Hostile
   components:
     - type: HTN
       rootTask:

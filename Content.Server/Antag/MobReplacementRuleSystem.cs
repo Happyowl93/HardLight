@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Server.Antag.Mimic;
 using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking.Rules.Components;
@@ -6,6 +5,7 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.VendingMachines;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
+using System.Linq; // Starlight
 
 namespace Content.Server.Antag;
 
@@ -35,18 +35,7 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
 
             // Starlight start
             if(component.Protos.Count == 1) Spawn(component.Protos.First().Key, coordinates);
-            else
-            {
-                var totalWeight = component.Protos.Values.Sum();
-                var roll = (float)_random.NextDouble() * totalWeight;
-                foreach (var proto in component.Protos)
-                {
-                    roll -= proto.Value;
-                    if (roll > 0) continue;
-                    Spawn(proto.Key, coordinates);
-                    break;
-                }
-            }
+            else Spawn(_random.Pick(component.Protos).Key, coordinates);
             // Starlight end
         }
     }
