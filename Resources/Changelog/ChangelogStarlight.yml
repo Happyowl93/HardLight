@@ -22334,5 +22334,12 @@ Entries:
   id: 225500
   time: '2025-11-30T22:11:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2255
+- author: DocMoth
+  changes:
+  - message: Sprites for syndicate and ussp avali antags.
+    type: Add
+  id: 228900
+  time: '2025-11-30T22:11:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2289
 Order: -1
 
