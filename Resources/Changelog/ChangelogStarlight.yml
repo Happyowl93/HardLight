@@ -22222,5 +22222,15 @@ Entries:
   id: 228200
   time: '2025-11-30T21:33:21.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2282
+- author: Conflee
+  changes:
+  - message: Added the Observer Bundle to the Traitor Uplink for 6 TC. Contains a
+      Camera Bug, Secret Security Sunglasses, Surveillance Camera Monitor Board, supplies
+      to build more surveillance cameras if needed, and some misc petty clothing/tools
+      to make setup easier and fit the 'stalker' vibe.
+    type: Add
+  id: 228800
+  time: '2025-11-30T21:46:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2288
 Order: -1
 
