@@ -22481,5 +22481,27 @@ Entries:
   id: 223200
   time: '2025-11-30T22:52:15.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2232
+- author: wonderfulnewworld
+  changes:
+  - message: Added belt sprites for the Syndicate/Prototype Jaws of Life
+    type: Add
+  id: 228300
+  time: '2025-11-30T22:52:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2283
+- author: wonderfulnewworld
+  changes:
+  - message: Added unused belt-equipped sprites for the Syndicate/Prototype Jaws of
+      Life
+    type: Add
+  id: 228301
+  time: '2025-11-30T22:52:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2283
+- author: wonderfulnewworld
+  changes:
+  - message: Added SyndicateJawsOfLife and PrototypeJawsOfLife tags
+    type: Add
+  id: 228302
+  time: '2025-11-30T22:52:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2283
 Order: -1
 
