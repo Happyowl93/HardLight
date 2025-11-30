@@ -30,7 +30,6 @@ public sealed class MassDriverSystem : SharedMassDriverSystem
         SubscribeLocalEvent<MassDriverConsoleComponent, NewLinkEvent>(OnNewLink);
         SubscribeLocalEvent<MassDriverConsoleComponent, PortDisconnectedEvent>(OnPortDisconnected);
         SubscribeLocalEvent<MassDriverComponent, SignalReceivedEvent>(OnSignalReceived);
-        SubscribeLocalEvent<MassDriverConsoleComponent, BoundUIOpenedEvent>(OnBoundUiOpened);
     }
 
     #region DeviceLinking
