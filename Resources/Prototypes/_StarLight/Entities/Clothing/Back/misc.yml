@@ -18,14 +18,9 @@
     - type: IdClothingBlocker
       freezeUser: false
       allowedJobs:
-        - SecurityOfficer
-        - Brigmedic
-        - Warden
-        - HeadOfSecurity
-        - Captain
-        - Detective
-        - ResearchDirector
-        - SecurityCadet
+        - Security
+        - Cadet
+        - Command
     - type: NullSpaceDrainer
     - type: ResearchClient
     - type: ActivatableUI
