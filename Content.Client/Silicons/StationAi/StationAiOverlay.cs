@@ -42,8 +42,9 @@ public sealed class StationAiOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
         // Carpmosia-start - AI Navmap
-        _navMap.WallColor = new(102, 102, 102);
-        _navMap.TileColor = new(30, 30, 30);
+        //starlight change, colors are adjusted to be green tints
+        _navMap.WallColor = new(0, 131, 0);
+        _navMap.TileColor = new(0, 60, 0);
         // Carpmosia-end - AI Navmap
     }
 
