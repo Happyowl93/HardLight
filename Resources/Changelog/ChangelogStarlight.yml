@@ -22319,5 +22319,13 @@ Entries:
   id: 224800
   time: '2025-11-30T22:10:31.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2248
+- author: CrazyPhantom
+  changes:
+  - message: HoP's Locker now contains a Present Filled Christmas Tree in the festive
+      Season
+    type: Add
+  id: 224700
+  time: '2025-11-30T22:10:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2247
 Order: -1
 
