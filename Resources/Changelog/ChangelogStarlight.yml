@@ -22327,5 +22327,12 @@ Entries:
   id: 224700
   time: '2025-11-30T22:10:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2247
+- author: CrazyPhantom
+  changes:
+  - message: Xenoborgs can no longer speak on binary (They can still hear it however)
+    type: Tweak
+  id: 225500
+  time: '2025-11-30T22:11:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2255
 Order: -1
 
