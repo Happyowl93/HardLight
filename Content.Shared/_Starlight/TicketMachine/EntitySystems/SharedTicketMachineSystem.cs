@@ -95,7 +95,7 @@ public abstract class SharedTicketMachineSystem : EntitySystem
         {
             component.lastIssuedNumber++;
             ticketComponent.Number = component.lastIssuedNumber;
-            component.issuedTickets.Add(ticket, ticketComponent);
+            component.issuedTickets.Add(ticket);
             _audioSystem.PlayPredicted(component.dispenseSound, uid, args.User);
             _handsSystem.TryPickup(args.User, ticket);
             UpdateVisuals(uid, component);

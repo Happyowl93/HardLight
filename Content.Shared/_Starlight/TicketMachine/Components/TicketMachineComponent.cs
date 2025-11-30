@@ -58,7 +58,7 @@ public sealed partial class TicketMachineComponent : Component
     /// List of currently issued tickets, required to be able to burn them out.
     /// </summary>
     [AutoNetworkedField, DataField]
-    public Dictionary<EntityUid, TicketComponent> issuedTickets = new();
+    public List<EntityUid> issuedTickets = new();
     #endregion
 
     #region Cooldown
