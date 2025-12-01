@@ -2692,7 +2692,7 @@ entities:
       pos: 3.5,-3.5
       parent: 2
     - type: AtmosPipeLayers
-      pipeLayer: Secondary
+      pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#F2E408FF'
   - uid: 1123
@@ -3552,7 +3552,7 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#0055CCFF'
-- proto: GasPassiveGateAlt1
+- proto: GasPassiveGateAlt2
   entities:
   - uid: 1097
     components:
@@ -3570,8 +3570,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#F2E408FF'
-- proto: GasPassiveGateAlt2
-  entities:
   - uid: 1104
     components:
     - type: Transform
@@ -3709,7 +3707,7 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
-- proto: GasPipeBendAlt1
+- proto: GasPipeBendAlt2
   entities:
   - uid: 1108
     components:
@@ -3719,8 +3717,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#F2E408FF'
-- proto: GasPipeBendAlt2
-  entities:
   - uid: 1121
     components:
     - type: Transform
@@ -4480,7 +4476,7 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
-- proto: GasPipeStraightAlt1
+- proto: GasPipeStraightAlt2
   entities:
   - uid: 1100
     components:
@@ -4546,8 +4542,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#F2E408FF'
-- proto: GasPipeStraightAlt2
-  entities:
   - uid: 1113
     components:
     - type: Transform
@@ -4718,7 +4712,7 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#0055CCFF'
-- proto: GasPipeTJunctionAlt1
+- proto: GasPipeTJunctionAlt2
   entities:
   - uid: 1103
     components:
@@ -4727,8 +4721,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#F2E408FF'
-- proto: GasPipeTJunctionAlt2
-  entities:
   - uid: 1119
     components:
     - type: Transform
