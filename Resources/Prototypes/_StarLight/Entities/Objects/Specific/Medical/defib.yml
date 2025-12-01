@@ -129,6 +129,9 @@
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
   - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
   - type: Storage
     maxItemSize: Small
     grid:
