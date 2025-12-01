@@ -92,7 +92,17 @@ public abstract partial class SharedHandsSystem
         container.OccludesLight = false;
 
         ent.Comp.Hands.Add(handName, hand);
-        ent.Comp.SortedHands.Add(handName);
+        //Starlight start
+        switch (hand.Location) 
+        {
+            case HandLocation.Functional:
+                ent.Comp.SortedHands.Add(handName);
+                break;
+            default:
+                ent.Comp.SortedHands.Insert(Math.Min((int)hand.Location, ent.Comp.SortedHands.Count), handName);
+                break;
+        }
+        //Starlight end
         Dirty(ent);
 
         OnPlayerAddHand?.Invoke((ent, ent.Comp), handName, hand.Location);
