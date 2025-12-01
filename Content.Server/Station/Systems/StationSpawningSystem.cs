@@ -175,6 +175,24 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         SetupCybernetics(entity.Value, profile?.Cybernetics ?? []); // Starlight
 
+        // Starlight begin
+        if (loadout != null && prototype?.StartingGear != null)
+        {
+            var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
+            StarlightEquipRoleLoadout(entity.Value, loadout, [startingGear], roleProto!);
+        }
+        else if (loadout != null)
+        {
+            StarlightEquipRoleLoadout(entity.Value, loadout, [], roleProto!);
+        }
+        else if (prototype?.StartingGear != null)
+        {
+            var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
+            EquipStartingGear(entity.Value, startingGear, raiseEvent: false);
+        }
+        // Starlight end
+
+        /* Starlight - add comment
         if (loadout != null)
         {
             EquipRoleLoadout(entity.Value, loadout, roleProto!);
@@ -185,6 +203,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
             EquipStartingGear(entity.Value, startingGear, raiseEvent: false);
         }
+        */ // Starlight - add end of comment
 
         var gearEquippedEv = new StartingGearEquippedEvent(entity.Value);
         RaiseLocalEvent(entity.Value, ref gearEquippedEv);
