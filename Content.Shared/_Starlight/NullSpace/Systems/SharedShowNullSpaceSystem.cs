@@ -23,8 +23,7 @@ public abstract partial class SharedShowNullSpaceSystem : EntitySystem
 
     private void OnInteractionAttempt(EntityUid uid, ShowNullSpaceComponent component, ref InteractionAttemptEvent args)
     {
-        if (HasComp<NullSpaceComponent>(uid)
-            || !HasComp<NullSpaceComponent>(args.Target))
+        if (!HasComp<NullSpaceComponent>(args.Target))
             return;
 
         args.Cancelled = true;

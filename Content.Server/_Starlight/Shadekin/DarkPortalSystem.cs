@@ -14,6 +14,7 @@ using Content.Shared.Examine;
 using Content.Server.Anomaly;
 using Content.Shared._Starlight.Railroading;
 using Content.Server._Starlight.Railroading;
+using Content.Shared.Light.Components;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -73,8 +74,8 @@ public sealed class DarkPortalSystem : EntitySystem
     {
         var range = component.PulseRange * 3 * args.PowerModifier;
 
-        foreach (var ent in _lookup.GetEntitiesInRange(Transform(uid).Coordinates, range))
-            _light.TryDestroyBulb(ent);
+        foreach (var ent in _lookup.GetEntitiesInRange<PoweredLightComponent>(Transform(uid).Coordinates, range))
+            _light.TryDestroyBulb(ent.Owner, ent.Comp);
 
         foreach (var ent in _lookup.GetEntitiesInRange<BrighteyeComponent>(Transform(uid).Coordinates, range))
         {

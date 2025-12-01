@@ -55,7 +55,7 @@ public sealed class BluespaceCrystalSystem : EntitySystem
         
         if (component.Teleport && target is not null)
         {
-            var newCoords = EffectLocation.Offset(_random.NextVector2(component.Range));
+            var newCoords = EffectLocation; // This is a comment... (newCoords is fetch later.)
             for (var i = 0; i < MaxRandomTeleportAttempts; i++)
             {
                 newCoords = EffectLocation.Offset(_random.NextVector2(component.Range));
