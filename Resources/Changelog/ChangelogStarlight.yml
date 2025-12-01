@@ -22985,5 +22985,19 @@ Entries:
   id: 140200
   time: '2025-12-01T00:42:33.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1402
+- author: neomoth
+  changes:
+  - message: Added hostile mimics.
+    type: Add
+  id: 230500
+  time: '2025-12-01T00:42:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2305
+- author: neomoth
+  changes:
+  - message: Made so MimicVendorRule can spawn either passive or hostile mimics.
+    type: Tweak
+  id: 230501
+  time: '2025-12-01T00:42:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2305
 Order: -1
 
