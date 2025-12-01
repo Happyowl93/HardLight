@@ -17,6 +17,8 @@
       allowedStates: [Alive, Critical, Dead]
     - type: Loadout
       prototypes: [SkubGear]
+    - type: TextToSpeech
+      voice: alvinjr
     
 - type: entity
   parent: ClothingBackpack
