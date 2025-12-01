@@ -132,6 +132,7 @@
     containers:
       storagebase: !type:Container
         ents: []
+      cell_slot: !type:ContainerSlot { }
   - type: Storage
     maxItemSize: Small
     grid:
