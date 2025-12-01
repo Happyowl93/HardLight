@@ -22799,5 +22799,12 @@ Entries:
   id: 221800
   time: '2025-11-30T23:27:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2218
+- author: STARLIGHT TEAM
+  changes:
+  - message: Avali no longer heal all bleed damage when going into stasis
+    type: Tweak
+  id: 220100
+  time: '2025-11-30T23:59:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2201
 Order: -1
 
