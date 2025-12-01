@@ -22999,5 +22999,13 @@ Entries:
   id: 230501
   time: '2025-12-01T00:42:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2305
+- author: Happyrobot33
+  changes:
+  - message: Reverted automatic pen insertion PR for now until menu sound spam is
+      fixed
+    type: Remove
+  id: 231100
+  time: '2025-12-01T01:26:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2311
 Order: -1
 
