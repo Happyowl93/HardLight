@@ -22860,5 +22860,13 @@ Entries:
   id: 220006
   time: '2025-12-01T00:00:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2200
+- author: CawsForConcern
+  changes:
+  - message: Spray painters no longer consume 2 paint charges when painting pipes
+      (now correctly consume only 1 charge)
+    type: Fix
+  id: 219900
+  time: '2025-12-01T00:00:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2199
 Order: -1
 
