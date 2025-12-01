@@ -232,7 +232,6 @@
   - Cyberlimbs
   completetime: 10
   materials:
-  materials:
     Plastic: 450
     Steel: 550
     Silver: 100
@@ -244,7 +243,6 @@
   categories:
   - Cyberlimbs
   completetime: 10
-  materials:
   materials:
     Plastic: 450
     Steel: 550
