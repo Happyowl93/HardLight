@@ -4,6 +4,16 @@
   description: signal-port-description-body-scanner-receiver
 
 - type: sinkPort
+  id: MassDriverConsoleReceiver
+  name: signal-port-name-mass-driver-console-receiver
+  description: signal-port-description-mass-driver-console-receiver
+
+- type: sinkPort
+  id: Launch
+  name: signal-port-name-launch
+  description: signal-port-description-launch
+
+- type: sinkPort
   id: TicketMachineNextNumber
   name: signal-port-name-ticket-machine-nextnumber
   description: signal-port-description-ticket-machine-nextnumber
