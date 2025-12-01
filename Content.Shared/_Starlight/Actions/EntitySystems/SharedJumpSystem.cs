@@ -107,37 +107,10 @@ public abstract class SharedJumpSystem : EntitySystem
 
         if (args.FromGrid && !_mapMan.TryFindGridAt(userMapCoords, out _, out _)) return;
 
-        if(TryComp<JumpComponent>(args.Performer, out var comp) && args.Action == comp.ActionEntity)
-            TryJump(args.Performer, args.Target, 15f, args.ToPointer, args.Sound, args.Distance);
-        else
-            ForceJump(args);
-        args.Handled = true;
+        TryJump(performer, targetCoords, target, 15f, args.ToPointer, args.Sound, args.Distance);
     }
 
-    private void ForceJump(JumpActionEvent args)
-
-    {
-        if (args.Handled) return;
-        var userTransform = Transform(args.Performer);
-
-        var userMapCoords = _transform.GetMapCoordinates(userTransform);
-        if (args.FromGrid && !_mapMan.TryFindGridAt(userMapCoords, out _, out _)) return;
-
-        args.Handled = true;
-        var targetMapCoords = _transform.ToMapCoordinates(args.Target);
-        var vector = targetMapCoords.Position - userMapCoords.Position;
-
-        if (!args.ToPointer
-
-            || Vector2.Distance(userMapCoords.Position, targetMapCoords.Position) > args.Distance)
-
-            vector = Vector2.Normalize(vector) * args.Distance;
-        _throwing.TryThrow(args.Performer, vector, baseThrowSpeed: args.Speed, doSpin: false);
-        _audio.PlayPredicted(args.Sound, args.Performer, args.Performer, AudioParams.Default.WithVolume(-4f));
-
-    }
-
-    public bool TryJump(Entity<JumpComponent?> ent, EntityCoordinates targetCoords, float speed = 15f, bool toPointer = false, SoundSpecifier? sound = null, float? distance = null, bool decreaseCharges = false)
+    public bool TryJump(Entity<JumpComponent?> performer, EntityCoordinates targetCoords, EntityUid? target = null, float speed = 15f, bool toPointer = false, SoundSpecifier? sound = null, float? distance = null, bool decreaseCharges = false)
     {
         if (!Resolve(performer, ref performer.Comp, false)
             || performer.Comp.ActionEntity == null
