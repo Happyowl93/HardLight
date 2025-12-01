@@ -22806,5 +22806,59 @@ Entries:
   id: 220100
   time: '2025-11-30T23:59:54.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2201
+- author: neomoth
+  changes:
+  - message: Added the ability to create new stations mid-round. Supports adding new
+      jobs to said station too.
+    type: Add
+  id: 220000
+  time: '2025-12-01T00:00:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2200
+- author: neomoth
+  changes:
+  - message: Added stationinit command to facilitate the creation of new stations
+      mid-round.
+    type: Add
+  id: 220001
+  time: '2025-12-01T00:00:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2200
+- author: neomoth
+  changes:
+  - message: Added rmstation command to facilitate the removal of stations. Please
+      do not use this on the main station, lmao.
+    type: Add
+  id: 220002
+  time: '2025-12-01T00:00:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2200
+- author: neomoth
+  changes:
+  - message: Added BecomesStationMidRoundComponent to allow mappers to create maps/grids
+      that become stations when spawned.
+    type: Add
+  id: 220003
+  time: '2025-12-01T00:00:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2200
+- author: neomoth
+  changes:
+  - message: Made so deleting a station will not delete the Central Command map, provided
+      there is at least one other station remaining.
+    type: Tweak
+  id: 220004
+  time: '2025-12-01T00:00:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2200
+- author: neomoth
+  changes:
+  - message: Made so deleting a station also deletes its associated armories.
+    type: Tweak
+  id: 220005
+  time: '2025-12-01T00:00:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2200
+- author: neomoth
+  changes:
+  - message: Fixed stations with no jobs still showing up in the New Life menu.
+    type: Fix
+  id: 220006
+  time: '2025-12-01T00:00:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2200
 Order: -1
 
