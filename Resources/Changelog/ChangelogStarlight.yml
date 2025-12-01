@@ -22889,5 +22889,44 @@ Entries:
   id: 221202
   time: '2025-11-30T23:59:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2212
+- author: mikeysaurus, Peter Poley
+  changes:
+  - message: Miners can now buy space hazard suits from their Mining Ticket Vender.
+    type: Add
+  id: 219600
+  time: '2025-12-01T00:25:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2196
+- author: mikeysaurus, Peter Poley
+  changes:
+  - message: Replaced Salvager's mercenary gear with unique gear, named "scrapper",
+      to seperate balance changes from the event Merc gear. Features Peter Poley's
+      sprites.
+    type: Tweak
+  id: 219601
+  time: '2025-12-01T00:25:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2196
+- author: mikeysaurus, Peter Poley
+  changes:
+  - message: Increased stock of the salvage gear vender to properly equip 10 total
+      salvagers or miners.
+    type: Tweak
+  id: 219602
+  time: '2025-12-01T00:25:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2196
+- author: mikeysaurus, Peter Poley
+  changes:
+  - message: Reduced price of both salv and mining maxim suits to 1200 tickets.
+    type: Tweak
+  id: 219603
+  time: '2025-12-01T00:25:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2196
+- author: mikeysaurus, Peter Poley
+  changes:
+  - message: Adds Binoculars to Mining and Salvage ticket venders, costing 75 tickets.
+      Max of 3.
+    type: Add
+  id: 219604
+  time: '2025-12-01T00:25:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2196
 Order: -1
 
