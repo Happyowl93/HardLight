@@ -12,7 +12,6 @@
   - SurvivalExtended
   - Trinkets
   - Scarves # Starlight
-  - CapPens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -29,7 +28,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - HoPPens # Starlight
   - GroupSpeciesBreathTool
 
 # Silicons
@@ -60,7 +58,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -76,7 +73,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -90,7 +86,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -107,7 +102,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -121,7 +115,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - LuxuryPens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -135,7 +128,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - LuxuryPens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -154,7 +146,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -170,7 +161,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - JanitorPlunger
   - GroupSpeciesBreathTool
 
@@ -187,7 +177,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -204,7 +193,6 @@
   - SurvivalClown
   - Trinkets
   - Scarves # Starlight
-  - ClownPens # Starlight
 
 - type: roleLoadout
   id: JobMime
@@ -221,7 +209,6 @@
   - SurvivalMime
   - Trinkets
   - Scarves # Starlight
-  - MimePens # Starlight
 
 - type: roleLoadout
   id: JobMusician
@@ -235,7 +222,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - Instruments
   - GroupSpeciesBreathTool
 
@@ -254,7 +240,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -271,7 +256,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -287,7 +271,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 # Engineering
@@ -304,7 +287,6 @@
   - SurvivalExtended
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -316,7 +298,6 @@
   - SurvivalExtended
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -332,7 +313,6 @@
   - SurvivalExtended
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -346,7 +326,6 @@
   - SurvivalExtended
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 # Science
@@ -365,7 +344,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -384,7 +362,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -397,7 +374,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 # Security
@@ -416,7 +392,6 @@
   - SurvivalSecurity
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
@@ -433,7 +408,6 @@
   - SurvivalSecurity
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
@@ -453,7 +427,6 @@
   - SurvivalSecurity
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
@@ -470,7 +443,6 @@
   - SurvivalSecurity
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
@@ -484,7 +456,6 @@
   - SurvivalSecurity
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathToolSecurity
 
 # Medical
@@ -504,7 +475,6 @@
   - SurvivalMedical
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -523,7 +493,6 @@
   - SurvivalMedical
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -536,7 +505,6 @@
   - SurvivalMedical
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -552,7 +520,6 @@
   - SurvivalMedical
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -570,7 +537,6 @@
   - SurvivalMedical
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathToolMedical
 
 # Wildcards
@@ -584,7 +550,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -598,7 +563,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - LuxuryPens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -612,7 +576,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -626,7 +589,6 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - Pens # Starlight
   - GroupSpeciesBreathTool
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
