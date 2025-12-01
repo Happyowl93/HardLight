@@ -65,8 +65,6 @@ public abstract class SharedMassDriverSystem : EntitySystem
             entities.Clear();
             _lookup.GetEntitiesIntersecting(uid, entities, LookupFlags.Dynamic | LookupFlags.Approximate);
 
-            // Remove anchored entities since we can't throw them
-            entities.RemoveWhere(e => Transform(e).Anchored);
             int entitiesCount = entities.Count;
 
             if (entitiesCount == 0)
