@@ -13,7 +13,6 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
-using Robust.Shared.Map; // Starlight
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Containers.ItemSlots
@@ -452,14 +451,12 @@ namespace Content.Shared.Containers.ItemSlots
         /// <param name="itemSlot">The ItemSlot on <paramref name="ent"/> to insert <paramref name="item"/> into.</param>
         /// <param name="emptyOnly"> True only returns slots that are empty.
         /// False returns any slot that is able to receive <paramref name="item"/>.</param>
-        /// <param name="allowSwap">Allow finding slots where insertion requires a swap</param> // Starlight
         /// <returns>True when a slot is found. Otherwise, false.</returns>
         public bool TryGetAvailableSlot(Entity<ItemSlotsComponent?> ent,
             EntityUid item,
             Entity<HandsComponent?>? userEnt,
             [NotNullWhen(true)] out ItemSlot? itemSlot,
-            bool emptyOnly = false, // Starlight-edit - change to second-to-last parameter
-            bool allowSwap = false) // Starlight - add parameter
+            bool emptyOnly = false)
         {
             itemSlot = null;
 
@@ -480,7 +477,7 @@ namespace Content.Shared.Containers.ItemSlots
                 if (emptyOnly && slot.ContainerSlot?.ContainedEntity != null)
                     continue;
 
-                if (CanInsert(ent, item, userEnt, slot, allowSwap)) //Starlight - add allowSwap parameter
+                if (CanInsert(ent, item, userEnt, slot))
                     slots.Add(slot);
             }
 
@@ -543,10 +540,9 @@ namespace Content.Shared.Containers.ItemSlots
         /// </summary>
         /// <param name="excludeUserAudio">If true, will exclude the user when playing sound. Does nothing client-side.
         /// Useful for predicted interactions</param>
-        private void Eject(EntityUid uid, ItemSlot slot, EntityUid item, EntityUid? user, bool excludeUserAudio = false, // Starlight-edit - extend argument list
-                EntityCoordinates? destination = null) // Starlight - add destination parameter
+        private void Eject(EntityUid uid, ItemSlot slot, EntityUid item, EntityUid? user, bool excludeUserAudio = false)
         {
-            bool? ejected = slot.ContainerSlot != null ? _containers.Remove(item, slot.ContainerSlot, destination: destination) : null; // Starlight-edit - pass through destination
+            bool? ejected = slot.ContainerSlot != null ? _containers.Remove(item, slot.ContainerSlot) : null;
             // ContainerSlot automatically raises a directed EntRemovedFromContainerMessage
 
             // Logging
@@ -566,8 +562,7 @@ namespace Content.Shared.Containers.ItemSlots
             ItemSlot slot,
             EntityUid? user,
             [NotNullWhen(true)] out EntityUid? item,
-            bool excludeUserAudio = false, // Starlight-edit - extend argument list
-            EntityCoordinates? destination = null) // Starlight - add destination parameter
+            bool excludeUserAudio = false)
         {
             item = null;
 
@@ -581,7 +576,7 @@ namespace Content.Shared.Containers.ItemSlots
             if (user != null && item != null && !_actionBlockerSystem.CanPickup(user.Value, item.Value))
                 return false;
 
-            Eject(uid, slot, item!.Value, user, excludeUserAudio, destination); // Starlight-edit - pass through destination
+            Eject(uid, slot, item!.Value, user, excludeUserAudio);
             return true;
         }
 

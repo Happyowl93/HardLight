@@ -11,7 +11,6 @@
   - Survival
   - Trinkets
   - Scarves
-  - Pens
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -22,7 +21,6 @@
   - Survival
   - Trinkets
   - Scarves
-  - LuxuryPens
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -41,7 +39,6 @@
   - SurvivalMedical
   - Trinkets
   - Scarves
-  - Pens
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -54,7 +51,6 @@
   - NanotrasenRepresentativeShoes
   - Trinkets
   - Scarves
-  - NTRPens
   - Survival
   - GroupSpeciesBreathTool
 
@@ -67,7 +63,6 @@
   - LawyerShoes
   - Trinkets
   - Scarves
-  - LuxuryPens
   - Survival
   - GroupSpeciesBreathTool
 
@@ -83,7 +78,6 @@
   - BlueShieldEyewear
   - Trinkets
   - Scarves
-  - Pens
   - SurvivalSecurity
   - GroupSpeciesBreathToolSecurity
 
@@ -100,7 +94,6 @@
   - Survival
   - Trinkets
   - Scarves
-  - Pens
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -116,7 +109,6 @@
   - Survival
   - Trinkets
   - Scarves
-  - Pens
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
