@@ -327,9 +327,12 @@ public sealed partial class ShadekinSystem : EntitySystem
 
             var lightExposure = 0f;
 
-            if (!HasComp<NullSpaceComponent>(uid) || !AreWeInTheDark(uid)) // Were in NullSpace, NullSpace is dark... and "The Dark" is dark too!
-                if (!_container.IsEntityInContainer(uid))
-                    lightExposure = GetLightExposure(uid);
+            if (HasComp<NullSpaceComponent>(uid) || AreWeInTheDark(uid)) // Were in NullSpace, NullSpace is dark... and "The Dark" is dark too!
+            {
+                // I had a brain moment, apprently if one is false its does not check for the other?
+            }
+            else if (!_container.IsEntityInContainer(uid))
+                lightExposure = GetLightExposure(uid);
 
             CheckThresholds(uid, component, lightExposure);
 
