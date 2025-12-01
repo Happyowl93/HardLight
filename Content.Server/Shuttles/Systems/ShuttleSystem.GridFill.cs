@@ -329,16 +329,13 @@ public sealed partial class ShuttleSystem
 
         var untriedGrids = new Dictionary<ResPath, float>(component.PathWeights);
 
-        while (untriedGrids.Count > 0) {
-            ResPath selectedGridPath = _random.Pick(untriedGrids);
-
-            untriedGrids.Remove(selectedGridPath);
+        while (_random.TryPickAndTake(untriedGrids, out var selectedGridPath)) {
 
             // Spawn on a dummy map and try to dock if possible, otherwise dump it.
-            _mapSystem.CreateMap(out var mapId);
+            _mapSystem.CreateMap(out var tempMapId);
             var valid = false;
 
-            if (_loader.TryLoadGrid(mapId, selectedGridPath, out var grid))
+            if (_loader.TryLoadGrid(tempMapId, selectedGridPath, out var grid))
             {
                 var escape = GetSingleDock(grid.Value);
 
@@ -372,7 +369,7 @@ public sealed partial class ShuttleSystem
                 }
             }
 
-            _mapSystem.DeleteMap(mapId);
+            _mapSystem.DeleteMap(tempMapId);
 
             if (valid)
             {
