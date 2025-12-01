@@ -22978,5 +22978,12 @@ Entries:
   id: 210800
   time: '2025-12-01T00:25:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2108
+- author: Rinary
+  changes:
+  - message: Added mass drivers!
+    type: Add
+  id: 140200
+  time: '2025-12-01T00:42:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1402
 Order: -1
 
