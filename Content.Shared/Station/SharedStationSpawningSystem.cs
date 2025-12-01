@@ -11,6 +11,7 @@ using Robust.Shared.Collections;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Shared.Preferences; // Starlight
 
 namespace Content.Shared.Station;
 
@@ -41,8 +42,14 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     /// <summary>
     ///     Equips the data from a `RoleLoadout` onto an entity.
     /// </summary>
-    public void EquipRoleLoadout(EntityUid entity, RoleLoadout loadout, RoleLoadoutPrototype roleProto)
+    public void EquipRoleLoadout(EntityUid entity, RoleLoadout loadout, RoleLoadoutPrototype roleProto, HumanoidCharacterProfile? profile = null) // Starlight edit
     {
+        // Starlight Start
+        // Store loadout and profile on entity
+        var appliedLoadout = EnsureComp<AppliedRoleLoadoutComponent>(entity);
+        appliedLoadout.Loadout = loadout;
+        appliedLoadout.Profile = profile;
+        // Starlight End
         // Order loadout selections by the order they appear on the prototype.
         foreach (var group in loadout.SelectedLoadouts.OrderBy(x => roleProto.Groups.FindIndex(e => e == x.Key)))
         {

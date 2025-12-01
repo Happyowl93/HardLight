@@ -55,3 +55,6 @@ loadout-group-salvage-lead-mantle = Salvage Lead mantle
 
 # Other
 loadout-group-scarves = Scarf
+
+# Silicons
+loadout-group-borg-brain-type = Cyborg Brain Type

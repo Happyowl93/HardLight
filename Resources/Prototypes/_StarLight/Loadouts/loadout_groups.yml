@@ -339,3 +339,13 @@
   loadouts:
     - SalvagePDA
     - VeteranSalvagePDA
+
+# Silicon Brain Type
+- type: loadoutGroup
+  id: SiliconBrainType
+  name: loadout-group-borg-brain-type
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - LoadoutSiliconPositronicBrain
+  - LoadoutSiliconSpeciesBrain
