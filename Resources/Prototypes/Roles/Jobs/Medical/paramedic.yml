@@ -14,6 +14,7 @@
   - Medical
   - Maintenance
   - Paramedic # Starlight
+  - External # Starlight
   extendedAccess:
   - Chemistry
   - Surgery # Starlight
