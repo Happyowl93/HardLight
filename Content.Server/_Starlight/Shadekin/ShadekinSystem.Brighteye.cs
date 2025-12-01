@@ -105,7 +105,7 @@ public sealed partial class ShadekinSystem : EntitySystem
             return;
 
         // Do we have a portal? if no... WE DIE!
-        if (component.Portal is null)
+        if (component.Portal is null && !AreWeInTheDark(uid))
             return;
 
         // Get a valid Location to get TP at.

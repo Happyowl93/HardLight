@@ -299,6 +299,20 @@ public sealed partial class ShadekinSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Makes a simple check to see if the ent is in the dark.
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <returns></returns>
+    private bool AreWeInTheDark(EntityUid uid)
+    {
+        var mapUid = Transform(uid).MapUid;
+        if (mapUid is not null && _tag.HasTag(mapUid.Value, _theDarkTag))
+            return true;
+
+        return false;
+    }
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -313,7 +327,7 @@ public sealed partial class ShadekinSystem : EntitySystem
 
             var lightExposure = 0f;
 
-            if (!HasComp<NullSpaceComponent>(uid)) // Were in NullSpace, NullSpace is dark. // TODO: If were also in "The Dark", this no light exposure should also be applied.
+            if (!HasComp<NullSpaceComponent>(uid) || !AreWeInTheDark(uid)) // Were in NullSpace, NullSpace is dark... and "The Dark" is dark too!
                 if (!_container.IsEntityInContainer(uid))
                     lightExposure = GetLightExposure(uid);
 
