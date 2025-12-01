@@ -346,57 +346,6 @@
   id: FloorTileItemOldConcreteSmooth
   result: FloorTileItemOldConcreteSmooth
 
-# Faux
-- type: latheRecipe
-  parent: BaseFauxTileRecipe
-  id: FauxTileAstroGrass
-  result: FloorTileItemAstroGrass
-
-- type: latheRecipe
-  parent: BaseFauxTileRecipe
-  id: FauxTileMowedAstroGrass
-  result: FloorTileItemMowedAstroGrass
-
-- type: latheRecipe
-  parent: BaseFauxTileRecipe
-  id: FauxTileJungleAstroGrass
-  result: FloorTileItemJungleAstroGrass
-
-- type: latheRecipe
-  parent: BaseFauxTileRecipe
-  id: FauxTileDarkAstroGrass
-  result: FloorTileItemDarkAstroGrass
-
-- type: latheRecipe
-  parent: BaseFauxTileRecipe
-  id: FauxTileLightAstroGrass
-  result: FloorTileItemLightAstroGrass
-
-- type: latheRecipe
-  parent: BaseFauxTileRecipe
-  id: FauxTileAstroIce
-  result: FloorTileItemAstroIce
-
-- type: latheRecipe
-  parent: BaseFauxTileRecipe
-  id: FauxTileAstroSnow
-  result: FloorTileItemAstroSnow
-
-- type: latheRecipe
-  parent: BaseFauxTileRecipe
-  id: FauxTileAstroAsteroidSand
-  result: FloorTileItemAstroAsteroidSand
-
-- type: latheRecipe
-  parent: BaseFauxTileRecipe
-  id: FauxTileAstroAsteroidSandBorderless
-  result: FloorTileItemAstroAsteroidSandBorderless
-
-- type: latheRecipe
-  parent: BaseFauxTileRecipe
-  id: FauxTileDesertAstroSand
-  result: FloorTileItemDesertAstroSand
-
 # Marble
 - type: latheRecipe
   parent: BaseMarbleTileRecipe
