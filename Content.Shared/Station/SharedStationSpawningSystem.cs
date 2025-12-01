@@ -356,32 +356,32 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     }
 
     private void InsertIntoItemSlots(Entity<ItemSlotsComponent?> typed, EntityUid entity) {
-        bool foundEmpty = _itemSlots.TryInsertEmpty(typed, entity, null, true);
+        bool foundEmpty = _itemSlots.TryInsertEmpty(typed, entity, null, excludeUserAudio: true, suppressSound: true);
 
         if (!foundEmpty)
         {
             // Since we're not filling in an empty slot, try to stack
-            bool foundSlot = _itemSlots.TryGetAvailableSlot(typed, entity, null, out var writeSlot, false, false);
+            bool foundSlot = _itemSlots.TryGetAvailableSlot(typed, entity, null, out var writeSlot, emptyOnly: false, allowSwap: false);
             if (foundSlot)
             {
-                _itemSlots.TryInsert(typed, writeSlot!, entity, null, false);
+                _itemSlots.TryInsert(typed, writeSlot!, entity, null, excludeUserAudio: true, suppressSound: true);
             }
             else
             {
                 // We can't stack - go for a swap instead, and we'll delete the removed item
-                foundSlot = _itemSlots.TryGetAvailableSlot(typed, entity, null, out var writeSlotSwap, false, true);
+                foundSlot = _itemSlots.TryGetAvailableSlot(typed, entity, null, out var writeSlotSwap, emptyOnly: false, allowSwap: true);
                 if (foundSlot)
                 {
                     var xform = _xformQuery.GetComponent(entity);
                     // If we don't specify that we're ejecting it to invalid coordinates, then
                     // when demo entities are loaded for the profile view in testing we'll try
                     // to eject into a nonexistent map coordinate space, which fails the test.
-                    var gotDeletable = _itemSlots.TryEject(typed, writeSlotSwap!, null, out var removedItem, false, xform.Coordinates);
+                    var gotDeletable = _itemSlots.TryEject(typed, writeSlotSwap!, null, out var removedItem, excludeUserAudio: true, xform.Coordinates, suppressSound: true);
                     if (gotDeletable)
                     {
                         QueueDel(removedItem);
                     }
-                    _itemSlots.TryInsert(typed, writeSlotSwap!, entity, null, false);
+                    _itemSlots.TryInsert(typed, writeSlotSwap!, entity, null, excludeUserAudio: true, suppressSound: true);
                 }
             }
         }

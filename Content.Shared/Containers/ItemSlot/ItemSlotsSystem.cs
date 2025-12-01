@@ -290,7 +290,8 @@ namespace Content.Shared.Containers.ItemSlots
             ItemSlot slot,
             EntityUid item,
             EntityUid? user,
-            bool excludeUserAudio = false)
+            bool excludeUserAudio = false, // Starlight-edit - extend argument list
+            bool suppressSound = false) // Starlight - add suppressSound parameter
         {
             bool? inserted = slot.ContainerSlot != null ? _containers.Insert(item, slot.ContainerSlot) : null;
             // ContainerSlot automatically raises a directed EntInsertedIntoContainerMessage
@@ -300,6 +301,13 @@ namespace Content.Shared.Containers.ItemSlots
                 _adminLogger.Add(LogType.Action,
                     LogImpact.Low,
                     $"{ToPrettyString(user.Value)} inserted {ToPrettyString(item)} into {slot.ContainerSlot?.ID + " slot of "}{ToPrettyString(uid)}");
+
+            // Starlight start - support suppressing generation of sounds
+            if (suppressSound)
+            {
+                return;
+            }
+            // Starlight end
 
             _audioSystem.PlayPredicted(slot.InsertSound, uid, excludeUserAudio ? user : null);
         }
@@ -373,12 +381,13 @@ namespace Content.Shared.Containers.ItemSlots
             ItemSlot slot,
             EntityUid item,
             EntityUid? user,
-            bool excludeUserAudio = false)
+            bool excludeUserAudio = false, // Starlight-edit - extend argument list
+            bool suppressSound = false) // Starlight - add suppressSound parameter
         {
             if (!CanInsert(uid, item, user, slot))
                 return false;
 
-            Insert(uid, slot, item, user, excludeUserAudio: excludeUserAudio);
+            Insert(uid, slot, item, user, excludeUserAudio: excludeUserAudio, suppressSound); // Starlight-edit - pass through suppressSound
             return true;
         }
 
@@ -420,11 +429,13 @@ namespace Content.Shared.Containers.ItemSlots
         ///     If true, will exclude the user when playing sound. Does nothing client-side.
         ///     Useful for predicted interactions
         /// </param>
+        /// <param name="suppressSound">Prevent any audio from being generated for this operation</param> // Starlight
         /// <returns>False if failed to insert item</returns>
         public bool TryInsertEmpty(Entity<ItemSlotsComponent?> ent,
             EntityUid item,
             EntityUid? user,
-            bool excludeUserAudio = false)
+            bool excludeUserAudio = false, // Starlight-edit - extend argument list
+            bool suppressSound = false) // Starlight - add suppressSound parameter
         {
             if (!Resolve(ent, ref ent.Comp, false))
                 return false;
@@ -439,7 +450,7 @@ namespace Content.Shared.Containers.ItemSlots
             if (user != null && !_handsSystem.TryDrop(user.Value, item))
                 return false;
 
-            Insert(ent, itemSlot, item, user, excludeUserAudio: excludeUserAudio);
+            Insert(ent, itemSlot, item, user, excludeUserAudio: excludeUserAudio, suppressSound); // Starlight-edit - pass through suppressSound
             return true;
         }
 
@@ -544,7 +555,7 @@ namespace Content.Shared.Containers.ItemSlots
         /// <param name="excludeUserAudio">If true, will exclude the user when playing sound. Does nothing client-side.
         /// Useful for predicted interactions</param>
         private void Eject(EntityUid uid, ItemSlot slot, EntityUid item, EntityUid? user, bool excludeUserAudio = false, // Starlight-edit - extend argument list
-                EntityCoordinates? destination = null) // Starlight - add destination parameter
+                EntityCoordinates? destination = null, bool suppressSound = false) // Starlight - add destination and suppressSound parameters
         {
             bool? ejected = slot.ContainerSlot != null ? _containers.Remove(item, slot.ContainerSlot, destination: destination) : null; // Starlight-edit - pass through destination
             // ContainerSlot automatically raises a directed EntRemovedFromContainerMessage
@@ -555,6 +566,12 @@ namespace Content.Shared.Containers.ItemSlots
                     LogImpact.Low,
                     $"{ToPrettyString(user.Value)} ejected {ToPrettyString(item)} from {slot.ContainerSlot?.ID + " slot of "}{ToPrettyString(uid)}");
 
+            // Starlight start - support suppressing generation of sounds
+            if (suppressSound)
+            {
+                return;
+            }
+            // Starlight end
             _audioSystem.PlayPredicted(slot.EjectSound, uid, excludeUserAudio ? user : null);
         }
 
@@ -566,8 +583,9 @@ namespace Content.Shared.Containers.ItemSlots
             ItemSlot slot,
             EntityUid? user,
             [NotNullWhen(true)] out EntityUid? item,
-            bool excludeUserAudio = false, // Starlight-edit - extend argument list
-            EntityCoordinates? destination = null) // Starlight - add destination parameter
+            bool excludeUserAudio = false, // Starlight start - extend argument list, add destination and suppressSound
+            EntityCoordinates? destination = null,
+            bool suppressSound = false) // Starlight end
         {
             item = null;
 
@@ -581,7 +599,7 @@ namespace Content.Shared.Containers.ItemSlots
             if (user != null && item != null && !_actionBlockerSystem.CanPickup(user.Value, item.Value, showPopup: true))
                 return false;
 
-            Eject(uid, slot, item!.Value, user, excludeUserAudio, destination); // Starlight-edit - pass through destination
+            Eject(uid, slot, item!.Value, user, excludeUserAudio, destination, suppressSound); // Starlight-edit - pass through destination and suppressSound
             return true;
         }
 
