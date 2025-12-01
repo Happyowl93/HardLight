@@ -23007,5 +23007,12 @@ Entries:
   id: 231100
   time: '2025-12-01T01:26:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2311
+- author: neomoth
+  changes:
+  - message: Fixed the faction member component on hostile mimic.
+    type: Fix
+  id: 231300
+  time: '2025-12-01T03:03:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2313
 Order: -1
 
