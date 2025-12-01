@@ -689,6 +689,7 @@
       components: 
       - type: MagnetPickup
         range: 3
+        requiresEquipping: false
         slotFlags: 0
     # starlight edit end
 
