@@ -372,6 +372,7 @@ public sealed partial class StationSystem : SharedStationSystem
     private EntityUid CreateCustomStation(List<EntProtoId> protoIds, MapCoordinates? coords, ComponentRegistry? registry, BecomesStationMidRoundComponent? data = null)
     {
         var ent = EntityManager.CreateEntityUninitialized(null); // dummy entity
+        data ??= EnsureComp<BecomesStationMidRoundComponent>(ent); // just ensure that this exists so that anything made with stationinit command will default to everything being blocked.
         // do parents first
         foreach (var protoId in protoIds)
         {
