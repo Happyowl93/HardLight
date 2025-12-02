@@ -16,12 +16,6 @@ namespace Content.Server.Shuttles.Systems;
 
 public sealed partial class ShuttleSystem
 {
-    //Starlight start
-    private static readonly string[] CargoShuttleKeys = ["cargo_salvage_shuttle", "cargo_mining_shuttle"];
-    private static readonly string[] TradeStationKeys = ["trade"];
-    private static readonly string[] RuinsKeys = ["ruins", "wrecks"];
-    //Starlight end
-
     private void InitializeGridFills()
     {
         SubscribeLocalEvent<GridSpawnComponent, StationPostInitEvent>(OnGridSpawnPostInit);
@@ -64,7 +58,7 @@ public sealed partial class ShuttleSystem
             foreach (var grid in station.Grids)
             {
                 if (!TryComp<BecomesStationMidRoundComponent>(grid, out var becomesStation)) continue;
-                if (!becomesStation.AllowCargoShuttles)
+                if (!becomesStation.AllowCargoShuttle)
                     return;
                 break; // can break, we already found the grid that created this station
             }
@@ -218,11 +212,7 @@ public sealed partial class ShuttleSystem
                     case GridSpawnGroup grid:
                         // Starlight start
                         if (station is not null)
-                        {
-                            if (!station.AllowCargoShuttles && CargoShuttleKeys.Contains(group.Key)) continue;
-                            if (!station.AllowRuins && RuinsKeys.Contains(group.Key)) continue;
-                            if (!station.AllowTradingStation && TradeStationKeys.Contains(group.Key)) continue;
-                        }
+                            if (!station.AllowedGridSpawns.Contains(group.Key)) continue; // group name must be whitelisted
                         // Starlight end
                         if (!TryGridSpawn(targetGrid.Value, uid, mapId, grid, out spawned))
                             continue;
