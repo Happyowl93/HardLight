@@ -55,9 +55,15 @@
     targetUser: true
     deleteItems: true
     gibBody: false
+  - type: PopupOnTrigger
+    targetUser: true
+    text: death-acidifier-implant-activate-gear
   - type: SpawnOnTrigger
+    targetUser: true
     proto: GearAcidifier
     predicted: true
+  - type: DeleteOnTrigger
+    targetUser: false
   - type: Tag
     tags:
     - SubdermalImplant

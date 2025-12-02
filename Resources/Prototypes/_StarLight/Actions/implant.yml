@@ -17,11 +17,15 @@
 
 # Gear Acidifier
 - type: entity
-  parent: [BaseSuicideAction, BaseImplantAction]
+  parent: BaseImplantAction
   id: ActionActivateGearAcidifier
   name: Activate Gear-Acidifier
   description: Activates your gear-acidifier, melting your equipment but leaving your body intact
   components:
+  - type: ConfirmableAction
+    popup: gear-acidifier-action-popup
+  - type: LimitedCharges
+    maxCharges: 1
   - type: Action
     itemIconStyle: BigAction
     priority: -20
