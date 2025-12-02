@@ -102,3 +102,12 @@
   components:
     - type: Implanter
       implant: MagillitisSerumImplant
+
+# Gear Acidifier
+- type: entity
+  id: GearAcidifierImplanter
+  name: gear acidifier implanter
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: GearAcidifierImplant

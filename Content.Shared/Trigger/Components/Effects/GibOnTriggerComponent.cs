@@ -14,4 +14,12 @@ public sealed partial class GibOnTriggerComponent : BaseXOnTriggerComponent
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool DeleteItems = false;
+
+    // Starlight Start
+    /// <summary>
+    /// Should the entity be gibbed? If false, only items will be deleted.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool GibBody = true;
+    // Starlight End
 }

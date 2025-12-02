@@ -34,7 +34,10 @@ public sealed class GibOnTriggerSystem : EntitySystem
                 PredictedQueueDel(item);
             }
         }
-        _body.GibBody(target.Value, true);
+        // Starlight edit Start: Gear acidifer
+        if (ent.Comp.GibBody)
+            _body.GibBody(target.Value, true);
+        // Starlight edit end
         args.Handled = true;
     }
 }

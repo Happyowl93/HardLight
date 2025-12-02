@@ -14,3 +14,17 @@
       icon:
         sprite: _Starlight/Actions/implants.rsi
         state: gorilla_rampage
+
+# Gear Acidifier
+- type: entity
+  parent: [BaseSuicideAction, BaseImplantAction]
+  id: ActionActivateGearAcidifier
+  name: Activate Gear-Acidifier
+  description: Activates your gear-acidifier, melting your equipment but leaving your body intact
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: gib

@@ -35,3 +35,31 @@
     - type: PolymorphOnTrigger
       polymorph: RampagingGorilla
       targetUser: true
+
+# Gear Acidifier
+- type: entity
+  parent: BaseSubdermalImplant
+  id: GearAcidifierImplant
+  name: gear-acidifier implant
+  description: This implant melts the user's equipment upon death, leaving the body intact.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    permanent: true
+    implantAction: ActionActivateGearAcidifier
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: TriggerOnActivateImplant
+  - type: GibOnTrigger
+    targetUser: true
+    deleteItems: true
+    gibBody: false
+  - type: SpawnOnTrigger
+    proto: GearAcidifier
+    predicted: true
+  - type: Tag
+    tags:
+    - SubdermalImplant
+    - HideContextMenu
+    - GearAcidifier

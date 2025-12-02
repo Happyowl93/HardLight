@@ -82,6 +82,9 @@
   id: fingerlessinsuls
 
 - type: Tag
+  id: GearAcidifier
+
+- type: Tag
   id: HiltPlasteel
 
 - type: Tag
