@@ -25,3 +25,5 @@ materials-unit-bill = bill
 materials-unit-credit = credit
 materials-unit-credits = credits
 currency-display-unit-credit = cr
+#Starlight - Salvage Ticket Machine
+materials-unit-tickets = tickets
