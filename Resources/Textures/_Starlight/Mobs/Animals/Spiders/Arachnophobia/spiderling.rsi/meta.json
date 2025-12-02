@@ -5,11 +5,29 @@
     "y": 32
   },
   "license": "CC-BY-SA-3.0",
-  "copyright": "Programmer Art",
+  "copyright": "Spider Filter textures by Conflee",
   "states": [
     {
       "name": "alive",
-      "directions": 4
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1
+        ]
+      ]
     },
     {
       "name": "dead"
