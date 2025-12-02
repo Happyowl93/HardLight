@@ -41,7 +41,3 @@
     - type: SkipLoadingCharacterRecords
   # Cosmatic Drift Record System-end
   applyTraits: false
-  # Starlight Start: Selectable Silicon Brain
-  loadoutGroups:
-  - SiliconBrainType
-  # Starlight End
