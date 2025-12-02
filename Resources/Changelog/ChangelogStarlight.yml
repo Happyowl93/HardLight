@@ -23037,5 +23037,38 @@ Entries:
   id: 232600
   time: '2025-12-02T02:28:39.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2326
+- author: neomoth
+  changes:
+  - message: Added several parameters to BecomesStationMidRoundComponent to allow
+      for better fine-tuning of how it gets set up.
+    type: Add
+  id: 232800
+  time: '2025-12-02T02:51:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2328
+- author: neomoth
+  changes:
+  - message: BecomesStationMidRoundComponent now accepts multiple station entity prototypes
+      so you can include and exclude things as you see fit.
+    type: Tweak
+  id: 232801
+  time: '2025-12-02T02:51:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2328
+- author: neomoth
+  changes:
+  - message: Fixed there being no cleanup for the arrivals shuttle if the station
+      it belongs to were to get deleted.
+    type: Fix
+  id: 232802
+  time: '2025-12-02T02:51:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2328
+- author: neomoth
+  changes:
+  - message: By default, newly made stations will NOT cause cargo shuttles, ruins,
+      wrecks, trading stations, arrivals, evacs, or armories to spawn. This only applies
+      to stations made with stationinit or BecomesStationMidRoundComponent.
+    type: Fix
+  id: 232803
+  time: '2025-12-02T02:51:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2328
 Order: -1
 
