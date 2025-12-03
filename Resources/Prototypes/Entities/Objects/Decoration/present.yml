@@ -26,7 +26,6 @@
     wrapper: PresentTrash
     sound:
       path: /Audio/Effects/unwrap.ogg
-    requireHands: false # 🌟Starlight🌟
     insaneMode: false
     contentsViewers:
       components:
@@ -40,7 +39,6 @@
   components:
     - type: RandomGift
       insaneMode: true
-      requireHands: false # 🌟Starlight🌟
 
 - type: entity
   id: PresentRandom
