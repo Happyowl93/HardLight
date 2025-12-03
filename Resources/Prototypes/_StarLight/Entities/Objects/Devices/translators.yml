@@ -26,7 +26,7 @@
       - state: translator
         shader: unshaded
         visible: false
-        map: [ "enum.ToggleableVisuals.Layer", "enum.PowerDeviceVisualLayers.Powered" ]
+        map: [ "translator" ]
   - type: Appearance
   - type: ToggleableVisuals
     spriteLayer: translator
