@@ -27,5 +27,14 @@ namespace Content.Server.Storage.Components
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("uses")]
         public int Uses = 1;
+
+        // 🌟Starlight🌟 start
+        /// <summary>
+        ///     How many uses before the item should delete itself.
+        /// </summary>
+        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField("requireHands")]
+        public bool RequireHands = true;
+        // 🌟Starlight🌟 end
     }
 }
