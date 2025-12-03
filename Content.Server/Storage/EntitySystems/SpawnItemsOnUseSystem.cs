@@ -71,29 +71,29 @@ namespace Content.Server.Storage.EntitySystems
 
         // 🌟Starlight🌟 start
         //Functionality was moved and slightly modified
-            SpawnItems(uid, component, args.User);
+            var coords = Transform(args.User).Coordinates;
+            SpawnItems(uid, component, args.User, coords);
             args.Handled = true;
         }
 
-        private void SpawnItems(EntityUid uid, SpawnItemsOnUseComponent component, EntityUid user)
+        private void SpawnItems(EntityUid uid, SpawnItemsOnUseComponent component, EntityUid user, EntityCoordinates coordinates)
         {
             // If starting with zero or less uses, this component is a no-op
             if (component.Uses <= 0)
                 return;
 
-            var coords = Transform(user).Coordinates;
             var spawnEntities = GetSpawns(component.Items, _random);
             EntityUid? entityToPlaceInHands = null;
 
             foreach (var proto in spawnEntities)
             {
-                entityToPlaceInHands = Spawn(proto, coords);
+                entityToPlaceInHands = Spawn(proto, coordinates);
                 _adminLogger.Add(LogType.EntitySpawn, LogImpact.Low, $"{ToPrettyString(user)} used {ToPrettyString(uid)} which spawned {ToPrettyString(entityToPlaceInHands.Value)}");
             }
 
             // The entity is often deleted, so play the sound at its position rather than parenting
             if (component.Sound != null)
-                _audio.PlayPvs(component.Sound, coords);
+                _audio.PlayPvs(component.Sound, coordinates);
 
             component.Uses--;
 
@@ -106,7 +106,7 @@ namespace Content.Server.Storage.EntitySystems
                 QueueDel(uid);
             }
 
-            if (entityToPlaceInHands != null && component.RequireHands)
+            if (entityToPlaceInHands != null)
                 _hands.PickupOrDrop(user, entityToPlaceInHands.Value);
 
         }
@@ -120,10 +120,11 @@ namespace Content.Server.Storage.EntitySystems
                 return;
 
             var user = args.User;
+            var coords = Transform(uid).Coordinates;
 
             args.Verbs.Add(new AlternativeVerb()
             {
-                Act = () => SpawnItems(uid, component, user),
+                Act = () => SpawnItems(uid, component, user, coords),
                 Text = Loc.GetString("delivery-open-verb"),
             });
         }
