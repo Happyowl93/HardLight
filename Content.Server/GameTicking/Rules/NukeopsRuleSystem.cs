@@ -301,10 +301,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     }
 
     // Starlight Start: Check round end when nukie is cuffed/uncuffed
-    private void OnNukieCuffStateChanged(EntityUid uid, NukeOperativeComponent component, ref CuffedStateChangeEvent args)
-    {
-        CheckRoundShouldEnd();
-    }
+    private void OnNukieCuffStateChanged(EntityUid uid, NukeOperativeComponent component, ref CuffedStateChangeEvent args) => CheckRoundShouldEnd();
     // Starlight End
 
     private void OnRuleLoadedGrids(Entity<NukeopsRuleComponent> ent, ref RuleLoadedGridsEvent args)
