@@ -98,11 +98,10 @@ public sealed partial class TransformMech : IGraphAction
                 containerSystem.Remove(equipment, equipmentContainer);
                 containerSystem.Insert(equipment, mechComp.EquipmentContainer);
             }
-            while (mechComp.PilotSlot.ContainedEntity == null && pilotContainer.ContainedEntities.Count > 0)
+            if (mechComp.PilotSlot.ContainedEntity == null && pilotContainer.ContainedEntities.Count > 0)
             {
-                var pilot = pilotContainer.ContainedEntities[0];
                 mechSys.TryEject(uid);
-                mechSys.TryInsert(mech, pilot);
+                mechSys.TryInsert(mech, pilotContainer.ContainedEntities[0]);
             }
         }
         var entChangeEv = new ConstructionChangeEntityEvent(mech, uid);
