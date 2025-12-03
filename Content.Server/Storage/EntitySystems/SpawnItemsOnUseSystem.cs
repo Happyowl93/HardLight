@@ -106,14 +106,14 @@ namespace Content.Server.Storage.EntitySystems
                 QueueDel(uid);
             }
 
-            if (entityToPlaceInHands != null)
+            if (entityToPlaceInHands != null && component.RequireHands)
                 _hands.PickupOrDrop(user, entityToPlaceInHands.Value);
 
         }
 
         private void OnGetWrapperVerbs(EntityUid uid, SpawnItemsOnUseComponent component, ref GetVerbsEvent<AlternativeVerb> args)
         {
-            if (!args.CanAccess || !args.CanInteract || args.Hands == null || component.RequireHands)
+            if (!args.CanAccess || !args.CanInteract || (component.RequireHands && args.Hands != null) )
                 return;
 
             if (_hands.IsHolding(args.User, uid))
