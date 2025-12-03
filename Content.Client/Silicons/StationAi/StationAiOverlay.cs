@@ -1,8 +1,8 @@
 using System.Numerics;
 using System.Linq; // Carpmosia-edit - AI Navmap
 using Content.Client.Pinpointer.UI; // Carpmosia-edit - AI Navmap
-using Content.Client.Graphics;
 using Content.Shared.Movement.Components;
+using Content.Client.Graphics;
 using Content.Shared.Silicons.StationAi;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
