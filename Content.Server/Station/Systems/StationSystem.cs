@@ -40,7 +40,7 @@ public sealed partial class StationSystem : SharedStationSystem
     [Dependency] private readonly PvsOverrideSystem _pvsOverride = default!;
     [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!; // Starlight
     [Dependency] private readonly IPrototypeManager _prototype = default!; // Starlight
-    [Dependency] private readonly IComponentFactory _factory = default!;
+    [Dependency] private readonly IComponentFactory _factory = default!; // Starlight
 
     private ISawmill _sawmill = default!;
 
