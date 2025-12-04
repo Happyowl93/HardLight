@@ -26,7 +26,11 @@ public sealed class ToggleReadyCommand : LocalizedEntityCommands
 
         if (_gameTicker.RunLevel != GameRunLevel.PreRoundLobby)
         {
-            shell.WriteError(Loc.GetString("shell-can-only-run-from-pre-round-lobby"));
+            // Starlight - due to synchronization issues, we can get this from the client
+            // immediately after we leave the lobby. This is more of an issue for us than
+            // for upstream because we have more states where this can get changed by the
+            // menu automatically, and that can cause test failures.
+            //shell.WriteError(Loc.GetString("shell-can-only-run-from-pre-round-lobby"));
             return;
         }
 
