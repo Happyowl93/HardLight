@@ -1,11 +1,8 @@
-using System.Collections.Generic; // Starlight
 using Content.Server.Chat.Systems;
-using Content.Shared._Starlight.Silicons.Borgs; // Starlight
 using Content.Server.Construction;
 using Content.Server.Destructible;
 using Content.Server.Ghost;
 using Content.Server.Mind;
-using Content.Server.Medical.SuitSensors;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Roles;
@@ -19,33 +16,39 @@ using Content.Shared.Damage;
 using Content.Shared.Destructible;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.DoAfter;
-using Content.Shared.Follower; // Starlight
-using Content.Shared.Follower.Components; // Starlight
 using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components; // Starlight
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Medical.SuitSensor; // Starlight
-using Content.Shared.Medical.SuitSensors; // Starlight
 using Content.Shared.Popups;
 using Content.Shared.Power.Components;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Roles;
 using Content.Shared.Silicons.StationAi;
-using Content.Shared.Humanoid; // Starlight
 using Content.Shared.Speech.Components;
 using Content.Shared.StationAi;
 using Content.Shared.Turrets;
 using Content.Shared.Weapons.Ranged.Events;
-using Content.Shared.Warps; // Starlight
 using Robust.Server.Containers;
 using Robust.Shared.Containers;
-using Robust.Shared.Map; // Starlight
 using Robust.Shared.Map.Components;
-using Robust.Shared.Log; // Starlight
-using Robust.Shared.Localization; // Starlight
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using static Content.Server.Chat.Systems.ChatSystem;
+
+#region Starlight
+using Content.Server.Medical.SuitSensors;
+using System.Collections.Generic;
+using Content.Shared._Starlight.Silicons.Borgs;
+using Content.Shared.Follower;
+using Content.Shared.Follower.Components;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Medical.SuitSensor;
+using Content.Shared.Medical.SuitSensors;
+using Content.Shared.Humanoid;
+using Content.Shared.Warps;
+using Robust.Shared.Map;
+using Robust.Shared.Log;
+using Robust.Shared.Localization;
+#endregion Starlight
 
 namespace Content.Server.Silicons.StationAi;
 
@@ -68,6 +71,7 @@ public sealed class StationAiSystem : SharedStationAiSystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+
     [Dependency] private readonly IMapManager _map = default!; // Starlight
     [Dependency] private readonly SuitSensorSystem _suitSensors = default!; // Starlight
     [Dependency] private readonly FollowerSystem _followerSystem = default!; // Starlight
@@ -363,6 +367,7 @@ public sealed class StationAiSystem : SharedStationAiSystem
             _activeFollowTargets.Remove(args.Following);
     }
     // Starlight-end
+
     private void AfterConstructionChangeEntity(Entity<StationAiCoreComponent> ent, ref AfterConstructionChangeEntityEvent args)
     {
         if (!_container.TryGetContainer(ent, StationAiCoreComponent.BrainContainer, out var container) ||
