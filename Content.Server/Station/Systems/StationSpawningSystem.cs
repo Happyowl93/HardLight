@@ -175,10 +175,11 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         SetupCybernetics(entity.Value, profile?.Cybernetics ?? []); // Starlight
 
-        // Starlight begin
+        // Starlight begin - we try to do a unified load of loadout and startinggear in one shot to
+        // make it more consistent and equip things in a more effective order.
         if (loadout != null)
         {
-            var startingGear = prototype?.StartingGear != null ? [_prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear)] : [];
+            var startingGear = prototype?.StartingGear != null ? [_prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear)] : Array.Empty<IEquipmentLoadout>();
             StarlightEquipRoleLoadout(entity.Value, loadout, startingGear, roleProto!);
         }
         else if (prototype?.StartingGear != null)
