@@ -176,14 +176,10 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         SetupCybernetics(entity.Value, profile?.Cybernetics ?? []); // Starlight
 
         // Starlight begin
-        if (loadout != null && prototype?.StartingGear != null)
+        if (loadout != null)
         {
-            var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
-            StarlightEquipRoleLoadout(entity.Value, loadout, [startingGear], roleProto!);
-        }
-        else if (loadout != null)
-        {
-            StarlightEquipRoleLoadout(entity.Value, loadout, [], roleProto!);
+            var startingGear = prototype?.StartingGear != null ? [_prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear)] : [];
+            StarlightEquipRoleLoadout(entity.Value, loadout, startingGear, roleProto!);
         }
         else if (prototype?.StartingGear != null)
         {
