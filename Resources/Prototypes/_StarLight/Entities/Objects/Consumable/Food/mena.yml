@@ -1,0 +1,141 @@
+# Middle Eastern Foods
+
+# Raw Pita
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughPita
+  name: pita dough
+  description: A piece of pita dough.
+  components:
+  - type: Item
+    size: Normal
+  - type: FlavorProfile
+    flavors:
+      - chalky
+      - dough
+  - type: Sprite
+    sprite: _Starlight/Objects/Consumable/Food/pita.rsi
+    layers:
+    - state: pitadough
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 3
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+# TBD: Pita slices for dipping
+#  - type: SliceableFood
+#    count: 3
+#    slice: FoodDoughPitaSlice
+
+# Pita
+- type: entity
+  parent: FoodBreadBase
+  id: FoodBreadPita
+  name: pita
+  description: A flatbread with internal pocket. Best when eaten stuffed.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Consumable/Food/pita.rsi
+    layers:
+    - state: pita
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+
+# Falafel
+- type: entity
+  parent: FoodInjectableBase
+  id: FoodFalafel
+  name: falafel
+  description: A hearty pea-based mince. The vegan meatloaf of the Middle East.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Consumable/Food/falafel.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 7
+        - ReagentId: Hummus
+          Quantity: 5
+
+# Hummus
+- type: entity
+  parent: FoodInjectableBase
+  id: FoodHummusDip
+  name: hummus
+  description: A hearty pea-based paste. The ultimate dip of the Middle East.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Consumable/Food/hummus.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 9
+        reagents:
+        - ReagentId: Hummus
+          Quantity: 7
+
+# Chicken Shawarma
+
+# Souvlaki
+
+# Doner Kebab
+
+# Turkish Delight
+- type: entity
+  parent: FoodInjectableBase
+  id: FoodSnackTurkishDelight
+  name: uncut turkish delight
+  description: A massive, wobbling gelatin dessert. Contains nuts!
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Consumable/Food/turkishdelight.rsi
+    layers:
+    - state: uncut
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 48
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 35
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: SliceableFood
+    count: 8
+    slice: FoodSnackTurkishDelightCube
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+
+- type: entity
+  parent: FoodInjectableBase
+  id: FoodSnackTurkishDelightCube
+  name: turkish delight
+  description: A tiny, wobbling gelatin dessert. Contains nuts!
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Consumable/Food/turkishdelight.rsi
+    layers:
+    - state: cube
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 4.375
+        - ReagentId: Nutriment
+          Quantity: 0.625
+  - type: Item
+    size: Tiny

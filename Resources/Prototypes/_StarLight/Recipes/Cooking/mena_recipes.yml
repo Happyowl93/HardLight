@@ -1,0 +1,84 @@
+# Middle Eastern Foods - Recipes
+
+# Pita
+- type: reaction
+  id: CreatePitaDough
+  impact: Low
+  quantized: true
+  conserveEnergy: false
+  reactants:
+    OilOlive:
+      amount: 1
+    Flour:
+      amount: 5
+    Water:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: FoodPitaDough
+      
+- type: microwaveMealRecipe
+  id: RecipePita
+  name: pita recipe
+  result: FoodBreadPita
+  time: 5
+  group: Breads
+  deviceType: Oven
+  solids:
+    FoodPitaDough: 1
+
+# Falafel
+
+- type: microwaveMealRecipe
+  id: RecipeFalafel
+  name: falafel recipe
+  result: FoodFalafel
+  time: 5
+  group: Savory
+  deviceType: Oven
+  reagents:
+    Hummus: 10
+    TableSalt: 1
+    OilOlive: 1
+  solids:
+    FoodOnionRedSlice: 1
+
+# Hummus (Dip)
+
+- type: microwaveMealRecipe
+  id: RecipeHummusDip
+  name: hummus dip recipe
+  result: FoodHummusDip
+  time: 5
+  group: Savory
+  deviceType: Oven
+  reagents:
+    Hummus: 10
+    TableSalt: 1
+    OilOlive: 1
+  solids:
+    FoodBowlBig: 1
+    FoodBreadPita: 1
+
+# Chicken Shawarma
+
+# Souvlaki
+
+# Doner Kebab
+
+# Turkish Delight
+- type: microwaveMealRecipe
+  id: RecipeTurkishDelight
+  name: turkish delight recipe
+  result: FoodTurkishDelight
+  time: 5
+  group: Savory
+  deviceType: Stove
+  reagents:
+    Sugar: 10
+    TableSalt: 10
+    Water: 10
+    CornMeal: 10
+  solids:
+    FoodSnackPistachios: 1
+
