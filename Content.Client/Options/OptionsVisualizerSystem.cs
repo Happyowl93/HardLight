@@ -71,7 +71,8 @@ public sealed class OptionsVisualizerSystem : EntitySystem
         UpdateComponent(uid, component, sprite);
     }
 
-    private void UpdateComponent(EntityUid uid, OptionsVisualizerComponent component, SpriteComponent sprite)
+    // Starlight Edit private -> public
+    public void UpdateComponent(EntityUid uid, OptionsVisualizerComponent component, SpriteComponent sprite)
     {
         foreach (var (layerKeyRaw, layerData) in component.Visuals)
         {
@@ -87,12 +88,23 @@ public sealed class OptionsVisualizerSystem : EntitySystem
             if (matchedDatum == null)
                 continue;
 
-            var layerIndex = _reflection.TryParseEnumReference(layerKeyRaw, out var @enum)
-                ? _sprite.LayerMapReserve((uid, sprite), @enum)
-                : _sprite.LayerMapReserve((uid, sprite), layerKeyRaw);
+            // Starlight Start
+            int layerIndex;
+            if (_reflection.TryParseEnumReference(layerKeyRaw, out var @enum))
+            {
+                if(_sprite.LayerMapTryGet((uid, sprite), @enum, out layerIndex, false))
+                    _sprite.LayerMapReserve((uid, sprite), @enum);
+            }
+            else 
+            { 
+                if(_sprite.LayerMapTryGet((uid, sprite), layerKeyRaw, out layerIndex, false))
+                    _sprite.LayerMapReserve((uid, sprite), layerKeyRaw); 
+            }
 
-            _sprite.LayerSetData((uid, sprite), layerIndex, matchedDatum.Data);
-        }
+            if(layerIndex != -1)
+            //Starlight End
+                _sprite.LayerSetData((uid, sprite), layerIndex, matchedDatum.Data);
+        }     
     }
 }
 
