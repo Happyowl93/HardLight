@@ -3,8 +3,12 @@ using Content.Server.Explosion.EntitySystems;
 using Content.Server.Power.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Database;
-using Content.Shared.Kitchen.Components; // Starlight-edit
+using Content.Shared.Power.Components;
 using Content.Shared.Rejuvenate;
+
+#region Starlight
+using Content.Shared.Kitchen.Components;
+#endregion Starlight
 
 namespace Content.Server.Power.EntitySystems;
 
