@@ -84,7 +84,7 @@
 - type: entity
   parent: FoodBowlBase
   id: FoodHummusDip
-  name: hummus
+  name: hummus dip
   description: A hearty pea-based paste, served with strips of pita. The ultimate dip of the Middle East.
   components:
   - type: FlavorProfile
