@@ -208,7 +208,10 @@
         Heat: 0.3
         Radiation: 0.5
         Caustic: 0.5
+    # Starlight-start
     staminaModifier: 0.35
+    ignoreKnockdown: true
+    # Starlight-end
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: FireProtection
