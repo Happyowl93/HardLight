@@ -107,6 +107,8 @@
         - CaptainJetpackStealObjective
         - HandTeleporterStealObjective
         - EnergyMagnumStealObjective
+        - EnergyShotgunStealObjective
+        - Proto5xStealObjective
 
 
 #USSP

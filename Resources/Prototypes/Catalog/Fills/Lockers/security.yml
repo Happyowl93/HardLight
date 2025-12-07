@@ -26,7 +26,6 @@
   id: FillLockerWarden
   table: !type:AllSelector
     children:
-    - id: WeaponEnergyShotgun #Starlight
     - id: ClothingEyesHudSecurity #Starlight
     - id: ClothingHeadsetSecurityWarden #Starlight
     - id: FlashlightSeclite
@@ -167,6 +166,7 @@
   table: !type:AllSelector
     children:
     - id: ClothingEyesGlassesNoir
+    - id: WeaponEnergyMagnum #Starlight
     - id: ClothingHeadHatFedoraBrown #Starlight
     - id: ClothingHeadHatDetGadget
     - id: ClothingNeckTieDet

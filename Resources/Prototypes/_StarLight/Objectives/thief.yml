@@ -19,3 +19,14 @@
     stealGroup: Proto5x
   - type: Objective
     difficulty: 1
+
+- type: entity
+  parent: BaseThiefStealObjective
+  id: EnergyShotgunStealObjective
+  components:
+  - type: NotJobRequirement
+    job: Warden
+  - type: StealCondition
+    stealGroup: WeaponEnergyShotgun
+  - type: Objective
+    difficulty: 1
