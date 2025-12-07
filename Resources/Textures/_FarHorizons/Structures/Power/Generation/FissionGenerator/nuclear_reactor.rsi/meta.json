@@ -108,29 +108,21 @@
                     0.1,
                     0.1,
                     0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
                     0.1
                 ]
             ]
         },
         {
             "name": "reactor_status_meltdown",
-            "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/misc/nuclearreactor.dmi",
-            "delays": [
-                [
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1
-                ]
-            ]
-        },
-        {
-            "name": "reactor_status_boom",
             "copyright": "Taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/misc/nuclearreactor.dmi",
             "delays": [
                 [
