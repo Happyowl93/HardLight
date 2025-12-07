@@ -37,7 +37,7 @@ public abstract class SharedArmorSystem : EntitySystem
     /// </summary>
     private void OnKnockdownAttempt(EntityUid uid, ArmorComponent component, InventoryRelayedEvent<KnockDownAttemptEvent> args)
     {
-        if (component.IngoreKnockdown)
+        if (component.IgnoreKnockdown)
             args.Args.Cancelled = true;
     }
     #endregion
