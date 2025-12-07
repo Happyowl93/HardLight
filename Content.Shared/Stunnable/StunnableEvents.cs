@@ -29,6 +29,8 @@ public record struct StunEndAttemptEvent(bool Cancelled);
 [ByRefEvent]
 public record struct KnockDownAttemptEvent(bool AutoStand, bool Drop, TimeSpan? Time) : IInventoryRelayEvent // Starlight-edit: Make it inventory relayed
 {
+    public SlotFlags TargetSlots { get; } = ~SlotFlags.POCKET; // Starlight-edit
+
     public bool Cancelled;
 }
 
