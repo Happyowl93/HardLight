@@ -1,4 +1,5 @@
-﻿- type: entity
+﻿# Originally developed on Harmony, ported to Starlight with permission
+- type: entity
   parent: FoodBoxPizzaFilled
   id: Pizzabomb
   suffix: Bomb
@@ -9,7 +10,9 @@
     triggerDelay: 0.5
     components:
       - type: ExplodeOnTrigger # Explode after the delay
-  - type: SoundOnTrigger
+        keysIn:
+        - stageTwo
+  - type: EmitSoundOnTrigger
     sound: /Audio/Machines/microwave_done_beep.ogg
     removeOnTrigger: false
   - type: TriggerOnUiOpen # Timer is triggered on storage open
