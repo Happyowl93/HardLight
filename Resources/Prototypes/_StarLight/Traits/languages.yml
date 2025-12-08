@@ -174,3 +174,16 @@
     - Moffic
   languagesUnderstood:
     - Moffic
+
+- type: trait
+  id: Thaveyan
+  name: trait-language-thaveyan-name
+  description: trait-language-thaveyan-desc
+  category: LanguageTraits
+  cost: 2
+  components:
+    - type: LanguageSpeaker
+  languagesSpoken:
+    - Thaveyan
+  languagesUnderstood:
+    - Thaveyan
