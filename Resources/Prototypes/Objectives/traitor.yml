@@ -247,16 +247,16 @@
 
 - type: entity
   parent: BaseTraitorStealObjective
-  id: EnergyShotgunStealObjective
+  id: EnergyMagnumStealObjective
   components:
   - type: Objective
     # HoS will have this on them a lot of the time so..
     difficulty: 3
   - type: NotJobRequirement
-    job: HeadOfSecurity
+    job: Detective # Starlight - magnum to detective
   - type: StealCondition
-    stealGroup: WeaponEnergyShotgun
-    owner: job-name-hos
+    stealGroup: WeaponEnergyMagnum
+    owner: job-name-detective # Starlight - magnum to detective
 
 ## ce
 
