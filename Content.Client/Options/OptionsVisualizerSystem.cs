@@ -89,19 +89,22 @@ public sealed class OptionsVisualizerSystem : EntitySystem
                 continue;
 
             // Starlight Start
-            int layerIndex;
+            int layerIndex = -1;
             if (_reflection.TryParseEnumReference(layerKeyRaw, out var @enum))
             {
-                if(_sprite.LayerMapTryGet((uid, sprite), @enum, out layerIndex, false))
-                    _sprite.LayerMapReserve((uid, sprite), @enum);
+                if(layerKeyRaw == "base" // We always need to create the base layer, if we can
+                || _sprite.LayerExists((uid, sprite), @enum))
+                    layerIndex = _sprite.LayerMapReserve((uid, sprite), @enum);
             }
             else 
-            { 
-                if(_sprite.LayerMapTryGet((uid, sprite), layerKeyRaw, out layerIndex, false))
-                    _sprite.LayerMapReserve((uid, sprite), layerKeyRaw); 
+            {
+                if(layerKeyRaw == "base"
+                || _sprite.LayerExists((uid, sprite), layerKeyRaw))
+                    layerIndex = _sprite.LayerMapReserve((uid, sprite), layerKeyRaw);
             }
 
-            if(layerIndex != -1)
+            if(layerKeyRaw == "base" 
+            || layerIndex >= 0)
             //Starlight End
                 _sprite.LayerSetData((uid, sprite), layerIndex, matchedDatum.Data);
         }     

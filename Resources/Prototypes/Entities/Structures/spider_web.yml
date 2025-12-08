@@ -14,9 +14,9 @@
         path:
           "/Audio/Weapons/slash.ogg"
   - type: Sprite
+    sprite: Structures/floor_web.rsi
+    drawdepth: WallMountedItems
   # Starlight Start
-    #sprite: Structures/floor_web.rsi
-    #drawdepth: WallMountedItems
     color: "#00000055"
   - type: OptionsVisualizer
     visuals:
