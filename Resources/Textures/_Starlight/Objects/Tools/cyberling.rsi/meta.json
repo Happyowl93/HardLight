@@ -1,7 +1,6 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Mechwright tools taken from tgstation, remaining tools by Maitake",
   "size": {
     "x": 32,
     "y": 32
@@ -14,7 +13,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Mechwright tools taken from tgstation"
     },
     {
       "name": "cutters",
@@ -24,7 +24,8 @@
           0.4,
           0.2
         ]
-      ]
+      ],
+      "copyright": "Mechwright tools taken from tgstation"
     },
     {
       "name": "indwelder",
@@ -34,7 +35,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Mechwright tools taken from tgstation"
     },
     {
       "name": "indwelder-on",
@@ -43,7 +45,8 @@
           0.2,
           0.2
         ]
-      ]
+      ],
+      "copyright": "Mechwright tools taken from tgstation"
     },
     {
       "name": "screwdriver",
@@ -53,7 +56,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Mechwright tools taken from tgstation"
     },
     {
       "name": "wrench",
@@ -63,7 +67,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Mechwright tools taken from tgstation"
     },
     {
       "name": "protokineticaccelerator",
@@ -73,7 +78,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "grapplinghook",
@@ -83,7 +89,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "grapplinghook-loaded",
@@ -93,7 +100,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "grapplinghook-unloaded",
@@ -103,7 +111,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "crusherdagger",
@@ -112,7 +121,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "gorillagauntlet",
@@ -121,7 +131,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "chimphandcannon",
@@ -130,13 +141,16 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
-      "name": "mag-unshaded-1"
+      "name": "mag-unshaded-1",
+      "copyright": "Citrea"
     },
     {
-      "name": "mag-unshaded-2"
+      "name": "mag-unshaded-2",
+      "copyright": "Citrea"
     },
     {
       "name": "anomalyscanner",
@@ -147,7 +161,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "autoinjector",
@@ -157,10 +172,12 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
-      "name": "autoinjector-fill-1"
+      "name": "autoinjector-fill-1",
+      "copyright": "Citrea"
     },
     {
       "name": "defibrillator",
@@ -170,7 +187,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "defibrillator-ready"
@@ -183,7 +201,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Reshaded from zeusfist_on"
     },
     {
       "name": "zeusfist_on",
@@ -193,7 +212,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "stunfist_off",
@@ -204,7 +224,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Reshaded from stunfist_on"
     },
     {
       "name": "stunfist_on",
@@ -215,7 +236,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "ripletclaw",
@@ -226,10 +248,12 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
-      "name": "ripletclaw-full"
+      "name": "ripletclaw-full",
+      "copyright": "Citrea"
     },
     {
       "name": "handheldgrinder",
@@ -239,13 +263,16 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
-      "name": "handheldgrinder-empty"
+      "name": "handheldgrinder-empty",
+      "copyright": "None (this is an empty image)"
     },
     {
-      "name": "handheldgrinder-beaker-attached"
+      "name": "handheldgrinder-beaker-attached",
+      "copyright": "Maitake"
     },
     {
       "name": "minihoe",
@@ -254,7 +281,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "spade",
@@ -263,7 +291,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "clippers",
@@ -273,7 +302,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "hatchet",
@@ -282,7 +312,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "scythe",
@@ -294,7 +325,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
       "name": "dropper",
@@ -303,10 +335,12 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     },
     {
-      "name": "dropper1"
+      "name": "dropper1",
+      "copyright": "Citrea"
     },
     {
       "name": "spraybottle",
@@ -316,7 +350,8 @@
           0.3,
           0.3
         ]
-      ]
+      ],
+      "copyright": "Maitake"
     }
   ]
 }

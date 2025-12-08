@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taked from SS13, thermal and night vision by Darkrell. Hand implants by Citrea (someone make better ones?)",
+  "copyright": "Taked from SS13, thermal and night vision by Darkrell.",
   "size": {
     "x": 32,
     "y": 32
@@ -32,16 +32,20 @@
       "name": "eyes_night"
     },
     {
-      "name": "hand_implant_insulated"
+      "name": "hand_implant_insulated",
+      "copyright": "Citrea"
     },
     {
-      "name": "hand_implant_forensics"
+      "name": "hand_implant_forensics",
+      "copyright": "Citrea"
     },
     {
-      "name": "hand_implant_claws"
+      "name": "hand_implant_claws",
+      "copyright": "Citrea"
     },
     {
-      "name": "hand_implant_thrusters"
+      "name": "hand_implant_thrusters",
+      "copyright": "Citrea"
     }
   ]
 }

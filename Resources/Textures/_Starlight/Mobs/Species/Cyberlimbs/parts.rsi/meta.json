@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "https://github.com/GentleButter, *_silver_* by darkrell, bulwark by Killer Tamashi - specialist limbs are dyed and modified from silver, bulwark, steel and legs by Citrea (someone make better ones?)",
+  "copyright": "https://github.com/GentleButter, *_silver_* by darkrell, bulwark by Killer Tamashi",
   "size": {
     "x": 32,
     "y": 32
@@ -246,91 +246,113 @@
     },
     {
       "name": "l_spacer_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from steel, done by Citrea (someone make better ones?)"
     },
     {
       "name": "l_spacer_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from steel, done by Citrea (someone make better ones?)"
     },
     {
       "name": "r_spacer_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from steel, done by Citrea (someone make better ones?)"
     },
     {
       "name": "r_spacer_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from steel, done by Citrea (someone make better ones?)"
     },
     {
       "name": "l_gorilla_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from bulwark, done by Citrea (someone make better ones?)"
     },
     {
       "name": "l_gorilla_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from bulwark, done by Citrea (someone make better ones?)"
     },
     {
       "name": "r_gorilla_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from bulwark, done by Citrea (someone make better ones?)"
     },
     {
       "name": "r_gorilla_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from bulwark, done by Citrea (someone make better ones?)"
     },
     {
       "name": "l_angel_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from silver, done by Citrea (someone make better ones?)"
     },
     {
       "name": "l_angel_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from silver, done by Citrea (someone make better ones?)"
     },
     {
       "name": "r_angel_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from silver, done by Citrea (someone make better ones?)"
     },
     {
       "name": "r_angel_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from silver, done by Citrea (someone make better ones?)"
     },
     {
       "name": "l_zeus_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from bulwark, done by Citrea (someone make better ones?)"
     },
     {
       "name": "r_zeus_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from bulwark, done by Citrea (someone make better ones?)"
     },
     {
       "name": "l_riplet_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from steel, done by Citrea (someone make better ones?)"
     },
     {
       "name": "l_riplet_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from steel, done by Citrea (someone make better ones?)"
     },
     {
       "name": "r_riplet_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from steel, done by Citrea (someone make better ones?)"
     },
     {
       "name": "r_riplet_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed and modified from steel, done by Citrea (someone make better ones?)"
     },
     {
       "name": "l_persephone_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed from silver, done by Citrea (someone make better ones?)"
     },
     {
       "name": "l_persephone_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed from silver, done by Citrea (someone make better ones?)"
     },
     {
       "name": "r_persephone_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed from silver, done by Citrea (someone make better ones?)"
     },
     {
       "name": "r_persephone_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+      "copyright": "dyed from silver, done by Citrea (someone make better ones?)"
     },
     {
       "name": "l_leg_hydraulic",
@@ -352,7 +374,8 @@
           1.15,
           1.15
         ]
-      ]
+      ],
+      "copyright": "Citrea"
     },
     {
       "name": "r_leg_hydraulic",
@@ -374,7 +397,8 @@
           1.15,
           1.15
         ]
-      ]
+      ],
+      "copyright": "Citrea"
     },
     {
       "name": "l_leg_pilebunker",
@@ -396,7 +420,8 @@
           0.5,
           0.5
         ]
-      ]
+      ],
+      "copyright": "Citrea"
     },
     {
       "name": "r_leg_pilebunker",
@@ -418,7 +443,8 @@
           0.5,
           0.5
         ]
-      ]
+      ],
+      "copyright": "Citrea"
     }
   ]
 }
