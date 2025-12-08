@@ -298,7 +298,7 @@
   id: UplinkAdvancedClawsImplant
   name: uplink-advanced-claws-name
   description: uplink-advanced-claws-desc
-  icon: { sprite: _Starlight/Actions/implants.rsi, state: hand_implant_claws }
+  icon: { sprite: _Starlight/Objects/Specific/Medical/implants.rsi, state: hand_implant_claws }
   productEntity: HandImplantClaws
   discountCategory: rareDiscounts
   discountDownTo:
@@ -312,7 +312,7 @@
   id: UplinkForensicsImplant
   name: uplink-forensics-implant-name
   description: uplink-forensics-implant-desc
-  icon: { sprite: _Starlight/Actions/implants.rsi, state: hand_implant_forensics }
+  icon: { sprite: _Starlight/Objects/Specific/Medical/implants.rsi, state: hand_implant_forensics }
   productEntity: HandImplantForensics
   discountCategory: rareDiscounts
   discountDownTo:
@@ -326,7 +326,7 @@
   id: UplinkSyndieEyeImplant
   name: uplink-syndie-implant-name
   description: uplink-syndie-implant-desc
-  icon: { sprite: _Starlight/Actions/implants.rsi, state: eye_implant_syndicate }
+  icon: { sprite: _Starlight/Objects/Specific/Medical/implants.rsi, state: eye_implant_syndicate }
   productEntity: EyeImplantSyndie
   discountCategory: rareDiscounts
   discountDownTo:
