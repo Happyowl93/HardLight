@@ -48,16 +48,16 @@ public sealed partial class RetractableItemActionComponent : Component
     public bool SpawnInHand = true;
 
     /// <summary>
-    /// Does the item get summoned into your hand?
+    /// Which slot does the item get retracted from?
     /// </summary>
     [DataField, AutoNetworkedField]
     public SlotFlags RequiredSlots = SlotFlags.NONE;
 
     /// <summary>
-    /// Does the item get summoned into your hand?
+    /// Which slot does the item get summoned into?
     /// </summary>
     [DataField, AutoNetworkedField]
-    public string Slot;
+    public string Slot = "none";
 
     #endregion Starlight
 }
