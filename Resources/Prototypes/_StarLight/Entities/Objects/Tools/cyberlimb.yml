@@ -482,7 +482,7 @@
     - type: AnomalyScanner
     - type: GuideHelp
       guides:
-      - ScannersAndVessel
+      - ScannersAndVessels
     - type: Tag
       tags:
         - CyberHandItem
