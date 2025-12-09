@@ -23007,5 +23007,82 @@ Entries:
   id: 231100
   time: '2025-12-01T01:26:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2311
+- author: neomoth
+  changes:
+  - message: Fixed the faction member component on hostile mimic.
+    type: Fix
+  id: 231300
+  time: '2025-12-01T03:03:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2313
+- author: Rinary
+  changes:
+  - message: Fixed bug when mass driver can throw ghosts.
+    type: Fix
+  id: 232000
+  time: '2025-12-01T17:02:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2320
+- author: neomoth
+  changes:
+  - message: Fixed borg chassis types using job time requirements instead of department
+      time requirements.
+    type: Fix
+  id: 231500
+  time: '2025-12-01T17:10:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2315
+- author: Rhetorica
+  changes:
+  - message: 'New ID card assets for mail tech, salv spec, and salv lead to match
+      previous SL PR #2258'
+    type: Tweak
+  id: 232600
+  time: '2025-12-02T02:28:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2326
+- author: neomoth
+  changes:
+  - message: Added several parameters to BecomesStationMidRoundComponent to allow
+      for better fine-tuning of how it gets set up.
+    type: Add
+  id: 232800
+  time: '2025-12-02T02:51:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2328
+- author: neomoth
+  changes:
+  - message: BecomesStationMidRoundComponent now accepts multiple station entity prototypes
+      so you can include and exclude things as you see fit.
+    type: Tweak
+  id: 232801
+  time: '2025-12-02T02:51:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2328
+- author: neomoth
+  changes:
+  - message: Fixed there being no cleanup for the arrivals shuttle if the station
+      it belongs to were to get deleted.
+    type: Fix
+  id: 232802
+  time: '2025-12-02T02:51:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2328
+- author: neomoth
+  changes:
+  - message: By default, newly made stations will NOT cause cargo shuttles, ruins,
+      wrecks, trading stations, arrivals, evacs, or armories to spawn. This only applies
+      to stations made with stationinit or BecomesStationMidRoundComponent.
+    type: Fix
+  id: 232803
+  time: '2025-12-02T02:51:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2328
+- author: CrazyPhantom
+  changes:
+  - message: Queue Radio TTS is now disabled by default.
+    type: Tweak
+  id: 232900
+  time: '2025-12-02T02:51:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2329
+- author: STARLIGHT TEAM
+  changes:
+  - message: Fix for a bug that prevents connecting if somehow all slots are deleted.
+    type: Fix
+  id: 237700
+  time: '2025-12-07T06:53:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2377
 Order: -1
 
