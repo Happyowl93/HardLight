@@ -109,7 +109,7 @@
     - type: Edible
       transferAmount: 3
     - type: Sprite
-      sprite: _Starlight/Objects/Consumable/Food/Plate.rsi
+      sprite: _Starlight/Objects/Consumable/Food/plate.rsi
       layers:
         - state: charcuterie
     - type: SolutionContainerManager
