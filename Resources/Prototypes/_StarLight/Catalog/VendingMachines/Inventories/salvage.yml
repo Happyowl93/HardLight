@@ -382,7 +382,7 @@
   id: VendorSalvageClothingEyesGlassesSalvageMercenary
   productEntity: ClothingEyesGlassesSalvageMercenary
   cost:
-    SalvageTicket: 25
+    SalvageTicket: 90
   categories:
   - SalvageMercenaryEquipment
   conditions:
