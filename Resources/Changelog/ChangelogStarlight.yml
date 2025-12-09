@@ -23077,5 +23077,12 @@ Entries:
   id: 232900
   time: '2025-12-02T02:51:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2329
+- author: STARLIGHT TEAM
+  changes:
+  - message: Fix for a bug that prevents connecting if somehow all slots are deleted.
+    type: Fix
+  id: 237700
+  time: '2025-12-07T06:53:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2377
 Order: -1
 
