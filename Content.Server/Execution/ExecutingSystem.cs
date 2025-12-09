@@ -15,6 +15,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Verbs;
+using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Ranged.Components;
@@ -371,9 +372,14 @@ public sealed class ExecutionSystem : EntitySystem
         {
             //🌟Starlight🌟 start
             case HitScanCartridgeAmmoComponent cartridge:
-                var hitscanProto = _prototypeManager.Index(cartridge.Hitscan);
-                if (hitscanProto.Damage is not null)
-                    damage = hitscanProto.Damage * hitscanProto.Count;
+                if (TryComp<HitscanBasicDamageComponent>(ammoUid, out var cartBasicDamage))
+                {
+                    damage = cartBasicDamage.Damage;
+                }
+                if (TryComp<ProjectileSpreadComponent>(ammoUid, out var spread))
+                {
+                    damage = damage * spread.Count;
+                }
 
                 cartridge.Spent = true;
                 _appearanceSystem.SetData(ammoUid!.Value, AmmoVisuals.Spent, true);
@@ -411,8 +417,11 @@ public sealed class ExecutionSystem : EntitySystem
                 Del(ammoUid);
                 break;
 
-            case HitscanPrototype hitscan:
-                damage = hitscan.Damage!;
+            case HitscanAmmoComponent:
+                if (TryComp<HitscanBasicDamageComponent>(ammoUid, out var basicDamage))
+                {
+                    damage = basicDamage.Damage;
+                }
                 break;
 
             default:

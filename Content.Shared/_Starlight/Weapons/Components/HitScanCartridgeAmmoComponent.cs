@@ -15,7 +15,7 @@ namespace Content.Shared._Starlight.Weapon.Components;
 public sealed partial class HitScanCartridgeAmmoComponent : AmmoComponent
 {
     [ViewVariables(VVAccess.ReadWrite), DataField("hitscan", required: true)]
-    public ProtoId<HitscanPrototype> Hitscan = default!;
+    public EntProtoId Hitscan = default!;
 
     [ViewVariables(VVAccess.ReadWrite), DataField]
     [AutoNetworkedField]

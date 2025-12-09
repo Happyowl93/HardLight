@@ -24,9 +24,9 @@
   - External
   - Detective
   - Cryogenics
-  - Brigmedic
-  - GenpopEnter #starlight
-  - GenpopLeave #starlight
+  - Brigmedic # Starlight
+  - GenpopEnter
+  - GenpopLeave
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

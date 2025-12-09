@@ -62,6 +62,5 @@ public sealed partial class DissolvableReaction : EntityEffectBase<DissolvableRe
                 ("chance", Probability));
     }
 
-    public override bool ShouldLog => true;
-    public override LogImpact LogImpact => LogImpact.Medium;
+    public override LogImpact? Impact => LogImpact.Medium;
 }
