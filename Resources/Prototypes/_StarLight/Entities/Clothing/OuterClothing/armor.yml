@@ -296,7 +296,7 @@
   parent: [ BaseSalvageContraband, ClothingOuterVestWeb] #web vest so it should have some pockets for ammo
   id: ClothingOuterVestWebSalvageMerc
   name: scrapper web vest
-  description: A versatile armored vest, popular among salvagers for its protection and storage capacity.
+  description: A versatile armored vest, popular among salvagers for its protective yet lightweight design.
   components:
     - type: Sprite
       sprite: _Starlight/Clothing/OuterClothing/Vests/salvagevest.rsi
