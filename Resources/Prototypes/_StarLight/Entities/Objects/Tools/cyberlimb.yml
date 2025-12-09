@@ -828,3 +828,7 @@
     - type: Tag
       tags:
         - CyberHandItem
+    - type: SolutionContainerVisuals
+      maxFillLevels: 1
+      fillBaseName: dropper
+      inHandsMaxFillLevels: 0
