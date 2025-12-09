@@ -1,0 +1,31 @@
+- type: startingGear
+  id: TSFMarineGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTSF
+    back: ClothingBackpackTSFFilled
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHelmetTSF
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorTSF
+    id: TSFIdCard
+    ears: ClothingHeadsetAltTSF
+    belt: ClothingBeltTSFMarineWebbingLoadout
+    pocket1: FlashlightSeclite
+    pocket2: WeaponPistolM1911
+    suitstorage: WeaponRifleARG
+
+- type: startingGear
+  id: TSFMarineLeaderGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTSF
+    back: ClothingBackpackTSFFilled
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHelmetTSFLeader
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorTSFLeader
+    id: TSFIdCard
+    ears: ClothingHeadsetAltTSF
+    belt: ClothingBeltTSFMarineWebbingLoadout
+    pocket1: FlashlightSeclite
+    pocket2: WeaponPistolDeagle
+    suitstorage: WeaponRifleARG

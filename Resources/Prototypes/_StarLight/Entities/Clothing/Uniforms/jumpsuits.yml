@@ -505,3 +505,14 @@
       sprite: _Starlight/Clothing/Uniforms/Jumpsuit/salvagebrown.rsi
     - type: Clothing
       sprite: _Starlight/Clothing/Uniforms/Jumpsuit/salvagebrown.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseTSFContraband]
+  id: ClothingUniformJumpsuitTSF
+  name: TSF marine uniform
+  description: A comfortable and durable combat uniform worn by the forces of the Trans-Solar Marine Corps.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/tsf.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/tsf.rsi

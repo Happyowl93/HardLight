@@ -13,9 +13,9 @@
     {
       "name": "green"
     },
-	{
-	  "name": "magistrate"
-	},
+    {
+      "name": "magistrate"
+    },
     {
       "name": "ntrep"
     },
@@ -37,11 +37,14 @@
     {
       "name": "miningspecialist"
     },
-	{
+    {
       "name": "decimusicon"
     },
-	{
+    {
       "name": "ntsficon"
+    },
+    {
+      "name": "TSF"
     }
   ]
 }

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "taken from https://github.com/RMC-14/RMC-14/tree/master/Resources/Textures/_RMC14/Objects/CMIDs/dogtags.rsi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-IDCARD",
+      "directions": 4
+    },
+    {
+      "name": "default-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "default-inhand-right",
+      "directions": 4
+    }
+  ]
+}

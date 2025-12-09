@@ -146,6 +146,9 @@
     sprite: _Starlight/Objects/Misc/id_cards.rsi
     layers: 
     - state: sovietid
+  - type: IdCard
+    jobTitle: job-title-Soviet
+    jobIcon: JobIconSoviet
 
 - type: entity
   parent: [ IDCardStandard, BaseSyndicateContraband ]
@@ -268,3 +271,20 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: Decimus
+
+- type: entity
+  parent: [IDCardStandard, BaseTSFContraband]
+  id: TSFIdCard
+  description: A marine dog tag.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Misc/dogtag.rsi
+    layers: 
+    - state: icon
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: _Starlight/Objects/Misc/dogtag.rsi
+  - type: IdCard
+    jobTitle: job-title-tsf
+    jobIcon: JobIconTSF
