@@ -353,5 +353,15 @@
     sprite: _Starlight/Objects/Specific/Chapel/rigveda.rsi
   - type: Item
     sprite: _Starlight/Objects/Specific/Chapel/rigveda.rsi
-
+    
+- type: entity
+  parent: Bible
+  name: bibble
+  description: "YOU QUESTION THE WORDS OF THE MIGHTY JIMMY?"
+  id: BibleBibble
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Specific/Chapel/bibble.rsi
+  - type: Item
+    sprite: _Starlight/Objects/Specific/Chapel/bibble.rsi
 # end of starlight additions
