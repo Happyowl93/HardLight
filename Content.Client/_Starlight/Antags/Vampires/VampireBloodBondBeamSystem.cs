@@ -1,18 +1,16 @@
 using System.Numerics;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Robust.Client.GameObjects;
-using Robust.Shared.Timing;
 
 namespace Content.Client._Starlight.Antags.Vampires;
 
 /// <summary>
-/// Client-side system for smooth vampire drain beam visualization
+/// Client-side system for smooth vampire blood bond beam visualization
 /// </summary>
-public sealed class VampireDrainBeamSystem : EntitySystem
+public sealed class VampireBloodBondBeamSystem : EntitySystem
 {
-    private static readonly Angle _beamAngleOffset = Angle.FromDegrees(180); // suck em
+    private static readonly Angle _beamAngleOffset = Angle.FromDegrees(180);
     private const bool SpriteIsVertical = true;
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
@@ -25,19 +23,17 @@ public sealed class VampireDrainBeamSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeNetworkEvent<VampireDrainBeamEvent>(OnDrainBeamEvent);
+        SubscribeNetworkEvent<VampireBloodBondBeamEvent>(OnBloodBondBeamEvent);
     }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        // Update all active beam visuals every frame for smooth following
         var toRemove = new List<(EntityUid, EntityUid)>();
 
         foreach (var ((source, target), beamEntity) in _activeBeamVisuals)
         {
-            // Check if entities still exist
             if (!Exists(source) || !Exists(target) || !Exists(beamEntity))
             {
                 toRemove.Add((source, target));
@@ -55,7 +51,7 @@ public sealed class VampireDrainBeamSystem : EntitySystem
         }
     }
 
-    private void OnDrainBeamEvent(VampireDrainBeamEvent ev)
+    private void OnBloodBondBeamEvent(VampireBloodBondBeamEvent ev)
     {
         var source = GetEntity(ev.Source);
         var target = GetEntity(ev.Target);
@@ -83,13 +79,12 @@ public sealed class VampireDrainBeamSystem : EntitySystem
     {
         var key = (source, target);
 
-        // Remove existing beam if any exist
         if (_activeBeamVisuals.TryGetValue(key, out var existingBeam))
         {
             QueueDel(existingBeam);
         }
 
-        var beam = Spawn("VampireDrainBeamVisual", Transform(source).Coordinates);
+        var beam = Spawn("VampireBloodBondBeamVisual", Transform(source).Coordinates);
 
         _activeBeamVisuals[key] = beam;
 
@@ -118,7 +113,6 @@ public sealed class VampireDrainBeamSystem : EntitySystem
         _transform.SetWorldRotation(beam, worldAngle);
         _sprite.SetRotation((beam, sprite), Angle.Zero);
 
-        // Scale beam to match distance. Isvertical ? scale Y : scale X
         var length = MathF.Max(0.05f, distance);
         var thickness = 0.9f;
         var scale = SpriteIsVertical ? new Vector2(thickness, length) : new Vector2(length, thickness);
@@ -128,7 +122,6 @@ public sealed class VampireDrainBeamSystem : EntitySystem
 
     public override void Shutdown()
     {
-        // Clean up all beam visuals
         foreach (var beamEntity in _activeBeamVisuals.Values)
         {
             if (Exists(beamEntity))

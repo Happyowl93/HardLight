@@ -1,0 +1,35 @@
+- type: entity
+  id: MobVampireSanguinePool
+  name: sanguine pool
+  parent: BaseMob
+  noSpawn: true
+  categories: [HideSpawnMenu]
+  description: A sentient puddle of vampiric blood.
+  components:
+  - type: Sprite
+    sprite: /Textures/_Starlight/Vampire/haemomancer.rsi
+    layers:
+      - state: blood_pool
+        shader: unshaded
+    drawdepth: BelowMobs
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.45
+        mask:
+          - SmallMobMask
+        layer:
+          - SmallMobLayer
+  - type: Physics
+    bodyType: KinematicController
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5
+    baseSprintSpeed: 7
+  - type: FootstepModifier
+    footstepSoundCollection: FootstepPuddle
+  - type: Damageable
+    damageContainer: Biological
+  - type: SanguinePool
+    trailInterval: 0.35
+    trailPrototype: PuddleBloodSmall

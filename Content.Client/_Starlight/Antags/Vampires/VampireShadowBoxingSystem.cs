@@ -40,6 +40,7 @@ public sealed class VampireShadowBoxingSystem : EntitySystem
         var direction = _transform.GetWorldPosition(target) - srcPos;
         if (direction != Vector2.Zero)
         {
+            // Set rotation so 4-directional RSI picks the correct direction frame
             var ang = direction.ToWorldAngle();
             _transform.SetWorldRotation(punch, ang);
         }

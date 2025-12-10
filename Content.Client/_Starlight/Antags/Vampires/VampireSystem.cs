@@ -1,16 +1,27 @@
 using Content.Client.Alerts;
 using Content.Shared._Starlight.Antags.Vampires;
+using Content.Shared._Starlight.Antags.Vampires.Components;
+using Content.Shared.StatusIcon;
+using Content.Shared.StatusIcon.Components;
 using Robust.Client.GameObjects;
+using Robust.Shared.Prototypes;
 
 namespace Content.Client._Starlight.Antags.Vampires;
 
 public sealed class VampireSystem : EntitySystem
 {
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
+
+    private static readonly ProtoId<FactionIconPrototype> ThrallIcon = "VampireThrallIcon";
+    private static readonly ProtoId<FactionIconPrototype> MasterIcon = "VampireMasterIcon";
+
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<VampireComponent, UpdateAlertSpriteEvent>(OnUpdateAlert);
+        SubscribeLocalEvent<VampireThrallComponent, GetStatusIconsEvent>(OnThrallIcons);
+        SubscribeLocalEvent<VampireComponent, GetStatusIconsEvent>(OnVampireIcons);
     }
 
     private void OnUpdateAlert(EntityUid uid, VampireComponent comp, ref UpdateAlertSpriteEvent args)
@@ -31,6 +42,18 @@ public sealed class VampireSystem : EntitySystem
             _sprite.LayerSetRsiState((args.SpriteViewEnt, args.SpriteViewEnt.Comp), VampireVisualLayers.Digit3, d3.ToString());
             _sprite.LayerSetRsiState((args.SpriteViewEnt, args.SpriteViewEnt.Comp), VampireVisualLayers.Digit4, d4.ToString());
         }
+    }
+
+    private void OnThrallIcons(EntityUid uid, VampireThrallComponent component, ref GetStatusIconsEvent ev)
+    {
+        if (_prototype.TryIndex(ThrallIcon, out var icon))
+            ev.StatusIcons.Add(icon);
+    }
+
+    private void OnVampireIcons(EntityUid uid, VampireComponent component, ref GetStatusIconsEvent ev)
+    {
+        if (_prototype.TryIndex(MasterIcon, out var icon))
+            ev.StatusIcons.Add(icon);
     }
 }
 

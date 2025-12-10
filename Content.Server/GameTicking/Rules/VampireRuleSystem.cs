@@ -2,12 +2,9 @@ using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Objectives;
-using Content.Server.Roles;
-using Content.Server._Starlight.Antags.Vampires;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Components;
-using Content.Shared._Starlight.Antags.Vampires;
-using Robust.Shared.Prototypes;
+using Content.Shared._Starlight.Antags.Vampires.Components;
 using System.Text;
 
 namespace Content.Server.GameTicking.Rules;

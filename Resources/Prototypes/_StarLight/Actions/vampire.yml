@@ -85,7 +85,7 @@
 
 - type: entity
   parent: BaseAction
-  id: ActionVampireClassSelect
+  id: ActionClassSelectId
   name: action-vampire-class-select-name
   description: action-vampire-class-select-desc
   components:
@@ -131,7 +131,7 @@
   description: Transform into a pool of blood for 8 seconds, allowing movement through doors and windows.
   components:
     - type: Action
-      useDelay: 25
+      useDelay: 45
       itemIconStyle: NoItem
       priority: 13
       icon:
@@ -246,7 +246,7 @@
   description: action-vampire-cloak-of-darkness-desc
   components:
     - type: Action
-      useDelay: 0
+      useDelay: 3
       itemIconStyle: NoItem
       priority: 15
       icon:
@@ -327,7 +327,9 @@
       whitelist:
         components:
           - MobState
-      event: !type:VampireShadowBoxingActionEvent {}
+      event: !type:VampireShadowBoxingActionEvent
+        hitSound: !type:SoundCollectionSpecifier
+          collection: Knuckles
     - type: VampireAction
       bloodToUnlock: 800
       bloodCost: 50
@@ -396,3 +398,184 @@
       bloodToUnlock: 1000
       bloodCost: 0
       requiredClass: Umbrae
+
+# Dantalion
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireEnthrall
+  name: action-vampire-enthrall-name
+  description: action-vampire-enthrall-desc
+  components:
+    - type: Action
+      useDelay: 45
+      itemIconStyle: NoItem
+      priority: 25
+      icon:
+        sprite: _Starlight/Vampire/Dantalion.rsi
+        state: enthrall
+    - type: TargetAction
+      range: 2
+      checkCanAccess: false
+      interactOnMiss: false
+      whitelist:
+        components:
+          - HumanoidAppearance
+    - type: EntityTargetAction
+      canTargetSelf: false
+      event: !type:VampireEnthrallActionEvent
+        channelTime: 15
+    - type: VampireAction
+      bloodToUnlock: 150
+      bloodCost: 150
+      requiredClass: Dantalion
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampirePacify
+  name: action-vampire-pacify-name
+  description: action-vampire-pacify-desc
+  components:
+    - type: Action
+      useDelay: 30
+      itemIconStyle: NoItem
+      priority: 26
+      icon:
+        sprite: _Starlight/Vampire/Dantalion.rsi
+        state: pacify
+    - type: TargetAction
+      range: 7
+      checkCanAccess: false
+      interactOnMiss: false
+      whitelist:
+        components:
+          - MobState
+    - type: EntityTargetAction
+      canTargetSelf: false
+      event: !type:VampirePacifyActionEvent
+        pacifyDuration: 40.0
+    - type: VampireAction
+      bloodToUnlock: 250
+      bloodCost: 10
+      requiredClass: Dantalion
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireSubspaceSwap
+  name: action-vampire-subspace-swap-name
+  description: action-vampire-subspace-swap-desc
+  components:
+    - type: Action
+      useDelay: 30
+      itemIconStyle: NoItem
+      priority: 27
+      icon:
+        sprite: _Starlight/Vampire/Dantalion.rsi
+        state: subspace_swap
+    - type: TargetAction
+      range: 7
+      checkCanAccess: false
+      interactOnMiss: false
+      whitelist:
+        components:
+          - MobState
+    - type: EntityTargetAction
+      canTargetSelf: false
+      event: !type:VampireSubspaceSwapActionEvent
+        slowDuration: 4.0
+        slowMultiplier: 0.4
+    - type: VampireAction
+      bloodToUnlock: 250
+      bloodCost: 30
+      requiredClass: Dantalion
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireDecoy
+  name: action-vampire-decoy-name
+  description: action-vampire-decoy-desc
+  components:
+    - type: Action
+      useDelay: 5
+      itemIconStyle: NoItem
+      priority: 28
+      icon:
+        sprite: _Starlight/Vampire/Dantalion.rsi
+        state: decoy
+    - type: InstantAction
+      event: !type:VampireDecoyActionEvent
+        DecoyDuration: 5.0
+        InvisibilityDuration: 6.0
+    - type: VampireAction
+      bloodToUnlock: 400
+      bloodCost: 30
+      requiredClass: Dantalion
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireRallyThralls
+  name: action-vampire-rally-thralls-name
+  description: action-vampire-rally-thralls-desc
+  components:
+    - type: Action
+      useDelay: 100
+      itemIconStyle: NoItem
+      priority: 29
+      icon:
+        sprite: _Starlight/Vampire/Dantalion.rsi
+        state: thralls_up
+    - type: InstantAction
+      event: !type:VampireRallyThrallsActionEvent
+        range: 7.0
+    - type: VampireAction
+      bloodToUnlock: 600
+      bloodCost: 100
+      requiredClass: Dantalion
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireBloodBond
+  name: action-vampire-blood-bond-name
+  description: action-vampire-blood-bond-desc
+  components:
+    - type: Action
+      useDelay: 0
+      itemIconStyle: NoItem
+      priority: 30
+      icon:
+        sprite: _Starlight/Vampire/Dantalion.rsi
+        state: blood_bond
+    - type: InstantAction
+      event: !type:VampireBloodBondActionEvent
+        range: 7.0
+        bloodCostPerSecond: 2.5
+        tickInterval: 1.0
+    - type: VampireAction
+      bloodToUnlock: 800
+      bloodCost: 0
+      requiredClass: Dantalion
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireMassHysteria
+  name: action-vampire-mass-hysteria-name
+  description: action-vampire-mass-hysteria-desc
+  components:
+    - type: Action
+      useDelay: 180
+      itemIconStyle: NoItem
+      priority: 31
+      icon:
+        sprite: _Starlight/Vampire/Dantalion.rsi
+        state: hysteria
+    - type: InstantAction
+      event: !type:VampireMassHysteriaActionEvent
+        range: 8.0
+        flashDuration: 3.0
+        hysteriaDuration: 30.0
+    - type: VampireAction
+      bloodToUnlock: 1000
+      bloodCost: 70
+    
+      requiredClass: Dantalion
+      

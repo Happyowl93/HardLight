@@ -1,7 +1,7 @@
 action-vampire-toggle-fangs-name = Toggle Fangs
 action-vampire-toggle-fangs-desc = Extend or retract your fangs to drink blood from victims.
 
-action-vampire-glare-name = Glare
+action-vampire-glare-name = Glare(Free)
 action-vampire-glare-desc = Paralyze and mute nearby targets, dealing stamina damage over time.
 
 alerts-vampire-blood-name = Blood Drunk
@@ -14,17 +14,21 @@ roles-antag-vamire-name = Vampire
 roles-antag-vampire-description = Feed on the crew. Extend your fangs and drink their blood.
 
 vampire-drink-start = You sink your fangs into {CAPITALIZE(THE($target))}.
-vampire-drink-end = You drink blood from {CAPITALIZE(THE($target))}.
 
-action-vampire-rejuvenate-i-name = Rejuvenate
+action-vampire-rejuvenate-i-name = Rejuvenate(Free)
 action-vampire-rejuvenate-i-desc = Instantly remove stuns and recover 100 stamina damage.
 
-action-vampire-rejuvenate-ii-name = Rejuvenate
+action-vampire-rejuvenate-ii-name = Rejuvenate(Free)
 action-vampire-rejuvenate-ii-desc = Instantly remove stuns and recover 100 stamina, plus purge harmful reagents (10u) and heal 10 brute, 10 burn, 10 toxin, and 50 oxy loss.
 
 action-vampire-class-select-name = Choose Vampire Class
 
 vampire-not-enough-blood = Not enough blood.
+
+vampire-mouth-covered = Your mouth is covered!
+vampire-drink-target-maxed = You have already drunk { $amount } units of blood from this target.
+vampire-drink-target-hard-max = You have drunk the maximum amount of blood from this target ({ $amount } units).
+vampire-full-power-achieved = Your vampiric essence surges full power achieved!
 
 vampire-role-greeting = You are a vampire!
     Your blood thirst compels you to feed on crew members. Use your abilities to turn other crew.
@@ -50,18 +54,18 @@ roundend-prepend-vampire-drained-named = {$name} was the most bloodthirsty vampi
 
 # Vampire class selection tooltips
 vampire-class-hemomancer-tooltip = Hemomancer
-    Focuses on blood magic and the manipulation of blood around you.
+    Focuses on blood magic and the manipulation of blood around you
     
 
 vampire-class-umbrae-tooltip = Umbrae
-    Focuses on darkness, stealth ambushing and mobility.
+    Focuses on darkness, stealth ambushing and mobility
 
 vampire-class-gargantua-tooltip = Gargantua
-    Focuses on tenacity and melee damage.
+    Focuses on tenacity and melee damage
 
 
 vampire-class-dantalion-tooltip = Dantalion
-    Focuses on thralling and illusions.
+    Focuses on thralling and illusions
 
 # Hemomancer abilities
 action-vampire-hemomancer-claws-name = Vampiric Claws()
@@ -77,6 +81,11 @@ action-vampire-blood-barrier-wrong-place = Cannot place barriers there.
 
 action-vampire-sanguine-pool-name = Sanguine Pool()
 action-vampire-sanguine-pool-desc = Briefly transform into a sentient blood puddle, increasing movement speed and allowing you to move through anything except walls and space.
+action-vampire-sanguine-pool-already-in = You are already in sanguine pool form!
+action-vampire-sanguine-pool-invalid-tile = You cannot become a blood pool here.
+action-vampire-sanguine-pool-enter = You transform into a pool of blood!
+action-vampire-sanguine-pool-exit = You reform from the blood pool!
+vampire-space-burn-warning = The harsh void light scorches your undead flesh!
 
 action-vampire-blood-eruption-name = Blood Eruption()
 action-vampire-blood-eruption-desc = Cause any blood within 4 tiles of you to erupt, dealing 50 brute damage to anyone standing on it.
@@ -99,6 +108,9 @@ action-vampire-cloak-of-darkness-stop = You step out of the shadows.
 
 action-vampire-shadow-snare-name = Shadow Snare(20/10)
 action-vampire-shadow-snare-desc = Place a fragile shadow trap at target location. Damages, blinds (20s) and heavily slows a non-vampire humanoid that steps on it. Trap health decays in brighter light and is destroyed by flashes.
+action-vampire-shadow-snare-scatter = You scattered the shadow trap.
+vampire-shadow-snare-oldest-removed = Your old shadow snare dissipates.
+ent-shadow-snare-ensnare = shadow snare
 
 action-vampire-shadow-anchor-name = Shadow Anchor(20/10)
 action-vampire-shadow-anchor-desc = First use: place a shadow anchor beacon (lasts 2 min). Second use while it exists: instantly return to it and consume the beacon.
@@ -108,6 +120,7 @@ action-vampire-shadow-anchor-installed = You've secured a spot in the shadows
 
 action-vampire-shadow-boxing-start = You begin shadow boxing.
 action-vampire-shadow-boxing-stop = Shadow boxing has been stoped.
+action-vampire-shadow-boxing-ends = Shadow boxing ends.
 
 action-vampire-dark-passage-wrong-place = The darkness here is impenetrable...
 action-vampire-dark-passage-activated = You slipped through the darkness...
@@ -118,3 +131,48 @@ action-vampire-eternal-darkness-not-enough-power = Your power is insufficient (n
 action-vampire-eternal-darkness-not-enough-blood = You have run out of blood to sustain eternal darkness.
 action-vampire-eternal-darkness-start = You conjured eternal darkness...
 action-vampire-eternal-darkness-stop = The eternal darkness has dissipated...
+
+#Dantalion
+action-vampire-enthrall-name = Enthrall(150)
+action-vampire-enthrall-desc = Channel for 15 seconds on a humanoid target to bind them to your will. Cancels if either of you moves.
+vampire-enthrall-start = You reach into {CAPITALIZE(THE($target))}'s mind...
+vampire-enthrall-success = {CAPITALIZE(THE($target))} bends the knee and becomes your thrall.
+vampire-enthrall-target = Your mind is overwhelmed by vampiric domination!
+vampire-enthrall-limit = You cannot control any more thralls.
+vampire-enthrall-invalid = That target cannot be enthralled.
+vampire-thrall-released = The vampiric hold over you fades.
+
+action-vampire-pacify-name = Pacify(10)
+action-vampire-pacify-desc = Flood a victim's mind with bliss, pacifying them for 40 seconds.
+vampire-pacify-invalid = That target cannot be pacified.
+vampire-pacify-success = {CAPITALIZE(THE($target))} succumbs to your overwhelming serenity.
+vampire-pacify-target = A crushing calm drowns your will to fight!
+
+action-vampire-subspace-swap-name = Subspace Swap(30)
+action-vampire-subspace-swap-desc = Select a target within 7 tiles to swap positions, slowing them for 4 seconds.
+vampire-subspace-swap-thrall = You cannot subspace swap with your thralls.
+vampire-subspace-swap-dead = That mind is beyond your reach.
+vampire-subspace-swap-failed = The subspace rift fizzles uselessly.
+vampire-subspace-swap-success = Space twists as you trade places with {CAPITALIZE(THE($target))}!
+vampire-subspace-swap-target = Reality warps and you are torn into a new position!
+
+action-vampire-decoy-name = Decoy(30)
+action-vampire-decoy-desc = Leave behind a fragile duplicate that blinds attackers when harmed while you vanish into invisibility.
+
+action-vampire-rally-thralls-name = Rally Thralls(100)
+action-vampire-rally-thralls-desc = Command thralls within 7 tiles to shake off stuns, wake up, and regain stamina.
+vampire-rally-thralls-success = {$count ->
+    [one] Your call rallies a thrall back to your side!
+    *[other] Your call rallies {$count} thralls back to your side!
+}
+vampire-rally-thralls-none = None of your thralls can answer the call.
+
+action-vampire-blood-bond-name = Blood Bond(Toggle)
+action-vampire-blood-bond-desc = Toggle a blood tether to nearby thralls, redistributing damage between you at the cost of 2.5 blood per second.
+vampire-blood-bond-start = Rivers of blood knit you to your thralls.
+vampire-blood-bond-stop = You let the blood bond fall slack.
+vampire-blood-bond-no-thralls = You have no enthralled servants to bond with.
+vampire-blood-bond-stop-blood = The bond shreds itself; you lack the blood to sustain it.
+
+action-vampire-mass-hysteria-name = Mass Hysteria(70)
+action-vampire-mass-hysteria-desc = Flood every nearby mind (except thralls) with terror, flashing them and cursing them with hallucinations for 30 seconds.

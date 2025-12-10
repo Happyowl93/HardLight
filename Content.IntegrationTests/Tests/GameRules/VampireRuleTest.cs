@@ -12,6 +12,7 @@ using Content.Shared._Starlight.Antags.Vampires;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 using Content.Shared.Mind;
+using Content.Shared._Starlight.Antags.Vampires.Components;
 
 namespace Content.IntegrationTests.Tests.GameRules;
 

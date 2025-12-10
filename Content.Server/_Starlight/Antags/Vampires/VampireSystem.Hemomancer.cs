@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
@@ -9,15 +10,13 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using System.Numerics;
 using Robust.Shared.Timing;
-using Robust.Shared.Physics;
 using Content.Shared.Body.Components;
 using Content.Shared.Damage.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
-using Content.Shared.Stealth.Components;
-using Robust.Shared.Audio;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Robust.Shared.Prototypes;
+using Content.Shared.Polymorph;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -31,6 +30,8 @@ public sealed partial class VampireSystem : EntitySystem
         SubscribeLocalEvent<VampireComponent, VampireSanguinePoolActionEvent>(OnSanguinePool);
         SubscribeLocalEvent<VampireComponent, VampireBloodEruptionActionEvent>(OnBloodEruption);
         SubscribeLocalEvent<VampireComponent, VampireBloodBringersRiteActionEvent>(OnBloodBringersRite);
+        SubscribeLocalEvent<HemomancerComponent, PolymorphedEvent>(OnHemomancerPolymorphed);
+        SubscribeLocalEvent<SanguinePoolComponent, PolymorphedEvent>(OnSanguinePoolReverted);
     }
 
     private static readonly Vector2[] _tendrilOffsets = new Vector2[]
@@ -264,7 +265,6 @@ public sealed partial class VampireSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString("action-vampire-blood-barrier-wrong-place"), args.Performer, args.Performer);
     }
 
-    // Rinary - rework on polymorph
     private void OnSanguinePool(EntityUid uid, VampireComponent comp, ref VampireSanguinePoolActionEvent args)
     {
         if (args.Handled || !TryComp<HemomancerComponent>(uid, out var hemomancer))
@@ -272,124 +272,84 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (hemomancer.InSanguinePool)
         {
-            _popup.PopupEntity("You are already in sanguine pool form!", uid, uid);
+            _popup.PopupEntity(Loc.GetString("action-vampire-sanguine-pool-already-in"), uid, uid);
             return;
         }
 
+
+        // Reminder да я хуй знает почему не пашет, потом разерусь
         // Dont allow pooling? in invalid tiles
-        var curCoords = Transform(uid).Coordinates;
-        if (!IsValidTile(curCoords))
-        {
-            _popup.PopupEntity("You cannot become a blood pool here.", uid, uid);
-            return;
-        }
+        // var curCoords = Transform(uid).Coordinates;
+        // if (!IsValidTile(curCoords))
+        // {
+        //     _popup.PopupEntity(Loc.GetString("action-vampire-sanguine-pool-invalid-tile"), uid, uid);
+        //     return;
+        // }
 
-        if (!comp.ActionEntities.TryGetValue("ActionVampireSanguinePool", out var action) 
+        if (!comp.ActionEntities.TryGetValue(hemomancer.SanguinePoolAction, out var action) 
             || !CheckAndConsumeBloodCost(uid, comp, action))
             return;
 
-        EnterSanguinePool(uid, hemomancer, args.Duration, args.BloodDripInterval);
-        args.Handled = true;
+        if (TryActivateSanguinePool(uid, hemomancer, args))
+            args.Handled = true;
     }
 
-    private void EnterSanguinePool(EntityUid uid, HemomancerComponent comp, int duration, float interval)
+    private bool TryActivateSanguinePool(EntityUid uid, HemomancerComponent hemomancer, VampireSanguinePoolActionEvent args)
     {
+        if (!_proto.TryIndex(hemomancer.SanguinePoolPolymorph, out var polymorphProto))
+        {
+            _sawmill?.Error($"Missing polymorph prototype '{hemomancer.SanguinePoolPolymorph}'.");
+            return false;
+        }
+
+        var duration = Math.Max(1, args.Duration);
+        var configuration = polymorphProto.Configuration with
+        {
+            Duration = duration
+        };
+
+        var poolEntity = _polymorph.PolymorphEntity(uid, configuration);
+        if (poolEntity == null)
+            return false;
+
+        if (TryComp<SanguinePoolComponent>(poolEntity.Value, out var poolComp))
+        {
+            poolComp.TrailInterval = MathF.Max(0.1f, args.BloodDripInterval);
+            poolComp.Accumulator = 0f;
+            Dirty(poolEntity.Value, poolComp);
+        }
+
+        Spawn(hemomancer.SanguinePoolEnterEffect, Transform(poolEntity.Value).Coordinates);
+        _popup.PopupEntity(Loc.GetString("action-vampire-sanguine-pool-enter"), poolEntity.Value, poolEntity.Value);
+        return true;
+    }
+
+    private void OnHemomancerPolymorphed(Entity<HemomancerComponent> ent, ref PolymorphedEvent args)
+    {
+        if (args.IsRevert || !HasComp<SanguinePoolComponent>(args.NewEntity))
+            return;
+
+        var (uid, comp) = ent;
+        if (comp.InSanguinePool)
+            return;
+
         comp.InSanguinePool = true;
         Dirty(uid, comp);
-
-        Spawn("VampireSanguinePoolOut", Transform(uid).Coordinates);
-
-        var stealth = EnsureComp<StealthComponent>(uid);
-        _stealth.SetVisibility(uid, -1f, stealth);
-
-        if (!HasComp<GodmodeComponent>(uid))
-        {
-            EnsureComp<GodmodeComponent>(uid);
-            comp.PoolOwnedGodmode = true;
-        }
-        else
-            comp.PoolOwnedGodmode = false;
-
-        if (TryComp<FixturesComponent>(uid, out var fixtures) && fixtures.FixtureCount > 0)
-        {
-            comp.PoolOriginalMasks = new();
-            comp.PoolOriginalLayers = new();
-            foreach (var (id, fix) in fixtures.Fixtures)
-            {
-                comp.PoolOriginalMasks[id] = fix.CollisionMask;
-                comp.PoolOriginalLayers[id] = fix.CollisionLayer;
-                var newMask = (int)CollisionGroup.Impassable | (int)CollisionGroup.GhostImpassable;
-                _physics.SetCollisionMask(uid, id, fix, newMask, fixtures);
-                var newLayer = 0;
-                _physics.SetCollisionLayer(uid, id, fix, newLayer, fixtures);
-            }
-        }
-
-        Timer.Spawn(TimeSpan.FromSeconds(duration), () =>
-        {
-            if (Exists(uid) && TryComp<HemomancerComponent>(uid, out var hemomancer))
-                ExitSanguinePool(uid, hemomancer);
-        });
-
-        _popup.PopupEntity("You transform into a pool of blood!", uid, uid);
-
-        var enterSound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/enter_blood.ogg");
-        _audio.PlayPvs(enterSound, uid, AudioParams.Default.WithVolume(-2f));
-
-        StartSanguinePoolBloodDrip(uid, interval, 0);
     }
 
-    private void ExitSanguinePool(EntityUid uid, HemomancerComponent comp)
+    private void OnSanguinePoolReverted(Entity<SanguinePoolComponent> ent, ref PolymorphedEvent args)
     {
-        if (!comp.InSanguinePool)
+        if (!args.IsRevert || !Exists(args.NewEntity) || !TryComp<HemomancerComponent>(args.NewEntity, out var hemomancer))
             return;
 
-        comp.InSanguinePool = false;
-        Dirty(uid, comp);
-
-        Spawn("VampireSanguinePoolIn", Transform(uid).Coordinates);
-
-        if (HasComp<StealthComponent>(uid))
-            RemComp<StealthComponent>(uid);
-
-        if (comp.PoolOwnedGodmode && HasComp<GodmodeComponent>(uid))
-            RemComp<GodmodeComponent>(uid);
-        comp.PoolOwnedGodmode = false;
-
-        if (TryComp<FixturesComponent>(uid, out var fixtures) &&
-            comp.PoolOriginalMasks != null && comp.PoolOriginalLayers != null)
-        {
-            foreach (var (id, fix) in fixtures.Fixtures)
-            {
-                if (comp.PoolOriginalMasks.TryGetValue(id, out var mask))
-                    _physics.SetCollisionMask(uid, id, fix, mask, fixtures);
-                if (comp.PoolOriginalLayers.TryGetValue(id, out var layer))
-                    _physics.SetCollisionLayer(uid, id, fix, layer, fixtures);
-            }
-            comp.PoolOriginalMasks = null;
-            comp.PoolOriginalLayers = null;
-        }
-
-        _popup.PopupEntity("You reform from the blood pool!", uid, uid);
-        var exitSound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/exit_blood.ogg");
-        _audio.PlayPvs(exitSound, uid, AudioParams.Default.WithVolume(-2f));
-    }
-
-    private void StartSanguinePoolBloodDrip(EntityUid uid, float interval, int tickCount = 0)
-    {
-        const int MaxTicks = 80;
-
-        if (tickCount >= MaxTicks || !Exists(uid))
+        if (!hemomancer.InSanguinePool)
             return;
 
-        if (!TryComp<HemomancerComponent>(uid, out var h) || !h.InSanguinePool)
-            return;
+        hemomancer.InSanguinePool = false;
+        Dirty(args.NewEntity, hemomancer);
 
-        var coords = Transform(uid).Coordinates;
-        if (IsValidTile(coords))
-            Spawn("PuddleBlood", coords);
-
-        Timer.Spawn(TimeSpan.FromSeconds(interval), () => StartSanguinePoolBloodDrip(uid, interval, tickCount + 1));
+        Spawn(hemomancer.SanguinePoolExitEffect, Transform(args.NewEntity).Coordinates);
+        _popup.PopupEntity(Loc.GetString("action-vampire-sanguine-pool-exit"), args.NewEntity, args.NewEntity);
     }
 
     private void OnBloodEruption(EntityUid uid, VampireComponent comp, ref VampireBloodEruptionActionEvent args)
@@ -409,6 +369,7 @@ public sealed partial class VampireSystem : EntitySystem
         {
             if (entity == uid)
                 continue;
+                
             if (MetaData(entity).EntityPrototype?.ID != "PuddleBlood")
                 continue;
 
@@ -420,7 +381,11 @@ public sealed partial class VampireSystem : EntitySystem
 
             var puddleCoords = xform.Coordinates;
             var targetsNearPuddle = _lookup.GetEntitiesInRange(puddleCoords, args.TargetRange)
-                .Where(target => target != uid && target != entity && HasComp<DamageableComponent>(target))
+                .Where(target => target != uid
+                                 && target != entity
+                                 && HasComp<DamageableComponent>(target)
+                                 && HasComp<BloodstreamComponent>(target)
+                                 && !_container.IsEntityOrParentInContainer(target))
                 .ToList();
 
             if (targetsNearPuddle.Count > 0)

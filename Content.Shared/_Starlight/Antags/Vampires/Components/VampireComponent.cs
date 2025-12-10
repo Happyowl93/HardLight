@@ -13,11 +13,24 @@ public sealed partial class VampireComponent : Component
     /// Default abilities, they will be added at start.
     /// </summary>
     [DataField]
-    public List<ProtoId<EntityPrototype>> BaseVampireActions = new()
+    public List<EntProtoId> BaseVampireActions = new()
     {
         "ActionVampireToggleFangs",
         "ActionVampireGlare",
         "ActionVampireRejuvenateI"
+    };
+
+    /// <summary>
+    /// Core action ids that systems need to manage explicitly.
+    /// </summary>
+    [DataField]
+    public EntProtoId ClassSelectActionId = "ActionClassSelectId";
+
+    [DataField]
+    public List<EntProtoId> RejuvenateActions = new()
+    {
+        "ActionVampireRejuvenateI",
+        "ActionVampireRejuvenateII"
     };
 
     /// <summary>
@@ -55,17 +68,56 @@ public sealed partial class VampireComponent : Component
     /// <summary>
     /// Decay rate per second for blood fullness.
     /// </summary>
-    public float FullnessDecayPerSecond = 0.25f;
+    public float FullnessDecayPerSecond = 0.15f;
 
     /// <summary>
-    /// Action ids of the vampire, used as VampireClassID -> ActionID's.
+    /// Action ids for the Hemomancer class
     /// </summary>
-    public Dictionary<string, List<string>> Actions = new();
+    [DataField]
+    public List<EntProtoId> HemomancerActions = new()
+    {
+        "ActionVampireHemomancerClaws",
+        "ActionVampireSanguinePool",
+        "ActionVampireHemomancerTendrils",
+        "ActionVampireBloodBarrier",
+        "ActionVampireBloodEruption",
+        "ActionVampireBloodBringersRite"
+    };
+
+    /// <summary>
+    /// Action ids for the Umbrae class
+    /// </summary>
+    [DataField]
+    public List<EntProtoId> UmbraeActions = new()
+    {
+        "ActionVampireCloakOfDarkness",
+        "ActionVampireShadowSnare",
+        "ActionVampireShadowAnchor",
+        "ActionVampireShadowBoxing",
+        "ActionVampireDarkPassage",
+        "ActionVampireExtinguish",
+        "ActionVampireEternalDarkness"
+    };
+
+    /// <summary>
+    /// Action ids for the Dantalion class
+    /// </summary>
+    [DataField]
+    public List<EntProtoId> DantalionActions = new()
+    {
+        "ActionVampireEnthrall",
+        "ActionVampirePacify",
+        "ActionVampireSubspaceSwap",
+        "ActionVampireDecoy",
+        "ActionVampireRallyThralls",
+        "ActionVampireBloodBond",
+        "ActionVampireMassHysteria"
+    };
 
     /// <summary>
     /// Action entities of the vampire, used as ActionId -> EntityUid.
     /// </summary>
-    public Dictionary<string, EntityUid> ActionEntities = new();
+    public Dictionary<EntProtoId, EntityUid> ActionEntities = new();
 
     /// <summary>
     /// Determines whether the vampire is drinking at the moment
@@ -90,7 +142,7 @@ public sealed partial class VampireComponent : Component
     public int LastRefreshedBloodLevel = -1;
 
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
-    public bool FullPower = false;
+    public bool FullPower = true; //Reminder  Не забудь поменят
 
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public int UniqueHumanoidVictims = 0;

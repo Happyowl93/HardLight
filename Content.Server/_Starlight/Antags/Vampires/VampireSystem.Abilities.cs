@@ -1,5 +1,6 @@
 using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
+using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -44,8 +45,6 @@ public sealed partial class VampireSystem : EntitySystem
     private readonly Dictionary<string, DamageTypePrototype?> _damageTypeCache = new();
     private readonly Dictionary<string, DamageGroupPrototype?> _damageGroupCache = new();
     private static readonly TimeSpan _shadowSnareBlindDuration = TimeSpan.FromSeconds(20);
-    private record struct ShadowSnareData(EntityUid TrapUid, int Health);
-    private readonly Dictionary<EntityUid, ShadowSnareData> _shadowSnares = new();
     private readonly Dictionary<EntityUid, List<EntityUid>> _playerShadowSnares = new();
 
     private void InitializeAbilities()
@@ -247,7 +246,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (IsMouthBlocked(uid))
         {
-            _popup.PopupEntity("Your mouth is covered!", uid, uid);
+            _popup.PopupEntity(Loc.GetString("vampire-mouth-covered"), uid, uid);
             return;
         }
 
@@ -268,7 +267,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (IsMouthBlocked(uid))
         {
-            _popup.PopupEntity("Your mouth is covered!", uid, uid); // Rinary - must to be moved into locale
+            _popup.PopupEntity(Loc.GetString("vampire-mouth-covered"), uid, uid);
             return;
         }
 
@@ -297,7 +296,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (drunkFromTarget >= comp.MaxBloodPerTarget)
         {
-            _popup.PopupEntity($"You have already drunk {comp.MaxBloodPerTarget} units of blood from this target.", uid, uid, Shared.Popups.PopupType.MediumCaution); // Rinary - move to locale
+            _popup.PopupEntity(Loc.GetString("vampire-drink-target-maxed", ("amount", comp.MaxBloodPerTarget)), uid, uid, Shared.Popups.PopupType.MediumCaution);
             comp.IsDrinking = false;
             return;
         }
@@ -337,14 +336,16 @@ public sealed partial class VampireSystem : EntitySystem
                         ApplyHealing(uid, _bruteGroupId, 3, true);
                         ApplyHealing(uid, _burnGroupId, 3, true);
                         break;
-                    // Dantalion - slaves heal 3 brute and burn + 5 oxygen loss
+                    case VampireClassType.Dantalion:
+                        HealDantalionThralls(uid);
+                        break;
                 }
             }
 
             UpdateFullPower(uid, comp);
 
             var biteSound = new SoundPathSpecifier("/Audio/Effects/bite.ogg");
-            _audio.PlayPvs(biteSound, target, AudioParams.Default.WithVolume(-4f));
+            _audio.PlayPvs(biteSound, target, AudioParams.Default.WithVolume(-7f));
             var targetCoords = Transform(target).Coordinates;
             Spawn("WeaponArcBite", targetCoords);
 
@@ -354,7 +355,6 @@ public sealed partial class VampireSystem : EntitySystem
             UpdateVampireFedAlert(uid, comp);
 
             EnsureRejuvenateUpgrade(uid, comp);
-            _popup.PopupEntity(Loc.GetString("vampire-drink-end", ("target", Identity.Entity(target, EntityManager))), uid, uid);
 
             var currentDrunkFromTarget = comp.BloodDrunkFromTargets.GetValueOrDefault(target, 0);
             if (comp.FangsExtended && currentDrunkFromTarget < comp.MaxBloodPerTarget)
@@ -366,7 +366,7 @@ public sealed partial class VampireSystem : EntitySystem
             {
                 comp.IsDrinking = false;
                 if (currentDrunkFromTarget >= comp.MaxBloodPerTarget)
-                    _popup.PopupEntity($"You have drunk the maximum amount of blood from this target ({comp.MaxBloodPerTarget} units).", uid, uid); // Rinary - move to locale
+                    _popup.PopupEntity(Loc.GetString("vampire-drink-target-hard-max", ("amount", comp.MaxBloodPerTarget)), uid, uid);
             }
         }
         else
@@ -394,7 +394,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (IsMouthBlocked(uid))
         {
             if (showPopup)
-                _popup.PopupEntity("Your mouth is covered!", uid, uid);
+                _popup.PopupEntity(Loc.GetString("vampire-mouth-covered"), uid, uid);
             return;
         }
 
@@ -640,7 +640,7 @@ public sealed partial class VampireSystem : EntitySystem
     }
 
     #region Full Power, Passives
-
+    // убейте меня нахуй
     private void UpdateFullPower(EntityUid uid, VampireComponent comp)
     {
         int uniqueHumanoids = 0;
@@ -651,7 +651,7 @@ public sealed partial class VampireSystem : EntitySystem
         var prev = comp.FullPower;
         comp.FullPower = comp.TotalBlood > 1000 && uniqueHumanoids >= 8;
         if (!prev && comp.FullPower)
-            _popup.PopupEntity("Your vampiric essence surges – full power achieved!", uid, uid); // Rinary - move to locale
+            _popup.PopupEntity(Loc.GetString("vampire-full-power-achieved"), uid, uid);
         Dirty(uid, comp);
     }
 
@@ -678,6 +678,31 @@ public sealed partial class VampireSystem : EntitySystem
             if (_inventory.TryGetSlotEntity(uid, slot, out var ent) && HasComp<IngestionBlockerComponent>(ent.Value))
                 return true;
         return false;
+    }
+
+    private void HealDantalionThralls(EntityUid uid)
+    {
+        if (!TryComp<DantalionComponent>(uid, out var dantalion) || dantalion.Thralls.Count == 0)
+            return;
+
+        foreach (var thrall in dantalion.Thralls.ToArray())
+        {
+            if (!Exists(thrall))
+            {
+                dantalion.Thralls.Remove(thrall);
+                continue;
+            }
+
+            if (!TryComp<VampireThrallComponent>(thrall, out var thrallComp) || thrallComp.Master != uid)
+            {
+                dantalion.Thralls.Remove(thrall);
+                continue;
+            }
+
+            ApplyHealing(thrall, _bruteGroupId, 3, true);
+            ApplyHealing(thrall, _burnGroupId, 3, true);
+            ApplyHealing(thrall, _oxyLossTypeId, 5);
+        }
     }
 
     #endregion

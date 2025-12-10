@@ -1,5 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
+using Robust.Shared.Audio;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Starlight.Antags.Vampires;
@@ -165,27 +166,45 @@ public sealed partial class VampireCloakOfDarknessActionEvent : InstantActionEve
 // Shadow Snare
 public sealed partial class VampireShadowSnareActionEvent : WorldTargetActionEvent
 {
-    [DataField]
-    public int BaseHealth = 200;
-
+    /// <summary>
+    /// Decay tick interval in seconds
+    /// </summary>
     [DataField]
     public float TickInterval = 2f;
 
+    /// <summary>
+    /// Health decay per tick in dark areas (light <= 5)
+    /// </summary>
     [DataField]
     public float DamageDark = 0f;
 
+    /// <summary>
+    /// Health decay per tick in normal light (5 < light <= 10)
+    /// </summary>
     [DataField]
     public float DamageNormal = 10f;
 
+    /// <summary>
+    /// Health decay per tick in bright light (light > 10)
+    /// </summary>
     [DataField]
     public float DamageBright = 25f;
 
+    /// <summary>
+    /// Max snares per player before oldest is removed
+    /// </summary>
     [DataField]
     public int MaxPerPlayer = 3;
 
+    /// <summary>
+    /// Stealth visibility modifier for the trap
+    /// </summary>
     [DataField]
     public float StealthVisibility = -0.3f;
 
+    /// <summary>
+    /// Position offset for centering on tile
+    /// </summary>
     [DataField]
     public float PositionOffset = 0.5f;
 }
@@ -214,6 +233,9 @@ public sealed partial class VampireShadowBoxingActionEvent : EntityTargetActionE
 
     [DataField]
     public float Range = 2.1f;
+
+    [DataField]
+    public SoundSpecifier? HitSound;
 }
 
 [Serializable, NetSerializable]
@@ -256,9 +278,101 @@ public sealed partial class VampireEternalDarknessActionEvent : InstantActionEve
 
 #endregion
 
-#region Misc
+#region Dantalion
+
+public sealed partial class VampireEnthrallActionEvent : EntityTargetActionEvent
+{
+    /// <summary>
+    ///     Channel duration, in seconds, before the target is enthralled
+    /// </summary>
+    [DataField]
+    public float ChannelTime = 1f;
+}
 
 [Serializable, NetSerializable]
 public sealed partial class VampireDrinkBloodDoAfterEvent : SimpleDoAfterEvent;
+
+[Serializable, NetSerializable]
+public sealed partial class VampireEnthrallDoAfterEvent : SimpleDoAfterEvent
+{
+    [DataField]
+    public int BloodCost;
+}
+
+public sealed partial class VampirePacifyActionEvent : EntityTargetActionEvent
+{
+    [DataField("pacifyDuration")]
+    public float PacifyDuration = 40f;
+}
+        
+public sealed partial class VampireSubspaceSwapActionEvent : EntityTargetActionEvent
+{
+    [DataField]
+    public float SlowDuration = 4f;
+
+    [DataField]
+    public float SlowMultiplier = 0.4f;
+    [DataField]
+    public float HysteriaDuration = 15f;
+}
+
+public sealed partial class VampireDecoyActionEvent : InstantActionEvent
+{
+    [DataField]
+    public float DecoyDuration = 6f;
+    [DataField]
+    public float InvisibilityDuration = 6f;
+}
+
+public sealed partial class VampireRallyThrallsActionEvent : InstantActionEvent
+{
+    /// <summary>
+    ///     Range in tiles to find thralls
+    /// </summary>
+    [DataField]
+    public float Range = 7f;
+}
+
+public sealed partial class VampireBloodBondActionEvent : InstantActionEvent
+{
+    /// <summary>
+    ///     Range in tiles for blood bond link
+    /// </summary>
+    [DataField]
+    public float Range = 7f;
+
+    /// <summary>
+    ///     Blood cost per second while active
+    /// </summary>
+    [DataField]
+    public float BloodCostPerSecond = 2.5f;
+
+    /// <summary>
+    ///     Tick interval in seconds
+    /// </summary>
+    [DataField]
+    public float TickInterval = 1f;
+}
+
+public sealed partial class VampireMassHysteriaActionEvent : InstantActionEvent
+{
+    /// <summary>
+    ///     Range in tiles to affect targets
+    /// </summary>
+    [DataField]
+    public float Range = 8f;
+
+    /// <summary>
+    ///     Duration of the flash effect in seconds
+    /// </summary>
+    [DataField]
+    public float FlashDuration = 3f;
+
+    /// <summary>
+    ///     Duration of the hysteria vision effect in seconds
+    /// </summary>
+    [DataField]
+    public float HysteriaDuration = 30f;
+}
 
 #endregion

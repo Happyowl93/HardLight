@@ -1,3 +1,5 @@
+using Content.Shared.Polymorph;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -11,9 +13,6 @@ public sealed partial class HemomancerComponent : Component
     public bool InSanguinePool = false;
     [AutoNetworkedField]
     public bool BloodBringersRiteActive = false;
-    public Dictionary<string, int>? PoolOriginalMasks = null;
-    public Dictionary<string, int>? PoolOriginalLayers = null;
-    public bool PoolOwnedGodmode = false;
 
     public int BloodBringersRiteLoopId = 0;
 
@@ -25,4 +24,22 @@ public sealed partial class HemomancerComponent : Component
 
     [DataField]
     public EntProtoId BloodBarrier = "VampireBloodBarrier";
+
+    [DataField]
+    public EntProtoId SanguinePoolAction = "ActionVampireSanguinePool";
+
+    [DataField]
+    public EntProtoId SanguinePoolEnterEffect = "VampireSanguinePoolOut";
+
+    [DataField]
+    public EntProtoId SanguinePoolExitEffect = "VampireSanguinePoolIn";
+
+    [DataField]
+    public ProtoId<PolymorphPrototype> SanguinePoolPolymorph = "VampireSanguinePoolPolymorph";
+
+    // [DataField]
+    // public SoundSpecifier? SanguinePoolEnterSound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/enter_blood.ogg");
+
+    // [DataField]
+    // public SoundSpecifier? SanguinePoolExitSound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/exit_blood.ogg");
 }

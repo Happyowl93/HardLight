@@ -24,10 +24,9 @@
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/effects.rsi
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
       state: shadow_box_atack_effect
       drawdepth: Effects
-      directionOffset: 0
     - type: TimedDespawn
       lifetime: 0.4
     - type: Physics
@@ -179,6 +178,24 @@
       noRot: false
 
 - type: entity
+  id: VampireBloodBondBeamVisual
+  name: blood bond beam visual
+  description: A smooth client-side vampire blood bond beam.
+  noSpawn: true
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/effects.rsi
+      layers:
+        - state: drainbeam
+          map: ["enum.EffectLayers.Unshaded"]
+          offset: 0, 0
+          color: "#80FF80" # Light green tint
+      drawdepth: BelowMobs
+    - type: Transform
+      noRot: false
+
+- type: entity
   id: VampireShadowSnareTrap
   name: shadow snare
   description: A nearly invisible snare of condensed darkness.
@@ -204,6 +221,17 @@
             - LowImpassable
     - type: InteractionOutline
       enabled: false
+    - type: ShadowSnareTrap
+      triggerBruteDamage: 20
+      maxHealth: 200
+      currentHealth: 200
+      triggerSound: /Audio/Weapons/Guns/Hits/snap.ogg
+      breakoutTime: 5
+      freeTime: 3.5
+      walkSpeedMultiplier: 0.5
+      sprintSpeedMultiplier: 0.5
+      maxEnsnares: 1
+      canMoveBreakout: true
 
 - type: entity
   id: VampireDarkPassageMistIn
@@ -290,3 +318,19 @@
     - type: Tag
       tags:
         - HideContextMenu
+
+- type: entity
+  id: VampireRallyOverlayEffect
+  name: vampire rally overlay
+  noSpawn: true
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/effects.rsi
+      state: rallyoverlay
+      drawdepth: OverMobs
+      layer: ["enum.EffectLayers.Unshaded"]
+    - type: TimedDespawn
+      lifetime: 3.0
+    - type: Transform
+      noRot: true
