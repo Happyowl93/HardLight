@@ -11,6 +11,9 @@ jobs:
       pull-requests: write
       issues: write
     steps:
+      - name: Wait a bit for labels to be applied
+        run: sleep 10s
+        
       - name: Assign reviewers based on labels
         uses: actions/github-script@v7
         with:
