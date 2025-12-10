@@ -16,30 +16,30 @@ jobs:
         with:
           script: |
             const labelToAssign = {
-              "Changes: Sprites": ["Conflee"],
-              "Changes: Map": ["APOCAMANDER, CawsForConcern"],
-              "Changes: UI": ["ss14-Starlight"],
-              "Changes: Shaders": ["ss14-Starlight, Happyrobot33, FoxxoTrystan"],
-              "Changes: Audio": ["ss14-Starlight, Happyrobot33, FoxxoTrystan"],
-              "Changes: No C#": ["ss14-Starlight, Happyrobot33, FoxxoTrystan"],
-              "Changes: C#": ["ss14-Starlight, Happyrobot33, FoxxoTrystan"],
+              "Changes: Sprites": ["ss14-Starlight/spriters"],
+              "Changes: Map": ["ss14-Starlight/mappers"],
+              "Changes: UI": ["ss14-Starlight/dev"],
+              "Changes: Shaders": ["ss14-Starlight/dev"],
+              "Changes: Audio": ["ss14-Starlight/dev"],
+              "Changes: C#": ["ss14-Starlight/dev"],
+              "Changes: Prototypes": ["ss14-Starlight/prototypers"],
             };
 
             const labels = context.payload.pull_request.labels.map(label => label.name);
-            const assignees = new Set();
+            const reviewers = new Set();
 
             for (const label of labels) {
               const tempAssing = labelToAssign[label];
               if (tempAssing) {
-                tempAssing.forEach(a => assignees.add(a));
+                tempAssing.forEach(a => reviewers.add(a));
               }
             }
 
-            if (assignees.size > 0) {
-              await github.rest.issues.addAssignees({
+            if (reviewers.size > 0) {
+              await github.rest.pulls.requestReviewers({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                issue_number: context.payload.pull_request.number,
-                assignees: Array.from(assignees),
+                pull_number: context.payload.pull_request.number,
+                team_reviewers: Array.from(reviewers),
               });
             }
