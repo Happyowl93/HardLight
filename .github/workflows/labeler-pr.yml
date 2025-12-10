@@ -41,7 +41,13 @@ jobs:
               "Changes: Prototypes": ["prototypers"],
             };
 
-            const labels = context.payload.pull_request.labels.map(label => label.name);
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+            });
+
+            const labels = pr.data.labels.map(label => label.name);
             const reviewers = new Set();
 
             for (const label of labels) {
