@@ -16,13 +16,13 @@ jobs:
         with:
           script: |
             const labelToAssign = {
-              "Changes: Sprites": ["ss14-Starlight/spriters"],
-              "Changes: Map": ["ss14-Starlight/mappers"],
-              "Changes: UI": ["ss14-Starlight/dev"],
-              "Changes: Shaders": ["ss14-Starlight/dev"],
-              "Changes: Audio": ["ss14-Starlight/dev"],
-              "Changes: C#": ["ss14-Starlight/dev"],
-              "Changes: Prototypes": ["ss14-Starlight/prototypers"],
+              "Changes: Sprites": ["spriters"],
+              "Changes: Map": ["mappers"],
+              "Changes: UI": ["dev"],
+              "Changes: Shaders": ["dev"],
+              "Changes: Audio": ["dev"],
+              "Changes: C#": ["dev"],
+              "Changes: Prototypes": ["prototypers"],
             };
 
             const labels = context.payload.pull_request.labels.map(label => label.name);
