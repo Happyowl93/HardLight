@@ -49,8 +49,6 @@ using Content.Shared.Tabletop.Components;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
 using Content.Shared.CombatMode.Pacification;
-using Content.Shared.Humanoid;
-using Content.Shared.Preferences;
 using Content.Shared.Trigger; // Starlight
 using Content.Shared.Trigger.Components.Effects; // Starlight
 using Robust.Shared.Map;
