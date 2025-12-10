@@ -650,6 +650,11 @@
           map: ["enum.MaterialStorageVisualLayers.Inserting"]
         - state: panel
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
+        # Starlight Edit Start - Add magnet layer
+        - state: magnet_on
+          map: ["enum.ToggleableVisuals.Layer"]
+          visible: false
+        # Starlight Edit End
     - type: Machine
       board: OreProcessorMachineCircuitboard
     - type: MaterialStorage
@@ -685,6 +690,12 @@
         range: 3
         requiresEquipping: false
         slotFlags: 0
+    - type: GenericVisualizer
+      visuals:
+        enum.ToggleableVisuals.Enabled:
+          enum.ToggleableVisuals.Layer:
+            True: { visible: true }
+            False: { visible: false }
     # starlight edit end
 
 - type: entity
