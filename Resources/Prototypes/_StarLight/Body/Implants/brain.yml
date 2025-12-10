@@ -1,0 +1,51 @@
+- type: entity
+  id: BaseEntityBrainImplant
+  abstract: true
+  parent: [ BaseItem, BaseImplant ]
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
+  - type: Organ
+  - type: BrainImplant
+  - type: Gibbable
+  - type: FlavorProfile
+    flavors:
+      - people
+
+- type: entity
+  id: ImplantTranslator
+  name: Universal Translator Implant
+  description: Translates from your language to galactic common right in your brain!
+  parent: BaseEntityBrainImplant
+  components:
+  - type: Sprite
+    state: brain_implant_translator
+  - type: FunctionalOrgan
+    comps:
+    - type: IntrinsicTranslator
+      spoken:
+      - GalacticCommon
+      understood:
+      - GalacticCommon
+
+- type: entity
+  id: ImplantComms
+  name: Radio Implant
+  description: A handy implant for the salvager of the modern age.
+  parent: BaseEntityBrainImplant
+  components:
+  - type: Sprite
+    state: brain_implant_comms
+    
+
+- type: entity
+  id: ImplantNexus
+  name: Nexus Implant
+  description: Gives you access to the Nexus!
+  parent: BaseEntityBrainImplant
+  components:
+  - type: Sprite
+    state: brain_implant_nexus
+  - type: TaggedOrgan
+    addTags:
+      - Nexus

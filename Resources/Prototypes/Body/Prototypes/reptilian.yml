@@ -12,6 +12,7 @@
         eyes: OrganHumanEyes
         tongue: OrganHumanTongue
         eye_implant: null
+        brain_implant: null # 🌟Starlight🌟
     torso:
       part: TorsoReptilian
       connections:

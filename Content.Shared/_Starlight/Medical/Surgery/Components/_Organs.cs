@@ -1,12 +1,14 @@
 ﻿using Content.Shared.Damage;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Tag;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 namespace Content.Shared.Starlight.Medical.Surgery.Steps.Parts;
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class EyeImplantComponent : Component;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class HandImplantComponent : Component;
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class BrainImplantComponent : Component;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class OrganBrainComponent : Component;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class OrganAppendixComponent : Component;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))] public sealed partial class OrganEarsComponent : Component;
@@ -44,6 +46,16 @@ public sealed partial class FunctionalOrganComponent : Component
 {
     [DataField("comps")]
     public ComponentRegistry? Components;
+}
+
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
+public sealed partial class TaggedOrganComponent : Component
+{
+    [DataField]
+    public List<ProtoId<TagPrototype>> AddTags = new();
+    
+    [DataField]
+    public List<ProtoId<TagPrototype>> RemoveTags = new();
 }
 
 [RegisterComponent, NetworkedComponent]

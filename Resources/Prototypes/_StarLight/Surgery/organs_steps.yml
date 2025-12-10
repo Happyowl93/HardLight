@@ -890,6 +890,41 @@
     sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
 
+# brain implants
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepInsertBrainImplant
+  name: Insert Brain Implant
+  components:
+  - type: SurgeryStep
+    duration: 2
+    tools:
+    - type: BrainImplant
+  - type: SurgeryStepOrganInsert
+    slot: brain_implant
+  - type: Sprite
+    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
+    layers:
+      - state: brain_implant_translator
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepRemoveBrainImplant
+  name: Remove Brain Implant
+  components:
+  - type: SurgeryStep
+    duration: 2
+    tools:
+    - type: Scalpel
+  - type: SurgeryStepEmoteEffect
+  - type: SurgeryStepOrganExtract
+    organ:
+    - type: BrainImplant
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
+
 # tongue
 
 - type: entity

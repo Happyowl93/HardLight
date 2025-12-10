@@ -6,6 +6,7 @@ using Content.Shared.Speech.Muting;
 using Content.Shared.Starlight.Antags.Abductor;
 using Content.Shared.Starlight.Medical.Surgery.Events;
 using Content.Shared.Starlight.Medical.Surgery.Steps.Parts;
+using Content.Shared.Tag;
 using Content.Shared.VentCraw;
 
 namespace Content.Server._Starlight.Medical.Surgery;
@@ -16,12 +17,16 @@ public sealed partial class OrganSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearanceSystem = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<FunctionalOrganComponent, SurgeryOrganImplantationCompleted>(OnFunctionalOrganImplanted);
         SubscribeLocalEvent<FunctionalOrganComponent, SurgeryOrganExtracted>(OnFunctionalOrganExtracted);
+
+        SubscribeLocalEvent<TaggedOrganComponent, SurgeryOrganImplantationCompleted>(OnTaggedOrganImplanted);
+        SubscribeLocalEvent<TaggedOrganComponent, SurgeryOrganExtracted>(OnTaggedOrganExtracted);
 
         SubscribeLocalEvent<OrganEyesComponent, SurgeryOrganImplantationCompleted>(OnEyeImplanted);
         SubscribeLocalEvent<OrganEyesComponent, SurgeryOrganExtracted>(OnEyeExtracted);
@@ -52,7 +57,25 @@ public sealed partial class OrganSystem : EntitySystem
     {
         foreach (var comp in (ent.Comp.Components ?? []).Values)
             if (EntityManager.HasComponent(args.Body, comp.Component.GetType()))
-                EntityManager.RemoveComponent(args.Body, _compFactory.GetComponent(comp.Component.GetType()));
+                EntityManager.RemoveComponent(args.Body, EntityManager.GetComponent(args.Body, comp.Component.GetType()));
+    }
+
+    //
+
+    private void OnTaggedOrganImplanted(Entity<TaggedOrganComponent> ent, ref SurgeryOrganImplantationCompleted args)
+    {
+        if(ent.Comp.AddTags.Count > 0)
+            _tag.AddTags(args.Body, ent.Comp.AddTags);
+        if(ent.Comp.RemoveTags.Count > 0)
+            _tag.RemoveTags(args.Body, ent.Comp.RemoveTags);
+    }
+
+    private void OnTaggedOrganExtracted(Entity<TaggedOrganComponent> ent, ref SurgeryOrganExtracted args)
+    {
+        if(ent.Comp.AddTags.Count > 0)
+            _tag.RemoveTags(args.Body, ent.Comp.AddTags);
+        if(ent.Comp.RemoveTags.Count > 0)
+            _tag.AddTags(args.Body, ent.Comp.RemoveTags);
     }
 
     //

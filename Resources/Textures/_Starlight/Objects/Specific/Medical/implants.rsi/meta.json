@@ -46,6 +46,30 @@
     {
       "name": "hand_implant_thrusters",
       "copyright": "Citrea"
+    },
+    {
+      "name": "brain_implant_nexus",
+      "copyright": "Citrea"
+    },
+    {
+      "name": "brain_implant_translator",
+		"delays": [
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "copyright": "Citrea"
+    },
+    {
+      "name": "brain_implant_comms",
+		"delays": [
+        [
+          0.9,
+          0.1
+        ]
+      ],
+      "copyright": "Citrea"
     }
   ]
 }

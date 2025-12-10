@@ -23,6 +23,7 @@
         core: SentientSlimeCore
         lungs: OrganSlimeLungs
         cavity: null
+        brain_implant: null # 🌟Starlight🌟
     right arm:
       part: RightArmSlime
       connections:

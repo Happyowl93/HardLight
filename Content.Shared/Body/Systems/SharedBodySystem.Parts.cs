@@ -7,6 +7,7 @@ using Content.Shared.Body.Part;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Movement.Components;
+using Content.Shared.Starlight.Medical.Surgery.Events;
 using Robust.Shared.Containers;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
@@ -43,7 +44,13 @@ public partial class SharedBodySystem
         }
 
         if (TryComp(insertedUid, out OrganComponent? organ))
+        //Starlight start
+        {
             AddOrgan((insertedUid, organ), ent.Comp.Body.Value, ent);
+            var addedEv = new SurgeryOrganImplantationCompleted(ent.Comp.Body.Value, ent.Owner, insertedUid);
+            RaiseLocalEvent(insertedUid, ref addedEv);
+        }
+        //Starlight end
     }
 
     private void OnBodyPartRemoved(Entity<BodyPartComponent> ent, ref EntRemovedFromContainerMessage args)

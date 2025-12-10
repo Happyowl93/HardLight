@@ -12,6 +12,7 @@
         eyes: OrganShadekinEyes
         tongue: OrganShadekinTongue
         eye_implant: null
+        brain_implant: null
     torso:
       part: TorsoShadekin
       connections:
