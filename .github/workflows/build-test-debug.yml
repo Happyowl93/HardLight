@@ -15,7 +15,8 @@ jobs:
       matrix:
         os: [ubuntu-latest]
 
-    runs-on: ${{ matrix.os }}
+    #runs-on: ${{ matrix.os }}
+    runs-on: happyrobot33
 
     steps:
     - name: Checkout Master
