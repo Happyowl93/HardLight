@@ -1795,11 +1795,11 @@
     Telecrystal: 12
   categories:
   - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+#  conditions: #Starlight edit, why cant traitors grab this?... they get elite web vest as is
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - NukeOpsUplink
 
 - type: listing
   id: UplinkClothingOuterHardsuitJuggernaut

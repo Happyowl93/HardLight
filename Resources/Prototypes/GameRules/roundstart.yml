@@ -281,6 +281,7 @@
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ HeadRev ]
+      min: 2 #Starlight edit, made it 2 since one person dying shouldnt end a major gamemode, praying it breaks nothing
       max: 3
       playerRatio: 15
       startingGear: HeadRevGear
