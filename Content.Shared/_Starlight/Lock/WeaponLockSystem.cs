@@ -29,7 +29,7 @@ public partial class WeaponLockSystem : EntitySystem
     private void OnUnequipHand(EntityUid uid, LockComponent component, GotUnequippedHandEvent args)
     {
         if (component.AutoUnlock)
-            _lock.Lock(uid, args.User);
+            _lock.Lock(uid, args.User, component);
     }
     
     private void OnEquipHand(EntityUid uid, LockComponent component, GotEquippedHandEvent args)
