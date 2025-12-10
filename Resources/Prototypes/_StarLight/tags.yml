@@ -4,6 +4,9 @@
   id: Arachnid
 
 - type: Tag
+  id: AutoMender
+
+- type: Tag
   id: Avali
 
 - type: Tag
@@ -55,16 +58,25 @@
   id: ClownKudzu
   
 - type: Tag
+  id: Condiment
+
+- type: Tag
   id: CyberHandItem
 
 - type: Tag
   id: Diona
 
 - type: Tag
+  id: Dinnerware
+
+- type: Tag
   id: DockEscape
 
 - type: Tag
   id: DockGamma
+
+- type: Tag
+  id: DrinkCarton
 
 - type: Tag
   id: ElderArena
@@ -243,6 +255,9 @@
   id: BorgModuleSecurity
 
 - type: Tag
+  id: BorgModuleSyndicateStealth
+
+- type: Tag
   id: Disabler
 
 - type: Tag
@@ -292,3 +307,9 @@
 
 - type: Tag
   id: WallmountMassScannerElectronics
+ 
+- type: Tag
+  id: SyndicateJawsOfLife
+  
+- type: Tag
+  id: PrototypeJawsOfLife
