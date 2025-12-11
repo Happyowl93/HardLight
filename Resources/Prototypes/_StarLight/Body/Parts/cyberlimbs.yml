@@ -501,6 +501,7 @@
   id: LeftArmCyberSpacer
   name: "left spacer arm"
   parent: [PartCyber, BaseLeftArm]
+  description: Augmented arm for the salvager of the modern age.
   components:
     - type: BaseLayerId
       layer: CyberLArmSpacer
@@ -532,6 +533,7 @@
   id: RightArmCyberSpacer
   name: "right spacer arm"
   parent: [PartCyber, BaseRightArm]
+  description: Augmented arm for the salvager of the modern age.
   components:
     - type: BaseLayerId
       layer: CyberRArmSpacer
