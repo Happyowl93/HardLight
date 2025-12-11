@@ -18,6 +18,7 @@ using Content.Shared.Throwing;
 using Content.Shared.Timing;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Hitscan.Components;
+using Content.Shared.Weapons.Hitscan.Events; // Starlight
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
@@ -691,8 +692,12 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Serializable, NetSerializable]
     public sealed class HitscanEvent : EntityEventArgs
     {
-        public List<(NetCoordinates coordinates, Angle angle, SpriteSpecifier Sprite, float Distance)> Sprites = new();
-        public List<(NetCoordinates coordinates, Angle angle, Color color)> BloodDecals = new(); // Starlight
+        // Starlight - comment out the upstream Sprites list in favor of tracking the hitscan and its traces
+        // public List<(NetCoordinates coordinates, Angle angle, SpriteSpecifier Sprite, float Distance)> Sprites = new();
+        // Starilght start - we add the traces block below, and use that instead of the sprite list above.
+        public EntityUid Hitscan;
+        public required List<HitscanTrace> Traces;
+        // Starlight end
     }
 
     /// <summary>

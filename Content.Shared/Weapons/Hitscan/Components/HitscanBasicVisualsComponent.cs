@@ -31,10 +31,17 @@ public sealed partial class HitscanBasicVisualsComponent : Component
     [DataField]
     public SpriteSpecifier? ImpactFlash;
 
-    // Starlight
+    // Starlight start
     /// <summary>
     /// The bullet that gets displayed for the hitscan rapidly for the client
     /// </summary>
     [DataField]
     public ExtendedSpriteSpecifier? Bullet;
+
+    /// <summary>
+    /// The speed of the projectile to display if Bullet has a value
+    /// </summary>
+    [DataField]
+    public float Speed = 315f; // 9mm bullet speed
+    // Starlight end 
 }

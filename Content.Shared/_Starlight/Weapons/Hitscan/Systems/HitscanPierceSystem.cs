@@ -56,6 +56,7 @@ public sealed partial class PierceSystem : EntitySystem
             ShotDirection = (data.ShotDirection.ToAngle() + random).ToVec(),
             Gun = data.Gun,
             Shooter = data.HitEntity.Value,
+            OutputTrace = data.OutputTrace,
         };
 
         RaiseLocalEvent(hitscan, ref hitFiredEvent);

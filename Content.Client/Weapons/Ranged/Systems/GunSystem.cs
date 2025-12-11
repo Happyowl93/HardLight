@@ -34,6 +34,7 @@ using Content.Shared._Starlight.Weapon.Components;
 using Content.Shared.Mech.Components;
 using Content.Shared.Starlight.Utility;
 using Content.Shared.Starlight.CCVar;
+using Content.Shared.Weapons.Hitscan.Events;
 using Robust.Shared.Timing;
 using Robust.Shared.Configuration;
 #endregion Starlight
@@ -134,40 +135,43 @@ public sealed partial class GunSystem : SharedGunSystem
 
     private void OnHitscan(HitscanEvent ev)
     {
-        var hitscan = _proto.Index(ev.Hitscan);
+        var hitscan = ev.Hitscan;
         //The real bullet speed is so high that the bullet isn’t visible at all. So, let's slow it down 5x.
-        var bulletSpeed = hitscan.Speed / 5000;
-        foreach (var effects in ev.Effects)
+        if (!TryComp<HitscanBasicVisualsComponent>(hitscan, out var visuals))
+        {
+            // There's no render data for this hitscan...
+            return;
+        }
+        foreach (var trace in ev.Traces)
         {
             var delay = 0f;
-            foreach (var effect in effects)
-                delay = FireEffect(hitscan, bulletSpeed, delay, effect);
+            delay = FireEffect((hitscan, visuals), delay, trace);
         }
     }
 
-    private float FireEffect(HitscanPrototype hitscan, float bulletSpeed, float delay, Effect effect)
+    private float FireEffect(Entity<HitscanBasicVisualsComponent> hitscan, float delay, HitscanTrace trace)
     {
-        var length = effect.Distance / bulletSpeed;
-        if (effect.MuzzleCoordinates is { } muzzleCoordinates)
+        var length = trace.Distance / hitscan.Comp.Speed;
+        if (trace.MuzzleCoordinates is { } muzzleCoordinates)
         {
-            if (hitscan.MuzzleFlash is { } mozzle && (_tracesEnabled || hitscan.Bullet is null))
-                RenderFlash(muzzleCoordinates, effect.Angle, mozzle, 1f, false, false, length, delay);
+            if (hitscan.Comp.MuzzleFlash is { } mozzle && (_tracesEnabled || hitscan.Comp.Bullet is null))
+                RenderFlash(muzzleCoordinates, trace.Angle, mozzle, 1f, false, false, length, delay);
 
-            if (hitscan.Bullet is { } bullet)
-                RenderBullet(muzzleCoordinates, effect.Angle, bullet, effect.Distance - 1.5f, length, delay);
+            if (hitscan.Comp.Bullet is { } bullet)
+                RenderBullet(muzzleCoordinates, trace.Angle, bullet, trace.Distance - 1.5f, length, delay);
         }
-        if (hitscan.TravelFlash is { } travel && effect.TravelCoordinates is { } travelCoordinates && (_tracesEnabled || hitscan.Bullet is null))
-            RenderFlash(travelCoordinates, effect.Angle, travel, effect.Distance - 1.5f, true, false, length, delay);
+        if (hitscan.Comp.TravelFlash is { } travel && trace.TravelCoordinates is { } travelCoordinates && (_tracesEnabled || hitscan.Comp.Bullet is null))
+            RenderFlash(travelCoordinates, trace.Angle, travel, trace.Distance - 1.5f, true, false, length, delay);
         delay += length;
 
-        if ((hitscan.ImpactFlash is not null || effect.ImpactEnt is not null) && (_tracesEnabled || hitscan.Bullet is null))
+        if ((hitscan.Comp.ImpactFlash is not null || trace.ImpactedEnt is not null) && (_tracesEnabled || hitscan.Comp.Bullet is null))
             Timer.Spawn((int)delay, () =>
             {
-                if (hitscan.ImpactFlash is { } impact)
-                    RenderFlash(effect.ImpactCoordinates, effect.Angle, impact, 1f, false, true, length, delay);
+                if (hitscan.Comp.ImpactFlash is { } impact)
+                    RenderFlash(trace.ImpactCoordinates, trace.Angle, impact, 1f, false, true, length, delay);
 
-                if (effect.ImpactEnt is { } netEnt && GetEntity(netEnt) is EntityUid ent)
-                    RenderDisplacementImpact(GetCoordinates(effect.ImpactCoordinates), effect.Angle, ent);
+                if (trace.ImpactedEnt is { } netEnt && GetEntity(netEnt) is EntityUid ent)
+                    RenderDisplacementImpact(GetCoordinates(trace.ImpactCoordinates), trace.Angle, ent);
             });
         return delay;
     }

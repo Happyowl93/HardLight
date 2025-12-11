@@ -45,6 +45,7 @@ public sealed partial class HitscanRicochetSystem : EntitySystem
             ShotDirection = ev.Dir,
             Gun = data.Gun,
             Shooter = data.HitEntity.Value,
+            OutputTrace = data.OutputTrace,
         };
 
         RaiseLocalEvent(hitscan, ref hitFiredEvent);

@@ -13,9 +13,11 @@ using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
 #region Starlight
+using System.Linq;
 using Content.Shared.Body.Components;
 using Content.Shared.Mech.Components;
 using Content.Shared.Weapons.Reflect;
+using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 #endregion Starlight
 
@@ -71,9 +73,29 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
 
         var distanceTried = result?.Distance ?? ent.Comp.MaxDistance;
 
+        // Starlight start
+        var isRoot = false;
+        if (args.OutputTrace is null)
+        {
+            args.OutputTrace = new List<HitscanTrace>();
+            isRoot = true;
+        }
+        // Starlight end
+
         // Do visuals without an event. They should always happen and putting it on the attempt event is weird!
         // If more stuff gets added here, it should probably be turned into an event.
-        FireEffects(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle(), ent.Owner, result?.HitEntity); // Starlight - add HitEntity parameter
+        // FireEffects(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle(), ent.Owner); // Starlight - comment out, as we want to aggregate these
+        
+        // Starlight start - add the visuals for this particular leg of the hitscan into the trace
+        args.OutputTrace.Add(new() {
+            Angle = args.ShotDirection.ToAngle(),
+            Distance = distanceTried,
+            // We don't draw muzzle or travel effects if we're at point-blank range, just impact effects
+            MuzzleCoordinates = distanceTried > 1f ? GetNetCoordinates(args.FromCoordinates.Offset(args.ShotDirection / 2)) : null,
+            TravelCoordinates = distanceTried > 1f ? GetNetCoordinates(args.FromCoordinates.Offset(args.ShotDirection * (distanceTried + 0.5f) / 2)) : null,
+            ImpactCoordinates = GetNetCoordinates(args.FromCoordinates.Offset(args.ShotDirection * distanceTried)),
+        });
+        // Starlight end
 
         // Admin logging
         if (result?.HitEntity != null)
@@ -89,18 +111,50 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
             Gun = args.Gun,
             Shooter = args.Shooter,
             HitEntity = result?.HitEntity,
+            OutputTrace = args.OutputTrace, // Starlight
         };
 
         var attemptEvent = new AttemptHitscanRaycastFiredEvent { Data = data };
         RaiseLocalEvent(ent, ref attemptEvent);
 
         if (attemptEvent.Cancelled)
+        { // Starlight start - added block with additional command before return
+            if (isRoot)
+                FireEffects(ent, args.OutputTrace);
             return;
+        }
 
         var hitEvent = new HitscanRaycastFiredEvent { Data = data };
         RaiseLocalEvent(ent, ref hitEvent);
+
+        // Starlight start
+        if (isRoot)
+            FireEffects(ent, args.OutputTrace);
+        // Starlight end
     }
 
+    private void FireEffects(EntityUid hitscan, List<HitscanTrace> traces)
+    {
+        // Trigger the render
+        var hitscanEvent = new SharedGunSystem.HitscanEvent
+        {
+            Hitscan = hitscan,
+            Traces = traces,
+        };
+
+        // Figure out who might see the event on any of the bounces
+        var filter = Filter.Empty();
+        foreach (var pos in traces
+                .Select(x => GetCoordinates(x.MuzzleCoordinates))
+                .Where(x => x is not null)
+                .Select<EntityCoordinates?, EntityCoordinates>(x => x!.Value)
+                .Where(x => x.IsValid(EntityManager)))
+            filter.Merge(Filter.Pvs(pos, entityMan: EntityManager));
+
+        RaiseNetworkEvent(hitscanEvent, filter);
+    }
+
+    /* Starlight - comment out upstream FireEffects
     /// <summary>
     /// Create visual effects for the fired hitscan weapon.
     /// </summary>
@@ -108,8 +162,7 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
     /// <param name="distance">Distance of the hitscan shot.</param>
     /// <param name="shotAngle">Angle of the shot.</param>
     /// <param name="hitscanUid">The hitscan entity itself.</param>
-    /// <param name="hitEntity">The entity hit by this hitscan.</param> // Starlight
-    private void FireEffects(EntityCoordinates fromCoordinates, float distance, Angle shotAngle, EntityUid hitscanUid, EntityUid? hitEntity) // Starlight - add hitEntity parameter
+    private void FireEffects(EntityCoordinates fromCoordinates, float distance, Angle shotAngle, EntityUid hitscanUid)
     {
         if (distance == 0 || !_visualsQuery.TryComp(hitscanUid, out var vizComp))
             return;
@@ -183,8 +236,8 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
             RaiseNetworkEvent(new SharedGunSystem.HitscanEvent
             {
                 Sprites = sprites,
-                BloodDecals = bloodDecals, // Starlight
             }, Filter.Pvs(fromCoordinates, entityMan: EntityManager));
         }
     }
+    */// Starlight - end of commenting out upstream FireEffects
 }
