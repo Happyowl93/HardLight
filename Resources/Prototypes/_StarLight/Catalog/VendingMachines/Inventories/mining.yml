@@ -242,7 +242,7 @@
     - MiningEquipment
   conditions:
     - !type:ListingLimitedStockCondition
-    - stock: 4
+      stock: 4
     - !type:BuyerAccessCondition
 
 #- type: listing
