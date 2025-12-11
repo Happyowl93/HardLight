@@ -7,7 +7,6 @@
     sprite: _Starlight/Objects/Specific/Medical/implants.rsi
   - type: Organ
   - type: BrainImplant
-  - type: Gibbable
   - type: FlavorProfile
     flavors:
       - people
@@ -38,8 +37,16 @@
     state: brain_implant_comms
   - type: FunctionalOrgan
     comps:
-    - type: RadioImplant
-      radioChannels:
+    - type: ActiveRadio
+      channels:
+      - Common
+      - Supply
+      - Expedition
+    - type: IntrinsicRadioReceiver
+    - type: IntrinsicRadioTransmitter
+      channels:
+      - Common
+      - Supply
       - Expedition
     
 
