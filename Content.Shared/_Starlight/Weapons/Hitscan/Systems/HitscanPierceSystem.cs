@@ -21,8 +21,12 @@ public sealed partial class PierceSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _rand = default!;
 
+    private EntityQuery<HitscanReflectComponent> _reflectQuery;
+
     public override void Initialize()
     {
+        _reflectQuery = GetEntityQuery<HitscanReflectComponent>();
+
         SubscribeLocalEvent<HitscanPierceComponent, HitscanRaycastFiredEvent>(OnHitscanHit);
         SubscribeLocalEvent<PierceableComponent, HitScanPierceAttemptEvent>(OnPierceablePierce);
         SubscribeLocalEvent<PierceableComponent, InventoryRelayedEvent<HitScanPierceAttemptEvent>>(OnArmorPierce);
@@ -39,11 +43,17 @@ public sealed partial class PierceSystem : EntitySystem
         if (hitscan.Comp.Chance < 1 || _rand.Prob(hitscan.Comp.Chance))
             return;
 
+        // If we're at our maximum recursion depth, don't try to pierce
+        if (!_reflectQuery.TryComp(hitscan.Owner, out var reflect) || reflect.CurrentReflections > reflect.MaxReflections)
+            return;
+
         var ev = new HitScanPierceAttemptEvent(hitscan.Comp.PierceLevel, false);
         RaiseLocalEvent(data.HitEntity.Value, ref ev);
 
         if (!ev.Pierced)
             return;
+
+        reflect.CurrentReflections++;
 
         var fromEffect = Transform(data.HitEntity.Value).Coordinates;
 

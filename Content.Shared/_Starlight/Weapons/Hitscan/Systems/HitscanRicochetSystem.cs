@@ -15,8 +15,13 @@ public sealed partial class HitscanRicochetSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _rand = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+
+    private EntityQuery<HitscanReflectComponent> _reflectQuery;
+
     public override void Initialize()
     {
+        _reflectQuery = GetEntityQuery<HitscanReflectComponent>();
+
         SubscribeLocalEvent<HitscanRicochetComponent, AttemptHitscanRaycastFiredEvent>(OnHitscanHit);
         SubscribeLocalEvent<RicochetableComponent, HitScanRicochetAttemptEvent>(OnRicochetPierce);
         base.Initialize();
@@ -29,11 +34,17 @@ public sealed partial class HitscanRicochetSystem : EntitySystem
         if (hitscan.Comp.Chance <= 0 || data.HitEntity == null || data.HitPosition == null)
             return;
 
+        // If we're at our maximum recursion depth, don't try to pierce
+        if (!_reflectQuery.TryComp(hitscan.Owner, out var reflect) || reflect.CurrentReflections > reflect.MaxReflections)
+            return;
+
         var ev = new HitScanRicochetAttemptEvent(hitscan.Comp.Chance, data.HitPosition.Value, data.ShotDirection, false);
         RaiseLocalEvent(data.HitEntity.Value, ref ev);
 
         if (!ev.Ricocheted)
             return;
+
+        reflect.CurrentReflections++;
 
         args.Cancelled = true;
 
