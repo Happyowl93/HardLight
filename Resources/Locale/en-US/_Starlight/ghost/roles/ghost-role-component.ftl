@@ -32,3 +32,8 @@ ghost-role-information-decimus-description = You are a Decimus Operative. Enact 
 
 ghost-role-information-syndicate-cyborg-stealth-name = Syndicate Stealth Cyborg
 
+ghost-role-information-tsf-marine-name = Solar Federation Marine
+ghost-role-information-tsf-marine-name = Solar Federation Marine
+ghost-role-information-tsf-leader-name = Solar Federation Marine Team Leader
+ghost-role-information-tsf-MARSOC-name = Solar Federation MARSOC Marine
+ghost-role-information-tsf-marine-desc = You are a Solar Federation Marine. Perform your assigned task.

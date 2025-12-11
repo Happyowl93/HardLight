@@ -147,7 +147,6 @@
     layers: 
     - state: sovietid
   - type: IdCard
-    jobTitle: job-title-Soviet
     jobIcon: JobIconSoviet
 
 - type: entity
@@ -275,6 +274,27 @@
 - type: entity
   parent: [IDCardStandard, BaseTSFContraband]
   id: TSFIdCard
+  name: TSF ID card
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Misc/id_cards.rsi
+    layers: 
+    - state: tsf
+  - type: IdCard
+    jobIcon: JobIconTSF
+
+- type: entity
+  parent: TSFIdCard
+  id: TSFIdCardTrader
+  name: TSF Trader ID card
+  components:
+  - type: IdCard
+    jobTitle: TSF Trader
+
+- type: entity
+  parent: [IDCardStandard, BaseTSFContraband]
+  id: TSFIdCardMarine
+  name: dogtag
   description: A marine dog tag.
   components:
   - type: Sprite
@@ -286,5 +306,24 @@
     - idcard
     sprite: _Starlight/Objects/Misc/dogtag.rsi
   - type: IdCard
-    jobTitle: job-title-tsf
+    jobTitle: TSF Marine
     jobIcon: JobIconTSF
+  - type: Access
+    groups:
+    - AllAccess
+
+- type: entity
+  parent: TSFIdCardMarine
+  id: TSFIdCardLeader
+  name: team leader dogtag
+  components:
+  - type: IdCard
+    jobTitle: TSF Team Leader
+
+- type: entity
+  parent: TSFIdCardMarine
+  id: TSFIdCardElite
+  name: MARSOC dogtag
+  components:
+  - type: IdCard
+    jobTitle: MARSOC Marine

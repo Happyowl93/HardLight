@@ -31,17 +31,3 @@
   parent: [BaseTSFContraband, ClothingBackpackBlueShield]
   id: ClothingBackpackTSF
   name: federation backpack
-
-- type: entity
-  parent: ClothingBackpackTSF
-  id: ClothingBackpackTSFFilled
-  name: federation backpack
-  suffix: Filled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvivalSecurity
-      - id: CrowbarRed
-      - id: Brutepack
-      - id: Ointment
-      - id: Gauze

@@ -516,3 +516,25 @@
     sprite: _Starlight/Clothing/Uniforms/Jumpsuit/tsf.rsi
   - type: Clothing
     sprite: _Starlight/Clothing/Uniforms/Jumpsuit/tsf.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseTSFContraband]
+  id: ClothingUniformJumpsuitTSFRep
+  name: TSF representative's uniform
+  description: A formal uniform worn by the diplomatic representatives of the Trans-Solar Federation.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/tsfrep.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/tsfrep.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseTSFContraband]
+  id: ClothingUniformJumpsuitTSFElite
+  name: MARSOC uniform
+  description: A comfortable and durable combat uniform worn by marines of the Trans-Solar Federation's Marine Special Operations Command.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/tsfelite.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/tsfelite.rsi

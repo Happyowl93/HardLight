@@ -351,19 +351,3 @@
     sprite: _Starlight/Clothing/Belt/tsf_webbing.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1
-
-- type: entity
-  parent: ClothingBeltTSFMarineWebbing
-  id: ClothingBeltTSFMarineWebbingLoadout
-  suffix: Filled
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazineBoxLightRifleFMJ
-      - id: MagazineLightRifleFMJ
-      - id: MagazineLightRifleFMJ
-      - id: MagazineLightRifleFMJ
-      - id: MagazineLightRifleFMJ
-      - id: MagazineBoxMagnumSP
-      - id: MagazineMagnum
-      - id: MagazineMagnum
