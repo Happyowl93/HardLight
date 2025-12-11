@@ -54,6 +54,18 @@
     - type: ShowHealthIcons
 
 - type: entity
+  id: EyeImplantChemistry
+  name: Chemistry Implant
+  description: Enables you to see information about solutions without chemical analysis goggles.
+  parent: BaseEntityEyeImplant
+  components:
+  - type: Sprite
+    state: eye_implant_chemistry
+  - type: FunctionalOrgan
+    comps:
+    - type: SolutionScanner
+
+- type: entity
   id: EyeImplantSecurity
   name: Security Implant
   description: Enables you to see information about station crew without security glasses.
