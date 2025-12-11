@@ -58,7 +58,7 @@ namespace Content.Client.Stylesheets
             SheetSystem = Init(new SystemStylesheet(new BaseStylesheet.NoConfig(), this));
             SheetNano = new StyleNano(_resCache).Stylesheet; // TODO: REMOVE (obsolete)
             SheetSpace = new StyleSpace(_resCache).Stylesheet; // TODO: REMOVE (obsolete)
-            Starlight = new StyleStarlight(_resourceCache).Stylesheet; //🌟Starlight🌟 TODO: REMOVE (obsolete)
+            Starlight = new StyleStarlight(_resCache).Stylesheet; //🌟Starlight🌟 TODO: REMOVE (obsolete)
             _userInterfaceManager.Stylesheet = SheetNanotrasen;
 
             // warn about unused sheetlets

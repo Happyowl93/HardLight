@@ -33,7 +33,7 @@ public sealed partial class GhostGui : UIWidget
         GhostRolesButton.OnPressed += _ => GhostRolesButton.StyleClasses.Remove(StyleClass.Negative);
         NewLifeButton.OnPressed += _ => NewLifePressed?.Invoke(); //🌟Starlight🌟
         GhostThemeButton.OnPressed += _ => GhostThemePressed?.Invoke(); //🌟Starlight🌟
-        NewLifeButton.StyleClasses.Add(StyleBase.ButtonCaution);  //🌟Starlight🌟
+        NewLifeButton.StyleClasses.Add(StyleClass.Negative);  //🌟Starlight🌟
     }
 
     public void Hide()

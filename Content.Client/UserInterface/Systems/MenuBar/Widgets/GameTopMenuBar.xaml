@@ -82,7 +82,7 @@
         ToolTip="Open the Language Menu"
         MinSize="42 64"
         HorizontalExpand="True"
-        AppendStyleClass="{x:Static style:StyleBase.ButtonSquare}"
+        AppendStyleClass="{x:Static style:StyleClass.ButtonSquare}"
         />
     <!-- Starlight-end -->
     <ui:MenuButton
@@ -113,7 +113,7 @@
         ToolTip="{Loc 'game-hud-open-bug-report-window-button-tooltip'}"
         MinSize="42 64"
         HorizontalExpand="True"
-        AppendStyleClass="{x:Static style:StyleBase.ButtonSquare}"
+        AppendStyleClass="{x:Static style:StyleClass.ButtonSquare}"
         />
   <ui:MenuButton
         Name="MHelpButton"
@@ -123,7 +123,7 @@
         ToolTip="{Loc 'ui-options-function-open-m-help'}"
         MinSize="42 64"
         HorizontalExpand="True"
-        AppendStyleClass="{x:Static style:StyleBase.ButtonSquare}"
+        AppendStyleClass="{x:Static style:StyleClass.ButtonSquare}"
         />
     <!-- Starlight end -->
     <ui:MenuButton
