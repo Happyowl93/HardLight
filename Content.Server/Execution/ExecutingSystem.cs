@@ -370,26 +370,19 @@ public sealed class ExecutionSystem : EntitySystem
         var ammoUid = ev.Ammo[0].Entity;
         switch (ev.Ammo[0].Shootable)
         {
-            //🌟Starlight🌟 start
-            case HitScanCartridgeAmmoComponent cartridge:
-                if (TryComp<HitscanBasicDamageComponent>(ammoUid, out var cartBasicDamage))
-                {
-                    damage = cartBasicDamage.Damage;
-                }
-                if (TryComp<ProjectileSpreadComponent>(ammoUid, out var spread))
-                {
-                    damage = damage * spread.Count;
-                }
-
-                cartridge.Spent = true;
-                _appearanceSystem.SetData(ammoUid!.Value, AmmoVisuals.Spent, true);
-                Dirty(ammoUid.Value, cartridge);
-
-                break;
-            //🌟Starlight🌟 end
             case CartridgeAmmoComponent cartridge:
                 // Get the damage value
                 var prototype = _prototypeManager.Index<EntityPrototype>(cartridge.Prototype);
+
+                // Starlight start - support hitscans in cartridges
+                if (prototype.TryGetComponent<HitscanAmmoComponent>(out var hitscan, _componentFactory))
+                {
+                    if (prototype.TryGetComponent<HitscanBasicDamageComponent>(out var hitscanDamage, _componentFactory))
+                    {
+                        damage = hitscanDamage.Damage;
+                    }
+                }
+                // Starlight end
                 prototype.TryGetComponent<ProjectileComponent>(out var projectileA, _componentFactory); // sloth forgive me
                 if (projectileA != null)
                 {

@@ -1023,7 +1023,7 @@
         state: slug
 
 - type: entity
-  id: PelletShotgunSpreadTrace
+  id: PelletShotgunTrace
   parent: BulletTrace
   categories: [ HideSpawnMenu ]
   components:
@@ -1034,17 +1034,24 @@
         Structural: 5
   - type: HitscanPierce
     chance: 0.03
-  - type: ProjectileSpread
-    count: 12
-    spread: 15
   - type: HitscanBasicVisuals
     bullet:
       sprite:
         sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
         state: buckshot
+
+- type: entity
+  id: PelletShotgunSpreadTrace
+  parent: PelletShotgunTrace
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunTrace
+    count: 12
+    spread: 15
     
 - type: entity
-  id: ShellShotgunIncendiaryTrace
+  id: PelletShotgunIncendiaryTrace
   parent: BulletTrace
   categories: [ HideSpawnMenu ]
   components:
@@ -1056,9 +1063,6 @@
   - type: HitscanPierce
     chance: 0.02
   - type: HitscanIgniteEffect
-  - type: ProjectileSpread
-    count: 12
-    spread: 15
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -1066,7 +1070,17 @@
         state: buckshot-flare
 
 - type: entity
-  id: PelletShotgunPracticeSpreadTrace
+  id: PelletShotgunIncendiarySpreadTrace
+  parent: PelletShotgunIncendiaryTrace
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunIncendiaryTrace
+    count: 12
+    spread: 15
+
+- type: entity
+  id: PelletShotgunPracticeTrace
   parent: BulletTrace
   categories: [ HideSpawnMenu ]
   components:
@@ -1076,9 +1090,6 @@
         Blunt: 1
   - type: HitscanPierce
     chance: 0
-  - type: ProjectileSpread
-    count: 12
-    spread: 15
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -1086,7 +1097,17 @@
         state: buckshot
 
 - type: entity
-  id: PelletShotgunImprovisedSpreadTrace
+  id: PelletShotgunPracticeSpreadTrace
+  parent: PelletShotgunPracticeTrace
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunPracticeTrace
+    count: 12
+    spread: 15
+
+- type: entity
+  id: PelletShotgunImprovisedTrace
   parent: BulletTrace
   categories: [ HideSpawnMenu ]
   components:
@@ -1097,9 +1118,6 @@
         Slash: 2
   - type: HitscanPierce
     chance: 0
-  - type: ProjectileSpread
-    count: 14
-    spread: 45
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -1107,7 +1125,17 @@
         state: shard
 
 - type: entity
-  id: PelletShotgunUraniumSpreadTrace
+  id: PelletShotgunImprovisedSpreadTrace
+  parent: PelletShotgunImprovisedTrace
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunImprovisedTrace
+    count: 14
+    spread: 45
+
+- type: entity
+  id: PelletShotgunUraniumTrace
   parent: BulletTrace
   categories: [ HideSpawnMenu ]
   components:
@@ -1119,14 +1147,21 @@
   - type: HitscanPierce
     chance: 0.05
     pierceLevel: HardenedMetal
-  - type: ProjectileSpread
-    count: 10
-    spread: 6
   - type: HitscanBasicVisuals
     bullet:
       sprite:
         sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
         state: depleted-uranium
+
+- type: entity
+  id: PelletShotgunUraniumSpreadTrace
+  parent: PelletShotgunUraniumTrace
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunUraniumTrace
+    count: 10
+    spread: 6
 
 - type: entity
   id: PelletShotgunBreachTrace
@@ -1140,14 +1175,21 @@
         Structural: 20
   - type: HitscanPierce
     chance: 0.03
-  - type: ProjectileSpread
-    count: 12
-    spread: 50
   - type: HitscanBasicVisuals
     bullet:
       sprite:
         sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
         state: piercing
+
+- type: entity
+  id: PelletShotgunBreachSpreadTrace
+  parent: PelletShotgunBreachTrace
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunBreachTrace
+    count: 12
+    spread: 50
 
 ## energy
 

@@ -18,7 +18,6 @@ using Content.Shared.Throwing;
 using Content.Shared.Timing;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Hitscan.Components;
-using Content.Shared.Weapons.Hitscan.Events; // Starlight
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
@@ -37,7 +36,12 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.VentCraw;
-using Content.Shared.Mech.Components; // Startlight-edit
+
+#region Starlight
+using Content.Shared.Mech.Components;
+using Content.Shared.Starlight.Utility;
+using Content.Shared.Weapons.Hitscan.Events;
+#endregion Starlight
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 
@@ -514,15 +518,6 @@ public abstract partial class SharedGunSystem : EntitySystem
     #region Starlight
     public bool IsChamberClosed(EntityUid gunEntity)
         => Appearance.TryGetData(gunEntity, AmmoVisuals.BoltClosed, out bool boltClosed) && boltClosed;
-
-    protected void SetCartridgeSpent(EntityUid uid, HitScanCartridgeAmmoComponent cartridge, bool spent)
-    {
-        if (cartridge.Spent != spent)
-            DirtyField(uid, cartridge, nameof(CartridgeAmmoComponent.Spent));
-
-        cartridge.Spent = spent;
-        Appearance.SetData(uid, AmmoVisuals.Spent, spent);
-    }
     #endregion
 
     /// <summary>
@@ -559,11 +554,6 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     protected IShootable EnsureShootable(EntityUid uid)
     {
-        // Starlight start
-        if (TryComp<HitScanCartridgeAmmoComponent>(uid, out var hitscanCartridge))
-            return hitscanCartridge;
-        // Starlight end
-
         if (TryComp<CartridgeAmmoComponent>(uid, out var cartridge))
             return cartridge;
 
@@ -695,8 +685,14 @@ public abstract partial class SharedGunSystem : EntitySystem
         // Starlight - comment out the upstream Sprites list in favor of tracking the hitscan and its traces
         // public List<(NetCoordinates coordinates, Angle angle, SpriteSpecifier Sprite, float Distance)> Sprites = new();
         // Starilght start - we add the traces block below, and use that instead of the sprite list above.
-        public NetEntity Hitscan;
         public required List<HitscanTrace> Traces;
+
+        // The following set of properties are copied from the HitscanBasicVisualsComponent
+        public SpriteSpecifier? MuzzleFlash;
+        public SpriteSpecifier? TravelFlash;
+        public SpriteSpecifier? ImpactFlash;
+        public ExtendedSpriteSpecifier? Bullet;
+        public required float Speed;
         // Starlight end
     }
 

@@ -135,39 +135,33 @@ public sealed partial class GunSystem : SharedGunSystem
 
     private void OnHitscan(HitscanEvent ev)
     {
-        var hitscan = EntityManager.GetEntity(ev.Hitscan);
-        //The real bullet speed is so high that the bullet isn’t visible at all. So, let's slow it down 5x.
-        if (!TryComp<HitscanBasicVisualsComponent>(hitscan, out var visuals))
-        {
-            // There's no render data for this hitscan...
-            return;
-        }
         foreach (var trace in ev.Traces)
         {
             var delay = 0f;
-            delay = FireEffect((hitscan, visuals), delay, trace);
+            delay = FireEffect(ev, delay, trace);
         }
     }
 
-    private float FireEffect(Entity<HitscanBasicVisualsComponent> hitscan, float delay, HitscanTrace trace)
+    private float FireEffect(HitscanEvent visuals, float delay, HitscanTrace trace)
     {
-        var length = trace.Distance / hitscan.Comp.Speed;
+        //The real bullet speed is so high that the bullet isn’t visible at all. So, let's slow it down 5x.
+        var length = trace.Distance / (visuals.Speed / 5000);
         if (trace.MuzzleCoordinates is { } muzzleCoordinates)
         {
-            if (hitscan.Comp.MuzzleFlash is { } mozzle && (_tracesEnabled || hitscan.Comp.Bullet is null))
+            if (visuals.MuzzleFlash is { } mozzle && (_tracesEnabled || visuals.Bullet is null))
                 RenderFlash(muzzleCoordinates, trace.Angle, mozzle, 1f, false, false, length, delay);
 
-            if (hitscan.Comp.Bullet is { } bullet)
+            if (visuals.Bullet is { } bullet)
                 RenderBullet(muzzleCoordinates, trace.Angle, bullet, trace.Distance - 1.5f, length, delay);
         }
-        if (hitscan.Comp.TravelFlash is { } travel && trace.TravelCoordinates is { } travelCoordinates && (_tracesEnabled || hitscan.Comp.Bullet is null))
+        if (visuals.TravelFlash is { } travel && trace.TravelCoordinates is { } travelCoordinates && (_tracesEnabled || visuals.Bullet is null))
             RenderFlash(travelCoordinates, trace.Angle, travel, trace.Distance - 1.5f, true, false, length, delay);
         delay += length;
 
-        if ((hitscan.Comp.ImpactFlash is not null || trace.ImpactedEnt is not null) && (_tracesEnabled || hitscan.Comp.Bullet is null))
+        if ((visuals.ImpactFlash is not null || trace.ImpactedEnt is not null) && (_tracesEnabled || visuals.Bullet is null))
             Timer.Spawn((int)delay, () =>
             {
-                if (hitscan.Comp.ImpactFlash is { } impact)
+                if (visuals.ImpactFlash is { } impact)
                     RenderFlash(trace.ImpactCoordinates, trace.Angle, impact, 1f, false, true, length, delay);
 
                 if (trace.ImpactedEnt is { } netEnt && GetEntity(netEnt) is EntityUid ent)
@@ -455,26 +449,6 @@ public sealed partial class GunSystem : SharedGunSystem
             // TODO: Clean this up in a gun refactor at some point - too much copy pasting
             switch (shootable)
             {
-                //🌟Starlight🌟
-                case HitScanCartridgeAmmoComponent cartridge:
-                    if (!cartridge.Spent)
-                    {
-                        SetCartridgeSpent(ent!.Value, cartridge, true);
-                        MuzzleFlash(gunUid, cartridge, worldAngle, user);
-                        Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
-                        Recoil(user, direction, gun.CameraRecoilScalarModified);
-                    }
-                    else
-                    {
-                        userImpulse = false;
-                        Audio.PlayPredicted(gun.SoundEmpty, gunUid, user);
-                    }
-
-                    if (IsClientSide(ent!.Value))
-                        Del(ent.Value);
-
-                    break;
-
                 case CartridgeAmmoComponent cartridge:
                     if (!cartridge.Spent)
                     {

@@ -3,6 +3,7 @@ using Robust.Shared.Utility;
 
 #region Starlight
 using Content.Shared.Starlight.Utility;
+using Robust.Shared.Serialization;
 #endregion Starlight
 
 namespace Content.Shared.Weapons.Hitscan.Components;
@@ -43,5 +44,5 @@ public sealed partial class HitscanBasicVisualsComponent : Component
     /// </summary>
     [DataField]
     public float Speed = 315f; // 9mm bullet speed
-    // Starlight end 
+    // Starlight end
 }

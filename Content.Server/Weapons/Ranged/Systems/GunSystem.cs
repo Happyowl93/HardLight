@@ -155,75 +155,6 @@ public sealed partial class GunSystem : SharedGunSystem
             // TODO: Clean this up in a gun refactor at some point - too much copy pasting
             switch (shootable)
             {
-                //🌟Starlight🌟
-                case HitScanCartridgeAmmoComponent cartridge:
-                    if (!cartridge.Spent)
-                    {
-                        if (TryComp<ProjectileSpreadComponent>(ent, out var ammoSpreadComp))
-                        {
-                            // Starlight note - we add a spread value to guns that upstream doesn't have,
-                            // since they handle it as a multiplier through GunGetAmmoSpreadEvent, which
-                            // only allows for a straight-up multiplier, while we first average the ammo
-                            // spread with the gun's inherent spread, before applying the multiplier.
-                            var baseSpread = (ammoSpreadComp.Spread + gun.Spread) / 2;
-                            var spreadEvent = new GunGetAmmoSpreadEvent(baseSpread);
-                            RaiseLocalEvent(gunUid, ref spreadEvent);
-
-                            var angles = LinearSpreadWithRandom(mapAngle - (spreadEvent.Spread / 2),
-                                mapAngle + (spreadEvent.Spread / 2), ammoSpreadComp.Count,
-                                3f);
-
-                            for (var i = 0; i < ammoSpreadComp.Count; i++)
-                            {
-                                var cartHitscanEv = new HitscanTraceEvent
-                                {
-                                    FromCoordinates = fromCoordinates,
-                                    ShotDirection = angles[i].ToVec().Normalized(),
-                                    Gun = gunUid,
-                                    Shooter = user,
-                                    Target = gun.Target,
-                                };
-                                RaiseLocalEvent(ent.Value, ref cartHitscanEv);
-                            }
-                        }
-                        else
-                        {
-                            if (ent == null)
-                                break;
-
-                            var cartHitscanEv = new HitscanTraceEvent
-                            {
-                                FromCoordinates = fromCoordinates,
-                                ShotDirection = mapDirection.Normalized(),
-                                Gun = gunUid,
-                                Shooter = user,
-                                Target = gun.Target,
-                            };
-                            RaiseLocalEvent(ent.Value, ref cartHitscanEv);
-                        }
-
-                        RaiseLocalEvent(ent!.Value, new AmmoShotEvent()
-                        {
-                            FiredProjectiles = shotProjectiles,
-                        });
-
-                        SetCartridgeSpent(ent!.Value, cartridge, true);
-
-                        if (cartridge.DeleteOnSpawn)
-                            Del(ent.Value);
-                    }
-                    else
-                    {
-                        userImpulse = false;
-                        Audio.PlayPredicted(gun.SoundEmpty, gunUid, user);
-                    }
-
-                    // Something like ballistic might want to leave it in the container still
-                    if (!cartridge.DeleteOnSpawn && !Containers.IsEntityInContainer(ent!.Value) && !gun.Pump)
-                        EjectCartridge(ent.Value, angle);
-
-                    Dirty(ent!.Value, cartridge);
-                    break;
                 // Cartridge shoots something else
                 case CartridgeAmmoComponent cartridge:
                     if (!cartridge.Spent)
@@ -364,6 +295,24 @@ public sealed partial class GunSystem : SharedGunSystem
             targeted.Target = target;
             Dirty(uid, targeted);
         }
+        
+        // Starlight start - cartridges can hold hitscans
+        if (HasComp<HitscanAmmoComponent>(uid))
+        {
+            var hitscanEv = new HitscanTraceEvent
+            {
+                FromCoordinates = EntityManager.GetComponent<TransformComponent>(uid).Coordinates,
+                ShotDirection = mapDirection.Normalized(),
+                Gun = gunUid,
+                Shooter = user,
+                Target = gun.Target,
+            };
+            RaiseLocalEvent(uid, ref hitscanEv);
+
+            Del(uid);
+            return;
+        }
+        // Starlight end - cartridges can hold hitscans
 
         // Do a throw
         if (!HasComp<ProjectileComponent>(uid))

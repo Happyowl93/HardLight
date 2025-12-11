@@ -86,16 +86,7 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
         // If more stuff gets added here, it should probably be turned into an event.
         // FireEffects(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle(), ent.Owner); // Starlight - comment out, as we want to aggregate these
         
-        // Starlight start - add the visuals for this particular leg of the hitscan into the trace
-        args.OutputTrace.Add(new() {
-            Angle = args.ShotDirection.ToAngle(),
-            Distance = distanceTried,
-            // We don't draw muzzle or travel effects if we're at point-blank range, just impact effects
-            MuzzleCoordinates = distanceTried > 1f ? GetNetCoordinates(args.FromCoordinates.Offset(args.ShotDirection / 2)) : null,
-            TravelCoordinates = distanceTried > 1f ? GetNetCoordinates(args.FromCoordinates.Offset(args.ShotDirection * (distanceTried + 0.5f) / 2)) : null,
-            ImpactCoordinates = GetNetCoordinates(args.FromCoordinates.Offset(args.ShotDirection * distanceTried)),
-        });
-        // Starlight end
+        args.OutputTrace.Add(GenerateTraceStep(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle())); // Starlight - add the visuals for this particular leg of the hitscan into the trace
 
         // Admin logging
         if (result?.HitEntity != null)
@@ -121,8 +112,9 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
         { // Starlight start - added block with additional command before return
             if (isRoot)
                 FireEffects(ent, args.OutputTrace);
+            // Starlight end
             return;
-        }
+        } // Starlight
 
         var hitEvent = new HitscanRaycastFiredEvent { Data = data };
         RaiseLocalEvent(ent, ref hitEvent);
@@ -133,22 +125,63 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
         // Starlight end
     }
 
+    private HitscanTrace GenerateTraceStep(EntityCoordinates fromCoordinates, float distance, Angle shotAngle)
+    {
+        var fromXform = Transform(fromCoordinates.EntityId);
+
+        var gridUid = fromXform.GridUid;
+        if (gridUid != fromCoordinates.EntityId && TryComp(gridUid, out TransformComponent? gridXform))
+        {
+            var (_, gridRot, gridInvMatrix) = _transform.GetWorldPositionRotationInvMatrix(gridXform);
+            var map = _transform.ToMapCoordinates(fromCoordinates);
+            fromCoordinates = new EntityCoordinates(gridUid.Value, Vector2.Transform(map.Position, gridInvMatrix));
+            shotAngle -= gridRot;
+        }
+        else
+        {
+            shotAngle -= _transform.GetWorldRotation(fromXform);
+        }
+
+        var shotVec = shotAngle.ToVec().Normalized();
+
+        return new() {
+            Angle = shotAngle,
+            Distance = distance,
+            // We don't draw muzzle or travel effects if we're at point-blank range, just impact effects
+            MuzzleCoordinates = distance > 1f ? GetNetCoordinates(fromCoordinates.Offset(shotVec / 2)) : null,
+            TravelCoordinates = distance > 1f ? GetNetCoordinates(fromCoordinates.Offset(shotVec * (distance + 0.5f) / 2)) : null,
+            ImpactCoordinates = GetNetCoordinates(fromCoordinates.Offset(shotVec * distance)),
+        };
+    }
+
     private void FireEffects(EntityUid hitscan, List<HitscanTrace> traces)
     {
+        if (!_visualsQuery.TryComp(hitscan, out var visuals))
+        {
+            // We're not going to display anything, so don't fire the event to display things
+            return;
+        }
+
         // Trigger the render
         var hitscanEvent = new SharedGunSystem.HitscanEvent
         {
-            Hitscan = EntityManager.GetNetEntity(hitscan),
+            MuzzleFlash = visuals.MuzzleFlash,
+            TravelFlash = visuals.TravelFlash,
+            ImpactFlash = visuals.ImpactFlash,
+            Bullet = visuals.Bullet,
+            Speed = visuals.Speed,
             Traces = traces,
         };
 
         // Figure out who might see the event on any of the bounces
         var filter = Filter.Empty();
-        foreach (var pos in traces
+        var sampledPositions = traces
                 .Select(x => GetCoordinates(x.MuzzleCoordinates))
                 .Where(x => x is not null)
                 .Select<EntityCoordinates?, EntityCoordinates>(x => x!.Value)
-                .Where(x => x.IsValid(EntityManager)))
+                .Where(x => x.IsValid(EntityManager))
+                .ToList();
+        foreach (var pos in sampledPositions)
             filter.Merge(Filter.Pvs(pos, entityMan: EntityManager));
 
         RaiseNetworkEvent(hitscanEvent, filter);
