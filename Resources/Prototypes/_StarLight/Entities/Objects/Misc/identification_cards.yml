@@ -7,7 +7,7 @@
       sprite: _Starlight/Objects/Misc/id_cards.rsi
       layers:
         - state: silver
-        - sprite: &icon-rsi Interface/Misc/job_icons.rsi
+        - sprite: &starlight-icon-rsi _Starlight/Interface/Misc/job_icons.rsi
           offset: &icon-offset -0.09375, 0.0625 #3 pixels left, 2 pixels up
           state: Magistrate
     - type: PresetIdCard
@@ -38,7 +38,7 @@
       color: &color-science-top "#a53aaa"
     - state: stripe_bottom
       color: &color-science-bottom "#652368"
-    - sprite: *icon-rsi
+    - sprite: &icon-rsi Interface/Misc/job_icons.rsi
       offset: *icon-offset
       state: Roboticist
   - type: PresetIdCard
@@ -51,7 +51,7 @@
   components:
   - type: Sprite
     layers:
-    - state: ert_commander
+    - state: centcom
   - type: PresetIdCard
     job: NanoTrasenRepresentative
 
@@ -79,9 +79,11 @@
     sprite: _Starlight/Objects/Misc/id_cards.rsi
     layers:
     - state: silver 
-    - state: stripe_top
+    - sprite: *icon-rsi
+      state: stripe_top
       color: "#1b67a5"
-    - state: stripe_bottom
+    - sprite: *icon-rsi
+      state: stripe_bottom
       color: "#1b67a5"
     - sprite: *icon-rsi
       offset: *icon-offset
@@ -98,9 +100,11 @@
     sprite: _Starlight/Objects/Misc/id_cards.rsi
     layers:
     - state: gold
-    - state: stripe_top
+    - sprite: *icon-rsi
+      state: stripe_top
       color: "#1b67a5"
-    - state: stripe_bottom
+    - sprite: *icon-rsi
+      state: stripe_bottom
       color: "#1b67a5"
     - sprite: *icon-rsi
       offset: *icon-offset
@@ -117,9 +121,11 @@
     sprite: _Starlight/Objects/Misc/id_cards.rsi
     layers:
     - state: default
-    - state: stripe_top
+    - sprite: *icon-rsi
+      state: stripe_top
       color: &color-supply-top "#b18644"
-    - state: stripe_bottom
+    - sprite: *icon-rsi
+      state: stripe_bottom
       color: &color-supply-bottom "#5b4523"
     - sprite: *icon-rsi
       offset: *icon-offset
@@ -136,9 +142,11 @@
     sprite: _Starlight/Objects/Misc/id_cards.rsi
     layers:
     - state: default
-    - state: stripe_top
+    - sprite: *icon-rsi
+      state: stripe_top
       color: *color-supply-top
-    - state: stripe_bottom
+    - sprite: *icon-rsi
+      state: stripe_bottom
       color: *color-supply-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
@@ -157,9 +165,11 @@
     - state: default
     - state: idmailtech
     - state: default
-    - state: stripe_top
+    - sprite: *icon-rsi
+      state: stripe_top
       color: *color-supply-top
-    - state: stripe_bottom
+    - sprite: *icon-rsi
+      state: stripe_bottom
       color: *color-supply-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
@@ -186,9 +196,9 @@
       sprite: _Starlight/Objects/Misc/id_cards.rsi
       layers:
         - state: syndi
-        - sprite: *icon-rsi
+        - sprite: *starlight-icon-rsi
           offset: *icon-offset
-          state: SyndicateCommander
+          state: Commander
     - type: Access
       tags:
         - Maintenance
@@ -212,7 +222,7 @@
       sprite: _Starlight/Objects/Misc/id_cards.rsi
       layers:
         - state: syndi
-        - sprite: *icon-rsi
+        - sprite: *starlight-icon-rsi
           offset: *icon-offset
           state: SyndicateAgent
     - type: Access
@@ -238,9 +248,9 @@
       sprite: _Starlight/Objects/Misc/id_cards.rsi
       layers:
         - state: syndi
-        - sprite: *icon-rsi
+        - sprite: *starlight-icon-rsi
           offset: *icon-offset
-          state: SyndicateOperative
+          state: Operative
     - type: Access
       tags:
         - Maintenance
@@ -288,7 +298,7 @@
   components:
   - type: Sprite
     layers:
-    - state: ert_commander
+    - state: centcom
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard

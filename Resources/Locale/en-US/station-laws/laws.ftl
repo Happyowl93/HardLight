@@ -1,6 +1,5 @@
 ﻿laws-number-wrapper = [bold]Law { $lawnumber }:[/bold] { $lawstring }
 
-law-crewsimov-name = Crewsimov
 #starlight dynamic law descriptions
 law-crewsimov-name = [color=green]Crewsimov[/color]
 law-crewsimov-0 = You must obey orders given to you by the station AI.
