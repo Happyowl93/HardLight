@@ -64,7 +64,7 @@
     sprite: _Starlight/Objects/Misc/id_cards.rsi
     layers:
     - state: silver
-    - sprite: *icon-rsi
+    - sprite: *starlight-icon-rsi
       offset: *icon-offset
       state: IAA
   - type: PresetIdCard
@@ -79,13 +79,13 @@
     sprite: _Starlight/Objects/Misc/id_cards.rsi
     layers:
     - state: silver 
-    - sprite: *icon-rsi
+    - sprite: &id-rsi Objects/Misc/id_cards.rsi
       state: stripe_top
       color: "#1b67a5"
-    - sprite: *icon-rsi
+    - sprite: *id-rsi
       state: stripe_bottom
       color: "#1b67a5"
-    - sprite: *icon-rsi
+    - sprite: *starlight-icon-rsi
       offset: *icon-offset
       state: BlueShield
   - type: PresetIdCard
@@ -100,15 +100,15 @@
     sprite: _Starlight/Objects/Misc/id_cards.rsi
     layers:
     - state: gold
-    - sprite: *icon-rsi
+    - sprite: *id-rsi
       state: stripe_top
       color: "#1b67a5"
-    - sprite: *icon-rsi
+    - sprite: *id-rsi
       state: stripe_bottom
       color: "#1b67a5"
-    - sprite: *icon-rsi
+    - sprite: *starlight-icon-rsi
       offset: *icon-offset
-      state: NTNCBlueshield
+      state: NTNCBlueShield
   - type: PresetIdCard
     job: NTNCBlueshield
 
@@ -121,13 +121,13 @@
     sprite: _Starlight/Objects/Misc/id_cards.rsi
     layers:
     - state: default
-    - sprite: *icon-rsi
+    - sprite: *id-rsi
       state: stripe_top
       color: &color-supply-top "#b18644"
-    - sprite: *icon-rsi
+    - sprite: *id-rsi
       state: stripe_bottom
       color: &color-supply-bottom "#5b4523"
-    - sprite: *icon-rsi
+    - sprite: *starlight-icon-rsi
       offset: *icon-offset
       state: SalvageLead
   - type: PresetIdCard
@@ -142,15 +142,15 @@
     sprite: _Starlight/Objects/Misc/id_cards.rsi
     layers:
     - state: default
-    - sprite: *icon-rsi
+    - sprite: *id-rsi
       state: stripe_top
       color: *color-supply-top
-    - sprite: *icon-rsi
+    - sprite: *id-rsi
       state: stripe_bottom
       color: *color-supply-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
-      state: MiningSpecialist
+      state: ShaftMiner
   - type: PresetIdCard
     job: MiningSpecialist
 
@@ -165,13 +165,13 @@
     - state: default
     - state: idmailtech
     - state: default
-    - sprite: *icon-rsi
+    - sprite: *id-rsi
       state: stripe_top
       color: *color-supply-top
-    - sprite: *icon-rsi
+    - sprite: *id-rsi
       state: stripe_bottom
       color: *color-supply-bottom
-    - sprite: *icon-rsi
+    - sprite: *starlight-icon-rsi
       offset: *icon-offset
       state: MailTech
   - type: PresetIdCard

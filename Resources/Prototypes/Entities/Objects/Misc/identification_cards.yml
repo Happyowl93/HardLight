@@ -38,7 +38,7 @@
     - state: default
     - sprite: &icon-rsi Interface/Misc/job_icons.rsi
       offset: &icon-offset -0.09375, 0.0625 #3 pixels left, 2 pixels up
-    - state: Assistant
+      state: Assistant
   - type: PresetIdCard
     job: Assistant
 
@@ -839,9 +839,9 @@
       color: *color-supply-top
     - state: stripe_bottom
       color: *color-supply-bottom
-    - sprite: *icon-rsi
+    - sprite: &starlight-icon-rsi _Starlight/Interface/Misc/job_icons.rsi
       offset: *icon-offset
-      state: Salvage
+      state: SalvageSpecialist # Starlight - Salvage -> SalvageSpecialist
   - type: PresetIdCard
     job: SalvageSpecialist
 
