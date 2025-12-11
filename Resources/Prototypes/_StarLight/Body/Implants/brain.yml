@@ -25,10 +25,8 @@
     - type: IntrinsicTranslator
       spoken:
       - GalacticCommon
-      - Scratch
       understood:
       - GalacticCommon
-      - Scratch
 
 - type: entity
   id: ImplantComms
@@ -48,6 +46,8 @@
   components:
   - type: Sprite
     state: brain_implant_nexus
+  - type: CollectiveMindIdentity
+    prototypeId: Nexus
   - type: TaggedOrgan
     addTags:
       - Nexus

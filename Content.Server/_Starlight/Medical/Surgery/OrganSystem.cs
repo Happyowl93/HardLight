@@ -1,6 +1,7 @@
 ﻿using Content.Server._Starlight.Language;
 using Content.Server.Humanoid;
 using Content.Shared._Starlight.Language.Components.Translators;
+using Content.Shared.CollectiveMind;
 using Content.Shared.Damage;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
@@ -19,6 +20,7 @@ public sealed partial class OrganSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearanceSystem = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly SharedCollectiveMindSystem _collectiveMind = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
 
     public override void Initialize()
@@ -80,6 +82,10 @@ public sealed partial class OrganSystem : EntitySystem
             case IntrinsicTranslatorComponent _:
                 _language.UpdateEntityLanguages(ent);
                 break;
+            case TaggedOrganComponent _: //Handle any required updates after tagging here
+                if(TryComp(ent, out CollectiveMindComponent? collectiveMindComp))
+                    _collectiveMind.UpdateCollectiveMind(ent,collectiveMindComp);
+                break;
         }
     }
 
@@ -91,6 +97,7 @@ public sealed partial class OrganSystem : EntitySystem
             _tag.AddTags(args.Body, ent.Comp.AddTags);
         if(ent.Comp.RemoveTags.Count > 0)
             _tag.RemoveTags(args.Body, ent.Comp.RemoveTags);
+        UpdateEntity(args.Body, ent.Comp);
     }
 
     private void OnTaggedOrganExtracted(Entity<TaggedOrganComponent> ent, ref SurgeryOrganExtracted args)
@@ -99,6 +106,7 @@ public sealed partial class OrganSystem : EntitySystem
             _tag.RemoveTags(args.Body, ent.Comp.AddTags);
         if(ent.Comp.RemoveTags.Count > 0)
             _tag.AddTags(args.Body, ent.Comp.RemoveTags);
+        UpdateEntity(args.Body, ent.Comp);
     }
 
     //
