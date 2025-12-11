@@ -1,4 +1,6 @@
-﻿using Content.Server.Humanoid;
+﻿using Content.Server._Starlight.Language;
+using Content.Server.Humanoid;
+using Content.Shared._Starlight.Language.Components.Translators;
 using Content.Shared.Damage;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
@@ -15,9 +17,9 @@ public sealed partial class OrganSystem : EntitySystem
 
     [Dependency] private readonly BlindableSystem _blindable = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearanceSystem = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly LanguageSystem _language = default!;
 
     public override void Initialize()
     {
@@ -49,15 +51,36 @@ public sealed partial class OrganSystem : EntitySystem
     private void OnFunctionalOrganImplanted(Entity<FunctionalOrganComponent> ent, ref SurgeryOrganImplantationCompleted args)
     {
         foreach (var comp in (ent.Comp.Components ?? []).Values)
+        {
             if (!EntityManager.HasComponent(args.Body, comp.Component.GetType()))
+            {
                 EntityManager.AddComponent(args.Body, comp.Component);
+                UpdateEntity(args.Body, comp.Component);
+            }
+        }
     }
 
     private void OnFunctionalOrganExtracted(Entity<FunctionalOrganComponent> ent, ref SurgeryOrganExtracted args)
     {
         foreach (var comp in (ent.Comp.Components ?? []).Values)
+        {
             if (EntityManager.HasComponent(args.Body, comp.Component.GetType()))
+            {
                 EntityManager.RemoveComponent(args.Body, EntityManager.GetComponent(args.Body, comp.Component.GetType()));
+                UpdateEntity(args.Body, comp.Component);
+            }
+        }
+    }
+
+    private void UpdateEntity(EntityUid ent, IComponent comp)
+    {
+        //For all those components where the enity needs to be updated in their own way after adding or removing a component
+        switch (comp)
+        {
+            case IntrinsicTranslatorComponent _:
+                _language.UpdateEntityLanguages(ent);
+                break;
+        }
     }
 
     //

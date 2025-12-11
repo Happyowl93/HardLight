@@ -802,7 +802,7 @@
   - type: Sprite
     sprite: _Starlight/Objects/Specific/Medical/implants.rsi
     layers:
-      - state: brain_implant_nexus
+      - state: brain_implant_translator
 
 - type: entity
   parent: SurgeryBase
@@ -862,7 +862,7 @@
   - type: Sprite
     sprite: _Starlight/Objects/Specific/Medical/implants.rsi
     layers:
-      - state: brain_implant_nexus
+      - state: brain_implant_translator
 
 
 #
