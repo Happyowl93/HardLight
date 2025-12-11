@@ -655,9 +655,6 @@
     radius: 1.5
     energy: 1.6
     color: "#D3D310"
-  - type: Tag
-    tags:
-    - AccessBreakerImmune
   - type: ItemSlots
   - type: ContainerContainer
     containers:

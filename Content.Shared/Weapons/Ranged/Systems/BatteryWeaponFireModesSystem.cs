@@ -57,7 +57,7 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
             }
             else if (ammoProvider is HitscanBatteryAmmoProviderComponent hitscanAmmo)
             {
-                if (!_prototypeManager.TryIndex<HitscanPrototype>(fireMode.Prototype, out var hitscan))
+                if (!_prototypeManager.TryIndex<EntityPrototype>(fireMode.Prototype, out var hitscan))
                     return;
 
                 args.PushMarkup(Loc.GetString("gun-set-fire-mode", ("mode", hitscan.Name)));
@@ -113,7 +113,7 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
             }
             else if (ammoProvider is HitscanBatteryAmmoProviderComponent hitscanAmmo)
             {
-                var entProto = _prototypeManager.Index<HitscanPrototype>(fireMode.Prototype);
+                var entProto = _prototypeManager.Index<EntityPrototype>(fireMode.Prototype);
 
                 var v = new Verb
                 {
@@ -211,11 +211,11 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
             }
             else if (ammoProvider is HitscanBatteryAmmoProviderComponent hitscanAmmo)
             {
-                if (!_prototypeManager.TryIndex<HitscanPrototype>(fireMode.Prototype, out var hitscan))
+                if (!_prototypeManager.TryIndex<EntityPrototype>(fireMode.Prototype, out var hitscan))
                     return;
 
                 var oldFireCost = hitscanAmmo.FireCost;
-                hitscanAmmo.Prototype = fireMode.Prototype;
+                hitscanAmmo.HitscanEntityProto = fireMode.Prototype;
                 hitscanAmmo.FireCost = fireMode.FireCost;
 
                 float fireCostDiff = (float)fireMode.FireCost / (float)oldFireCost;

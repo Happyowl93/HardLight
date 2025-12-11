@@ -303,7 +303,9 @@ namespace Content.Server.Chemistry.EntitySystems
         private void OnDispenseReagentMessage(Entity<ReagentDispenserComponent> reagentDispenser, ref ReagentDispenserDispenseReagentMessage message)
         {
             if (!TryComp<StorageComponent>(reagentDispenser.Owner, out var storage))
+            {
                 return;
+            }
 
             // Starlight Start
             var outputContainer = _itemSlotsSystem.GetItemOrNull(reagentDispenser, SharedReagentDispenser.OutputSlotName);
@@ -355,10 +357,10 @@ namespace Content.Server.Chemistry.EntitySystems
 
                     // force open container, if applicable, to avoid confusing people on why it doesn't dispense
                     _openable.SetOpen(storedContainer, true);
-                    _solutionTransferSystem.Transfer(reagentDispenser,
+                    _solutionTransferSystem.Transfer(new SolutionTransferData(reagentDispenser,
                             storedContainer, src.Value,
                             outputContainer.Value, dst.Value,
-                            (int)reagentDispenser.Comp.DispenseAmount);
+                            (int)reagentDispenser.Comp.DispenseAmount));
                 }
             }
 

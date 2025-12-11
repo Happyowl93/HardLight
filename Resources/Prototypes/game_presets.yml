@@ -202,7 +202,7 @@
   name: rev-title
   description: rev-description
   minPlayers: 30
-  showInVote: false # 🌟Starlight🌟
+  showInVote: false
   rules:
   # - DummyNonAntagChance 🌟Starlight🌟
   - Revolutionary
