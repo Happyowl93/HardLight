@@ -138,7 +138,7 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
         // Trigger the render
         var hitscanEvent = new SharedGunSystem.HitscanEvent
         {
-            Hitscan = hitscan,
+            Hitscan = EntityManager.GetNetEntity(hitscan),
             Traces = traces,
         };
 

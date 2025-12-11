@@ -695,7 +695,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         // Starlight - comment out the upstream Sprites list in favor of tracking the hitscan and its traces
         // public List<(NetCoordinates coordinates, Angle angle, SpriteSpecifier Sprite, float Distance)> Sprites = new();
         // Starilght start - we add the traces block below, and use that instead of the sprite list above.
-        public EntityUid Hitscan;
+        public NetEntity Hitscan;
         public required List<HitscanTrace> Traces;
         // Starlight end
     }

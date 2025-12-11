@@ -135,7 +135,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
     private void OnHitscan(HitscanEvent ev)
     {
-        var hitscan = ev.Hitscan;
+        var hitscan = EntityManager.GetEntity(ev.Hitscan);
         //The real bullet speed is so high that the bullet isn’t visible at all. So, let's slow it down 5x.
         if (!TryComp<HitscanBasicVisualsComponent>(hitscan, out var visuals))
         {
