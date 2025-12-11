@@ -1,16 +1,19 @@
-﻿using Content.Server._Starlight.Language;
+﻿using System.Linq;
+using Content.Server._Starlight.Language;
 using Content.Server.Humanoid;
 using Content.Shared._Starlight.Language.Components.Translators;
 using Content.Shared.CollectiveMind;
 using Content.Shared.Damage;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
+using Content.Shared.Radio.Components;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Starlight.Antags.Abductor;
 using Content.Shared.Starlight.Medical.Surgery.Events;
 using Content.Shared.Starlight.Medical.Surgery.Steps.Parts;
 using Content.Shared.Tag;
 using Content.Shared.VentCraw;
+using Robust.Shared.Containers;
 
 namespace Content.Server._Starlight.Medical.Surgery;
 public sealed partial class OrganSystem : EntitySystem
@@ -22,6 +25,7 @@ public sealed partial class OrganSystem : EntitySystem
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly SharedCollectiveMindSystem _collectiveMind = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
 
     public override void Initialize()
     {
@@ -57,7 +61,7 @@ public sealed partial class OrganSystem : EntitySystem
             if (!EntityManager.HasComponent(args.Body, comp.Component.GetType()))
             {
                 EntityManager.AddComponent(args.Body, comp.Component);
-                UpdateEntity(args.Body, comp.Component);
+                UpdateEntity(args.Body, comp.Component, ent.Owner);
             }
         }
     }
@@ -69,12 +73,12 @@ public sealed partial class OrganSystem : EntitySystem
             if (EntityManager.HasComponent(args.Body, comp.Component.GetType()))
             {
                 EntityManager.RemoveComponent(args.Body, EntityManager.GetComponent(args.Body, comp.Component.GetType()));
-                UpdateEntity(args.Body, comp.Component);
+                UpdateEntity(args.Body, comp.Component, ent.Owner);
             }
         }
     }
 
-    private void UpdateEntity(EntityUid ent, IComponent comp)
+    private void UpdateEntity(EntityUid ent, IComponent comp, EntityUid? implant = null)
     {
         //For all those components where the enity needs to be updated in their own way after adding or removing a component
         switch (comp)
@@ -85,6 +89,16 @@ public sealed partial class OrganSystem : EntitySystem
             case TaggedOrganComponent _: //Handle any required updates after tagging here
                 if(TryComp(ent, out CollectiveMindComponent? collectiveMindComp))
                     _collectiveMind.UpdateCollectiveMind(ent,collectiveMindComp);
+                break;
+            case EncryptionKeyHolderComponent encrypt: //Move encryption keys between implant and body
+                if(implant != null)
+                    if(TryComp(implant, out EncryptionKeyHolderComponent? implantKeyHolder))
+                        if (TryComp(ent, out EncryptionKeyHolderComponent? bodyKeyHolder))
+                            foreach (var key in implantKeyHolder.KeyContainer.ContainedEntities.ToList())
+                                _container.Insert(key, bodyKeyHolder.KeyContainer);
+                        else
+                            foreach (var key in encrypt.KeyContainer.ContainedEntities.ToList())
+                                _container.Insert(key, implantKeyHolder.KeyContainer);
                 break;
         }
     }

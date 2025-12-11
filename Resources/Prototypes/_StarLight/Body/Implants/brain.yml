@@ -28,26 +28,42 @@
       - GalacticCommon
 
 - type: entity
-  id: BrainImplantComms
-  name: Radio Implant
+  id: BrainImplantCommsExpedition
+  name: Expedition Radio Implant
   description: A handy implant for the salvager of the modern age.
   parent: BaseEntityBrainImplant
   components:
   - type: Sprite
-    state: brain_implant_comms
+    state: brain_implant_comms_exped
   - type: FunctionalOrgan
     comps:
+    - type: TelecomExempt
     - type: ActiveRadio
       channels:
-      - Common
-      - Supply
       - Expedition
     - type: IntrinsicRadioReceiver
     - type: IntrinsicRadioTransmitter
       channels:
-      - Common
-      - Supply
       - Expedition
+
+- type: entity
+  id: BrainImplantComms
+  name: Radio Implant
+  description: A headset, right in your brain!
+  parent: BaseEntityBrainImplant
+  components:
+  - type: Sprite
+    state: brain_implant_comms
+  - type: EncryptionKeyHolder
+    keySlots: 4
+  - type: FunctionalOrgan
+    comps:
+    - type: ActiveRadio
+    - type: IntrinsicRadioReceiver
+    - type: IntrinsicRadioTransmitter
+    - type: EncryptionKeyHolder
+      keySlots: 4
+      canBeExamined: false
     
 
 - type: entity

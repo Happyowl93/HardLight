@@ -70,7 +70,7 @@
   id: DebugStickSurgery
   parent: BoneGelBase
   description: A stick.
-  tags: [Debug]
+  suffix: DEBUG
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Decoration/Flora/Abyss/obelisk.rsi

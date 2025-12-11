@@ -74,6 +74,16 @@
         ]
       ],
       "copyright": "Citrea"
+    },
+    {
+      "name": "brain_implant_comms_exped",
+		"delays": [
+        [
+          0.9,
+          0.1
+        ]
+      ],
+      "copyright": "Citrea"
     }
   ]
 }
