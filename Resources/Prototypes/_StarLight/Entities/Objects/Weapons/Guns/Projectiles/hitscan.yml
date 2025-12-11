@@ -1,29 +1,4 @@
 - type: entity
-  id: ImpactEffect
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: TimedDespawn
-    lifetime: 0.6
-  - type: Sprite
-    drawdepth: Effects
-    layers:
-    - map: ["unshaded"]
-      #shader: unshaded
-  - type: EffectVisuals
-  - type: Tag
-    tags:
-      - HideContextMenu
-  - type: AnimationPlayer
-
-- type: displacementEffect
-  id: displacementEffect
-  displacement:
-    sizeMaps:
-      32:
-        sprite: _Starlight/Effects/impact.rsi
-        state: impact
-
-- type: entity
   id: BulletTrace
   parent: BasicHitscan
   abstract: true
@@ -73,10 +48,11 @@
         Structural: 226
   - type: HitscanStaminaDamage
     staminaDamage: 35
-#  pierceChance: 0.95
-#  pierceLevel: Rock
+  - type: HitscanPierce
+    chance: 0.95
+    pierceLevel: Rock
+    deviation: 0.005
 #  steps: 20
-#  deviation: 0.005
   - type: HitscanRicochet
     chance: 0.95
 
@@ -130,8 +106,9 @@
         Piercing: 35
   - type: HitscanStaminaDamage
     staminaDamage: 4
-#  pierceChance: 0.40
-#  deviation: 0.05
+  - type: HitscanPierce
+    chance: 0.40
+    deviation: 0.05
   - type: HitscanRicochet
     chance: 0.30
   - type: HitscanBasicVisuals
@@ -160,8 +137,9 @@
       types:
         Piercing: 15
         Blunt: 15
-#  pierceChance: 0.25
-#  deviation: 0.05
+  - type: HitscanPierce
+    chance: 0.25
+    deviation: 0.05
   - type: HitscanRicochet
     chance: 0.30
   - type: HitscanStaminaDamage
@@ -193,8 +171,9 @@
         Piercing: 45 # +30%
   - type: HitscanStaminaDamage
     staminaDamage: 10    
-#  pierceChance: 0.03
-#  deviation: 0.05
+  - type: HitscanPierce
+    chance: 0.03
+    deviation: 0.05
   - type: HitscanRicochet
     chance: 0.15
 
@@ -208,9 +187,10 @@
     damage:
       types:
         Piercing: 25 #- 30%
-#  pierceChance: 0.69
-#  deviation: 0.05
-#  pierceLevel: Metal
+  - type: HitscanPierce
+    chance: 0.69
+    deviation: 0.05
+    pierceLevel: Metal
   - type: HitscanRicochet
     chance: 0.80
   - type: HitscanBasicVisuals
@@ -237,8 +217,9 @@
     damage:
       types:
         Blunt: 2
-#  pierceChance: 0.69
-#  deviation: 0.05
+  - type: HitscanPierce
+    chance: 0.69
+    deviation: 0.05
   - type: HitscanRicochet
     chance: 0.48
   - type: HitscanBasicVisuals
@@ -266,8 +247,9 @@
       types:
         Blunt: 3
         Heat: 32
-#  pierceChance: 0.69
-#  deviation: 0.05
+  - type: HitscanPierce
+    chance: 0.69
+    deviation: 0.05
   - type: HitscanRicochet
     chance: 0.48
   - type: HitscanIgniteEffect
@@ -296,9 +278,10 @@
       types:
         Radiation: 15
         Piercing: 20
-#  pierceChance: 0.69
-#  deviation: 0.05
-#  pierceLevel: HardenedMetal
+  - type: HitscanPierce
+    chance: 0.69
+    deviation: 0.05
+    pierceLevel: HardenedMetal
   - type: HitscanRicochet
     chance: 0.80
   - type: HitscanBasicVisuals
@@ -326,9 +309,10 @@
     damage:
       types:
         Piercing: 25 #- 30%
-#  pierceChance: 0.81
-#  deviation: 0.05
-#  pierceLevel: HardenedMetal
+  - type: HitscanPierce
+    chance: 0.81
+    deviation: 0.05
+    pierceLevel: HardenedMetal
   - type: HitscanRicochet
     chance: 0.48
   - type: HitscanBasicVisuals
@@ -360,8 +344,9 @@
         Piercing: 16
   - type: HitscanStaminaDamage
     staminaDamage: 2
-#  pierceChance: 0.40
-#  deviation: 0.2
+  - type: HitscanPierce
+    chance: 0.40
+    deviation: 0.2
   - type: HitscanRicochet
     chance: 0.30
   - type: HitscanBasicVisuals
@@ -383,8 +368,9 @@
         Blunt: 7
   - type: HitscanStaminaDamage
     staminaDamage: 3
-#  pierceChance: 0.25
-#  deviation: 0.2
+  - type: HitscanPierce
+    chance: 0.25
+    deviation: 0.2
   - type: HitscanRicochet
     chance: 0.10
   - type: HitscanBasicVisuals
@@ -405,8 +391,9 @@
         Piercing: 21 # +30%
   - type: HitscanStaminaDamage
     staminaDamage: 5
-#  pierceChance: 0.03
-#  deviation: 0.2
+  - type: HitscanPierce
+    chance: 0.03
+    deviation: 0.2
   - type: HitscanRicochet
     chance: 0.15
 
@@ -420,9 +407,10 @@
     damage:
       types:
         Piercing: 11 #- 30%
-#  pierceChance: 0.69
-#  deviation: 0.2
-#  pierceLevel: Wood
+  - type: HitscanPierce
+    chance: 0.69
+    deviation: 0.2
+    pierceLevel: Wood
   - type: HitscanRicochet
     chance: 0.80
   - type: HitscanBasicVisuals
@@ -440,8 +428,9 @@
     damage:
       types:
         Blunt: 2
-#  pierceChance: 0.69
-#  deviation: 0.2
+  - type: HitscanPierce
+    chance: 0.69
+    deviation: 0.2
   - type: HitscanRicochet
     chance: 0.48
   - type: HitscanBasicVisuals
@@ -461,8 +450,9 @@
         Blunt: 2
         Heat: 14
   - type: HitscanIgniteEffect
-#  pierceChance: 0.69
-#  deviation: 0.2
+  - type: HitscanPierce
+    chance: 0.69
+    deviation: 0.2
   - type: HitscanRicochet
     chance: 0.48
   - type: HitscanBasicVisuals
@@ -481,9 +471,10 @@
       types:
         Radiation: 6
         Piercing: 10
-#  pierceChance: 0.69
-#  deviation: 0.2
-#  pierceLevel: HardenedMetal
+  - type: HitscanPierce
+    chance: 0.69
+    deviation: 0.2
+    pierceLevel: HardenedMetal
   - type: HitscanRicochet
     chance: 0.80
   - type: HitscanBasicVisuals
@@ -502,9 +493,10 @@
     damage:
       types:
         Piercing: 11 #- 30%
-#  pierceChance: 0.81
-#  deviation: 0.2
-#  pierceLevel: Metal
+  - type: HitscanPierce
+    chance: 0.81
+    deviation: 0.2
+    pierceLevel: Metal
   - type: HitscanRicochet
     chance: 0.48
   - type: HitscanBasicVisuals
@@ -525,8 +517,9 @@
         Piercing: 20
   - type: HitscanStaminaDamage
     staminaDamage: 15
-#  pierceChance: 0.30
-#  deviation: 0.15
+  - type: HitscanPierce
+    chance: 0.30
+    deviation: 0.15
   - type: HitscanRicochet
     chance: 0.20
   - type: HitscanBasicVisuals
@@ -547,8 +540,9 @@
         Piercing: 26 # +30%
   - type: HitscanStaminaDamage
     staminaDamage: 20
-#  pierceChance: 0.02
-#  deviation: 0.15
+  - type: HitscanPierce
+    chance: 0.02
+    deviation: 0.15
   - type: HitscanRicochet
     chance: 0.10
   - type: HitscanBasicVisuals
@@ -569,9 +563,10 @@
         Piercing: 16
   - type: HitscanStaminaDamage
     staminaDamage: 13
-#  pierceChance: 0.55
-#  deviation: 0.15
-#  pierceLevel: Wood
+  - type: HitscanPierce
+    chance: 0.55
+    deviation: 0.15
+    pierceLevel: Wood
   - type: HitscanRicochet
     chance: 0.70
   - type: HitscanBasicVisuals
@@ -592,9 +587,10 @@
         Piercing: 14
   - type: HitscanStaminaDamage
     staminaDamage: 10
-#  pierceChance: 0.63
-#  deviation: 0.15
-#  pierceLevel: Metal
+  - type: HitscanPierce
+    chance: 0.63
+    deviation: 0.15
+    pierceLevel: Metal
   - type: HitscanRicochet
     chance: 0.35
   - type: HitscanBasicVisuals
@@ -662,9 +658,10 @@
         Piercing: 19
   - type: HitscanStaminaDamage
     staminaDamage: 2
-#  pierceChance: 0.40
-#  deviation: 0.05
-#  pierceLevel: Metal
+  - type: HitscanPierce
+    chance: 0.40
+    deviation: 0.05
+    pierceLevel: Metal
   - type: HitscanRicochet
     chance: 0.30
   - type: HitscanBasicVisuals
@@ -686,9 +683,10 @@
         Blunt: 7
   - type: HitscanStaminaDamage
     staminaDamage: 3
-#  pierceChance: 0.20
-#  deviation: 0.05
-#  pierceLevel: Metal
+  - type: HitscanPierce
+    chance: 0.20
+    deviation: 0.05
+    pierceLevel: Metal
   - type: HitscanRicochet
     chance: 0.30
   - type: HitscanBasicVisuals
@@ -709,9 +707,10 @@
         Piercing: 25 # +30%
   - type: HitscanStaminaDamage
     staminaDamage: 6
-#  pierceLevel: Wood
-#  pierceChance: 0.03
-#  deviation: 0.05
+  - type: HitscanPierce
+    chance: 0.03
+    deviation: 0.05
+    pierceLevel: Wood
   - type: HitscanRicochet
     chance: 0.15
 
@@ -725,9 +724,10 @@
     damage:
       types:
         Piercing: 13 #- 40%
-#  pierceChance: 0.69
-#  deviation: 0.05
-#  pierceLevel: Metal
+  - type: HitscanPierce
+    chance: 0.69
+    deviation: 0.05
+    pierceLevel: Metal
   - type: HitscanRicochet
     chance: 0.80
   - type: HitscanBasicVisuals
@@ -746,9 +746,10 @@
     damage:
       types:
         Piercing: 13 #- 40%
-#  pierceChance: 0.81
-#  deviation: 0.05
-#  pierceLevel: HardenedMetal
+  - type: HitscanPierce
+    chance: 0.81
+    deviation: 0.05
+    pierceLevel: HardenedMetal
   - type: HitscanRicochet
     chance: 0.48
   - type: HitscanBasicVisuals
@@ -766,8 +767,9 @@
     damage:
       types:
         Blunt: 2
-#  pierceChance: 0.69
-#  deviation: 0.05
+  - type: HitscanPierce
+    chance: 0.69
+    deviation: 0.05
   - type: HitscanRicochet
     chance: 0.48
   - type: HitscanBasicVisuals
@@ -787,8 +789,9 @@
         Blunt: 3
         Heat: 16
   - type: HitscanIgniteEffect
-#  pierceChance: 0.69
-#  deviation: 0.05
+  - type: HitscanPierce
+    chance: 0.69
+    deviation: 0.05
   - type: HitscanRicochet
     chance: 0.48
   - type: HitscanBasicVisuals
@@ -807,9 +810,10 @@
       types:
         Radiation: 9
         Piercing: 10
-#  pierceChance: 0.69
-#  deviation: 0.05
-#  pierceLevel: HardenedMetal
+  - type: HitscanPierce
+    chance: 0.69
+    deviation: 0.05
+    pierceLevel: HardenedMetal
   - type: HitscanRicochet
     chance: 0.80
   - type: HitscanBasicVisuals
@@ -832,8 +836,9 @@
         Piercing: 17
   - type: HitscanStaminaDamage
     staminaDamage: 2
-#  pierceChance: 0.40
-#  pierceLevel: Wood
+  - type: HitscanPierce
+    chance: 0.40
+    pierceLevel: Wood
   - type: HitscanRicochet
     chance: 0.30
   - type: HitscanBasicVisuals
@@ -854,7 +859,8 @@
         Piercing: 23 # +30%
   - type: HitscanStaminaDamage
     staminaDamage: 5
-#  pierceChance: 0.03
+  - type: HitscanPierce
+    chance: 0.03
   - type: HitscanRicochet
     chance: 0.15
 
@@ -868,8 +874,9 @@
     damage:
       types:
         Piercing: 12 #- 30%
-#  pierceChance: 0.69
-#  pierceLevel: Metal
+  - type: HitscanPierce
+    chance: 0.69
+    pierceLevel: Metal
   - type: HitscanRicochet
     chance: 0.80
   - type: HitscanBasicVisuals
@@ -888,8 +895,9 @@
     damage:
       types:
         Piercing: 12 #- 30%
-#  pierceChance: 0.81
-#  pierceLevel: HardenedMetal
+  - type: HitscanPierce
+    chance: 0.81
+    pierceLevel: HardenedMetal
   - type: HitscanRicochet
     chance: 0.48
   - type: HitscanBasicVisuals
@@ -907,7 +915,8 @@
     damage:
       types:
         Blunt: 2
-#  pierceChance: 0.69
+  - type: HitscanPierce
+    chance: 0.69
   - type: HitscanRicochet
     chance: 0.48
   - type: HitscanBasicVisuals
@@ -927,7 +936,8 @@
         Blunt: 2
         Heat: 15
   - type: HitscanIgniteEffect
-#  pierceChance: 0.69
+  - type: HitscanPierce
+    chance: 0.69
   - type: HitscanRicochet
     chance: 0.48
   - type: HitscanBasicVisuals
@@ -946,8 +956,9 @@
       types:
         Radiation: 7
         Piercing: 8
-#  pierceChance: 0.69
-#  pierceLevel: HardenedMetal
+  - type: HitscanPierce
+    chance: 0.69
+    pierceLevel: HardenedMetal
   - type: HitscanRicochet
     chance: 0.80
   - type: HitscanBasicVisuals
@@ -968,7 +979,8 @@
         Blunt: 10
   - type: HitscanStaminaDamage
     staminaDamage: 40
-#  pierceChance: 0   
+  - type: HitscanPierce
+    chance: 0   
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -985,7 +997,8 @@
       types:
         Piercing: 40
         Structural: 15
-#  pierceChance: 0.08
+  - type: HitscanPierce
+    chance: 0.08
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -1001,7 +1014,8 @@
     damage:
       types:
         Piercing: 28
-#  pierceChance: 0.08
+  - type: HitscanPierce
+    chance: 0.08
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -1018,9 +1032,11 @@
       types:
         Piercing: 5
         Structural: 5
-#  pierceChance: 0.03
-#  count: 12
-#  spread: 15
+  - type: HitscanPierce
+    chance: 0.03
+  - type: ProjectileSpread
+    count: 12
+    spread: 15
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -1037,10 +1053,12 @@
       types:
         Blunt: 2
         Heat: 3
-#  pierceChance: 0.02
+  - type: HitscanPierce
+    chance: 0.02
   - type: HitscanIgniteEffect
-#  count: 12
-#  spread: 15
+  - type: ProjectileSpread
+    count: 12
+    spread: 15
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -1056,9 +1074,11 @@
     damage:
       types:
         Blunt: 1
-#  pierceChance: 0
-#  count: 12
-#  spread: 15
+  - type: HitscanPierce
+    chance: 0
+  - type: ProjectileSpread
+    count: 12
+    spread: 15
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -1075,9 +1095,11 @@
       types:
         Piercing: 2
         Slash: 2
-#  pierceChance: 0
-#  count: 14
-#  spread: 45
+  - type: HitscanPierce
+    chance: 0
+  - type: ProjectileSpread
+    count: 14
+    spread: 45
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -1094,10 +1116,12 @@
       types:
         Radiation: 2
         Piercing: 3
-#  pierceChance: 0.05
-#  pierceLevel: HardenedMetal
-#  count: 10
-#  spread: 6
+  - type: HitscanPierce
+    chance: 0.05
+    pierceLevel: HardenedMetal
+  - type: ProjectileSpread
+    count: 10
+    spread: 6
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -1110,13 +1134,15 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: HitscanBasicDamage
-  damage:
-    types:
-      Piercing: 5
-      Structural: 20
-#  pierceChance: 0.03
-#  count: 12
-#  spread: 50
+    damage:
+      types:
+        Piercing: 5
+        Structural: 20
+  - type: HitscanPierce
+    chance: 0.03
+  - type: ProjectileSpread
+    count: 12
+    spread: 50
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -1376,14 +1402,13 @@
         Poison: 20
   - type: HitscanBasicRaycast
     collisionMask: BulletImpassable
+    maxDistance: 10
   - type: HitscanReflect
     reflectiveType: NonEnergy
   - type: HitscanCrawlerTargetEffects
     knockdownDuration: 1s
   - type: HitscanStaminaDamage
     staminaDamage: 30
-  - type: HitscanBasicRaycast
-    maxDistance: 10
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -1402,7 +1427,7 @@
         Poison: 10
   - type: HitscanStaminaDamage
     staminaDamage: 40
-  - type: HitscanCrawlerTargetEffectsComponent
+  - type: HitscanCrawlerTargetEffects
     knockdownDuration: 2s
 
 - type: entity

@@ -10,7 +10,7 @@
         {
             "name": "Admin"
         },
-	{
+        {
             "name": "Assistant"
         },
         {
@@ -39,6 +39,9 @@
         },
         {
             "name": "CBURN"
+        },
+        {
+            "name": "Changeling"
         },
         {
             "name": "Chaplain"
@@ -71,6 +74,9 @@
             "name": "ERTChaplain"
         },
         {
+            "name": "ERTEngineer"
+        },
+        {
             "name": "ERTJanitor"
         },
         {
@@ -85,7 +91,7 @@
         {
             "name": "Geneticist"
         },
-		{
+        {
             "name": "HeadOfPersonnel"
         },
         {

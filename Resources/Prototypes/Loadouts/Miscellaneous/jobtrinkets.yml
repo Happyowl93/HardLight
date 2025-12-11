@@ -25,16 +25,16 @@
       - PlushieLizardJobHeadofpersonnel
 
 - type: loadout
-  id: LizardPlushiePassenger
+  id: LizardPlushieAssistant
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobPassenger
+      role: JobAssistant
       time: 72000 # 20hr
   storage:
     back:
-      - PlushieLizardJobPassenger
+      - PlushieLizardJobAssistant
 
 - type: loadout
   id: LizardPlushieBartender

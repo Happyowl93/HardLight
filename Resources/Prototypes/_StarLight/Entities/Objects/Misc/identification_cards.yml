@@ -7,29 +7,11 @@
       sprite: _Starlight/Objects/Misc/id_cards.rsi
       layers:
         - state: silver
-        - sprite: *icon-rsi
-          offset: *icon-offset
+        - sprite: &icon-rsi Interface/Misc/job_icons.rsi
+          offset: &icon-offset -0.09375, 0.0625 #3 pixels left, 2 pixels up
           state: Magistrate
     - type: PresetIdCard
       job: Magistrate
-
-- type: entity
-  parent: [ IDCardStandard, BaseSecurityContraband ]
-  id: BrigmedicIDCard
-  name: brigmedic ID card
-  components:
-    - type: Sprite
-      layers:
-        - state: default
-        - state: stripe_top
-          color: *color-security-top
-        - state: stripe_bottom
-          color: *color-security-bottom
-        - sprite: *icon-rsi
-          offset: *icon-offset
-          state: Brigmedic
-    - type: PresetIdCard
-      job: Brigmedic
 
 - type: entity
   parent: [ IDCardStandard, BaseCentcommContraband ]
@@ -53,9 +35,9 @@
     layers:
     - state: default
     - state: stripe_top
-      color: *color-science-top
+      color: &color-science-top "#a53aaa"
     - state: stripe_bottom
-      color: *color-science-bottom
+      color: &color-science-bottom "#652368"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Roboticist
@@ -136,9 +118,9 @@
     layers:
     - state: default
     - state: stripe_top
-      color: *color-supply-top
+      color: &color-supply-top "#b18644"
     - state: stripe_bottom
-      color: *color-supply-bottom
+      color: &color-supply-bottom "#5b4523"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SalvageLead
