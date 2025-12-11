@@ -1079,6 +1079,7 @@ public sealed partial class AdminVerbSystem
                 EnsureComp<DnaScrambleOnTriggerComponent>(args.Target);
                 var triggerEvent = new TriggerEvent(args.User, null);
                 RaiseLocalEvent(args.Target, ref triggerEvent);
+                RemComp<DnaScrambleOnTriggerComponent>(args.Target);
             },
             Impact = LogImpact.Extreme,
             Message = string.Join(": ", scrambleName, Loc.GetString("admin-smite-scramble-description"))
