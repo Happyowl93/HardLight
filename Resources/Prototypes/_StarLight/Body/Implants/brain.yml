@@ -36,6 +36,11 @@
   components:
   - type: Sprite
     state: brain_implant_comms
+  - type: FunctionalOrgan
+    comps:
+    - type: RadioImplant
+      radioChannels:
+      - Expedition
     
 
 - type: entity
