@@ -13,7 +13,7 @@
       - people
 
 - type: entity
-  id: ImplantTranslator
+  id: BrainImplantTranslator
   name: Universal Translator Implant
   description: Translates from your language to galactic common right in your brain!
   parent: BaseEntityBrainImplant
@@ -29,7 +29,7 @@
       - GalacticCommon
 
 - type: entity
-  id: ImplantComms
+  id: BrainImplantComms
   name: Radio Implant
   description: A handy implant for the salvager of the modern age.
   parent: BaseEntityBrainImplant
@@ -44,7 +44,7 @@
     
 
 - type: entity
-  id: ImplantNexus
+  id: BrainImplantNexus
   name: Nexus Implant
   description: Gives you access to the Nexus!
   parent: BaseEntityBrainImplant

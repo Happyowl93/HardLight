@@ -405,6 +405,17 @@
     Glass: 100
 
 - type: latheRecipe
+  id: EyeImplantChemistry
+  result: EyeImplantChemistry
+  categories:
+  - Implants
+  completetime: 4
+  materials:
+    Steel: 200
+    Plasma: 300
+    Glass: 100
+
+- type: latheRecipe
   id: EyeImplantDiagnostic
   result: EyeImplantDiagnostic
   categories:
@@ -475,6 +486,47 @@
     Steel: 200
     Plasma: 300
     Glass: 150
+
+# Brain
+
+- type: latheRecipe
+  id: BrainImplantComms
+  result: BrainImplantComms
+  categories:
+  - Implants
+  completetime: 4
+  materials:
+    Steel: 100
+    Plasma: 300
+    Glass: 100
+    Gold: 300
+    Silver: 200
+
+- type: latheRecipe
+  id: BrainImplantTranslator
+  result: BrainImplantTranslator
+  categories:
+  - Implants
+  completetime: 4
+  materials:
+    Steel: 100
+    Plasma: 300
+    Glass: 100
+    Gold: 300
+    Silver: 200
+
+- type: latheRecipe
+  id: BrainImplantNexus
+  result: BrainImplantNexus
+  categories:
+  - Implants
+  completetime: 4
+  materials:
+    Steel: 200
+    Plasma: 1000
+    Glass: 200
+    Gold: 500
+    Silver: 500
 
 # Automenders
 

@@ -89,19 +89,22 @@
   name: research-technology-basic-implants
   icon:
     sprite: _Starlight/Objects/Specific/Medical/implants.rsi
-    state: eye_implant_welding
+    state: eye_implant_janitor
   discipline: Biochemical
   tier: 2
   cost: 10000
   recipeUnlocks:
     - EyeImplantWelding
     - EyeImplantMedical
+    - EyeImplantChemistry
     - EyeImplantDiagnostic
     - EyeImplantSecurity
     - HandImplantInsulated
     - HandImplantThrusters
     - HandImplantForensics
     - HandImplantClaws
+    - BrainImplantComms
+    - BrainImplantTranslator
   technologyPrerequisites:
     - CyberLimbsTech
   radioChannels:

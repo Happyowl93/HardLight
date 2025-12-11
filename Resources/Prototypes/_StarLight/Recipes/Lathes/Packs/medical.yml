@@ -68,10 +68,13 @@
   recipes:
   - EyeImplantWelding
   - EyeImplantMedical
+  - EyeImplantChemistry
   - EyeImplantDiagnostic
   - EyeImplantSecurity
   - HandImplantInsulated
   - HandImplantThrusters
+  - BrainImplantComms
+  - BrainImplantTranslator
 
 
 - type: latheRecipePack
