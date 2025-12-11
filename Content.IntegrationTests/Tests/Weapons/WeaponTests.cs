@@ -55,7 +55,7 @@ public sealed class WeaponTests : InteractionTest
         await AttemptShoot(urist);
         updatedAmmo = gunSystem.GetAmmoCount(mosinEnt);
 
-        Assert.That(updatedAmmo, Is.EqualTo(startAmmo - 1), "Mosin failed to discharge appropriate amount of ammo!");
+        Assert.That(updatedAmmo, Is.EqualTo(startAmmo), "Mosin failed to discharge appropriate amount of ammo!"); // Starlight-edit - There's still an empty cartridge in the chamber, and GetAmmoCount counts cartridges
         Assert.That(damageComp.TotalDamage.Value,
             Is.GreaterThan(0),
             "Mosin was fired but urist sustained no damage!");
