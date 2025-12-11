@@ -162,6 +162,13 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
             return;
         }
 
+        if (!_reflectQuery.TryComp(hitscan, out var reflectComp))
+        {
+            // This shouldn't be possible.
+            Log.Warning("Fired a hitscan with no reflect component to contain the reflect type");
+            return;
+        }
+
         // Trigger the render
         var hitscanEvent = new SharedGunSystem.HitscanEvent
         {
@@ -170,6 +177,7 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
             ImpactFlash = visuals.ImpactFlash,
             Bullet = visuals.Bullet,
             Speed = visuals.Speed,
+            ReflectType = reflectComp.ReflectiveType,
             Traces = traces,
         };
 
@@ -245,24 +253,6 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
 
             sprites.Add((netCoords, shotAngle.FlipPositive(), vizComp.ImpactFlash, 1f));
         }
-
-        // Starlight start
-        // if we hit someone with a physical projectile and they have blood, splash some
-        var bloodDecals = new List<(NetCoordinates coordinates, Angle angle, Color color)>();
-        if (
-                hitEntity is not null
-             && _reflectQuery.TryComp(hitscanUid, out var reflectComp)
-             && reflectComp.ReflectiveType == ReflectType.NonEnergy
-             && _bloodQuery.TryComp(hitEntity, out var bloodstream))
-        {
-            var color = _proto.Index(bloodstream.BloodReagent).SubstanceColor;
-            // A flash of the neuralyzer, then a man in a black suit says that you didn’t see any “vector crutch” here, and if you did—read it again.
-            var coords = fromCoordinates.Offset((shotAngle.ToVec() * (distance + 1.3f)) + new Vector2(-0.5f, -0.5f));
-            var netCoords = GetNetCoordinates(coords);
-
-            bloodDecals.Add((netCoords, shotAngle + Angle.FromDegrees(-45), color));
-        }
-        // Starlight end
 
         if (sprites.Count > 0)
         {
