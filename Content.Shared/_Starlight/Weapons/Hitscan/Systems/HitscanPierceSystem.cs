@@ -40,14 +40,14 @@ public sealed partial class PierceSystem : EntitySystem
         if (hitscan.Comp.Chance <= 0 || data.HitEntity == null)
             return;
         
-        if (hitscan.Comp.Chance < 1 || _rand.Prob(hitscan.Comp.Chance))
+        if (hitscan.Comp.Chance < 1 && !_rand.Prob(hitscan.Comp.Chance))
             return;
 
         // If we're at our maximum recursion depth, don't try to pierce
         if (!_reflectQuery.TryComp(hitscan.Owner, out var reflect) || reflect.CurrentReflections > reflect.MaxReflections)
             return;
 
-        var ev = new HitScanPierceAttemptEvent(hitscan.Comp.PierceLevel, false);
+        var ev = new HitScanPierceAttemptEvent(hitscan.Comp.PierceLevel, true);
         RaiseLocalEvent(data.HitEntity.Value, ref ev);
 
         if (!ev.Pierced)
