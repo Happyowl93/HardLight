@@ -39,6 +39,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Server._Starlight.Station; // Starlight
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -473,6 +474,17 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
 
     private void OnStationStartup(Entity<StationEmergencyShuttleComponent> ent, ref StationPostInitEvent args)
     {
+        //Starlight start
+        if (TryComp<StationDataComponent>(ent, out var station))
+            foreach (var grid in station.Grids)
+            {
+                if (!TryComp<BecomesStationMidRoundComponent>(grid, out var becomesStation)) continue;
+                if (!becomesStation.UseEmergencyShuttle)
+                    return;
+                break; // can break, we already found the grid that created this station
+            }
+        //Starlight end
+        
         AddEmergencyShuttle((ent, ent));
     }
 
