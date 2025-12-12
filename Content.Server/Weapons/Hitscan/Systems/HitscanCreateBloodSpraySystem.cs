@@ -40,8 +40,7 @@ public sealed class HitscanCreateBloodSpraySystem : EntitySystem
             return;
 
         var data = args.Data;
-        var distance = Math.Abs((Transform(args.Data.HitEntity.Value).Coordinates.Position - Transform(args.Data.Gun).Coordinates.Position).Length());
-        
+
         var gunShooingXform = Transform(args.Data.Gun);
         
         // Copied from HitscanBasicRaycastSystem
@@ -53,9 +52,10 @@ public sealed class HitscanCreateBloodSpraySystem : EntitySystem
         }
         else
         {
-            shotAngle -= _transform.GetWorldRotation(gunShooingXform);
+            return; // TODO: Add logic that actually works for off grid shots.
         }
-
+        
+        var distance = Math.Abs((Transform(args.Data.HitEntity.Value).Coordinates.Position - Transform(args.Data.Gun).Coordinates.Position).Length());
         var hitEntityCords = Transform(args.Data.HitEntity.Value).Coordinates;
         var color = _proto.Index(bloodstream.BloodReagent).SubstanceColor;
         var coords = hitEntityCords.Offset((shotAngle.ToVec() * ((distance/5000.0f) + 1.3f)) + new Vector2(-0.5f, -0.5f));
