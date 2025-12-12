@@ -191,15 +191,6 @@
 
 # Misc
 - type: loadout
-  id: SecStar
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SecurityStarWorthy
-  storage:
-    back:
-    - Dinkystar
-
-- type: loadout
   id: SecurityGlasses
   equipment:
     eyes: ClothingEyesGlassesSecurity

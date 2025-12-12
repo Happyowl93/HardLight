@@ -108,7 +108,7 @@ namespace Content.Server.Chemistry.EntitySystems
                     // Charge at 5W when connected to power
                     chargeRate = 5f;
                     
-                    if (_battery.IsFull(batteryUid.Value, battery))
+                    if (_battery.IsFull(batteryUid.Value))
                         continue;
                     
                     isChargingOrDraining = true;
@@ -150,7 +150,7 @@ namespace Content.Server.Chemistry.EntitySystems
                     continue;
                 }
 
-                _battery.ChangeCharge(batteryUid.Value, chargeRate * frameTime, battery);
+                _battery.ChangeCharge(batteryUid.Value, chargeRate * frameTime);
                 
                 if (chargeRate < 0 && battery.CurrentCharge <= 0 && uiOpen)
                 {

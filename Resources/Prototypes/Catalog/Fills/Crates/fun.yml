@@ -102,7 +102,7 @@
       - id: PlushieLizardJobMime #
       - id: PlushieLizardJobMusician
       - id: PlushieLizardJobParamedic
-      - id: PlushieLizardJobPassenger
+      - id: PlushieLizardJobAssistant #Starlight, assistant change
       - id: PlushieLizardJobPsychologist
       - id: PlushieLizardJobQuartermaster
       - id: PlushieLizardJobReporter
