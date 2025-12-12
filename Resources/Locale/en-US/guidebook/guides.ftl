@@ -146,6 +146,7 @@ guide-entry-thieves = Thieves
 guide-entry-vampires = Vampires
 guide-entry-abductors = Abductors
 guide-entry-wizard = Wizard
+guide-entry-xenoborgs = Xenoborgs
 
 guide-entry-rules = Server Rules
 guide-entry-rules-core-only = Core Only Ruleset
