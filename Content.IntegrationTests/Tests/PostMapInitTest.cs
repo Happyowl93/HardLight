@@ -131,13 +131,13 @@ namespace Content.IntegrationTests.Tests
             "dm01-entryway",
             "Exo",
             "dm01-entryway",
+            #region Starlight
             "StarlightBarratry",
             "StarlightCork",
             "StarlightKiloton",
             "StarlightLagan",
             "StarlightLobster",
             "StarlightManor",
-            #region Starlight
             "Gateway",
             "StarlightLeth",
             "StarlightMing",
