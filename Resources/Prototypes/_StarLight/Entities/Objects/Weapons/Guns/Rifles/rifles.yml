@@ -178,7 +178,7 @@
 
 - type: entity
   name: Aussec Armory M-52
-  parent: [WeaponRifleLecter, BaseSecurityContraband]
+  parent: [WeaponRifleLecter, BaseTSFContraband]
   id: WeaponRifleM52
   description: One of the least popular examples of heavy assault rifles. It has impressive firepower.
   components:

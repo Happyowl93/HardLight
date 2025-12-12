@@ -299,7 +299,7 @@
 
 - type: randomHumanoidSettings
   id: TSFMarine
-  parent: EventHumanoid
+  parent: EventHumanoidMindShielded
   speciesBlacklist:
   - Arachnid
   - Diona
@@ -337,7 +337,10 @@
         - NamesMilitaryFirst
         - NamesMilitaryLast
       nameFormat: name-format-ert
-    - type: MindShield
+    - type: AutoImplant
+      implants:
+      - DeathRattleImplantTSF
+      - MindShieldImplant
 
 - type: randomHumanoidSettings
   id: TSFMarineLeader
@@ -390,3 +393,8 @@
         - NamesMilitaryFirstLeader
         - NamesMilitaryLast
       nameFormat: name-format-ert
+    - type: AutoImplant
+      implants:
+      - DeathRattleImplantTSF
+      - DeathAcidifierImplant
+      - MindShieldImplant

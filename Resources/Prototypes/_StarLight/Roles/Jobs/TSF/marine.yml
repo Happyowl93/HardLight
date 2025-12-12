@@ -79,7 +79,6 @@
     - BoxSurvivalSecurity
     - CrowbarRed
     - MedkitCombatFilled
-    - DeathRattleImplanterCentcomm
     belt:
     - MagazineBoxRifleHP
     - MagazineRifleM52HP
@@ -89,8 +88,6 @@
     - MagazineBoxMagnumSP
     - MagazineMagnum
     - MagazineMagnum
-  inhand: 
-  - DeathAcidifierImplanter
 
 - type: startingGear
   id: TSFGeneralGear
@@ -117,7 +114,7 @@
     - BoxLethalshot
     - BoxLethalshot
   inhand: 
-  - DeathRattleImplanterCentcomm
+  - DeathRattleImplanterTSF
 
 - type: startingGear
   id: TSFRepGear
@@ -135,6 +132,8 @@
   storage:
     back:
     - BoxSurvival
+  inhand: 
+  - DeathRattleImplanterTSF
 
 - type: startingGear
   id: TSFTraderGear
