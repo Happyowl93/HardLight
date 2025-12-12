@@ -53,6 +53,8 @@
 
 - type: npcFaction
   id: PetsNT
+  friendly:
+  - NanoTrasen
   hostile:
     - Mouse
     - SimpleHostile

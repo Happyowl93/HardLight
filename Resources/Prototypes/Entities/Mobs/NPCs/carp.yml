@@ -184,6 +184,8 @@
     - type: HTN
       rootTask:
         task: DragonCarpCompound
+    - type: Temperature
+      heatDamageThreshold: 1200
    #Starlight
     - type: Flammable
       damage:

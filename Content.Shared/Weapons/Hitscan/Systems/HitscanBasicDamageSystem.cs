@@ -1,4 +1,4 @@
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Hitscan.Events;
 
@@ -22,10 +22,10 @@ public sealed class HitscanBasicDamageSystem : EntitySystem
 
         var dmg = ent.Comp.Damage * _damage.UniversalHitscanDamageModifier;
 
-        // var damageDealt = _damage.TryChangeDamage(args.Data.HitEntity, dmg, origin: args.Data.Gun); // Starlight - we redefine this
+        // var damageDealt = _damage.TryChangeDamage(args.Data.HitEntity.Value, dmg, origin: args.Data.Gun); // Starlight - we redefine this
         // Starlight start
         var damageDealt = _damage.TryChangeDamage(
-                args.Data.HitEntity,
+                args.Data.HitEntity.Value,
                 dmg,
                 ignoreResistances: ent.Comp.IgnoreResistances,
                 origin: args.Data.Gun,
