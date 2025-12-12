@@ -941,9 +941,6 @@
   id: MechThruster
 
 - type: Tag
-  id: Medal
-
-- type: Tag
   id: MicroBomb # ReplacementImplant whitelist on MacroBombImplant.
 
 - type: Tag
@@ -1034,9 +1031,6 @@
 
 - type: Tag
   id: PaddyUpgradeKit
-
-- type: Tag
-  id: ParadoxCloneObjectiveBlacklist # objective entities with this tag don't get copied to paradox clones
 
 - type: Tag
   id: Pancake # CargoBounty: BountyPancake
@@ -1324,9 +1318,6 @@
 
 - type: Tag
   id: SpecialMech
-
-- type: Tag
-  id: Smokable
 
 - type: Tag
   id: Soap # Storage whitelist: BorgModuleCustodial, ClothingBeltJanitor. CargoBounty: BountySoap

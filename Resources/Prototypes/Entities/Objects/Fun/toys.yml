@@ -1083,9 +1083,6 @@
       collection: packetOpenSounds
   - type: TrashOnSolutionEmpty
     solution: drink
-  - type: Tag
-    tags:
-    - DrinkSpaceGlue
   # 🌟Starlight-start🌟
   - type: BoneGel
   - type: SurgeryTool

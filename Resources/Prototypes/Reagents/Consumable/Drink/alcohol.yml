@@ -172,16 +172,14 @@
         - !type:MetabolizerTypeCondition
           type: [ Dwarf ]
           inverted: true
-        damage:
-          types:
-            Poison: 0.1
-        # Starlight
+          # Starlight
         - !type:MetabolizerTypeCondition
           type: [ BudgetCyber ]
           inverted: true
+          # Starlight end
         damage:
           types:
-            Poison: 1
+            Poison: 0.1
       # Starlight
       # Budget CyberLiver will cause you to take more damage from less alcohol
       - !type:HealthChange

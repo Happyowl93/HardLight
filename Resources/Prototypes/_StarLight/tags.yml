@@ -398,3 +398,9 @@
   
 - type: Tag
   id: PrototypeJawsOfLife
+
+- type: Tag
+  id: GasTank
+
+- type: Tag
+  id: MagazineLightRiflePan

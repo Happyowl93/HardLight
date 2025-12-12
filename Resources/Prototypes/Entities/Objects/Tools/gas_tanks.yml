@@ -47,6 +47,11 @@
       Steel: 185
   - type: StaticPrice
     price: 30
+    #Starlight start
+  - type: Tag
+    tags:
+    - GasTank
+    #Starlight end
 
 - type: entity
   abstract: true

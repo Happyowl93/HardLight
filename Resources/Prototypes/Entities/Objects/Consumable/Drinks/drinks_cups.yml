@@ -15,10 +15,6 @@
     maxTransferAmount: 10
   - type: StaticPrice
     price: 10
-  # Starlight
-  - type: Tag
-    tags:
-    - DrinkCup
   # Starlight-edit: Vending Machines Prices
   - type: ItemPrice
     priceCategory: drink
