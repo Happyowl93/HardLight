@@ -1,6 +1,12 @@
 # ALPHABETIZE
 
 - type: Tag
+  id: Abductor
+
+- type: Tag
+  id: AbductorScientist
+
+- type: Tag
   id: Arachnid
 
 - type: Tag
@@ -392,3 +398,9 @@
   
 - type: Tag
   id: PrototypeJawsOfLife
+
+- type: Tag
+  id: GasTank
+
+- type: Tag
+  id: MagazineLightRiflePan

@@ -56,25 +56,17 @@
                     <Control VerticalExpand="True" />
             
                     <!-- Left Bot Panel -->
-                  <!-- NullLink start -->
-                  <BoxContainer Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                    
-                    <nulllink:Hub />
-                    
-                    <!-- Starlight, change to vertical-->
                     <BoxContainer Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                        <nulllink:Hub /> <!-- Starlight -->
                         <info:DevInfoBanner Name="DevInfoBanner" VerticalExpand="false" Margin="3 3 3 3" />
-                        <PanelContainer StyleClasses="BackgroundPanel" Margin="3 3 3 3"> <!-- Starlight margin added-->
-                            <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" />
+                        <PanelContainer StyleClasses="BackgroundPanel" Margin="3 3 3 3">
+                            <BoxContainer Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="3 3 3 3">
+                                <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Left" />
+                                <RichTextLabel Name="LobbyBackground" Access="Public" HorizontalAlignment="Left" />
+                            </BoxContainer>
                         </PanelContainer>
-                        <!-- Starlight start-->
-                        <PanelContainer StyleClasses="AngleRect" Margin="3 3 3 3">
-                            <RichTextLabel Name="LobbyBackground" Access="Public" HorizontalAlignment="Center" />
-                        </PanelContainer>
-                        <!-- Starlight end-->
                     </BoxContainer>
-                  </BoxContainer>
-                  <!-- NullLink end -->
+                    <!-- NullLink end -->
                 </Control>
                 <!-- Character setup state -->
                 <!-- This is injected on startup. Funky! -->

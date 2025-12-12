@@ -1434,46 +1434,6 @@
       sprite:
         sprite: _Starlight/Objects/Weapons/Guns/Projectiles/projectiles.rsi
         state: sniperlaser
-      
-- type: entity
-  id: EnergyCrossbowBolt
-  parent: BasicHitscan
-  name: crossbow bolt
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: HitscanBasicDamage
-    damage:
-      types:
-        Poison: 20
-  - type: HitscanBasicRaycast
-    collisionMask: BulletImpassable
-    maxDistance: 10
-  - type: HitscanReflect
-    reflectiveType: NonEnergy
-  - type: HitscanCrawlerTargetEffects
-    knockdownDuration: 1s
-  - type: HitscanStaminaDamage
-    staminaDamage: 30
-  - type: HitscanBasicVisuals
-    bullet:
-      sprite:
-        sprite: _Starlight/Objects/Weapons/Guns/Projectiles/projectiles.rsi
-        state: cbbolt
-      
-- type: entity
-  id: MiniEnergyCrossbowBolt
-  name: crossbow bolt
-  parent: EnergyCrossbowBolt
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: HitscanBasicDamage
-    damage:
-      types:
-        Poison: 10
-  - type: HitscanStaminaDamage
-    staminaDamage: 40
-  - type: HitscanCrawlerTargetEffects
-    knockdownDuration: 2s
 
 - type: entity
   id: ProjectilePolyboltJohnToe

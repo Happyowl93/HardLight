@@ -39,6 +39,8 @@ public sealed class CrayonSystem : SharedCrayonSystem
         SubscribeLocalEvent<CrayonComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<CrayonComponent, CrayonSelectMessage>(OnCrayonBoundUI);
         SubscribeLocalEvent<CrayonComponent, CrayonColorMessage>(OnCrayonBoundUIColor);
+        SubscribeLocalEvent<CrayonComponent, UseInHandEvent>(OnCrayonUse);
+        SubscribeLocalEvent<CrayonComponent, AfterInteractEvent>(OnCrayonAfterInteract, after: [typeof(IngestionSystem)]);
         SubscribeLocalEvent<CrayonComponent, CrayonRotationMessage>(OnCrayonBoundUIRotation);
         SubscribeLocalEvent<CrayonComponent, BoundUIOpenedEvent>(OnBoundUIOpened);
         SubscribeLocalEvent<CrayonComponent, BoundUIClosedEvent>(OnBoundUIClosed);
@@ -47,8 +49,6 @@ public sealed class CrayonSystem : SharedCrayonSystem
         SubscribeLocalEvent<CrayonComponent, GotEquippedEvent>(OnGotEquipped);
         SubscribeLocalEvent<CrayonComponent, GotUnequippedEvent>(OnGotUnequipped);
         SubscribeLocalEvent<CrayonComponent, CrayonPreviewToggleMessage>(OnCrayonBoundUIPreviewToggle);
-        SubscribeLocalEvent<CrayonComponent, UseInHandEvent>(OnCrayonUse, before: new[] { typeof(FoodSystem) });
-        SubscribeLocalEvent<CrayonComponent, AfterInteractEvent>(OnCrayonAfterInteract, after: new[] { typeof(FoodSystem) });
         SubscribeLocalEvent<CrayonComponent, DroppedEvent>(OnCrayonDropped);
     }
 
@@ -60,6 +60,7 @@ public sealed class CrayonSystem : SharedCrayonSystem
         Dirty(ent);
     }
 
+    // Runs after IngestionSystem so it doesn't bulldoze force-feeding
     private void OnCrayonAfterInteract(EntityUid uid, CrayonComponent component, AfterInteractEvent args)
     {
         if (args.Handled || !args.CanReach)

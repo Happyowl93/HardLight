@@ -1,4 +1,4 @@
-﻿using Content.Server.Kitchen.Components;
+using Content.Server.Kitchen.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Chat;
 using Content.Shared.Clumsy;
@@ -30,6 +30,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Shared._Starlight.Weapon.Components;
 using Content.Shared.Kitchen.Components;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Components;
 
 namespace Content.Server.Execution;
 

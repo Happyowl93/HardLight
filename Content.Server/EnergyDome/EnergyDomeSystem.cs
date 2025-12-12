@@ -1,9 +1,9 @@
 using Content.Server.DeviceLinking.Systems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Server.PowerCell;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
@@ -20,6 +20,7 @@ using Robust.Shared.Containers;
 
 namespace Content.Server.EnergyDome;
 
+//TODO: This is all starlight code? move it
 public sealed partial class EnergyDomeSystem : EntitySystem
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -145,7 +146,7 @@ public sealed partial class EnergyDomeSystem : EntitySystem
 
     private void OnPowerCellChanged(Entity<EnergyDomeGeneratorComponent> generator, ref PowerCellChangedEvent args)
     {
-        if (args.Ejected || !_powerCell.HasDrawCharge(generator))
+        if (args.Ejected || !_powerCell.HasDrawCharge(generator.Owner))
             TurnOff(generator, true);
     }
 
@@ -177,9 +178,9 @@ public sealed partial class EnergyDomeSystem : EntitySystem
             _powerCell.TryGetBatteryFromSlot(generatorUid, out var cell);
             if (cell != null)
             {
-                _battery.UseCharge(cell.Owner, energyLeak);
+                _battery.UseCharge(cell.Value.Owner, energyLeak);
 
-                if (cell.CurrentCharge == 0)
+                if (cell.Value.Comp.LastCharge == 0)
                     TurnOff((generatorUid, generatorComp), true);
             }
         }
@@ -223,7 +224,7 @@ public sealed partial class EnergyDomeSystem : EntitySystem
 
         if (TryComp<PowerCellSlotComponent>(generator, out var powerCellSlot))
         {
-            if (!_powerCell.TryGetBatteryFromSlot(generator, out var cell) && !TryComp(generator, out cell))
+            if (!_powerCell.TryGetBatteryFromSlot((generator, powerCellSlot), out var cell))
             {
                 _audio.PlayPvs(generator.Comp.TurnOffSound, generator);
                 _popup.PopupEntity(
@@ -232,7 +233,7 @@ public sealed partial class EnergyDomeSystem : EntitySystem
                 return false;
             }
 
-            if (!_powerCell.HasDrawCharge(generator))
+            if (!_powerCell.HasDrawCharge(generator.Owner))
             {
                 _audio.PlayPvs(generator.Comp.TurnOffSound, generator);
                 _popup.PopupEntity(

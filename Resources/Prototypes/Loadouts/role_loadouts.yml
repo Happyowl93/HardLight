@@ -171,7 +171,6 @@
   - Trinkets
   - Scarves # Starlight
   - JanitorJobTrinkets
-  - JanitorPlunger
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -418,7 +417,6 @@
   - Trinkets
   - Scarves # Starlight
   - HeadofSecurityJobTrinkets
-  - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -435,7 +433,6 @@
   - Trinkets
   - Scarves # Starlight
   - WardenJobTrinkets
-  - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -455,7 +452,6 @@
   - Trinkets
   - Scarves # Starlight
   - SecurityJobTrinkets
-  - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -472,7 +468,6 @@
   - Trinkets
   - Scarves # Starlight
   - DetectiveJobTrinkets
-  - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout

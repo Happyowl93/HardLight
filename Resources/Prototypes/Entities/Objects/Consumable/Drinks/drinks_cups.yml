@@ -13,9 +13,8 @@
   - type: SolutionTransfer
     canChangeTransferAmount: true
     maxTransferAmount: 10
-  - type: Tag
-    tags:
-    - DrinkCup
+  - type: StaticPrice
+    price: 10
   # Starlight-edit: Vending Machines Prices
   - type: ItemPrice
     priceCategory: drink
@@ -90,13 +89,14 @@
   - type: Tag
     tags:
     - Trash
-    - DrinkCup
     - WhitelistChameleon
   - type: Clothing
     slots:
     - HEAD
     quickEquip: false
     sprite: Clothing/Head/Hats/party_water_cup.rsi
+  - type: SpillWhenWorn
+    solution: drink
 
 # Mugs
 - type: entity

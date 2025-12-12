@@ -67,7 +67,10 @@
     damageContainer: Biological
     damageModifierSet: Slime
   - type: Bloodstream
-    bloodReagent: Slime
+    bloodReagents:
+      reagents:
+      - ReagentId: Slime
+        Quantity: 1
     bloodlossDamage:
       types:
         Bloodloss:
@@ -93,7 +96,6 @@
       methods: [ Touch ]
       effects:
       - !type:HealthChange
-        scaling: true
         damage:
           types:
             Heat: 0.05 #Same as slime species
