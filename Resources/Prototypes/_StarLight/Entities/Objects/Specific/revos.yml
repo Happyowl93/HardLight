@@ -33,7 +33,6 @@
     - metallic
     - chemical
   - type: BadFood
-  - type: ContextMenuFood
   - type: SolutionContainerManager
     solutions:
       food:

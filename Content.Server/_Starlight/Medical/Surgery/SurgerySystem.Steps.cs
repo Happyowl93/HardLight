@@ -15,6 +15,7 @@ using Microsoft.CodeAnalysis;
 using Content.Server._Starlight.Medical.Limbs;
 using Content.Server.Administration.Systems;
 using Robust.Shared.Timing;
+using Content.Shared.Damage.Components;
 
 
 namespace Content.Server.Starlight.Medical.Surgery;

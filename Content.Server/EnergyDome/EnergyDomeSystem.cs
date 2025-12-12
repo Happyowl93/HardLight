@@ -4,6 +4,7 @@ using Content.Server.Power.EntitySystems;
 using Content.Server.PowerCell;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
@@ -20,6 +21,7 @@ using Robust.Shared.Containers;
 
 namespace Content.Server.EnergyDome;
 
+//TODO: This is all starlight code? move it
 public sealed partial class EnergyDomeSystem : EntitySystem
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;

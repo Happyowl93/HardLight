@@ -21,6 +21,7 @@ using Content.Shared.Temperature.Components;
 using Content.Shared.Temperature;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server.Starlight.EntityEffects.EntitySystems;
 

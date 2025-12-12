@@ -216,7 +216,7 @@ public record struct BeforeDamageChangedEvent(DamageSpecifier Damage, EntityUid?
 ///
 ///     For example, armor.
 /// </summary>
-public sealed class DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null)
+public sealed class DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, float armorPenetration = 0f, bool canHeal = false) // 🌟Starlight🌟
     : EntityEventArgs, IInventoryRelayEvent
 {
     // Whenever locational damage is a thing, this should just check only that bit of armour.
@@ -224,6 +224,9 @@ public sealed class DamageModifyEvent(DamageSpecifier damage, EntityUid? origin 
 
     public readonly DamageSpecifier OriginalDamage = damage;
     public DamageSpecifier Damage = damage;
+    public float ArmorPenetration = armorPenetration;   // 🌟Starlight🌟
+    public bool CanHeal = canHeal;  // 🌟Starlight🌟
+    public EntityUid? Origin = origin; //Starlight, but this is clearly a upstream bug
 }
 
 public sealed class DamageChangedEvent : EntityEventArgs

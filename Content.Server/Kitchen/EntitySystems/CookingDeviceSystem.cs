@@ -321,7 +321,7 @@ namespace Content.Server.Kitchen.EntitySystems
 
                         if (stackComp is not null)
                         {
-                            if (stackComp.Count == 1)
+                            if (stackComp.Count == 1) {
                                 _container.Remove(item, component.Storage);
                             }
                             _stack.ReduceCount((item, stackComp), 1);
@@ -798,7 +798,7 @@ namespace Content.Server.Kitchen.EntitySystems
                         {
                             if (stackComp.Count == 1)
                                 _container.Remove(item, cookingDevice.Storage);
-                            _stack.Use(item, 1, stackComp);
+                            _stack.TryUse(item, 1);
                             Spawn(cookingDevice.SpoiledItemId, coords);
                             continue;
                         }

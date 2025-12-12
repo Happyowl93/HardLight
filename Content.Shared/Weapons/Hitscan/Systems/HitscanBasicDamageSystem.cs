@@ -24,7 +24,7 @@ public sealed class HitscanBasicDamageSystem : EntitySystem
 
         // var damageDealt = _damage.TryChangeDamage(args.Data.HitEntity.Value, dmg, origin: args.Data.Gun); // Starlight - we redefine this
         // Starlight start
-        var damageDealt = _damage.TryChangeDamage(
+        var damageDealt = _damage.ChangeDamage(
                 args.Data.HitEntity.Value,
                 dmg,
                 ignoreResistances: ent.Comp.IgnoreResistances,
