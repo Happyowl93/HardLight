@@ -3,6 +3,7 @@ using System.Numerics;
 using Content.Server.Decals;
 using Content.Server.Weapons.Hitscan.Components;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Shared.Decals;
 using Content.Shared.Weapons.Hitscan.Events;
 using Robust.Shared.Prototypes;
@@ -17,6 +18,7 @@ public sealed class HitscanCreateBloodSpraySystem : EntitySystem
     [Dependency] private readonly DecalSystem _decal = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!;
 
     private string[] _bloodDecals = [];
 
@@ -57,7 +59,7 @@ public sealed class HitscanCreateBloodSpraySystem : EntitySystem
         
         var distance = Math.Abs((Transform(args.Data.HitEntity.Value).Coordinates.Position - Transform(args.Data.Gun).Coordinates.Position).Length());
         var hitEntityCords = Transform(args.Data.HitEntity.Value).Coordinates;
-        var color = _proto.Index(bloodstream.BloodReagent).SubstanceColor;
+        var color = _bloodstream.getBloodColor(args.Data.HitEntity.Value);
         var coords = hitEntityCords.Offset((shotAngle.ToVec() * ((distance/5000.0f) + 1.3f)) + new Vector2(-0.5f, -0.5f));
 
         Timer.Spawn(200, () =>

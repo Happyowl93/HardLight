@@ -528,4 +528,17 @@ public abstract class SharedBloodstreamSystem : EntitySystem
 
         return bloodData;
     }
+
+    //starlight start
+    public Color getBloodColor(Entity<BloodstreamComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp, logMissing: false)
+            || !SolutionContainer.ResolveSolution(ent.Owner, ent.Comp.BloodSolutionName, ref ent.Comp.BloodSolution, out var bloodSolution))
+        {
+            return Color.Red; // default blood color
+        }
+
+        return ent.Comp.BloodReagents.GetColor(null);
+    }
+    //starlight end
 }
