@@ -289,7 +289,7 @@
   name: TSF Trader ID card
   components:
   - type: IdCard
-    jobTitle: TSF Trader
+    jobTitle: job-title-tsf-trader
 
 - type: entity
   parent: [IDCardStandard, BaseTSFContraband]
@@ -306,7 +306,7 @@
     - idcard
     sprite: _Starlight/Objects/Misc/dogtag.rsi
   - type: IdCard
-    jobTitle: TSF Marine
+    jobTitle: job-title-tsf-marine
     jobIcon: JobIconTSF
   - type: Access
     groups:
@@ -318,7 +318,7 @@
   name: team leader dogtag
   components:
   - type: IdCard
-    jobTitle: TSF Team Leader
+    jobTitle: job-title-tsf-marine-leader
 
 - type: entity
   parent: TSFIdCardMarine
@@ -326,4 +326,4 @@
   name: MARSOC dogtag
   components:
   - type: IdCard
-    jobTitle: MARSOC Marine
+    jobTitle: job-title-tsf-MARSOC

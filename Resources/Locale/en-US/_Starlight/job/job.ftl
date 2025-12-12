@@ -14,6 +14,10 @@ job-name-decimus = Decimus Operative
 job-name-salvagelead = Salvage Lead
 job-name-abductor = Abductor
 job-title-borgi = Borgi
+job-title-tsf-trader = TSF Trader
+job-title-tsf-marine = TSF Marine
+job-title-tsf-marine-leader = TSF Team Leader
+job-title-tsf-MARSOC = MARSOC Marine
 
 job-greet-information-rules = {$jobRules}
 
