@@ -83,10 +83,6 @@ public abstract partial class SharedCollectiveMindSystem : EntitySystem
 
             if (meetsRequirements)
             {
-                //check if they dont already have it
-                if (collective.Minds.ContainsKey(prototype))
-                    continue;
-                    
                 //Use identity from brain implant, or generate a new one to assign to it
                 CollectiveMindIdentityComponent? identity = null;
                 foreach (var organ in organs)
@@ -99,12 +95,23 @@ public abstract partial class SharedCollectiveMindSystem : EntitySystem
                 }
                 if (identity != null)
                 {
-                    identity.MindData ??= collective.Minds.TryGetValue(prototype, out var mindData) 
-                    ? mindData : CreateNewCollectiveMindMemberData(prototype);
+                    //check if they dont already have it
+                    if (collective.Minds.TryGetValue(prototype, out var mindData))
+                    {
+                        identity.MindData = mindData;
+                        continue;
+                    }
+                    
+                    identity.MindData ??= CreateNewCollectiveMindMemberData(prototype);
                     collective.Minds.TryAdd(prototype, identity.MindData);
                 }
                 else
+                {
+                    //check if they dont already have it
+                    if (collective.Minds.ContainsKey(prototype))
+                        continue;
                     collective.Minds.TryAdd(prototype, CreateNewCollectiveMindMemberData(prototype));
+                }
             }
             else
             {
