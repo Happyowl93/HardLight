@@ -126,4 +126,11 @@ public record struct HitscanDamageDealtEvent
     /// The amount of damage that the target was dealt.
     /// </summary>
     public DamageSpecifier DamageDealt;
+    
+    // Starlight begin
+    /// <summary>
+    /// Data for the hitscan that was fired.
+    /// </summary>
+    public HitscanRaycastFiredData Data;
+    // Starlight end
 }
