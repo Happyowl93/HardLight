@@ -68,8 +68,8 @@
 
 - type: entity
   id: BrainImplantNexus
-  name: Nexus Implant
-  description: Gives you access to the Nexus!
+  name: Nexus Uplink
+  description: A weird piece of Avali tech... Gives you access to the Nexus!
   parent: BaseEntityBrainImplant
   components:
   - type: Sprite
