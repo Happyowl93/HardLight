@@ -162,13 +162,6 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
             return;
         }
 
-        if (!_reflectQuery.TryComp(hitscan, out var reflectComp))
-        {
-            // This shouldn't be possible.
-            Log.Warning("Fired a hitscan with no reflect component to contain the reflect type");
-            return;
-        }
-
         // Trigger the render
         var hitscanEvent = new SharedGunSystem.HitscanEvent
         {
@@ -177,7 +170,6 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
             ImpactFlash = visuals.ImpactFlash,
             Bullet = visuals.Bullet,
             Speed = visuals.Speed,
-            ReflectType = reflectComp.ReflectiveType,
             Traces = traces,
         };
 
