@@ -1,7 +1,8 @@
+/* Starlight, TODO: Use this file instead and make relevant changes here. I dont want to right now because itd require a rework of how we do execution stuff
 using Content.Shared.ActionBlocker;
 using Content.Shared.Chat;
 using Content.Shared.CombatMode;
-using Content.Shared.Damage.Components;
+using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
@@ -12,6 +13,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Mind;
 using Robust.Shared.Player;
 using Robust.Shared.Audio.Systems;
 
@@ -63,8 +65,7 @@ public sealed class SharedExecutionSystem : EntitySystem
             Message = Loc.GetString("execution-verb-message"),
         };
 
-        //starlight, disable execution
-        //args.Verbs.Add(verb);
+        args.Verbs.Add(verb);
     }
 
     private void TryStartExecutionDoAfter(EntityUid weapon, EntityUid victim, EntityUid attacker, ExecutionComponent comp)
@@ -231,3 +232,4 @@ public sealed class SharedExecutionSystem : EntitySystem
         }
     }
 }
+*/
