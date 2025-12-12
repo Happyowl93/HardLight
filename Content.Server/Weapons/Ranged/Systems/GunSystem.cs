@@ -77,22 +77,13 @@ public sealed partial class GunSystem : SharedGunSystem
 #endregion Starlight
 
     private const float DamagePitchVariation = 0.05f;
-    private string[] _bloodDecals = []; // 🌟Starlight🌟
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<BallisticAmmoProviderComponent, PriceCalculationEvent>(OnBallisticPrice);
+    }
 
-        // Starlight start
-        SubscribeNetworkEvent<HitscanEvent>(OnHitscan);
-        CacheDecals();
-        // Starlight end
-    }
-    private void CacheDecals() // 🌟Starlight🌟
-    {
-        _bloodDecals = _proto.EnumeratePrototypes<DecalPrototype>().Where(x => x.Tags.Contains("BloodSplatter")).Select(x => x.ID).ToArray();
-    }
 
     private void OnBallisticPrice(EntityUid uid, BallisticAmmoProviderComponent component, ref PriceCalculationEvent args)
     {
@@ -427,49 +418,4 @@ public sealed partial class GunSystem : SharedGunSystem
             Audio.PlayPvs(weaponSound, otherEntity);
         }
     }
-
-    // Starlight start - hitscan processing code for blood decal generation
-    private void OnHitscan(HitscanEvent ev)
-    {
-        foreach (var trace in ev.Traces)
-        {
-            var delay = 0f;
-            delay = FireEffect(ev, delay, trace);
-        }
-    }
-
-    private float FireEffect(HitscanEvent visuals, float delay, HitscanTrace trace)
-    {
-        //The real bullet speed is so high that the bullet isn’t visible at all. So, let's slow it down 5x.
-        var length = trace.Distance / (visuals.Speed / 5000);
-
-        // This is where we'd put any decal generation for the start of a trace -
-        // but there's no case for it yet.
-
-        delay += length;
-
-        // Impact effects
-        if (trace.ImpactedEnt is not null && trace.MuzzleCoordinates is { } muzzleCoordinates)
-        {
-            var localEnt = EntityManager.GetEntity(trace.ImpactedEnt);
-            var localMuzzleCoordinates = EntityManager.GetCoordinates(muzzleCoordinates);
-            if (visuals.ReflectType == ReflectType.NonEnergy)
-            {
-                if (TryComp<BloodstreamComponent>(localEnt, out var bloodstream))
-                {
-                    Timer.Spawn(200, () =>
-                    {
-                        //commented out as non functional and fixed in a different PR anyway
-                        // var color = _proto.Index(bloodstream.BloodReagents).SubstanceColor;
-                        // // A flash of the neuralyzer, then a man in a black suit says that you didn’t see any “vector crutch” here, and if you did—read it again.
-                        // var coords = localMuzzleCoordinates.Offset((trace.Angle.ToVec() * (trace.Distance + 1.3f)) + new Vector2(-0.5f, -0.5f));
-                        // _decals.TryAddDecal(_rand.Pick(_bloodDecals), coords, out _, color, trace.Angle + Angle.FromDegrees(-45), cleanable: true);
-                    });
-                }
-            }
-        }
-
-        return delay;
-    }
-    // Starlight end
 }

@@ -42,7 +42,6 @@ using Content.Shared.VentCraw;
 using Content.Shared.Mech.Components;
 using Content.Shared.Starlight.Utility;
 using Content.Shared.Weapons.Hitscan.Events;
-using Content.Shared.Weapons.Reflect;
 #endregion Starlight
 
 namespace Content.Shared.Weapons.Ranged.Systems;
@@ -680,7 +679,6 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     /// <summary>
     /// Used for animated effects on the client.
-    /// Starlight - and blood splatter generation on the server
     /// </summary>
     [Serializable, NetSerializable]
     public sealed class HitscanEvent : EntityEventArgs
@@ -696,9 +694,6 @@ public abstract partial class SharedGunSystem : EntitySystem
         public SpriteSpecifier? ImpactFlash;
         public ExtendedSpriteSpecifier? Bullet;
         public required float Speed;
-        // This last one we use to detect if it's a physical projectile
-        public required ReflectType ReflectType;
-        // Starlight end
     }
 
     /// <summary>
