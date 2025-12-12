@@ -31,7 +31,6 @@ using Content.Server.IgnitionSource;
 using Content.Server.Interaction;
 using Content.Server.Mech.Equipment.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Server.PowerCell;
 using Content.Server.Stunnable.Components;
 using Content.Server.Stunnable;
 using Content.Shared.Atmos.Components;
@@ -460,10 +459,11 @@ public sealed partial class GunSystem : SharedGunSystem
                 {
                     Timer.Spawn(200, () =>
                     {
-                        var color = _proto.Index(bloodstream.BloodReagent).SubstanceColor;
-                        // A flash of the neuralyzer, then a man in a black suit says that you didn’t see any “vector crutch” here, and if you did—read it again.
-                        var coords = localMuzzleCoordinates.Offset((trace.Angle.ToVec() * (trace.Distance + 1.3f)) + new Vector2(-0.5f, -0.5f));
-                        _decals.TryAddDecal(_rand.Pick(_bloodDecals), coords, out _, color, trace.Angle + Angle.FromDegrees(-45), cleanable: true);
+                        //commented out as non functional and fixed in a different PR anyway
+                        // var color = _proto.Index(bloodstream.BloodReagents).SubstanceColor;
+                        // // A flash of the neuralyzer, then a man in a black suit says that you didn’t see any “vector crutch” here, and if you did—read it again.
+                        // var coords = localMuzzleCoordinates.Offset((trace.Angle.ToVec() * (trace.Distance + 1.3f)) + new Vector2(-0.5f, -0.5f));
+                        // _decals.TryAddDecal(_rand.Pick(_bloodDecals), coords, out _, color, trace.Angle + Angle.FromDegrees(-45), cleanable: true);
                     });
                 }
             }

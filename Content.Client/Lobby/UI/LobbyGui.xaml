@@ -66,8 +66,7 @@
                             </BoxContainer>
                         </PanelContainer>
                     </BoxContainer>
-                  </BoxContainer>
-                  <!-- NullLink end -->
+                    <!-- NullLink end -->
                 </Control>
                 <!-- Character setup state -->
                 <!-- This is injected on startup. Funky! -->

@@ -88,11 +88,6 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         if (args.Target == null || !args.CanReach || !HasComp<MobStateComponent>(args.Target) || !_cell.HasDrawCharge(uid.Owner, user: args.User))
         	return;
 
-        if (uid.Comp.DamageContainers != null 
-            && damageableComponent.DamageContainerID != null 
-            && !uid.Comp.DamageContainers.Contains(damageableComponent.DamageContainerID))
-            return;
-
         _audio.PlayPvs(uid.Comp.ScanningBeginSound, uid);
 
         var doAfterCancelled = !_doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, uid.Comp.ScanDelay, new HealthAnalyzerDoAfterEvent(), uid, target: args.Target, used: uid)

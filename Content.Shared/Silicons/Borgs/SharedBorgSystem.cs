@@ -298,7 +298,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
         {
             AddRadioChannels(chassis, used);
             _adminLog.Add(LogType.Action, LogImpact.Low,
-                $"{ToPrettyString(args.User):player} added encryption key {ToPrettyString(used)} to borg {ToPrettyString(uid)}");
+                $"{ToPrettyString(args.User):player} added encryption key {ToPrettyString(used)} to borg {ToPrettyString(chassis)}");
             args.Handled = true;
         }
         // End Starlight
