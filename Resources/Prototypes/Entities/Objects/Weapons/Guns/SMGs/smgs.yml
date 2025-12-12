@@ -170,10 +170,10 @@
   - type: ProjectileBatteryAmmoProvider
     proto: CartridgePistolSP #Starlight Ammo
     fireCost: 100
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 3000
     startingCharge: 3000
-  - type: BatterySelfRecharger
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 25
   - type: AmmoCounter
 

@@ -12,6 +12,7 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 #region Starlight
@@ -293,28 +294,15 @@ namespace Content.Client.Lobby
 
         private void UpdateLobbyBackground()
         {
-            //starlight start, art credit system
-            if (_protoMan.TryIndex(_gameTicker.LobbyBackground, out LobbyBackgroundPrototype? proto))
+            if (_protoMan.TryIndex(_gameTicker.LobbyBackground, out var proto))
             {
                 Lobby!.Background.Texture = _resourceCache.GetResource<TextureResource>(proto.Background);
 
-                var background = _gameTicker.LobbyBackground;
-
-                var title = string.IsNullOrEmpty(proto.Title)
-                    ? Loc.GetString("lobby-state-background-unknown-title")
-                    : proto.Title;
-
-                var artist = string.IsNullOrEmpty(proto.Artist)
-                    ? Loc.GetString("lobby-state-background-unknown-artist")
-                    : proto.Artist;
-
                 var markup = Loc.GetString("lobby-state-background-text",
-                    ("backgroundTitle", title),
-                    ("backgroundArtist", artist));
+                    ("backgroundTitle", Loc.GetString(proto.Title)),
+                    ("backgroundArtist", Loc.GetString(proto.Artist)));
 
                 Lobby!.LobbyBackground.SetMarkup(markup);
-
-                return;
             }
             else
             {
@@ -322,7 +310,6 @@ namespace Content.Client.Lobby
 
                 Lobby!.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text"));
             }
-            //starlight end
         }
 
         private void SetReady(bool newReady)
