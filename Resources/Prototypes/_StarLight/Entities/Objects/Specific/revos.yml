@@ -21,7 +21,7 @@
   - type: Currency
     price:
       Telebond: 1
-  - type: Food
+  - type: Edible
     solution: food
     delay: 2
     forceFeedDelay: 2
