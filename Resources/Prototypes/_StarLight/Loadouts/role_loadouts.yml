@@ -11,6 +11,7 @@
   - Survival
   - Trinkets
   - Scarves
+  - Pins
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -21,6 +22,7 @@
   - Survival
   - Trinkets
   - Scarves
+  - Pins
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -39,6 +41,7 @@
   - SurvivalMedical
   - Trinkets
   - Scarves
+  - Pins
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -51,6 +54,7 @@
   - NanotrasenRepresentativeShoes
   - Trinkets
   - Scarves
+  - Pins
   - Survival
   - GroupSpeciesBreathTool
 
@@ -63,6 +67,7 @@
   - LawyerShoes
   - Trinkets
   - Scarves
+  - Pins
   - Survival
   - GroupSpeciesBreathTool
 
@@ -78,6 +83,7 @@
   - BlueShieldEyewear
   - Trinkets
   - Scarves
+  - Pins
   - SurvivalSecurity
   - GroupSpeciesBreathToolSecurity
 
@@ -94,6 +100,7 @@
   - Survival
   - Trinkets
   - Scarves
+  - Pins
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -109,37 +116,42 @@
   - Survival
   - Trinkets
   - Scarves
+  - Pins
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBrigmedic
   groups:
-    - BrigmedicHead
-    - BrigmedicJumpsuit
-    - BrigmedicBackpack
-    - BrigmedicOuterClothing
-    - BrigmedicBelt
-    - BrigmedicGloves
-    - BrigmedicEyewear
-    - SecurityShoes
-    - SecurityNonLethalWeapon
-    - SecuritySidearm
-    - SurvivalSecurity
-    - Trinkets
-    - SecurityStar
-    - GroupSpeciesBreathToolSecurity
+  - BrigmedicHead
+  - BrigmedicJumpsuit
+  - BrigmedicBackpack
+  - BrigmedicOuterClothing
+  - BrigmedicBelt
+  - BrigmedicGloves
+  - BrigmedicEyewear
+  - SecurityShoes
+  - SecurityNonLethalWeapon
+  - SecuritySidearm
+  - SurvivalSecurity
+  - Trinkets
+  - Scarves
+  - Pins
+  - SecurityStar
+  - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
   id: JobSalvageLead
   groups:
-    - GroupTankHarness
-    - SalvageSpecialistBackpack
-    - SalvageLeadJumpsuit
-    - SalvageLeadNeck
-    - SalvageSpecialistOuterClothing
-    - SalvageSpecialistShoes
-    - SalvageLeadPDA
-    - Glasses
-    - Survival
-    - Trinkets
-    - GroupSpeciesBreathTool
+  - GroupTankHarness
+  - SalvageSpecialistBackpack
+  - SalvageLeadJumpsuit
+  - SalvageLeadNeck
+  - SalvageSpecialistOuterClothing
+  - SalvageSpecialistShoes
+  - SalvageLeadPDA
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - Scarves
+  - Pins
