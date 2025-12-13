@@ -132,7 +132,19 @@
   storage:
     back:
     - BibleNanoTrasen
-    
+
+- type: loadout
+  id: BibleSatanic
+  storage:
+    back:
+    - BibleSatanic
+
+- type: loadout
+  id: BibleTanakh
+  storage:
+    back:
+    - BibleTanakh
+
 - type: loadout
   id: BibleNarsie
   storage:

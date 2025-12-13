@@ -59,7 +59,7 @@ public sealed class HitscanCreateBloodSpraySystem : EntitySystem
         
         var distance = Math.Abs((Transform(args.Data.HitEntity.Value).Coordinates.Position - Transform(args.Data.Gun).Coordinates.Position).Length());
         var hitEntityCords = Transform(args.Data.HitEntity.Value).Coordinates;
-        var color = _bloodstream.getBloodColor(args.Data.HitEntity.Value);
+        var color = _bloodstream.GetBloodColor(args.Data.HitEntity.Value);
         var coords = hitEntityCords.Offset((shotAngle.ToVec() * ((distance/5000.0f) + 1.3f)) + new Vector2(-0.5f, -0.5f));
 
         Timer.Spawn(200, () =>
