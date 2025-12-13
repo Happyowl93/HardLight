@@ -243,3 +243,12 @@
     - type: RuleGrids
     - type: LoadMapRule
       gridPath: /Maps/_Starlight/Shuttles/KillerTamashi-SecShuttle.yml
+
+# Nanotrasen Battlecruiser
+- type: entity
+  parent: BaseGameRule
+  id: shuttle_crew_NTSF_MinosBattlecruiser
+  components:
+    - type: RuleGrids
+    - type: LoadMapRule
+      gridPath: /Maps/_Starlight/Shuttles/CC-NT/NTSF_Minos_Battlecruiser.yml
