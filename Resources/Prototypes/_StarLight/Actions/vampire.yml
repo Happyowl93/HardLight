@@ -576,6 +576,145 @@
     - type: VampireAction
       bloodToUnlock: 1000
       bloodCost: 70
-    
       requiredClass: Dantalion
-      
+
+#Gargantua
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireBloodSwell
+  name: action-vampire-blood-swell-name
+  description: action-vampire-blood-swell-desc
+  components:
+    - type: Action
+      useDelay: 40
+      itemIconStyle: NoItem
+      priority: 40
+      icon:
+        sprite: _Starlight/Vampire/Gargantua.rsi
+        state: blood_swell
+    - type: InstantAction
+      event: !type:VampireBloodSwellActionEvent
+        duration: 30.0
+    - type: VampireAction
+      bloodToUnlock: 150
+      bloodCost: 30
+      requiredClass: Gargantua
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireBloodRush
+  name: action-vampire-blood-rush-name
+  description: action-vampire-blood-rush-desc
+  components:
+    - type: Action
+      useDelay: 30
+      itemIconStyle: NoItem
+      priority: 41
+      icon:
+        sprite: _Starlight/Vampire/Gargantua.rsi
+        state: blood_rush
+    - type: InstantAction
+      event: !type:VampireBloodRushActionEvent
+        duration: 10.0
+    - type: VampireAction
+      bloodToUnlock: 250
+      bloodCost: 30
+      requiredClass: Gargantua
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireSeismicStomp
+  name: action-vampire-seismic-stomp-name
+  description: action-vampire-seismic-stomp-desc
+  components:
+    - type: Action
+      useDelay: 30
+      itemIconStyle: NoItem
+      priority: 42
+      icon:
+        sprite: _Starlight/Vampire/Gargantua.rsi
+        state: seismic_stomp
+    - type: InstantAction
+      event: !type:VampireSeismicStompActionEvent
+        radius: 3.0
+        throwDistance: 3.0
+    - type: VampireAction
+      bloodToUnlock: 250
+      bloodCost: 30
+      requiredClass: Gargantua
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireOverwhelmingForce
+  name: action-vampire-overwhelming-force-name
+  description: action-vampire-overwhelming-force-desc
+  components:
+    - type: Action
+      useDelay: 2
+      itemIconStyle: NoItem
+      priority: 43
+      icon:
+        sprite: _Starlight/Vampire/Gargantua.rsi
+        state: overwhelming_force
+    - type: InstantAction
+      event: !type:VampireOverwhelmingForceActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 600
+      bloodCost: 0
+      requiredClass: Gargantua
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireDemonicGrasp
+  name: action-vampire-demonic-grasp-name
+  description: action-vampire-demonic-grasp-desc
+  components:
+    - type: Action
+      useDelay: 30
+      itemIconStyle: NoItem
+      priority: 44
+      icon:
+        sprite: _Starlight/Vampire/Gargantua.rsi
+        state: demonic_grasp
+    - type: TargetAction
+      checkCanAccess: false
+      range: 15
+    - type: WorldTargetAction
+      range: 15
+      event: !type:VampireDemonicGraspActionEvent
+        range: 15.0
+        immobilizeDuration: 5.0
+        projectileSpeed: 15.0
+    - type: VampireAction
+      bloodToUnlock: 800
+      bloodCost: 20
+      requiredClass: Gargantua
+
+- type: entity
+  parent: BaseAction
+  id: ActionVampireCharge
+  name: action-vampire-charge-name
+  description: action-vampire-charge-desc
+  components:
+    - type: Action
+      useDelay: 30
+      itemIconStyle: NoItem
+      priority: 45
+      icon:
+        sprite: _Starlight/Vampire/Gargantua.rsi
+        state: charge
+    - type: TargetAction
+      checkCanAccess: false
+      range: -1
+    - type: WorldTargetAction
+      range: -1
+      event: !type:VampireChargeActionEvent
+        creatureDamage: 60.0
+        creatureThrowDistance: 5.0
+        structuralDamage: 150.0
+        chargeSpeed: 25.0
+    - type: VampireAction
+      bloodToUnlock: 800
+      bloodCost: 30
+      requiredClass: Gargantua

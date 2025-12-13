@@ -1,6 +1,7 @@
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Robust.Shared.Audio;
+using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Starlight.Antags.Vampires;
@@ -373,6 +374,105 @@ public sealed partial class VampireMassHysteriaActionEvent : InstantActionEvent
     /// </summary>
     [DataField]
     public float HysteriaDuration = 30f;
+}
+
+#endregion
+
+#region Gargantua
+
+public sealed partial class VampireBloodSwellActionEvent : InstantActionEvent
+{
+    [DataField]
+    public float Duration = 30f;
+}
+
+public sealed partial class VampireBloodRushActionEvent : InstantActionEvent
+{
+    [DataField]
+    public float Duration = 10f;
+}
+
+public sealed partial class VampireSeismicStompActionEvent : InstantActionEvent
+{
+    /// <summary>
+    ///     Radius of the stomp effect in tiles
+    /// </summary>
+    [DataField]
+    public float Radius = 3f;
+
+    /// <summary>
+    ///     Distance to throw targets in tiles
+    /// </summary>
+    [DataField]
+    public float ThrowDistance = 3f;
+}
+
+public sealed partial class VampireOverwhelmingForceActionEvent : InstantActionEvent;
+
+public sealed partial class VampireDemonicGraspActionEvent : WorldTargetActionEvent
+{
+    /// <summary>
+    ///     Maximum range of the grasp projectile
+    /// </summary>
+    [DataField]
+    public float Range = 15f;
+
+    /// <summary>
+    ///     Duration of immobilization in seconds
+    /// </summary>
+    [DataField]
+    public float ImmobilizeDuration = 5f;
+
+    /// <summary>
+    ///     Speed of the grasp projectile
+    /// </summary>
+    [DataField]
+    public float ProjectileSpeed = 15f;
+}
+
+public sealed partial class VampireChargeActionEvent : WorldTargetActionEvent
+{
+    /// <summary>
+    ///     Brute damage dealt to creatures on impact
+    /// </summary>
+    [DataField]
+    public float CreatureDamage = 60f;
+
+    /// <summary>
+    ///     Distance to throw creatures on impact
+    /// </summary>
+    [DataField]
+    public float CreatureThrowDistance = 5f;
+
+    /// <summary>
+    ///     Structural damage dealt to structures/machinery
+    /// </summary>
+    [DataField]
+    public float StructuralDamage = 150f;
+
+    /// <summary>
+    ///     Charge movement speed
+    /// </summary>
+    [DataField]
+    public float ChargeSpeed = 25f;
+}
+
+/// <summary>
+/// Event for syncing demonic grasp projectile visuals
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class VampireDemonicGraspVisualEvent : EntityEventArgs
+{
+    public NetEntity Source { get; }
+    public NetCoordinates Target { get; }
+    public float Speed { get; }
+
+    public VampireDemonicGraspVisualEvent(NetEntity source, NetCoordinates target, float speed)
+    {
+        Source = source;
+        Target = target;
+        Speed = speed;
+    }
 }
 
 #endregion

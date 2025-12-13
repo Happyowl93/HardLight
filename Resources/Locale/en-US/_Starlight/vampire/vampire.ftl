@@ -176,3 +176,36 @@ vampire-blood-bond-stop-blood = The bond shreds itself; you lack the blood to su
 
 action-vampire-mass-hysteria-name = Mass Hysteria(70)
 action-vampire-mass-hysteria-desc = Flood every nearby mind (except thralls) with terror, flashing them and cursing them with hallucinations for 30 seconds.
+
+# Gargantua abilities
+action-vampire-blood-swell-name = Blood Swell(30)
+action-vampire-blood-swell-desc = For 30 seconds: reduces brute damage by 60%, stamina and burn by 50%, halves stun times. Cannot use guns. After 400 blood: also gain +14 melee damage.
+vampire-blood-swell-start = Your muscles swell with unholy power!
+vampire-blood-swell-end = The blood rage subsides.
+
+action-vampire-blood-rush-name = Blood Rush(30)
+action-vampire-blood-rush-desc = For 10 seconds: double your movement speed.
+vampire-blood-rush-start = Blood surges through your limbs!
+vampire-blood-rush-end = Your supernatural speed fades.
+
+action-vampire-seismic-stomp-name = Seismic Stomp(30)
+action-vampire-seismic-stomp-desc = Slam the ground, knocking down and throwing all creatures within 3 tiles away from you. Destroys floor tiles.
+vampire-seismic-stomp-activate = The ground shudders beneath your fury!
+
+action-vampire-overwhelming-force-name = Overwhelming Force(Toggle)
+action-vampire-overwhelming-force-desc = Toggle: automatically pry open unpowered doors. While active, you cannot be pushed or pulled. Costs 5 blood per door.
+vampire-overwhelming-force-start = Your presence becomes immovable.
+vampire-overwhelming-force-stop = You relax your iron grip.
+vampire-overwhelming-force-too-heavy = This object is far too heavy to move!
+vampire-overwhelming-force-door-pried = You wrench the door open with brute strength.
+
+action-vampire-demonic-grasp-name = Demonic Grasp(20)
+action-vampire-demonic-grasp-desc = Launch a demonic hand up to 15 tiles. Immobilizes the target for 5 seconds. In combat mode, also pulls them to you.
+vampire-demonic-grasp-cast = You launch a demonic claw!
+vampire-demonic-grasp-hit = A demonic claw seizes you!
+vampire-demonic-grasp-pull = The claw drags you toward the vampire!
+
+action-vampire-charge-name = Charge(30)
+action-vampire-charge-desc = Charge in the target direction until hitting an obstacle or void. Creatures take 60 brute and are thrown 5 tiles. Structures take 150 damage. Walls are destroyed.
+vampire-charge-start = You barrel forward with unstoppable force!
+vampire-charge-impact = You crash into {CAPITALIZE(THE($target))} with devastating force!

@@ -37,13 +37,13 @@ public sealed partial class VampireComponent : Component
     /// Lifetime total blood drunk. Used for unlocking abilities.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public int TotalBlood = 0;
+    public int TotalBlood = 1500;
 
     /// <summary>
     /// Total blood drunk by this vampire, used for blood cost calculations.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public int DrunkBlood = 0;
+    public int DrunkBlood = 1500;
 
     /// <summary>
     /// Determines whether the fangs are extended or not.
@@ -112,6 +112,20 @@ public sealed partial class VampireComponent : Component
         "ActionVampireRallyThralls",
         "ActionVampireBloodBond",
         "ActionVampireMassHysteria"
+    };
+
+    /// <summary>
+    /// Action ids for the Gargantua class
+    /// </summary>
+    [DataField]
+    public List<EntProtoId> GargantuaActions = new()
+    {
+        "ActionVampireBloodSwell",
+        "ActionVampireBloodRush",
+        "ActionVampireSeismicStomp",
+        "ActionVampireOverwhelmingForce",
+        "ActionVampireDemonicGrasp",
+        "ActionVampireCharge"
     };
 
     /// <summary>

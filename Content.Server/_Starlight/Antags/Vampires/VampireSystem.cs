@@ -1,6 +1,7 @@
 using Content.Server.Actions;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Systems;
+using Content.Server.Doors.Systems;
 using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
 using Content.Server.Polymorph.Systems;
@@ -27,9 +28,11 @@ using Content.Shared.Popups;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.Stealth;
 using Content.Shared.Stunnable;
+using Content.Shared.Throwing;
 using Content.Shared.Wieldable;
 using Robust.Shared.Audio;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -71,6 +74,9 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly FlammableSystem _flammable = default!;
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly SharedFlashSystem _flash = default!;
+    [Dependency] private readonly ThrowingSystem _throwing = default!;
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly DoorSystem _door = default!;
 
     private ISawmill? _sawmill;
     private static readonly ProtoId<DamageGroupPrototype> _bruteGroupId = "Brute";
@@ -92,6 +98,7 @@ public sealed partial class VampireSystem : EntitySystem
         InitializeHemomancer();
         InitializeUmbrae();
         InitializeDantalion();
+        InitializeGargantua();
         InitializeObjectives();
     }
 
@@ -133,6 +140,8 @@ public sealed partial class VampireSystem : EntitySystem
 
             HandleSpaceExposure(uid, vampire, sunlight, xform, frameTime);
         }
+
+        UpdateGargantua(frameTime);
     }
 
     private void HandleSpaceExposure(EntityUid uid, VampireComponent vampire, VampireSunlightComponent sunlight, TransformComponent xform, float frameTime)
@@ -477,6 +486,10 @@ public sealed partial class VampireSystem : EntitySystem
                 break;
             case VampireClassType.Dantalion:
                 foreach (var actionId in comp.DantalionActions)
+                    GrantAbility(uid, comp, actionId);
+                break;
+            case VampireClassType.Gargantua:
+                foreach (var actionId in comp.GargantuaActions)
                     GrantAbility(uid, comp, actionId);
                 break;
         }

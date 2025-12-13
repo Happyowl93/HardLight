@@ -69,12 +69,12 @@ public sealed class VampireClassBui : BoundUserInterface
             },
             new(HandleClassChoice, VampireClassType.Gargantua)
             {
-                IconSpecifier = RadialMenuIconSpecifier.With(new SpriteSpecifier.Rsi(new ResPath("_Starlight/Vampire/actions_vampire.rsi"), "rejuvinate")),
+                IconSpecifier = RadialMenuIconSpecifier.With(new SpriteSpecifier.Rsi(new ResPath("_Starlight/Vampire/Gargantua.rsi"), "blood_swell")),
                 ToolTip = Loc.GetString("vampire-class-gargantua-tooltip")
             },
             new(HandleClassChoice, VampireClassType.Dantalion)
             {
-                IconSpecifier = RadialMenuIconSpecifier.With(new SpriteSpecifier.Rsi(new ResPath("_Starlight/Vampire/actions_vampire.rsi"), "fangs_extended")),
+                IconSpecifier = RadialMenuIconSpecifier.With(new SpriteSpecifier.Rsi(new ResPath("_Starlight/Vampire/Dantalion.rsi"), "enthrall")),
                 ToolTip = Loc.GetString("vampire-class-dantalion-tooltip")
             }
         };
