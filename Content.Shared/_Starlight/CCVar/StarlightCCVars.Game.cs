@@ -17,7 +17,7 @@ public sealed partial class StarlightCCVars
         CVarDef.Create("game.cryo_teleportation", true, CVar.SERVERONLY);
 
     /// <summary>
-    /// Sends afk players to cryo.
+    /// A limit on the maximum manual FTL range for shuttles, even if the shuttle's components are modified.
     /// </summary>
     public static readonly CVarDef<float> AdmemeShuttleLimit =
         CVarDef.Create("game.admeme_shuttle_limit", 1000f, CVar.SERVER | CVar.REPLICATED);
@@ -27,4 +27,10 @@ public sealed partial class StarlightCCVars
     /// </summary>
     public static readonly CVarDef<bool> FuckMappingCommand =
         CVarDef.Create("game.fuck_mapping", false, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    /// A multiplier for how much everyone gets paid on salary ticks, e.g. for hazard pay to encourage playing on test branches.
+    /// </summary>
+    public static readonly CVarDef<float> PayScaling =
+        CVarDef.Create("game.pay_scaling", 1f, CVar.SERVERONLY);
 }

@@ -22,12 +22,14 @@ using Content.Shared.Pinpointer;
 using Content.Shared.Roles;
 using Content.Shared.Stacks;
 using Content.Shared.Starlight.Antags.Abductor;
+using Content.Shared.Starlight.CCVar;
 using Content.Shared.Starlight.Medical.Surgery.Effects.Step;
 using Content.Shared.UserInterface;
 using NAudio.CoreAudioApi;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -49,6 +51,7 @@ public sealed partial class SalarySystem : SharedSalarySystem
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly RoleSystem _roles = default!;
     [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
 
     private float _delayAccumulator = 0f;
     private readonly Stopwatch _stopwatch = new();
@@ -114,6 +117,10 @@ public sealed partial class SalarySystem : SharedSalarySystem
         foreach (var bonus in _prototypes.EnumeratePrototypes<SalaryRoleBonusPrototype>())
             if(bonus.Roles.Any(playerData.Roles.Contains))
                 bonusMultiplier += bonus.Multiplayer;
+
+        var serverSalaryMultiplier = _configurationManager.GetCVar(StarlightCCVars.PayScaling);
+
+        bonusMultiplier *= serverSalaryMultiplier;
 
         return (int)Math.Ceiling(baseSalary * bonusMultiplier);
     }
