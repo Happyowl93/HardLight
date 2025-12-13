@@ -4,9 +4,11 @@
   name: super synthesizer crate
   description: Contains one Super Synthesizer instrument. Groovy!
   components:
-  - type: StorageFill
-    contents:
-      - id: SuperSynthesizerInstrument
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: SuperSynthesizerInstrument
 
 - type: entity
   id: CrateFunPinata
@@ -14,10 +16,12 @@
   name: pinata crate
   description: Contains one Clown Pinata and a bat to beat it with.
   components:
-  - type: StorageFill
-    contents:
-      - id: ClownPinata
-      - id: BaseBallBat
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: ClownPinata
+        - id: BaseBallBat
 
 - type: entity
   name: moproach kit crate
@@ -25,7 +29,8 @@
   id: CrateFunMoproach
   parent: CratePlastic
   components:
-  containers:
+  - type: EntityTableContainerFill
+    containers:
       entity_storage: !type:AllSelector
         children:
         - id: MoproachBox

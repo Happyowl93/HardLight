@@ -22,12 +22,13 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      entity_storage:
-      - id: FoodBoxPizzaFilled
-        amount: 15
-      - id: FoodBoxPizzaCotton
-      - id: LidSalami
-        prob: 0.04
+      entity_storage: !type:AllSelector
+        children:
+        - id: FoodBoxPizzaFilled
+          amount: 15
+        - id: FoodBoxPizzaCotton
+        - id: LidSalami
+          prob: 0.04
 
 - type: entity
   parent: CratePlastic

@@ -245,11 +245,12 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      storagebase:
-      - id: C4
-        amount: 8
-      - id: NetworkConfigurator #SL EDIT
-      - id: RemoteSignaller #SL EDIT
+      storagebase: !type:AllSelector
+        children:
+        - id: C4
+          amount: 8
+        - id: NetworkConfigurator #SL EDIT
+        - id: RemoteSignaller #SL EDIT
 
 - type: entity
   parent: ClothingBackpackChameleon

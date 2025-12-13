@@ -46,8 +46,8 @@ lobby-state-background-securityshowdown-artist = TheKillerDumb & Bukkataro
 lobby-state-background-revclown-title = Rev Clown
 lobby-state-background-revclown-artist = Zigo
 
-lobby-state-background-the_mid-round_antag's_bane-title = The mid round antag's bane
-lobby-state-background-the_mid-round_antag's_bane-artist = voy0099
+lobby-state-background-themidroundantagsbane-title = The mid round antag's bane
+lobby-state-background-themidroundantagsbane-artist = voy0099
 
 lobby-state-background-blackfeathers-title = Blackfeathers
 lobby-state-background-blackfeathers-artist = Gib Schmib

@@ -56,27 +56,17 @@
   id: CrateArmoryLaser
   parent: [ CrateWeaponSecure, BaseSecurityContraband ]
   name: lasers crate
+  # Starlight description change
   description: Contains two standard-issue laser rifles and two energy gun's. Requires Armory access to open.
   components:
   - type: EntityTableContainerFill
     containers:
-      entity_storage:
-      - id: WeaponLaserCarbine
-        amount: 2
-      - id: WeaponEnergyGun
-        amount: 2
-
-- type: entity
-  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
-  id: CrateArmoryLaser
-  name: lasers crate
-  description: Contains three standard-issue laser rifles. Requires Armory access to open.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: WeaponLaserCarbine
-        amount: 3
+      entity_storage: !type:AllSelector
+        children:
+        - id: WeaponLaserCarbine #Starlight
+          amount: 2
+        - id: WeaponEnergyGun #Starlight
+          amount: 2
 
 - type: entity
   parent: [ CrateWeaponSecure, BaseSecurityContraband ]
@@ -88,14 +78,14 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-	    - id: WeaponPistolMk58 #Starlight
-	      amount: 2
-	    - id: MagazinePistolSP #Starlight
-	      amount: 2
-	    - id: MagazinePistolHP #Starlight
-	      amount: 1
-	    - id: MagazinePistolFMJ #Starlight
-	      amount: 1
+        - id: WeaponPistolMk58 #Starlight
+          amount: 2
+        - id: MagazinePistolSP #Starlight
+          amount: 2
+        - id: MagazinePistolHP #Starlight
+          amount: 1
+        - id: MagazinePistolFMJ #Starlight
+          amount: 1
 
 - type: entity
   parent: [ CrateWeaponSecure, BaseSecurityContraband ]
