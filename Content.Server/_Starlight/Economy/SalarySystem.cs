@@ -118,7 +118,7 @@ public sealed partial class SalarySystem : SharedSalarySystem
             if(bonus.Roles.Any(playerData.Roles.Contains))
                 bonusMultiplier += bonus.Multiplayer;
 
-        var serverSalaryMultiplier = _configurationManager.GetCVar(StarlightCCVars.PayScaling);
+        var serverSalaryMultiplier = _configurationManager.GetCVar(StarlightCCVars.SalaryMultiplier);
 
         bonusMultiplier *= serverSalaryMultiplier;
 

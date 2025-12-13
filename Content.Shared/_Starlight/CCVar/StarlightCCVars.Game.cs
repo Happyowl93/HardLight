@@ -31,6 +31,6 @@ public sealed partial class StarlightCCVars
     /// <summary>
     /// A multiplier for how much everyone gets paid on salary ticks, e.g. for hazard pay to encourage playing on test branches.
     /// </summary>
-    public static readonly CVarDef<float> PayScaling =
-        CVarDef.Create("game.pay_scaling", 1f, CVar.SERVERONLY);
+    public static readonly CVarDef<float> SalaryMultiplier =
+        CVarDef.Create("game.salary_multiplier", 1f, CVar.SERVERONLY);
 }
