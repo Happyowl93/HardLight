@@ -363,7 +363,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: alive
       sprite: _Starlight/Mobs/Animals/Spiders/terror_white.rsi
-  - type: HitscanBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: BulletAcidHitscan
     fireCost: 50
   - type: BatterySelfRecharger
