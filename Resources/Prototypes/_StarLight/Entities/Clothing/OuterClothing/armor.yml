@@ -319,7 +319,7 @@
   parent: [ClothingOuterBaseMedium, BaseSovietContraband, AllowSuitStorageClothing ] #"ClothingOuterArmorBase" is stupid and overrides any contraband level.
   id: ClothingOuterArmorSovietFlak
   name: soviet flak vest
-  description: An old soviet era flak vest designed to mitigate damage from explosives, with minor penetration resistence. however it's just a cheap reproduction model, quality may vary.
+  description: An old Soviet-era flak vest designed to mitigate damage from explosives, with minor penetration resistance. However, it's just a cheap reproduction model. quality may vary.
   components:
   - type: Pierceable
     level: Metal
