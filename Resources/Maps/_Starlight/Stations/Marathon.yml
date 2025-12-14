@@ -12227,7 +12227,7 @@ entities:
     - type: Transform
       pos: -2.5,18.5
       parent: 2
-    - type: Battery
+    - type: PredictedBattery
       startingCharge: 12000
     - type: Fixtures
       fixtures: {}
@@ -12335,7 +12335,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -45.5,49.5
       parent: 2
-    - type: Battery
+    - type: PredictedBattery
       startingCharge: 12000
     - type: Fixtures
       fixtures: {}
@@ -12395,7 +12395,7 @@ entities:
     - type: Transform
       pos: 4.5,35.5
       parent: 2
-    - type: Battery
+    - type: PredictedBattery
       startingCharge: 12000
     - type: Fixtures
       fixtures: {}
@@ -12557,7 +12557,7 @@ entities:
     - type: Transform
       pos: 9.5,-30.5
       parent: 2
-    - type: Battery
+    - type: PredictedBattery
       startingCharge: 12000
     - type: Fixtures
       fixtures: {}

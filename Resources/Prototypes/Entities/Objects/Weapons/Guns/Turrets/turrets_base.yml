@@ -124,7 +124,7 @@
   - type: BatteryAmmoProvider
     proto: BulletEnergyTurretLaser
     fireCost: 100
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 2000
     startingCharge: 2000
   - type: ApcPowerReceiverBattery

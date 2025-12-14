@@ -38,13 +38,15 @@
   name: Cybersun gygax bundle
   description: Contains a set of Cybersan light armored mechs.
   components:
-  - type: StorageFill
-    contents:
-      - id: MechGygaxSyndieFilled
-      - id: DoubleEmergencyOxygenTankFilled
-      - id: DoubleEmergencyNitrogenTankFilled
-      - id: ToolboxSyndicateFilled
-      - id: PlushieNuke
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: MechGygaxSyndieFilled
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: DoubleEmergencyNitrogenTankFilled
+        - id: ToolboxSyndicateFilled
+        - id: PlushieNuke
 
 - type: entity
   id: CrateCybersunMaulerBundle
@@ -53,10 +55,12 @@
   name: Cybersun mauler bundle
   description: Contains a set of Cybersan heavy armored mechs.
   components:
-  - type: StorageFill
-    contents:
-      - id: MechMaulerSyndieFilled
-      - id: DoubleEmergencyOxygenTankFilled
-      - id: DoubleEmergencyNitrogenTankFilled
-      - id: ToolboxSyndicateFilled
-      - id: PlushieNuke
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: MechMaulerSyndieFilled
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: DoubleEmergencyNitrogenTankFilled
+        - id: ToolboxSyndicateFilled
+        - id: PlushieNuke

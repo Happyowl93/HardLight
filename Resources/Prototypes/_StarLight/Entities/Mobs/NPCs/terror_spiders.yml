@@ -372,7 +372,7 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 10
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 150
     startingCharge: 150
   - type: Gun

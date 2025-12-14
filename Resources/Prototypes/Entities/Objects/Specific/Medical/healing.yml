@@ -1141,9 +1141,11 @@
   components:
   - type: Label
     currentLabel: psicodine 10u
-  - type: StorageFill
-    contents:
-    - id: PillPsicodine
-      amount: 5
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: PillPsicodine
+          amount: 5
 
 ### SL end

@@ -256,7 +256,7 @@
   - type: ApcPowerReceiver
     powerLoad: 500
   - type: ExtensionCableReceiver
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 300000
     startingCharge: 300000
   - type: ApcPowerReceiverBattery

@@ -5403,7 +5403,7 @@ entities:
     - type: Transform
       pos: -5.5,-7.5
       parent: 31
-    - type: Battery
+    - type: PredictedBattery
       startingCharge: 11999.417
   - uid: 1488
     components:
@@ -5433,7 +5433,7 @@ entities:
     - type: Transform
       pos: -2.5,27.5
       parent: 31
-    - type: Battery
+    - type: PredictedBattery
       startingCharge: 11999.3
   - uid: 2485
     components:
@@ -5442,7 +5442,7 @@ entities:
     - type: Transform
       pos: 9.5,22.5
       parent: 31
-    - type: Battery
+    - type: PredictedBattery
       startingCharge: 11999.066
   - uid: 2489
     components:
@@ -5457,7 +5457,7 @@ entities:
     - type: Transform
       pos: 22.5,-3.5
       parent: 31
-    - type: Battery
+    - type: PredictedBattery
       startingCharge: 11999.066
   - uid: 2493
     components:
@@ -5466,7 +5466,7 @@ entities:
     - type: Transform
       pos: 16.5,2.5
       parent: 31
-    - type: Battery
+    - type: PredictedBattery
       startingCharge: 11999.467
   - uid: 2497
     components:
@@ -5475,7 +5475,7 @@ entities:
     - type: Transform
       pos: -39.5,11.5
       parent: 31
-    - type: Battery
+    - type: PredictedBattery
       startingCharge: 11999.4
   - uid: 2498
     components:
@@ -5484,7 +5484,7 @@ entities:
     - type: Transform
       pos: -11.5,2.5
       parent: 31
-    - type: Battery
+    - type: PredictedBattery
       startingCharge: 11998.483
   - uid: 2526
     components:
@@ -5509,7 +5509,7 @@ entities:
     - type: Transform
       pos: -15.5,-9.5
       parent: 31
-    - type: Battery
+    - type: PredictedBattery
       startingCharge: 11999.45
   - uid: 2853
     components:
@@ -5547,7 +5547,7 @@ entities:
     - type: Transform
       pos: -12.5,12.5
       parent: 31
-    - type: Battery
+    - type: PredictedBattery
       startingCharge: 11999.217
   - uid: 4085
     components:

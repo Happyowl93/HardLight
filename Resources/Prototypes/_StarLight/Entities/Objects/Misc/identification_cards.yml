@@ -185,8 +185,6 @@
     sprite: _Starlight/Objects/Misc/id_cards.rsi
     layers:
     - state: default
-    - state: idmailtech
-    - state: default
     - sprite: *id-rsi
       state: stripe_top
       color: *color-supply-top

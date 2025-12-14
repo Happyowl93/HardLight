@@ -30,7 +30,7 @@
   - type: BatteryAmmoProvider
     proto: PointDefenseBeam
     fireCost: 500
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 500
     startingCharge: 0
   - type: Damageable

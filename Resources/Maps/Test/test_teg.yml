@@ -2489,7 +2489,7 @@ entities:
     - type: Transform
       pos: 0.5,5.5
       parent: 2
-    - type: Battery
+    - type: PredictedBattery
       maxCharge: 8E+12
     - type: PowerNetworkBattery
       maxChargeRate: 5E+09
