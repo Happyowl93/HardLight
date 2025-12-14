@@ -103,15 +103,6 @@
     - type: LoadMapRule
       gridPath: /Maps/_Starlight/Shuttles/CC-NT/ERTShuttle.yml
 
-      #Pig's DS Shuttle
-- type: entity
-  parent: BaseGameRule
-  id: DeathsquadShuttleSpawn
-  components:
-    - type: RuleGrids
-    - type: LoadMapRule
-      gridPath: /Maps/_Starlight/Shuttles/CC-NT/DSshuttle.yml
-
       #Pig's RadioTower
 - type: entity
   parent: BaseGameRule
@@ -244,7 +235,7 @@
     - type: LoadMapRule
       gridPath: /Maps/_Starlight/Shuttles/KillerTamashi-SecShuttle.yml
 
-# Nanotrasen Battlecruiser
+# Teapot's Nanotrasen Battlecruiser
 - type: entity
   parent: BaseGameRule
   id: shuttle_crew_NTSF_MinosBattlecruiser
