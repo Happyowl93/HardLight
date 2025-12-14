@@ -60,12 +60,6 @@ public sealed partial class DamagedThroatComponent : Component
     public TimeSpan ResetCooldown = TimeSpan.FromSeconds(30);
 
     /// <summary>
-    ///     The last time damage was applied.
-    /// </summary>
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
-    public TimeSpan LastDamageTime;
-
-    /// <summary>
     ///     The last time the entity spoke normally (not whisper).
     /// </summary>
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]

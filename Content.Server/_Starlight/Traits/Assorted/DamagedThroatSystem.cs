@@ -33,7 +33,7 @@ public sealed partial class DamagedThroatSystem : EntitySystem
             return;
 
         // Check cooldown
-        if (_gameTiming.CurTime < component.LastDamageTime + component.Cooldown)
+        if (_gameTiming.CurTime < component.LastSpeakTime + component.Cooldown)
             return;
 
         // Reset damage if enough time has passed since last normal speech
@@ -55,8 +55,7 @@ public sealed partial class DamagedThroatSystem : EntitySystem
         // Escalate damage for next time (capped at max)
         component.CurrentDamage = Math.Min(component.CurrentDamage + component.DamageIncrement, component.MaxDamage);
 
-        // Update timers
-        component.LastDamageTime = _gameTiming.CurTime;
+        // Update timer
         component.LastSpeakTime = _gameTiming.CurTime;
     }
 }
