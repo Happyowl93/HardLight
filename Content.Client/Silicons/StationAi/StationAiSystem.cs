@@ -16,6 +16,7 @@ public sealed partial class StationAiSystem : SharedStationAiSystem
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly StationAiVisionSystem _vision = default!; // Starlight
 
     private StationAiOverlay? _overlay;
 
