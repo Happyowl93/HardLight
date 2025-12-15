@@ -57,7 +57,7 @@ public sealed class DarkHubSystem : EntitySystem
         var query = EntityQueryEnumerator<WarpPointComponent>();
         while (query.MoveNext(out var warpEnt, out var warpPointComp))
         {
-            if (_whitelist.IsBlacklistPass(warpPointComp.Blacklist, warpEnt) || string.IsNullOrWhiteSpace(warpPointComp.Location))
+            if (_whitelist.IsWhitelistPass(warpPointComp.Blacklist, warpEnt) || string.IsNullOrWhiteSpace(warpPointComp.Location))
                 continue;
 
             warps.Add(warpEnt);

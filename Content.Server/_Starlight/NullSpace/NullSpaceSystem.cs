@@ -42,7 +42,6 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
         SubscribeLocalEvent<NullSpaceComponent, MapInitEvent>(OnStartup);
         SubscribeLocalEvent<NullSpaceComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<NullSpaceComponent, AtmosExposedGetAirEvent>(OnExpose);
-        SubscribeLocalEvent<NullSpaceComponent, PreventHitscanEvent>(PreventHitScan);
         SubscribeLocalEvent<NullSpaceComponent, VirtualItemDeletedEvent>(OnVirtualItemDeleted);
         SubscribeLocalEvent<NullSpaceComponent, NullSpaceShuntEvent>(NullSpaceShunt);
 
@@ -205,10 +204,5 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
 
         args.Gas = null;
         args.Handled = true;
-    }
-
-    private void PreventHitScan(EntityUid uid, NullSpaceComponent component, ref PreventHitscanEvent args)
-    {
-        args.Cancel();
     }
 }

@@ -32,10 +32,8 @@ public sealed class BluespaceCrystalSystem : EntitySystem
 
         BluespaceEffect(uid, component, args.User);
 
-        if (TryComp<StackComponent>(uid, out var stack))
-            _sharedStackSystem.Use(uid, 1, stack);
-        else
-            QueueDel(uid);
+        if (HasComp<StackComponent>(uid))
+            _sharedStackSystem.ReduceCount(uid, 1);
 
         args.Handled = true;
     }
