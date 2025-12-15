@@ -243,3 +243,12 @@
     - type: RuleGrids
     - type: LoadMapRule
       gridPath: /Maps/_Starlight/Shuttles/CC-NT/NTSF_Minos_Battlecruiser.yml
+
+# Teapot's Decimus Shuttle
+- type: entity
+  parent: BaseGameRule
+  id: shuttle_crew_Decimus_MagnusBreachingCraft
+  components:
+    - type: RuleGrids
+    - type: LoadMapRule
+      gridPath: /Maps/_Starlight/Shuttles/CC-NT/Decimus_Shuttle_Magnus.yml
