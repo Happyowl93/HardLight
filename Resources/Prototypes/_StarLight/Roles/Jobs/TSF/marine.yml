@@ -1,3 +1,25 @@
+- type: job
+  id: TSFMarine
+  name: ghost-role-information-tsf-marine-name
+  description: ghost-role-information-tsf-marine-desc
+  playTimeTracker: JobTSFMarine
+  requirements:
+    - !type:OverallPlaytimeRequirement
+        time: 72000 # 20h
+    - !type:DepartmentTimeRequirement
+        department: Security
+        time: 18000 # 5h
+  setPreference: false
+  icon: JobIconNanotrasen
+  rules: job-rules-corporate-aligned
+  supervisors: job-supervisors-none
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantTSF ]
+
 - type: startingGear
   id: TSFMarineGear
   equipment:

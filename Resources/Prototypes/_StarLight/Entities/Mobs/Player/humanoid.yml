@@ -294,12 +294,7 @@
         settings: default
       mindRoles:
       - MindRoleGhostCorporateAligned
-      requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 72000 # 20h
-      - !type:DepartmentTimeRequirement
-        department: Security
-        time: 18000 # 5h
+      job: TSFMarine
     - type: Loadout
       prototypes: [ TSFMarineGear ]
     - type: RandomMetadata
@@ -318,18 +313,6 @@
   components:
     - type: GhostRole
       name: ghost-role-information-tsf-leader-name
-      description: ghost-role-information-tsf-marine-desc
-      rules: ghost-role-information-corporate-aligned-rules
-      raffle:
-        settings: default
-      mindRoles:
-      - MindRoleGhostCorporateAligned
-      requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 72000 # 20h
-      - !type:DepartmentTimeRequirement
-        department: Security
-        time: 36000 # 10h
     - type: Loadout
       prototypes: [ TSFMarineLeaderGear ]
     - type: RandomMetadata
@@ -344,18 +327,6 @@
   components:
     - type: GhostRole
       name: ghost-role-information-tsf-MARSOC-name
-      description: ghost-role-information-tsf-marine-desc
-      rules: ghost-role-information-corporate-aligned-rules
-      raffle:
-        settings: default
-      mindRoles:
-      - MindRoleGhostCorporateAligned
-      requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 72000 # 20h
-      - !type:DepartmentTimeRequirement
-        department: Security
-        time: 36000 # 10h
     - type: Loadout
       prototypes: [ TSFEliteMarineGear ]
     - type: RandomMetadata

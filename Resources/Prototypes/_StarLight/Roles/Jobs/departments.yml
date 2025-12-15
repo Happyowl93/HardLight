@@ -21,3 +21,11 @@
   - NanoTrasenSpecialForces
   primary: false
   weight: 50
+
+- type: department
+  id: TSF
+  name: department-TSF
+  color: "#22a7ff"
+  roles:
+  - TSFMarine
+  editorHidden: true
