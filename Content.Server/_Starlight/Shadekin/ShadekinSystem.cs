@@ -28,6 +28,7 @@ using Content.Server._Starlight.NullSpace;
 using Content.Server._Starlight.Bluespace;
 using Content.Server.Stunnable;
 using Content.Server.Body.Systems;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._Starlight.Shadekin;
 

@@ -7,20 +7,17 @@
     name: ghost-role-information-derelict-borgi-name
     description: ghost-role-information-derelict-borgi-desc
     rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSubvertedSilicon
     raffle:
       settings: default
-    requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 86400 # 24h STARLIGHT
-    - !type:RoleTimeRequirement
-      role: JobBorg
-      time: 21600 # 6h STARLIGHT
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
     - state: green
     - sprite: Mobs/Silicon/Chassis/derelict.rsi
       state: derelict_icon
+<<<<<<< HEAD
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -45,3 +42,5 @@
     - state: green
     - sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
       state: full
+=======
+>>>>>>> main/starlight-dev
