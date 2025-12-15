@@ -103,11 +103,10 @@
         - meaty
         - cheesy
         - bread
-    - type: Food
-      trash:
-      - FoodPlateSmall
     - type: Edible
       transferAmount: 3
+      trash:
+      - FoodPlateSmall
     - type: Sprite
       sprite: _Starlight/Objects/Consumable/Food/plate.rsi
       layers:
