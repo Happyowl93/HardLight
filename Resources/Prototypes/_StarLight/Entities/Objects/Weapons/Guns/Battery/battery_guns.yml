@@ -267,7 +267,7 @@
       fireCost: 750
       magState: destroy
       visualState: destroy-unshaded
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 1500
     startingCharge: 1500
   - type: BatterySelfRecharger
@@ -312,7 +312,7 @@
       fireCost: 1000
       magState: destroy
       visualState: destroy-unshaded
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 2000
     startingCharge: 2000
   - type: BatterySelfRecharger
@@ -412,7 +412,7 @@
     availableModes:
     - SemiAuto
     - FullAuto #Just allows people to hold down left click
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 1500 # ~2:30 minutes for recharge
     startingCharge: 1500
   - type: BatteryAmmoProvider
@@ -528,7 +528,7 @@
       fireCost: 200
       magState: destroy
       visualState: destroy
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 2600
     startingCharge: 2600
 
@@ -570,7 +570,7 @@
       fireCost: 100
       magState: kill
       visualState: kill
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 1500
     startingCharge: 1500
 
@@ -697,7 +697,7 @@
       fireCost: 100
       magState: destroy
       visualState: destroy
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 3300
     startingCharge: 3300
 
@@ -751,7 +751,7 @@
       fireCost: 10
       magState: destroy
       visualState: destroy
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 2640
     startingCharge: 2640
 
@@ -783,7 +783,7 @@
       fireCost: 100
       magState: destroy
       visualState: destroy
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 2000
     startingCharge: 2000
   - type: BatterySelfRecharger
@@ -877,7 +877,7 @@
   #- type: StealTarget
     #stealGroup: WeaponEnergyShotgun
   #- type: GunRequiresWield #remove when inaccuracy on spreads is fixed
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 1500
     startingCharge: 1500
   - type: BatterySelfRecharger
@@ -920,7 +920,7 @@
     - proto: DeleteBeam
       fireCost: 10
       #magState: delete
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 500
     startingCharge: 500
   - type: BatterySelfRecharger
