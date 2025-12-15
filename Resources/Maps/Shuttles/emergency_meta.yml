@@ -2658,7 +2658,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 1.5,-8.5
       parent: 1
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 19730.242
     - type: ActiveEmergencyLight
   - uid: 573
@@ -2667,7 +2667,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 4.5,-1.5
       parent: 1
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 19730.242
     - type: ActiveEmergencyLight
   - uid: 574
@@ -2676,7 +2676,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 10.5,-5.5
       parent: 1
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 19730.242
     - type: ActiveEmergencyLight
   - uid: 575
@@ -2685,7 +2685,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -3.5,-5.5
       parent: 1
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 19730.242
     - type: ActiveEmergencyLight
   - uid: 576
@@ -2694,7 +2694,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 9.5,-7.5
       parent: 1
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 19730.242
     - type: ActiveEmergencyLight
   - uid: 577
@@ -2703,7 +2703,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 16.5,-10.5
       parent: 1
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 19730.242
     - type: ActiveEmergencyLight
   - uid: 578
@@ -2712,7 +2712,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 19.5,-4.5
       parent: 1
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 19730.242
     - type: ActiveEmergencyLight
 - proto: EmergencyMedipen
@@ -6269,7 +6269,7 @@ entities:
     - type: Transform
       pos: 18.5,-0.5
       parent: 1
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 4318837
     - type: PowerNetworkBattery
       loadingNetworkDemand: 18075.072

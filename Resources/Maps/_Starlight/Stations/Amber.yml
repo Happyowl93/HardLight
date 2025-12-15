@@ -61516,7 +61516,7 @@ entities:
     - type: Transform
       pos: -39.5,-40.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9024
     components:
@@ -61524,7 +61524,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 41.5,-36.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9025
     components:
@@ -61532,7 +61532,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 35.5,-33.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9026
     components:
@@ -61540,7 +61540,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -4.5,-53.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9027
     components:
@@ -61554,21 +61554,21 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 33.5,-3.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9029
     components:
     - type: Transform
       pos: 40.5,-20.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9030
     components:
     - type: Transform
       pos: 51.5,-24.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9031
     components:
@@ -61576,14 +61576,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: 51.5,-18.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9032
     components:
     - type: Transform
       pos: 26.5,-20.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9033
     components:
@@ -61591,7 +61591,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 47.5,-22.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9034
     components:
@@ -61599,14 +61599,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: 56.5,-18.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9035
     components:
     - type: Transform
       pos: 56.5,-24.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9036
     components:
@@ -61614,7 +61614,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 30.5,-27.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9037
     components:
@@ -61622,7 +61622,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 22.5,-31.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9038
     components:
@@ -61630,7 +61630,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 17.5,-22.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9039
     components:
@@ -61638,7 +61638,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 11.5,-27.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9040
     components:
@@ -61646,7 +61646,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 9.5,-40.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9041
     components:
@@ -61654,7 +61654,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 11.5,-48.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9042
     components:
@@ -61662,7 +61662,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -9.5,-48.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9043
     components:
@@ -61670,7 +61670,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -9.5,-59.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9044
     components:
@@ -61678,7 +61678,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -9.5,-65.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9045
     components:
@@ -61686,7 +61686,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 12.5,-65.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9046
     components:
@@ -61694,7 +61694,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 11.5,-57.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9047
     components:
@@ -61702,14 +61702,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 7.5,-53.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9048
     components:
     - type: Transform
       pos: 1.5,-47.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9049
     components:
@@ -61717,7 +61717,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 24.5,-4.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9050
     components:
@@ -61725,7 +61725,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 16.5,-1.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9051
     components:
@@ -61733,7 +61733,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 14.5,6.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9052
     components:
@@ -61741,14 +61741,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -16.5,10.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9053
     components:
     - type: Transform
       pos: -27.5,0.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9054
     components:
@@ -61756,14 +61756,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -26.5,5.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9055
     components:
     - type: Transform
       pos: -23.5,-7.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9056
     components:
@@ -61771,7 +61771,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -9.5,-0.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9057
     components:
@@ -61779,7 +61779,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -30.5,-4.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9058
     components:
@@ -61787,7 +61787,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -0.5,-4.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9059
     components:
@@ -61795,14 +61795,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: -10.5,-13.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9060
     components:
     - type: Transform
       pos: -0.5,-6.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9061
     components:
@@ -61810,21 +61810,21 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -12.5,-39.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9062
     components:
     - type: Transform
       pos: -32.5,-67.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9063
     components:
     - type: Transform
       pos: -11.5,-53.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9064
     components:
@@ -61832,7 +61832,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -21.5,-48.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9065
     components:
@@ -61840,7 +61840,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -14.5,-53.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9066
     components:
@@ -61848,7 +61848,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -30.5,-56.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9067
     components:
@@ -61856,21 +61856,21 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -26.5,-43.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9068
     components:
     - type: Transform
       pos: -47.5,-42.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9069
     components:
     - type: Transform
       pos: -36.5,-20.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9070
     components:
@@ -61878,14 +61878,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: -38.5,-27.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9071
     components:
     - type: Transform
       pos: -29.5,-29.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9072
     components:
@@ -61893,14 +61893,14 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -22.5,-35.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9073
     components:
     - type: Transform
       pos: -16.5,-32.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9074
     components:
@@ -61908,7 +61908,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -14.5,-25.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9075
     components:
@@ -61916,7 +61916,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -21.5,-20.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9076
     components:
@@ -61924,21 +61924,21 @@ entities:
       rot: 3.141592653589793 rad
       pos: -24.5,-16.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9077
     components:
     - type: Transform
       pos: -51.5,-11.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9078
     components:
     - type: Transform
       pos: -67.5,-14.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9079
     components:
@@ -61946,7 +61946,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -67.5,-10.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9080
     components:
@@ -61954,7 +61954,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -17.5,-13.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9081
     components:
@@ -61962,7 +61962,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 28.5,18.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9082
     components:
@@ -61970,7 +61970,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 31.5,35.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9083
     components:
@@ -61978,7 +61978,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 31.5,22.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9084
     components:
@@ -61986,14 +61986,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 31.5,12.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9085
     components:
     - type: Transform
       pos: 24.5,-8.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9086
     components:
@@ -62001,7 +62001,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 23.5,-0.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9087
     components:
@@ -62009,7 +62009,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 5.5,-18.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9088
     components:
@@ -62017,7 +62017,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 36.5,-43.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9089
     components:
@@ -62025,7 +62025,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 39.5,-25.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9090
     components:
@@ -62033,14 +62033,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 34.5,-14.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9091
     components:
     - type: Transform
       pos: 30.5,-37.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9092
     components:
@@ -62048,7 +62048,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -36.5,-58.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 9093
     components:
@@ -111029,7 +111029,7 @@ entities:
     - type: Transform
       pos: -2.5,-23.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 2500000
 - proto: SubstationMachineCircuitboard
   entities:

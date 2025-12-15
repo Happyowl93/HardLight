@@ -9950,7 +9950,7 @@ entities:
     - type: Transform
       pos: 43.5,32.5
       parent: 1
-    - type: PredictedBattery
+    - type: Battery
       maxCharge: 25000000
 - proto: DefaultStationBeaconMedical
   entities:

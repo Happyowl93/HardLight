@@ -108555,7 +108555,7 @@ entities:
     - type: Transform
       pos: 9.691935,-47.56793
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 0
 - proto: SubstationBasic
   entities:

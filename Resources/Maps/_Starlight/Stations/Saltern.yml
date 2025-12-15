@@ -5824,7 +5824,7 @@ entities:
     - type: Transform
       pos: -5.5,-7.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 11999.417
     - type: Fixtures
       fixtures: {}
@@ -5862,7 +5862,7 @@ entities:
     - type: Transform
       pos: -2.5,27.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 11999.3
     - type: Fixtures
       fixtures: {}
@@ -5873,7 +5873,7 @@ entities:
     - type: Transform
       pos: 9.5,22.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 11999.066
     - type: Fixtures
       fixtures: {}
@@ -5892,7 +5892,7 @@ entities:
     - type: Transform
       pos: 22.5,-3.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 11999.066
     - type: Fixtures
       fixtures: {}
@@ -5903,7 +5903,7 @@ entities:
     - type: Transform
       pos: 16.5,2.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 11999.467
     - type: Fixtures
       fixtures: {}
@@ -5914,7 +5914,7 @@ entities:
     - type: Transform
       pos: -39.5,11.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 11999.4
     - type: Fixtures
       fixtures: {}
@@ -5925,7 +5925,7 @@ entities:
     - type: Transform
       pos: -11.5,2.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 11998.483
     - type: Fixtures
       fixtures: {}
@@ -5956,7 +5956,7 @@ entities:
     - type: Transform
       pos: -15.5,-9.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 11999.45
     - type: Fixtures
       fixtures: {}

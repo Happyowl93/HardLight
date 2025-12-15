@@ -9407,7 +9407,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 7.5,3.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 1317
     components:
@@ -9415,7 +9415,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,-8.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 1318
     components:
@@ -9423,7 +9423,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -16.5,-0.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 1319
     components:
@@ -9431,7 +9431,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -23.5,-1.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 1320
     components:
@@ -9439,7 +9439,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,9.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 1321
     components:
@@ -9447,7 +9447,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -1.5,9.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 1322
     components:
@@ -9455,21 +9455,21 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 5.5,12.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 1323
     components:
     - type: Transform
       pos: 17.5,1.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 1324
     components:
     - type: Transform
       pos: 9.5,-2.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 1325
     components:
@@ -9477,7 +9477,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -7.5,-0.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 1326
     components:
@@ -9485,7 +9485,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -20.5,2.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 1327
     components:
@@ -9493,7 +9493,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -9.5,7.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 1328
     components:
@@ -9501,7 +9501,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 9.5,3.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 1330
     components:
@@ -9509,7 +9509,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 5.5,3.5
       parent: 2
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 30000
   - uid: 3051
     components:
