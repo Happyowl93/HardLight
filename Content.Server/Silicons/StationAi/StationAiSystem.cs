@@ -90,8 +90,6 @@ public sealed class StationAiSystem : SharedStationAiSystem
     [Dependency] private readonly StationAiVisionSystem _aiVision = default!;
     // Starlight End
 
-    private readonly ISawmill _warpSawmill = Logger.GetSawmill("stationai.warp"); // Starlight
-
     private readonly HashSet<Entity<StationAiCoreComponent>> _stationAiCores = new();
 
     // Starlight-start
