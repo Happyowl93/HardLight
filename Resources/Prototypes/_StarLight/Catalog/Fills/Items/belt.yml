@@ -189,7 +189,6 @@
       storagebase: !type:AllSelector
         children:
         - id: Handcuffs
-        - id: Handcuffs
         - id: Stunbaton
         - id: MedkitCombatFilled
         - id: MedkitCombatFilled
