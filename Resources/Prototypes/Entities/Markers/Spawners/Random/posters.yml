@@ -180,6 +180,7 @@
       - PosterLegitEyeChart
       - PosterLegitTyrone
       - PosterLegitHelio
+      - PosterLegitBotanyFear
       #region Starlight
       - PosterLegitSkillIssue
       - PosterLegitShoeless
@@ -191,5 +192,6 @@
       - PosterLegitRipleyCertified
       - PosterLegitKillersClinic
       - PosterlegitLawPoster
+      - PosterLegitSaline
       #endregion Starlight
     chance: 1

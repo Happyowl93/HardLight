@@ -52,6 +52,8 @@ using Robust.Shared.Audio.Systems;
 using Content.Shared.Implants.Components;
 using Robust.Shared.Player;
 using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared._Starlight.Silicons.Borgs;
+using Content.Shared.Silicons.Laws.Components; //Starlight
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -232,6 +234,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
 
             // TODO: someone suggested listing all alive? revs maybe implement at some point
         }
+        args.AddLine("");
     }
 
     private void OnGetBriefing(EntityUid uid, RevolutionaryRoleComponent comp, ref GetBriefingEvent args)
@@ -613,7 +616,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
             var rev = AllEntityQuery<RevolutionaryComponent, MindContainerComponent>();
             while (rev.MoveNext(out var uid, out _, out var mc))
             {
-                if (HasComp<HeadRevolutionaryComponent>(uid))
+                if (HasComp<HeadRevolutionaryComponent>(uid)||HasComp<SiliconLawBoundComponent>(uid)) // Starlight silicons cannot be deconverted
                     continue;
 
                 // Play the deconversion sound for the revolutionary
