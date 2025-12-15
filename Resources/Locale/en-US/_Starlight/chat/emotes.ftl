@@ -22,7 +22,6 @@ chat-emote-msg-purr = purrs
 chat-emote-msg-meow = meows
 chat-emote-msg-trill = trills
 chat-emote-msg-yip = yips
-chat-emote-msg-whine = whines
 chat-emote-msg-marr = marrs
 chat-emote-msg-wurble = wurbles
 chat-emote-msg-scree = screes
