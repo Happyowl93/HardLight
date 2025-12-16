@@ -13,6 +13,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - CaptainJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -30,6 +31,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - HoPJobTrinkets
   - GroupSpeciesBreathTool
 
 # Silicons
@@ -61,6 +63,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - AssistantJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -77,6 +80,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - BartenderJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -91,6 +95,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ServiceWorkerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -108,6 +113,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ChefJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -122,6 +128,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - LibrarianJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -136,6 +143,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - LawyerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -155,6 +163,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ChaplainJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -172,6 +181,7 @@
   - Scarves # Starlight
   - Pins # Starlight
   - JanitorPlunger
+  - JanitorJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -188,6 +198,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - BotanistJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -205,6 +216,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ClownJobTrinkets
 
 - type: roleLoadout
   id: JobMime
@@ -222,9 +234,11 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - MimeJobTrinkets
 
 - type: roleLoadout
   id: JobMusician
+  canCustomizeName: true
   groups:
   - GroupTankHarness
   - MusicianJumpsuit
@@ -236,6 +250,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - MusicianJobTrinkets
   - Instruments
   - GroupSpeciesBreathTool
 
@@ -255,6 +270,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - QuartermasterJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -272,6 +288,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -288,6 +305,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - SalvageSpecialistJobTrinkets
   - GroupSpeciesBreathTool
 
 # Engineering
@@ -305,6 +323,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -317,6 +336,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -333,6 +353,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -347,6 +368,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - AtmosphericTechnicianJobTrinkets
   - GroupSpeciesBreathTool
 
 # Science
@@ -366,6 +388,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ResearchDirectorJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -385,6 +408,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ScientistJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -398,6 +422,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ResearchAssistantJobTrinkets
   - GroupSpeciesBreathTool
 
 # Security
@@ -418,6 +443,7 @@
   - Scarves # Starlight
   - Pins # Starlight
   - SecurityStar
+  - HeadofSecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -435,6 +461,7 @@
   - Scarves # Starlight
   - Pins # Starlight
   - SecurityStar
+  - WardenJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -455,6 +482,7 @@
   - Scarves # Starlight
   - Pins # Starlight
   - SecurityStar
+  - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -472,6 +500,7 @@
   - Scarves # Starlight
   - Pins # Starlight
   - SecurityStar
+  - DetectiveJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -485,6 +514,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - SecurityCadetJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
 # Medical
@@ -505,6 +535,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -524,6 +555,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -537,6 +569,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -553,6 +586,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -571,6 +605,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 # Wildcards
@@ -585,6 +620,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ZookeeperJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -599,6 +635,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ReporterJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -613,6 +650,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - PsychologistJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -627,6 +665,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - BoxerJobTrinkets
   - GroupSpeciesBreathTool
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
