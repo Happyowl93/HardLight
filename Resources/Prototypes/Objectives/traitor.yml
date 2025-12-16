@@ -187,6 +187,10 @@
         components:
         - HelpProgressCondition
         - KeepAliveCondition
+  - type: ObjectiveBlacklistRequirement # Starlight - only one, its not that cool, noone wants all their objectives to be "help X"
+    blacklist:
+      components:
+        - HelpProgressCondition
 
 # steal
 
