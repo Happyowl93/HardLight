@@ -257,6 +257,7 @@
   - type: RuleGrids
   - type: GameRule
     minPlayers: 10
+  - type: BrighteyeRule
   - type: LoadTheDarkRule
     mapPath: /Maps/_Starlight/TheDark/Hideout.yml
   - type: AntagLoadProfileRule

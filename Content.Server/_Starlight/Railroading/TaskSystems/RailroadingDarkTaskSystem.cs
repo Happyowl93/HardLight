@@ -38,7 +38,7 @@ public sealed partial class RailroadDarkTaskSystem : AccUpdateEntitySystem
         }
     }
 
-    private float CheckDarkTilesOnStation()
+    public float CheckDarkTilesOnStation()
     {
         var darkTiles = 0;
         var query = EntityQueryEnumerator<DarkTileComponent, TransformComponent>();

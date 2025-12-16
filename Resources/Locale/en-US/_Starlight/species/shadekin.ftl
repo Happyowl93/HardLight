@@ -33,3 +33,9 @@ shadekin-shunt = Something resonates with your core and brings you to your knees
 
 shadekin-core-undamaged = [color=yellow]The core flows with power![/color]
 shadekin-core-owner = [color=yellow]This core belongs to you.[/color]
+
+brighteye-thedark = [bold]The Dark[/bold]
+brighteye-darktiles = [color=red]{$darkCount}[/color] dark tiles on station.
+
+admin-verb-text-make-brighteye = Make Bright-eye
+admin-verb-make-brighteye = Make the target into a Bright-eye.
