@@ -35,6 +35,16 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using static Content.Server.Chat.Systems.ChatSystem;
+// Starlight Start
+using Content.Shared.Follower;
+using Content.Shared.Follower.Components;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Medical.SuitSensor;
+using Content.Shared.Medical.SuitSensors;
+using Content.Shared.Humanoid;
+using Content.Shared.Warps;
+using Robust.Shared.Map;
+// Starlight End
 
 #region Starlight
 using Content.Server.Medical.SuitSensors;
@@ -73,19 +83,22 @@ public sealed class StationAiSystem : SharedStationAiSystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-
-    [Dependency] private readonly IMapManager _map = default!; // Starlight
-    [Dependency] private readonly SuitSensorSystem _suitSensors = default!; // Starlight
-    [Dependency] private readonly FollowerSystem _followerSystem = default!; // Starlight
-
-    private readonly ISawmill _warpSawmill = Logger.GetSawmill("stationai.warp"); // Starlight
+    // Starlight Start
+    [Dependency] private readonly IMapManager _map = default!;
+    [Dependency] private readonly SuitSensorSystem _suitSensors = default!;
+    [Dependency] private readonly FollowerSystem _followerSystem = default!;
+    [Dependency] private readonly StationAiVisionSystem _aiVision = default!;
+    // Starlight End
 
     private readonly HashSet<Entity<StationAiCoreComponent>> _stationAiCores = new();
 
     // Starlight-start
     private readonly Dictionary<EntityUid, EntityUid> _activeFollowTargets = new();
+    private readonly List<EntityUid> _followTargetsToRemove = new();
+    private readonly ISawmill _warpSawmill = Logger.GetSawmill("stationai.warp");
+    private float _followCheckAccumulator;
+    private const float FollowCheckInterval = 1f;
     // Starlight-end
-
 
     private readonly ProtoId<ChatNotificationPrototype> _turretIsAttackingChatNotificationPrototype = "TurretIsAttacking";
     private readonly ProtoId<ChatNotificationPrototype> _aiWireSnippedChatNotificationPrototype = "AiWireSnipped";
@@ -119,7 +132,47 @@ public sealed class StationAiSystem : SharedStationAiSystem
         SubscribeNetworkEvent<StationAiWarpToTargetEvent>(OnStationAiWarpToTarget); // Starlight
     }
 
-    // Starlight-start
+    // Starlight Start: AI warping
+    #region Starlight
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        _followCheckAccumulator += frameTime;
+        if (_followCheckAccumulator < FollowCheckInterval)
+            return;
+
+        _followCheckAccumulator -= FollowCheckInterval;
+
+        // Early exit if no one is being followed
+        if (_activeFollowTargets.Count == 0)
+            return;
+
+        // Check if any followed targets are outside camera view
+        _followTargetsToRemove.Clear();
+        
+        foreach (var (target, follower) in _activeFollowTargets)
+        {
+            if (!Exists(target) || !Exists(follower))
+            {
+                _followTargetsToRemove.Add(target);
+                continue;
+            }
+
+            // Check if target is outside AI camera view
+            if (_aiVision.IsOutsideCameraView(target))
+            {
+                _followerSystem.StopFollowingEntity(follower, target);
+                _followTargetsToRemove.Add(target);
+            }
+        }
+
+        foreach (var target in _followTargetsToRemove)
+        {
+            _activeFollowTargets.Remove(target);
+        }
+    }
+
     private void OnStationAiWarpRequest(StationAiWarpRequestEvent msg, EntitySessionEventArgs args)
     {
         if (args.SenderSession.AttachedEntity is not { Valid: true } actor || !HasComp<StationAiHeldComponent>(actor))
@@ -198,6 +251,10 @@ public sealed class StationAiSystem : SharedStationAiSystem
                 if (ownerStation != station)
                     continue;
             }
+
+            // Don't show crew members outside of camera view
+            if (_aiVision.IsOutsideCameraView(ownerUid))
+                continue;
 
             var display = string.IsNullOrWhiteSpace(status.Job)
                 ? status.Name
@@ -323,12 +380,10 @@ public sealed class StationAiSystem : SharedStationAiSystem
         {
             var orbit = !HasComp<StationAiHeldComponent>(user);
             _followerSystem.StartFollowingEntity(remoteEye, target, orbit);
-            // Starlight-start
             if (!orbit)
                 _activeFollowTargets[target] = remoteEye;
             else
                 _activeFollowTargets.Remove(target);
-            // Starlight-end
             return true;
         }
 
@@ -338,16 +393,13 @@ public sealed class StationAiSystem : SharedStationAiSystem
             if (parent.IsValid())
             {
                 _followerSystem.StopFollowingEntity(remoteEye, parent);
-                // Starlight-start
                 if (_activeFollowTargets.TryGetValue(parent, out var follower) && follower == remoteEye)
                     _activeFollowTargets.Remove(parent);
-                // Starlight-end
             }
         }
 
         return TryWarpEyeToCoordinates(user, Transform(target).Coordinates, popupOnFailure);
     }
-    // Starlight-start
 
     private void OnSuitSensorModeChanged(Entity<SuitSensorComponent> ent, ref SuitSensorModeChangedEvent args)
     {
@@ -368,6 +420,7 @@ public sealed class StationAiSystem : SharedStationAiSystem
         if (_activeFollowTargets.TryGetValue(args.Following, out var follower) && follower == args.Follower)
             _activeFollowTargets.Remove(args.Following);
     }
+    #endregion
     // Starlight-end
 
     private void AfterConstructionChangeEntity(Entity<StationAiCoreComponent> ent, ref AfterConstructionChangeEntityEvent args)
