@@ -13,7 +13,7 @@
     sprite: Clothing/Neck/Misc/stethoscope.rsi
     quickEquip: true
     slots:
-    - misc # Starlight: Neck -> Misc
+    - neck
   - type: Stethoscope
 
 - type: entity
@@ -33,7 +33,7 @@
     event: !type:StethoscopeActionEvent
 
 - type: entity
-  parent: ClothingMiscBase # Starlight: Neck -> Misc
+  parent: ClothingNeckBase
   id: ClothingNeckBling
   name: bling
   description: Damn, it feels good to be a gangster.

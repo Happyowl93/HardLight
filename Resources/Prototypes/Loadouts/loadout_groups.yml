@@ -18,6 +18,9 @@
   - CigPackBlack
   - CigarCase
   - CigarGold
+  - BoxFolderBaseThreePapers
+  - BoxFolderPlasticClipboardThreePapers
+  - BoxFolderClipboardThreePapers
   # - ClothingNeckLGBTPin # SL EDIT: moved to pin tab
   # - ClothingNeckAllyPin
   # - ClothingNeckAromanticPin
@@ -36,9 +39,6 @@
   # - ClothingNeckTransPin
   # - ClothingNeckAutismPin
   # - ClothingNeckGoldAutismPin
-  - BoxFolderBaseThreePapers
-  - BoxFolderPlasticClipboardThreePapers
-  - BoxFolderClipboardThreePapers
   - OffsetCane
   - OffsetCaneWood
   - OffsetCaneClown
