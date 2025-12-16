@@ -1,5 +1,7 @@
 {
     "version": 1,
+	"copyright": "See below.",
+	"license": "CC-BY-SA-3.0",
     "size": {
         "x": 32,
         "y": 32
