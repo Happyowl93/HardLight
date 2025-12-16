@@ -24038,5 +24038,12 @@ Entries:
   id: 174500
   time: '2025-12-15T16:51:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1745
+- author: Happyrobot33
+  changes:
+  - message: Test CL entry
+    type: Add
+  id: 249300
+  time: '2025-12-16T20:59:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2493
 Order: -1
 
