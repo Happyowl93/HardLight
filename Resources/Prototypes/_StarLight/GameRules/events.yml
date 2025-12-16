@@ -139,7 +139,7 @@
     - type: LoadMapRule
       gridPath: /Maps/_Starlight/Shuttles/CC-NT/Chaplain_GRID.yml
 
-  # Quini's ERT Janitor shuttle
+  # neomoth's ERT Janitor shuttle
 - type: entity
   parent: BaseGameRule
   id: ERTJanitorShuttleSpawn
