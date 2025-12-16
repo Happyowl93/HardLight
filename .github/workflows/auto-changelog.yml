@@ -57,15 +57,14 @@ jobs:
             const pr = await github.rest.pulls.list({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              head: `${context.repo.owner}:${context.ref.replace('refs/heads/', '')}`,
-              state: 'merged'
+              commit_sha: context.sha
             });
             if (pr.data.length === 0) {
               console.log("No PR found for this branch. Skipping changelog update.");
               return "";
             }
             console.log(`PR Number: ${pr.data[0].number}`);
-            return pr.data[0].number;
+            echo `::set-output name=PR_NUMBER::${pr.data[0].number}`;
 
       # - name: Get Pull Request Number
       #   id: get_pr
@@ -83,6 +82,7 @@ jobs:
         
       #re checkout
       - name: Re-checkout repository
+        if: steps.get_pr.outputs.PR_NUMBER != ''
         uses: actions/checkout@v3
         with:
           ref: ${{ github.ref }}
