@@ -23,7 +23,6 @@
     CaptainGunStealObjective: 0.75  #Starlight edit
     CaptainJetpackStealObjective: 0.75  #Starlight edit
     HandTeleporterStealObjective: 1  #Starlight edit
-    EnergyShotgunStealObjective: 0.5
     RDDiplomaStealObjective: 1 #Starlight Unique Targets
     CMOLicenseStealObjective: 1 #Starlight Unique Targets
     EnergyShotgunStealObjective: 0.5 #Starlight re-targeted
