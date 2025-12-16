@@ -51,7 +51,7 @@ public sealed partial class DamagedThroatComponent : Component
     ///     The minimum time between damage applications.
     /// </summary>
     [DataField]
-    public TimeSpan Cooldown = TimeSpan.FromSeconds(2);
+    public TimeSpan Cooldown = TimeSpan.FromSeconds(1);
 
     /// <summary>
     ///     Time without speaking normally before damage resets to base.

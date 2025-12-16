@@ -1,61 +1,64 @@
 using Content.Server.Chat.Systems;
-using Content.Shared.Chat;
+using Content.Server.Damage.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
+using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Starlight.Traits.Assorted;
 
-/// <summary>
-///     System that handles the damaged throat trait, causing damage and coughing when speaking normally.
-/// </summary>
-public sealed partial class DamagedThroatSystem : EntitySystem
+public sealed class DamagedThroatSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-
         SubscribeLocalEvent<DamagedThroatComponent, EntitySpokeEvent>(OnSpeak);
     }
 
     private void OnSpeak(EntityUid uid, DamagedThroatComponent component, EntitySpokeEvent args)
     {
-        // Don't apply damage if whispering
+        // Don't damage if whispering
         if (args.IsWhisper)
             return;
 
-        // Check cooldown
-        if (_gameTiming.CurTime < component.LastSpeakTime + component.Cooldown)
+        // Don't damage if using sign language (ID: "Sign")
+        if (args.Language != null && args.Language.ID == "Sign")
             return;
 
-        // Reset damage if enough time has passed since last normal speech
-        if (_gameTiming.CurTime >= component.LastSpeakTime + component.ResetCooldown)
+        // Don't damage if on cooldown
+        var currentTime = _gameTiming.CurTime;
+        if (currentTime < component.LastSpeakTime + component.Cooldown)
+            return;
+
+        // Check if reset cooldown has passed (30 seconds of no normal speech)
+        if (currentTime >= component.LastSpeakTime + component.ResetCooldown)
         {
             component.CurrentDamage = component.BaseDamage;
         }
 
-        // Apply current damage level
-        var damageSpec = new DamageSpecifier(_prototypeManager.Index(component.DamageType), component.CurrentDamage);
-        _damageableSystem.TryChangeDamage(uid, damageSpec, ignoreResistances: false);
+        component.LastSpeakTime = currentTime;
 
-        // Make the entity cough with a chance
+        // Apply damage
+        var damageType = _prototypeManager.Index<DamageTypePrototype>(component.DamageType);
+        var damageSpec = new DamageSpecifier(damageType, component.CurrentDamage);
+        _damageableSystem.TryChangeDamage(uid, damageSpec, origin: uid);
+
+        // Chance to cough
         if (_random.Prob(component.CoughChance))
         {
-            _chatSystem.TryEmoteWithChat(uid, "Cough", ChatTransmitRange.Normal);
+            _chatSystem.TryEmoteWithChat(uid, "Cough");
         }
 
-        // Escalate damage for next time (capped at max)
+        // Increase damage for next time (escalating damage)
         component.CurrentDamage = Math.Min(component.CurrentDamage + component.DamageIncrement, component.MaxDamage);
-
-        // Update timer
-        component.LastSpeakTime = _gameTiming.CurTime;
     }
 }
