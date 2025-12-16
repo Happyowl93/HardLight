@@ -6,4 +6,6 @@ server-info-connect-discord-button = Link Discord
 
 ui-options-function-smart-equip-suit-storage = Smart-equip to suit storage
 
+## Accessibility
+
 ui-options-arachnophobia = Arachnophobia Mode
