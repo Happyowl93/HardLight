@@ -12,6 +12,7 @@
   - Trinkets
   - Scarves
   - Pins
+  - Pens
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -23,6 +24,7 @@
   - Trinkets
   - Scarves
   - Pins
+  - LuxuryPens
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -42,6 +44,7 @@
   - Trinkets
   - Scarves
   - Pins
+  - Pens
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -55,6 +58,7 @@
   - Trinkets
   - Scarves
   - Pins
+  - NTRPens
   - Survival
   - GroupSpeciesBreathTool
 
@@ -68,6 +72,7 @@
   - Trinkets
   - Scarves
   - Pins
+  - LuxuryPens
   - Survival
   - GroupSpeciesBreathTool
 
@@ -84,6 +89,7 @@
   - Trinkets
   - Scarves
   - Pins
+  - Pens
   - SurvivalSecurity
   - GroupSpeciesBreathToolSecurity
 
@@ -101,6 +107,7 @@
   - Trinkets
   - Scarves
   - Pins
+  - Pens
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -117,6 +124,7 @@
   - Trinkets
   - Scarves
   - Pins
+  - Pens
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -136,7 +144,7 @@
   - Trinkets
   - Scarves
   - Pins
-  - SecurityStar
+  - SecStar
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout

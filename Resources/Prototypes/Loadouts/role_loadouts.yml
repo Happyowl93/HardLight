@@ -13,6 +13,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - CapPens # Starlight
   - CaptainJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -31,6 +32,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - HoPPens # Starlight
   - HoPJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -63,6 +65,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - AssistantJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -80,6 +83,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - BartenderJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -95,6 +99,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - ServiceWorkerJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -113,6 +118,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - ChefJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -128,6 +134,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - LuxuryPens # Starlight
   - LibrarianJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -143,6 +150,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - LuxuryPens # Starlight
   - LawyerJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -163,6 +171,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - ChaplainJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -181,6 +190,7 @@
   - Scarves # Starlight
   - Pins # Starlight
   - JanitorPlunger
+  - Pens # Starlight
   - JanitorJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -198,6 +208,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - BotanistJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -216,6 +227,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - ClownPens # Starlight
   - ClownJobTrinkets
 
 - type: roleLoadout
@@ -234,6 +246,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - MimePens # Starlight
   - MimeJobTrinkets
 
 - type: roleLoadout
@@ -250,6 +263,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - MusicianJobTrinkets
   - Instruments
   - GroupSpeciesBreathTool
@@ -270,6 +284,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - QuartermasterJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -288,6 +303,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -305,6 +321,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - SalvageSpecialistJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -323,6 +340,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -336,6 +354,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -353,6 +372,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -368,6 +388,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - AtmosphericTechnicianJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -388,6 +409,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - ResearchDirectorJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -408,6 +430,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - ScientistJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -422,6 +445,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - ResearchAssistantJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -443,6 +467,7 @@
   - Scarves # Starlight
   - Pins # Starlight
   - SecStar
+  - Pens # Starlight
   - HeadofSecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
@@ -461,6 +486,7 @@
   - Scarves # Starlight
   - Pins # Starlight
   - SecStar
+  - Pens # Starlight
   - WardenJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
@@ -482,6 +508,7 @@
   - Scarves # Starlight
   - Pins # Starlight
   - SecStar
+  - Pens # Starlight
   - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
@@ -500,6 +527,7 @@
   - Scarves # Starlight
   - Pins # Starlight
   - SecStar
+  - Pens # Starlight
   - DetectiveJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
@@ -514,6 +542,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - SecurityCadetJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
@@ -535,6 +564,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
 
@@ -555,6 +585,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
 
@@ -569,6 +600,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
 
@@ -586,6 +618,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
 
@@ -605,6 +638,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
 
@@ -620,6 +654,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - ZookeeperJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -635,6 +670,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - LuxuryPens # Starlight
   - ReporterJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -650,6 +686,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - PsychologistJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -665,6 +702,7 @@
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
+  - Pens # Starlight
   - BoxerJobTrinkets
   - GroupSpeciesBreathTool
 

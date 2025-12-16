@@ -54,5 +54,7 @@ loadout-group-salvage-id = Salvage Specialist ID
 loadout-group-salvage-lead-mantle = Salvage Lead mantle
 
 # Other
+
 loadout-group-scarves = Scarf
 loadout-group-pins = Pins
+loadout-group-pens = Pen
