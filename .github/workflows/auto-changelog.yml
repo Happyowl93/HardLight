@@ -48,19 +48,38 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Get Pull Request Number
+      - name: Get Pull Request Number via GH
         id: get_pr
-        run: |
-          COMMIT_MESSAGE=$(git log -1 --pretty=%B)
-          echo "Commit message: $COMMIT_MESSAGE"
-          PR_NUMBER=$(echo "$COMMIT_MESSAGE" | grep -oP '(?<=Merge pull request #)\d+' || true)
-          if [ -z "$PR_NUMBER" ]; then
-            echo "No PR number found in commit message. Skipping changelog update."
-            echo "::set-output name=PR_NUMBER::"
-            exit 0
-          fi
-          echo "PR Number: $PR_NUMBER"
-          echo "::set-output name=PR_NUMBER::$PR_NUMBER"
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:${context.ref.replace('refs/heads/', '')}`,
+              state: 'merged'
+            });
+            if (pr.data.length === 0) {
+              console.log("No PR found for this branch. Skipping changelog update.");
+              return "";
+            }
+            console.log(`PR Number: ${pr.data[0].number}`);
+            return pr.data[0].number;
+
+      # - name: Get Pull Request Number
+      #   id: get_pr
+      #   run: |
+      #     COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+      #     echo "Commit message: $COMMIT_MESSAGE"
+      #     PR_NUMBER=$(echo "$COMMIT_MESSAGE" | grep -oP '(?<=Merge pull request #)\d+' || true)
+      #     if [ -z "$PR_NUMBER" ]; then
+      #       echo "No PR number found in commit message. Skipping changelog update."
+      #       echo "::set-output name=PR_NUMBER::"
+      #       exit 0
+      #     fi
+      #     echo "PR Number: $PR_NUMBER"
+      #     echo "::set-output name=PR_NUMBER::$PR_NUMBER"
         
       #re checkout
       - name: Re-checkout repository
