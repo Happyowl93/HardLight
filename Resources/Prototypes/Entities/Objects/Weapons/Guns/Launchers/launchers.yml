@@ -84,7 +84,7 @@
   parent: [ BaseWeaponLauncher, BaseGunWieldable, BaseJanitorContraband ] # Starlight: major -> jani contra
   id: WeaponLauncherHydra
   name: hydra
-  description: PLOOP... FSSSSSS
+  description: PLOOP... FSSSSSS...
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Launchers/hydra_launcher.rsi
@@ -464,9 +464,6 @@
   description: It fires large meteors.
   components:
   - type: BallisticAmmoProvider
-    whitelist:
-      tags:
-        - CartridgeRocket
     proto: MeteorMedium
 
 - type: entity
@@ -477,7 +474,4 @@
   description: It fires slow immovable rods.
   components:
   - type: BallisticAmmoProvider
-    whitelist:
-      tags:
-        - CartridgeRocket
     proto: ImmovableRodSlow

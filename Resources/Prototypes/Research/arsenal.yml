@@ -155,6 +155,8 @@
   - MagazineGrenadeBlast
   - MagazineGrenadeBaton
   - MagazineGrenadeFlash # SL end
+  - CableDetStack1
+  - EmptyDetonator
   radioChannels:
   - Security
 
