@@ -4,6 +4,8 @@ using Content.Server.Humanoid;
 using Content.Shared._Starlight.Language.Components.Translators;
 using Content.Shared.CollectiveMind;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Radio.Components;
@@ -129,9 +131,9 @@ public sealed partial class OrganSystem : EntitySystem
     {
         if (!TryComp<DamageableComponent>(args.Body, out var bodyDamageable)) return;
 
-        var change = _damageableSystem.TryChangeDamage(args.Body, ent.Comp.Damage, true, false, bodyDamageable);
+        var change = _damageableSystem.ChangeDamage(args.Body, ent.Comp.Damage, true, false);
         if (change is not null)
-            _damageableSystem.TryChangeDamage(ent.Owner, change.Invert(), true, false, ent.Comp);
+            _damageableSystem.ChangeDamage(ent.Owner, change.Invert(), true, false);
     }
     private void OnOrganExtracted(Entity<DamageableComponent> ent, ref SurgeryOrganExtracted args)
     {
@@ -139,9 +141,9 @@ public sealed partial class OrganSystem : EntitySystem
          || damageRule.Damage is null
          || !TryComp<DamageableComponent>(args.Body, out var bodyDamageable)) return;
 
-        var change = _damageableSystem.TryChangeDamage(args.Body, damageRule.Damage.Invert(), true, false, bodyDamageable);
+        var change = _damageableSystem.ChangeDamage(args.Body, damageRule.Damage.Invert(), true, false);
         if (change is not null)
-            _damageableSystem.TryChangeDamage(ent.Owner, change.Invert(), true, false, ent.Comp);
+            _damageableSystem.ChangeDamage(ent.Owner, change.Invert(), true, false);
     }
 
     //
