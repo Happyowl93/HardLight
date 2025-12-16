@@ -2840,8 +2840,6 @@ entities:
       pos: 4.5,-10.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 998
   - uid: 1002
@@ -2896,8 +2894,6 @@ entities:
       pos: -1.5,-10.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 998
   - uid: 1012
@@ -2907,8 +2903,6 @@ entities:
       pos: 1.5,-7.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 998
   - uid: 1013
@@ -2918,8 +2912,6 @@ entities:
       pos: 0.5,-14.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 998
   - uid: 1014
@@ -2929,8 +2921,6 @@ entities:
       pos: 2.5,-14.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 998
 - proto: FirelockElectronics
@@ -4007,8 +3997,6 @@ entities:
       pos: 2.5,-11.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 998
     - type: AtmosPipeColor
@@ -4076,8 +4064,6 @@ entities:
       pos: 0.5,-11.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 998
     - type: AtmosPipeColor
@@ -4100,8 +4086,6 @@ entities:
       pos: -7.5,-11.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 997
     - type: AtmosPipeColor
@@ -7334,8 +7318,6 @@ entities:
     - type: Lock
       locked: False
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 590
   - uid: 570
@@ -7347,8 +7329,6 @@ entities:
     - type: Lock
       locked: False
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 590
   - uid: 575
@@ -7359,8 +7339,6 @@ entities:
     - type: Lock
       locked: False
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 590
   - uid: 576
@@ -7371,8 +7349,6 @@ entities:
     - type: Lock
       locked: False
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 590
 - proto: WeaponEnergyTurretCommandControlPanel

@@ -1598,8 +1598,6 @@ entities:
       pos: 0.5,-4.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
   - uid: 479
@@ -1608,8 +1606,6 @@ entities:
       pos: -2.5,-1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
   - uid: 480
@@ -1618,8 +1614,6 @@ entities:
       pos: 3.5,-1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
   - uid: 481
@@ -1628,8 +1622,6 @@ entities:
       pos: 0.5,1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
 - proto: FoodBreadCotton
@@ -2144,8 +2136,6 @@ entities:
       pos: -0.5,-8.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
     - type: AtmosPipeColor
@@ -2156,8 +2146,6 @@ entities:
       pos: -0.5,-0.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
     - type: AtmosPipeColor
@@ -2168,8 +2156,6 @@ entities:
       pos: -4.5,-0.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
     - type: AtmosPipeColor
@@ -2181,8 +2167,6 @@ entities:
       pos: -0.5,3.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
     - type: AtmosPipeColor
@@ -2193,8 +2177,6 @@ entities:
       pos: 5.5,-0.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
     - type: AtmosPipeColor
@@ -2208,8 +2190,6 @@ entities:
       pos: 1.5,-8.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
     - type: AtmosPipeLayers
@@ -2223,8 +2203,6 @@ entities:
       pos: 1.5,-2.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
     - type: AtmosPipeLayers
@@ -2238,8 +2216,6 @@ entities:
       pos: -4.5,-2.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
     - type: AtmosPipeLayers
@@ -2253,8 +2229,6 @@ entities:
       pos: 1.5,3.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
     - type: AtmosPipeLayers
@@ -2268,8 +2242,6 @@ entities:
       pos: 5.5,-2.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 477
     - type: AtmosPipeLayers
@@ -3660,8 +3632,6 @@ entities:
       pos: 0.5,-1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 495
     - type: Lock

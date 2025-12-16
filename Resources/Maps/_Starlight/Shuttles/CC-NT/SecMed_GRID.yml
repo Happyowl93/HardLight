@@ -2254,8 +2254,6 @@ entities:
       pos: 5.5,-7.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 10
       - 8
@@ -2328,8 +2326,6 @@ entities:
       pos: -5.5,-2.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 11
       - 6
@@ -3216,8 +3212,6 @@ entities:
       pos: 6.5,-6.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 8
     - type: AtmosPipeColor
@@ -3272,8 +3266,6 @@ entities:
       pos: -7.5,-3.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 6
     - type: AtmosPipeColor
@@ -3312,8 +3304,6 @@ entities:
       pos: -8.5,-1.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 6
     - type: AtmosPipeLayers
@@ -3364,8 +3354,6 @@ entities:
       pos: 8.5,-7.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 8
     - type: AtmosPipeLayers
@@ -6137,8 +6125,6 @@ entities:
       pos: -2.5,-8.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 844
     - type: Lock
@@ -6149,8 +6135,6 @@ entities:
       pos: 0.5,-2.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 844
     - type: Lock
@@ -6161,8 +6145,6 @@ entities:
       pos: -7.5,-1.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 844
     - type: Lock
@@ -6173,8 +6155,6 @@ entities:
       pos: 8.5,-1.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 844
     - type: Lock
@@ -6185,8 +6165,6 @@ entities:
       pos: 6.5,-0.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 844
     - type: Lock
@@ -6197,8 +6175,6 @@ entities:
       pos: -5.5,-0.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 844
     - type: Lock
