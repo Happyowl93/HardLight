@@ -1067,27 +1067,6 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", siliconName, Loc.GetString("admin-smite-silicon-laws-bound-description"))
         };
         args.Verbs.Add(silicon);
-        
-        // Starlight begin
-        var scrambleName = Loc.GetString("admin-smite-scramble-name").ToLowerInvariant();
-        Verb scramble = new()
-        {
-            Text = scrambleName,
-            Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new("Clothing/OuterClothing/Hardsuits/lingspacesuit.rsi"), "icon"),
-            Act = () =>
-            {
-                EnsureComp<DnaScrambleOnTriggerComponent>(args.Target);
-                var triggerEvent = new TriggerEvent(args.User, null);
-                RaiseLocalEvent(args.Target, ref triggerEvent);
-                RemComp<DnaScrambleOnTriggerComponent>(args.Target);
-            },
-            Impact = LogImpact.Extreme,
-            Message = string.Join(": ", scrambleName, Loc.GetString("admin-smite-scramble-description"))
-        };
-        args.Verbs.Add(scramble);
-        // Starlight end
-
 
         var homingRodName = Loc.GetString("admin-smite-homing-rod-name").ToLowerInvariant();
         Verb homingRod = new()
@@ -1124,6 +1103,26 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", homingRodSlowName, Loc.GetString("admin-smite-homing-rod-slow-description"))
         };
         args.Verbs.Add(homingRodSlow);
+        
+        // Starlight begin
+        var scrambleName = Loc.GetString("admin-smite-scramble-name").ToLowerInvariant();
+        Verb scramble = new()
+        {
+            Text = scrambleName,
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new("Clothing/OuterClothing/Hardsuits/lingspacesuit.rsi"), "icon"),
+            Act = () =>
+            {
+                EnsureComp<DnaScrambleOnTriggerComponent>(args.Target);
+                var triggerEvent = new TriggerEvent(args.User, null);
+                RaiseLocalEvent(args.Target, ref triggerEvent);
+                RemComp<DnaScrambleOnTriggerComponent>(args.Target);
+            },
+            Impact = LogImpact.Extreme,
+            Message = string.Join(": ", scrambleName, Loc.GetString("admin-smite-scramble-description"))
+        };
+        args.Verbs.Add(scramble);
+        // Starlight end
     }
 
     public void HomingLaunchSequence(EntityUid target, EntProtoId proto, float distance, float speed)
