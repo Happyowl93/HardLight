@@ -5,3 +5,4 @@ flavor-base-evil = like evil
 flavor-base-wrong = wrong
 flavor-complex-tha-slop = like processed shit
 flavor-complex-struggle = like raw struggle
+flavor-base-halal = halal
