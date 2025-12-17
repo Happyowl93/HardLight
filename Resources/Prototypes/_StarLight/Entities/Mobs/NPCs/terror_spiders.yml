@@ -420,7 +420,6 @@
             sprite: _Starlight/Mobs/Animals/Spiders/Arachnophobia/terror_white.rsi
             map: ["enum.DamageStateVisualLayers.Base", "movement"]
             state: alive
-  - type: HitscanBatteryAmmoProvider
   - type: BatteryAmmoProvider
     proto: BulletAcidHitscan
     fireCost: 50
