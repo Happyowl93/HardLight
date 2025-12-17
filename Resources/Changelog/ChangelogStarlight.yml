@@ -24059,5 +24059,13 @@ Entries:
   id: 250301
   time: '2025-12-17T15:18:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2503
+- author: Penguinwizzard
+  changes:
+  - message: A number of self-recharging weapons got a firmware update and now properly
+      display updates to their ammo when they recharge.
+    type: Fix
+  id: 249800
+  time: '2025-12-17T16:24:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2498
 Order: -1
 
