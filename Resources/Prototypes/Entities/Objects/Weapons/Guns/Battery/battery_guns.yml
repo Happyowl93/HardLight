@@ -904,7 +904,6 @@
     maxCharge: 480
     startingCharge: 480
   - type: PredictedBatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 20
     autoRechargePauseTime: 10
 

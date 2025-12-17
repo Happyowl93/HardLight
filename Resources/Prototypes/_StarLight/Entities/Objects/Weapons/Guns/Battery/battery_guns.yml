@@ -271,7 +271,6 @@
     maxCharge: 1500
     startingCharge: 1500
   - type: PredictedBatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 20
 
 - type: entity
@@ -316,7 +315,6 @@
     maxCharge: 2000
     startingCharge: 2000
   - type: PredictedBatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 100
     autoRechargePauseTime: 44
 
@@ -342,7 +340,6 @@
   - type: Gun
     fireRate: 0.6
   - type: PredictedBatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 40 #100sec+60Sec Pause
     autoRechargePauseTime: 60
   - type: BatteryAmmoProvider
@@ -380,7 +377,6 @@
   - type: Gun
     fireRate: 0.6
   - type: PredictedBatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 40 #100sec+60Sec Pause
     autoRechargePauseTime: 60
   - type: BatteryAmmoProvider
@@ -465,7 +461,6 @@
     shape:
     - 0, 0, 1, 1
   - type: PredictedBatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 200
   - type: MagazineVisuals
     magState: stun
@@ -787,7 +782,6 @@
     maxCharge: 2000
     startingCharge: 2000
   - type: PredictedBatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 500
 
 - type: entity
@@ -810,7 +804,6 @@
       proto: ProjectilePolyboltJohnToe
       fireCost: 200
     - type: PredictedBatterySelfRecharger
-      autoRecharge: true
       autoRechargeRate: 40 #every 5 seconds another becomes toe.
     - type: MagazineVisuals
       magState: mag
@@ -881,7 +874,6 @@
     maxCharge: 1500
     startingCharge: 1500
   - type: PredictedBatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 80
     autoRechargePauseTime: 10
 
@@ -924,6 +916,5 @@
     maxCharge: 500
     startingCharge: 500
   - type: PredictedBatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 50
     autoRechargePauseTime: 10
