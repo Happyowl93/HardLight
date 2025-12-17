@@ -70,7 +70,7 @@ thaven-mood-tourist-desc = It is customary and polite to follow people into thei
 thaven-mood-crywolf-name = Cry Wolf
 thaven-mood-crywolf-desc = NT has been too lax in its security of late. The crew must be kept on edge, ready for any emergency. Regularly call out fake threats to make sure everyone is properly prepared.
 
-thaven-mood-cave-dweller-name = Caveweller
+thaven-mood-cave-dweller-name = Cave Dweller
 thaven-mood-cave-dweller-desc = You strongly prefer navigating via flashlight in the darkness to harsh overhead lights.
 
 thaven-mood-daredevil-name = Daredevil
