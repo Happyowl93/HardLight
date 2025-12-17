@@ -8,6 +8,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
+using Content.Shared.Humanoid;
 using Content.Shared.Radio.Components;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Starlight.Antags.Abductor;
@@ -203,6 +204,8 @@ public sealed partial class OrganSystem : EntitySystem
         => _humanoidAppearanceSystem.SetLayersVisibility(args.Body, [ent.Comp.Layer], false);
     private void OnVisualizationImplanted(Entity<OrganVisualizationComponent> ent, ref SurgeryOrganImplantationCompleted args)
     {
+        if (!TryComp<HumanoidAppearanceComponent>(args.Body, out var _)) return;
+        
         _humanoidAppearanceSystem.SetLayersVisibility(args.Body, [ent.Comp.Layer], true);
         _humanoidAppearanceSystem.SetBaseLayerId(args.Body, ent.Comp.Layer, ent.Comp.Prototype);
     }
