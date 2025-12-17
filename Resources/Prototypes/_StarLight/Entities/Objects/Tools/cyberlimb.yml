@@ -574,7 +574,7 @@
           Blunt: 4
     - type: ToggleCellDraw
     - type: PowerCellDraw
-      useRate: 50
+      useCharge: 50
     - type: Defibrillator
       zapHeal:
         types:
@@ -639,7 +639,6 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 3 # Full charge in two minutes
-    autoRechargePause: true
     autoRechargePauseTime: 30
   - type: GenericVisualizer
     visuals:

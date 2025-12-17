@@ -112,7 +112,7 @@
           Blunt: 5
     - type: ToggleCellDraw
     - type: PowerCellDraw
-      useRate: 715
+      useCharge: 715
     - type: ItemToggleMeleeWeapon
       activatedSoundOnHit:
         path: /Audio/Items/Defib/defib_zap.ogg
