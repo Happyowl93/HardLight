@@ -20,7 +20,7 @@ public sealed partial class EmpOnMeleeHitComponent : Component
     /// How long it disables targets in seconds
     /// </summary>
     [DataField("disableDuration"), ViewVariables(VVAccess.ReadWrite)]
-    public float DisableDuration = 60f;
+    public TimeSpan DisableDuration = TimeSpan.FromSeconds(60);
 
     /// <summary>
     /// How much battery power it takes to trigger the EMP

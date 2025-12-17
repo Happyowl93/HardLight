@@ -1,6 +1,6 @@
 using Content.Server._Starlight.Equipment.Components;
 using Content.Server.Interaction;
-using Content.Server.PowerCell;
+using Content.Shared.PowerCell;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Item.ItemToggle;

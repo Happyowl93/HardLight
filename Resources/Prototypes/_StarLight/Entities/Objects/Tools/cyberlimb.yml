@@ -391,7 +391,7 @@
         path: "/Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg"
     - type: CorePoweredThrower
     - type: MeleeThrowOnHit
-      unanchorOnHit: true
+      unanchorOnHit: Unanchorable
     - type: ItemSlots
       slots:
         core_slot:
@@ -440,7 +440,7 @@
       fireRate: 1.5
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
-    - type: ProjectileBatteryAmmoProvider
+    - type: BatteryAmmoProvider
       proto: AnomalousParticleDeltaStrong
       fireCost: 100
     - type: BatteryWeaponFireModes
@@ -630,7 +630,7 @@
       state: tiny
   - type: Item
     size: Small
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 250 #while in theory this could give five uses, in practice it gives 2-3 uses (between charge-up time, cooldown and idle-time). Any lower and the margins are too narrow to get more than 1 use out of the defib.
     startingCharge: 250
   - type: Tag
@@ -641,6 +641,13 @@
     autoRechargeRate: 3 # Full charge in two minutes
     autoRechargePause: true
     autoRechargePauseTime: 30
+  - type: GenericVisualizer
+    visuals:
+      enum.BatteryVisuals.State:
+        enum.PowerCellVisualLayers.Unshaded:
+          Full: {visible: false}
+          Neither: {visible: false}
+          Empty: {visible: false}
 
 # Riplet
 - type: entity

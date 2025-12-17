@@ -8,7 +8,7 @@ using Content.Shared.Weapons.Melee.Events;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Content.Shared.Item.ItemToggle;
-using Content.Server.PowerCell;
+using Content.Shared.PowerCell;
 
 namespace Content.Server.Emp;
 

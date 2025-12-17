@@ -258,16 +258,8 @@ public sealed class HypospraySystem : EntitySystem
         }
         // 🌟Starlight🌟 end
 
-        var removedSolution = _solutionContainers.Draw(target, targetSolution, realTransferAmount);
+        amount = realTransferAmount;
 
-        if (!_solutionContainers.TryAddSolution(soln.Value, removedSolution))
-        {
-            return false;
-        }
-
-        _popup.PopupClient(Loc.GetString("injector-component-draw-success-message",
-            ("amount", removedSolution.Volume),
-            ("target", Identity.Entity(target, EntityManager))), entity.Owner, user);
         return true;
     }
 
