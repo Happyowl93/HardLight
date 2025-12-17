@@ -270,7 +270,7 @@
   - type: PredictedBattery
     maxCharge: 1500
     startingCharge: 1500
-  - type: BatterySelfRecharger
+  - type: PredictedBatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 20
 
@@ -315,7 +315,7 @@
   - type: PredictedBattery
     maxCharge: 2000
     startingCharge: 2000
-  - type: BatterySelfRecharger
+  - type: PredictedBatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 100
     autoRechargePauseTime: 44
@@ -341,7 +341,7 @@
     - Back
   - type: Gun
     fireRate: 0.6
-  - type: BatterySelfRecharger
+  - type: PredictedBatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 40 #100sec+60Sec Pause
     autoRechargePauseTime: 60
@@ -379,7 +379,7 @@
     - 0, 0, 3, 1
   - type: Gun
     fireRate: 0.6
-  - type: BatterySelfRecharger
+  - type: PredictedBatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 40 #100sec+60Sec Pause
     autoRechargePauseTime: 60
@@ -464,7 +464,7 @@
     size: Small
     shape:
     - 0, 0, 1, 1
-  - type: BatterySelfRecharger
+  - type: PredictedBatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 200
   - type: MagazineVisuals
@@ -786,7 +786,7 @@
   - type: PredictedBattery
     maxCharge: 2000
     startingCharge: 2000
-  - type: BatterySelfRecharger
+  - type: PredictedBatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 500
 
@@ -809,7 +809,7 @@
     - type: BatteryAmmoProvider
       proto: ProjectilePolyboltJohnToe
       fireCost: 200
-    - type: BatterySelfRecharger
+    - type: PredictedBatterySelfRecharger
       autoRecharge: true
       autoRechargeRate: 40 #every 5 seconds another becomes toe.
     - type: MagazineVisuals
@@ -880,7 +880,7 @@
   - type: PredictedBattery
     maxCharge: 1500
     startingCharge: 1500
-  - type: BatterySelfRecharger
+  - type: PredictedBatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 80
     autoRechargePauseTime: 10
@@ -923,7 +923,7 @@
   - type: PredictedBattery
     maxCharge: 500
     startingCharge: 500
-  - type: BatterySelfRecharger
+  - type: PredictedBatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 50
     autoRechargePauseTime: 10
