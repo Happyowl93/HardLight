@@ -24045,5 +24045,19 @@ Entries:
   id: 249300
   time: '2025-12-16T20:59:10.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2493
+- author: Happyrobot33
+  changes:
+  - message: Disabled rift auto gamma for now.
+    type: Tweak
+  id: 250300
+  time: '2025-12-17T15:18:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2503
+- author: Happyrobot33
+  changes:
+  - message: Added a cvar for controlling auto gamma on rifts.
+    type: Add
+  id: 250301
+  time: '2025-12-17T15:18:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2503
 Order: -1
 
