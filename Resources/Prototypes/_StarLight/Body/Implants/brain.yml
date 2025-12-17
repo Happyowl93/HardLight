@@ -56,6 +56,9 @@
     state: brain_implant_comms
   - type: EncryptionKeyHolder
     keySlots: 4
+  - type: ContainerContainer
+    containers:
+      key_slots: !type:Container
   - type: FunctionalOrgan
     comps:
     - type: ActiveRadio
