@@ -231,7 +231,7 @@ public sealed class HealingSystem : EntitySystem
             {
                 if (!solution.Contents.Any(sol => healing.Comp.ReagentsToDrain.Any(req => req.Reagent == sol.Reagent && sol.Quantity >= req.Quantity)))
                 {
-                    _popupSystem.PopupEntity(Loc.GetString("medical-item-solution-missing", ("item", healing.Owner)), healing.Owner, user);
+                    _popupSystem.PopupClient(Loc.GetString("medical-item-solution-missing", ("item", healing.Owner)), healing.Owner, user);
                     return false;
                 }
             }
