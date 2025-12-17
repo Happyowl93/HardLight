@@ -1,4 +1,4 @@
-# Belts that need/have visualizers
+## Belts that need/have visualizers
 
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase, BaseCommandContraband]
