@@ -24067,5 +24067,13 @@ Entries:
   id: 249800
   time: '2025-12-17T16:24:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2498
+- author: mikeysaurus
+  changes:
+  - message: Increases timeout on the holopad from 1 minute to 10 minutes, allowing
+      for longer conversations without interruption.
+    type: Tweak
+  id: 250000
+  time: '2025-12-17T17:25:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2500
 Order: -1
 
