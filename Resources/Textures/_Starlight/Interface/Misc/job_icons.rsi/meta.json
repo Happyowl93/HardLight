@@ -82,17 +82,17 @@
         {
             "name": "TSF"
         },
-		    {
-			      "name": "Xenoborg"
-		    },
-		    {
-			      "name": "Mothership"
-		    },
-		    {
-			      "name": "Skub"
-		    },
-		    {
-			      "name": "CultistChaplain"
-		    }
+		{
+			"name": "Xenoborg"
+		},
+		{
+			"name": "Mothership"
+		},
+		{
+			"name": "Skub"
+		},
+		{
+			"name": "CultistChaplain"
+		}
     ]
 }
