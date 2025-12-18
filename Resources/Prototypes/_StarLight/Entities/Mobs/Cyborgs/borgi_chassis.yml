@@ -155,8 +155,8 @@
         shader: unshaded
         visible: false
     - type: BorgChassis
-      jobIconOverride: JobIconXenoborg
-      jobTitleOverride: chat-radio-xenoborg
+      jobIconOverride: JobIconXenoborg # Starlight
+      jobTitleOverride: chat-radio-xenoborg # Starlight
       hasMindState: corgitag
       noMindState: corgitag
       maxModules: 8
