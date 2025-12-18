@@ -53,6 +53,8 @@
         Alive: BorgHealth
         Critical: BorgCrit
         Dead: BorgDead
+      showOverlays: false
+      allowRevives: true
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.5
       baseSprintSpeed: 4
@@ -211,12 +213,6 @@
       price: 1250
     - type: RotationVisuals
       horizontalRotation: 90
-      stateAlertDict:
-        Alive: BorgHealth
-        Critical: BorgCrit
-        Dead: BorgDead
-      showOverlays: false
-      allowRevives: true
     - type: HealthExaminable
       examinableTypes:
         - Blunt
@@ -232,11 +228,10 @@
       actions:
         - ActionViewLaws
     - type: IntrinsicRadioReceiver
-    - type: IntrinsicRadioTransmitter # can only use binary and xenoborg channel
+    - type: IntrinsicRadioTransmitter
       channels:
         - Xenoborg
-        - Binary
-    - type: ActiveRadio # but can hear the mothership channel
+    - type: ActiveRadio
       channels:
         - Mothership
         - Xenoborg
@@ -244,12 +239,6 @@
     - type: ZombieImmune
     - type: WiresPanel
     - type: ActivatableUIRequiresPanel
-#    - type: ContainerContainer
-#      containers:
-#        borg_brain: !type:ContainerSlot { }
-#        cell_slot: !type:ContainerSlot { }
-#        borg_module: !type:Container { }
-#        part-container: !type:Container
     - type: PowerCellSlot
       cellSlotId: cell_slot
       fitsInCharger: true
@@ -287,7 +276,6 @@
       userInterfaceKeys:
         - enum.BorgUiKey.Key
     - type: LockedWiresPanel
-      spriteLayer: light
     - type: Pullable
     - type: Puller
       needsHands: false
@@ -353,7 +341,7 @@
       speechVerb: Robotic
       speechSounds: Xenoborg
       allowedEmotes: [ 'Chitter', 'Squeak', 'FlapWings', 'Laugh' ]
-      wilhelmProbability: 0
+      wilhelmProbability: 0.0
     - type: DamagedSiliconAccent
     - type: UnblockableSpeech
 #    - type: FootstepModifier

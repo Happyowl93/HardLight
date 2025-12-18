@@ -19,6 +19,11 @@
       prototypes: [SkubGear]
     - type: TextToSpeech
       voice: alvinjr
+    - type: IntrinsicRadioReceiver
+    - type: IntrinsicRadioTransmitter
+      channels: [Common, CentCom, Command, Engineering, Medical, Science, Security, Service, Supply, Law, Binary, Expedition, Freelance, Xenoborg, Soviet, Mothership, Syndicate]
+    - type: ActiveRadio
+      channels: [Common, CentCom, Command, Engineering, Medical, Science, Security, Service, Supply, Law, Binary, Expedition, Freelance, Xenoborg, Soviet, Mothership, Syndicate]
     
 - type: entity
   parent: ClothingBackpack
@@ -32,6 +37,8 @@
         back:
           - state: equipped-BACKPACK
             visible: false
+    - type: Item
+      size: Ginormous
     - type: Storage
       grid:
         - 0,0,20,15
@@ -76,32 +83,6 @@
     - type: Unremoveable
 
 - type: entity
-  id: SkubInner
-  parent: ClothingUniformJumpsuitFamilyGuy
-  categories: [HideSpawnMenu]
-  components:
-    - type: Unremoveable
-    - type: Clothing
-      clothingVisuals:
-        jumpsuit:
-          - state: invis
-            visible: false
-      equippedState: invis
-
-- type: entity
-  id: SkubHeadset
-  categories: [HideSpawnMenu]
-  name: Skub Headset
-  description: Via the power of skub, all of your comms are compromised.
-  parent: ClothingHeadsetAltCentComDS
-  components:
-    - type: EncryptionKeyHolder
-      channels: [Common, CentCom, Command, Engineering, Medical, Science, Security, Service, Supply, Law, Binary, Expedition, Freelance, Xenoborg, Soviet, Mothership, Syndicate]
-    - type: ActiveRadio
-      channels: [Common, CentCom, Command, Engineering, Medical, Science, Security, Service, Supply, Law, Binary, Expedition, Freelance, Xenoborg, Soviet, Mothership, Syndicate]
-    - type: Unremoveable
-
-- type: entity
   id: SpeedySkub
   parent: Skub
   categories: [HideSpawnMenu]
@@ -135,10 +116,9 @@
   equipment:
     id: SkubPDA
     back: SkubPack
-    ears: SkubHeadset
     outerClothing: SkubSuit
     head: SkubHat
-    jumpsuit: SkubInner
+    jumpsuit: ClothingUniformJumpsuitColorGrey
     pocket1: SpeedySkub
     pocket2: PocketTether
   storage:
