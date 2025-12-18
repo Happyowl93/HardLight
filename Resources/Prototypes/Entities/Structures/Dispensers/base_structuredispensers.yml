@@ -103,6 +103,8 @@
       cell_slot: !type:ContainerSlot { }
   - type: PowerCellSlot
     cellSlotId: cell_slot
+  - type: Charger
+    slotId: cell_slot
   - type: ItemSlots
     slots:
       cell_slot:
