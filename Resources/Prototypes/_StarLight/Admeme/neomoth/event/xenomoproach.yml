@@ -8,12 +8,12 @@
     - type: BorgTransponder
       name: xenomoproach
       sprite:
-        sprite: _Starlight/Mobs/Animals/xenomoproach.rsi
+        sprite: _Starlight/Admeme/neomoth/xenomoproach.rsi
         state: mothroach
     - type: VentCrawler
     - type: Sprite
       drawdepth: SmallMobs
-      sprite: _Starlight/Mobs/Animals/xenomoproach.rsi
+      sprite: _Starlight/Admeme/neomoth/xenomoproach.rsi
       layers:
         - state: mothroach
           map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
@@ -136,7 +136,7 @@
           state: mothroach
     - type: Clothing
       quickEquip: false
-      sprite: _Starlight/Mobs/Animals/xenomoproach.rsi
+      sprite: _Starlight/Admeme/neomoth/xenomoproach.rsi
       equippedPrefix: 0
       slots:
         - HEAD
