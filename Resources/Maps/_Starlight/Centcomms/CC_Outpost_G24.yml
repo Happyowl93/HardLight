@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/18/2025 15:47:14
-  entityCount: 11120
+  time: 12/18/2025 16:00:07
+  entityCount: 11129
 maps: []
 grids:
 - 1
@@ -17814,6 +17814,51 @@ entities:
     components:
     - type: Transform
       pos: -9.5,28.5
+      parent: 1
+  - uid: 11121
+    components:
+    - type: Transform
+      pos: 2.5,4.5
+      parent: 1
+  - uid: 11122
+    components:
+    - type: Transform
+      pos: 2.5,3.5
+      parent: 1
+  - uid: 11123
+    components:
+    - type: Transform
+      pos: 2.5,2.5
+      parent: 1
+  - uid: 11124
+    components:
+    - type: Transform
+      pos: 2.5,1.5
+      parent: 1
+  - uid: 11125
+    components:
+    - type: Transform
+      pos: 2.5,0.5
+      parent: 1
+  - uid: 11126
+    components:
+    - type: Transform
+      pos: 2.5,-0.5
+      parent: 1
+  - uid: 11127
+    components:
+    - type: Transform
+      pos: 2.5,-1.5
+      parent: 1
+  - uid: 11128
+    components:
+    - type: Transform
+      pos: 2.5,-2.5
+      parent: 1
+  - uid: 11129
+    components:
+    - type: Transform
+      pos: 2.5,-3.5
       parent: 1
 - proto: Cablecuffs
   entities:
@@ -50961,20 +51006,6 @@ entities:
       parent: 1
 - proto: LightBulbCrystalGreen
   entities:
-  - uid: 7574
-    components:
-    - type: Transform
-      parent: 7573
-    - type: Physics
-      canCollide: False
-  - uid: 7576
-    components:
-    - type: Transform
-      parent: 7575
-    - type: Physics
-      canCollide: False
-- proto: LightBulbCrystalRed
-  entities:
   - uid: 7570
     components:
     - type: Transform
@@ -50985,6 +51016,20 @@ entities:
     components:
     - type: Transform
       parent: 7571
+    - type: Physics
+      canCollide: False
+- proto: LightBulbCrystalRed
+  entities:
+  - uid: 7574
+    components:
+    - type: Transform
+      parent: 7573
+    - type: Physics
+      canCollide: False
+  - uid: 7576
+    components:
+    - type: Transform
+      parent: 7575
     - type: Physics
       canCollide: False
 - proto: LockableButtonCentcomm
@@ -55829,38 +55874,6 @@ entities:
   - uid: 7569
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 3.5,3.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        light_bulb: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 7570
-    - type: ApcPowerReceiver
-      powerLoad: 0
-    - type: DamageOnInteract
-      isDamageActive: False
-  - uid: 7571
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 3.5,-2.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        light_bulb: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 7572
-    - type: ApcPowerReceiver
-      powerLoad: 0
-    - type: DamageOnInteract
-      isDamageActive: False
-  - uid: 7573
-    components:
-    - type: Transform
       rot: 1.5707963267948966 rad
       pos: 0.5,3.5
       parent: 1
@@ -55871,12 +55884,12 @@ entities:
         light_bulb: !type:ContainerSlot
           showEnts: False
           occludes: True
-          ent: 7574
+          ent: 7570
     - type: ApcPowerReceiver
       powerLoad: 60
     - type: DamageOnInteract
       isDamageActive: False
-  - uid: 7575
+  - uid: 7571
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -55889,9 +55902,41 @@ entities:
         light_bulb: !type:ContainerSlot
           showEnts: False
           occludes: True
-          ent: 7576
+          ent: 7572
     - type: ApcPowerReceiver
       powerLoad: 60
+    - type: DamageOnInteract
+      isDamageActive: False
+  - uid: 7573
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 3.5,3.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        light_bulb: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: 7574
+    - type: ApcPowerReceiver
+      powerLoad: 0
+    - type: DamageOnInteract
+      isDamageActive: False
+  - uid: 7575
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 3.5,-2.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        light_bulb: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: 7576
+    - type: ApcPowerReceiver
+      powerLoad: 0
     - type: DamageOnInteract
       isDamageActive: False
 - proto: PrinterDoc
@@ -58961,12 +59006,12 @@ entities:
           - Open
         - - On
           - Close
-        7575:
+        7571:
         - - Off
           - On
         - - On
           - Off
-        7571:
+        7575:
         - - On
           - On
         - - Off
@@ -59015,12 +59060,12 @@ entities:
           - Close
         - - Off
           - Open
-        7573:
+        7569:
         - - Off
           - On
         - - On
           - Off
-        7569:
+        7573:
         - - On
           - On
         - - Off
@@ -71278,7 +71323,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -163.11595
+      secondsUntilStateChange: -192.75258
       state: Opening
     - type: Airlock
       autoClose: False
@@ -71292,7 +71337,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -164.01596
+      secondsUntilStateChange: -193.65259
       state: Opening
     - type: Airlock
       autoClose: False
@@ -71306,7 +71351,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -21257.074
+      secondsUntilStateChange: -21286.71
       state: Opening
     - type: Airlock
       autoClose: False
@@ -71335,7 +71380,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -21258.04
+      secondsUntilStateChange: -21287.676
       state: Opening
     - type: Airlock
       autoClose: False
