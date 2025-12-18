@@ -81,6 +81,18 @@
         },
         {
             "name": "TSF"
-        }
+        },
+		    {
+			      "name": "Xenoborg"
+		    },
+		    {
+			      "name": "Mothership"
+		    },
+		    {
+			      "name": "Skub"
+		    },
+		    {
+			      "name": "CultistChaplain"
+		    }
     ]
 }
