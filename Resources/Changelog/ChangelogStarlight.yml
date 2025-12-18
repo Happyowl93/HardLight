@@ -24131,5 +24131,33 @@ Entries:
   id: 239702
   time: '2025-12-17T20:09:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2397
+- author: neomoth
+  changes:
+  - message: Added xenoborg and mothership job icons
+    type: Add
+  id: 252000
+  time: '2025-12-18T15:36:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2520
+- author: neomoth
+  changes:
+  - message: Added two admeme job icons
+    type: Add
+  id: 252001
+  time: '2025-12-18T15:36:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2520
+- author: neomoth
+  changes:
+  - message: Changed the admin job icon to a weh
+    type: Tweak
+  id: 252002
+  time: '2025-12-18T15:36:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2520
+- author: neomoth
+  changes:
+  - message: Xenoborgs and the mother ship now use their respective job icons in chat
+    type: Tweak
+  id: 252003
+  time: '2025-12-18T15:36:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2520
 Order: -1
 
