@@ -48,7 +48,12 @@ loadout-group-civilian-shoes = Shoes
 loadout-group-salvage-specialist-jumpsuit = Salvage Specialist jumpsuit
 loadout-group-salvage-lead-jumpsuit = Salvage Lead jumpsuit
 loadout-group-mining-specialist-jumpsuit = Mining Specialist jumpsuit
+loadout-group-salvagelead-id = Salvage Lead ID
+loadout-group-mining-id = Mining Specialist ID
+loadout-group-salvage-id = Salvage Specialist ID
+loadout-group-salvage-lead-mantle = Salvage Lead mantle 
 
 # Other
 
 loadout-group-scarves = Scarf
+loadout-group-pens = Pen

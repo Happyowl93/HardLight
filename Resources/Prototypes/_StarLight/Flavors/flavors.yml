@@ -9,6 +9,21 @@
   description: flavor-complex-dragan-special
 
 - type: flavor
-  id: evil
+  id: thaslop
+  flavorType: complex
+  description: flavor-complex-tha-slop
+
+- type: flavor
+  id: wrong
   flavorType: Base
-  description: flavor-basic-evil
+  description: flavor-base-wrong
+
+- type: flavor
+  id: struggle
+  flavorType: Complex
+  description: flavor-complex-struggle
+
+- type: flavor
+  id: halal
+  flavorType: Base
+  description: flavor-base-halal

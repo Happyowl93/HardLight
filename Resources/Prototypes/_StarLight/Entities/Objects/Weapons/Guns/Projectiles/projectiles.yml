@@ -110,44 +110,6 @@
     damage: 12 # 9 hits to stun sounds reasonable
 
 - type: entity
-  id: BulletEnergyCrossbow
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Reflective
-    reflective:
-      - NonEnergy
-  - type: Sprite
-    sprite: _Starlight/Objects/Weapons/Guns/Projectiles/projectiles.rsi
-    layers:
-    - state: cbbolt
-  - type: StaminaDamageOnCollide
-    damage: 30
-  - type: StunOnCollide
-    knockdownAmount: 1
-  - type: Projectile
-    damage:
-      types:
-        Poison: 20
-  - type: TimedDespawn
-    lifetime: 0.4
-  - type: GatheringProjectile
-
-- type: entity
-  id: BulletMiniEnergyCrossbow
-  parent: BulletEnergyCrossbow
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: StaminaDamageOnCollide
-    damage: 40
-  - type: StunOnCollide
-    knockdownAmount: 2
-  - type: Projectile
-    damage:
-      types:
-        Poison: 10
-
-- type: entity
   name : laser bolt
   id: BulletEnergySMGLaser
   parent: BulletEnergyTurretBase
@@ -165,7 +127,7 @@
     damage:
       types:
         Heat: 10
-
+  
 - type: entity
   name : disabler bolt
   id: BulletEnergySMGDisabler
@@ -189,32 +151,3 @@
     soundHit:
       collection: WeakHit
     forceSound: true
-
-- type: entity
-  parent: [ BulletGrenadeCleanade, BaseSyndicateContraband ]
-  id: BulletGrenadeCleanadeSyndicate
-  name: evil cleanade grenade round
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-    - state: cleanade
-  - type: SmokeOnTrigger
-    duration: 6
-    spreadAmount: 45
-    smokePrototype: Foam
-    solution:
-      reagents:
-      - ReagentId: SyndicateSpaceCleaner
-        Quantity: 30
-  - type: EmitSoundOnTrigger
-    sound: /Audio/Items/smoke_grenade_smoke.ogg
-    positional: true
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Default
-    totalIntensity: 0.01 # a little pop
-    intensitySlope: 1
-    maxIntensity: 0.01
-    tileBreakScale: 0.01

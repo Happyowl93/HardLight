@@ -16,7 +16,7 @@ uplink-magillitis-serum-implanter-name = Magillitis Serum Implanter
 uplink-magillitis-serum-implanter-desc = An experimental biochip which causes irreversable rapid muscular growth in Hominidae. Side-affects may include hypertrichosis, violent outbursts, and an unending affinity for bananas.
 
 uplink-pitbull-bundle-name = Pitbull Bundle
-uplink-pitbull-bundle-desc = A large bullpup rifle with a low fire-rate but excellent accuracy. Chambered in .45 magnum.
+uplink-pitbull-bundle-desc = A large bullpup rifle with a low fire-rate but excellent accuracy. Chambered in .45 magnum. 
 
 
 uplink-rifle-magazine-pitbull-name = Bullpup magazine (.45 magnum)
@@ -42,10 +42,20 @@ uplink-syndicate-borgi-name = Syndicate Borgi
 uplink-syndicate-borgi-desc = A basic syndicate borgi
 
 uplink-syndicate-borgi-kitted-name = Kitted Syndicate Borgi
-uplink-syndicate-borgi-kitted-desc = A syndicate borgi, with assault modules
+uplink-syndicate-borgi-kitted-desc = A syndicate borgi, outfitted with an L6 module, operative module and E-sword module.
 
 uplink-syndicate-borgi-speed-name = Speed Syndicate Borgi
 uplink-syndicate-borgi-speed-desc = A syndicate borgi, with dagger modules and additional speed
+
+uplink-reinforcement-radio-medical-cyborg-name = Syndicate Medical Cyborg Teleporter
+uplink-reinforcement-radio-medical-cyborg-desc = A medical borg, with syndicate variants of items where applicable. Comes with basic weapons.
+
+uplink-reinforcement-radio-saboteur-cyborg-name = Syndicate Saboteur Cyborg Teleporter
+uplink-reinforcement-radio-saboteur-cyborg-desc = A saboteur cyborg, complete with syndicate advanced tools, standard hacking equipment and basic weapons
+
+uplink-reinforcement-radio-stealth-cyborg-name = Syndicate Stealth Cyborg Teleporter
+uplink-reinforcement-radio-stealth-cyborg-desc = A stealth cyborg. Whilst it is incapable of fighting, it has the ability to disguise, go invisible and move through vents. Comes with standard hacking tools.
+
 
 uplink-syndimov-law-name = Syndimov Law Circuit
 uplink-syndimov-law-desc = A modified version of crewismov that defines syndicate agents as crew.
@@ -58,6 +68,3 @@ uplink-lube-grenade-desc = Special grenade for shenanigans, releasing large clou
 
 uplink-glue-grenade-name = Glue Grenade
 uplink-glue-grenade-desc = Special grenade for shenanigans, releasing large cloud of glue foam.
-
-uplink-hydra-name = Hydra
-uplink-hydra-desc = A hydra grenade launcher, filled with syndicate cleanade grenades instead of normal ones.
