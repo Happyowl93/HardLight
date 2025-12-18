@@ -341,7 +341,6 @@
       speechVerb: Robotic
       speechSounds: Xenoborg
       allowedEmotes: [ 'Chitter', 'Squeak', 'FlapWings', 'Laugh' ]
-      wilhelmProbability: 0.0
     - type: DamagedSiliconAccent
     - type: UnblockableSpeech
 #    - type: FootstepModifier
