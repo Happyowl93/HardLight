@@ -244,12 +244,12 @@
     - type: ZombieImmune
     - type: WiresPanel
     - type: ActivatableUIRequiresPanel
-    - type: ContainerContainer
-      containers:
-        borg_brain: !type:ContainerSlot { }
-        cell_slot: !type:ContainerSlot { }
-        borg_module: !type:Container { }
-        part-container: !type:Container
+#    - type: ContainerContainer
+#      containers:
+#        borg_brain: !type:ContainerSlot { }
+#        cell_slot: !type:ContainerSlot { }
+#        borg_module: !type:Container { }
+#        part-container: !type:Container
     - type: PowerCellSlot
       cellSlotId: cell_slot
       fitsInCharger: true
@@ -287,29 +287,7 @@
       userInterfaceKeys:
         - enum.BorgUiKey.Key
     - type: LockedWiresPanel
-    - type: ToggleableVisuals
       spriteLayer: light
-    - type: HandheldLight
-      toggleOnInteract: false
-      wattage: 0.2
-      blinkingBehaviourId: blinking
-      radiatingBehaviourId: radiating
-    - type: LightBehaviour
-      behaviours:
-        - !type:FadeBehaviour
-          id: radiating
-          maxDuration: 2.0
-          startValue: 3.0
-          endValue: 2.0
-          isLooped: true
-          reverseWhenFinished: true
-        - !type:PulseBehaviour
-          id: blinking
-          interpolate: Nearest
-          maxDuration: 1.0
-          startValue: 0.1
-          endValue: 2.0
-          isLooped: true
     - type: Pullable
     - type: Puller
       needsHands: false
@@ -355,7 +333,7 @@
     - type: ContainerFill
       containers:
         borg_brain:
-          - MMIFilledGhostRoleXenomoproach
+          - MMIFilled
         borg_module:
           - XenoborgModuleBasic
           - BorgModuleAdvancedTool
@@ -412,11 +390,37 @@
                 - cell_slot
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
+    - type: HandheldLight
+      toggleOnInteract: false
+      wattage: 0.2
+      blinkingBehaviourId: blinking
+      radiatingBehaviourId: radiating
     - type: ItemTogglePointLight
+    - type: ToggleableVisuals
+      spriteLayer: light
+    - type: LightBehaviour
+      behaviours:
+        - !type:FadeBehaviour
+          id: radiating
+          maxDuration: 2.0
+          startValue: 3.0
+          endValue: 2.0
+          isLooped: true
+          reverseWhenFinished: true
+        - !type:PulseBehaviour
+          id: blinking
+          interpolate: Nearest
+          maxDuration: 1.0
+          startValue: 0.1
+          endValue: 2.0
+          isLooped: true
     - type: PointLight
       color: "#0033ff"
       enabled: false
       mask: /Textures/Effects/LightMasks/cone.png
+      autoRot: true
+      radius: 4
+      netsync: false
     - type: GuideHelp
       guides:
         - Cyborgs
@@ -437,7 +441,7 @@
       canBeStripped: false
     - type: ComplexInteraction
     - type: Buckle
-    
+
 - type: entity
   parent: MobXenomoproach
   suffix: admeme, empty
@@ -445,8 +449,7 @@
   components:
     - type: ContainerFill
       containers:
-        borg_brain:
-          - MMI
+        borg_brain: []
         borg_module:
           - XenoborgModuleBasic
           - BorgModuleAdvancedTool
@@ -455,6 +458,20 @@
         cell_slot:
           name: power-cell-slot-component-slot-name-default
           startingItem: PowerCellHighPrinted
+
+- type: entity
+  parent: MobXenomoproach
+  id: MobXenomoproachPacified
+  suffix: admeme, pacified
+  components:
+    - type: Pacified
+
+- type: entity
+  parent: MobXenomoproachEmpty
+  id: MobXenomoproachEmptyPacified
+  suffix: admeme, empty, pacified
+  components:
+    - type: Pacified
 
 - type: entity
   parent: [ClothingBackpack]
@@ -482,24 +499,7 @@
   equipment:
     head: ClothingHeadHatPurplesoft
     back: ClothingBackpackXenomoproach
-
-### TEMPORARY UNTIL MMI GHOST ROLE STUFF IS FIXED ###
-- type: entity
-  parent: MMIFilled
-  id: MMIFilledGhostRoleXenomoproach
-  suffix: admeme, DO NOT MAP
-  components:
-    - type: GhostRole
-      makeSentient: true
-      allowSpeech: true
-      allowMovement: true
-      name: ghost-role-information-xenomoproach-name
-      description: ghost-role-information-xenomoproach-description
-      rules: ghost-role-information-xenomoproach-rules
-      mindRoles:
-        - MindRoleGhostRoleTeamAntagonist
-    - type: GhostTakeoverAvailable
-      
+  
 - type: body
   id: Xenomoproach
   name: "xenomoproach"
