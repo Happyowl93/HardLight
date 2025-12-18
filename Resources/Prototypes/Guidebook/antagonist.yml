@@ -13,8 +13,11 @@
   - SpaceNinja
   - Thieves
   - Vampires
-  - Abductors
   - Wizard
+  # Starlight-start
+  - Abductors
+  - TerrorSpiders
+  # Starlight-end
 
 - type: guideEntry
   id: Traitors
@@ -60,11 +63,6 @@
   id: Vampires
   name: guide-entry-vampires
   text: "/ServerInfo/Guidebook/Antagonist/Vampires.xml"
-  
-- type: guideEntry
-  id: Abductors
-  name: guide-entry-abductors
-  text: "/ServerInfo/Guidebook/Antagonist/Abductors.xml"
   
 - type: guideEntry
   id: Wizard

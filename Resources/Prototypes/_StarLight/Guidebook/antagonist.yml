@@ -1,0 +1,9 @@
+- type: guideEntry
+  id: Abductors
+  name: guide-entry-abductors
+  text: "/ServerInfo/Guidebook/Antagonist/Abductors.xml"
+
+- type: guideEntry
+  id: TerrorSpiders
+  name: guide-entry-terror-spiders
+  text: "/ServerInfo/_StarLight/Guidebook/Antagonist/TerrorSpider.xml"
