@@ -371,9 +371,9 @@
   description: A mysterious yet well made mantle of unknown origin.
   components:
     - type: Sprite
-      sprite: _Starlight/Clothing/Neck/Mantles/unidentifiedmantle.rsi
+      sprite: _Starlight/Clothing/Neck/Mantles/Unidentifiedmantle.rsi
     - type: Clothing
-      sprite: _Starlight/Clothing/Neck/Mantles/unidentifiedmantle.rsi
+      sprite: _Starlight/Clothing/Neck/Mantles/Unidentifiedmantle.rsi
 
 ## Cool
 
