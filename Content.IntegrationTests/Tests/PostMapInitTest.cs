@@ -35,15 +35,12 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] NoSpawnMaps =
         {
-            "CentComm",
             "StarlightCentCommG24", //starlight
             "StarlightCentCommSC17", //starlight
-            "Dart"
         };
 
         private static readonly string[] Grids =
         {
-            "/Maps/centcomm.yml",
             //"/Maps/_Starlight/Centcomms/CC_Outpost_G24",
             //"/Maps/_Starlight/Centcomms/CC_Outpost_SC17",
             AdminTestArenaSystem.ArenaMapPath
@@ -59,8 +56,6 @@ namespace Content.IntegrationTests.Tests
         /// </remarks>
         private static readonly Dictionary<string, HashSet<EntProtoId>> DoNotMapWhitelistSpecific = new()
         {
-            {"/Maps/bagel.yml", ["RubberStampMime"]},
-            {"/Maps/reach.yml", ["HandheldCrewMonitor"]},
             {"/Maps/Shuttles/ShuttleEvent/honki.yml", ["GoldenBikeHorn", "RubberStampClown"]},
             {"/Maps/Shuttles/ShuttleEvent/syndie_evacpod.yml", ["RubberStampSyndicate"]},
             {"/Maps/Shuttles/ShuttleEvent/cruiser.yml", ["ShuttleGunPerforator"]},
@@ -76,10 +71,7 @@ namespace Content.IntegrationTests.Tests
         /// </remarks>
         private static readonly string[] DoNotMapWhitelist =
         {
-            "/Maps/centcomm.yml",
             "/Maps/Shuttles/AdminSpawn/**", // admin gaming
-            "/Maps/bagel.yml", // Contains mime's rubber stamp --> Either fix this, remove the category, or remove this comment if intentional.
-            "/Maps/reach.yml", // Contains handheld crew monitor
            #region starlight
             "/Maps/nanoStation.yml",
             "/Maps/_Starlight/nukieplanet.yml", //starlight nukie spawn map
@@ -113,23 +105,7 @@ namespace Content.IntegrationTests.Tests
         {
             "Dev",
             "TestTeg",
-            "Fland",
-            "Packed",
-            "Bagel",
-            "CentComm",
-            "Box",
-            "Marathon",
-            "MeteorArena",
-            "Saltern",
-            "Reach",
-            "Oasis",
-            "Plasma",
-            "Elkridge",
-            "Relic",
-            "dm01-entryway",
-            "Exo",
-            "Snowball",
-            "dm01-entryway",
+            //Starlight, do not accept any upstream maps into this list, we are keeping them out for package size and just general management reasons
             #region Starlight
             "StarlightBarratry",
             "StarlightCork",

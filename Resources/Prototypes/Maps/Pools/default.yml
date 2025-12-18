@@ -1,14 +1,14 @@
 - type: gameMapPool
   id: DefaultMapPool
-  maps:
-  - Bagel
-  - Box
-  - Elkridge
-  - Fland
-  - Marathon
-  - Oasis
-  - Packed
-  - Plasma
-  - Reach
-  - Exo
-  - Snowball
+  maps: #Starlight all disabled because they dont exist anymore
+  # - Bagel
+  # - Box
+  # - Elkridge
+  # - Fland
+  # - Marathon
+  # - Oasis
+  # - Packed
+  # - Plasma
+  # - Reach
+  # - Exo
+  # - Snowball
