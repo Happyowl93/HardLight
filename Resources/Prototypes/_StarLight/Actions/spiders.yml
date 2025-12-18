@@ -40,6 +40,26 @@
 # Terror spiders
 
 - type: entity
+  id: ActionAcidVent
+  name: Acid Vent
+  description: Unwelds vents.
+  components:
+  - type: Action
+    useDelay: 30
+    itemIconStyle: BigAction
+    raiseOnUser: true
+    sound:
+      path: /Audio/Effects/pop.ogg
+    icon:
+      sprite: _Starlight/Interface/Actions/actions_spider.rsi
+      state: acid_vent
+  - type: TargetAction
+    range: 2
+    checkCanAccess: true
+  - type: EntityTargetAction
+    event: !type:AcidVentEvent
+
+- type: entity
   id: ActionEvolve
   name: Evolve
   description: evolve into a new entity.
