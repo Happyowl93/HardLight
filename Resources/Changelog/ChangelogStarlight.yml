@@ -24045,5 +24045,91 @@ Entries:
   id: 249300
   time: '2025-12-16T20:59:10.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2493
+- author: Happyrobot33
+  changes:
+  - message: Disabled rift auto gamma for now.
+    type: Tweak
+  id: 250300
+  time: '2025-12-17T15:18:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2503
+- author: Happyrobot33
+  changes:
+  - message: Added a cvar for controlling auto gamma on rifts.
+    type: Add
+  id: 250301
+  time: '2025-12-17T15:18:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2503
+- author: Penguinwizzard
+  changes:
+  - message: A number of self-recharging weapons got a firmware update and now properly
+      display updates to their ammo when they recharge.
+    type: Fix
+  id: 249800
+  time: '2025-12-17T16:24:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2498
+- author: mikeysaurus
+  changes:
+  - message: Increases timeout on the holopad from 1 minute to 10 minutes, allowing
+      for longer conversations without interruption.
+    type: Tweak
+  id: 250000
+  time: '2025-12-17T17:25:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2500
+- author: Quini98, neomoth
+  changes:
+  - message: Adds Quini98's ERT shuttles into the base repository.
+    type: Add
+  id: 248300
+  time: '2025-12-17T17:46:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2483
+- author: Quini98, neomoth
+  changes:
+  - message: Adds a new Janitorial ERT shuttle.
+    type: Add
+  id: 248301
+  time: '2025-12-17T17:46:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2483
+- author: Quini98, neomoth
+  changes:
+  - message: Adds gamerules to spawn the new ERT shuttles.
+    type: Add
+  id: 248302
+  time: '2025-12-17T17:46:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2483
+- author: Quini98, neomoth
+  changes:
+  - message: Adds a new janitor locker, currently only used on the janitor ERT shuttle.
+    type: Add
+  id: 248303
+  time: '2025-12-17T17:46:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2483
+- author: Quini98, neomoth
+  changes:
+  - message: Remove the original ERTShuttleSpawn gamerule.
+    type: Remove
+  id: 248304
+  time: '2025-12-17T17:46:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2483
+- author: Rhetorica
+  changes:
+  - message: charcuterie board
+    type: Add
+  id: 239700
+  time: '2025-12-17T20:09:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2397
+- author: Rhetorica
+  changes:
+  - message: khlav kalash
+    type: Add
+  id: 239701
+  time: '2025-12-17T20:09:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2397
+- author: Rhetorica
+  changes:
+  - message: crab juice (canned or fresh-squeezed)
+    type: Add
+  id: 239702
+  time: '2025-12-17T20:09:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2397
 Order: -1
 
