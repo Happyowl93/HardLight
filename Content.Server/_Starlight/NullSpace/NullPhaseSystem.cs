@@ -65,7 +65,9 @@ public sealed class NullSpacePhaseSystem : EntitySystem
 
     private void OnPhaseAction(EntityUid uid, NullPhaseComponent component, NullPhaseActionEvent args)
     {
-        Phase(uid);
+        if (CanPhase(uid))
+            Phase(uid);
+
         args.Handled = true;
     }
 
@@ -77,7 +79,7 @@ public sealed class NullSpacePhaseSystem : EntitySystem
             _actionsSystem.RemoveAction(uid, component.PhaseAction);
     }
 
-    public void Phase(EntityUid uid)
+    public bool CanPhase(EntityUid uid)
     {
         if (TryComp<NullSpaceComponent>(uid, out var nullspace))
         {
@@ -86,9 +88,34 @@ public sealed class NullSpacePhaseSystem : EntitySystem
             && _physics.GetEntitiesIntersectingBody(uid, (int)CollisionGroup.Impassable).Count > 0)
             {
                 _popup.PopupEntity(Loc.GetString("revenant-in-solid"), uid, uid);
-                return;
+                return false;
+            }
+        }
+        else
+        {
+            if (_container.IsEntityInContainer(uid))
+            {
+                _popup.PopupEntity(Loc.GetString("phase-fail-generic"), uid, uid);
+                return false;
             }
 
+            foreach (var entity in _lookup.GetEntitiesIntersecting(Transform(uid).Coordinates))
+            {
+                if (HasComp<NullSpaceBlockerComponent>(entity))
+                {
+                    _popup.PopupEntity(Loc.GetString("phase-fail-generic"), uid, uid);
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public void Phase(EntityUid uid)
+    {
+        if (TryComp<NullSpaceComponent>(uid, out var nullspace))
+        {
             if (HasComp<ShadekinComponent>(uid))
             {
                 var lightQuery = _lookup.GetEntitiesInRange(uid, 5, flags: LookupFlags.StaticSundries)
@@ -106,21 +133,6 @@ public sealed class NullSpacePhaseSystem : EntitySystem
         }
         else
         {
-            if (_container.IsEntityInContainer(uid))
-            {
-                _popup.PopupEntity(Loc.GetString("phase-fail-generic"), uid, uid);
-                return;
-            }
-
-            foreach (var entity in _lookup.GetEntitiesIntersecting(Transform(uid).Coordinates))
-            {
-                if (HasComp<NullSpaceBlockerComponent>(entity))
-                {
-                    _popup.PopupEntity(Loc.GetString("phase-fail-generic"), uid, uid);
-                    return;
-                }
-            }
-
             EnsureComp<NullSpaceComponent>(uid);
 
             if (HasComp<ShadekinComponent>(uid))

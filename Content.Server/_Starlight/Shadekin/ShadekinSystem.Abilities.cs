@@ -60,7 +60,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         int cost = _phaseCost;
         if (HasComp<NullSpaceComponent>(uid))
         {
-            if (OnAttemptEnergyUse(uid, component))
+            if (_nullspace.CanPhase(uid) && OnAttemptEnergyUse(uid, component))
                 _nullspace.Phase(uid);
 
             args.Handled = true;
@@ -93,7 +93,7 @@ public sealed partial class ShadekinSystem : EntitySystem
                 BlockDuplicate = true
             });
         }
-        else if (OnAttemptEnergyUse(uid, component, cost))
+        else if (_nullspace.CanPhase(uid) && OnAttemptEnergyUse(uid, component, cost))
             _nullspace.Phase(uid);
 
         args.Handled = true;
@@ -104,7 +104,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         if (!args.Args.Target.HasValue || args.Handled || args.Cancelled)
             return;
 
-        if (!OnAttemptEnergyUse(uid, component, args.Cost))
+        if (!_nullspace.CanPhase(uid) || !OnAttemptEnergyUse(uid, component, args.Cost))
             return;
 
         EnsureComp<NullSpacePulledComponent>(args.Args.Target.Value);
