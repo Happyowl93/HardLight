@@ -221,15 +221,15 @@
         - GenpopLeave
     - type: Loadout
       prototypes: [ CCMoproachGearHat ]
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
 
 - type: entity
   parent: MobCCMoproach
   id: MobCCMoproachHat
   suffix: Jani ERT, hat
   components:
-    - type: NpcFactionMember
-      factions:
-        - NanoTrasen
     - type: Loadout
       prototypes: [ CCMoproachGearHat ]
 
