@@ -2,3 +2,4 @@
 - type: entityCategory
   id: ShouldMapStation
   name: entity-category-name-shouldmapstation
+  inheritable: false
