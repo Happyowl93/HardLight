@@ -23016,7 +23016,7 @@ entities:
     - type: Transform
       pos: 12.5,-45.5
       parent: 1668
-- proto: ClothingOuterHardsuitThanatos
+- proto: ClothingOuterHardsuitDeathsquad
   entities:
   - uid: 2472
     components:

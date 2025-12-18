@@ -1083,8 +1083,8 @@
 #Deathsquad Hardsuit
 - type: entity
   parent: [ BaseCentcommContraband, ClothingHeadHardsuitBase ]
-  id: ClothingHeadHelmetHardsuitThanatos
-  name: Thanatos helmet
+  id: ClothingHeadHelmetHardsuitDeathsquad
+  name: deathsquad hardsuit helmet
   description: A robust helmet for special operations.
   components:
   - type: BreathMask
