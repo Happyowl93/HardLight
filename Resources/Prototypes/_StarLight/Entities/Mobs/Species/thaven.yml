@@ -116,7 +116,7 @@
       misc:
         sizeMaps:
           32:
-            sprite: _Starlight/Mobs/Species/Cyclorite/displacement.rsi
+            sprite: _Starlight/Mobs/Species/Thaven/displacement.rsi
             state: neck
       outerClothing:
         sizeMaps:
@@ -173,7 +173,7 @@
       misc:
         sizeMaps:
           32:
-            sprite: _Starlight/Mobs/Species/Cyclorite/displacement.rsi
+            sprite: _Starlight/Mobs/Species/Thaven/displacement.rsi
             state: neck
       outerClothing:
         sizeMaps:
