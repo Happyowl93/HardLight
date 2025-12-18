@@ -24159,5 +24159,51 @@ Entries:
   id: 252003
   time: '2025-12-18T15:36:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2520
+- author: CawsForConcern
+  changes:
+  - message: (CC Outpost G24) Scan gates at Security checkpoint
+    type: Add
+  id: 252400
+  time: '2025-12-18T20:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2524
+- author: CawsForConcern
+  changes:
+  - message: (CC Outpost SC17) Scan gates at Security checkpoint
+    type: Add
+  id: 252401
+  time: '2025-12-18T20:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2524
+- author: CawsForConcern
+  changes:
+  - message: (CC Outpost G24) Changed airlocks at Security checkpoint for windoors
+      (which can close on people without hurting them) to make checkpoints smoother
+      to operate
+    type: Tweak
+  id: 252402
+  time: '2025-12-18T20:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2524
+- author: CawsForConcern
+  changes:
+  - message: (CC Outpost SC17) Changed airlocks at Security checkpoint for windoors
+      (which can close on people without hurting them) to make checkpoints smoother
+      to operate
+    type: Tweak
+  id: 252403
+  time: '2025-12-18T20:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2524
+- author: CawsForConcern
+  changes:
+  - message: (CC Outpost G24) Green/Red status lights for airlocks were backwards
+    type: Fix
+  id: 252404
+  time: '2025-12-18T20:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2524
+- author: CawsForConcern
+  changes:
+  - message: (CC Outpost G24) Air sensor in the checkpoint booth was unpowered
+    type: Fix
+  id: 252405
+  time: '2025-12-18T20:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2524
 Order: -1
 
