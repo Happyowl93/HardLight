@@ -35,9 +35,16 @@ public sealed class TicketMachineSystem : SharedTicketMachineSystem
             List<EntityUid> burnedTickets = new();
             foreach (var ticket in component.issuedTickets)
             {
+                if (!Exists(ticket))
+                {
+                    burnedTickets.Add(ticket); // Clean up invalid tickets
+                    continue;
+                }
+
                 if (TryComp<TicketComponent>(ticket, out var ticketComp) 
                     && ticketComp.Number > component.displayNumber) // Only burn tickets which are already served
                     continue;
+                
                 _flammableSystem.Ignite(ticket, uid);
                 burnedTickets.Add(ticket);
             }
