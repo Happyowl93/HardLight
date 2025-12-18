@@ -24213,5 +24213,13 @@ Entries:
   id: 252100
   time: '2025-12-18T21:07:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2521
+- author: Penguinwizzard
+  changes:
+  - message: Firelocks now behave the same way when placed over glass and opaque airlocks,
+      closing over the airlock if a linked air alarm is in an alarm state.
+    type: Tweak
+  id: 251900
+  time: '2025-12-18T15:40:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2519
 Order: -1
 
