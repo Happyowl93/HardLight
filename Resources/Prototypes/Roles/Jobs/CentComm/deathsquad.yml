@@ -31,7 +31,7 @@
     eyes: ClothingEyesHudCentComm
     ears: ClothingHeadsetAltCentComDS
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitDeathsquad
+    outerClothing: ClothingOuterHardsuitThanatos
     shoes: ClothingShoesBootsMagAdv
     id: DeathsquadPDA
     pocket1: EnergySword
@@ -57,5 +57,5 @@
   job: DeathSquad
   hasMindShield: true
   equipment:
-    head: ClothingHeadHelmetHardsuitDeathsquad
+    head: ClothingHeadHelmetHardsuitThanatos
     neck: ClothingNeckBronzeheart

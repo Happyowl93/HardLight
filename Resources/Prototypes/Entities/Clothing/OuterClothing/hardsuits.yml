@@ -1116,8 +1116,8 @@
 #Deathsquad
 - type: entity
   parent: [ BaseCentcommContraband, ClothingOuterHardsuitBase ]
-  id: ClothingOuterHardsuitDeathsquad
-  name: death squad hardsuit
+  id: ClothingOuterHardsuitThanatos
+  name: Thanatos
   description: An advanced hardsuit favored by commandos for use in special operations.
   components:
   - type: Sprite
@@ -1135,25 +1135,25 @@
   - type: FireProtection
     reduction: 0.8
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.15 # Needs 21 hits with a disabler to stun :godo:
+    damageCoefficient: 0.0 # 100% stamina resistance
   - type: Pierceable
     level: Rock
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.1 #best armor in the game
-        Slash: 0.1
-        Piercing: 0.1
-        Heat: 0.1
-        Radiation: 0.1
-        Caustic: 0.1
+        Blunt: 0.05 # 95% resistance
+        Slash: 0.05
+        Piercing: 0.01 # 99% pierce resistance
+        Heat: 0.05
+        Radiation: 0.05
+        Caustic: 0.05
     staminaModifier: 0.0
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
   - type: HeldSpeedModifier
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitDeathsquad
+    clothingPrototype: ClothingHeadHelmetHardsuitThanatos
 
 #CBURN Hardsuit
 - type: entity
