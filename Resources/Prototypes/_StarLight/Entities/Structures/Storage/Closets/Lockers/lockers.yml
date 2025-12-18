@@ -156,6 +156,7 @@
 - type: entity
   id: LockerJanitorCC
   parent: LockerJanitor
+  suffix: Central Command
   components:
     - type: AccessReader
       access: [["CentralCommand"]]

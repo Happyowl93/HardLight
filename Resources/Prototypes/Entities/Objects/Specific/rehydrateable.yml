@@ -126,6 +126,16 @@
     possibleSpawns:
     - MobMoproach
 
+# SL start
+- type: entity
+  parent: MoproachCube
+  id: CCMoproachCube
+  components:
+    - type: Rehydratable
+      possibleSpawns:
+      - MobCCMoproach 
+# SL end
+
 - type: entity
   parent: RehydratableAnimalCube
   id: MouseCube
