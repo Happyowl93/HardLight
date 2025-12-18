@@ -49,6 +49,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.4
     sprintModifier: 0.0
+  - type: AmmoCounter
 
 - type: entity
   id: SkatesRacing
@@ -68,18 +69,33 @@
   name: thruster cartridge
   parent: CartridgeMinigun
   components:
-  - type: HitScanCartridgeAmmo
-    hitscan: BulletThruster
+  - type: CartridgeAmmo
+    proto: BulletThruster
     deleteOnSpawn: true
 
-- type: hitscan
+- type: entity
   id: BulletThruster
   parent: BulletTrace
-  damage:
-    types:
-      Piercing: 0
-  derivation: 0.1
-  count: 0
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Blunt: 0
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: _Starlight/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: muzzle
+    travelFlash:
+      sprite: _Starlight/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: trace
+    impactFlash:
+      sprite: _Starlight/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: impact
+    bullet:
+      sprite:
+        sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+        state: rubber
 
 - type: entity
   id: SuitRacingRandom
