@@ -32,6 +32,12 @@ public sealed partial class CollectiveMind : SharedCollectiveMindSystem
     {
         var uid = ent.Owner;
 
+        if (ent.Comp.BlockWhenUnconscious)
+        {
+            args.Cancel();
+            return;
+        }
+
         if (ent.Comp.CorruptWhenUnconscious)
         {
             //we need to check if the entity is sleeping, or crit

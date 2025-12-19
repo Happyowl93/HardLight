@@ -54,3 +54,18 @@ public sealed partial class PortalComponent : Component
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public bool RandomTeleport = true;
 }
+
+// Startlight - OnAttemptPortalEvent
+public sealed class OnAttemptPortalEvent : CancellableEntityEventArgs
+{
+    public EntityUid Subject { get; }
+
+    /// <summary>
+    /// Starlight - Trigger when i use attempt to use a portal, if cancelled, the portal does not teleport.
+    /// </summary>
+    /// <param name="ent"></param>
+    public OnAttemptPortalEvent(EntityUid subject)
+    {
+        Subject = subject;
+    }
+}
