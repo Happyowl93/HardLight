@@ -24362,5 +24362,16 @@ Entries:
   id: 254400
   time: '2025-12-19T21:28:39.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2544
+- author: Penguinwizzard
+  changes:
+  - message: Addressed a disagreement between CC supply and facilities departments,
+      re-adding the energy shotgun to the warden's locker.
+    type: Fix
+  - message: Addressed a mis-order from CC supply of energy magnums, HOS's will now
+      no longer get a copy of the detectives gun
+    type: Fix
+  id: 254600
+  time: '2025-12-19T22:01:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2546
 Order: -1
 
