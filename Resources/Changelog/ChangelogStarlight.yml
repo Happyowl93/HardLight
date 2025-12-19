@@ -24231,5 +24231,13 @@ Entries:
   id: 254200
   time: '2025-12-19T15:16:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2542
+- author: CorruptOmega
+  changes:
+  - message: Salvage/Mining Ticket machines now correctly say tickets instead of currency.
+      Stop trying to stick your spesos into the ticket vendor slot.
+    type: Tweak
+  id: 234600
+  time: '2025-12-19T16:49:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2346
 Order: -1
 
