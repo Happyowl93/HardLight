@@ -24324,5 +24324,13 @@ Entries:
   id: 216600
   time: '2025-12-19T16:50:39.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2166
+- author: Citrea
+  changes:
+  - message: Some wrapped items can now be unwrapped without hands. Your chocolate
+      and presents are not safe.
+    type: Tweak
+  id: 235800
+  time: '2025-12-19T16:49:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2358
 Order: -1
 
