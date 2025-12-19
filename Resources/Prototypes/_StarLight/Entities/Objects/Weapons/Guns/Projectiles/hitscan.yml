@@ -1203,6 +1203,7 @@
   - type: HitscanAmmo
   - type: HitscanBasicRaycast
   - type: HitscanReflect
+  - type: HitscanBasicEffects
 
 - type: entity
   id: EnergyTrace
@@ -1304,6 +1305,8 @@
       sprite:
         sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
         state: omnilaser
+  - type: HitscanBasicEffects
+    hitColor: blue
 
 - type: entity
   id: DisablerBolt
