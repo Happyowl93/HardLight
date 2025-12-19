@@ -65,8 +65,8 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ReplacementAccentSystem _wordreplacement = default!;
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
-    [Dependency] private readonly SharedCollectiveMindSystem _collectiveMind = default!; // Starlight
-    [Dependency] private readonly SpeechSystem _speechSystem = default!; // Starlight
+    [Dependency] private readonly SharedCollectiveMindSystem _collectiveMind = default!;
+    [Dependency] private readonly SpeechSystem _speechSystem = default!; //Starlight
     [Dependency] private readonly LanguageSystem _language = default!; // Starlight
     [Dependency] private readonly SharedPopupSystem _popups = default!; // Starlight
 
@@ -482,9 +482,6 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (_mobStateSystem.IsDead(source) || collectiveMind == null || message == "" || !TryComp<CollectiveMindComponent>(source, out var sourceCollectiveMindComp) || !sourceCollectiveMindComp.Minds.ContainsKey(collectiveMind))
             return;
 
-        if (collectiveMind.NeedWhitelist && !_collectiveMind.CheckWhitelist(source, collectiveMind))
-            return;
-
         //raise the message event for modifications
         var evMsg = new CollectiveMindMessageAttemptEvent(source, message);
         RaiseLocalEvent(source, evMsg, false);
@@ -533,9 +530,6 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("message", FormattedMessage.EscapeText(message)),
             ("channel", collectiveMind.LocalizedName),
             ("number", Number));
-
-        if (collectiveMind.ShowNames)
-            messageWrap = adminMessageWrap;
 
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"CollectiveMind chat from {ToPrettyString(source):Player}: {FormattedMessage.EscapeText(message)}");
 

@@ -20,7 +20,6 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Server.Body.Components; // Starlight
 using System.Linq;
 using Content.Shared.EntityEffects.Effects.Solution;
 using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
@@ -269,9 +268,6 @@ public sealed class SmokeSystem : EntitySystem
             return;
 
         var blockIngestion = _internals.AreInternalsWorking(entity);
-
-        if (!HasComp<RespiratorComponent>(entity)) // Starlight - Shadekin does not breathe and "AreInternalsWorking" does not check for that.
-            blockIngestion = true;
 
         var cloneSolution = solution.Clone();
         var availableTransfer = FixedPoint2.Min(cloneSolution.Volume, component.TransferRate);
