@@ -21,10 +21,12 @@ public sealed partial class LimbSystem : SharedLimbSystem
             layers.Add(layer.Value);
 
             if (TryComp<BaseLayerIdComponent>(partLimbId, out var baseLayerStorage)
-                && baseLayerStorage?.Layer != null)
+                && (baseLayerStorage.Layers.TryGetValue(body.Comp.Species, out var baseLayer) 
+                || baseLayerStorage.Layers.TryGetValue("Human", out baseLayer))
+                && baseLayer.HasValue)
             {
-                _humanoidAppearanceSystem.SetBaseLayerId(body, layer.Value, baseLayerStorage.Layer, true, body.Comp);
-                var @base = _prototype.Index(baseLayerStorage.Layer.Value);
+                _humanoidAppearanceSystem.SetBaseLayerId(body, layer.Value, baseLayer, true, body.Comp);
+                var @base = _prototype.Index(baseLayer.Value);
                 _humanoidAppearanceSystem.SetBaseLayerColor(body, layer.Value, @base.MatchSkin ? body.Comp.SkinColor : Color.White, true, body.Comp);
             }
         }
@@ -47,13 +49,23 @@ public sealed partial class LimbSystem : SharedLimbSystem
             layers.Add(layer.Value);
 
             if (humanoid.CustomBaseLayers.TryGetValue(layer.Value, out var customBaseLayer))
-                baseLayerStorage.Layer = customBaseLayer.Id;
+                if (baseLayerStorage.Layers.ContainsKey(humanoid.Species))
+                    baseLayerStorage.Layers[humanoid.Species] = customBaseLayer.Id;
+                else if (baseLayerStorage.Layers.ContainsKey("Human"))
+                    baseLayerStorage.Layers["Human"] = customBaseLayer.Id;
+                else
+                    baseLayerStorage.Layers.Add("Human", customBaseLayer.Id); // This should never happen
             else
             {
                 var speciesProto = _prototype.Index(humanoid.Species);
                 var baseSprites = _prototype.Index<HumanoidSpeciesBaseSpritesPrototype>(speciesProto.SpriteSet);
                 if (baseSprites.Sprites.TryGetValue(layer.Value, out var baseLayer))
-                    baseLayerStorage.Layer = baseLayer;
+                    if (baseLayerStorage.Layers.ContainsKey(humanoid.Species))
+                        baseLayerStorage.Layers[humanoid.Species] = baseLayer;
+                    else if (baseLayerStorage.Layers.ContainsKey("Human"))
+                        baseLayerStorage.Layers["Human"] = baseLayer;
+                    else
+                        baseLayerStorage.Layers.Add("Human", baseLayer); // This should never happen
             }
         }
 
@@ -64,6 +76,11 @@ public sealed partial class LimbSystem : SharedLimbSystem
         var layer = limb.Comp3.ToHumanoidLayers();
         if (layer is null) return;
 
-        _humanoidAppearanceSystem.SetBaseLayerId(body, layer.Value, toggled ? limb.Comp2.Layer : limb.Comp1.Layer, true, body.Comp);
+        _humanoidAppearanceSystem.SetBaseLayerId(body, layer.Value, toggled ? 
+        !limb.Comp2.Layers.TryGetValue(body.Comp.Species, out var baseLayerToggled)? // Get layer value by species
+            !limb.Comp2.Layers.TryGetValue("Human", out baseLayerToggled)? null : baseLayerToggled : baseLayerToggled : // Fall back to human, if it exists and species is undefined
+        !limb.Comp1.Layers.TryGetValue(body.Comp.Species, out var baseLayer)? 
+            !limb.Comp1.Layers.TryGetValue("Human", out baseLayer)? null : baseLayer : baseLayer 
+        , true, body.Comp);
     }
 }
