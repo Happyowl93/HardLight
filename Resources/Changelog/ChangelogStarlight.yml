@@ -24131,5 +24131,95 @@ Entries:
   id: 239702
   time: '2025-12-17T20:09:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2397
+- author: neomoth
+  changes:
+  - message: Added xenoborg and mothership job icons
+    type: Add
+  id: 252000
+  time: '2025-12-18T15:36:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2520
+- author: neomoth
+  changes:
+  - message: Added two admeme job icons
+    type: Add
+  id: 252001
+  time: '2025-12-18T15:36:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2520
+- author: neomoth
+  changes:
+  - message: Changed the admin job icon to a weh
+    type: Tweak
+  id: 252002
+  time: '2025-12-18T15:36:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2520
+- author: neomoth
+  changes:
+  - message: Xenoborgs and the mother ship now use their respective job icons in chat
+    type: Tweak
+  id: 252003
+  time: '2025-12-18T15:36:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2520
+- author: CawsForConcern
+  changes:
+  - message: (CC Outpost G24) Scan gates at Security checkpoint
+    type: Add
+  id: 252400
+  time: '2025-12-18T20:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2524
+- author: CawsForConcern
+  changes:
+  - message: (CC Outpost SC17) Scan gates at Security checkpoint
+    type: Add
+  id: 252401
+  time: '2025-12-18T20:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2524
+- author: CawsForConcern
+  changes:
+  - message: (CC Outpost G24) Changed airlocks at Security checkpoint for windoors
+      (which can close on people without hurting them) to make checkpoints smoother
+      to operate
+    type: Tweak
+  id: 252402
+  time: '2025-12-18T20:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2524
+- author: CawsForConcern
+  changes:
+  - message: (CC Outpost SC17) Changed airlocks at Security checkpoint for windoors
+      (which can close on people without hurting them) to make checkpoints smoother
+      to operate
+    type: Tweak
+  id: 252403
+  time: '2025-12-18T20:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2524
+- author: CawsForConcern
+  changes:
+  - message: (CC Outpost G24) Green/Red status lights for airlocks were backwards
+    type: Fix
+  id: 252404
+  time: '2025-12-18T20:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2524
+- author: CawsForConcern
+  changes:
+  - message: (CC Outpost G24) Air sensor in the checkpoint booth was unpowered
+    type: Fix
+  id: 252405
+  time: '2025-12-18T20:10:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2524
+- author: Penguinwizzard
+  changes:
+  - message: We found an issue in our recently-issued dispenser machine boards, and
+      they should now once again charge batteries (while anchored on LV power)
+    type: Fix
+  id: 252100
+  time: '2025-12-18T21:07:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2521
+- author: Penguinwizzard
+  changes:
+  - message: Firelocks now behave the same way when placed over glass and opaque airlocks,
+      closing over the airlock if a linked air alarm is in an alarm state.
+    type: Tweak
+  id: 251900
+  time: '2025-12-18T15:40:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2519
 Order: -1
 
