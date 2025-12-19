@@ -161,7 +161,8 @@
     heldPrefix: eyeballs
   - type: OrganVisualization
     layer: Eyes
-    prototype: MobArachnidEyes
+    prototypes:
+      Default: MobArachnidEyes
 
 - type: entity
   id: OrganArachnidTongue

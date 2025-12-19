@@ -54,7 +54,8 @@
     damageContainer: Biological
   - type: OrganVisualization
     layer: Eyes
-    prototype: MobHumanoidEyes
+    prototypes:
+      Default: MobHumanoidEyes
 
 - type: entity
   id: BaseOrganTongue

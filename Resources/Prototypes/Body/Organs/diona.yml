@@ -47,7 +47,8 @@
       - state: eyeball-r
   - type: OrganVisualization
     layer: Eyes
-    prototype: MobDionaEyes
+    prototypes:
+      Default: MobDionaEyes
 
 - type: entity
   id: OrganDionaStomach

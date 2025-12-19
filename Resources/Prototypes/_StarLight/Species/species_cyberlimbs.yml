@@ -1,228 +1,242 @@
 - type: humanoidBaseSprite
-  id: CyberLLeg
+  id: ResomiCyberLLeg
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_leg
 
 - type: humanoidBaseSprite
-  id: CyberLArm
+  id: ResomiCyberLArm
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_arm
 
 - type: humanoidBaseSprite
-  id: CyberLHand
+  id: ResomiCyberLHand
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_hand
 
 - type: humanoidBaseSprite
-  id: CyberLFoot
+  id: ResomiCyberLFoot
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_foot
 
 - type: humanoidBaseSprite
-  id: CyberRLeg
+  id: ResomiCyberRLeg
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_leg
 
 - type: humanoidBaseSprite
-  id: CyberRArm
+  id: ResomiCyberRArm
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_arm
 
 - type: humanoidBaseSprite
-  id: CyberRHand
+  id: ResomiCyberRHand
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_hand
 
 - type: humanoidBaseSprite
-  id: CyberRFoot
+  id: ResomiCyberRFoot
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_foot
 
 #silver
 - type: humanoidBaseSprite
-  id: CyberLArmSilver
+  id: ResomiCyberLArmSilver
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_silver_arm
 
 - type: humanoidBaseSprite
-  id: CyberLArmSilverReaper
+  id: ResomiCyberLArmSilverReaper
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_silver_arm_SURG
 
 - type: humanoidBaseSprite
-  id: CyberRArmSilver
+  id: ResomiCyberRArmSilver
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_silver_arm
 
 - type: humanoidBaseSprite
-  id: CyberRArmSilverReaper
+  id: ResomiCyberRArmSilverReaper
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_silver_arm_SURG
 
 #Steel
 - type: humanoidBaseSprite
-  id: CyberLArmSteel
+  id: ResomiCyberLArmSteel
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_steel_arm
 
 - type: humanoidBaseSprite
-  id: CyberLArmSteelMechwright
+  id: ResomiCyberLArmSteelMechwright
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_steel_arm_TOOLS
 
 - type: humanoidBaseSprite
-  id: CyberRArmSteel
+  id: ResomiCyberRArmSteel
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_steel_arm
 
 - type: humanoidBaseSprite
-  id: CyberRArmSteelMechwright
+  id: ResomiCyberRArmSteelMechwright
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_steel_arm_TOOLS
 
 #Security Red
 - type: humanoidBaseSprite
-  id: CyberLArmBulwark
+  id: ResomiCyberLArmBulwark
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_bulwark_arm
 
 - type: humanoidBaseSprite
-  id: CyberLArmBulwarkToggled
+  id: ResomiCyberLArmBulwarkToggled
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_bulwark_arm_TOOLS
 
 - type: humanoidBaseSprite
-  id: CyberRArmBulwark
+  id: ResomiCyberRArmBulwark
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_bulwark_arm
 
 - type: humanoidBaseSprite
-  id: CyberRArmBulwarkToggled
+  id: ResomiCyberRArmBulwarkToggled
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_bulwark_arm_TOOLS
 
 #Mantis Blade
 - type: humanoidBaseSprite
-  id: CyberLArmMantisBlade
+  id: ResomiCyberLArmMantisBlade
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_mantis_blade_arm
 
 - type: humanoidBaseSprite
-  id: CyberRArmMantisBlade
+  id: ResomiCyberRArmMantisBlade
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_mantis_blade_arm
 
 - type: humanoidBaseSprite
-  id: CyberLArmMantisBladeToggled
+  id: ResomiCyberLArmMantisBladeToggled
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_mantis_blade_arm_BLADE
 
 - type: humanoidBaseSprite
-  id: CyberRArmMantisBladeToggled
+  id: ResomiCyberRArmMantisBladeToggled
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_mantis_blade_arm_BLADE
 
 #ripper
 - type: humanoidBaseSprite
-  id: CyberLArmRipper
+  id: ResomiCyberLArmRipper
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_ripper_arm
 
 - type: humanoidBaseSprite
-  id: CyberLArmRipperRipping
+  id: ResomiCyberLArmRipperRipping
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: l_ripper_arm_SURG
 
 - type: humanoidBaseSprite
-  id: CyberRArmRipper
+  id: ResomiCyberRArmRipper
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_ripper_arm
 
 - type: humanoidBaseSprite
-  id: CyberRArmRipperRipping
+  id: ResomiCyberRArmRipperRipping
   matchSkin: false
   markingsMatchSkin: false
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
     state: r_ripper_arm_SURG
+
+# Eyes
+
+- type: humanoidBaseSprite
+  id: ResomiCyberEyesNightVision
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
+    state: eyes_night
+
+- type: humanoidBaseSprite
+  id: ResomiCyberEyesThermalVision
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/resomiparts.rsi
+    state: eyes_thermal

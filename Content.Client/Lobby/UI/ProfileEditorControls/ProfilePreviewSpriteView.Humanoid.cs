@@ -300,7 +300,7 @@ public sealed partial class ProfilePreviewSpriteView
         {
             return (CyberneticImplant.LayerFromBodypart(part), new(
                 !layer.Layers.TryGetValue(humanoid.Species, out var baseLayer) ? // Get layer value by species
-                !layer.Layers.TryGetValue("Human", out baseLayer) ? null : baseLayer : baseLayer // Fall back to human, if it exists and species is undefined
+                !layer.Layers.TryGetValue("Default", out baseLayer) ? null : baseLayer : baseLayer // Fall back to default, if it exists and species is undefined
                 ));
         }
         else { return (HumanoidVisualLayers.Special, new CustomBaseLayerInfo()); }

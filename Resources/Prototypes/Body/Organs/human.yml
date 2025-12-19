@@ -90,7 +90,8 @@
     heldPrefix: eyeballs
   - type: OrganVisualization
     layer: Eyes
-    prototype: MobHumanoidEyes
+    prototypes:
+      Default: MobHumanoidEyes
 
 - type: entity
   id: OrganHumanTongue
