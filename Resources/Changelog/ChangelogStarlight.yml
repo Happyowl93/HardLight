@@ -24283,5 +24283,20 @@ Entries:
   id: 253700
   time: '2025-12-19T16:50:11.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2537
+- author: CawsForConcern
+  changes:
+  - message: New Arachnid cough SFX
+    type: Add
+  - message: New Arachnid cry SFX
+    type: Add
+  - message: New Arachnid gasp SFX
+    type: Add
+  - message: New Arachnid sigh SFX
+    type: Add
+  - message: New Arachnid yawn SFX
+    type: Add
+  id: 253600
+  time: '2025-12-19T16:50:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2536
 Order: -1
 
