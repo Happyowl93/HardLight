@@ -401,7 +401,7 @@
       collection: Hew
     Honk:
       collection: BikeHorn
-    # Starlight-Start
+    #region Starlight
     Crying:
       path: /Audio/_Starlight/Voice/Arachnid/arachnid_cry.ogg
     Cough:
@@ -412,7 +412,7 @@
       path: /Audio/_Starlight/Voice/Arachnid/arachnid_sigh.ogg
     Gasp:
       path: /Audio/_Starlight/Voice/Arachnid/arachnid_gasp.ogg
-    # Starlight-End
+    #endregion Starlight
     DefaultDeathgasp:
       collection: DeathGasp
 
