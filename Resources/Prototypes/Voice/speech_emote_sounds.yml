@@ -401,8 +401,18 @@
       collection: Hew
     Honk:
       collection: BikeHorn
+    # Starlight-Start
+    Crying:
+      path: /Audio/_Starlight/Voice/Arachnid/arachnid_cry.ogg
+    Cough:
+      path: /Audio/_Starlight/Voice/Arachnid/arachnid_cough.ogg
+    Yawn:
+      path: /Audio/_Starlight/Voice/Arachnid/arachnid_yawn.ogg
+    Sigh:
+      path: /Audio/_Starlight/Voice/Arachnid/arachnid_sigh.ogg
     Gasp:
-      collection: MaleGasp
+      path: /Audio/_Starlight/Voice/Arachnid/arachnid_gasp.ogg
+    # Starlight-End
     DefaultDeathgasp:
       collection: DeathGasp
 
