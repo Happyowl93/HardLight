@@ -54,8 +54,10 @@
     damageContainer: Biological
   - type: OrganVisualization
     layer: Eyes
+    # 🌟Starlight🌟 start
     prototypes:
       Default: MobHumanoidEyes
+    # 🌟Starlight🌟 end
 
 - type: entity
   id: BaseOrganTongue
