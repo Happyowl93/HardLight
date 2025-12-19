@@ -164,32 +164,32 @@
 #Mantis Blade
 - type: humanoidBaseSprite
   id: CyberLArmMantisBlade
-  matchSkin: false
-  markingsMatchSkin: false
+  matchSkin: true
+  markingsMatchSkin: true
   baseSprite:
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: l_mantis_blade_arm
 
 - type: humanoidBaseSprite
   id: CyberRArmMantisBlade
-  matchSkin: false
-  markingsMatchSkin: false
+  matchSkin: true
+  markingsMatchSkin: true
   baseSprite:
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: r_mantis_blade_arm
 
 - type: humanoidBaseSprite
   id: CyberLArmMantisBladeToggled
-  matchSkin: false
-  markingsMatchSkin: false
+  matchSkin: true
+  markingsMatchSkin: true
   baseSprite:
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: l_mantis_blade_arm_BLADE
 
 - type: humanoidBaseSprite
   id: CyberRArmMantisBladeToggled
-  matchSkin: false
-  markingsMatchSkin: false
+  matchSkin: true
+  markingsMatchSkin: true
   baseSprite:
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: r_mantis_blade_arm_BLADE

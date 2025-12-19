@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "https://github.com/GentleButter, *_silver_* by darkrell, bulwark by Killer Tamashi",
+  "copyright": "Citrea, drawn to match existing sprites by https://github.com/GentleButter, darkrell and Killer Tamashi",
   "size": {
     "x": 32,
     "y": 32
@@ -14,7 +14,8 @@
           0.3,
           2.0
         ]
-      ]
+      ],
+  	  "copyright": "https://github.com/GentleButter"
     },
     {
       "name": "l_arm",
@@ -36,11 +37,13 @@
           0.3,
           2.0
         ]
-      ]
+      ],
+  	  "copyright": "Citrea"
     },
     {
       "name": "l_foot",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "l_hand",
@@ -62,7 +65,8 @@
           0.3,
           2.0
         ]
-      ]
+      ],
+  	  "copyright": "Citrea"
     },
     {
       "name": "l_leg",
@@ -84,7 +88,8 @@
           0.3,
           2.0
         ]
-      ]
+      ],
+  	  "copyright": "Citrea"
     },
     {
       "name": "r_arm",
@@ -106,7 +111,8 @@
           0.3,
           2.0
         ]
-      ]
+      ],
+  	  "copyright": "Citrea"
     },
     {
       "name": "r_foot",
@@ -132,7 +138,8 @@
           0.3,
           2.0
         ]
-      ]
+      ],
+  	  "copyright": "Citrea"
     },
     {
       "name": "r_leg",
@@ -154,7 +161,8 @@
           0.3,
           2.0
         ]
-      ]
+      ],
+  	  "copyright": "Citrea"
     },
     {
       "name": "eyes_thermal",
@@ -166,83 +174,103 @@
     },
     {
       "name": "l_silver_arm",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "l_silver_arm_SURG",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "r_silver_arm",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "r_silver_arm_SURG",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "l_steel_arm",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "l_steel_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "r_steel_arm",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "r_steel_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "l_bulwark_arm",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "l_bulwark_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "r_bulwark_arm",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "r_bulwark_arm_TOOLS",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "l_mantis_blade_arm",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "r_mantis_blade_arm",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "l_mantis_blade_arm_BLADE",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "r_mantis_blade_arm_BLADE",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "l_ripper_arm",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "l_ripper_arm_SURG",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "r_ripper_arm",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     },
     {
       "name": "r_ripper_arm_SURG",
-      "directions": 4
+      "directions": 4,
+  	  "copyright": "Citrea"
     }
   ]
 }
