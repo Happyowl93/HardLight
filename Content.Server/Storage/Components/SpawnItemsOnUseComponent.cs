@@ -30,7 +30,7 @@ namespace Content.Server.Storage.Components
 
         // 🌟Starlight🌟 start
         /// <summary>
-        ///     How many uses before the item should delete itself.
+        ///     Whether the item requires hands to trigger or not.
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("requireHands")]
