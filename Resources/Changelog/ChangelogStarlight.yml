@@ -24354,5 +24354,13 @@ Entries:
   id: 254700
   time: '2025-12-19T21:11:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2547
+- author: Rinary
+  changes:
+  - message: Fixed bug when you can use taser to knockdown entity with armor which
+      is supposed to ignore knockdown from tasers.
+    type: Fix
+  id: 254400
+  time: '2025-12-19T21:28:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2544
 Order: -1
 
