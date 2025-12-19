@@ -24256,5 +24256,15 @@ Entries:
   id: 254300
   time: '2025-12-19T16:49:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2543
+- author: Rinary
+  changes:
+  - message: Returned `ignoreknockdown` to armor.
+    type: Fix
+  - message: Changed a lot of armors/vests/hardsuits, so they ignore knockdown from
+      tasers. (Check pr description for full list).
+    type: Tweak
+  id: 238900
+  time: '2025-12-19T16:49:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2389
 Order: -1
 
