@@ -24316,5 +24316,13 @@ Entries:
   id: 254000
   time: '2025-12-19T16:50:32.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2540
+- author: R3v3l4t1on
+  changes:
+  - message: Reverted PR 2046 because gamemode votes work. Which means nukeops is
+      back in the voting pool.
+    type: Tweak
+  id: 216600
+  time: '2025-12-19T16:50:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2166
 Order: -1
 
