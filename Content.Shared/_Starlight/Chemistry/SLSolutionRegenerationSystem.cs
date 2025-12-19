@@ -17,6 +17,10 @@ public sealed class SLSolutionRegenerationSystem : EntitySystem
 
     private void OnSolutionChanged(Entity<SolutionRegenerationComponent> ent, ref SolutionContainerChangedEvent args)
     {
+        //make sure the entity isnt terminating
+        if (TerminatingOrDeleted(ent))
+            return;
+            
         // No component additions during client state application
         if (_timing.ApplyingState)
             return;
