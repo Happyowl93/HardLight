@@ -1,6 +1,6 @@
 using Content.Shared._Starlight.Evolving;
 
-namespace Content.Server._Starlight.Evolving.Conditions;
+namespace Content.Shared._Starlight.Evolving.Conditions;
 
 /// <summary>
 /// Condition that checks if the entity has dealt a certain amount of damage.
@@ -21,7 +21,11 @@ public sealed partial class DamageDealCondition : EvolvingCondition
 
     private float _dealedDamage = 0f;
 
+    public override EvolveType Type => EvolveType.DamageDeal;
+
     public override bool Condition(EvolvingConditionArgs args) => _dealedDamage >= TargetDamageAmount;
+
+    public override int GetTarget() => (int)TargetDamageAmount;
 
     public bool Condition() => _dealedDamage >= TargetDamageAmount;
 

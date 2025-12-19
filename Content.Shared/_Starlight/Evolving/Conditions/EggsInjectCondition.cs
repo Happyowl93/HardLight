@@ -1,6 +1,6 @@
 using Content.Shared._Starlight.Evolving;
 
-namespace Content.Server._Starlight.Evolving.Conditions;
+namespace Content.Shared._Starlight.Evolving.Conditions;
 
 /// <summary>
 /// Condition that checks if the entity injected a certain amount of eggs.
@@ -15,7 +15,11 @@ public sealed partial class EggsInjectCondition : EvolvingCondition
 
     private int _injectedEggs = 0;
 
+    public override EvolveType Type => EvolveType.EggsInjected;
+
     public override bool Condition(EvolvingConditionArgs args) => _injectedEggs >= TargetEggsAmount;
+
+    public override int GetTarget() => TargetEggsAmount;
 
     public bool Condition() => _injectedEggs >= TargetEggsAmount;
 

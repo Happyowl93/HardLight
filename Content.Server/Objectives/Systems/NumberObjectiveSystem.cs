@@ -45,4 +45,30 @@ public sealed class NumberObjectiveSystem : EntitySystem
 
         return comp.Target;
     }
+
+    #region Starlight
+    public void SetTarget(EntityUid uid, int target, NumberObjectiveComponent? comp = null)
+    {
+        if (!Resolve(uid, ref comp))
+            return;
+
+        comp.Target = target;
+    }
+
+    public void SetTitle(EntityUid uid, string title, NumberObjectiveComponent? comp = null)
+    {
+        if (!Resolve(uid, ref comp))
+            return;
+
+        comp.Title = title;
+    }
+
+    public void SetDescription(EntityUid uid, string description, NumberObjectiveComponent? comp = null)
+    {
+        if (!Resolve(uid, ref comp))
+            return;
+            
+        comp.Description = description;
+    }
+    #endregion
 }
