@@ -24307,5 +24307,14 @@ Entries:
   id: 253900
   time: '2025-12-19T16:50:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2539
+- author: CawsForConcern
+  changes:
+  - message: 'New Laspi (Slime) emote: Pop'
+    type: Add
+  - message: 'New Laspi (Slime) emote: Bubble'
+    type: Add
+  id: 254000
+  time: '2025-12-19T16:50:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2540
 Order: -1
 
