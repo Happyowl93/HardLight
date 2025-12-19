@@ -57,4 +57,6 @@ loadout-group-salvage-lead-mantle = Salvage Lead mantle
 loadout-group-paramedic-id = Paramedic ID
 
 # Other
+
 loadout-group-scarves = Scarf
+loadout-group-pens = Pen
