@@ -4,6 +4,13 @@
   id: MobBatVampire
   description: Some cultures find them terrifying, others crunchy on the teeth.
   components:
+  # begin starlight
+  - type: LanguageKnowledge
+    speaks:
+    - Darktongue
+    understands:
+    - Darktongue
+  # end starlight
   - type: Tag
     tags:
     - DoorBumpOpener

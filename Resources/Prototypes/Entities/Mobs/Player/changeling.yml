@@ -4,6 +4,13 @@
   name: Urist McLing
   suffix: Non-Antag
   components:
+  # begin starlight
+  - type: LanguageKnowledge
+    speaks:
+    - Darktongue
+    understands:
+    - Darktongue
+  # end starlight
   - type: ChangelingDevour
   - type: ChangelingIdentity
   - type: ChangelingTransform

@@ -4,6 +4,13 @@
   id: MobBatRemilia
   description: The chaplain's familiar. Likes fruit.
   components:
+  # begin starlight
+  - type: LanguageKnowledge
+    speaks:
+    - Darktongue
+    understands:
+    - Darktongue
+  # end starlight
   - type: GhostRole
     makeSentient: true
     allowMovement: true
@@ -39,6 +46,13 @@
   id: MobCorgiCerberus
   description: This pupper is not wholesome.
   components:
+  # begin starlight
+  - type: LanguageKnowledge
+    speaks:
+    - Darktongue
+    understands:
+    - Darktongue
+  # end starlight
   - type: GhostRole
     makeSentient: true
     allowMovement: true

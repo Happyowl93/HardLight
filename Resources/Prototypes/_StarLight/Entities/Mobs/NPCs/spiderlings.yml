@@ -7,6 +7,11 @@
   description: a small spider which growth into unknown big and dangerous spider.
   abstract: true
   components:
+  - type: LanguageKnowledge
+    speaks:
+    - Darktongue
+    understands:
+    - Darktongue
   - type: Sprite
     drawdepth: Mobs
     layers:

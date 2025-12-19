@@ -72,6 +72,58 @@
     - Scratch
 
 - type: trait
+  id: Darktongue
+  name: trait-language-darktongue-name
+  description: trait-language-darktongue-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+    - type: LanguageSpeaker
+  languagesSpoken:
+    - Darktongue
+  languagesUnderstood:
+    - Darktongue
+
+- type: trait
+  id: Classical
+  name: trait-language-classical-name
+  description: trait-language-classical-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+    - type: LanguageSpeaker
+  languagesSpoken:
+    - Classical
+  languagesUnderstood:
+    - Classical
+
+- type: trait
+  id: HighElven
+  name: trait-language-high-elven-name
+  description: trait-language-high-elven-desc
+  category: LanguageTraits
+  cost: 2
+  components:
+    - type: LanguageSpeaker
+  languagesSpoken:
+    - HighElven
+  languagesUnderstood:
+    - HighElven
+
+- type: trait
+  id: Dwarvish
+  name: trait-language-dwarvish-name
+  description: trait-language-dwarvish-desc
+  category: LanguageTraits
+  cost: 2
+  components:
+    - type: LanguageSpeaker
+  languagesSpoken:
+    - Dwarvish
+  languagesUnderstood:
+    - Dwarvish
+
+- type: trait
   id: SolCommon
   name: trait-language-solcommon-name
   description: trait-language-solcommon-desc

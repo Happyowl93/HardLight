@@ -9,10 +9,11 @@
   - type: LanguageKnowledge
     speaks:
     - GalacticCommon
-    - SolCommon
+    - Dwarvish
     understands:
     - GalacticCommon
     - SolCommon
+    - Dwarvish
   - type: MobThresholds
     thresholds:
       0: Alive
