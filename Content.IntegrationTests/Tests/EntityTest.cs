@@ -84,6 +84,7 @@ namespace Content.IntegrationTests.Tests
         }
 
         [Test]
+        [Ignore("Test disabled on starlight due to instability/issues, use SpawnAndDirtyAllEntities instead.")]
         public async Task SpawnAndDeleteAllEntitiesInTheSameSpot()
         {
             // This test dirties the pair as it simply deletes ALL entities when done. Overhead of restarting the round
