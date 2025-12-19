@@ -24,6 +24,8 @@
   name: cc moproach
   description: A moproach specially trained in the ways of janitorial duties by the best NT has to offer.
   components:
+    - type: CanEscapeInventory
+      baseResistTime: 2 # better at escaping grasps
     - type: Inventory
       displacements:
         head:
