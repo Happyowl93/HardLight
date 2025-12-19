@@ -24332,5 +24332,12 @@ Entries:
   id: 235800
   time: '2025-12-19T16:49:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2358
+- author: NT Navy (scarlet lightweaver)
+  changes:
+  - message: Changed NTSF/DS/DECIMUS stats to be more sane
+    type: Tweak
+  id: 253200
+  time: '2025-12-19T16:50:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2532
 Order: -1
 
