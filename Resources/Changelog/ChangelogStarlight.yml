@@ -24221,5 +24221,15 @@ Entries:
   id: 251900
   time: '2025-12-18T15:40:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2519
+- author: CawsForConcern
+  changes:
+  - message: (Arrivals Terminal) SMES was connected incorrectly
+    type: Fix
+  - message: (Arrivals Terminal) Replaced telecom server that had master comms with
+      one that just has common radio
+    type: Tweak
+  id: 254200
+  time: '2025-12-19T15:16:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2542
 Order: -1
 
