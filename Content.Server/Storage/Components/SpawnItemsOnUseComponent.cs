@@ -33,7 +33,7 @@ namespace Content.Server.Storage.Components
         ///     Whether the item requires hands to trigger or not.
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
-        [DataField("requireHands")]
+        [DataField]
         public bool RequireHands = true;
         // 🌟Starlight🌟 end
     }
