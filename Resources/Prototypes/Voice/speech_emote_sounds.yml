@@ -268,12 +268,12 @@
     Whine:
       collection: Whine
     #endregion Afterlight
-    # Starlight-Start
+    #region Starlight
     Bubble:
       collection: Bubbles
     Pop:
       collection: Pops
-    # Starlight-End
+    #endregion Starlight
   params:
     variation: 0.125
 
@@ -332,12 +332,12 @@
     Whine:
       collection: Whine
     #endregion Afterlight
-    # Starlight-Start
+    #region Starlight
     Bubble:
       collection: Bubbles
     Pop:
       collection: Pops
-    # Starlight-End
+    #endregion Starlight
   params:
     variation: 0.125
 
