@@ -24339,5 +24339,12 @@ Entries:
   id: 253200
   time: '2025-12-19T16:50:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2532
+- author: DocMoth
+  changes:
+  - message: Added lights to Maxim and LuxMax
+    type: Add
+  id: 249700
+  time: '2025-12-19T17:20:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2497
 Order: -1
 
