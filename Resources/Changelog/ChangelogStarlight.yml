@@ -24298,5 +24298,14 @@ Entries:
   id: 253600
   time: '2025-12-19T16:50:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2536
+- author: Citrea
+  changes:
+  - message: Corgis and Borgis can no longer see through solid steel boxes
+    type: Tweak
+  - message: Borgis need welding protection when welding now. Put on cute goggles!
+    type: Tweak
+  id: 253900
+  time: '2025-12-19T16:50:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2539
 Order: -1
 
