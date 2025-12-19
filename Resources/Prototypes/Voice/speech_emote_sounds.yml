@@ -513,8 +513,18 @@
       collection: Hew
     Honk:
       collection: BikeHorn
+    # Starlight-Start
+    Crying:
+      /Audio/_Starlight/Voice/Moth/moth_cry.ogg
+    Cough:
+      /Audio/_Starlight/Voice/Moth/moth_cough.ogg
+    Yawn:
+      /Audio/_Starlight/Voice/Moth/moth_yawn.ogg
+    Sigh:
+      /Audio/_Starlight/Voice/Moth/moth_sigh.ogg
     Gasp:
-      collection: MaleGasp
+      path: /Audio/_Starlight/Voice/Moth/moth_gasp.ogg
+    # Starlight-End
     DefaultDeathgasp:
       collection: MothDeathGasp
 
