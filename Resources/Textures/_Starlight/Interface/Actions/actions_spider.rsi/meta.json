@@ -12,8 +12,15 @@
 			"copyright": "Paradise Station"
 		},
 		{
-			"name": "egg",
-			"copyright": "Paradise Station"
+			"name": "lay_eggs",
+			"copyright": "Paradise Station RU",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
 		},
 		{
 			"name": "spiderscream",

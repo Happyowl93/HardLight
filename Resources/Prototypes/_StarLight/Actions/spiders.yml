@@ -104,7 +104,7 @@
     sound: /Audio/Effects/pop.ogg
     icon:
       sprite:  _Starlight/Interface/Actions/actions_spider.rsi
-      state: egg
+      state: lay_eggs
   - type: TargetAction
     interactOnMiss: false
   - type: EntityTargetAction
@@ -124,7 +124,7 @@
     useDelay: 5
     icon:
       sprite: _Starlight/Interface/Actions/actions_spider.rsi
-      state: egg
+      state: lay_eggs
   - type: LimitedCharges
     maxCharges: 3
   - type: AutoRecharge
