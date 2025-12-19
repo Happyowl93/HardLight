@@ -6,8 +6,9 @@ using Content.Shared.Maps;
 using Robust.Server.GameObjects;
 using Content.Shared.Popups;
 using Content.Shared.Physics;
-using Content.Shared._Starlight.Shadekin;
+using Content.Shared._Starlight;
 using System.Linq;
+using Content.Server.Light.Components;
 using Content.Server.Ghost;
 using Robust.Server.Containers;
 using Robust.Shared.Prototypes;
@@ -15,7 +16,7 @@ using Content.Shared.Light.Components;
 
 namespace Content.Server._Starlight.NullSpace;
 
-public sealed class NullSpacePhaseSystem : EntitySystem
+public sealed class EtherealPhaseSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly PhysicsSystem _physics = default!;
@@ -25,7 +26,7 @@ public sealed class NullSpacePhaseSystem : EntitySystem
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
 
-    private EntProtoId _shadekinShadow = "ShadekinShadow";
+    private EntProtoId ShadekinShadow = "ShadekinShadow";
     private EntProtoId ShadekinPhaseInEffect = "ShadekinPhaseInEffect";
     private EntProtoId ShadekinPhaseOutEffect = "ShadekinPhaseOutEffect";
 
@@ -65,9 +66,7 @@ public sealed class NullSpacePhaseSystem : EntitySystem
 
     private void OnPhaseAction(EntityUid uid, NullPhaseComponent component, NullPhaseActionEvent args)
     {
-        if (CanPhase(uid))
-            Phase(uid);
-
+        Phase(uid);
         args.Handled = true;
     }
 
@@ -79,9 +78,9 @@ public sealed class NullSpacePhaseSystem : EntitySystem
             _actionsSystem.RemoveAction(uid, component.PhaseAction);
     }
 
-    public bool CanPhase(EntityUid uid)
+    public bool Phase(EntityUid uid)
     {
-        if (TryComp<NullSpaceComponent>(uid, out var nullspace))
+        if (TryComp<NullSpaceComponent>(uid, out var ethereal))
         {
             var tileref = _turf.GetTileRef(Transform(uid).Coordinates);
             if (tileref != null
@@ -90,32 +89,7 @@ public sealed class NullSpacePhaseSystem : EntitySystem
                 _popup.PopupEntity(Loc.GetString("revenant-in-solid"), uid, uid);
                 return false;
             }
-        }
-        else
-        {
-            if (_container.IsEntityInContainer(uid))
-            {
-                _popup.PopupEntity(Loc.GetString("phase-fail-generic"), uid, uid);
-                return false;
-            }
 
-            foreach (var entity in _lookup.GetEntitiesIntersecting(Transform(uid).Coordinates))
-            {
-                if (HasComp<NullSpaceBlockerComponent>(entity))
-                {
-                    _popup.PopupEntity(Loc.GetString("phase-fail-generic"), uid, uid);
-                    return false;
-                }
-            }
-        }
-
-        return true;
-    }
-
-    public void Phase(EntityUid uid)
-    {
-        if (TryComp<NullSpaceComponent>(uid, out var nullspace))
-        {
             if (HasComp<ShadekinComponent>(uid))
             {
                 var lightQuery = _lookup.GetEntitiesInRange(uid, 5, flags: LookupFlags.StaticSundries)
@@ -127,12 +101,18 @@ public sealed class NullSpacePhaseSystem : EntitySystem
                 Transform(effect).LocalRotation = Transform(uid).LocalRotation;
             }
             else
-                SpawnAtPosition(_shadekinShadow, Transform(uid).Coordinates);
+                SpawnAtPosition(ShadekinShadow, Transform(uid).Coordinates);
 
-            RemComp(uid, nullspace);
+            RemComp(uid, ethereal);
         }
         else
         {
+            if (_container.IsEntityInContainer(uid))
+            {
+                _popup.PopupEntity(Loc.GetString("phase-fail-generic"), uid, uid);
+                return false;
+            }
+
             EnsureComp<NullSpaceComponent>(uid);
 
             if (HasComp<ShadekinComponent>(uid))
@@ -146,7 +126,8 @@ public sealed class NullSpacePhaseSystem : EntitySystem
                 Transform(effect).LocalRotation = Transform(uid).LocalRotation;
             }
             else
-                SpawnAtPosition(_shadekinShadow, Transform(uid).Coordinates);
+                SpawnAtPosition(ShadekinShadow, Transform(uid).Coordinates);
         }
+        return true;
     }
 }

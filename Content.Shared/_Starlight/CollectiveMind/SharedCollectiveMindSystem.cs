@@ -134,17 +134,4 @@ public abstract partial class SharedCollectiveMindSystem : EntitySystem
 
         return data;
     }
-
-    public bool CheckWhitelist(EntityUid uid, CollectiveMindPrototype collectiveMind)
-    {
-        foreach (var component in StringsToRegs(collectiveMind.WhitelistComponents))
-            if (EntityManager.HasComponent(uid, component))
-                return true;
-
-        foreach (var tag in collectiveMind.WhitelistTags)
-            if (_tag.HasTag(uid, tag))
-                return true;
-
-        return false;
-    }
 }

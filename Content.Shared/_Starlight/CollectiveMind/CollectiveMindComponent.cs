@@ -11,9 +11,6 @@ public sealed partial class CollectiveMindComponent : Component
     public Dictionary<CollectiveMindPrototype, CollectiveMindMemberData> Minds = new();
 
     [DataField]
-    public bool BlockWhenUnconscious = false;
-
-    [DataField]
     public bool CorruptWhenUnconscious = true;
 
     [DataField]
