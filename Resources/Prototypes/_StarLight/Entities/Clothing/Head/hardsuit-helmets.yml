@@ -243,8 +243,7 @@
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
   - type: PointLight
-    radius: 7
-    energy: 3
+    color: "#adfffd"
 
 # Experimental Security Hardsuit
 - type: entity
