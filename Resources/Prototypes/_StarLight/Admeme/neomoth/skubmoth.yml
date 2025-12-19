@@ -67,6 +67,16 @@
   parent: AdminPDA
   components:
     - type: Unremoveable
+    - type: Pda
+      id: SkubIDCard
+
+- type: entity
+  id: SkubIDCard
+  categories: [HideSpawnMenu]
+  parent: UniversalIDCard
+  components:
+    - type: IdCard
+      jobIcon: JobIconSkub
 
 - type: entity
   id: SkubSuit
