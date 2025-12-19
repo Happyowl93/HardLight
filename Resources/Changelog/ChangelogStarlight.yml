@@ -24266,5 +24266,22 @@ Entries:
   id: 238900
   time: '2025-12-19T16:49:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2389
+- author: CawsForConcern
+  changes:
+  - message: New Moth speech SFX (talk, ask?, and exclaim!)
+    type: Add
+  - message: New Moth cough SFX
+    type: Add
+  - message: New Moth cry SFX
+    type: Add
+  - message: New Moth gasp SFX
+    type: Add
+  - message: New Moth sigh SFX
+    type: Add
+  - message: New Moth yawn SFX
+    type: Add
+  id: 253700
+  time: '2025-12-19T16:50:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2537
 Order: -1
 
