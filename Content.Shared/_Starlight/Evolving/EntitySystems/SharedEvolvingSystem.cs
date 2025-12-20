@@ -101,12 +101,12 @@ public abstract class SharedEvolvingSystem : EntitySystem
     {
         if (component.Objectives.Count > 0)
             foreach (var obj in component.Objectives)
-                _mindSystem.AddObjective(args.mind.Owner, args.mind.Comp, obj);
+                _mindSystem.AddObjective(args.Mind.Owner, args.Mind.Comp, obj);
         else
             TryUpdateObjective(uid, component, null, false); // Just add starting objectives.
     }
 
-    private void OnMindRemoved(EntityUid uid, EvolvingComponent component, MindRemovedMessage args) => TryRemoveObjectives(args.mind.Owner, args.mind.Comp, component, delete: false, force: true);
+    private void OnMindRemoved(EntityUid uid, EvolvingComponent component, MindRemovedMessage args) => TryRemoveObjectives(args.Mind.Owner, args.Mind.Comp, component, delete: false, force: true);
 
     private bool TryUpdateEvolveState(EntityUid uid, EvolvingComponent component, EvolveType? objType = null)
     {
