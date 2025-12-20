@@ -24373,5 +24373,19 @@ Entries:
   id: 254600
   time: '2025-12-19T22:01:07.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2546
+- author: Arkanic, neomoth
+  changes:
+  - message: fix disablers and tasers showing laser beams
+    type: Fix
+  id: 255300
+  time: '2025-12-20T00:50:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2553
+- author: Arkanic
+  changes:
+  - message: Switch back to starlight vulpkanin emote sounds
+    type: Fix
+  id: 255600
+  time: '2025-12-20T03:14:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2556
 Order: -1
 
