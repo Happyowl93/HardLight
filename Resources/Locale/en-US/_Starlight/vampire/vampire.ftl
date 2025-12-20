@@ -10,6 +10,14 @@ alerts-vampire-blood-desc = Shows how much blood you've drunk. Extend your fangs
 alerts-vampire-fed-name = Blood Fullness
 alerts-vampire-fed-desc = Your current blood fullness. Drink blood to stay fed.
 
+alerts-vampire-blood-swell-name = Blood Swell
+alerts-vampire-blood-swell-desc = Blood Swell is empowering you.
+
+alerts-vampire-blood-rush-name = Blood Rush
+alerts-vampire-blood-rush-desc = Blood Rush is speeding you up.
+
+vampire-blood-swell-cancel-shoot = Your fingers don`t fit in the trigger guard!!
+
 roles-antag-vamire-name = Vampire
 roles-antag-vampire-description = Feed on the crew. Extend your fangs and drink their blood.
 

@@ -3,22 +3,26 @@ using Content.Server.Destructible;
 using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
-using Content.Shared.Access.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage;
-using Content.Shared.Doors.Components;
-using Content.Shared.Interaction.Events;
-using Content.Shared.Maps;
+using Content.Shared.Damage.Events;
+using Content.Shared.Ensnaring.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Pulling.Events;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Tools.Components;
+using Content.Shared.Prying.Components;
+using Content.Shared.StatusEffectNew;
+using Content.Shared.StatusEffectNew.Components;
+using Content.Shared.Stunnable;
+using Content.Shared.Movement.Components;
+using Content.Shared.Bed.Sleep;
+using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Physics.Events;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Starlight.Antags.Vampires;
@@ -39,7 +43,13 @@ public sealed partial class VampireSystem : EntitySystem
         SubscribeLocalEvent<VampireComponent, VampireChargeActionEvent>(OnCharge);
         SubscribeLocalEvent<GargantuaComponent, ShotAttemptedEvent>(OnShotAttempted);
         SubscribeLocalEvent<GargantuaComponent, PullAttemptEvent>(OnPullAttempt);
-        SubscribeLocalEvent<GargantuaComponent, InteractionAttemptEvent>(OnInteractionAttempt);
+        SubscribeLocalEvent<GargantuaComponent, GetMeleeDamageEvent>(OnBloodSwellMeleeDamage);
+        SubscribeLocalEvent<GargantuaComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeed);
+        SubscribeLocalEvent<GargantuaComponent, BeforeDamageChangedEvent>(OnBloodSwellIncomingDamage);
+        SubscribeLocalEvent<GargantuaComponent, BeforeStaminaDamageEvent>(OnBloodSwellStaminaDamage);
+
+        // Status effects are raised on the status effect entity, so hook globally
+        SubscribeLocalEvent<StatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
     }
 
     private void UpdateGargantua(float frameTime)
@@ -51,7 +61,7 @@ public sealed partial class VampireSystem : EntitySystem
         {
             if (gargantua.BloodSwellActive && gargantua.BloodSwellEndTime.HasValue && now >= gargantua.BloodSwellEndTime.Value)
             {
-                EndBloodSwell(uid, gargantua, vampire);
+                EndBloodSwell(uid, gargantua);
             }
 
             if (gargantua.BloodRushActive && gargantua.BloodRushEndTime.HasValue && now >= gargantua.BloodRushEndTime.Value)
@@ -78,7 +88,7 @@ public sealed partial class VampireSystem : EntitySystem
             return;
 
         var gargantua = EnsureComp<GargantuaComponent>(uid);
-
+        
         if (gargantua.BloodSwellActive)
         {
             // Already active, refresh duration
@@ -91,14 +101,16 @@ public sealed partial class VampireSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString("vampire-blood-swell-start"), uid, uid);
         }
 
+        _alerts.ShowAlert(uid, "VampireBloodSwell");
         Dirty(uid, gargantua);
         args.Handled = true;
     }
 
-    private void EndBloodSwell(EntityUid uid, GargantuaComponent gargantua, VampireComponent vampire)
+    private void EndBloodSwell(EntityUid uid, GargantuaComponent gargantua)
     {
         gargantua.BloodSwellActive = false;
         gargantua.BloodSwellEndTime = null;
+        _alerts.ClearAlert(uid, "VampireBloodSwell");
         Dirty(uid, gargantua);
         _popup.PopupEntity(Loc.GetString("vampire-blood-swell-end"), uid, uid);
     }
@@ -106,9 +118,94 @@ public sealed partial class VampireSystem : EntitySystem
     private void OnShotAttempted(EntityUid uid, GargantuaComponent component, ref ShotAttemptedEvent args)
     {
         if (component.BloodSwellActive)
-        {
+        {   
+            _popup.PopupEntity(Loc.GetString("vampire-blood-swell-cancel-shoot"), uid, uid);
             args.Cancel();
         }
+    }
+
+    private void OnBloodSwellMeleeDamage(EntityUid uid, GargantuaComponent component, ref GetMeleeDamageEvent args)
+    {
+        if (!component.BloodSwellActive)
+            return;
+
+        if (!TryComp<VampireComponent>(uid, out var vampire))
+            return;
+
+        // Bonus only for unarmed (weapon == user) after 400 total blood
+        if (args.Weapon != uid)
+            return;
+
+        if (vampire.TotalBlood < component.BloodSwellEnhancedThreshold)
+            return;
+
+        args.Damage.DamageDict.TryGetValue("Blunt", out var blunt);
+        args.Damage.DamageDict["Blunt"] = blunt + component.BloodSwellMeleeBonusDamage;
+    }
+
+    private void OnRefreshMovementSpeed(EntityUid uid, GargantuaComponent component, RefreshMovementSpeedModifiersEvent args)
+    {
+        if (component.BloodRushActive)
+        {
+            args.ModifySpeed(component.BloodRushSpeedMultiplier, component.BloodRushSpeedMultiplier);
+        }
+    }
+
+    private void OnBloodSwellIncomingDamage(EntityUid uid, GargantuaComponent component, ref BeforeDamageChangedEvent args)
+    {
+        if (!component.BloodSwellActive)
+            return;
+
+        static bool IsBrute(string id)
+            => id is "Blunt" or "Slash" or "Piercing";
+
+        static bool IsBurn(string id)
+            => id is "Heat" or "Cold" or "Shock" or "Caustic";
+
+        foreach (var (type, value) in args.Damage.DamageDict)
+        {
+            if (value <= 0)
+                continue;
+
+            if (IsBrute(type) || IsBurn(type))
+                args.Damage.DamageDict[type] = value * 0.5f;
+        }
+    }
+
+    private void OnBloodSwellStaminaDamage(EntityUid uid, GargantuaComponent component, ref BeforeStaminaDamageEvent args)
+    {
+        if (!component.BloodSwellActive)
+            return;
+
+        args.Value *= 0.5f;
+    }
+
+    private void OnStatusEffectApplied(EntityUid effectUid, StatusEffectComponent effect, ref StatusEffectAppliedEvent args)
+    {
+        if (!TryComp<GargantuaComponent>(args.Target, out var gargantua) || !gargantua.BloodSwellActive)
+            return;
+
+        var now = _timing.CurTime;
+
+        // Only affect relevant negative effects
+        if (!HasComp<StunnedStatusEffectComponent>(effectUid)
+            && !HasComp<KnockdownStatusEffectComponent>(effectUid)
+            && !HasComp<MovementModStatusEffectComponent>(effectUid)
+            && !HasComp<ForcedSleepingStatusEffectComponent>(effectUid))
+            return;
+
+        if (effect.EndEffectTime is not { } end)
+            return;
+
+        var remaining = end - now;
+        if (remaining <= TimeSpan.Zero)
+            return;
+
+        // Use the status effect system API so we have write access to the end time.
+        if (MetaData(effectUid).EntityPrototype is not { ID: var protoId })
+            return;
+
+        _statusEffects.TrySetStatusEffectDuration(args.Target, protoId, remaining / 2);
     }
 
     #endregion
@@ -136,12 +233,13 @@ public sealed partial class VampireSystem : EntitySystem
             gargantua.BloodRushActive = true;
             gargantua.BloodRushEndTime = _timing.CurTime + TimeSpan.FromSeconds(args.Duration);
 
-            // Apply speed buff
-            _movementMod.TryAddMovementSpeedModDuration(uid, "VampireBloodRush", TimeSpan.FromSeconds(args.Duration), gargantua.BloodRushSpeedMultiplier);
+            // Refresh movement speed modifiers to apply the buff
+            _movement.RefreshMovementSpeedModifiers(uid);
 
             _popup.PopupEntity(Loc.GetString("vampire-blood-rush-start"), uid, uid);
         }
 
+        _alerts.ShowAlert(uid, "VampireBloodRush");
         Dirty(uid, gargantua);
         args.Handled = true;
     }
@@ -150,6 +248,8 @@ public sealed partial class VampireSystem : EntitySystem
     {
         gargantua.BloodRushActive = false;
         gargantua.BloodRushEndTime = null;
+        _alerts.ClearAlert(uid, "VampireBloodRush");
+        _movement.RefreshMovementSpeedModifiers(uid);
         Dirty(uid, gargantua);
         _popup.PopupEntity(Loc.GetString("vampire-blood-rush-end"), uid, uid);
     }
@@ -200,34 +300,7 @@ public sealed partial class VampireSystem : EntitySystem
             _throwing.TryThrow(target, direction * args.ThrowDistance, 5f, uid);
         }
 
-        // Damage floor tiles
-        if (xform.GridUid != null && TryComp<MapGridComponent>(xform.GridUid, out var grid))
-        {
-            // Get all tiles in radius and damage them
-            var centerTile = _map.TileIndicesFor(xform.GridUid.Value, grid, xform.Coordinates);
-            var radius = (int)Math.Ceiling(args.Radius);
-
-            for (var x = -radius; x <= radius; x++)
-            {
-                for (var y = -radius; y <= radius; y++)
-                {
-                    var offset = new Vector2i(x, y);
-                    if (offset.Length > args.Radius)
-                        continue;
-
-                    var tilePos = centerTile + offset;
-                    var tile = _map.GetTileRef(xform.GridUid.Value, grid, tilePos);
-
-                    if (tile.Tile.IsEmpty)
-                        continue;
-
-                    // Break the tile to plating
-                    _tiles.DeconstructTile(tile);
-                }
-            }
-        }
-
-        // Spawn visual effect
+        // Spawn visual effect at vampire's position
         Spawn("VampireSeismicStompEffect", xform.Coordinates);
 
         args.Handled = true;
@@ -248,10 +321,19 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (gargantua.OverwhelmingForceActive)
         {
+            // Add PryingComponent to enable door prying
+            var prying = EnsureComp<PryingComponent>(uid);
+            prying.PryPowered = true;
+            prying.Force = true;
+            prying.SpeedModifier = 0.5f; // Fast prying
+            
             _popup.PopupEntity(Loc.GetString("vampire-overwhelming-force-start"), uid, uid);
         }
         else
         {
+            // Remove PryingComponent
+            RemComp<PryingComponent>(uid);
+            
             _popup.PopupEntity(Loc.GetString("vampire-overwhelming-force-stop"), uid, uid);
         }
 
@@ -279,44 +361,7 @@ public sealed partial class VampireSystem : EntitySystem
         }
     }
 
-    private void OnInteractionAttempt(EntityUid uid, GargantuaComponent component, InteractionAttemptEvent args)
-    {
-        if (!component.OverwhelmingForceActive)
-            return;
-
-        if (args.Target == null)
-            return;
-
-        // Auto-pry doors
-        if (!TryComp<DoorComponent>(args.Target, out var door))
-            return;
-
-        // Check if door is bolted or welded
-        if (TryComp<DoorBoltComponent>(args.Target, out var bolt) && bolt.BoltsDown)
-            return;
-
-        if (TryComp<WeldableComponent>(args.Target, out var weld) && weld.IsWelded)
-            return;
-
-        // Check if we have access
-        if (TryComp<AccessReaderComponent>(args.Target, out _))
-        {
-            // No access check needed - just pry it open
-            if (door.State == DoorState.Closed)
-            {
-                // Consume blood
-                if (TryComp<VampireComponent>(uid, out var vampire) && vampire.DrunkBlood >= 5)
-                {
-                    vampire.DrunkBlood -= 5;
-                    Dirty(uid, vampire);
-                    UpdateVampireAlert(uid);
-
-                    _door.StartOpening(args.Target.Value);
-                    _popup.PopupEntity(Loc.GetString("vampire-overwhelming-force-door-pried"), uid, uid);
-                }
-            }
-        }
-    }
+    // Overwhelming Force now uses PryingComponent instead of manual door interaction
 
     #endregion
 
@@ -337,11 +382,8 @@ public sealed partial class VampireSystem : EntitySystem
         if (xform.GridUid == null)
             return;
 
-        var grid = Comp<MapGridComponent>(xform.GridUid.Value);
         var gridUid = xform.GridUid.Value;
-        var startPos = _transform.GetWorldPosition(xform);
-        var targetPos = _transform.ToMapCoordinates(args.Target).Position;
-        var direction = (targetPos - startPos).Normalized();
+        var direction = (args.Target.Position - xform.Coordinates.Position).Normalized();
 
         // Check if combat mode is active for pulling
         var shouldPull = TryComp<CombatModeComponent>(uid, out var combat) && combat.IsInCombatMode;
@@ -353,25 +395,43 @@ public sealed partial class VampireSystem : EntitySystem
         var immobilizeDuration = args.ImmobilizeDuration;
         var delayPerTile = 50; // 50ms between each tile effect
 
+        // Flag to stop spawning after hitting something
+        var stopped = false;
+
         for (var i = 1; i <= maxTiles; i++)
         {
             var tileIndex = i;
-            var tilePos = startPos + (direction * tileIndex);
+            var tileCoords = xform.Coordinates.Offset(direction * tileIndex);
 
             Timer.Spawn(delayPerTile * i, () =>
             {
-                // Check if vampire still exists
-                if (!Exists(uid))
+                if (!Exists(uid) || stopped)
                     return;
 
-                // Get tile coordinates
-                var tileCoords = new EntityCoordinates(gridUid, tilePos);
+                // Check for walls/obstacles before spawning
+                var blocked = false;
+                var entitiesOnTile = _lookup.GetEntitiesInRange(tileCoords, 0.4f);
+                foreach (var ent in entitiesOnTile)
+                {
+                    if (ent == uid)
+                        continue;
+
+                    // Check for static physics bodies (walls, structures)
+                    if (TryComp<PhysicsComponent>(ent, out var physics) && physics.BodyType == BodyType.Static && physics.Hard)
+                    {
+                        blocked = true;
+                        stopped = true;
+                        break;
+                    }
+                }
+
+                if (blocked)
+                    return;
 
                 // Spawn visual effect on the tile
-                var effect = Spawn("VampireDemonicGraspEffect", tileCoords);
+                Spawn("VampireDemonicGraspEffect", tileCoords);
 
                 // Check for mobs on this tile
-                var entitiesOnTile = _lookup.GetEntitiesInRange(tileCoords, 0.5f);
                 foreach (var target in entitiesOnTile)
                 {
                     if (target == uid)
@@ -380,28 +440,36 @@ public sealed partial class VampireSystem : EntitySystem
                     if (!HasComp<MobStateComponent>(target))
                         continue;
 
-                    // Found a mob - immobilize them
-                    _stun.TryAddParalyzeDuration(target, TimeSpan.FromSeconds(immobilizeDuration));
+                    // apply paralyze in combat mode, otherwise immobilize
+                    if (shouldPull)
+                    {
+                        _stun.TryAddParalyzeDuration(target, TimeSpan.FromSeconds(immobilizeDuration));
+                    }
+                    else
+                    {
+                        _stun.TryAddStunDuration(target, TimeSpan.FromSeconds(immobilizeDuration));
 
-                    // Spawn immobilized effect on the target
-                    var targetXform = Transform(target);
-                    Spawn("VampireImmobilizedEffect", targetXform.Coordinates);
+                        var attachCoords = new EntityCoordinates(target, Vector2.Zero);
+                        EntityManager.SpawnAttachedTo("VampireImmobilizedEffect", attachCoords);
+                    }
 
-                    _popup.PopupEntity(Loc.GetString("vampire-demonic-grasp-hit"), target, target, PopupType.LargeCaution);
+                    // Stop spawning further
+                    stopped = true;
 
-                    // If combat mode was active, pull the target to the vampire
                     if (shouldPull && Exists(uid))
                     {
                         var vampireXform = Transform(uid);
                         var vampirePos = _transform.GetWorldPosition(vampireXform);
+                        var targetXform = Transform(target);
                         var targetCurrentPos = _transform.GetWorldPosition(targetXform);
                         var pullDirection = (vampirePos - targetCurrentPos).Normalized();
                         var distance = (vampirePos - targetCurrentPos).Length();
-
                         _throwing.TryThrow(target, pullDirection * (distance - 1f), 8f, uid);
-
                         _popup.PopupEntity(Loc.GetString("vampire-demonic-grasp-pull"), uid, uid);
                     }
+
+                    _popup.PopupEntity(Loc.GetString("vampire-demonic-grasp-hit"), target, target, PopupType.LargeCaution);
+                    break;
                 }
             });
         }
@@ -418,19 +486,33 @@ public sealed partial class VampireSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (!comp.ActionEntities.TryGetValue("ActionVampireCharge", out var actionEntity)
-            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
-            return;
-
         var gargantua = EnsureComp<GargantuaComponent>(uid);
 
         if (gargantua.IsCharging)
             return;
 
+        if (!comp.ActionEntities.TryGetValue("ActionVampireCharge", out var actionEntity))
+            return;
+
+        if (TryComp<EnsnareableComponent>(uid, out var ensnareable) && ensnareable.IsEnsnared)
+        {
+            _popup.PopupEntity(Loc.GetString("vampire-legs-ensnared"), uid, uid, PopupType.Medium);
+            return;
+        }
+
         var xform = Transform(uid);
         var startPos = _transform.GetWorldPosition(xform);
         var targetPos = _transform.ToMapCoordinates(args.Target).Position;
         var direction = (targetPos - startPos).Normalized();
+
+        if (direction == Vector2.Zero)
+            return;
+
+        if (!CheckAndConsumeBloodCost(uid, comp, actionEntity))
+            return;
+
+        if (!TryComp<PhysicsComponent>(uid, out var physics))
+            return;
 
         gargantua.IsCharging = true;
         gargantua.ChargeDirection = new Angle(MathF.Atan2(direction.Y, direction.X));
@@ -440,6 +522,9 @@ public sealed partial class VampireSystem : EntitySystem
         gargantua.ChargeCreatureThrowDistance = args.CreatureThrowDistance;
         gargantua.ChargeStructuralDamage = args.StructuralDamage;
 
+        // Kick off movement immediately so the charge feels responsive
+        _physics.SetLinearVelocity(uid, direction * gargantua.ChargeSpeed, body: physics);
+
         _popup.PopupEntity(Loc.GetString("vampire-charge-start"), uid, uid);
 
         Dirty(uid, gargantua);
@@ -448,6 +533,12 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void ProcessChargeMovement(EntityUid uid, GargantuaComponent gargantua, VampireComponent _, float frameTime)
     {
+        if (!TryComp<PhysicsComponent>(uid, out var physics))
+        {
+            EndCharge(uid, gargantua);
+            return;
+        }
+
         var xform = Transform(uid);
 
         // Check if we're over void/space
@@ -464,14 +555,11 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        // Move in the charge direction
-        var movement = gargantua.ChargeDirectionVector * gargantua.ChargeSpeed * frameTime;
-        var newPos = _transform.GetWorldPosition(xform) + movement;
+        // Keep pushing forward at a constant speed
+        _physics.SetLinearVelocity(uid, gargantua.ChargeDirectionVector * gargantua.ChargeSpeed, body: physics);
 
-        // Check for obstacles
-        var moverCoords = _transform.GetMoverCoordinates(uid);
-        var offsetCoords = moverCoords.Offset(movement);
-        var nextTilePos = _map.TileIndicesFor(xform.GridUid.Value, grid, offsetCoords);
+        // Check for obstacles ahead
+        var movement = gargantua.ChargeDirectionVector * 0.5f; // Check 0.5 tiles ahead
         var obstacles = _lookup.GetEntitiesInRange(xform.Coordinates.Offset(movement), 0.5f);
 
         foreach (var obstacle in obstacles)
@@ -487,7 +575,7 @@ public sealed partial class VampireSystem : EntitySystem
             }
 
             // Check for anchored entities (structures, walls, etc.)
-            if (TryComp<PhysicsComponent>(obstacle, out var physics) && physics.BodyType == BodyType.Static)
+            if (TryComp<PhysicsComponent>(obstacle, out var obstaclePhysics) && obstaclePhysics.BodyType == BodyType.Static)
             {
                 // Check if it's a wall - destroy it
                 if (HasComp<DestructibleComponent>(obstacle))
@@ -512,9 +600,6 @@ public sealed partial class VampireSystem : EntitySystem
                 _damageableSystem.TryChangeDamage(obstacle, damageSpec, true, origin: uid);
             }
         }
-
-        // Move the vampire
-        _transform.SetWorldPosition(uid, newPos);
     }
 
     private void HandleChargeImpact(EntityUid uid, EntityUid target, GargantuaComponent gargantua)
@@ -538,6 +623,8 @@ public sealed partial class VampireSystem : EntitySystem
         gargantua.IsCharging = false;
         gargantua.ChargeSpeed = 0;
         gargantua.ChargeDirectionVector = default;
+        if (TryComp<PhysicsComponent>(uid, out var physics))
+            _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
         Dirty(uid, gargantua);
     }
 

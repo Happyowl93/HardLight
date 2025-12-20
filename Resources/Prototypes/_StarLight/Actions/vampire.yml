@@ -163,11 +163,6 @@
     - type: WorldTargetAction
       range: 7
       event: !type:VampireHemomancerTendrilsActionEvent
-        delay: 1.0
-        slowMultiplier: 0.3
-        slowDuration: 2.0
-        toxinDamage: 33
-        spawnVisuals: true
     - type: VampireAction
       bloodToUnlock: 250
       bloodCost: 25
@@ -424,7 +419,6 @@
     - type: EntityTargetAction
       canTargetSelf: false
       event: !type:VampireEnthrallActionEvent
-        channelTime: 15
     - type: VampireAction
       bloodToUnlock: 150
       bloodCost: 150
@@ -453,7 +447,6 @@
     - type: EntityTargetAction
       canTargetSelf: false
       event: !type:VampirePacifyActionEvent
-        pacifyDuration: 40.0
     - type: VampireAction
       bloodToUnlock: 250
       bloodCost: 10
@@ -482,8 +475,6 @@
     - type: EntityTargetAction
       canTargetSelf: false
       event: !type:VampireSubspaceSwapActionEvent
-        slowDuration: 4.0
-        slowMultiplier: 0.4
     - type: VampireAction
       bloodToUnlock: 250
       bloodCost: 30
@@ -504,8 +495,6 @@
         state: decoy
     - type: InstantAction
       event: !type:VampireDecoyActionEvent
-        DecoyDuration: 5.0
-        InvisibilityDuration: 6.0
     - type: VampireAction
       bloodToUnlock: 400
       bloodCost: 30
@@ -526,7 +515,6 @@
         state: thralls_up
     - type: InstantAction
       event: !type:VampireRallyThrallsActionEvent
-        range: 7.0
     - type: VampireAction
       bloodToUnlock: 600
       bloodCost: 100
@@ -547,9 +535,6 @@
         state: blood_bond
     - type: InstantAction
       event: !type:VampireBloodBondActionEvent
-        range: 7.0
-        bloodCostPerSecond: 2.5
-        tickInterval: 1.0
     - type: VampireAction
       bloodToUnlock: 800
       bloodCost: 0
@@ -570,9 +555,6 @@
         state: hysteria
     - type: InstantAction
       event: !type:VampireMassHysteriaActionEvent
-        range: 8.0
-        flashDuration: 3.0
-        hysteriaDuration: 30.0
     - type: VampireAction
       bloodToUnlock: 1000
       bloodCost: 70
@@ -595,7 +577,6 @@
         state: blood_swell
     - type: InstantAction
       event: !type:VampireBloodSwellActionEvent
-        duration: 30.0
     - type: VampireAction
       bloodToUnlock: 150
       bloodCost: 30
@@ -616,7 +597,6 @@
         state: blood_rush
     - type: InstantAction
       event: !type:VampireBloodRushActionEvent
-        duration: 10.0
     - type: VampireAction
       bloodToUnlock: 250
       bloodCost: 30
@@ -637,8 +617,6 @@
         state: seismic_stomp
     - type: InstantAction
       event: !type:VampireSeismicStompActionEvent
-        radius: 3.0
-        throwDistance: 3.0
     - type: VampireAction
       bloodToUnlock: 250
       bloodCost: 30
@@ -683,9 +661,6 @@
     - type: WorldTargetAction
       range: 15
       event: !type:VampireDemonicGraspActionEvent
-        range: 15.0
-        immobilizeDuration: 5.0
-        projectileSpeed: 15.0
     - type: VampireAction
       bloodToUnlock: 800
       bloodCost: 20
@@ -710,10 +685,6 @@
     - type: WorldTargetAction
       range: -1
       event: !type:VampireChargeActionEvent
-        creatureDamage: 60.0
-        creatureThrowDistance: 5.0
-        structuralDamage: 150.0
-        chargeSpeed: 25.0
     - type: VampireAction
       bloodToUnlock: 800
       bloodCost: 30

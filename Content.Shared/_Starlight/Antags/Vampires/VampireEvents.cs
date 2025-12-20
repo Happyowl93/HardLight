@@ -421,7 +421,7 @@ public sealed partial class VampireDemonicGraspActionEvent : WorldTargetActionEv
     ///     Duration of immobilization in seconds
     /// </summary>
     [DataField]
-    public float ImmobilizeDuration = 5f;
+    public float ImmobilizeDuration = 10f;
 
     /// <summary>
     ///     Speed of the grasp projectile
@@ -454,7 +454,7 @@ public sealed partial class VampireChargeActionEvent : WorldTargetActionEvent
     ///     Charge movement speed
     /// </summary>
     [DataField]
-    public float ChargeSpeed = 25f;
+    public float ChargeSpeed = 75f;
 }
 
 /// <summary>

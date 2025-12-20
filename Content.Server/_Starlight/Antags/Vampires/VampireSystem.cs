@@ -1,7 +1,6 @@
 using Content.Server.Actions;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Systems;
-using Content.Server.Doors.Systems;
 using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
 using Content.Server.Polymorph.Systems;
@@ -76,7 +75,7 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly SharedFlashSystem _flash = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly DoorSystem _door = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
 
     private ISawmill? _sawmill;
     private static readonly ProtoId<DamageGroupPrototype> _bruteGroupId = "Brute";

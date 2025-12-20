@@ -177,10 +177,11 @@
     - type: Transform
       noRot: false
 
+
+
+# Gotta resprite this shit
 - type: entity
   id: VampireBloodBondBeamVisual
-  name: blood bond beam visual
-  description: A smooth client-side vampire blood bond beam.
   noSpawn: true
   categories: [HideSpawnMenu]
   components:
@@ -296,7 +297,6 @@
 
 - type: entity
   id: VampireEternalDarknessAura
-  name: vampiric darkness aura
   noSpawn: true
   components:
     - type: Transform
@@ -321,7 +321,6 @@
 
 - type: entity
   id: VampireRallyOverlayEffect
-  name: vampire rally overlay
   noSpawn: true
   categories: [HideSpawnMenu]
   components:
@@ -337,12 +336,11 @@
 
 - type: entity
   id: VampireSeismicStompEffect
-  name: vampire stomp
   noSpawn: true
-  categories: [HideSpawnMenu]
+  # categories: [HideSpawnMenu]
   components:
     - type: Sprite 
-      sprite: Resources/Textures/_Starlight/Vampire/Effects.rsi/seismic_stopmp.rsi
+      sprite: /Textures/_Starlight/Vampire/seismic_stopmp.rsi
       state: stomp_effect
       drawdepth: Effects
     - type: TimedDespawn
@@ -354,9 +352,8 @@
 
 - type: entity
   id: VampireDemonicGraspEffect
-  name: demonic grasp
   noSpawn: true
-  categories: [HideSpawnMenu]
+  # categories: [HideSpawnMenu]
   components:
     - type: Sprite
       sprite: /Textures/_Starlight/Vampire/Effects.rsi
@@ -371,7 +368,6 @@
 
 - type: entity
   id: VampireImmobilizedEffect
-  name: immobilized
   noSpawn: true
   categories: [HideSpawnMenu]
   components:
@@ -380,7 +376,7 @@
       state: immobilized
       drawdepth: Effects
     - type: TimedDespawn
-      lifetime: 2.0
+      lifetime: 10.0
     - type: Physics
       canCollide: false
     - type: Transform

@@ -82,7 +82,7 @@ public sealed partial class GargantuaComponent : Component
     ///     Speed modifier for Blood Rush
     /// </summary>
     [DataField]
-    public float BloodRushSpeedMultiplier = 2f;
+    public float BloodRushSpeedMultiplier = 1.5f;
 
     /// <summary>
     ///     Duration of Blood Rush in seconds
