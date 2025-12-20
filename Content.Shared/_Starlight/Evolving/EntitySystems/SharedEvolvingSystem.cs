@@ -8,6 +8,7 @@ using Content.Shared.Actions;
 using Content.Shared._Starlight.Antags.TerrorSpider;
 using Content.Shared._Starlight.Spider.Events;
 using Content.Shared.Objectives.Systems;
+using Content.Shared.Mind.Components;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Starlight.Evolving.EntitySystems;
@@ -25,7 +26,7 @@ public abstract class SharedEvolvingSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<EvolvingComponent, EvolveEvent>(OnEvolve);
-        SubscribeLocalEvent<EvolvingComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<EvolvingComponent, MindAddedMessage>(OnMindAdded);
 
         // Watchers
 
@@ -95,7 +96,7 @@ public abstract class SharedEvolvingSystem : EntitySystem
 
     #region Logic
 
-    private void OnInit(EntityUid uid, EvolvingComponent component, ComponentInit args) => TryUpdateObjective(uid, component, null, false); // Just add starting objectives.
+    private void OnMindAdded(EntityUid uid, EvolvingComponent component, MindAddedMessage args) => TryUpdateObjective(uid, component, null, false); // Just add starting objectives.
 
     private bool TryUpdateEvolveState(EntityUid uid, EvolvingComponent component, EvolveType? objType = null)
     {

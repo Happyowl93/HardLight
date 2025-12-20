@@ -9,7 +9,9 @@ using Content.Shared.Actions;
 using Content.Shared._Starlight.Antags.TerrorSpider;
 using Content.Shared._Starlight.Spider.Events;
 using Content.Shared.Objectives.Systems;
+using Content.Shared.Objectives.Components;
 using Content.Server.Objectives.Systems;
+using Content.Server.Objectives.Components;
 
 namespace Content.Server._Starlight.Evolving.EntitySystems;
 
@@ -19,7 +21,22 @@ public sealed class EvolvingSystem : SharedEvolvingSystem
     [Dependency] private readonly SharedObjectivesSystem _objectivesSystem = default!;
     [Dependency] private readonly NumberObjectiveSystem _numberObjectiveSystem = default!;
 
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<EvolveConditionComponent, ObjectiveGetProgressEvent>(OnGetProgress);
+    }
+
     #region Logic
+
+    private void OnGetProgress(Entity<EvolveConditionComponent> ent, ref ObjectiveGetProgressEvent args)
+    {
+        if (!TryComp<NumberObjectiveComponent>(ent.Owner, out var objective))
+            return;
+        args.Progress = Math.Clamp((float)ent.Comp.Count / objective.Target, 0f, 1f);
+    }
+
     public override EntityUid TryInitObjectives(EntityUid mindId, MindComponent mind, string objectiveId, EvolvingCondition condition)
     {
         var obj = _objectivesSystem.TryCreateObjective(mindId, mind, objectiveId);

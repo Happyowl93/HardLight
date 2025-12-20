@@ -61,6 +61,7 @@ public sealed class NumberObjectiveSystem : EntitySystem
             return;
 
         comp.Title = title;
+        _metaData.SetEntityName(uid, Loc.GetString(comp.Title, ("count", comp.Target)), args.Meta);
     }
 
     public void SetDescription(EntityUid uid, string description, NumberObjectiveComponent? comp = null)
@@ -69,6 +70,7 @@ public sealed class NumberObjectiveSystem : EntitySystem
             return;
             
         comp.Description = description;
+        _metaData.SetEntityDescription(uid, Loc.GetString(comp.Description, ("count", comp.Target)), args.Meta);
     }
     #endregion
 }
