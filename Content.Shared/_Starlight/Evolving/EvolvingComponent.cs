@@ -30,6 +30,9 @@ public sealed partial class EvolvingComponent : Component
 
     [DataField]
     public string ObjectiveId = "EvolveObjective";
+
+    [DataField]
+    public List<EntityUid> Objectives = [];
 }
 
 [RegisterComponent]

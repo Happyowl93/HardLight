@@ -27,6 +27,7 @@ public abstract class SharedEvolvingSystem : EntitySystem
 
         SubscribeLocalEvent<EvolvingComponent, EvolveEvent>(OnEvolve);
         SubscribeLocalEvent<EvolvingComponent, MindAddedMessage>(OnMindAdded);
+        SubscribeLocalEvent<EvolvingComponent, MindRemovedMessage>(OnMindRemoved);
 
         // Watchers
 
@@ -96,7 +97,16 @@ public abstract class SharedEvolvingSystem : EntitySystem
 
     #region Logic
 
-    private void OnMindAdded(EntityUid uid, EvolvingComponent component, MindAddedMessage args) => TryUpdateObjective(uid, component, null, false); // Just add starting objectives.
+    private void OnMindAdded(EntityUid uid, EvolvingComponent component, MindAddedMessage args)
+    {
+        if (component.Objectives.Count > 0)
+            foreach (var obj in component.Objectives)
+                _mindSystem.AddObjective(args.mind.Owner, args.mind.Comp, obj);
+        else
+            TryUpdateObjective(uid, component, null, false); // Just add starting objectives.
+    }
+
+    private void OnMindRemoved(EntityUid uid, EvolvingComponent component, MindRemovedMessage args) => TryRemoveObjectives(args.mind.Owner, args.mind.Comp, component, delete: false, force: true);
 
     private bool TryUpdateEvolveState(EntityUid uid, EvolvingComponent component, EvolveType? objType = null)
     {
@@ -129,6 +139,7 @@ public abstract class SharedEvolvingSystem : EntitySystem
                 var objEnt = TryInitObjectives(mindId, mind, component.ObjectiveId, condition);
 
                 _mindSystem.AddObjective(mindId, mind, objEnt);
+                component.Objectives.Add(objEnt);
             }
         }
         else if (increment)
@@ -182,10 +193,31 @@ public abstract class SharedEvolvingSystem : EntitySystem
             return false;
 
         // All conditions met, evolve.
-        var ent = EntityManager.SpawnEntity(component.EvolveTo, Transform(uid).Coordinates);
+        foreach (var obj in component.Objectives)
+            _mindSystem.TryRemoveObjective(mindId, mind, obj, force: true); // Clear out objectives.
+
+        var ent = EntityManager.PredictedSpawnAtPosition(component.EvolveTo, Transform(uid).Coordinates);
         _mindSystem.TransferTo(mindId, ent, mind: mind);
         QueueDel(uid);
         return true;
+    }
+
+    private bool TryRemoveObjectives(EntityUid uid, EvolvingComponent component, bool delete = true, bool force = false)
+    {
+        if (!_mindSystem.TryGetMind(uid, out var mindId, out var mind))
+            return false;
+        
+        return TryRemoveObjectives(mindId, mind, component, delete, force);
+    }
+
+    private bool TryRemoveObjectives(EntityUid mindId, MindComponent mind, EvolvingComponent component, bool delete = true, bool force = false)
+    {        
+        bool removedAny = false;
+        foreach (var obj in component.Objectives)
+            if (_mindSystem.TryRemoveObjective(mindId, mind, obj, delete: delete, force: force))
+                removedAny = true;
+
+        return removedAny;
     }
 
     private void OnEvolve(EntityUid uid, EvolvingComponent component, EvolveEvent args) => TryEvolve(uid, component);
