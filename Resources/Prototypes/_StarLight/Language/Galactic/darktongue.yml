@@ -2,7 +2,9 @@
 - type: language
   id: Darktongue
   speech:
-    color: "#d42222"
+    color: "#ff2202"
+    fontId: Darktongue
+    obfuscationFont: true
   icon: LanguageIconDarktongue
   obfuscation:
     !type:SyllableObfuscation

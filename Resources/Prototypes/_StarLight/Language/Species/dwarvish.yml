@@ -3,11 +3,13 @@
   id: Dwarvish
   speech:
     color: "#dfc68c"
+    fontId: MonasteryRaid
+    obfuscationFont: true
   icon: LanguageIconDwarvish
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
-    maxSyllables: 3
+    maxSyllables: 2
     replacement:
     - az
     - skit

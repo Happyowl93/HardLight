@@ -3,11 +3,12 @@
   id: HighElven
   speech:
     color: "#80a7d5"
+    font: DefaultItalic
   icon: LanguageIconHighElven
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
-    maxSyllables: 4
+    maxSyllables: 3
     replacement:
     - ai
     - el
