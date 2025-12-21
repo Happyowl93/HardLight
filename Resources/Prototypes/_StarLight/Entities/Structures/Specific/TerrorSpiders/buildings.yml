@@ -97,6 +97,8 @@
   - type: SpiderWebObject
   - type: Strap
     position: Stand
+    needsHands: false
+    setVisible: true
     whitelist: 
       components:
       - Spider
