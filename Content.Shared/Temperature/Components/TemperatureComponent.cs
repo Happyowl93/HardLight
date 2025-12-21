@@ -76,4 +76,32 @@ public sealed partial class TemperatureComponent : Component
 
     [DataField]
     public ProtoId<AlertPrototype> ColdAlert = "Cold";
+    
+    // Starlight begin
+    
+    /// <summary>
+    /// How much damage you take when you or someone else hugs, and they are below your <see cref="ColdDamageThreshold"/>.
+    /// </summary>
+    [DataField]
+    public DamageSpecifier ColdHugDamage = new()
+    {
+        DamageDict = new()
+        {
+            { "Cold", 1.0 },
+        }
+    };
+
+    /// <summary>
+    /// How much damage you take when you or someone else hugs, and they are above your <see cref="HeatDamageThreshold"/>.
+    /// </summary>
+    [DataField]
+    public DamageSpecifier HeatHugDamage = new()
+    {
+        DamageDict = new()
+        {
+            { "Heat", 1.0 },
+        }
+    };
+
+    // Starlight end
 }

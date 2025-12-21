@@ -1,7 +1,10 @@
 using System.Linq;
 using Content.Shared.Atmos;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Popups;
 using Content.Shared.Temperature.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
@@ -15,6 +18,8 @@ public abstract class SharedTemperatureSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
+    [Dependency] private readonly DamageableSystem _damage = default!; // Starlight
+    [Dependency] private readonly SharedPopupSystem _popup = default!; // Starlight
 
     /// <summary>
     /// Band-aid for unpredicted atmos. Delays the application for a short period so that laggy clients can get the replicated temperature.
@@ -27,8 +32,39 @@ public abstract class SharedTemperatureSystem : EntitySystem
 
         SubscribeLocalEvent<TemperatureSpeedComponent, OnTemperatureChangeEvent>(OnTemperatureChanged);
         SubscribeLocalEvent<TemperatureSpeedComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
+        SubscribeLocalEvent<TemperatureComponent, InteractionSuccessEvent>(OnInteractionSuccess); // Starlight
     }
 
+    // Starlight begin
+
+    private void OnInteractionSuccess(Entity<TemperatureComponent> ent, ref InteractionSuccessEvent args)
+    {
+        if (!TryComp<TemperatureComponent>(args.User, out var userTempComp))
+            return;
+        
+        DealHugTemperatureDamage(ent, (args.User, userTempComp));
+        DealHugTemperatureDamage((args.User, userTempComp), ent);
+    }
+
+    private void DealHugTemperatureDamage(Entity<TemperatureComponent> target, Entity<TemperatureComponent> giver)
+    {
+        var temp = giver.Comp.CurrentTemperature;
+
+        if (target.Comp.ColdDamageThreshold >= temp)
+        {
+            _damage.TryChangeDamage(target.Owner, target.Comp.ColdHugDamage, ignoreResistances: true, interruptsDoAfters: false);
+            _popup.PopupClient(Loc.GetString("hugging-too-cold"), target.Owner, PopupType.LargeCaution);
+        }
+
+        if (target.Comp.HeatDamageThreshold <= temp)
+        {
+            _damage.TryChangeDamage(target.Owner, target.Comp.HeatHugDamage, ignoreResistances: true, interruptsDoAfters: false);
+            _popup.PopupClient(Loc.GetString("hugging-too-hot"), target.Owner, PopupType.LargeCaution);
+        }
+    }
+
+    // Starlight end
+    
     private void OnTemperatureChanged(Entity<TemperatureSpeedComponent> ent, ref OnTemperatureChangeEvent args)
     {
         foreach (var (threshold, modifier) in ent.Comp.Thresholds)
