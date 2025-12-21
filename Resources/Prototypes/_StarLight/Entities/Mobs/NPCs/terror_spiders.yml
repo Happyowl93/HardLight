@@ -325,6 +325,9 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: alive
       sprite: _Starlight/Mobs/Animals/Spiders/terror_widow.rsi
+  - type: Spider
+    hasBuilding: true
+    buildingActionProto: ActionSpiderBuildingPole
   - type: Jump
     knockdownTargetOnCollision: true
   - type: Spider
@@ -360,6 +363,9 @@
   id: MobTerrorWhiteUnevolvable
   abstract: true
   components:
+  - type: Spider
+    hasBuilding: true
+    buildingActionProto: ActionSpiderBuildingCocoon
   - type: Sprite
     drawdepth: Mobs
     layers:
