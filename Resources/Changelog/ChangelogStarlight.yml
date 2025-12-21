@@ -24387,5 +24387,15 @@ Entries:
   id: 255600
   time: '2025-12-20T03:14:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2556
+- author: Penguinwizzard
+  changes:
+  - message: We realized that when putting in the order for the new energy magnums,
+      our supplier took the opportunity to upcharge us for autochargers for the energy
+      shotguns. We've reminded them of our contracting process, so your energy shotguns
+      will no longer self-recharge.
+    type: Tweak
+  id: 257100
+  time: '2025-12-21T22:41:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2571
 Order: -1
 
