@@ -24451,5 +24451,12 @@ Entries:
   id: 257500
   time: '2025-12-21T23:21:48.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2575
+- author: Fasuh
+  changes:
+  - message: Fix Avali and Cyclorites processing alcohol for long
+    type: Tweak
+  id: 255900
+  time: '2025-12-21T23:21:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2559
 Order: -1
 
