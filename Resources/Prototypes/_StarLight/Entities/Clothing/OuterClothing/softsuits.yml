@@ -41,13 +41,13 @@
 - type: entity
   parent: [ ClothingOuterEVASuitBase, BaseMagicalContraband ]
   id: ClothingOuterSoftsuitWizard
-  name: wizard space robes
-  description: A cumbersome gem-encrusted robe that is somehow space proof
+  name: wizard void robes
+  description: A cumbersome gem-encrusted robe that is magically resistant to the void of space
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/wizard.rsi
+    sprite: _Starlight/Clothing/OuterClothing/Suits/wizard.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/wizard.rsi
+    sprite: _Starlight/Clothing/OuterClothing/Suits/wizard.rsi
   - type: Armor
     modifiers:
       coefficients:
