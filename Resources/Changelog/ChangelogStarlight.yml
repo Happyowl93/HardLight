@@ -24442,5 +24442,14 @@ Entries:
   id: 256500
   time: '2025-12-21T23:12:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2565
+- author: SevenShades
+  changes:
+  - message: Wizard's void robes
+    type: Add
+  - message: Wizard hardsuit
+    type: Remove
+  id: 257500
+  time: '2025-12-21T23:21:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2575
 Order: -1
 
