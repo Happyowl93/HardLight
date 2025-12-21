@@ -126,15 +126,15 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         if (!TryComp<StrapComponent>(args.Strap, out var strapComp)) //Starlight
             return; 
 
-        if (!ent.Comp.OriginalDrawDepth.HasValue)
-            return;
-
         // Starlight-start
 
         if (strapComp.SetVisible && ent.Comp.OriginalVisible is { } originalVis)
             buckledSprite.Visible = originalVis;
 
         // Starlight-end
+
+        if (!ent.Comp.OriginalDrawDepth.HasValue)
+            return;
 
         _sprite.SetDrawDepth((ent.Owner, buckledSprite), ent.Comp.OriginalDrawDepth.Value);
         ent.Comp.OriginalDrawDepth = null;
