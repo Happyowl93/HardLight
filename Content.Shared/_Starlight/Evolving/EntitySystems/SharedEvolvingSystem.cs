@@ -145,7 +145,7 @@ public abstract class SharedEvolvingSystem : EntitySystem
         else if (increment)
             foreach (var objective in objectivesToUpdate)
                 if (TryComp<EvolveConditionComponent>(objective, out var evolveCondition) 
-                    && (objType == null || evolveCondition.Type == objType))
+                    && (objType == null || evolveCondition.ConditionType == objType))
                     evolveCondition.Count += 1;
         
         return true;
@@ -158,7 +158,7 @@ public abstract class SharedEvolvingSystem : EntitySystem
             return EntityUid.Invalid;
 
         if (TryComp<EvolveConditionComponent>(objEnt, out var evolveCondition))
-            evolveCondition.Type = condition.Type;
+            evolveCondition.ConditionType = condition.Type;
 
         return objEnt;
     }

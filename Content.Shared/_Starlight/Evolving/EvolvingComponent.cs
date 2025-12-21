@@ -38,9 +38,8 @@ public sealed partial class EvolvingComponent : Component
 [RegisterComponent]
 public sealed partial class EvolveConditionComponent : Component
 {
-    [DataField("type"), ViewVariables(VVAccess.ReadWrite)]
-    public EvolveType? Type;
-
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public EvolveType? ConditionType;
     [DataField("count"), ViewVariables(VVAccess.ReadWrite)]
     public int Count = 0;
 }

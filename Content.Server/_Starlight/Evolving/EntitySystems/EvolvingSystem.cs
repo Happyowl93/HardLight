@@ -44,7 +44,7 @@ public sealed class EvolvingSystem : SharedEvolvingSystem
             return EntityUid.Invalid;
 
         if (TryComp<EvolveConditionComponent>(objEnt, out var evolveCondition))
-            evolveCondition.Type = condition.Type;
+            evolveCondition.ConditionType = condition.Type;
 
         _numberObjectiveSystem.SetTarget(objEnt, condition.GetTarget()); // All evolve conditions are count based with target 1.
         _numberObjectiveSystem.SetTitle(objEnt, $"objective-{condition.Type.ToString().ToLower()}-condition-title");
