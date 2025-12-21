@@ -24423,5 +24423,13 @@ Entries:
   id: 256400
   time: '2025-12-21T22:41:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2564
+- author: Penguinwizzard
+  changes:
+  - message: The "Assistant" job now only shows up once in the ID card computer's
+      job list, rather than twice.
+    type: Fix
+  id: 256200
+  time: '2025-12-21T22:41:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2562
 Order: -1
 
