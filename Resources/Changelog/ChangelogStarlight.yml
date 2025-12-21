@@ -24415,5 +24415,13 @@ Entries:
   id: 256300
   time: '2025-12-21T22:41:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2563
+- author: Penguinwizzard
+  changes:
+  - message: Changed the NT Rep's cane from Firewire back to USB-C so it can use the
+      station chargers again.
+    type: Fix
+  id: 256400
+  time: '2025-12-21T22:41:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2564
 Order: -1
 
