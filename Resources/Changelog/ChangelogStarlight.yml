@@ -24431,5 +24431,16 @@ Entries:
   id: 256200
   time: '2025-12-21T22:41:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2562
+- author: Conflee, Abby, DocMoth, Way
+  changes:
+  - message: Resprited the Security, Warden, and Head of Security Hardsuits. Wizden
+      ones are each in a slightly different art style, not matching each other. New
+      ones all match.
+    type: Tweak
+  - message: Made NTSF and REDACTED immune to tasers.
+    type: Tweak
+  id: 256500
+  time: '2025-12-21T23:12:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2565
 Order: -1
 
