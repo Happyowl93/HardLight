@@ -29,3 +29,28 @@
     unequipSound: /Audio/Mecha/mechmove03.ogg #starlight
     equipDelay: 3 #starlight
     unequipDelay: 3 #starlight
+
+#Wizard "Robes"
+- type: entity
+  parent:  ClothingHeadEVAHelmetBase #, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetsoftsuitWizard
+  name: wizard void hood
+  description: A bizarre gem-encrusted hood that radiates magical energies.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Head/Hoods/wizard.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Head/Hoods/wizard.rsi
+    equipSound:
+      collection: storageRustle
+    unequipSound: 
+      collection: storageRustle
+  # - type: PointLight
+  #   color: "#ffadfb"
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
