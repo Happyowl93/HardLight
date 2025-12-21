@@ -325,13 +325,12 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: alive
       sprite: _Starlight/Mobs/Animals/Spiders/terror_widow.rsi
-  - type: Spider
-    hasBuilding: true
-    buildingActionProto: ActionSpiderBuildingPole
   - type: Jump
     knockdownTargetOnCollision: true
   - type: Spider
     webPrototype: SpiderWebPoison
+    hasBuilding: true
+    buildingActionProto: ActionSpiderBuildingPole
 
 - type: entity
   name: terror black
