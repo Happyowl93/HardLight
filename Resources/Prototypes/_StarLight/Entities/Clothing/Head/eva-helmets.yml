@@ -29,3 +29,45 @@
     unequipSound: /Audio/Mecha/mechmove03.ogg #starlight
     equipDelay: 3 #starlight
     unequipDelay: 3 #starlight
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadBowlHelmet
+  name: fish bowl helmet
+  description: It looks like a fish bowl, but somehow it functions as an EVA helmet.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Head/Helmets/wizard_bowl.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+    equipSound: /Audio/Mecha/mechmove03.ogg #starlight
+    unequipSound: /Audio/Mecha/mechmove03.ogg #starlight
+    equipDelay: 1 #starlight
+    unequipDelay: 1 #starlight
+  - type: BreathMask
+  - type: Item
+    size: Normal
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
+  - type: IngestionBlocker
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HelmetEVA
+  - type: StaticPrice
+    price: 1000
+  - type: Pierceable
+    level: Metal
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.95
+        Radiation: 0.95
