@@ -24405,5 +24405,15 @@ Entries:
   id: 256700
   time: '2025-12-21T22:41:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2567
+- author: Penguinwizzard
+  changes:
+  - message: The paperwork has finally gone through, and the Warden and Detective
+      are now permitted to use their issued weapons as non-contraband. Thank you for
+      refraining for using them while we were waiting on that to get filed, it must
+      have been stressful.
+    type: Fix
+  id: 256300
+  time: '2025-12-21T22:41:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2563
 Order: -1
 
