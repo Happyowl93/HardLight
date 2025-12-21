@@ -903,10 +903,6 @@
   - type: PredictedBattery
     maxCharge: 480
     startingCharge: 480
-  - type: PredictedBatterySelfRecharger
-    autoRechargeRate: 20
-    autoRechargePauseTime: 10
-
 
 - type: entity
   name: energy magnum
