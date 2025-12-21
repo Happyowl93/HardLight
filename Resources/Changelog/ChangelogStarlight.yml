@@ -24346,5 +24346,46 @@ Entries:
   id: 249700
   time: '2025-12-19T17:20:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2497
+- author: Rhetorica
+  changes:
+  - message: Moved new Middle Eastern recipes (falafel, hummus, shawarma, souvlaki,
+      doner) from the oven to the microwave for consistency with other recipes
+    type: Tweak
+  id: 254700
+  time: '2025-12-19T21:11:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2547
+- author: Rinary
+  changes:
+  - message: Fixed bug when you can use taser to knockdown entity with armor which
+      is supposed to ignore knockdown from tasers.
+    type: Fix
+  id: 254400
+  time: '2025-12-19T21:28:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2544
+- author: Penguinwizzard
+  changes:
+  - message: Addressed a disagreement between CC supply and facilities departments,
+      re-adding the energy shotgun to the warden's locker.
+    type: Fix
+  - message: Addressed a mis-order from CC supply of energy magnums, HOS's will now
+      no longer get a copy of the detectives gun
+    type: Fix
+  id: 254600
+  time: '2025-12-19T22:01:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2546
+- author: Arkanic, neomoth
+  changes:
+  - message: fix disablers and tasers showing laser beams
+    type: Fix
+  id: 255300
+  time: '2025-12-20T00:50:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2553
+- author: Arkanic
+  changes:
+  - message: Switch back to starlight vulpkanin emote sounds
+    type: Fix
+  id: 255600
+  time: '2025-12-20T03:14:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2556
 Order: -1
 
