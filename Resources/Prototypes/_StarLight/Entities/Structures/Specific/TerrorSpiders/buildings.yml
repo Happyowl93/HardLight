@@ -33,7 +33,7 @@
   - type: Transform
     anchored: true
   - type: Sprite
-    sprite: _Starlight/Structures/Specific/TerrorSpiders/buildings.rsi
+    sprite: _Starlight/Structures/Specific/TerrorSpiders/buildings_48.rsi
     color: "#ffffffdd"
     layers:
     - state: pole

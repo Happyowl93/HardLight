@@ -818,7 +818,7 @@
   - type: Sprite
     sprite:  _Starlight/Interface/Actions/actions_spider.rsi
     layers:
-      - state: egg
+      - state: lay_eggs
 #
 - type: entity
   parent: SurgeryBase
