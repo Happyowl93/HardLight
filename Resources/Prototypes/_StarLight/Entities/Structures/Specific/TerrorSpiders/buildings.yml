@@ -109,6 +109,14 @@
     drawdepth: OverMobs
     layers:
     - state: cocoon
+    - state: cocoon_open
+      map: ["buckledLayer"]
+    - type: GenericVisualizer
+      visuals:
+        enum.StrapVisuals.State:
+          buckledLayer:
+            True: {visible: false}
+            False: {visible: true}
   - type: Fixtures
     fixtures:
       fix1:
