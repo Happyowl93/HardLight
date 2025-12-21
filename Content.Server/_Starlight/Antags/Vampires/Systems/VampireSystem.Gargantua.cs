@@ -24,6 +24,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
+using Robust.Shared.Audio;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -88,6 +89,9 @@ public sealed partial class VampireSystem : EntitySystem
             return;
 
         var gargantua = EnsureComp<GargantuaComponent>(uid);
+
+        gargantua.BloodSwellEnhancedThreshold = args.EnhancedThreshold;
+        gargantua.BloodSwellMeleeBonusDamage = args.MeleeBonusDamage;
         
         if (gargantua.BloodSwellActive)
         {
@@ -132,10 +136,10 @@ public sealed partial class VampireSystem : EntitySystem
         if (!TryComp<VampireComponent>(uid, out var vampire))
             return;
 
-        // Bonus only for unarmed (weapon == user) after 400 total blood
         if (args.Weapon != uid)
             return;
 
+        // Bonus only for unarmed after 400 total blood
         if (vampire.TotalBlood < component.BloodSwellEnhancedThreshold)
             return;
 
@@ -187,7 +191,6 @@ public sealed partial class VampireSystem : EntitySystem
 
         var now = _timing.CurTime;
 
-        // Only affect relevant negative effects
         if (!HasComp<StunnedStatusEffectComponent>(effectUid)
             && !HasComp<KnockdownStatusEffectComponent>(effectUid)
             && !HasComp<MovementModStatusEffectComponent>(effectUid)
@@ -201,7 +204,6 @@ public sealed partial class VampireSystem : EntitySystem
         if (remaining <= TimeSpan.Zero)
             return;
 
-        // Use the status effect system API so we have write access to the end time.
         if (MetaData(effectUid).EntityPrototype is not { ID: var protoId })
             return;
 
@@ -222,6 +224,9 @@ public sealed partial class VampireSystem : EntitySystem
             return;
 
         var gargantua = EnsureComp<GargantuaComponent>(uid);
+
+        // Pull tuning parameters from the action event (configured in the action prototype).
+        gargantua.BloodRushSpeedMultiplier = args.SpeedMultiplier;
 
         if (gargantua.BloodRushActive)
         {
@@ -388,8 +393,6 @@ public sealed partial class VampireSystem : EntitySystem
         // Check if combat mode is active for pulling
         var shouldPull = TryComp<CombatModeComponent>(uid, out var combat) && combat.IsInCombatMode;
 
-        _popup.PopupEntity(Loc.GetString("vampire-demonic-grasp-cast"), uid, uid);
-
         // Calculate tiles along the path - capture values for lambda
         var maxTiles = (int)args.Range;
         var immobilizeDuration = args.ImmobilizeDuration;
@@ -398,6 +401,7 @@ public sealed partial class VampireSystem : EntitySystem
         // Flag to stop spawning after hitting something
         var stopped = false;
 
+        var SpawnSound = args.Sound;
         for (var i = 1; i <= maxTiles; i++)
         {
             var tileIndex = i;
@@ -428,7 +432,8 @@ public sealed partial class VampireSystem : EntitySystem
                 if (blocked)
                     return;
 
-                // Spawn visual effect on the tile
+                // Spawn visual effect on the tile and play audio
+                _audio.PlayPvs(SpawnSound, tileCoords, AudioParams.Default.WithVolume(3f));
                 Spawn("VampireDemonicGraspEffect", tileCoords);
 
                 // Check for mobs on this tile
@@ -449,8 +454,12 @@ public sealed partial class VampireSystem : EntitySystem
                     {
                         _stun.TryAddStunDuration(target, TimeSpan.FromSeconds(immobilizeDuration));
 
-                        var attachCoords = new EntityCoordinates(target, Vector2.Zero);
-                        EntityManager.SpawnAttachedTo("VampireImmobilizedEffect", attachCoords);
+                        // Don't spawn the visual on targets that are already lying down
+                        if (!HasComp<KnockedDownComponent>(target))
+                        {
+                            var attachCoords = new EntityCoordinates(target, Vector2.Zero);
+                            EntityManager.SpawnAttachedTo("VampireImmobilizedEffect", attachCoords);
+                        }
                     }
 
                     // Stop spawning further
@@ -503,7 +512,8 @@ public sealed partial class VampireSystem : EntitySystem
         var xform = Transform(uid);
         var startPos = _transform.GetWorldPosition(xform);
         var targetPos = _transform.ToMapCoordinates(args.Target).Position;
-        var direction = (targetPos - startPos).Normalized();
+        var delta = targetPos - startPos;
+        var direction = delta.Normalized();
 
         if (direction == Vector2.Zero)
             return;
@@ -521,9 +531,10 @@ public sealed partial class VampireSystem : EntitySystem
         gargantua.ChargeCreatureDamage = args.CreatureDamage;
         gargantua.ChargeCreatureThrowDistance = args.CreatureThrowDistance;
         gargantua.ChargeStructuralDamage = args.StructuralDamage;
+        gargantua.ChargeImpactSound = args.Sound;
 
         // Kick off movement immediately so the charge feels responsive
-        _physics.SetLinearVelocity(uid, direction * gargantua.ChargeSpeed, body: physics);
+        _physics.SetLinearVelocity(uid, direction * args.ChargeSpeed, body: physics);
 
         _popup.PopupEntity(Loc.GetString("vampire-charge-start"), uid, uid);
 
@@ -531,7 +542,7 @@ public sealed partial class VampireSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void ProcessChargeMovement(EntityUid uid, GargantuaComponent gargantua, VampireComponent _, float frameTime)
+    private void ProcessChargeMovement(EntityUid uid, GargantuaComponent gargantua, VampireComponent _, float __)
     {
         if (!TryComp<PhysicsComponent>(uid, out var physics))
         {
@@ -541,7 +552,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         var xform = Transform(uid);
 
-        // Check if we're over void/space
+        // Check if were over void/space
         if (xform.GridUid == null || !TryComp<MapGridComponent>(xform.GridUid, out var grid))
         {
             EndCharge(uid, gargantua);
@@ -567,30 +578,37 @@ public sealed partial class VampireSystem : EntitySystem
             if (obstacle == uid)
                 continue;
 
+            // Never interact with contained entities
+            // Otherwise we can "hit" our own items and cancel the charge.
+            if (_container.IsEntityInContainer(obstacle))
+                continue;
+
             // Check for mobs
             if (HasComp<MobStateComponent>(obstacle))
             {
                 HandleChargeImpact(uid, obstacle, gargantua);
-                continue;
+                EndCharge(uid, gargantua);
+                return;
             }
 
-            // Check for anchored entities (structures, walls, etc.)
-            if (TryComp<PhysicsComponent>(obstacle, out var obstaclePhysics) && obstaclePhysics.BodyType == BodyType.Static)
+            // Stop only on static obstacles that actually collide with us.
+            // This prevents decorative/underfloor entities (e.g. wires) from canceling the charge
+            if (TryComp<PhysicsComponent>(obstacle, out var obstaclePhysics)
+                && obstaclePhysics.BodyType == BodyType.Static
+                && obstaclePhysics.CanCollide
+                && obstaclePhysics.Hard
+                && (physics.CollisionMask & obstaclePhysics.CollisionLayer) != 0)
             {
-                // Check if it's a wall - destroy it
+                // Check if its a wall, destroy it
                 if (HasComp<DestructibleComponent>(obstacle))
-                {
-                    // Apply massive damage to destroy
-                    var damageSpec = new DamageSpecifier();
-                    damageSpec.DamageDict["Structural"] = gargantua.ChargeStructuralDamage;
-                    _damageableSystem.TryChangeDamage(obstacle, damageSpec, true, origin: uid);
-                }
+                    _destructible.DestroyEntity(obstacle);
+                    _audio.PlayPvs(gargantua.ChargeImpactSound, obstacle);
 
                 EndCharge(uid, gargantua);
                 return;
             }
 
-            // Unanchored objects - throw them
+            // throw unanchored entities
             if (TryComp<PhysicsComponent>(obstacle, out var physicsUnanchored) && physicsUnanchored.BodyType != BodyType.Static)
             {
                 _throwing.TryThrow(obstacle, gargantua.ChargeDirectionVector * gargantua.ChargeCreatureThrowDistance, 10f, uid);
@@ -604,15 +622,16 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void HandleChargeImpact(EntityUid uid, EntityUid target, GargantuaComponent gargantua)
     {
-        // Apply damage
+        if (gargantua.ChargeImpactSound != null)
+            _audio.PlayPvs(gargantua.ChargeImpactSound, target);
+
         var damageSpec = new DamageSpecifier();
         damageSpec.DamageDict["Blunt"] = gargantua.ChargeCreatureDamage;
         _damageableSystem.TryChangeDamage(target, damageSpec, true, origin: uid);
 
         // Throw the target
-        _throwing.TryThrow(target, gargantua.ChargeDirectionVector * gargantua.ChargeCreatureThrowDistance, 10f, uid);
+        _throwing.TryThrow(target, gargantua.ChargeDirectionVector * gargantua.ChargeCreatureThrowDistance, 6f, uid);
 
-        // Stun
         _stun.TryKnockdown(target, TimeSpan.FromSeconds(2), true);
 
         _popup.PopupEntity(Loc.GetString("vampire-charge-impact", ("target", target)), uid, uid);
@@ -623,6 +642,7 @@ public sealed partial class VampireSystem : EntitySystem
         gargantua.IsCharging = false;
         gargantua.ChargeSpeed = 0;
         gargantua.ChargeDirectionVector = default;
+        gargantua.ChargeImpactSound = null;
         if (TryComp<PhysicsComponent>(uid, out var physics))
             _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
         Dirty(uid, gargantua);

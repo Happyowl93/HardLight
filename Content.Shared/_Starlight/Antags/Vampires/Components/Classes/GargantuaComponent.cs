@@ -1,4 +1,5 @@
 using System.Numerics;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._Starlight.Antags.Vampires.Components.Classes;
@@ -45,78 +46,54 @@ public sealed partial class GargantuaComponent : Component
     /// <summary>
     ///     The direction of the charge
     /// </summary>
-    [DataField]
     public Angle ChargeDirection;
 
     /// <summary>
     ///     Current charge direction as vector
     /// </summary>
-    [DataField]
     public Vector2 ChargeDirectionVector;
 
     /// <summary>
     ///     Current charge speed
     /// </summary>
-    [DataField]
     public float ChargeSpeed;
 
     /// <summary>
     ///     Damage dealt to creatures on charge impact
     /// </summary>
-    [DataField]
     public float ChargeCreatureDamage;
 
     /// <summary>
     ///     How far creatures are thrown on charge impact
     /// </summary>
-    [DataField]
     public float ChargeCreatureThrowDistance;
 
     /// <summary>
     ///     Damage dealt to structures on charge impact
     /// </summary>
-    [DataField]
     public float ChargeStructuralDamage;
 
     /// <summary>
-    ///     Speed modifier for Blood Rush
+    ///     Sound played when the charge ends due to an impact.
+    ///     Set from <see cref="VampireChargeActionEvent"/> when the ability is activated.
     /// </summary>
-    [DataField]
-    public float BloodRushSpeedMultiplier = 1.5f;
+    public SoundSpecifier? ChargeImpactSound;
 
     /// <summary>
-    ///     Duration of Blood Rush in seconds
+    ///     Runtime speed multiplier for Blood Rush.
+    ///     Set from <see cref="VampireBloodRushActionEvent"/> when the ability is activated.
     /// </summary>
-    [DataField]
-    public float BloodRushDuration = 10f;
+    public float BloodRushSpeedMultiplier;
 
     /// <summary>
-    ///     Duration of Blood Swell in seconds
+    ///     Runtime bonus melee damage during Blood Swell (enhanced).
+    ///     Set from <see cref="VampireBloodSwellActionEvent"/> when the ability is activated.
     /// </summary>
-    [DataField]
-    public float BloodSwellDuration = 30f;
+    public float BloodSwellMeleeBonusDamage;
 
     /// <summary>
-    ///     Brute damage reduction during Blood Swell
+    ///     Runtime total-blood threshold for enhanced Blood Swell.
+    ///     Set from <see cref="VampireBloodSwellActionEvent"/> when the ability is activated.
     /// </summary>
-    [DataField]
-    public float BloodSwellBruteReduction = 0.6f;
-
-    /// <summary>
-    ///     Stamina/Burn damage reduction during Blood Swell
-    /// </summary>
-    [DataField]
-    public float BloodSwellOtherReduction = 0.5f;
-
-    /// <summary>
-    ///     Bonus melee damage during Blood Swell (after 400 total blood)
-    /// </summary>
-    [DataField]
-    public float BloodSwellMeleeBonusDamage = 14f;
-
-    /// <summary>
-    ///     Total blood threshold for enhanced Blood Swell
-    /// </summary>
-    [DataField]
-    public float BloodSwellEnhancedThreshold = 400f;
+    public float BloodSwellEnhancedThreshold;
 }

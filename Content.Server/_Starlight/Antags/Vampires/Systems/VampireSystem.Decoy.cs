@@ -1,4 +1,3 @@
-using Content.Shared.Coordinates;
 using Robust.Shared.Audio;
 
 namespace Content.Server._Starlight.Antags.Vampires;

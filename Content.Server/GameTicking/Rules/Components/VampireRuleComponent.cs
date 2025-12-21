@@ -1,8 +1,5 @@
 using Robust.Shared.Prototypes;
-using Content.Shared.Vampire.Components;
-
 namespace Content.Server.GameTicking.Rules.Components;
-
 
 [RegisterComponent]
 public sealed partial class VampireRuleComponent : Component

@@ -599,6 +599,8 @@ public sealed partial class VampireSystem : EntitySystem
         }
 
         OpenClassUi(uid, comp);
+        args.Handled = true;
+        Dirty(uid, comp);
     }
 
     private bool CheckAndConsumeActionCost(EntityUid uid, VampireComponent comp, EntityUid? actionEntity)

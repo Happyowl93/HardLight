@@ -276,7 +276,6 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-
         // Reminder да я хуй знает почему не пашет, потом разерусь
         // Dont allow pooling? in invalid tiles
         // var curCoords = Transform(uid).Coordinates;
@@ -320,6 +319,7 @@ public sealed partial class VampireSystem : EntitySystem
         }
 
         Spawn(hemomancer.SanguinePoolEnterEffect, Transform(poolEntity.Value).Coordinates);
+        _audio.PlayPvs(hemomancer.SanguinePoolEnterSound, uid);
         _popup.PopupEntity(Loc.GetString("action-vampire-sanguine-pool-enter"), poolEntity.Value, poolEntity.Value);
         return true;
     }
@@ -349,6 +349,7 @@ public sealed partial class VampireSystem : EntitySystem
         Dirty(args.NewEntity, hemomancer);
 
         Spawn(hemomancer.SanguinePoolExitEffect, Transform(args.NewEntity).Coordinates);
+        _audio.PlayPvs(hemomancer.SanguinePoolExitSound, args.NewEntity);
         _popup.PopupEntity(Loc.GetString("action-vampire-sanguine-pool-exit"), args.NewEntity, args.NewEntity);
     }
 

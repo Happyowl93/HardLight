@@ -302,7 +302,7 @@ public sealed partial class VampireEnthrallDoAfterEvent : SimpleDoAfterEvent
 
 public sealed partial class VampirePacifyActionEvent : EntityTargetActionEvent
 {
-    [DataField("pacifyDuration")]
+    [DataField]
     public float PacifyDuration = 40f;
 }
         
@@ -384,12 +384,29 @@ public sealed partial class VampireBloodSwellActionEvent : InstantActionEvent
 {
     [DataField]
     public float Duration = 30f;
+    /// <summary>
+    ///     Total blood required for the enhanced unarmed damage bonus.
+    /// </summary>
+    [DataField]
+    public float EnhancedThreshold = 400f;
+
+    /// <summary>
+    ///     Bonus blunt damage added to unarmed hits when enhanced.
+    /// </summary>
+    [DataField]
+    public float MeleeBonusDamage = 14f;
 }
 
 public sealed partial class VampireBloodRushActionEvent : InstantActionEvent
 {
     [DataField]
     public float Duration = 10f;
+
+    /// <summary>
+    ///     Movement speed multiplier while Blood Rush is active.
+    /// </summary>
+    [DataField]
+    public float SpeedMultiplier = 1.5f;
 }
 
 public sealed partial class VampireSeismicStompActionEvent : InstantActionEvent
@@ -428,6 +445,8 @@ public sealed partial class VampireDemonicGraspActionEvent : WorldTargetActionEv
     /// </summary>
     [DataField]
     public float ProjectileSpeed = 15f;
+    [DataField]
+    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/exit_blood.ogg");
 }
 
 public sealed partial class VampireChargeActionEvent : WorldTargetActionEvent
@@ -454,7 +473,10 @@ public sealed partial class VampireChargeActionEvent : WorldTargetActionEvent
     ///     Charge movement speed
     /// </summary>
     [DataField]
-    public float ChargeSpeed = 75f;
+    public float ChargeSpeed = 35f;
+    
+    [DataField]
+    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Effects/Footsteps/largethud.ogg");
 }
 
 /// <summary>

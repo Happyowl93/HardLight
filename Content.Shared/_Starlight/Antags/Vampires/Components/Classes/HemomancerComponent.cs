@@ -1,6 +1,7 @@
 using Content.Shared.Polymorph;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Audio;
 
 namespace Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 
@@ -36,9 +37,9 @@ public sealed partial class HemomancerComponent : Component
     [DataField]
     public ProtoId<PolymorphPrototype> SanguinePoolPolymorph = "VampireSanguinePoolPolymorph";
 
-    // [DataField]
-    // public SoundSpecifier? SanguinePoolEnterSound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/enter_blood.ogg");
+    [DataField]
+    public SoundSpecifier? SanguinePoolEnterSound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/enter_blood.ogg");
 
-    // [DataField]
-    // public SoundSpecifier? SanguinePoolExitSound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/exit_blood.ogg");
+    [DataField]
+    public SoundSpecifier? SanguinePoolExitSound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/exit_blood.ogg");
 }

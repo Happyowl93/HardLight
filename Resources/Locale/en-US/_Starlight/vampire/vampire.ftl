@@ -209,7 +209,6 @@ vampire-overwhelming-force-door-pried = You wrench the door open with brute stre
 
 action-vampire-demonic-grasp-name = Demonic Grasp(20)
 action-vampire-demonic-grasp-desc = Launch a demonic hand up to 15 tiles. Immobilizes the target for 5 seconds. In combat mode, also pulls them to you.
-vampire-demonic-grasp-cast = You launch a demonic claw!
 vampire-demonic-grasp-hit = A demonic claw seizes you!
 vampire-demonic-grasp-pull = The claw drags you toward the vampire!
 

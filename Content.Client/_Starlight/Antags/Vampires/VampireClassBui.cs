@@ -53,9 +53,8 @@ public sealed class VampireClassBui : BoundUserInterface
         base.Dispose(disposing);
     }
 
-    private IEnumerable<RadialMenuActionOption<VampireClassType>> CreateClassButtons()
-    {
-        return new List<RadialMenuActionOption<VampireClassType>>
+    private IEnumerable<RadialMenuActionOption<VampireClassType>> CreateClassButtons() => 
+        new List<RadialMenuActionOption<VampireClassType>>
         {
             new(HandleClassChoice, VampireClassType.Hemomancer)
             {
@@ -78,7 +77,6 @@ public sealed class VampireClassBui : BoundUserInterface
                 ToolTip = Loc.GetString("vampire-class-dantalion-tooltip")
             }
         };
-    }
 
     private void HandleClassChoice(VampireClassType classType)
     {

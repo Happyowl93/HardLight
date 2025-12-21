@@ -1,5 +1,4 @@
 using System.Linq;
-using System;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking.Rules.Components;

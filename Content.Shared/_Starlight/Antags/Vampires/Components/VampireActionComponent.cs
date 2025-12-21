@@ -1,6 +1,3 @@
-using Robust.Shared.GameStates;
-using Robust.Shared.Serialization;
-
 namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
 /// <summary>
@@ -21,4 +18,3 @@ public sealed partial class VampireActionComponent : Component
     [DataField]
     public VampireClassType? RequiredClass = null;
 }
-
