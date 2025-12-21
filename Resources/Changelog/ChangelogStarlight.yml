@@ -24397,5 +24397,13 @@ Entries:
   id: 257100
   time: '2025-12-21T22:41:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2571
+- author: Penguinwizzard
+  changes:
+  - message: Fixed miscommunication; non-command engineers can now once again open
+      firelocks when needed.
+    type: Fix
+  id: 256700
+  time: '2025-12-21T22:41:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2567
 Order: -1
 
