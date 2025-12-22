@@ -10,9 +10,9 @@
       flavors:
         - meaty
     - type: Item
-      size: Normal
+      size: Large
       shape:
-        - 0,0,2,1
+        - 0,0,3,2
       inhandVisuals:
         left:
           - state: plate-inhand-left
@@ -87,8 +87,10 @@
         tags:
         - FestiveDinner
     - type: Item
-      sprite: _Starlight/Objects/Consumable/Food/turkey.rsi
       size: Large
+      shape:
+        - 0,0,3,2
+      sprite: _Starlight/Objects/Consumable/Food/turkey.rsi
       inhandVisuals:
         left:
           - state: plate-inhand-both
@@ -210,7 +212,7 @@
   name: family-size mashed potatoes
   parent: FoodMealBase
   id: FoodFeastPotatoMashed
-  description: Feeds five.
+  description: Feeds five... or ten if you cut it properly.
   components:
     - type: FlavorProfile
       flavors:
@@ -236,7 +238,7 @@
         - Potato
         - Vegetable
     - type: SliceableFood
-      count: 5
+      count: 10
       slice: FoodPotatoMashed
 
 # mashed potatoes, private
@@ -273,7 +275,7 @@
   name: family-size gravy potatoes
   parent: FoodMealBase
   id: FoodFeastPotatoGravy
-  description: Do NOT leave it out overnight.
+  description: Remember to serve individually!
   components:
     - type: FlavorProfile
       flavors:
@@ -302,7 +304,7 @@
         - Potato
         - Vegetable
     - type: SliceableFood
-      count: 5
+      count: 10
       slice: FoodPotatoGravy
 
 # mashed potatoes with gravy, private

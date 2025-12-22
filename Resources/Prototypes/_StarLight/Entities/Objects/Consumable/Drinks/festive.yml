@@ -17,3 +17,6 @@
     sprite: _Starlight/Objects/Consumable/Drinks/gravyboat.rsi
   - type: FitsInDispenser
     solution: drink
+  - type: Tag
+    tags:
+    - Dinnerware
