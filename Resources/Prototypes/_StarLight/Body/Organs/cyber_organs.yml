@@ -132,3 +132,49 @@
     comps: 
     - type: ThirstRateMultiplier
       multiplier: 1.25
+
+- type: entity
+  id: CyberBreathableLungs
+  name: Cyber Breathable Lungs
+  description: Artificial lungs with an integrated gas tank system. Can be filled with any breathable gas mixture.
+  parent: [OrganCyber, OrganHumanLungs]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    layers:
+      - state: lung-l
+      - state: lung-r
+  - type: Metabolizer
+    metabolizerTypes: [ Human ]
+  - type: Lung
+    alert: LowOxygen
+  - type: Item
+    size: Normal
+    heldPrefix: lungs
+    shape:
+    - 0,0,3,3
+  - type: BreathMask
+  - type: OrganBreathTool
+    startActivated: false
+  - type: GasTank
+    air:
+      volume: 2.5
+      temperature: 293.15
+    outputPressure: 21.3
+  - type: OrganGasTankFillable
+    targetPressure: 1000.0
+  - type: UseDelay
+    delays:
+      gasTank:
+        length: 1.0
+  - type: ActivatableUI
+    key: enum.SharedGasTankUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.SharedGasTankUiKey.Key:
+        type: GasTankBoundUserInterface
+      enum.SharedGasTankUiKey.OrganKey:
+        type: OrganGasTankBoundUserInterface
+  - type: Tag
+    tags:
+    - GasTank
