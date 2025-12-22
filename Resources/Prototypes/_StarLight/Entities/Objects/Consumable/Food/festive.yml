@@ -10,7 +10,7 @@
       flavors:
         - meaty
     - type: Item
-      size: Large
+      size: Normal
       shape:
         - 0,0,3,2
       inhandVisuals:
@@ -86,8 +86,9 @@
       whitelist:
         tags:
         - FestiveDinner
+      hideStackVisualsWhenClosed: false
     - type: Item
-      size: Large
+      size: Normal
       shape:
         - 0,0,3,2
       sprite: _Starlight/Objects/Consumable/Food/turkey.rsi
@@ -99,7 +100,11 @@
     - type: Sprite
       sprite: _Starlight/Objects/Consumable/Food/turkey.rsi
       layers:
+        - state: turkeyfeasted
         - state: turkeyfeast
+          map: ["turkeyfeast1"]
+        - state: turkeyfeast
+          map: ["turkeyfeast2"]
     - type: Tag
       tags:
         - Meat
@@ -107,6 +112,14 @@
         - Vegetable
         - FestiveFeast
         - Trash
+    - type: ItemCounter
+      count:
+        tags: [FestiveDinner]
+      composite: true
+      layerStates:
+      - turkeyfeast1
+      - turkeyfeast2
+    - type: Appearance
     - type: EntityTableContainerFill
       containers:
         storagebase: !type:AllSelector
@@ -289,7 +302,7 @@
     - type: Sprite
       sprite: _Starlight/Objects/Consumable/Food/potatomash.rsi
       layers:
-        - state: potatomashfeast
+        - state: potatogravyfeast
     - type: SolutionContainerManager
       solutions:
         food:
@@ -324,7 +337,7 @@
     - type: Sprite
       sprite: _Starlight/Objects/Consumable/Food/potatomash.rsi
       layers:
-        - state: potatomash
+        - state: potatogravy
     - type: SolutionContainerManager
       solutions:
         food:
@@ -394,7 +407,7 @@
     - type: Sprite
       sprite: _Starlight/Objects/Consumable/Food/stuffing.rsi
       layers:
-        - state: stuffing
+        - state: stuffingmoth
     - type: SolutionContainerManager
       solutions:
         food:

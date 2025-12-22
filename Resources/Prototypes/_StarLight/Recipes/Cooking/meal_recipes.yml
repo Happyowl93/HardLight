@@ -116,7 +116,6 @@
   time: 29 # good luck getting this timing perfect
   deviceType: Stove
   group: Secret
-  secretRecipe: true
   reagents:
     WeldingFuel: 10
   solids:

@@ -18,7 +18,7 @@
   time: 15
   deviceType: Oven
   reagents:
-    Salt: 5
+    TableSalt: 5
   solids:
     FoodBreadPlainSlice: 3
     FoodOnionSlice: 1
@@ -30,7 +30,7 @@
   time: 15
   deviceType: Oven
   reagents:
-    Salt: 5
+    TableSalt: 5
   solids:
     FoodBreadCottonSlice: 3
     FoodOnionSlice: 1
@@ -52,8 +52,8 @@
   result: FoodFeastTurkey
   time: 30
   reagents:
-    Salt: 10
-    Pepper: 10
+    TableSalt: 10
+    Blackpepper: 10
   solids:
     FoodStuffing: 1
     FoodMeatChicken: 4
@@ -90,7 +90,7 @@
   reagents:
     Gravy: 50
   solids:
-    FoodFeastPotatoMashed: 5
+    FoodFeastPotatoMashed: 1
 
 - type: microwaveMealRecipe
   id: RecipePotatoGravy
