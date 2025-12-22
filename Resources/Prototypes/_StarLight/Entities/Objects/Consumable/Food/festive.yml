@@ -109,7 +109,6 @@
       tags:
         - Meat
         - Potato
-        - Vegetable
         - Trash
     - type: ItemCounter
       count:
@@ -168,7 +167,6 @@
     - type: Tag
       tags:
         - Meat
-        - Vegetable
         - Potato
         - FestiveDinner
 
@@ -215,7 +213,6 @@
     - type: Tag
       tags:
         - Meat
-        - Vegetable
         - Potato
         - FestiveDinner
 
@@ -248,7 +245,6 @@
     - type: Tag
       tags:
         - Potato
-        - Vegetable
     - type: SliceableFood
       count: 10
       slice: FoodPotatoMashed
@@ -280,7 +276,6 @@
     - type: Tag
       tags:
         - Potato
-        - Vegetable
 
 # mashed potatoes with gravy, full size
 - type: entity
@@ -314,7 +309,6 @@
     - type: Tag
       tags:
         - Potato
-        - Vegetable
     - type: SliceableFood
       count: 10
       slice: FoodPotatoGravy
@@ -349,7 +343,6 @@
     - type: Tag
       tags:
         - Potato
-        - Vegetable
 
 # stuffing
 - type: entity
@@ -383,7 +376,6 @@
       tags:
         - Bread
         - Slice
-
 
 # moff stuffing
 - type: entity
