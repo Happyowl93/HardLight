@@ -3,7 +3,7 @@
   id: Aielic
   speech:
     color: "#80a7d5"
-    font: DefaultItalic
+#    fontId: DefaultItalic
   icon: LanguageIconAielic
   obfuscation:
     !type:SyllableObfuscation
