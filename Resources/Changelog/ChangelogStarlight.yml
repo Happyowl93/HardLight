@@ -24465,5 +24465,14 @@ Entries:
   id: 257400
   time: '2025-12-21T23:31:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2574
+- author: Conflee
+  changes:
+  - message: Added the Fishbowl Helmet. It functions as an EVA helmet, with 5% heat
+      and radiation resistance. Appears as rare maints locker loot. Just bringing
+      in a retro scifi trope for fun.
+    type: Add
+  id: 257300
+  time: '2025-12-22T00:07:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2573
 Order: -1
 
