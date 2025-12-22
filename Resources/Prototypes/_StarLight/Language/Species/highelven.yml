@@ -8,7 +8,7 @@
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
-    maxSyllables: 3
+    maxSyllables: 2
     replacement:
     - ai
     - el
