@@ -13,12 +13,24 @@
 			"license": "CC-BY-SA-3.0"
         },
         {
-            "name": "festiveplate",
+            "name": "plate-small-festive",
 			"copyright": "By Rhetorica for Starlight",
 			"license": "CC-BY-SA-3.0"
         },
 		{
-            "name": "festiveplatebroken",
+            "name": "plate-small-festive-trash",
+			"copyright": "By Rhetorica for Starlight",
+			"license": "CC-BY-SA-3.0"
+        },
+        {
+            "name": "plate-festive-inhand-left",
+			"directions": 4,
+			"copyright": "By Rhetorica for Starlight",
+			"license": "CC-BY-SA-3.0"
+        },
+		{
+            "name": "plate-festive-inhand-right",
+			"directions": 4,
 			"copyright": "By Rhetorica for Starlight",
 			"license": "CC-BY-SA-3.0"
         },
