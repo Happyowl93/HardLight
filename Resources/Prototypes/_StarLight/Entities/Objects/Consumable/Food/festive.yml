@@ -110,7 +110,6 @@
         - Meat
         - Potato
         - Vegetable
-        - FestiveFeast
         - Trash
     - type: ItemCounter
       count:
@@ -150,7 +149,7 @@
           - state: plate-festive-inhand-right
     - type: Edible
       trash:
-        - FoodFestivePlate
+        - FoodPlateFestive
     - type: Sprite
       sprite: _Starlight/Objects/Consumable/Food/plate.rsi
       layers:
@@ -195,7 +194,7 @@
           - state: plate-festive-inhand-right
     - type: Edible
       trash:
-        - FoodFestivePlate
+        - FoodPlateFestive
     - type: Sprite
       sprite: _Starlight/Objects/Consumable/Food/plate.rsi
       layers:
