@@ -1,11 +1,11 @@
 # Strike the earth!
 - type: language
-  id: Dwarvish
+  id: Grumbakul
   speech:
     color: "#dfc68c"
     fontId: MonasteryRaid
     obfuscationFont: true
-  icon: LanguageIconDwarvish
+  icon: LanguageIconGrumbakul
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

@@ -48,8 +48,8 @@ trait-language-darktongue-desc = This simple, crude language of ne'er-do-wells a
 trait-language-classical-name = Classical
 trait-language-classical-description = Once upon a time, everyone spoke this language. Not as hard to pick up as you might expect.
 
-trait-language-dwarvish-name = Grumbakul
-trait-language-dwarvish-description = You have mastered the language of Dwarfkind, or at least that's what your Dwarf friends tell you.
+trait-language-grumbakul-name = Grumbakul
+trait-language-grumbakul-description = You have mastered the language of Dwarfkind, or at least that's what your Dwarf friends tell you.
 
-trait-language-high-elven-name = Aielic
-trait-language-high-elven-desc = The musical language of a nearly-extinct species known for its beautiful literature and once-vast empire.
+trait-language-aielic-name = Aielic
+trait-language-aielic-desc = The musical language of a nearly-extinct species known for its beautiful literature, pointy ears, and once-vast empire.

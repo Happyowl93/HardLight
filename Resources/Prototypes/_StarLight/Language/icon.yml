@@ -176,7 +176,7 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: LanguageIconHighElven
+  id: LanguageIconAielic
   icon:
     sprite: /Textures/_Starlight/Interface/language_icon.rsi
     state: high-elven
@@ -200,7 +200,7 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: LanguageIconDwarvish
+  id: LanguageIconGrumbakul
   icon:
     sprite: /Textures/_Starlight/Interface/language_icon.rsi
     state: dwarvish

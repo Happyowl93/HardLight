@@ -1,10 +1,10 @@
-# Actual elves coming soon?
+# High Elven language. Actual elves coming soon?
 - type: language
-  id: HighElven
+  id: Aielic
   speech:
     color: "#80a7d5"
     font: DefaultItalic
-  icon: LanguageIconHighElven
+  icon: LanguageIconAielic
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

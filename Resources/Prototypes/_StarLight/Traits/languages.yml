@@ -98,30 +98,30 @@
     - Classical
 
 - type: trait
-  id: HighElven
-  name: trait-language-high-elven-name
-  description: trait-language-high-elven-desc
+  id: Aielic
+  name: trait-language-aielic-name
+  description: trait-language-aielic-desc
   category: LanguageTraits
   cost: 2
   components:
     - type: LanguageSpeaker
   languagesSpoken:
-    - HighElven
+    - Aielic
   languagesUnderstood:
-    - HighElven
+    - Aielic
 
 - type: trait
-  id: Dwarvish
-  name: trait-language-dwarvish-name
-  description: trait-language-dwarvish-desc
+  id: Grumbakul
+  name: trait-language-grumbakul-name
+  description: trait-language-grumbakul-desc
   category: LanguageTraits
   cost: 2
   components:
     - type: LanguageSpeaker
   languagesSpoken:
-    - Dwarvish
+    - Grumbakul
   languagesUnderstood:
-    - Dwarvish
+    - Grumbakul
 
 - type: trait
   id: SolCommon

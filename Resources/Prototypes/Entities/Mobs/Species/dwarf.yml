@@ -9,11 +9,11 @@
   - type: LanguageKnowledge
     speaks:
     - GalacticCommon
-    - Dwarvish
+    - Grumbakul
     understands:
     - GalacticCommon
     - SolCommon
-    - Dwarvish
+    - Grumbakul
   - type: MobThresholds
     thresholds:
       0: Alive
