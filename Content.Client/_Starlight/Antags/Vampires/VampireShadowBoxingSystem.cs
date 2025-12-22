@@ -1,8 +1,6 @@
 using System.Numerics;
 using Content.Shared._Starlight.Antags.Vampires;
 using Robust.Client.GameObjects;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Maths;
 using Robust.Shared.Timing;
 
 namespace Content.Client._Starlight.Antags.Vampires;
@@ -19,7 +17,8 @@ public sealed class VampireShadowBoxingSystem : EntitySystem
     private record struct ActivePunch(EntityUid Entity, EntityUid Source, EntityUid Target, TimeSpan SpawnTime, TimeSpan LifeTime);
     private readonly List<ActivePunch> _active = new();
 
-    private static readonly TimeSpan PunchLifetime = TimeSpan.FromSeconds(0.35); 
+    // How long a punch effect flys for?
+    private static readonly TimeSpan _punchLifetime = TimeSpan.FromSeconds(0.5); 
 
     public override void Initialize()
     {
@@ -44,7 +43,7 @@ public sealed class VampireShadowBoxingSystem : EntitySystem
             var ang = direction.ToWorldAngle();
             _transform.SetWorldRotation(punch, ang);
         }
-        _active.Add(new ActivePunch(punch, source, target, _timing.CurTime, PunchLifetime));
+        _active.Add(new ActivePunch(punch, source, target, _timing.CurTime, _punchLifetime));
     }
     // Помогите
     public override void Update(float frameTime)

@@ -227,13 +227,13 @@ public sealed partial class VampireExtinguishActionEvent : InstantActionEvent
 public sealed partial class VampireShadowBoxingActionEvent : EntityTargetActionEvent
 {
     [DataField]
-    public float Interval = 0.4f;
+    public float Interval = 0.9f;
 
     [DataField]
     public int BrutePerTick = 6;
 
     [DataField]
-    public float Range = 2.1f;
+    public float Range = 4f;
 
     [DataField]
     public SoundSpecifier? HitSound;

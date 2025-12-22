@@ -166,7 +166,13 @@
         },
         {
             "name": "shadow_box_atack_effect",
-            "directions": 4
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 2],
+                [0.1, 0.1, 0.1, 2],
+                [0.1, 0.1, 0.1, 2],
+                [0.1, 0.1, 0.1, 2]
+            ]
         },
         {
             "name": "rallyoverlay",

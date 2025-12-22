@@ -595,7 +595,7 @@ public sealed partial class VampireSystem : EntitySystem
                 _popup.PopupEntity(Loc.GetString("action-vampire-shadow-boxing-ends"), uid, uid);
                 return;
             }
-
+            // ehh.. well its something
             var tgt = c.ShadowBoxingTarget;
             if (tgt == null || !Exists(tgt.Value))
             {
