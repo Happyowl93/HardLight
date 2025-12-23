@@ -39,6 +39,7 @@ namespace Content.IntegrationTests.Tests
             "CentComm",
             "StarlightCentCommG24", //starlight
             "StarlightCentCommSC17", //starlight
+            "StarlightCentCommGNT9", //starlight
             "Dart"
         };
 
@@ -47,6 +48,7 @@ namespace Content.IntegrationTests.Tests
             "/Maps/centcomm.yml",
             //"/Maps/_Starlight/Centcomms/CC_Outpost_G24",
             //"/Maps/_Starlight/Centcomms/CC_Outpost_SC17",
+            //"/Maps/_Starlight/Centcomms/CC_Outpost_GNT9",
             AdminTestArenaSystem.ArenaMapPath
         };
 
@@ -86,6 +88,7 @@ namespace Content.IntegrationTests.Tests
             "/Maps/_Starlight/nukieplanet.yml", //starlight nukie spawn map
             "/Maps/_Starlight/Centcomms/CC_Outpost_G24.yml", //starlight centcomm map
             "/Maps/_Starlight/Centcomms/CC_Outpost_SC17.yml", //starlight centcomm map
+            "/Maps/_Starlight/Centcomms/CC_Outpost_GNT9.yml", //starlight centcomm map
             "/Maps/_Starlight/Dungeon/syndie.yml",
             "/Maps/_Starlight/Shuttles/Radiotower.yml",
             "/Maps/_Starlight/Shuttles/scarletSHCdefenderFinal.yml",
@@ -151,6 +154,7 @@ namespace Content.IntegrationTests.Tests
             "StarlightBox",
             "StarlightCentCommG24",
             "StarlightCentCommSC17",
+            "StarlightCentCommGNT9",
             "StarlightCog",
             "StarlightCore",
             "StarlightCrescent",
