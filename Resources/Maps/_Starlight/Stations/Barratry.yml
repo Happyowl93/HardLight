@@ -92562,7 +92562,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -23.5,2.5
       parent: 2
-- proto: ToiletFilled
+- proto: ToiletEmpty
   entities:
   - uid: 5646
     components:
@@ -92580,6 +92580,8 @@ entities:
           showEnts: False
           occludes: True
           ents: []
+- proto: ToiletFilled
+  entities:
   - uid: 13108
     components:
     - type: Transform

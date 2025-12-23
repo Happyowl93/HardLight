@@ -151827,7 +151827,7 @@ entities:
     - type: Transform
       pos: 35.5,73.5
       parent: 2
-- proto: ToiletDirtyWaterFilled
+- proto: ToiletDirtyWater
   entities:
   - uid: 18410
     components:
@@ -151844,6 +151844,8 @@ entities:
           showEnts: False
           occludes: True
           ents: []
+- proto: ToiletDirtyWaterFilled
+  entities:
   - uid: 22679
     components:
     - type: Transform
