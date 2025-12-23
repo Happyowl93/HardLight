@@ -284,6 +284,10 @@
   - type: Gun
     spread: 10
     fireRate: 2
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,3,0
   - type: ItemSlots
     slots:
       gun_magazine:
