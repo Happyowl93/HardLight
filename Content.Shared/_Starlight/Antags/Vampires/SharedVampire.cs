@@ -22,6 +22,12 @@ public enum VampireClassUiKey : byte
 }
 
 [Serializable, NetSerializable]
+public enum VampireLocateUiKey : byte
+{
+    Key
+}
+
+[Serializable, NetSerializable]
 public enum VampireClassType : byte
 {
     None = 0,
@@ -35,4 +41,19 @@ public enum VampireClassType : byte
 public sealed class VampireClassChosenBuiMsg : BoundUserInterfaceMessage
 {
     public VampireClassType Choice { get; init; }
+}
+
+[Serializable, NetSerializable]
+public readonly record struct VampireLocateTarget(NetEntity Target, string DisplayName);
+
+[Serializable, NetSerializable]
+public sealed partial class VampireLocateBuiState : BoundUserInterfaceState
+{
+    public List<VampireLocateTarget> Targets { get; init; } = new();
+}
+
+[Serializable, NetSerializable]
+public sealed partial class VampireLocateSelectedBuiMsg : BoundUserInterfaceMessage
+{
+    public NetEntity Target { get; init; }
 }

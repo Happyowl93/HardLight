@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 
@@ -25,4 +26,7 @@ public sealed partial class UmbraeComponent : Component
 
     [AutoNetworkedField]
     public EntityUid? SpawnedShadowAnchorBeacon = null;
+    public bool ShadowAnchorPlacementInProgress;
+    public int ShadowAnchorLoopId;
+    public EntProtoId ShadowAnchorBeaconPrototype = "VampireShadowAnchorBeacon";
 }

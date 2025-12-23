@@ -341,7 +341,7 @@ public sealed partial class VampireSystem : EntitySystem
             var prying = EnsureComp<PryingComponent>(uid);
             prying.PryPowered = true;
             prying.Force = true;
-            prying.SpeedModifier = 5f; // Fast prying
+            prying.SpeedModifier = 10f; // Fast prying
             
             _popup.PopupEntity(Loc.GetString("vampire-overwhelming-force-start"), uid, uid);
         }

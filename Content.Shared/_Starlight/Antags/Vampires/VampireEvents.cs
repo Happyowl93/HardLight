@@ -56,6 +56,7 @@ public sealed partial class VampireRejuvenateIIActionEvent : InstantActionEvent;
 public sealed partial class VampireClassSelectActionEvent : InstantActionEvent;
 
 public sealed partial class VampireToggleFangsActionEvent : InstantActionEvent;
+public sealed partial class VampireLocateMindActionEvent : InstantActionEvent;
 
 #endregion
 
@@ -244,6 +245,44 @@ public sealed partial class VampireShadowAnchorActionEvent : InstantActionEvent
 {
     [DataField]
     public EntProtoId BeaconPrototype = "VampireShadowAnchorBeacon";
+
+    /// <summary>
+    /// DoAfter duration to place the anchor.
+    /// </summary>
+    [DataField]
+    public float PlaceDelay = 5f; 
+
+    /// <summary>
+    /// Time window to return to the anchor. After this, return triggers automatically.
+    /// </summary>
+    [DataField]
+    public float AutoReturnDelay = 120f; // 2min 
+}
+
+[Serializable, NetSerializable]
+public sealed partial class VampireShadowAnchorDoAfterEvent : SimpleDoAfterEvent
+{
+    [DataField("coordinates", required: true)]
+    public NetCoordinates TargetCoordinates;
+
+    [DataField]
+    public int BloodCost;
+
+    [DataField]
+    public float AutoReturnDelay;
+
+    private VampireShadowAnchorDoAfterEvent()
+    {
+    }
+
+    public VampireShadowAnchorDoAfterEvent(NetCoordinates coords, int bloodCost, float autoReturnDelay)
+    {
+        TargetCoordinates = coords;
+        BloodCost = bloodCost;
+        AutoReturnDelay = autoReturnDelay;
+    }
+
+    public override DoAfterEvent Clone() => this;
 }
 
 // Dark Passage

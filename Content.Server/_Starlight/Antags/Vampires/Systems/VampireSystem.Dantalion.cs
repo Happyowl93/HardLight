@@ -128,7 +128,6 @@ public sealed partial class VampireSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString("vampire-enthrall-target"), target, target, PopupType.Medium);
         args.Handled = true;
     }
-
     private void OnThrallShutdown(EntityUid uid, VampireThrallComponent component, ComponentShutdown args)
     {
         if (component.Master is not { } master || !TryComp(master, out DantalionComponent? dantalion))
@@ -201,7 +200,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (HasComp<VampireComponent>(target) || HasComp<VampireThrallComponent>(target))
             return false;
 
-        if(HasComp<MindShieldComponent>(target))
+        if(HasComp<MindShieldComponent>(target)) // No fun 4u goobers
             return false;
 
         return true;

@@ -74,6 +74,7 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
     {
         var mostDrainedName = string.Empty;
         var mostDrained = 0f;
+        var totalBlood = 0f;
 
         var query = EntityQueryEnumerator<VampireComponent>();
         while (query.MoveNext(out var vampUid, out var vamp))
@@ -84,6 +85,8 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
             if (!TryComp(vampUid, out MetaDataComponent? meta))
                 continue;
 
+            totalBlood += vamp.TotalBlood;
+
             if (vamp.TotalBlood > mostDrained)
             {
                 mostDrained = vamp.TotalBlood;
@@ -92,7 +95,22 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
         }
 
         var sb = new StringBuilder();
-        sb.AppendLine(Loc.GetString($"roundend-prepend-vampire-drained{(!string.IsNullOrWhiteSpace(mostDrainedName) ? "-named" : "")}", ("name", mostDrainedName), ("number", mostDrained)));
+
+        // Display blood statistics based on total amount drained
+        if (totalBlood > 0)
+        {
+            var category = totalBlood switch
+            {
+                < 500 => "low",
+                < 1000 => "medium",
+                < 2000 => "high",
+                _ => "critical"
+            };
+            sb.AppendLine(Loc.GetString($"roundend-prepend-vampire-drained-{category}", ("blood", (int)totalBlood)));
+        }
+
+        sb.AppendLine(Loc.GetString($"roundend-prepend-vampire-drained{(!string.IsNullOrWhiteSpace(mostDrainedName) ? "-named" : "")}", ("name", mostDrainedName), ("number", (int)mostDrained)));
+
         args.Text = sb.ToString();
     }
 }

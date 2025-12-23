@@ -101,6 +101,16 @@ action-vampire-blood-bringers-rite-start = Blood Bringers Rite activated!
 action-vampire-blood-bringers-rite-stop = Blood bringers rite deactivated
 action-vampire-blood-bringers-rite-stop-blood = Blood Bringers Rite deactivated - not enough blood
 
+action-vampire-predator-sense-name = Predator Sense
+action-vampire-predator-sense-desc = Sense the approximate location of a mind on the same sector.
+
+vampire-locate-result = Your senses trace { $target } to { $location }.
+vampire-locate-not-same-sector = Hunt down your prey, there's nowhere to hide...
+vampire-locate-unknown = an unknown area
+vampire-locate-no-targets = No prey can be sensed on this sector.
+
+vampire-locate-search-placeholder = Search...
+
 # Umbrae abilities
 action-vampire-cloak-of-darkness-name = Cloak of Darkness(Toggle)
 action-vampire-cloak-of-darkness-desc = Toggle invisibility and speed boost that scales with darkness. More effective in dark areas, less effective in bright light.

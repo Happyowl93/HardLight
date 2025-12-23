@@ -1,4 +1,5 @@
 using Content.Shared.Charges.Components;
+using Content.Shared.DoAfter;
 using Content.Shared.Ensnaring.Components;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Flash.Components;
@@ -36,6 +37,7 @@ public sealed partial class VampireSystem : EntitySystem
         SubscribeLocalEvent<VampireComponent, VampireExtinguishActionEvent>(OnExtinguish);
         SubscribeLocalEvent<VampireComponent, VampireEternalDarknessActionEvent>(OnEternalDarkness);
         SubscribeLocalEvent<VampireComponent, VampireShadowAnchorActionEvent>(OnShadowAnchor);
+        SubscribeLocalEvent<VampireComponent, VampireShadowAnchorDoAfterEvent>(OnShadowAnchorDoAfter);
         SubscribeLocalEvent<VampireComponent, VampireShadowBoxingActionEvent>(OnShadowBoxing);
         SubscribeLocalEvent<ShadowSnareTrapComponent, InteractUsingEvent>(OnShadowSnareTrapInteractUsing);
         SubscribeLocalEvent<ShadowSnareTrapComponent, StartCollideEvent>(OnShadowSnareTrapCollide);
@@ -471,29 +473,132 @@ public sealed partial class VampireSystem : EntitySystem
             || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
             return;
 
+        // If an anchor already exists, this activation returns to it and deletes it
         if (umbrae.SpawnedShadowAnchorBeacon != null && Exists(umbrae.SpawnedShadowAnchorBeacon))
         {
-            var beacon = umbrae.SpawnedShadowAnchorBeacon.Value;
-            var coords = Transform(beacon).Coordinates;
-            _transform.SetCoordinates(uid, coords);
-            _transform.AttachToGridOrMap(uid, Transform(uid));
-            QueueDel(beacon);
-            umbrae.SpawnedShadowAnchorBeacon = null;
-            Dirty(uid, umbrae);
-            _popup.PopupEntity(Loc.GetString("action-vampire-shadow-anchor-returned"), uid, uid);
+            ReturnToShadowAnchor(uid, umbrae);
             args.Handled = true;
             return;
         }
 
-        if (!CheckAndConsumeBloodCost(uid, comp, args.Action.Owner))
+        // Prevent starting multiple plasement DoAfters
+        if (umbrae.ShadowAnchorPlacementInProgress)
+        {
+            args.Handled = true;
+            return;
+        }
+
+        // consume blood it only after the doAfter complete
+        if (!TryComp<VampireActionComponent>(args.Action.Owner, out var vac))
             return;
 
-        var cur = Transform(uid).Coordinates;
-        var newBeacon = EntityManager.SpawnEntity(args.BeaconPrototype, cur);
-        umbrae.SpawnedShadowAnchorBeacon = newBeacon;
-        Dirty(uid, umbrae);
-        _popup.PopupEntity(Loc.GetString("action-vampire-shadow-anchor-installed"), uid, uid);
+        if (comp.TotalBlood < vac.BloodToUnlock)
+            return;
+
+        var bloodCost = (int) vac.BloodCost;
+        if (bloodCost > 0 && comp.DrunkBlood < bloodCost)
+        {
+            _popup.PopupEntity(Loc.GetString("vampire-not-enough-blood"), uid, uid);
+            return;
+        }
+
+        // Cache prototype to use when the DoAfter finishes
+        umbrae.ShadowAnchorBeaconPrototype = args.BeaconPrototype;
+
+        // remember tile where ability was originaly activated
+        var pressedCoords = Transform(uid).Coordinates;
+        var tileCoords = pressedCoords.WithPosition(pressedCoords.Position.Floored() + new Vector2(0.5f, 0.5f));
+
+        var ev = new VampireShadowAnchorDoAfterEvent(GetNetCoordinates(tileCoords), bloodCost, args.AutoReturnDelay);
+        var doAfter = new DoAfterArgs(EntityManager, uid, TimeSpan.FromSeconds(args.PlaceDelay), ev, uid)
+        {
+            DistanceThreshold = null,
+            BreakOnDamage = false,
+            BreakOnMove = false,
+            RequireCanInteract = false,
+            BlockDuplicate = true,
+            CancelDuplicate = true
+        };
+
+        umbrae.ShadowAnchorPlacementInProgress = true;
+
+        if (!_doAfter.TryStartDoAfter(doAfter))
+        {
+            umbrae.ShadowAnchorPlacementInProgress = false;
+            return;
+        }
+
         args.Handled = true;
+    }
+
+    private void OnShadowAnchorDoAfter(EntityUid uid, VampireComponent comp, ref VampireShadowAnchorDoAfterEvent args)
+    {
+        if (!TryComp<UmbraeComponent>(uid, out var umbrae))
+            return;
+
+        // Always clear placement lock when the DoAfter resolves
+        umbrae.ShadowAnchorPlacementInProgress = false;
+
+        if (args.Handled || args.Cancelled)
+            return;
+
+        if (!ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
+            return;
+
+        if (!CheckAndConsumeBloodCost(uid, comp, null, args.BloodCost))
+            return;
+
+        // safety check
+        if (umbrae.SpawnedShadowAnchorBeacon != null && Exists(umbrae.SpawnedShadowAnchorBeacon))
+            return;
+
+        var coords = GetCoordinates(args.TargetCoordinates);
+        var newBeacon = EntityManager.SpawnEntity(umbrae.ShadowAnchorBeaconPrototype, coords);
+        umbrae.SpawnedShadowAnchorBeacon = newBeacon;
+        umbrae.ShadowAnchorLoopId++;
+        var expectedLoopId = umbrae.ShadowAnchorLoopId;
+        Dirty(uid, umbrae);
+
+        _popup.PopupEntity(Loc.GetString("action-vampire-shadow-anchor-installed"), uid, uid);
+
+        // Auto-return if vampire doesnt use the ability agaib
+        Timer.Spawn(TimeSpan.FromSeconds(args.AutoReturnDelay), () => AutoReturnToShadowAnchor(uid, expectedLoopId));
+    }
+
+    private void AutoReturnToShadowAnchor(EntityUid uid, int expectedLoopId)
+    {
+        if (!Exists(uid) || !TryComp<UmbraeComponent>(uid, out var umbrae))
+            return;
+
+        if (umbrae.ShadowAnchorLoopId != expectedLoopId)
+            return;
+
+        if (umbrae.SpawnedShadowAnchorBeacon == null || !Exists(umbrae.SpawnedShadowAnchorBeacon))
+            return;
+
+        ReturnToShadowAnchor(uid, umbrae);
+    }
+
+    private void ReturnToShadowAnchor(EntityUid uid, UmbraeComponent umbrae)
+    {
+        if (umbrae.SpawnedShadowAnchorBeacon == null || !Exists(umbrae.SpawnedShadowAnchorBeacon))
+        {
+            umbrae.SpawnedShadowAnchorBeacon = null;
+            Dirty(uid, umbrae);
+            return;
+        }
+
+        var beacon = umbrae.SpawnedShadowAnchorBeacon.Value;
+        var coords = Transform(beacon).Coordinates;
+        _transform.SetCoordinates(uid, coords);
+        _transform.AttachToGridOrMap(uid, Transform(uid));
+
+        QueueDel(beacon);
+        umbrae.SpawnedShadowAnchorBeacon = null;
+        umbrae.ShadowAnchorLoopId++;
+        Dirty(uid, umbrae);
+
+        _popup.PopupEntity(Loc.GetString("action-vampire-shadow-anchor-returned"), uid, uid);
     }
 #endregion
 

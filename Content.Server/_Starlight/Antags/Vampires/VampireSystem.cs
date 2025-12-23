@@ -29,6 +29,7 @@ using Content.Shared.Stealth;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using Content.Shared.Wieldable;
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Systems;
@@ -79,6 +80,7 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
     [Dependency] private readonly DestructibleSystem _destructible = default!;
     [Dependency] private readonly SharedCollectiveMindSystem _collectiveMind = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
     private ISawmill? _sawmill;
     private static readonly ProtoId<DamageGroupPrototype> _bruteGroupId = "Brute";

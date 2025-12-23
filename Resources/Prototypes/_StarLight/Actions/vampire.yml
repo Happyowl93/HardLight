@@ -195,6 +195,26 @@
 
 - type: entity
   parent: BaseAction
+  id: ActionVampirePredatorSense
+  name: action-vampire-predator-sense-name
+  description: action-vampire-predator-sense-desc
+  components:
+    - type: Action
+      useDelay: 1
+      itemIconStyle: NoItem
+      priority: 14
+      icon:
+        sprite: _Starlight/Vampire/haemomancer.rsi
+        state: predator_sense
+    - type: InstantAction
+      event: !type:VampireLocateMindActionEvent {}
+    - type: VampireAction
+      bloodToUnlock: 600
+      bloodCost: 20
+      requiredClass: Hemomancer
+
+- type: entity
+  parent: BaseAction
   id: ActionVampireBloodEruption
   name: action-vampire-blood-eruption-name
   description: action-vampire-blood-eruption-desc

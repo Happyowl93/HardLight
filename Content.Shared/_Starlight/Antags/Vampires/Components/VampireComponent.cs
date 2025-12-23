@@ -81,7 +81,8 @@ public sealed partial class VampireComponent : Component
         "ActionVampireHemomancerTendrils",
         "ActionVampireBloodBarrier",
         "ActionVampireBloodEruption",
-        "ActionVampireBloodBringersRite"
+        "ActionVampireBloodBringersRite",
+        "ActionVampirePredatorSense"
     };
 
     /// <summary>

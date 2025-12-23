@@ -199,6 +199,8 @@
         type: SurgeryBui
       enum.VampireClassUiKey.Key: # SL
         type: VampireClassBui
+      enum.VampireLocateUiKey.Key: # SL
+        type: VampireLocateBui
       enum.ThavenMoodsUiKey.Key: # impstation edit
         type: ThavenMoodsBoundUserInterface
         requireInputValidation: false
@@ -246,6 +248,14 @@
   id: BaseMobSpeciesOrganic
   abstract: true
   components:
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+      enum.VampireClassUiKey.Key: # SL
+        type: VampireClassBui
+      enum.VampireLocateUiKey.Key: # SL
+        type: VampireLocateBui
   - type: Barotrauma
     damage:
       types:
