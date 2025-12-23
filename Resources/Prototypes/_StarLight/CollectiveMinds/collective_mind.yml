@@ -63,6 +63,6 @@
   keycode: 'p'
   color: "#066338"
   requiredComponents:
-  - DantalionComponent
-  - VampireThrallComponent
+  - Dantalion
+  - VampireThrall
   

@@ -216,9 +216,47 @@ public sealed partial class VampireSystem : EntitySystem
         UpdateVampireAlert(uid);
         return true;
     }
+    private bool CheckAndConsumeActionCost(EntityUid uid, VampireComponent comp, EntityUid? actionEntity)
+        => CheckAndConsumeBloodCost(uid, comp, actionEntity);
+
+    /// <summary>
+    /// Checks if a tile position is blocked by solid entities(walls etc.)
+    /// </summary>
+    private bool IsTileBlockedByEntities(EntityCoordinates coords)
+    {
+        // Check for anchored entities in this position that block movement
+        foreach (var ent in _lookup.GetEntitiesIntersecting(_transform.ToMapCoordinates(coords), LookupFlags.Static))
+        {
+            // Skip non anchored entities
+            if (!TryComp(ent, out TransformComponent? entTransform) || !entTransform.Anchored)
+                continue;
+
+            // Check if entity has a physics component with impassable collision
+            if (TryComp<PhysicsComponent>(ent, out var physics) &&
+                physics.CanCollide &&
+                (physics.CollisionMask & (int)(CollisionGroup.Impassable | CollisionGroup.Opaque)) != 0)
+                return true;
+
+            // Check for door components that typically block movement
+            if (HasComp<Shared.Doors.Components.DoorComponent>(ent))
+                return true;
+
+            // Check entity prototype names for common wall/structure types
+            if (TryComp(ent, out MetaDataComponent? meta) &&
+                meta.EntityPrototype?.ID != null)
+            {
+                var id = meta.EntityPrototype.ID.ToLower();
+                if (id.Contains("wall") || id.Contains("grille") || id.Contains("window") ||
+                    id.Contains("reinforced") || id.Contains("solid"))
+                    return true;
+            }
+        }
+        return false;
+    }
 
     #endregion
 
+    #region Base Abilities 
     private void OnToggleFangs(EntityUid uid, VampireComponent comp, ref VampireToggleFangsActionEvent args)
     {
         if (args.Handled)
@@ -603,46 +641,9 @@ public sealed partial class VampireSystem : EntitySystem
         Dirty(uid, comp);
     }
 
-    private bool CheckAndConsumeActionCost(EntityUid uid, VampireComponent comp, EntityUid? actionEntity)
-        => CheckAndConsumeBloodCost(uid, comp, actionEntity);
-
-    /// <summary>
-    /// Checks if a tile position is blocked by solid entities(walls etc.)
-    /// </summary>
-    private bool IsTileBlockedByEntities(EntityCoordinates coords)
-    {
-        // Check for anchored entities in this position that block movement
-        foreach (var ent in _lookup.GetEntitiesIntersecting(_transform.ToMapCoordinates(coords), LookupFlags.Static))
-        {
-            // Skip non anchored entities
-            if (!TryComp(ent, out TransformComponent? entTransform) || !entTransform.Anchored)
-                continue;
-
-            // Check if entity has a physics component with impassable collision
-            if (TryComp<PhysicsComponent>(ent, out var physics) &&
-                physics.CanCollide &&
-                (physics.CollisionMask & (int)(CollisionGroup.Impassable | CollisionGroup.Opaque)) != 0)
-                return true;
-
-            // Check for door components that typically block movement
-            if (HasComp<Shared.Doors.Components.DoorComponent>(ent))
-                return true;
-
-            // Check entity prototype names for common wall/structure types
-            if (TryComp(ent, out MetaDataComponent? meta) &&
-                meta.EntityPrototype?.ID != null)
-            {
-                var id = meta.EntityPrototype.ID.ToLower();
-                if (id.Contains("wall") || id.Contains("grille") || id.Contains("window") ||
-                    id.Contains("reinforced") || id.Contains("solid"))
-                    return true;
-            }
-        }
-        return false;
-    }
+    #endregion
 
     #region Full Power, Passives
-    // убейте меня нахуй
     private void UpdateFullPower(EntityUid uid, VampireComponent comp)
     {
         int uniqueHumanoids = 0;
@@ -661,12 +662,17 @@ public sealed partial class VampireSystem : EntitySystem
     {
         var center = Transform(uid).Coordinates;
         var list = new List<EntityUid>();
+
         foreach (var ent in _lookup.GetEntitiesInRange(center, range))
+        {
             if (TryComp<Shared.Light.Components.PoweredLightComponent>(ent, out var light) && light.On)
                 list.Add(ent);
+        }
         if (list.Count == 0)
             return;
+
         var pick = _rand.Pick(list);
+
         if (TryComp<Shared.Light.Components.PoweredLightComponent>(pick, out var pl))
             EntityManager.System<Light.EntitySystems.PoweredLightSystem>().SetState(pick, false, pl);
     }
@@ -675,12 +681,15 @@ public sealed partial class VampireSystem : EntitySystem
     {
         if (!HasComp<InventoryComponent>(uid))
             return false;
+
         var slots = new[] { "mask", "head" };
         foreach (var slot in slots)
             if (_inventory.TryGetSlotEntity(uid, slot, out var ent) && 
                 TryComp<IngestionBlockerComponent>(ent.Value, out var blocker) && 
                 blocker.Enabled)
+
                 return true;
+
         return false;
     }
 

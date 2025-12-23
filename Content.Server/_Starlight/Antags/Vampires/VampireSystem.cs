@@ -415,7 +415,6 @@ public sealed partial class VampireSystem : EntitySystem
             ReleaseAllThralls(uid, dantalion);
     }
 
-    partial void SubscribeAbilities();
     partial void UpdateVampireAlert(EntityUid uid);
     partial void UpdateVampireFedAlert(EntityUid uid, VampireComponent? comp);
 

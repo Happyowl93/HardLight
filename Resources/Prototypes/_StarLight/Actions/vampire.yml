@@ -7,7 +7,7 @@
   description: action-vampire-toggle-fangs-desc
   components:
     - type: Action
-      useDelay: 2
+      useDelay: 2 # Toggle
       itemIconStyle: NoItem
       priority: 1
       icon:
@@ -90,7 +90,7 @@
   description: action-vampire-class-select-desc
   components:
     - type: Action
-      useDelay: 2
+      useDelay: 2 # Toggle
       itemIconStyle: NoItem
       priority: 5
       icon:
@@ -111,7 +111,7 @@
   description: Create undroppable claws of blood. Each hit grants +5 blood. Has 15 swings. Use in hand to dispel.
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 30
       itemIconStyle: NoItem
       priority: 10
       icon:
@@ -131,7 +131,7 @@
   description: Transform into a pool of blood for 8 seconds, allowing movement through doors and windows.
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 30
       itemIconStyle: NoItem
       priority: 13
       icon:
@@ -151,7 +151,7 @@
   description: After a short delay, tendrils erupt in a 3x3 area, poisoning and heavily slowing victims.
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 30
       itemIconStyle: NoItem
       priority: 11
       icon:
@@ -175,7 +175,7 @@
   description: Creates 3 blood barriers at the target location. Vampires can pass through them.
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 60
       itemIconStyle: NoItem
       priority: 12
       icon:
@@ -200,7 +200,7 @@
   description: action-vampire-predator-sense-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 40
       itemIconStyle: NoItem
       priority: 14
       icon:
@@ -220,7 +220,7 @@
   description: action-vampire-blood-eruption-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 90
       itemIconStyle: NoItem
       priority: 13
       icon:
@@ -240,7 +240,7 @@
   description: action-vampire-blood-bringers-rite-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 1 # Toggle
       itemIconStyle: NoItem
       priority: 14
       icon:
@@ -261,7 +261,7 @@
   description: action-vampire-cloak-of-darkness-desc
   components:
     - type: Action
-      useDelay: 2
+      useDelay: 2 # Toggle
       itemIconStyle: NoItem
       priority: 15
       icon:
@@ -281,7 +281,7 @@
   description: action-vampire-shadow-snare-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 25
       itemIconStyle: NoItem
       priority: 16
       icon:
@@ -308,7 +308,7 @@
   description: action-vampire-shadow-anchor-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 300 # 5min
       itemIconStyle: NoItem
       priority: 20
       icon:
@@ -328,7 +328,7 @@
   description: action-vampire-shadow-boxing-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 30
       itemIconStyle: NoItem
       priority: 21
       icon:
@@ -357,7 +357,7 @@
   description: action-vampire-dark-passage-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 40
       itemIconStyle: NoItem
       priority: 17
       icon:
@@ -381,7 +381,7 @@
   description: action-vampire-extinguish-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 20
       itemIconStyle: NoItem
       priority: 18
       icon:
@@ -401,7 +401,7 @@
   description: action-vampire-eternal-darkness-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 2 # Toggle
       itemIconStyle: NoItem
       priority: 19
       icon:
@@ -423,7 +423,7 @@
   description: action-vampire-enthrall-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 1 # Jus no CD
       itemIconStyle: NoItem
       priority: 25
       icon:
@@ -451,7 +451,7 @@
   description: action-vampire-pacify-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 30 
       itemIconStyle: NoItem
       priority: 26
       icon:
@@ -479,7 +479,7 @@
   description: action-vampire-subspace-swap-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 30
       itemIconStyle: NoItem
       priority: 27
       icon:
@@ -507,7 +507,7 @@
   description: action-vampire-decoy-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 40
       itemIconStyle: NoItem
       priority: 28
       icon:
@@ -527,7 +527,7 @@
   description: action-vampire-rally-thralls-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 100
       itemIconStyle: NoItem
       priority: 29
       icon:
@@ -547,7 +547,7 @@
   description: action-vampire-blood-bond-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 2 # Toggle
       itemIconStyle: NoItem
       priority: 30
       icon:
@@ -567,7 +567,7 @@
   description: action-vampire-mass-hysteria-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 180 # 3min
       itemIconStyle: NoItem
       priority: 31
       icon:
@@ -589,7 +589,7 @@
   description: action-vampire-blood-swell-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 40
       itemIconStyle: NoItem
       priority: 40
       icon:
@@ -609,7 +609,7 @@
   description: action-vampire-blood-rush-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 30
       itemIconStyle: NoItem
       priority: 41
       icon:
@@ -629,7 +629,7 @@
   description: action-vampire-seismic-stomp-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 60
       itemIconStyle: NoItem
       priority: 42
       icon:
@@ -649,7 +649,7 @@
   description: action-vampire-overwhelming-force-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 2 # Toggle
       itemIconStyle: NoItem
       priority: 43
       icon:
@@ -669,7 +669,7 @@
   description: action-vampire-demonic-grasp-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 30
       itemIconStyle: NoItem
       priority: 44
       icon:
@@ -693,7 +693,7 @@
   description: action-vampire-charge-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 30
       itemIconStyle: NoItem
       priority: 45
       icon:
@@ -706,6 +706,6 @@
       range: -1
       event: !type:VampireChargeActionEvent
     - type: VampireAction
-      bloodToUnlock: 800
+      bloodToUnlock: 1000
       bloodCost: 30
       requiredClass: Gargantua

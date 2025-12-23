@@ -10,6 +10,5 @@ public sealed partial class HemomancerComponent : Component
     public bool InSanguinePool = false;
     [AutoNetworkedField]
     public bool BloodBringersRiteActive = false;
-
     public int BloodBringersRiteLoopId = 0;
 }

@@ -21,7 +21,7 @@ action-vampire-rejuvenate-i-name = Rejuvenate(Free)
 action-vampire-rejuvenate-i-desc = Instantly remove stuns and recover 100 stamina damage.
 
 action-vampire-rejuvenate-ii-name = Rejuvenate(Free)
-action-vampire-rejuvenate-ii-desc = Instantly remove stuns and recover 100 stamina, plus purge harmful reagents (10u) and heal 10 brute, 10 burn, 10 toxin, and 50 oxy loss.
+action-vampire-rejuvenate-ii-desc = Instantly remove stuns and recover 100 stamina, plus purge harmful reagents (10u) and heal 20 brute, 20 burn, 20 toxin, and 30 oxy loss.
 
 action-vampire-class-select-name = Choose Vampire Class
 
@@ -102,11 +102,11 @@ action-vampire-blood-bringers-rite-stop = Blood bringers rite deactivated
 action-vampire-blood-bringers-rite-stop-blood = Blood Bringers Rite deactivated - not enough blood
 
 action-vampire-predator-sense-name = Predator Sense
-action-vampire-predator-sense-desc = Sense the approximate location of a mind on the same sector.
+action-vampire-predator-sense-desc = Hunt down your prey, there's nowhere to hide...
 
 vampire-locate-result = Your senses trace { $target } to { $location }.
-vampire-locate-not-same-sector = Hunt down your prey, there's nowhere to hide...
-vampire-locate-unknown = an unknown area
+vampire-locate-not-same-sector = vampire-locate-not-same-sector = That person is not on your sector.
+vampire-locate-unknown = Unknown area
 vampire-locate-no-targets = No prey can be sensed on this sector.
 
 vampire-locate-search-placeholder = Search...

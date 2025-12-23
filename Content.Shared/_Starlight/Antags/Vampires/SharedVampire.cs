@@ -2,6 +2,9 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._Starlight.Antags.Vampires;
 
+/// <summary>
+/// Visual layers for DrunkBlood alert digits
+/// </summary>
 public enum VampireVisualLayers : byte
 {
     Digit1,
@@ -11,9 +14,7 @@ public enum VampireVisualLayers : byte
 }
 
 [Serializable, NetSerializable]
-public sealed partial class VampireClassClosedBuiMsg : BoundUserInterfaceMessage
-{
-}
+public sealed partial class VampireClassClosedBuiMsg : BoundUserInterfaceMessage { }
 
 [Serializable, NetSerializable]
 public enum VampireClassUiKey : byte
@@ -27,6 +28,9 @@ public enum VampireLocateUiKey : byte
     Key
 }
 
+/// <summary>
+/// Vampire class types
+/// </summary>
 [Serializable, NetSerializable]
 public enum VampireClassType : byte
 {

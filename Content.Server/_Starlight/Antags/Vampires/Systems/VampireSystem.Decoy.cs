@@ -12,13 +12,13 @@ public sealed partial class VampireSystem
     private void TriggerDecoyFlash(EntityUid uid)
     {
         var coords = _transform.GetMapCoordinates(uid);
-        var entityCoords = _transform.GetMoverCoordinates(uid);
+        // var entityCoords = _transform.GetMoverCoordinates(uid);
         
-        // Play flash sound on coordinates (entity will be deleted)
-        _audio.PlayPvs(_decoyFlashSound, entityCoords);
+        // Play flash sound on coordinates
+        // _audio.PlayPvs(_decoyFlashSound, entityCoords);
         
         // Apply real flash effect (blindness + slowdown) to nearby entities
-        _flash.FlashArea(uid, null, DecoyFlashRange, _decoyFlashDuration, slowTo: 0.5f, displayPopup: true);
+        _flash.FlashArea(uid, null, DecoyFlashRange, _decoyFlashDuration, slowTo: 0.5f, displayPopup: true, probability: 1f, _decoyFlashSound);
         
         // Spawn visual effect
         EntityManager.SpawnEntity(DecoyFlashEffectId, coords);

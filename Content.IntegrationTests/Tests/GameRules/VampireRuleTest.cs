@@ -41,6 +41,7 @@ public sealed class VampireRuleTest
         var mindSys = server.System<MindSystem>();
         var roleSys = server.System<RoleSystem>();
         var ruleSys = server.System<VampireRuleSystem>();
+        // var prefMan = server.ResolveDependency<IServerPreferencesManager>();
         
         var minPlayers = 2;
         await server.WaitAssertion(() =>
@@ -61,6 +62,14 @@ public sealed class VampireRuleTest
 
         Assert.That(pair.Player?.AttachedEntity, Is.Null);
         Assert.That(dummies.All(x => x.AttachedEntity == null));
+
+        // // Vampire antag selection disallows non-humans. Integration tests can spawn with a non-human species (e.g. Avali),
+        // // so force the main test player character to be Human to make them eligible.
+        // await server.WaitPost(() =>
+        // {
+        //     var profile = prefMan.GetPreferences(pair.Player!.UserId).Characters[0] as HumanoidCharacterProfile;
+        //     prefMan.SetProfile(pair.Player!.UserId, 0, profile!.WithSpecies("Human")).Wait();
+        // });
 
         await pair.SetAntagPreferences([VampireAntagRoleName]);
 

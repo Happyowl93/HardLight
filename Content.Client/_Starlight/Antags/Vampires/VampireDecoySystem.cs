@@ -2,7 +2,9 @@ using Content.Shared._Starlight.Antags.Vampires.Components;
 using Robust.Client.GameObjects;
 
 namespace Content.Client._Starlight.Antags.Vampires;
-
+/// <summary>
+/// Handles copying visual data from the vampire to its decoy.
+/// </summary>
 public sealed class VampireDecoySystem : EntitySystem
 {
     [Dependency] private readonly SpriteSystem _sprite = default!;
