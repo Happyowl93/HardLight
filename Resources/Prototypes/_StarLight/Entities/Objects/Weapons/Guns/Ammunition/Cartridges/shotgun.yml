@@ -1,5 +1,5 @@
 
-# the toz is too shitty to fire real ammo
+# the ZOZ is too shitty to fire real ammo
 
 - type: entity
   id: BaseShellShotgunToz
@@ -31,7 +31,7 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#F4001F"
+        color: "#FFFFFF"
       - state: spent
         map: [ "enum.AmmoVisualLayers.Spent" ]
         visible: false

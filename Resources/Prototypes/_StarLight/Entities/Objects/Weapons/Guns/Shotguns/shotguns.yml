@@ -262,12 +262,12 @@
         launchAngle: 180
         prob: 0.80
 
-# it's the Toz!
+# it's the TOZ!
 - type: entity
-  name: Toz-106
+  name: ZOZ-106
   parent: [BaseWeaponShotgunAny, BaseGunWieldable, BaseSovietContraband]
   id: WeaponShotgunToz106
-  description: A cheap Soviet shotgun that received an indifferent welcome from hunters. Aim at the head and eyes for best results. Uses hard-to-source, inferior .42 shotgun shells.
+  description: A cheap Soviet shotgun that received an indifferent welcome from hunters. Aim at the head and eyes for best results. Uses less-powerful .42 shotgun shells.
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Shotguns/toz.rsi
@@ -284,9 +284,6 @@
   - type: Gun
     spread: 10
     fireRate: 2
-    selectedMode: FullAuto
-    availableModes:
-    - FullAuto
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -311,3 +308,13 @@
   - type: Appearance
   - type: StaticPrice
     price: 400
+
+# TOZ with extended mag inserted:
+- type: entity
+  parent: WeaponShotgunToz106
+  id: WeaponShotgunToz106Extended
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        startingItem: MagazineShotgunTozExtended

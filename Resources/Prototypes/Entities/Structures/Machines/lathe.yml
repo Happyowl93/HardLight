@@ -137,6 +137,7 @@
     - StarlightAutolatheLootable
   - type: EmagLatheRecipes
     emagStaticPacks:
+    - StarlightSyndicateAmmoStatic
     - StarlightSecurityEmagWeaponsStatic
     - StarlightSecurityAmmoStatic
     - StarlightSecurityAmmoEmagStatic # Starlight end
@@ -226,7 +227,8 @@
     - StarlightDefenseStatic
     emagStaticPacks:
     - StarlightSecurityEmagWeaponsStatic
-    - StarlightSecurityAmmoStatic # Starlight end
+    - StarlightSecurityAmmoStatic
+    - StarlightSyndicateAmmoStatic # Starlight end
 
 - type: entity
   id: ProtolatheHyperConvection
@@ -445,6 +447,7 @@
   - type: EmagLatheRecipes
     emagStaticPacks:
     - StarlightSyndicateModulesSecfab
+    - StarlightSyndicateAmmoStatic
   #endregion Starlight secfab emagging
     - SyndicateAmmoStatic
   - type: MaterialStorage
@@ -480,6 +483,7 @@
       #- SecurityAmmoStatic # SL - disable in favor of previous line
     - type: EmagLatheRecipes
       emagStaticPacks:
+      - StarlightSyndicateAmmoStatic # Starlight
       - SyndicateAmmoStatic
     - type: MaterialStorage
       whitelist: *StandardMaterialWhitelist

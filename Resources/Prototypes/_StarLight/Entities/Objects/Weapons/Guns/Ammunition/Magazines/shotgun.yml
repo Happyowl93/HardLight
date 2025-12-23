@@ -1,5 +1,5 @@
 
-# toz magazines are also garbage
+# TOZ magazines are also garbage
 
 - type: entity
   id: BaseMagazineShotgunToz
@@ -23,12 +23,8 @@
     inhandVisuals:
       left:
       - state: inhand-left-mag
-      - state: inhand-left-stripe
-        color: "#d73307"
       right:
       - state: inhand-right-mag
-      - state: inhand-right-stripe
-        color: "#d73307"
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
@@ -63,17 +59,38 @@
     proto: ShellShotgunToz
   - type: Sprite
     layers:
-    - state: pellets
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left-mag
-      - state: inhand-left-stripe
-        color: "#ba7710"
-      right:
-      - state: inhand-right-mag
-      - state: inhand-right-stripe
-        color: "#ba7710"
+
+- type: entity
+  id: MagazineShotgunTozExtendedEmpty
+  name: magazine (.42 shells any)
+  suffix: empty
+  parent: BaseMagazineShotgunToz
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+    capacity: 5
+  - type: Sprite
+    layers:
+    - state: extended
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineShotgunTozExtended
+  name: magazine (.42 pellet)
+  parent: BaseMagazineShotgunToz
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunToz
+    capacity: 5
+  - type: Sprite
+    layers:
+    - state: extended
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
