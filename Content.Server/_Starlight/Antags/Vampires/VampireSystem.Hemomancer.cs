@@ -450,6 +450,13 @@ public sealed partial class VampireSystem : EntitySystem
         if (args.Handled || !comp.ActionEntities.TryGetValue("ActionVampireBloodBringersRite", out var actionEntity) || !TryComp<HemomancerComponent>(uid, out var hemomancer))
             return;
 
+        if (!comp.FullPower)
+        {
+            _popup.PopupEntity(Loc.GetString("action-vampire-not-enough-power"), uid, uid);
+            args.Handled = true;
+            return;
+        }
+        
         if (hemomancer.BloodBringersRiteActive)
         {
             DeactivateBloodBringersRite(uid, hemomancer);

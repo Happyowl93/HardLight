@@ -36,6 +36,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Server.Destructible;
+using Content.Shared.CollectiveMind;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -77,6 +78,7 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
     [Dependency] private readonly DestructibleSystem _destructible = default!;
+    [Dependency] private readonly SharedCollectiveMindSystem _collectiveMind = default!;
 
     private ISawmill? _sawmill;
     private static readonly ProtoId<DamageGroupPrototype> _bruteGroupId = "Brute";
@@ -558,6 +560,8 @@ public sealed partial class VampireSystem : EntitySystem
                 break;
             case VampireClassType.Dantalion:
                 AddComp<DantalionComponent>(uid);
+                if (TryComp<CollectiveMindComponent>(uid, out var cmComp))
+                    _collectiveMind.UpdateCollectiveMind(uid, cmComp);
                 break;
             case VampireClassType.Gargantua:
                 AddComp<GargantuaComponent>(uid);

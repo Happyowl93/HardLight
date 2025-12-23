@@ -1,6 +1,7 @@
 using Content.Client.UserInterface.Controls;
 using Content.Shared._Starlight.Antags.Vampires;
 using JetBrains.Annotations;
+using Robust.Client.UserInterface;
 using Robust.Shared.Utility;
 
 namespace Content.Client._Starlight.Antags.Vampires;
@@ -18,10 +19,11 @@ public sealed class VampireClassBui : BoundUserInterface
     protected override void Open()
     {
         base.Open();
-
-        _menu = new SimpleRadialMenu();
+        _menu = this.CreateWindow<SimpleRadialMenu>();
         _menu.Track(Owner);
         _choiceMade = false;
+
+        _menu.OnClose += OnMenuClosed;
 
         var buttonModels = CreateClassButtons();
         _menu.SetButtons(buttonModels);
@@ -29,24 +31,23 @@ public sealed class VampireClassBui : BoundUserInterface
         _menu.OpenOverMouseScreenPosition();
     }
 
+    private void OnMenuClosed()
+    {
+        if (_choiceMade)
+            return;
+
+        if (!EntMan.EntityExists(Owner) || !EntMan.TryGetComponent<MetaDataComponent>(Owner, out _))
+            return;
+
+        SendMessage(new VampireClassClosedBuiMsg());
+    }
+
     protected override void Dispose(bool disposing)
     {
         if (disposing)
         {
-            if (!_choiceMade)
-            {
-                var entMan = IoCManager.Resolve<IEntityManager>();
-                var playerMgr = IoCManager.Resolve<Robust.Client.Player.IPlayerManager>();
-                var local = playerMgr.LocalSession;
-                var stillAttached = local != null && local.AttachedEntity == Owner;
-
-                if (stillAttached && entMan.EntityExists(Owner) && entMan.TryGetComponent<MetaDataComponent>(Owner, out _))
-                {
-                    SendMessage(new VampireClassClosedBuiMsg());
-                }
-            }
-
-            _menu?.Close();
+            if (_menu != null)
+                _menu.OnClose -= OnMenuClosed;
             _menu = null;
         }
 

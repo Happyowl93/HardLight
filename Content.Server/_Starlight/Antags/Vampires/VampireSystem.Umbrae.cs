@@ -318,7 +318,7 @@ public sealed partial class VampireSystem : EntitySystem
         {
             if (!comp.FullPower)
             {
-                _popup.PopupEntity(Loc.GetString("action-vampire-eternal-darkness-not-enough-power"), uid, uid);
+                _popup.PopupEntity(Loc.GetString("action-vampire-not-enough-power"), uid, uid);
                 args.Handled = true;
                 return;
             }

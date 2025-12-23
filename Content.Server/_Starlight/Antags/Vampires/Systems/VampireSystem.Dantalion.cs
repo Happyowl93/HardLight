@@ -17,6 +17,7 @@ using Content.Shared.Stealth.Components;
 using Content.Shared.Stunnable;
 using Robust.Shared.Timing;
 using Content.Shared.Mindshield.Components;
+using Content.Shared.CollectiveMind;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -120,6 +121,9 @@ public sealed partial class VampireSystem : EntitySystem
 
         dantalion.Thralls.Add(target);
 
+        if (TryComp<CollectiveMindComponent>(target, out var cmComp))
+            _collectiveMind.UpdateCollectiveMind(target, cmComp);
+
         _popup.PopupEntity(Loc.GetString("vampire-enthrall-success", ("target", Identity.Entity(target, EntityManager))), uid, uid);
         _popup.PopupEntity(Loc.GetString("vampire-enthrall-target"), target, target, PopupType.Medium);
         args.Handled = true;
@@ -158,6 +162,9 @@ public sealed partial class VampireSystem : EntitySystem
         }
 
         RemComp<VampireThrallComponent>(thrall);
+
+        if (TryComp<CollectiveMindComponent>(thrall, out var cmComp))
+            _collectiveMind.UpdateCollectiveMind(thrall, cmComp);
     }
 
     private bool TryGetEnthrallData(EntityUid uid, VampireComponent comp, EntityUid actionEntity, out DantalionComponent dantalion, out int bloodCost)
@@ -694,6 +701,13 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (!ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
             return;
+
+        if (!comp.FullPower)
+        {
+            _popup.PopupEntity(Loc.GetString("action-vampire-not-enough-power"), uid, uid);
+            args.Handled = true;
+            return;
+        }
 
         if (!TryComp<DantalionComponent>(uid, out var _))
             return;

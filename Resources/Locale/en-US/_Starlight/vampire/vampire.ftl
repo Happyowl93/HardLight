@@ -1,4 +1,6 @@
-action-vampire-toggle-fangs-name = Toggle Fangs
+## Base actions
+
+action-vampire-toggle-fangs-name = Toggle Fangs(Toggle)
 action-vampire-toggle-fangs-desc = Extend or retract your fangs to drink blood from victims.
 
 action-vampire-glare-name = Glare(Free)
@@ -9,14 +11,6 @@ alerts-vampire-blood-desc = Shows how much blood you've drunk. Extend your fangs
 
 alerts-vampire-fed-name = Blood Fullness
 alerts-vampire-fed-desc = Your current blood fullness. Drink blood to stay fed.
-
-alerts-vampire-blood-swell-name = Blood Swell
-alerts-vampire-blood-swell-desc = Blood Swell is empowering you.
-
-alerts-vampire-blood-rush-name = Blood Rush
-alerts-vampire-blood-rush-desc = Blood Rush is speeding you up.
-
-vampire-blood-swell-cancel-shoot = Your fingers don`t fit in the trigger guard!!
 
 roles-antag-vamire-name = Vampire
 roles-antag-vampire-description = Feed on the crew. Extend your fangs and drink their blood.
@@ -76,10 +70,10 @@ vampire-class-dantalion-tooltip = Dantalion
     Focuses on thralling and illusions
 
 # Hemomancer abilities
-action-vampire-hemomancer-claws-name = Vampiric Claws()
-action-vampire-hemomancer-claws-desc = Extend blood-infused claws, increasing your melee damage significantly.
+action-vampire-hemomancer-claws-name = Vampiric Claws(30)
+action-vampire-hemomancer-claws-desc = Extend blood-infused claws, increasing your melee damage significantly, but be extremely careful, the claws will break after striking the victim 15 times.
 
-action-vampire-hemomancer-tendrils-name = Blood Tendrils()
+action-vampire-hemomancer-tendrils-name = Blood Tendrils(25)
 action-vampire-hemomancer-tendrils-desc = Send blood tendrils to a target location, slowing and poisoning enemies.
 action-vampire-hemomancer-tendrils-wrong-place = Cannot cast there.
 
@@ -87,7 +81,7 @@ action-vampire-blood-barrier-name = Blood Barrier()
 action-vampire-blood-barrier-desc = Creates 3 blood barriers at the target location. Vampires can pass through them.
 action-vampire-blood-barrier-wrong-place = Cannot place barriers there.
 
-action-vampire-sanguine-pool-name = Sanguine Pool()
+action-vampire-sanguine-pool-name = Sanguine Pool(30)
 action-vampire-sanguine-pool-desc = Briefly transform into a sentient blood puddle, increasing movement speed and allowing you to move through anything except walls and space.
 action-vampire-sanguine-pool-already-in = You are already in sanguine pool form!
 action-vampire-sanguine-pool-invalid-tile = You cannot become a blood pool here.
@@ -95,12 +89,12 @@ action-vampire-sanguine-pool-enter = You transform into a pool of blood!
 action-vampire-sanguine-pool-exit = You reform from the blood pool!
 vampire-space-burn-warning = The harsh void light scorches your undead flesh!
 
-action-vampire-blood-eruption-name = Blood Eruption()
+action-vampire-blood-eruption-name = Blood Eruption(100)
 action-vampire-blood-eruption-desc = Cause any blood within 4 tiles of you to erupt, dealing 50 brute damage to anyone standing on it.
 action-vampire-blood-eruption-activated = You cause blood to erupt in spikes around you!
 
-action-vampire-blood-bringers-rite-name = Blood Bringers Rite(10/2 sec)
-action-vampire-blood-bringers-rite-desc = todo
+action-vampire-blood-bringers-rite-name = Blood Bringers Rite(Toggle)
+action-vampire-blood-bringers-rite-desc = When toggled, everyone around you begins to bleed profusely. You will drain their blood and rejuvenate yourself with it.
 action-vampire-blood-bringers-rite-not-enough-power = You lack full vampiric power (need above 1000 total blood & 8 unique victims)
 action-vampire-blood-brighters-rite-not-enough-blood = Not enough blood to activate blood bringers rite
 action-vampire-blood-bringers-rite-start = Blood Bringers Rite activated!
@@ -114,18 +108,19 @@ action-vampire-cloak-of-darkness-start = You blend into the shadows!
 action-vampire-cloak-of-darkness-stop = You step out of the shadows.
 
 
-action-vampire-shadow-snare-name = Shadow Snare(20/10)
+action-vampire-shadow-snare-name = Shadow Snare (20)
 action-vampire-shadow-snare-desc = Place a fragile shadow trap at target location. Damages, blinds (20s) and heavily slows a non-vampire humanoid that steps on it. Trap health decays in brighter light and is destroyed by flashes.
 action-vampire-shadow-snare-scatter = You scattered the shadow trap.
 vampire-shadow-snare-oldest-removed = Your old shadow snare dissipates.
 ent-shadow-snare-ensnare = shadow snare
 
-action-vampire-shadow-anchor-name = Shadow Anchor(20/10)
+action-vampire-shadow-anchor-name = Shadow Anchor (20)
 action-vampire-shadow-anchor-desc = First use: place a shadow anchor beacon (lasts 2 min). Second use while it exists: instantly return to it and consume the beacon.
 action-vampire-shadow-anchor-returned = You returned to the shadow anchor
 action-vampire-shadow-anchor-installed = You've secured a spot in the shadows
 
-
+action-vampire-shadow-boxing-name = Shadow Boxing (50)
+action-vampire-shadow-boxing-desc = Target someone to have your shadow bats beat them up. You must stay within 4 tiles for this to work.
 action-vampire-shadow-boxing-start = You begin shadow boxing.
 action-vampire-shadow-boxing-stop = Shadow boxing has been stoped.
 action-vampire-shadow-boxing-ends = Shadow boxing ends.
@@ -135,7 +130,8 @@ action-vampire-dark-passage-activated = You slipped through the darkness...
 
 action-vampire-extinguish-activated = You absorbed the light around you...({$count})
 
-action-vampire-eternal-darkness-not-enough-power = Your power is insufficient (need >1000 total blood & 8 unique victims).
+action-vampire-eternal-darkness-name = Eternal Darkness (Toggle)
+action-vampire-eternal-darkness-desc = When toggled, you shroud the area around you in darkness and slowly lower the body temperature of people nearby.
 action-vampire-eternal-darkness-not-enough-blood = You have run out of blood to sustain eternal darkness.
 action-vampire-eternal-darkness-start = You conjured eternal darkness...
 action-vampire-eternal-darkness-stop = The eternal darkness has dissipated...
@@ -184,8 +180,9 @@ vampire-blood-bond-stop-blood = The bond shreds itself; you lack the blood to su
 
 action-vampire-mass-hysteria-name = Mass Hysteria(70)
 action-vampire-mass-hysteria-desc = Flood every nearby mind (except thralls) with terror, flashing them and cursing them with hallucinations for 30 seconds.
+action-vampire-not-enough-power = Your power is insufficient (need >1000 total blood & 8 unique victims).
 
-# Gargantua abilities
+# Gargantua 
 action-vampire-blood-swell-name = Blood Swell(30)
 action-vampire-blood-swell-desc = For 30 seconds: reduces brute damage by 60%, stamina and burn by 50%, halves stun times. Cannot use guns. After 400 blood: also gain +14 melee damage.
 vampire-blood-swell-start = Your muscles swell with unholy power!
@@ -216,3 +213,11 @@ action-vampire-charge-name = Charge(30)
 action-vampire-charge-desc = Charge in the target direction until hitting an obstacle or void. Creatures take 60 brute and are thrown 5 tiles. Structures take 150 damage. Walls are destroyed.
 vampire-charge-start = You barrel forward with unstoppable force!
 vampire-charge-impact = You crash into {CAPITALIZE(THE($target))} with devastating force!
+
+alerts-vampire-blood-swell-name = Blood Swell
+alerts-vampire-blood-swell-desc = Blood Swell is empowering you.
+
+alerts-vampire-blood-rush-name = Blood Rush
+alerts-vampire-blood-rush-desc = Blood Rush is speeding you up.
+
+vampire-blood-swell-cancel-shoot = Your fingers don`t fit in the trigger guard!!
