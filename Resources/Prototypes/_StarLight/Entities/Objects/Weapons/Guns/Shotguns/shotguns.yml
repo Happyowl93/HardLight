@@ -276,8 +276,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Item
-    sprite: _Starlight/Objects/Weapons/Guns/Shotguns/toz.rsi
   - type: Clothing
     sprite: _Starlight/Objects/Weapons/Guns/Shotguns/toz.rsi
   - type: GunRequiresWield
@@ -285,6 +283,7 @@
     spread: 10
     fireRate: 2
   - type: Item
+    sprite: _Starlight/Objects/Weapons/Guns/Shotguns/toz.rsi
     size: Normal
     shape:
     - 0,0,3,0
