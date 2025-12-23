@@ -17,6 +17,7 @@ using Content.Shared.Physics;
 using Content.Server.Light.EntitySystems;
 using Content.Server.Temperature.Systems;
 using Content.Shared.Light.Components;
+using Robust.Shared.Audio;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -27,8 +28,7 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void InitializeUmbrae()
     {
-        SubscribeLocalEvent<VampireComponent, VampireCloakOfDarknessActionEvent>(OnCloackOfDarkness);
-
+        SubscribeLocalEvent<VampireComponent, VampireCloakOfDarknessActionEvent>(OnCloakOfDarkness);
         SubscribeLocalEvent<ShadowSnareEnsnareComponent, ComponentShutdown>(OnShadowSnareEnsnareShutdown);
 
         SubscribeLocalEvent<VampireComponent, VampireShadowSnareActionEvent>(OnShadowSnare);
@@ -41,7 +41,8 @@ public sealed partial class VampireSystem : EntitySystem
         SubscribeLocalEvent<ShadowSnareTrapComponent, StartCollideEvent>(OnShadowSnareTrapCollide);
     }
 
-    private void OnCloackOfDarkness(EntityUid uid, VampireComponent comp, ref VampireCloakOfDarknessActionEvent args)
+#region Cloak of Darkness
+    private void OnCloakOfDarkness(EntityUid uid, VampireComponent comp, ref VampireCloakOfDarknessActionEvent args)
     {
         if (args.Handled
             || !comp.ActionEntities.TryGetValue("ActionVampireCloakOfDarkness", out var actionEntity)
@@ -52,12 +53,12 @@ public sealed partial class VampireSystem : EntitySystem
         if (umbrae.CloakOfDarknessActive)
         {
             DeactivateCloakOfDarkness(uid, umbrae);
-            _popup.PopupEntity(Loc.GetString("action-vampire-cloak-of-darkness-start"), uid, uid);
+            _popup.PopupEntity(Loc.GetString("action-vampire-cloak-of-darkness-stop"), uid, uid);
         }
         else
         {
             ActivateCloakOfDarkness(uid, umbrae);
-            _popup.PopupEntity(Loc.GetString("action-vampire-cloak-of-darkness-stop"), uid, uid);
+            _popup.PopupEntity(Loc.GetString("action-vampire-cloak-of-darkness-start"), uid, uid);
         }
 
         if (_actions.GetAction(actionEntity) is { } action)
@@ -69,8 +70,11 @@ public sealed partial class VampireSystem : EntitySystem
     private void ActivateCloakOfDarkness(EntityUid uid, UmbraeComponent comp)
     {
         comp.CloakOfDarknessActive = true;
-        comp.CloakOfDarknessLoopId++;
         Dirty(uid, comp);
+
+        var stealth = EnsureComp<StealthComponent>(uid);
+        _stealth.SetEnabled(uid, true, stealth);    
+        _stealth.SetVisibility(uid, -1f, stealth);
     }
 
     private void DeactivateCloakOfDarkness(EntityUid uid, UmbraeComponent comp)
@@ -79,46 +83,26 @@ public sealed partial class VampireSystem : EntitySystem
         Dirty(uid, comp);
 
         RemComp<StealthComponent>(uid);
-        _movementMod.TryUpdateMovementSpeedModDuration(uid, comp.CloakOfDarknessMovementEffect, TimeSpan.Zero, 1f);
+        _stealth.SetEnabled(uid, false);
     }
-    private void ApplyCloakEffects(EntityUid uid, float lightLevel)
-    {
+#endregion
 
-        float stealthModifier;
-        float speedModifier;
-
-        switch (lightLevel)
-        {
-            case <= 1f:
-                stealthModifier = -1f;
-                speedModifier = 1.4f;
-                break;
-            case <= 5f:
-                stealthModifier = -0.7f;
-                speedModifier = 1.3f;
-                break;
-            case <= 10f:
-                stealthModifier = 0.4f;
-                speedModifier = 1.2f;
-                break;
-            default:
-                stealthModifier = 0.2f;
-                speedModifier = 1.1f;
-                break;
-        }
-
-        var stealth = EnsureComp<StealthComponent>(uid);
-        _stealth.SetVisibility(uid, stealthModifier, stealth);
-
-        _movementMod.TryUpdateMovementSpeedModDuration(uid, "VampireCloakSpeedBoost", TimeSpan.MaxValue, speedModifier);
-    }
-
+#region Shadow Snare
     private void OnShadowSnare(EntityUid uid, VampireComponent comp, ref VampireShadowSnareActionEvent args)
     {
         if (args.Handled
             || !comp.ActionEntities.TryGetValue("ActionVampireShadowSnare", out var actionEntity)
             || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
-            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
+            )
+            return;
+
+        var target = args.Target;
+        var place = target.WithPosition(target.Position.Floored() + new Vector2(args.PositionOffset, args.PositionOffset));
+
+        if (!_transform.GetGrid(place).HasValue)
+            return;
+
+        if (!CheckAndConsumeBloodCost(uid, comp, actionEntity))
             return;
 
         if (!_playerShadowSnares.TryGetValue(uid, out var playerTraps))
@@ -136,260 +120,13 @@ public sealed partial class VampireSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString("vampire-shadow-snare-oldest-removed", ("default", "Your old shadow snare has dissipated.")), uid, uid);
         }
 
-        var target = args.Target;
-        var place = target.WithPosition(target.Position.Floored() + new Vector2(args.PositionOffset, args.PositionOffset));
-
-        if (!_transform.GetGrid(place).HasValue)
-            return;
-
         var trap = EntityManager.SpawnEntity("VampireShadowSnareTrap", place);
-        // All trap settings come from VampireShadowSnareTrap prototype
 
         var stealth = EnsureComp<StealthComponent>(trap);
         _stealth.SetVisibility(trap, args.StealthVisibility, stealth);
         playerTraps.Add(trap);
-        StartShadowSnareLoop(trap, args.TickInterval, 0, args.DamageDark, args.DamageNormal, args.DamageBright);
         args.Handled = true;
     }
-
-    private void OnDarkPassage(EntityUid uid, VampireComponent comp, ref VampireDarkPassageActionEvent args)
-    {
-        if (args.Handled
-            || !TryComp<UmbraeComponent>(uid, out var umbrae)
-            || !comp.ActionEntities.TryGetValue("ActionVampireDarkPassage", out var actionEntity)
-            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
-            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
-            return;
-
-        var target = args.Target;
-        var curXform = Transform(uid);
-        if (curXform.MapID != _transform.GetMapId(target)
-            || !_transform.GetGrid(target).HasValue)
-            return;
-
-        if (!IsValidTile(target) || !_interaction.InRangeUnobstructed(uid, target, range: 1000f, collisionMask: CollisionGroup.Opaque, popup: false))
-        {
-            _popup.PopupEntity(Loc.GetString("action-vampire-dark-passage-wrong-place"), uid, uid);
-            return;
-        }
-
-        EntityManager.SpawnEntity(umbrae.DarkPassageMistIn, curXform.Coordinates);
-
-        _transform.SetCoordinates(uid, target);
-        _transform.AttachToGridOrMap(uid, curXform);
-
-        EntityManager.SpawnEntity(umbrae.DarkPassageMistOut, target);
-
-        _popup.PopupEntity(Loc.GetString("action-vampire-dark-passage-activated"), uid, uid);
-        args.Handled = true;
-    }
-
-    private void OnExtinguish(EntityUid uid, VampireComponent comp, ref VampireExtinguishActionEvent args)
-    {
-        if (args.Handled
-            || !comp.ActionEntities.TryGetValue("ActionVampireExtinguish", out var actionEntity)
-            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
-            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
-            return;
-
-        var center = Transform(uid).Coordinates;
-
-        var toProcess = _lookup.GetEntitiesInRange(center, args.Radius);
-        var count = 0;
-        foreach (var ent in toProcess)
-        {
-            if (ent == uid)
-                continue;
-
-            if (TryComp<PoweredLightComponent>(ent, out var light))
-            {
-                _poweredLightSystem.SetState(ent, false, light);
-                count++;
-            }
-        }
-
-        _popup.PopupEntity(Loc.GetString("action-vampire-extinguish-activated", ("count", count)), uid, uid);
-        args.Handled = true;
-    }
-
-    private void OnEternalDarkness(EntityUid uid, VampireComponent comp, ref VampireEternalDarknessActionEvent args)
-    {
-        if (args.Handled
-            || !comp.ActionEntities.TryGetValue("ActionVampireEternalDarkness", out var actionEntity)
-            || !TryComp<UmbraeComponent>(uid, out var umbrae)
-            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
-            return;
-
-        if (!umbrae.EternalDarknessActive)
-        {
-            if (!comp.FullPower)
-            {
-                _popup.PopupEntity(Loc.GetString("action-vampire-eternal-darkness-not-enough-power"), uid, uid);
-                args.Handled = true;
-                return;
-            }
-            umbrae.EternalDarknessActive = true;
-        }
-        else
-            umbrae.EternalDarknessActive = false;
-        Dirty(uid, comp);
-
-        if (_actions.GetAction(actionEntity) is { } action)
-            _actions.SetToggled(action.AsNullable(), umbrae.EternalDarknessActive);
-
-        if (umbrae.EternalDarknessActive)
-        {
-            _popup.PopupEntity(Loc.GetString("action-vampire-eternal-darkness-start"), uid, uid);
-            umbrae.EternalDarknessLoopId++;
-            if (umbrae.EternalDarknessAuraEntity == null || !Exists(umbrae.EternalDarknessAuraEntity))
-            {
-                var aura = Spawn(umbrae.EternalDarknessAura, Transform(uid).Coordinates);
-                umbrae.EternalDarknessAuraEntity = aura;
-                _transform.SetParent(aura, uid);
-            }
-            StartEternalDarknessLoop(uid, comp, args.MaxTicks, 0, args.BloodPerTick, args.TempDropInterval, args.FreezeRadius, args.TargetFreezeTemp, args.TempDropPerInterval, args.LightOffRadius);
-        }
-        else
-        {
-            _popup.PopupEntity(Loc.GetString("action-vampire-eternal-darkness-stop"), uid, uid);
-            if (umbrae.EternalDarknessAuraEntity != null && Exists(umbrae.EternalDarknessAuraEntity))
-                QueueDel(umbrae.EternalDarknessAuraEntity.Value);
-            umbrae.EternalDarknessAuraEntity = null;
-        }
-
-        args.Handled = true;
-    }
-    private void StartEternalDarknessLoop(EntityUid uid, VampireComponent comp, int maxTicks, int tick, int bloodPerTick, int dropInterval, float freezeRadius, float targetTemp, float tempDrop, float radius)
-    {
-        if (tick >= maxTicks
-            || !Exists(uid)
-            || !TryComp<UmbraeComponent>(uid, out var umbrae)
-            || !umbrae.EternalDarknessActive
-            || !ValidateEternalDarknessConditions(uid, comp, umbrae)
-            || !ConsumeEternalDarknessBlood(uid, comp, umbrae, bloodPerTick))
-            return;
-
-        ProcessEternalDarknessEffects(uid, tick, dropInterval, freezeRadius, targetTemp, tempDrop, radius);
-        ScheduleNextEternalDarknessTick(uid, comp, umbrae, maxTicks, tick, bloodPerTick, dropInterval, freezeRadius, targetTemp, tempDrop, radius);
-    }
-
-    private bool ValidateEternalDarknessConditions(EntityUid uid, VampireComponent comp, UmbraeComponent umbrae)
-    {
-        if (TryComp<MobStateComponent>(uid, out var mob) && mob.CurrentState == Shared.Mobs.MobState.Dead)
-        {
-            DeactivateEternalDarkness(uid, comp, umbrae);
-            return false;
-        }
-        return true;
-    }
-
-    private bool ConsumeEternalDarknessBlood(EntityUid uid, VampireComponent comp, UmbraeComponent umbrae, int bloodPerTick)
-    {
-        if (comp.DrunkBlood < bloodPerTick)
-        {
-            DeactivateEternalDarkness(uid, comp, umbrae, Loc.GetString("action-vampire-eternal-darkness-not-enough-blood"));
-            return false;
-        }
-
-        comp.DrunkBlood -= bloodPerTick;
-        Dirty(uid, comp);
-        UpdateVampireAlert(uid);
-        return true;
-    }
-
-    private void DeactivateEternalDarkness(EntityUid uid, VampireComponent comp, UmbraeComponent umbrae, string? message = null)
-    {
-        umbrae.EternalDarknessActive = false;
-
-        if (comp.ActionEntities.TryGetValue("ActionVampireEternalDarkness", out var actionEntity) && _actions.GetAction(actionEntity) is { } action)
-            _actions.SetToggled(action.AsNullable(), false);
-
-        if (message != null)
-            _popup.PopupEntity(message, uid, uid);
-
-        Dirty(uid, comp);
-    }
-
-    private void ProcessEternalDarknessEffects(EntityUid uid, int tick, int dropInterval, float freezeRadius, float targetTemp, float tempDrop, float radius)
-    {
-        var vampXform = Transform(uid);
-        var center = _transform.GetWorldPosition(vampXform);
-
-        var doCoolingThisTick = (tick % dropInterval) == 0;
-        if (doCoolingThisTick)
-            ProcessTemperatureEffects(uid, vampXform, center, freezeRadius, targetTemp, tempDrop);
-
-        ProcessLightEffects(vampXform, radius);
-    }
-
-    private void ProcessTemperatureEffects(EntityUid uid, TransformComponent vampXform, Vector2 center, float freezeRadius, float targetTemp, float tempDrop)
-    {
-        foreach (var ent in _lookup.GetEntitiesInRange(vampXform.Coordinates, freezeRadius))
-        {
-            if (ent == uid || !HasComp<HumanoidAppearanceComponent>(ent) || HasComp<VampireComponent>(ent))
-                continue;
-
-            if (!TryComp<Temperature.Components.TemperatureComponent>(ent, out var temp))
-                continue;
-
-            var targetXform = Transform(ent);
-            var distance = (_transform.GetWorldPosition(targetXform) - center).Length();
-
-            if (distance > freezeRadius || temp.CurrentTemperature <= targetTemp)
-                continue;
-
-            var remaining = temp.CurrentTemperature - targetTemp;
-            var drop = Math.Min(tempDrop, remaining);
-
-            _temperatureSystem.ForceChangeTemperature(ent, temp.CurrentTemperature - drop, temp);
-        }
-    }
-
-    private void ProcessLightEffects(TransformComponent vampXform, float radius)
-    {
-        foreach (var ent in _lookup.GetEntitiesInRange(vampXform.Coordinates, radius))
-            if (TryComp<PoweredLightComponent>(ent, out var light))
-                _poweredLightSystem.SetState(ent, false, light);
-    }
-
-    private void ScheduleNextEternalDarknessTick(EntityUid uid, VampireComponent comp, UmbraeComponent umbrae, int maxTicks, int tick, int bloodPerTick, int dropInterval, float freezeRadius, float targetTemp, float tempDrop, float radius)
-    {
-        var expectedLoopId = umbrae.EternalDarknessLoopId;
-        Timer.Spawn(TimeSpan.FromSeconds(1), () =>
-        {
-            if (!Exists(uid) || !TryComp<UmbraeComponent>(uid, out var c2))
-                return;
-
-            if (!c2.EternalDarknessActive || c2.EternalDarknessLoopId != expectedLoopId)
-                return;
-
-            StartEternalDarknessLoop(uid, comp, maxTicks, tick + 1, bloodPerTick, dropInterval, freezeRadius, targetTemp, tempDrop, radius);
-        });
-    }
-
-    private void StartShadowSnareLoop(EntityUid trap, float interval, int tick, float damageDark, float damageNormal, float damageBright)
-    {
-        if (!TryComp<ShadowSnareTrapComponent>(trap, out var trapComp))
-            return;
-
-        var light = _shadekin.GetLightExposure(trap);
-        float decay = light switch
-        {
-            <= 5f => damageDark,
-            <= 10f => damageNormal,
-            _ => damageBright
-        };
-
-        trapComp.CurrentHealth -= decay;
-        if (trapComp.CurrentHealth <= 0f)
-        {
-            DeleteShadowSnare(trap);
-            return;
-        }
-
-        Timer.Spawn(TimeSpan.FromSeconds(interval), () => StartShadowSnareLoop(trap, interval, tick + 1, damageDark, damageNormal, damageBright));
-    }
-
     private void DeleteShadowSnare(EntityUid trap)
     {
         foreach (var playerTraps in _playerShadowSnares.Values)
@@ -398,7 +135,6 @@ public sealed partial class VampireSystem : EntitySystem
         if (Exists(trap))
             QueueDel(trap);
     }
-
     private void OnShadowSnareEnsnareShutdown(EntityUid uid, ShadowSnareEnsnareComponent comp, ComponentShutdown args)
     {
         if (comp.Victim != default && HasComp<ShadowSnareBlindMarkerComponent>(comp.Victim))
@@ -502,14 +238,237 @@ public sealed partial class VampireSystem : EntitySystem
         }
         TryClearShadowSnareBlind(victim);
     }
+#endregion
 
+#region Dark Passage
+    private void OnDarkPassage(EntityUid uid, VampireComponent comp, ref VampireDarkPassageActionEvent args)
+    {
+        if (args.Handled
+            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
+            )
+            return;
+
+        var target = args.Target;
+        var curXform = Transform(uid);
+        if (curXform.MapID != _transform.GetMapId(target)
+            || !_transform.GetGrid(target).HasValue)
+            return;
+
+        if (!IsValidTile(target) || !_interaction.InRangeUnobstructed(uid, target, range: 100, collisionMask: CollisionGroup.Opaque, popup: false))
+        {
+            _popup.PopupEntity(Loc.GetString("action-vampire-dark-passage-wrong-place"), uid, uid);
+            return;
+        }
+
+        if (!CheckAndConsumeBloodCost(uid, comp, args.Action.Owner))
+            return;
+
+        EntityManager.SpawnEntity(args.MistInPrototype, curXform.Coordinates);
+
+        _transform.SetCoordinates(uid, target);
+        _transform.AttachToGridOrMap(uid, curXform);
+
+        EntityManager.SpawnEntity(args.MistOutPrototype, target);
+
+        _popup.PopupEntity(Loc.GetString("action-vampire-dark-passage-activated"), uid, uid);
+        _audio.PlayPvs(args.Sound, uid, AudioParams.Default.WithVolume(-1f));
+        args.Handled = true;
+    }
+#endregion
+
+#region Extinguish
+    private void OnExtinguish(EntityUid uid, VampireComponent comp, ref VampireExtinguishActionEvent args)
+    {
+        if (args.Handled
+            || !comp.ActionEntities.TryGetValue("ActionVampireExtinguish", out var actionEntity)
+            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
+            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
+            return;
+
+        var center = Transform(uid).Coordinates;
+
+        var toProcess = _lookup.GetEntitiesInRange(center, args.Radius);
+        var count = 0;
+        foreach (var ent in toProcess)
+        {
+            if (ent == uid)
+                continue;
+
+            if (TryComp<PoweredLightComponent>(ent, out var light))
+            {
+                _poweredLightSystem.SetState(ent, false, light);
+                count++;
+            }
+        }
+
+        _popup.PopupEntity(Loc.GetString("action-vampire-extinguish-activated", ("count", count)), uid, uid);
+        args.Handled = true;
+    }
+#endregion
+
+#region Eternal Darkness
+    private void OnEternalDarkness(EntityUid uid, VampireComponent comp, ref VampireEternalDarknessActionEvent args)
+    {
+        if (args.Handled
+            || !TryComp<UmbraeComponent>(uid, out var umbrae)
+            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
+            return;
+
+        if (!umbrae.EternalDarknessActive)
+        {
+            if (!comp.FullPower)
+            {
+                _popup.PopupEntity(Loc.GetString("action-vampire-eternal-darkness-not-enough-power"), uid, uid);
+                args.Handled = true;
+                return;
+            }
+            umbrae.EternalDarknessActive = true;
+        }
+        else
+            umbrae.EternalDarknessActive = false;
+        Dirty(uid, umbrae);
+
+        if (_actions.GetAction(args.Action.Owner) is { } action)
+            _actions.SetToggled(action.AsNullable(), umbrae.EternalDarknessActive);
+
+        if (umbrae.EternalDarknessActive)
+        {
+            _popup.PopupEntity(Loc.GetString("action-vampire-eternal-darkness-start"), uid, uid);
+            umbrae.EternalDarknessLoopId++;
+            if (umbrae.EternalDarknessAuraEntity == null || !Exists(umbrae.EternalDarknessAuraEntity))
+            {
+                var aura = Spawn(args.AuraPrototype, Transform(uid).Coordinates);
+                umbrae.EternalDarknessAuraEntity = aura;
+                _transform.SetParent(aura, uid);
+            }
+            StartEternalDarknessLoop(uid, args.MaxTicks, 0, args.BloodPerTick, args.TempDropInterval, args.FreezeRadius, args.TargetFreezeTemp, args.TempDropPerInterval, args.LightOffRadius);
+        }
+        else
+        {
+            _popup.PopupEntity(Loc.GetString("action-vampire-eternal-darkness-stop"), uid, uid);
+            if (umbrae.EternalDarknessAuraEntity != null && Exists(umbrae.EternalDarknessAuraEntity))
+                QueueDel(umbrae.EternalDarknessAuraEntity.Value);
+            umbrae.EternalDarknessAuraEntity = null;
+        }
+
+        args.Handled = true;
+    }
+    private void StartEternalDarknessLoop(EntityUid uid, int maxTicks, int tick, int bloodPerTick, int dropInterval, float freezeRadius, float targetTemp, float tempDrop, float radius)
+    {
+        if (tick >= maxTicks
+            || !Exists(uid)
+            || !TryComp<VampireComponent>(uid, out var comp)
+            || !TryComp<UmbraeComponent>(uid, out var umbrae)
+            || !umbrae.EternalDarknessActive
+            || !ValidateEternalDarknessConditions(uid, comp, umbrae)
+            || !ConsumeEternalDarknessBlood(uid, comp, umbrae, bloodPerTick))
+            return;
+
+        ProcessEternalDarknessEffects(uid, tick, dropInterval, freezeRadius, targetTemp, tempDrop, radius);
+        ScheduleNextEternalDarknessTick(uid, umbrae, maxTicks, tick, bloodPerTick, dropInterval, freezeRadius, targetTemp, tempDrop, radius);
+    }
+
+    private bool ValidateEternalDarknessConditions(EntityUid uid, VampireComponent comp, UmbraeComponent umbrae)
+    {
+        if (TryComp<MobStateComponent>(uid, out var mob) && mob.CurrentState == Shared.Mobs.MobState.Dead)
+        {
+            DeactivateEternalDarkness(uid, comp, umbrae);
+            return false;
+        }
+        return true;
+    }
+
+    private bool ConsumeEternalDarknessBlood(EntityUid uid, VampireComponent comp, UmbraeComponent umbrae, int bloodPerTick)
+    {
+        if (comp.DrunkBlood < bloodPerTick)
+        {
+            DeactivateEternalDarkness(uid, comp, umbrae, Loc.GetString("action-vampire-eternal-darkness-not-enough-blood"));
+            return false;
+        }
+
+        comp.DrunkBlood -= bloodPerTick;
+        Dirty(uid, comp);
+        UpdateVampireAlert(uid);
+        return true;
+    }
+
+    private void DeactivateEternalDarkness(EntityUid uid, VampireComponent comp, UmbraeComponent umbrae, string? message = null)
+    {
+        umbrae.EternalDarknessActive = false;
+
+        if (comp.ActionEntities.TryGetValue("ActionVampireEternalDarkness", out var actionEntity) && _actions.GetAction(actionEntity) is { } action)
+            _actions.SetToggled(action.AsNullable(), false);
+
+        if (message != null)
+            _popup.PopupEntity(message, uid, uid);
+
+        Dirty(uid, umbrae);
+    }
+
+    private void ProcessEternalDarknessEffects(EntityUid uid, int tick, int dropInterval, float freezeRadius, float targetTemp, float tempDrop, float radius)
+    {
+        var vampXform = Transform(uid);
+        var center = _transform.GetWorldPosition(vampXform);
+
+        var doCoolingThisTick = (tick % dropInterval) == 0;
+        if (doCoolingThisTick)
+            ProcessTemperatureEffects(uid, vampXform, center, freezeRadius, targetTemp, tempDrop);
+
+        ProcessLightEffects(vampXform, radius);
+    }
+
+    private void ProcessTemperatureEffects(EntityUid uid, TransformComponent vampXform, Vector2 center, float freezeRadius, float targetTemp, float tempDrop)
+    {
+        foreach (var ent in _lookup.GetEntitiesInRange(vampXform.Coordinates, freezeRadius))
+        {
+            if (ent == uid || !HasComp<HumanoidAppearanceComponent>(ent) || HasComp<VampireComponent>(ent))
+                continue;
+
+            if (!TryComp<Temperature.Components.TemperatureComponent>(ent, out var temp))
+                continue;
+
+            var targetXform = Transform(ent);
+            var distance = (_transform.GetWorldPosition(targetXform) - center).Length();
+
+            if (distance > freezeRadius || temp.CurrentTemperature <= targetTemp)
+                continue;
+
+            var remaining = temp.CurrentTemperature - targetTemp;
+            var drop = Math.Min(tempDrop, remaining);
+
+            _temperatureSystem.ForceChangeTemperature(ent, temp.CurrentTemperature - drop, temp);
+        }
+    }
+
+    private void ProcessLightEffects(TransformComponent vampXform, float radius)
+    {
+        foreach (var ent in _lookup.GetEntitiesInRange(vampXform.Coordinates, radius))
+            if (TryComp<PoweredLightComponent>(ent, out var light))
+                _poweredLightSystem.SetState(ent, false, light);
+    }
+
+    private void ScheduleNextEternalDarknessTick(EntityUid uid, UmbraeComponent umbrae, int maxTicks, int tick, int bloodPerTick, int dropInterval, float freezeRadius, float targetTemp, float tempDrop, float radius)
+    {
+        var expectedLoopId = umbrae.EternalDarknessLoopId;
+        Timer.Spawn(TimeSpan.FromSeconds(1), () =>
+        {
+            if (!Exists(uid) || !TryComp<UmbraeComponent>(uid, out var c2))
+                return;
+
+            if (!c2.EternalDarknessActive || c2.EternalDarknessLoopId != expectedLoopId)
+                return;
+
+            StartEternalDarknessLoop(uid, maxTicks, tick + 1, bloodPerTick, dropInterval, freezeRadius, targetTemp, tempDrop, radius);
+        });
+    }
+#endregion
+
+#region Shadow Anchor
     private void OnShadowAnchor(EntityUid uid, VampireComponent comp, ref VampireShadowAnchorActionEvent args)
     {
         if (args.Handled
-            || !comp.ActionEntities.TryGetValue("ActionVampireShadowAnchor", out var actionEntity)
             || !TryComp<UmbraeComponent>(uid, out var umbrae)
-            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
-            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
+            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
             return;
 
         if (umbrae.SpawnedShadowAnchorBeacon != null && Exists(umbrae.SpawnedShadowAnchorBeacon))
@@ -520,18 +479,25 @@ public sealed partial class VampireSystem : EntitySystem
             _transform.AttachToGridOrMap(uid, Transform(uid));
             QueueDel(beacon);
             umbrae.SpawnedShadowAnchorBeacon = null;
+            Dirty(uid, umbrae);
             _popup.PopupEntity(Loc.GetString("action-vampire-shadow-anchor-returned"), uid, uid);
             args.Handled = true;
             return;
         }
 
+        if (!CheckAndConsumeBloodCost(uid, comp, args.Action.Owner))
+            return;
+
         var cur = Transform(uid).Coordinates;
-        var newBeacon = EntityManager.SpawnEntity(umbrae.ShadowAnchorBeacon, cur);
+        var newBeacon = EntityManager.SpawnEntity(args.BeaconPrototype, cur);
         umbrae.SpawnedShadowAnchorBeacon = newBeacon;
+        Dirty(uid, umbrae);
         _popup.PopupEntity(Loc.GetString("action-vampire-shadow-anchor-installed"), uid, uid);
         args.Handled = true;
     }
+#endregion
 
+#region Shadow Boxing
     private void OnShadowBoxing(EntityUid uid, VampireComponent comp, ref VampireShadowBoxingActionEvent args)
     {
         if (args.Handled
@@ -620,7 +586,8 @@ public sealed partial class VampireSystem : EntitySystem
                 ApplyDamage(tgt.Value, "Blunt", arguments.BrutePerTick, uid);
                 if (arguments.HitSound != null)
                     _audio.PlayPvs(arguments.HitSound, tgt.Value);
-                Spawn("WeaponArcPunch", Transform(tgt.Value).Coordinates);
+                var punchEffect = Spawn("WeaponArcPunch", Transform(tgt.Value).Coordinates);
+                _transform.SetParent(punchEffect, tgt.Value);
                 RaiseNetworkEvent(new VampireShadowBoxingPunchEvent(GetNetEntity(uid), GetNetEntity(tgt.Value)));
             }
 
@@ -648,3 +615,4 @@ public sealed partial class VampireSystem : EntitySystem
         args.Handled = true;
     }
 }
+#endregion

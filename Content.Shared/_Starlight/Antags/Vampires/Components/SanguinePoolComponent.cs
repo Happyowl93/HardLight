@@ -1,4 +1,6 @@
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.Antags.Vampires.Components;
@@ -28,4 +30,19 @@ public sealed partial class SanguinePoolComponent : Component
     /// </summary>
     [ViewVariables]
     public float Accumulator;
+
+    [DataField]
+    public EntProtoId ExitEffectPrototype = "VampireSanguinePoolIn";
+
+    [DataField]
+    public SoundSpecifier ExitSound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/exit_blood.ogg");
+
+    [ViewVariables]
+    public EntityUid? LastTrailGrid;
+
+    [ViewVariables]
+    public Vector2i LastTrailTile;
+
+    [ViewVariables]
+    public bool HasLastTrailTile;
 }

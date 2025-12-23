@@ -241,7 +241,7 @@
   description: action-vampire-cloak-of-darkness-desc
   components:
     - type: Action
-      useDelay: 1
+      useDelay: 2
       itemIconStyle: NoItem
       priority: 15
       icon:

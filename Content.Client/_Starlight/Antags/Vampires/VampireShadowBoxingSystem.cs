@@ -18,7 +18,7 @@ public sealed class VampireShadowBoxingSystem : EntitySystem
     private readonly List<ActivePunch> _active = new();
 
     // How long a punch effect flys for?
-    private static readonly TimeSpan _punchLifetime = TimeSpan.FromSeconds(0.5); 
+    private static readonly TimeSpan _punchLifetime = TimeSpan.FromSeconds(0.33); 
 
     public override void Initialize()
     {

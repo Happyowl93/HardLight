@@ -2,7 +2,9 @@ using Content.Server.Polymorph.Components;
 using Content.Server.Polymorph.Systems;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Antags.Vampires.Systems;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Maps;
+using Content.Shared.Fluids.Components;
 using Robust.Shared.Map.Components;
 
 namespace Content.Server._Starlight.Antags.Vampires;
@@ -12,6 +14,8 @@ public sealed class SanguinePoolSystem : SharedSanguinePoolSystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
 
     public override void Update(float frameTime)
     {
@@ -26,14 +30,46 @@ public sealed class SanguinePoolSystem : SharedSanguinePoolSystem
             if (comp.TrailPrototype == null)
                 continue;
 
-            comp.Accumulator += frameTime;
-            if (comp.Accumulator < comp.TrailInterval)
+            // Spawn more frequently: once per entered tile (but don't duplicate if the tile already has a blood puddle).
+            if (xform.GridUid is not { } gridUid || !TryComp(gridUid, out MapGridComponent? gridComp))
                 continue;
 
-            comp.Accumulator -= comp.TrailInterval;
+            var tile = _map.CoordinatesToTile(gridUid, gridComp, xform.Coordinates);
+            if (comp.HasLastTrailTile && comp.LastTrailGrid == gridUid && comp.LastTrailTile == tile)
+                continue;
 
-            Spawn(comp.TrailPrototype, xform.Coordinates);
+            comp.LastTrailGrid = gridUid;
+            comp.LastTrailTile = tile;
+            comp.HasLastTrailTile = true;
+
+            var tileCoords = _map.GridTileToLocal(gridUid, gridComp, tile);
+            if (HasBloodPuddleNearby(tileCoords))
+                continue;
+
+            Spawn(comp.TrailPrototype, tileCoords);
         }
+    }
+
+    private bool HasBloodPuddleNearby(Robust.Shared.Map.EntityCoordinates coords)
+    {
+        foreach (var ent in _lookup.GetEntitiesInRange(coords, 0.45f, LookupFlags.Static | LookupFlags.Dynamic | LookupFlags.Sundries))
+        {
+            if (IsBloodPuddle(ent))
+                return true;
+        }
+
+        return false;
+    }
+
+    private bool IsBloodPuddle(EntityUid uid)
+    {
+        if (!TryComp<PuddleComponent>(uid, out var puddle))
+            return false;
+
+        if (!_solution.TryGetSolution(uid, puddle.SolutionName, out _, out var solution))
+            return false;
+
+        return solution.ContainsReagent("Blood", null);
     }
 
     private bool ShouldForceRevert(EntityUid uid, TransformComponent xform)

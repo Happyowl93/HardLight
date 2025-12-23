@@ -57,7 +57,6 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedWieldableSystem _wieldable = default!;
     [Dependency] private readonly MovementModStatusSystem _movementMod = default!;
-    [Dependency] private readonly ShadekinSystem _shadekin = default!;
     [Dependency] private readonly IRobustRandom _rand = default!;
     [Dependency] private readonly TileSystem _tiles = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -85,7 +84,6 @@ public sealed partial class VampireSystem : EntitySystem
     private static readonly ProtoId<DamageGroupPrototype> _geneticGroupId = "Genetic";
     private static readonly ProtoId<DamageTypePrototype> _poisonTypeId = "Poison";
     private static readonly ProtoId<DamageTypePrototype> _oxyLossTypeId = "Asphyxiation";
-    private static readonly EntProtoId _pacifiedStatusEffectId = "StatusEffectPacified";
     private static readonly SoundSpecifier _spaceBurnSound = new SoundPathSpecifier("/Audio/Effects/lightburn.ogg");
 
     public override void Initialize()
@@ -121,12 +119,6 @@ public sealed partial class VampireSystem : EntitySystem
 
             if (bloodChanged || ShouldRefreshActions(comp))
                 RefreshAllActions(uid, comp);
-
-            if (TryComp<UmbraeComponent>(uid, out var umbrae))
-            {
-                UpdateCloakToggleState(comp, umbrae);
-                UpdateCloakOfDarkness(uid, comp, umbrae);
-            }
 
             TryGrantClassAbilities(uid, comp);
             HandleClassSelection(uid, comp);
@@ -339,34 +331,6 @@ public sealed partial class VampireSystem : EntitySystem
         comp.LastRefreshedBloodLevel = comp.TotalBlood;
         foreach (var (_, actionEntity) in comp.ActionEntities)
             TryRefreshVampireAction(uid, actionEntity);
-    }
-
-    private void UpdateCloakToggleState(VampireComponent vampire, UmbraeComponent umbrae)
-    {
-        if (vampire.ActionEntities.TryGetValue("ActionVampireCloakOfDarkness", out var actionEntity)
-            && _actions.GetAction(actionEntity) is { } cloakAction)
-            _actions.SetToggled(cloakAction.AsNullable(), umbrae.CloakOfDarknessActive);
-    }
-
-    private void UpdateCloakOfDarkness(EntityUid uid, VampireComponent vampire, UmbraeComponent umbrae)
-    {
-        if (!umbrae.CloakOfDarknessActive)
-            return;
-
-        if (TryComp<MobStateComponent>(uid, out var mobState)
-            && mobState.CurrentState == Shared.Mobs.MobState.Dead)
-        {
-            DeactivateCloakOfDarkness(uid, umbrae);
-            if (vampire.ActionEntities.TryGetValue("ActionVampireCloakOfDarkness", out var actionEntity)
-                && _actions.GetAction(actionEntity) is { } action)
-            {
-                _actions.SetToggled(action.AsNullable(), false);
-            }
-            return;
-        }
-
-        var lightLevel = _shadekin.GetLightExposure(uid);
-        ApplyCloakEffects(uid, lightLevel);
     }
 
     private void HandleClassSelection(EntityUid uid, VampireComponent comp)

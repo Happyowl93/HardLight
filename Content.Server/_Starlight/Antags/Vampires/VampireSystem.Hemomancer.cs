@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
@@ -13,10 +12,11 @@ using Robust.Shared.Timing;
 using Content.Shared.Body.Components;
 using Content.Shared.Damage.Components;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Physics;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Robust.Shared.Prototypes;
 using Content.Shared.Polymorph;
+using Content.Shared.Fluids.Components;
+using Content.Shared.Physics;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -43,8 +43,8 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnHemomancerClaws(EntityUid uid, VampireComponent comp, ref VampireHemomancerClawsActionEvent args)
     {
+        var action = args.Action.Owner;
         if (args.Handled 
-            || !comp.ActionEntities.TryGetValue("ActionVampireHemomancerClaws", out var action) 
             || !ValidateVampireAbility(uid, out var validatedComp, VampireClassType.Hemomancer, action))
             return;
 
@@ -84,18 +84,12 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnHemomancerTendrils(VampireHemomancerTendrilsActionEvent args)
     {
-        if (args.Handled)
-            return;
-
+        var action = args.Action.Owner;
         if (args.Handled 
             || !TryComp<VampireComponent>(args.Performer, out var comp) 
-            || !TryComp<HemomancerComponent>(args.Performer, out var hemomancer)
-            || !comp.ActionEntities.TryGetValue("ActionVampireHemomancerTendrils", out var action) 
             || !ValidateVampireClass(args.Performer, comp, VampireClassType.Hemomancer)
-            || !CheckAndConsumeActionCost(args.Performer, comp, action))
+            )
             return;
-
-        args.Handled = true;
 
         var targetCoords = args.Target;
         var tileCoords = targetCoords.WithPosition(targetCoords.Position.Floored() + new Vector2(args.PositionOffset, args.PositionOffset));
@@ -103,8 +97,13 @@ public sealed partial class VampireSystem : EntitySystem
         if (!ValidateTendrilTarget(tileCoords, args.Performer))
             return;
 
+        if (!CheckAndConsumeActionCost(args.Performer, comp, action))
+            return;
+
+        args.Handled = true;
+
         if (args.SpawnVisuals)
-            SpawnTendrilVisuals(tileCoords, hemomancer.BloodTendrilsVisual);
+            SpawnTendrilVisuals(tileCoords, args.TendrilsVisualPrototype);
 
         ScheduleTendrilEffect(args, tileCoords);
     }
@@ -143,35 +142,38 @@ public sealed partial class VampireSystem : EntitySystem
         var toxinDamage = args.ToxinDamage;
         var performerUid = args.Performer;
 
-        var gridUid = _transform.GetGrid(tileCoords);
+        var tendrilVisualId = args.TendrilsVisualPrototype;
+        var puddleId = args.TendrilsPuddlePrototype;
+
+        Timer.Spawn(delay, () => ExecuteTendrilEffect(performerUid, tileCoords, toxinDamage, slowDuration, slowMultiplier, args.VisualSpawnDelay, args.TargetRange, args.PositionOffset, tendrilVisualId, puddleId));
+    }
+
+    private void ExecuteTendrilEffect(EntityUid performerUid, EntityCoordinates targetCoords,
+        float toxinDamage, TimeSpan slowDuration, float slowMultiplier, float spawnDelay, float targetRange, float positionOffset, EntProtoId tendrilVisualId, EntProtoId puddleId)
+    {
+        if (!Exists(performerUid))
+            return;
+
+        var gridUid = _transform.GetGrid(targetCoords);
         if (gridUid == null || !TryComp<MapGridComponent>(gridUid.Value, out var gridComp))
             return;
 
-        Timer.Spawn(delay, () => ExecuteTendrilEffect(performerUid, tileCoords, gridUid.Value, gridComp, toxinDamage, slowDuration, slowMultiplier, args.VisualSpawnDelay, args.TargetRange, args.PositionOffset));
-    }
-
-    private void ExecuteTendrilEffect(EntityUid performerUid, EntityCoordinates targetCoords, EntityUid gridUid, MapGridComponent gridComp,
-        float toxinDamage, TimeSpan slowDuration, float slowMultiplier, float spawnDelay, float targetRange, float positionOffset)
-    {
-        if (!Exists(performerUid) || !TryComp<HemomancerComponent>(performerUid, out var hemomancer))
-            return;
-
         // Spawn blood puddle at center
-        if (IsValidTile(targetCoords, gridUid, gridComp))
-            Spawn(hemomancer.BloodTendrilsPuddle, targetCoords);
+        if (IsValidTile(targetCoords, gridUid.Value, gridComp))
+            Spawn(puddleId, targetCoords);
 
         // Process damage and effects
-        var hitEnemies = ProcessTendrilDamage(performerUid, targetCoords, gridUid, gridComp, toxinDamage, slowDuration, slowMultiplier, targetRange);
+        var hitEnemies = ProcessTendrilDamage(performerUid, targetCoords, gridUid.Value, gridComp, toxinDamage, slowDuration, slowMultiplier, targetRange);
 
         // Schedule visual effects for hit enemies
         if (hitEnemies.Count > 0)
-            Timer.Spawn(TimeSpan.FromSeconds(spawnDelay), () => SpawnTendrilEffectsOnEnemies(hitEnemies, gridUid, gridComp, positionOffset, hemomancer.BloodTendrilsVisual, hemomancer.BloodTendrilsPuddle));
+            Timer.Spawn(TimeSpan.FromSeconds(spawnDelay), () => SpawnTendrilEffectsOnEnemies(hitEnemies, gridUid.Value, gridComp, positionOffset, tendrilVisualId, puddleId));
     }
 
     private List<EntityUid> ProcessTendrilDamage(EntityUid performerUid, EntityCoordinates targetCoords, EntityUid gridUid,
         MapGridComponent gridComp, float toxinDamage, TimeSpan slowDuration, float slowMultiplier, float targetRange)
     {
-        var hitEnemies = new List<EntityUid>();
+        var hitEnemies = new HashSet<EntityUid>();
 
         foreach (var offset in _tendrilOffsets)
         {
@@ -191,7 +193,7 @@ public sealed partial class VampireSystem : EntitySystem
             }
         }
 
-        return hitEnemies;
+        return hitEnemies.ToList();
     }
 
     private void SpawnTendrilEffectsOnEnemies(List<EntityUid> hitEnemies, EntityUid gridUid, MapGridComponent gridComp, float positionOffset, EntProtoId tendrilVisualId, EntProtoId puddleId)
@@ -213,14 +215,10 @@ public sealed partial class VampireSystem : EntitySystem
     private void OnBloodBarrier(VampireBloodBarrierActionEvent args)
     {
         if (args.Handled 
-            || !TryComp<HemomancerComponent>(args.Performer, out var hemomancer)
             || !TryComp<VampireComponent>(args.Performer, out var comp) 
-            || !comp.ActionEntities.TryGetValue("ActionVampireBloodBarrier", out var action)
             || !ValidateVampireClass(args.Performer, comp, VampireClassType.Hemomancer) 
-            || !CheckAndConsumeBloodCost(args.Performer, comp, action))
+            )
             return;
-
-        args.Handled = true;
 
         var targetCoords = args.Target;
         var tileCoords = targetCoords.WithPosition(targetCoords.Position.Floored() + new Vector2(0.5f, 0.5f));
@@ -237,32 +235,40 @@ public sealed partial class VampireSystem : EntitySystem
 
         var perpendicular = new Vector2(-direction.Y, direction.X);
 
-        var barrierPositions = new Vector2[]
-        {
-            tileCoords.Position + perpendicular,
-            tileCoords.Position,
-            tileCoords.Position - perpendicular
-        };
+        var barrierCount = Math.Clamp(args.BarrierCount, 1, 9);
+        var half = barrierCount / 2;
+        var successfulPositions = new List<Vector2>(barrierCount);
 
-        int successfulBarriers = 0;
-        foreach (var pos in barrierPositions)
+        for (var i = -half; i <= half && successfulPositions.Count < barrierCount; i++)
         {
+            var pos = tileCoords.Position + (perpendicular * i);
             var barrierCoords = tileCoords.WithPosition(pos.Floored() + new Vector2(0.5f, 0.5f));
 
             if (!IsValidTile(barrierCoords, gridUid, gridComp))
                 continue;
 
-            var barrier = EntityManager.SpawnEntity(hemomancer.BloodBarrier, barrierCoords);
-
-            var preventCollide = EnsureComp<PreventCollideComponent>(barrier);
-            preventCollide.Uid = args.Performer;
-
-            successfulBarriers++;
-
+            successfulPositions.Add(barrierCoords.Position);
         }
 
-        if (successfulBarriers == 0)
+        if (successfulPositions.Count == 0)
+        {
             _popup.PopupEntity(Loc.GetString("action-vampire-blood-barrier-wrong-place"), args.Performer, args.Performer);
+            return;
+        }
+
+        if (!CheckAndConsumeBloodCost(args.Performer, comp, args.Action.Owner))
+            return;
+
+        args.Handled = true;
+
+        foreach (var pos in successfulPositions)
+        {
+            var barrierCoords = tileCoords.WithPosition(pos);
+            var barrier = EntityManager.SpawnEntity(args.BarrierPrototype, barrierCoords);
+            var preventComp = EnsureComp<PreventCollideComponent>(barrier);
+            preventComp.Uid = args.Performer;
+            Dirty(barrier, preventComp);
+        }
     }
 
     private void OnSanguinePool(EntityUid uid, VampireComponent comp, ref VampireSanguinePoolActionEvent args)
@@ -276,17 +282,18 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        // Reminder да я хуй знает почему не пашет, потом разерусь
-        // Dont allow pooling? in invalid tiles
-        // var curCoords = Transform(uid).Coordinates;
-        // if (!IsValidTile(curCoords))
-        // {
-        //     _popup.PopupEntity(Loc.GetString("action-vampire-sanguine-pool-invalid-tile"), uid, uid);
-        //     return;
-        // }
+        // Don't allow pooling in space / invalid tiles
+        var curCoords = Transform(uid).Coordinates;
+        if (_transform.GetGrid(curCoords) is not { } gridUid
+            || !TryComp<MapGridComponent>(gridUid, out var gridComp)
+            || !_map.TryGetTileRef(gridUid, gridComp, curCoords, out var tileRef)
+            || _turf.IsSpace(tileRef))
+        {
+            _popup.PopupEntity(Loc.GetString("action-vampire-sanguine-pool-invalid-tile"), uid, uid);
+            return;
+        }
 
-        if (!comp.ActionEntities.TryGetValue(hemomancer.SanguinePoolAction, out var action) 
-            || !CheckAndConsumeBloodCost(uid, comp, action))
+        if (!CheckAndConsumeBloodCost(uid, comp, args.Action.Owner))
             return;
 
         if (TryActivateSanguinePool(uid, hemomancer, args))
@@ -295,9 +302,9 @@ public sealed partial class VampireSystem : EntitySystem
 
     private bool TryActivateSanguinePool(EntityUid uid, HemomancerComponent hemomancer, VampireSanguinePoolActionEvent args)
     {
-        if (!_proto.TryIndex(hemomancer.SanguinePoolPolymorph, out var polymorphProto))
+        if (!_proto.TryIndex(args.PolymorphPrototype, out var polymorphProto))
         {
-            _sawmill?.Error($"Missing polymorph prototype '{hemomancer.SanguinePoolPolymorph}'.");
+            _sawmill?.Error($"Missing polymorph prototype '{args.PolymorphPrototype}'.");
             return false;
         }
 
@@ -315,11 +322,13 @@ public sealed partial class VampireSystem : EntitySystem
         {
             poolComp.TrailInterval = MathF.Max(0.1f, args.BloodDripInterval);
             poolComp.Accumulator = 0f;
+            poolComp.ExitEffectPrototype = args.ExitEffectPrototype;
+            poolComp.ExitSound = args.ExitSound;
             Dirty(poolEntity.Value, poolComp);
         }
 
-        Spawn(hemomancer.SanguinePoolEnterEffect, Transform(poolEntity.Value).Coordinates);
-        _audio.PlayPvs(hemomancer.SanguinePoolEnterSound, uid);
+        Spawn(args.EnterEffectPrototype, Transform(poolEntity.Value).Coordinates);
+        _audio.PlayPvs(args.EnterSound, uid);
         _popup.PopupEntity(Loc.GetString("action-vampire-sanguine-pool-enter"), poolEntity.Value, poolEntity.Value);
         return true;
     }
@@ -348,39 +357,43 @@ public sealed partial class VampireSystem : EntitySystem
         hemomancer.InSanguinePool = false;
         Dirty(args.NewEntity, hemomancer);
 
-        Spawn(hemomancer.SanguinePoolExitEffect, Transform(args.NewEntity).Coordinates);
-        _audio.PlayPvs(hemomancer.SanguinePoolExitSound, args.NewEntity);
+        Spawn(ent.Comp.ExitEffectPrototype, Transform(args.NewEntity).Coordinates);
+        _audio.PlayPvs(ent.Comp.ExitSound, args.NewEntity);
         _popup.PopupEntity(Loc.GetString("action-vampire-sanguine-pool-exit"), args.NewEntity, args.NewEntity);
     }
 
     private void OnBloodEruption(EntityUid uid, VampireComponent comp, ref VampireBloodEruptionActionEvent args)
     {
         if (args.Handled 
-            || !comp.ActionEntities.TryGetValue("ActionVampireBloodEruption", out var action)
-            || !CheckAndConsumeBloodCost(uid, comp, action))
+            || !CheckAndConsumeBloodCost(uid, comp, args.Action.Owner))
             return;
 
         var coords = Transform(uid).Coordinates;
 
         var nearbyEntities = _lookup.GetEntitiesInRange(coords, args.Range);
 
-        var bloodPuddlesWithTargets = new Dictionary<EntityUid, List<EntityUid>>();
+        var targetsToDamage = new HashSet<EntityUid>();
+        var targetsToVisualize = new HashSet<EntityUid>();
 
         foreach (var entity in nearbyEntities)
         {
             if (entity == uid)
                 continue;
-                
-            if (MetaData(entity).EntityPrototype?.ID != "PuddleBlood")
+
+            if (!IsBloodPuddle(entity))
                 continue;
 
             if (!TryComp(entity, out TransformComponent? xform) || !xform.Anchored)
+                continue;
+
+            if (xform.GridUid is not { } gridUid || !TryComp<MapGridComponent>(gridUid, out var gridComp))
                 continue;
 
             if (_container.IsEntityOrParentInContainer(entity))
                 continue;
 
             var puddleCoords = xform.Coordinates;
+            var puddleTile = _map.CoordinatesToTile(gridUid, gridComp, puddleCoords);
             var targetsNearPuddle = _lookup.GetEntitiesInRange(puddleCoords, args.TargetRange)
                 .Where(target => target != uid
                                  && target != entity
@@ -389,23 +402,47 @@ public sealed partial class VampireSystem : EntitySystem
                                  && !_container.IsEntityOrParentInContainer(target))
                 .ToList();
 
-            if (targetsNearPuddle.Count > 0)
-                bloodPuddlesWithTargets[entity] = targetsNearPuddle;
+            foreach (var target in targetsNearPuddle)
+            {
+                targetsToDamage.Add(target);
+
+                if (!TryComp(target, out TransformComponent? targetXform))
+                    continue;
+
+                if (targetXform.GridUid != gridUid)
+                    continue;
+
+                var targetTile = _map.CoordinatesToTile(gridUid, gridComp, targetXform.Coordinates);
+                if (targetTile == puddleTile)
+                    targetsToVisualize.Add(target);
+            }
         }
 
-        foreach (var (puddleUid, targets) in bloodPuddlesWithTargets)
+        foreach (var targetUid in targetsToDamage)
+            ApplyDamage(targetUid, "Blunt", args.Damage, uid);
+
+        foreach (var targetUid in targetsToVisualize)
         {
-            var puddleCoords = Transform(puddleUid).Coordinates;
+            if (!TryComp(targetUid, out TransformComponent? targetXform) || _container.IsEntityOrParentInContainer(targetUid))
+                continue;
 
-            // // Spawn spike visual effect at each blood puddle нету пока, спрайтят
-            // Spawn("VampireBloodSpikesVisual", puddleCoords);
-
-            foreach (var targetUid in targets)
-                ApplyDamage(targetUid, "Blunt", args.Damage, uid);
+            var visual = Spawn("VampireBloodEruptionVisual", targetXform.Coordinates);
+            _audio.PlayPvs(args.Sound, visual);
         }
 
         _popup.PopupEntity(Loc.GetString("action-vampire-blood-eruption-activated"), uid, uid);
         args.Handled = true;
+    }
+
+    private bool IsBloodPuddle(EntityUid uid)
+    {
+        if (!TryComp<PuddleComponent>(uid, out var puddle))
+            return false;
+
+        if (!_solution.TryGetSolution(uid, puddle.SolutionName, out _, out var solution))
+            return false;
+
+        return solution.ContainsReagent("Blood", null);
     }
 
     private void OnBloodBringersRite(EntityUid uid, VampireComponent comp, ref VampireBloodBringersRiteActionEvent args)

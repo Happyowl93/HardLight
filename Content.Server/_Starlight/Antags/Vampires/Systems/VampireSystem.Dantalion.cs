@@ -22,11 +22,6 @@ namespace Content.Server._Starlight.Antags.Vampires;
 
 public sealed partial class VampireSystem : EntitySystem
 {
-    private const string EnthrallActionId = "ActionVampireEnthrall";
-    private const string RallyThrallsActionId = "ActionVampireRallyThralls";
-    private const string BloodBondActionId = "ActionVampireBloodBond";
-    private const string MassHysteriaActionId = "ActionVampireMassHysteria";
-
     private void InitializeDantalion()
     {
         SubscribeLocalEvent<VampireComponent, VampireEnthrallActionEvent>(OnEnthrall);
@@ -44,12 +39,14 @@ public sealed partial class VampireSystem : EntitySystem
         SubscribeLocalEvent<VampireComponent, VampireMassHysteriaActionEvent>(OnMassHysteria);
     }
 
+#region Enthrall
     private void OnEnthrall(EntityUid uid, VampireComponent comp, ref VampireEnthrallActionEvent args)
     {
         if (args.Handled || !Exists(args.Target))
             return;
 
-        if (!TryGetEnthrallData(uid, comp, out var dantalion, out _, out var bloodCost))
+        var actionEntity = args.Action.Owner;
+        if (!TryGetEnthrallData(uid, comp, actionEntity, out var dantalion, out var bloodCost))
             return;
 
         var target = args.Target;
@@ -163,10 +160,9 @@ public sealed partial class VampireSystem : EntitySystem
         RemComp<VampireThrallComponent>(thrall);
     }
 
-    private bool TryGetEnthrallData(EntityUid uid, VampireComponent comp, out DantalionComponent dantalion, out EntityUid actionEntity, out int bloodCost)
+    private bool TryGetEnthrallData(EntityUid uid, VampireComponent comp, EntityUid actionEntity, out DantalionComponent dantalion, out int bloodCost)
     {
         bloodCost = 0;
-        actionEntity = EntityUid.Invalid;
         dantalion = default!;
 
         if (comp.ChosenClass != VampireClassType.Dantalion)
@@ -177,13 +173,10 @@ public sealed partial class VampireSystem : EntitySystem
 
         dantalion = dantalionComp!;
 
-        if (!comp.ActionEntities.TryGetValue(EnthrallActionId, out actionEntity))
+        if (!Exists(actionEntity) || !TryComp<VampireActionComponent>(actionEntity, out var actionComp))
             return false;
 
-        if (!TryComp<VampireActionComponent>(actionEntity, out var actionComp))
-            return false;
-
-        bloodCost = (int)Math.Max(actionComp.BloodCost, 0);
+        bloodCost = (int) Math.Max(actionComp.BloodCost, 0);
         return true;
     }
 
@@ -225,9 +218,16 @@ public sealed partial class VampireSystem : EntitySystem
 
         return limit;
     }
+
+#endregion
+
+#region Pacify
     public void OnPacify(EntityUid uid, VampireComponent comp, ref VampirePacifyActionEvent args)
     {
         if (args.Handled || !Exists(args.Target))
+            return;
+
+        if (!ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
             return;
 
         var target = args.Target;
@@ -238,8 +238,8 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        if (!comp.ActionEntities.TryGetValue("ActionVampirePacify", out var actionEntity)
-            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
+        var actionEntity = args.Action.Owner;
+        if (!Exists(actionEntity) || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
             return;
 
         var duration = TimeSpan.FromSeconds(args.PacifyDuration);
@@ -256,10 +256,15 @@ public sealed partial class VampireSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString("vampire-pacify-target", ("duration", Math.Round(args.PacifyDuration))), target, target, PopupType.Medium);
         args.Handled = true;
     }
+#endregion
 
+#region Subspace Swap
     private void OnSubspaceSwap(EntityUid uid, VampireComponent comp, ref VampireSubspaceSwapActionEvent args)
     {
         if (args.Handled || !Exists(args.Target))
+            return;
+
+        if (!ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
             return;
 
         var target = args.Target;
@@ -276,11 +281,11 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        if (!comp.ActionEntities.TryGetValue("ActionVampireSubspaceSwap", out var actionEntity)
-            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
+        if (!TryComp<MobStateComponent>(uid, out var performerMobState) || performerMobState.CurrentState == Shared.Mobs.MobState.Dead)
             return;
 
-        if (!TryComp<MobStateComponent>(uid, out var performerMobState) || performerMobState.CurrentState == Shared.Mobs.MobState.Dead)
+        var actionEntity = args.Action.Owner;
+        if (!Exists(actionEntity) || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
             return;
 
         if (!_transform.SwapPositions(uid, target))
@@ -302,14 +307,19 @@ public sealed partial class VampireSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString("vampire-subspace-swap-target"), target, target, PopupType.Medium);
         args.Handled = true;
     }
+#endregion
 
+#region Decoy
     private void OnDecoy(EntityUid uid, VampireComponent comp, ref VampireDecoyActionEvent args)
     {
         if (args.Handled)
             return;
 
-        if (!comp.ActionEntities.TryGetValue("ActionVampireDecoy", out var actionEntity)
-            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
+        if (!ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
+            return;
+
+        var actionEntity = args.Action.Owner;
+        if (!Exists(actionEntity) || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
             return;
 
         var stealth = EnsureComp<StealthComponent>(uid);
@@ -365,23 +375,24 @@ public sealed partial class VampireSystem : EntitySystem
         component.Detonated = true;
         TriggerDecoyFlash(uid);
     }
+#endregion
 
-    #region Rally Thralls
+#region Rally Thralls
 
     private void OnRallyThralls(EntityUid uid, VampireComponent comp, ref VampireRallyThrallsActionEvent args)
     {
         if (args.Handled)
             return;
 
+        if (!ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
+            return;
+
         if (!TryComp<DantalionComponent>(uid, out var dantalion))
             return;
 
-        if (!comp.ActionEntities.TryGetValue(RallyThrallsActionId, out var actionEntity)
-            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
-            return;
-
         var coords = Transform(uid).Coordinates;
-        var ralliedCount = 0;
+
+        var toRally = new List<EntityUid>();
 
         foreach (var thrall in dantalion.Thralls.ToArray())
         {
@@ -390,6 +401,26 @@ public sealed partial class VampireSystem : EntitySystem
 
             var thrallCoords = Transform(thrall).Coordinates;
             if (!thrallCoords.TryDistance(EntityManager, _transform, coords, out var distance) || distance > args.Range)
+                continue;
+
+            toRally.Add(thrall);
+        }
+
+        if (toRally.Count == 0)
+        {
+            _popup.PopupEntity(Loc.GetString("vampire-rally-thralls-none"), uid, uid, PopupType.SmallCaution);
+            return;
+        }
+
+        var actionEntity = args.Action.Owner;
+        if (!Exists(actionEntity) || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
+            return;
+
+        var ralliedCount = 0;
+
+        foreach (var thrall in toRally)
+        {
+            if (!Exists(thrall))
                 continue;
 
             // Remove stun
@@ -406,34 +437,31 @@ public sealed partial class VampireSystem : EntitySystem
                 _stamina.TakeStaminaDamage(thrall, -stamina.StaminaDamage, stamina);
             }
             
-            EntityManager.SpawnAttachedTo(dantalion.rallyOverlayEffect, thrallCoords);
+            var rallyEffect = EntityManager.SpawnEntity(dantalion.rallyOverlayEffect, Transform(thrall).Coordinates);
+            _transform.SetParent(rallyEffect, thrall);
 
             ralliedCount++;
         }
 
-        if (ralliedCount > 0)
-        {
-            _popup.PopupEntity(Loc.GetString("vampire-rally-thralls-success", ("count", ralliedCount)), uid, uid);
-        }
-        else
-        {
-            _popup.PopupEntity(Loc.GetString("vampire-rally-thralls-none"), uid, uid, PopupType.SmallCaution);
-        }
+        _popup.PopupEntity(Loc.GetString("vampire-rally-thralls-success", ("count", ralliedCount)), uid, uid);
 
         args.Handled = true;
     }
 
-    #endregion
+#endregion
 
-    #region Blood Bond
+#region Blood Bond
 
     private void OnBloodBond(EntityUid uid, VampireComponent comp, ref VampireBloodBondActionEvent args)
     {
         if (args.Handled)
             return;
 
-        if (!comp.ActionEntities.TryGetValue(BloodBondActionId, out var actionEntity)
-            || !TryComp<DantalionComponent>(uid, out var dantalion))
+        if (!ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
+            return;
+
+        var actionEntity = args.Action.Owner;
+        if (!Exists(actionEntity) || !TryComp<DantalionComponent>(uid, out var dantalion))
             return;
 
         if (dantalion.BloodBondActive)
@@ -449,7 +477,7 @@ public sealed partial class VampireSystem : EntitySystem
                 return;
             }
 
-            ActivateBloodBond(uid, comp, dantalion, args.Range, args.BloodCostPerSecond, args.TickInterval);
+            ActivateBloodBond(uid, comp, dantalion, actionEntity, args.Range, args.BloodCostPerSecond, args.TickInterval);
             _popup.PopupEntity(Loc.GetString("vampire-blood-bond-start"), uid, uid);
         }
 
@@ -459,7 +487,7 @@ public sealed partial class VampireSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void ActivateBloodBond(EntityUid uid, VampireComponent _, DantalionComponent dantalion, float range, float bloodCostPerSecond, float tickInterval)
+    private void ActivateBloodBond(EntityUid uid, VampireComponent _, DantalionComponent dantalion, EntityUid actionEntity, float range, float bloodCostPerSecond, float tickInterval)
     {
         dantalion.BloodBondActive = true;
         dantalion.BloodBondLoopId++;
@@ -470,7 +498,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         Dirty(uid, dantalion);
 
-        StartBloodBondLoop(uid, range, bloodCostPerSecond, tickInterval);
+        StartBloodBondLoop(uid, actionEntity, range, bloodCostPerSecond, tickInterval);
     }
 
     private void DeactivateBloodBond(EntityUid uid, DantalionComponent dantalion)
@@ -491,7 +519,7 @@ public sealed partial class VampireSystem : EntitySystem
         Dirty(uid, dantalion);
     }
 
-    private void StartBloodBondLoop(EntityUid uid, float range, float bloodCostPerSecond, float tickInterval)
+    private void StartBloodBondLoop(EntityUid uid, EntityUid actionEntity, float range, float bloodCostPerSecond, float tickInterval)
     {
         if (!Exists(uid)
             || !TryComp<VampireComponent>(uid, out var comp)
@@ -503,8 +531,7 @@ public sealed partial class VampireSystem : EntitySystem
             mobState.CurrentState == Shared.Mobs.MobState.Dead)
         {
             DeactivateBloodBond(uid, dantalion);
-            if (comp.ActionEntities.TryGetValue(BloodBondActionId, out var actionEntity) &&
-                _actions.GetAction(actionEntity) is { } action)
+            if (Exists(actionEntity) && _actions.GetAction(actionEntity) is { } action)
                 _actions.SetToggled(action.AsNullable(), false);
             return;
         }
@@ -514,8 +541,7 @@ public sealed partial class VampireSystem : EntitySystem
         {
             DeactivateBloodBond(uid, dantalion);
             _popup.PopupEntity(Loc.GetString("vampire-blood-bond-stop-blood"), uid, uid);
-            if (comp.ActionEntities.TryGetValue(BloodBondActionId, out var actionEntity) &&
-                _actions.GetAction(actionEntity) is { } action)
+            if (Exists(actionEntity) && _actions.GetAction(actionEntity) is { } action)
                 _actions.SetToggled(action.AsNullable(), false);
             return;
         }
@@ -559,7 +585,7 @@ public sealed partial class VampireSystem : EntitySystem
         {
             if (!Exists(uid) || !TryComp<DantalionComponent>(uid, out var d2)) return;
             if (!d2.BloodBondActive || d2.BloodBondLoopId != expectedLoopId) return;
-            StartBloodBondLoop(uid, range, bloodCostPerSecond, tickInterval);
+            StartBloodBondLoop(uid, actionEntity, range, bloodCostPerSecond, tickInterval);
         });
     }
     /// <summary>
@@ -657,20 +683,23 @@ public sealed partial class VampireSystem : EntitySystem
         }
     }
 
-    #endregion
+#endregion
 
-    #region Mass Hysteria
+#region Mass Hysteria
 
     private void OnMassHysteria(EntityUid uid, VampireComponent comp, ref VampireMassHysteriaActionEvent args)
     {
         if (args.Handled)
             return;
 
-        if (!TryComp<DantalionComponent>(uid, out var dantalion))
+        if (!ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
             return;
 
-        if (!comp.ActionEntities.TryGetValue(MassHysteriaActionId, out var actionEntity)
-            || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
+        if (!TryComp<DantalionComponent>(uid, out var _))
+            return;
+
+        var actionEntity = args.Action.Owner;
+        if (!Exists(actionEntity) || !CheckAndConsumeBloodCost(uid, comp, actionEntity))
             return;
 
         var coords = Transform(uid).Coordinates;
@@ -715,5 +744,5 @@ public sealed partial class VampireSystem : EntitySystem
         Dirty(target, hysteria);
     }
 
-    #endregion
+#endregion
 }

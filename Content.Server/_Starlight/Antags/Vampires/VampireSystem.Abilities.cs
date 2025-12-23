@@ -677,7 +677,9 @@ public sealed partial class VampireSystem : EntitySystem
             return false;
         var slots = new[] { "mask", "head" };
         foreach (var slot in slots)
-            if (_inventory.TryGetSlotEntity(uid, slot, out var ent) && HasComp<IngestionBlockerComponent>(ent.Value))
+            if (_inventory.TryGetSlotEntity(uid, slot, out var ent) && 
+                TryComp<IngestionBlockerComponent>(ent.Value, out var blocker) && 
+                blocker.Enabled)
                 return true;
         return false;
     }

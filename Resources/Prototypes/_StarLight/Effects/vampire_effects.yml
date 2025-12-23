@@ -52,18 +52,31 @@
           shape: !type:PhysShapeAabb
             bounds: "-0.5,-0.5,0.5,0.5"
           mask:
-            - Impassable
+            - FullTileMask
           layer:
-            - Impassable
+            - WallLayer
     - type: Damageable
-      damageContainer: Inorganic
+      damageContainer: Biological
     - type: Destructible
       thresholds:
-        - trigger: !type:DamageTrigger
-            damage: 130
-          behaviors:
-            - !type:DoActsBehavior
-              acts: ["Destruction"]
+      - trigger: !type:DamageTrigger
+          damage: 130
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            PuddleBlood:
+              min: 1
+              max: 1
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: WindowShatter
+    - type: TimedDespawn
+      lifetime: 30.0
+    - type: Tag
+      tags:
+        - Wall
 
 - type: entity
   id: VampireSanguinePoolOut
@@ -104,41 +117,22 @@
         - Wall
         - VampireBarrier
 
-# - type: entity
-#   id: VampireBloodEruptionVisual
-#   name: blood eruption
-#   noSpawn: true
-#   categories: [HideSpawnMenu]
-#   components:
-#     - type: Sprite
-#       sprite: _Starlight/Vampire/Haemomancer.rsi
-#       state: :(
-#       drawdepth: Effects
-#     - type: TimedDespawn
-#       lifetime: 2.0
-#     - type: Clickable
-#     - type: Physics
-#       canCollide: false
-#     - type: Transform
-#       noRot: true
-#
-# - type: entity
-#   id: VampireBloodSpikesVisual
-#   name: blood spikes
-#   noSpawn: true
-#   categories: [HideSpawnMenu]
-#   components:
-#     - type: Sprite
-#       sprite: _Starlight/Vampire/Haemomancer.rsi
-#       state: :(
-#       drawdepth: Effects
-#     - type: TimedDespawn
-#       lifetime: 1.5
-#     - type: Clickable
-#     - type: Physics
-#       canCollide: false
-#     - type: Transform
-#       noRot: true
+- type: entity
+  id: VampireBloodEruptionVisual
+  name: blood eruption
+  noSpawn: true
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/effects.rsi
+      state: bloodspike
+      drawdepth: Effect
+    - type: TimedDespawn
+      lifetime: 0.6
+    - type: Physics
+      canCollide: false
+    - type: Transform
+      noRot: true
 
 - type: entity
   id: VampireDrainBeam
@@ -154,7 +148,6 @@
           map: ["enum.EffectLayers.Unshaded"]
       drawdepth: Effects
     - type: AnimationPlayer
-    - type: Clickable
     - type: Physics
       canCollide: false
     - type: Transform
@@ -176,8 +169,6 @@
       drawdepth: BelowMobs
     - type: Transform
       noRot: false
-
-
 
 # Gotta resprite this shit
 - type: entity
@@ -293,7 +284,8 @@
     - type: InteractionOutline
       enabled: false
     - type: Stealth
-      visibility: -0.8
+      minVisibility: -1
+      lastVisibility: -1
 
 - type: entity
   id: VampireEternalDarknessAura
@@ -303,10 +295,10 @@
       anchored: false
     - type: PointLight
       enabled: true
-      radius: 6.0  
-      energy: 1.0         
-      softness: 4.0        
-      color: "#6d00ff"     
+      radius: 6.0
+      energy: 1.0
+      softness: 4.0
+      color: "#6d00ff"
       castShadows: false
       autoBrightness: false
     - type: Sprite
@@ -337,14 +329,14 @@
 - type: entity
   id: VampireSeismicStompEffect
   noSpawn: true
-  # categories: [HideSpawnMenu]
+  categories: [HideSpawnMenu]
   components:
-    - type: Sprite 
+    - type: Sprite
       sprite: /Textures/_Starlight/Vampire/seismic_stopmp.rsi
       state: stomp_effect
       drawdepth: Effects
     - type: TimedDespawn
-      lifetime: 0.8
+      lifetime: 0.5
     - type: Transform
       noRot: true
     - type: Physics
@@ -353,7 +345,7 @@
 - type: entity
   id: VampireDemonicGraspEffect
   noSpawn: true
-  # categories: [HideSpawnMenu]
+  categories: [HideSpawnMenu]
   components:
     - type: Sprite
       sprite: /Textures/_Starlight/Vampire/Effects.rsi

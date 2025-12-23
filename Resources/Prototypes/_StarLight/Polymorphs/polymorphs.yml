@@ -25,7 +25,7 @@
     revertOnCrit: true
     revertOnDeath: true
     effectProto: null
-    polumorphSound: !type:SoundPathSpecifier
+    polymorphSound: !type:SoundPathSpecifier
       path: /Audio/_Starlight/Effects/vampire/enter_blood.ogg
     exitPolymorphSound: !type:SoundPathSpecifier
       path: /Audio/_Starlight/Effects/vampire/exit_blood.ogg

@@ -37,13 +37,13 @@ public sealed partial class VampireComponent : Component
     /// Lifetime total blood drunk. Used for unlocking abilities.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public int TotalBlood = 1500;
+    public int TotalBlood = 0;
 
     /// <summary>
     /// Total blood drunk by this vampire, used for blood cost calculations.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public int DrunkBlood = 1500;
+    public int DrunkBlood = 0;
 
     /// <summary>
     /// Determines whether the fangs are extended or not.
@@ -156,7 +156,7 @@ public sealed partial class VampireComponent : Component
     public int LastRefreshedBloodLevel = -1;
 
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
-    public bool FullPower = true; //Reminder  Не забудь поменят
+    public bool FullPower = false;
 
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public int UniqueHumanoidVictims = 0;

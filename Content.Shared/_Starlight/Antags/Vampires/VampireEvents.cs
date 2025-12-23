@@ -1,7 +1,9 @@
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
+using Content.Shared.Polymorph;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Starlight.Antags.Vampires;
@@ -66,6 +68,12 @@ public sealed partial class VampireHemomancerClawsActionEvent : InstantActionEve
 public sealed partial class VampireHemomancerTendrilsActionEvent : WorldTargetActionEvent
 {
     [DataField]
+    public EntProtoId TendrilsVisualPrototype = "VampireBloodTendrilVisual";
+
+    [DataField]
+    public EntProtoId TendrilsPuddlePrototype = "PuddleBlood";
+
+    [DataField]
     public float Delay = 1.0f;
 
     [DataField]
@@ -103,12 +111,30 @@ public sealed partial class VampireHemomancerTendrilsActionEvent : WorldTargetAc
 public sealed partial class VampireBloodBarrierActionEvent : WorldTargetActionEvent
 {
     [DataField]
+    public EntProtoId BarrierPrototype = "VampireBloodBarrier";
+
+    [DataField]
     public int BarrierCount = 3;
 }
 
 // Blood Pool
 public sealed partial class VampireSanguinePoolActionEvent : InstantActionEvent
 {
+    [DataField]
+    public EntProtoId EnterEffectPrototype = "VampireSanguinePoolOut";
+
+    [DataField]
+    public EntProtoId ExitEffectPrototype = "VampireSanguinePoolIn";
+
+    [DataField]
+    public ProtoId<PolymorphPrototype> PolymorphPrototype = "VampireSanguinePoolPolymorph";
+
+    [DataField]
+    public SoundSpecifier EnterSound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/enter_blood.ogg");
+
+    [DataField]
+    public SoundSpecifier ExitSound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/exit_blood.ogg");
+
     [DataField]
     public float BloodDripInterval = 1.0f;
 
@@ -119,6 +145,9 @@ public sealed partial class VampireSanguinePoolActionEvent : InstantActionEvent
 // Blood Eruption
 public sealed partial class VampireBloodEruptionActionEvent : InstantActionEvent
 {
+    [DataField]
+    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/blooderruption.ogg");
+
     [DataField]
     public float Range = 10f;
 
@@ -211,10 +240,23 @@ public sealed partial class VampireShadowSnareActionEvent : WorldTargetActionEve
 }
 
 // Soul Anchor
-public sealed partial class VampireShadowAnchorActionEvent : InstantActionEvent;
+public sealed partial class VampireShadowAnchorActionEvent : InstantActionEvent
+{
+    [DataField]
+    public EntProtoId BeaconPrototype = "VampireShadowAnchorBeacon";
+}
 
 // Dark Passage
-public sealed partial class VampireDarkPassageActionEvent : WorldTargetActionEvent;
+public sealed partial class VampireDarkPassageActionEvent : WorldTargetActionEvent
+{
+    [DataField]
+    public EntProtoId MistInPrototype = "VampireDarkPassageMistIn";
+
+    [DataField]
+    public EntProtoId MistOutPrototype = "VampireDarkPassageMistOut";
+    [DataField]
+    public SoundSpecifier? Sound = new SoundPathSpecifier("/Audio/Effects/teleport_departure.ogg");
+}
 
 // Extinguish
 public sealed partial class VampireExtinguishActionEvent : InstantActionEvent
@@ -255,6 +297,9 @@ public sealed class VampireShadowBoxingPunchEvent : EntityEventArgs
 // Eternal Darkness
 public sealed partial class VampireEternalDarknessActionEvent : InstantActionEvent
 {
+    [DataField]
+    public EntProtoId AuraPrototype = "VampireEternalDarknessAura";
+
     [DataField]
     public int MaxTicks = 360;
 
@@ -422,6 +467,8 @@ public sealed partial class VampireSeismicStompActionEvent : InstantActionEvent
     /// </summary>
     [DataField]
     public float ThrowDistance = 3f;
+    [DataField]
+    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Effects/Footsteps/largethud.ogg");
 }
 
 public sealed partial class VampireOverwhelmingForceActionEvent : InstantActionEvent;
