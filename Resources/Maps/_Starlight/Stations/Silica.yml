@@ -151827,7 +151827,7 @@ entities:
     - type: Transform
       pos: 35.5,73.5
       parent: 2
-- proto: ToiletDirtyWater
+- proto: ToiletDirtyWaterFilled
   entities:
   - uid: 18410
     components:

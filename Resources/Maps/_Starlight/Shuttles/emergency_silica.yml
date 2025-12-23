@@ -8257,7 +8257,7 @@ entities:
       parent: 1
     - type: DeltaPressure
       gridUid: 1
-- proto: ToiletDirtyWater
+- proto: ToiletDirtyWaterFilled
   entities:
   - uid: 545
     components:
