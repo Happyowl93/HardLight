@@ -18,7 +18,7 @@
 
 - type: entity
   name: ammunition box (.42 pellet)
-  description: It is open and ready to be used.
+  description: Open and ready to be used.
   parent: AmmoProviderShotgunShellToz
   id: BoxLethalshotTozOpen
   components:
@@ -27,7 +27,7 @@
 
 - type: entity
   name: ammunition box (.42 pellet)
-  description: The nearly-illegible text on the packaging says you should use a knife, but it is so cheap you can just rip it open.
+  description: The nearly-illegible text on the packaging says you should use a knife, but it's so cheap you can just rip it open.
   parent: BaseItem
   id: BoxLethalshotToz
   components:
