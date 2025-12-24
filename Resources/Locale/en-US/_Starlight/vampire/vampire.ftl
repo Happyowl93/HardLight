@@ -15,6 +15,8 @@ alerts-vampire-fed-desc = Your current blood fullness. Drink blood to stay fed.
 roles-antag-vamire-name = Vampire
 roles-antag-vampire-description = Feed on the crew. Extend your fangs and drink their blood.
 
+vampire-roundend-name = vampire
+
 vampire-drink-start = You sink your fangs into {CAPITALIZE(THE($target))}.
 
 action-vampire-rejuvenate-i-name = Rejuvenate(Free)

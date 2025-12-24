@@ -2,7 +2,6 @@
   id: MobVampireSanguinePool
   name: sanguine pool
   parent: BaseMob
-  noSpawn: true
   categories: [HideSpawnMenu]
   description: A sentient puddle of vampiric blood.
   components:
@@ -27,7 +26,8 @@
     baseWalkSpeed: 5
     baseSprintSpeed: 7
   - type: FootstepModifier
-    footstepSoundCollection: FootstepPuddle
+    footstepSoundCollection: !type:SoundCollectionSpecifier
+      collection: FootstepPuddle
   - type: Damageable
     damageContainer: Biological
   - type: SanguinePool

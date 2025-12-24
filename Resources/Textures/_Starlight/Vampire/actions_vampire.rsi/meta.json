@@ -27,6 +27,9 @@
 	    },
         {
             "name": "blood_objective"
+        },
+        {
+            "name": "survive_icon"
         }
     ]
 }

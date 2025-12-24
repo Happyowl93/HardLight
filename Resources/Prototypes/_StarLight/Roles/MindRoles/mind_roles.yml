@@ -23,6 +23,6 @@
   name: Vampire Role
   components:
   - type: MindRole
-    antagPrototype: 
+    antagPrototype: Vampire
     roleType: SoloAntagonist
   - type: VampireRole

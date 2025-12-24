@@ -52,5 +52,4 @@
   - type: VampireDecoyAppearance
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Default
   - type: VampireDecoy

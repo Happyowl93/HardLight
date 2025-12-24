@@ -161,7 +161,6 @@
       checkCanAccess: false
       range: 7
     - type: WorldTargetAction
-      range: 7
       event: !type:VampireHemomancerTendrilsActionEvent
     - type: VampireAction
       bloodToUnlock: 250
@@ -185,7 +184,6 @@
       checkCanAccess: false
       range: 6
     - type: WorldTargetAction
-      range: 6
       event: !type:VampireBloodBarrierActionEvent
         barrierCount: 3
     - type: VampireAction
@@ -289,12 +287,8 @@
         state: shadow_snare
     - type: TargetAction
       checkCanAccess: false
-      range: 6
-    - type: WorldTargetAction
       range: 15
-      itemIconStyle: NoItem
-      canTargetSelf: false
-      checkCanAccess: false
+    - type: WorldTargetAction
       event: !type:VampireShadowSnareActionEvent {}
     - type: VampireAction
       bloodToUnlock: 200
@@ -336,9 +330,9 @@
         state: shadow_boxing
     - type: TargetAction
       interactOnMiss: false
+      range: 2
     - type: EntityTargetAction
       canTargetSelf: false
-      range: 2
       whitelist:
         components:
           - MobState
@@ -433,11 +427,11 @@
       range: 2
       checkCanAccess: false
       interactOnMiss: false
+    - type: EntityTargetAction
+      canTargetSelf: false
       whitelist:
         components:
           - HumanoidAppearance
-    - type: EntityTargetAction
-      canTargetSelf: false
       event: !type:VampireEnthrallActionEvent
     - type: VampireAction
       bloodToUnlock: 150
@@ -461,11 +455,11 @@
       range: 7
       checkCanAccess: false
       interactOnMiss: false
+    - type: EntityTargetAction
+      canTargetSelf: false
       whitelist:
         components:
           - MobState
-    - type: EntityTargetAction
-      canTargetSelf: false
       event: !type:VampirePacifyActionEvent
     - type: VampireAction
       bloodToUnlock: 250
@@ -489,11 +483,11 @@
       range: 7
       checkCanAccess: false
       interactOnMiss: false
+    - type: EntityTargetAction
+      canTargetSelf: false
       whitelist:
         components:
           - MobState
-    - type: EntityTargetAction
-      canTargetSelf: false
       event: !type:VampireSubspaceSwapActionEvent
     - type: VampireAction
       bloodToUnlock: 250
@@ -679,7 +673,6 @@
       checkCanAccess: false
       range: 15
     - type: WorldTargetAction
-      range: 15
       event: !type:VampireDemonicGraspActionEvent
     - type: VampireAction
       bloodToUnlock: 800
@@ -703,7 +696,6 @@
       checkCanAccess: false
       range: -1
     - type: WorldTargetAction
-      range: -1
       event: !type:VampireChargeActionEvent
     - type: VampireAction
       bloodToUnlock: 1000

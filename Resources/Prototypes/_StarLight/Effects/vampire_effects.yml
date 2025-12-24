@@ -1,11 +1,10 @@
 - type: entity
   id: VampireBloodTendrilVisual
   name: blood tendrils
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/effects.rsi
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
       state: blood_tendril_ent
       drawdepth: Effects
     - type: TimedDespawn
@@ -19,7 +18,6 @@
 - type: entity
   id: VampireShadowBoxingPunch
   name: shadow punch
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -40,7 +38,7 @@
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/effects.rsi
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
       state: blood_barrier_ent
       drawdepth: Walls
     - type: Physics
@@ -80,11 +78,10 @@
 - type: entity
   id: VampireSanguinePoolOut
   name: vampire transformation out
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/effects.rsi
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
       state: vampout
       drawdepth: Effects
     - type: TimedDespawn
@@ -98,11 +95,10 @@
 - type: entity
   id: VampireSanguinePoolIn
   name: vampire transformation in
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/effects.rsi
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
       state: vampin
       drawdepth: Effects
     - type: TimedDespawn
@@ -118,13 +114,12 @@
 - type: entity
   id: VampireBloodEruptionVisual
   name: blood eruption
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/effects.rsi
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
       state: bloodspike
-      drawdepth: Effect
+      drawdepth: Effects
     - type: TimedDespawn
       lifetime: 0.6
     - type: Physics
@@ -136,11 +131,10 @@
   id: VampireDrainBeam
   name: drain beam
   description: A crimson beam of life-draining energy.
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/effects.rsi
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
       layers:
         - state: drainbeam
           map: ["enum.EffectLayers.Unshaded"]
@@ -155,11 +149,10 @@
   id: VampireDrainBeamVisual
   name: drain beam visual
   description: A smooth client-side vampire drain beam.
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/effects.rsi
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
       layers:
         - state: drainbeam
           map: ["enum.EffectLayers.Unshaded"]
@@ -171,11 +164,10 @@
 # Gotta resprite this shit
 - type: entity
   id: VampireBloodBondBeamVisual
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/effects.rsi
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
       layers:
         - state: drainbeam
           map: ["enum.EffectLayers.Unshaded"]
@@ -189,12 +181,11 @@
   id: VampireShadowSnareTrap
   name: shadow snare
   description: A nearly invisible snare of condensed darkness.
-  noSpawn: true
   components:
     - type: Transform
       anchored: true
     - type: Sprite
-      sprite: _Starlight/Vampire/effects.rsi
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
       state: shadow_snare_base
       drawdepth: Items
       noRot: true
@@ -209,8 +200,6 @@
           hard: false
           layer:
             - LowImpassable
-    - type: InteractionOutline
-      enabled: false
     - type: ShadowSnareTrap
       triggerBruteDamage: 20
       maxHealth: 200
@@ -225,7 +214,6 @@
 
 - type: entity
   id: VampireDarkPassageMistIn
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -241,7 +229,6 @@
 
 - type: entity
   id: VampireDarkPassageMistOut
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -259,13 +246,12 @@
   id: VampireShadowAnchorBeacon
   name: shadow anchor
   description: A pulsing knot of shadow you can return to.
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Transform
       anchored: true
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/effects.rsi
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
       state: pylon
       drawdepth: Effects
     - type: TimedDespawn
@@ -279,15 +265,12 @@
             bounds: "-0.3,-0.3,0.3,0.3"
           hard: false
     - type: Clickable
-    - type: InteractionOutline
-      enabled: false
     - type: Stealth
       minVisibility: -1
       lastVisibility: -1
 
 - type: entity
   id: VampireEternalDarknessAura
-  noSpawn: true
   components:
     - type: Transform
       anchored: false
@@ -299,26 +282,21 @@
       color: "#6d00ff"
       castShadows: false
       autoBrightness: false
-    - type: Sprite
-      sprite: Effects/blank.rsi
-      state: blank
-      draws: false
-    - type: MetaData
-      entityClass: Effect
+      visible: false
     - type: Tag
       tags:
         - HideContextMenu
 
 - type: entity
   id: VampireRallyOverlayEffect
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/effects.rsi
-      state: rallyoverlay
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      layers:
+        - state: rallyoverlay
+          map: ["enum.EffectLayers.Unshaded"]
       drawdepth: OverMobs
-      layer: ["enum.EffectLayers.Unshaded"]
     - type: TimedDespawn
       lifetime: 3.0
     - type: Transform
@@ -326,7 +304,6 @@
 
 - type: entity
   id: VampireSeismicStompEffect
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -342,7 +319,6 @@
 
 - type: entity
   id: VampireDemonicGraspEffect
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -358,7 +334,6 @@
 
 - type: entity
   id: VampireImmobilizedEffect
-  noSpawn: true
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
