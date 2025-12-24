@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from Paradise Station 13",
+    "copyright": "Taken from Paradise Station 13, [bloodpool, shadow_box_atack_effect, bloodspike] added by DocMoth from Starlight",
     "size": {
         "x": 32,
         "y": 32
@@ -228,6 +228,12 @@
             "name": "bloodspike",
             "delays":[
                 [0.1, 0.1, 0.1, 0.1, 1]
+            ]
+        },
+        {
+            "name": "bloodpool",
+            "delays":[
+                [0.1, 0.1, 0.1, 0.1, 0.1]
             ]
         }
     ]
