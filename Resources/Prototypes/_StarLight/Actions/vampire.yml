@@ -309,7 +309,7 @@
         sprite: _Starlight/Vampire/umbrae.rsi
         state: shadow_anchor
     - type: InstantAction
-      event: !type:VampireShadowAnchorActionEvent {}
+      event: !type:VampireShadowAnchorActionEvent
     - type: VampireAction
       bloodToUnlock: 200
       bloodCost: 20
