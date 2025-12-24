@@ -14,7 +14,7 @@ public sealed class VampireSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     private static readonly ProtoId<FactionIconPrototype> _thrallIcon = "VampireThrallIcon";
-    private static readonly ProtoId<FactionIconPrototype> _tasterIcon = "VampireMasterIcon";
+    private static readonly ProtoId<FactionIconPrototype> _masterIcon = "VampireFaction";
 
     public override void Initialize()
     {
@@ -52,7 +52,7 @@ public sealed class VampireSystem : EntitySystem
 
     private void OnVampireIcons(EntityUid uid, VampireComponent component, ref GetStatusIconsEvent ev)
     {
-        if (_prototype.TryIndex(_tasterIcon, out var icon))
+        if (_prototype.TryIndex(_masterIcon, out var icon))
             ev.StatusIcons.Add(icon);
     }
 }
