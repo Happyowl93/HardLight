@@ -1,10 +1,8 @@
 using System.Linq;
 using Content.Shared.Atmos;
-using Content.Shared.Damage.Systems;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
-using Content.Shared.Popups;
 using Content.Shared.Temperature.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
@@ -18,8 +16,6 @@ public abstract class SharedTemperatureSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
-    [Dependency] private readonly DamageableSystem _damage = default!; // Starlight
-    [Dependency] private readonly SharedPopupSystem _popup = default!; // Starlight
 
     /// <summary>
     /// Band-aid for unpredicted atmos. Delays the application for a short period so that laggy clients can get the replicated temperature.
@@ -39,28 +35,34 @@ public abstract class SharedTemperatureSystem : EntitySystem
 
     private void OnInteractionSuccess(Entity<TemperatureComponent> ent, ref InteractionSuccessEvent args)
     {
+        // Const
+        var joulesTransferPerDegree = 800.0f;
+
         if (!TryComp<TemperatureComponent>(args.User, out var userTempComp))
             return;
+
+        // This is not realistic whatsoever. A "realistic" hug (not really but a lot closer) would be more like ~250 J total for a dT of 50.
+
+        Entity<TemperatureComponent> hotEntity;
+        Entity<TemperatureComponent> coldEntity;
+
+        var deltaT = ent.Comp.CurrentTemperature - userTempComp.CurrentTemperature;
         
-        DealHugTemperatureDamage(ent, (args.User, userTempComp));
-        DealHugTemperatureDamage((args.User, userTempComp), ent);
-    }
-
-    private void DealHugTemperatureDamage(Entity<TemperatureComponent> target, Entity<TemperatureComponent> giver)
-    {
-        var temp = giver.Comp.CurrentTemperature;
-
-        if (target.Comp.ColdDamageThreshold >= temp)
+        if (deltaT > 0)
         {
-            _damage.TryChangeDamage(target.Owner, target.Comp.ColdHugDamage, ignoreResistances: true, interruptsDoAfters: false);
-            _popup.PopupClient(Loc.GetString("hugging-too-cold"), target.Owner, PopupType.LargeCaution);
+            hotEntity = ent;
+            coldEntity = (args.User, userTempComp);
+        }
+        else
+        {
+            hotEntity = (args.User, userTempComp);
+            coldEntity = ent;
         }
 
-        if (target.Comp.HeatDamageThreshold <= temp)
-        {
-            _damage.TryChangeDamage(target.Owner, target.Comp.HeatHugDamage, ignoreResistances: true, interruptsDoAfters: false);
-            _popup.PopupClient(Loc.GetString("hugging-too-hot"), target.Owner, PopupType.LargeCaution);
-        }
+        var joulesTransferred = joulesTransferPerDegree * Math.Abs(deltaT);
+
+        ChangeHeat(hotEntity, -joulesTransferred, false, hotEntity.Comp);
+        ChangeHeat(coldEntity, joulesTransferred, false, coldEntity.Comp);
     }
 
     // Starlight end
