@@ -15,3 +15,14 @@
     antagPrototype: SSF
     roleType: TeamAntagonist
     subtype: role-subtype-revolutionary
+
+# Vampire
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleVampire
+  name: Vampire Role
+  components:
+  - type: MindRole
+    antagPrototype: 
+    roleType: SoloAntagonist
+  - type: VampireRole

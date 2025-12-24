@@ -19,6 +19,12 @@ public sealed partial class DantalionComponent : Component
 	public HashSet<EntityUid> Thralls = new();
 
 	/// <summary>
+	///     Total thrall slots consumed. Does not decrease when thralls are lost.
+	/// </summary>
+	[ViewVariables(VVAccess.ReadOnly)]
+	public int ThrallSlotsUsed = 0;
+
+	/// <summary>
 	///     Whether Blood Bond is currently active
 	/// </summary>
 	[ViewVariables(VVAccess.ReadOnly)]

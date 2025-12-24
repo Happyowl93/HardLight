@@ -194,3 +194,22 @@
     title: objective-condition-drain-title
     description: objective-condition-drain-description
   - type: BloodDrainCondition
+
+# Thrall
+
+- type: entity
+  parent: BaseObjective
+  id: VampireThrallObeyMasterObjective
+  name: objective-vampire-thrall-obey-master-name
+  description: objective-vampire-thrall-obey-master-desc
+  components:
+  - type: Objective
+    issuer: objective-issuer-vampire
+    difficulty: 0.1
+    unique: false
+    icon:
+      sprite: _Starlight/Interface/Actions/actions_vampire.rsi
+      state: bg_vampire
+  - type: FreeObjective
+  - type: TargetObjective
+    title: objective-vampire-thrall-obey-master-title

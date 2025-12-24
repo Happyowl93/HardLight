@@ -10,7 +10,6 @@
       drawdepth: Effects
     - type: TimedDespawn
       lifetime: 1.05
-    - type: Clickable
     - type: Physics
       canCollide: false
     - type: Transform
@@ -115,7 +114,6 @@
     - type: Tag
       tags:
         - Wall
-        - VampireBarrier
 
 - type: entity
   id: VampireBloodEruptionVisual

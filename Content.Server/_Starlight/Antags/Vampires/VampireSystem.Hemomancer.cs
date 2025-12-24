@@ -3,7 +3,6 @@ using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Wieldable.Components;
-using Content.Shared.Damage;
 using Content.Shared.Humanoid;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -22,6 +21,8 @@ namespace Content.Server._Starlight.Antags.Vampires;
 
 public sealed partial class VampireSystem : EntitySystem
 {
+    private const string BloodReagentId = "Blood";
+
     private void InitializeHemomancer()
     {
         SubscribeLocalEvent<VampireComponent, VampireHemomancerClawsActionEvent>(OnHemomancerClaws);
@@ -96,8 +97,15 @@ public sealed partial class VampireSystem : EntitySystem
         var targetCoords = args.Target;
         var tileCoords = targetCoords.WithPosition(targetCoords.Position.Floored() + new Vector2(args.PositionOffset, args.PositionOffset));
 
-        if (!ValidateTendrilTarget(tileCoords, args.Performer))
+        if (_transform.GetGrid(tileCoords) is not { } gridUid
+            || !TryComp<MapGridComponent>(gridUid, out var gridComp)
+            || !_map.TryGetTileRef(gridUid, gridComp, tileCoords, out var tileRef)
+            || _turf.IsSpace(tileRef)
+            || IsTileBlockedByEntities(tileCoords))
+        {
+            _popup.PopupEntity(Loc.GetString("action-vampire-hemomancer-tendrils-wrong-place"), args.Performer, args.Performer);
             return;
+        }
 
         if (!CheckAndConsumeActionCost(args.Performer, comp, action))
             return;
@@ -107,19 +115,53 @@ public sealed partial class VampireSystem : EntitySystem
         if (args.SpawnVisuals)
             SpawnTendrilVisuals(tileCoords, args.TendrilsVisualPrototype);
 
-        ScheduleTendrilEffect(args, tileCoords);
-    }
+        var delaySeconds = Math.Max(args.MinDelay, args.Delay);
+        var slowDurationSeconds = Math.Max(args.MinSlowDuration, args.SlowDuration);
+        var slowMultiplier = MathF.Max(args.MinSlowMultiplier, args.SlowMultiplier);
+        var toxinDamage = args.ToxinDamage;
+        var performerUid = args.Performer;
+        var targetRange = args.TargetRange;
+        var puddleId = args.TendrilsPuddlePrototype;
 
-    private bool ValidateTendrilTarget(EntityCoordinates tileCoords, EntityUid performer)
-    {
-        if (_transform.GetGrid(tileCoords) is not { } gridUid ||
-            !TryComp<MapGridComponent>(gridUid, out var gridComp) ||
-            !IsValidTile(tileCoords, gridUid, gridComp))
+        Timer.Spawn(TimeSpan.FromSeconds(delaySeconds), () =>
         {
-            _popup.PopupEntity(Loc.GetString("action-vampire-hemomancer-tendrils-wrong-place"), performer, performer);
-            return false;
-        }
-        return true;
+            if (!Exists(performerUid))
+                return;
+
+            var gridUid2 = _transform.GetGrid(tileCoords);
+            if (gridUid2 == null || !TryComp<MapGridComponent>(gridUid2.Value, out var gridComp2))
+                return;
+
+            if (_map.TryGetTileRef(gridUid2.Value, gridComp2, tileCoords, out var centerTileRef)
+                && !_turf.IsSpace(centerTileRef)
+                && !IsTileBlockedByEntities(tileCoords))
+                Spawn(puddleId, tileCoords);
+
+            var hitEnemies = new HashSet<EntityUid>();
+            var slowDuration = TimeSpan.FromSeconds(slowDurationSeconds);
+
+            foreach (var offset in _tendrilOffsets)
+            {
+                var center = tileCoords.Offset(offset);
+                if (!_map.TryGetTileRef(gridUid2.Value, gridComp2, center, out var tileRef2)
+                    || _turf.IsSpace(tileRef2)
+                    || IsTileBlockedByEntities(center))
+                    continue;
+
+                foreach (var ent in _lookup.GetEntitiesInRange(center, targetRange, LookupFlags.Dynamic | LookupFlags.Sundries))
+                {
+                    if (ent == performerUid || hitEnemies.Contains(ent) || !HasComp<HumanoidAppearanceComponent>(ent))
+                        continue;
+
+                    if (!TryComp<DamageableComponent>(ent, out var _))
+                        continue;
+
+                    ApplyDamage(ent, _poisonTypeId, toxinDamage, performerUid);
+                    _movementMod.TryAddMovementSpeedModDuration(ent, Shared.Movement.Systems.MovementModStatusSystem.FlashSlowdown, slowDuration, slowMultiplier);
+                    hitEnemies.Add(ent);
+                }
+            }
+        });
     }
 
     private void SpawnTendrilVisuals(EntityCoordinates tileCoords, EntProtoId tendrilVisualId)
@@ -131,86 +173,12 @@ public sealed partial class VampireSystem : EntitySystem
         foreach (var offset in _tendrilOffsets)
         {
             var coords = tileCoords.Offset(offset);
-            if (IsValidTile(coords, gridUid.Value, gridComp))
+            if (!_map.TryGetTileRef(gridUid.Value, gridComp, coords, out var tileRef)
+                || _turf.IsSpace(tileRef)
+                || IsTileBlockedByEntities(coords))
+                continue;
+
                 EntityManager.SpawnEntity(tendrilVisualId, coords);
-        }
-    }
-
-    private void ScheduleTendrilEffect(VampireHemomancerTendrilsActionEvent args, EntityCoordinates tileCoords)
-    {
-        var delay = TimeSpan.FromSeconds(Math.Max(args.MinDelay, args.Delay));
-        var slowDuration = TimeSpan.FromSeconds(Math.Max(args.MinSlowDuration, args.SlowDuration));
-        var slowMultiplier = MathF.Max(args.MinSlowMultiplier, args.SlowMultiplier);
-        var toxinDamage = args.ToxinDamage;
-        var performerUid = args.Performer;
-
-        var tendrilVisualId = args.TendrilsVisualPrototype;
-        var puddleId = args.TendrilsPuddlePrototype;
-
-        Timer.Spawn(delay, () => ExecuteTendrilEffect(performerUid, tileCoords, toxinDamage, slowDuration, slowMultiplier, args.VisualSpawnDelay, args.TargetRange, args.PositionOffset, tendrilVisualId, puddleId));
-    }
-
-    private void ExecuteTendrilEffect(EntityUid performerUid, EntityCoordinates targetCoords,
-        float toxinDamage, TimeSpan slowDuration, float slowMultiplier, float spawnDelay, float targetRange, float positionOffset, EntProtoId tendrilVisualId, EntProtoId puddleId)
-    {
-        if (!Exists(performerUid))
-            return;
-
-        var gridUid = _transform.GetGrid(targetCoords);
-        if (gridUid == null || !TryComp<MapGridComponent>(gridUid.Value, out var gridComp))
-            return;
-
-        // Spawn blood puddle at center
-        if (IsValidTile(targetCoords, gridUid.Value, gridComp))
-            Spawn(puddleId, targetCoords);
-
-        // Process damage and effects
-        var hitEnemies = ProcessTendrilDamage(performerUid, targetCoords, gridUid.Value, gridComp, toxinDamage, slowDuration, slowMultiplier, targetRange);
-
-        // Schedule visual effects for hit enemies
-        if (hitEnemies.Count > 0)
-            Timer.Spawn(TimeSpan.FromSeconds(spawnDelay), () => SpawnTendrilEffectsOnEnemies(hitEnemies, gridUid.Value, gridComp, positionOffset, tendrilVisualId, puddleId));
-    }
-
-    private List<EntityUid> ProcessTendrilDamage(EntityUid performerUid, EntityCoordinates targetCoords, EntityUid gridUid,
-        MapGridComponent gridComp, float toxinDamage, TimeSpan slowDuration, float slowMultiplier, float targetRange)
-    {
-        var hitEnemies = new HashSet<EntityUid>();
-
-        foreach (var offset in _tendrilOffsets)
-        {
-            var center = targetCoords.Offset(offset);
-            if (!IsValidTile(center, gridUid, gridComp))
-                continue;
-
-            foreach (var ent in _lookup.GetEntitiesInRange(center, targetRange, LookupFlags.Dynamic | LookupFlags.Sundries))
-            {
-                if (ent == performerUid || !HasComp<HumanoidAppearanceComponent>(ent) ||
-                    !TryComp<DamageableComponent>(ent, out var _) || hitEnemies.Contains(ent))
-                    continue;
-
-                ApplyDamage(ent, _poisonTypeId, toxinDamage, performerUid);
-                _movementMod.TryAddMovementSpeedModDuration(ent, Shared.Movement.Systems.MovementModStatusSystem.FlashSlowdown, slowDuration, slowMultiplier);
-                hitEnemies.Add(ent);
-            }
-        }
-
-        return hitEnemies.ToList();
-    }
-
-    private void SpawnTendrilEffectsOnEnemies(List<EntityUid> hitEnemies, EntityUid gridUid, MapGridComponent gridComp, float positionOffset, EntProtoId tendrilVisualId, EntProtoId puddleId)
-    {
-        foreach (var enemy in hitEnemies)
-        {
-            if (!Exists(enemy))
-                continue;
-
-            var enemyCoords = Transform(enemy).Coordinates;
-            EntityManager.SpawnEntity(tendrilVisualId, enemyCoords);
-
-            var enemyTileCoords = enemyCoords.WithPosition(enemyCoords.Position.Floored() + new Vector2(positionOffset, positionOffset));
-            if (IsValidTile(enemyTileCoords, gridUid, gridComp))
-                Spawn(puddleId, enemyTileCoords);
         }
     }
 
@@ -298,11 +266,11 @@ public sealed partial class VampireSystem : EntitySystem
         if (!CheckAndConsumeBloodCost(uid, comp, args.Action.Owner))
             return;
 
-        if (TryActivateSanguinePool(uid, hemomancer, args))
+        if (TryActivateSanguinePool(uid, args))
             args.Handled = true;
     }
 
-    private bool TryActivateSanguinePool(EntityUid uid, HemomancerComponent hemomancer, VampireSanguinePoolActionEvent args)
+    private bool TryActivateSanguinePool(EntityUid uid, VampireSanguinePoolActionEvent args)
     {
         if (!_proto.TryIndex(args.PolymorphPrototype, out var polymorphProto))
         {
@@ -444,7 +412,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (!_solution.TryGetSolution(uid, puddle.SolutionName, out _, out var solution))
             return false;
 
-        return solution.ContainsReagent("Blood", null);
+        return solution.ContainsReagent(BloodReagentId, null);
     }
 
     private void OnBloodBringersRite(EntityUid uid, VampireComponent comp, ref VampireBloodBringersRiteActionEvent args)

@@ -41,9 +41,8 @@ public sealed class VampireRuleTest
         var mindSys = server.System<MindSystem>();
         var roleSys = server.System<RoleSystem>();
         var ruleSys = server.System<VampireRuleSystem>();
-        // var prefMan = server.ResolveDependency<IServerPreferencesManager>();
         
-        var minPlayers = 2;
+        var minPlayers = 1;
         await server.WaitAssertion(() =>
         {
             Assert.That(protoMan.TryIndex<EntityPrototype>(VampireGameRuleProtoId, out var gameRuleEntProto),
@@ -62,15 +61,6 @@ public sealed class VampireRuleTest
 
         Assert.That(pair.Player?.AttachedEntity, Is.Null);
         Assert.That(dummies.All(x => x.AttachedEntity == null));
-
-        // // Vampire antag selection disallows non-humans. Integration tests can spawn with a non-human species (e.g. Avali),
-        // // so force the main test player character to be Human to make them eligible.
-        // await server.WaitPost(() =>
-        // {
-        //     var profile = prefMan.GetPreferences(pair.Player!.UserId).Characters[0] as HumanoidCharacterProfile;
-        //     prefMan.SetProfile(pair.Player!.UserId, 0, profile!.WithSpecies("Human")).Wait();
-        // });
-
         await pair.SetAntagPreferences([VampireAntagRoleName]);
 
         EntityUid gameRuleEnt = default;
@@ -106,8 +96,6 @@ public sealed class VampireRuleTest
             "Vampire should start without a chosen class");
         Assert.That(vampComp.TotalBlood, Is.EqualTo(0), 
             "Vampire should start with 0 blood");
-        Assert.That(vampComp.BloodFullness, Is.EqualTo(0f), 
-            "Vampire should start with 0 blood fullness");
 
         Assert.That(ruleComp.VampireMinds.Count, Is.EqualTo(1), 
             "Expected exactly 1 vampire to be selected when only 1 player opts in");

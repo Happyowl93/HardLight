@@ -11,7 +11,6 @@ namespace Content.Client._Starlight.Antags.Vampires;
 public sealed class VampireShadowBoxingSystem : EntitySystem
 {
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
     private record struct ActivePunch(EntityUid Entity, EntityUid Source, EntityUid Target, TimeSpan SpawnTime, TimeSpan LifeTime);

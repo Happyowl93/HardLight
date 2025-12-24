@@ -7,6 +7,7 @@ using Content.Shared.Actions;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Ensnaring.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Pulling.Events;
@@ -193,8 +194,10 @@ public sealed partial class VampireSystem : EntitySystem
         static bool IsBurn(string id)
             => id is "Heat" or "Cold" or "Shock" or "Caustic";
 
-        foreach (var (type, value) in args.Damage.DamageDict.ToArray())
+        foreach (var entry in args.Damage.DamageDict.ToArray())
         {
+            var type = entry.Key;
+            var value = entry.Value;
             if (value <= 0)
                 continue;
 
@@ -528,6 +531,13 @@ public sealed partial class VampireSystem : EntitySystem
         if (args.Handled)
             return;
 
+        if (!comp.FullPower)
+        {
+            _popup.PopupEntity(Loc.GetString("action-vampire-not-enough-power"), uid, uid);
+            args.Handled = true;
+            return;
+        }
+        
         var gargantua = EnsureComp<GargantuaComponent>(uid);
 
         if (gargantua.IsCharging)

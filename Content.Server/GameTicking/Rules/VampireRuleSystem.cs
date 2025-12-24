@@ -1,4 +1,5 @@
 using Content.Server.Antag;
+using Content.Server.Bible.Components;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Objectives;
@@ -31,6 +32,13 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
     {
         if (!_mind.TryGetMind(target, out var mindId, out var mind))
             return false;
+
+        // Roundstart chaplains shouldnt be vampires.
+        if (HasComp<BibleUserComponent>(target))
+        {
+            _role.MindRemoveRole((mindId, mind), "MindRoleVampire");
+            return false;
+        }
 
         if (TryComp(target, out MetaDataComponent? meta))
         {

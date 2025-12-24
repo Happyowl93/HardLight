@@ -10,7 +10,7 @@ using Robust.Shared.Timing;
 using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using System.Numerics;
@@ -18,6 +18,7 @@ using Content.Shared.Physics;
 using Content.Server.Light.EntitySystems;
 using Content.Server.Temperature.Systems;
 using Content.Shared.Light.Components;
+using Content.Shared.Temperature.Components;
 using Robust.Shared.Audio;
 
 namespace Content.Server._Starlight.Antags.Vampires;
@@ -426,7 +427,7 @@ public sealed partial class VampireSystem : EntitySystem
             if (ent == uid || !HasComp<HumanoidAppearanceComponent>(ent) || HasComp<VampireComponent>(ent))
                 continue;
 
-            if (!TryComp<Temperature.Components.TemperatureComponent>(ent, out var temp))
+            if (!TryComp<TemperatureComponent>(ent, out var temp))
                 continue;
 
             var targetXform = Transform(ent);

@@ -175,8 +175,7 @@ public sealed class HysteriaVisionOverlay : Robust.Client.Graphics.Overlay
                 continue;
 
             // Calculate the draw box centered on the entity
-            // Offset Y up slightly to center on humanoid body
-            var drawPos = worldPos + new Vector2(0f, 0.1f);
+            var drawPos = worldPos;
             
             var box = Box2.CenteredAround(drawPos, size);
 

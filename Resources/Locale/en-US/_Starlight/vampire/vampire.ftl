@@ -38,8 +38,14 @@ vampire-role-greeting = You are a vampire!
     Find something to accomplish during this shift!
 
 # Objectives
+objective-issuer-vampire = [color=crimson]Vampire[/color]
+
 objective-condition-drain-title = Drain {$count} units of blood
 objective-condition-drain-description = Drink {$count} units of blood from crew members using your fangs.
+
+objective-vampire-thrall-obey-master-title = Obey your master, {$targetName}.
+objective-vampire-thrall-obey-master-name = Obey your master
+objective-vampire-thrall-obey-master-desc = You are enthralled. Follow your master's commands.
 
 # Class selection action
 action-vampire-class-select = Select vampire class
@@ -231,3 +237,5 @@ alerts-vampire-blood-rush-name = Blood Rush
 alerts-vampire-blood-rush-desc = Blood Rush is speeding you up.
 
 vampire-blood-swell-cancel-shoot = Your fingers don`t fit in the trigger guard!!
+
+vampire-holy-place-burn = The sacred ground sears your unholy flesh!

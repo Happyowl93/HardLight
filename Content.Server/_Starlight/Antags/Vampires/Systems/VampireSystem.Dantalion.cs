@@ -4,7 +4,6 @@ using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Content.Shared.Bed.Sleep;
-using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.DoAfter;
@@ -18,11 +17,14 @@ using Content.Shared.Stunnable;
 using Robust.Shared.Timing;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.CollectiveMind;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
 public sealed partial class VampireSystem : EntitySystem
 {
+    private const string ThrallObeyMasterObjectiveId = "VampireThrallObeyMasterObjective";
+
     private void InitializeDantalion()
     {
         SubscribeLocalEvent<VampireComponent, VampireEnthrallActionEvent>(OnEnthrall);
@@ -120,6 +122,9 @@ public sealed partial class VampireSystem : EntitySystem
         Dirty(target, thrallComp);
 
         dantalion.Thralls.Add(target);
+        dantalion.ThrallSlotsUsed++;
+
+        TryAssignThrallObeyObjective(uid, target);
 
         if (TryComp<CollectiveMindComponent>(target, out var cmComp))
             _collectiveMind.UpdateCollectiveMind(target, cmComp);
@@ -127,6 +132,22 @@ public sealed partial class VampireSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString("vampire-enthrall-success", ("target", Identity.Entity(target, EntityManager))), uid, uid);
         _popup.PopupEntity(Loc.GetString("vampire-enthrall-target"), target, target, PopupType.Medium);
         args.Handled = true;
+    }
+
+    private void TryAssignThrallObeyObjective(EntityUid master, EntityUid thrall)
+    {
+        if (!_mind.TryGetMind(thrall, out var thrallMindId, out var thrallMind))
+            return;
+
+        if (!_mind.TryGetMind(master, out var masterMindId, out _))
+            return;
+
+        var objective = _objectives.TryCreateObjective(thrallMindId, thrallMind, ThrallObeyMasterObjectiveId);
+        if (objective == null)
+            return;
+
+        _targetObjectives.SetTarget(objective.Value, masterMindId);
+        _mind.AddObjective(thrallMindId, thrallMind, objective.Value);
     }
     private void OnThrallShutdown(EntityUid uid, VampireThrallComponent component, ComponentShutdown args)
     {
@@ -207,7 +228,7 @@ public sealed partial class VampireSystem : EntitySystem
     }
 
     private bool HasThrallCapacity(VampireComponent comp, DantalionComponent dantalion)
-        => dantalion.Thralls.Count < GetThrallLimit(comp, dantalion);
+        => dantalion.ThrallSlotsUsed < GetThrallLimit(comp, dantalion);
 
     private int GetThrallLimit(VampireComponent comp, DantalionComponent dantalion)
     {
@@ -433,6 +454,10 @@ public sealed partial class VampireSystem : EntitySystem
             if (HasComp<StunnedComponent>(thrall))
                 RemComp<StunnedComponent>(thrall);
 
+            _statusEffects.TryRemoveStatusEffect(thrall, SharedStunSystem.StunId);
+            _stun.TryUnstun(thrall);
+            RemComp<KnockedDownComponent>(thrall);
+
             // Remove sleep
             if (HasComp<SleepingComponent>(thrall))
                 RemComp<SleepingComponent>(thrall);
@@ -440,7 +465,13 @@ public sealed partial class VampireSystem : EntitySystem
             // Restore stamina
             if (TryComp<StaminaComponent>(thrall, out var stamina))
             {
-                _stamina.TakeStaminaDamage(thrall, -stamina.StaminaDamage, stamina);
+                stamina.StaminaDamage = 0f;
+                _stamina.ExitStamCrit(thrall, stamina);
+                _stamina.AdjustStatus((thrall, stamina));
+                RemComp<ActiveStaminaComponent>(thrall);
+                _statusEffects.TryRemoveStatusEffect(thrall, SharedStaminaSystem.StaminaLow);
+                _stamina.UpdateStaminaVisuals((thrall, stamina));
+                Dirty(thrall, stamina);
             }
             
             var rallyEffect = EntityManager.SpawnEntity(dantalion.rallyOverlayEffect, Transform(thrall).Coordinates);

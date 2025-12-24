@@ -80,7 +80,7 @@
     - type: InstantAction
       event: !type:VampireRejuvenateIIActionEvent {}
     - type: VampireAction
-      bloodToUnlock: 0
+      bloodToUnlock: 200
       bloodCost: 0
 
 - type: entity
@@ -469,7 +469,7 @@
       event: !type:VampirePacifyActionEvent
     - type: VampireAction
       bloodToUnlock: 250
-      bloodCost: 10
+      bloodCost: 30
       requiredClass: Dantalion
 
 - type: entity

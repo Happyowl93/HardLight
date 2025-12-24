@@ -2,8 +2,8 @@
   id: Vampire
   name: roles-antag-vamire-name
   antagonist: true
-  setPreference: false # 🌟Starlight🌟 - disabled until reworked
+  setPreference: True # 🌟Starlight🌟
   objective: roles-antag-vampire-description
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 10800 # 3h
+    time: 72000 # 20h

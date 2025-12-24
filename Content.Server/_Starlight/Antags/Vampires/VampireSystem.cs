@@ -2,6 +2,7 @@ using Content.Server.Actions;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Systems;
 using Content.Server.Objectives.Components;
+using Content.Server.Objectives;
 using Content.Server.Objectives.Systems;
 using Content.Server.Polymorph.Systems;
 using Content.Shared._Starlight.Antags.Vampires;
@@ -10,6 +11,7 @@ using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Content.Shared.Alert;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
@@ -18,6 +20,7 @@ using Content.Shared.Ensnaring;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Maps;
+using Content.Shared.Mind;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
@@ -29,6 +32,7 @@ using Content.Shared.Stealth;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using Content.Shared.Wieldable;
+using Content.Shared.Prayer;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Map.Components;
@@ -56,6 +60,9 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
     [Dependency] private readonly NumberObjectiveSystem _number = default!;
+    [Dependency] private readonly ObjectivesSystem _objectives = default!;
+    [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly TargetObjectiveSystem _targetObjectives = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedWieldableSystem _wieldable = default!;
     [Dependency] private readonly MovementModStatusSystem _movementMod = default!;
@@ -127,6 +134,8 @@ public sealed partial class VampireSystem : EntitySystem
             TryGrantClassAbilities(uid, comp);
             HandleClassSelection(uid, comp);
             EnsureRejuvenateUpgrade(uid, comp);
+            HandleHolyWater(uid, comp);
+            HandleHolyPlace(uid, comp);
         }
 
         var sunlightQuery = EntityQueryEnumerator<VampireSunlightComponent, TransformComponent>();
@@ -236,6 +245,7 @@ public sealed partial class VampireSystem : EntitySystem
         _damageableSystem.TryChangeDamage(uid, spec, true);
 
         if (!TryComp(uid, out DamageableComponent? damageable) ||
+            damageable == null ||
             !damageable.DamagePerGroup.TryGetValue(_geneticGroupId, out var geneticDamage))
         {
             return true;
@@ -508,11 +518,8 @@ public sealed partial class VampireSystem : EntitySystem
         var rejuvenateI = comp.RejuvenateActions[0];
         var rejuvenateII = comp.RejuvenateActions[1];
 
-        if (comp.ActionEntities.TryGetValue(rejuvenateII, out var actionEntity)
-            && TryComp<VampireActionComponent>(actionEntity, out var rejuvII)
-            && comp.TotalBlood < rejuvII.BloodToUnlock)
-            return;
-        else if (comp.TotalBlood < comp.RejuvenateIIThreshold)
+        var unlockThreshold = GetActionBloodThreshold(rejuvenateII);
+        if (comp.TotalBlood < unlockThreshold)
             return;
 
         if (!comp.ActionEntities.ContainsKey(rejuvenateII))
@@ -531,6 +538,117 @@ public sealed partial class VampireSystem : EntitySystem
         }
 
         Dirty(uid, comp);
+    }
+
+    private void HandleHolyWater(EntityUid uid, VampireComponent comp)
+    {
+        if (comp.UniqueHumanoidVictims < 1)
+            return;
+
+        if (_timing.CurTime < comp.NextHolyWaterTick)
+            return;
+
+        var holywater = _solution.GetTotalPrototypeQuantity(uid, comp.HolyWaterReagentId);
+        if (holywater <= FixedPoint2.Zero)
+            return;
+
+        if (TryComp(uid, out MobStateComponent? mobState) && mobState.CurrentState == Shared.Mobs.MobState.Dead)
+            return;
+
+        comp.NextHolyWaterTick = _timing.CurTime + comp.HolyTickDelay;
+
+        if (comp.DrunkBlood > 0)
+        {
+            comp.DrunkBlood = Math.Max(0, comp.DrunkBlood - 3);
+            Dirty(uid, comp);
+
+            ApplyGroupDamage(uid, _bruteGroupId, 3f);
+
+            if (TryComp(uid, out StaminaComponent? stamina))
+                _stamina.TakeStaminaDamage(uid, 5f, stamina);
+
+            return;
+        }
+
+        ApplyGroupDamage(uid, _burnGroupId, 2f);
+        if (_rand.Prob(0.25f))
+            _flammable.AdjustFireStacks(uid, 2f, ignite: true);
+    }
+
+    private void HandleHolyPlace(EntityUid uid, VampireComponent comp)
+    {
+        if (comp.UniqueHumanoidVictims < 1)
+            return;
+
+        if (_timing.CurTime < comp.NextHolyPlaceTick)
+            return;
+
+        if (!IsInHolyPlace(uid, comp))
+            return;
+
+        if (TryComp(uid, out MobStateComponent? mobState) && mobState.CurrentState == Shared.Mobs.MobState.Dead)
+            return;
+
+        comp.NextHolyPlaceTick = _timing.CurTime + comp.HolyTickDelay;
+
+        if (_timing.CurTime >= comp.NextHolyPlacePopup)
+        {
+            _popup.PopupEntity(Loc.GetString("vampire-holy-place-burn"), uid, uid, PopupType.MediumCaution);
+            comp.NextHolyPlacePopup = _timing.CurTime + TimeSpan.FromSeconds(5);
+        }
+
+        var health = GetApproximateHealth(uid);
+        if (health <= 50f)
+        {
+            _flammable.AdjustFireStacks(uid, 3f, ignite: true);
+            return;
+        }
+
+        ApplyDamage(uid, "Heat", 3f);
+    }
+
+    private bool IsInHolyPlace(EntityUid uid, VampireComponent comp)
+    {
+        if (_container.IsEntityInContainer(uid))
+            return false;
+
+        var coords = Transform(uid).Coordinates;
+        foreach (var ent in _lookup.GetEntitiesInRange(coords, comp.HolyPlaceRange, LookupFlags.Static | LookupFlags.Dynamic | LookupFlags.Sundries))
+        {
+            if (ent == uid)
+                continue;
+
+            if (HasComp<PrayableComponent>(ent))
+                return true;
+        }
+
+        return false;
+    }
+
+    private float GetApproximateHealth(EntityUid uid)
+    {
+        if (!TryComp(uid, out DamageableComponent? damageable))
+            return 100f;
+
+        if (!_mobThreshold.TryGetDeadThreshold(uid, out var deadThreshold, CompOrNull<MobThresholdsComponent>(uid))
+            || deadThreshold == null
+            || deadThreshold.Value == FixedPoint2.Zero)
+        {
+            return 100f - damageable.TotalDamage.Float();
+        }
+
+        return deadThreshold.Value.Float() - damageable.TotalDamage.Float();
+    }
+
+    private void ApplyGroupDamage(EntityUid uid, ProtoId<DamageGroupPrototype> groupId, float amount)
+    {
+        var group = GetCachedDamageGroup(groupId);
+        if (group == null)
+            return;
+
+        var spec = new DamageSpecifier();
+        spec += new DamageSpecifier(group, FixedPoint2.New(amount));
+        _damageableSystem.TryChangeDamage(uid, spec, true);
     }
 
     private void OpenClassUi(EntityUid uid, VampireComponent comp)

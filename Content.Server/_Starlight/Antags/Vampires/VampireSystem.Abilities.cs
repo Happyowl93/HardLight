@@ -549,8 +549,10 @@ public sealed partial class VampireSystem : EntitySystem
             _stamina.UpdateStaminaVisuals((uid, stamina));
             Dirty(uid, stamina);
         }
+
+        _statusEffects.TryRemoveStatusEffect(uid, SharedStunSystem.StunId);
         _stun.TryUnstun(uid);
-        _stun.ForceStandUp(uid);
+        RemComp<KnockedDownComponent>(uid);
 
         args.Handled = true;
     }
@@ -572,8 +574,10 @@ public sealed partial class VampireSystem : EntitySystem
             _stamina.UpdateStaminaVisuals((uid, stamina));
             Dirty(uid, stamina);
         }
+
+        _statusEffects.TryRemoveStatusEffect(uid, SharedStunSystem.StunId);
         _stun.TryUnstun(uid);
-        _stun.ForceStandUp(uid);
+        RemComp<KnockedDownComponent>(uid);
 
         // Purge 10u of harmful reagents
         FixedPoint2 MaxRemove = FixedPoint2.New(10);

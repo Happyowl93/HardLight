@@ -163,7 +163,7 @@ public sealed partial class VampireSystem
         var warps = AllEntityQuery<WarpPointComponent, TransformComponent>();
         while (warps.MoveNext(out var warpUid, out var warp, out var warpXform))
         {
-            if (_whitelist.IsBlacklistPass(warp.Blacklist, warpUid))
+            if (_whitelist.IsWhitelistPass(warp.Blacklist, warpUid))
                 continue;
 
             if (string.IsNullOrWhiteSpace(warp.Location))
