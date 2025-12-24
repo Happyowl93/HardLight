@@ -15,27 +15,27 @@
 
   ## Toolkit (Total Blood Threshold | Cost)
 
-  [bold]150 | 30[/bold] Blood Swell
+  [bold](150 | 30)[/bold] Blood Swell
    Temporarily reduces incoming damage and shortens stun durations.
    Limitation: you cannot use guns while it is active.
    After 400 total blood, it also adds extra melee damage.
 
-  [bold]250 | 30[/bold] Blood Rush
+  [bold](250 | 30)[/bold] Blood Rush
    A short speed spike: chase, escape, or crash into a formation.
 
-  [bold]250 | 30[/bold] Seismic Stomp
+  [bold](250 | 30)[/bold] Seismic Stomp
    Slam the ground: knocks down and throws nearby creatures; can break floor tiles.
    Great for creating chaos and resetting distance.
 
-  [bold]600 | 0[/bold] Overwhelming Force (toggle)
+  [bold](600 | 0)[/bold] Overwhelming Force (toggle)
    Automatically pries unpowered doors.
    While active, you can't be pushed or pulled.
    Cost is blood per door (~5).
 
-  [bold]800 | 20[/bold] Demonic Grasp
+  [bold](800 | 20)[/bold] Demonic Grasp
    A ranged “hand” up to 15 tiles: immobilizes the target and can pull them to you in combat mode.
 
-  [bold]1000 | 30[/bold] Charge
+  [bold](1000 | 30)[/bold] Charge
    A charge to break through and finish targets.
 
 </Document>

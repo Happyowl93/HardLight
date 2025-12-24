@@ -20,6 +20,7 @@ using Content.Server.Temperature.Systems;
 using Content.Shared.Light.Components;
 using Content.Shared.Temperature.Components;
 using Robust.Shared.Audio;
+using Robust.Shared.Containers;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -193,7 +194,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         Timer.Spawn(_shadowSnareBlindDuration, () => TryClearShadowSnareBlind(ent));
 
-        var ensnareEnt = EntityManager.SpawnEntity(null, Transform(ent).Coordinates);
+        var ensnareEnt = EntityManager.SpawnEntity("VampireShadowSnareEnsnare", Transform(ent).Coordinates);
         _metaData.SetEntityName(ensnareEnt, Loc.GetString("ent-shadow-snare-ensnare"));
         var ensnaringComponent = EnsureComp<EnsnaringComponent>(ensnareEnt);
         var marker = EnsureComp<ShadowSnareEnsnareComponent>(ensnareEnt);
@@ -205,8 +206,10 @@ public sealed partial class VampireSystem : EntitySystem
         ensnaringComponent.SprintSpeed = comp.SprintSpeedMultiplier;
         ensnaringComponent.MaxEnsnares = comp.MaxEnsnares;
         ensnaringComponent.CanMoveBreakout = comp.CanMoveBreakout;
+        ensnaringComponent.StaminaDamage = 0f;
 
-        EnsureComp<EnsnareableComponent>(ent);
+        var ensnareable = EnsureComp<EnsnareableComponent>(ent);
+        ensnareable.Container = _container.EnsureContainer<Container>(ent, "ensnare");
 
         if (_ensnare.TryEnsnare(ent, ensnareEnt, ensnaringComponent))
             Timer.Spawn(TimeSpan.FromSeconds(0.25f), () => ShadowSnareBlindPoll(ent));

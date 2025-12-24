@@ -213,6 +213,24 @@
       canMoveBreakout: true
 
 - type: entity
+  id: VampireShadowSnareEnsnare
+  name: shadow snare
+  categories: [HideSpawnMenu]
+  components:
+    - type: Transform
+      noRot: true
+    - type: Physics
+      canCollide: false
+    - type: Ensnaring
+      freeTime: 3.5
+      breakoutTime: 5
+      walkSpeed: 0.5
+      sprintSpeed: 0.5
+      staminaDamage: 0
+      canMoveBreakout: true
+      maxEnsnares: 1
+
+- type: entity
   id: VampireDarkPassageMistIn
   categories: [HideSpawnMenu]
   components:
