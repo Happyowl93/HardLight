@@ -144,7 +144,13 @@
     - RubberStampCRD
     - RubberStampCCD
     - RubberStampCSD
-    - RubberStampCDD #starlight end
+    - RubberStampCDD 
+    - RubberStampAcknowledged
+    - RubberStampMissingStamps
+    - RubberStampIncorrectForm
+    - RubberStampSentToATS
+    - RubberStampDeferToCommand
+    - RubberStampStandby #starlight end
 
 #Gladiator with spear
 - type: startingGear
