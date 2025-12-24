@@ -200,8 +200,8 @@
 - type: entity
   parent: BaseObjective
   id: VampireThrallObeyMasterObjective
-  name: objective-vampire-thrall-obey-master-name
-  description: objective-vampire-thrall-obey-master-desc
+  name:  Obey your master
+  description: You are enthralled. Follow your master's commands.
   components:
   - type: Objective
     issuer: objective-issuer-vampire

@@ -3,8 +3,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireToggleFangs
-  name: action-vampire-toggle-fangs-name
-  description: action-vampire-toggle-fangs-desc
+  name: Toggle Fangs(Toggle)
+  description: Extend or retract your fangs to drink blood from victims.
   components:
     - type: Action
       useDelay: 2 # Toggle
@@ -25,8 +25,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireGlare
-  name: action-vampire-glare-name
-  description: action-vampire-glare-desc
+  name: Glare(Free)
+  description: Paralyze and mute nearby targets, dealing stamina damage over time.
   components:
     - type: Action
       useDelay: 90
@@ -44,8 +44,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireRejuvenateI
-  name: action-vampire-rejuvenate-i-name
-  description: action-vampire-rejuvenate-i-desc
+  name: Rejuvenate(Free)
+  description: Instantly remove stuns and recover 100 stamina damage.
   components:
     - type: Action
       useDelay: 35
@@ -65,8 +65,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireRejuvenateII
-  name: action-vampire-rejuvenate-ii-name
-  description: action-vampire-rejuvenate-ii-desc
+  name: Rejuvenate(Free)
+  description: Instantly remove stuns and recover 100 stamina, plus purge harmful reagents (10u) and heal 20 brute, 20 burn, 20 toxin, and 30 oxy loss.
   components:
     - type: Action
       useDelay: 30
@@ -86,8 +86,8 @@
 - type: entity
   parent: BaseAction
   id: ActionClassSelectId
-  name: action-vampire-class-select-name
-  description: action-vampire-class-select-desc
+  name: Choose Vampire Class
+  description: Choose your vampire subclass
   components:
     - type: Action
       useDelay: 2 # Toggle
@@ -194,8 +194,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampirePredatorSense
-  name: action-vampire-predator-sense-name
-  description: action-vampire-predator-sense-desc
+  name: Predator Sense
+  description: Hunt down your prey, there's nowhere to hide...
   components:
     - type: Action
       useDelay: 40
@@ -214,8 +214,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireBloodEruption
-  name: action-vampire-blood-eruption-name
-  description: action-vampire-blood-eruption-desc
+  name: Blood Eruption(100)
+  description: Cause any blood within 4 tiles of you to erupt, dealing 50 brute damage to anyone standing on it.
   components:
     - type: Action
       useDelay: 90
@@ -234,8 +234,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireBloodBringersRite
-  name: action-vampire-blood-bringers-rite-name
-  description: action-vampire-blood-bringers-rite-desc
+  name: Blood Bringers Rite(Toggle)
+  description: When toggled, everyone around you begins to bleed profusely. You will drain their blood and rejuvenate yourself with it.
   components:
     - type: Action
       useDelay: 1 # Toggle
@@ -255,8 +255,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireCloakOfDarkness
-  name: action-vampire-cloak-of-darkness-name
-  description: action-vampire-cloak-of-darkness-desc
+  name: Cloak of Darkness(Toggle)
+  description: Toggle invisibility and speed boost that scales with darkness. More effective in dark areas, less effective in bright light.
   components:
     - type: Action
       useDelay: 2 # Toggle
@@ -275,8 +275,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireShadowSnare
-  name: action-vampire-shadow-snare-name
-  description: action-vampire-shadow-snare-desc
+  name: Shadow Snare (20)
+  description: Place a fragile shadow trap at target location. Damages, blinds (20s) and heavily slows a non-vampire humanoid that steps on it. Trap health decays in brighter light and is destroyed by flashes.
   components:
     - type: Action
       useDelay: 25
@@ -298,8 +298,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireShadowAnchor
-  name: action-vampire-shadow-anchor-name
-  description: action-vampire-shadow-anchor-desc
+  name: Shadow Anchor (20)
+  description: First use: place a shadow anchor beacon (lasts 2 min). Second use while it exists: instantly return to it and consume the beacon.
   components:
     - type: Action
       useDelay: 300 # 5min
@@ -318,8 +318,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireShadowBoxing
-  name: action-vampire-shadow-boxing-name
-  description: action-vampire-shadow-boxing-desc
+  name: Shadow Boxing (50)
+  description: Target someone to have your shadow bats beat them up. You must stay within 4 tiles for this to work.
   components:
     - type: Action
       useDelay: 30
@@ -347,8 +347,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireDarkPassage
-  name: action-vampire-dark-passage-name
-  description: action-vampire-dark-passage-desc
+  name: Dark Passage (20)
+  description: Teleport to target location through shadows. Cannot pass through bright areas.
   components:
     - type: Action
       useDelay: 40
@@ -371,8 +371,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireExtinguish
-  name: action-vampire-extinguish-name
-  description: action-vampire-extinguish-desc
+  name: Extinguish Lights (0)
+  description: Destroy all light sources within 3 tiles, gaining 5 blood per light.
   components:
     - type: Action
       useDelay: 20
@@ -391,8 +391,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireEternalDarkness
-  name: action-vampire-eternal-darkness-name
-  description: action-vampire-eternal-darkness-desc
+  name: Eternal Darkness (Toggle)
+  description: When toggled, you shroud the area around you in darkness and slowly lower the body temperature of people nearby.
   components:
     - type: Action
       useDelay: 2 # Toggle
@@ -413,8 +413,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireEnthrall
-  name: action-vampire-enthrall-name
-  description: action-vampire-enthrall-desc
+  name: Enthrall(150)
+  description: Channel for 15 seconds on a humanoid target to bind them to your will. Cancels if either of you moves.
   components:
     - type: Action
       useDelay: 1 # Jus no CD
@@ -441,8 +441,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampirePacify
-  name: action-vampire-pacify-name
-  description: action-vampire-pacify-desc
+  name: Pacify(10)
+  description: Flood a victim's mind with bliss, pacifying them for 40 seconds.
   components:
     - type: Action
       useDelay: 30 
@@ -469,8 +469,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireSubspaceSwap
-  name: action-vampire-subspace-swap-name
-  description: action-vampire-subspace-swap-desc
+  name: Subspace Swap(30)
+  description: Select a target within 7 tiles to swap positions, slowing them for 4 seconds.
   components:
     - type: Action
       useDelay: 30
@@ -497,8 +497,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireDecoy
-  name: action-vampire-decoy-name
-  description: action-vampire-decoy-desc
+  name: Decoy(30)
+  description: Leave behind a fragile duplicate that blinds attackers when harmed while you vanish into invisibility.
   components:
     - type: Action
       useDelay: 40
@@ -517,8 +517,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireRallyThralls
-  name: action-vampire-rally-thralls-name
-  description: action-vampire-rally-thralls-desc
+  name: Rally Thralls(100)
+  description: Command thralls within 7 tiles to shake off stuns, wake up, and regain stamina.
   components:
     - type: Action
       useDelay: 100
@@ -537,8 +537,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireBloodBond
-  name: action-vampire-blood-bond-name
-  description: action-vampire-blood-bond-desc
+  name: Blood Bond(Toggle)
+  description: Toggle a blood tether to nearby thralls, redistributing damage between you at the cost of 2.5 blood per second.
   components:
     - type: Action
       useDelay: 2 # Toggle
@@ -557,8 +557,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireMassHysteria
-  name: action-vampire-mass-hysteria-name
-  description: action-vampire-mass-hysteria-desc
+  name: Mass Hysteria(70)
+  description: Flood every nearby mind (except thralls) with terror, flashing them and cursing them with hallucinations for 30 seconds.
   components:
     - type: Action
       useDelay: 180 # 3min
@@ -579,8 +579,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireBloodSwell
-  name: action-vampire-blood-swell-name
-  description: action-vampire-blood-swell-desc
+  name: Blood Swell(30)
+  description: For 30 seconds: reduces brute damage by 60%, stamina and burn by 50%, halves stun times. Cannot use guns. After 400 blood: also gain +14 melee damage.
   components:
     - type: Action
       useDelay: 40
@@ -599,8 +599,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireBloodRush
-  name: action-vampire-blood-rush-name
-  description: action-vampire-blood-rush-desc
+  name: Blood Rush(30)
+  description: For 10 seconds: double your movement speed.
   components:
     - type: Action
       useDelay: 30
@@ -619,8 +619,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireSeismicStomp
-  name: action-vampire-seismic-stomp-name
-  description: action-vampire-seismic-stomp-desc
+  name: Seismic Stomp(30)
+  description: Slam the ground, knocking down and throwing all creatures within 3 tiles away from you. Destroys floor tiles.
   components:
     - type: Action
       useDelay: 60
@@ -639,8 +639,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireOverwhelmingForce
-  name: action-vampire-overwhelming-force-name
-  description: action-vampire-overwhelming-force-desc
+  name: Overwhelming Force(Toggle)
+  description: Toggle: automatically pry open unpowered doors. While active, you cannot be pushed or pulled. Costs 5 blood per door.
   components:
     - type: Action
       useDelay: 2 # Toggle
@@ -659,8 +659,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireDemonicGrasp
-  name: action-vampire-demonic-grasp-name
-  description: action-vampire-demonic-grasp-desc
+  name: Demonic Grasp(20)
+  description: Launch a demonic hand up to 15 tiles. Immobilizes the target for 5 seconds. In combat mode, also pulls them to you.
   components:
     - type: Action
       useDelay: 30
@@ -682,8 +682,8 @@
 - type: entity
   parent: BaseAction
   id: ActionVampireCharge
-  name: action-vampire-charge-name
-  description: action-vampire-charge-desc
+  name: Charge(30)
+  description: Charge in the target direction until hitting an obstacle or void. Creatures take 60 brute and are thrown 5 tiles. Structures take 150 damage. Walls are destroyed.
   components:
     - type: Action
       useDelay: 30
