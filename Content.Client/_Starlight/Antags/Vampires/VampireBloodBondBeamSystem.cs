@@ -80,9 +80,7 @@ public sealed class VampireBloodBondBeamSystem : EntitySystem
         var key = (source, target);
 
         if (_activeBeamVisuals.TryGetValue(key, out var existingBeam))
-        {
             QueueDel(existingBeam);
-        }
 
         var beam = Spawn("VampireBloodBondBeamVisual", Transform(source).Coordinates);
 
