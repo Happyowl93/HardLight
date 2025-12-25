@@ -58,17 +58,12 @@ public sealed class HysteriaVisionSystem : EntitySystem
 
         // Check if we need to remove the overlay due to expiration
         var player = _playerManager.LocalEntity;
-        if (player == null)
-            return;
-
-        if (!TryComp<HysteriaVisionComponent>(player, out var hysteria))
+        if (player == null || !TryComp<HysteriaVisionComponent>(player, out var hysteria))
             return;
 
         // Remove component if expired
         if (_timing.CurTime > hysteria.EndTime)
-        {
             RemComp<HysteriaVisionComponent>(player.Value);
-        }
     }
 
     private void AddOverlay()
