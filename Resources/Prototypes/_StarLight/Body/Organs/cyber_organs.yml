@@ -140,7 +140,7 @@
   parent: [OrganCyber, OrganHumanLungs]
   components:
   - type: Sprite
-    sprite: Mobs/Species/Human/organs.rsi
+    sprite: _Starlight/Objects/Specific/Medical/breathable_cyber_lungs.rsi
     layers:
       - state: lung-l
       - state: lung-r
