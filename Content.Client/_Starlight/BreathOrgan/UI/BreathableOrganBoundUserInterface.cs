@@ -10,12 +10,12 @@ namespace Content.Client._Starlight.BreathOrgan.UI
     /// Contains a button to empty the organ replacing the text field to edit the output pressure
     /// </summary>
     [UsedImplicitly]
-    public sealed class OrganGasTankBoundUserInterface : BoundUserInterface
+    public sealed class BreathableOrganBoundUserInterface : BoundUserInterface
     {
         [ViewVariables]
         private OrganGasTankWindow? _window;
 
-        public OrganGasTankBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+        public BreathableOrganBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {
         }
 

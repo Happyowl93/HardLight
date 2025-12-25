@@ -31,11 +31,11 @@ public sealed class GasTankSystem : SharedGasTankSystem
         {
             bui.Update<GasTankBoundUserInterfaceState>();
         }
-        // Starlight edit start - Show simplified UI for when the breakhing organ is inaccessible
-        if (UI.TryGetOpenUi(ent.Owner, SharedGasTankUiKey.OrganKey, out var organBui))
-        {
-            organBui.Update<GasTankBoundUserInterfaceState>();
-        }
+        // Starlight edit start - Show simplified UI for when the breathing organ is inaccessible
+        // if (UI.TryGetOpenUi(ent.Owner, SharedGasTankUiKey.OrganKey, out var organBui))
+        // {
+        //     organBui.Update<GasTankBoundUserInterfaceState>();
+        // }
         // Starlight edit end
     }
 }

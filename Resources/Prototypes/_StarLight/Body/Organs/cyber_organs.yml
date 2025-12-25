@@ -174,7 +174,7 @@
       enum.SharedGasTankUiKey.Key:
         type: GasTankBoundUserInterface
       enum.SharedGasTankUiKey.OrganKey:
-        type: OrganGasTankBoundUserInterface
+        type: BreathableOrganBoundUserInterface
   - type: Tag
     tags:
     - GasTank
