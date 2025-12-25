@@ -25,10 +25,6 @@ public sealed partial class RattleOnTriggerComponent : BaseXOnTriggerComponent
     public Dictionary<MobState, LocId> Messages = new()
     {
         {MobState.Critical, "rattle-on-trigger-critical-message"},
-        {MobState.Dead, "rattle-on-trigger-dead-message"},
-
-        //starlight edit begin
-        {MobState.Alive, "rattle-on-trigger-distress-message"}
-        //starlight edit end 
+        {MobState.Dead, "rattle-on-trigger-dead-message"}
     };
 }
