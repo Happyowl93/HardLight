@@ -339,10 +339,7 @@ public sealed partial class VampireSystem : EntitySystem
 #region Decoy
     private void OnDecoy(EntityUid uid, VampireComponent comp, ref VampireDecoyActionEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
+        if (args.Handled || !ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
             return;
 
         var actionEntity = args.Action.Owner;
