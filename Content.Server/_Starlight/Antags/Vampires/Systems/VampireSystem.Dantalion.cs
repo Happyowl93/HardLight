@@ -288,10 +288,8 @@ public sealed partial class VampireSystem : EntitySystem
 #region Subspace Swap
     private void OnSubspaceSwap(EntityUid uid, VampireComponent comp, ref VampireSubspaceSwapActionEvent args)
     {
-        if (args.Handled || !Exists(args.Target))
-            return;
-
-        if (!ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
+        if (args.Handled || !Exists(args.Target) 
+            || !ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
             return;
 
         var target = args.Target;
