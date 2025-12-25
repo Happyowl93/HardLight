@@ -194,10 +194,8 @@ public sealed partial class VampireSystem : EntitySystem
         bloodCost = 0;
         dantalion = default!;
 
-        if (comp.ChosenClass != VampireClassType.Dantalion)
-            return false;
-
-        if (!TryComp(uid, out DantalionComponent? dantalionComp))
+        if (comp.ChosenClass != VampireClassType.Dantalion
+            || !TryComp(uid, out DantalionComponent? dantalionComp))
             return false;
 
         dantalion = dantalionComp!;
