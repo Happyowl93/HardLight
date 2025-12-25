@@ -1,0 +1,20 @@
+- type: entity
+  name: basic xenobiology slime
+  id: XenoSlimeBase
+  parent:
+  - BaseMobAdultSlimes
+  abstract: true
+  description: I don't think you should be seeing this.
+  components:
+  - type: Sprite
+    sprite: Mobs/XenoSlimes/test_sprite.rsi
+    layers:
+    - state: test_image
+
+- type: entity
+  name: gray xenobiology slime
+  id: XenoSlimeGray
+  parent: XenoSlimeBase
+  abstract: false
+  description: GRAY
+
