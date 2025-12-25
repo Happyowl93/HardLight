@@ -17,7 +17,7 @@ namespace Content.Client._Starlight.Antags.Vampires;
 /// Overlay that renders monster/animal sprites over humanoids  
 /// when the local player has HysteriaVisionComponent.
 /// </summary>
-public sealed class HysteriaVisionOverlay : Robust.Client.Graphics.Overlay
+public sealed class HysteriaVisionOverlay : Overlay
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
