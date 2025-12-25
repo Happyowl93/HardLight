@@ -393,10 +393,7 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnDecoyDamaged(EntityUid uid, VampireDecoyComponent component, DamageChangedEvent args)
     {
-        if (component.Detonated)
-            return;
-
-        if (args.DamageDelta == null || !args.DamageDelta.AnyPositive())
+        if (component.Detonated || args.DamageDelta == null || !args.DamageDelta.AnyPositive())
             return;
 
         component.Detonated = true;
