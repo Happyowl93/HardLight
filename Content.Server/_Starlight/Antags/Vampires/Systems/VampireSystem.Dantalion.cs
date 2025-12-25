@@ -96,10 +96,8 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnEnthrallDoAfter(EntityUid uid, VampireComponent comp, ref VampireEnthrallDoAfterEvent args)
     {
-        if (args.Handled || args.Cancelled || args.Target == null)
-            return;
-
-        if (!TryComp(uid, out DantalionComponent? dantalion))
+        if (args.Handled || args.Cancelled || args.Target == null 
+            || !TryComp(uid, out DantalionComponent? dantalion))
             return;
 
         var target = args.Target.Value;
