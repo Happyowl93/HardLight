@@ -138,10 +138,8 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void TryAssignThrallObeyObjective(EntityUid master, EntityUid thrall)
     {
-        if (!_mind.TryGetMind(thrall, out var thrallMindId, out var thrallMind))
-            return;
-
-        if (!_mind.TryGetMind(master, out var masterMindId, out _))
+        if (!_mind.TryGetMind(thrall, out var thrallMindId, out var thrallMind) 
+            || !_mind.TryGetMind(master, out var masterMindId, out _))
             return;
 
         var objective = _objectives.TryCreateObjective(thrallMindId, thrallMind, ThrallObeyMasterObjectiveId);
