@@ -37,7 +37,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 222 # 120%
+        density: 278 # 150% so pulling is easier but harder against
         restitution: 0.0
         mask:
         - MobMask
