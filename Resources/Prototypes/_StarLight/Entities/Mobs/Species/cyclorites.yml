@@ -21,7 +21,7 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-    - id: FoodMeatHuman #todo
+    - id: FoodMeatHuman # TODO: Make Sprite for butchered rock steak
       amount: 10
   - type: HumanoidAppearance
     species: Cyclorite
