@@ -26,6 +26,9 @@ public sealed partial class RattleOnTriggerComponent : BaseXOnTriggerComponent
     {
         {MobState.Critical, "rattle-on-trigger-critical-message"},
         {MobState.Dead, "rattle-on-trigger-dead-message"},
+
+        //starlight edit begin
         {MobState.Alive, "rattle-on-trigger-distress-message"}
+        //starlight edit end 
     };
 }
