@@ -129,16 +129,9 @@ public sealed class HysteriaVisionOverlay : Overlay
 
         while (query.MoveNext(out var uid, out _, out var xform, out var sprite))
         {
-            // Skip if not on the same map
-            if (xform.MapID != args.MapId)
-                continue;
-
-            // Skip self
-            if (uid == player)
-                continue;
-
-            // Skip entities that are not visible
-            if (!sprite.Visible)
+            if (xform.MapID != args.MapId // Skip if not on the same map
+                || uid == player // Skip self
+                || !sprite.Visible) // Skip entities that are not visible
                 continue;
 
             // Skip thralls of the source vampire
