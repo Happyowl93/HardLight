@@ -408,13 +408,9 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnRallyThralls(EntityUid uid, VampireComponent comp, ref VampireRallyThrallsActionEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
-            return;
-
-        if (!TryComp<DantalionComponent>(uid, out var dantalion))
+        if (args.Handled 
+            || !ValidateVampireClass(uid, comp, VampireClassType.Dantalion) 
+            || !TryComp<DantalionComponent>(uid, out var dantalion))
             return;
 
         var coords = Transform(uid).Coordinates;
