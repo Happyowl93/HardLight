@@ -46,8 +46,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      120: Critical
-      240: Dead
+      150: Critical # 50 extra health than Base mobs
+      300: Dead # 100 extra damage required to kill
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Cyclorite
