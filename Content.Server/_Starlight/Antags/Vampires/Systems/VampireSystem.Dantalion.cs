@@ -251,10 +251,8 @@ public sealed partial class VampireSystem : EntitySystem
 #region Pacify
     public void OnPacify(EntityUid uid, VampireComponent comp, ref VampirePacifyActionEvent args)
     {
-        if (args.Handled || !Exists(args.Target))
-            return;
-
-        if (!ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
+        if (args.Handled || !Exists(args.Target) 
+            || !ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
             return;
 
         var target = args.Target;
