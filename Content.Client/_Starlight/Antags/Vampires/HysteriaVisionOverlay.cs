@@ -70,13 +70,8 @@ public sealed class HysteriaVisionOverlay : Overlay
             var trimmedPath = sprite.Path.TrimStart('/');
             var path = new ResPath("/Textures") / trimmedPath;
 
-            if (!_resourceCache.TryGetResource<RSIResource>(path, out var rsiResource))
-            {
-                _disguiseStates[i] = null;
-                continue;
-            }
-
-            if (!rsiResource.RSI.TryGetState(sprite.State, out var rsiState))
+            if (!_resourceCache.TryGetResource<RSIResource>(path, out var rsiResource) 
+                || !rsiResource.RSI.TryGetState(sprite.State, out var rsiState))
             {
                 _disguiseStates[i] = null;
                 continue;
