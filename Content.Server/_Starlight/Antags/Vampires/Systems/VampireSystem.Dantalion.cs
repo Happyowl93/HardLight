@@ -487,10 +487,7 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnBloodBond(EntityUid uid, VampireComponent comp, ref VampireBloodBondActionEvent args)
     {
-        if (args.Handled)
-            return;
-
-        if (!ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
+        if (args.Handled || !ValidateVampireClass(uid, comp, VampireClassType.Dantalion))
             return;
 
         var actionEntity = args.Action.Owner;
