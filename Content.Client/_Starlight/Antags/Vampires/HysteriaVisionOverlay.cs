@@ -48,14 +48,9 @@ public sealed class HysteriaVisionOverlay : Overlay
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
         var player = _playerManager.LocalEntity;
-        if (player == null)
-            return false;
-
-        if (!_entManager.TryGetComponent<HysteriaVisionComponent>(player, out var hysteria))
-            return false;
-
-        // Check if effect expired
-        if (_timing.CurTime > hysteria.EndTime)
+        if (player == null 
+            || !_entManager.TryGetComponent<HysteriaVisionComponent>(player, out var hysteria) 
+            || _timing.CurTime > hysteria.EndTime) // Check if effect expired
             return false;
 
         // Load all sprites if not loaded
