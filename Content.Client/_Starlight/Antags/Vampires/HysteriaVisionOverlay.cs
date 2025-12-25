@@ -9,6 +9,7 @@ using Robust.Shared.Graphics.RSI;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Client.Graphics;
 using System.Numerics;
 
 namespace Content.Client._Starlight.Antags.Vampires;
