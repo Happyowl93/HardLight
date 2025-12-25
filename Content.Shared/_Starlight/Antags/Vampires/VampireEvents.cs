@@ -197,47 +197,8 @@ public sealed partial class VampireCloakOfDarknessActionEvent : InstantActionEve
 // Shadow Snare
 public sealed partial class VampireShadowSnareActionEvent : WorldTargetActionEvent
 {
-    /// <summary>
-    /// Decay tick interval in seconds
-    /// </summary>
     [DataField]
-    public float TickInterval = 2f;
-
-    /// <summary>
-    /// Health decay per tick in dark areas (light <= 5)
-    /// </summary>
-    [DataField]
-    public float DamageDark = 0f;
-
-    /// <summary>
-    /// Health decay per tick in normal light (5 < light <= 10)
-    /// </summary>
-    [DataField]
-    public float DamageNormal = 10f;
-
-    /// <summary>
-    /// Health decay per tick in bright light (light > 10)
-    /// </summary>
-    [DataField]
-    public float DamageBright = 25f;
-
-    /// <summary>
-    /// Max snares per player before oldest is removed
-    /// </summary>
-    [DataField]
-    public int MaxPerPlayer = 3;
-
-    /// <summary>
-    /// Stealth visibility modifier for the trap
-    /// </summary>
-    [DataField]
-    public float StealthVisibility = -0.3f;
-
-    /// <summary>
-    /// Position offset for centering on tile
-    /// </summary>
-    [DataField]
-    public float PositionOffset = 0.5f;
+    public EntProtoId SnarePrototype = "VampireShadowSnare";
 }
 
 // Soul Anchor
@@ -458,6 +419,8 @@ public sealed partial class VampireMassHysteriaActionEvent : InstantActionEvent
     /// </summary>
     [DataField]
     public float HysteriaDuration = 30f;
+    [DataField]
+    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/sound_hallucinations_im_here1.ogg");
 }
 
 #endregion

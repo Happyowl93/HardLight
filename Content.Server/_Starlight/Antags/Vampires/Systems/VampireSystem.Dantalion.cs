@@ -18,6 +18,8 @@ using Robust.Shared.Timing;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.CollectiveMind;
 using Content.Shared.Damage.Systems;
+using Robust.Shared.Audio;
+using Robust.Shared.Player;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -768,6 +770,10 @@ public sealed partial class VampireSystem : EntitySystem
 
             // Apply flash effect
             _flash.Flash(target, uid, null, TimeSpan.FromSeconds(args.FlashDuration), 0.8f, false);
+
+            // Play hallucination sound for the victim
+            if (TryComp<ActorComponent>(target, out var actor))
+                _audio.PlayGlobal(args.Sound, actor.PlayerSession, AudioParams.Default.WithVolume(1f));
 
             // Apply hysteria effect
             ApplyHysteriaVision(target, uid, args.HysteriaDuration);

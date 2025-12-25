@@ -276,7 +276,7 @@
   parent: BaseAction
   id: ActionVampireShadowSnare
   name: Shadow Snare (20)
-  description: Place a fragile shadow trap at target location. Damages, blinds (20s) and heavily slows a non-vampire humanoid that steps on it. Trap health decays in brighter light and is destroyed by flashes.
+  description: Place a fragile shadow trap at target location. Damages, blinds (20s) and heavily slows a non-vampire humanoid that steps on it. Trap is destroyed by flashes.
   components:
     - type: Action
       useDelay: 25

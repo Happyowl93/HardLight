@@ -1,18 +1,15 @@
-using Content.Shared.Charges.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Ensnaring.Components;
-using Content.Shared.Eye.Blinding.Components;
-using Content.Shared.Flash.Components;
+using Content.Shared.Flash;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Stealth.Components;
-using Robust.Shared.Physics.Events;
+using Content.Shared.StepTrigger.Systems;
 using Robust.Shared.Timing;
 using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Content.Shared.Damage.Components;
 using Content.Shared.Humanoid;
-using Content.Shared.Interaction;
 using System.Numerics;
 using Content.Shared.Physics;
 using Content.Server.Light.EntitySystems;
@@ -20,7 +17,6 @@ using Content.Server.Temperature.Systems;
 using Content.Shared.Light.Components;
 using Content.Shared.Temperature.Components;
 using Robust.Shared.Audio;
-using Robust.Shared.Containers;
 
 namespace Content.Server._Starlight.Antags.Vampires;
 
@@ -32,17 +28,16 @@ public sealed partial class VampireSystem : EntitySystem
     private void InitializeUmbrae()
     {
         SubscribeLocalEvent<VampireComponent, VampireCloakOfDarknessActionEvent>(OnCloakOfDarkness);
-        SubscribeLocalEvent<ShadowSnareEnsnareComponent, ComponentShutdown>(OnShadowSnareEnsnareShutdown);
-
-        SubscribeLocalEvent<VampireComponent, VampireShadowSnareActionEvent>(OnShadowSnare);
         SubscribeLocalEvent<VampireComponent, VampireDarkPassageActionEvent>(OnDarkPassage);
         SubscribeLocalEvent<VampireComponent, VampireExtinguishActionEvent>(OnExtinguish);
         SubscribeLocalEvent<VampireComponent, VampireEternalDarknessActionEvent>(OnEternalDarkness);
         SubscribeLocalEvent<VampireComponent, VampireShadowAnchorActionEvent>(OnShadowAnchor);
         SubscribeLocalEvent<VampireComponent, VampireShadowAnchorDoAfterEvent>(OnShadowAnchorDoAfter);
         SubscribeLocalEvent<VampireComponent, VampireShadowBoxingActionEvent>(OnShadowBoxing);
-        SubscribeLocalEvent<ShadowSnareTrapComponent, InteractUsingEvent>(OnShadowSnareTrapInteractUsing);
-        SubscribeLocalEvent<ShadowSnareTrapComponent, StartCollideEvent>(OnShadowSnareTrapCollide);
+        SubscribeLocalEvent<VampireComponent, VampireShadowSnareActionEvent>(OnShadowSnare);
+        SubscribeLocalEvent<ShadowSnareComponent, StepTriggerAttemptEvent>(OnShadowSnareStepAttempt);
+        SubscribeLocalEvent<ShadowSnareComponent, StepTriggeredOffEvent>(OnShadowSnareTriggered);
+        SubscribeLocalEvent<ShadowSnareComponent, AfterFlashedEvent>(OnShadowSnareFlashed);
     }
 
 #region Cloak of Darkness
@@ -95,154 +90,102 @@ public sealed partial class VampireSystem : EntitySystem
     private void OnShadowSnare(EntityUid uid, VampireComponent comp, ref VampireShadowSnareActionEvent args)
     {
         if (args.Handled
-            || !comp.ActionEntities.TryGetValue("ActionVampireShadowSnare", out var actionEntity)
-            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae)
-            )
+            || !TryComp<UmbraeComponent>(uid, out var umbrae)
+            || !ValidateVampireClass(uid, comp, VampireClassType.Umbrae))
             return;
 
         var target = args.Target;
-        var place = target.WithPosition(target.Position.Floored() + new Vector2(args.PositionOffset, args.PositionOffset));
-
-        if (!_transform.GetGrid(place).HasValue)
+        var curXform = Transform(uid);
+        if (curXform.MapID != _transform.GetMapId(target)
+            || !_transform.GetGrid(target).HasValue)
             return;
 
-        if (!CheckAndConsumeBloodCost(uid, comp, actionEntity))
+        if (!IsValidTile(target))
+        {
+            _popup.PopupEntity(Loc.GetString("action-vampire-shadow-snare-wrong-place"), uid, uid);
+            return;
+        }
+
+        if (!CheckAndConsumeBloodCost(uid, comp, args.Action.Owner))
             return;
 
-        if (!_playerShadowSnares.TryGetValue(uid, out var playerTraps))
+        // Clean up deleted snares from the list
+        umbrae.PlacedSnares.RemoveAll(e => !Exists(e));
+
+        // If at max capacity, remove the oldest snare
+        if (umbrae.PlacedSnares.Count >= umbrae.MaxSnares)
         {
-            playerTraps = new List<EntityUid>();
-            _playerShadowSnares[uid] = playerTraps;
+            var oldestSnare = umbrae.PlacedSnares[0];
+            umbrae.PlacedSnares.RemoveAt(0);
+            if (Exists(oldestSnare))
+            {
+                QueueDel(oldestSnare);
+                _popup.PopupEntity(Loc.GetString("vampire-shadow-snare-oldest-removed"), uid, uid);
+            }
         }
 
-        playerTraps.RemoveAll(trap => !Exists(trap) || !HasComp<ShadowSnareTrapComponent>(trap));
+        var snare = EntityManager.SpawnEntity(args.SnarePrototype, target);
+        umbrae.PlacedSnares.Add(snare);
+        Dirty(uid, umbrae);
 
-        if (playerTraps.Count >= args.MaxPerPlayer)
-        {
-            var oldestTrap = playerTraps[0];
-            DeleteShadowSnare(oldestTrap);
-            _popup.PopupEntity(Loc.GetString("vampire-shadow-snare-oldest-removed", ("default", "Your old shadow snare has dissipated.")), uid, uid);
-        }
-
-        var trap = EntityManager.SpawnEntity("VampireShadowSnareTrap", place);
-
-        var stealth = EnsureComp<StealthComponent>(trap);
-        _stealth.SetVisibility(trap, args.StealthVisibility, stealth);
-        playerTraps.Add(trap);
+        _popup.PopupEntity(Loc.GetString("action-vampire-shadow-snare-placed"), uid, uid);
         args.Handled = true;
     }
-    private void DeleteShadowSnare(EntityUid trap)
-    {
-        foreach (var playerTraps in _playerShadowSnares.Values)
-            playerTraps.Remove(trap);
 
-        if (Exists(trap))
-            QueueDel(trap);
-    }
-    private void OnShadowSnareEnsnareShutdown(EntityUid uid, ShadowSnareEnsnareComponent comp, ComponentShutdown args)
+    private void OnShadowSnareStepAttempt(EntityUid uid, ShadowSnareComponent component, ref StepTriggerAttemptEvent args) => args.Continue = true;
+
+    private void OnShadowSnareTriggered(EntityUid uid, ShadowSnareComponent component, ref StepTriggeredOffEvent args)
     {
-        if (comp.Victim != default && HasComp<ShadowSnareBlindMarkerComponent>(comp.Victim))
+        var target = args.Tripper;
+
+        // Only trigger on humanoids
+        if (!HasComp<HumanoidAppearanceComponent>(target))
+            return;
+
+        // Don't trigger on vampires or thralls
+        if (HasComp<VampireComponent>(target) || HasComp<VampireThrallComponent>(target))
+            return;
+
+        // Apply brute damage
+        ApplyDamage(target, "Blunt", component.BruteDamage, uid);
+
+        // Apply temporary blindness using flash system
+        var blindDuration = TimeSpan.FromSeconds(component.BlindDuration);
+        _flash.Flash(target, null, null, blindDuration, slowTo: 1f, displayPopup: false);
+
+        // Extinguish nearby lights
+        ExtinguishNearbyLights(uid, component.LightExtinguishRadius);
+
+        // Spawn ensnare entity and apply to target
+        var ensnareEnt = Spawn(component.EnsnarePrototype, Transform(target).Coordinates);
+        if (TryComp<EnsnaringComponent>(ensnareEnt, out var ensnaring))
         {
-            if (HasComp<TemporaryBlindnessComponent>(comp.Victim))
-                RemCompDeferred<TemporaryBlindnessComponent>(comp.Victim);
-
-            RemCompDeferred<ShadowSnareBlindMarkerComponent>(comp.Victim);
+            ensnaring.WalkSpeed = component.WalkSpeed;
+            ensnaring.SprintSpeed = component.SprintSpeed;
+            ensnaring.FreeTime = component.FreeTime;
+            ensnaring.BreakoutTime = component.BreakoutTime;
+            _ensnare.TryEnsnare(target, ensnareEnt, ensnaring);
         }
+
+        // Play trigger sound
+        _audio.PlayPvs(component.TriggerSound, uid, AudioParams.Default.WithVolume(1f));
+
+        QueueDel(uid);
     }
 
-    private void OnShadowSnareTrapInteractUsing(EntityUid uid, ShadowSnareTrapComponent comp, ref InteractUsingEvent args)
+    private void OnShadowSnareFlashed(EntityUid uid, ShadowSnareComponent component, ref AfterFlashedEvent args) => QueueDel(uid);
+
+    private void ExtinguishNearbyLights(EntityUid uid, float radius)
     {
-        if (args.Handled)
-            return;
+        var center = Transform(uid).Coordinates;
 
-        var used = args.Used;
-        if (used == EntityUid.Invalid || !HasComp<FlashComponent>(used))
-            return;
-
-        if (TryComp<LimitedChargesComponent>(used, out var charges) && !_charges.IsEmpty((used, charges)))
-            _charges.TryUseCharge((used, charges));
-        args.Handled = true;
-        DeleteShadowSnare(uid);
-        var user = args.User;
-        if (user != EntityUid.Invalid)
-            _popup.PopupEntity(Loc.GetString("action-vampire-shadow-snare-scatter"), user, user);
-    }
-
-    private void OnShadowSnareTrapCollide(EntityUid uid, ShadowSnareTrapComponent comp, ref StartCollideEvent args)
-    {
-        if (!Exists(uid))
-            return;
-
-        var ent = args.OtherEntity;
-        if (ent == uid
-            || HasComp<VampireComponent>(ent)
-            || !HasComp<HumanoidAppearanceComponent>(ent)
-            || !TryComp<DamageableComponent>(ent, out var _))
-            return;
-
-        if (comp.TriggerSound != null)
-            _audio.PlayPvs(comp.TriggerSound, ent);
-
-        ApplyDamage(ent, _bruteGroupId, comp.TriggerBruteDamage);
-
-        var hadBlind = HasComp<TemporaryBlindnessComponent>(ent);
-        if (!hadBlind)
-            AddComp<TemporaryBlindnessComponent>(ent);
-
-        if (!HasComp<ShadowSnareBlindMarkerComponent>(ent))
-            AddComp<ShadowSnareBlindMarkerComponent>(ent);
-
-        Timer.Spawn(_shadowSnareBlindDuration, () => TryClearShadowSnareBlind(ent));
-
-        var ensnareEnt = EntityManager.SpawnEntity("VampireShadowSnareEnsnare", Transform(ent).Coordinates);
-        _metaData.SetEntityName(ensnareEnt, Loc.GetString("ent-shadow-snare-ensnare"));
-        var ensnaringComponent = EnsureComp<EnsnaringComponent>(ensnareEnt);
-        var marker = EnsureComp<ShadowSnareEnsnareComponent>(ensnareEnt);
-        marker.Victim = ent;
-
-        ensnaringComponent.BreakoutTime = comp.BreakoutTime;
-        ensnaringComponent.FreeTime = comp.FreeTime;
-        ensnaringComponent.WalkSpeed = comp.WalkSpeedMultiplier;
-        ensnaringComponent.SprintSpeed = comp.SprintSpeedMultiplier;
-        ensnaringComponent.MaxEnsnares = comp.MaxEnsnares;
-        ensnaringComponent.CanMoveBreakout = comp.CanMoveBreakout;
-        ensnaringComponent.StaminaDamage = 0f;
-
-        var ensnareable = EnsureComp<EnsnareableComponent>(ent);
-        ensnareable.Container = _container.EnsureContainer<Container>(ent, "ensnare");
-
-        if (_ensnare.TryEnsnare(ent, ensnareEnt, ensnaringComponent))
-            Timer.Spawn(TimeSpan.FromSeconds(0.25f), () => ShadowSnareBlindPoll(ent));
-        else
-            QueueDel(ensnareEnt);
-
-        DeleteShadowSnare(uid);
-    }
-
-    private void TryClearShadowSnareBlind(EntityUid victim)
-    {
-        if (!Exists(victim)
-            || !HasComp<ShadowSnareBlindMarkerComponent>(victim)
-            || (TryComp<EnsnareableComponent>(victim, out var ens) && ens.IsEnsnared))
-            return;
-
-        if (HasComp<TemporaryBlindnessComponent>(victim))
-            RemCompDeferred<TemporaryBlindnessComponent>(victim);
-
-        RemCompDeferred<ShadowSnareBlindMarkerComponent>(victim);
-    }
-
-    private void ShadowSnareBlindPoll(EntityUid victim)
-    {
-        if (!Exists(victim)
-            || !HasComp<ShadowSnareBlindMarkerComponent>(victim))
-            return;
-        if (TryComp<EnsnareableComponent>(victim, out var ens) && ens.IsEnsnared)
+        foreach (var ent in _lookup.GetEntitiesInRange(center, radius))
         {
-            Timer.Spawn(TimeSpan.FromSeconds(0.25f), () => ShadowSnareBlindPoll(victim));
-            return;
+            if (TryComp<PoweredLightComponent>(ent, out var light))
+            {
+                _poweredLightSystem.SetState(ent, false, light);
+            }
         }
-        TryClearShadowSnareBlind(victim);
     }
 #endregion
 

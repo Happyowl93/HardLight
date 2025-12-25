@@ -312,9 +312,7 @@ namespace Content.Client.ContextMenu.UI
 
             // remove the element
             var parent = element.ParentMenu?.ParentElement;
-            // Starlight: Check if element is already disposed (can happen if entity is deleted while menu is open)
-            if (!element.Disposed)
-                element.Dispose();
+            element.Dispose();
             Elements.Remove(entity);
 
             // update any parent elements

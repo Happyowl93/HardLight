@@ -29,4 +29,16 @@ public sealed partial class UmbraeComponent : Component
     public bool ShadowAnchorPlacementInProgress;
     public int ShadowAnchorLoopId;
     public EntProtoId ShadowAnchorBeaconPrototype = "VampireShadowAnchorBeacon";
+
+    /// <summary>
+    /// List of placed shadow snare traps
+    /// </summary>
+    [AutoNetworkedField]
+    public List<EntityUid> PlacedSnares = new();
+
+    /// <summary>
+    /// Maximum number of shadow snares that can be placed
+    /// </summary>
+    [DataField]
+    public int MaxSnares = 3;
 }

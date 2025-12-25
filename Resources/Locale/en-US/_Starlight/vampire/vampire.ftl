@@ -91,6 +91,8 @@ vampire-locate-search-placeholder = Search...
 action-vampire-cloak-of-darkness-start = You blend into the shadows!
 action-vampire-cloak-of-darkness-stop = You step out of the shadows.
 
+action-vampire-shadow-snare-placed = You set a shadow snare trap.
+action-vampire-shadow-snare-wrong-place = You can't place a trap here.
 action-vampire-shadow-snare-scatter = You scattered the shadow trap.
 vampire-shadow-snare-oldest-removed = Your old shadow snare dissipates.
 ent-shadow-snare-ensnare = shadow snare

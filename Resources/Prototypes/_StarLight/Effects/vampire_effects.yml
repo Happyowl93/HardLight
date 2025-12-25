@@ -178,59 +178,6 @@
       noRot: false
 
 - type: entity
-  id: VampireShadowSnareTrap
-  name: shadow snare
-  description: A nearly invisible snare of condensed darkness.
-  components:
-    - type: Transform
-      anchored: true
-    - type: Sprite
-      sprite: /Textures/_Starlight/Vampire/Effects.rsi
-      state: shadow_snare_base
-      drawdepth: Items
-      noRot: true
-    - type: Clickable
-    - type: Physics
-      bodyType: Static
-    - type: Fixtures
-      fixtures:
-        slips:
-          shape: !type:PhysShapeAabb
-            bounds: "-0.25,-0.25,0.25,0.25"
-          hard: false
-          layer:
-            - LowImpassable
-    - type: ShadowSnareTrap
-      triggerBruteDamage: 20
-      maxHealth: 200
-      currentHealth: 200
-      triggerSound: /Audio/Weapons/Guns/Hits/snap.ogg
-      breakoutTime: 5
-      freeTime: 3.5
-      walkSpeedMultiplier: 0.5
-      sprintSpeedMultiplier: 0.5
-      maxEnsnares: 1
-      canMoveBreakout: true
-
-- type: entity
-  id: VampireShadowSnareEnsnare
-  name: shadow snare
-  categories: [HideSpawnMenu]
-  components:
-    - type: Transform
-      noRot: true
-    - type: Physics
-      canCollide: false
-    - type: Ensnaring
-      freeTime: 3.5
-      breakoutTime: 5
-      walkSpeed: 0.5
-      sprintSpeed: 0.5
-      staminaDamage: 0
-      canMoveBreakout: true
-      maxEnsnares: 1
-
-- type: entity
   id: VampireDarkPassageMistIn
   categories: [HideSpawnMenu]
   components:
@@ -364,3 +311,63 @@
       canCollide: false
     - type: Transform
       noRot: true
+
+# Shadow Snare trap for Umbrae vampires
+- type: entity
+  id: VampireShadowSnare
+  name: shadow snare
+  description: A nearly invisible trap made of condensed shadows.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Damageable
+      damageContainer: ShadowHaze
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 1
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+    - type: DamagedByFlashing
+      flashDamage:
+        types:
+          Heat: 10
+    - type: Transform
+      anchored: true
+    - type: Sprite
+      sprite: /Textures/_Starlight/Vampire/Effects.rsi
+      state: shadow_snare_base
+      drawdepth: Effects
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeAabb
+            bounds: "-0.3,-0.3,0.3,0.3"
+          hard: false
+          layer:
+            - LowImpassable
+    - type: Stealth
+      minVisibility: -1
+      lastVisibility: -1
+    - type: StepTrigger
+      requiredTriggeredSpeed: -1
+    - type: ShadowSnare
+    - type: Clickable
+
+# Ensnare entity spawned when shadow snare triggers
+- type: entity
+  id: VampireShadowSnareEnsnare
+  name: shadow tendrils
+  description: Dark tendrils binding your legs.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Ensnaring
+      freeTime: 3.0
+      breakoutTime: 8.0
+      walkSpeed: 0.1
+      sprintSpeed: 0.1
+      staminaDamage: 0
+      canMoveBreakout: true
