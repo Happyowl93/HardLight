@@ -151,12 +151,11 @@ public sealed partial class VampireSystem : EntitySystem
         _targetObjectives.SetTarget(objective.Value, masterMindId);
         _mind.AddObjective(thrallMindId, thrallMind, objective.Value);
     }
+
     private void OnThrallShutdown(EntityUid uid, VampireThrallComponent component, ComponentShutdown args)
     {
-        if (component.Master is not { } master || !TryComp(master, out DantalionComponent? dantalion))
-            return;
-
-        if (!dantalion.Thralls.Remove(uid))
+        if (component.Master is not { } master || !TryComp(master, out DantalionComponent? dantalion) 
+            || !dantalion.Thralls.Remove(uid))
             return;
 
         if (!TerminatingOrDeleted(uid))
