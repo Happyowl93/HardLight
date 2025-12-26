@@ -85,6 +85,7 @@ vampire-locate-not-same-sector = vampire-locate-not-same-sector = That person is
 vampire-locate-unknown = Unknown area
 vampire-locate-no-targets = No prey can be sensed on this sector.
 
+predator-sense-title = Predator Sense
 vampire-locate-search-placeholder = Search...
 
 # Umbrae abilities

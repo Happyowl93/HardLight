@@ -46,4 +46,12 @@ public sealed partial class GargantuaComponent : Component
     ///     Current charge direction as vector
     /// </summary>
     public Vector2 ChargeDirectionVector;
+
+    [DataField]
+    public TimeSpan BloodSwellShootPopupCooldown = TimeSpan.FromSeconds(1f);
+    [DataField]
+    public TimeSpan? BloodSwellShootNextPopupTime;
+
+    [DataField]
+    public EntityUid? BloodSwellShootLastGun;
 }

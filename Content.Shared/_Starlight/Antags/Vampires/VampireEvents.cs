@@ -163,7 +163,7 @@ public sealed partial class VampireBloodEruptionActionEvent : InstantActionEvent
 public sealed partial class VampireBloodBringersRiteActionEvent : InstantActionEvent
 {
     [DataField]
-    public float Range = 7f;
+    public float Range = 4f;
 
     [DataField]
     public float Damage = 5f;
@@ -292,6 +292,10 @@ public sealed class VampireShadowBoxingPunchEvent : EntityEventArgs
         Source = source;
         Target = target;
     }
+    [DataField]
+    public TimeSpan PunchLifetime = TimeSpan.FromSeconds(0.33); 
+    [DataField]
+    public string EffectProto = "VampireShadowBoxingPunch";
 }
 
 // Eternal Darkness
@@ -332,7 +336,7 @@ public sealed partial class VampireEnthrallActionEvent : EntityTargetActionEvent
     ///     Channel duration, in seconds, before the target is enthralled
     /// </summary>
     [DataField]
-    public float ChannelTime = 1f;
+    public float ChannelTime = 15f;
 }
 
 [Serializable, NetSerializable]
@@ -385,7 +389,7 @@ public sealed partial class VampireBloodBondActionEvent : InstantActionEvent
     ///     Range in tiles for blood bond link
     /// </summary>
     [DataField]
-    public float Range = 7f;
+    public float Range = 3f;
 
     /// <summary>
     ///     Blood cost per second while active

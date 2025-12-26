@@ -9,8 +9,6 @@ using Robust.Shared.Graphics.RSI;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Robust.Client.Graphics;
-using System.Numerics;
 
 namespace Content.Client._Starlight.Antags.Vampires;
 
@@ -18,7 +16,7 @@ namespace Content.Client._Starlight.Antags.Vampires;
 /// Overlay that renders monster/animal sprites over humanoids  
 /// when the local player has HysteriaVisionComponent.
 /// </summary>
-public sealed class HysteriaVisionOverlay : Overlay
+public sealed class HysteriaVisionOverlay : Robust.Client.Graphics.Overlay
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
@@ -116,6 +114,10 @@ public sealed class HysteriaVisionOverlay : Overlay
         if (player == null || !_entManager.TryGetComponent<HysteriaVisionComponent>(player, out var hysteria))
             return;
 
+        var preserveSourceThrallVisibility =
+            _entManager.TryGetComponent<VampireThrallComponent>(player.Value, out var playerThrall)
+            && playerThrall.Master == hysteria.Source;
+
         var worldHandle = args.WorldHandle;
         var counterRotation = -(args.Viewport.Eye?.Rotation ?? Angle.Zero); 
 
@@ -130,12 +132,10 @@ public sealed class HysteriaVisionOverlay : Overlay
                 continue;
 
             // Skip thralls of the source vampire
-            if (_entManager.HasComponent<VampireThrallComponent>(uid))
-            {
-                if (_entManager.TryGetComponent<VampireThrallComponent>(uid, out var thrall) &&
-                    thrall.Master == hysteria.Source)
-                    continue;
-            }
+            if (preserveSourceThrallVisibility
+                && _entManager.TryGetComponent<VampireThrallComponent>(uid, out var thrall)
+                && thrall.Master == hysteria.Source)
+                continue;
 
             // Get world position
             var worldPos = _transform.GetWorldPosition(xform);

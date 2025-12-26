@@ -1,31 +1,39 @@
 using System.Numerics;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Robust.Client.GameObjects;
-using Robust.Shared.Timing;
 
 namespace Content.Client._Starlight.Antags.Vampires;
 
 /// <summary>
-/// Client-side system for smooth vampire drain beam visualization
+/// Client-side system for smooth vampire beams visualization
 /// </summary>
 public sealed class VampireDrainBeamSystem : EntitySystem
 {
+    private enum BeamKind
+    {
+        Drain,
+        BloodBond
+    }
+
     private static readonly Angle _beamAngleOffset = Angle.FromDegrees(180); // suck em
     private const bool SpriteIsVertical = true;
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
+    private const string DrainPrototype = "VampireDrainBeamVisual";
+    private const string BloodBondPrototype = "VampireBloodBondBeamVisual";
+
     /// <summary>
     /// Tracks client-side beam visual entities
-    /// Key = (source, target) pair, Value = visual beam entity
+    /// Key = (kind, source, target) pair, Value = visual beam entity
     /// </summary>
-    private readonly Dictionary<(EntityUid, EntityUid), EntityUid> _activeBeamVisuals = new();
+    private readonly Dictionary<(BeamKind, EntityUid, EntityUid), EntityUid> _activeBeamVisuals = new();
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeNetworkEvent<VampireDrainBeamEvent>(OnDrainBeamEvent);
+        SubscribeNetworkEvent<VampireBloodBondBeamEvent>(OnBloodBondBeamEvent);
     }
 
     public override void Update(float frameTime)
@@ -33,14 +41,14 @@ public sealed class VampireDrainBeamSystem : EntitySystem
         base.Update(frameTime);
 
         // Update all active beam visuals every frame for smooth following
-        var toRemove = new List<(EntityUid, EntityUid)>();
+        var toRemove = new List<(BeamKind, EntityUid, EntityUid)>();
 
-        foreach (var ((source, target), beamEntity) in _activeBeamVisuals)
+        foreach (var ((kind, source, target), beamEntity) in _activeBeamVisuals)
         {
             // Check if entities still exist
             if (!Exists(source) || !Exists(target) || !Exists(beamEntity))
             {
-                toRemove.Add((source, target));
+                toRemove.Add((kind, source, target));
                 if (Exists(beamEntity))
                     QueueDel(beamEntity);
                 continue;
@@ -56,32 +64,37 @@ public sealed class VampireDrainBeamSystem : EntitySystem
     }
 
     private void OnDrainBeamEvent(VampireDrainBeamEvent ev)
+        => HandleBeamEvent(ev.Source, ev.Target, ev.Create, BeamKind.Drain, DrainPrototype);
+
+    private void OnBloodBondBeamEvent(VampireBloodBondBeamEvent ev)
+        => HandleBeamEvent(ev.Source, ev.Target, ev.Create, BeamKind.BloodBond, BloodBondPrototype);
+
+    private void HandleBeamEvent(NetEntity sourceNet, NetEntity targetNet, bool create, BeamKind kind, string prototype)
     {
-        var source = GetEntity(ev.Source);
-        var target = GetEntity(ev.Target);
+        var source = GetEntity(sourceNet);
+        var target = GetEntity(targetNet);
 
         if (!Exists(source) || !Exists(target))
             return;
 
-        var key = (source, target);
+        var key = (kind, source, target);
 
-        if (ev.Create)
+        if (create)
         {
-            CreateBeamVisual(source, target);
+            CreateBeamVisual(kind, prototype, source, target);
+            return;
         }
-        else
+
+        if (_activeBeamVisuals.TryGetValue(key, out var beamEntity))
         {
-            if (_activeBeamVisuals.TryGetValue(key, out var beamEntity))
-            {
-                QueueDel(beamEntity);
-                _activeBeamVisuals.Remove(key);
-            }
+            QueueDel(beamEntity);
+            _activeBeamVisuals.Remove(key);
         }
     }
 
-    private void CreateBeamVisual(EntityUid source, EntityUid target)
+    private void CreateBeamVisual(BeamKind kind, string prototype, EntityUid source, EntityUid target)
     {
-        var key = (source, target);
+        var key = (kind, source, target);
 
         // Remove existing beam if any exist
         if (_activeBeamVisuals.TryGetValue(key, out var existingBeam))
@@ -89,7 +102,7 @@ public sealed class VampireDrainBeamSystem : EntitySystem
             QueueDel(existingBeam);
         }
 
-        var beam = Spawn("VampireDrainBeamVisual", Transform(source).Coordinates);
+        var beam = Spawn(prototype, Transform(source).Coordinates);
 
         _activeBeamVisuals[key] = beam;
 

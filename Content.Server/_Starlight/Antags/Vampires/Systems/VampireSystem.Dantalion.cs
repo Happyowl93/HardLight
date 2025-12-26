@@ -287,7 +287,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         var target = args.Target;
 
-        if (HasComp<VampireThrallComponent>(target))
+        if (TryComp<VampireThrallComponent>(target, out var thrall) && thrall.Master == uid)
         {
             _popup.PopupEntity(Loc.GetString("vampire-subspace-swap-thrall"), uid, uid, PopupType.MediumCaution);
             return;

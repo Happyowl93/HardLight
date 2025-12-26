@@ -63,7 +63,6 @@ public sealed partial class VampireSystem : EntitySystem
         SubscribeLocalEvent<VampireComponent, VampireDemonicGraspActionEvent>(OnDemonicGrasp);
         SubscribeLocalEvent<VampireComponent, VampireChargeActionEvent>(OnCharge);
         SubscribeLocalEvent<GargantuaComponent, StartCollideEvent>(OnChargeCollide);
-        SubscribeLocalEvent<GargantuaComponent, ShotAttemptedEvent>(OnShotAttempted);
         SubscribeLocalEvent<GargantuaComponent, PullAttemptEvent>(OnPullAttempt);
         SubscribeLocalEvent<GargantuaComponent, GetMeleeDamageEvent>(OnBloodSwellMeleeDamage);
         SubscribeLocalEvent<GargantuaComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeed);
@@ -136,15 +135,6 @@ public sealed partial class VampireSystem : EntitySystem
         _alerts.ClearAlert(uid, "VampireBloodSwell");
         Dirty(uid, gargantua);
         _popup.PopupEntity(Loc.GetString("vampire-blood-swell-end"), uid, uid);
-    }
-
-    private void OnShotAttempted(EntityUid uid, GargantuaComponent component, ref ShotAttemptedEvent args)
-    {
-        if (component.BloodSwellActive)
-        {   
-            _popup.PopupEntity(Loc.GetString("vampire-blood-swell-cancel-shoot"), uid, uid);
-            args.Cancel();
-        }
     }
 
     private void OnBloodSwellMeleeDamage(EntityUid uid, GargantuaComponent component, ref GetMeleeDamageEvent args)

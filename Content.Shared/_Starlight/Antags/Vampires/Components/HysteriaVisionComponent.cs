@@ -27,6 +27,6 @@ public sealed partial class HysteriaVisionComponent : Component
     public static readonly HysteriaDisguiseSprite[] DisguiseSprites =
     {
         new("/_Starlight/Vampire/Effects.rsi", "schizo", new Vector2(1.5f, 1.5f)),
-        new("/Mobs/Animals/bear.rsi", "bear", new Vector2(1.5f, 1.5f)),
+        new("/Mobs/Animals/bear.rsi", "bear", new Vector2(1.65f, 1.65f)),
     };
 }

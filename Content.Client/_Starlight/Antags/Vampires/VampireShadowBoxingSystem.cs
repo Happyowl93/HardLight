@@ -16,9 +16,6 @@ public sealed class VampireShadowBoxingSystem : EntitySystem
     private record struct ActivePunch(EntityUid Entity, EntityUid Source, EntityUid Target, TimeSpan SpawnTime, TimeSpan LifeTime);
     private readonly List<ActivePunch> _active = new();
 
-    // How long a punch effect flys for?
-    private static readonly TimeSpan _punchLifetime = TimeSpan.FromSeconds(0.33); 
-
     public override void Initialize()
     {
         base.Initialize();
@@ -34,7 +31,7 @@ public sealed class VampireShadowBoxingSystem : EntitySystem
 
         var srcPos = _transform.GetWorldPosition(source);
 
-        var punch = Spawn("VampireShadowBoxingPunch", Transform(source).Coordinates);
+        var punch = Spawn(ev.EffectProto, Transform(source).Coordinates);
         var direction = _transform.GetWorldPosition(target) - srcPos;
         if (direction != Vector2.Zero)
         {
@@ -42,9 +39,8 @@ public sealed class VampireShadowBoxingSystem : EntitySystem
             var ang = direction.ToWorldAngle();
             _transform.SetWorldRotation(punch, ang);
         }
-        _active.Add(new ActivePunch(punch, source, target, _timing.CurTime, _punchLifetime));
+        _active.Add(new ActivePunch(punch, source, target, _timing.CurTime, ev.PunchLifetime));
     }
-    // Помогите
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
