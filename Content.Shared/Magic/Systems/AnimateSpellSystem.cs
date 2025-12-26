@@ -14,10 +14,8 @@ public sealed class AnimateSpellSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
 
-    public override void Initialize()
-    {
+    public override void Initialize() =>
         SubscribeLocalEvent<AnimateComponent, MapInitEvent>(OnAnimate);
-    }
 
     private void OnAnimate(Entity<AnimateComponent> ent, ref MapInitEvent args)
     {
@@ -32,7 +30,8 @@ public sealed class AnimateSpellSystem : EntitySystem
         _transform.Unanchor(ent); // If left anchored they are effectively stuck/immobile and not a threat
         _physics.SetCanCollide(ent, true, true, false, fixtures, physics);
         _physics.SetCollisionMask(ent, fixture.Key, fixture.Value, (int)CollisionGroup.FlyingMobMask, fixtures, physics);
-        _physics.SetCollisionLayer(ent, fixture.Key, fixture.Value, (int)CollisionGroup.FlyingMobLayer, fixtures, physics);
+        // Starlight edit: Add Opaque so melee AttackMask can detect animated objects for wide swings
+        _physics.SetCollisionLayer(ent, fixture.Key, fixture.Value, (int)(CollisionGroup.FlyingMobLayer | CollisionGroup.Opaque), fixtures, physics);
         _physics.SetBodyType(ent, BodyType.KinematicController, fixtures, physics, xform);
         _physics.SetBodyStatus(ent, physics, BodyStatus.InAir, true);
         _physics.SetFixedRotation(ent, false, true, fixtures, physics);
