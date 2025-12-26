@@ -21,8 +21,8 @@
   parent: AmmoProviderShotgunShellToz
   id: BoxLethalshotTozOpen
   components:
-    - type: BallisticAmmoProvider
-      proto: ShellShotgunToz
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunToz
 
 - type: entity
   name: ammunition box (.42 pellet)
