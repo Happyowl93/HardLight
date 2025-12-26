@@ -11,7 +11,7 @@
     understands:
     - GalacticCommon
 #    - Aielic
-    - SolCommon
+#    - SolCommon
 #    - Darktongue
     - Sylvan
   - type: Absorbable
@@ -35,6 +35,7 @@
     hideLayersOnEquip:
     - Hair
     - Snout
+    - HeadTop
   - type: Inventory
     femaleDisplacements:
       jumpsuit:
@@ -42,8 +43,6 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: Wagging # Starlight
-
 
 - type: entity
   parent: BaseSpeciesDummy
