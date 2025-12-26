@@ -11,6 +11,7 @@
       - legs
       organs:
         brain: OrganHumanBrain # feels strange but it is what it is
+        eyes: OrganHumanEyes
         lungs: OrganAnimalLungs
         stomach: OrganAnimalStomach
         liver: OrganAnimalLiver
