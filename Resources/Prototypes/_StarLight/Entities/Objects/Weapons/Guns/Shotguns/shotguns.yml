@@ -312,10 +312,11 @@
   - type: StaticPrice
     price: 400
 
-# TOZ with extended mag inserted:
+# TOZ with extended mag already inserted:
 - type: entity
   parent: WeaponShotgunToz106
   id: WeaponShotgunToz106Extended
+  suffix: extended mag
   components:
   - type: ItemSlots
     slots:

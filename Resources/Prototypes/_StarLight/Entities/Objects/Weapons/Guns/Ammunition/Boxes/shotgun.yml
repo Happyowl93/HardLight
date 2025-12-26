@@ -19,6 +19,7 @@
   name: ammunition box (.42 pellet)
   description: Open and ready to be used.
   parent: AmmoProviderShotgunShellToz
+  suffix: opened
   id: BoxLethalshotTozOpen
   components:
   - type: BallisticAmmoProvider
