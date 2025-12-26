@@ -431,7 +431,7 @@
   name: loadout-group-brigmedic-id
   loadouts:
     - BrigmedicPDA
-    - VeteranCorpsmanPDA
+    - VeteranBrigmedicPDA
 
 - type: loadoutGroup
   id: BrigmedicBeaker

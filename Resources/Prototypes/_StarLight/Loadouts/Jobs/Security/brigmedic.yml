@@ -10,7 +10,7 @@
 
 # Senior Time
 - type: loadoutEffectGroup
-  id: VeteranCorpsman
+  id: VeteranBrigmedic
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
@@ -25,12 +25,12 @@
     id: BrigmedicPDA
 
 - type: loadout
-  id: VeteranCorpsmanPDA
+  id: VeteranBrigmedicPDA
   effects:
     - !type:GroupLoadoutEffect
-        proto: VeteranCorpsman
+        proto: VeteranBrigmedic
   equipment:
-    id: VeteranCorpsmanPDA
+    id: VeteranBrigmedicPDA
 
 
 # Beaker

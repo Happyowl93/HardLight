@@ -46,7 +46,7 @@
 
 - type: entity
   parent: BaseMedicalPDA
-  id: VeteranCorpsmanPDA
+  id: VeteranBrigmedicPDA
   name: veteran corpsman PDA
   description: I've seen the end. I couldn't change a thing...
   components:
@@ -58,14 +58,14 @@
     appearanceDataInit:
      enum.PdaVisuals.PdaType:
        !type:String
-       pda-veterancorpsman
+       pda-veteranbrigmedic
   - type: PdaBorderColor
     borderColor: "#A32D26"
     accentHColor: "#d7d7d0"
     accentVColor: "#d7d7d0"
   - type: Icon
     sprite: _Starlight/Objects/Devices/pda.rsi
-    state: pda-veterancorpsman
+    state: pda-veteranbrigmedic
   - type: CartridgeLoader
     preinstalled:
     - CrewManifestCartridge

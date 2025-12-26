@@ -23,7 +23,7 @@
 - type: startingGear
   id: ChemistGear
   equipment:
-    id: ChemistryPDA
+    # id: ChemistryPDA #Starlight
     ears: ClothingHeadsetMedical
     belt: ChemBag
     pocket1: HandLabeler

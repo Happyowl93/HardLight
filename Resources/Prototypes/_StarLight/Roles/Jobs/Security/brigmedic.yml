@@ -35,7 +35,7 @@
     neck: ClothingNeckTieRed
     pocket2: HandheldBrigmedicCrewMonitor
     mask: ClothingMaskBreathMedicalSecurity
-    id: BrigmedicPDA
+    # id: BrigmedicPDA # No longer needed with veteran PDA.
   storage:
     back:
     - Flash
