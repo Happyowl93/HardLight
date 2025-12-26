@@ -79,7 +79,7 @@ public sealed class DoorElectronicsSystem : EntitySystem
     }
     
     // Starlight begin
-    private void OnGotEmagged(EntityUid uid, DoorElectronicsComponent comp, GotEmaggedEvent args)
+    private void OnGotEmagged(EntityUid uid, DoorElectronicsComponent comp, ref GotEmaggedEvent args)
     {
         if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
             return;
