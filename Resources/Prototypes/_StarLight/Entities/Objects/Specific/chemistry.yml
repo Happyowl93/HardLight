@@ -156,7 +156,7 @@
   - type: ExaminableSolution
     examinableWhileClosed: true
     heldOnly: false
-    - type: MeleeWeapon
+  - type: MeleeWeapon
     damage:
       types:
         Blunt: 2
