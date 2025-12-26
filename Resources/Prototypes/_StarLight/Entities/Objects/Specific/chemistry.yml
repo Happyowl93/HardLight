@@ -145,10 +145,25 @@
     fillBaseName: beakerlarge
     inHandsMaxFillLevels: 3
     inHandsFillBaseName: -fill-
+  - type: Openable
+    sound:
+      collection: bottleOpenSounds
+    closeable: true
+    closeSound:
+      collection: bottleCloseSounds
+  - type: Sealable
+    sealed: false
   - type: ExaminableSolution
-    solution: *sol
     examinableWhileClosed: true
     heldOnly: false
+    - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 4
   - type: SolutionContainerManager
     solutions:
       beaker:
@@ -178,10 +193,27 @@
     fillBaseName: beakerlarge
     inHandsMaxFillLevels: 3
     inHandsFillBaseName: -fill-
+  - type: Openable
+    sound:
+      collection: bottleOpenSounds
+    closeable: true
+    closeSound:
+      collection: bottleCloseSounds
+  - type: Sealable
+    sealed: false
   - type: ExaminableSolution
-    solution: *sol
     examinableWhileClosed: true
     heldOnly: false
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 6
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 8
+    soundHit:
+      collection: MetalThud
   - type: SolutionContainerManager
     solutions:
       beaker:

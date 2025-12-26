@@ -423,7 +423,7 @@
   name: loadout-group-chemist-beaker
   loadouts:
     - LightBeaker
-    - SilverBeaker
+    - SilverBeakerChemist
     
 # Brigmedic
 - type: loadoutGroup
@@ -438,4 +438,4 @@
   name: loadout-group-brigmedic-beaker
   loadouts:
     - DarkBeaker
-    - SilverBeaker
+    - SilverBeakerBrigmedic

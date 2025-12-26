@@ -28,7 +28,7 @@
   id: VeteranCorpsmanPDA
   effects:
     - !type:GroupLoadoutEffect
-    proto: VeteranCorpsman
+        proto: VeteranCorpsman
   equipment:
     id: VeteranCorpsmanPDA
 
@@ -41,10 +41,10 @@
     - DarkBeaker
     
 - type: loadout
-  id: SilverBeaker
+  id: SilverBeakerBrigmedic
   effects:
     - !type:GroupLoadoutEffect
-    proto: SkilledBrigmedic
+        proto: SkilledBrigmedic
   storage:
     back:
     - SilverBeaker

@@ -29,7 +29,7 @@
   id: SeniorChemistPDA
   effects:
     - !type:GroupLoadoutEffect
-    proto: SeniorChemist
+        proto: SeniorChemist
   equipment:
     id: SeniorChemistPDA
 
@@ -42,10 +42,10 @@
     - LightBeaker
     
 - type: loadout
-  id: SilverBeaker
+  id: SilverBeakerChemist
   effects:
     - !type:GroupLoadoutEffect
-    proto: SkilledChemist
+        proto: SkilledChemist
   storage:
     back:
     - SilverBeaker
