@@ -53,8 +53,9 @@ loadout-group-mining-id = Mining Specialist ID
 loadout-group-salvage-id = Salvage Specialist ID
 loadout-group-salvage-lead-mantle = Salvage Lead mantle 
 
-# Other
-loadout-group-scarves = Scarf
-
 # Silicons
 loadout-group-borg-brain-type = Cyborg Brain Type
+
+# Other
+loadout-group-scarves = Scarf
+loadout-group-pens = Pen
