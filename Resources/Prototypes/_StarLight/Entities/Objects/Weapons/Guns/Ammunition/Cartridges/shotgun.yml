@@ -13,8 +13,8 @@
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell_toz.rsi
     layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: Appearance
   - type: SpentAmmoVisuals
     revealSpent: true # Starlight
@@ -27,14 +27,14 @@
   components:
   - type: Sprite
     layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
-      - state: tip
-        map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#FFFFFF"
-      - state: spent
-        map: [ "enum.AmmoVisualLayers.Spent" ]
-        visible: false
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#FFFFFF"
+    - state: spent
+      map: [ "enum.AmmoVisualLayers.Spent" ]
+      visible: false
   - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
