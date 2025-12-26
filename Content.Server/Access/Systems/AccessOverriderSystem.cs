@@ -218,7 +218,10 @@ public sealed class AccessOverriderSystem : SharedAccessOverriderSystem
                 allowedByDoorGroups.UnionWith(allowedByConfigurator);
             }
 
-            availableAccess = allowedByConfigurator.Intersect(allowedByDoorGroups).ToArray();
+            if (!component.OverridesTargetRestrictions)
+            {
+                availableAccess = allowedByConfigurator.Intersect(allowedByDoorGroups).ToArray();
+            }
 
             foreach (var set in accessReaderEnt.Value.Comp.AccessLists)
                 actuallySetOnDoor.UnionWith(set);
