@@ -1,4 +1,67 @@
-# Borgs
+# region AI
+
+- type: entity
+  parent: AiHeld
+  id: AiHeldCC
+  components:
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Common
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    - Law
+    - CentCom
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    - Law
+    - CentCom
+
+- type: entity
+  parent: CentComStationAiEmpty
+  id: CentComStationAi
+  suffix: CC Comms
+  categories: DoNotMap
+  components:
+  components:
+  - type: ContainerComp
+    proto: AiHeldCC
+  - type: ContainerFill
+    containers:
+      board:
+      - StationAiCoreElectronics
+      station_ai_mind_slot:
+      - CentComAiBrain
+
+- type: entity
+  parent: StationAiBrain
+  id: CentComAiBrain
+  categories: [ HideSpawnMenu, DoNotMap ]
+  components:
+  - type: Access
+    groups:
+    - AllAccess
+    tags:
+    - CentralCommand
+  - type: MindContainer
+  - type: IonStormTarget
+    chance: 0
+
+# region Borgs
 - type: entity
   id: PlayerBorgSyndicateStealthBattery
   parent: BorgChassisSyndicateStealth
