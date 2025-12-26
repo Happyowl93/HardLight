@@ -1,4 +1,3 @@
-
 - type: entity
   parent: BaseAmmoProvider
   id: AmmoProviderShotgunShellToz
