@@ -113,6 +113,10 @@
     rules: ghost-role-information-xeno-rules
     raffle:
       settings: default
+    # Starlight start
+    mindRoles:
+    - MindRoleGhostRoleXeno
+    # Starlight end
   - type: GhostTakeoverAvailable
   - type: TypingIndicator
     proto: alien
