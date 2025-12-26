@@ -181142,6 +181142,8 @@ entities:
     - type: Transform
       pos: 8.499433,-51.2844
       parent: 2
+    missingComponents:
+    - Contraband
 - proto: WeaponPistolMk58
   entities:
   - uid: 29050
