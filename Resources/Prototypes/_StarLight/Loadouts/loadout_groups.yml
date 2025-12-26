@@ -409,3 +409,33 @@
   loadouts:
     - SalvagePDA
     - VeteranSalvagePDA
+
+# Chemist
+- type: loadoutGroup
+  id: ChemistPDA
+  name: loadout-group-chemist-id
+  loadouts:
+    - ChemistPDA
+    - SeniorChemistPDA
+
+- type: loadoutGroup
+  id: ChemistBeaker
+  name: loadout-group-chemist-beaker
+  loadouts:
+    - LightBeaker
+    - SilverBeaker
+    
+# Brigmedic
+- type: loadoutGroup
+  id: BrigmedicPDA
+  name: loadout-group-brigmedic-id
+  loadouts:
+    - BrigmedicPDA
+    - VeteranCorpsmanPDA
+
+- type: loadoutGroup
+  id: BrigmedicBeaker
+  name: loadout-group-brigmedic-beaker
+  loadouts:
+    - DarkBeaker
+    - SilverBeaker

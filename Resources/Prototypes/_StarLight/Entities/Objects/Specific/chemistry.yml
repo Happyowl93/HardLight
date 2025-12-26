@@ -1,7 +1,7 @@
 - type: entity
   name: golden beaker
   parent: BaseBeaker
-  description: Used to contain a moderate amount of chemicals and solutions.
+  description: Used to contain a gigantic amount of chemicals and solutions.
   id: GoldenBeaker
   components:
   - type: Sprite
@@ -88,3 +88,101 @@
     - vial5
     - vial6
   - type: Appearance
+
+- type: entity
+  name: silver beaker
+  parent: BaseBeaker
+  description: Used to contain a huge amount of chemicals and solutions.
+  id: SilverBeaker
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Specific/Chemistry/silverbeaker.rsi
+    layers:
+      - state: beaker
+      - state: beaker1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: Item
+    sprite: _Starlight/Objects/Specific/Chemistry/silverbeaker.rsi
+  - type: Spillable
+    solution: beaker
+  - type: StaticPrice
+    price: 10
+  - type: PhysicalComposition
+    materialComposition:
+      Glass: 50
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
+    fillBaseName: beaker
+    inHandsMaxFillLevels: 3
+    inHandsFillBaseName: -fill-
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 150
+
+- type: entity
+  name: light beaker
+  parent: [BaseBeakerMetallic, DrinkBaseOpenable, DrinkVisualsOpenable]
+  description: The light side of an unbreakable beaker. Its true power can be sealed.
+  id: LightBeaker
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Specific/Chemistry/lightbeaker.rsi
+    layers:
+      - state: beakerlarge
+      - state: beakerlarge1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: Item
+    sprite: _Starlight/Objects/Specific/Chemistry/lightbeaker.rsi
+  - type: Spillable
+    solution: beaker
+  - type: StaticPrice
+    price: 10
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
+    fillBaseName: beakerlarge
+    inHandsMaxFillLevels: 3
+    inHandsFillBaseName: -fill-
+  - type: ExaminableSolution
+    solution: *sol
+    examinableWhileClosed: true
+    heldOnly: false
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 100
+
+- type: entity
+  name: dark beaker
+  parent: [BaseBeakerMetallic, DrinkBaseOpenable, DrinkVisualsOpenable]
+  description: The dark side of an unbreakable beaker. Its true power can be sealed.
+  id: DarkBeaker
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Specific/Chemistry/darkbeaker.rsi
+    layers:
+      - state: beakerlarge
+      - state: beakerlarge1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: Item
+    sprite: _Starlight/Objects/Specific/Chemistry/darkbeaker.rsi
+  - type: Spillable
+    solution: beaker
+  - type: StaticPrice
+    price: 10
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
+    fillBaseName: beakerlarge
+    inHandsMaxFillLevels: 3
+    inHandsFillBaseName: -fill-
+  - type: ExaminableSolution
+    solution: *sol
+    examinableWhileClosed: true
+    heldOnly: false
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 100

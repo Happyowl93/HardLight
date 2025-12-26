@@ -1,0 +1,50 @@
+﻿# Skilled (Beaker) Time
+- type: loadoutEffectGroup
+  id: SkilledBrigmedic
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBrigmedic
+      time: 54000 # 15 hrs
+
+# Senior Time
+- type: loadoutEffectGroup
+  id: VeteranCorpsman
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBrigmedic
+      time: 216000 # 60 hrs
+
+# PDA
+- type: loadout
+  id: BrigmedicPDA
+  equipment:
+    id: BrigmedicPDA
+
+- type: loadout
+  id: VeteranCorpsmanPDA
+  effects:
+    - !type:GroupLoadoutEffect
+    proto: VeteranCorpsman
+  equipment:
+    id: VeteranCorpsmanPDA
+
+
+# Beaker
+- type: loadout
+  id: DarkBeaker
+  storage:
+    back:
+    - DarkBeaker
+    
+- type: loadout
+  id: SilverBeaker
+  effects:
+    - !type:GroupLoadoutEffect
+    proto: SkilledBrigmedic
+  storage:
+    back:
+    - SilverBeaker
