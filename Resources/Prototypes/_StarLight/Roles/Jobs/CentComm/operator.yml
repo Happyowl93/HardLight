@@ -20,7 +20,6 @@
     jumpsuit: ClothingAltUniformJumpsuitCentcomOfficial
     back: ClothingBackpackSatchelCentcomm
     shoes: ClothingShoesBootsLaceup
-    head: ClothingHeadHatCentcomcap
     eyes: ClothingEyesGlassesCentComm
     gloves: ClothingHandsGlovesColorBlack
     id: CentCommOperatorPDA
@@ -39,7 +38,6 @@
     jumpsuit: ClothingUniformJumpskirtCentcommResearchFormalWear
     back: ClothingBackpackSatchelCentcomm
     shoes: ClothingShoesBootsLaceup
-    head: ClothingHeadHatCentcomcap
     eyes: ClothingEyesGlassesCentComm
     gloves: ClothingHandsGlovesColorBlack
     id: CentcomPDA
@@ -58,7 +56,6 @@
     jumpsuit: ClothingUniformJumpskirtCentcommAdminFormalWear
     back: ClothingBackpackSatchelCentcomm
     shoes: ClothingShoesBootsLaceup
-    head: ClothingHeadHatCentcomcap
     eyes: ClothingEyesGlassesCentComm
     gloves: ClothingHandsGlovesHop
     id: CentcomPDA
@@ -78,7 +75,6 @@
     jumpsuit: ClothingUniformJumpskirtCentcommCargoFormalWear
     back: ClothingBackpackSatchelCentcomm
     shoes: ClothingShoesBootsLaceup
-    head: ClothingHeadHatCentcomcap
     eyes: ClothingEyesGlassesCentComm
     gloves: ClothingHandsGlovesColorBlack
     id: CentcomPDA
@@ -117,7 +113,6 @@
     jumpsuit: ClothingUniformJumpskirtCentcommIntelFormalWear
     back: ClothingBackpackSatchelCentcomm
     shoes: ClothingShoesBootsLaceup
-    head: ClothingHeadHatCentcomcap
     gloves: ClothingHandsGlovesColorBlack
     eyes: ClothingEyesGlassesCentComm
     id: CentcomPDA
@@ -136,7 +131,6 @@
     jumpsuit: ClothingUniformJumpskirtCentcommMedFormalWear
     back: ClothingBackpackSatchelCentcomm
     shoes: ClothingShoesBootsLaceup
-    head: ClothingHeadHatCentcomcap
     eyes: ClothingEyesGlassesCentComm
     gloves: ClothingHandsGlovesNitrile 
     id: CentcomPDA
@@ -174,7 +168,6 @@
     jumpsuit: ClothingUniformJumpskirtCentcommSecurityFormalWear
     back: ClothingBackpackSatchelCentcomm
     shoes: ClothingShoesBootsCombatFilled
-    head: ClothingHeadHatCentcomcap
     eyes: ClothingEyesGlassesCentComm
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterArmorCentcommCarapace
@@ -195,7 +188,6 @@
     jumpsuit: ClothingUniformJumpskirtCentcommSpecialOpsFormalWear
     back: ClothingBackpackSatchelCentcomm
     shoes: ClothingShoesBootsCombatFilled
-    head: ClothingHeadHatCentcomcap
     eyes: ClothingEyesGlassesCentComm
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterArmorCentcommCarapace
