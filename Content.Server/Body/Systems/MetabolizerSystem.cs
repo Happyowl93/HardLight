@@ -198,8 +198,8 @@ public sealed class MetabolizerSystem : SharedMetabolizerSystem
                         case "Poison":
                             scaleRate = scaleComp.PoisonScale;
                             break;
-                        case "Narcotics":
-                            scaleRate = scaleComp.NarcoticsScale;
+                        case "Narcotic":
+                            scaleRate = scaleComp.NarcoticScale;
                             break;
                     }
                 }

@@ -24,5 +24,5 @@ public sealed partial class MetabolizerScaleComponent : Component
     ///     Sets the scale for the "Narcotics" reagent group efficiency and rate
     /// </summary>
     [DataField]
-    public float NarcoticsScale = 1f;
+    public float NarcoticScale = 1f;
 }
