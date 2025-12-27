@@ -17,7 +17,7 @@ public sealed class DoorElectronicsSystem : EntitySystem
 {
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly AccessReaderSystem _accessReader = default!;
-    [Dependency] private readonly EmagSystem _emag = default!;
+    [Dependency] private readonly EmagSystem _emag = default!; // Starlight
 
     public override void Initialize()
     {
