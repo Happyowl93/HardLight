@@ -8,6 +8,10 @@
   },
     "states": [
         {
+          "name": "box-cc",
+          "copyright": "by mikeysaurus"
+        },
+        {
             "name": "stamp-cc-departments",
             "copyright": "by mikeysaurus"
         },

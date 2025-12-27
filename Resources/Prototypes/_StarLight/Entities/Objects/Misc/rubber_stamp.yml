@@ -205,6 +205,7 @@
       containers:
         storagebase: !type:AllSelector
           children:
+            - id: RubberStampCentcom
             - id: RubberStampCAD
             - id: RubberStampCCD
             - id: RubberStampCED
@@ -215,9 +216,10 @@
             - id: RubberStampCSOD
             - id: RubberStampCSD
     - type: Sprite
+      sprite: _Starlight/Objects/Storage/boxes.rsi
       layers:
-        - state: box
-        - state: stamp
+        - state: box-cc
+        - state: stamp-cc-departments
     
 # CC Administrative Stamps
 - type: entity
@@ -249,6 +251,20 @@
     state: stamp-missingstamps
 
 - type: entity
+  name: INCORRECT STAMPS rubber stamp
+  parent: RubberStampBase
+  id: RubberStampIncorrectStamps
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: "Incorrect Stamps"
+    stampedColor: "#9b5100"
+    stampState: "paper_stamp-deny"
+  - type: Sprite
+    sprite: _Starlight/Objects/Misc/stamps.rsi
+    state: stamp-missingstamps
+
+- type: entity
   name: INCORRECT FORM rubber stamp
   parent: RubberStampBase
   id: RubberStampIncorrectForm
@@ -256,6 +272,20 @@
   components:
   - type: Stamp
     stampedName: "Incorrect Form"
+    stampedColor: "#9b3600"
+    stampState: "paper_stamp-deny"
+  - type: Sprite
+    sprite: _Starlight/Objects/Misc/stamps.rsi
+    state: stamp-incorrectform
+
+- type: entity
+  name: INCOMPLETE FORM rubber stamp
+  parent: RubberStampBase
+  id: RubberStampIncompleteForm
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: "Incomplete Form"
     stampedColor: "#9b3600"
     stampState: "paper_stamp-deny"
   - type: Sprite
@@ -322,16 +352,19 @@
           children:
             - id: RubberStampAcknowledged
             - id: RubberStampMissingStamps
+            - id: RubberStampIncorrectStamps
             - id: RubberStampIncorrectForm
+            - id: RubberStampIncompleteForm
             - id: RubberStampSentToATS
             - id: RubberStampDeferToCommand
             - id: RubberStampStandby
             - id: RubberStampApproved
             - id: RubberStampDenied
     - type: Sprite
+      sprite: _Starlight/Objects/Storage/boxes.rsi
       layers:
-        - state: box
-        - state: stamp
+        - state: box-cc
+        - state: stamp-cc-admin
 
 # Salvage stamp
 - type: entity
