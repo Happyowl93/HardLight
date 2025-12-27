@@ -43,7 +43,7 @@
         altDisarm: false
         soundHit: /Audio/Weapons/smash.ogg
         range: 1.2
-        angle: 0.0
+        angle: 60
         damage:
           types:
             Blunt: 10

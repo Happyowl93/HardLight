@@ -63,9 +63,10 @@ public sealed class AnimateSpellSystem : EntitySystem
         // Determine HP based on item size with random variance
         int hp;
         
-        if (TryComp<ItemComponent>(uid, out var item))
+        // Check for stored original size (Item component may have been removed)
+        if (TryComp<AnimatedObjectSizeComponent>(uid, out var sizeComp))
         {
-            var sizeId = item.Size.Id;
+            var sizeId = sizeComp.OriginalSize;
             
             // Get HP range based on size from component configuration
             var (min, max) = sizeId switch
@@ -80,14 +81,14 @@ public sealed class AnimateSpellSystem : EntitySystem
             };
             
             hp = _random.Next(min, max + 1);
-            _sawmill.Info($"Entity is item with size {sizeId}, HP set to {hp} (range {min}-{max})");
+            _sawmill.Info($"Entity had item size {sizeId}, HP set to {hp} (range {min}-{max})");
         }
         else
         {
-            // Objects without ItemComponent (can't be picked up) - furniture, structures, etc.
+            // Objects that were never items - furniture, structures, etc.
             var (min, max) = hpConfig.NonItemHP;
             hp = _random.Next(min, max + 1);
-            _sawmill.Info($"Entity is not an item, HP set to {hp} (range {min}-{max})");
+            _sawmill.Info($"Entity was not an item, HP set to {hp} (range {min}-{max})");
         }
 
         // Add or update Destructible component with size-based HP
