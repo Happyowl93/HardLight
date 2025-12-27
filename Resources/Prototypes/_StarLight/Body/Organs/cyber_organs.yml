@@ -134,8 +134,8 @@
       multiplier: 1.25
 
 - type: entity
-  id: CyberBreathableLungs
-  name: Cyber Breathable Lungs
+  id: CyberRebreather
+  name: Cyber Rebreather
   description: Artificial lungs with an integrated gas tank system. Can be filled with any breathable gas mixture.
   parent: [OrganCyber, OrganHumanLungs]
   components:
@@ -151,6 +151,7 @@
   - type: Item
     size: Normal
     heldPrefix: lungs
+    sprite: _Starlight/Objects/Specific/Medical/breathable_cyber_lungs.rsi
     shape:
     - 0,0,3,3
   - type: BreathMask

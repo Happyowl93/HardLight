@@ -341,8 +341,8 @@
     Glass: 150
 
 - type: latheRecipe
-  id: CyberBreathableLungs
-  result: CyberBreathableLungs
+  id: CyberRebreather
+  result: CyberRebreather
   categories:
   - Implants
   completetime: 2

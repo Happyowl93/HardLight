@@ -12,6 +12,14 @@
     },
     {
       "name": "lung-r"
+    },
+    {
+      "name": "lungs-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "lungs-inhand-right",
+      "directions": 4
     }
   ]
 }
