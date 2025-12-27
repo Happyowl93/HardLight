@@ -7,6 +7,9 @@ signal-port-description-nuclear-reactor-receiver-insert = Increases the insertio
 signal-port-name-nuclear-reactor-receiver-retract = Control Rods Out
 signal-port-description-nuclear-reactor-receiver-retract = Decreases the insertion level of the control rods.
 
+signal-port-name-gas-turbine-data-receiver = Turbine Monitor
+signal-port-description-gas-turbine-data-receiver = Receiving info about a gas turbine.
+
 signal-port-name-gas-turbine-receiver-increase = Increase Load
 signal-port-description-gas-turbine-receiver-increase = Increases the stator load of the turbine.
 

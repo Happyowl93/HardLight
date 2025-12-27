@@ -7,6 +7,12 @@
 
   # Gas Turbine
 - type: sourcePort
+  id: GasTurbineDataSender
+  name: signal-port-name-gas-turbine-data-sender
+  description: signal-port-description-gas-turbine-data-sender
+  defaultLinks: [ GasTurbineDataReceiver ]
+
+- type: sourcePort
   id: TurbineSpeedHigh
   name: signal-port-name-gas-turbine-speed-high
   description: signal-port-description-gas-turbine-speed-high
