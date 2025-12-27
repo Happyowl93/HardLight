@@ -13,6 +13,10 @@
   naming: FirstLast
   customName: true
   roundstartCyberwareCapacity: 5
+  minAge: 30
+  youngAge: 120
+  oldAge: 2700
+  maxAge: 10000
 
 # The lack of a layer means that
 # this person cannot have round-start anything

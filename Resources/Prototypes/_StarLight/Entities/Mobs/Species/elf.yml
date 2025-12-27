@@ -29,7 +29,7 @@
     - id: FoodMeatHuman
       amount: 5
   - type: Speech
-    speechSounds: Alto
+    speechSounds: Tenor
   - type: HumanoidAppearance
     species: Elf
     hideLayersOnEquip:
