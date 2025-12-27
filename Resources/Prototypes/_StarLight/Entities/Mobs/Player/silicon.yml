@@ -32,7 +32,7 @@
     - CentCom
 
 - type: entity
-  parent: CentComStationAiEmpty
+  parent: PlayerStationAiEmpty
   id: CentComStationAi
   suffix: CC Comms
   categories: DoNotMap
