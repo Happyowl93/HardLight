@@ -217,7 +217,7 @@
     - type: Sprite
       layers:
         - state: box
-        - state: stamp # MIKEY - make custom sprite for CC stamps?
+        - state: stamp
     
 # CC Administrative Stamps
 - type: entity
@@ -228,11 +228,11 @@
   components:
   - type: Stamp
     stampedName: "Acknowledged"
-    stampedColor: "#00be00"
+    stampedColor: "#79ae00"
     stampState: "paper_stamp-ok"
   - type: Sprite
-    #sprite: _Starlight/Objects/Misc/stamps.rsi
-    state: stamp-ok
+    sprite: _Starlight/Objects/Misc/stamps.rsi
+    state: stamp-acknowledged
       
 - type: entity
   name: MISSING STAMPS rubber stamp
@@ -242,11 +242,11 @@
   components:
   - type: Stamp
     stampedName: "Missing Stamps"
-    stampedColor: "#a23e3e"
+    stampedColor: "#9b5100"
     stampState: "paper_stamp-deny"
   - type: Sprite
-    #sprite: _Starlight/Objects/Misc/stamps.rsi
-    state: stamp-deny
+    sprite: _Starlight/Objects/Misc/stamps.rsi
+    state: stamp-missingstamps
 
 - type: entity
   name: INCORRECT FORM rubber stamp
@@ -256,11 +256,11 @@
   components:
   - type: Stamp
     stampedName: "Incorrect Form"
-    stampedColor: "#a23e3e"
+    stampedColor: "#9b3600"
     stampState: "paper_stamp-deny"
   - type: Sprite
-    #sprite: _Starlight/Objects/Misc/stamps.rsi
-    state: stamp-deny
+    sprite: _Starlight/Objects/Misc/stamps.rsi
+    state: stamp-incorrectform
 
 - type: entity
   name: SENT TO ATS rubber stamp
@@ -270,11 +270,11 @@
   components:
   - type: Stamp
     stampedName: "Sent to ATS"
-    stampedColor: "#B45F06"
+    stampedColor: "#b3844b"
     stampState: "paper_stamp-qm"
   - type: Sprite
-    #sprite: _Starlight/Objects/Misc/stamps.rsi
-    state: stamp-detective
+    sprite: _Starlight/Objects/Misc/stamps.rsi
+    state: stamp-senttoATS
   
 - type: entity
   name: DEFER TO COMMAND rubber stamp
@@ -298,11 +298,11 @@
   components:
   - type: Stamp
     stampedName: "Standby"
-    stampedColor: "#c69b17"
-    stampState: "paper_stamp-ce"
+    stampedColor: "#e0c300"
+    stampState: "paper_stamp-standby"
   - type: Sprite
-    #sprite: _Starlight/Objects/Misc/stamps.rsi
-    state: stamp-ce
+    sprite: _Starlight/Objects/Misc/stamps.rsi
+    state: stamp-standby
 
 - type: entity
   name: cc administrative stamps box
@@ -331,7 +331,7 @@
     - type: Sprite
       layers:
         - state: box
-        - state: stamp # MIKEY - make custom sprite for CC stamps?
+        - state: stamp
 
 # Salvage stamp
 - type: entity
