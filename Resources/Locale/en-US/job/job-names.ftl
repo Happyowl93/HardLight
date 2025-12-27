@@ -13,7 +13,8 @@ job-name-cburn = Centcomm Quarantine Officer
 job-name-ce = Chief Engineer
 job-name-centcomoff = CentComm Official
 job-name-centcomoperator = CentComm Operator
-job-name-chaplain = Chaplain
+# Starlight:
+job-name-chaplain = Priest
 job-name-chef = Chef
 job-name-chemist = Chemist
 job-name-clown = Clown
@@ -22,7 +23,8 @@ job-name-deathsquad = Centcomm Agent
 job-name-detective = Detective
 job-name-doctor = Medical Doctor
 job-name-engineer = Station Engineer
-job-name-ertchaplain = ERT Chaplain
+# Starlight:
+job-name-ertchaplain = ERT Priest
 job-name-ertengineer = ERT Engineer
 job-name-ertjanitor = ERT Janitor
 job-name-ertleader = ERT Leader
@@ -81,14 +83,16 @@ JobCaptain = Captain
 JobCargoTechnician = Cargo Technician
 JobCentralCommandOfficial = Central Command Official
 JobCentralCommandOperator = CentComm Operator
-JobChaplain = Chaplain
+# Starlight:
+JobChaplain = Priest
 JobChef = Chef
 JobChemist = Chemist
 JobChiefEngineer = Chief Engineer
 JobChiefMedicalOfficer = Chief Medical Officer
 JobClown = Clown
 JobDetective = Detective
-JobERTChaplain = ERT Chaplain
+# Starlight:
+JobERTChaplain = ERT Priest
 JobERTEngineer = ERT Engineer
 JobERTJanitor = ERT Janitor
 JobERTLeader = ERT Leader

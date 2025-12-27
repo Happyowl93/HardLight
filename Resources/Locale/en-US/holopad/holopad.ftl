@@ -134,7 +134,8 @@ holopad-service-janitor = Service - Janitor
 holopad-service-bar = Service - Bar
 holopad-service-kitchen = Service - Kitchen
 holopad-service-botany = Service - Botany
-holopad-service-chapel = Service - Chapel
+# Starlight: Chapel -> Temple
+holopad-service-chapel = Service - Temple
 holopad-service-library = Service - Library
 holopad-service-newsroom = Service - Newsroom
 holopad-service-zookeeper = Service - Zookeeper
