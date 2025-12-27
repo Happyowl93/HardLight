@@ -89,10 +89,14 @@ public sealed class DoorElectronicsSystem : EntitySystem
 
         if (args.EmagComponent is null) return;
 
-        if (!comp.AccessGroups.Contains(args.EmagComponent.AccessGroup))
-            comp.AccessGroups.Add(args.EmagComponent.AccessGroup);
-        else return;
+        var addedGroups = false;
+        foreach (var group in args.EmagComponent.AccessGroups.Where(group => !comp.AccessGroups.Contains(group)))
+        {
+            comp.AccessGroups.Add(group);
+            addedGroups = true;
+        }
 
+        if (!addedGroups) return;
         args.Handled = true;
     }
     // Starlight end

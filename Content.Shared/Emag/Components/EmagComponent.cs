@@ -51,7 +51,7 @@ public sealed partial class EmagComponent : Component
     /// </summary>
     [DataField]
     [AutoNetworkedField]
-    public ProtoId<AccessGroupPrototype> AccessGroup = "Syndicate";
+    public List<ProtoId<AccessGroupPrototype>> AccessGroups = [];
     
     /// <summary>
     /// should this emag also destroy the transponder
