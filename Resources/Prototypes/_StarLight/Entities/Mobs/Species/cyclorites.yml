@@ -73,6 +73,10 @@
       reagents:
       - ReagentId: CopperBlood
         Quantity: 1
+  - type: MetabolizerScale
+    medicineScale: 2
+    poisonScale: 0.5
+    narcoticScale: 0.5
   - type: Vocal
     sounds:
       Male: MaleCyclorite
