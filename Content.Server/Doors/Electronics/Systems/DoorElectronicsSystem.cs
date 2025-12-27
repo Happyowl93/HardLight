@@ -25,7 +25,7 @@ public sealed class DoorElectronicsSystem : EntitySystem
         SubscribeLocalEvent<DoorElectronicsComponent, DoorElectronicsUpdateConfigurationMessage>(OnChangeConfiguration);
         SubscribeLocalEvent<DoorElectronicsComponent, AccessReaderConfigurationChangedEvent>(OnAccessReaderChanged);
         SubscribeLocalEvent<DoorElectronicsComponent, BoundUIOpenedEvent>(OnBoundUIOpened);
-        SubscribeLocalEvent<DoorElectronicsComponent, GotEmaggedEvent>(OnGotEmagged);
+        SubscribeLocalEvent<DoorElectronicsComponent, GotEmaggedEvent>(OnGotEmagged); // Starlight
     }
 
     public void UpdateUserInterface(EntityUid uid, DoorElectronicsComponent component)
