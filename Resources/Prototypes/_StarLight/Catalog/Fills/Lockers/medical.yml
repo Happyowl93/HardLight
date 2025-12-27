@@ -1,4 +1,3 @@
-# Starlight - Medical Chemical Crate
 - type: entityTable
   id: CrateFillChemicalJugs
   table: !type:AllSelector
