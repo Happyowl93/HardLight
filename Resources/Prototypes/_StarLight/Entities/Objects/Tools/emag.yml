@@ -28,7 +28,7 @@
   components:
     - type: Emag
       owningFaction: NanoTrasen
-      accessGroup: CentralCommand
+      accessGroups: [CentralCommand]
       channelAdd: [CentCom]
       lawset: CCLawset
     - type: Sprite
