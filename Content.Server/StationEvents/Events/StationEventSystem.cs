@@ -63,23 +63,12 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
             }
             else
             {
-                Log.Log(LogLevel.Info, $"Not global!");
                 var allPlayersOnStation = Filter.Empty().AddWhere(session =>
                 {
-                    Log.Log(LogLevel.Info, $"Checking filter for {session.Name}");
                     if (session.AttachedEntity is null) return false;
-                    Log.Log(LogLevel.Info, $"{session.Name} has attached entity");
                     if (!TryComp<StationMemberComponent>(Transform(session.AttachedEntity.Value).GridUid,
                             out var stationGrid)) return false;
-                    Log.Log(LogLevel.Info, $"{session.Name} is on a grid that is a station");
-                    Log.Log(LogLevel.Info, $"{session.Name}: Checking: {stationGrid.Station}, {stationEvent.TargetStation}");
-                    if (stationGrid.Station == stationEvent.TargetStation)
-                    {
-                        Log.Log(LogLevel.Info, $"{session.Name}, {stationGrid.Station}, {stationEvent.TargetStation}");
-                        return true;
-                    }
-
-                    return false;
+                    return stationGrid.Station == stationEvent.TargetStation;
                 });
                 
                 ChatSystem.DispatchFilteredAnnouncement(allPlayersOnStation,
