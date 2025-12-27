@@ -35,7 +35,7 @@
   parent: PlayerStationAiEmpty
   id: CentComStationAi
   suffix: CC Comms
-  categories: DoNotMap
+  categories: [ DoNotMap ]
   components:
   - type: ContainerComp
     proto: AiHeldCC
