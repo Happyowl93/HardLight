@@ -9,6 +9,7 @@ using Content.Shared.GameTicking.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Shared.Station.Components; //Starlight
 
 namespace Content.Server.StationEvents.Events;
 
@@ -42,13 +43,56 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
 
         AdminLogManager.Add(LogType.EventAnnounced, $"Event added / announced: {ToPrettyString(uid)}");
 
+        //Starlight begin
+        if (TryGetRandomStation(out var chosenStation))
+            stationEvent.TargetStation = chosenStation;
+        //Starlight end stationEvent.TargetStation = station;
+
+        if (stationEvent.StartAnnouncement is not null)
+        {
+            if (stationEvent.GlobalAnnouncement)
+            {
+                var allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
+
+                if (stationEvent.StartAnnouncement != null)
+                    ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame,
+                        Loc.GetString(stationEvent.StartAnnouncement), playSound: false,
+                        colorOverride: stationEvent.StartAnnouncementColor);
+                
+                Audio.PlayGlobal(stationEvent.StartAudio, allPlayersInGame, true);
+            }
+            else
+            {
+                Log.Log(LogLevel.Info, $"Not global!");
+                var allPlayersOnStation = Filter.Empty().AddWhere(session =>
+                {
+                    Log.Log(LogLevel.Info, $"Checking filter for {session.Name}");
+                    if (session.AttachedEntity is null) return false;
+                    Log.Log(LogLevel.Info, $"{session.Name} has attached entity");
+                    if (!TryComp<StationMemberComponent>(Transform(session.AttachedEntity.Value).GridUid,
+                            out var stationGrid)) return false;
+                    Log.Log(LogLevel.Info, $"{session.Name} is on a grid that is a station");
+                    Log.Log(LogLevel.Info, $"{session.Name}: Checking: {stationGrid.Station}, {stationEvent.TargetStation}");
+                    if (stationGrid.Station == stationEvent.TargetStation)
+                    {
+                        Log.Log(LogLevel.Info, $"{session.Name}, {stationGrid.Station}, {stationEvent.TargetStation}");
+                        return true;
+                    }
+
+                    return false;
+                });
+                
+                ChatSystem.DispatchFilteredAnnouncement(allPlayersOnStation,
+                    Loc.GetString(stationEvent.StartAnnouncement), playSound: false,
+                    colorOverride: stationEvent.StartAnnouncementColor);
+                
+                Audio.PlayGlobal(stationEvent.StartAudio, allPlayersOnStation, true);
+            }
+        }
+        
         // we don't want to send to players who aren't in game (i.e. in the lobby)
-        Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
-
-        if (stationEvent.StartAnnouncement != null)
-            ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.StartAnnouncement), playSound: false, colorOverride: stationEvent.StartAnnouncementColor);
-
-        Audio.PlayGlobal(stationEvent.StartAudio, allPlayersInGame, true);
+        
+        //Starlight end
     }
 
     /// <inheritdoc/>

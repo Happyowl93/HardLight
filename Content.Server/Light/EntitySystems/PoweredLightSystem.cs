@@ -3,6 +3,7 @@ using Content.Shared.Light.Components;
 using Content.Shared.Light.EntitySystems;
 
 #region Starlight
+using Content.Shared.Station.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.AlertLevel;
 using Content.Server.DeviceLinking.Systems;
@@ -68,6 +69,8 @@ public sealed class PoweredLightSystem : SharedPoweredLightSystem
         var query = EntityQueryEnumerator<PoweredLightComponent>();
         while (query.MoveNext(out var uid, out var light))
         {
+            if (!TryComp<StationMemberComponent>(Transform(uid).GridUid, out var stationMember)) continue;
+            if (stationMember.Station != args.Station) continue;
             if (args.AlertLevel == "delta" || args.AlertLevel == "epsilon")
                 SetState(uid, false, light);
             else
