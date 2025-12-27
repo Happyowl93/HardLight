@@ -21,6 +21,7 @@ using Robust.Shared.Collections;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Server._Starlight.Body.Components;
 
 #region Starlight
 using Content.Shared._Starlight.Railroading.Events;
@@ -185,12 +186,31 @@ public sealed class MetabolizerSystem : SharedMetabolizerSystem
                 if (!proto.Metabolisms.TryGetValue(group.Id, out var entry))
                     continue;
 
-                var rate = entry.MetabolismRate * group.MetabolismRateModifier;
-
+                // Starlight-start: Metabolizer Rate Scaling
+                float scaleRate = 1f;
+                if (TryComp<MetabolizerScaleComponent>(actualEntity, out var scaleComp))
+                {
+                    switch (group.Id)
+                    {
+                        case "Medicine":
+                            scaleRate = scaleComp.MedicineScale;
+                            break;
+                        case "Poison":
+                            scaleRate = scaleComp.PoisonScale;
+                            break;
+                        case "Narcotics":
+                            scaleRate = scaleComp.NarcoticsScale;
+                            break;
+                    }
+                }
+                // Starlight-end
+                
+                var rate = entry.MetabolismRate * group.MetabolismRateModifier * scaleRate;
+                
                 // Remove $rate, as long as there's enough reagent there to actually remove that much
                 mostToRemove = FixedPoint2.Clamp(rate, 0, quantity);
 
-                var scale = (float) mostToRemove;
+                var scale = (float) mostToRemove / scaleRate;
 
                 // TODO: This is a very stupid workaround to lungs heavily relying on scale = reagent quantity. Needs lung and metabolism refactors to remove.
                 // TODO: Lungs just need to have their scale be equal to the mols consumed, scale needs to be not hardcoded either and configurable per metabolizer...
