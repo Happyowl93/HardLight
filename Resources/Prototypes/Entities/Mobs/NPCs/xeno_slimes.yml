@@ -11,10 +11,13 @@
     sprite: Mobs/XenoSlimes/test_sprite.rsi
     layers:
     - state: test_image
-  - type: SlimeNutrition
+  - type: Slime
     hunger_threshold: 100
     nutrition: 100
     nutrition_change_per_second: -1
+    damage_on_eat:
+      Genetic: 5
+    nutrition_on_hit: 10
 
 - type: entity
   name: Gray Xenobiology Slime
