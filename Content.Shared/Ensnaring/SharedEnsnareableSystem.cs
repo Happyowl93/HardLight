@@ -138,7 +138,7 @@ public abstract class SharedEnsnareableSystem : EntitySystem
         if (!component.IsEnsnared)
             return;
 
-        args.ModifySpeed(component.WalkSpeed, component.SprintSpeed);
+        args.ModifySpeedScaled(component.WalkSpeed, component.SprintSpeed);
     }
 
     /// <summary>
