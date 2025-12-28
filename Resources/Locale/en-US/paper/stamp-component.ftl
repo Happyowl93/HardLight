@@ -3,7 +3,8 @@ stamp-component-stamped-name-detective = Detective
 stamp-component-stamped-name-mime = Mime
 stamp-component-stamped-name-captain = Captain
 stamp-component-stamped-name-centcom = CentComm
-stamp-component-stamped-name-chaplain = Chaplain
+# Starlight: Chaplain -> Priest
+stamp-component-stamped-name-chaplain = Priest
 stamp-component-stamped-name-lawyer = Lawyer
 stamp-component-stamped-name-clown = Clown
 stamp-component-stamped-name-cmo = Chief Medical Officer

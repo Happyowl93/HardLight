@@ -75,7 +75,7 @@
 - type: entity
   parent: Windoor
   id: WindoorChapelLocked
-  suffix: Chapel, Locked
+  suffix: Temple, Locked # Starlight: Chapel -> Temple
   components:
   - type: ContainerFill
     containers:
@@ -222,7 +222,7 @@
 - type: entity
   parent: WindoorSecure
   id: WindoorSecureChapelLocked
-  suffix: Chapel, Locked
+  suffix: Temple, Locked # Starlight: Chapel -> Temple
   components:
   - type: ContainerFill
     containers:
