@@ -45,7 +45,7 @@
   - !type:GroupLoadoutEffect
     proto: SeniorChemist
   equipment:
-    head: ClothingHeadHatTruckersHatChemist
+    head: ClothingHeadHatTruckerChemist
 
 - type: loadout
   id: ChemistFisherCap

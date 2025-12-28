@@ -218,3 +218,29 @@
     solutions:
       beaker:
         maxVol: 100
+
+- type: entity
+  parent: ChemBag
+  id: SeniorChemBag
+  name: senior chemistry bag
+  description: A limited edition chemistry bag, only obtained by those seriously devoted to their craft.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Specific/Chemistry/senior_chem_bag.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Starlight/Objects/Specific/Chemistry/senior_chem_bag.rsi
+    quickEquip: false
+
+- type: entity
+  parent: HandLabeler
+  id: GoldenHandLabeler
+  name: golden hand labeler
+  description: A golden hand labeler, awarded only to the most elite of chemists. Don't test its composition.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Specific/Chemistry/golden_hand_labeler.rsi
+      state: golden_hand_labeler
+    - type: Item
+      sprite: _Starlight/Objects/Specific/Chemistry/golden_hand_labeler.rsi
+      storedRotation: -90

@@ -559,7 +559,7 @@
   parent: ClothingOuterHardsuitAtmos
   id: ClothingOuterHardsuitAtmosGolden
   name: atmos hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has thermal shielding.
+  description: A golden hardsuit that protects against hazardous, low pressure environments. Has thermal shielding. Use of expensive alloys have made it lighter than its non-golden counterpart.
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/OuterClothing/Hardsuits/atmospherics_golden.rsi
@@ -567,6 +567,9 @@
     sprite: _Starlight/Clothing/OuterClothing/Hardsuits/atmospherics_golden.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitAtmosGolden
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
 
 # NanoTrasen Special Forces
 
