@@ -12,7 +12,7 @@
     layers:
     - state: test_image
   - type: Slime
-    nutrition: 100
+    nutrition: 50
     nutrition_change_per_second: -1
     damage_on_eat:
       types:

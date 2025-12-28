@@ -37,7 +37,7 @@ public sealed class SlimeSystem : EntitySystem
     {
         if (!Resolve(slime, ref slime.Comp, false)) return false;
         
-        if (!_interaction.InRangeUnobstructed(slime.Owner, target, range: 0.25f)) return false;
+        if (!_interaction.InRangeUnobstructed(slime.Owner, target, range: 0.75f)) return false;
         if (!TryComp<DamageableComponent>(target, out var mobState)) return false;
 
         if (!_damageableSystem.TryChangeDamage(target, slime.Comp.DamageOnEat, out var returnDamage, ignoreResistances: true)) return false;

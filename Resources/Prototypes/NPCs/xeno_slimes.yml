@@ -15,11 +15,20 @@
         - !type:HTNPrimitiveTask
           operator: !type:MoveToOperator
             pathfindInPlanning: false
-        
+
+        - !type:HTNPrimitiveTask
+          operator: !type:SetFloatOperator
+            targetKey: MovementRange
+            amount: 0.5
+
+        - !type:HTNPrimitiveTask
+          operator: !type:SlimeEatOperator
+            targetKey: EatTarget
+
         - !type:HTNPrimitiveTask
           operator: !type:SetFloatOperator
             targetKey: IdleTime
-            amount: 0
+            amount: 2
 
         - !type:HTNPrimitiveTask
           operator: !type:WaitOperator
@@ -27,15 +36,6 @@
           preconditions:
             - !type:KeyExistsPrecondition
               key: IdleTime
-
-        - !type:HTNPrimitiveTask
-          operator: !type:SetFloatOperator
-            targetKey: MovementRange
-            amount: 0.1
-
-        - !type:HTNPrimitiveTask
-          operator: !type:SlimeEatOperator
-            targetKey: EatTarget
         
     - tasks:
         - !type:HTNCompoundTask
