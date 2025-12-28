@@ -145,7 +145,7 @@ public abstract class SharedWieldableSystem : EntitySystem
     {
         if (TryComp<WieldableComponent>(uid, out var wield) && wield.Wielded)
         {
-            args.Args.ModifySpeed(component.WalkModifier, component.SprintModifier);
+            args.Args.ModifySpeedScaled(component.WalkModifier, component.SprintModifier);
         }
     }
 

@@ -1,14 +1,18 @@
+using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
+
 namespace Content.Shared._Starlight.Movement.Components;
 
 /// <summary>
-///     TODO: 
+///     Movement Speed Scale: changes the effectiveness of movement modifiers to be closer to the original value
+///     Lower values will cause increases or decreases in speed to effect less.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class MovementSpeedModifierScaleComponent : Component
 {
     /// <summary>
-    ///     TODO: Sets the scale that all speed modifiers are scaled by.
+    ///     Sets the scale that all speed modifiers are scaled by if used with ModifySpeedScaled.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public float MovementSpeedScale = 1f;
 }

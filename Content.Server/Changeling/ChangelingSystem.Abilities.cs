@@ -307,9 +307,9 @@ public sealed partial class ChangelingSystem : EntitySystem
     private void OnRefreshSpeed(Entity<ChangelingComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
     {
         if (ent.Comp.StrainedMusclesActive)
-            args.ModifySpeed(1.25f, 1.5f);
+            args.ModifySpeedScaled(1.25f, 1.5f);
         else
-            args.ModifySpeed(1f, 1f);
+            args.ModifySpeedScaled(1f, 1f);
     }
 
     #endregion

@@ -296,11 +296,11 @@ public sealed class PullingSystem : EntitySystem
         {
             var (walkMod, sprintMod) =
                 _clothingMoveSpeed.GetHeldMovementSpeedModifiers(component.Pulling.Value, heldMoveSpeed);
-            args.ModifySpeed(walkMod, sprintMod);
+            args.ModifySpeedScaled(walkMod, sprintMod);
             return;
         }
 
-        args.ModifySpeed(component.WalkSpeedModifier, component.SprintSpeedModifier);
+        args.ModifySpeedScaled(component.WalkSpeedModifier, component.SprintSpeedModifier);
     }
 
     private void OnPullableMoveInput(EntityUid uid, PullableComponent component, ref MoveInputEvent args)

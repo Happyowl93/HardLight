@@ -1,3 +1,4 @@
+using Content.Shared._Starlight.Movement.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Inventory;
 using Content.Shared.Movement.Components;
@@ -112,12 +113,14 @@ namespace Content.Shared.Movement.Systems
 
             if (_timing.ApplyingState)
                 return;
-
+            
             var scalar = 1f;
-            /*
-                Raise your event here and modifiy the scalar before passing it into the event. 
-            */
-
+            
+            if (TryComp<MovementSpeedModifierScaleComponent>(uid, out var comp))
+            {
+                scalar = comp.MovementSpeedScale;
+            }
+            
             var ev = new RefreshMovementSpeedModifiersEvent(scalar);
             RaiseLocalEvent(uid, ev);
 
@@ -207,8 +210,8 @@ namespace Content.Shared.Movement.Systems
         // Use these when you want the modifiers to be adjusted and pushed towards the center, aka for reagent and clothes modifiers.
         public void ModifySpeedScaled(float walk, float sprint)
         {
-            WalkSpeedModifier *= ((walk - 1)*scalar + 1);
-            SprintSpeedModifier *= ((sprint - 1)*scalar + 1);
+            WalkSpeedModifier *= ((walk - 1) * scalar + 1);
+            SprintSpeedModifier *= ((sprint - 1) * scalar + 1);
         }
 
         public void ModifySpeedScaled(float mod)

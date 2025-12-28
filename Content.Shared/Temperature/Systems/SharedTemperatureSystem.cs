@@ -58,7 +58,7 @@ public abstract class SharedTemperatureSystem : EntitySystem
         if (ent.Comp.NextSlowdownUpdate != null || ent.Comp.CurrentSpeedModifier == null)
             return;
 
-        args.ModifySpeed(ent.Comp.CurrentSpeedModifier.Value, ent.Comp.CurrentSpeedModifier.Value);
+        args.ModifySpeedScaled(ent.Comp.CurrentSpeedModifier.Value, ent.Comp.CurrentSpeedModifier.Value);
     }
 
     public override void Update(float frameTime)
