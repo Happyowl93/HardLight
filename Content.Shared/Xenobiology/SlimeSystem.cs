@@ -8,6 +8,9 @@ using Content.Shared.Mobs.Components;
 
 namespace Content.Shared.Xenobiology;
 
+/// <summary>
+/// Handles the general behavior of slimes.
+/// </summary>
 public sealed class SlimeSystem : EntitySystem
 {
     [Dependency] private SharedInteractionSystem _interaction = default!;
@@ -24,6 +27,12 @@ public sealed class SlimeSystem : EntitySystem
         }
     }
     
+    /// <summary>
+    /// Attempts to eat a target.
+    /// </summary>
+    /// <param name="slime">The slime entity.</param>
+    /// <param name="target">The target entity ID.</param>
+    /// <returns>Returns false if the slime was unable to eat the target. Returns true otherwise.</returns>
     public bool TryEat(Entity<SlimeComponent?> slime, EntityUid target)
     {
         if (!Resolve(slime, ref slime.Comp, false)) return false;
