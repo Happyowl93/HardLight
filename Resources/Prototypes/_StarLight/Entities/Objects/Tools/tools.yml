@@ -901,7 +901,7 @@
   description: A device used to rapidly pipe things.
   components:
   - type: RCD
-    IsRPD: true
+    isRPD: true
     availablePrototypes:
     - PipeFourway
     - PipeStraight
@@ -926,3 +926,11 @@
     maxCharges: 45
   - type: Sprite
     sprite: _Starlight/Objects/Tools/rpd.rsi
+
+- type: entity
+  id: RPDEmpty
+  parent: RPD
+  suffix: Empty
+  components:
+  - type: LimitedCharges
+    lastCharges: -1

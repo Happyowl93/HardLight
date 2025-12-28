@@ -73,6 +73,8 @@
   - type: RCDDeconstructable
     cost: 1
     delay: 2
+    fx: EffectRCDDeconstruct2
+    rpd: true
   # Starlight End
 
 - type: entity
