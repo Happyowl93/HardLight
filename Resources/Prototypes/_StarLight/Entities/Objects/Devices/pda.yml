@@ -79,7 +79,7 @@
   parent: BaseMedicalPDA
   id: CorpsmanPDA
   name: corpsman PDA
-  description: How's it going to end?.
+  description: How's it going to end?
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Devices/pda.rsi

@@ -24,6 +24,7 @@
   - Cryogenics
   - Brigmedic
   - Chemistry
+  - Surgery # Starlight
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
