@@ -37,7 +37,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 278 # 150% so pulling is easier but harder against
+        density: 300 # heavier due to being made from rocky skin, same weight as diona
         restitution: 0.0
         mask:
         - MobMask

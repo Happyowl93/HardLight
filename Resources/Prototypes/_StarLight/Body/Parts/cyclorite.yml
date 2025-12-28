@@ -111,7 +111,7 @@
       state: "l_leg"
     - type: MovementBodyPart
       sprintSpeed : 3.825
-      maxDensity: 139
+      maxDensity: 155
       
 - type: entity
   id: RightLegCyclorite
@@ -126,7 +126,7 @@
       state: "r_leg"
     - type: MovementBodyPart
       sprintSpeed : 3.825
-      maxDensity: 139
+      maxDensity: 155
 
 - type: entity
   id: LeftFootCyclorite
