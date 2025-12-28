@@ -923,6 +923,5 @@
     - Deconstruct
   - type: LimitedCharges
     maxCharges: 45
-    charges: 45
   - type: Sprite
     sprite: _Starlight/Objects/Tools/rpd.rsi
