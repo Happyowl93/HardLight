@@ -255,6 +255,7 @@
   loadouts:
   - BlueShieldGlasses
   - BlueShieldHud
+  - BlueShieldEyePatchHud
 
 - type: loadoutGroup
   id: SecurityNonLethalWeapon
@@ -414,6 +415,7 @@
 - type: loadoutGroup
   id: ChemistHead
   name: loadout-group-chemist-head
+  minLimit: 0
   loadouts:
     - ChemistryBeret
     - ChemistNurseHat
@@ -463,7 +465,9 @@
   name: loadout-group-brigmedic-id
   loadouts:
     - BrigmedicPDA
+    - CorpsmanPDA
     - VeteranBrigmedicPDA
+    - VeteranCorpsmanPDA
 
 - type: loadoutGroup
   id: BrigmedicBeaker

@@ -1,4 +1,4 @@
-﻿# Skilled (Beaker) Time
+﻿# Skilled Time
 - type: loadoutEffectGroup
   id: SkilledBrigmedic
   effects:
@@ -18,11 +18,99 @@
       role: JobBrigmedic
       time: 216000 # 60 hrs
 
+# Head
+- type: loadout
+  id: BrigmedicNurseHat
+  equipment:
+    head: ClothingHeadNurseHatBrigmedic
+
+- type: loadout
+  id: CorpsmanNurseHat
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: VeteranBrigmedic
+  equipment:
+    head: ClothingHeadNurseHatCorpsman
+
+- type: loadout
+  id: BrigmedicNurseHatOfLife
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SkilledBrigmedic
+  equipment:
+    head: ClothingHeadNurseHatOfLife
+
+
+# Veteran Jumpsuits
+- type: loadout
+  id: CorpsmanResponse
+  effects:
+    - !type:GroupLoadoutEffect
+        proto: VeteranBrigmedic
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCorpsmanResponse
+
+- type: loadout
+  id: CorpsmanTrauma
+  effects:
+    - !type:GroupLoadoutEffect
+        proto: VeteranBrigmedic
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCorpsmanTrauma
+
+# Skilled Jumpsuits
+- type: loadout
+  id: BrigmedicJumpsuitOfLife
+  effects:
+    - !type:GroupLoadoutEffect
+        proto: SkilledBrigmedic
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOfLife
+
+- type: loadout
+  id: BrigmedicJumpskirtOfLife
+  effects:
+    - !type:GroupLoadoutEffect
+        proto: SkilledBrigmedic
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtOfLife
+
+# Outer clothing
+- type: loadout
+  id: BrigmedicLabCoat
+  equipment:
+    outerClothing: ClothingOuterCoatLabBrigmedic
+
+- type: loadout
+  id: CorpsmanLabCoat
+  effects:
+    - !type:GroupLoadoutEffect
+        proto: VeteranBrigmedic
+  equipment:
+    outerClothing: ClothingOuterCoatLabCorpsman
+
+# Eyewear
+- type: loadout
+  id: BrigmedicEyePatchHud
+  effects:
+    - !type:GroupLoadoutEffect
+        proto: SkilledBrigmedic
+  equipment:
+    eyes: ClothingEyesEyepatchHudBrigmedic
+
 # PDA
 - type: loadout
   id: BrigmedicPDA
   equipment:
     id: BrigmedicPDA
+
+- type: loadout
+  id: CorpsmanPDA
+  effects:
+    - !type:GroupLoadoutEffect
+        proto: SkilledBrigmedic
+  equipment:
+    id: CorpsmanPDA
 
 - type: loadout
   id: VeteranBrigmedicPDA
@@ -32,6 +120,13 @@
   equipment:
     id: VeteranBrigmedicPDA
 
+- type: loadout
+  id: VeteranCorpsmanPDA
+  effects:
+    - !type:GroupLoadoutEffect
+        proto: VeteranBrigmedic
+  equipment:
+    id: VeteranCorpsmanPDA
 
 # Beaker
 - type: loadout

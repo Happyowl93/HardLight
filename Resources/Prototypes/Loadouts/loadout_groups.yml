@@ -1420,6 +1420,9 @@
   - BrigmedicBeret
   - SecurityHelmet
   - CorpsmanBeret #Starlight
+  - BrigmedicNurseHat # Starlight
+  - CorpsmanNurseHat # Starlight
+  - BrigmedicNurseHatOfLife # Starlight
 
 - type: loadoutGroup
   id: BrigmedicJumpsuit
@@ -1429,6 +1432,10 @@
   - JumpsuitCorpsman
   - JumpskirtBrigmedic
   - JumpskirtCorpsman #Starlight
+  - CorpsmanResponse # Starlight
+  - CorpsmanTrauma # Starlight
+  - BrigmedicJumpsuitOfLife # Starlight
+  - BrigmedicJumpskirtOfLife # Starlight
 
 - type: loadoutGroup
   id: BrigmedicBackpack
@@ -1446,6 +1453,8 @@
   - BrigmedicCoat
   - SecurityOfficerWintercoat
   - CorpsmanCoat #Starlight
+  - BrigmedicLabCoat # Starlight
+  - CorpsmanLabCoat # Starlight
 
 - type: loadoutGroup
   id: BrigmedicEyewear
@@ -1453,6 +1462,7 @@
   loadouts:
   - BrigmedicGlasses
   - BrigmedicHud
+  - BrigmedicEyePatchHud # Starlight
 
 - type: loadoutGroup
   id: BrigmedicBelt
