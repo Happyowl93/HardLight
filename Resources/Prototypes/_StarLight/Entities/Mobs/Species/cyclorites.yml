@@ -77,6 +77,8 @@
     medicineScale: 2
     poisonScale: 0.5
     narcoticScale: 0.5
+  - type: MovementSpeedModifierScale
+    movementSpeedScale: 0.5
   - type: Vocal
     sounds:
       Male: MaleCyclorite
