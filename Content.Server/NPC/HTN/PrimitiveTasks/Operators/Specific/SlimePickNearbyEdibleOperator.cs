@@ -1,0 +1,119 @@
+using System.ComponentModel.DataAnnotations;
+using System.Threading;
+using System.Threading.Tasks;
+using Content.Server.NPC.Pathfinding;
+using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.Damage.Components;
+using Content.Shared.Emag.Components;
+using Content.Shared.FixedPoint;
+using Content.Shared.Interaction;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Xenobiology;
+
+namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
+
+public sealed partial class SlimePickNearbyEdibleOperator : HTNOperator
+{
+    // Before anyone asks, yes this is a slapdash copy of PickNearbyInjectableOperator.cs
+    // What do you want from me? I got places to go and food to eat, I'm not going to needlessly reinvent the wheel here
+    
+    [Dependency] private readonly IEntityManager _entManager = default!;
+    private EntityLookupSystem _lookup = default!;
+    private SlimeSystem _slime = default!;
+    private PathfindingSystem _pathfinding = default!;
+    
+    /// <summary>
+    /// The slime's search range for eating.
+    /// </summary>
+    [DataField("rangeKey")]
+    public string RangeKey = NPCBlackboard.SlimeEatRange;
+    
+    /// <summary>
+    /// Target entity to eat.
+    /// </summary>
+    [DataField("targetKey", required: true)]
+    public string TargetKey = string.Empty;
+    
+    /// <summary>
+    /// Target entitycoordinates to move to.
+    /// </summary>
+    [DataField("targetMoveKey", required: true)]
+    public string TargetMoveKey = string.Empty;
+    
+    /// <summary>
+    /// The amount of nutrition below which the slime will try to eat others.
+    /// </summary>
+    [DataField("hungerThreshold", required: true)]
+    public FixedPoint2 HungerThreshold = 0;
+    
+    /// <summary>
+    /// The type of damage to check against when determining if the target has enough non-damage.
+    /// </summary>
+    [DataField("targetDamageType", required: true)]
+    public string TargetDamageType = string.Empty;
+    
+    /// <summary>
+    /// The amount of damage below which the slime will consider the target to be edible.
+    /// </summary>
+    [DataField("targetDamageThreshold", required: true)]
+    public FixedPoint2 TargetDamageThreshold = 0;
+    
+    public const string HungerThresholdKey = "HungerThreshold";
+    public const string TargetDamageTypeKey = "TargetDamageType";
+    public const string TargetDamageThresholdKey = "TargetDamageThreshold";
+
+    public override void Initialize(IEntitySystemManager sysManager)
+    {
+        base.Initialize(sysManager);
+        _lookup = sysManager.GetEntitySystem<EntityLookupSystem>();
+        _slime = sysManager.GetEntitySystem<SlimeSystem>();
+        _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
+    }
+
+    public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard,
+        CancellationToken cancelToken)
+    {
+        var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
+
+        if (!blackboard.TryGetValue<float>(RangeKey, out var range, _entManager))
+            return (false, null);
+        
+        if (!_entManager.TryGetComponent<SlimeComponent>(owner, out var slime))
+            return (false, null);
+
+        if (HungerThreshold <= slime.Nutrition)
+            return (false, null);
+        
+        var damageQuery = _entManager.GetEntityQuery<DamageableComponent>();
+        var mobState = _entManager.GetEntityQuery<MobStateComponent>();
+
+        foreach (var entity in _lookup.GetEntitiesInRange(owner, range))
+        {
+            if (damageQuery.TryGetComponent(entity, out var damage))
+            {
+                // Only target entities that are not damaged enough
+                if (!damage.DamagePerGroup.TryGetValue(TargetDamageType, out var targetDamage) ||
+                    !(targetDamage < TargetDamageThreshold))
+                    continue;
+                
+                var pathRange = SharedInteractionSystem.InteractionRange - 1f;
+                var path = await _pathfinding.GetPath(owner, entity, pathRange, cancelToken);
+
+                if (path.Result == PathResult.NoPath)
+                    continue;
+
+                return (true, new Dictionary<string, object>()
+                {
+                    {TargetKey, entity},
+                    {TargetMoveKey, _entManager.GetComponent<TransformComponent>(entity).Coordinates},
+                    {NPCBlackboard.PathfindKey, path},
+                    {HungerThresholdKey, HungerThreshold},
+                    {TargetDamageTypeKey, TargetDamageType},
+                    {TargetDamageThresholdKey, TargetDamageThreshold},
+                });
+            }
+        }
+        
+        return (false, null);
+    }
+}

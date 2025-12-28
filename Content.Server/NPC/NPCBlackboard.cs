@@ -34,6 +34,7 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
         {"RotateSpeed", float.MaxValue},
         {"VisionRadius", 10f},
         {"AggroVisionRadius", 10f},
+        {SlimeEatRange, 4f},
     };
 
     /// <summary>
@@ -292,6 +293,7 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
     public const string FollowTarget = "FollowTarget";
     public const string Inventory = "Inventory";
     public const string MedibotInjectRange = "MedibotInjectRange";
+    public const string SlimeEatRange = "SlimeEatRange";
 
     public const string MeleeMissChance = "MeleeMissChance";
 
