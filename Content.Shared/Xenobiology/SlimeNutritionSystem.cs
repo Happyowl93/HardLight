@@ -1,3 +1,5 @@
+using Content.Shared.FixedPoint;
+
 namespace Content.Shared.Xenobiology;
 
 public sealed class SlimeNutritionSystem : EntitySystem
@@ -9,7 +11,7 @@ public sealed class SlimeNutritionSystem : EntitySystem
         var query = EntityQueryEnumerator<SlimeNutritionComponent>();
         while (query.MoveNext(out var uid, out var slime))
         {
-            slime.Nutrition = double.Max(slime.Nutrition + (frameTime * slime.NutritionChangePerSecond), 0);
+            slime.Nutrition = FixedPoint2.Max(slime.Nutrition + (frameTime * slime.NutritionChangePerSecond), 0);
         }
     }
 }
