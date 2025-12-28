@@ -568,8 +568,8 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitAtmosGolden
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.85
+    sprintModifier: 0.85
 
 - type: entity
   parent: ClothingOuterHardsuitEngineering
@@ -584,8 +584,8 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineeringGolden
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.85
+    sprintModifier: 0.85
 
 # NanoTrasen Special Forces
 
