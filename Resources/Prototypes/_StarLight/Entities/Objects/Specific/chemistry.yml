@@ -159,11 +159,11 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 2
+        Blunt: 3
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 4
+        Blunt: 5
   - type: SolutionContainerManager
     solutions:
       beaker:
@@ -207,11 +207,11 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 6
+        Blunt: 7
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 8
+        Blunt: 9
     soundHit:
       collection: MetalThud
   - type: SolutionContainerManager

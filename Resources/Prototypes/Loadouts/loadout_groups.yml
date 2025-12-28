@@ -1775,6 +1775,8 @@
   loadouts:
   - ChemistJumpsuit
   - ChemistJumpskirt
+  - SeniorChemistJumpsuit # Starlight
+  - SeniorChemistJumpskirt # Starlight
 
 - type: loadoutGroup
   id: ChemistOuterClothing
@@ -1784,6 +1786,7 @@
   - RegularLabCoat
   - ChemistLabCoat
   - ChemistWintercoat
+  - SeniorChemistLabCoat # Starlight
 
 - type: loadoutGroup
   id: ChemistBackpack

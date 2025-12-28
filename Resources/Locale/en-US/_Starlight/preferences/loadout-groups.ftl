@@ -56,8 +56,12 @@ loadout-group-salvage-id = Salvage Specialist ID
 loadout-group-salvage-lead-mantle = Salvage Lead mantle 
 
 # Medical
+loadout-group-chemist-head = Chemist head
+loadout-group-chemist-eyewear = Chemist eyewear
 loadout-group-chemist-id = Chemist ID
 loadout-group-chemist-beaker = Chemist beaker
+loadout-group-chemist-bag = Chemist bag
+loadout-group-chemist-labeler = Chemist labeler
 
 # Other
 

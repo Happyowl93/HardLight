@@ -571,14 +571,18 @@
   id: JobChemist
   groups:
   - GroupTankHarness
+  - ChemistHead # Starlight
   - MedicalMask
   - ChemistJumpsuit
   - MedicalGloves
   - ChemistBackpack
+  - ChemistBag # Starlight
   - ChemistOuterClothing
   - MedicalShoes
   - ChemistPDA # Starlight
+  - ChemistEyewear # Starlight
   - ChemistBeaker # Starlight
+  - ChemistLabeler # Starlight
   - SurvivalMedical
   - Trinkets
   - Scarves # Starlight

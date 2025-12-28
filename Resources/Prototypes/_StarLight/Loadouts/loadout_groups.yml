@@ -412,6 +412,22 @@
 
 # Chemist
 - type: loadoutGroup
+  id: ChemistHead
+  name: loadout-group-chemist-head
+  loadouts:
+    - ChemistryBeret
+    - ChemistNurseHat
+    - ChemistTruckersHat
+    - ChemistFisherCap
+
+- type: loadoutGroup
+  id: ChemistBag
+  name: loadout-group-chemist-bag
+  loadouts:
+    - ChemBag
+    - SeniorChemBag
+
+- type: loadoutGroup
   id: ChemistPDA
   name: loadout-group-chemist-id
   loadouts:
@@ -419,11 +435,27 @@
     - SeniorChemistPDA
 
 - type: loadoutGroup
+  id: ChemistEyewear
+  name: loadout-group-chemist-eyewear
+  loadouts:
+    - ChemicalGoggles
+    - ChemicalHud
+    - ChemicalEyePatchHud
+    - ChemicalJensens
+
+- type: loadoutGroup
   id: ChemistBeaker
   name: loadout-group-chemist-beaker
   loadouts:
     - LightBeaker
     - SilverBeakerChemist
+
+- type: loadoutGroup
+  id: ChemistLabeler
+  name: loadout-group-chemist-beaker
+  loadouts:
+    - ChemistHandLabeler
+    - GoldenHandLabeler
     
 # Brigmedic
 - type: loadoutGroup
