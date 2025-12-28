@@ -113,7 +113,12 @@ namespace Content.Shared.Movement.Systems
             if (_timing.ApplyingState)
                 return;
 
-            var ev = new RefreshMovementSpeedModifiersEvent();
+            var scalar = 1f;
+            /*
+                Raise your event here and modifiy the scalar before passing it into the event. 
+            */
+
+            var ev = new RefreshMovementSpeedModifiersEvent(scalar);
             RaiseLocalEvent(uid, ev);
 
             if (MathHelper.CloseTo(ev.WalkSpeedModifier, move.WalkSpeedModifier) &&
@@ -181,7 +186,7 @@ namespace Content.Shared.Movement.Systems
     ///     should hook into this event and set it then. If you want this event to be raised,
     ///     call <see cref="MovementSpeedModifierSystem.RefreshMovementSpeedModifiers"/>.
     /// </summary>
-    public sealed class RefreshMovementSpeedModifiersEvent : EntityEventArgs, IInventoryRelayEvent
+    public sealed class RefreshMovementSpeedModifiersEvent(float scalar) : EntityEventArgs, IInventoryRelayEvent
     {
         public SlotFlags TargetSlots { get; } = ~SlotFlags.POCKET;
 
@@ -197,6 +202,18 @@ namespace Content.Shared.Movement.Systems
         public void ModifySpeed(float mod)
         {
             ModifySpeed(mod, mod);
+        }
+
+        // Use these when you want the modifiers to be adjusted and pushed towards the center, aka for reagent and clothes modifiers.
+        public void ModifySpeedScaled(float walk, float sprint)
+        {
+            WalkSpeedModifier *= ((walk - 1)*scalar + 1);
+            SprintSpeedModifier *= ((sprint - 1)*scalar + 1);
+        }
+
+        public void ModifySpeedScaled(float mod)
+        {
+            ModifySpeedScaled(mod, mod);
         }
     }
 
