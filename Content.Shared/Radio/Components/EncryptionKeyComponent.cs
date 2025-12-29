@@ -27,15 +27,17 @@ public sealed partial class EncryptionKeyComponent : Component
     /// Set of custom channel data
     /// </summary>
     [DataField, AutoNetworkedField] public HashSet<CustomRadioChannelData> CustomChannels = [];
+
+    // TODO: someone please make so you can modify the sprite layers through this component. Use ClientEncryptionKeySystem. 
     
-    /// <summary>
-    /// Original layer data, used to restore layer data when <see cref="SpriteLayerOverrides"/> is cleared or null.
-    /// </summary>
-    public readonly List<((ResPath, Vector2i)?, string)> OriginalLayerData = [];
-    
-    /// <summary>
-    /// Overrides the encryption key sprite layer.
-    /// </summary>
-    [ViewVariables, AutoNetworkedField] public Dictionary<int, ((ResPath, Vector2i)?, string)> SpriteLayerOverrides = [];
+    // [AutoNetworkedField] public string? OriginalBaseRsiPath;
+    // [AutoNetworkedField] public string? OriginalIconRsiPath;
+    // [AutoNetworkedField] public string? OriginalBaseState;
+    // [AutoNetworkedField] public string? OriginalIconState;
+    //
+    // [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField] public string? BaseRsiPath;
+    // [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField] public string? IconRsiPath;
+    // [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField] public string? BaseState;
+    // [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField] public string? IconState;
     //Starlight end
 }
