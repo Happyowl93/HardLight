@@ -153,6 +153,7 @@
   loadouts:
   - RoboticistCap
   - SkullBandana
+  - RoboticistBlackCapFlipped
 
 - type: loadoutGroup
   id: RoboticistGloves
