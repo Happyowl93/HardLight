@@ -24549,5 +24549,14 @@ Entries:
   id: 261200
   time: '2025-12-29T23:08:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2612
+- author: CrazyPhantom
+  changes:
+  - message: 'ADMIN: Central Command Division loadouts. Trialmins rejoice'
+    type: Add
+  - message: 'ADMIN: Filled vibroblade sheath entitys.'
+    type: Add
+  id: 260600
+  time: '2025-12-29T23:08:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2606
 Order: -1
 
