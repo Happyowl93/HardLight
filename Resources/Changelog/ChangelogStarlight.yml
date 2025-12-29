@@ -24572,5 +24572,23 @@ Entries:
   id: 262000
   time: '2025-12-29T23:14:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2620
+- author: Rhetorica
+  changes:
+  - message: Festive Feast, a turkey dinner for everyone! (not moffs)
+    type: Add
+  - message: Festive Dinner (with/without gravy)
+    type: Add
+  - message: Roast Turkey, Mashed Potatoes (in two sizes), Mashed Potatoes with Gravy
+      (in two sizes), Stuffing (including moff-friendly cotton variant)
+    type: Add
+  - message: One-Minute Blinding Stew (traitors HATE this one simple recipe!)
+    type: Add
+  - message: Gravy, CranberrySauce, BlindingStew reagents
+    type: Add
+  - message: Gravy Boat
+    type: Add
+  id: 258200
+  time: '2025-12-29T23:28:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2582
 Order: -1
 
