@@ -1,4 +1,4 @@
-rcd-component-piping = Piping
-rcd-component-atmosphericutility = Atmospheric Utility
-rcd-component-pumps = Pumps & Valves
-rcd-component-vents = Vents
+rpd-component-piping = Piping
+rpd-component-atmosphericutility = Atmospheric Utility
+rpd-component-pumps = Pumps & Valves
+rpd-component-vents = Vents

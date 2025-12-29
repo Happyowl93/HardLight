@@ -25,10 +25,10 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
             ["Electrical"] = ("rcd-component-electrical", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCD/multicoil.png"))),
             ["Lighting"] = ("rcd-component-lighting", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCD/lighting.png"))),
             // Starlight start: RPD
-            ["Piping"] = ("rcd-component-piping", new SpriteSpecifier.Texture(new ResPath("/Textures/_Starlight/Interface/Radial/RPD/fourway.png"))),
-            ["AtmosphericUtility"] = ("rcd-component-atmosphericutility", new SpriteSpecifier.Texture(new ResPath("/Textures/_Starlight/Interface/Radial/RPD/port.png"))),
-            ["PumpsValves"] = ("rcd-component-pumpsvalves", new SpriteSpecifier.Texture(new ResPath("/Textures/_Starlight/Interface/Radial/RPD/pump_volume.png"))),
-            ["Vents"] = ("rcd-component-vents", new SpriteSpecifier.Texture(new ResPath("/Textures/_Starlight/Interface/Radial/RPD/vent_passive.png"))),
+            ["Piping"] = ("rpd-component-piping", new SpriteSpecifier.Texture(new ResPath("/Textures/_Starlight/Interface/Radial/RPD/fourway.png"))),
+            ["AtmosphericUtility"] = ("rpd-component-atmosphericutility", new SpriteSpecifier.Texture(new ResPath("/Textures/_Starlight/Interface/Radial/RPD/port.png"))),
+            ["PumpsValves"] = ("rpd-component-pumpsvalves", new SpriteSpecifier.Texture(new ResPath("/Textures/_Starlight/Interface/Radial/RPD/pump_volume.png"))),
+            ["Vents"] = ("rpd-component-vents", new SpriteSpecifier.Texture(new ResPath("/Textures/_Starlight/Interface/Radial/RPD/vent_passive.png"))),
             // Starlight end
         };
 
