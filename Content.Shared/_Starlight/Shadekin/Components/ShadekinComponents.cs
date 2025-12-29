@@ -81,7 +81,7 @@ public sealed partial class BrighteyeComponent : Component
     /// <summary>
     /// Shadekin Rejuvenating Bool
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public bool Rejuvenating = false;
 
     /// <summary>

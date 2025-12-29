@@ -197,7 +197,7 @@ public sealed partial class ShadekinSystem : EntitySystem
 
         if (component.Energy >= cost)
         {
-            component.Energy -= cost;
+            component.Energy -= (int)cost;
             Dirty(uid, component);
         }
         else
