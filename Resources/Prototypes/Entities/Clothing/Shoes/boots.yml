@@ -143,7 +143,7 @@
 # Starlight start
 - type: entity
   parent: ClothingShoesBaseWinterBoots
-  id: ClothingShoesBootsWinterMed
+  id: ClothingShoesBootsWinterChem
   name: chemistry winter boots
   components:
   - type: Sprite
