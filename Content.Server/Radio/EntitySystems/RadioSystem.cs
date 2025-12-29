@@ -74,6 +74,13 @@ public sealed class RadioSystem : EntitySystem
             SendRadioMessage(uid, args.Message, args.Channel, uid, args.Language); // Starlight
             args.Channel = null; // prevent duplicate messages from other listeners.
         }
+        //Starlight begin
+        if (args.UsingCustomChannel && args.CustomChannel is not null)
+        {
+            // Custom channel data is already confirmed to exist on this headset
+            SendCustomRadioMessage(uid, args.Message, args.CustomChannel, uid, args.Language);
+        }
+        //Starlight end
     }
 
     private void OnIntrinsicReceive(EntityUid uid, IntrinsicRadioReceiverComponent component, ref RadioReceiveEvent args)

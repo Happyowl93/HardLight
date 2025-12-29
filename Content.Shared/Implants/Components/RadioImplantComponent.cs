@@ -1,4 +1,5 @@
-﻿using Content.Shared.Radio;
+﻿using Content.Shared._Starlight.Radio;
+using Content.Shared.Radio;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Implants.Components;
@@ -34,4 +35,10 @@ public sealed partial class RadioImplantComponent : Component
     /// </remarks>
     [DataField]
     public HashSet<ProtoId<RadioChannelPrototype>> TransmitterAddedChannels = new();
+    
+    //Starlight begin
+    [ViewVariables] public HashSet<CustomRadioChannelData> CustomRadioChannels = [];
+    [ViewVariables] public HashSet<CustomRadioChannelData> ActiveAddedCustomRadioChannels = [];
+    [ViewVariables] public HashSet<CustomRadioChannelData> TransmitterAddedCustomRadioChannels = [];
+    //Starlight end
 }

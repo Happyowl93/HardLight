@@ -316,6 +316,12 @@ public abstract partial class SharedBorgSystem : EntitySystem
                 {
                     activeRadio.Channels.Add(channel);
                 }
+                //Starlight begin
+                foreach (var channel in key.CustomChannels)
+                {
+                    activeRadio.CustomChannels.Add(channel);
+                }
+                //Starlight end
             }
             if (TryComp(ent, out IntrinsicRadioTransmitterComponent? transmitter))
             {
@@ -323,6 +329,12 @@ public abstract partial class SharedBorgSystem : EntitySystem
                 {
                     transmitter.Channels.Add(channel);
                 }
+                //Starlight begin
+                foreach (var channel in key.CustomChannels)
+                {
+                    transmitter.CustomChannels.Add(channel);
+                }
+                //Starlight end
             }
         }
     }
