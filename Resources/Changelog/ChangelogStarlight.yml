@@ -24524,5 +24524,19 @@ Entries:
   id: 261000
   time: '2025-12-29T23:03:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2610
+- author: CrazyPhantom
+  changes:
+  - message: Access denied sound when right clicking most things with a lock (Aghosts
+      rejoice)
+    type: Fix
+  - message: X-01 Multiphase not being access broken
+    type: Fix
+  - message: Chameleon items being unlocked when taking them off.
+    type: Fix
+  - message: Much more similar lock bugs
+    type: Fix
+  id: 260900
+  time: '2025-12-29T23:03:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2609
 Order: -1
 
