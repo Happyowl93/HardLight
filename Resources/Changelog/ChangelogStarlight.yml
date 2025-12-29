@@ -24485,5 +24485,15 @@ Entries:
   id: 262900
   time: '2025-12-29T22:34:31.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2629
+- author: CawsForConcern
+  changes:
+  - message: BSO now has access to through NTR airlocks
+    type: Add
+  - message: NTR's locker is now locked behind NTR access (was previously Command
+      access)
+    type: Fix
+  id: 262800
+  time: '2025-12-29T22:37:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2628
 Order: -1
 
