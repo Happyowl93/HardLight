@@ -1797,7 +1797,7 @@
   - ChemistLabCoat
   - ChemistWintercoat
   - SeniorChemistLabCoat # Starlight
-  - SeniorChemistWinterCoat # Starlight
+  - SeniorChemistWintercoat # Starlight
 
 - type: loadoutGroup
   id: ChemistBackpack

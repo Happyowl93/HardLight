@@ -66,13 +66,37 @@
       "name": "pda-seniorchemist"
     },
     {
-      "name": "pda-veteranbrigmedic"
+      "name": "pda-veteranbrigmedic",
+	  "delays": [
+                [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ]
+            ]
     },
 	{
-      "name": "pda-corpsman"
+      "name": "pda-corpsman",
+	  "delays": [
+                [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ]
+            ]
     },
 	{
-      "name": "pda-veterancorpsman"
+      "name": "pda-veterancorpsman",
+	  "delays": [
+                [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ]
+            ]
     }
   ]
 }
