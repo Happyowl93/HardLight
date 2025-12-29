@@ -33,6 +33,8 @@
   - type: Sprite
     sprite: Objects/Consumable/Drinks/icebucket.rsi
     state: icon
+  - type: Item
+    size: Normal
   - type: PhysicalComposition
     materialComposition:
       Steel: 75
