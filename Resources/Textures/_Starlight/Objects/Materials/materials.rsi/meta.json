@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from Paradise at https://github.com/ParadiseSS13/Paradise/blob/cd7cb01a1f846272dcf3dc2c37970eff377b58a4/icons/obj/stacks/minerals.dmi // abyss_core by Darkrell",
+  "copyright": "Taken from Paradise at https://github.com/ParadiseSS13/Paradise/blob/cd7cb01a1f846272dcf3dc2c37970eff377b58a4/icons/obj/stacks/minerals.dmi",
   "size": {
     "x": 32,
     "y": 32
@@ -33,9 +33,6 @@
     },
     {
       "name": "synthetic_bluespace_crystal_3"
-    },
-    {
-      "name": "abyss_core"
     }
   ]
 }
