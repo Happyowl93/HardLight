@@ -1,6 +1,7 @@
 using Content.Shared.Chat;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Content.Shared._Starlight.Radio; // Starlight
 
 namespace Content.Shared.Radio.Components;
 
@@ -13,4 +14,6 @@ public sealed partial class IntrinsicRadioTransmitterComponent : Component
 {
     [DataField]
     public HashSet<ProtoId<RadioChannelPrototype>> Channels = new() { SharedChatSystem.CommonChannel };
+
+    [DataField] public HashSet<CustomRadioChannelData> CustomChannels = []; //Starlight
 }

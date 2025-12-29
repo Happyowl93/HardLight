@@ -1,5 +1,6 @@
 ﻿using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Content.Shared._Starlight.Radio; //Starlight
 
 namespace Content.Shared.Radio.Components;
 
@@ -22,11 +23,13 @@ public sealed partial class IntercomComponent : Component
     public bool MicrophoneEnabled;
 
     [DataField, AutoNetworkedField]
-    public ProtoId<RadioChannelPrototype>? CurrentChannel;
+    public string? CurrentChannel; // Starlight edit
 
     /// <summary>
     /// The list of radio channel prototypes this intercom can choose between.
     /// </summary>
     [DataField, AutoNetworkedField]
     public List<ProtoId<RadioChannelPrototype>> SupportedChannels = new();
+
+    [ViewVariables, AutoNetworkedField] public List<CustomRadioChannelData> SupportedCustomChannels = []; //Starlight
 }

@@ -33,12 +33,15 @@ public sealed partial class IntercomMenu : FancyWindow
         MicButton.Pressed = entity.Comp.MicrophoneEnabled;
         SpeakerButton.Pressed = entity.Comp.SpeakerEnabled;
 
-        MicButton.Disabled = entity.Comp.SupportedChannels.Count == 0;
-        SpeakerButton.Disabled = entity.Comp.SupportedChannels.Count == 0;
-        ChannelOptions.Disabled = entity.Comp.SupportedChannels.Count == 0;
+        //Starlight begin
+        MicButton.Disabled = entity.Comp.SupportedChannels.Count == 0 && entity.Comp.SupportedCustomChannels.Count == 0;
+        SpeakerButton.Disabled = entity.Comp.SupportedChannels.Count == 0 && entity.Comp.SupportedCustomChannels.Count == 0;
+        ChannelOptions.Disabled = entity.Comp.SupportedChannels.Count == 0 && entity.Comp.SupportedCustomChannels.Count == 0;
+        //Starlight end
 
         ChannelOptions.Clear();
         _channels.Clear();
+        var totalIds = 0; // Starlight edit
         for (var i = 0; i < entity.Comp.SupportedChannels.Count; i++)
         {
             var channel = entity.Comp.SupportedChannels[i];
@@ -46,13 +49,30 @@ public sealed partial class IntercomMenu : FancyWindow
                 continue;
 
             _channels.Add(channel);
-            ChannelOptions.AddItem(Loc.GetString(prototype.Name), i);
+            //Starlight begin
+            ChannelOptions.AddItem(Loc.GetString(prototype.Name), totalIds);
 
-            if (channel == entity.Comp.CurrentChannel)
-                ChannelOptions.Select(i);
+            if (entity.Comp.CurrentChannel != null && channel == entity.Comp.CurrentChannel)
+                ChannelOptions.Select(totalIds);
+            totalIds++;
+            //Starlight end
         }
 
-        if (entity.Comp.SupportedChannels.Count == 0)
+        //Starlight begin
+        for (var i = 0; i < entity.Comp.SupportedCustomChannels.Count; i++)
+        {
+            var channel = entity.Comp.SupportedCustomChannels[i];
+
+            _channels.Add(channel.Id);
+            ChannelOptions.AddItem(Loc.GetString(channel.Name), totalIds);
+
+            if (entity.Comp.CurrentChannel != null && channel.Id == entity.Comp.CurrentChannel)
+                ChannelOptions.Select(totalIds);
+            totalIds++;
+        }
+        //Starlight end
+        
+        if (entity.Comp.SupportedChannels.Count == 0 && entity.Comp.SupportedCustomChannels.Count == 0) // Starlight edit
         {
             ChannelOptions.AddItem(Loc.GetString("intercom-options-none"), 0);
             ChannelOptions.Select(0);
