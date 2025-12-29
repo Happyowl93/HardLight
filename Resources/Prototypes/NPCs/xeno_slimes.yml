@@ -9,17 +9,18 @@
             targetKey: EatTarget
             targetMoveKey: TargetCoordinates
             hungerThreshold: 150
-            targetDamageType: Genetic
+            targetDamageType: Cellular
             targetDamageThreshold: 100
-
-        - !type:HTNPrimitiveTask
-          operator: !type:MoveToOperator
-            pathfindInPlanning: false
+            only_target: Biological
 
         - !type:HTNPrimitiveTask
           operator: !type:SetFloatOperator
             targetKey: MovementRange
             amount: 0.5
+
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            pathfindInPlanning: false
 
         - !type:HTNPrimitiveTask
           operator: !type:SlimeEatOperator

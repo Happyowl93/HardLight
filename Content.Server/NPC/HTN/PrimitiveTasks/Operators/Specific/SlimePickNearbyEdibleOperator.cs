@@ -1,10 +1,7 @@
-using System.ComponentModel.DataAnnotations;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.NPC.Pathfinding;
-using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Damage.Components;
-using Content.Shared.Emag.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
@@ -85,15 +82,23 @@ public sealed partial class SlimePickNearbyEdibleOperator : HTNOperator
             return (false, null);
         
         var damageQuery = _entManager.GetEntityQuery<DamageableComponent>();
-        var mobState = _entManager.GetEntityQuery<MobStateComponent>();
+        var slimeQuery = _entManager.GetEntityQuery<SlimeComponent>();
+        var mobStateQuery = _entManager.GetEntityQuery<MobStateComponent>();
 
         foreach (var entity in _lookup.GetEntitiesInRange(owner, range))
         {
+            // Don't cannibalize other slimes
+            if (slimeQuery.HasComponent(entity))
+                continue;
+            
             if (damageQuery.TryGetComponent(entity, out var damage))
             {
+                // Don't target entities that aren't mobs
+                if (!mobStateQuery.HasComponent(entity))
+                    continue;
+                
                 // Only target entities that are not damaged enough
-                if (!damage.DamagePerGroup.TryGetValue(TargetDamageType, out var targetDamage) ||
-                    !(targetDamage < TargetDamageThreshold))
+                if (!(damage.TotalDamage < TargetDamageThreshold))
                     continue;
                 
                 var pathRange = SharedInteractionSystem.InteractionRange - 1f;

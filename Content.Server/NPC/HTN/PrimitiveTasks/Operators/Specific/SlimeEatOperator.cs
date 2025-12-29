@@ -1,13 +1,7 @@
-using Content.Server.Chat.Systems;
-using Content.Shared.Chat;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage.Components;
 using Content.Shared.FixedPoint;
-using Content.Shared.Interaction;
-using Content.Shared.Popups;
-using Content.Shared.Silicons.Bots;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Xenobiology;
-using Robust.Shared.Audio.Systems;
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
@@ -48,6 +42,10 @@ public sealed partial class SlimeEatOperator : HTNOperator
             !blackboard.TryGetValue<string>(SlimePickNearbyEdibleOperator.TargetDamageTypeKey, out var targetDamageType, _entMan) ||
             !blackboard.TryGetValue<FixedPoint2>(SlimePickNearbyEdibleOperator.TargetDamageThresholdKey, out var targetDamageThreshold, _entMan))
             return HTNOperatorStatus.Failed;
+        
+        // No cannibalism of other slimes
+        if (_entMan.HasComponent<SlimeComponent>(target))
+            return HTNOperatorStatus.Failed;
 
         if (!_entMan.TryGetComponent<SlimeComponent>(owner, out var slime))
             return HTNOperatorStatus.Failed;
@@ -58,11 +56,14 @@ public sealed partial class SlimeEatOperator : HTNOperator
         if (!_entMan.TryGetComponent<DamageableComponent>(target, out var damage))
             return HTNOperatorStatus.Failed;
         
-        if (!damage.DamagePerGroup.TryGetValue(targetDamageType, out var targetDamage) || !(targetDamage <
-                targetDamageThreshold))
+        // Don't target entities that aren't mobs
+        if (!_entMan.HasComponent<MobStateComponent>(target))
+            return HTNOperatorStatus.Failed;
+        
+        if (!(damage.TotalDamage < targetDamageThreshold))
             return HTNOperatorStatus.Failed;
 
-        if (!_slime.TryEat((owner, slime), target, targetDamageType, targetDamageThreshold))
+        if (!_slime.TryEat((owner, slime), target))
             return HTNOperatorStatus.Failed;
 
         return HTNOperatorStatus.Finished;
