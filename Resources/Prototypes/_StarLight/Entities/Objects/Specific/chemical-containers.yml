@@ -11,7 +11,9 @@
       beaker:
         reagents:
         - ReagentId: Uranium
-          Quantity: 200# Medicine Jugs for Chemist Locker
+          Quantity: 200
+
+# Medicine Jugs for Chemist Locker
 - type: entity
   parent: Jug
   suffix: bicaridine
