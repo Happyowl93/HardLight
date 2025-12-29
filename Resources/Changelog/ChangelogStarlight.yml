@@ -24474,5 +24474,16 @@ Entries:
   id: 257300
   time: '2025-12-22T00:07:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2573
+- author: neomoth
+  changes:
+  - message: Additional grids can now be vvwritten into CommunicationsConsoleComponent
+      to allow them to receive non-global announcements.
+    type: Add
+  - message: Central Command now receives announcements from communication consoles
+      on the station.
+    type: Tweak
+  id: 262900
+  time: '2025-12-29T22:34:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2629
 Order: -1
 
