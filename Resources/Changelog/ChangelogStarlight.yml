@@ -24604,5 +24604,14 @@ Entries:
   id: 260700
   time: '2025-12-29T23:29:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2607
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) Default charge circuit on Starboard's PA SMES increased to
+      50kW to prevent a weird situation where the main SMES bank charges first before
+      the PA SMES charges
+    type: Tweak
+  id: 258100
+  time: '2025-12-29T23:28:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2581
 Order: -1
 
