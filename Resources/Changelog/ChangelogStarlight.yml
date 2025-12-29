@@ -24597,5 +24597,12 @@ Entries:
   id: 258500
   time: '2025-12-29T23:28:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2585
+- author: DocMoth
+  changes:
+  - message: Added Red Regalia suit and accessories to fashion vend.
+    type: Add
+  id: 260700
+  time: '2025-12-29T23:29:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2607
 Order: -1
 
