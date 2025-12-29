@@ -53,7 +53,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadNurseHatChemist
-  name: chemist nurse hat
+  name: chemistry nurse hat
   description: I'm technically a doctor, you know.
   components:
   - type: Sprite
@@ -70,7 +70,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatTruckerChemist
-  name: chemist trucker hat
+  name: chemistry trucker hat
   description: My chemical chariot cannot be stopped!
   components:
   - type: Sprite
@@ -81,7 +81,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatFishCapChemist
-  name: chemist fishing cap
+  name: chemistry fishing cap
   description: Do mechanical brides fish in chemical spills?
   components:
   - type: Sprite
