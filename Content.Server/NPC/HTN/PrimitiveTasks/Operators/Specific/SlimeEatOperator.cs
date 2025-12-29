@@ -14,12 +14,7 @@ namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 public sealed partial class SlimeEatOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
-    private ChatSystem _chat = default!;
     private SlimeSystem _slime = default!;
-    private SharedAudioSystem _audio = default!;
-    private SharedInteractionSystem _interaction = default!;
-    private SharedPopupSystem _popup = default!;
-    private SharedSolutionContainerSystem _solutionContainer = default!;
 
     /// <summary>
     /// Target entity to eat.
@@ -30,12 +25,7 @@ public sealed partial class SlimeEatOperator : HTNOperator
     public override void Initialize(IEntitySystemManager sysManager)
     {
         base.Initialize(sysManager);
-        _chat = sysManager.GetEntitySystem<ChatSystem>();
         _slime = sysManager.GetEntitySystem<SlimeSystem>();
-        _audio = sysManager.GetEntitySystem<SharedAudioSystem>();
-        _interaction = sysManager.GetEntitySystem<SharedInteractionSystem>();
-        _popup = sysManager.GetEntitySystem<SharedPopupSystem>();
-        _solutionContainer = sysManager.GetEntitySystem<SharedSolutionContainerSystem>();
     }
 
     public override void TaskShutdown(NPCBlackboard blackboard, HTNOperatorStatus status)
@@ -72,7 +62,7 @@ public sealed partial class SlimeEatOperator : HTNOperator
                 targetDamageThreshold))
             return HTNOperatorStatus.Failed;
 
-        if (!_slime.TryEat((owner, slime), target))
+        if (!_slime.TryEat((owner, slime), target, targetDamageType, targetDamageThreshold))
             return HTNOperatorStatus.Failed;
 
         return HTNOperatorStatus.Finished;

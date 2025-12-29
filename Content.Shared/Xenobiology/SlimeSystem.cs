@@ -1,3 +1,5 @@
+using Content.Shared.Cloning;
+using Content.Shared.Coordinates;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
@@ -5,6 +7,7 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Xenobiology;
 
@@ -13,7 +16,8 @@ namespace Content.Shared.Xenobiology;
 /// </summary>
 public sealed class SlimeSystem : EntitySystem
 {
-    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly EntityManager _entityManager = default!;
+    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     
     /// <inheritdoc />
@@ -21,9 +25,21 @@ public sealed class SlimeSystem : EntitySystem
     {
         base.Update(frameTime);
         var query = EntityQueryEnumerator<SlimeComponent>();
+        
+        var slimesToDelete = new List<Entity<SlimeComponent?>>();
         while (query.MoveNext(out var uid, out var slime))
         {
             slime.Nutrition = FixedPoint2.Max(slime.Nutrition + (frameTime * slime.NutritionChangePerSecond), 0);
+            if (slime.Nutrition > slime.SplitThreshold)
+            {
+                slimesToDelete.Add((uid, slime));
+            }
+        }
+
+        foreach (var slime in slimesToDelete)
+        {
+            TrySplitSlime(slime, 2);
+            _entityManager.DeleteEntity(slime);
         }
     }
     
@@ -33,13 +49,16 @@ public sealed class SlimeSystem : EntitySystem
     /// <param name="slime">The slime entity.</param>
     /// <param name="target">The target entity ID.</param>
     /// <returns>Returns false if the slime was unable to eat the target. Returns true otherwise.</returns>
-    public bool TryEat(Entity<SlimeComponent?> slime, EntityUid target)
+    public bool TryEat(Entity<SlimeComponent?> slime, EntityUid target, string targetDamageType, FixedPoint2 TargetDamageThreshold)
     {
         if (!Resolve(slime, ref slime.Comp, false)) return false;
         
         if (!_interaction.InRangeUnobstructed(slime.Owner, target, range: 0.75f)) return false;
-        if (!TryComp<DamageableComponent>(target, out var mobState)) return false;
+        if (!TryComp<DamageableComponent>(target, out var damage)) return false;
 
+        if (!damage.DamagePerGroup.TryGetValue(targetDamageType, out var targetDamage) ||
+            !(targetDamage < TargetDamageThreshold)) return false;
+        
         if (!_damageableSystem.TryChangeDamage(target, slime.Comp.DamageOnEat, out var returnDamage, ignoreResistances: true)) return false;
 
         if (returnDamage.AnyPositive())
@@ -47,6 +66,19 @@ public sealed class SlimeSystem : EntitySystem
             slime.Comp.Nutrition += slime.Comp.NutritionOnHit;
         }
         
+        return true;
+    }
+
+    public bool TrySplitSlime(Entity<SlimeComponent?> slime, int split_amount)
+    {
+        if (!Resolve(slime, ref slime.Comp, false)) return false;
+        var newNutrition = slime.Comp.Nutrition / 2;
+        for (int i = 0; i < split_amount; i++)
+        {
+            var id = _entityManager.SpawnAtPosition(slime.Comp.SplitInto, slime.Owner.ToCoordinates());
+            var comp = CopyComp(slime, id, slime.Comp);
+            comp.Nutrition = newNutrition;
+        }
         return true;
     }
 }

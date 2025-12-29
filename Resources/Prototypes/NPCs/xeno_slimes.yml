@@ -8,7 +8,7 @@
           operator: !type:PickNearbyEdibleOperator
             targetKey: EatTarget
             targetMoveKey: TargetCoordinates
-            hungerThreshold: 100
+            hungerThreshold: 150
             targetDamageType: Genetic
             targetDamageThreshold: 100
 

@@ -18,6 +18,7 @@
       types:
         Cellular: 5
     nutrition_on_hit: 10
+    split_threshold: 100
   - type: HTN
     rootTask:
       task: SlimeEatCompound
@@ -27,3 +28,6 @@
   id: XenoSlimeGray
   parent: XenoSlimeBase
   description: GRAY
+  components:
+  - type: Slime
+    split_into: XenoSlimeGray
