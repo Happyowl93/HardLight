@@ -24538,5 +24538,16 @@ Entries:
   id: 260900
   time: '2025-12-29T23:03:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2609
+- author: neomoth
+  changes:
+  - message: Added the ability for newly created station AI's to rename themselves
+      via the customization menu.
+    type: Add
+  - message: AI takeover verb now attempts to setmind to an existing PB instead of
+      always making a new one.
+    type: Tweak
+  id: 261200
+  time: '2025-12-29T23:08:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2612
 Order: -1
 
