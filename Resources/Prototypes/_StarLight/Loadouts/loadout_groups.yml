@@ -430,6 +430,17 @@
     - SeniorChemBag
 
 - type: loadoutGroup
+  id: ChemistShoes
+  name: loadout-group-chemist-shoes
+  loadouts:
+  - WhiteShoes
+  - ChemistWinterBoots
+  - MedicalWinterBoots
+  - Heels
+  - LaceupShoes
+  - LeatherShoes
+
+- type: loadoutGroup
   id: ChemistPDA
   name: loadout-group-chemist-id
   loadouts:
@@ -454,12 +465,28 @@
 
 - type: loadoutGroup
   id: ChemistLabeler
-  name: loadout-group-chemist-beaker
+  name: loadout-group-chemist-labeler
   loadouts:
     - ChemistHandLabeler
     - GoldenHandLabeler
     
 # Brigmedic
+- type: loadoutGroup
+  id: BrigmedicMask
+  name: loadout-group-brigmedic-mask
+  minLimit: 0
+  loadouts:
+    - BrigmedicBreathMaskMedicalSecurity
+    - BrigmedicMaskGasSecurity
+
+- type: loadoutGroup
+  id: BrigmedicTie
+  name: loadout-group-brigmedic-tie
+  minLimit: 0
+  loadouts:
+    - BrigmedicRedNeckTie
+    - BrigmedicDetNeckTie
+
 - type: loadoutGroup
   id: BrigmedicPDA
   name: loadout-group-brigmedic-id

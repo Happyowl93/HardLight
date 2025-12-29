@@ -123,7 +123,9 @@
   id: JobBrigmedic
   groups:
     - BrigmedicHead
+    - BrigmedicMask
     - BrigmedicJumpsuit
+    - BrigmedicTie
     - BrigmedicBackpack
     - BrigmedicOuterClothing
     - BrigmedicBelt

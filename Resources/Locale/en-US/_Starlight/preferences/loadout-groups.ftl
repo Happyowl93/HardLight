@@ -38,6 +38,8 @@ loadout-group-security-sidearm = Security Sidearm
 loadout-group-detective-shoes = Detective shoes
 loadout-group-brigmedic-id = Brigmedic ID
 loadout-group-brigmedic-beaker = Brigmedic beaker
+loadout-group-brigmedic-mask = Brigmedic mask
+loadout-group-brigmedic-tie = Brigmedic tie
 
 # Law
 loadout-group-magistrate-shoes = Magistrate shoes
@@ -62,6 +64,7 @@ loadout-group-chemist-id = Chemist ID
 loadout-group-chemist-beaker = Chemist beaker
 loadout-group-chemist-bag = Chemist bag
 loadout-group-chemist-labeler = Chemist labeler
+loadout-group-chemist-shoes = Chemist shoes
 
 # Other
 

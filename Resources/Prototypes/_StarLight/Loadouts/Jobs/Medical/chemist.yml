@@ -84,7 +84,7 @@
     - !type:GroupLoadoutEffect
         proto: SeniorChemist
   equipment:
-    bag: LimitedChemBag
+    bag: SeniorChemBag
 
 # Senior Outer clothing
 - type: loadout
@@ -108,6 +108,21 @@
         proto: StarOfChemistry
   equipment:
     pocket1: GoldenHandLabeler
+
+# Winter coat
+- type: loadout
+  id: SeniorChemistWintercoat
+  effects:
+    - !type:GroupLoadoutEffect
+        proto: SeniorChemist
+  equipment:
+    outerClothing: ClothingOuterWinterChemSenior
+
+# Shoes
+- type: loadout
+  id: ChemistWinterBoots
+  equipment:
+    shoes: ClothingShoesBootsWinterChem
 
 # PDA
 - type: loadout

@@ -339,6 +339,19 @@
   - type: Clothing
     sprite: Clothing/Head/Hoods/Coat/hoodchemist.rsi
 
+# Starlight start
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterChemSenior
+  categories: [ HideSpawnMenu ]
+  name: senior chemist winter coat hood
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodchemistsenior.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodchemistsenior.rsi
+# Starlight end
+
 - type: entity
   parent: ClothingHeadHatHoodWinterBase
   id: ClothingHeadHatHoodWinterCMO
