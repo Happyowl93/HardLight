@@ -24509,5 +24509,12 @@ Entries:
   id: 262300
   time: '2025-12-29T22:50:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2623
+- author: ork
+  changes:
+  - message: Hugging now transfers some heat
+    type: Add
+  id: 262400
+  time: '2025-12-29T22:59:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2624
 Order: -1
 
