@@ -24485,5 +24485,29 @@ Entries:
   id: 262900
   time: '2025-12-29T22:34:31.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2629
+- author: CawsForConcern
+  changes:
+  - message: BSO now has access to through NTR airlocks
+    type: Add
+  - message: NTR's locker is now locked behind NTR access (was previously Command
+      access)
+    type: Fix
+  id: 262800
+  time: '2025-12-29T22:37:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2628
+- author: neomoth
+  changes:
+  - message: Added StationGridMemoryComponent/System
+    type: Add
+  - message: Weapons locked to the station's alert level that also have a StationGridMemoryComponent
+      should now respect the alert level of the last valid station it was on, allowing
+      them to work off-station.
+    type: Tweak
+  - message: The Dominator and the Miniature Energy Gun were given a StationGridMemoryComponent
+      to allow them to work off-station.
+    type: Tweak
+  id: 262300
+  time: '2025-12-29T22:50:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2623
 Order: -1
 
