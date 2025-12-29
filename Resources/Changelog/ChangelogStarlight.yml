@@ -24613,5 +24613,12 @@ Entries:
   id: 258100
   time: '2025-12-29T23:28:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2581
+- author: Sparlight
+  changes:
+  - message: Fixed smart corgis and borgis being blinded from oculine.
+    type: Fix
+  id: 260500
+  time: '2025-12-29T23:28:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2605
 Order: -1
 
