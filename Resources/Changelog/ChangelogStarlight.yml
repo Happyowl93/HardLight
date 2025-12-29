@@ -24565,5 +24565,12 @@ Entries:
   id: 263400
   time: '2025-12-29T23:14:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2634
+- author: Penguinwizzard
+  changes:
+  - message: Supermatter flatpacks are now purchased in engineering-locked crates.
+    type: Tweak
+  id: 262000
+  time: '2025-12-29T23:14:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2620
 Order: -1
 
