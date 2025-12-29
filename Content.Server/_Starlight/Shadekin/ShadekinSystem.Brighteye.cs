@@ -8,6 +8,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Inventory;
 using Content.Server.Spawners.Components;
 using Content.Server._Starlight.Bluespace;
+using Content.Shared.Zombies;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -20,6 +21,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         SubscribeLocalEvent<BrighteyeComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<BrighteyeComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<BrighteyeComponent, NullSpaceShuntEvent>(NullSpaceShunt);
+        SubscribeLocalEvent<BrighteyeComponent, EntityZombifiedEvent>(OnZombified);
 
         SubscribeLocalEvent<OrganShadekinCoreComponent, SurgeryOrganImplantationCompleted>(OnCoreOrganImplanted);
         SubscribeLocalEvent<OrganShadekinCoreComponent, SurgeryOrganExtracted>(OnCoreOrganExtracted);
@@ -51,6 +53,12 @@ public sealed partial class ShadekinSystem : EntitySystem
     {
         if (HasComp<BrighteyeComponent>(args.Body) && !ent.Comp.Damaged)
             RemComp<BrighteyeComponent>(args.Body);
+    }
+
+    // No Phasing, Almost Unkillable Zombie... We get zombified as a Brighteye we get burned!
+    private void OnZombified(EntityUid uid, BrighteyeComponent component, ref EntityZombifiedEvent args)
+    {
+        RemComp<BrighteyeComponent>(uid);
     }
 
     private void OnShutdown(EntityUid uid, BrighteyeComponent component, ComponentShutdown args)
