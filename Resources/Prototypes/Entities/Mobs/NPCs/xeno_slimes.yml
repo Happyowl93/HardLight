@@ -2,7 +2,9 @@
   name: Basic Xenobiology Slime
   id: XenoSlimeBase
   parent:
-  - BaseSimpleMob
+  - MobRespirator
+  - MobAtmosStandard
+  - SimpleSpaceMobBase
   abstract: true
   description: I don't think you should be seeing this.
   components:
