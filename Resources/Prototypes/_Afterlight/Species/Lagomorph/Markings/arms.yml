@@ -1,0 +1,35 @@
+- type: marking
+  id: LagomorphBraceletL
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: bracelet_L
+
+- type: marking
+  id: LagomorphBraceletR
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: bracelet_R
+
+- type: marking
+  id: LagomorphArmSpotsL
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: left_arm_spots
+
+- type: marking
+  id: LagomorphArmSpotsR
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: right_arm_spots

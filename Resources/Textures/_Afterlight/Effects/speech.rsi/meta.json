@@ -1,0 +1,40 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Sprites by InanimateIJK",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "lagomorph0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "lagomorph1"
+        },
+        {
+            "name": "lagomorph2"
+        },
+        {
+            "name": "lagomorph3",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5,
+                    0.5
+                ]
+            ]
+        }
+    ]
+}

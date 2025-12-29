@@ -1,0 +1,24 @@
+- files: ["bunnytalk1.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "By lukeman for Afterlight"
+  source: "lukeman.@Discord"
+
+- files: ["bunnytalk2.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "By lukeman for Afterlight"
+  source: "lukeman.@Discord"
+
+- files: ["bunnytalk3.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "By lukeman for Afterlight"
+  source: "lukeman.@Discord"
+
+- files: ["squeek.ogg"]
+  license: "CC0-1.0 Universal"
+  copyright: "Rabbit sounds by u_51wf53qyw2 on Pixabay"
+  source: "https://pixabay.com/sound-effects/rabbit-sounds-358172/"
+
+- files: ["sniff.ogg"]
+  license: "CC0-1.0 Universal"
+  copyright: "Rabbit sounds by u_51wf53qyw2 on Pixabay"
+  source: "https://pixabay.com/sound-effects/rabbit-sounds-358172/"

@@ -1,0 +1,53 @@
+- type: marking
+  id: LagomorphChestScarLeft
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: chest_scar_L
+
+- type: marking
+  id: LagomorphChestScarRight
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: chest_scar_R
+
+- type: marking
+  id: LagomorphBackScarLeft
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: back_scar_L
+
+- type: marking
+  id: LagomorphBackScarRight
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: back_scar_R
+
+- type: marking
+  id: LagomorphBellyColour
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: belly_color
+
+- type: marking
+  id: LagomorphTorsoSpots
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: torso_spots

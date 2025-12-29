@@ -10,6 +10,7 @@
   - Dwarf
   - Felionoid
   - Human
+  - Lagomorph #Afterlight
   - SlimePerson
   - Moth
   - Reptilian
@@ -90,4 +91,8 @@
   name: species-name-shadekin
   text: "/ServerInfo/Guidebook/Mobs/Shadekin.xml"
 
-
+#TODO: Move below into _Afterlight
+- type: guideEntry
+  id: Lagomorph
+  name: species-name-lagomorph
+  text: "/ServerInfo/_Afterlight/Guidebook/Mobs/Lagomorph.xml"

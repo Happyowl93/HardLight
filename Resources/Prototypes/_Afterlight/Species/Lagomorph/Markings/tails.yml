@@ -1,0 +1,26 @@
+- type: marking
+  id: LagomorphTailFluffy
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: fluffy_tail
+
+- type: marking
+  id: LagomorphTailLong
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: long_tail
+
+- type: marking
+  id: LagomorphTailCotton
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: cotton_tail

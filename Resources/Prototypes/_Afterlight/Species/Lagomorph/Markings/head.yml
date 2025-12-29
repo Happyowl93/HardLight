@@ -1,0 +1,54 @@
+- type: marking
+  id: LagomorphEyeScarLeft
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: eye_scar_L
+
+- type: marking
+  id: LagomorphEyeScarRight
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: eye_scar_R
+
+# they don't render right lol
+# - type: marking
+#   id: LagomorphFloppyPiercingLeft
+#   bodyPart: HeadTop
+#   markingCategory: HeadSide
+#   speciesRestriction: [Lagomorph]
+#   sprites:
+#     - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+#       state: floppy_ears_piercing_L
+#
+# - type: marking
+#   id: LagomorphFloppyPiercingRight
+#   bodyPart: HeadSide
+#   markingCategory: HeadSide
+#   speciesRestriction: [Lagomorph]
+#   sprites:
+#     - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+#       state: floppy_ears_piercing_R
+#
+# - type: marking
+#   id: LagomorphTallPiercingLeft
+#   bodyPart: HeadSide
+#   markingCategory: HeadSide
+#   speciesRestriction: [Lagomorph]
+#   sprites:
+#     - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+#       state: tall_ears_piercing_L
+#
+# - type: marking
+#   id: LagomorphTallPiercingRight
+#   bodyPart: HeadSide
+#   markingCategory: HeadSide
+#   speciesRestriction: [Lagomorph]
+#   sprites:
+#     - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+#       state: tall_ears_piercing_R

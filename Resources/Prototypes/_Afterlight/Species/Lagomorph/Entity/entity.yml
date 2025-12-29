@@ -1,0 +1,86 @@
+- type: entity
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobLagomorph
+  name: Urist McBnuuy
+  abstract: true
+  components:
+  - type: Absorbable
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - Lagomorphian
+    understands:
+    - GalacticCommon
+    - Lagomorphian
+  - type: Jump
+    action: JumpLagomorph
+  - type: Icon
+    sprite: _Afterlight/Species/Lagomorph/parts.rsi
+    state: full
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5
+  - type: HumanoidAppearance
+    species: Lagomorph
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+  - type: Hunger
+    thresholds:
+      Overfed: 210
+      Okay: 165
+      Peckish: 110
+      Starving: 55
+      Dead: 0
+    baseDecayRate: 0.02
+  - type: Thirst
+    thresholds:
+      OverHydrated: 610
+      Okay: 465
+      Thirsty: 310
+      Parched: 155
+      Dead: 0
+  - type: Speech
+    speechSounds: ALLagomorph
+    speechVerb: Lagomorph
+    allowedEmotes: ['Squeek', 'Snort', 'LagomorphSneeze', 'LagomorphSnore']
+  - type: Vocal
+    sounds:
+      Male: MaleLagomorph
+      Female: FemaleLagomorph
+      Unsexed: FemaleLagomorph
+  - type: TypingIndicator
+    proto: lagomorph
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Lagomorph
+  - type: MeleeWeapon
+    animation: WeaponArcClaw
+    soundHit:
+      collection: AlienClaw
+    damage:
+      types:
+        Slash: 5
+
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobLagomorphDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: Lagomorph
+  - type: Body
+    prototype: Lagomorph
+  - type: Inventory
+    speciesId: lagomorph
+
+# for fragile electronics like consoles or shuttle engines.
+- type: damageModifierSet
+  id: Lagomorph
+  coefficients:
+    Blunt: 0.9
+    Cold: 0.75
+    Heat: 1.25
