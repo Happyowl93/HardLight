@@ -24590,5 +24590,12 @@ Entries:
   id: 258200
   time: '2025-12-29T23:28:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2582
+- author: Way
+  changes:
+  - message: New parallax background for mappers.
+    type: Add
+  id: 258500
+  time: '2025-12-29T23:28:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2585
 Order: -1
 
