@@ -62,7 +62,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         if (component.Portal is not null)
         {
             SpawnAtPosition(_shadekinShadow, Transform(component.Portal.Value).Coordinates);
-            QueueDel(component.Portal);
+            QueueDel(component.Portal.Value);
         }
 
         if (TryComp<BodyComponent>(uid, out var body))
@@ -197,7 +197,7 @@ public sealed partial class ShadekinSystem : EntitySystem
 
         if (component.Energy >= cost)
         {
-            component.Energy -= (int)cost;
+            component.Energy -= cost;
             Dirty(uid, component);
         }
         else

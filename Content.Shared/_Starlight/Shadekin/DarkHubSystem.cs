@@ -65,8 +65,10 @@ public sealed class DarkHubSystem : EntitySystem
 
         var target = _random.Pick(warps);
 
-        SpawnAtPosition(_shadekinShadow, Transform(target).Coordinates);
-        _transform.SetCoordinates(args.Subject, Transform(target).Coordinates);
+        var coords = Transform(target).Coordinates;
+        SpawnAtPosition(_shadekinShadow, coords);
+        _transform.SetCoordinates(args.Subject, coords);
+
 
         args.Cancel(); // Duh, we need to handle the teleport ourself!
     }

@@ -55,15 +55,15 @@ public sealed partial class PortalComponent : Component
     public bool RandomTeleport = true;
 }
 
-// Startlight - OnAttemptPortalEvent
+// Starlight - OnAttemptPortalEvent
 public sealed class OnAttemptPortalEvent : CancellableEntityEventArgs
 {
     public EntityUid Subject { get; }
 
     /// <summary>
-    /// Starlight - Trigger when i use attempt to use a portal, if cancelled, the portal does not teleport.
+    /// Raised when an entity attempts to use a portal. Cancel this event to prevent teleportation
     /// </summary>
-    /// <param name="ent"></param>
+    /// <param name="subject">The entity attempting to use the portal</param>
     public OnAttemptPortalEvent(EntityUid subject)
     {
         Subject = subject;
