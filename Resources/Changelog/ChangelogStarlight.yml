@@ -24620,5 +24620,12 @@ Entries:
   id: 260500
   time: '2025-12-29T23:28:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2605
+- author: neomoth
+  changes:
+  - message: Fixed the preview ghost for crayons. Artists, rejoice.
+    type: Fix
+  id: 260400
+  time: '2025-12-29T23:29:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2604
 Order: -1
 
