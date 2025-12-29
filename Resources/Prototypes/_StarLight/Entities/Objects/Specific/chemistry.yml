@@ -171,7 +171,7 @@
 
 - type: entity
   name: dark beaker
-  parent: [BaseBeakerMetallic, DrinkBaseOpenable, DrinkVisualsOpenable]
+  parent: [BaseBeakerMetallic, DrinkBaseOpenable, DrinkVisualsOpenable, BaseSecurityContraband]
   description: The dark side of an unbreakable beaker. Its true power can be sealed.
   id: DarkBeaker
   components:
