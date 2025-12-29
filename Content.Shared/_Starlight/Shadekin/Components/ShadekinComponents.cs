@@ -54,7 +54,7 @@ public sealed partial class OrganShadekinCoreComponent : Component
 #endregion
 
 #region Brighteye
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentPause, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class BrighteyeComponent : Component
 {
     [DataField]
