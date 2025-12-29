@@ -41,7 +41,7 @@
   id: VendorClothingOuterHardsuitEngineeringGolden
   productEntity: ClothingOuterHardsuitEngineeringGolden
   cost:
-    NTCredit: 1500
+    NTCredit: 1140
   categories:
   - SLEnginery
   conditions:
@@ -54,7 +54,7 @@
   id: VendorClothingOuterHardsuitAtmosGolden
   productEntity: ClothingOuterHardsuitAtmosGolden
   cost:
-    NTCredit: 1500
+    NTCredit: 1140
   categories:
   - SLEnginery
   conditions:

@@ -559,7 +559,7 @@
   parent: ClothingOuterHardsuitAtmos
   id: ClothingOuterHardsuitAtmosGolden
   name: golden atmos hardsuit
-  description: A golden hardsuit that protects against hazardous, low pressure environments. Has thermal shielding. Use of expensive alloys have made it lighter than its non-golden counterpart.
+  description: A golden hardsuit that protects against hazardous, low pressure environments. Has thermal shielding.
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/OuterClothing/Hardsuits/atmospherics_golden.rsi
@@ -567,23 +567,12 @@
     sprite: _Starlight/Clothing/OuterClothing/Hardsuits/atmospherics_golden.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitAtmosGolden
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Piercing: 0.95
-        Heat: 0.8
-        Radiation: 0.55
-  - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
 
 - type: entity
   parent: ClothingOuterHardsuitEngineering
   id: ClothingOuterHardsuitEngineeringGolden
   name: golden engineering hardsuit
-  description: A golden hardsuit that protects against hazardous, low pressure environments. Has radiation shielding. Use of expensive alloys have made it lighter than its non-golden counterpart.
+  description: A golden hardsuit that protects against hazardous, low pressure environments. Has radiation shielding.
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/OuterClothing/Hardsuits/engineering_golden.rsi
@@ -591,18 +580,6 @@
     sprite: _Starlight/Clothing/OuterClothing/Hardsuits/engineering_golden.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineeringGolden
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Piercing: 0.95
-        Shock: 0.85
-        Caustic: 0.55
-        Radiation: 0.2
-  - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
 
 # NanoTrasen Special Forces
 
