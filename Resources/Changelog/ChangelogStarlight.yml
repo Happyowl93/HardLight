@@ -24643,5 +24643,14 @@ Entries:
   id: 257900
   time: '2025-12-29T23:51:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2579
+- author: Clone0401
+  changes:
+  - message: The Error item is now at a loss for words
+    type: Tweak
+  - message: The Error item will shock you when eaten
+    type: Tweak
+  id: 259500
+  time: '2025-12-29T23:51:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2595
 Order: -1
 
