@@ -63,8 +63,8 @@
   keycode: 'e'
   color: "#8a0060"
   showNames: true
-  needWhitelist: true
+  canSpeak: true
   requiredComponents: 
   - Shadekin
-  whitelistComponents:
+  canSpeakComponents:
   - Brighteye
