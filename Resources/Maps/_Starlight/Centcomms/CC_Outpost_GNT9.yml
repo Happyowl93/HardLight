@@ -181,6 +181,8 @@ entities:
       bodyType: Dynamic
     - type: Fixtures
       fixtures: {}
+    - type: BecomesStation
+      id: centcomm
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
@@ -42741,12 +42743,6 @@ entities:
       parent: 3490
     - type: Physics
       canCollide: False
-  - uid: 6030
-    components:
-    - type: Transform
-      parent: 6029
-    - type: Physics
-      canCollide: False
   - uid: 6031
     components:
     - type: Transform
@@ -58398,8 +58394,6 @@ entities:
       pos: 1.5,24.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 8584
   - uid: 8519
@@ -58900,8 +58894,6 @@ entities:
       pos: -0.5,24.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 8584
 - proto: WeaponEnergyTurretCommandControlPanel
