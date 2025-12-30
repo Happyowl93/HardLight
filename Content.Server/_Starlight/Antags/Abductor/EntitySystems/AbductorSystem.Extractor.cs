@@ -51,17 +51,14 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
     private void OnExtractDoAfter(Entity<AbductorExtractorComponent> ent, ref AbductorExtractDoAfterEvent args)
     {
-        if (args.Target == null || args.User == EntityUid.Invalid)
-            return;
-
-        if (!_body.TryGetBodyOrganEntityComps<OrganHeartComponent>(args.Target.Value, out var hearts))
+        if (args.Target == null 
+            || args.User == EntityUid.Invalid 
+            || !_body.TryGetBodyOrganEntityComps<OrganHeartComponent>(args.Target.Value, out var hearts))
             return;
 
         _admin.Add(LogType.InteractUsing, LogImpact.Low, $"Heart successfully extracted from {ToPrettyString(args.Target.Value)} using {ToPrettyString(ent.Owner)} by {ToPrettyString(args.User)}");
 
         foreach (var heart in hearts)
-        {
             _body.RemoveOrgan(heart, _entityManager.GetComponent<OrganComponent>(heart));
-        }
     }
 }

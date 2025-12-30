@@ -44,10 +44,8 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
         SubscribeLocalEvent<AbductorComponent, AbductorAttractDoAfterEvent>(OnDoAfterAttract);
     }
-    private void OnAbductGetProgress(Entity<AbductConditionComponent> ent, ref ObjectiveGetProgressEvent args)
-    {
-        args.Progress = AbductProgress(ent, _number.GetTarget(ent.Owner));
-    }
+    private void OnAbductGetProgress(Entity<AbductConditionComponent> ent, ref ObjectiveGetProgressEvent args) 
+        => args.Progress = AbductProgress(ent, _number.GetTarget(ent.Owner));
 
     private float AbductProgress(Entity<AbductConditionComponent> ent, int target)
     {
@@ -131,18 +129,15 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
     private void TryUpdateObjectiveProgress(EntityUid actor, EntityUid victim, AbductorVictimComponent victimComp, AbductorConsoleComponent component)
     {
-        if (victimComp.Organ == AbductorOrganType.None)
-            return;
-
-        if (!TryComp<MindContainerComponent>(actor, out var mindContainer) ||
-            mindContainer.Mind is not { } mindId)
-            return;
-
-        if (!TryComp<MindComponent>(mindId, out var mind))
+        if (victimComp.Organ == AbductorOrganType.None 
+            || !TryComp<MindContainerComponent>(actor, out var mindContainer) 
+            || mindContainer.Mind is not { } mindId
+            || !TryComp<MindComponent>(mindId, out var mind))
             return;
 
         var objId = mind.Objectives.FirstOrDefault(HasComp<AbductConditionComponent>);
-        if (objId == default || !TryComp<AbductConditionComponent>(objId, out var condition))
+        if (objId == default 
+            || !TryComp<AbductConditionComponent>(objId, out var condition))
             return;
 
         var victimNet = GetNetEntity(victim);
@@ -199,26 +194,17 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
             return;
 
         var victim = GetEntity(args.Victim);
-        if (_pullingSystem.IsPulling(victim))
-        {
-            if (!TryComp<PullerComponent>(victim, out var pullerComp))
-                return;
 
-            if (!TryComp<PullableComponent>(pullerComp.Pulling, out var pullableComp))
-                return;
+        if (_pullingSystem.IsPulling(victim) 
+            || !TryComp<PullerComponent>(victim, out var pullerComp) 
+            || !TryComp<PullableComponent>(pullerComp.Pulling, out var pullableComp) 
+            || !_pullingSystem.TryStopPull(pullerComp.Pulling.Value, pullableComp))
+            return;
 
-            if (!_pullingSystem.TryStopPull(pullerComp.Pulling.Value, pullableComp))
-                return;
-        }
-
-        if (_pullingSystem.IsPulled(victim))
-        {
-            if (!TryComp<PullableComponent>(victim, out var pullableComp))
-                return;
-
-            if (!_pullingSystem.TryStopPull(victim, pullableComp))
-                return;
-        }
+        if (_pullingSystem.IsPulled(victim) 
+            || !TryComp<PullableComponent>(victim, out var pullableComp) 
+            || !_pullingSystem.TryStopPull(victim, pullableComp))
+            return;
 
         if (!HasComp<AbductorComponent>(victim))
         {
@@ -232,10 +218,8 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         
         _xformSys.SetCoordinates(victim, GetCoordinates(args.TargetCoordinates));
     }
-    private void OnBeforeActivatableUIOpen(Entity<AbductorConsoleComponent> ent, ref BeforeActivatableUIOpenEvent args)
-    {
-        UpdateGui(ent.Comp.Target, ent);
-    }
+
+    private void OnBeforeActivatableUIOpen(Entity<AbductorConsoleComponent> ent, ref BeforeActivatableUIOpenEvent args) => UpdateGui(ent.Comp.Target, ent);
 
     public void SyncAbductors(Entity<AbductorConsoleComponent> ent)
     {
@@ -300,11 +284,10 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         {
             if (HasComp<UnremoveableComponent>(GetEntity(computer.Comp.Armor.Value)))
                 armorLock = true;
+            
             if (TryComp<ItemSwitchComponent>(GetEntity(computer.Comp.Armor.Value), out var switchVest)
                 && Enum.TryParse<AbductorArmorModeType>(switchVest.State, ignoreCase: true, out var state))
-            {
                 armorMode = state;
-            }
         }
 
         _uiSystem.SetUiState(computer.Owner, AbductorConsoleUIKey.Key, new AbductorConsoleBuiState()

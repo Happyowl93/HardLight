@@ -22,7 +22,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
 
-    private static readonly ProtoId<TagPrototype> Abductor = "Abductor";
+    private static readonly ProtoId<TagPrototype> _abductor = "Abductor";
     public void InitializeGizmo()
     {
         SubscribeLocalEvent<AbductorGizmoComponent, AfterInteractEvent>(OnGizmoInteract);
@@ -46,10 +46,8 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
     private void OnGizmoInteract(Entity<AbductorGizmoComponent> ent, ref AfterInteractEvent args)
     {
-        if (!_actionBlockerSystem.CanInstrumentInteract(args.User, args.Used, args.Target))
-            return;
-
-        if (!args.Target.HasValue)
+        if (!_actionBlockerSystem.CanInstrumentInteract(args.User, args.Used, args.Target) 
+            || !args.Target.HasValue)
             return;
 
         if (HasComp<SurgeryTargetComponent>(args.Target))
@@ -70,7 +68,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
     {
         var time = TimeSpan.FromSeconds(6);
 
-        if (_tags.HasTag(target, Abductor))
+        if (_tags.HasTag(target, _abductor))
             time = TimeSpan.FromSeconds(0.5);
 
         var doAfter = new DoAfterArgs(EntityManager, user, time, new AbductorGizmoMarkDoAfterEvent(), ent, target, ent.Owner)
