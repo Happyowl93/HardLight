@@ -406,8 +406,8 @@
 - type: entity
   id: DisposalYJunction
   parent: DisposalPipeBase
-  name: disposal alt 2-1 merger
-  description: Merges 2 pipes from the side to one. Items coming from the exit leave through the right entrance instead.
+  name: disposal alt 2-1 merger # Starlight-edit
+  description: Merges 2 pipes from the side to one. Items coming from the exit leave through the right entrance instead. # Starlight-edit
   components:
   - type: Sprite
     layers:
