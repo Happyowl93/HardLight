@@ -24627,5 +24627,14 @@ Entries:
   id: 260400
   time: '2025-12-29T23:29:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2604
+- author: Fasuh, Vonte(Sprites)
+  changes:
+  - message: Add the ability to hold 10L of gas in vox lungs
+    type: Add
+  - message: Add new synthetic lungs with the ability to hold 2.5L of gas
+    type: Add
+  id: 258600
+  time: '2025-12-29T23:51:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2586
 Order: -1
 
