@@ -407,3 +407,7 @@
 
 - type: Tag
   id: MagazineLightRiflePan
+
+- type: Tag
+  id: FestiveDinner
+  
