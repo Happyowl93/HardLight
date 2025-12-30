@@ -24687,5 +24687,14 @@ Entries:
   id: 258800
   time: '2025-12-29T23:52:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2588
+- author: Penguinwizzard
+  changes:
+  - message: We've managed to find some savings in our custodial budgets! In other
+      news, if the toilets on your station don't work, ask the janitor to check the
+      cistern.
+    type: Tweak
+  id: 258900
+  time: '2025-12-30T00:59:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2589
 Order: -1
 
