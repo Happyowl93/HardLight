@@ -24652,5 +24652,12 @@ Entries:
   id: 259500
   time: '2025-12-29T23:51:33.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2595
+- author: ork
+  changes:
+  - message: DAGD cannot be paired with escape alive anymore
+    type: Fix
+  id: 258300
+  time: '2025-12-29T23:51:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2583
 Order: -1
 
