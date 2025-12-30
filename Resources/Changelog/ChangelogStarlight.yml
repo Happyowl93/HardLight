@@ -24673,5 +24673,19 @@ Entries:
   id: 260300
   time: '2025-12-29T23:52:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2603
+- author: Conflee
+  changes:
+  - message: Added 6 new posters
+    type: Add
+  - message: Added 9 new crayon/graffiti decals
+    type: Add
+  - message: Added Starlight graffiti to the graffiti spawners, so they will now appear
+      in messy areas round start
+    type: Tweak
+  - message: Fixed Speaker rotations being backwards
+    type: Fix
+  id: 258800
+  time: '2025-12-29T23:52:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2588
 Order: -1
 
