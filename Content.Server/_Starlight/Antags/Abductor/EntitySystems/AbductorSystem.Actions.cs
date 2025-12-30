@@ -1,13 +1,12 @@
 using System.Linq;
-using Content.Shared._Starlight.Action;
-using Content.Shared.Actions;
+using Content.Server._Starlight.Computers.RemoteEye;
+using Content.Shared._Starlight.Actions.EntitySystems;
 using Content.Shared.Actions.Components;
 using Content.Shared.Cuffs;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Effects;
 using Content.Shared.Inventory;
-using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
@@ -32,6 +31,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
     [Dependency] private readonly StarlightActionsSystem _starlightActions = default!;
     [Dependency] private readonly SharedCuffableSystem _cuffs = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly RemoteEyeSystem _remoteEye = default!;
 
     private static readonly EntProtoId<InstantActionComponent> _gizmoMark = "ActionGizmoMark";
     private static readonly EntProtoId<InstantActionComponent> _sendYourself = "ActionSendYourself";
@@ -43,8 +43,6 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
     {
         SubscribeLocalEvent<AbductorScientistComponent, ComponentStartup>(AbductorScientistComponentStartup);
         SubscribeLocalEvent<AbductorAgentComponent, ComponentStartup>(AbductorAgentComponentStartup);
-
-        SubscribeLocalEvent<ExitConsoleEvent>(OnExit);
 
         SubscribeLocalEvent<AbductorReturnToShipEvent>(OnReturn);
         SubscribeLocalEvent<AbductorScientistComponent, AbductorReturnDoAfterEvent>(OnDoAfterAbductorScientistReturn);
@@ -100,6 +98,9 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
             return;
         }
 
+        if (_mobState.IsIncapacitated(ev.Performer))
+            return;
+          
         AbductorAgentComponent? agentComp = null;
         if (!TryComp<AbductorScientistComponent>(ev.Performer, out var scientistComp) && !TryComp<AbductorAgentComponent>(ev.Performer, out agentComp))
             EnsureComp<AbductorScientistComponent>(ev.Performer, out scientistComp);
@@ -194,7 +195,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
             return;
 
         _xformSys.SetCoordinates(uid, spawnPosition.Value);
-        OnCameraExit(uid);
+        _remoteEye.CameraExit(uid);
     }
 
     private void OnSendYourself(SendYourselfEvent ev)
@@ -226,6 +227,8 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
     private void OnDoAfterSendYourself(EntityUid ent, AbductorSendYourselfDoAfterEvent args)
     {
+        if (_mobState.IsIncapacitated(ent))
+            return;
         _color.RaiseEffect(Color.FromHex("#BA0099"), new List<EntityUid>(1) { ent }, Filter.Pvs(ent, entityManager: EntityManager));
         if (_pullingSystem.IsPulling(ent))
         {
@@ -241,7 +244,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
                 || !_pullingSystem.TryStopPull(ent, pullableComp)) return;
         }
         _xformSys.SetCoordinates(ent, GetCoordinates(args.TargetCoordinates));
-        OnCameraExit(ent);
+        _remoteEye.CameraExit(ent);
     }
 
     private void OnGizmoMark(GizmoMarkEvent ev)
@@ -260,28 +263,5 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         else if (TryComp<AbductorGizmoComponent>(pocket2PossibleGizmo, out var pocket2Gizmo))
             pocket2Gizmo.Target = GetNetEntity(ev.Target);
 
-    }
-
-    private void OnExit(ExitConsoleEvent ev) => OnCameraExit(ev.Performer);
-
-    private void AddActions(AbductorBeaconChosenBuiMsg args)
-    {
-        EnsureComp<AbductorsAbilitiesComponent>(args.Actor, out var comp);
-        comp.HiddenActions = _starlightActions.HideActions(args.Actor);
-        _actions.AddAction(args.Actor, ref comp.ExitConsole, _exitAction);
-        _actions.AddAction(args.Actor, ref comp.SendYourself, _sendYourself);
-        _actions.AddAction(args.Actor, ref comp.GizmoMark, _gizmoMark);
-    }
-    private void RemoveActions(EntityUid actor)
-    {
-        EnsureComp<AbductorsAbilitiesComponent>(actor, out var comp);
-        if (comp.ExitConsole is not null)
-            _actions.RemoveAction(actor, comp.ExitConsole);
-        if (comp.SendYourself is not null)
-            _actions.RemoveAction(actor, comp.SendYourself);
-        if (comp.GizmoMark is not null)
-            _actions.RemoveAction(actor, comp.GizmoMark);
-
-        _starlightActions.UnHideActions(actor, comp.HiddenActions);
     }
 }

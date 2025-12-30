@@ -2,6 +2,7 @@
   name: comrade
   parent: BaseMobHuman
   id: MobSovietComrade
+  categories: [ Spawner ]
   components:
     - type: Prying
       pryPowered: true
@@ -116,7 +117,10 @@
   - type: MovementAlwaysTouching
   - type: Bloodstream
     bloodMaxVolume: 300
-    bloodReagent: Vodka
+    bloodReagents:
+        reagents:
+        - ReagentId: Vodka
+          Quantity: 1
   - type: CombatMode
   - type: Temperature
     heatDamageThreshold: 500

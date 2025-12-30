@@ -6,7 +6,7 @@
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Abductor/organs.rsi
   - type: Organ
-  - type: Food
+  - type: Edible
   - type: Extractable
     grindableSolutionName: organ
   - type: SolutionContainerManager
@@ -75,8 +75,6 @@
     layers:
       - state: lung-l
       - state: lung-r
-  - type: Lung
-    alert: LowNitrogen
 
 - type: entity
   id: OrganAbductorHeart

@@ -1,3 +1,4 @@
+using Content.Server.Body.Systems;
 using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
 using Content.Server.Popups;
@@ -30,6 +31,7 @@ public sealed partial class DragonSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
+    [Dependency] private readonly BodySystem _body = default!; //starlight
 
     private EntityQuery<CarpRiftsConditionComponent> _objQuery;
 
@@ -97,12 +99,14 @@ public sealed partial class DragonSystem : EntitySystem
             if (!_mobState.IsDead(uid))
                 comp.RiftAccumulator += frameTime;
 
-            // Delete it, naughty dragon!
-            if (comp.RiftAccumulator >= comp.RiftMaxAccumulator)
+            //starlight start
+            if (comp.RiftAccumulator >= comp.RiftMaxAccumulator && !_mobState.IsDead(uid)) // dragon has no rifts and has surpassed the timer
             {
-                Roar(uid, comp);
-                QueueDel(uid);
+                var xform = Transform(uid);
+                Spawn(comp.NoRiftDeathEffect, _transform.GetMapCoordinates(uid, xform: xform));
+                _body.GibBody(uid, gibOrgans: false); // REND HIS FLESH!!!!!!!!!!!!!
             }
+            //starlight end
         }
     }
 
@@ -265,17 +269,34 @@ public sealed partial class DragonSystem : EntitySystem
     /// <summary>
     /// Do everything that needs to happen when a rift gets destroyed by the crew.
     /// </summary>
-    public void RiftDestroyed(EntityUid uid, DragonComponent? comp = null)
+    public void RiftDestroyed(EntityUid dragonUid, EntityUid riftUid, DragonComponent? comp = null) // Starlight edit
     {
-        if (!Resolve(uid, ref comp))
+        if (!Resolve(dragonUid, ref comp)) // Starlight edit
             return;
 
         // do reset the rift count since crew destroyed the rift, not deleted by the dragon dying.
-        DeleteRifts(uid, true, comp);
+        // Starlight edit Start
+        comp.Rifts.Remove(riftUid);
 
+        // Reset the rift count in objectives since crew destroyed a rift
+        if (TryComp<MindContainerComponent>(dragonUid, out var mindContainer) && mindContainer.HasMind)
+        {
+            var mind = Comp<MindComponent>(mindContainer.Mind.Value);
+            foreach (var objId in mind.Objectives)
+            {
+                if (_objQuery.TryGetComponent(objId, out var obj))
+                {
+                    _carpRifts.ResetRifts(objId, obj);
+                    break;
+                }
+            }
+        }
+        // Starlight edit End
         // We can't predict the rift being destroyed anyway so no point adding weakened to shared.
         comp.WeakenedAccumulator = comp.WeakenedDuration;
-        _movement.RefreshMovementSpeedModifiers(uid);
-        _popup.PopupEntity(Loc.GetString("carp-rift-destroyed"), uid, uid);
+        // Starlight edit Start
+        _movement.RefreshMovementSpeedModifiers(dragonUid);
+        _popup.PopupEntity(Loc.GetString("carp-rift-destroyed"), dragonUid, dragonUid);
+        // Starlight edit End
     }
 }

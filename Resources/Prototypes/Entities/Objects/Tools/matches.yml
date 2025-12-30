@@ -91,9 +91,18 @@
   - type: Storage
     grid:
     - 0,0,2,1
-  - type: StorageFill
-    contents:
-      - id: Matchstick
+  # 🌟Starlight - Start🌟
+    whitelist:
+      components:
+        - Smokable
+        - Matchstick
+        - Welder # for lighters
+        - Crayon # they're ciggie shaped
+    # 🌟Starlight - End🌟
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: Matchstick
         amount: 6
   - type: ItemCounter
     count:
@@ -107,7 +116,12 @@
   - type: Tag
     tags:
     - Trash
+    - Lighters #SL
   - type: SpaceGarbage
+  # Starlight-start: Vending Machines Prices
+  - type: ItemPrice
+    priceCategory: miscellaneous
+  # Starlight-end
 
 - type: entity
   parent: [Matchbox, BaseSyndicateContraband]
@@ -122,11 +136,15 @@
   - type: Storage
     grid:
     - 0,0,11,1
-  - type: StorageFill
-    contents:
-      - id: GorlexMatchstick
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: GorlexMatchstick
         amount: 24
   - type: Matchbox
+  - type: Tag
+    tags:
+    - Lighters #SL
 
 - type: entity
   name: match stick

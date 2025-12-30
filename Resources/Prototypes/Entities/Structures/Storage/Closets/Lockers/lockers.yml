@@ -25,12 +25,13 @@
   id: LockerSteel
   parent: LockerBaseSecure
   name: secure closet
-  components:
-  - type: Appearance
-  - type: EntityStorageVisuals
-    stateBaseClosed: secure
-    stateDoorOpen: secure_open
-    stateDoorClosed: secure_door
+  suffix: Mapping # Starlight-edit
+#  components: Starlight-edit: Moved to LockerBaseSecure
+#  - type: Appearance
+#  - type: EntityStorageVisuals
+#    stateBaseClosed: secure
+#    stateDoorOpen: secure_open
+#    stateDoorClosed: secure_door
 
 # Cargo
 - type: entity
@@ -45,6 +46,8 @@
     stateDoorClosed: qm_door
   - type: AccessReader
     access: [["Quartermaster"]]
+  - type: WiresPanelSecurity # Starlight: Maintenance panel
+    securityLevel: medSecurity
 
 - type: entity
   id: LockerSalvageSpecialist
@@ -73,6 +76,8 @@
     stateDoorClosed: cap_door
   - type: AccessReader
     access: [["Captain"]]
+  - type: WiresPanelSecurity # Starlight-edit: Maintenance panel
+    securityLevel: medSecurity # Starlight-edit: Maintenance panel
 
 - type: entity
   id: LockerHeadOfPersonnel
@@ -86,6 +91,8 @@
     stateDoorClosed: hop_door
   - type: AccessReader
     access: [["HeadOfPersonnel"]]
+  - type: WiresPanelSecurity # Starlight-edit: Maintenance panel
+    securityLevel: medSecurity # Starlight-edit: Maintenance panel
 
 # CE
 - type: entity
@@ -100,6 +107,8 @@
     stateDoorClosed: ce_door
   - type: AccessReader
     access: [ [ "ChiefEngineer" ] ]
+  - type: WiresPanelSecurity # Starlight-edit: Maintenance panel
+    securityLevel: medSecurity # Starlight-edit: Maintenance panel
 
 # Electrical supplies
 - type: entity
@@ -289,6 +298,8 @@
     stateDoorClosed: cmo_door
   - type: AccessReader
     access: [ [ "ChiefMedicalOfficer" ] ]
+  - type: WiresPanelSecurity # Starlight-edit: Maintenance panel
+    securityLevel: medSecurity # Starlight-edit: Maintenance panel
 
 # Science
 - type: entity
@@ -303,6 +314,8 @@
     stateDoorClosed: rd_door
   - type: AccessReader
     access: [ [ "ResearchDirector" ] ]
+  - type: WiresPanelSecurity # Starlight-edit: Maintenance panel
+    securityLevel: medSecurity # Starlight-edit: Maintenance panel
 
 - type: entity
   id: LockerScientist
@@ -330,6 +343,8 @@
     stateDoorClosed: hos_door
   - type: AccessReader
     access: [["HeadOfSecurity"]]
+  - type: WiresPanelSecurity # Starlight-edit: Maintenance panel
+    securityLevel: medSecurity # Starlight-edit: Maintenance panel
 
 # Warden
 - type: entity
@@ -344,6 +359,8 @@
     stateDoorClosed: warden_door
   - type: AccessReader
     access: [["Armory"]]
+  - type: WiresPanelSecurity # Starlight-edit: Maintenance panel
+    securityLevel: medSecurity # Starlight-edit: Maintenance panel
 
 # Brigmedic
 - type: entity
@@ -371,7 +388,7 @@
     stateDoorOpen: sec_open
     stateDoorClosed: sec_door
   - type: AccessReader
-    access: [["Security"]]
+    access: [["Security"], ["Cadet"]] # Starlight: add cadet
 
 - type: entity
   id: GunSafe
@@ -416,6 +433,7 @@
         type: GenpopLockerBoundUserInterface
   - type: AccessReader # note! this access is for the UI, not the door. door access is handled on GenpopLocker
     access: [["Security"]]
+    examinationText: access-reader-examination-functionality-restricted
   - type: Lock
     locked: false
     useAccess: false
@@ -605,8 +623,10 @@
   components:
   - type: Appearance
   - type: AccessReader
-    access: [["Command"]]
+    access: [["Ntrep"]] # Starlight
   - type: EntityStorageVisuals
     stateBaseClosed: hop
     stateDoorOpen: hop_open
     stateDoorClosed: representative_door
+  - type: WiresPanelSecurity # Starlight: Maintenance panel
+    securityLevel: medSecurity

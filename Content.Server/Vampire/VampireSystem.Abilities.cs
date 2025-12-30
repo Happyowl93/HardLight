@@ -30,6 +30,8 @@ using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Flash.Components;
+using Content.Shared.Storage.Components;
+using Content.Shared.Damage.Components;
 
 namespace Content.Server.Vampire;
 
@@ -341,9 +343,9 @@ public sealed partial class VampireSystem
             if (HasComp<VampireComponent>(entity))
                 continue;
 
-            if (HasComp<HumanoidAppearanceComponent>(entity))
+            if (TryComp<KnockedDownComponent>(entity, out var knockedDownComponent))
             {
-                _stun.TryParalyze(entity, duration ?? TimeSpan.FromSeconds(3), false);
+                _stun.UpdateKnockdownTime((entity, knockedDownComponent), duration ?? TimeSpan.FromSeconds(3), false);
                 _chat.TryEmoteWithoutChat(entity, _prototypeManager.Index<EmotePrototype>(VampireComponent.ScreamEmoteProto), true);
             }
 
@@ -364,14 +366,18 @@ public sealed partial class VampireSystem
 
         if (HasComp<BibleUserComponent>(target))
         {
-            _stun.TryParalyze(vampire, duration ?? TimeSpan.FromSeconds(3), true);
+            if (TryComp<KnockedDownComponent>(vampire, out var knockdown))
+                _stun.UpdateKnockdownTime((vampire, knockdown), duration ?? TimeSpan.FromSeconds(3), true);
             _chat.TryEmoteWithoutChat(vampire.Owner, _prototypeManager.Index<EmotePrototype>(VampireComponent.ScreamEmoteProto), true);
             if (damage != null)
                 _damageableSystem.TryChangeDamage(vampire.Owner, damage);
             return;
         }
 
-        _stun.TryParalyze(target.Value, duration ?? TimeSpan.FromSeconds(3), true);
+        if (!TryComp<KnockedDownComponent>(target, out var tgtKnockdown))
+            return;
+
+        _stun.UpdateKnockdownTime((target.Value,tgtKnockdown), duration ?? TimeSpan.FromSeconds(3), true);
     }
     private void PolymorphSelf(Entity<VampireComponent> vampire, string? polymorphTarget)
     {
@@ -674,7 +680,7 @@ public sealed partial class VampireSystem
         if (!_interaction.InRangeUnobstructed(vampire.Owner, target, popup: true))
             return false;
 
-        if (_food.IsMouthBlocked(target, vampire))
+        if (!_ingestion.HasMouthAvailable(vampire, target))
             return false;
 
         if (_rotting.IsRotten(target))
@@ -708,7 +714,7 @@ public sealed partial class VampireSystem
         if (!HasComp<VampireFangsExtendedComponent>(entity))
             return;
 
-        if (_food.IsMouthBlocked(entity, entity))
+        if (!_ingestion.HasMouthAvailable(entity, entity))
             return;
 
         if (_rotting.IsRotten(args.Target!.Value))
@@ -745,7 +751,7 @@ public sealed partial class VampireSystem
         //TODO: Replace with raised event?
         if (HasComp<BibleUserComponent>(args.Target))
         {
-            _damageableSystem.TryChangeDamage(entity, VampireComponent.HolyDamage, true);
+            _damageableSystem.TryChangeDamage(entity.Owner, VampireComponent.HolyDamage, true);
             _popup.PopupEntity(Loc.GetString("vampire-ingest-holyblood"), entity, entity, PopupType.LargeCaution);
             _admin.Add(LogType.Damaged, LogImpact.Low, $"{ToPrettyString(entity):user} attempted to drink {volumeToConsume}u of {ToPrettyString(args.Target):target}'s holy blood");
             return;

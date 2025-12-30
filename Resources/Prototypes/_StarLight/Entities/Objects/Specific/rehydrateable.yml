@@ -10,14 +10,24 @@
     - SubwooferBorgiChassis
     - BaseStationBorgiChassis
     - StationBorgiChassis
-    - SmartCorgi
+    - MobCorgiSmart
 
 - type: entity
   parent: RehydratableAnimalCube
-  id: ShadowBorgiCube
-  name: shadow borgi cube
-  description: Just add water! BORK!
+  id: ScurretCube
+  name: scurret cube
+  description: Just add rain!
   components:
   - type: Rehydratable
     possibleSpawns:
-    - ShadowBorgiChassis
+    - MobEmotionalSupportScurret
+
+- type: entity
+  parent: RehydratableAnimalCube
+  id: CCMoproachCube
+  name: cc moproach cube
+  description: Just add water! *chitters*
+  components:
+    - type: Rehydratable
+      possibleSpawns:
+        - MobCCMoproach 

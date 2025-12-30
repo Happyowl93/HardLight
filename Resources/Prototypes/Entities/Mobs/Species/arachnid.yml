@@ -5,6 +5,16 @@
   id: BaseMobArachnid
   abstract: true
   components:
+  # Starlight-start: Languages
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - Chittin
+    understands:
+    - GalacticCommon
+    - Chittin
+  - type: IgnoreSpiderWeb
+  # Starlight-end
   - type: Absorbable
   - type: Body
     prototype: Arachnid
@@ -35,16 +45,19 @@
     - reagents: [Water]
       methods: [Touch]
       effects:
-      - !type:WearableReaction
+      - !type:SpawnEntityInInventory
         slot: head
-        prototypeID: WaterDropletHat
+        entity: WaterDropletHat
     - reagents: [Water, SpaceCleaner]
       methods: [Touch]
       effects:
-      - !type:WashCreamPieReaction
+      - !type:WashCreamPie
   # Damage (Self)
   - type: Bloodstream
-    bloodReagent: CopperBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: CopperBlood
+        Quantity: 1
   # Damage (Others)
   - type: MeleeWeapon
     animation: WeaponArcBite
@@ -97,6 +110,7 @@
       - map: [ "enum.HumanoidVisualLayers.Tail" ] # Mentioned in moth code: This needs renaming lol.
       - map: [ "back" ]
       - map: [ "neck" ]
+      - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ] # Do these need to be here? (arachnid hair arachnid hair)
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
@@ -129,7 +143,7 @@
   - type: HumanoidAppearance
     species: Arachnid
   - type: Inventory
-    speciesId: arachnid 
+    speciesId: arachnid
 
 
 #>88w88<

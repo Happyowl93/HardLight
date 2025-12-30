@@ -4,6 +4,15 @@
   id: MobMoproach
   description: This little mothroach has mopshoes on its feet! How adorable!
   components:
+  # Starlight-start: Languages
+  - type: LanguageKnowledge
+    speaks:
+    - Mothroach
+    understands:
+    - Moffic
+    - Mothroach
+    - GalacticCommon
+  # Starlight-end
   - type: GhostRole
     name: ghost-role-information-moproach-name
     description: ghost-role-information-moproach-description
@@ -73,13 +82,15 @@
   id: MoproachBox
   description: A kit to quickly get two moproaches ready to work.
   components:
-  - type: StorageFill
-    contents:
-    - id: MoproachCubeWrapped
-      amount: 2
-    - id: ClothingHeadHatPurplesoft
-      amount: 2
-    - id: PaperMoproachManual
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: MoproachCubeWrapped
+          amount: 2
+        - id: ClothingHeadHatPurplesoft
+          amount: 2
+        - id: PaperMoproachManual
   - type: Sprite
     sprite: Objects/Misc/monkeycube.rsi
     state: box_moproach

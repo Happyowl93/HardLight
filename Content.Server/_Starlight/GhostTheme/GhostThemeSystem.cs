@@ -1,46 +1,47 @@
-using System.Linq;
 using Content.Server.Administration.Logs;
+using Content.Server.Administration.Managers;
 using Content.Server.EUI;
+using Content.Server.GameTicking;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Ghost.Roles.Events;
-using Content.Shared.Ghost.Roles.Raffles;
 using Content.Server.Ghost.Roles.UI;
 using Content.Server.Mind.Commands;
+using Content.Server.Popups;
+using Content.Server.RoundEnd;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Follower;
 using Content.Shared.GameTicking;
-using Content.Shared.Ghost;
+using Content.Shared.Ghost.Roles.Components;
+using Content.Shared.Ghost.Roles.Raffles;
 using Content.Shared.Ghost.Roles;
-using Content.Shared.Mind;
+using Content.Shared.Ghost;
 using Content.Shared.Mind.Components;
-using Content.Shared.Weapons.Ranged.Systems;
+using Content.Shared.Mind;
 using Content.Shared.Mobs;
 using Content.Shared.Players;
 using Content.Shared.Roles;
+using Content.Shared.Starlight.GhostTheme;
+using Content.Shared.Starlight;
+using Content.Shared.Verbs;
+using Content.Shared.Weapons.Ranged.Systems;
+using Content.Shared._NullLink;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
+using Robust.Shared.Collections;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Enums;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Server.Popups;
-using Content.Shared.Verbs;
-using Robust.Shared.Collections;
-using Content.Shared.Ghost.Roles.Components;
-using Robust.Shared.Prototypes;
-using Content.Shared.Starlight.GhostTheme;
-using Content.Shared.Starlight;
-using Robust.Shared.Network;
-using Robust.Shared.GameObjects;
-using Content.Server.RoundEnd;
-using Content.Server.GameTicking;
+using System.Linq;
 
 namespace Content.Server.Ghost.Roles;
 
@@ -51,9 +52,10 @@ public sealed class GhostThemeSystem : EntitySystem
     [Dependency] private readonly EuiManager _euiManager = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly ISharedPlayersRoleManager _playerRoles = default!;
+    [Dependency] private readonly ISharedNullLinkPlayerRolesReqManager _nulllinkPlayerRoles = default!;
+    [Dependency] private readonly IPlayerRolesManager _playerRoles = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    
+
     public override void Initialize()
     {
         base.Initialize();
@@ -74,21 +76,25 @@ public sealed class GhostThemeSystem : EntitySystem
 
         if (_openUis.ContainsKey(session))
             CloseEui(session);
-        
+
         HashSet<string> AvailableThemes = new HashSet<string>();
-        
+
         foreach (var ghostTheme in _prototypeManager.EnumeratePrototypes<GhostThemePrototype>())
         {
-            if (_playerRoles.HasAnyPlayerFlags(session, ghostTheme.Flags))
+            if (ghostTheme.Ckey != null)
             {
-                if (ghostTheme.Ckey != null && 
-                    session.Name != ghostTheme.Ckey && 
-                    session.Name != $"localhost@{ghostTheme.Ckey}")
-                {
-                    continue;
-                }
-                AvailableThemes.Add(ghostTheme.ID);
+                if (session.Name == ghostTheme.Ckey || session.Name.Split('@').LastOrDefault() == ghostTheme.Ckey)
+                    AvailableThemes.Add(ghostTheme.ID);
+                continue;
             }
+
+            if (ghostTheme.Requirement is { } req && _prototypeManager.TryIndex(req, out var roleReq))
+            {
+                if (_nulllinkPlayerRoles.IsAnyRole(session, roleReq.Roles))
+                    AvailableThemes.Add(ghostTheme.ID);
+                continue;
+            }
+            AvailableThemes.Add(ghostTheme.ID);
         }
 
         var eui = _openUis[session] = new GhostThemeEui(AvailableThemes);
@@ -110,17 +116,17 @@ public sealed class GhostThemeSystem : EntitySystem
         if (session.AttachedEntity is not { Valid: true } attached ||
             !EntityManager.TryGetComponent<GhostThemeComponent>(attached, out var themes))
             return;
-            
+
         themes.GhostThemeColor = Color;
-        
+
         Dirty(attached, themes);
-        
+
         var playerData = _playerRoles.GetPlayerData(attached);
         if (playerData != null)
         {
             playerData.GhostThemeColor = Color;
         }
-        
+
         _appearance.SetData(attached, GhostThemeVisualLayers.Color, Color);
     }
     public void ChangeTheme(ICommonSession session, string Theme)
@@ -128,17 +134,17 @@ public sealed class GhostThemeSystem : EntitySystem
         if (session.AttachedEntity is not { Valid: true } attached ||
             !EntityManager.TryGetComponent<GhostThemeComponent>(attached, out var themes))
             return;
-            
+
         themes.SelectedGhostTheme = Theme;
-        
+
         Dirty(attached, themes);
-        
+
         var playerData = _playerRoles.GetPlayerData(attached);
         if (playerData != null)
         {
             playerData.GhostTheme = Theme;
         }
-        
+
         _appearance.SetData(attached, GhostThemeVisualLayers.Base, Theme);
     }
     public void UpdateAllEui()
@@ -164,7 +170,7 @@ public sealed class GhostThemeSystem : EntitySystem
             _appearance.SetData(uid, GhostThemeVisualLayers.Color, playerData.GhostThemeColor);
 
             Dirty(uid, theme);
-            
+
             _appearance.SetData(uid, GhostThemeVisualLayers.Base, playerData.GhostTheme);
         }
     }

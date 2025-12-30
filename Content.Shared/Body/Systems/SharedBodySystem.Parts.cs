@@ -183,7 +183,7 @@ public partial class SharedBodySystem
         {
             // TODO BODY SYSTEM KILL : remove this when wounding and required parts are implemented properly
             var damage = new DamageSpecifier(Prototypes.Index(BloodlossDamageType), 300);
-            Damageable.TryChangeDamage(bodyEnt, damage);
+            Damageable.ChangeDamage(bodyEnt.Owner, damage);
         }
     }
 
@@ -350,14 +350,18 @@ public partial class SharedBodySystem
     /// </summary>
     public (EntityUid Entity, BodyPartComponent BodyPart)? GetRootPartOrNull(EntityUid bodyId, BodyComponent? body = null)
     {
-        if (!Resolve(bodyId, ref body)
+        if (!Resolve(bodyId, ref body, logMissing: false) // Starlight-edit
+            || body.RootContainer is null // Starlight-edit
             || body.RootContainer.ContainedEntity is null)
         {
             return null;
         }
 
-        return (body.RootContainer.ContainedEntity.Value,
-            Comp<BodyPartComponent>(body.RootContainer.ContainedEntity.Value));
+        var rootEntity = body.RootContainer.ContainedEntity.Value; // Starlight-edit
+        if (!TryComp<BodyPartComponent>(rootEntity, out var rootPart)) // Starlight-edit
+            return null; // Starlight-edit
+
+        return (rootEntity, rootPart); // Starlight-edit
     }
 
     /// <summary>

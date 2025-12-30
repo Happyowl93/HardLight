@@ -52,18 +52,13 @@
     - type: GhostRole
       name: ghost-role-information-Death-Squad-name
       description: ghost-role-information-Death-Squad-description
-      rules: ghost-role-information-Death-Squad-rules
+      rules: ghost-role-information-corporate-aligned-rules # Starlight
       raffle:
         settings: short
       mindRoles:
-      - MindRoleGhostRoleFamiliar
+#      - MindRoleGhostRoleFamiliar  # DOTS - look at deleting this entire line, if we are reclassifying DS. Does this break stuff?
+      - MindRoleGhostCorporateAligned # Starlight
       job: DeathSquad
-      requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 72000 # 20h
-      - !type:DepartmentTimeRequirement
-        department: Security
-        time: 36000 # 10h
     - type: Loadout
       prototypes: [ DeathSquadGear ]
       roleLoadout: [ RoleSurvivalEVA ]
@@ -99,19 +94,10 @@
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
       description: ghost-role-information-ert-leader-description
-      rules: ghost-role-information-nonantagonist-rules
+      rules: ghost-role-information-corporate-aligned-rules # Starlight
       raffle:
         settings: short
       job: ERTLeader
-      requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 72000 # 20h
-      - !type:DepartmentTimeRequirement
-        department: CentralCommand
-        time: 36000 # 10h
-      - !type:DepartmentTimeRequirement
-        department: Command
-        time: 36000 # 10h
     - type: Loadout
       prototypes: [ ERTLeaderGear ]
       roleLoadout: [ RoleSurvivalExtended ]
@@ -184,16 +170,10 @@
     - type: GhostRole
       name: ghost-role-information-ert-chaplain-name
       description: ghost-role-information-ert-chaplain-description
-      rules: ghost-role-information-nonantagonist-rules
+      rules: ghost-role-information-corporate-aligned-rules # Starlight
       raffle:
         settings: short
       job: ERTChaplain
-      requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 72000 # 20h
-      - !type:RoleTimeRequirement
-        role: JobChaplain
-        time: 18000 # 5h
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst
@@ -250,16 +230,10 @@
     - type: GhostRole
       name: ghost-role-information-ert-janitor-name
       description: ghost-role-information-ert-janitor-description
-      rules: ghost-role-information-nonantagonist-rules
+      rules: ghost-role-information-corporate-aligned-rules # Starlight
       raffle:
         settings: short
       job: ERTJanitor
-      requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 72000 # 20h
-      - !type:RoleTimeRequirement
-        role: JobJanitor
-        time: 18000 # 5h
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst
@@ -315,16 +289,10 @@
     - type: GhostRole
       name: ghost-role-information-ert-engineer-name
       description: ghost-role-information-ert-engineer-description
-      rules: ghost-role-information-nonantagonist-rules
+      rules: ghost-role-information-corporate-aligned-rules # Starlight
       raffle:
         settings: short
       job: ERTEngineer
-      requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 72000 # 20h
-      - !type:RoleTimeRequirement
-        role: JobStationEngineer
-        time: 18000 # 5h
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst
@@ -380,16 +348,10 @@
     - type: GhostRole
       name: ghost-role-information-ert-security-name
       description: ghost-role-information-ert-security-description
-      rules: ghost-role-information-nonantagonist-rules
+      rules: ghost-role-information-corporate-aligned-rules # Starlight
       raffle:
         settings: short
       job: ERTSecurity
-      requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 72000 # 20h
-      - !type:RoleTimeRequirement
-        role: JobSecurityOfficer
-        time: 18000 # 5h
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst
@@ -461,19 +423,10 @@
     - type: GhostRole
       name: ghost-role-information-ert-medical-name
       description: ghost-role-information-ert-medical-description
-      rules: ghost-role-information-nonantagonist-rules
+      rules: ghost-role-information-corporate-aligned-rules # Starlight
       raffle:
         settings: short
       job: ERTMedical
-      requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 72000 # 20h
-      - !type:RoleTimeRequirement
-        role: JobMedicalDoctor
-        time: 18000 # 5h
-      - !type:RoleTimeRequirement
-        role: JobChemist
-        time: 18000 # 5h
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst
@@ -526,19 +479,10 @@
     - type: GhostRole
       name: ghost-role-information-cburn-agent-name
       description: ghost-role-information-cburn-agent-description
-      rules: ghost-role-information-nonantagonist-rules
+      rules: ghost-role-information-corporate-aligned-rules # Starlight
       raffle:
         settings: short
       job: CBURN
-      requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 72000 # 20h
-      - !type:RoleTimeRequirement
-        role: JobMedicalDoctor
-        time: 18000 # 5h
-      - !type:RoleTimeRequirement
-        role: JobSecurityOfficer
-        time: 18000 # 5h
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst
@@ -564,15 +508,10 @@
     - type: GhostRole
       name: ghost-role-information-centcom-official-name
       description: ghost-role-information-centcom-official-description
-      rules: ghost-role-information-nonantagonist-rules
+      rules: ghost-role-information-corporate-aligned-rules # Starlight
       raffle:
         settings: default
-      requirements:
-      - !type:AnyFlagsRequirement
-        flags:
-        - Staff
-        - Mentor
-        - Retiree
+      job: CentralCommandOfficial
     - type: Loadout
       prototypes: [ CentcomGear ]
       roleLoadout: [ RoleSurvivalStandard ]
@@ -645,3 +584,4 @@
       raffle:
         settings: default
     - type: Cluwne
+      unremovable: true #Starlight

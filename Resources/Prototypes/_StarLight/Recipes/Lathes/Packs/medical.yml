@@ -1,3 +1,10 @@
+## Static Recipes
+
+- type: latheRecipePack
+  id: StarlightMedicalStatic
+  recipes:
+    - PatchPack # Starlight
+
 ## Dynamic recipes
 
 - type: latheRecipePack
@@ -52,3 +59,13 @@
   - EyeImplantWelding
   - EyeImplantMedical
   - EyeImplantSecurity
+  - CyberRebreather # For now i will be lazy and put it here, not sure if i can excuse making a new pack for just 1 recipe
+
+- type: latheRecipePack
+  id: StarlightBudgetCyberOrgansDynamic
+  recipes:
+  - BudgetCyberEyes
+  - BudgetCyberTongue
+  - BudgetCyberLiver
+  - BudgetCyberStomach
+  - BudgetCyberKidneys

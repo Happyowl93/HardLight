@@ -7,7 +7,7 @@
   guides: [ Thieves ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600 # 1h
+    time: 3h # Starlight
 
 - type: startingGear
   id: ThiefGear
