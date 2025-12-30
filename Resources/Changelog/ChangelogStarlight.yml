@@ -24659,5 +24659,12 @@ Entries:
   id: 258300
   time: '2025-12-29T23:51:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2583
+- author: lyxcaster
+  changes:
+  - message: Added pens to the PTech vending machine
+    type: Add
+  id: 260100
+  time: '2025-12-29T23:51:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2601
 Order: -1
 
