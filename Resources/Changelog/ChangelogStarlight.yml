@@ -24666,5 +24666,12 @@ Entries:
   id: 260100
   time: '2025-12-29T23:51:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2601
+- author: Joeri
+  changes:
+  - message: Security crisis button, 5 added to SecTech
+    type: Add
+  id: 260300
+  time: '2025-12-29T23:52:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2603
 Order: -1
 
