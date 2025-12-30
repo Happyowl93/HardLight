@@ -213,3 +213,83 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0
+
+- type: rcd
+  id: PipeHalf
+  category: Piping
+  sprite: /Textures/_Starlight/Interface/Radial/RPD/half.png
+  mode: ConstructObject
+  prototype: GasPipeHalf
+  cost: 1
+  delay: 0
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
+  id: PipeManifold
+  category: Piping
+  sprite: /Textures/_Starlight/Interface/Radial/RPD/manifold.png
+  mode: ConstructObject
+  prototype: GasPipeManifold
+  cost: 2
+  delay: 0
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
+  id: RadiatorBend
+  category: AtmosphericUtility
+  sprite: /Textures/_Starlight/Interface/Radial/RPD/radiator_bend.png
+  mode: ConstructObject
+  prototype: HeatExchangerBend
+  cost: 2
+  delay: 0
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
+  id: PressureRegulator
+  category: PumpsValves
+  sprite: /Textures/_Starlight/Interface/Radial/RPD/pressure_regulator.png
+  mode: ConstructObject
+  prototype: GasPressureRegulator
+  cost: 2
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
+  id: PassiveGate
+  category: PumpsValves
+  sprite: /Textures/_Starlight/Interface/Radial/RPD/passive_gate.png
+  mode: ConstructObject
+  prototype: GasPassiveGate
+  cost: 2
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
+  id: PipeSensor
+  category: AtmosphericUtility
+  sprite: /Textures/_Starlight/Interface/Radial/RPD/sensor.png
+  mode: ConstructObject
+  prototype: GasPipeSensor
+  cost: 2
+  delay: 0
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
+  id: DigitalValve
+  category: PumpsValves
+  sprite: /Textures/_Starlight/Interface/Radial/RPD/digital_valve.png
+  mode: ConstructObject
+  prototype: GasDigitalValve
+  cost: 2
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
