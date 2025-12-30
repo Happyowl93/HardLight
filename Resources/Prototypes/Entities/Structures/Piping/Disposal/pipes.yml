@@ -446,8 +446,8 @@
 - type: entity
   id: DisposalXJunction
   parent: DisposalPipeBase
-  name: disposal 3-1 Merger
-  description: Merges 3 pipes into 1. Items coming from the exit move straight on.
+  name: disposal 3-1 Merger # Starlight-edit
+  description: Merges 3 pipes into 1. Items coming from the exit move straight on. # Starlight-edit
   components:
   - type: Sprite
     layers:
