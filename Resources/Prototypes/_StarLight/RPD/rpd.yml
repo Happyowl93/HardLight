@@ -281,15 +281,3 @@
   delay: 0
   rotation: User
   fx: EffectRCDConstruct0
-
-- type: rcd
-  id: DigitalValve
-  category: PumpsValves
-  sprite: /Textures/_Starlight/Interface/Radial/RPD/digital_valve.png
-  mode: ConstructObject
-  prototype: GasDigitalValve
-  cost: 2
-  delay: 0
-  collisionMask: Impassable
-  rotation: User
-  fx: EffectRCDConstruct0
