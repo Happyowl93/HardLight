@@ -24745,5 +24745,21 @@ Entries:
   id: 248000
   time: '2025-12-30T02:02:31.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2480
+- author: neomoth
+  changes:
+  - message: Added CC moproaches for the ERT Janitor shuttle!
+    type: Add
+  - message: Added WorksWhileHeld to AccessComponent
+    type: Add
+  - message: Added ForceDisplacements to InventoryComponent
+    type: Add
+  - message: Modified ERT Janitor shuttle a bit, moved the right turret left a tile
+      and replaced moproach cubes with cc moproach cubes.
+    type: Tweak
+  - message: Mothroaches of all types now use their defined displacement maps.
+    type: Fix
+  id: 251800
+  time: '2025-12-30T02:02:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2518
 Order: -1
 
