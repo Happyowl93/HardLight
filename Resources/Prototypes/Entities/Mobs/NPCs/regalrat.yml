@@ -9,11 +9,9 @@
     speaks:
     - GalacticCommon
     - Mouse
-    - Darktongue
     understands:
     - GalacticCommon
     - Mouse
-    - Darktongue
   # Starlight-end
   - type: ThermalVision # Starlight-edit: Thermal Vision
   - type: VentCrawler # Starlight-edit: Vent Crawl
