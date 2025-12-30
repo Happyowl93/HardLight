@@ -47,6 +47,7 @@
       - SprayPainterAmmo
       - NetworkConfigurator
       - RCD
+      - RPD # Starlight: RPD
       - RCDAmmo
       - Welder
       - PowerCell

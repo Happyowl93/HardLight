@@ -255,6 +255,7 @@
     back:
     - trayScanner
     - RCD
+    - RPD # Starlight: RPD
     - RCDAmmo
     - RCDAmmo
     - CableMVStack
@@ -283,6 +284,7 @@
     back:
     - trayScanner
     - RCD
+    - RPD # Starlight: RPD
     - RCDAmmo
     - RCDAmmo
     - CableMVStack
