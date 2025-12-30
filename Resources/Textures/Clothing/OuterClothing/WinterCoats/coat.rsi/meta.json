@@ -581,21 +581,6 @@
     },
 	{
       "name": "ARMOR-icon"
-    },
-	{
-      "name": "CHEM-SENIOR-icon"
-    },
-    {
-      "name": "CHEM-SENIOR-equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "CHEM-SENIOR-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "CHEM-SENIOR-inhand-right",
-      "directions": 4
     }
   ]
 }

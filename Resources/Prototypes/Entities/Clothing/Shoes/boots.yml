@@ -140,18 +140,6 @@
   - type: Clothing
     sprite: Clothing/Shoes/Boots/winterbootsmed.rsi
 
-# Starlight start
-- type: entity
-  parent: ClothingShoesBaseWinterBoots
-  id: ClothingShoesBootsWinterChem
-  name: chemistry winter boots
-  components:
-  - type: Sprite
-    sprite: Clothing/Shoes/Boots/winterbootschem.rsi
-  - type: Clothing
-    sprite: Clothing/Shoes/Boots/winterbootschem.rsi
-# Starlight end
-
 - type: entity
   parent: ClothingShoesBaseWinterBoots
   id: ClothingShoesBootsWinterSci
