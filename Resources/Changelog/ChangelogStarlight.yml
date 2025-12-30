@@ -24696,5 +24696,18 @@ Entries:
   id: 258900
   time: '2025-12-30T00:59:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2589
+- author: R3v3l4t1on
+  changes:
+  - message: Xenoborgs are now in Secret at 0.15
+    type: Add
+  - message: Xenoborgs can now spawn on Traitor/Traitorling gamemodes.
+    type: Add
+  - message: Xenoborgs should now be able to spawn midround.
+    type: Add
+  - message: Removed dummy non antag chance from Xenoborgs rule, we don't use it.
+    type: Remove
+  id: 259800
+  time: '2025-12-30T01:53:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2598
 Order: -1
 
