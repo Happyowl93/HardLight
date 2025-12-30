@@ -7,8 +7,10 @@
   components:
   - type: LanguageKnowledge
     speaks:
+    - Chittin
     - Darktongue
     understands:
+    - Chittin
     - Darktongue
   - type: ThermalVision
   - type: Sprite

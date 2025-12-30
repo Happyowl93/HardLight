@@ -9,8 +9,10 @@
   components:
   - type: LanguageKnowledge
     speaks:
+    - Chittin
     - Darktongue
     understands:
+    - Chittin
     - Darktongue
   - type: Sprite
     drawdepth: Mobs
