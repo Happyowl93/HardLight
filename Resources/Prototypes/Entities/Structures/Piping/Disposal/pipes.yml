@@ -234,7 +234,7 @@
   id: DisposalRouter
   parent: DisposalPipeBase
   name: disposal router
-  description: A disposal pipe able to filter items based on a tag. Items coming from the exits are not filtered and sent to the entrance instead.
+  description: A disposal pipe able to filter items based on a tag. Items coming from the exits are not filtered and sent to the entrance instead. # Starlight-edit
   components:
   - type: Sprite
     layers:
