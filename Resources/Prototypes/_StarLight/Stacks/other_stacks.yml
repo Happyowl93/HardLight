@@ -16,5 +16,5 @@
   id: LabellerRefillPaper
   name: stack-labeller-refill-paper
   icon: { sprite: _Starlight/Objects/Materials/paper_roll.rsi, state: icon_100 }
-  spawn: LabellerRefillPaper1
+  spawn: LabellerRefillPaper
   maxCount: 100
