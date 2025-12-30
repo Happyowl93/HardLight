@@ -15,6 +15,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Content.Shared.Emag.Systems; //Starlight
+using Content.Shared._Starlight.Railroading.Events; // starlight
 
 namespace Content.Shared.Delivery;
 
@@ -165,7 +166,7 @@ public abstract class SharedDeliverySystem : EntitySystem
     private bool TryUnlockDelivery(Entity<DeliveryComponent> ent, EntityUid user, bool rewardMoney = true, bool force = false)
     {
         // Check fingerprint access if there is a reader on the mail
-        if (!force && TryComp<FingerprintReaderComponent>(ent, out var reader) && !_fingerprintReader.IsAllowed((ent, reader), user))
+        if (!force && !_fingerprintReader.IsAllowed(ent.Owner, user, out _))
             return false;
 
         var deliveryName = _nameModifier.GetBaseName(ent.Owner);
@@ -201,6 +202,9 @@ public abstract class SharedDeliverySystem : EntitySystem
 
         var ev = new DeliveryOpenedEvent(user);
         RaiseLocalEvent(ent, ref ev);
+        // starlight start - raise event on user for railroad mail task
+        RaiseLocalEvent(user, ref ev);
+        // starlight end
 
         if (attemptPickup)
             _hands.TryDrop(user, ent);

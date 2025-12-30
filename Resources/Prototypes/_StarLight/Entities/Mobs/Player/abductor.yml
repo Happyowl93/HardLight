@@ -3,6 +3,7 @@
   parent: BaseMobAbductor
   id: MobAbductor
   components:
+  - type: UniversalLanguageSpeaker
   - type: Abductor
   - type: Tag
     tags:
@@ -24,13 +25,8 @@
     rules: abductors-ghost-role-rules
     raffle:
       settings: default
-    requirements:
-    - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 10800 # 3 hrs
-    - !type:RoleTimeRequirement
-      role: JobSurgeon
-      time: 10800 # 3 hrs
+    mindRoles:
+    - MindRoleLoneAbductor
   - type: AbductorScientist
   - type: ActionGrant
     actions:
@@ -53,13 +49,8 @@
     rules: abductors-ghost-role-rules
     raffle:
       settings: default
-    requirements:
-    - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 10800 # 3 hrs
-    - !type:RoleTimeRequirement
-      role: JobSurgeon
-      time: 10800 # 3 hrs
+    mindRoles:
+    - MindRoleLoneAbductor
   - type: AbductorAgent
   - type: ActionGrant
     actions:
@@ -76,7 +67,6 @@
     gloves: ClothingHandsGlovesCombat
     shoes: ClothingShoesBootsCombat
     pocket1: AbductorGizmo
-    id: AbductorIDCard
     
 - type: startingGear
   id: AbductorAgentGear
@@ -89,7 +79,6 @@
     pocket1: Silencer
     pocket2: WeaponAlien
     belt: ClothingAbductorBeltFilled
-    id: AbductorIDCard
     outerClothing: ClothingOuterArmorAbductor
   inhand:
   - Wonderprod
@@ -116,13 +105,8 @@
     name: abductora-ghost-role-name
     description: abductora-ghost-role-desc
     rules: abductors-ghost-role-rules
-    requirements:
-    - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 10800 # 3 hrs
-    - !type:RoleTimeRequirement
-      role: JobSurgeon
-      time: 10800 # 3 hrs
+    mindRoles:
+    - MindRoleLoneAbductor
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -152,13 +136,8 @@
     name: abductors-ghost-role-name
     description: abductors-ghost-role-desc
     rules: abductors-ghost-role-rules
-    requirements:
-    - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 10800 # 3 hrs
-    - !type:RoleTimeRequirement
-      role: JobSurgeon
-      time: 10800 # 3 hrs
+    mindRoles:
+    - MindRoleLoneAbductor
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:

@@ -4,7 +4,7 @@
   components:
   - type: StationEvent
     earliestStart: 15
-    weight: 7.5
+    weight: 3
     minimumPlayers: 10
     duration: null
   - type: RuleGrids
@@ -94,14 +94,59 @@
     - type: LoadMapRule
       gridPath: /Maps/_Starlight/Shuttles/VoxATS.yml
 
-  #Pig's ERT Shuttle
+#  #Pig's ERT Shuttle # DEPRECIATED
+#- type: entity
+#  parent: BaseGameRule
+#  id: ERTShuttleSpawn
+#  components:
+#    - type: RuleGrids
+#    - type: LoadMapRule
+#      gridPath: /Maps/_Starlight/Shuttles/CC-NT/ERTShuttle.yml
+
+  # Quini's ERT Security/Medical shuttle
 - type: entity
   parent: BaseGameRule
-  id: ERTShuttleSpawn
+  id: ERTSecurityShuttleSpawn
   components:
     - type: RuleGrids
     - type: LoadMapRule
-      gridPath: /Maps/_Starlight/Shuttles/ERTShuttle.yml
+      gridPath: /Maps/_Starlight/Shuttles/CC-NT/SecMed_GRID.yml
+
+  # Quini's ERT Medical shuttle
+- type: entity
+  parent: BaseGameRule
+  id: ERTMedicalShuttleSpawn
+  components:
+    - type: RuleGrids
+    - type: LoadMapRule
+      gridPath: /Maps/_Starlight/Shuttles/CC-NT/Medical_GRID.yml
+
+  # Quini's ERT Engineering shuttle
+- type: entity
+  parent: BaseGameRule
+  id: ERTEngineeringShuttleSpawn
+  components:
+    - type: RuleGrids
+    - type: LoadMapRule
+      gridPath: /Maps/_Starlight/Shuttles/CC-NT/EngiAtmos_GRID.yml
+
+  # Quini's ERT Chaplain shuttle
+- type: entity
+  parent: BaseGameRule
+  id: ERTChaplainShuttleSpawn
+  components:
+    - type: RuleGrids
+    - type: LoadMapRule
+      gridPath: /Maps/_Starlight/Shuttles/CC-NT/Chaplain_GRID.yml
+
+  # neomoth's ERT Janitor shuttle
+- type: entity
+  parent: BaseGameRule
+  id: ERTJanitorShuttleSpawn
+  components:
+    - type: RuleGrids
+    - type: LoadMapRule
+      gridPath: /Maps/_Starlight/Shuttles/CC-NT/Janitor_GRID.yml
 
       #Pig's DS Shuttle
 - type: entity
@@ -110,7 +155,7 @@
   components:
     - type: RuleGrids
     - type: LoadMapRule
-      gridPath: /Maps/_Starlight/Shuttles/DSshuttle.yml
+      gridPath: /Maps/_Starlight/Shuttles/CC-NT/DSshuttle.yml
 
       #Pig's RadioTower
 - type: entity
@@ -129,7 +174,7 @@
   components:
     - type: RuleGrids
     - type: LoadMapRule
-      gridPath: /Maps/_Starlight/Shuttles/CBURN.yml
+      gridPath: /Maps/_Starlight/Shuttles/CC-NT/CBURN.yml
 
 # Karma's Quantum Ark Shuttles
 - type: entity
@@ -175,14 +220,23 @@
     - type: LoadMapRule
       mapPath: /Maps/_Starlight/EventMaps/research_outpost_map.yml
 
-#Quini's CBURN Shuttle
+# Quini's CBURN Shuttle
 - type: entity
   parent: BaseGameRule
   id: CBURNShuttleSpawn_Q
   components:
     - type: RuleGrids
     - type: LoadMapRule
-      gridPath: /Maps/_Starlight/Shuttles/CBURN_Q.yml
+      gridPath: /Maps/_Starlight/Shuttles/CC-NT/CBURN_Q.yml
+
+# Security Shuttle
+- type: entity
+  parent: BaseGameRule
+  id: SecurityShuttleSpawn_SP-4C3
+  components:
+    - type: RuleGrids
+    - type: LoadMapRule
+      gridPath: /Maps/_Starlight/Shuttles/Security/SP-4C3.yml
 
 # Roundender-less events table for survival
 - type: entityTable
@@ -199,12 +253,12 @@
     - id: SleeperAgents
 #    - id: ZombieOutbreak
     - id: LoneOpsSpawn
-    - id: DerelictCyborgSpawn
+    - !type:NestedSelector
+      tableId: DerelictBorgEventTable
     - id: WizardSpawn
-
-    # Starlight gamerules
+    - id: Xenoborgs
+    # Starlight gamerules:
     - id: AbductorsSpawn
-    - id: DerelictBorgiSpawn
 
 - type: entity
   parent: BaseGameRule
@@ -227,3 +281,11 @@
           max: 1
           pickPlayer: false
           
+# Security Shuttle
+- type: entity
+  parent: BaseGameRule
+  id: SecurityShuttleSpawn_KillerTamashi
+  components:
+    - type: RuleGrids
+    - type: LoadMapRule
+      gridPath: /Maps/_Starlight/Shuttles/KillerTamashi-SecShuttle.yml

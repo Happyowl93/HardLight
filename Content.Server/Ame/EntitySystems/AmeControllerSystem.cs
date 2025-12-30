@@ -150,7 +150,7 @@ public sealed class AmeControllerSystem : EntitySystem
         // how much power can be produced at the current settings, in kW
         // we don't use max. here since this is what is set in the Controller, not what the AME is actually producing
         float targetedPowerSupply = 0;
-        if (TryGetAMENodeGroup(uid, out var group))
+        if (TryGetAMENodeGroup(uid, out var group) && group.CoreCount > 0)
         {
             coreCount = group.CoreCount;
             targetedPowerSupply = group.CalculatePower(controller.InjectionAmount, group.CoreCount) / 1000;
@@ -277,7 +277,7 @@ public sealed class AmeControllerSystem : EntitySystem
 
         var safeLimit = int.MaxValue;
         if (TryGetAMENodeGroup(uid, out var group))
-            safeLimit = group.CoreCount * 4;
+            safeLimit = group.SafeFuelLimit; /* STARLIGHT code was being calculated twice. */
 
         var logImpact = (oldValue <= safeLimit && value > safeLimit) ? LogImpact.Extreme : LogImpact.Medium;
 

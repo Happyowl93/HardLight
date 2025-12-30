@@ -30,9 +30,8 @@ trait-unrevivable-desc = You are unable to be revived by defibrillators.
 trait-pirate-accent-name = Pirate accent
 trait-pirate-accent-desc = You can't stop speaking like a pirate!
 
-## 🌟Starlight🌟
-trait-accentless-name = No native accent
-trait-accentless-desc = You don't have the accent that your species would usually have
+trait-accentless-name = Accentless
+trait-accentless-desc = You don't have the accent that your species would usually have.
 
 trait-frontal-lisp-name = Frontal lisp
 trait-frontal-lisp-desc = You thpeak with a lithp.
@@ -66,6 +65,12 @@ trait-spanish-desc = Hola señor, donde esta la biblioteca.
 
 trait-painnumbness-name = Numb
 trait-painnumbness-desc = You lack any sense of feeling pain, being unaware of how hurt you may be.
+
+trait-hemophilia-name = Hemophilia
+trait-hemophilia-desc = Your body fails to make blood clots.
+
+trait-impaired-mobility-name = Impaired Mobility
+trait-impaired-mobility-desc = You have difficulty moving without a mobility aid.
 
 ## 🌟Starlight🌟
 trait-clumsy-name = Clumsy

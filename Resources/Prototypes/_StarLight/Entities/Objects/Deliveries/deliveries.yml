@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseDelivery
+  parent: PackageDelivery
   id: PackageDeliveryEvil
   name: package
   components:
@@ -9,7 +9,7 @@
         tableId: PackageDeliveryRewardsEvil
 
 - type: entity
-  parent: BaseDelivery
+  parent: LetterDelivery
   id: LetterDeliveryEvil
   name: letter
   components:
@@ -72,7 +72,16 @@
   parent: BasePackageDeliveryReward
   id: PackageDeliveryRewardPlush
   components:
-  - type: ContainerFill
+  - type: EntityTableContainerFill
     containers:
       delivery:
-      - PlushieCarp
+        id: PlushieCarp
+
+- type: entity
+  parent: LetterDeliveryEvil
+  id: PackageDeliveryRewardSyndicateLetter
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      delivery:
+        id: RRMailSyndicateSpamLetter
