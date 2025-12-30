@@ -13,7 +13,6 @@
   - Scarves
   - Pins
   - Pens
-  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobMagistrate
@@ -25,12 +24,10 @@
   - Scarves
   - Pins
   - LuxuryPens
-  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobSurgeon
   groups:
-  - GroupTankHarness
   - MedicalDoctorHead
   - MedicalMask
   - MedicalDoctorJumpsuit
@@ -45,7 +42,6 @@
   - Scarves
   - Pins
   - Pens
-  - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobNanoTrasenRepresentative
@@ -60,7 +56,6 @@
   - Pins
   - NTRPens
   - Survival
-  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobIAA
@@ -74,7 +69,6 @@
   - Pins
   - LuxuryPens
   - Survival
-  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBlueShield
@@ -91,12 +85,10 @@
   - Pins
   - Pens
   - SurvivalSecurity
-  - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
   id: JobMiningSpecialist
   groups:
-  - GroupTankHarness
   - SalvageSpecialistBackpack
   - MiningSpecialistJumpsuit
   - SalvageSpecialistOuterClothing
@@ -108,12 +100,10 @@
   - Scarves
   - Pins
   - Pens
-  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobMailTech
   groups:
-  - GroupTankHarness
   - CargoTechnicianHead
   - CargoTechnicianJumpsuit
   - CargoTechnicianBackpack
@@ -125,7 +115,6 @@
   - Scarves
   - Pins
   - Pens
-  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBrigmedic
