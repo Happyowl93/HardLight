@@ -52185,24 +52185,6 @@ entities:
     - type: Transform
       pos: -23.5,14.5
       parent: 1
-- proto: TranslatorPoweredBase
-  entities:
-  - uid: 6029
-    components:
-    - type: Transform
-      pos: 3.7133307,34.815277
-      parent: 1
-    - type: PowerCellDraw
-      canUse: True
-      canDraw: True
-    - type: HandheldTranslator
-      enabled: True
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 6030
 - proto: TrashBananaPeel
   entities:
   - uid: 7403
