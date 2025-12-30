@@ -5,7 +5,7 @@
     - !type:GroupSelector
       children:
       - id: RPD
-      - id: RPDEmpty
-    - id: RPDAmmo
+      - id: RCDEmpty
+    - id: RCDAmmo
       amount: !type:RangeNumberSelector
         range: 1, 2
