@@ -7,5 +7,4 @@
     obfuscationFont: true
   icon: LanguageIconGrumbakul
   obfuscation:
-  obfuscation:
     !type:RandomObfuscation
