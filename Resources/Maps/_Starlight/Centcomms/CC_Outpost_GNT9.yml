@@ -58442,8 +58442,6 @@ entities:
           friction: 0.4
     - type: HTN
       enabled: True
-    - type: ProjectileBatteryAmmoProvider
-      proto: BulletEnergyTurretLaser
     - type: BatteryWeaponFireModes
       currentFireMode: 1
     - type: DeployableTurret
@@ -58530,8 +58528,6 @@ entities:
           friction: 0.4
     - type: HTN
       enabled: True
-    - type: ProjectileBatteryAmmoProvider
-      proto: BulletEnergyTurretLaser
     - type: BatteryWeaponFireModes
       currentFireMode: 1
     - type: DeployableTurret
@@ -58588,8 +58584,6 @@ entities:
           friction: 0.4
     - type: HTN
       enabled: True
-    - type: ProjectileBatteryAmmoProvider
-      proto: BulletEnergyTurretLaser
     - type: BatteryWeaponFireModes
       currentFireMode: 1
     - type: DeployableTurret
@@ -58646,8 +58640,6 @@ entities:
           friction: 0.4
     - type: HTN
       enabled: True
-    - type: ProjectileBatteryAmmoProvider
-      proto: BulletEnergyTurretLaser
     - type: BatteryWeaponFireModes
       currentFireMode: 1
     - type: DeployableTurret
@@ -58704,8 +58696,6 @@ entities:
           friction: 0.4
     - type: HTN
       enabled: True
-    - type: ProjectileBatteryAmmoProvider
-      proto: BulletEnergyTurretLaser
     - type: BatteryWeaponFireModes
       currentFireMode: 1
     - type: DeployableTurret
@@ -58762,8 +58752,6 @@ entities:
           friction: 0.4
     - type: HTN
       enabled: True
-    - type: ProjectileBatteryAmmoProvider
-      proto: BulletEnergyTurretLaser
     - type: BatteryWeaponFireModes
       currentFireMode: 1
     - type: DeployableTurret
@@ -58820,8 +58808,6 @@ entities:
           friction: 0.4
     - type: HTN
       enabled: True
-    - type: ProjectileBatteryAmmoProvider
-      proto: BulletEnergyTurretLaser
     - type: BatteryWeaponFireModes
       currentFireMode: 1
     - type: DeployableTurret
@@ -58877,8 +58863,6 @@ entities:
           friction: 0.4
     - type: HTN
       enabled: True
-    - type: ProjectileBatteryAmmoProvider
-      proto: BulletEnergyTurretLaser
     - type: BatteryWeaponFireModes
       currentFireMode: 1
     - type: DeployableTurret
