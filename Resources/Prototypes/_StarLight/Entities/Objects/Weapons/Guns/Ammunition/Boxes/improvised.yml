@@ -96,7 +96,7 @@
 - type: entity
   parent: BaseMagazineBoxImprovised
   id: MagazineBoxImprovisedShotgun
-  name: 12 gauge improvised buckshot tbox
+  name: 12 gauge improvised buckshot box
   components:
   - type: BallisticAmmoProvider
     proto: ShellShotgunImprovised
