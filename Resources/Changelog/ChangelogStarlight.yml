@@ -24761,5 +24761,14 @@ Entries:
   id: 251800
   time: '2025-12-30T02:02:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2518
+- author: teapoterror
+  changes:
+  - message: Added Central Command Outpost GNT-9
+    type: Add
+  - message: All Necessary Files to Make CC Outpost GNT-9 Function as a CC Outpost
+    type: Add
+  id: 259200
+  time: '2025-12-30T02:52:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2592
 Order: -1
 
