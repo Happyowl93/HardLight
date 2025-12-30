@@ -202,7 +202,6 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
             return;
 
         if (_pullingSystem.IsPulled(victim) 
-            || !TryComp<PullableComponent>(victim, out var pullableComp) 
             || !_pullingSystem.TryStopPull(victim, pullableComp))
             return;
 
