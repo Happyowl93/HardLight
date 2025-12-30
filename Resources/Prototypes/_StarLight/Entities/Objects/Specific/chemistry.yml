@@ -160,6 +160,8 @@
     damage:
       types:
         Blunt: 3
+    soundHit:
+      collection: MetalThud
   - type: DamageOtherOnHit
     damage:
       types:
@@ -208,12 +210,12 @@
     damage:
       types:
         Blunt: 7
+    soundHit:
+      collection: MetalThud
   - type: DamageOtherOnHit
     damage:
       types:
         Blunt: 9
-    soundHit:
-      collection: MetalThud
   - type: SolutionContainerManager
     solutions:
       beaker:
