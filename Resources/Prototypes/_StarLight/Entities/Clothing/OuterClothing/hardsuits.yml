@@ -169,6 +169,7 @@
   - type: Tag
     tags:
     - Hardsuit
+    - CorgiWearable
     - WhitelistChameleon
     - HardsuitSpatio #can now be used to make goliath hardsuit
 
@@ -604,6 +605,7 @@
         Radiation: 0.35
         Caustic: 0.35
     staminaModifier: 0.0
+    ignoreKnockdown: true
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
@@ -652,6 +654,7 @@
         Radiation: 0.25
         Caustic: 0.25
     staminaModifier: 0.0
+    ignoreKnockdown: true
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
@@ -701,6 +704,7 @@
         Radiation: 0.05
         Caustic: 0.05
     staminaModifier: 0.0
+    ignoreKnockdown: true
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
