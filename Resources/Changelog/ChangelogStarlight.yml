@@ -24709,5 +24709,22 @@ Entries:
   id: 259800
   time: '2025-12-30T01:53:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2598
+- author: penquinwizzard, neomoth
+  changes:
+  - message: Adds the cryptographic endoder, a CC variant of the emag
+    type: Add
+  - message: Adds the CC lawset
+    type: Add
+  - message: Emags now have associated factions, emags of differing factions can override
+      the effects of another faction's emag.
+    type: Tweak
+  - message: You can now emag door electronics. Doing so grants it the access group
+      of the associated emag. Defaults to syndicate.
+    type: Tweak
+  - message: Admin access overriders now ignore the limits of targeted door electronics.
+    type: Tweak
+  id: 261300
+  time: '2025-12-30T01:58:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2613
 Order: -1
 
