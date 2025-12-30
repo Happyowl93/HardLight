@@ -4,12 +4,13 @@
   name: Nar'Sie
   description: Your mind begins to bubble and ooze as it tries to comprehend what it sees.
   components:
-# begin starlight
+  # begin starlight
   - type: LanguageKnowledge
     speaks:
     - Darktongue
     understands:
     - Darktongue
+  - type: UniversalLanguageSpeaker
   # end starlight
   - type: Sprite
     sprite: Mobs/Demons/narsie.rsi
