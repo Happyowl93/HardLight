@@ -12,7 +12,6 @@
     - Grumbakul
     understands:
     - GalacticCommon
-    - SolCommon
     - Grumbakul
   - type: MobThresholds
     thresholds:
