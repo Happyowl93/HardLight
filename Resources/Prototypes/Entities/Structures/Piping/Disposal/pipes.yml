@@ -363,7 +363,7 @@
 
 - type: entity
   id: DisposalJunctionFlipped
-  description: Merges 2 pipes into one. Items coming from the exit move straight on.
+  description: Merges 2 pipes into one. Items coming from the exit move straight on. # Starlight-edit
   parent: DisposalJunction
   suffix: flipped
   components:
