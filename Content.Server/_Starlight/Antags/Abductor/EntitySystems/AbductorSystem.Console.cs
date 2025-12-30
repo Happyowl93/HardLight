@@ -162,7 +162,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         var target = GetEntity(ent.Comp.Target.Value);
         EnsureComp<TransformComponent>(target, out var xform);
 
-        var effectEnt = SpawnAttachedTo(TeleportationEffectEntity, xform.Coordinates);
+        var effectEnt = SpawnAttachedTo(_teleportationEffectEntity, xform.Coordinates);
         _xformSys.SetParent(effectEnt, target);
 
         EnsureComp<TimedDespawnComponent>(effectEnt, out var despawnEffectEntComp);
@@ -172,7 +172,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
         var telepad = GetEntity(ent.Comp.AlienPod.Value);
         var telepadXform = EnsureComp<TransformComponent>(telepad);
-        var effect = _entityManager.SpawnEntity(TeleportationEffectEntity, telepadXform.Coordinates);
+        var effect = _entityManager.SpawnEntity(_teleportationEffectEntity, telepadXform.Coordinates);
 
         EnsureComp<TimedDespawnComponent>(effect, out var despawnComp);
         despawnComp.Lifetime = 3.0f;
