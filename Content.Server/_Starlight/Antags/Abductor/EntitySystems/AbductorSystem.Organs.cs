@@ -5,6 +5,7 @@ using Content.Shared.Damage.Prototypes;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Atmos;
 using Content.Server.Chat.Systems;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server.Starlight.Antags.Abductor;
 
@@ -21,7 +22,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
     private readonly Dictionary<AbductorOrganType, TimeSpan> _organCooldowns = new()
     {
         { AbductorOrganType.Health, TimeSpan.FromSeconds(3) },
-        { AbductorOrganType.Plasma, TimeSpan.FromSeconds(120) },
+        { AbductorOrganType.NitrousOxide, TimeSpan.FromSeconds(120) },
         { AbductorOrganType.Gravity, TimeSpan.FromSeconds(60) },
         { AbductorOrganType.Egg, TimeSpan.FromSeconds(120) },
         { AbductorOrganType.Spider, TimeSpan.FromSeconds(240) },
@@ -70,9 +71,8 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
             case AbductorOrganType.Health:
                 _damageable.TryChangeDamage(uid, _passiveHealing);
                 break;
-
-            case AbductorOrganType.Plasma:
-                HandlePlasmaOrgan(uid);
+            case AbductorOrganType.NitrousOxide:
+                HandleNitrousOxideOrgan(uid);
                 break;
 
             case AbductorOrganType.Gravity:
@@ -84,15 +84,15 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
                 break;
 
             case AbductorOrganType.Spider:
-                SpawnAttachedTo("EggSpiderFertilized", Transform(uid).Coordinates);
+                SpawnAttachedTo("MobSpiderlingSpiderAngry", Transform(uid).Coordinates);
                 break;
         }
     }
 
-    private void HandlePlasmaOrgan(EntityUid uid)
+    private void HandleNitrousOxideOrgan(EntityUid uid)
     {
         var mix = _atmos.GetContainingMixture((uid, Transform(uid)), true, true) ?? new();
-        mix.AdjustMoles(Gas.Plasma, 30);
+        mix.AdjustMoles(Gas.NitrousOxide, 30);
         _chat.TryEmoteWithChat(uid, "Cough");
     }
 

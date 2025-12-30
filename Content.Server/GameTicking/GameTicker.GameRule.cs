@@ -21,7 +21,7 @@ public sealed partial class GameTicker
     ///     A list storing the start times of all game rules that have been started this round.
     ///     Game rules can be started and stopped at any time, including midround.
     /// </summary>
-    public IReadOnlyList<(TimeSpan, string)> AllPreviousGameRules => _allPreviousGameRules;
+    public override IReadOnlyList<(TimeSpan, string)> AllPreviousGameRules => _allPreviousGameRules;
 
     private void InitializeGameRules()
     {
@@ -69,6 +69,20 @@ public sealed partial class GameTicker
     /// <returns>The entity for the added gamerule</returns>
     public EntityUid AddGameRule(string ruleId)
     {
+        // Starlight Start: Check if any active game rule denies this rule from being added
+        var activeRules = GetActiveGameRules();
+        foreach (var activeRuleUid in activeRules)
+        {
+            if (!TryComp<GameRuleComponent>(activeRuleUid, out var activeRuleComp))
+                continue;
+            if (activeRuleComp.DenyGameRules.Contains(ruleId))
+            {
+                _sawmill.Info($"Game rule {ruleId} was denied by active rule {ToPrettyString(activeRuleUid)}");
+                return EntityUid.Invalid;
+            }
+        }
+        // Starlight End
+
         var ruleEntity = Spawn(ruleId, MapCoordinates.Nullspace);
         _sawmill.Info($"Added game rule {ToPrettyString(ruleEntity)}");
         _adminLogger.Add(LogType.EventStarted, $"Added game rule {ToPrettyString(ruleEntity)}");

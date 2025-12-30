@@ -5,6 +5,14 @@
   parent: SimpleSpaceMobBase
   description: They mostly come at night. Mostly.
   components:
+  # Starlight-start: Languages
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+  # Starlight-end
   - type: ThermalVision
   - type: Insulated
   - type: CombatMode
@@ -68,7 +76,10 @@
   - type: Stamina
     critThreshold: 200
   - type: Bloodstream
-    bloodReagent: FluorosulfuricAcid
+    bloodReagents:
+      reagents:
+      - ReagentId: FluorosulfuricAcid
+        Quantity: 1
     bloodMaxVolume: 650
   - type: MeleeWeapon
     altDisarm: false
@@ -195,6 +206,16 @@
   parent: MobXeno
   id: MobXenoQueen
   components:
+  # Starlight-start: Languages
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - Xeno
+    understands:
+    - GalacticCommon
+    - Xeno
+  # Starlight-end
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/Xenos/queen.rsi
@@ -394,6 +415,7 @@
   - type: NpcFactionMember
     factions:
     - Xeno
+    - SimpleHostile
   - type: MeleeWeapon
     angle: 0
     animation: WeaponArcBite
@@ -492,7 +514,10 @@
   - type: Stamina
     critThreshold: 200
   - type: Bloodstream
-    bloodReagent: FluorosulfuricAcid
+    bloodReagents:
+      reagents:
+      - ReagentId: FluorosulfuricAcid
+        Quantity: 1
     bloodMaxVolume: 300
   - type: MeleeWeapon
     altDisarm: false

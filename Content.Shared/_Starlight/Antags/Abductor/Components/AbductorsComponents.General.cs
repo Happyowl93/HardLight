@@ -8,23 +8,11 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Starlight.Antags.Abductor;
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
-public sealed partial class AbductorHumanObservationConsoleComponent : Component
-{
-    [DataField(readOnly: true)]
-    public EntProtoId? RemoteEntityProto = "AbductorHumanObservationConsoleEye";
-
-    [DataField, AutoNetworkedField]
-    public NetEntity? RemoteEntity;
-
-    [DataField, AutoNetworkedField]
-    public EntityUid? Opener;
-}
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
 public sealed partial class AbductorConsoleComponent : Component
 {
     [DataField, ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public int Balance = 0;
-
+    
     [DataField, AutoNetworkedField]
     public NetEntity? Target;
 
@@ -33,16 +21,16 @@ public sealed partial class AbductorConsoleComponent : Component
 
     [DataField, AutoNetworkedField]
     public NetEntity? Experimentator;
-
+    
     [DataField, AutoNetworkedField]
     public NetEntity? Dispencer;
-
+    
     [DataField, AutoNetworkedField]
     public NetEntity? Armor;
-
+    
     [DataField, AutoNetworkedField]
     public EntityUid? Agent;
-
+    
     [DataField, AutoNetworkedField]
     public EntityUid? Scientist;
 }
@@ -69,29 +57,6 @@ public sealed partial class AbductorComponent : Component
 {
 }
 
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
-public sealed partial class RemoteEyeSourceContainerComponent : Component
-{
-    [DataField, AutoNetworkedField]
-    public EntityUid? Actor;
-}
-
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
-public sealed partial class AbductorsAbilitiesComponent : Component
-{
-    [DataField, AutoNetworkedField]
-    public EntityUid? ExitConsole;
-
-    [DataField, AutoNetworkedField]
-    public EntityUid? SendYourself;
-
-    [DataField, AutoNetworkedField]
-    public EntityUid? GizmoMark;
-
-    [DataField]
-    public EntityUid[] HiddenActions = [];
-}
-
 [RegisterComponent, Access(typeof(SharedAbductorSystem))]
 public sealed partial class AbductConditionComponent : Component
 {
@@ -103,10 +68,6 @@ public sealed partial class AbductConditionComponent : Component
 
 #region Events
 
-public sealed partial class ExitConsoleEvent : InstantActionEvent
-{
-
-}
 public sealed partial class SendYourselfEvent : WorldTargetActionEvent
 {
 

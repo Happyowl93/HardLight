@@ -7,6 +7,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Internals;
 using Content.Shared.Inventory;
+using Content.Shared.Movement.Components;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
@@ -21,6 +22,7 @@ public abstract class SharedInternalsSystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!; // Starlight edit
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedGasTankSystem _gasTank = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
@@ -158,12 +160,12 @@ public abstract class SharedInternalsSystem : EntitySystem
 
     private void OnInternalsStartup(Entity<InternalsComponent> ent, ref ComponentStartup args)
     {
-        _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
+        _alerts.ShowAlert(ent.Owner, ent.Comp.InternalsAlert, GetSeverity(ent));
     }
 
     private void OnInternalsShutdown(Entity<InternalsComponent> ent, ref ComponentShutdown args)
     {
-        _alerts.ClearAlert(ent, ent.Comp.InternalsAlert);
+        _alerts.ClearAlert(ent.Owner, ent.Comp.InternalsAlert);
     }
 
     public void ConnectBreathTool(Entity<InternalsComponent> ent, EntityUid toolEntity)
@@ -178,7 +180,7 @@ public abstract class SharedInternalsSystem : EntitySystem
         }
 
         Dirty(ent);
-        _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
+        _alerts.ShowAlert(ent.Owner, ent.Comp.InternalsAlert, GetSeverity(ent));
     }
 
     public void DisconnectBreathTool(Entity<InternalsComponent> ent, EntityUid toolEntity, bool forced = false)
@@ -199,7 +201,7 @@ public abstract class SharedInternalsSystem : EntitySystem
             DisconnectTank(ent, forced: forced);
         }
 
-        _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
+        _alerts.ShowAlert(ent.Owner, ent.Comp.InternalsAlert, GetSeverity(ent));
     }
 
     public void DisconnectTank(Entity<InternalsComponent> ent, bool forced = false)
@@ -222,7 +224,7 @@ public abstract class SharedInternalsSystem : EntitySystem
 
         ent.Comp.GasTankEntity = tankEntity;
         Dirty(ent);
-        _alerts.ShowAlert(ent, ent.Comp.InternalsAlert, GetSeverity(ent));
+        _alerts.ShowAlert(ent.Owner, ent.Comp.InternalsAlert, GetSeverity(ent));
         return true;
     }
 
@@ -257,36 +259,74 @@ public abstract class SharedInternalsSystem : EntitySystem
     public Entity<GasTankComponent>? FindBestGasTank(
         Entity<HandsComponent?, InventoryComponent?, ContainerManagerComponent?> user)
     {
+        // Starlight edit start - Add a check for whether the user can breathe from organs
         // TODO use _respirator.CanMetabolizeGas() to prioritize metabolizable gasses
-        // Prioritise
-        // 1. back equipped tanks
-        // 2. exo-slot tanks
-        // 3. in-hand tanks
-        // 4. pocket/belt tanks
+        // Lookup order:
+        // 1. Organs
+        // 2. Back
+        // 3. Exo-slot
+        // 4. In-hand
+        // 5. Pocket/belt
+        // Jetpacks will only be used as a fallback if no other tank is found
+
+        // Store the first jetpack seen
+        Entity<GasTankComponent>? found = null;
 
         if (!Resolve(user, ref user.Comp2, ref user.Comp3))
             return null;
 
+        if (TryComp<BodyComponent>(user.Owner, out var body) &&
+            TryComp<InternalsComponent>(user.Owner, out var internals) &&
+            internals.BreathTools.Count > 0)
+        {
+            var organTanks = _body.GetBodyOrganEntityComps<GasTankComponent>((user.Owner, body));
+            foreach (var organTank in organTanks)
+            {
+                if (organTank.Comp1.IsConnected && organTank.Comp1.User == user.Owner)
+                {
+                    return (organTank.Owner, organTank.Comp1);
+                }
+                else if (_gasTank.CanConnectToInternals((organTank.Owner, organTank.Comp1)))
+                {
+                    return (organTank.Owner, organTank.Comp1);
+                }
+            }
+        }
+        // Starlight edit end
         if (_inventory.TryGetSlotEntity(user, "back", out var backEntity, user.Comp2, user.Comp3) &&
             TryComp<GasTankComponent>(backEntity, out var backGasTank) &&
             _gasTank.CanConnectToInternals((backEntity.Value, backGasTank)))
         {
-            return (backEntity.Value, backGasTank);
+            found = (backEntity.Value, backGasTank);
+            if (!HasComp<JetpackComponent>(backEntity.Value))
+            {
+                return found;
+            }
         }
 
         if (_inventory.TryGetSlotEntity(user, "suitstorage", out var entity, user.Comp2, user.Comp3) &&
             TryComp<GasTankComponent>(entity, out var gasTank) &&
             _gasTank.CanConnectToInternals((entity.Value, gasTank)))
         {
-            return (entity.Value, gasTank);
+            found ??= (entity.Value, gasTank);
+            if (!HasComp<JetpackComponent>(entity.Value))
+            {
+                return (entity.Value, gasTank);
+            }
         }
 
         foreach (var item in _inventory.GetHandOrInventoryEntities((user.Owner, user.Comp1, user.Comp2)))
         {
             if (TryComp(item, out gasTank) && _gasTank.CanConnectToInternals((item, gasTank)))
-                return (item, gasTank);
+            {
+                found ??= (item, gasTank);
+                if (!HasComp<JetpackComponent>(item))
+                {
+                    return (item, gasTank);
+                }
+            }
         }
 
-        return null;
+        return found;
     }
 }

@@ -1,17 +1,20 @@
 # Placeholder PAIs, aka semi-automatic ghost roles
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseItem, BaseSiliconLanguages ] #Starlight Languages
   id: PersonalAI
   name: personal ai device
   description: Your electronic pal who's fun to be with!
   components:
+  # Starlight-start: Languages
+  - type: LanguageSpeaker
   - type: TextToSpeech
+  # Starlight-end
   - type: Instrument
     allowPercussion: false
     handheld: false
-    bank: 1
     program: 2
+    bank: 100 # Defined in space-station-14.sf2
   - type: UserInterface
     interfaces:
       enum.StoreUiKey.Key:
@@ -59,7 +62,11 @@
     - Common
   - type: DoAfter
   - type: Actions
+  - type: ActionGrant
+    actions:
+    - ActionPAIOpenShop
   - type: Store
+    name: store-preset-name-pai #Starlight name change for data purity
     categories:
     - PAIAbilities
     currencyWhitelist:
@@ -100,6 +107,10 @@
   - type: Tag
     tags:
     - SiliconEmotes
+  # Starlight Start
+  - type: Blindable
+  - type: ParentCanBlockVision
+  # Starlight End
 
 - type: entity
   parent: [ PersonalAI, BaseSyndicateContraband]
@@ -191,15 +202,10 @@
     node: potatoai
 
 - type: entity
-  parent: BaseMentalAction
+  parent: ActionIntrinsicStore
   id: ActionPAIOpenShop
   name: Software Catalog
   description: Install new software to assist your owner.
-  components:
-  - type: Action
-    icon: Interface/Actions/shop.png
-  - type: InstantAction
-    event: !type:PAIShopActionEvent
 
 - type: entity
   parent: BaseMentalAction

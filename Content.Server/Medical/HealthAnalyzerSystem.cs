@@ -1,9 +1,10 @@
+using Content.Server.Chat.Systems; // Starlight-edit
 using Content.Server.Medical.Components;
-using Content.Server.PowerCell;
-using Content.Server.Temperature.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chat; // Starlight
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -13,6 +14,8 @@ using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.MedicalScanner;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
+using Content.Shared.PowerCell;
+using Content.Shared.Temperature.Components;
 using Content.Shared.Traits.Assorted;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
@@ -32,6 +35,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private readonly ChatSystem _chat = default!; // Starlight-edit
 
     public override void Initialize()
     {
@@ -81,17 +85,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// </summary>
     private void OnAfterInteract(Entity<HealthAnalyzerComponent> uid, ref AfterInteractEvent args)
     {
-        if (args.Target == null 
-            || !args.CanReach 
-            || !TryComp<DamageableComponent>(args.Target, out var damageableComponent)
-            || !HasComp<MobStateComponent>(args.Target) 
-            || !_cell.HasDrawCharge(uid, user: args.User))
-            return;
-        
-        if (uid.Comp.DamageContainers != null 
-            && damageableComponent.DamageContainerID != null 
-            && !uid.Comp.DamageContainers.Contains(damageableComponent.DamageContainerID))
-            return;
+        if (args.Target == null || !args.CanReach || !HasComp<MobStateComponent>(args.Target) || !_cell.HasDrawCharge(uid.Owner, user: args.User))
+        	return;
 
         _audio.PlayPvs(uid.Comp.ScanningBeginSound, uid);
 
@@ -110,7 +105,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
 
     private void OnDoAfter(Entity<HealthAnalyzerComponent> uid, ref HealthAnalyzerDoAfterEvent args)
     {
-        if (args.Handled || args.Cancelled || args.Target == null || !_cell.HasDrawCharge(uid, user: args.User))
+        if (args.Handled || args.Cancelled || args.Target == null || !_cell.HasDrawCharge(uid.Owner, user: args.User))
             return;
 
         if (!uid.Comp.Silent)
@@ -161,7 +156,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// </summary>
     /// <param name="healthAnalyzer">The health analyzer that should receive the updates</param>
     /// <param name="target">The entity to start analyzing</param>
-    private void BeginAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target)
+    public void BeginAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target) // Starlight-edit: Make it public, so we can reuse it in other systems
     {
         //Link the health analyzer to the scanned entity
         healthAnalyzer.Comp.ScannedEntity = target;
@@ -176,7 +171,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// </summary>
     /// <param name="healthAnalyzer">The health analyzer that's receiving the updates</param>
     /// <param name="target">The entity to analyze</param>
-    private void StopAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target)
+    public void StopAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target) // Starlight-edit: Make it public, so we can reuse it in other systems
     {
         //Unlink the analyzer
         healthAnalyzer.Comp.ScannedEntity = null;
@@ -194,7 +189,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// <param name="scanMode">True makes the UI show ACTIVE, False makes the UI show INACTIVE</param>
     public void UpdateScannedUser(EntityUid healthAnalyzer, EntityUid target, bool scanMode)
     {
-        if (!_uiSystem.HasUi(healthAnalyzer, HealthAnalyzerUiKey.Key))
+        if (!_uiSystem.HasUi(healthAnalyzer, HealthAnalyzerUiKey.Key) || !TryComp<HealthAnalyzerComponent>(healthAnalyzer, out var healthComp)) // Starlight-edit
             return;
 
         if (!HasComp<DamageableComponent>(target))
@@ -219,6 +214,16 @@ public sealed class HealthAnalyzerSystem : EntitySystem
 
         if (TryComp<UnrevivableComponent>(target, out var unrevivableComp) && unrevivableComp.Analyzable)
             unrevivable = true;
+        
+        // Starlight-start: Talking health analyzer
+        if (healthComp.Talk && healthComp.NextTalk < _timing.CurTime && TryComp<DamageableComponent>(target, out var damageable) && scanMode)
+        {
+            healthComp.NextTalk = _timing.CurTime + healthComp.TalkInterval;
+            
+            var bloodLevel = !float.IsNaN(bloodAmount) ? $"{bloodAmount * 100:F1} %" : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
+            _chat.TrySendInGameICMessage(healthAnalyzer, Loc.GetString(healthComp.TalkMessage, ("damage", damageable.TotalDamage.ToString()), ("blood", bloodLevel)), InGameICChatType.Speak, hideChat: true);
+        }
+        // Starlight-end
 
         _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(
             GetNetEntity(target),

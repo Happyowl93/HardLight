@@ -64,10 +64,11 @@
     canCollide: false
     bodyType: static
   - type: StaticPrice
-    price: 22
+    price: 30 # Starlight
   - type: ContainerContainer
     containers:
       VentCrawTube: !type:Container
+  - type: ChildBlockVision # Starlight-edit
 
 - type: entity
   id: VentCrawHolder
@@ -144,7 +145,6 @@
         nodeGroupID: Pipe
         pipeDirection: Longitudinal
   - type: VentCrawTube
-    containerId: VentCrawTube
   - type: VentCrawTransit
   - type: ContainerContainer
     containers:
@@ -193,7 +193,6 @@
         nodeGroupID: Pipe
         pipeDirection: SWBend
   - type: VentCrawTube
-    containerId: VentCrawTube
   - type: VentCrawBend
   - type: ContainerContainer
     containers:
@@ -274,7 +273,6 @@
     soundHit:
       collection: MetalThud
   - type: VentCrawTube
-    containerId: VentCrawTube
   - type: VentCrawJunction
     degrees:
       - 0
@@ -316,7 +314,6 @@
     graph: GasPipe
     node: fourway
   - type: VentCrawTube
-    containerId: VentCrawTube
   - type: VentCrawJunction
     degrees:
       - 0
@@ -414,31 +411,37 @@
         nodeGroupID: Pipe
         pipeDirection: South
         pipeLayer: 0
+        volume: 50
       south1:
         !type:PipeNode
         nodeGroupID: Pipe
         pipeDirection: South
         pipeLayer: 1
+        volume: 50
       south2:
         !type:PipeNode
         nodeGroupID: Pipe
         pipeDirection: South
         pipeLayer: 2
+        volume: 50
       north0:
         !type:PipeNode
         nodeGroupID: Pipe
         pipeDirection: North
         pipeLayer: 0
+        volume: 50
       north1:
         !type:PipeNode
         nodeGroupID: Pipe
         pipeDirection: North
         pipeLayer: 1
+        volume: 50
       north2:
         !type:PipeNode
         nodeGroupID: Pipe
         pipeDirection: North
         pipeLayer: 2
+        volume: 50
   - type: GasPipeManifold
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: GasPipeManifold

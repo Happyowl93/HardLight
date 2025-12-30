@@ -19,6 +19,7 @@
         Slash: 6
   - type: Item
     sprite: Objects/Tools/Hydroponics/hoe.rsi
+    storedRotation: -135
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -97,9 +98,20 @@
         Piercing: 2
   - type: Item
     sprite: Objects/Tools/Hydroponics/hatchet.rsi
+    storedRotation: -135
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
+  # 🌟Starlight-start🌟
+  - type: BoneSaw
+  - type: SurgeryTool
+    successRate: 0.4
+    speed: 0.8
+    startSound:
+      path: /Audio/Effects/chop.ogg
+    endSound:
+      path: /Audio/Effects/chop.ogg
+  # 🌟Starlight-end🌟
 
 - type: entity
   name: spade
@@ -123,6 +135,7 @@
       collection: MetalThud
   - type: Item
     sprite: Objects/Tools/Hydroponics/spade.rsi
+    storedRotation: -45
   - type: Shovel
     speedModifier: 0.75 # slower at digging than a full-sized shovel
   - type: PhysicalComposition

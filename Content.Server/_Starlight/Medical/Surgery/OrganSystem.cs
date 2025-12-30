@@ -1,5 +1,7 @@
 ﻿using Content.Server.Humanoid;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Speech.Muting;
@@ -45,7 +47,7 @@ public sealed partial class OrganSystem : EntitySystem
     {
         foreach (var comp in (ent.Comp.Components ?? []).Values)
             if (!EntityManager.HasComponent(args.Body, comp.Component.GetType()))
-                EntityManager.AddComponent(args.Body, _compFactory.GetComponent(comp.Component.GetType()));
+                EntityManager.AddComponent(args.Body, comp.Component);
     }
 
     private void OnFunctionalOrganExtracted(Entity<FunctionalOrganComponent> ent, ref SurgeryOrganExtracted args)
@@ -61,9 +63,9 @@ public sealed partial class OrganSystem : EntitySystem
     {
         if (!TryComp<DamageableComponent>(args.Body, out var bodyDamageable)) return;
 
-        var change = _damageableSystem.TryChangeDamage(args.Body, ent.Comp.Damage, true, false, bodyDamageable);
+        var change = _damageableSystem.ChangeDamage(args.Body, ent.Comp.Damage, true, false);
         if (change is not null)
-            _damageableSystem.TryChangeDamage(ent.Owner, change.Invert(), true, false, ent.Comp);
+            _damageableSystem.ChangeDamage(ent.Owner, change.Invert(), true, false);
     }
     private void OnOrganExtracted(Entity<DamageableComponent> ent, ref SurgeryOrganExtracted args)
     {
@@ -71,9 +73,9 @@ public sealed partial class OrganSystem : EntitySystem
          || damageRule.Damage is null
          || !TryComp<DamageableComponent>(args.Body, out var bodyDamageable)) return;
 
-        var change = _damageableSystem.TryChangeDamage(args.Body, damageRule.Damage.Invert(), true, false, bodyDamageable);
+        var change = _damageableSystem.ChangeDamage(args.Body, damageRule.Damage.Invert(), true, false);
         if (change is not null)
-            _damageableSystem.TryChangeDamage(ent.Owner, change.Invert(), true, false, ent.Comp);
+            _damageableSystem.ChangeDamage(ent.Owner, change.Invert(), true, false);
     }
 
     //

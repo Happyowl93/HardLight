@@ -28,6 +28,8 @@
   id: MobAvaliSprites
   sprites:
     Head: MobAvaliHead
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobAvaliTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
@@ -77,6 +79,12 @@
       required: false
     Legs:
       points: 2
+      required: false
+    UndergarmentTop:
+      points: 1
+      required: false
+    UndergarmentBottom:
+      points: 1
       required: false
     Arms:
       points: 4
@@ -165,12 +173,3 @@
   baseSprite:
     sprite: _Starlight/Mobs/Species/Avali/parts.rsi
     state: r_foot
-
-- type: entity
-  id: Stasis
-  name: Avali Stasis
-  description: Allows Avali to enter nanite induced stasis.
-  components:
-    - type: Stasis
-      enterStasisAction: ActionStasisEnter
-      exitStasisAction: ActionStasisExit

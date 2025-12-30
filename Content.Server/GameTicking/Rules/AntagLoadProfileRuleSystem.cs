@@ -31,14 +31,14 @@ public sealed class AntagLoadProfileRuleSystem : GameRuleSystem<AntagLoadProfile
         HumanoidCharacterProfile? profile = null;
         if (args.Session != null)
         {
-            var roles = args.Def.PrefRoles;
+            var roles = args.AntagRoles;
             var prefs = _prefs.GetPreferences(args.Session.UserId);
             profile = prefs.SelectProfileForAntag(roles);
         }
 
         // If we can't find one, give them a random humanoid
         profile ??= HumanoidCharacterProfile.RandomWithSpecies();
-        if (profile?.Species is not { } speciesId || !_proto.TryIndex(speciesId, out var species))
+        if (profile?.Species is not { } speciesId || !_proto.Resolve(speciesId, out var species))
         {
             species = _proto.Index<SpeciesPrototype>(SharedHumanoidAppearanceSystem.DefaultSpecies);
         }

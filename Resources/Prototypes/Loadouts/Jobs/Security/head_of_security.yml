@@ -6,7 +6,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfSecurity
-      time: 72000 #20 hrs
+      time: 20h
 
 # Jumpsuit
 - type: loadout
@@ -44,6 +44,17 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtHosFormal
   groupBy: "jumpskirt"
+
+- type: loadout
+  id: HeadofSecurityBlueJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSBlue
+  groupBy: "jumpsuit"
+
+- type: loadout
+  id: HeadofSecurityGreyJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSGrey
 
 # Head
 - type: loadout

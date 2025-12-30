@@ -227,7 +227,9 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
             if (TryComp<VendingMachineComponent>(dispenser, out var vendingComp))
                 _vending.RestockRandom(dispenser, vendingComp);
         }
-
+        else if (_mobState.IsDead(victim)) //The console can grab em if crit. but nothing less.
+            return;
+        
         _xformSys.SetCoordinates(victim, GetCoordinates(args.TargetCoordinates));
     }
     private void OnBeforeActivatableUIOpen(Entity<AbductorConsoleComponent> ent, ref BeforeActivatableUIOpenEvent args)

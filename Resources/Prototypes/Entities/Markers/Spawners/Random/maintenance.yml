@@ -89,6 +89,10 @@
       - id: ClothingUniformJumpsuitLoungewear
       - id: ClothingHeadHatCowboyRed
       - id: ClothingNeckOldMantle # Starlight
+      - id: TatteredClothesUniformSuit #SL
+      - id: CamoUniformSuit #SL
+      - id: ClothingOuterBurnedRobes #SL
+      - id: ClothingNeckTatteredHood #SL
     # Uncommon Group
     - !type:GroupSelector
       weight: 23
@@ -112,9 +116,10 @@
         - id: ClothingNeckCloakGay
         - id: ClothingNeckCloakEnby
         - id: ClothingNeckCloakPan
-      - id: ToySkeleton
+      - id: ToyFigurineSkeleton
       - id: Basketball
       - id: Football
+      - id: TennisBall
       - id: BalloonNT
       - id: BalloonCorgi
       - id: MysteryFigureBox
@@ -177,6 +182,7 @@
       - id: WristwatchGold
       - id: MysteryLighterBox
       - id: GoldenPersonalAI
+      - id: ClothingHeadBowlHelmet #Starlight
 
 - type: entity
   name: Maint Loot Spawner
@@ -332,6 +338,7 @@
       weight: 95
       children:
       - id: Machete
+      - id: Claymore
       - id: BaseBallBat
       - id: CombatKnife
       - id: Spear
