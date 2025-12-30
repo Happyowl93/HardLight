@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.Shadekin;
 
@@ -13,10 +14,20 @@ public sealed partial class DarkPortalComponent : Component
 
     [DataField]
     public float PulseRange = 5f;
+
+    [DataField]
+    public EntProtoId ShadekinShadow = "ShadekinShadow";
+
+    [DataField]
+    public int StabilizeCost = 50;
 }
 
 /// <summary>
 /// The Shadekin/Dark Hub; All DarkPortalComponent init will link to this ent.
 /// </summary>
 [RegisterComponent]
-public sealed partial class DarkHubComponent : Component { }
+public sealed partial class DarkHubComponent : Component
+{
+    [DataField]
+    public EntProtoId ShadekinShadow = "ShadekinShadow";
+}

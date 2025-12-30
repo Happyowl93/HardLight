@@ -30,9 +30,6 @@ public sealed class DarkPortalSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly RailroadingSupercritPortalSystem _railroadingSupercritPortal = default!;
-    private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
-    private readonly int _stabilizeCost = 50;
-    private readonly EntProtoId _brighteyePortalAction = "BrighteyePortalAction";
 
     public override void Initialize()
     {
@@ -109,7 +106,7 @@ public sealed class DarkPortalSystem : EntitySystem
     {
         component.Portal = null;
         _alerts.ShowAlert(uid, component.PortalAlert);
-        _actionsSystem.AddAction(uid, ref component.PortalAction, _brighteyePortalAction, uid);
+        _actionsSystem.AddAction(uid, ref component.PortalAction, component.BrighteyePortalAction, uid);
         _actionsSystem.SetCooldown(component.PortalAction, TimeSpan.FromSeconds(300));
     }
 
@@ -162,7 +159,7 @@ public sealed class DarkPortalSystem : EntitySystem
                 if (TryComp<BrighteyeComponent>(user, out var brighteye))
                     OnPortalShutdown(user, brighteye);
 
-                SpawnAtPosition(_shadekinShadow, Transform(uid).Coordinates);
+                SpawnAtPosition(component.ShadekinShadow, Transform(uid).Coordinates);
                 QueueDel(uid);
             },
             Text = Loc.GetString("shadekin-portal-destroy"),
@@ -182,8 +179,8 @@ public sealed class DarkPortalSystem : EntitySystem
                     }
                 },
                 Text = Loc.GetString("shadekin-portal-stabilize"),
-                Message = brighteye.Energy < _stabilizeCost ? Loc.GetString("shadekin-noenergy") : Loc.GetString("shadekin-portal-stabilize-info"),
-                Disabled = brighteye.Energy < _stabilizeCost,
+                Message = brighteye.Energy < component.StabilizeCost ? Loc.GetString("shadekin-noenergy") : Loc.GetString("shadekin-portal-stabilize-info"),
+                Disabled = brighteye.Energy < component.StabilizeCost,
             });
         }
     }

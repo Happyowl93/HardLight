@@ -303,8 +303,9 @@
   - type: GameRule
     minPlayers: 10
   - type: BrighteyeRule
-  - type: LoadTheDarkRule
+  - type: LoadMapRule
     mapPath: /Maps/_Starlight/TheDark/Hideout.yml
+    mapTag: TheDark
   - type: AntagLoadProfileRule
     speciesHardOverride: Shadekin
     applyCharacterProfile: true

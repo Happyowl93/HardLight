@@ -39,8 +39,8 @@ public sealed partial class ShadekinSystem : EntitySystem
         if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
             SetBrighteyes(uid, humanoid);
 
-        _actionsSystem.AddAction(uid, ref component.PortalAction, _brighteyePortalAction, uid);
-        _actionsSystem.AddAction(uid, ref component.PhaseAction, _brighteyePhaseAction, uid);
+        _actionsSystem.AddAction(uid, ref component.PortalAction, component.BrighteyePortalAction, uid);
+        _actionsSystem.AddAction(uid, ref component.PhaseAction, component.BrighteyePhaseAction, uid);
     }
 
     private void OnCoreOrganImplanted(Entity<OrganShadekinCoreComponent> ent, ref SurgeryOrganImplantationCompleted args)
@@ -69,7 +69,7 @@ public sealed partial class ShadekinSystem : EntitySystem
 
         if (component.Portal is not null)
         {
-            SpawnAtPosition(_shadekinShadow, Transform(component.Portal.Value).Coordinates);
+            SpawnAtPosition(component.ShadekinShadow, Transform(component.Portal.Value).Coordinates);
             QueueDel(component.Portal.Value);
         }
 
@@ -136,7 +136,7 @@ public sealed partial class ShadekinSystem : EntitySystem
                 _inventorySystem.TryUnequip(uid, slot.Name, true, true, false, inventoryComponent);
 
         // Spawn the Shadow.
-        SpawnAtPosition(_shadekinShadow, Transform(uid).Coordinates);
+        SpawnAtPosition(component.ShadekinShadow, Transform(uid).Coordinates);
 
         // Teleport to "The Dark"
         foreach (var spawnUid in spawns)
@@ -145,7 +145,7 @@ public sealed partial class ShadekinSystem : EntitySystem
             break;
         }
 
-        var effect = SpawnAtPosition(_shadekinPhaseInEffect2, Transform(uid).Coordinates);
+        var effect = SpawnAtPosition(component.ShadekinPhaseInEffect2, Transform(uid).Coordinates);
         Transform(effect).LocalRotation = Transform(uid).LocalRotation;
 
         RaiseLocalEvent(uid, new RejuvenateEvent());

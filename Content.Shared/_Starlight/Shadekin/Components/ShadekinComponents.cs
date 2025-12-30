@@ -95,6 +95,27 @@ public sealed partial class BrighteyeComponent : Component
 
     [DataField]
     public EntityUid? PhaseAction;
+
+    [DataField]
+    public EntProtoId BrighteyePortalAction = "BrighteyePortalAction";
+
+    [DataField]
+    public EntProtoId BrighteyePhaseAction = "BrighteyePhaseAction";
+
+    [DataField]
+    public int PortalCost = 150;
+
+    [DataField]
+    public int PhaseCost = 50;
+
+    [DataField]
+    public EntProtoId ShadekinShadow = "ShadekinShadow";
+
+    [DataField]
+    public EntProtoId ShadekinPhaseInEffect2 = "ShadekinPhaseInEffect2";
+
+    [DataField]
+    public EntProtoId PortalShadekin = "PortalShadekin";
 }
 
 public sealed class OnAttemptEnergyUseEvent : CancellableEntityEventArgs

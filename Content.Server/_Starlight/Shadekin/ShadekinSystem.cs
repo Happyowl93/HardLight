@@ -54,14 +54,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private readonly NullSpacePhaseSystem _nullspace = default!;
     [Dependency] private readonly StunSystem _stunSystem = default!;
 
-    private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
-    private readonly EntProtoId _shadekinPhaseInEffect2 = "ShadekinPhaseInEffect2";
-    private readonly EntProtoId _shadekinPortal = "PortalShadekin";
     private static readonly ProtoId<TagPrototype> _theDarkTag = "TheDark";
-
-    // Abilities
-    private readonly EntProtoId _brighteyePortalAction = "BrighteyePortalAction";
-    private readonly EntProtoId _brighteyePhaseAction = "BrighteyePhaseAction";
 
     private sealed class LightCone
     {

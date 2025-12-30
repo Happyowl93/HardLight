@@ -482,7 +482,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (_mobStateSystem.IsDead(source) || collectiveMind == null || message == "" || !TryComp<CollectiveMindComponent>(source, out var sourceCollectiveMindComp) || !sourceCollectiveMindComp.Minds.ContainsKey(collectiveMind))
             return;
 
-        if (collectiveMind.NeedWhitelist && !_collectiveMind.CheckWhitelist(source, collectiveMind))
+        if (collectiveMind.CanSpeak && !_collectiveMind.CheckCanSpeak(source, collectiveMind))
             return;
 
         //raise the message event for modifications

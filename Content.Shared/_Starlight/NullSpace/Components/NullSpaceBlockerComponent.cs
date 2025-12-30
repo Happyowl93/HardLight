@@ -10,5 +10,5 @@ public sealed partial class NullSpaceBlockerComponent : Component
     /// Will force Unphase any ent that touches it.
     /// </summary>
     [DataField]
-    public bool Unphase = true;
+    public bool UnphaseOnCollide = true;
 }

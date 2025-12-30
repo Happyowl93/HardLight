@@ -11,8 +11,6 @@ namespace Content.Server._Starlight.Shadekin;
 public sealed partial class ShadekinSystem : EntitySystem
 {
     [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
-    private readonly int _portalCost = 150;
-    private readonly int _phaseCost = 50;
     public void InitializeAbilities()
     {
         SubscribeLocalEvent<BrighteyeComponent, BrighteyePortalActionEvent>(OnPortalAction);
@@ -37,13 +35,13 @@ public sealed partial class ShadekinSystem : EntitySystem
                 return;
         }
 
-        if (OnAttemptEnergyUse(uid, component, _portalCost))
+        if (OnAttemptEnergyUse(uid, component, component.PortalCost))
         {
             _actionsSystem.RemoveAction(uid, component.PortalAction);
 
             EnsureComp<PortalTimeoutComponent>(uid); // Lets not teleport as soon we put down the portal, duh.
 
-            var newportal = SpawnAtPosition(_shadekinPortal, Transform(uid).Coordinates);
+            var newportal = SpawnAtPosition(component.PortalShadekin, Transform(uid).Coordinates);
             if (TryComp<DarkPortalComponent>(newportal, out var portal))
                 portal.Brighteye = uid;
 
@@ -57,7 +55,7 @@ public sealed partial class ShadekinSystem : EntitySystem
 
     private void OnPhaseAction(EntityUid uid, BrighteyeComponent component, BrighteyePhaseActionEvent args)
     {
-        int cost = _phaseCost;
+        int cost = component.PhaseCost;
         if (HasComp<NullSpaceComponent>(uid))
         {
             if (_nullspace.CanPhase(uid) && OnAttemptEnergyUse(uid, component))

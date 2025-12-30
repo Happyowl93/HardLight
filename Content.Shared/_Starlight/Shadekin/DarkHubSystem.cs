@@ -15,7 +15,6 @@ public sealed class DarkHubSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly INetManager _netMan = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
     public override void Initialize()
     {
         base.Initialize();
@@ -66,7 +65,7 @@ public sealed class DarkHubSystem : EntitySystem
         var target = _random.Pick(warps);
 
         var coords = Transform(target).Coordinates;
-        SpawnAtPosition(_shadekinShadow, coords);
+        SpawnAtPosition(component.ShadekinShadow, coords);
         _transform.SetCoordinates(args.Subject, coords);
 
 

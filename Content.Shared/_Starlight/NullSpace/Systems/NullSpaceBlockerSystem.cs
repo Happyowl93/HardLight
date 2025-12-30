@@ -16,7 +16,7 @@ public sealed class NullSpaceBlockerSystem : EntitySystem
 
     private void OnEntityEnter(EntityUid uid, NullSpaceBlockerComponent component, ref StartCollideEvent args)
     {
-        if (!component.Unphase)
+        if (!component.UnphaseOnCollide)
             return;
 
         var otherUid = args.OtherEntity;

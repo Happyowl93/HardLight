@@ -25,9 +25,9 @@ public sealed class NullSpacePhaseSystem : EntitySystem
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
 
-    private EntProtoId _shadekinShadow = "ShadekinShadow";
-    private EntProtoId ShadekinPhaseInEffect = "ShadekinPhaseInEffect";
-    private EntProtoId ShadekinPhaseOutEffect = "ShadekinPhaseOutEffect";
+    private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
+    private readonly EntProtoId ShadekinPhaseInEffect = "ShadekinPhaseInEffect";
+    private readonly EntProtoId ShadekinPhaseOutEffect = "ShadekinPhaseOutEffect";
 
     public override void Initialize()
     {

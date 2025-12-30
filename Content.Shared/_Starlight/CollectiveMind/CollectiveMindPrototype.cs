@@ -39,11 +39,11 @@ public sealed partial class CollectiveMindPrototype : IPrototype
     /// When true, you can hear the collectivemind but unable to speak unless valid WhitelistComponents & WhitelistTags.
     /// </summary>
     [DataField]
-    public bool NeedWhitelist = false;
+    public bool CanSpeak = false;
 
     [DataField]
-    public List<string> WhitelistComponents { get; set; } = new();
+    public List<string> CanSpeakComponents { get; set; } = new();
     
     [DataField]
-    public List<ProtoId<TagPrototype>> WhitelistTags { get; set; } = new();
+    public List<ProtoId<TagPrototype>> CanSpeakTags { get; set; } = new();
 }
