@@ -15,5 +15,7 @@
     ClothingHeadsetMedical: 2
     ClothingOuterWinterChem: 2
     ClothingEyesGlassesChemical: 2
+    ClothingEyeGlassesChemicalPrescription: 1 # Starlight
   contrabandInventory:
     ToyFigurineChemist: 1
+
