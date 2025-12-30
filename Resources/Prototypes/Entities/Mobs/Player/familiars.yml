@@ -7,8 +7,12 @@
   # begin starlight
   - type: LanguageKnowledge
     speaks:
+    - Bat
     - Darktongue
     understands:
+    - GalacticCommon
+    - Bat
+    - Mouse
     - Darktongue
   # end starlight
   - type: GhostRole
@@ -49,8 +53,12 @@
   # begin starlight
   - type: LanguageKnowledge
     speaks:
+    - Dog
     - Darktongue
     understands:
+    - GalacticCommon
+    - Dog
+    - Fox
     - Darktongue
   # end starlight
   - type: GhostRole
