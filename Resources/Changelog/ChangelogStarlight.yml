@@ -24884,5 +24884,22 @@ Entries:
   id: 262200
   time: '2025-12-31T00:09:55.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2622
+- author: FoxxoTrystan
+  changes:
+  - message: Brighteye Antag.
+    type: Add
+  - message: Surgery steps for the Shadekin Core.
+    type: Add
+  - message: 'Add a new material: Bluespace Crystal!'
+    type: Add
+  - message: Shadekins can now have hair!
+    type: Tweak
+  - message: Updated Shadekin Guidebook.
+    type: Tweak
+  - message: Shadekin somehow breathing smoke/foam.
+    type: Fix
+  id: 255200
+  time: '2025-12-31T03:40:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2552
 Order: -1
 
