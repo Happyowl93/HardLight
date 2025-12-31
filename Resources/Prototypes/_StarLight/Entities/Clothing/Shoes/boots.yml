@@ -19,3 +19,13 @@
     sprite: _Starlight/Clothing/Shoes/Boots/slick_shoes.rsi
   - type: Clothing
     sprite: _Starlight/Clothing/Shoes/Boots/slick_shoes.rsi
+
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: ClothingShoesBootsWinterChem
+  name: chemistry winter boots
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Shoes/Boots/winterbootschem.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Shoes/Boots/winterbootschem.rsi

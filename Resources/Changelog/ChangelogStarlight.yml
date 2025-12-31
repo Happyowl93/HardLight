@@ -24781,5 +24781,91 @@ Entries:
   id: 261600
   time: '2025-12-30T18:31:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2616
+- author: CrazyPhantom
+  changes:
+  - message: Bluespace and Redspace implants (Currently admeme only)
+    type: Add
+  id: 262100
+  time: '2025-12-31T00:11:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2621
+- author: CrazyPhantom
+  changes:
+  - message: Borgs can now use looc while crit. Silicons rejoice!
+    type: Fix
+  - message: Holopads now work with looc
+    type: Add
+  id: 260800
+  time: '2025-12-31T00:12:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2608
+- author: wonderfulnewworld
+  changes:
+  - message: Senior Chemist Jumpsuit/Jumpskirt, Senior Chemist Lab Coat, Senior Chemist
+      Winter Coat, Chemistry Trucker Hat, Chemistry Fishing Cap, Senior Chemistry
+      Bag, Senior Chemist PDA (60 Hours Chemist)
+    type: Add
+  - message: Advanced (Chemical) Jensens, Chemical HUD, Chemical HUD Eyepatch, Silver
+      Beaker (15 hours Chemist)
+    type: Add
+  - message: Chemistry beret, Chemistry nurse hat, light beaker, chemistry winter
+      boots
+    type: Add
+  - message: Golden Hand Labeler (100 Hours Chemist)
+    type: Add
+  - message: Veteran Corpsman Response Jacket, Veteran Corpsman Trauma Wear, Corpsman's
+      Nostalgic Overcoat, Corpsman's Traumabay hat, Veteran Brigmedic/Veteran Corpsman
+      PDA (60 Hours Brigmedic)
+    type: Add
+  - message: Brigmedic HUD eyepatch, Suit of Life, Nurse Hat of Life, Silver Beaker
+      (15 Hours Brigmedic)
+    type: Add
+  - message: Brigmedic's Reminisced Overcoat, Brigmedic's Medbay hat, dark beaker
+    type: Add
+  - message: BlueShield Officer's HUD eyepatch
+    type: Add
+  - message: Added Skirt of Life to Brigmedic's loadout
+    type: Tweak
+  - message: 'Brigmedic can now select loadout options for: Mask, tie, ID, and beaker'
+    type: Tweak
+  - message: 'Chemist can now select loadout options for: Head, bag, ID, eyewear,
+      beaker, and labeler'
+    type: Tweak
+  - message: The Ice Bucket is now 2x2
+    type: Tweak
+  - message: Added 5 Silver Beakers to the Medical Dispenser, priced at 200 credits
+      each
+    type: Tweak
+  - message: Added an extra Golden Beaker to the Medical Dispenser
+    type: Tweak
+  - message: Golden Beakers now cost 300 credits
+    type: Tweak
+  - message: Added the Industrial Welder/Advanced Industrial Welder to the Engineering
+      Dispenser (at 250/400 credits respectively)
+    type: Tweak
+  - message: added a Golden Engineering Hardsuit to the Engineering Dispenser
+    type: Add
+  - message: Added the flipped black cap to the Roboticist's loadout
+    type: Tweak
+  - message: Added the Roboticist's bags to the RoboDrobe
+    type: Tweak
+  - message: The Skirt of Life/Suit of Life now give 5% Infection resist
+    type: Tweak
+  - message: Added the Suit of Life and Nurse Hat of Life to the MediDrobe's manager
+      wire
+    type: Tweak
+  - message: Added the Chemistry beret, Chemistry nursehat, and Chemistry winter boots
+      to the ChemDrobe
+    type: Tweak
+  - message: Brigmedic now has Surgery access (it was forgotten)
+    type: Tweak
+  id: 263600
+  time: '2025-12-31T00:27:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2636
+- author: Penguinwizzard
+  changes:
+  - message: Added base tooling around randomizing Nuclear Operative spawn planets.
+    type: Add
+  id: 221400
+  time: '2025-12-31T00:57:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2214
 Order: -1
 
