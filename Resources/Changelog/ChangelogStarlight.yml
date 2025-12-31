@@ -24770,5 +24770,196 @@ Entries:
   id: 259200
   time: '2025-12-30T02:52:32.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2592
+- author: mikeysaurus
+  changes:
+  - message: Adds new administrative stamps for CC operators, as well as boxes to
+      organize them.
+    type: Add
+  - message: Adds all of these stamps to aghosts for admin usage (including original
+      centcom stamp)
+    type: Add
+  id: 261600
+  time: '2025-12-30T18:31:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2616
+- author: CrazyPhantom
+  changes:
+  - message: Bluespace and Redspace implants (Currently admeme only)
+    type: Add
+  id: 262100
+  time: '2025-12-31T00:11:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2621
+- author: CrazyPhantom
+  changes:
+  - message: Borgs can now use looc while crit. Silicons rejoice!
+    type: Fix
+  - message: Holopads now work with looc
+    type: Add
+  id: 260800
+  time: '2025-12-31T00:12:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2608
+- author: wonderfulnewworld
+  changes:
+  - message: Senior Chemist Jumpsuit/Jumpskirt, Senior Chemist Lab Coat, Senior Chemist
+      Winter Coat, Chemistry Trucker Hat, Chemistry Fishing Cap, Senior Chemistry
+      Bag, Senior Chemist PDA (60 Hours Chemist)
+    type: Add
+  - message: Advanced (Chemical) Jensens, Chemical HUD, Chemical HUD Eyepatch, Silver
+      Beaker (15 hours Chemist)
+    type: Add
+  - message: Chemistry beret, Chemistry nurse hat, light beaker, chemistry winter
+      boots
+    type: Add
+  - message: Golden Hand Labeler (100 Hours Chemist)
+    type: Add
+  - message: Veteran Corpsman Response Jacket, Veteran Corpsman Trauma Wear, Corpsman's
+      Nostalgic Overcoat, Corpsman's Traumabay hat, Veteran Brigmedic/Veteran Corpsman
+      PDA (60 Hours Brigmedic)
+    type: Add
+  - message: Brigmedic HUD eyepatch, Suit of Life, Nurse Hat of Life, Silver Beaker
+      (15 Hours Brigmedic)
+    type: Add
+  - message: Brigmedic's Reminisced Overcoat, Brigmedic's Medbay hat, dark beaker
+    type: Add
+  - message: BlueShield Officer's HUD eyepatch
+    type: Add
+  - message: Added Skirt of Life to Brigmedic's loadout
+    type: Tweak
+  - message: 'Brigmedic can now select loadout options for: Mask, tie, ID, and beaker'
+    type: Tweak
+  - message: 'Chemist can now select loadout options for: Head, bag, ID, eyewear,
+      beaker, and labeler'
+    type: Tweak
+  - message: The Ice Bucket is now 2x2
+    type: Tweak
+  - message: Added 5 Silver Beakers to the Medical Dispenser, priced at 200 credits
+      each
+    type: Tweak
+  - message: Added an extra Golden Beaker to the Medical Dispenser
+    type: Tweak
+  - message: Golden Beakers now cost 300 credits
+    type: Tweak
+  - message: Added the Industrial Welder/Advanced Industrial Welder to the Engineering
+      Dispenser (at 250/400 credits respectively)
+    type: Tweak
+  - message: added a Golden Engineering Hardsuit to the Engineering Dispenser
+    type: Add
+  - message: Added the flipped black cap to the Roboticist's loadout
+    type: Tweak
+  - message: Added the Roboticist's bags to the RoboDrobe
+    type: Tweak
+  - message: The Skirt of Life/Suit of Life now give 5% Infection resist
+    type: Tweak
+  - message: Added the Suit of Life and Nurse Hat of Life to the MediDrobe's manager
+      wire
+    type: Tweak
+  - message: Added the Chemistry beret, Chemistry nursehat, and Chemistry winter boots
+      to the ChemDrobe
+    type: Tweak
+  - message: Brigmedic now has Surgery access (it was forgotten)
+    type: Tweak
+  id: 263600
+  time: '2025-12-31T00:27:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2636
+- author: Penguinwizzard
+  changes:
+  - message: Added base tooling around randomizing Nuclear Operative spawn planets.
+    type: Add
+  id: 221400
+  time: '2025-12-31T00:57:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2214
+- author: STARLIGHT TEAM
+  changes:
+  - message: Automatic playtime exchange with SL:alfa, SL:delta, TP, CL, and AL.
+    type: Add
+  - message: A new animated ghost skin, available after 10 hours of playtime on Trieste
+      Port.
+    type: Add
+  id: 264500
+  time: '2025-12-30T18:30:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2645
+- author: CrazyPhantom
+  changes:
+  - message: Tinted windows can now have their tint toggled.
+    type: Add
+  id: 262200
+  time: '2025-12-31T00:09:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2622
+- author: FoxxoTrystan
+  changes:
+  - message: Brighteye Antag.
+    type: Add
+  - message: Surgery steps for the Shadekin Core.
+    type: Add
+  - message: 'Add a new material: Bluespace Crystal!'
+    type: Add
+  - message: Shadekins can now have hair!
+    type: Tweak
+  - message: Updated Shadekin Guidebook.
+    type: Tweak
+  - message: Shadekin somehow breathing smoke/foam.
+    type: Fix
+  id: 255200
+  time: '2025-12-31T03:40:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2552
+- author: Fractalflower
+  changes:
+  - message: Shotguns now use 12 gauge instead of .50
+    type: Tweak
+  id: 260200
+  time: '2025-12-31T03:41:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2602
+- author: Fractalflower
+  changes:
+  - message: Central Command now allows (amongst others) the Captain, Head of Security,
+      and Warden to leave their coat at home.
+    type: Tweak
+  - message: NanoTrasen doesn't force the Officer "Blue Shield" to have a cloak anymore.
+    type: Tweak
+  - message: NanoTrasen now begrudgingly allows the Officer "Blue Shield" to leave
+      their coat at home.
+    type: Tweak
+  id: 237500
+  time: '2025-12-31T04:01:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2375
+- author: neomoth
+  changes:
+  - message: Adds several toolshed commands related to containers.
+    type: Add
+  - message: Adds a few toolshed commands for adjusting solutions.
+    type: Add
+  id: 265000
+  time: '2025-12-31T04:02:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2650
+- author: CawsForConcern
+  changes:
+  - message: Barratry from the voting map pool
+    type: Remove
+  id: 265100
+  time: '2025-12-31T05:39:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2651
+- author: STARLIGHT TEAM
+  changes:
+  - message: Fixed Flavour Text to properly wrap in the character window.
+    type: Fix
+  id: 264200
+  time: '2025-12-31T13:23:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2642
+- author: Shades
+  changes:
+  - message: Fix bluespace crystals able to teleport walls, doors and windows, now
+      its only effect mobs.
+    type: Fix
+  id: 265600
+  time: '2025-12-31T16:06:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2656
+- author: Shades
+  changes:
+  - message: Fix Error Realm
+    type: Fix
+  - message: Prediction errors.
+    type: Fix
+  id: 265800
+  time: '2025-12-31T17:12:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2658
 Order: -1
 
