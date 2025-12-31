@@ -24860,5 +24860,12 @@ Entries:
   id: 263600
   time: '2025-12-31T00:27:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2636
+- author: Penguinwizzard
+  changes:
+  - message: Added base tooling around randomizing Nuclear Operative spawn planets.
+    type: Add
+  id: 221400
+  time: '2025-12-31T00:57:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2214
 Order: -1
 
