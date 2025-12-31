@@ -24781,5 +24781,21 @@ Entries:
   id: 261600
   time: '2025-12-30T18:31:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2616
+- author: CrazyPhantom
+  changes:
+  - message: Bluespace and Redspace implants (Currently admeme only)
+    type: Add
+  id: 262100
+  time: '2025-12-31T00:11:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2621
+- author: CrazyPhantom
+  changes:
+  - message: Borgs can now use looc while crit. Silicons rejoice!
+    type: Fix
+  - message: Holopads now work with looc
+    type: Add
+  id: 260800
+  time: '2025-12-31T00:12:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2608
 Order: -1
 
