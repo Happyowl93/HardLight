@@ -24901,5 +24901,12 @@ Entries:
   id: 255200
   time: '2025-12-31T03:40:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2552
+- author: Fractalflower
+  changes:
+  - message: Shotguns now use 12 gauge instead of .50
+    type: Tweak
+  id: 260200
+  time: '2025-12-31T03:41:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2602
 Order: -1
 
