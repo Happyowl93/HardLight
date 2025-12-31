@@ -142,7 +142,6 @@
 - type: roleLoadout
   id: JobSalvageLead
   groups:
-    - GroupTankHarness
     - SalvageSpecialistBackpack
     - SalvageLeadJumpsuit
     - SalvageLeadNeck
@@ -152,7 +151,6 @@
     - Glasses
     - Survival
     - Trinkets
-    - GroupSpeciesBreathTool
     - Scarves
     - Pins
     - Pens
