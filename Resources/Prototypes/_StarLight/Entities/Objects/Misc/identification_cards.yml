@@ -93,7 +93,7 @@
     job: IAA
 
 - type: entity
-  parent: [ IDCardStandard, BaseCommandContraband ]
+  parent: [ IDCardStandard, BaseBlueShieldContraband ]
   id: BlueShieldIDCard
   name: blueshield officer's ID card
   components:

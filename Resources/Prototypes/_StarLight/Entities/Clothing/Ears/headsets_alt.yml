@@ -67,7 +67,7 @@
     sprite: Clothing/Ears/Headsets/command.rsi
 
 - type: entity
-  parent: [ClothingHeadsetAlt, BaseCommandContraband]
+  parent: [ClothingHeadsetAlt, BaseBlueShieldContraband]
   id: ClothingHeadsetAltBSO
   name: officer blue shield over-ear headset
   components:

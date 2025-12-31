@@ -96,7 +96,7 @@
     state: pda-lawyer
 
 - type: entity
-  parent: BasePDA
+  parent: [ BasePDA, BaseBlueShieldContraband ]
   id: BlueShieldPDA
   name: blueshield officer's PDA
   components:
