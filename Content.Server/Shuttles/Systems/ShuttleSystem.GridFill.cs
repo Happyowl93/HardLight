@@ -323,7 +323,7 @@ public sealed partial class ShuttleSystem
         }
 
         if (component.PathWeights.Count == 0) {
-            Log.Error($"Error loading gridfill dock for {ToPrettyString(uid)} due to lacking any PathWeights");
+            Log.Error($"Error loading gridfill dock {ToPrettyString(uid)} due to lacking any PathWeights");
             return;
         }
 
@@ -368,6 +368,10 @@ public sealed partial class ShuttleSystem
                     AddComp(grid.Value, comp, true);
                 }
             }
+            else
+            {
+                Log.Info($"Failed to place {selectedGridPath} for gridfill of dock {ToPrettyString(uid)}, cycling");
+            }
 
             _mapSystem.DeleteMap(tempMapId);
 
@@ -377,7 +381,8 @@ public sealed partial class ShuttleSystem
             }
         }
 
-        Log.Error($"Error loading all possible gridfills for gridfill dock for {ToPrettyString(uid)}");
+        Log.Error($"Error placing all possible gridfills for gridfill dock {ToPrettyString(uid)}");
+        DebugTools.Assert($"Error placing all possible gridfills for gridfill dock {ToPrettyString(uid)}");
     }
     // Starlight end
 
