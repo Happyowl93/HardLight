@@ -22,3 +22,9 @@ command-description-container-getoutercontainer =
     Gets the outermost container that is containing the piped entity.
 command-description-container-getowner =
     Gets the entity that owns the specified container.
+command-description-solution-adjcapacity =
+    Adjusts the capacity on the given solution.
+command-description-solution-adjtemperature =
+    Adjusts the capacity on the given solution.
+command-description-solution-adjthermalenergy =
+    Adjusts the capacity on the given solution.

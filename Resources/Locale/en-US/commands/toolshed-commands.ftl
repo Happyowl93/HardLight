@@ -99,14 +99,6 @@ command-description-solution-get =
     Grabs the given solution off the given entity.
 command-description-solution-adjreagent =
     Adjusts the given reagent on the given solution.
-#SL begin
-command-description-solution-adjcapacity =
-    Adjusts the capacity on the given solution.
-command-description-solution-adjtemperature =
-    Adjusts the capacity on the given solution.
-command-description-solution-adjthermalenergy =
-    Adjusts the capacity on the given solution.
-#SL end
 command-description-mind-get =
     Grabs the mind from the entity, if any.
 command-description-mind-control =
