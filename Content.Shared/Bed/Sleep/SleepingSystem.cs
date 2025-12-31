@@ -352,11 +352,8 @@ public sealed partial class SleepingSystem : EntitySystem
 
         /// Starlight
         /// Ensures that people who are SSD cannot be woken up by others.
-        if (TryComp(ent.Owner, out SSDIndicatorComponent? SSDComp))
-        {
-            if (SSDComp.IsSSD)
-                return false;
-        }
+        if (TryComp(ent.Owner, out SSDIndicatorComponent? SSDComp) && SSDComp.IsSSD)
+            return false;
 
         return RemComp<SleepingComponent>(ent);
     }
