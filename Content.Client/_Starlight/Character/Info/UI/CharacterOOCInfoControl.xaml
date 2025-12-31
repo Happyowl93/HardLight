@@ -9,14 +9,14 @@
         <BoxContainer Orientation="Vertical" VerticalExpand="True">
             <Label Text="OOC Notes:"/>
             <RichTextLabel Name="OOCNotes" Access="Public" MinSize="220 100" Margin="10"
-                           HorizontalExpand="False" VerticalExpand="True" VerticalAlignment="Top"/>
+                           VerticalExpand="True" VerticalAlignment="Top"/>
         </BoxContainer>
         <PanelContainer Name="HiddenInfoSection" Access="Public" Visible="False">
             <BoxContainer Orientation="Vertical" VerticalExpand="True">
                 <Label Text="Hidden Info" StyleClasses="LabelHeading"/>
                 <Label Text="Personal Notes:"/>
                 <RichTextLabel Name="PersonalNotes" Access="Public" MinSize="220 100" Margin="10"
-                       HorizontalExpand="False" VerticalExpand="True" VerticalAlignment="Top"/>
+                       VerticalExpand="True" VerticalAlignment="Top"/>
             </BoxContainer>
         </PanelContainer>
     </BoxContainer>
