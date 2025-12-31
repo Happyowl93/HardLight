@@ -574,13 +574,19 @@
 - type: roleLoadout
   id: JobChemist
   groups:
-#  - GroupTankHarness - Starlight removed
+# - GroupTankHarness - Starlight removed
+  - ChemistHead # Starlight
   - MedicalMask
   - ChemistJumpsuit
   - MedicalGloves
   - ChemistBackpack
+  - ChemistBag # Starlight
   - ChemistOuterClothing
-  - MedicalShoes
+  - ChemistShoes # Starlight
+  - ChemistPDA # Starlight
+  - ChemistEyewear # Starlight
+  - ChemistBeaker # Starlight
+  - ChemistLabeler # Starlight
   - SurvivalMedical
   - Trinkets
   - Scarves # Starlight
