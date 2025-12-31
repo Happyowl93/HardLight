@@ -24867,5 +24867,15 @@ Entries:
   id: 221400
   time: '2025-12-31T00:57:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2214
+- author: STARLIGHT TEAM
+  changes:
+  - message: Automatic playtime exchange with SL:alfa, SL:delta, TP, CL, and AL.
+    type: Add
+  - message: A new animated ghost skin, available after 10 hours of playtime on Trieste
+      Port.
+    type: Add
+  id: 264500
+  time: '2025-12-30T18:30:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2645
 Order: -1
 
