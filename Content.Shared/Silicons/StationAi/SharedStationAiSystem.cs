@@ -34,18 +34,13 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Starlight.TextToSpeech;
-using Content.Shared._Starlight.Silicons.Borgs;//Starlight
-using Content.Shared.Silicons.Borgs.Components; // Starlight
 
 #region Starlight
-using Content.Shared._Starlight.Computers.RemoteEye;
 using Content.Shared._Starlight.Silicons.Borgs;
-using Content.Shared.Starlight;
+using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Starlight.TextToSpeech;
 using Robust.Shared.Player;
 using System.Linq;
-using Content.Shared.Silicons.Borgs.Components;
 #endregion Starlight
 
 namespace Content.Shared.Silicons.StationAi;
@@ -277,11 +272,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         if (!TryComp(args.Args.Target.Value, out StationAiHolderComponent? targetHolder)) // Starlight-edit
             return;
 
-        // Starlight - basically if the AI is off shunting we wanna force them BACK. simplest way to do that is to fake the event to send them back.
-        if (ent.Comp.Slot.Item.HasValue && TryComp<StationAIShuntableComponent>(ent.Comp.Slot.Item.Value, out var shuntable))
-            Unshunt(shuntable);
-        
-        //#region Starlight
+        // Starlight-start
 
         var isBorg = HasComp<BorgBrainComponent>(uid);
         var borgHaveMind = TryComp<MindContainerComponent>(uid, out var mindContainer) && _mind.GetMind(uid, mindContainer) != null;
@@ -290,9 +281,9 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
         // basically if the AI is off shunting we wanna force them BACK. simplest way to do that is to fake the event to send them back.
         var slot = component?.Slot;
-        if (slot?.Item is { } item && TryComp<StationAIShuntableComponent>(item, out var shuntable) && shuntable.Inhabited is { } inhabited)
-            RaiseLocalEvent(inhabited, new AIUnShuntActionEvent());
-        //#endregion Starlight
+        if (slot != null && slot.Item.HasValue && TryComp<StationAIShuntableComponent>(slot.Item.Value, out var shuntable))
+            Unshunt(shuntable);
+        // Starlight-end
 
         // Try to insert our thing into them
         if (slot != null && _slots.CanEject(uid, args.User, slot)) // Starlight-edit
@@ -355,7 +346,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
         var isBorg = HasComp<BorgBrainComponent>(args.Target.Value);
         var isShunted = TryComp<StationAIShuntComponent>(args.Target.Value, out var shunt) && shunt.Return != null;
-        var borgHaveMind = TryComp<MindContainerComponent>(args.Target.Value, out var mindContainer) && _mind.GetMind(args.Target.Value, mindContainer) != null;
+        var borgHaveMind = TryComp<MindContainerComponent>(args.Target.Value, out var mindContainer) && mindContainer.HasMind;
         
         // Starlight-end
 
