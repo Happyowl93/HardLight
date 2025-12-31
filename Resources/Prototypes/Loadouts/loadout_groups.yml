@@ -206,6 +206,8 @@
 - type: loadoutGroup
   id: CaptainOuterClothing
   name: loadout-group-captain-outerclothing
+  minLimit: 0 # starlight
+  defaultSelected: 1 # starlight
   loadouts:
   - CaptainOuterClothing
   - CaptainWintercoat
@@ -1366,6 +1368,8 @@
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
   name: loadout-group-head-of-security-outerclothing
+  minLimit: 0 # starlight
+  defaultSelected: 1 # starlight
   loadouts:
   - HeadofSecurityCoat
   - HeadofSecurityWinterCoat
@@ -1396,6 +1400,8 @@
 - type: loadoutGroup
   id: WardenOuterClothing
   name: loadout-group-warden-outerclothing
+  minLimit: 0 # starlight
+  defaultSelected: 1 # starlight
   loadouts:
   - WardenCoat
   - WardenArmoredWinterCoat
@@ -1453,6 +1459,8 @@
 - type: loadoutGroup
   id: BrigmedicOuterClothing
   name: loadout-group-brigmedic-outerclothing
+  minLimit: 0 # starlight
+  defaultSelected: 1 # starlight
   loadouts:
   - BrigmedicCoat
   - SecurityOfficerWintercoat
@@ -1531,6 +1539,8 @@
 - type: loadoutGroup
   id: SecurityOuterClothing
   name: loadout-group-security-outerclothing
+  minLimit: 0 # starlight
+  defaultSelected: 1 # starlight
   loadouts:
   - ArmorVest
   - ArmorVestSlim
@@ -1591,6 +1601,8 @@
 - type: loadoutGroup
   id: DetectiveOuterClothing
   name: loadout-group-detective-outerclothing
+  minLimit: 0 # starlight
+  defaultSelected: 1 # starlight
   loadouts:
   - DetectiveArmorVest
   - DetectiveCoat
