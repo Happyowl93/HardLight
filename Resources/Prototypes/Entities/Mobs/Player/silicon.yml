@@ -1,4 +1,4 @@
-# Be careful with these as they get removed on shutdown too!
+﻿# Be careful with these as they get removed on shutdown too!
 - type: entity
   id: AiHeld
   description: Components added / removed from an entity that gets inserted into an AI core.
@@ -40,6 +40,7 @@
     - ActionSurvCameraLights
     - ActionAIViewLaws
     - ActionAIShunt # Starlight AI Shunt ability
+    - ActionAIWarp # Starlight
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:
@@ -83,6 +84,9 @@
   #region Starlight
   - type: StationAIShuntable
   #endregion Starlight
+  - type: DamagedSiliconAccent
+    startPowerCorruptionAtCharIdx: 4
+    maxPowerCorruptionAtCharIdx: 20
 
 - type: entity
   id: AiHeldIntellicard
@@ -150,8 +154,11 @@
     sprite: Objects/Devices/ai_card.rsi
     layers:
     - state: base
-    - state: full
+    - state: empty
       map: ["unshaded"]
+      shader: unshaded
+    - state: full
+      map: ["enum.StationAiVisualLayers.Icon"]
       shader: unshaded
   - type: Appearance
   - type: GenericVisualizer
@@ -169,7 +176,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Mobs/Silicon/station_ai.rsi
+    sprite: _Starlight/Mobs/Silicon/station_ai.rsi
     layers:
     - state: base
     - state: ai
@@ -178,7 +185,7 @@
 # Empty AI core
 - type: entity
   id: PlayerStationAiEmpty
-  name: AI Core
+  name: AI core
   description: The latest in Artificial Intelligences.
   parent:
   - BaseStructure
@@ -186,7 +193,7 @@
   suffix: Empty
   components:
   - type: Anchorable
-    flags: 
+    flags:
     - Anchorable
   - type: Rotatable
   - type: WarpPoint
@@ -241,7 +248,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: DamageVisuals
-    thresholds: [25, 50, 75, 100, 125, 150, 175]
+    thresholds: [25, 50, 75, 100, 200, 300, 400]
     damageDivisor: 4
     trackAllDamage: true
     damageOverlay:
@@ -261,7 +268,7 @@
   - type: InteractionOutline
   - type: Sprite
     snapCardinals: true
-    sprite: Mobs/Silicon/station_ai.rsi
+    sprite: _Starlight/Mobs/Silicon/station_ai.rsi
     layers:
     - state: base
     - state: ai_empty
@@ -348,7 +355,7 @@
 - type: entity
   parent: BaseStructure
   id: PlayerStationAiAssembly
-  name: AI Core Assembly
+  name: AI core assembly
   description: An unfinished computer core for housing an artifical intelligence.
   components:
   - type: Anchorable
@@ -357,7 +364,7 @@
   - type: Rotatable
   - type: Sprite
     snapCardinals: true
-    sprite: Mobs/Silicon/station_ai.rsi
+    sprite: _Starlight/Mobs/Silicon/station_ai.rsi # Starlight - use our sprites
     layers:
     - state: frame_0
       map: [ "enum.ConstructionVisuals.Layer" ]
@@ -418,7 +425,7 @@
 # The actual brain inside the core
 - type: entity
   id: StationAiBrain
-  parent: PositronicBrain
+  parent: [ BaseSiliconLanguages, PositronicBrain ] # Starlight edit: Languages
   categories: [ HideSpawnMenu, DoNotMap ]
   components:
   - type: Sprite
@@ -475,9 +482,20 @@
   - type: NameIdentifier
     group: StationAi
     #region Starlight
+  - type: ContentEye
   - type: IonStormTarget
     chance: 0.6 # lets just try it at 3/4th the chance of a borg and see how bad it gets
     #endregion
+
+#SL start
+- type: entity
+  parent: StationAiBrain
+  id: StationAiBrainConstructed
+  categories: [ HideSpawnMenu, DoNotMap ]
+  components:
+    - type: StationAiCustomization
+      renameAvailable: true
+#SL end
 
 # Hologram projection that the AI's eye tracks.
 - type: entity
@@ -585,6 +603,7 @@
       rules: ghost-role-information-silicon-rules
       raffle:
         settings: default
+      job: Borg
     - type: GhostTakeoverAvailable
 
 - type: entity
@@ -598,7 +617,8 @@
       borg_brain:
         - PositronicBrain
       borg_module:
-        - BorgModuleTool
+        - BorgModuleSyndicateAdvancedTool # Starlight
+        - BorgModuleConstruction
         - BorgModuleRCD
         - BorgModuleOperative
         - BorgModuleSyndicateWeapon
@@ -619,6 +639,7 @@
       rules: ghost-role-information-silicon-rules
       raffle:
         settings: default
+      job: Borg
     - type: GhostTakeoverAvailable
 
 - type: entity
@@ -633,8 +654,9 @@
         - PositronicBrain
       borg_module:
         - BorgModuleTool
-        - BorgModuleChemical
+        - BorgModuleSyndicateAdvancedChemical # starlight
         - BorgModuleTopicals
+        - BorgModuleSyndicateRescue # starlight
         - BorgModuleSyndicateWeapon
   - type: ItemSlots
     slots:
@@ -706,6 +728,7 @@
     raffle:
       settings: default
     reregister: false
+    job: Borg
   - type: GhostTakeoverAvailable
 
 - type: entity
@@ -740,6 +763,7 @@
       raffle:
         settings: default
       reregister: false
+      job: Borg
     - type: GhostTakeoverAvailable
 
 - type: entity
@@ -776,6 +800,7 @@
     raffle:
       settings: default
     reregister: false
+    job: Borg
   - type: GhostTakeoverAvailable
 
 - type: entity
@@ -813,6 +838,7 @@
     raffle:
       settings: default
     reregister: false
+    job: Borg
   - type: GhostTakeoverAvailable
 
 - type: entity
@@ -849,6 +875,7 @@
     raffle:
       settings: default
     reregister: false
+    job: Borg
   - type: GhostTakeoverAvailable
 
 - type: entity
@@ -861,6 +888,7 @@
       borg_brain:
       - PositronicBrain
       borg_module:
+      - BorgModuleTool # starlight
       - BorgModuleOperative
       - BorgModuleC20r
       - BorgModuleEsword
@@ -884,4 +912,5 @@
     raffle:
       settings: default
     reregister: false
+    job: Borg
   - type: GhostTakeoverAvailable
