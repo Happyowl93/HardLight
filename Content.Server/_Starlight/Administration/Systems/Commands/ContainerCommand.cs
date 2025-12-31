@@ -1,9 +1,10 @@
 using System.Linq;
+using Content.Server.Administration;
 using Content.Shared.Administration;
 using Robust.Shared.Containers;
 using Robust.Shared.Toolshed;
 
-namespace Content.Server.Administration.Commands;
+namespace Content.Server._Starlight.Administration.Commands;
 
 [ToolshedCommand, AdminCommand(AdminFlags.Fun)]
 public sealed class ContainerCommand : ToolshedCommand
