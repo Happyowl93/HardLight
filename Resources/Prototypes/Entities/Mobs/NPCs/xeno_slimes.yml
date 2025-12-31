@@ -15,11 +15,11 @@
     - state: test_image
   - type: Slime
     nutrition: 50
-    nutrition_change_per_second: -1
-    damage_on_eat:
+    nutritionChangePerSecond: -1
+    damageOnEat:
       types:
         Cellular: 5
-    nutrition_on_hit: 10
+    nutritionOnHit: 10
   - type: HTN
     rootTask:
       task: SlimeEatCompound
@@ -31,4 +31,4 @@
   description: GRAY
   components:
   - type: Slime
-    split_into: XenoSlimeGray
+    splitInto: XenoSlimeGray
