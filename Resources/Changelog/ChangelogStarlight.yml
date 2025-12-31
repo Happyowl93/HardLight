@@ -24930,5 +24930,12 @@ Entries:
   id: 265000
   time: '2025-12-31T04:02:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2650
+- author: CawsForConcern
+  changes:
+  - message: Barratry from the voting map pool
+    type: Remove
+  id: 265100
+  time: '2025-12-31T05:39:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2651
 Order: -1
 
