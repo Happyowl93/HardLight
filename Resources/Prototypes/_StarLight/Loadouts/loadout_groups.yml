@@ -168,6 +168,7 @@
   id: BlueShieldOuterclothing
   name: Loadout-group-blueshield-outerclothing
   minLimit: 0
+  defaultSelected: 1
   loadouts:
   - BlueShieldVest
   - BlueShieldCoat
@@ -175,6 +176,7 @@
 - type: loadoutGroup
   id: BlueShieldNeck
   minLimit: 0
+  defaultSelected: 1
   name: Loadout-group-blueshield-neck
   loadouts:
   - BlueShieldFormalCloak
