@@ -24908,5 +24908,18 @@ Entries:
   id: 260200
   time: '2025-12-31T03:41:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2602
+- author: Fractalflower
+  changes:
+  - message: Central Command now allows (amongst others) the Captain, Head of Security,
+      and Warden to leave their coat at home.
+    type: Tweak
+  - message: NanoTrasen doesn't force the Officer "Blue Shield" to have a cloak anymore.
+    type: Tweak
+  - message: NanoTrasen now begrudgingly allows the Officer "Blue Shield" to leave
+      their coat at home.
+    type: Tweak
+  id: 237500
+  time: '2025-12-31T04:01:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2375
 Order: -1
 
