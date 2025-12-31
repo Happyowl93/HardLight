@@ -137,7 +137,7 @@ public sealed class LoadMapRuleSystem : StationEventSystem<LoadMapRuleComponent>
         }
     }
 
-    private bool LoadMapTag(EntityUid uid, LoadMapRuleComponent comp, GameRuleComponent rule, GameRuleAddedEvent args, ProtoId<TagPrototype> MapTag)
+    private bool LoadMapTag(EntityUid uid, LoadMapRuleComponent comp, GameRuleComponent rule, GameRuleStartedEvent args, ProtoId<TagPrototype> MapTag)
     {
         MapId mapId;
         IReadOnlyList<EntityUid> grids;
@@ -160,7 +160,9 @@ public sealed class LoadMapRuleSystem : StationEventSystem<LoadMapRuleComponent>
                     var ev = new RuleLoadedGridsEvent(mapId, grids);
                     RaiseLocalEvent(uid, ref ev);
 
-                    base.Added(uid, comp, rule, args);
+                    PropagateLoadEvent(uid, mapId, grids);
+
+                    base.Started(uid, comp, rule, args);
 
                     return true;
                 }
