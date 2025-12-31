@@ -346,18 +346,23 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
             return;
 
         var lawset = provider.Lawset ?? GetLawset(provider.Laws);
-        if (ent.Comp.Core != null // Starlight-edit
-            && TryComp<StationAiHolderComponent>(ent.Comp.Core.Value, out var holder)  // Starlight-edit
-            && holder.Slot.ContainerSlot?.ContainedEntity is { } update) // Starlight-edit
-            SetLaws(lawset.Laws, update, provider.LawUploadSound); // Starlight-edit
+
+        // Starlight-start
+        if (ent.Comp.Core != null
+            && TryComp<StationAiHolderComponent>(ent.Comp.Core.Value, out var holder)
+            && holder.Slot.ContainerSlot?.ContainedEntity is { } update)
+        {
+            SetLaws(lawset.Laws, update, provider.LawUploadSound);
+            // Components on lawboards TODO remove components provided by the old board when it is removed.
+            if (provider.Components != null)
+                _entMan.AddComponents(update, provider.Components);
+        }
+        // Starlight-end
 
 //        var query = EntityManager.CompRegistryQueryEnumerator(ent.Comp.Components); Starlight-edit: Changed to device linking
 //        while (query.MoveNext(out var update))
 //        {
 //            SetLaws(lawset.Laws, update, provider.LawUploadSound);
-//            // Starlight: Components on lawboards TODO remove components provided by the old board when it is removed.
-//            if (provider.Components != null)
-//                _entMan.AddComponents(update, provider.Components);
 //        }
     }
 }
