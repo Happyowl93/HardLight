@@ -24877,5 +24877,12 @@ Entries:
   id: 264500
   time: '2025-12-30T18:30:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2645
+- author: CrazyPhantom
+  changes:
+  - message: Tinted windows can now have their tint toggled.
+    type: Add
+  id: 262200
+  time: '2025-12-31T00:09:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2622
 Order: -1
 
