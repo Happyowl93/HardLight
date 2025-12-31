@@ -24921,5 +24921,14 @@ Entries:
   id: 237500
   time: '2025-12-31T04:01:44.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2375
+- author: neomoth
+  changes:
+  - message: Adds several toolshed commands related to containers.
+    type: Add
+  - message: Adds a few toolshed commands for adjusting solutions.
+    type: Add
+  id: 265000
+  time: '2025-12-31T04:02:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2650
 Order: -1
 
