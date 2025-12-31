@@ -19,6 +19,15 @@ public sealed class SlimeSystem : EntitySystem
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+
+    public List<SlimeSplitRecord> SlimeSplitRecords = new();
+    public List<EntityUid> SlimesToDelete = new();
+
+    public sealed class SlimeSplitRecord(Entity<SlimeComponent?> slime, int splitAmount)
+    {
+        public Entity<SlimeComponent?> Slime = slime;
+        public int SplitAmount = splitAmount;
+    }
     
     /// <inheritdoc />
     public override void Update(float frameTime)
@@ -26,20 +35,19 @@ public sealed class SlimeSystem : EntitySystem
         base.Update(frameTime);
         var query = EntityQueryEnumerator<SlimeComponent>();
         
-        var slimesToDelete = new List<Entity<SlimeComponent?>>();
         while (query.MoveNext(out var uid, out var slime))
         {
             slime.Nutrition = FixedPoint2.Max(slime.Nutrition + (frameTime * slime.NutritionChangePerSecond), 0);
-            if (slime.Nutrition >= slime.SplitThreshold)
-            {
-                slimesToDelete.Add((uid, slime));
-            }
         }
 
-        foreach (var slime in slimesToDelete)
+        foreach (var record in SlimeSplitRecords)
         {
-            TrySplitSlime(slime, 2);
-            _entityManager.QueueDeleteEntity(slime.Owner);
+            TrySplitSlime(record.Slime, record.SplitAmount);
+        }
+        
+        foreach (var slime in SlimesToDelete)
+        {
+            _entityManager.QueueDeleteEntity(slime);
         }
     }
     
@@ -78,6 +86,13 @@ public sealed class SlimeSystem : EntitySystem
                 comp.Nutrition = newNutrition;
             else return false;
         }
+        SlimesToDelete.Add(slime.Owner);
+        return true;
+    }
+
+    public bool QueueSlimeSplit(Entity<SlimeComponent?> slime, int splitAmount)
+    {
+        SlimeSplitRecords.Add(new(slime, splitAmount));
         return true;
     }
 }

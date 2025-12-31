@@ -5,6 +5,27 @@
   branches:
     - tasks:
         - !type:HTNPrimitiveTask
+          operator: !type:RandomOperator
+            targetKey: IdleTime
+            minKey: MinimumIdleTime
+            maxKey: MaximumIdleTime
+          preconditions:
+            - !type:SlimeEnoughNutritionToSplitPrecondition
+              splitThreshold: 100
+
+        - !type:HTNPrimitiveTask
+          operator: !type:WaitOperator
+            key: IdleTime
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: IdleTime
+        
+        - !type:HTNPrimitiveTask
+          operator: !type:SlimeSplitOperator
+            splitAmount: 4
+    
+    - tasks:
+        - !type:HTNPrimitiveTask
           operator: !type:PickNearbyEdibleOperator
             targetKey: EatTarget
             targetMoveKey: TargetCoordinates

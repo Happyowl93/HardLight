@@ -20,7 +20,6 @@
       types:
         Cellular: 5
     nutrition_on_hit: 10
-    split_threshold: 100
   - type: HTN
     rootTask:
       task: SlimeEatCompound
