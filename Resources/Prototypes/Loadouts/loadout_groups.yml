@@ -206,6 +206,8 @@
 - type: loadoutGroup
   id: CaptainOuterClothing
   name: loadout-group-captain-outerclothing
+  minLimit: 0 # starlight
+  defaultSelected: 1 # starlight
   loadouts:
   - CaptainOuterClothing
   - CaptainWintercoat
@@ -1366,6 +1368,8 @@
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
   name: loadout-group-head-of-security-outerclothing
+  minLimit: 0 # starlight
+  defaultSelected: 1 # starlight
   loadouts:
   - HeadofSecurityCoat
   - HeadofSecurityWinterCoat
@@ -1396,6 +1400,8 @@
 - type: loadoutGroup
   id: WardenOuterClothing
   name: loadout-group-warden-outerclothing
+  minLimit: 0 # starlight
+  defaultSelected: 1 # starlight
   loadouts:
   - WardenCoat
   - WardenArmoredWinterCoat
@@ -1424,6 +1430,9 @@
   - BrigmedicBeret
   - SecurityHelmet
   - CorpsmanBeret #Starlight
+  - BrigmedicNurseHat # Starlight
+  - CorpsmanNurseHat # Starlight
+  - BrigmedicNurseHatOfLife # Starlight
 
 - type: loadoutGroup
   id: BrigmedicJumpsuit
@@ -1433,6 +1442,10 @@
   - JumpsuitCorpsman
   - JumpskirtBrigmedic
   - JumpskirtCorpsman #Starlight
+  - CorpsmanResponse # Starlight
+  - CorpsmanTrauma # Starlight
+  - BrigmedicJumpsuitOfLife # Starlight
+  - BrigmedicJumpskirtOfLife # Starlight
 
 - type: loadoutGroup
   id: BrigmedicBackpack
@@ -1446,10 +1459,14 @@
 - type: loadoutGroup
   id: BrigmedicOuterClothing
   name: loadout-group-brigmedic-outerclothing
+  minLimit: 0 # starlight
+  defaultSelected: 1 # starlight
   loadouts:
   - BrigmedicCoat
   - SecurityOfficerWintercoat
   - CorpsmanCoat #Starlight
+  - BrigmedicLabCoat # Starlight
+  - CorpsmanLabCoat # Starlight
 
 - type: loadoutGroup
   id: BrigmedicEyewear
@@ -1457,6 +1474,7 @@
   loadouts:
   - BrigmedicGlasses
   - BrigmedicHud
+  - BrigmedicEyePatchHud # Starlight
 
 - type: loadoutGroup
   id: BrigmedicBelt
@@ -1521,6 +1539,8 @@
 - type: loadoutGroup
   id: SecurityOuterClothing
   name: loadout-group-security-outerclothing
+  minLimit: 0 # starlight
+  defaultSelected: 1 # starlight
   loadouts:
   - ArmorVest
   - ArmorVestSlim
@@ -1581,6 +1601,8 @@
 - type: loadoutGroup
   id: DetectiveOuterClothing
   name: loadout-group-detective-outerclothing
+  minLimit: 0 # starlight
+  defaultSelected: 1 # starlight
   loadouts:
   - DetectiveArmorVest
   - DetectiveCoat
@@ -1779,6 +1801,8 @@
   loadouts:
   - ChemistJumpsuit
   - ChemistJumpskirt
+  - SeniorChemistJumpsuit # Starlight
+  - SeniorChemistJumpskirt # Starlight
 
 - type: loadoutGroup
   id: ChemistOuterClothing
@@ -1788,6 +1812,8 @@
   - RegularLabCoat
   - ChemistLabCoat
   - ChemistWintercoat
+  - SeniorChemistLabCoat # Starlight
+  - SeniorChemistWintercoat # Starlight
 
 - type: loadoutGroup
   id: ChemistBackpack
