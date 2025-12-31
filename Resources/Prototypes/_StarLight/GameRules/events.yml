@@ -256,6 +256,7 @@
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
     - id: WizardSpawn
+    - id: Xenoborgs
     # Starlight gamerules:
     - id: AbductorsSpawn
 
