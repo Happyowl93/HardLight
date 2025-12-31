@@ -1,4 +1,9 @@
 roles-req-any-role-required = You require any of the following roles on {$discord}: {$roles}.
+requirements-playtime = 
+    { $tracker ->
+        [overall] You still need {$time} of total gameplay time on the {$server} server.
+       *[other] You still need {$time} of gameplay time for {$tracker} on the {$server} server.
+    }
 
 roles-req-discord-starlight = 🌟 STARLIGHT 🌟
 roles-req-discord-wizden = Wizden
@@ -12,3 +17,6 @@ roles-req-staff-roles = staff
 roles-req-manager-roles = --Server Leadership--
 roles-req-patron-roles = patron
 roles-req-carpgames-roles = Carp Games Winner
+
+triesteport-main = TRIESTEPORT
+overall = overall

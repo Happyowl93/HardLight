@@ -24673,5 +24673,192 @@ Entries:
   id: 260300
   time: '2025-12-29T23:52:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2603
+- author: Conflee
+  changes:
+  - message: Added 6 new posters
+    type: Add
+  - message: Added 9 new crayon/graffiti decals
+    type: Add
+  - message: Added Starlight graffiti to the graffiti spawners, so they will now appear
+      in messy areas round start
+    type: Tweak
+  - message: Fixed Speaker rotations being backwards
+    type: Fix
+  id: 258800
+  time: '2025-12-29T23:52:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2588
+- author: Penguinwizzard
+  changes:
+  - message: We've managed to find some savings in our custodial budgets! In other
+      news, if the toilets on your station don't work, ask the janitor to check the
+      cistern.
+    type: Tweak
+  id: 258900
+  time: '2025-12-30T00:59:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2589
+- author: R3v3l4t1on
+  changes:
+  - message: Xenoborgs are now in Secret at 0.15
+    type: Add
+  - message: Xenoborgs can now spawn on Traitor/Traitorling gamemodes.
+    type: Add
+  - message: Xenoborgs should now be able to spawn midround.
+    type: Add
+  - message: Removed dummy non antag chance from Xenoborgs rule, we don't use it.
+    type: Remove
+  id: 259800
+  time: '2025-12-30T01:53:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2598
+- author: penquinwizzard, neomoth
+  changes:
+  - message: Adds the cryptographic endoder, a CC variant of the emag
+    type: Add
+  - message: Adds the CC lawset
+    type: Add
+  - message: Emags now have associated factions, emags of differing factions can override
+      the effects of another faction's emag.
+    type: Tweak
+  - message: You can now emag door electronics. Doing so grants it the access group
+      of the associated emag. Defaults to syndicate.
+    type: Tweak
+  - message: Admin access overriders now ignore the limits of targeted door electronics.
+    type: Tweak
+  id: 261300
+  time: '2025-12-30T01:58:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2613
+- author: Sparlight
+  changes:
+  - message: Smart Corgis can now wear the space hazard hardsuit.
+    type: Tweak
+  id: 254900
+  time: '2025-12-30T02:02:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2549
+- author: neomoth
+  changes:
+  - message: Adds the Xenomoproach as an admeme entity that can be spawned by admins
+      during xenoborgs.
+    type: Add
+  - message: Adds the wehnade, a modified cleanade admeme item that expels weh foam.
+    type: Add
+  - message: Adds skubmoth. Huh.
+    type: Add
+  id: 248000
+  time: '2025-12-30T02:02:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2480
+- author: neomoth
+  changes:
+  - message: Added CC moproaches for the ERT Janitor shuttle!
+    type: Add
+  - message: Added WorksWhileHeld to AccessComponent
+    type: Add
+  - message: Added ForceDisplacements to InventoryComponent
+    type: Add
+  - message: Modified ERT Janitor shuttle a bit, moved the right turret left a tile
+      and replaced moproach cubes with cc moproach cubes.
+    type: Tweak
+  - message: Mothroaches of all types now use their defined displacement maps.
+    type: Fix
+  id: 251800
+  time: '2025-12-30T02:02:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2518
+- author: teapoterror
+  changes:
+  - message: Added Central Command Outpost GNT-9
+    type: Add
+  - message: All Necessary Files to Make CC Outpost GNT-9 Function as a CC Outpost
+    type: Add
+  id: 259200
+  time: '2025-12-30T02:52:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2592
+- author: mikeysaurus
+  changes:
+  - message: Adds new administrative stamps for CC operators, as well as boxes to
+      organize them.
+    type: Add
+  - message: Adds all of these stamps to aghosts for admin usage (including original
+      centcom stamp)
+    type: Add
+  id: 261600
+  time: '2025-12-30T18:31:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2616
+- author: CrazyPhantom
+  changes:
+  - message: Bluespace and Redspace implants (Currently admeme only)
+    type: Add
+  id: 262100
+  time: '2025-12-31T00:11:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2621
+- author: CrazyPhantom
+  changes:
+  - message: Borgs can now use looc while crit. Silicons rejoice!
+    type: Fix
+  - message: Holopads now work with looc
+    type: Add
+  id: 260800
+  time: '2025-12-31T00:12:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2608
+- author: wonderfulnewworld
+  changes:
+  - message: Senior Chemist Jumpsuit/Jumpskirt, Senior Chemist Lab Coat, Senior Chemist
+      Winter Coat, Chemistry Trucker Hat, Chemistry Fishing Cap, Senior Chemistry
+      Bag, Senior Chemist PDA (60 Hours Chemist)
+    type: Add
+  - message: Advanced (Chemical) Jensens, Chemical HUD, Chemical HUD Eyepatch, Silver
+      Beaker (15 hours Chemist)
+    type: Add
+  - message: Chemistry beret, Chemistry nurse hat, light beaker, chemistry winter
+      boots
+    type: Add
+  - message: Golden Hand Labeler (100 Hours Chemist)
+    type: Add
+  - message: Veteran Corpsman Response Jacket, Veteran Corpsman Trauma Wear, Corpsman's
+      Nostalgic Overcoat, Corpsman's Traumabay hat, Veteran Brigmedic/Veteran Corpsman
+      PDA (60 Hours Brigmedic)
+    type: Add
+  - message: Brigmedic HUD eyepatch, Suit of Life, Nurse Hat of Life, Silver Beaker
+      (15 Hours Brigmedic)
+    type: Add
+  - message: Brigmedic's Reminisced Overcoat, Brigmedic's Medbay hat, dark beaker
+    type: Add
+  - message: BlueShield Officer's HUD eyepatch
+    type: Add
+  - message: Added Skirt of Life to Brigmedic's loadout
+    type: Tweak
+  - message: 'Brigmedic can now select loadout options for: Mask, tie, ID, and beaker'
+    type: Tweak
+  - message: 'Chemist can now select loadout options for: Head, bag, ID, eyewear,
+      beaker, and labeler'
+    type: Tweak
+  - message: The Ice Bucket is now 2x2
+    type: Tweak
+  - message: Added 5 Silver Beakers to the Medical Dispenser, priced at 200 credits
+      each
+    type: Tweak
+  - message: Added an extra Golden Beaker to the Medical Dispenser
+    type: Tweak
+  - message: Golden Beakers now cost 300 credits
+    type: Tweak
+  - message: Added the Industrial Welder/Advanced Industrial Welder to the Engineering
+      Dispenser (at 250/400 credits respectively)
+    type: Tweak
+  - message: added a Golden Engineering Hardsuit to the Engineering Dispenser
+    type: Add
+  - message: Added the flipped black cap to the Roboticist's loadout
+    type: Tweak
+  - message: Added the Roboticist's bags to the RoboDrobe
+    type: Tweak
+  - message: The Skirt of Life/Suit of Life now give 5% Infection resist
+    type: Tweak
+  - message: Added the Suit of Life and Nurse Hat of Life to the MediDrobe's manager
+      wire
+    type: Tweak
+  - message: Added the Chemistry beret, Chemistry nursehat, and Chemistry winter boots
+      to the ChemDrobe
+    type: Tweak
+  - message: Brigmedic now has Surgery access (it was forgotten)
+    type: Tweak
+  id: 263600
+  time: '2025-12-31T00:27:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2636
 Order: -1
 
