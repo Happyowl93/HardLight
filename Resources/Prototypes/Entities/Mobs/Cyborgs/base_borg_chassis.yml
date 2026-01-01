@@ -253,7 +253,7 @@
   - type: StationAIShunt #Starlight allow shunting into all borgs
   - type: BorgSwitchableSubtype # Afterlight change
   - type: Crawler
-  - type: BatteryStatus
+  - type: BatteryAlert
   - type: Blindable
   - type: EyeProtection
   #endregion
