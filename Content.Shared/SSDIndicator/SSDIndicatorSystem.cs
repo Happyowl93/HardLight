@@ -102,7 +102,8 @@ public sealed class SSDIndicatorSystem : EntitySystem
     public bool TrySSD(EntityUid uid, SSDIndicatorComponent? comp, bool force = false)
     {
         if (comp == null 
-            || comp.IsSSD)
+            || comp.IsSSD 
+            || TerminatingOrDeleted(uid))
             return false;
 
         if (!force)
@@ -140,7 +141,8 @@ public sealed class SSDIndicatorSystem : EntitySystem
     public bool TryRemoveSSD(EntityUid uid, SSDIndicatorComponent? comp)
     {
         if (comp == null 
-            || !comp.IsSSD)
+            || !comp.IsSSD 
+            || TerminatingOrDeleted(uid))
             return false;
 
         comp.IsSSD = false;
