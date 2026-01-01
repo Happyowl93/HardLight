@@ -1,0 +1,51 @@
+- type: entity
+  parent: BaseItem
+  id: BaseSlimeExtract
+  abstract: true
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      container:
+        maxVol: 15
+  - type: MixableSolution
+    solution: container
+  - type: FitsInDispenser
+    solution: container
+  - type: RefillableSolution
+    solution: container
+  - type: DrainableSolution
+    solution: container
+  - type: ExaminableSolution
+    solution: container
+    exactVolume: true
+  - type: DrawableSolution
+    solution: container
+  - type: InjectableSolution
+    solution: container
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
+  - type: SolutionItemStatus
+    solution: container
+  - type: SlimeExtract
+    containerName: container
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: GraySlimeExtract
+  name: Gray Slime Extract
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Objects/Specific/Xenobiology/test_slime_extract.rsi
+    layers:
+      - state: test_slime_extract
+  - type: SlimeExtract
+    extractReactions:
+    - requirements:
+        reagents:
+        - ReagentId: Water
+          Quantity: 1
+      effects:
+        - !type:SpawnEntity
+          entity: MonkeyCube
+          number: 3
