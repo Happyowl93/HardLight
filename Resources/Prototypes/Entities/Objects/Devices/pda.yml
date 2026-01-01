@@ -428,10 +428,10 @@
   - type: Muted # for random sentience event
 
 - type: entity
-  name: chaplain PDA
+  name: priest PDA # Starlight
   parent: BasePDA
   id: ChaplainPDA
-  description: God's chosen PDA.
+  description: Is the black austere, or luxurious? It's a matter of faith. # Starlight
   components:
   - type: Pda
     id: ChaplainIDCard
@@ -1188,8 +1188,8 @@
 - type: entity
   parent: ERTLeaderPDA
   id: ERTChaplainPDA
-  name: ERT Chaplain PDA
-  suffix: Chaplain
+  name: ERT Priest PDA # Starlight
+  suffix: Priest
   description: Red for firepower, it's blessed.
   components:
   - type: Pda

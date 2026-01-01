@@ -265,8 +265,8 @@
 - type: entity
   parent: ClothingBackpackERTLeader
   id: ClothingBackpackERTChaplain
-  name: ERT chaplain backpack
-  description: A spacious backpack with lots of pockets, worn by Chaplains of an Emergency Response Team.
+  name: ERT priest backpack # Starlight
+  description: A spacious backpack with lots of pockets, worn by Priests of an Emergency Response Team. # Starlight
   components:
   - type: Sprite
     sprite: Clothing/Back/Backpacks/ertchaplain.rsi

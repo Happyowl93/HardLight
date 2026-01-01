@@ -572,7 +572,7 @@
     - RandomHumanoidVisitorBoxer
 
 - type: entity
-  name: visiting chaplain spawner
+  name: visiting priest spawner # Starlight
   id: VisitorChaplainSpawner
   parent: MarkerBase
   components:

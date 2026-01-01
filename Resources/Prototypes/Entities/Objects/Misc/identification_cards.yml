@@ -608,7 +608,7 @@
 - type: entity
   parent: IDCardStandard
   id: ChaplainIDCard
-  name: chaplain ID card
+  name: priest ID card
   components:
   - type: Sprite
     layers:
@@ -1123,7 +1123,7 @@
 - type: entity
   parent: IDCardStandard
   id: ERTChaplainIDCard
-  name: ERT chaplain ID card
+  name: ERT priest ID card # Starlight
   components:
   - type: Sprite
     layers:
