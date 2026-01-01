@@ -6,10 +6,13 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 20h # Starlight
+      time: 25h # Starlight
     - !type:RoleTimeRequirement
       role: JobDetective # Starlight
-      time: 1h # Starlight
+      time: 5h
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 45h # Starlight - 2nd in command to HoS, and you usually do their job for them
   weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"

@@ -7,13 +7,13 @@
   guides: [ Revolutionaries ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 24h # Starlight
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 6h # Starlight
+    time: 72h # Starlight
+  - !type:RoleTimeRequirement #Starlight
+    role: JobSecurityOfficer
+    time: 9h
   - !type:DepartmentTimeRequirement
     department: Command
-    time: 6h # Starlight
+    time: 12h # Starlight
 
 - type: antag
   id: Rev

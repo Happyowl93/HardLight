@@ -6,4 +6,6 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobSalvageSpecialist
-    time: 10800 # 3h STARLIGHT
+    time: 3h #STARLIGHT
+  - !type:OverallPlaytimeRequirement #Starlight edit
+    time: 24h

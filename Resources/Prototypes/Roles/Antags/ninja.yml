@@ -9,7 +9,9 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 10800 # 3h STARLIGHT
+    time: 9h #STARLIGHT
+  - !type:OverallPlaytimeRequirement
+    time: 48h #Starlight edit
 
 #Ninja Gear
 - type: startingGear

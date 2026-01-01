@@ -6,7 +6,7 @@
   setPreference: false
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 86400 # 24h STARLIGHT
+    time: 48h #STARLIGHT - this antag is hard to change times for since its absolute random
 
 # they need to be able to espace when spawning inside a locked room
 # TODO: remove this once we got a better spawning loacation selection
