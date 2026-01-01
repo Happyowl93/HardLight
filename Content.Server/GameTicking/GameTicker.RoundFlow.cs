@@ -423,6 +423,8 @@ namespace Content.Server.GameTicking
 
             SpawnPlayers(readyPlayers, readyPlayerIds, force);
 
+            StartGamePresetRules(); // Starlight - Start any map- or player-attached game rules
+
             _roundStartDateTime = DateTime.UtcNow;
             RunLevel = GameRunLevel.InRound;
 
