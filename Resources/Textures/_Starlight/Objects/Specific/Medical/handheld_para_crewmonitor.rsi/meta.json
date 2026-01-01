@@ -5,7 +5,7 @@
         "y": 32
     },
     "license": "CC-BY-SA-3.0",
-    "copyright": "Created by TacoLlama (github)",
+    "copyright": "Created by TacoLlama (github), in-hands modified by SeamLesss (github) from Objects/Misc/qm_clipboard.rsi/inhand-(left/right), in-hands further modified for Paramed by wonderfulnewworld (github)",
     "states": [
         {
             "name": "scanner",
@@ -18,6 +18,14 @@
                     0.4
                 ]
             ]
+        },
+		{
+            "name": "scanner-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "scanner-inhand-right",
+            "directions": 4
         },
         {
             "name": "icon",
