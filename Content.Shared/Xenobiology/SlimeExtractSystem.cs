@@ -3,6 +3,7 @@ using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Coordinates;
 using Content.Shared.EntityEffects;
+using Content.Shared.FixedPoint;
 
 namespace Content.Shared.Xenobiology;
 
@@ -23,16 +24,20 @@ public sealed class SlimeExtractSystem : EntitySystem
 
         while (query.MoveNext(out var uid, out var slimeExtractComponent))
         {
-            if (!_solutionContainerSystem.TryGetSolution(uid, slimeExtractComponent.ContainerName, out _, out var currentSolution)) continue;
+            if (!_solutionContainerSystem.TryGetSolution(uid, slimeExtractComponent.ContainerName, out var solcom, out var currentSolution)) continue;
             foreach (var reaction in slimeExtractComponent.ExtractReactions)
             {
                 if (IsSolutionRequirementFulfilled(reaction.Requirements, currentSolution))
                 {
+                    var minimumScalingFactor = FindMinimumScalingFactor(reaction.Requirements, currentSolution);
                     foreach (var effect in reaction.Effects)
                     {
-                        _entityEffectsSystem.TryApplyEffect(uid, effect);
+                        _entityEffectsSystem.TryApplyEffect(uid, effect.Effect, minimumScalingFactor.Float());
                     }
-                    currentSolution.RemoveAllSolution();
+                    foreach (var requirement in reaction.Requirements)
+                    {
+                        _solutionContainerSystem.RemoveReagent(solcom.Value, requirement.Reagent, minimumScalingFactor * requirement.Quantity);
+                    }
                 }
             }
         }
@@ -47,5 +52,16 @@ public sealed class SlimeExtractSystem : EntitySystem
         }
         
         return true;
+    }
+
+    public FixedPoint2 FindMinimumScalingFactor(Solution requiredSolution, Solution currentSolution)
+    {
+        var minimumScalingFactor = FixedPoint2.MaxValue;
+        foreach (var req in requiredSolution.Contents)
+        {
+            if (!currentSolution.TryGetReagentQuantity(req.Reagent, out var amount)) return 0.0;
+            minimumScalingFactor = FixedPoint2.Min(minimumScalingFactor, amount/req.Quantity);
+        }
+        return minimumScalingFactor;
     }
 }

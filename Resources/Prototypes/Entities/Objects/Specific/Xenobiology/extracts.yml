@@ -46,6 +46,8 @@
         - ReagentId: Water
           Quantity: 1
       effects:
-        - !type:SpawnEntity
-          entity: MonkeyCube
-          number: 3
+        - effect: !type:SpawnEntity
+            entity: MonkeyCube
+            number: 3
+          scalingFactor: 0
+          scalingOffset: 1

@@ -1,5 +1,6 @@
 using Content.Shared.Chemistry.Components;
 using Content.Shared.EntityEffects;
+using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -39,7 +40,41 @@ public sealed partial class ExtractReaction
     /// The effects caused when there is enough of the required reagents.
     /// </summary>
     [DataField("effects", required: true)]
-    public List<EntityEffect> Effects = default!;
+    public List<ScaledEntityEffect> Effects = default!;
+}
+
+/// <summary>
+/// An entity effect combined with a scaling factor.
+/// </summary>
+/// <remarks>
+/// While this could be used anywhere, this is meant for xenobiology.
+/// As such, I'll document the formula here for the sake of people writing slime extracts.
+/// First, a minimized scaling factor is found among the reagents.
+/// Specifically, for each reagent, amountInContainer/amountRequired is calculated.
+/// The minimum found across all the reagents is taken and used as the minimizedScalingFactor.
+/// The final factor is then minimizedScalingFactor * scalingFactor + scalingOffset.
+/// Great fans of y = mx + b should find themselves right at home here.
+/// </remarks>
+[Serializable, NetSerializable, DataDefinition]
+public sealed partial class ScaledEntityEffect
+{
+    /// <summary>
+    /// The effect.
+    /// </summary>
+    [DataField("effect", required: true)]
+    public EntityEffect Effect = default!;
+    
+    /// <summary>
+    /// Increases the scale in proportion to how much reagent was provided.
+    /// </summary>
+    [DataField("scalingFactor")]
+    public FixedPoint2 ScalingFactor = 0;
+
+    /// <summary>
+    /// A flat modifier added at the end of calculating the scale.
+    /// </summary>
+    [DataField("scalingOffset")]
+    public FixedPoint2 ScalingOffset = 1;
 }
 
 [Serializable, NetSerializable]
