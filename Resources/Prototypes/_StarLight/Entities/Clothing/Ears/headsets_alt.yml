@@ -69,7 +69,7 @@
 - type: entity
   parent: [ClothingHeadsetAlt, BaseBlueShieldContraband]
   id: ClothingHeadsetAltBSO
-  name: officer blue shield over-ear headset
+  name: blue shield over-ear headset
   components:
   - type: ContainerFill
     containers:

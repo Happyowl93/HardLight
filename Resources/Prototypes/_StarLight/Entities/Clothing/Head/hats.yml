@@ -12,8 +12,8 @@
 - type: entity
   parent: [ClothingHeadBase, BaseBlueShieldContraband]
   id: ClothingHeadHatBeretBlueShield
-  name: blue shield officer's beret
-  description: This beret completes the outfit of any true Blue Shield.
+  name: blue shield beret
+  description: This beret completes the outfit of any true Blue Shield Officer.
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Head/Hats/blueshield.rsi

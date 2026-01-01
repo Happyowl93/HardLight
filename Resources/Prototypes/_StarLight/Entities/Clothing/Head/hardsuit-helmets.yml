@@ -3,7 +3,7 @@
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitBlueshield
   categories: [ HideSpawnMenu ]
-  name: blue shield officer's hardsuit helmet
+  name: blue shield hardsuit helmet
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Head/Hardsuits/blueshield.rsi

@@ -213,7 +213,7 @@
 - type: entity
   parent: [ BasePDA, BaseBlueShieldContraband ]
   id: BlueShieldPDA
-  name: blueshield officer's PDA
+  name: blue shield PDA
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Devices/pda.rsi

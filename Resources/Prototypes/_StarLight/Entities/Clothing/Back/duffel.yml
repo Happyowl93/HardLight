@@ -32,7 +32,7 @@
 - type: entity
   parent: [ClothingBackpackDuffel, BaseBlueShieldContraband]
   id: ClothingBackpackDuffelBlueShield
-  name: blue shield's duffel bag
+  name: blue shield duffel bag
   description: The bag for a Blue Shield Officer who is ready for any contingency. 
   components:
   - type: Sprite

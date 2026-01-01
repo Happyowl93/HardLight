@@ -10,7 +10,7 @@
 - type: entity
   parent: [ClothingBackpack, BaseBlueShieldContraband]
   id: ClothingBackpackBlueShield
-  name: blue shield's backpack
+  name: blue shield backpack
   description: A lightweight but reliable backpack. Can't go wrong with the classics!
   components:
   - type: Sprite

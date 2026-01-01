@@ -83,7 +83,7 @@
 - type: entity
   parent: [ClothingUniformBase, BaseBlueShieldContraband]
   id: ClothingUniformJumpsuitBlueShield
-  name: blue shield officer's suit
+  name: blue shield suit
   description: The suit of a glorified bodyguard.
   components:
   - type: Sprite
@@ -94,7 +94,7 @@
 - type: entity
   parent: [ClothingUniformBase, BaseBlueShieldContraband]
   id: ClothingUniformJumpsuitEliteBlueShield
-  name: elite blue shield officer's suit
+  name: elite blue shield suit
   description: The suit of an elite BSO. To reach such a level, you must have protected Command from [REDACTED].
   components:
   - type: Sprite
@@ -105,7 +105,7 @@
 - type: entity
   parent: [ClothingUniformBase, BaseBlueShieldContraband]
   id: ClothingUniformJumpsuitBlueShieldCaptain
-  name: blue shield officer's shirt
+  name: blue shield shirt
   description: A classic suit in theme with the rest of the BSO ensemble. 
   components:
   - type: Sprite
@@ -116,7 +116,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitSalvageLead
-  name: salvage leads's jumpsuit
+  name: salvage lead's jumpsuit
   description: It's a snappy jumpsuit with a sturdy set of overalls. It's very dirty.
   components:
   - type: RollUpSleeves

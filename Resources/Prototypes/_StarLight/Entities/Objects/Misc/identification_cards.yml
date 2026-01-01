@@ -95,7 +95,7 @@
 - type: entity
   parent: [ IDCardStandard, BaseBlueShieldContraband ]
   id: BlueShieldIDCard
-  name: blueshield officer's ID card
+  name: blue shield ID card
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Misc/id_cards.rsi
