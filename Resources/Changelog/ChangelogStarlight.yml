@@ -24952,5 +24952,14 @@ Entries:
   id: 265600
   time: '2025-12-31T16:06:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2656
+- author: Shades
+  changes:
+  - message: Fix Error Realm
+    type: Fix
+  - message: Prediction errors.
+    type: Fix
+  id: 265800
+  time: '2025-12-31T17:12:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2658
 Order: -1
 
