@@ -70,3 +70,8 @@ loadout-group-chemist-shoes = Chemist shoes
 
 loadout-group-scarves = Scarf
 loadout-group-pens = Pen
+
+# Brighteye
+loadout-group-brighteye-jumpsuit = Brighteye jumpsuit
+Loadout-group-brighteye-neck = Brighteye neck
+loadout-group-brighteye-gloves = Brighteye gloves

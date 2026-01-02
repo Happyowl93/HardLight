@@ -513,15 +513,28 @@
   id: BrighteyeJumpsuit
   name: loadout-group-brighteye-jumpsuit
   loadouts:
-    - TatteredClothesUniformSuit
-    - ClothingUniformJumpsuitGladiator
+    - BrighteyeTatteredClothes
+    - BrighteyeGladiator
 
 - type: loadoutGroup
   id: BrighteyeNeck
   name: Loadout-group-brighteye-neck
   loadouts:
-    - ClothingNeckTatteredHood
-    - ClothingNeckMantle
-    - ClothingNeckOldMantle
-    - ClothingNeckCloakGoliathCloak
-    - ClothingNeckCloakVoid
+    - BrighteyeTatteredHood
+    - BrighteyeMantle
+    - BrighteyeOldMantle
+    - BrighteyeGoliathCloak
+    - BrighteyeCloakVoid
+
+- type: loadoutGroup
+  id: BrighteyeShoes
+  name: loadout-group-civilian-shoes
+  loadouts:
+    - BrighteyeClothWrapShoe
+    - BlackShoes
+
+- type: loadoutGroup
+  id: BrighteyeGloves
+  name: loadout-group-civilian-gloves
+  loadouts:
+    - BrighteyeClothWrapGlove
