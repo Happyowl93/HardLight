@@ -83,6 +83,13 @@ namespace Content.Client.Lobby.UI
         /// </summary>
         public JobPrototype? JobOverride;
 
+        // Starlight Start: Antag Loadouts
+        /// <summary>
+        /// Temporary override of their selected antag, used to preview roles.
+        /// </summary>
+        public ProtoId<AntagPrototype>? AntagOverride;
+        // Starlight End
+
         /// <summary>
         /// Track the state of the ShowClothes button to use for the profile preview
         /// </summary>
@@ -982,6 +989,7 @@ namespace Content.Client.Lobby.UI
             CharacterSlot = slot;
             IsDirty = false;
             JobOverride = null;
+            AntagOverride = null; // Starlight: Antag Loadouts
 
             UpdateNameEdit();
             UpdateCustomSpecieNameEdit(); // Starlight
@@ -1320,6 +1328,7 @@ namespace Content.Client.Lobby.UI
                 roleLoadout.AddLoadout(loadoutGroup, loadoutProto, _prototypeManager);
                 _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
                 Profile = Profile?.WithLoadout(roleLoadout);
+                ReloadPreview();
             };
 
             _loadoutWindow.OnLoadoutUnpressed += (loadoutGroup, loadoutProto) =>
@@ -1327,11 +1336,22 @@ namespace Content.Client.Lobby.UI
                 roleLoadout.RemoveLoadout(loadoutGroup, loadoutProto, _prototypeManager);
                 _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
                 Profile = Profile?.WithLoadout(roleLoadout);
+                ReloadPreview();
             };
+
+            AntagOverride = antagProto.ID;
+            JobOverride = antagProto.PreviewStartingGear != null
+                ? _prototypeManager.EnumeratePrototypes<JobPrototype>().FirstOrDefault(j => j.StartingGear == antagProto.PreviewStartingGear)
+                : null;
 
             ReloadPreview();
 
-            _loadoutWindow.OnClose += ReloadPreview;
+            _loadoutWindow.OnClose += () =>
+            {
+                AntagOverride = null;
+                JobOverride = null;
+                ReloadPreview();
+            };
         }
         private void OnPhysicalDescChanged(TextEdit.TextEditEventArgs args)
         {
@@ -1341,7 +1361,6 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithPhysicalDesc(Rope.Collapse(args.TextRope).Trim());
             IsDirty = true;
         }
-
 
         private void OnPersonalityDescChanged(TextEdit.TextEditEventArgs args)
         {

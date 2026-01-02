@@ -44,11 +44,47 @@ public sealed partial class ProfilePreviewSpriteView
     /// <param name="humanoid">Profile to load</param>
     /// <param name="job">Force job clothes override -- don't use job preferences</param>
     /// <param name="showClothes">Add job clothes or just spawn a species doll</param>
-    private void LoadHumanoidEntity(HumanoidCharacterProfile humanoid, JobPrototype? job, bool showClothes)
+    private void LoadHumanoidEntity(HumanoidCharacterProfile humanoid, JobPrototype? job, bool showClothes, ProtoId<AntagPrototype>? antagOverride = null) // Starlight edit: Antag Loadouts
     {
         ProfileName = humanoid.Name;
         JobName = null;
         LoadoutName = null;
+
+        // Starlight Start: Antag Loadouts
+        // If an antag override is provided, display that antag's loadout
+        if (antagOverride != null && _prototypeManager.TryIndex(antagOverride.Value, out var antagProto))
+        {
+            PreviewDummy = EntMan.SpawnEntity(
+                _prototypeManager.Index(humanoid.Species).DollPrototype,
+                MapCoordinates.Nullspace);
+
+            ReloadHumanoidEntity(humanoid);
+
+            if (!showClothes)
+                return;
+
+            JobName = Loc.GetString(antagProto.Name);
+
+            // Then apply roleLoadout on top (which can override specific slots)
+            if (antagProto.RoleLoadout != null && antagProto.RoleLoadout.Count > 0)
+            {
+                var antagLoadoutProtoId = antagProto.RoleLoadout.First();
+                if (_prototypeManager.HasIndex<RoleLoadoutPrototype>(antagLoadoutProtoId))
+                {
+                    var antagLoadout = humanoid.GetLoadoutOrDefault(
+                        antagLoadoutProtoId,
+                        _playerManager.LocalSession,
+                        humanoid.Species,
+                        EntMan,
+                        _prototypeManager);
+
+                    LoadoutName = GetLoadoutName(antagLoadout);
+                    GiveDummyLoadout(PreviewDummy, antagLoadout);
+                }
+            }
+            return;
+        }
+        // Starlight End
 
         job ??= GetPreferredJob(humanoid);
 
@@ -101,14 +137,14 @@ public sealed partial class ProfilePreviewSpriteView
             // Search the preferences for an antag with "PreviewStartingGear" defined
             foreach (var antag in humanoid.AntagPreferences)
             {
-                if (!_prototypeManager.TryIndex(antag, out var antagProto))
+                if (!_prototypeManager.TryIndex(antag, out var selectedAntagProto))
                     continue;
 
-                var antagLoadoutId = antagProto.RoleLoadout?.FirstOrDefault();
+                var antagLoadoutId = selectedAntagProto.RoleLoadout?.FirstOrDefault();
 
                 // Brighteye Color Valid
-                if (antagProto.PreviewStartingGear.HasValue || antagLoadoutId is not null)
-                    if (antagProto.ID == "Brighteye")
+                if (selectedAntagProto.PreviewStartingGear.HasValue || antagLoadoutId is not null)
+                    if (selectedAntagProto.ID == "Brighteye")
                     {
                         humanoid.Appearance.EyeColor = EyeColor.MakeBrighteyeValid(humanoid.Appearance.EyeColor);
                         humanoid.Appearance.EyeGlowing = true;
@@ -126,15 +162,15 @@ public sealed partial class ProfilePreviewSpriteView
                     LoadoutName = GetLoadoutName(loadout);
 
                     GiveDummyLoadout(PreviewDummy, loadout);
-                    JobName = Loc.GetString(antagProto.Name);
+                    JobName = Loc.GetString(selectedAntagProto.Name);
                     return;
                 }
 
-                if (antagProto.PreviewStartingGear.HasValue)
+                if (selectedAntagProto.PreviewStartingGear.HasValue)
                 {
                     // We found an antag to dress as! Set it and return.
-                    GiveDummyAntagLoadout(antagProto);
-                    JobName = Loc.GetString(antagProto.Name);
+                    GiveDummyAntagLoadout(selectedAntagProto);
+                    JobName = Loc.GetString(selectedAntagProto.Name);
                     return;
                 }
             }
