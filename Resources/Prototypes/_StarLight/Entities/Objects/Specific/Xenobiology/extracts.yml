@@ -36,7 +36,7 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Objects/Specific/Xenobiology/test_slime_extract.rsi
+    sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_extract.rsi
     layers:
       - state: test_slime_extract
   - type: SlimeExtract

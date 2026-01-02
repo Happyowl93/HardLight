@@ -10,7 +10,7 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/XenoSlimes/test_sprite.rsi
+    sprite: _Starlight/Mobs/XenoSlimes/test_sprite.rsi
     layers:
     - state: test_image
   - type: Slime
