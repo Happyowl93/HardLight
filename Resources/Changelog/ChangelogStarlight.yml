@@ -25044,5 +25044,12 @@ Entries:
   id: 259300
   time: '2026-01-02T18:13:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2593
+- author: Rinary
+  changes:
+  - message: Removed hugs transferring temperature feature
+    type: Remove
+  id: 267400
+  time: '2026-01-02T21:14:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2674
 Order: -1
 
