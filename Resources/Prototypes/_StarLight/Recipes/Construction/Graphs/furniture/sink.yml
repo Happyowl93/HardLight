@@ -1,21 +1,21 @@
 - type: constructionGraph
-  id: Toilet
+  id: Sink
   start: start
   graph:
     - node: start
       edges:
-        - to: toilet
+        - to: sink
           completed:
             - !type:SnapToGrid { }
           steps:
             - material: Steel
-              amount: 5
+              amount: 7
               doAfter: 1
             - material: Plasteel
-              amount: 1
+              amount: 2
               doAfter: 1
-    - node: toilet
-      entity: ToiletEmpty
+    - node: sink
+      entity: SinkEmpty
       edges:
         - to: start
           completed:
