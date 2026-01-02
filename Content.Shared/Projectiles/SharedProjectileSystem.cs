@@ -139,11 +139,12 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         Dirty(uid, component);
 
         EnsureComp<EmbeddedContainerComponent>(target, out var embeddedContainer);
-
+        // Startlight start
         if (!embeddedContainer.EmbeddedObjects.Contains(uid))
             embeddedContainer.EmbeddedObjects.Add(uid);
 
         Dirty(target, embeddedContainer);
+        // Starlight end
     }
 
     public void EmbedDetach(EntityUid uid, EmbeddableProjectileComponent? component, EntityUid? user = null)
