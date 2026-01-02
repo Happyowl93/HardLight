@@ -63,6 +63,18 @@ public sealed class ContainerCommand : ToolshedCommand
     public IEnumerable<EntityUid> Create([PipedArgument] IEnumerable<EntityUid> target, string containerId) =>
         target.Select(x => Create(x, containerId));
     
+    [CommandImplementation("createslot")]
+    public EntityUid CreateSlot([PipedArgument] EntityUid target, string containerId)
+    {
+        _container ??= EntityManager.System<SharedContainerSystem>();
+        _container.MakeContainer<ContainerSlot>(target, containerId);
+        return target;
+    }
+
+    [CommandImplementation("createslot")]
+    public IEnumerable<EntityUid> CreateSlot([PipedArgument] IEnumerable<EntityUid> target, string containerId) =>
+        target.Select(x => CreateSlot(x, containerId));
+    
     #endregion
     
     #region delete implementations

@@ -3,7 +3,9 @@ command-description-container-insert =
 command-description-container-insertmany =
     Inserts the piped entities into the specified container on the specified entity.
 command-description-container-create =
-    Creates a container on the piped entity.
+    Creates a new container on the piped entity.
+command-description-container-createslot =
+	Creates a new containerslot on the piped entity.
 command-description-container-delete =
     Deletes a container on the piped entity.
 command-description-container-drop =
@@ -28,3 +30,7 @@ command-description-solution-adjtemperature =
     Adjusts the capacity on the given solution.
 command-description-solution-adjthermalenergy =
     Adjusts the capacity on the given solution.
+command-description-solution-create=
+    Creates a new solution with a given name on the piped entity. Returns the existing solution if it exists already.
+command-description-solution-delete=
+    Deletes the specified solution on the piped entity.

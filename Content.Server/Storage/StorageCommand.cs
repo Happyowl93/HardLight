@@ -14,7 +14,7 @@ public sealed class StorageCommand : ToolshedCommand
 {
     private SharedStorageSystem? _storage;
     private SharedContainerSystem? _container;
-
+    private SharedUserInterfaceSystem? _ui; // starlight
 
     [CommandImplementation("insert")]
     public IEnumerable<EntityUid> StorageInsert([PipedArgument] IEnumerable<EntityUid> entsToInsert,
@@ -53,6 +53,33 @@ public sealed class StorageCommand : ToolshedCommand
         return null;
     }
 
-
-
+    //Starlight begin
+    [CommandImplementation("reshape")]
+    public EntityUid StorageResize([PipedArgument] EntityUid uid, BoxList shapes)
+    {
+        _storage ??= GetSys<SharedStorageSystem>();
+        _container ??= GetSys<SharedContainerSystem>();
+        _ui ??= GetSys<SharedUserInterfaceSystem>();
+        if (!TryComp<StorageComponent>(uid, out var storage)) return uid;
+        _container.EmptyContainer(storage.Container);
+        storage.Grid = shapes.Boxes;
+        _storage.UpdateOccupied((uid, storage)); // <- this is black voodoo magic and i hate it
+        _ui.CloseUi(uid, StorageComponent.StorageUiKey.Key);
+        return uid;
+    }
+    //Starlight end
 }
+
+//Starlight begin
+public readonly record struct BoxList(List<Box2i> Boxes)
+{
+    public override string ToString()
+    {
+        var str = Boxes.Aggregate("BoxList[",
+            (current, box) => current + $"{{{box.Top},{box.Left},{box.Bottom},{box.Right}}},");
+        if (str.EndsWith(',')) str = str.Remove(str.Length - 1);
+        str += ']';
+        return str;
+    }
+}
+//Starlight end
