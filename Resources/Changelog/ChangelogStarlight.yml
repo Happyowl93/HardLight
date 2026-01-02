@@ -25007,5 +25007,29 @@ Entries:
   id: 262500
   time: '2026-01-02T17:50:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2625
+- author: Rhetorica
+  changes:
+  - message: Grumbakul, the language of the dwarves
+    type: Add
+  - message: Darktongue, the language of nasty things
+    type: Add
+  - message: Classical, the language of ancient scholars
+    type: Add
+  - message: Aielic, the language of... who knows? (Maybe elves?)
+    type: Add
+  - message: Traits for learning the above
+    type: Add
+  - message: Ability for familiars, Nar'Sie, Librarian, and terror spiders to speak
+      Darktongue
+    type: Add
+  - message: Ability for Remilia to understand Mouse
+    type: Add
+  - message: Ability for Cerberus to understand Fox
+    type: Add
+  - message: Improved ChavAccent so it doesn't interfere with essential communications
+    type: Tweak
+  id: 258400
+  time: '2026-01-02T18:13:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2584
 Order: -1
 
