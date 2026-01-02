@@ -8,4 +8,5 @@ public sealed class RadioSpokeEvent : EntityEventArgs
     public string Message { get; set; } = null!;
     public LanguagePrototype Language = null!;
     public EntityUid[] Receivers { get; set; } = null!;
+    public bool SuppressTTS { get; set; } = false;
 }
