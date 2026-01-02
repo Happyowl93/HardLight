@@ -24994,5 +24994,18 @@ Entries:
   id: 259000
   time: '2026-01-02T17:34:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2590
+- author: R3v3l4t1on
+  changes:
+  - message: Disposal junctions are now named mergers.
+    type: Tweak
+  - message: Disposal junctions will now send items entering via their designated
+      entrances straight through. For the y-junction, they will move to the right.
+    type: Tweak
+  - message: Disposal routers will ignore items entering via either the filtered or
+      unfiltered exits, routing them to the entrance instead.
+    type: Tweak
+  id: 262500
+  time: '2026-01-02T17:50:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2625
 Order: -1
 
