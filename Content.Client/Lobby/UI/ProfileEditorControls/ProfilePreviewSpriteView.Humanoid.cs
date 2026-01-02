@@ -43,11 +43,53 @@ public sealed partial class ProfilePreviewSpriteView
     /// <param name="humanoid">Profile to load</param>
     /// <param name="job">Force job clothes override -- don't use job preferences</param>
     /// <param name="showClothes">Add job clothes or just spawn a species doll</param>
-    private void LoadHumanoidEntity(HumanoidCharacterProfile humanoid, JobPrototype? job, bool showClothes)
+    private void LoadHumanoidEntity(HumanoidCharacterProfile humanoid, JobPrototype? job, bool showClothes, ProtoId<AntagPrototype>? antagOverride = null) // Starlight edit: Antag Loadouts
     {
         ProfileName = humanoid.Name;
         JobName = null;
         LoadoutName = null;
+
+        // Starlight Start: Antag Loadouts
+        // If an antag override is provided, display that antag's loadout
+        if (antagOverride != null && _prototypeManager.TryIndex(antagOverride.Value, out var antagProto))
+        {
+            PreviewDummy = EntMan.SpawnEntity(
+                _prototypeManager.Index(humanoid.Species).DollPrototype,
+                MapCoordinates.Nullspace);
+
+            ReloadHumanoidEntity(humanoid);
+
+            if (!showClothes)
+                return;
+
+            JobName = Loc.GetString(antagProto.Name);
+
+            // Apply preview starting gear as base
+            if (antagProto.PreviewStartingGear.HasValue)
+            {
+                GiveDummyAntagLoadout(antagProto);
+            }
+
+            // Then apply roleLoadout on top (which can override specific slots)
+            if (antagProto.RoleLoadout != null && antagProto.RoleLoadout.Count > 0)
+            {
+                var antagLoadoutProtoId = antagProto.RoleLoadout.First();
+                if (_prototypeManager.HasIndex<RoleLoadoutPrototype>(antagLoadoutProtoId))
+                {
+                    var antagLoadout = humanoid.GetLoadoutOrDefault(
+                        antagLoadoutProtoId,
+                        _playerManager.LocalSession,
+                        humanoid.Species,
+                        EntMan,
+                        _prototypeManager);
+
+                    LoadoutName = GetLoadoutName(antagLoadout);
+                    GiveDummyLoadout(PreviewDummy, antagLoadout);
+                }
+            }
+            return;
+        }
+        // Starlight End
 
         job ??= GetPreferredJob(humanoid);
 
@@ -100,16 +142,46 @@ public sealed partial class ProfilePreviewSpriteView
             // Search the preferences for an antag with "PreviewStartingGear" defined
             foreach(var antag in humanoid.AntagPreferences)
             {
-                if (!_prototypeManager.TryIndex(antag, out var antagProto))
-                    continue;
-                if (!antagProto.PreviewStartingGear.HasValue)
+                if (!_prototypeManager.TryIndex(antag, out var selectedAntagProto)) // Starlight edit: Antag Loadouts
                     continue;
 
-                // We found an antag to dress as! Set it and return.
-                GiveDummyAntagLoadout(antagProto);
-                JobName = Loc.GetString(antagProto.Name);
+                // Starlight edit Start: Antag Loadouts
+                // Apply preview starting gear as base if it exists
+                if (selectedAntagProto.PreviewStartingGear.HasValue)
+                {
+                    GiveDummyAntagLoadout(selectedAntagProto);
+                    JobName = Loc.GetString(selectedAntagProto.Name);
+                }
 
-                return;
+                // Check if this antag has a roleLoadout to apply on top
+                if (selectedAntagProto.RoleLoadout != null && selectedAntagProto.RoleLoadout.Count > 0)
+                {
+                    var antagLoadoutProtoId = selectedAntagProto.RoleLoadout.First();
+                    if (_prototypeManager.HasIndex<RoleLoadoutPrototype>(antagLoadoutProtoId))
+                    {
+                        // Get the antag's loadout from the profile
+                        var antagLoadout = humanoid.GetLoadoutOrDefault(
+                            antagLoadoutProtoId,
+                            _playerManager.LocalSession,
+                            humanoid.Species,
+                            EntMan,
+                            _prototypeManager);
+
+                        JobName = Loc.GetString(selectedAntagProto.Name);
+                        LoadoutName = GetLoadoutName(antagLoadout);
+
+                        // Apply the loadout on top of starting gear
+                        GiveDummyLoadout(PreviewDummy, antagLoadout);
+                        return;
+                    }
+                }
+
+                // If we got here and applied starting gear, return
+                if (selectedAntagProto.PreviewStartingGear.HasValue)
+                {
+                    return;
+                }
+                // Starlight edit End
             }
         }
 
