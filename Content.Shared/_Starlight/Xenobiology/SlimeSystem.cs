@@ -1,15 +1,10 @@
-using Content.Shared.Cloning;
 using Content.Shared.Coordinates;
-using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
-using Content.Shared.Mobs.Components;
-using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Xenobiology;
+namespace Content.Shared._Starlight.Xenobiology;
 
 /// <summary>
 /// Handles the general behavior of slimes.

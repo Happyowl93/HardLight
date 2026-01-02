@@ -1,10 +1,9 @@
-using System.ComponentModel.DataAnnotations;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Xenobiology;
+namespace Content.Shared._Starlight.Xenobiology;
 
 /// <summary>
 /// This component describes the current state of the slime.

@@ -4,7 +4,7 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Xenobiology;
+namespace Content.Shared._Starlight.Xenobiology;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class SlimeExtractComponent : Component

@@ -1,11 +1,9 @@
 using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Coordinates;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 
-namespace Content.Shared.Xenobiology;
+namespace Content.Shared._Starlight.Xenobiology;
 
 /// <summary>
 /// Handles the general behavior of slime extracts

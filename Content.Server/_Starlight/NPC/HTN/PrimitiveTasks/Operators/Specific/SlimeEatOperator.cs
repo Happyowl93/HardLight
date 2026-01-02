@@ -1,9 +1,14 @@
+using Content.Server.NPC;
+using Content.Server.NPC.HTN;
+using Content.Server.NPC.HTN.PrimitiveTasks;
+using Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
+using Content.Shared._Starlight.Xenobiology;
 using Content.Shared.Damage.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Xenobiology;
+using SlimeComponent = Content.Shared._Starlight.Xenobiology.SlimeComponent;
 
-namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
+namespace Content.Server._Starlight.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
 public sealed partial class SlimeEatOperator : HTNOperator
 {

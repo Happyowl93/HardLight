@@ -1,7 +1,10 @@
+using Content.Server.NPC;
+using Content.Server.NPC.HTN.Preconditions;
+using Content.Shared._Starlight.Xenobiology;
 using Content.Shared.FixedPoint;
-using Content.Shared.Xenobiology;
+using SlimeComponent = Content.Shared._Starlight.Xenobiology.SlimeComponent;
 
-namespace Content.Server.NPC.HTN.Preconditions;
+namespace Content.Server._Starlight.NPC.HTN.Preconditions;
 
 public sealed partial class SlimeEnoughNutritionToSplitPrecondition : HTNPrecondition
 {
