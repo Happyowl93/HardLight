@@ -11,19 +11,19 @@
 - type: guideEntry
   id: Felionoid
   name: species-name-felionoid
-  text: "/ServerInfo/Guidebook/Mobs/Felionoid.xml"
+  text: "/ServerInfo/_StarLight/Guidebook/Mobs/Felionoid.xml"
 
 - type: guideEntry
   id: Cyclorite
   name: species-name-cyclorite
-  text: "/ServerInfo/Guidebook/Mobs/Cyclorite.xml"
+  text: "/ServerInfo/_StarLight/Guidebook/Mobs/Cyclorite.xml"
 
 - type: guideEntry
   id: Resomi
   name: species-name-resomi
-  text: "/ServerInfo/Guidebook/Mobs/Resomi.xml"
+  text: "/ServerInfo/_StarLight/Guidebook/Mobs/Resomi.xml"
 
 - type: guideEntry
   id: Avali
   name: species-name-avali
-  text: "/ServerInfo/Guidebook/Mobs/Avali.xml"
+  text: "/ServerInfo/_StarLight/Guidebook/Mobs/Avali.xml"
