@@ -23,6 +23,10 @@
   - type: HTN
     rootTask:
       task: SlimeEatCompound
+  - type: Temperature
+    coldDamage:
+      types:
+        Cold: 10.0
 
 - type: entity
   name: Gray Xenobiology Slime
