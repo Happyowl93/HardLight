@@ -24961,5 +24961,14 @@ Entries:
   id: 265800
   time: '2025-12-31T17:12:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2658
+- author: CrazyPhantom
+  changes:
+  - message: Antag Loadouts
+    type: Add
+  - message: Xenoborg Name Loadout
+    type: Add
+  id: 266900
+  time: '2026-01-02T17:28:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2669
 Order: -1
 
