@@ -24961,5 +24961,38 @@ Entries:
   id: 265800
   time: '2025-12-31T17:12:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2658
+- author: CrazyPhantom
+  changes:
+  - message: Antag Loadouts
+    type: Add
+  - message: Xenoborg Name Loadout
+    type: Add
+  id: 266900
+  time: '2026-01-02T17:28:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2669
+- author: wonderfulnewworld
+  changes:
+  - message: Formal Cargo cap, Senior Courier Backpack/Duffel Bag/Satchel, Formal
+      Cargo Winter Coat, and Formal Cargo Winter Boots (60 Hours Cargo)
+    type: Add
+  - message: Science (except Roboticists) now spawn with a science waist bag. It's
+      2x1 bigger than a normal waist bag, but you can't get them from the SciDrobe
+    type: Add
+  - message: Sinks are now constructable (7 Steel + 2 Plasteel)
+    type: Add
+  - message: Toilets now cost 1 Plasteel in addition to the 5 steel they already cost
+    type: Tweak
+  - message: Added Dogtag trinket! (5 hours SecOfficer)
+    type: Add
+  id: 267300
+  time: '2026-01-02T17:28:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2673
+- author: Sparlight
+  changes:
+  - message: Mindshields and round-flow components transfer by default when polymorphing.
+    type: Tweak
+  id: 259000
+  time: '2026-01-02T17:34:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2590
 Order: -1
 
