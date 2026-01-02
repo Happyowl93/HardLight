@@ -316,7 +316,6 @@
     - prefRoles: [ Brighteye ]
       playerRatio: 1
       spawnerPrototype: SpawnPointGhostBrighteye
-      startingGear: BrighteyeGear
       roleLoadout:
       - AntagBrighteye
       briefing:

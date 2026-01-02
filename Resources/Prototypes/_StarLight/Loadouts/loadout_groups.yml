@@ -535,6 +535,7 @@
 
 - type: loadoutGroup
   id: BrighteyeGloves
-  name: loadout-group-civilian-gloves
+  minLimit: 0
+  name: loadout-group-brighteye-gloves
   loadouts:
     - BrighteyeClothWrapGlove
