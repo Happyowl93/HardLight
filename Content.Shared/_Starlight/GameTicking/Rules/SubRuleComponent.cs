@@ -1,12 +1,11 @@
 using Content.Shared.EntityTable.EntitySelectors;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.GameTicking.Rules;
 
 /// <summary>
 /// Gamerule which creates starts a number of other gamerules at once based on a budget
 /// </summary>
-[RegisterComponent, AutoGenerateComponentPause]
+[RegisterComponent]
 public sealed partial class SubRuleComponent : Component
 {
     /// <summary>

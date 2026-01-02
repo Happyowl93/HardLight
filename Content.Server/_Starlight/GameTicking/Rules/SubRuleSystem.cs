@@ -23,16 +23,33 @@ public sealed class SubRuleSystem : GameRuleSystem<SubRuleComponent>
     {
         base.Added(uid, component, gameRule, args);
 
-        component.Budget = _random.Next(component.BudgetMin, component.BudgetMax);;
+        component.Budget = _random.Next(component.BudgetMin, component.BudgetMax);
 
-        AddChildRules((uid, component));
+        foreach (var rule in GetRuleSpawns((uid, component)))
+        {
+            var ruleUid = GameTicker.AddGameRule(rule, component.Rules);
+
+            if (TryComp<DynamicRuleCostComponent>(ruleUid, out var cost))
+            {
+                component.Budget -= cost.Cost;
+                _adminLog.Add(LogType.EventRan, LogImpact.High, $"{ToPrettyString(uid)} ran rule {ToPrettyString(ruleUid)} with cost {cost.Cost} on budget {component.Budget}.");
+            }
+            else
+            {
+                _adminLog.Add(LogType.EventRan, LogImpact.High, $"{ToPrettyString(uid)} ran rule {ToPrettyString(ruleUid)} which had no cost.");
+            }
+        }
     }
 
     protected override void Started(EntityUid uid, SubRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
 
-        StartChildRules((uid, component));
+        foreach (var ruleUid in component.Rules)
+        {
+            var res = GameTicker.StartGameRule(ruleUid);
+            Debug.Assert(res);
+        }
     }
 
     protected override void Ended(EntityUid uid, SubRuleComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
@@ -57,54 +74,5 @@ public sealed class SubRuleSystem : GameRuleSystem<SubRuleComponent>
         });
 
         return _entityTable.GetSpawns(entity.Comp.Table, ctx: ctx);
-    }
-
-    /// <summary>
-    /// Uses the definition of the component to create and add sub rules, but not yet start them.
-    /// </summary>
-    /// <returns>
-    /// Returns a list of the rules that were added.
-    /// </returns>
-    private List<EntityUid> AddChildRules(Entity<SubRuleComponent> entity)
-    {
-        var addedRules = new List<EntityUid>();
-
-        foreach (var rule in GetRuleSpawns(entity))
-        {
-            var ruleUid = GameTicker.AddGameRule(rule, entity.Comp.Rules);
-
-            addedRules.Add(ruleUid);
-
-            if (TryComp<DynamicRuleCostComponent>(ruleUid, out var cost))
-            {
-                entity.Comp.Budget -= cost.Cost;
-                _adminLog.Add(LogType.EventRan, LogImpact.High, $"{ToPrettyString(entity)} ran rule {ToPrettyString(ruleUid)} with cost {cost.Cost} on budget {entity.Comp.Budget}.");
-            }
-            else
-            {
-                _adminLog.Add(LogType.EventRan, LogImpact.High, $"{ToPrettyString(entity)} ran rule {ToPrettyString(ruleUid)} which had no cost.");
-            }
-        }
-
-        return addedRules;
-    }
-
-    /// <summary>
-    /// Starts rules already added to the component.
-    /// </summary>
-    /// <returns>
-    /// Returns a list of the rules that were started.
-    /// </returns>
-    private List<EntityUid> StartChildRules(Entity<SubRuleComponent> entity)
-    {
-        var startedRules = new List<EntityUid>();
-
-        foreach (var ruleUid in entity.Comp.Rules)
-        {
-            var res = GameTicker.StartGameRule(ruleUid);
-            Debug.Assert(res);
-        }
-
-        return startedRules;
     }
 }
