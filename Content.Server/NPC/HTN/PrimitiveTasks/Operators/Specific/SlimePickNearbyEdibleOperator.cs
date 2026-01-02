@@ -22,8 +22,8 @@ public sealed partial class SlimePickNearbyEdibleOperator : HTNOperator
     /// <summary>
     /// The slime's search range for eating.
     /// </summary>
-    [DataField("rangeKey")]
-    public string RangeKey = NPCBlackboard.SlimeEatRange;
+    [DataField("range", required: true)]
+    public float Range = 0;
     
     /// <summary>
     /// Target entity to eat.
@@ -71,9 +71,6 @@ public sealed partial class SlimePickNearbyEdibleOperator : HTNOperator
         CancellationToken cancelToken)
     {
         var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
-
-        if (!blackboard.TryGetValue<float>(RangeKey, out var range, _entManager))
-            return (false, null);
         
         if (!_entManager.TryGetComponent<SlimeComponent>(owner, out var slime))
             return (false, null);
@@ -85,7 +82,7 @@ public sealed partial class SlimePickNearbyEdibleOperator : HTNOperator
         var slimeQuery = _entManager.GetEntityQuery<SlimeComponent>();
         var mobStateQuery = _entManager.GetEntityQuery<MobStateComponent>();
 
-        foreach (var entity in _lookup.GetEntitiesInRange(owner, range))
+        foreach (var entity in _lookup.GetEntitiesInRange(owner, Range))
         {
             // Don't cannibalize other slimes
             if (slimeQuery.HasComponent(entity))

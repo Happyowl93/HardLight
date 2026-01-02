@@ -33,6 +33,7 @@
             targetDamageType: Cellular
             targetDamageThreshold: 100
             only_target: Biological
+            range: 4
 
         - !type:HTNPrimitiveTask
           operator: !type:SetFloatOperator
