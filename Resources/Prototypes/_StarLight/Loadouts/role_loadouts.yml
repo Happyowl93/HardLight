@@ -112,12 +112,16 @@
   id: JobBrigmedic
   groups:
     - BrigmedicHead
+    - BrigmedicMask
     - BrigmedicJumpsuit
+    - BrigmedicTie
     - BrigmedicBackpack
     - BrigmedicOuterClothing
     - BrigmedicBelt
     - BrigmedicGloves
     - BrigmedicEyewear
+    - BrigmedicPDA
+    - BrigmedicBeaker
     - SecurityShoes
     - SecurityNonLethalWeapon
     - SecuritySidearm
