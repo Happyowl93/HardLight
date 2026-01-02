@@ -1,14 +1,4 @@
-﻿# Accessory Time
-- type: loadoutEffectGroup
-  id: NoviceBrigmedic
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobBrigmedic
-      time: 18000 # 5 hrs
-
-# Skilled Time
+﻿# Skilled Time
 - type: loadoutEffectGroup
   id: SkilledBrigmedic
   effects:

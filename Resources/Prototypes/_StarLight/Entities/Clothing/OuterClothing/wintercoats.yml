@@ -34,7 +34,7 @@
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterCargoSenior
-  name: senior courier winter coat
+  name: formal cargo winter coat
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/OuterClothing/WinterCoats/coat.rsi

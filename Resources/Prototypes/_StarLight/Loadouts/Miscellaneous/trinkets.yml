@@ -500,7 +500,7 @@
   id: ClothingDogTags
   effects:
   - !type:GroupLoadoutEffect
-    proto: NoviceBrigmedic
+    proto: NoviceOfficer
   storage:
     back:
     - ClothingDogTags

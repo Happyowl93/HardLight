@@ -13,7 +13,7 @@
   parent: ClothingHeadHatHoodWinterBase
   id: ClothingHeadHatHoodWinterSeniorCourier
   categories: [ HideSpawnMenu ]
-  name: senior courier winter coat hood
+  name: formal cargo winter coat hood
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Head/Hoods/Coat/hoodcargosenior.rsi

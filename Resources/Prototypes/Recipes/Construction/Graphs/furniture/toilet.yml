@@ -11,9 +11,9 @@
             - material: Steel
               amount: 5
               doAfter: 1
-            - material: Plasteel
-              amount: 1
-              doAfter: 1
+            - material: Plasteel # Starlight
+              amount: 1 # Starlight
+              doAfter: 1 # Starlight
     - node: toilet
       entity: ToiletEmpty
       edges:
