@@ -12,6 +12,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Content.Shared.Body.Part;
 using Content.Shared.Starlight;
+using Robust.Shared.Utility; // Starlight
 
 namespace Content.Client.Lobby.UI.ProfileEditorControls;
 
@@ -64,12 +65,6 @@ public sealed partial class ProfilePreviewSpriteView
 
             JobName = Loc.GetString(antagProto.Name);
 
-            // Apply preview starting gear as base
-            if (antagProto.PreviewStartingGear.HasValue)
-            {
-                GiveDummyAntagLoadout(antagProto);
-            }
-
             // Then apply roleLoadout on top (which can override specific slots)
             if (antagProto.RoleLoadout != null && antagProto.RoleLoadout.Count > 0)
             {
@@ -95,7 +90,7 @@ public sealed partial class ProfilePreviewSpriteView
 
         RoleLoadout? loadout;
 
-        if(job != null)
+        if (job != null)
         {
             try
             {
@@ -140,48 +135,44 @@ public sealed partial class ProfilePreviewSpriteView
         if (job == null && humanoid.JobPreferences.Count == 0)
         {
             // Search the preferences for an antag with "PreviewStartingGear" defined
-            foreach(var antag in humanoid.AntagPreferences)
+            foreach (var antag in humanoid.AntagPreferences)
             {
-                if (!_prototypeManager.TryIndex(antag, out var selectedAntagProto)) // Starlight edit: Antag Loadouts
+                if (!_prototypeManager.TryIndex(antag, out var selectedAntagProto))
                     continue;
 
-                // Starlight edit Start: Antag Loadouts
-                // Apply preview starting gear as base if it exists
-                if (selectedAntagProto.PreviewStartingGear.HasValue)
-                {
-                    GiveDummyAntagLoadout(selectedAntagProto);
-                    JobName = Loc.GetString(selectedAntagProto.Name);
-                }
+                var antagLoadoutId = selectedAntagProto.RoleLoadout?.FirstOrDefault();
 
-                // Check if this antag has a roleLoadout to apply on top
-                if (selectedAntagProto.RoleLoadout != null && selectedAntagProto.RoleLoadout.Count > 0)
-                {
-                    var antagLoadoutProtoId = selectedAntagProto.RoleLoadout.First();
-                    if (_prototypeManager.HasIndex<RoleLoadoutPrototype>(antagLoadoutProtoId))
+                // Brighteye Color Valid
+                if (selectedAntagProto.PreviewStartingGear.HasValue || antagLoadoutId is not null)
+                    if (selectedAntagProto.ID == "Brighteye")
                     {
-                        // Get the antag's loadout from the profile
-                        var antagLoadout = humanoid.GetLoadoutOrDefault(
-                            antagLoadoutProtoId,
-                            _playerManager.LocalSession,
-                            humanoid.Species,
-                            EntMan,
-                            _prototypeManager);
-
-                        JobName = Loc.GetString(selectedAntagProto.Name);
-                        LoadoutName = GetLoadoutName(antagLoadout);
-
-                        // Apply the loadout on top of starting gear
-                        GiveDummyLoadout(PreviewDummy, antagLoadout);
-                        return;
+                        humanoid.Appearance.EyeColor = EyeColor.MakeBrighteyeValid(humanoid.Appearance.EyeColor);
+                        humanoid.Appearance.EyeGlowing = true;
                     }
-                }
 
-                // If we got here and applied starting gear, return
-                if (selectedAntagProto.PreviewStartingGear.HasValue)
+                if (antagLoadoutId is not null)
                 {
+                    loadout = humanoid.GetLoadoutOrDefault(
+                        antagLoadoutId,
+                        _playerManager.LocalSession,
+                        humanoid.Species,
+                        EntMan,
+                        _prototypeManager);
+
+                    LoadoutName = GetLoadoutName(loadout);
+
+                    GiveDummyLoadout(PreviewDummy, loadout);
+                    JobName = Loc.GetString(selectedAntagProto.Name);
                     return;
                 }
-                // Starlight edit End
+
+                if (selectedAntagProto.PreviewStartingGear.HasValue)
+                {
+                    // We found an antag to dress as! Set it and return.
+                    GiveDummyAntagLoadout(selectedAntagProto);
+                    JobName = Loc.GetString(selectedAntagProto.Name);
+                    return;
+                }
             }
         }
 
@@ -228,7 +219,7 @@ public sealed partial class ProfilePreviewSpriteView
         else
         {
             var priorities = _preferencesManager.Preferences?.JobPriorities ?? [];
-            foreach (var priority in new List<JobPriority>{JobPriority.High, JobPriority.Medium, JobPriority.Low})
+            foreach (var priority in new List<JobPriority> { JobPriority.High, JobPriority.Medium, JobPriority.Low })
             {
                 highPriorityJob = profile.JobPreferences.FirstOrDefault(p => priorities.GetValueOrDefault(p) == priority);
                 if (highPriorityJob.Id != null)
@@ -285,7 +276,7 @@ public sealed partial class ProfilePreviewSpriteView
                         // Try startinggear first
                         if (_prototypeManager.TryIndex(loadoutProto.StartingGear, out var loadoutGear))
                         {
-                            var itemType = ((IEquipmentLoadout) loadoutGear).GetGear(slot.Name);
+                            var itemType = ((IEquipmentLoadout)loadoutGear).GetGear(slot.Name);
 
                             if (inventorySys.TryUnequip(dummy, slot.Name, out var unequippedItem, silent: true, force: true, reparent: false))
                             {
@@ -300,7 +291,7 @@ public sealed partial class ProfilePreviewSpriteView
                         }
                         else
                         {
-                            var itemType = ((IEquipmentLoadout) loadoutProto).GetGear(slot.Name);
+                            var itemType = ((IEquipmentLoadout)loadoutProto).GetGear(slot.Name);
 
                             if (inventorySys.TryUnequip(dummy, slot.Name, out var unequippedItem, silent: true, force: true, reparent: false))
                             {
@@ -323,7 +314,7 @@ public sealed partial class ProfilePreviewSpriteView
 
         foreach (var slot in slots)
         {
-            var itemType = ((IEquipmentLoadout) gear).GetGear(slot.Name);
+            var itemType = ((IEquipmentLoadout)gear).GetGear(slot.Name);
 
             if (inventorySys.TryUnequip(dummy, slot.Name, out var unequippedItem, silent: true, force: true, reparent: false))
             {
@@ -366,12 +357,15 @@ public sealed partial class ProfilePreviewSpriteView
     /// </summary>
     private Dictionary<HumanoidVisualLayers, CustomBaseLayerInfo> GetCyberneticsLayers(HumanoidCharacterProfile humanoid)
     {
-        return humanoid.Cybernetics.Select(p => {
+        return humanoid.Cybernetics.Select(p =>
+        {
             var _cyberneticEnt = _prototypeManager.Index<EntityPrototype>(p);
-            if(_cyberneticEnt.TryGetComponent<BodyPartComponent>(out var part, EntMan.ComponentFactory) && 
-               _cyberneticEnt.TryGetComponent<BaseLayerIdComponent>(out var layer, EntMan.ComponentFactory)){
+            if (_cyberneticEnt.TryGetComponent<BodyPartComponent>(out var part, EntMan.ComponentFactory) &&
+               _cyberneticEnt.TryGetComponent<BaseLayerIdComponent>(out var layer, EntMan.ComponentFactory))
+            {
                 return (CyberneticImplant.LayerFromBodypart(part), new(layer.Layer));
-            } else { return (HumanoidVisualLayers.Special, new CustomBaseLayerInfo()); }
+            }
+            else { return (HumanoidVisualLayers.Special, new CustomBaseLayerInfo()); }
         }).Where(p => p.Item1 != HumanoidVisualLayers.Special).ToDictionary();
-    }  
+    }
 }
