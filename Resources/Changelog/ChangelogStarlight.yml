@@ -25031,5 +25031,18 @@ Entries:
   id: 258400
   time: '2026-01-02T18:13:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2584
+- author: Peter Poley and Rhetorica
+  changes:
+  - message: .42 pellet ammo (small-bore shotgun ammo)
+    type: Add
+  - message: .42 pellet ammo to emagged lathes
+    type: Add
+  - message: ZOZ-106 shotgun (fires .42 pellet)
+    type: Add
+  - message: ZOZ-106 shotgun to rev uplink, maints lockers, weapon lottery
+    type: Add
+  id: 259300
+  time: '2026-01-02T18:13:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2593
 Order: -1
 
