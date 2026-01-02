@@ -5,6 +5,8 @@
   setPreference: true
   objective: roles-antag-brighteye-description
   guides: [ Shadekin, Brighteye ]
+  roleLoadout: [ AntagBrighteye ]
+  previewStartingGear: BrighteyeGear
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 172800 # 48h

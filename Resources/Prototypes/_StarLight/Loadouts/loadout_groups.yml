@@ -507,3 +507,21 @@
   loadouts:
     - DarkBeaker
     - SilverBeakerBrigmedic
+
+# Brighteye
+- type: loadoutGroup
+  id: BrighteyeJumpsuit
+  name: loadout-group-brighteye-jumpsuit
+  loadouts:
+    - TatteredClothesUniformSuit
+    - ClothingUniformJumpsuitGladiator
+
+- type: loadoutGroup
+  id: BrighteyeNeck
+  name: Loadout-group-brighteye-neck
+  loadouts:
+    - ClothingNeckTatteredHood
+    - ClothingNeckMantle
+    - ClothingNeckOldMantle
+    - ClothingNeckCloakGoliathCloak
+    - ClothingNeckCloakVoid

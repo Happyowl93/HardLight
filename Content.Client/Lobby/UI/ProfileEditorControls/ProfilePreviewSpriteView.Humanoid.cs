@@ -105,6 +105,12 @@ public sealed partial class ProfilePreviewSpriteView
                 if (!antagProto.PreviewStartingGear.HasValue)
                     continue;
 
+                if (antagProto.ID == "Brighteye")
+                {
+                    humanoid.Appearance.EyeColor = EyeColor.MakeBrighteyeValid(humanoid.Appearance.EyeColor);
+                    humanoid.Appearance.EyeGlowing = true;
+                }
+
                 // We found an antag to dress as! Set it and return.
                 GiveDummyAntagLoadout(antagProto);
                 JobName = Loc.GetString(antagProto.Name);

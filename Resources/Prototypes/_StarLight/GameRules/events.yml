@@ -317,6 +317,8 @@
       playerRatio: 1
       spawnerPrototype: SpawnPointGhostBrighteye
       startingGear: BrighteyeGear
+      roleLoadout:
+      - AntagBrighteye
       briefing:
         text: brighteye-role-greeting
         color: "#F200FF"

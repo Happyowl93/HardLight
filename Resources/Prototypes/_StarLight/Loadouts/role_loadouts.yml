@@ -155,5 +155,6 @@
 - type: roleLoadout
   id: AntagBrighteye
   groups:
-    - Glasses
-    - Trinkets
+  - BrighteyeJumpsuit
+  - BrighteyeNeck
+  - Scarves
