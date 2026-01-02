@@ -58,14 +58,14 @@ public sealed partial class ResearchSystem
                 ("approver", getIdentityEvent.Title ?? string.Empty)
             );
 
-            _radio.SendRadioMessage(uid, message, component.AnnouncementChannel, uid, escapeMarkup: false, suppressTTS: true);
+            _radio.SendRadioMessage(uid, message, component.AnnouncementChannel, uid, escapeMarkup: false);
 
             if (technologyPrototype.RadioChannels.Any())
                 foreach (var radioChannelId in technologyPrototype.RadioChannels)
                 {
                     if (PrototypeManager.TryIndex<RadioChannelPrototype>(radioChannelId, out var radioChannel))
                     {
-                        _radio.SendRadioMessage(uid, message, radioChannel, uid, escapeMarkup: false);
+                        _radio.SendRadioMessage(uid, message, radioChannel, uid, escapeMarkup: false, suppressTTS: true); // Starlight
                     }
                 }
         }

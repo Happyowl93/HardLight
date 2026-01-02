@@ -102,8 +102,8 @@ public sealed class RadioSystem : EntitySystem
         ProtoId<RadioChannelPrototype> channel,
         EntityUid radioSource,
         LanguagePrototype? language = null, // Starlight
-        bool escapeMarkup = true,
-        bool suppressTTS = false)
+        bool suppressTTS = false, // Starlight
+        bool escapeMarkup = true)
     {
         SendRadioMessage(messageSource, message, _prototype.Index(channel), radioSource, escapeMarkup: escapeMarkup, language: language, suppressTTS: suppressTTS); // Starlight
     }
@@ -119,8 +119,8 @@ public sealed class RadioSystem : EntitySystem
         RadioChannelPrototype channel,
         EntityUid radioSource,
         LanguagePrototype? language = null, // Starlight
-        bool escapeMarkup = true,
-        bool suppressTTS = false)
+        bool suppressTTS = false, // Starlight
+        bool escapeMarkup = true)
     {
         // Starlight - start
         if (language == null)
@@ -214,8 +214,8 @@ public sealed class RadioSystem : EntitySystem
             Source = messageSource,
             Message = message,
             Language = language, // Starlight-edit: Languages
-            Receivers = [.. ev.Receivers],
-            SuppressTTS = suppressTTS
+            SuppressTTS = suppressTTS, // Starlight
+            Receivers = [.. ev.Receivers]
         });
 
         if (name != Name(messageSource))
