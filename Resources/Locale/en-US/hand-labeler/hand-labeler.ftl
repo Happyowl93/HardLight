@@ -1,8 +1,5 @@
 hand-labeler-ui-header = Hand Labeler
 
-# Starlight
-hand-labeler-saved-labels = Saved Labels: 
-
 # The content of the label in the UI above the text entry input.
 hand-labeler-current-text-label = Label:
 
@@ -11,15 +8,6 @@ hand-labeler-ui-reset-label-text = Reset
 
 # The text on the button in the UI to clear the text entry input
 hand-labeler-ui-clear-label-text = Clear
-
-# The text on the button in the ui to save a label to the saved label list. Starlight
-hand-labeler-save-label-text = Save Label 
-
-# The text on the button in the ui to delete a label from the saved label list. Starlight
-hand-labeler-delete-label-text = Delete Label 
-
-# The text on the button when in delete mode. Starlight
-hand-labeler-delete-mode-text = Deleting... 
 
 # When the hand labeler applies a label successfully
 hand-labeler-successfully-applied = Applied label successfully
