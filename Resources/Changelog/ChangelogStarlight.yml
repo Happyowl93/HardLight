@@ -24987,5 +24987,12 @@ Entries:
   id: 267300
   time: '2026-01-02T17:28:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2673
+- author: Sparlight
+  changes:
+  - message: Mindshields and round-flow components transfer by default when polymorphing.
+    type: Tweak
+  id: 259000
+  time: '2026-01-02T17:34:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2590
 Order: -1
 
