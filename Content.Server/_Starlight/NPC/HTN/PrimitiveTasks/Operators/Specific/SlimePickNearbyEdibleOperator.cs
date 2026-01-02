@@ -8,7 +8,6 @@ using Content.Shared.Damage.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
-using SlimeComponent = Content.Shared._Starlight.Xenobiology.SlimeComponent;
 
 namespace Content.Server._Starlight.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
