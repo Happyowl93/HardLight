@@ -2,7 +2,7 @@
   id: VendorGoldenBeaker
   productEntity: GoldenBeaker
   cost:
-    NTCredit: 350
+    NTCredit: 300
   categories:
   - SLChemistry
   conditions:
