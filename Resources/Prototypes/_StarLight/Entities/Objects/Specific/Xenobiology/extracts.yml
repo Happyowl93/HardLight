@@ -12,23 +12,10 @@
     solutions:
       container:
         maxVol: 15
-  - type: MixableSolution
-    solution: container
-  - type: FitsInDispenser
-    solution: container
-  - type: RefillableSolution
-    solution: container
-  - type: DrainableSolution
-    solution: container
-  - type: ExaminableSolution
-    solution: container
-    exactVolume: true
   - type: DrawableSolution
     solution: container
   - type: InjectableSolution
     solution: container
-  - type: SolutionTransfer
-    canChangeTransferAmount: true
   - type: SolutionItemStatus
     solution: container
   - type: SlimeExtract
