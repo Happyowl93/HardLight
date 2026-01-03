@@ -19,7 +19,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<SlimeProcessorComponent>();
+        var query = EntityQueryEnumerator<Shared._Starlight.Xenobiology.SlimeProcessorComponent>();
         while (query.MoveNext(out var uid, out var slimeProcessorComponent))
         {
             if (!slimeProcessorComponent.IsPowered)
@@ -56,7 +56,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
                 {
                     foreach (var entity in _entityLookupSystem.GetEntitiesInRange(uid, 1F))
                     {
-                        if (!_entityManager.TryGetComponent(entity, out SlimeComponent? slimeComponent)) continue;
+                        if (!_entityManager.TryGetComponent(entity, out Shared._Starlight.Xenobiology.SlimeComponent? slimeComponent)) continue;
                         if (!_entityManager.TryGetComponent(entity, out DamageableComponent? damageableComponent)) continue;
                         if (damageableComponent.TotalDamage >= 200)
                         {
@@ -77,16 +77,16 @@ public sealed class SlimeProcessorSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<SlimeProcessorComponent, ActivateInWorldEvent>(OnAfterActivate);
-        SubscribeLocalEvent<SlimeProcessorComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<Shared._Starlight.Xenobiology.SlimeProcessorComponent, ActivateInWorldEvent>(OnAfterActivate);
+        SubscribeLocalEvent<Shared._Starlight.Xenobiology.SlimeProcessorComponent, PowerChangedEvent>(OnPowerChanged);
     }
     
-    private void OnPowerChanged(EntityUid uid, SlimeProcessorComponent component, ref PowerChangedEvent args)
+    private void OnPowerChanged(EntityUid uid, Shared._Starlight.Xenobiology.SlimeProcessorComponent component, ref PowerChangedEvent args)
     {
         component.IsPowered = args.Powered;
     }
 
-    private void OnAfterActivate(Entity<SlimeProcessorComponent> ent, ref ActivateInWorldEvent args)
+    private void OnAfterActivate(Entity<Shared._Starlight.Xenobiology.SlimeProcessorComponent> ent, ref ActivateInWorldEvent args)
     {
         if (ent.Comp.Extracts.Count <= 0)
             return;

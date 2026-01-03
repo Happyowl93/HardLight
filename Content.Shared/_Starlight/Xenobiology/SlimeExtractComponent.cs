@@ -4,30 +4,30 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Server._Starlight.Xenobiology;
+namespace Content.Shared._Starlight.Xenobiology;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SlimeExtractComponent : Component
 {
     /// <summary>
     /// What occurs when this extract receives some specific reagent.
     /// Each entry is a reagent reaction, consisting of the requirements and then the response
     /// </summary>
-    [DataField("extractReactions", required: true)]
+    [DataField("extractReactions", required: true), AutoNetworkedField]
     public List<ExtractReaction> ExtractReactions = new();
     
     /// <summary>
     /// The name of the container that holds the solution.
     /// Needed so that the slime extract can communicate with the container itself.
     /// </summary>
-    [DataField("containerName", required: true)]
+    [DataField("containerName", required: true), AutoNetworkedField]
     public string ContainerName = string.Empty;
 }
 
 /// <summary>
 /// A set of requirements and the associated effects.
 /// </summary>
-[Serializable, DataDefinition]
+[Serializable, NetSerializable, DataDefinition]
 public sealed partial class ExtractReaction
 {
     /// <summary>
@@ -41,6 +41,12 @@ public sealed partial class ExtractReaction
     /// </summary>
     [DataField("effects", required: true)]
     public List<ScaledEntityEffect> Effects = default!;
+    
+    /// <summary>
+    /// Whether the extract should be deleted upon this reaction occuring.
+    /// </summary>
+    [DataField("shouldDelete", required: true)]
+    public bool ShouldDelete = default!;
 }
 
 /// <summary>
@@ -55,7 +61,7 @@ public sealed partial class ExtractReaction
 /// The final factor is then minimizedScalingFactor * scalingFactor + scalingOffset.
 /// Great fans of y = mx + b should find themselves right at home here.
 /// </remarks>
-[Serializable, DataDefinition]
+[Serializable, NetSerializable, DataDefinition]
 public sealed partial class ScaledEntityEffect
 {
     /// <summary>

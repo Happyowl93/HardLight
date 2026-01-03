@@ -1,5 +1,4 @@
 - type: entity
-  name: Basic Xenobiology Slime
   id: XenoSlimeBase
   parent:
   - MobRespirator
@@ -20,6 +19,7 @@
       types:
         Cellular: 5
     nutritionOnHit: 10
+    mutationChance: 0.25
   - type: HTN
     rootTask:
       task: SlimeEatCompound
@@ -29,7 +29,7 @@
         Cold: 10.0
 
 - type: entity
-  name: Gray Xenobiology Slime
+  name: gray xenobiology slime
   id: XenoSlimeGray
   parent: XenoSlimeBase
   description: GRAY
@@ -37,5 +37,19 @@
   - type: Slime
     splitInto: XenoSlimeGray
     extract: GraySlimeExtract
+    splitIntoMutation:
+    - XenoSlimeOrange
   - type: Sprite
     color: "#999999FF"
+
+- type: entity
+  name: orange xenobiology slime
+  id: XenoSlimeOrange
+  parent: XenoSlimeBase
+  description: ORANGE
+  components:
+    - type: Slime
+      splitInto: XenoSlimeOrange
+      extract: OrangeSlimeExtract
+    - type: Sprite
+      color: "#F07A26FF"

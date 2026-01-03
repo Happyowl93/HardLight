@@ -18,29 +18,34 @@ public sealed class SlimeExtractSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-        var query = EntityQueryEnumerator<SlimeExtractComponent>();
+        var query = EntityQueryEnumerator<Shared._Starlight.Xenobiology.SlimeExtractComponent>();
 
         while (query.MoveNext(out var uid, out var slimeExtractComponent))
         {
             if (!_solutionContainerSystem.TryGetSolution(uid, slimeExtractComponent.ContainerName, out var solcom, out var currentSolution)) continue;
+            var shouldDelete = false;
             foreach (var reaction in slimeExtractComponent.ExtractReactions)
             {
                 if (IsSolutionRequirementFulfilled(reaction.Requirements, currentSolution))
                 {
                     var minimumScalingFactor = FindMinimumScalingFactor(reaction.Requirements, currentSolution);
+                    foreach (var requirement in reaction.Requirements)
+                    {
+                        _solutionContainerSystem.RemoveReagent(solcom.Value, requirement.Reagent, minimumScalingFactor * requirement.Quantity);
+                    }
                     foreach (var effect in reaction.Effects)
                     {
                         var factor = (minimumScalingFactor * effect.ScalingFactor) + effect.ScalingOffset;
                         _entityEffectsSystem.TryApplyEffect(uid, effect.Effect, factor.Float());
                     }
-                    foreach (var requirement in reaction.Requirements)
+                    if (reaction.ShouldDelete)
                     {
-                        _solutionContainerSystem.RemoveReagent(solcom.Value, requirement.Reagent, minimumScalingFactor * requirement.Quantity);
+                        shouldDelete = true;
                     }
-                    _entityManager.QueueDeleteEntity(uid);
-                    break;
                 }
             }
+            if (shouldDelete)
+                _entityManager.QueueDeleteEntity(uid);
         }
     }
     

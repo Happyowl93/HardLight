@@ -11,7 +11,9 @@
   - type: SolutionContainerManager
     solutions:
       container:
-        maxVol: 15
+        maxVol: 150
+  - type: MixableSolution
+    solution: container
   - type: DrawableSolution
     solution: container
   - type: InjectableSolution
@@ -24,7 +26,7 @@
 - type: entity
   parent: BaseSlimeExtract
   id: GraySlimeExtract
-  name: Gray Slime Extract
+  name: gray slime extract
   components:
   - type: Sprite
     color: "#999999FF"
@@ -32,7 +34,18 @@
     extractReactions:
     - requirements:
         reagents:
-        - ReagentId: Water
+          - ReagentId: Water
+            Quantity: 1
+      effects:
+        - effect: !type:AddReagentToSolution
+            reagent: Epinephrine
+            solution: container
+          scalingFactor: 1
+          scalingOffset: 0
+      shouldDelete: false
+    - requirements:
+        reagents:
+        - ReagentId: Blood
           Quantity: 1
       effects:
         - effect: !type:SpawnEntity
@@ -40,3 +53,65 @@
             number: 3
           scalingFactor: 0
           scalingOffset: 1
+      shouldDelete: true
+    - requirements:
+        reagents:
+          - ReagentId: Plasma
+            Quantity: 1
+      effects:
+        - effect: !type:SpawnEntity
+            entity: XenoSlimeGray
+            number: 1
+          scalingFactor: 0
+          scalingOffset: 1
+      shouldDelete: true
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: OrangeSlimeExtract
+  name: orange slime extract
+  components:
+    - type: Sprite
+      color: "#F07A26FF"
+    - type: SlimeExtract
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: Water
+                Quantity: 5
+          effects:
+            - effect: !type:AddReagentToSolution
+                reagent: OrangeSmokeCauser
+                solution: container
+              scalingFactor: 1
+              scalingOffset: 0
+          shouldDelete: true
+        - requirements:
+            reagents:
+              - ReagentId: Blood
+                Quantity: 1
+          effects:
+            - effect: !type:AddReagentToSolution
+                reagent: CapsaicinOil
+                solution: container
+              scalingFactor: 10
+              scalingOffset: 0
+          shouldDelete: false
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:CreateGas
+                gas: Plasma
+              scalingFactor: 1
+              scalingOffset: 0
+            - effect: !type:CreateGas
+                gas: Oxygen
+              scalingFactor: 1
+              scalingOffset: 0
+            - effect: !type:ChangeGasTemperature
+                temperature: 5000
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true

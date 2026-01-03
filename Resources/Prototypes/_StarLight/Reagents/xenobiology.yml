@@ -1,0 +1,10 @@
+- type: reagent
+  id: OrangeSmokeCauser
+  name: reagent-name-orange-smoke-causer
+  group: Special
+  desc: reagent-name-orange-smoke-causer
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: metallic
+  color: "#F07A26FF"
+  meltingPoint: 44.2
+  boilingPoint: 280.5

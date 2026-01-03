@@ -1,0 +1,14 @@
+- type: reaction
+  id: OrangeSmoke
+  priority: 10
+  impact: High
+  conserveEnergy: false
+  reactants:
+    OrangeSmokeCauser:
+      amount: 1
+  effects:
+    - !type:AreaReactionEffect
+      duration: 10
+      prototypeId: Smoke
+      sound:
+        path: /Audio/Effects/smoke.ogg

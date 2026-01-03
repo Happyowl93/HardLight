@@ -5,6 +5,7 @@ using Content.Server.NPC.HTN.PrimitiveTasks;
 using Content.Shared.Damage.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Components;
+using Content.Shared._Starlight.Xenobiology;
 
 namespace Content.Server._Starlight.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
