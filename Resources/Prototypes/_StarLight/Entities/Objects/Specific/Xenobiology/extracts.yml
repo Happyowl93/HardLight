@@ -122,7 +122,7 @@
   name: purple slime extract
   components:
     - type: Sprite
-      color: "#501466ff"
+      color: "#9721c2ff"
     - type: SlimeExtract
       extractReactions:
         - requirements:
@@ -318,6 +318,37 @@
           effects:
             - effect: !type:SpawnEntity
                 entity: YellowSlimeExtractPowercell
+                number: 1
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true
+
+- type: entity
+  parent: SheetPlasma
+  id: SheetPlasma3
+  suffix: 3
+  components:
+    - type: Sprite
+      state: plasma
+    - type: Stack
+      count: 3
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: DarkPurpleSlimeExtract
+  name: dark purple slime extract
+  components:
+    - type: Sprite
+      color: "#501466ff"
+    - type: SlimeExtract
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                entity: SheetPlasma3
                 number: 1
               scalingFactor: 0
               scalingOffset: 1
