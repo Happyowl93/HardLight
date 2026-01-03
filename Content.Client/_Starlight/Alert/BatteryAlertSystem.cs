@@ -2,6 +2,8 @@ using Content.Shared._Starlight.UI;
 using Content.Shared.Alert;
 using Content.Shared.PowerCell;
 using Content.Shared.PowerCell.Components;
+using Content.Shared.Silicons.Borgs.Components;
+using Robust.Shared.Player;
 
 namespace Content.Server._Starlight.Alert;
 
