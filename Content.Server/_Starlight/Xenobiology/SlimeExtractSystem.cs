@@ -1,4 +1,3 @@
-using Content.Shared._Starlight.Xenobiology;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.EntityEffects;

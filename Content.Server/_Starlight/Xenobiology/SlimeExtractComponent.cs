@@ -4,9 +4,9 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Starlight.Xenobiology;
+namespace Content.Server._Starlight.Xenobiology;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent]
 public sealed partial class SlimeExtractComponent : Component
 {
     /// <summary>
@@ -27,7 +27,7 @@ public sealed partial class SlimeExtractComponent : Component
 /// <summary>
 /// A set of requirements and the associated effects.
 /// </summary>
-[Serializable, NetSerializable, DataDefinition]
+[Serializable, DataDefinition]
 public sealed partial class ExtractReaction
 {
     /// <summary>
@@ -55,7 +55,7 @@ public sealed partial class ExtractReaction
 /// The final factor is then minimizedScalingFactor * scalingFactor + scalingOffset.
 /// Great fans of y = mx + b should find themselves right at home here.
 /// </remarks>
-[Serializable, NetSerializable, DataDefinition]
+[Serializable, DataDefinition]
 public sealed partial class ScaledEntityEffect
 {
     /// <summary>
@@ -75,15 +75,4 @@ public sealed partial class ScaledEntityEffect
     /// </summary>
     [DataField("scalingOffset")]
     public FixedPoint2 ScalingOffset = 1;
-}
-
-[Serializable, NetSerializable]
-public sealed class SlimeExtractComponentState : ComponentState
-{
-    public List<ExtractReaction> ExtractReactions;
-
-    public SlimeExtractComponentState(List<ExtractReaction> extractReactions)
-    {
-        ExtractReactions = extractReactions;
-    }
 }

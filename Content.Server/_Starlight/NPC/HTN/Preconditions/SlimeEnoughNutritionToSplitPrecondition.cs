@@ -1,7 +1,6 @@
 using Content.Server._Starlight.Xenobiology;
 using Content.Server.NPC;
 using Content.Server.NPC.HTN.Preconditions;
-using Content.Shared._Starlight.Xenobiology;
 using Content.Shared.FixedPoint;
 
 namespace Content.Server._Starlight.NPC.HTN.Preconditions;

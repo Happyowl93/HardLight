@@ -3,12 +3,12 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Starlight.Xenobiology;
+namespace Content.Server._Starlight.Xenobiology;
 
 /// <summary>
 /// This component describes the current state of the slime.
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent]
 public sealed partial class SlimeComponent : Component
 {
     /// <summary>
@@ -36,32 +36,8 @@ public sealed partial class SlimeComponent : Component
     public FixedPoint2 NutritionOnHit;
     
     /// <summary>
-    /// What this slime splits into if not mutating
+    /// What this slime splits into if not mutating.
     /// </summary>
     [DataField("splitInto", required: true)]
     public string SplitInto;
-}
-
-[Serializable, NetSerializable]
-public sealed class SlimeComponentState : ComponentState
-{
-    public FixedPoint2 Nutrition;
-    public FixedPoint2 NutritionChangePerSecond;
-    public DamageSpecifier DamageOnEat;
-    public FixedPoint2 NutritionOnHit;
-    public string SplitInto;
-
-    public SlimeComponentState(FixedPoint2 nutrition,
-        FixedPoint2 nutritionChangePerSecond,
-        DamageSpecifier damageOnEat,
-        FixedPoint2 nutritionOnHit,
-        FixedPoint2 splitThreshold,
-        string splitInto)
-    {
-        Nutrition = nutrition;
-        NutritionChangePerSecond = nutritionChangePerSecond;
-        DamageOnEat = damageOnEat;
-        NutritionOnHit = nutritionOnHit;
-        SplitInto = splitInto;
-    }
 }

@@ -1,4 +1,3 @@
-using Content.Shared._Starlight.Xenobiology;
 using Content.Shared.Coordinates;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
