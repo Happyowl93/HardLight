@@ -1428,6 +1428,7 @@
   - SecurityGlasses
   - SecurityHud
   - DetectiveNoirGlasses
+  - SecurityGlassesPrescription
 
 - type: loadoutGroup
   id: BrigmedicHead
