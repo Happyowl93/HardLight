@@ -25071,5 +25071,15 @@ Entries:
   id: 264700
   time: '2026-01-03T01:53:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2647
+- author: CrazyPhantom
+  changes:
+  - message: Cyborgs can now select Posibrain or Brain in loadout. Brain goes off
+      your characters specie.
+    type: Add
+  - message: Above for Xenoborgs too
+    type: Add
+  id: 232500
+  time: '2026-01-03T02:20:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2325
 Order: -1
 
