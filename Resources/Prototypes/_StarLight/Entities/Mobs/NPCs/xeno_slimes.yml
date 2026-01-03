@@ -12,7 +12,7 @@
     drawdepth: Mobs
     sprite: _Starlight/Mobs/XenoSlimes/test_sprite.rsi
     layers:
-    - state: test_image
+    - state: test_slime
   - type: Slime
     nutrition: 50
     nutritionChangePerSecond: -1
@@ -36,3 +36,5 @@
   components:
   - type: Slime
     splitInto: XenoSlimeGray
+  - type: Sprite
+    color: "#999999FF"
