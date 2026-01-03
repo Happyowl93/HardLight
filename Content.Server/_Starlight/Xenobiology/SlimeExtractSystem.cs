@@ -1,9 +1,10 @@
+using Content.Shared._Starlight.Xenobiology;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 
-namespace Content.Shared._Starlight.Xenobiology;
+namespace Content.Server._Starlight.Xenobiology;
 
 /// <summary>
 /// Handles the general behavior of slime extracts
@@ -30,12 +31,15 @@ public sealed class SlimeExtractSystem : EntitySystem
                     var minimumScalingFactor = FindMinimumScalingFactor(reaction.Requirements, currentSolution);
                     foreach (var effect in reaction.Effects)
                     {
-                        _entityEffectsSystem.TryApplyEffect(uid, effect.Effect, minimumScalingFactor.Float());
+                        var factor = (minimumScalingFactor * effect.ScalingFactor) + effect.ScalingOffset;
+                        _entityEffectsSystem.TryApplyEffect(uid, effect.Effect, factor.Float());
                     }
                     foreach (var requirement in reaction.Requirements)
                     {
                         _solutionContainerSystem.RemoveReagent(solcom.Value, requirement.Reagent, minimumScalingFactor * requirement.Quantity);
                     }
+                    _entityManager.QueueDeleteEntity(uid);
+                    break;
                 }
             }
         }
