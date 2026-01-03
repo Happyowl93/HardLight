@@ -99,7 +99,10 @@ public sealed class SlimeSystem : EntitySystem
             var split = _entityManager.SpawnAtPosition(protoName, slime.Owner.ToCoordinates());
             SlimeComponent? comp = null;
             if (Resolve(split, ref comp))
+            {
                 comp.Nutrition = newNutrition;
+                comp.MutationChance = slime.Comp.MutationChance;
+            }
             else return false;
         }
         SlimesToDelete.Add(slime.Owner);
@@ -117,6 +120,12 @@ public sealed class SlimeSystem : EntitySystem
         if (TryComp<SlimeSteroidPotionComponent>(args.Used, out _) && ent.Comp.SlimeSteroidAmount < 4)
         {
             ent.Comp.SlimeSteroidAmount += 1;
+            QueueDel(args.Used);
+            args.Handled = true;
+        }
+        else if (TryComp<SlimeStabilizerPotionComponent>(args.Used, out _) && ent.Comp.MutationChance > 0)
+        {
+            ent.Comp.MutationChance = FixedPoint2.Max(0, ent.Comp.MutationChance - 0.15);
             QueueDel(args.Used);
             args.Handled = true;
         }

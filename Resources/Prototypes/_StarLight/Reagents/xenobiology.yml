@@ -6,8 +6,15 @@
   physicalDesc: reagent-physical-desc-powdery
   flavor: metallic
   color: "#F07A26FF"
-  meltingPoint: 44.2
-  boilingPoint: 280.5
+
+- type: reagent
+  id: BlueFoamCauser
+  name: reagent-name-blue-foam-causer
+  group: Special
+  desc: reagent-name-blue-foam-causer
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: metallic
+  color: "#F07A26FF"
 
 - type: reagent
   id: RegenerativeJelly

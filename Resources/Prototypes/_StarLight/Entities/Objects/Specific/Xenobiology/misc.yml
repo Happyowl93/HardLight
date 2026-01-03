@@ -7,4 +7,17 @@
   - type: Sprite
     sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
     layers:
-      - state: icon
+    - state: icon
+    color: "#501466ff"
+
+- type: entity
+  parent: BaseItem
+  id: SlimeStabilizerPotion
+  name: slime stabilizer potion
+  components:
+  - type: SlimeStabilizerPotion
+  - type: Sprite
+    sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
+    layers:
+    - state: icon
+    color: "#34cfebff"
