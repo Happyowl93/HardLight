@@ -1435,8 +1435,8 @@
   minLimit: 0
   loadouts:
   - BrigmedicBeret
-  - CorpsmanBeret #Starlight
   - BrigmedicNurseHat # Starlight
+  - CorpsmanBeret #Starlight
   - CorpsmanNurseHat # Starlight
   - BrigmedicNurseHatOfLife # Starlight
   - SecurityHelmet
@@ -1470,8 +1470,8 @@
   defaultSelected: 1 # starlight
   loadouts:
   - BrigmedicCoat
-  - CorpsmanCoat #Starlight
   - BrigmedicLabCoat # Starlight
+  - CorpsmanCoat #Starlight
   - CorpsmanLabCoat # Starlight
   - SecurityOfficerWintercoat
 
