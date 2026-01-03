@@ -507,8 +507,8 @@
   name: loadout-group-brigmedic-id
   loadouts:
     - BrigmedicPDA
-    - CorpsmanPDA
     - VeteranBrigmedicPDA
+    - CorpsmanPDA
     - VeteranCorpsmanPDA
 
 - type: loadoutGroup
