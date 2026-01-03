@@ -28,6 +28,12 @@ public sealed partial class SlimeExtractComponent : Component
     /// </summary>
     [ViewVariables, AutoNetworkedField]
     public float TimeSinceLastInject = 0F;
+
+    /// <summary>
+    /// Whether the slime extract has already been used, and thus cannot be used again.
+    /// </summary>
+    [ViewVariables, AutoNetworkedField]
+    public bool Exhausted = false;
 }
 
 /// <summary>

@@ -30,6 +30,8 @@ public sealed class SlimeExtractSystem : EntitySystem
 
         while (query.MoveNext(out var uid, out var slimeExtractComponent))
         {
+            if (slimeExtractComponent.Exhausted) continue;
+            
             slimeExtractComponent.TimeSinceLastInject += frameTime;
             if (!_solutionContainerSystem.TryGetSolution(uid, slimeExtractComponent.ContainerName, out var solcom, out var currentSolution)) continue;
             var shouldDelete = false;
@@ -51,6 +53,7 @@ public sealed class SlimeExtractSystem : EntitySystem
                     {
                         shouldDelete = true;
                     }
+                    slimeExtractComponent.Exhausted = true;
                 }
             }
             if (shouldDelete)
