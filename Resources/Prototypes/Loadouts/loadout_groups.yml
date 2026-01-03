@@ -1887,6 +1887,7 @@
   - Glasses
   - GlassesJamjar
   - GlassesJensen
+  - MedicalGlassesPrescription
 
 - type: loadoutGroup
   id: SurvivalMedical
