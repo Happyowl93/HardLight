@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._Starlight.Xenobiology;
 using Content.Shared.Coordinates;
 using Content.Shared.Damage.Components;
 using Content.Shared.Interaction;
@@ -60,7 +61,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
                         if (!_entityManager.TryGetComponent(entity, out DamageableComponent? damageableComponent)) continue;
                         if (damageableComponent.TotalDamage >= 200)
                         {
-                            for (int i = 0; i < slimeProcessorComponent.YieldMultiplier; i++)
+                            for (int i = 0; i < slimeProcessorComponent.YieldMultiplier + slimeComponent.SlimeSteroidAmount; i++)
                             {
                                 slimeProcessorComponent.Extracts.Add(slimeComponent.Extract);
                             }
@@ -77,16 +78,16 @@ public sealed class SlimeProcessorSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<Shared._Starlight.Xenobiology.SlimeProcessorComponent, ActivateInWorldEvent>(OnAfterActivate);
-        SubscribeLocalEvent<Shared._Starlight.Xenobiology.SlimeProcessorComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<SlimeProcessorComponent, ActivateInWorldEvent>(OnAfterActivate);
+        SubscribeLocalEvent<SlimeProcessorComponent, PowerChangedEvent>(OnPowerChanged);
     }
     
-    private void OnPowerChanged(EntityUid uid, Shared._Starlight.Xenobiology.SlimeProcessorComponent component, ref PowerChangedEvent args)
+    private void OnPowerChanged(EntityUid uid, SlimeProcessorComponent component, ref PowerChangedEvent args)
     {
         component.IsPowered = args.Powered;
     }
 
-    private void OnAfterActivate(Entity<Shared._Starlight.Xenobiology.SlimeProcessorComponent> ent, ref ActivateInWorldEvent args)
+    private void OnAfterActivate(Entity<SlimeProcessorComponent> ent, ref ActivateInWorldEvent args)
     {
         if (ent.Comp.Extracts.Count <= 0)
             return;

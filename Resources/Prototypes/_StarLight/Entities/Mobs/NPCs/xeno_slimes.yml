@@ -39,6 +39,7 @@
     extract: GraySlimeExtract
     splitIntoMutation:
     - XenoSlimeOrange
+    - XenoSlimePurple
   - type: Sprite
     color: "#999999FF"
 
@@ -53,3 +54,15 @@
       extract: OrangeSlimeExtract
     - type: Sprite
       color: "#F07A26FF"
+
+- type: entity
+  name: purple xenobiology slime
+  id: XenoSlimePurple
+  parent: XenoSlimeBase
+  description: PURPLE
+  components:
+    - type: Slime
+      splitInto: XenoSlimePurple
+      extract: PurpleSlimeExtract
+    - type: Sprite
+      color: "#501466FF"

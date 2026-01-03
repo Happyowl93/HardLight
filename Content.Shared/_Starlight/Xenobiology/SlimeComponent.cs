@@ -58,4 +58,10 @@ public sealed partial class SlimeComponent : Component
     /// </summary>
     [DataField("splitIntoMutation"), AutoNetworkedField]
     public List<String> SplitIntoMutation = new();
+
+    /// <summary>
+    /// The amount of slime steroid potions that have been applied to this slime.
+    /// </summary>
+    [ViewVariables, AutoNetworkedField]
+    public int SlimeSteroidAmount = 0;
 }

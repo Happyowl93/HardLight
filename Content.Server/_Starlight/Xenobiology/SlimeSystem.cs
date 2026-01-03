@@ -1,3 +1,5 @@
+using Content.Shared._Starlight.Xenobiology;
+using Content.Shared._Starlight.Xenobiology.MiscItems;
 using Content.Shared.Coordinates;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
@@ -19,17 +21,24 @@ public sealed class SlimeSystem : EntitySystem
     public List<SlimeSplitRecord> SlimeSplitRecords = new();
     public List<EntityUid> SlimesToDelete = new();
 
-    public sealed class SlimeSplitRecord(Entity<Shared._Starlight.Xenobiology.SlimeComponent?> slime, int splitAmount)
+    public sealed class SlimeSplitRecord(Entity<SlimeComponent?> slime, int splitAmount)
     {
-        public Entity<Shared._Starlight.Xenobiology.SlimeComponent?> Slime = slime;
+        public Entity<SlimeComponent?> Slime = slime;
         public int SplitAmount = splitAmount;
+    }
+
+    /// <inheritdoc />
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<SlimeComponent, InteractUsingEvent>(OnInteractUsing);
     }
     
     /// <inheritdoc />
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-        var query = EntityQueryEnumerator<Shared._Starlight.Xenobiology.SlimeComponent>();
+        var query = EntityQueryEnumerator<SlimeComponent>();
         
         while (query.MoveNext(out var uid, out var slime))
         {
@@ -53,7 +62,7 @@ public sealed class SlimeSystem : EntitySystem
     /// <param name="slime">The slime entity.</param>
     /// <param name="target">The target entity ID.</param>
     /// <returns>Returns false if the slime was unable to eat the target. Returns true otherwise.</returns>
-    public bool TryEat(Entity<Shared._Starlight.Xenobiology.SlimeComponent?> slime, EntityUid target)
+    public bool TryEat(Entity<SlimeComponent?> slime, EntityUid target)
     {
         if (!Resolve(slime, ref slime.Comp, false)) return false;
         
@@ -70,7 +79,7 @@ public sealed class SlimeSystem : EntitySystem
         return true;
     }
 
-    public bool TrySplitSlime(Entity<Shared._Starlight.Xenobiology.SlimeComponent?> slime, int split_amount)
+    public bool TrySplitSlime(Entity<SlimeComponent?> slime, int split_amount)
     {
         if (!Resolve(slime, ref slime.Comp, false)) return false;
         var newNutrition = slime.Comp.Nutrition / split_amount;
@@ -88,7 +97,7 @@ public sealed class SlimeSystem : EntitySystem
                 protoName = slime.Comp.SplitInto;
             }
             var split = _entityManager.SpawnAtPosition(protoName, slime.Owner.ToCoordinates());
-            Shared._Starlight.Xenobiology.SlimeComponent? comp = null;
+            SlimeComponent? comp = null;
             if (Resolve(split, ref comp))
                 comp.Nutrition = newNutrition;
             else return false;
@@ -97,9 +106,19 @@ public sealed class SlimeSystem : EntitySystem
         return true;
     }
 
-    public bool QueueSlimeSplit(Entity<Shared._Starlight.Xenobiology.SlimeComponent?> slime, int splitAmount)
+    public bool QueueSlimeSplit(Entity<SlimeComponent?> slime, int splitAmount)
     {
         SlimeSplitRecords.Add(new(slime, splitAmount));
         return true;
+    }
+
+    private void OnInteractUsing(Entity<SlimeComponent> ent, ref InteractUsingEvent args)
+    {
+        if (TryComp<SlimeSteroidPotionComponent>(args.Used, out _) && ent.Comp.SlimeSteroidAmount < 4)
+        {
+            ent.Comp.SlimeSteroidAmount += 1;
+            QueueDel(args.Used);
+            args.Handled = true;
+        }
     }
 }
