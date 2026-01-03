@@ -321,4 +321,24 @@
   - type: ItemSlots
     slots:
       gun_magazine:
+        name: Magazine
+        startingItem: MagazineShotgunTozExtended
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineShotgunToz
+        whitelistFailPopup: gun-magazine-whitelist-fail
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+
+# shitpost TOZ with no mag restrictions
+- type: entity
+  name: ZOZ-106 Shitpost Edition
+  parent: WeaponShotgunToz106
+  id: WeaponShotgunToz106Shitpost
+  suffix: DO NOT MAP
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
         startingItem: MagazineShotgunTozExtended
