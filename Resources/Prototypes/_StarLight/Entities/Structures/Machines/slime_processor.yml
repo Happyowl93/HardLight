@@ -1,0 +1,18 @@
+- type: entity
+  id: SlimeProcessor
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  name: slime processor
+  description: Turns slime corpses into extracts. Try freezing them first!
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      sprite: _Starlight/Structures/Machines/slime_processor.rsi
+      state: icon
+      snapCardinals: true
+    - type: SlimeProcessor
+      processingTime: 5
+      yieldMultiplier: 4
+      slimeAcquireCooldown: 5
+    - type: Machine
+      board: SlimeProcessorMachineCircuitboard

@@ -40,4 +40,10 @@ public sealed partial class SlimeComponent : Component
     /// </summary>
     [DataField("splitInto", required: true)]
     public string SplitInto;
+    
+    /// <summary>
+    /// The extract this slime provides when processed in the Slime Processor.
+    /// </summary>
+    [DataField("extract", required: true)]
+    public string Extract;
 }

@@ -36,5 +36,6 @@
   components:
   - type: Slime
     splitInto: XenoSlimeGray
+    extract: GraySlimeExtract
   - type: Sprite
     color: "#999999FF"
