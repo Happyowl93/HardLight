@@ -25,7 +25,6 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly SharedNanoChatSystem _nanoChat = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
 
     // Messages in notifications get cut off after this point
     // no point in storing it on the comp
@@ -231,6 +230,14 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         if (!EnsureRecipientExists(card, msg.RecipientNumber.Value))
             return;
 
+        // Starlight Start
+        var content = msg.Content;
+        if (!string.IsNullOrWhiteSpace(content))
+        {
+            content = content.Trim();
+        }
+        // Starlight End
+
         // Create and store message for sender
         var message = new NanoChatMessage(
             _timing.CurTime,
@@ -256,8 +263,15 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
             LogImpact.Low,
             $"{ToPrettyString(card):user} sent NanoChat message to {recipientsText}: {msg.Content}{(deliveryFailed ? " [DELIVERY FAILED]" : "")}");
 
-        var msgEv = new NanoChatMessageReceivedEvent(card, message);
-        RaiseLocalEvent(ref msgEv);
+        // Starlight edit Start: Commented out
+        // var msgEv = new NanoChatMessageReceivedEvent(card, message);
+        // RaiseLocalEvent(ref msgEv);
+        // Starlight edit End
+
+        // Starlight Start
+        // Update sender's UI to show the sent message
+        UpdateUIForCard(card);
+        // Starlight End
 
         if (deliveryFailed)
             return;

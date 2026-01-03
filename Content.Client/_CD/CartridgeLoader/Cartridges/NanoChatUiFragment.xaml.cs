@@ -6,6 +6,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.UserInterface;
 using Robust.Shared.Timing;
+using Content.Client._Starlight.NanoChat; // Starlight
 
 namespace Content.Client._CD.CartridgeLoader.Cartridges;
 
@@ -17,13 +18,17 @@ public sealed partial class NanoChatUiFragment : BoxContainer
     private const int MaxMessageLength = 256;
 
     private readonly NewChatPopup _newChatPopup;
+    private readonly NanoChatEmoteSelector _emoteSelector; // Starlight: Emotes
     private uint? _currentChat;
     private uint? _pendingChat;
     private uint _ownNumber;
     private bool _notificationsMuted;
     private bool _listNumber = true;
-    private Dictionary<uint, NanoChatRecipient> _recipients = new();
-    private Dictionary<uint, List<NanoChatMessage>> _messages = new();
+    // Starlight edit Start: new() -> []
+    private Dictionary<uint, NanoChatRecipient> _recipients = [];
+    private Dictionary<uint, List<NanoChatMessage>> _messages = [];
+    // Starlight edit End: new() -> []
+    private List<NanoChatRecipient>? _contacts; // Starlight
 
     public event Action<NanoChatUiMessageType, uint?, string?, string?>? OnMessageSent;
 
@@ -33,6 +38,7 @@ public sealed partial class NanoChatUiFragment : BoxContainer
         RobustXamlLoader.Load(this);
 
         _newChatPopup = new NewChatPopup();
+        _emoteSelector = new NanoChatEmoteSelector(); // Starlight: Emotes
         SetupEventHandlers();
     }
 
@@ -42,6 +48,16 @@ public sealed partial class NanoChatUiFragment : BoxContainer
         {
             OnMessageSent?.Invoke(NanoChatUiMessageType.NewChat, number, name, job);
         };
+
+        // Starlight Start: Emotes
+        _emoteSelector.OnEmoteSelected += InsertEmoji;
+
+        NewChatButton.OnPressed += _ =>
+        {
+            _newChatPopup.ClearInputs();
+            _newChatPopup.OpenCentered();
+        };
+        // Starlight End: Emotes
 
         MuteButton.OnPressed += _ =>
         {
@@ -90,8 +106,28 @@ public sealed partial class NanoChatUiFragment : BoxContainer
 
         MessageInput.OnTextEntered += _ => SendMessage();
         SendButton.OnPressed += _ => SendMessage();
+        EmojiButton.OnPressed += _ => OpenEmojiPicker(); // Starlight: Emotes
         DeleteChatButton.OnPressed += _ => DeleteCurrentChat();
     }
+
+    // Starlight Start: Emotes
+    private void OpenEmojiPicker()
+    {
+        _emoteSelector.OpenCentered();
+    }
+
+    private void InsertEmoji(string emoji)
+    {
+        var currentText = MessageInput.Text;
+        var cursorPos = MessageInput.CursorPosition;
+
+        var newText = currentText.Insert(cursorPos, emoji);
+        MessageInput.Text = newText;
+        MessageInput.CursorPosition = cursorPos + emoji.Length;
+        MessageInput.GrabKeyboardFocus();
+    }
+    // Starlight End
+
     private void ToggleView()
     {
         ChatView.Visible = !ChatView.Visible;
@@ -250,6 +286,7 @@ public sealed partial class NanoChatUiFragment : BoxContainer
         _ownNumber = state.OwnNumber;
         _notificationsMuted = state.NotificationsMuted;
         _listNumber = state.ListNumber;
+        _contacts = state.Contacts;
         OwnNumberLabel.Text = $"#{state.OwnNumber:D4}";
         UpdateMuteButton();
         UpdateListNumber();
@@ -267,9 +304,10 @@ public sealed partial class NanoChatUiFragment : BoxContainer
         if (_pendingChat == null)
             _currentChat = state.CurrentChat;
 
-        UpdateCurrentChat();
+        // UpdateCurrentChat(); // Starlight Edit: Moved
         UpdateChatList(state.Recipients);
         UpdateMessages(state.Messages);
+        UpdateCurrentChat(); // Starlight
         LookupView.UpdateContactList(state);
     }
 }

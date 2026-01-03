@@ -31,6 +31,18 @@ public abstract class SharedNanoChatSystem : EntitySystem
         args.PushMarkup(Loc.GetString("nanochat-card-examine-number", ("number", $"{ent.Comp.Number:D4}")));
     }
 
+    // Starlight Start
+    public static string Truncate(string? text, int maxLength, string overflowText = "...")
+    {
+        if (string.IsNullOrEmpty(text))
+            return string.Empty;
+
+        return text.Length > maxLength
+            ? text[..(maxLength - overflowText.Length)] + overflowText
+            : text;
+    }
+    // Starlight End
+
     #region Public API Methods
 
     /// <summary>

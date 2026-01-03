@@ -64,12 +64,22 @@
                                      MinSize="18 18" />
                     </Control>
                 </Button>
-                <Button Name="LookupButton"
+                <Button Name="NewChatButton"
                         Text="+"
+                        MinSize="32 32"
+                        MaxSize="32 32"
+                        Margin="0 0 4 0"
+                        StyleClasses="OpenBoth"
+                        ToolTip="{Loc nano-chat-new-chat}" />
+                <Button Name="LookupButton"
                         MaxSize="32 32"
                         StyleClasses="OpenBoth"
                         Margin="0 0 4 0"
                         ToolTip="{Loc nano-chat-look-up}">
+                    <TextureRect StyleClasses="ButtonSquare"
+                                 TexturePath="/Textures/Interface/VerbIcons/examine.svg.192dpi.png"
+                                 Stretch="KeepAspectCentered"
+                                 MinSize="18 18" />
                 </Button>
                 <Button Name="ListNumberButton"
                         MaxSize="32 32"
@@ -88,7 +98,8 @@
 
         <!-- Main content split -->
         <BoxContainer Name="ChatView"
-                      Orientation="Horizontal"                      VerticalExpand="True"
+                      Orientation="Horizontal"
+                      VerticalExpand="True"
                       HorizontalExpand="True"
                       Margin="0 5 0 0">
             <!-- Left panel: Chat list -->
@@ -147,30 +158,55 @@
 
                     <!-- Message input -->
                     <BoxContainer Name="MessageInputContainer"
-                                  Orientation="Horizontal"
+                                  Orientation="Vertical"
                                   HorizontalExpand="True"
                                   Margin="0 4 0 0"
                                   Visible="False">
-                        <!-- Character count -->
-                        <Label Name="CharacterCount"
-                               HorizontalAlignment="Right"
-                               StyleClasses="LabelSubText"
-                               Margin="0 0 4 2"
-                               Visible="False" />
+                        <!-- Emoji Preview -->
+                        <PanelContainer Name="EmojiPreviewPanel"
+                                        StyleClasses="AngleRect"
+                                        MinSize="0 32"
+                                        Margin="0 0 0 4"
+                                        Visible="False">
+                            <RichTextLabel Name="EmojiPreview"
+                                           Margin="4"
+                                           VerticalAlignment="Center" />
+                        </PanelContainer>
                         <!-- Input row -->
-                        <LineEdit Name="MessageInput"
-                                  PlaceHolder="{Loc nano-chat-message-placeholder}"
-                                  HorizontalExpand="True"
-                                  StyleClasses="OpenRight" />
-                        <Button Name="SendButton"
-                                MinSize="32 32"
-                                Disabled="True"
-                                StyleClasses="OpenLeft"
-                                Margin="4 0 0 0">
-                            <TextureRect StyleClasses="ButtonSquare"
-                                         TexturePath="/Textures/Interface/Nano/triangle_right.png"
-                                         Stretch="KeepAspectCentered" />
-                        </Button>
+                        <BoxContainer Orientation="Horizontal"
+                                      HorizontalExpand="True">
+                            <!-- Character count -->
+                            <Label Name="CharacterCount"
+                                   HorizontalAlignment="Right"
+                                   StyleClasses="LabelSubText"
+                                   Margin="0 0 4 2"
+                                   Visible="False" />
+                            <!-- Input row -->
+                            <LineEdit Name="MessageInput"
+                                      PlaceHolder="{Loc nano-chat-message-placeholder}"
+                                      HorizontalExpand="True"
+                                      StyleClasses="OpenRight" />
+                            <Button Name="EmojiButton"
+                                    MinSize="32 32"
+                                    MaxSize="32 32"
+                                    StyleClasses="OpenBoth"
+                                    Margin="4 0 0 0"
+                                    ToolTip="{Loc nano-chat-emoji-picker}">
+                                <TextureRect StyleClasses="ButtonSquare"
+                                             TexturePath="/Textures/Interface/Emotes/laugh.png"
+                                             Stretch="KeepAspectCentered"
+                                             MinSize="24 24" />
+                            </Button>
+                            <Button Name="SendButton"
+                                    MinSize="32 32"
+                                    Disabled="True"
+                                    StyleClasses="OpenLeft"
+                                    Margin="4 0 0 0">
+                                <TextureRect StyleClasses="ButtonSquare"
+                                             TexturePath="/Textures/Interface/Nano/triangle_right.png"
+                                             Stretch="KeepAspectCentered" />
+                            </Button>
+                        </BoxContainer>
                     </BoxContainer>
                 </BoxContainer>
             </PanelContainer>
