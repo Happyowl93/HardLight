@@ -1,32 +1,32 @@
 - type: entity
   id: XenoSlimeBase
   parent:
-  - MobRespirator
-  - MobAtmosStandard
-  - SimpleSpaceMobBase
+    - MobRespirator
+    - MobAtmosStandard
+    - SimpleSpaceMobBase
   abstract: true
   description: I don't think you should be seeing this.
   components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: _Starlight/Mobs/XenoSlimes/test_sprite.rsi
-    layers:
-    - state: test_slime
-  - type: Slime
-    nutrition: 50
-    nutritionChangePerSecond: -1
-    damageOnEat:
-      types:
-        Cellular: 5
-    nutritionOnHit: 10
-    mutationChance: 0.25
-  - type: HTN
-    rootTask:
-      task: SlimeEatCompound
-  - type: Temperature
-    coldDamage:
-      types:
-        Cold: 10.0
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Starlight/Mobs/XenoSlimes/test_sprite.rsi
+      layers:
+        - state: test_slime
+    - type: Slime
+      nutrition: 50
+      nutritionChangePerSecond: -1
+      damageOnEat:
+        types:
+          Cellular: 5
+      nutritionOnHit: 10
+      mutationChance: 0.25
+    - type: HTN
+      rootTask:
+        task: SlimeEatCompound
+    - type: Temperature
+      coldDamage:
+        types:
+          Cold: 10.0
 
 - type: entity
   name: gray xenobiology slime
@@ -34,16 +34,16 @@
   parent: XenoSlimeBase
   description: GRAY
   components:
-  - type: Slime
-    splitInto: XenoSlimeGray
-    extract: GraySlimeExtract
-    splitIntoMutation:
-    - XenoSlimeOrange
-    - XenoSlimePurple
-    - XenoSlimeBlue
-    - XenoSlimeMetal
-  - type: Sprite
-    color: "#999999ff"
+    - type: Slime
+      splitInto: XenoSlimeGray
+      extract: GraySlimeExtract
+      splitIntoMutation:
+        - XenoSlimeOrange
+        - XenoSlimePurple
+        - XenoSlimeBlue
+        - XenoSlimeMetal
+    - type: Sprite
+      color: "#999999ff"
 
 - type: entity
   name: orange xenobiology slime
@@ -54,6 +54,8 @@
     - type: Slime
       splitInto: XenoSlimeOrange
       extract: OrangeSlimeExtract
+      splitIntoMutation:
+        - XenoSlimeYellow
     - type: Sprite
       color: "#f07a26ff"
 
@@ -90,5 +92,22 @@
     - type: Slime
       splitInto: XenoSlimeMetal
       extract: MetalSlimeExtract
+      splitIntoMutation:
+        - XenoSlimeYellow
     - type: Sprite
       color: "#5e5e5eff"
+
+- type: entity
+  name: yellow xenobiology slime
+  id: XenoSlimeYellow
+  parent: XenoSlimeBase
+  description: YELLOW
+  components:
+    - type: Slime
+      splitInto: XenoSlimeYellow
+      extract: YellowSlimeExtract
+      splitIntoMutation:
+        - XenoSlimeOrange
+        - XenoSlimeMetal
+    - type: Sprite
+      color: "#ffeb52ff"

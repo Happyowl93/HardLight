@@ -3,21 +3,57 @@
   id: SlimeSteroidPotion
   name: slime steroid potion
   components:
-  - type: SlimeSteroidPotion
-  - type: Sprite
-    sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
-    layers:
-    - state: icon
-    color: "#501466ff"
+    - type: SlimeSteroidPotion
+    - type: Sprite
+      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
+      layers:
+        - state: icon
+      color: "#501466ff"
 
 - type: entity
   parent: BaseItem
   id: SlimeStabilizerPotion
   name: slime stabilizer potion
   components:
-  - type: SlimeStabilizerPotion
-  - type: Sprite
-    sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
-    layers:
-    - state: icon
-    color: "#34cfebff"
+    - type: SlimeStabilizerPotion
+    - type: Sprite
+      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
+      layers:
+        - state: icon
+      color: "#34cfebff"
+
+- type: entity
+  parent: BaseItem
+  id: YellowSlimeExtractLight
+  name: yellow slime extract light
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_extract.rsi
+      layers:
+        - state: test_slime_extract
+      color: "#ffeb52ff"
+    - type: YellowSlimeExtractLight
+    - type: ItemToggle
+    - type: PointLight
+      enabled: true
+      radius: 2
+      netsync: false
+
+- type: entity
+  parent: BasePowerCell
+  id: YellowSlimeExtractPowercell
+  name: yellow slime extract powercell
+  components:
+    - type: Sprite
+      layers:
+        - map: [ "enum.PowerCellVisualLayers.Base" ]
+          state: microreactor
+        - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+          state: o2
+          shader: unshaded
+      color: "#ffeb52ff" # Yes I'm just taking the microreactor sprite and painting it yellow, sue me
+    - type: PredictedBattery
+      maxCharge: 5000
+      startingCharge: 5000
+    - type: PredictedBatterySelfRecharger
+      autoRechargeRate: 50
