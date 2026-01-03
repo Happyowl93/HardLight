@@ -282,7 +282,7 @@
   - type: Gun
     spread: 10
     pump: true
-    fireRate: 0.4
+    fireRate: 1
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -291,49 +291,37 @@
     size: Normal
     shape:
     - 0,0,3,0
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazineShotgunToz
-        priority: 2
-        whitelist:
-          tags:
-          - MagazineShotgunToz
-        whitelistFailPopup: gun-magazine-whitelist-fail
-        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - ShellShotgunToz
+    capacity: 2
+    proto: ShellShotgunToz
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
   - type: ContainerContainer
     containers:
-      gun_magazine: !type:ContainerSlot
-      gun_chamber: !type:ContainerSlot
-  - type: ChamberMagazineAmmoProvider
-  - type: MagazineVisuals
-    magState: mag
-    steps: 1
-    zeroVisible: true
+      ballistic-ammo: !type:Container
+        ents: []
   - type: Appearance
   - type: StaticPrice
     price: 400
 
-# TOZ with extended mag already inserted:
+# TOZ with extended mag:
 - type: entity
   parent: WeaponShotgunToz106
   id: WeaponShotgunToz106Extended
+  description: A cheap Soviet shotgun that received an indifferent welcome from hunters. Aim at the head and eyes for best results. Uses less-powerful 20 gauge shotgun shells. Extended magazine version.
   suffix: extended mag
   components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazineShotgunTozExtended
-        priority: 2
-        whitelist:
-          tags:
-          - MagazineShotgunToz
-        whitelistFailPopup: gun-magazine-whitelist-fail
-        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - ShellShotgunToz
+    capacity: 5
+    proto: ShellShotgunToz
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
 
 # shitpost TOZ with no mag restrictions
 - type: entity
@@ -347,3 +335,12 @@
     slots:
       gun_magazine:
         startingItem: MagazineShotgunTozExtended
+  - type: ChamberMagazineAmmoProvider
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
