@@ -41,6 +41,7 @@
     - XenoSlimeOrange
     - XenoSlimePurple
     - XenoSlimeBlue
+    - XenoSlimeMetal
   - type: Sprite
     color: "#999999ff"
 
@@ -79,3 +80,15 @@
       extract: BlueSlimeExtract
     - type: Sprite
       color: "#34cfebff"
+
+- type: entity
+  name: metal xenobiology slime
+  id: XenoSlimeMetal
+  parent: XenoSlimeBase
+  description: METAL
+  components:
+    - type: Slime
+      splitInto: XenoSlimeMetal
+      extract: MetalSlimeExtract
+    - type: Sprite
+      color: "#5e5e5eff"
