@@ -98,7 +98,7 @@
   parent: [ClothingEyesBase, ShowSecurityIcons, BaseSecurityContraband]
   id: ClothingEyesGlassesBrigmedicPrescription
   name: prescription brigmedic glasses
-  description: Placeholder
+  description: A set of unshielded prescription glasses for Brigmedics.
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Eyes/Glasses/prescriptionbrigmedicglasses.rsi
@@ -115,7 +115,7 @@
   parent: [ClothingEyesBase, ShowMedicalIcons]
   id: ClothingEyeGlassesMedicalPrescription
   name: prescription medical glasses
-  description: Placeholder
+  description: A set of prescription glasses for Doctors. Not covered under insurance.
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Eyes/Glasses/prescriptionmedical.rsi
@@ -132,7 +132,7 @@
   parent: [ClothingEyesBase, ShowSecurityIcons, BaseSecurityContraband]
   id: ClothingEyeGlassesSecurityPrescription
   name: prescription security glasses
-  description: Placeholder
+  description: A set of unshielded perscription glasses for Security.
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Eyes/Glasses/prescriptionsecglasses.rsi
@@ -148,7 +148,7 @@
   parent: ClothingEyesGlassesChemical
   id: ClothingEyeGlassesChemicalPrescription
   name: prescription chemical analysis glasses
-  description: Placeholder
+  description: A set of perscription glasses for chemists.
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Eyes/Glasses/prescriptionscience.rsi
