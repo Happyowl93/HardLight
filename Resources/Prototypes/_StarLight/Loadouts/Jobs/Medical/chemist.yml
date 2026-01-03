@@ -168,6 +168,12 @@
   equipment:
     eyes: ClothingEyesGlassesJensenChemical
 
+- type: loadout
+  id: ChemicalGlassesPrescription
+  equipment:
+    eyes: ClothingEyeGlassesChemicalPrescription
+
+
 # Beaker
 - type: loadout
   id: LightBeaker
