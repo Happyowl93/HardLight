@@ -2,7 +2,7 @@
 
 - type: entity
   id: BaseMagazineShotgunToz
-  name: magazine (.42 shells)
+  name: magazine (20 gauge shells)
   parent: [ BaseItem, BaseSecurityContraband ]
   abstract: true
   components:
@@ -42,7 +42,7 @@
 
 - type: entity
   id: MagazineShotgunTozEmpty
-  name: magazine (.42 shells any)
+  name: magazine (20 gauge shells any)
   suffix: empty
   parent: BaseMagazineShotgunToz
   components:
@@ -51,7 +51,7 @@
 
 - type: entity
   id: MagazineShotgunToz
-  name: magazine (.42 pellet)
+  name: magazine (20 gauge pellet)
   parent: BaseMagazineShotgunToz
   components:
   - type: BallisticAmmoProvider
@@ -65,7 +65,7 @@
 
 - type: entity
   id: MagazineShotgunTozExtendedEmpty
-  name: magazine (.42 shells any)
+  name: magazine (20 gauge shells any)
   suffix: empty
   parent: BaseMagazineShotgunToz
   components:
@@ -81,7 +81,7 @@
 
 - type: entity
   id: MagazineShotgunTozExtended
-  name: magazine (.42 pellet)
+  name: magazine (20 gauge pellet)
   parent: BaseMagazineShotgunToz
   components:
   - type: BallisticAmmoProvider

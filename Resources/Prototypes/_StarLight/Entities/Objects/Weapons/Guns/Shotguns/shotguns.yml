@@ -232,7 +232,7 @@
   name: makeshift shotgun
   parent: [WeaponFlareGunSecurity, BaseMinorContraband]
   id: WeaponShotgunMakeshift
-  description: A small hand-cannon that fires .50 shotgun shells. Has no cloth to hold it together, so it has a high chance of falling apart with every shot.
+  description: A small hand-cannon that fires 12 gauge shotgun shells. Has no cloth to hold it together, so it has a high chance of falling apart with every shot.
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Shotguns/makeshift_shotgun.rsi
@@ -267,7 +267,7 @@
   name: ZOZ-106
   parent: [BaseWeaponShotgunAny, BaseGunWieldable, BaseSovietContraband]
   id: WeaponShotgunToz106
-  description: A cheap Soviet shotgun that received an indifferent welcome from hunters. Aim at the head and eyes for best results. Uses less-powerful .42 shotgun shells.
+  description: A cheap Soviet shotgun that received an indifferent welcome from hunters. Aim at the head and eyes for best results. Uses less-powerful 20 gauge shotgun shells.
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Shotguns/toz.rsi
@@ -336,6 +336,7 @@
   name: ZOZ-106 Shitpost Edition
   parent: WeaponShotgunToz106
   id: WeaponShotgunToz106Shitpost
+  description: Piotr said his custom ZOZ-106 could use anything as ammunition. No one believed him until it was too late.
   suffix: DO NOT MAP
   components:
   - type: ItemSlots
