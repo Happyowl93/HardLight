@@ -281,7 +281,11 @@
   - type: GunRequiresWield
   - type: Gun
     spread: 10
-    fireRate: 2
+    pump: true
+    fireRate: 0.4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
   - type: Item
     sprite: _Starlight/Objects/Weapons/Guns/Shotguns/toz.rsi
     size: Normal
@@ -333,11 +337,11 @@
 
 # shitpost TOZ with no mag restrictions
 - type: entity
-  name: ZOZ-106 Shitpost Edition
+  name: TOZ-106
   parent: WeaponShotgunToz106
   id: WeaponShotgunToz106Shitpost
-  description: Piotr said his custom ZOZ-106 could use anything as ammunition. No one believed him until it was too late.
-  suffix: DO NOT MAP
+  description: Piotr said his custom ZOZ-106 could accept ANY magazine. No one believed him until it was too late.
+  suffix: Admeme, DO NOT MAP
   components:
   - type: ItemSlots
     slots:
