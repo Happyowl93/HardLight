@@ -1,3 +1,4 @@
+using Content.Shared._Starlight.Xenobiology;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.EntityEffects;
@@ -14,19 +15,27 @@ public sealed class SlimeExtractSystem : EntitySystem
     [Dependency] private readonly SharedEntityEffectsSystem _entityEffectsSystem = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
 
+    /// <inheritdoc/>
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<SlimeExtractComponent, SolutionContainerChangedEvent>(OnSolutionChanged);
+    }
+    
     /// <inheritdoc />
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-        var query = EntityQueryEnumerator<Shared._Starlight.Xenobiology.SlimeExtractComponent>();
+        var query = EntityQueryEnumerator<SlimeExtractComponent>();
 
         while (query.MoveNext(out var uid, out var slimeExtractComponent))
         {
+            slimeExtractComponent.TimeSinceLastInject += frameTime;
             if (!_solutionContainerSystem.TryGetSolution(uid, slimeExtractComponent.ContainerName, out var solcom, out var currentSolution)) continue;
             var shouldDelete = false;
             foreach (var reaction in slimeExtractComponent.ExtractReactions)
             {
-                if (IsSolutionRequirementFulfilled(reaction.Requirements, currentSolution))
+                if (slimeExtractComponent.TimeSinceLastInject >= reaction.Delay && IsSolutionRequirementFulfilled(reaction.Requirements, currentSolution))
                 {
                     var minimumScalingFactor = FindMinimumScalingFactor(reaction.Requirements, currentSolution);
                     foreach (var requirement in reaction.Requirements)
@@ -69,5 +78,10 @@ public sealed class SlimeExtractSystem : EntitySystem
             minimumScalingFactor = FixedPoint2.Min(minimumScalingFactor, amount/req.Quantity);
         }
         return minimumScalingFactor;
+    }
+
+    private void OnSolutionChanged(Entity<SlimeExtractComponent> entity, ref SolutionContainerChangedEvent args)
+    {
+        entity.Comp.TimeSinceLastInject = 0F;
     }
 }

@@ -115,3 +115,4 @@
               scalingFactor: 0
               scalingOffset: 1
           shouldDelete: true
+          delay: 5

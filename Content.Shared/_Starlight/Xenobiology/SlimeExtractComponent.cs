@@ -22,6 +22,12 @@ public sealed partial class SlimeExtractComponent : Component
     /// </summary>
     [DataField("containerName", required: true), AutoNetworkedField]
     public string ContainerName = string.Empty;
+    
+    /// <summary>
+    /// How long it has been since the last injection.
+    /// </summary>
+    [ViewVariables, AutoNetworkedField]
+    public float TimeSinceLastInject = 0F;
 }
 
 /// <summary>
@@ -47,6 +53,12 @@ public sealed partial class ExtractReaction
     /// </summary>
     [DataField("shouldDelete", required: true)]
     public bool ShouldDelete = default!;
+
+    /// <summary>
+    /// If nonzero, how long until the effect actually occurs.
+    /// </summary>
+    [DataField("delay")]
+    public float Delay = 0;
 }
 
 /// <summary>
