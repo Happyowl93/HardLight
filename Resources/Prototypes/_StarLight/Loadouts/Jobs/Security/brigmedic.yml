@@ -125,7 +125,7 @@
 - type: loadout
   id: BrigmeicGlassesPrescription
   equipment:
-    id: ClothingEyesGlassesBrigmedicPrescription
+    eyes: ClothingEyesGlassesBrigmedicPrescription
 
 # PDA
 - type: loadout
