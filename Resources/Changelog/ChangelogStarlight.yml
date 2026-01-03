@@ -25058,5 +25058,18 @@ Entries:
   id: 267600
   time: '2026-01-02T17:28:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2676
+- author: R3v3l4t1on
+  changes:
+  - message: Swapped the multitool and welder around in the xenoborg tool module so
+      they're consistent with the normal tool module
+    type: Tweak
+  - message: Xenoborg is now 15 hours of borg playtime. Mothership is 5 hours of AI
+      playtime
+    type: Tweak
+  - message: The mothership can now communicate with their xenoborgs.
+    type: Fix
+  id: 264700
+  time: '2026-01-03T01:53:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2647
 Order: -1
 
