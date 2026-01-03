@@ -173,7 +173,6 @@
   equipment:
     eyes: ClothingEyeGlassesChemicalPrescription
 
-
 # Beaker
 - type: loadout
   id: LightBeaker
