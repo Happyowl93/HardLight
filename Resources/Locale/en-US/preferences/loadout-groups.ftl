@@ -57,12 +57,11 @@ loadout-group-librarian-jumpsuit = Librarian jumpsuit
 loadout-group-lawyer-jumpsuit = Lawyer jumpsuit
 loadout-group-lawyer-neck = Lawyer neck
 
-# Starlight: Chaplain -> Priest
-loadout-group-chaplain-head = Priest head
-loadout-group-chaplain-mask = Priest mask
-loadout-group-chaplain-jumpsuit = Priest jumpsuit
-loadout-group-chaplain-outerclothing = Priest outer clothing
-loadout-group-chaplain-neck = Priest neck
+loadout-group-chaplain-head = Chaplain head
+loadout-group-chaplain-mask = Chaplain mask
+loadout-group-chaplain-jumpsuit = Chaplain jumpsuit
+loadout-group-chaplain-outerclothing = Chaplain outer clothing
+loadout-group-chaplain-neck = Chaplain neck
 loadout-group-chaplain-bible = Holy Book
 
 loadout-group-janitor-head = Janitor head

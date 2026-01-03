@@ -1037,8 +1037,8 @@
 - type: entity
   parent: [ BaseCentcommContraband, ClothingOuterHardsuitJuggernaut ]
   id: ClothingOuterHardsuitERTChaplain
-  name: ERT priest hardsuit # Starlight
-  description: A protective hardsuit worn by the Priests of an Emergency Response Team. # Starlight
+  name: ERT chaplain hardsuit
+  description: A protective hardsuit worn by the Chaplains of an Emergency Response Team.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi #if you change this, please update the humanoid.yml with a better markers sprite.

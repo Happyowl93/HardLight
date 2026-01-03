@@ -949,7 +949,7 @@
 - type: entity
   parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
   id: ClothingHeadHelmetHardsuitERTChaplain
-  name: ERT priest hardsuit helmet # Starlight
+  name: ERT chaplain hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
   components:
   - type: Sprite

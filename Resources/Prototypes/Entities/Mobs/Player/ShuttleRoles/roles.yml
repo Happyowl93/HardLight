@@ -308,7 +308,7 @@
 
 - type: entity
   id: RandomHumanoidVisitorChaplain
-  name: visiting priest ghost role # Starlight
+  name: visiting chaplain ghost role
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi

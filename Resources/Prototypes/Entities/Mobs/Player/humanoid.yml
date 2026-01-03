@@ -148,7 +148,7 @@
 - type: entity
   id: RandomHumanoidSpawnerERTChaplain
   parent: RandomHumanoidSpawnerERTLeader
-  name: ERT priest # Starlight
+  name: ERT chaplain
   suffix: ERTRole, Basic
   components:
     - type: Sprite
@@ -186,7 +186,7 @@
 - type: entity
   id: RandomHumanoidSpawnerERTChaplainEVA
   parent: RandomHumanoidSpawnerERTChaplain
-  name: ERT priest # Starlight
+  name: ERT chaplain
   suffix: ERTRole, Enviro EVA
   components:
     - type: Sprite

@@ -542,7 +542,7 @@ accent-archaic-replacement-191 = cook
 accent-archaic-replaced-192 = captain
 accent-archaic-replacement-192 = lord
 
-accent-archaic-replaced-193 = priest
+accent-archaic-replaced-193 = chaplain
 accent-archaic-replacement-193 = vicar
 
 accent-archaic-replaced-194 = temple

@@ -325,7 +325,7 @@
 - type: entity
   parent: BaseFigurine
   id: ToyFigurineChaplain
-  name: priest figure # Starlight
+  name: chaplain figure
   description: A figurine depicting a religious leader hopefully praying for good things. # Starlight
   components:
   - type: Sprite

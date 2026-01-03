@@ -86,8 +86,8 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtChaplain
-  name: priest jumpskirt # Starlight
-  description: "It's a black jumpskirt, often worn by religious folk." # Starlight
+  name: chaplain jumpskirt
+  description: It's a black jumpskirt, often worn by religious folk.
   components:
     - type: Sprite
       sprite: Clothing/Uniforms/Jumpskirt/chaplain.rsi

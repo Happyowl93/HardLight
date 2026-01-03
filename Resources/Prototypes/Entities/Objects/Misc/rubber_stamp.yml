@@ -64,7 +64,7 @@
     state: stamp-centcom
 
 - type: entity
-  name: priest's rubber stamp # Starlight
+  name: chaplain's rubber stamp
   parent: RubberStampBase
   id: RubberStampChaplain
   categories: [ DoNotMap ]
