@@ -323,7 +323,7 @@
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
 
-# fully shitposted TOZ with no mag restrictions
+# fully shitposted TOZ with no mag restrictions!
 - type: entity
   name: TOZ-106
   parent: [BaseWeaponShotgunAny, BaseGunWieldable, BaseSovietContraband]
