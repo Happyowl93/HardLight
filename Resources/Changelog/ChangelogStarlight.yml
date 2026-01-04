@@ -25296,5 +25296,13 @@ Entries:
   id: 268400
   time: '2026-01-04T21:26:28.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2684
+- author: redmushie
+  changes:
+  - message: Reduced containment field ejection force to prevent noclipping and getting
+      ejected into deep space
+    type: Fix
+  id: 268800
+  time: '2026-01-04T21:32:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2688
 Order: -1
 
