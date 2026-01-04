@@ -74,6 +74,9 @@ marking-ResomiTailComplex = Resomi Tail (Complex)
 marking-ResomiTailComplex-tail_top = Tail Top
 marking-ResomiTailComplex-tail_middle = Tail Middle
 marking-ResomiTailComplex-tail_bottom = Tail Bottom
+marking-ResomiTailStubby = Resomi Tail (Stubby)
+marking-ResomiTailStubby-tail_stubby = Resomi Tail (Stubby)
+
 marking-ResomiTailFeathers = Resomi Tail Feathers
 marking-ResomiTailFeathers-tail_feathers = Resomi Tail Feathers
 marking-ResomiTailFeathersComplex = Resomi Tail Feathers (Complex)
@@ -81,3 +84,20 @@ marking-ResomiTailFeathersComplex-tail_feathers_right_upper = Resomi Upper Right
 marking-ResomiTailFeathersComplex-tail_feathers_right_lower = Resomi Lower Right Tail Feather
 marking-ResomiTailFeathersComplex-tail_feathers_left_upper = Resomi Upper Left Tail Feather
 marking-ResomiTailFeathersComplex-tail_feathers_left_lower = Resomi Lower Left Tail Feather
+marking-ResomiTailFeathersShort = Resomi Tail Feathers (Short)
+marking-ResomiTailFeathersShort-tail_feathers_short = Resomi Tail Feathers (Short)
+marking-ResomiTailFeathersFledgling = Resomi Tail Feathers (Fledgling)
+marking-ResomiTailFeathersFledgling-tail_feathers_fledgling = Resomi Tail Feathers (Fledgling)
+marking-ResomiTailFeathersLarge = Resomi Tail Feathers (Large)
+marking-ResomiTailFeathersLarge-tail_feathers_large = Resomi Tail Feathers (Large)
+
+marking-ResomiTailStripes = Resomi Tail Stripes
+marking-ResomiTailStripes-tail_stripes = Resomi Tail Stripes
+marking-ResomiTailSpots = Resomi Tail Spots
+marking-ResomiTailSpots-tail_spots = Resomi Tail Spots
+marking-ResomiTailStubbyProstheticWood = Stubby Tail Prosthetic (Wood)
+marking-ResomiTailStubbyProstheticUnbranded-stubby_prosthetic_wood = Wood Prosthetic Color
+marking-ResomiTailStubbyProstheticHighTech = Stubby Tail Prosthetic (High Tech)
+marking-ResomiTailStubbyProstheticUnbranded = Stubby Tail Prosthetic (Unbranded)
+marking-ResomiTailStubbyProstheticUnbranded-stubby_prosthetic_unbranded = Prosthetic Color
+

@@ -45,23 +45,23 @@
   onlyWhitelisted: true
   points:
     Special:
-      points: 10
+      points: 1
       required: false
     Hair:
       points: 1
       required: false
     Tail:
-      points: 2
-      required: true
-      defaultMarkings: [ ResomiTail, ResomiTailFeathers ]
+      points: 3
+      required: false
+      #defaultMarkings: [ ResomiTail, ResomiTailStubby, ResomiTailFeathers ]
     Legs:
-      points: 2
+      points: 1
       required: false
     Arms:
-      points: 2
+      points: 1
       required: false
     Head:
-      points: 2
+      points: 1
       required: false
     Chest:
       points: 1
