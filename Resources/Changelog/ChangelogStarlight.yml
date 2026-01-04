@@ -25088,5 +25088,19 @@ Entries:
   id: 270200
   time: '2026-01-04T20:05:44.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2702
+- author: teapoterror
+  changes:
+  - message: Change the Light in the Syndicate Hideout of GNT9 to be harder for the
+      turret to accidentally shoot out.
+    type: Tweak
+  - message: Remove Klaxon Sirens from Biohaz, replaced with a normal red light.
+    type: Tweak
+  - message: Change the airlock in the Syndicate Hideout to be unlocked.
+    type: Tweak
+  - message: Removed one of the lights in the beach (It was a tad too bright)
+    type: Tweak
+  id: 269400
+  time: '2026-01-04T20:09:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2694
 Order: -1
 
