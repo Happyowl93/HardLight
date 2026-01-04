@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/02/2026 14:52:51
-  entityCount: 29420
+  time: 01/04/2026 12:40:48
+  entityCount: 29418
 maps:
 - 1
 grids:
@@ -10290,7 +10290,7 @@ entities:
       pos: -63.5,-31.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -178973.31
+      secondsUntilStateChange: -179042.1
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10315,7 +10315,7 @@ entities:
       pos: -58.5,-45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -177370.81
+      secondsUntilStateChange: -177439.6
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10450,7 +10450,7 @@ entities:
       pos: -32.5,-52.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -184625.84
+      secondsUntilStateChange: -184694.62
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10913,7 +10913,7 @@ entities:
       pos: -71.5,-38.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -179483.64
+      secondsUntilStateChange: -179552.42
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -11108,7 +11108,7 @@ entities:
       pos: -83.5,-42.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4044.8987
+      secondsUntilStateChange: -4113.674
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11120,7 +11120,7 @@ entities:
       pos: -83.5,-46.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4045.4988
+      secondsUntilStateChange: -4114.274
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11132,7 +11132,7 @@ entities:
       pos: -83.5,-50.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4046.2654
+      secondsUntilStateChange: -4115.0405
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11144,7 +11144,7 @@ entities:
       pos: -83.5,-32.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4043.4988
+      secondsUntilStateChange: -4112.274
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11156,7 +11156,7 @@ entities:
       pos: -83.5,-28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4042.9321
+      secondsUntilStateChange: -4111.707
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11168,7 +11168,7 @@ entities:
       pos: -83.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4042.4321
+      secondsUntilStateChange: -4111.207
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11180,7 +11180,7 @@ entities:
       pos: 47.5,53.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4067.7322
+      secondsUntilStateChange: -4136.5073
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11192,7 +11192,7 @@ entities:
       pos: 47.5,57.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4067.0986
+      secondsUntilStateChange: -4135.8735
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11205,7 +11205,7 @@ entities:
     - type: GridFill
       path: /Maps/_Starlight/Shuttles/KillerTamashi-SecShuttle.yml
     - type: Door
-      secondsUntilStateChange: -59855.01
+      secondsUntilStateChange: -59923.785
       state: Opening
 - proto: AirlockExternalGlassShuttleLocked
   entities:
@@ -12513,7 +12513,7 @@ entities:
       pos: 34.5,43.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -257831.31
+      secondsUntilStateChange: -257900.1
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -131475,18 +131475,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 40.306778,-11.597965
       parent: 2
-- proto: MagazinePistolSubMachineGunTopMounted
-  entities:
-  - uid: 20628
-    components:
-    - type: Transform
-      pos: 40.337463,-10.522595
-      parent: 2
-  - uid: 20629
-    components:
-    - type: Transform
-      pos: 40.44684,-10.35072
-      parent: 2
 - proto: MagazineRifleSP
   entities:
   - uid: 20281
@@ -151641,6 +151629,13 @@ entities:
     components:
     - type: Transform
       pos: 39.5,-11.5
+      parent: 2
+- proto: SpawnPointHeadOfSecurityWeapon
+  entities:
+  - uid: 20628
+    components:
+    - type: Transform
+      pos: 39.5,-10.5
       parent: 2
 - proto: SpawnPointIAA
   entities:
@@ -179413,13 +179408,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponSubMachineGunWt550
-  entities:
-  - uid: 29057
-    components:
-    - type: Transform
-      pos: 39.681213,-10.366345
-      parent: 2
 - proto: WelderExperimental
   entities:
   - uid: 11976
