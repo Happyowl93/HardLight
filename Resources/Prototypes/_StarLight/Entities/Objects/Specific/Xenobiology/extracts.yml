@@ -468,3 +468,15 @@
               scalingFactor: 0
               scalingOffset: 1
           shouldDelete: true
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: SepiaSlimeExtract
+  name: sepia slime extract
+  components:
+    - type: Sprite
+      color: "#c9b7a9ff"
+    - type: SlimeExtract
+      extractReactions:
+# Extract reactions for sepia extracts are currently unimplemented as there are no handheld cameras, tiles capable of slowing down, or the ability to stop time.
+# We either need to make these things or come up with different reactions and make this our own thing

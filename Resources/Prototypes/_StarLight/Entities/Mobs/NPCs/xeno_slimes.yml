@@ -133,6 +133,7 @@
       splitIntoMutation:
         - XenoSlimeOrange
         - XenoSlimePurple
+        - XenoSlimeSepia
     - type: Sprite
       color: "#501466ff"
 
@@ -177,3 +178,15 @@
       extract: BluespaceSlimeExtract
     - type: Sprite
       color: "#ffffffff"
+
+- type: entity
+  name: sepia xenobiology slime
+  id: XenoSlimeSepia
+  parent: XenoSlimeBase
+  description: SEPIA
+  components:
+    - type: Slime
+      splitInto: XenoSlimeSepia
+      extract: SepiaSlimeExtract
+    - type: Sprite
+      color: "#c9b7a9ff"
