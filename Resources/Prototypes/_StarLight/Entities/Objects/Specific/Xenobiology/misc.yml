@@ -24,6 +24,26 @@
 
 - type: entity
   parent: BaseItem
+  id: SlimeFireproofPotion
+  name: slime fireproof potion
+  description: Apply this to clothing to make it fireproof. Only clothing. Because I'm way too tired to make a general fireproofing component.
+  components:
+    - type: SlimeFireproofPotion
+      fireProtection:
+        reduction: 1.0
+    - type: Sprite
+      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
+      layers:
+        - state: icon
+      color: "#132b6eff"
+
+- type: damageModifierSet
+  id: SlimeFireproofPotionEffect
+  coefficients:
+    Heat: -10.0
+
+- type: entity
+  parent: BaseItem
   id: YellowSlimeExtractLight
   name: yellow slime extract light
   components:

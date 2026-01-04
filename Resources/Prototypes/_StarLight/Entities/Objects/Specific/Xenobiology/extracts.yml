@@ -353,3 +353,39 @@
               scalingFactor: 0
               scalingOffset: 1
           shouldDelete: true
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: DarkBlueSlimeExtract
+  name: dark blue slime extract
+  components:
+    - type: Sprite
+      color: "#132b6eff"
+    - type: SlimeExtract
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: Water
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                entity: SlimeFireproofPotion
+                number: 1
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:CreateGas
+                gas: Nitrogen
+              scalingFactor: 1
+              scalingOffset: 0
+            - effect: !type:ChangeGasTemperature
+                temperature: -300
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true
+          delay: 5

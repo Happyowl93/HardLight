@@ -71,6 +71,7 @@
       extract: PurpleSlimeExtract
       splitIntoMutation:
         - XenoSlimeDarkPurple
+        - XenoSlimeDarkBlue
     - type: Sprite
       color: "#9721c2ff"
 
@@ -83,6 +84,8 @@
     - type: Slime
       splitInto: XenoSlimeBlue
       extract: BlueSlimeExtract
+      splitIntoMutation:
+        - XenoSlimeDarkBlue
     - type: Sprite
       color: "#34cfebff"
 
@@ -129,3 +132,18 @@
         - XenoSlimePurple
     - type: Sprite
       color: "#501466ff"
+
+- type: entity
+  name: dark blue xenobiology slime
+  id: XenoSlimeDarkBlue
+  parent: XenoSlimeBase
+  description: DARK BLUE
+  components:
+    - type: Slime
+      splitInto: XenoSlimeDarkBlue
+      extract: DarkBlueSlimeExtract
+      splitIntoMutation:
+        - XenoSlimePurple
+        - XenoSlimeBlue
+    - type: Sprite
+      color: "#132b6eff"
