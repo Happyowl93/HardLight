@@ -149,7 +149,7 @@
   parent: [ClothingEyesBase, ShowSecurityIcons, BaseSecurityContraband]
   id: ClothingEyeGlassesSecurityPrescription
   name: prescription security glasses
-  description: A set of unshielded perscription glasses for Security.
+  description: A set of unshielded prescription glasses for Security.
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Eyes/Glasses/prescriptionsecglasses.rsi
@@ -165,7 +165,7 @@
   parent: ClothingEyesGlassesChemical
   id: ClothingEyeGlassesChemicalPrescription
   name: prescription chemical analysis glasses
-  description: A set of perscription glasses for chemists.
+  description: A set of prescription glasses for chemists.
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Eyes/Glasses/prescriptionscience.rsi
