@@ -527,6 +527,7 @@
     - StarlightMedicalStatic # Starlight
     dynamicPacks:
     - StarlightSurgeryDynamic
+    - StarlightAutomendersDynamic
     - StarlightCyberlimbDynamic
     - StarlightCyberOrgansDynamic
     - StarlightImplantDynamic
