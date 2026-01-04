@@ -425,3 +425,46 @@
               scalingFactor: 1
               scalingOffset: 0
           shouldDelete: true
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: BluespaceSlimeExtract
+  name: bluespace slime extract
+  components:
+    - type: Sprite
+      color: "#ffffffff"
+    - type: SlimeExtract
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: Water
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: SlimeBluespaceRadioPotion
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true
+        - requirements:
+            reagents:
+              - ReagentId: Blood
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: FloorTileItemBluespace25
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: BluespaceCrystal
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true

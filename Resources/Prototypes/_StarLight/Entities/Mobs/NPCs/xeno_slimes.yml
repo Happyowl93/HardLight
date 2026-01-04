@@ -117,6 +117,7 @@
       splitIntoMutation:
         - XenoSlimeOrange
         - XenoSlimeMetal
+        - XenoSlimeBluespace
     - type: Sprite
       color: "#ffeb52ff"
 
@@ -154,7 +155,7 @@
   name: silver xenobiology slime
   id: XenoSlimeSilver
   parent: XenoSlimeBase
-  description: Silver
+  description: SILVER
   components:
     - type: Slime
       splitInto: XenoSlimeSliver
@@ -164,3 +165,15 @@
         - XenoSlimeBlue
     - type: Sprite
       color: "#aab8bdff"
+
+- type: entity
+  name: bluespace xenobiology slime
+  id: XenoSlimeBluespace
+  parent: XenoSlimeBase
+  description: BLUESPACE
+  components:
+    - type: Slime
+      splitInto: XenoSlimeBluespace
+      extract: BluespaceSlimeExtract
+    - type: Sprite
+      color: "#ffffffff"
