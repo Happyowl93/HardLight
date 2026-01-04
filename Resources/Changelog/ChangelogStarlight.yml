@@ -25102,5 +25102,12 @@ Entries:
   id: 269400
   time: '2026-01-04T20:09:33.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2694
+- author: Karma
+  changes:
+  - message: Updated Corporate Law in Game
+    type: Tweak
+  id: 266500
+  time: '2026-01-04T20:13:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2665
 Order: -1
 
