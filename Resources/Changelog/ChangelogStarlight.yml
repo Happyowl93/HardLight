@@ -25151,5 +25151,28 @@ Entries:
   id: 269600
   time: '2026-01-04T20:21:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2696
+- author: CawsForConcern
+  changes:
+  - message: (Fland) Added a second Service Request Computer, which is located in
+      the Bar. People had trouble finding the one in the Service Common Area between
+      the Kitchen and Hydroponics.
+    type: Add
+  - message: (Fland) Per Atmos requests, the gas input to the SM chamber has been
+      changed to passive vents (was previously air injectors)
+    type: Tweak
+  - message: (Fland) Maints door in Salvage/Mining was Salvage acces only
+    type: Fix
+  - message: (Fland) Chemistry's lower half was missing power due to a missing LV
+      wire
+    type: Fix
+  - message: (Fland) AI Turret controls were using the wrong turret control prototype,
+      turret controls now fixed
+    type: Fix
+  - message: (Fland) Replaced HOS WT550 with the 'HOS weapon spawner' (no gameplay
+      difference, just mapping stuff)
+    type: Tweak
+  id: 269500
+  time: '2026-01-04T20:22:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2695
 Order: -1
 
