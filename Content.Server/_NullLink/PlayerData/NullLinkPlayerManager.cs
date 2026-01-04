@@ -45,6 +45,7 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
         _sawmill = _logManager.GetSawmill("NullLink player data");
         _netMgr.RegisterNetMessage<MsgUpdatePlayerRoles>();
         _netMgr.RegisterNetMessage<MsgUpdatePlayerPlayTime>();
+        _netMgr.RegisterNetMessage<MsgUpdatePlayerResources>();
         _playerManager.PlayerStatusChanged += PlayerStatusChanged;
         InitializeLinking();
         _cfg.OnValueChanged(NullLinkCCVars.RoleReqMentors, UpdateMentors, true);

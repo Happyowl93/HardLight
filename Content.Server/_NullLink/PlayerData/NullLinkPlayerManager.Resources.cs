@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
 using Content.Shared._NullLink;
 using Robust.Shared.Player;
 using Starlight.NullLink.Event;
@@ -7,6 +8,19 @@ namespace Content.Server._NullLink.PlayerData;
 
 public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
 {
+    public ValueTask SyncResources(PlayerResourcesSyncEvent ev)
+    {
+        if (!_playerById.TryGetValue(ev.Player, out var playerData))
+            return ValueTask.CompletedTask;
+        playerData.Resources.Clear();
+
+        foreach (var resource in ev.Resources)
+            playerData.Resources[resource.Key] = resource.Value;
+
+        SendPlayerResources(playerData.Session, playerData.Resources);
+        return ValueTask.CompletedTask;
+    }
+    
     public ValueTask UpdateResource(ResourceChangedEvent ev)
     {
         if (!_playerById.TryGetValue(ev.Player, out var playerData))
@@ -22,4 +36,15 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
         {
             Resources = resources
         }, session.Channel);
+
+    public bool TryGetResource(Guid userId, string id, [NotNullWhen(true)] out double? value)
+    {
+        value = null;
+        if (!TryGetPlayerData(userId, out var data) 
+            || !data.Resources.TryGetValue(id, out var Value))
+            return false;
+
+        value = Value;
+        return true;
+    }
 }

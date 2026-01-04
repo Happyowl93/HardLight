@@ -6,6 +6,8 @@ using Robust.Server.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Content.Server._NullLink.Core;
+using Content.Shared._NullLink;
 
 namespace Content.Server.Starlight;
 
@@ -14,6 +16,7 @@ public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjec
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IServerDbManager _dbManager = default!;
     [Dependency] private readonly IServerNetManager _netMgr = default!;
+    [Dependency] private readonly IActorRouter _actors = default!;
 
     private readonly Dictionary<ICommonSession, PlayerReg> _players = new();
 
@@ -118,8 +121,19 @@ public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjec
 
         if (data == null)
             return;
+
+        var diff = value - data.Balance;
+
+        if (diff == 0) // If we don't have any difference - we don't need to call null link.
+            return;
         
         data.Balance = value;
+
+        if (!_actors.Enabled 
+            || !_actors.TryGetServerGrain(out var serverGrain))
+            return;
+        
+        serverGrain.UpdateResource(session.UserId, "credits", diff);
     }
 
     public PlayerData? GetPlayerData(ICommonSession session) => _players.TryGetValue(session, out var data) ? data.Data : null;

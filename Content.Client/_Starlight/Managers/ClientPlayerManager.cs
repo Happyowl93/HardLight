@@ -6,6 +6,7 @@ using Robust.Client.UserInterface;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Content.Client._NullLink;
 
 namespace Content.Client.Administration.Managers;
 
@@ -14,6 +15,7 @@ public sealed class ClientPlayerManager : IClientPlayerRolesManager, IPostInject
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IClientNetManager _netMgr = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
+    [Dependency] private readonly INullLinkPlayerResourcesManager _nullLinkResourcesManager = default!;
 
     private PlayerData? _playerData;
     private ISawmill _sawmill = default!;
@@ -21,7 +23,20 @@ public sealed class ClientPlayerManager : IClientPlayerRolesManager, IPostInject
     public event Action? PlayerStatusUpdated;
 
     public void Initialize()
-        => _netMgr.RegisterNetMessage<MsgUpdatePlayerStatus>(UpdateMessageRx);
+    {
+        _netMgr.RegisterNetMessage<MsgUpdatePlayerStatus>(UpdateMessageRx);
+
+        _nullLinkResourcesManager.PlayerResourcesChanged += OnPlayerResourcesUpdated;
+    }
+
+    private void OnPlayerResourcesUpdated()
+    {
+        if (!_nullLinkResourcesManager.TryGetResource("credits", out var balance) 
+            || _player.LocalSession == null)
+            return;
+
+        SetBalance(_player.LocalSession, (int)balance);
+    }
 
     private void UpdateMessageRx(MsgUpdatePlayerStatus message)
     {
@@ -54,7 +69,19 @@ public sealed class ClientPlayerManager : IClientPlayerRolesManager, IPostInject
     public int? GetBalance(ICommonSession session)
         => GetPlayerData(session) is { } data ? data.Balance : null;
 
-    public void SetBalance(EntityUid uid, int value) {} // Empty because we set balance only at the server-side.
+    public void SetBalance(EntityUid uid, int value)
+    {
+        if (_player.LocalEntity == uid && _player.LocalSession != null)
+            SetBalance(_player.LocalSession, value);
+    } 
 
-    public void SetBalance(ICommonSession session, int value) {} // Empty because we set balance only at the server-side.
+    public void SetBalance(ICommonSession session, int value) 
+    {
+        var data = GetPlayerData(session);
+
+        if (data == null)
+            return;
+
+        data.Balance = value;
+    }
 }
