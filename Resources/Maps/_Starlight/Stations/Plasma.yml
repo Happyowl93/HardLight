@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/27/2025 08:27:00
-  entityCount: 26975
+  time: 01/04/2026 10:35:06
+  entityCount: 26973
 maps:
 - 1
 grids:
@@ -131461,18 +131461,6 @@ entities:
     - type: Transform
       pos: -88.74439,-22.559776
       parent: 2
-- proto: MagazinePistolSubMachineGunTopMounted
-  entities:
-  - uid: 8276
-    components:
-    - type: Transform
-      pos: -77.744835,-33.616684
-      parent: 2
-  - uid: 24471
-    components:
-    - type: Transform
-      pos: -77.369835,-33.429184
-      parent: 2
 - proto: MailingUnit
   entities:
   - uid: 3680
@@ -149625,6 +149613,13 @@ entities:
     components:
     - type: Transform
       pos: -82.5,-34.5
+      parent: 2
+- proto: SpawnPointHeadOfSecurityWeapon
+  entities:
+  - uid: 8276
+    components:
+    - type: Transform
+      pos: -77.5,-33.5
       parent: 2
 - proto: SpawnPointIAA
   entities:
@@ -173743,13 +173738,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponSubMachineGunWt550
-  entities:
-  - uid: 14639
-    components:
-    - type: Transform
-      pos: -77.588585,-33.179184
-      parent: 2
 - proto: WeaponTurretSyndicateBroken
   entities:
   - uid: 2407
