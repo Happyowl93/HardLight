@@ -108934,9 +108934,6 @@ entities:
 
         - B
     - type: UserInterface
-      actors:
-        enum.PaperUiKey.Key:
-        - invalid
     - type: ActiveUserInterface
 - proto: ParticleAcceleratorComputerCircuitboard
   entities:
