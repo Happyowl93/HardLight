@@ -1,5 +1,4 @@
 using System.Numerics;
-using Content.Shared._Starlight.Xenobiology;
 using Content.Shared.Coordinates;
 using Content.Shared.Damage.Components;
 using Content.Shared.Interaction;
@@ -8,7 +7,7 @@ using Content.Shared.Power;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 
-namespace Content.Server._Starlight.Xenobiology;
+namespace Content.Shared._Starlight.Xenobiology;
 
 public sealed class SlimeProcessorSystem : EntitySystem
 {
@@ -36,7 +35,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
 
                 if (slimeProcessorComponent.ProcessingTimer <= 0) // If we are processing slimes
                 {
-                    Random random = new Random();
+                    System.Random random = new System.Random();
                     foreach (var proto in slimeProcessorComponent.Extracts)
                     {
                         Vector2 randomOffset = new Vector2(random.NextFloat(-0.2F, 0.2F), random.NextFloat(-0.2F, 0.2F));
@@ -65,7 +64,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
                             {
                                 slimeProcessorComponent.Extracts.Add(slimeComponent.Extract);
                             }
-                            QueueDel(entity);
+                            PredictedQueueDel(entity);
                             slimeProcessorComponent.SlimeAcquireTimer = slimeProcessorComponent.SlimeAcquireCooldown;
                             break;
                         }

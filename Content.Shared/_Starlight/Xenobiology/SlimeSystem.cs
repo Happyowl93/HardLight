@@ -1,4 +1,3 @@
-using Content.Shared._Starlight.Xenobiology;
 using Content.Shared._Starlight.Xenobiology.MiscItems;
 using Content.Shared.Coordinates;
 using Content.Shared.Damage.Components;
@@ -7,7 +6,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Robust.Shared.Random;
 
-namespace Content.Server._Starlight.Xenobiology;
+namespace Content.Shared._Starlight.Xenobiology;
 
 /// <summary>
 /// Handles the general behavior of slimes.
@@ -52,7 +51,7 @@ public sealed class SlimeSystem : EntitySystem
         
         foreach (var slime in SlimesToDelete)
         {
-            _entityManager.QueueDeleteEntity(slime);
+            _entityManager.PredictedQueueDeleteEntity(slime);
         }
     }
     
@@ -83,7 +82,7 @@ public sealed class SlimeSystem : EntitySystem
     {
         if (!Resolve(slime, ref slime.Comp, false)) return false;
         var newNutrition = slime.Comp.Nutrition / split_amount;
-        Random random = new Random();
+        System.Random random = new System.Random();
         for (int i = 0; i < split_amount; i++)
         {
             string protoName;
@@ -120,13 +119,13 @@ public sealed class SlimeSystem : EntitySystem
         if (TryComp<SlimeSteroidPotionComponent>(args.Used, out _) && ent.Comp.SlimeSteroidAmount < 4)
         {
             ent.Comp.SlimeSteroidAmount += 1;
-            QueueDel(args.Used);
+            PredictedQueueDel(args.Used);
             args.Handled = true;
         }
         else if (TryComp<SlimeStabilizerPotionComponent>(args.Used, out _) && ent.Comp.MutationChance > 0)
         {
             ent.Comp.MutationChance = FixedPoint2.Max(0, ent.Comp.MutationChance - 0.15);
-            QueueDel(args.Used);
+            PredictedQueueDel(args.Used);
             args.Handled = true;
         }
     }

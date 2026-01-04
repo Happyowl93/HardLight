@@ -1,7 +1,6 @@
-using Content.Shared._Starlight.Xenobiology.MiscItems;
 using Content.Shared.Item.ItemToggle.Components;
 
-namespace Content.Client._Starlight.Xenobiology.MiscItems;
+namespace Content.Shared._Starlight.Xenobiology.MiscItems;
 
 public sealed class YellowSlimeExtractLightSystem : EntitySystem
 {

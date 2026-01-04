@@ -1,10 +1,9 @@
-using Content.Shared._Starlight.Xenobiology;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 
-namespace Content.Server._Starlight.Xenobiology;
+namespace Content.Shared._Starlight.Xenobiology;
 
 /// <summary>
 /// Handles the general behavior of slime extracts
@@ -57,7 +56,7 @@ public sealed class SlimeExtractSystem : EntitySystem
                 }
             }
             if (shouldDelete)
-                _entityManager.QueueDeleteEntity(uid);
+                _entityManager.PredictedQueueDeleteEntity(uid);
         }
     }
     

@@ -1,5 +1,6 @@
-using Content.Shared.Clothing.Components;
+using Content.Shared.Damage.Prototypes;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.Xenobiology.MiscItems;
 
@@ -11,4 +12,10 @@ public sealed partial class SlimeFireproofPotionComponent : Component
     /// </summary>
     [ViewVariables, AutoNetworkedField]
     public int RemainingUses = 3;
+
+    /// <summary>
+    /// The specific damage set applied to the entity
+    /// </summary>
+    [DataField("fireproofDamageSet", required: true), AutoNetworkedField]
+    public ProtoId<DamageModifierSetPrototype> FireproofDamageSet = default!;
 }
