@@ -13,7 +13,7 @@ public sealed partial class SlimeExtractComponent : Component
     /// What occurs when this extract receives some specific reagent.
     /// Each entry is a reagent reaction, consisting of the requirements and then the response
     /// </summary>
-    [DataField("extractReactions", required: true), AutoNetworkedField]
+    [DataField("extractReactions"), AutoNetworkedField]
     public List<ExtractReaction> ExtractReactions = new();
     
     /// <summary>
