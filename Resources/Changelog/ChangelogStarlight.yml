@@ -25191,5 +25191,24 @@ Entries:
   id: 270000
   time: '2026-01-04T20:22:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2700
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Turret control panel for AI Upload (by Bridge)
+    type: Add
+  - message: (Lobster) One (1) surplus TEG engine in Atmospherics — some assembly
+      required!
+    type: Add
+  - message: (Lobster) Station beacon for Southwest Solars
+    type: Add
+  - message: (Lobster) Medical Records computer to Medical Reception
+    type: Add
+  - message: (Lobster) Replaced HOS WT550 with the 'HOS weapon spawner' (no gameplay
+      difference, just mapping stuff)
+    type: Tweak
+  - message: (Lobster) Artifact pads were not linked in Science
+    type: Fix
+  id: 269800
+  time: '2026-01-04T20:21:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2698
 Order: -1
 
