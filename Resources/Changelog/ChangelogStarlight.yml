@@ -25228,5 +25228,32 @@ Entries:
   id: 268600
   time: '2026-01-04T20:41:44.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2686
+- author: wonderfulnewworld
+  changes:
+  - message: Added Senior Chemistry Backpack/Duffel Bag/Satchel
+    type: Add
+  - message: Chemistry is now actually able to spawn with their Chem bags again
+    type: Fix
+  - message: Science's waistbag is now another 2x1 wider to account for science's
+      expected equipment
+    type: Tweak
+  - message: Reordered some outfits in Brigmedic/Senior Courier to be more consistent/make
+      more aesthetic sense
+    type: Tweak
+  - message: Brigmedic is once again required bring a mask to work for health and
+      safety concerns
+    type: Tweak
+  - message: Brigmedic can now wear white gloves
+    type: Tweak
+  - message: Renamed Corpsman's response jacket to Corpsman's response wear
+    type: Tweak
+  - message: -5% blunt armor on Brigmedic overcoats
+    type: Tweak
+  - message: Decreased price of Industrial/Advanced Industrial Welder in Engineering's
+      vendor from 250->150 and 400->350 respectively
+    type: Tweak
+  id: 268700
+  time: '2026-01-04T20:52:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2687
 Order: -1
 
