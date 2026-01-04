@@ -165,6 +165,7 @@
       splitIntoMutation:
         - XenoSlimeMetal
         - XenoSlimeBlue
+        - XenoSlimePyrite
     - type: Sprite
       color: "#aab8bdff"
 
@@ -203,3 +204,15 @@
       extract: CeruleanSlimeExtract
     - type: Sprite
       color: "#5998b3ff"
+
+- type: entity
+  name: pyrite xenobiology slime
+  id: XenoSlimePyrite
+  parent: XenoSlimeBase
+  description: PYRITE
+  components:
+    - type: Slime
+      splitInto: XenoSlimePyrite
+      extract: PyriteSlimeExtract
+    - type: Sprite
+      color: "#ebe15bff"

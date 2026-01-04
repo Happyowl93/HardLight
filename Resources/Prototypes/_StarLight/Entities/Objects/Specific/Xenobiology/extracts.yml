@@ -490,3 +490,50 @@
               scalingFactor: 0
               scalingOffset: 1
           shouldDelete: true
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: PyriteSlimeExtract
+  name: pyrite slime extract
+  components:
+    - type: Sprite
+      color: "#ebe15bff"
+    - type: SlimeExtract
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: Blood
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntityFromTable
+                number: 1
+                entityTable: !type:GroupSelector
+                  children:
+                    - id: CrayonRed
+                    - id: CrayonOrange
+                    - id: CrayonYellow
+                    - id: CrayonGreen
+                    - id: CrayonBlue
+                    - id: CrayonPurple
+                    - id: CrayonBlack
+                    - id: CrayonWhite
+                offset: 0.2
+              scalingFactor: 1
+              scalingOffset: 0
+          shouldDelete: true
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: SprayPainter
+              scalingFactor: 0
+              scalingOffset: 1
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: SprayPainterAmmo
+              scalingFactor: 1
+              scalingOffset: 0
+          shouldDelete: true
