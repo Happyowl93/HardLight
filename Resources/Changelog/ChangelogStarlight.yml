@@ -25304,5 +25304,12 @@ Entries:
   id: 268800
   time: '2026-01-04T21:32:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2688
+- author: Scarlet Lightweaver
+  changes:
+  - message: Added a new admeme crate.
+    type: Add
+  id: 261400
+  time: '2026-01-04T22:38:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2614
 Order: -1
 
