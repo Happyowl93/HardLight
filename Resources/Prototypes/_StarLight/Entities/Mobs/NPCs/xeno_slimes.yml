@@ -149,6 +149,7 @@
       splitIntoMutation:
         - XenoSlimePurple
         - XenoSlimeBlue
+        - XenoSlimeCerulean
     - type: Sprite
       color: "#132b6eff"
 
@@ -190,3 +191,15 @@
       extract: SepiaSlimeExtract
     - type: Sprite
       color: "#c9b7a9ff"
+
+- type: entity
+  name: cerulean xenobiology slime
+  id: XenoSlimeCerulean
+  parent: XenoSlimeBase
+  description: CERULEAN
+  components:
+    - type: Slime
+      splitInto: XenoSlimeCerulean
+      extract: CeruleanSlimeExtract
+    - type: Sprite
+      color: "#5998b3ff"

@@ -468,3 +468,25 @@
     - type: SlimeExtract
 # Extract reactions for sepia extracts are currently unimplemented as there are no handheld cameras, tiles capable of slowing down, or the ability to stop time.
 # We either need to make these things or come up with different reactions and make this our own thing
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: CeruleanSlimeExtract
+  name: cerulean slime extract
+  components:
+    - type: Sprite
+      color: "#5998b3ff"
+    - type: SlimeExtract
+      extractReactions:
+        # The blood reaction doesn't work until the slime console is implemented.
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: SlimeExtractEnhancerPotion
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true

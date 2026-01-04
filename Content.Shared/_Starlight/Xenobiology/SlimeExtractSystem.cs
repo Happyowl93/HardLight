@@ -1,7 +1,9 @@
+using Content.Shared._Starlight.Xenobiology.MiscItems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
+using Content.Shared.Interaction;
 
 namespace Content.Shared._Starlight.Xenobiology;
 
@@ -19,6 +21,7 @@ public sealed class SlimeExtractSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<SlimeExtractComponent, SolutionContainerChangedEvent>(OnSolutionChanged);
+        SubscribeLocalEvent<SlimeExtractComponent, InteractUsingEvent>(OnInteractUsing);
     }
     
     /// <inheritdoc />
@@ -29,11 +32,12 @@ public sealed class SlimeExtractSystem : EntitySystem
 
         while (query.MoveNext(out var uid, out var slimeExtractComponent))
         {
-            if (slimeExtractComponent.Exhausted) continue;
+            if (slimeExtractComponent.RemainingUses <= 0) continue;
             
             slimeExtractComponent.TimeSinceLastInject += frameTime;
             if (!_solutionContainerSystem.TryGetSolution(uid, slimeExtractComponent.ContainerName, out var solcom, out var currentSolution)) continue;
             var shouldDelete = false;
+            var shouldExhaust = false;
             foreach (var reaction in slimeExtractComponent.ExtractReactions)
             {
                 if (slimeExtractComponent.TimeSinceLastInject >= reaction.Delay && IsSolutionRequirementFulfilled(reaction.Requirements, currentSolution))
@@ -52,10 +56,16 @@ public sealed class SlimeExtractSystem : EntitySystem
                     {
                         shouldDelete = true;
                     }
-                    slimeExtractComponent.Exhausted = true;
+                    shouldExhaust = true;
                 }
             }
-            if (shouldDelete)
+
+            if (shouldExhaust)
+            {
+                slimeExtractComponent.RemainingUses -= 1;
+                slimeExtractComponent.TimeSinceLastInject = 0F;
+            }
+            if (shouldDelete && slimeExtractComponent.RemainingUses <= 0)
                 _entityManager.PredictedQueueDeleteEntity(uid);
         }
     }
@@ -85,5 +95,15 @@ public sealed class SlimeExtractSystem : EntitySystem
     private void OnSolutionChanged(Entity<SlimeExtractComponent> entity, ref SolutionContainerChangedEvent args)
     {
         entity.Comp.TimeSinceLastInject = 0F;
+    }
+    
+    private void OnInteractUsing(Entity<SlimeExtractComponent> ent, ref InteractUsingEvent args)
+    {
+        if (TryComp<SlimeExtractEnhancerPotionComponent>(args.Used, out _))
+        {
+            ent.Comp.RemainingUses += 1;
+            PredictedQueueDel(args.Used);
+            args.Handled = true;
+        }
     }
 }

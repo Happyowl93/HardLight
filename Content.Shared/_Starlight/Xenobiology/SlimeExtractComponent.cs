@@ -30,10 +30,10 @@ public sealed partial class SlimeExtractComponent : Component
     public float TimeSinceLastInject = 0F;
 
     /// <summary>
-    /// Whether the slime extract has already been used, and thus cannot be used again.
+    /// How many times this extract can be used before being deleted or exhausted.
     /// </summary>
     [ViewVariables, AutoNetworkedField]
-    public bool Exhausted = false;
+    public int RemainingUses = 1;
 }
 
 /// <summary>
