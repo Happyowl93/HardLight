@@ -1428,7 +1428,7 @@
   - SecurityGlasses
   - SecurityHud
   - DetectiveNoirGlasses
-  - SecurityGlassesPrescription
+  - SecurityGlassesPrescription # Starlight
 
 - type: loadoutGroup
   id: BrigmedicHead
@@ -1888,7 +1888,7 @@
   - Glasses
   - GlassesJamjar
   - GlassesJensen
-  - MedicalGlassesPrescription
+  - MedicalGlassesPrescription # Starlight
 
 - type: loadoutGroup
   id: SurvivalMedical
