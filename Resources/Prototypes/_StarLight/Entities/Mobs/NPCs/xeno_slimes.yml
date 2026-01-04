@@ -86,6 +86,7 @@
       extract: BlueSlimeExtract
       splitIntoMutation:
         - XenoSlimeDarkBlue
+        - XenoSlimeSliver
     - type: Sprite
       color: "#34cfebff"
 
@@ -100,6 +101,7 @@
       extract: MetalSlimeExtract
       splitIntoMutation:
         - XenoSlimeYellow
+        - XenoSlimeSliver
     - type: Sprite
       color: "#5e5e5eff"
 
@@ -147,3 +149,18 @@
         - XenoSlimeBlue
     - type: Sprite
       color: "#132b6eff"
+
+- type: entity
+  name: silver xenobiology slime
+  id: XenoSlimeSilver
+  parent: XenoSlimeBase
+  description: Silver
+  components:
+    - type: Slime
+      splitInto: XenoSlimeSliver
+      extract: SilverSlimeExtract
+      splitIntoMutation:
+        - XenoSlimeMetal
+        - XenoSlimeBlue
+    - type: Sprite
+      color: "#aab8bdff"

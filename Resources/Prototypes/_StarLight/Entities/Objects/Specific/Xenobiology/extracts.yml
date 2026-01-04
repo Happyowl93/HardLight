@@ -389,3 +389,37 @@
               scalingOffset: 1
           shouldDelete: true
           delay: 5
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: SilverSlimeExtract
+  name: silver slime extract
+  components:
+    - type: Sprite
+      color: "#aab8bdff"
+    - type: SlimeExtract
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: Water
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntityFromTable
+                number: 1
+                entityTable: !type:NestedSelector
+                  tableId: SilverSlimeDrinkTable
+              scalingFactor: 1
+              scalingOffset: 0
+          shouldDelete: true
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntityFromTable
+                number: 1
+                entityTable: !type:NestedSelector
+                  tableId: SilverSlimeFoodTable
+              scalingFactor: 1
+              scalingOffset: 0
+          shouldDelete: true
