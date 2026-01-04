@@ -25081,5 +25081,12 @@ Entries:
   id: 232500
   time: '2026-01-03T02:20:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2325
+- author: Citrea
+  changes:
+  - message: Unsafe presents can now *also* be opened by borgs.
+    type: Fix
+  id: 270200
+  time: '2026-01-04T20:05:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2702
 Order: -1
 
