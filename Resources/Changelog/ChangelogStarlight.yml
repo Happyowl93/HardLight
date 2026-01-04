@@ -25174,5 +25174,22 @@ Entries:
   id: 269500
   time: '2026-01-04T20:22:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2695
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) Mining ticket machine to Salvage/Mining Bay
+    type: Add
+  - message: (Saltern) Jr. Pacman generator to Engineering
+    type: Add
+  - message: (Saltern) Replaced HOS WT550 with the 'HOS weapon spawner' (no gameplay
+      difference, just mapping stuff)
+    type: Tweak
+  - message: (Saltern) Handcuffs at Bridge replaced with Zipties
+    type: Tweak
+  - message: (Saltern) Plantpot spawner was spawning on top of Security's document
+      printer (rude)
+    type: Fix
+  id: 270000
+  time: '2026-01-04T20:22:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2700
 Order: -1
 
