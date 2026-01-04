@@ -25,6 +25,8 @@
   id: MobResomiSprites
   sprites:
     Head: MobResomiHead
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
     Hair: MobResomiHair
     Chest: MobResomiTorso
     Eyes: MobResomiEyes
@@ -53,7 +55,7 @@
     Tail:
       points: 3
       required: false
-      #defaultMarkings: [ ResomiTail, ResomiTailStubby, ResomiTailFeathers ]
+      #defaultMarkings: [ ResomiTail,  ResomiTailFeathers ] # This will crash if tail points =/= 2
     Legs:
       points: 1
       required: false
@@ -61,7 +63,13 @@
       points: 1
       required: false
     Head:
-      points: 1
+      points: 4
+      required: false
+    HeadTop:
+      points: 4
+      required: false
+    HeadSide:
+      points: 2
       required: false
     Chest:
       points: 1

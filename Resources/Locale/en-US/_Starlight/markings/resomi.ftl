@@ -11,6 +11,35 @@ marking-ResomiHeadStripes-head_stripes = Stripes
 marking-ResomiHeadWar = War
 marking-ResomiHeadWar-head_war = War
 
+marking-ResomiUpperEars = Resomi Upper Ears
+marking-ResomiUpperEars-upper_ear = Resomi Upper Ears
+marking-ResomiUpperEarsAlternate = Resomi Upper Ears (Alternate)
+marking-ResomiUpperEarsAlternate-upper_ear_alternate = Resomi Upper Ears
+marking-ResomiUpperEarsAlternate-upper_ear_alternate_earing = Resomi Upper Earings
+marking-ResomiLowerEars = Resomi Lower Ears
+marking-ResomiLowerEars-lower_ear = Resomi Lower Ears
+marking-ResomiHeadFluff = Resomi Head Fluff
+marking-ResomiHeadFluff-head_fluff = Resomi Head Fluff
+marking-ResomiHeadFluffShort = Resomi Head Fluff (Short)
+marking-ResomiHeadFluffShort-head_fluff_short = Resomi Head Fluff (Short)
+
+marking-ResomiHeadJewelleryOneLeft = Left Earing One
+marking-ResomiHeadJewelleryOneLeft-resomi_earring_1_2 = Left Earing One
+marking-ResomiHeadJewelleryOneRight = Right Earing One
+marking-ResomiHeadJewelleryOneRight-resomi_earring_1_1 = Right Earing One
+marking-ResomiHeadJewelleryTwoLeft = Left Earing Two
+marking-ResomiHeadJewelleryTwoLeft-resomi_earring_2_2 = Left Earing Two
+marking-ResomiHeadJewelleryTwoRight = Right Earing Two
+marking-ResomiHeadJewelleryTwoRight-resomi_earring_2_1 = Right Earing Two
+marking-ResomiHeadJewelleryThreeLeft = Left Earing Three
+marking-ResomiHeadJewelleryThreeLeft-resomi_earring_3_2 = Left Earing Three
+marking-ResomiHeadJewelleryThreeRight = Right Earing Three
+marking-ResomiHeadJewelleryThreeRight-resomi_earring_3_1 = Right Earing Three
+marking-ResomiHeadJewelleryFourLeft = Left Earing Four
+marking-ResomiHeadJewelleryFourLeft-resomi_earring_4_2 = Left Earing Four
+marking-ResomiHeadJewelleryFourRight = Right Earing Four
+marking-ResomiHeadJewelleryFourRight-resomi_earring_4_1 = Right Earing Four
+
 marking-ResomiFluff = Under Fluff
 marking-ResomiFluff-fluff = Under Fluff
 marking-ResomiBelly = Belly

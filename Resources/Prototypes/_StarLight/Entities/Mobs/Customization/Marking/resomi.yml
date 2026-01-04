@@ -3,71 +3,201 @@
   id: ResomiFluffHead
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
-  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
     state: fluff_head
 
 - type: marking
   id: ResomiFluffHeadUp
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
-  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
     state: fluff_head_up
-
-- type: marking
-  id: ResomiSnout
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ Resomi ]
-  sprites:
-  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
-    state: snout
 
 - type: marking
   id: ResomiForehead
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
-  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
     state: forehead
 
 - type: marking
   id: ResomiHeadWar
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
-  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
     state: head_war
 
 - type: marking
   id: ResomiHeadStripes
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
-  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
     state: head_stripes
+
+# Ear Markings
+- type: marking
+  id: ResomiEars
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: resomi_ears
+
+- type: marking
+  id: ResomiUpperEars
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: upper_ear
+
+- type: marking
+  id: ResomiUpperEarsAlternate
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: upper_ear_alternate
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: upper_ear_alternate_earring
+
+- type: marking
+  id: ResomiLowerEars
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: lower_ear
+
+- type: marking
+  id: ResomiHeadFluff
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: head_fluff
+
+- type: marking
+  id: ResomiHeadFluffShort
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: head_fluff_short
+
+# Head Jewellery
+- type: marking
+  id: ResomiHeadJewelleryOneRight
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: resomi_earring_1_1
+
+- type: marking
+  id: ResomiHeadJewelleryOneLeft
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: resomi_earring_1_2
+
+- type: marking
+  id: ResomiHeadJewelleryTwoRight
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: resomi_earring_2_1
+
+- type: marking
+  id: ResomiHeadJewelleryTwoLeft
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: resomi_earring_2_2
+
+- type: marking
+  id: ResomiHeadJewelleryThreeRight
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: resomi_earring_3_1
+
+- type: marking
+  id: ResomiHeadJewelleryThreeLeft
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: resomi_earring_3_2
+
+- type: marking
+  id: ResomiHeadJewelleryFourRight
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: resomi_earring_4_1
+
+- type: marking
+  id: ResomiHeadJewelleryFourLeft
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: resomi_earring_4_2
 
 # Chest Markings
 - type: marking
   id: ResomiFluff
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
     state: fluff
 
 - type: marking
+  id: ResomiFluffGroin
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
+    state: fluff_groin
+
+- type: marking
   id: ResomiBodyStripes
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
     state: body_stripes
@@ -76,7 +206,7 @@
   id: ResomiBodyRings
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
     state: body_rings
@@ -85,7 +215,7 @@
   id: ResomiBodyLines
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
     state: body_lines
@@ -94,7 +224,7 @@
   id: ResomiBelly
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
     state: belly
@@ -103,7 +233,7 @@
   id: ResomiBackPatch
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
     state: back_patch
@@ -112,7 +242,7 @@
   id: ResomiBackPatchFull
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
     state: back_patch_full
@@ -122,7 +252,7 @@
   id: ResomiLArmFeathersComplex
   bodyPart: LHand
   markingCategory: Arms
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_arm_markings.rsi
     state: l_hand_feathers_primary
@@ -133,7 +263,7 @@
   id: ResomiRArmFeathersComplex
   bodyPart: RHand
   markingCategory: Arms
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_arm_markings.rsi
     state: r_hand_feathers_primary
@@ -144,7 +274,7 @@
   id: ResomiRArmFade
   bodyPart: RHand
   markingCategory: Arms
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_arm_markings.rsi
     state: r_arm_fade
@@ -153,7 +283,7 @@
   id: ResomiLArmFade
   bodyPart: LHand
   markingCategory: Arms
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_arm_markings.rsi
     state: l_arm_fade
@@ -162,7 +292,7 @@
   id: ResomiLArmFeathers
   bodyPart: LHand
   markingCategory: Arms
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_arm_markings.rsi
     state: l_hand_feathers
@@ -171,7 +301,7 @@
   id: ResomiRArmFeathers
   bodyPart: RHand
   markingCategory: Arms
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_arm_markings.rsi
     state: r_hand_feathers
@@ -180,7 +310,7 @@
   id: ResomiRShoulderFade
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_arm_markings.rsi
     state: r_shoulder_fade
@@ -189,7 +319,7 @@
   id: ResomiLShoulderFade
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_arm_markings.rsi
     state: l_shoulder_fade
@@ -199,7 +329,7 @@
   id: ResomiLLegFeathers
   bodyPart: LFoot
   markingCategory: Legs
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_leg_markings.rsi
     state: l_foot_feathers
@@ -208,7 +338,7 @@
   id: ResomiRLegFeathers
   bodyPart: RFoot
   markingCategory: Legs
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_leg_markings.rsi
     state: r_foot_feathers
@@ -217,7 +347,7 @@
   id: ResomiRFootFade
   bodyPart: RFoot
   markingCategory: Legs
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_leg_markings.rsi
     state: r_foot_fade
@@ -226,7 +356,7 @@
   id: ResomiLFootFade
   bodyPart: RFoot
   markingCategory: Legs
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_leg_markings.rsi
     state: l_foot_fade
@@ -235,7 +365,7 @@
   id: ResomiLLegFeathersComplex
   bodyPart: LFoot
   markingCategory: Legs
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_leg_markings.rsi
     state: l_foot_feathers_primary
@@ -246,7 +376,7 @@
   id: ResomiRLegFeathersComplex
   bodyPart: RFoot
   markingCategory: Legs
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_leg_markings.rsi
     state: r_foot_feathers_primary
@@ -257,7 +387,7 @@
   id: ResomiRLegFade
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_leg_markings.rsi
     state: r_leg_fade
@@ -266,7 +396,7 @@
   id: ResomiLLegFade
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_leg_markings.rsi
     state: l_leg_fade
@@ -275,7 +405,7 @@
   id: ResomiRLegStripes
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_leg_markings.rsi
     state: r_leg_stripes
@@ -284,7 +414,7 @@
   id: ResomiLLegStripes
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_leg_markings.rsi
     state: l_leg_stripes
