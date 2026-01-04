@@ -25210,5 +25210,23 @@ Entries:
   id: 269800
   time: '2026-01-04T20:21:52.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2698
+- author: Rhetorica
+  changes:
+  - message: Extended Mag ZOZ-106
+    type: Fix
+  - message: magazine no longer removable from ZOZ-106, allowing it to require cycling
+      after each shot, as the maints gods intended
+    type: Tweak
+  - message: TOZ-106 admeme weapon
+    type: Add
+  - message: rename .42 shells to 20 gauge shells
+    type: Tweak
+  - message: handcrafted shotgun still referenced .50 shells instead of 12 gauge
+    type: Fix
+  - message: ZOZ-106 to rev supply markers and rift crates
+    type: Add
+  id: 268600
+  time: '2026-01-04T20:41:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2686
 Order: -1
 
