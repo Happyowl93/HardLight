@@ -408,6 +408,7 @@
                 number: 1
                 entityTable: !type:NestedSelector
                   tableId: SilverSlimeDrinkTable
+                offset: 0.2
               scalingFactor: 1
               scalingOffset: 0
           shouldDelete: true
@@ -420,6 +421,7 @@
                 number: 1
                 entityTable: !type:NestedSelector
                   tableId: SilverSlimeFoodTable
+                offset: 0.2
               scalingFactor: 1
               scalingOffset: 0
           shouldDelete: true
