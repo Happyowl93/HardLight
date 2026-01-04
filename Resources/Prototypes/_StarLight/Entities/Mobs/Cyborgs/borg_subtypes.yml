@@ -11,7 +11,7 @@
       spriteHasMindState: standard_e
       spriteNoMindState: standard_e_r
       spriteToggleLightState: standard_l
-      inventoryTemplateId: borgShort
+      inventoryTemplateId: borg
 
 - type: entity
   parent: BorgEngineerSubtypeBase
@@ -91,7 +91,7 @@
       spriteHasMindState: droid_e
       spriteNoMindState: droid_e_r
       spriteToggleLightState: droid_l
-      inventoryTemplateId: borgShort
+      inventoryTemplateId: borg
 
 - type: entity
   parent: BorgGenericSubtypeBase
@@ -119,7 +119,7 @@
       spriteHasMindState: standard_e
       spriteNoMindState: standard_e_r
       spriteToggleLightState: standard_l
-      inventoryTemplateId: borgShort
+      inventoryTemplateId: borg
 
 - type: entity
   parent: BorgJanitorSubtypeBase
@@ -186,7 +186,7 @@
       spriteHasMindState: standard_e
       spriteNoMindState: standard_e_r
       spriteToggleLightState: standard_l
-      inventoryTemplateId: borgShort
+      inventoryTemplateId: borg
 
 - type: entity
   parent: BorgMedicalSubtypeBase
@@ -266,7 +266,7 @@
       spriteHasMindState: standard_e
       spriteNoMindState: standard_e_r
       spriteToggleLightState: standard_l
-      inventoryTemplateId: borgShort
+      inventoryTemplateId: borg
 
 - type: entity
   parent: BorgMiningSubtypeBase
@@ -333,7 +333,7 @@
       spriteHasMindState: standard_e
       spriteNoMindState: standard_e_r
       spriteToggleLightState: standard_l
-      inventoryTemplateId: borgShort
+      inventoryTemplateId: borg
 
 - type: entity
   parent: BorgServiceSubtypeBase
@@ -445,7 +445,7 @@
       spriteHasMindState: standard_e
       spriteNoMindState: standard_e_r
       spriteToggleLightState: standard_l
-      inventoryTemplateId: borgShort
+      inventoryTemplateId: borg
 
 - type: entity
   parent: BorgSecuritySubtypeBase
@@ -484,4 +484,4 @@
       spriteHasMindState: heavy_e
       spriteNoMindState: heavy_e_r
       spriteToggleLightState: heavy_l
-      inventoryTemplateId: borgShort
+      inventoryTemplateId: borg
