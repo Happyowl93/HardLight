@@ -15,4 +15,5 @@ public interface INullLinkPlayerManager
     ValueTask SyncRoles(PlayerRolesSyncEvent ev);
     bool TryGetPlayerData(Guid userId, [NotNullWhen(true)] out PlayerData? playerData);
     ValueTask UpdateRoles(RolesChangedEvent ev);
+    ValueTask UpdateResource(ResourceChangedEvent ev);
 }

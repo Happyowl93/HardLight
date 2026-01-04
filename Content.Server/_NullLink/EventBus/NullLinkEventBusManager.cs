@@ -63,6 +63,9 @@ public sealed partial class NullLinkEventBusManager : IEventBusObserver, INullLi
             PlayerServerPlayTimesSyncEvent playTimesSync
                 => _players.SyncPlayTime(playTimesSync),
 
+            ResourceChangedEvent resourceChangedEvent 
+                => _players.UpdateResource(resourceChangedEvent),
+
             BaseEvent baseEvent
                 => Enqueue(baseEvent),
         };
