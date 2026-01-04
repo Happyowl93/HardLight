@@ -37,6 +37,18 @@
   fx: EffectRCDConstruct4
 
 - type: rcd
+  id: XenoDoorGlass
+  category: Airlocks
+  sprite: /Textures/_Starlight/Interface/Radial/RCD/airlock_xeno_glass.png
+  mode: ConstructObject
+  prototype: AirlockXenoborgGlassLocked
+  cost: 4
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: Camera
+  fx: EffectRCDConstruct4
+
+- type: rcd
   id: FloorXeno
   name: rcd-floor-xeno
   category: WallsAndFlooring

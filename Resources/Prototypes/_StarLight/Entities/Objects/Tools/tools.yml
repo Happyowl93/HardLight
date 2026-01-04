@@ -892,7 +892,7 @@
       - Wrench
       - PlantSampleTaker
       - Wirecutter
-      - Screwdriver
+      - Screwdriver 
 
 - type: entity
   id: RCDXeno
@@ -903,6 +903,7 @@
   - type: RCD
     availablePrototypes:
     - XenoDoor
+    - XenoDoorGlass
     - XenoWall
     - XenoWindow
     - FloorXeno
@@ -912,7 +913,6 @@
     - Window
     - WindowDirectional
     - WindowReinforcedDirectional
-    - AirlockGlass
     - Firelock
     - TubeLight
     - BulbLight

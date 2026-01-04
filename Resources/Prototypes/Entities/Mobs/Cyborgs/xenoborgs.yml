@@ -42,7 +42,7 @@
       - XenoborgModuleBasic
       - BorgModuleAdvancedTool
       - BorgModuleConstruction
-      - BorgModuleRCD
+      - XenoborgModuleRCD # Starlight
       - BorgModuleCable
       - XenoborgModuleAccessBreaker
       - XenoborgModuleFireExtinguisher
@@ -275,7 +275,7 @@
       - XenoborgModuleBasic
       - BorgModuleAdvancedTool
       - BorgModuleConstruction
-      - BorgModuleRCD
+      - XenoborgModuleRCD # Starlight
       - BorgModuleCable
       - XenoborgModuleAccessBreaker
       - XenoborgModuleFireExtinguisher
