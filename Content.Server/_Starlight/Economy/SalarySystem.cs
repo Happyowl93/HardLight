@@ -87,11 +87,12 @@ public sealed partial class SalarySystem : SharedSalarySystem
                     var roles = _roles.MindGetAllRoleInfo((mind.Value.Owner, mind.Value.Comp));
                     foreach (var role in roles)
                     {
-                        if (_salaries.Jobs.TryGetValue(role.Prototype, out var salary))
+                        if (_salaries.Jobs.TryGetValue(role.Prototype, out var salary) 
+                            && _playerRolesManager.GetBalance(query.Current.Session) is { } balance)
                         {
                             var amount = CalculateSalaryWithBonuses(salary, query.Current.Session);
 
-                            query.Current.Data.Balance += amount;
+                            _playerRolesManager.SetBalance(query.Current.Session, balance += amount);
                             var message = Loc.GetString("economy-chat-salary-message", ("amount", amount), ("sender", "NanoTrasen"));
                             var wrappedMessage = Loc.GetString("economy-chat-salary-wrapped-message", ("amount", amount), ("sender", "NanoTrasen"), ("senderColor", "#2384CE"));
                             _chat.ChatMessageToOne(ChatChannel.Notifications, message, wrappedMessage, default, false, query.Current.Session.Channel, Color.FromHex("#57A3F7"));
@@ -120,11 +121,10 @@ public sealed partial class SalarySystem : SharedSalarySystem
 
     internal void Donate(ICommonSession session, int amount)
     {
-        var playerData = _playerRolesManager.GetPlayerData(session);
-        if (playerData == null)
+        if (_playerRolesManager.GetBalance(session) is not { } balance)
             return;
 
-        playerData.Balance += amount;
+        _playerRolesManager.SetBalance(session, balance += amount);
 
         // We need to make a prototype
         var i = _random.Next(0, 20);

@@ -47,4 +47,14 @@ public sealed class ClientPlayerManager : IClientPlayerRolesManager, IPostInject
 
     public PlayerData? GetPlayerData(ICommonSession session)
         => _player.LocalUser == session.UserId ? _playerData : null;
+
+    public int? GetBalance(EntityUid uid)
+        => _player.LocalEntity == uid && _player.LocalSession != null ? GetBalance(_player.LocalSession) : null;
+
+    public int? GetBalance(ICommonSession session)
+        => GetPlayerData(session) is { } data ? data.Balance : null;
+
+    public void SetBalance(EntityUid uid, int value) {} // Empty because we set balance only at the server-side.
+
+    public void SetBalance(ICommonSession session, int value) {} // Empty because we set balance only at the server-side.
 }

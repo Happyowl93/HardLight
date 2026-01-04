@@ -9,4 +9,10 @@ public interface ISharedPlayersRoleManager
 
     PlayerData? GetPlayerData(EntityUid uid);
     PlayerData? GetPlayerData(ICommonSession session);
+
+    int? GetBalance(EntityUid uid);
+    int? GetBalance(ICommonSession session);
+
+    void SetBalance(EntityUid uid, int value);
+    void SetBalance(ICommonSession session, int value);
 }

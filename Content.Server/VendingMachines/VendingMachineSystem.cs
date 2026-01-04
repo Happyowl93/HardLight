@@ -257,40 +257,33 @@ namespace Content.Server.VendingMachines
                 if (price > 0)
                 {
                     var playerData = _playerRolesManager.GetPlayerData(buyerUid);
-                    if (playerData != null)
+                    if (_playerRolesManager.GetBalance(buyerUid) is { } balance && balance >= price) // Double-check sufficient funds
                     {
-                        // Double-check sufficient funds
-                        if (playerData.Balance >= price)
+                        _playerRolesManager.SetBalance(buyerUid, balance -= price);
+                        vendComponent.DebitApplied = true;
+                        Popup.PopupEntity($"Debited {price}\u20a1. Balance: {balance}\u20a1", uid, buyerUid);
+                        SendBalanceUpdate(uid, buyerUid, balance);
+
+                        // Alogs
+                        _adminLogger.Add(
+                            LogType.Action,
+                            LogImpact.Medium,
+                            $"{ToPrettyString(buyerUid):player} bought {ToPrettyString(ent):entity} for {price}₡ from {ToPrettyString(uid):entity} Balance left: {balance}₡");
+
+                        // Credit cargo 10x price
+                        var stationUid = _stationSystem.GetOwningStation(uid);
+
+                        if (stationUid != null && TryComp<StationBankAccountComponent>(stationUid, out var bank))
                         {
-                            playerData.Balance -= price;
-                            vendComponent.DebitApplied = true;
-                            Popup.PopupEntity($"Debited {price}\u20a1. Balance: {playerData.Balance}\u20a1", uid, buyerUid);
-                            SendBalanceUpdate(uid, buyerUid, playerData.Balance);
-
-                            // Alogs
-                            _adminLogger.Add(
-                                LogType.Action,
-                                LogImpact.Medium,
-                                $"{ToPrettyString(buyerUid):player} bought {ToPrettyString(ent):entity} for {price}₡ from {ToPrettyString(uid):entity} Balance left: {playerData.Balance}₡");
-
-                            // Credit cargo 10x price
-                            var stationUid = _stationSystem.GetOwningStation(uid);
-
-                            if (stationUid != null && TryComp<StationBankAccountComponent>(stationUid, out var bank))
-                            {
-                                var creditLong = (long)price * 10L;
-                                var toCredit = (int)Math.Clamp(creditLong, int.MinValue, int.MaxValue);
-                                if (toCredit > 0)
-                                    _cargoSystem.UpdateBankAccount((stationUid.Value, bank), toCredit, bank.PrimaryAccount);
-                            }
-
-                        }
-                        else
-                        {
-                            Popup.PopupEntity($"Insufficient funds. Required: {price}\u20a1", uid, buyerUid);
+                            var creditLong = (long)price * 10L;
+                            var toCredit = (int)Math.Clamp(creditLong, int.MinValue, int.MaxValue);
+                            if (toCredit > 0)
+                                _cargoSystem.UpdateBankAccount((stationUid.Value, bank), toCredit, bank.PrimaryAccount);
                         }
                     }
                 }
+                else
+                    Popup.PopupEntity($"Insufficient funds. Required: {price}\u20a1", uid, buyerUid);
             }
             // Starlight-end
 
@@ -342,18 +335,12 @@ namespace Content.Server.VendingMachines
         // 🌟Starlight🌟 Send balance to the opening player right away so it shows before any purchase
         private void OnUiOpened(EntityUid uid, VendingMachineComponent component, BoundUIOpenedEvent args)
         {
-            if (!Equals(args.UiKey, VendingMachineUiKey.Key))
+            if (!Equals(args.UiKey, VendingMachineUiKey.Key) 
+                || !component.ShowPrices 
+                || _playerRolesManager.GetBalance(args.Actor) is not { } balance)
                 return;
 
-            if (!component.ShowPrices)
-                return;
-
-            var actor = args.Actor;
-            var playerData = _playerRolesManager.GetPlayerData(actor);
-            if (playerData != null)
-            {
-                SendBalanceUpdate(uid, actor, playerData.Balance);
-            }
+            SendBalanceUpdate(uid, args.Actor, balance);
         }
 
         private void OnTryVocalize(Entity<VendingMachineComponent> ent, ref TryVocalizeEvent args)
@@ -468,16 +455,11 @@ namespace Content.Server.VendingMachines
         /// </summary>
         protected override void OnRequestBalanceMessage(Entity<VendingMachineComponent> entity, ref VendingMachineRequestBalanceMessage args)
         {
-            if (args.Actor is not { Valid: true } actor)
-            {
+            if (args.Actor is not { Valid: true } actor 
+                || _playerRolesManager.GetBalance(actor) is not { } balance)
                 return;
-            }
 
-            var playerData = _playerRolesManager.GetPlayerData(actor);
-            if (playerData != null)
-            {
-                SendBalanceUpdate(entity.Owner, actor, playerData.Balance);
-            }
+            SendBalanceUpdate(entity.Owner, actor, balance);
         }
 
         /// <summary>
@@ -508,12 +490,9 @@ namespace Content.Server.VendingMachines
             if (!TryComp<ActorComponent>(sender, out var actor))
                 return;
 
-            // Get player data for payment
-            var playerData = _playerRolesManager.GetPlayerData(sender);
-            if (playerData == null)
-            {
+            // Get balance for payment
+            if (_playerRolesManager.GetBalance(sender) is not { } balance)
                 return;
-            }
 
             // Get inventory entry for the correct inventory bucket
             var entry = GetEntry(uid, itemId, type, component);
@@ -570,7 +549,7 @@ namespace Content.Server.VendingMachines
             // If payment is required, pre-check funds but DO NOT! deduct yet
             if (!isEmagged && component.ShowPrices && entry.Price > 0)
             {
-                if (playerData.Balance < entry.Price)
+                if (balance < entry.Price)
                 {
                     Popup.PopupEntity($"Insufficient funds. Required: {entry.Price}\u20a1", uid, sender);
                     return;

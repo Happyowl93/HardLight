@@ -18,5 +18,6 @@ public sealed class PlayerData
     
     public Color GhostThemeColor = Color.White;
     
+    [Obsolete("Use ISharedPlayersRoleManager to access this field")]
     public int Balance;
 }

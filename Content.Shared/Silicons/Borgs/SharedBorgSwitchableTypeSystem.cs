@@ -82,11 +82,11 @@ public abstract class SharedBorgSwitchableTypeSystem : EntitySystem
         if (TryComp<BorgSwitchableSubtypeComponent>(ent, out var subtypeComp) && subtypeComp.BorgSubtype != null
             && Prototypes.Index(subtypeComp.BorgSubtype.Value).TryGetComponent<BorgSubtypeDefinitionComponent>(out var subtype) && subtype.Price is not null and > 0)
         {
-            if (_playerRoles.GetPlayerData(ent.Owner) is not PlayerData playerData
-                || playerData.Balance < subtype.Price)
+            if (_playerRoles.GetBalance(ent.Owner) is not { } balance
+                || balance < subtype.Price)
                 return;
 
-            playerData.Balance -= subtype.Price.Value;
+            _playerRoles.SetBalance(ent.Owner, balance -= subtype.Price.Value);
         }
         // Starlight-end
 

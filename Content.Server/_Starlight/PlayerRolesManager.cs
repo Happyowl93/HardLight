@@ -90,6 +90,38 @@ public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjec
         return GetPlayerData(session);
     }
 
+    public int? GetBalance(EntityUid uid)
+    {
+        if (!_playerManager.TryGetSessionByEntity(uid, out var session)) return null;
+        return GetBalance(session);
+    }
+
+    public int? GetBalance(ICommonSession session)
+    {
+        var data = GetPlayerData(session);
+
+        if (data == null)
+            return null;
+        
+        return data.Balance;
+    }
+
+    public void SetBalance(EntityUid uid, int value)
+    {
+        if (!_playerManager.TryGetSessionByEntity(uid, out var session)) return;
+        SetBalance(session, value);
+    }
+
+    public void SetBalance(ICommonSession session, int value)
+    {
+        var data = GetPlayerData(session);
+
+        if (data == null)
+            return;
+        
+        data.Balance = value;
+    }
+
     public PlayerData? GetPlayerData(ICommonSession session) => _players.TryGetValue(session, out var data) ? data.Data : null;
 
     public sealed class PlayerReg(ICommonSession session, PlayerData data)
