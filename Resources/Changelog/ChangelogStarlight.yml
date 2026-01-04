@@ -25289,5 +25289,12 @@ Entries:
   id: 264800
   time: '2026-01-04T21:14:44.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2648
+- author: Fasuh
+  changes:
+  - message: Other people being unable to give vox an external tank.
+    type: Fix
+  id: 268400
+  time: '2026-01-04T21:26:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2684
 Order: -1
 
