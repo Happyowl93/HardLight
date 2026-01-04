@@ -448,17 +448,6 @@
           shouldDelete: true
         - requirements:
             reagents:
-              - ReagentId: Blood
-                Quantity: 1
-          effects:
-            - effect: !type:SpawnEntity
-                number: 1
-                entity: FloorTileItemBluespace25
-              scalingFactor: 0
-              scalingOffset: 1
-          shouldDelete: true
-        - requirements:
-            reagents:
               - ReagentId: Plasma
                 Quantity: 1
           effects:
