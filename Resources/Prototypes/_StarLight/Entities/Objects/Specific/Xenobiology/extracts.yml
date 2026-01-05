@@ -579,7 +579,29 @@
     - type: Sprite
       color: "#4efc4eff"
     - type: SlimeExtract
-      # Green slimes require race changing capabilities, and I'm not sure if that exists
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: Radium
+                Quantity: 1
+          effects:
+            - effect: !type:AddReagentToSolution
+                reagent: UnstableMutationToxin
+                solution: container
+              scalingFactor: 1
+              scalingOffset: 0
+          shouldDelete: false
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:AddReagentToSolution
+                reagent: ImperfectMutationToxin
+                solution: container
+              scalingFactor: 1
+              scalingOffset: 0
+          shouldDelete: false
 
 - type: entity
   parent: BaseSlimeExtract
@@ -592,7 +614,7 @@
       extractReactions:
         - requirements:
             reagents:
-              - ReagentId: blood
+              - ReagentId: Blood
                 Quantity: 1
           effects:
             - effect: !type:SpawnEntity

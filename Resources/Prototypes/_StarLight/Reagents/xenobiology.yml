@@ -2,7 +2,7 @@
   id: OrangeSmokeCauser
   name: reagent-name-orange-smoke-causer
   group: Special
-  desc: reagent-name-orange-smoke-causer
+  desc: reagent-desc-orange-smoke-causer
   physicalDesc: reagent-physical-desc-powdery
   flavor: metallic
   color: "#F07A26FF"
@@ -11,7 +11,7 @@
   id: BlueFoamCauser
   name: reagent-name-blue-foam-causer
   group: Special
-  desc: reagent-name-blue-foam-causer
+  desc: reagent-desc-blue-foam-causer
   physicalDesc: reagent-physical-desc-powdery
   flavor: metallic
   color: "#F07A26FF"
@@ -20,7 +20,7 @@
   id: RegenerativeJelly
   name: reagent-name-regenerative-jelly
   group: Medicine
-  desc: reagent-name-regenerative-jelly
+  desc: reagent-desc-regenerative-jelly
   physicalDesc: reagent-physical-desc-soothing
   flavor: medicine
   color: "#a579b5"
@@ -33,3 +33,50 @@
             Toxin: -2
             Airloss: -2
             Brute: -2
+
+- type: reagent
+  id: UnstableMutationToxin
+  name: reagent-name-unstable-mutation-toxin
+  group: Medicine
+  desc: reagent-desc-unstable-mutation-toxin
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: medicine
+  color: "#50d977"
+  metabolisms:
+    Medicine:
+      effects:
+        - !type:ChangeSpeciesFromTable
+          speciesTable: !type:GroupSelector
+            children:
+              - id: Arachnid
+              - id: Diona
+              - id: Dwarf
+              - id: Gingerbread
+              - id: Human
+              - id: Moth
+              - id: Reptilian
+              - id: Resomi
+              - id: Skeleton
+              - id: SlimePerson
+              - id: Vox
+              - id: Vulpkanin
+              - id: Abductor
+              - id: Avali
+              - id: Cyclorite
+              - id: Felionoid
+              - id: Shadekin
+              - id: Thaven
+
+- type: reagent
+  id: ImperfectMutationToxin
+  name: reagent-name-imperfect-mutation-toxin
+  group: Medicine
+  desc: reagent-desc-imperfect-mutation-toxin
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: medicine
+  color: "#50d977"
+  metabolisms:
+    Medicine:
+      effects:
+        - !type:ChangeSpecies
+          species: SlimePerson
