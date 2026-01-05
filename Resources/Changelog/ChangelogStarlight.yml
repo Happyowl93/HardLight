@@ -25388,5 +25388,28 @@ Entries:
   id: 263100
   time: '2026-01-05T15:56:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2631
+- author: TacoLlama
+  changes:
+  - message: Paramedic defibrillator
+    type: Add
+  - message: Lockable body bags
+    type: Add
+  - message: Added a rescue knife for paramedics so the clown spider you find dragging
+      the dead body away has something to worry about
+    type: Add
+  - message: Senior Paramedic uniforms and PDA
+    type: Add
+  - message: Modified the standard paramedic PDA's visuals
+    type: Tweak
+  - message: Added infection resistance to void suit, medical gloves, and sterile
+      masks
+    type: Tweak
+  - message: Resprite of the emergency crew monitor
+    type: Tweak
+  - message: Added External access to Paramedic IDs
+    type: Tweak
+  id: 222000
+  time: '2026-01-05T16:03:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2220
 Order: -1
 
