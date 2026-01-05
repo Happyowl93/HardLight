@@ -29,6 +29,9 @@ public sealed class SlimeExtractSystem : EntitySystem
         base.Update(frameTime);
         var query = EntityQueryEnumerator<SlimeExtractComponent>();
 
+        List<ApplyEffectRecord> applyEffectRecords = new();
+        List<DeleteRecord> deleteRecords = new();
+
         while (query.MoveNext(out var uid, out var slimeExtractComponent))
         {
             if (slimeExtractComponent.RemainingUses <= 0) continue;
@@ -48,8 +51,10 @@ public sealed class SlimeExtractSystem : EntitySystem
                     }
                     foreach (var effect in reaction.Effects)
                     {
+                        // Need to defer the application of effects in order to avoid modifying the query's collection
+                        // Because the rainbow extract can summon other extracts
                         var factor = (minimumScalingFactor * effect.ScalingFactor) + effect.ScalingOffset;
-                        _entityEffectsSystem.TryApplyEffect(uid, effect.Effect, factor.Float());
+                        applyEffectRecords.Add(new(uid, effect.Effect, factor.Float()));
                     }
                     if (reaction.ShouldDelete)
                     {
@@ -65,8 +70,13 @@ public sealed class SlimeExtractSystem : EntitySystem
                 slimeExtractComponent.TimeSinceLastInject = 0F;
             }
             if (shouldDelete && slimeExtractComponent.RemainingUses <= 0)
-                _entityManager.PredictedQueueDeleteEntity(uid);
+                deleteRecords.Add(new(uid));
         }
+        
+        foreach (var applyEffectRecord in applyEffectRecords)
+            _entityEffectsSystem.TryApplyEffect(applyEffectRecord._entityUid, applyEffectRecord._entityEffect, applyEffectRecord._scale);
+        foreach (var deleteRecord in deleteRecords)
+            _entityManager.PredictedQueueDeleteEntity(deleteRecord._entityUid);
     }
     
     public bool IsSolutionRequirementFulfilled(Solution requiredSolution, Solution currentSolution)
@@ -94,5 +104,29 @@ public sealed class SlimeExtractSystem : EntitySystem
     private void OnSolutionChanged(Entity<SlimeExtractComponent> entity, ref SolutionContainerChangedEvent args)
     {
         entity.Comp.TimeSinceLastInject = 0F;
+    }
+}
+
+internal record DeleteRecord
+{
+    public EntityUid _entityUid;
+    
+    public DeleteRecord(EntityUid entityUid)
+    {
+        _entityUid = entityUid;
+    }
+}
+
+internal record ApplyEffectRecord
+{
+    public EntityUid _entityUid;
+    public EntityEffect _entityEffect;
+    public float _scale;
+
+    public ApplyEffectRecord(EntityUid entityUid, EntityEffect entityEffect, float scale)
+    {
+        _entityUid = entityUid;
+        _entityEffect = entityEffect;
+        _scale = scale;
     }
 }

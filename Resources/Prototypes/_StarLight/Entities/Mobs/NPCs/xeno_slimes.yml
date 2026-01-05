@@ -20,6 +20,7 @@
           Cellular: 5
       nutritionOnHit: 10
       mutationChance: 0.25
+      mutationOnMaxSplit: XenobiologySlimeRainbow
     - type: HTN
       rootTask:
         task: SlimeEatCompound
@@ -330,3 +331,15 @@
       extract: AdamantineSlimeExtract
     - type: Sprite
       color: "#407985ff"
+
+- type: entity
+  name: rainbow xenobiology slime
+  id: XenobiologySlimeRainbow
+  parent: XenobiologySlimeBase
+  description: RAINBOW
+  components:
+    - type: Slime
+      splitInto: XenobiologySlimeRainbow
+      extract: RainbowSlimeExtract
+    - type: Sprite
+      color: "#300636ff"

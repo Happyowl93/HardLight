@@ -520,3 +520,55 @@
       - id: MobSpiderSpace
       - id: MobCobraSpace
       - id: MobTick
+
+- type: entityTable
+  id: SlimeExtractsNoRainbow
+  table: !type:GroupSelector
+    children:
+      - id: GraySlimeExtract
+      - id: OrangeSlimeExtract
+      - id: PurpleSlimeExtract
+      - id: BlueSlimeExtract
+      - id: MetalSlimeExtract
+      - id: YellowSlimeExtract
+      - id: DarkPurpleSlimeExtract
+      - id: DarkBlueSlimeExtract
+      - id: SilverSlimeExtract
+      - id: BluespaceSlimeExtract
+      - id: SepiaSlimeExtract
+      - id: CeruleanSlimeExtract
+      - id: PyriteSlimeExtract
+      - id: RedSlimeExtract
+      - id: GreenSlimeExtract
+      - id: PinkSlimeExtract
+      - id: GoldSlimeExtract
+      - id: OilSlimeExtract
+      - id: BlackSlimeExtract
+      - id: LightPinkSlimeExtract
+      - id: AdamantineSlimeExtract
+
+- type: entityTable
+  id: FilledSlimeExtractsNoRainbow
+  table: !type:GroupSelector
+    children:
+      - id: GraySlimeExtractFilled
+      - id: OrangeSlimeExtractFilled
+      - id: PurpleSlimeExtractFilled
+      - id: BlueSlimeExtractFilled
+      - id: MetalSlimeExtractFilled
+      - id: YellowSlimeExtractFilled
+      - id: DarkPurpleSlimeExtractFilled
+      - id: DarkBlueSlimeExtractFilled
+      - id: SilverSlimeExtractFilled
+      - id: BluespaceSlimeExtractFilled
+      - id: SepiaSlimeExtractFilled
+      - id: CeruleanSlimeExtractFilled
+      - id: PyriteSlimeExtractFilled
+      - id: RedSlimeExtractFilled
+      - id: GreenSlimeExtractFilled
+      - id: PinkSlimeExtractFilled
+      - id: GoldSlimeExtractFilled
+      - id: OilSlimeExtractFilled
+      - id: BlackSlimeExtractFilled
+      - id: LightPinkSlimeExtractFilled
+      - id: AdamantineSlimeExtractFilled

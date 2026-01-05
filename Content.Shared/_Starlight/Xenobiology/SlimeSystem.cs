@@ -85,7 +85,11 @@ public sealed class SlimeSystem : EntitySystem
         for (int i = 0; i < split_amount; i++)
         {
             string protoName;
-            if (random.NextFloat() < slime.Comp.MutationChance && slime.Comp.SplitIntoMutation.Count > 0)
+            if (slime.Comp.MutationChance >= 1.0f && slime.Comp.MutationOnMaxSplit != null)
+            {
+                protoName = slime.Comp.MutationOnMaxSplit;
+            }
+            else if (random.NextFloat() < slime.Comp.MutationChance && slime.Comp.SplitIntoMutation.Count > 0)
             {
                 var randomIndex = random.Next(slime.Comp.SplitIntoMutation.Count);
                 protoName = slime.Comp.SplitIntoMutation[randomIndex];

@@ -59,7 +59,7 @@
                 Quantity: 1
           effects:
             - effect: !type:SpawnEntity
-                entity: XenoSlimeGray
+                entity: XenobiologySlimeGray
                 number: 1
               scalingFactor: 0
               scalingOffset: 1
@@ -778,4 +778,51 @@
                 entity: SheetAdamantine1
               scalingFactor: 0
               scalingOffset: 1
+          shouldDelete: true
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: RainbowSlimeExtract
+  name: rainbow slime extract
+  components:
+    - type: Sprite
+      color: "#300636ff" # Yes, this is not a rainbow
+    - type: SlimeExtract
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: Blood
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: SlimeMindTransferencePotion
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntityFromTable
+                number: 1
+                entityTable: !type:NestedSelector
+                  tableId: SlimeExtractsNoRainbow
+                offset: 0.2
+              scalingFactor: 1
+              scalingOffset: 0
+          shouldDelete: true
+        - requirements:
+            reagents:
+              - ReagentId: Radium # should be slime jelly but that's not implemented yet
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntityFromTable
+                number: 1
+                entityTable: !type:NestedSelector
+                  tableId: FilledSlimeExtractsNoRainbow
+                offset: 0.2
+              scalingFactor: 1
+              scalingOffset: 0
           shouldDelete: true

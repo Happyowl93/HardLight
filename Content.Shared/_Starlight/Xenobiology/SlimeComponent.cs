@@ -57,7 +57,14 @@ public sealed partial class SlimeComponent : Component
     /// If blank, will not mutate at all.
     /// </summary>
     [DataField("splitIntoMutation"), AutoNetworkedField]
-    public List<String> SplitIntoMutation = new();
+    public List<string> SplitIntoMutation = new();
+
+    /// <summary>
+    /// What to turn into if mutation chance hits 100%
+    /// If blank, will use normal mutation functionality
+    /// </summary>
+    [DataField("mutationOnMaxSplit"), AutoNetworkedField]
+    public string? MutationOnMaxSplit = null;
 
     /// <summary>
     /// The amount of slime steroid potions that have been applied to this slime.
