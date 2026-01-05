@@ -262,3 +262,15 @@
       extract: PinkSlimeExtract
     - type: Sprite
       color: "#fc86cfff"
+
+- type: entity
+  name: gold xenobiology slime
+  id: XenobiologySlimeGold
+  parent: XenobiologySlimeBase
+  description: GOLD
+  components:
+    - type: Slime
+      splitInto: XenobiologySlimeGold
+      extract: GoldSlimeExtract
+    - type: Sprite
+      color: "#8a7b1cff"
