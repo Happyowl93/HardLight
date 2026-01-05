@@ -30,7 +30,6 @@ public sealed class SlimeSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<SlimeComponent, InteractUsingEvent>(OnInteractUsing);
     }
     
     /// <inheritdoc />
@@ -112,27 +111,5 @@ public sealed class SlimeSystem : EntitySystem
     {
         SlimeSplitRecords.Add(new(slime, splitAmount));
         return true;
-    }
-
-    private void OnInteractUsing(Entity<SlimeComponent> ent, ref InteractUsingEvent args)
-    {
-        if (TryComp<SlimeSteroidPotionComponent>(args.Used, out _) && ent.Comp.SlimeSteroidAmount < 4)
-        {
-            ent.Comp.SlimeSteroidAmount += 1;
-            PredictedQueueDel(args.Used);
-            args.Handled = true;
-        }
-        else if (TryComp<SlimeStabilizerPotionComponent>(args.Used, out _) && ent.Comp.MutationChance > 0)
-        {
-            ent.Comp.MutationChance = FixedPoint2.Max(0, ent.Comp.MutationChance - 0.15);
-            PredictedQueueDel(args.Used);
-            args.Handled = true;
-        }
-        else if (TryComp<SlimeMutationPotionComponent>(args.Used, out _) && ent.Comp.MutationChance < 1)
-        {
-            ent.Comp.MutationChance = FixedPoint2.Max(0, ent.Comp.MutationChance + 0.12);
-            PredictedQueueDel(args.Used);
-            args.Handled = true;
-        }
     }
 }

@@ -12,19 +12,20 @@ public sealed class SlimeFireproofPotionSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<DamageableComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<SlimeFireproofPotionComponent, AfterInteractEvent>(OnAfterInteract);
     }
 
-    private void OnInteractUsing(Entity<DamageableComponent> ent, ref InteractUsingEvent args)
+    private void OnAfterInteract(Entity<SlimeFireproofPotionComponent> ent, ref AfterInteractEvent args)
     {
-        if (!_entityManager.TryGetComponent<SlimeFireproofPotionComponent>(args.Used,
-                out var slimeFireproofPotionComponent)) return;
-        if (!_prototypeManager.Resolve(slimeFireproofPotionComponent.FireproofDamageSet, out var modifier))
+        if (!args.Target.HasValue) return;
+        if (!_entityManager.TryGetComponent<DamageableComponent>(args.Target.Value,
+                out _)) return;
+        if (!_prototypeManager.Resolve(ent.Comp.FireproofDamageSet, out var modifier))
             return;
-        var damageProtectionBuffComponent = _entityManager.EnsureComponent<DamageProtectionBuffComponent>(ent);
-        damageProtectionBuffComponent.Modifiers.Add("SlimeFireproofPotionEffect", modifier);
-        slimeFireproofPotionComponent.RemainingUses -= 1;
-        if (slimeFireproofPotionComponent.RemainingUses <= 0)
+        var damageProtectionBuffComponent = _entityManager.EnsureComponent<DamageProtectionBuffComponent>(args.Target.Value);
+        damageProtectionBuffComponent.Modifiers.TryAdd("SlimeFireproofPotionEffect", modifier);
+        ent.Comp.RemainingUses -= 1;
+        if (ent.Comp.RemainingUses <= 0)
             PredictedQueueDel(args.Used);
         args.Handled = true;
     }

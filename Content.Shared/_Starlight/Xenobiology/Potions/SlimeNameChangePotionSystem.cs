@@ -7,34 +7,26 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._Starlight.Xenobiology.Potions;
 
-public sealed class SlimeMindContainerComponentPotionSystem : EntitySystem
+public sealed class SlimeNameChangePotionSystem : EntitySystem
 {
     [Dependency] private readonly EntityManager _entityManager = default!;
-    [Dependency] private readonly SharedMindSystem _sharedMindSystem = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
     
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<MindContainerComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<SlimeNameChangePotionComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<SlimeNameChangePotionComponent, SlimeNameChangePotionNewNameChangedMessage>(OnSlimePotionNameChanged);
     }
     
-    private void OnInteractUsing(Entity<MindContainerComponent> ent, ref InteractUsingEvent args)
+    private void OnAfterInteract(Entity<SlimeNameChangePotionComponent> ent, ref AfterInteractEvent args)
     {
-        if (_entityManager.TryGetComponent<SlimeSentiencePotionComponent>(args.Used, out _))
-        {
-            _sharedMindSystem.MakeSentient(ent.Owner); // I hope this creates the associated ghost role because otherwise I've got nothing.
-            PredictedQueueDel(args.Used);
-            args.Handled = true;
-        }
-        else if (_entityManager.TryGetComponent<SlimeNameChangePotionComponent>(args.Used, out var slimeNameChangePotionComponent))
-        {
-            _metaDataSystem.SetEntityName(args.Target, slimeNameChangePotionComponent.AssignedName);
-            PredictedQueueDel(args.Used);
-            args.Handled = true;
-        }
+        if (!args.Target.HasValue) return;
+        if (!_entityManager.TryGetComponent<MindContainerComponent>(args.Target.Value,
+                out _)) return;
+        _metaDataSystem.SetEntityName(args.Target.Value, ent.Comp.AssignedName);
+        PredictedQueueDel(args.Used);
+        args.Handled = true;
     }
 
     private void OnSlimePotionNameChanged(EntityUid uid, SlimeNameChangePotionComponent slimeSentiencePotionComponent, SlimeNameChangePotionNewNameChangedMessage args)

@@ -11,15 +11,16 @@ public sealed class SlimeSpeedPotionSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<ClothingSpeedModifierComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<SlimeSpeedPotionComponent, AfterInteractEvent>(OnAfterInteract);
     }
     
-    private void OnInteractUsing(Entity<ClothingSpeedModifierComponent> ent, ref InteractUsingEvent args)
+    private void OnAfterInteract(Entity<SlimeSpeedPotionComponent> ent, ref AfterInteractEvent args)
     {
-        if (!_entityManager.TryGetComponent<SlimeSpeedPotionComponent>(args.Used,
-                out _)) return;
-        _clothingSpeedModifierSystem.SetWalkSpeedModifier(ent.Comp, (ent.Comp.WalkModifier + 1.0F) / 2.0F);
-        _clothingSpeedModifierSystem.SetSprintSpeedModifier(ent.Comp, (ent.Comp.SprintModifier + 1.0F) / 2.0F);
+        if (!args.Target.HasValue) return;
+        if (!_entityManager.TryGetComponent<ClothingSpeedModifierComponent>(args.Target.Value,
+                out var clothingSpeedModifierComponent)) return;
+        _clothingSpeedModifierSystem.SetWalkSpeedModifier(clothingSpeedModifierComponent, (clothingSpeedModifierComponent.WalkModifier + 1.0F) / 2.0F);
+        _clothingSpeedModifierSystem.SetSprintSpeedModifier(clothingSpeedModifierComponent, (clothingSpeedModifierComponent.SprintModifier + 1.0F) / 2.0F);
         PredictedQueueDel(args.Used);
         args.Handled = true;
     }

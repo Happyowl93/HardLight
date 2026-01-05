@@ -12,24 +12,32 @@ public sealed class SlimeGenderChangePotionSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<HumanoidAppearanceComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<SlimeGenderChangePotionComponent, AfterInteractEvent>(OnAfterInteract);
     }
     
-    private void OnInteractUsing(Entity<HumanoidAppearanceComponent> ent, ref InteractUsingEvent args)
+    private void OnAfterInteract(Entity<SlimeGenderChangePotionComponent> ent, ref AfterInteractEvent args)
     {
-        // SetGender
-        if (!_entityManager.TryGetComponent<SlimeGenderChangePotionComponent>(args.Used,
-                out _)) return;
+        if (!args.Target.HasValue) return;
+        if (!_entityManager.TryGetComponent<HumanoidAppearanceComponent>(args.Target.Value,
+                out var humanoidAppearanceComponent)) return;
         // Because there are 4 gender options, this potion will simply cycle through each one
-        var gender = ent.Comp.Gender;
-        if (gender == Gender.Neuter)
-            _sharedHumanoidAppearanceSystem.SetGender(ent.AsNullable(), Gender.Epicene);
-        else if (gender == Gender.Epicene)
-            _sharedHumanoidAppearanceSystem.SetGender(ent.AsNullable(), Gender.Female);
-        else if (gender == Gender.Female)
-            _sharedHumanoidAppearanceSystem.SetGender(ent.AsNullable(), Gender.Male);
-        else if (gender == Gender.Male)
-            _sharedHumanoidAppearanceSystem.SetGender(ent.AsNullable(), Gender.Neuter);
+        // It would be better to have a dropdown list of genders, but this works for now
+        var gender = humanoidAppearanceComponent.Gender;
+        switch (gender)
+        {
+            case Gender.Neuter:
+                _sharedHumanoidAppearanceSystem.SetGender((args.Target.Value, humanoidAppearanceComponent), Gender.Epicene);
+                break;
+            case Gender.Epicene:
+                _sharedHumanoidAppearanceSystem.SetGender((args.Target.Value, humanoidAppearanceComponent), Gender.Female);
+                break;
+            case Gender.Female:
+                _sharedHumanoidAppearanceSystem.SetGender((args.Target.Value, humanoidAppearanceComponent), Gender.Male);
+                break;
+            case Gender.Male:
+                _sharedHumanoidAppearanceSystem.SetGender((args.Target.Value, humanoidAppearanceComponent), Gender.Neuter);
+                break;
+        }
         PredictedQueueDel(args.Used);
         args.Handled = true;
     }

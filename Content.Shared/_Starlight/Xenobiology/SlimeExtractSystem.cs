@@ -21,7 +21,6 @@ public sealed class SlimeExtractSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<SlimeExtractComponent, SolutionContainerChangedEvent>(OnSolutionChanged);
-        SubscribeLocalEvent<SlimeExtractComponent, InteractUsingEvent>(OnInteractUsing);
     }
     
     /// <inheritdoc />
@@ -95,15 +94,5 @@ public sealed class SlimeExtractSystem : EntitySystem
     private void OnSolutionChanged(Entity<SlimeExtractComponent> entity, ref SolutionContainerChangedEvent args)
     {
         entity.Comp.TimeSinceLastInject = 0F;
-    }
-    
-    private void OnInteractUsing(Entity<SlimeExtractComponent> ent, ref InteractUsingEvent args)
-    {
-        if (TryComp<SlimeExtractEnhancerPotionComponent>(args.Used, out _))
-        {
-            ent.Comp.RemainingUses += 1;
-            PredictedQueueDel(args.Used);
-            args.Handled = true;
-        }
     }
 }

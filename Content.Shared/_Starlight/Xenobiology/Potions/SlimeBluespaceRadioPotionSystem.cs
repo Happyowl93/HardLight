@@ -12,18 +12,18 @@ public sealed class SlimeBluespaceRadioPotionSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<LanguageSpeakerComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<SlimeBluespaceRadioPotionComponent, AfterInteractEvent>(OnAfterInteract);
     }
 
-    private void OnInteractUsing(Entity<LanguageSpeakerComponent> ent, ref InteractUsingEvent args)
+    private void OnAfterInteract(Entity<SlimeBluespaceRadioPotionComponent> ent, ref AfterInteractEvent args)
     {
-        if (!_entityManager.TryGetComponent<SlimeBluespaceRadioPotionComponent>(args.Used,
-                out var slimeBluespaceRadioPotionComponent)) return;
-        var activeRadioComponent = _entityManager.AddComponent<ActiveRadioComponent>(args.Target);
-        activeRadioComponent.Channels = slimeBluespaceRadioPotionComponent.Channels;
-        var intrinsicRadioTransmitterComponent = _entityManager.AddComponent<IntrinsicRadioTransmitterComponent>(args.Target);
-        intrinsicRadioTransmitterComponent.Channels = slimeBluespaceRadioPotionComponent.Channels;
-        _entityManager.AddComponent<IntrinsicRadioReceiverComponent>(args.Target);
+        if (!args.Target.HasValue) return;
+        if (!_entityManager.TryGetComponent<LanguageSpeakerComponent>(args.Target.Value, out _)) return;
+        var activeRadioComponent = _entityManager.AddComponent<ActiveRadioComponent>(args.Target.Value);
+        activeRadioComponent.Channels = ent.Comp.Channels;
+        var intrinsicRadioTransmitterComponent = _entityManager.AddComponent<IntrinsicRadioTransmitterComponent>(args.Target.Value);
+        intrinsicRadioTransmitterComponent.Channels = ent.Comp.Channels;
+        _entityManager.AddComponent<IntrinsicRadioReceiverComponent>(args.Target.Value);
         
         PredictedQueueDel(args.Used);
         args.Handled = true;
