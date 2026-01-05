@@ -236,6 +236,8 @@
     - type: Slime
       splitInto: XenobiologySlimeRed
       extract: RedSlimeExtract
+      splitIntoMutation:
+        - XenobiologySlimeOil
     - type: Sprite
       color: "#fc4e4eff"
 
