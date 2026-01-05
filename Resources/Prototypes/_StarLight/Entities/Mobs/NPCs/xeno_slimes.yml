@@ -216,3 +216,15 @@
       extract: PyriteSlimeExtract
     - type: Sprite
       color: "#ebe15bff"
+
+- type: entity
+  name: red xenobiology slime
+  id: XenoSlimeRed
+  parent: XenoSlimeBase
+  description: RED
+  components:
+    - type: Slime
+      splitInto: XenoSlimeRed
+      extract: RedSlimeExtract
+    - type: Sprite
+      color: "#fc4e4eff"

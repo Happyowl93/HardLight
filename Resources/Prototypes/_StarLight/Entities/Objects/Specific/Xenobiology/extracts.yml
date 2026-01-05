@@ -537,3 +537,36 @@
               scalingFactor: 1
               scalingOffset: 0
           shouldDelete: true
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: RedSlimeExtract
+  name: red slime extract
+  components:
+    - type: Sprite
+      color: "#fc4e4eff"
+    - type: SlimeExtract
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: Water
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: SlimeSpeedPotion
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true
+        # Need to implement slime rabidity before we can implement the red reagent reaction
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: SlimeMutationPotion
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true

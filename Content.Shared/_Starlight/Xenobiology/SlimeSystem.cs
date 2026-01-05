@@ -128,5 +128,11 @@ public sealed class SlimeSystem : EntitySystem
             PredictedQueueDel(args.Used);
             args.Handled = true;
         }
+        else if (TryComp<SlimeMutationPotionComponent>(args.Used, out _) && ent.Comp.MutationChance < 1)
+        {
+            ent.Comp.MutationChance = FixedPoint2.Max(0, ent.Comp.MutationChance + 0.12);
+            PredictedQueueDel(args.Used);
+            args.Handled = true;
+        }
     }
 }
