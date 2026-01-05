@@ -705,3 +705,24 @@
               scalingOffset: 1
           shouldDelete: false
           delay: 5
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: BlackSlimeExtract
+  name: black slime extract
+  components:
+    - type: Sprite
+      color: "#111111ff"
+    - type: SlimeExtract
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:AddReagentToSolution
+                reagent: AdvancedMutationToxin
+                solution: container
+              scalingFactor: 1
+              scalingOffset: 0
+          shouldDelete: false

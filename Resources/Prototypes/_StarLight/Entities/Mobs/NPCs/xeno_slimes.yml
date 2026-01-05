@@ -250,6 +250,8 @@
     - type: Slime
       splitInto: XenobiologySlimeGreen
       extract: GreenSlimeExtract
+      splitIntoMutation:
+        - XenobiologySlimeBlack
     - type: Sprite
       color: "#4efc4eff"
 
@@ -285,6 +287,18 @@
   components:
     - type: Slime
       splitInto: XenobiologySlimeOil
+      extract: OilSlimeExtract
+    - type: Sprite
+      color: "#262626ff"
+
+- type: entity
+  name: black xenobiology slime
+  id: XenobiologySlimeBlack
+  parent: XenobiologySlimeBase
+  description: BLACK
+  components:
+    - type: Slime
+      splitInto: XenobiologySlimeBlack
       extract: OilSlimeExtract
     - type: Sprite
       color: "#262626ff"

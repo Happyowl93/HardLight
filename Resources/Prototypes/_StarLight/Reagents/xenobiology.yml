@@ -80,3 +80,17 @@
       effects:
         - !type:ChangeSpecies
           species: SlimePerson
+
+- type: reagent
+  id: AdvancedMutationToxin
+  name: reagent-name-advanced-mutation-toxin
+  group: Medicine
+  desc: reagent-desc-advanced-mutation-toxin
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: medicine
+  color: "#50d977"
+  metabolisms:
+    Medicine:
+      effects:
+        - !type:MutateIntoEntity
+          entity: XenobiologySlimeGray
