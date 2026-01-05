@@ -17,13 +17,19 @@ public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjec
     [Dependency] private readonly IServerDbManager _dbManager = default!;
     [Dependency] private readonly IServerNetManager _netMgr = default!;
     [Dependency] private readonly IActorRouter _actors = default!;
+    [Dependency] private readonly ILogManager _logger = default!;
 
     private readonly Dictionary<ICommonSession, PlayerReg> _players = new();
 
     public IEnumerable<PlayerReg> Players => _players.Values;
 
+    private ISawmill _sawmill = default!;
+
     public void Initialize() 
-        => _netMgr.RegisterNetMessage<MsgUpdatePlayerStatus>();
+    {
+        _netMgr.RegisterNetMessage<MsgUpdatePlayerStatus>();
+        _sawmill = _logger.GetSawmill("player_manager");
+    }
 
     void IPostInjectInit.PostInject()
         => _playerManager.PlayerStatusChanged += PlayerStatusChanged;
@@ -134,6 +140,7 @@ public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjec
             return;
         
         serverGrain.UpdateResource(session.UserId, "credits", diff);
+        _sawmill.Debug($"Updated balance OLD: {data.Balance + diff} NEW: {data.Balance} DIFF: {diff}");
     }
 
     public PlayerData? GetPlayerData(ICommonSession session) => _players.TryGetValue(session, out var data) ? data.Data : null;
