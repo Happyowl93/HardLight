@@ -726,3 +726,35 @@
               scalingFactor: 1
               scalingOffset: 0
           shouldDelete: false
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: LightPinkSlimeExtract
+  name: light pink slime extract
+  components:
+    - type: Sprite
+      color: "#ff94d1ff"
+    - type: SlimeExtract
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: Water
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: SlimeNameChangePotion
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: SlimeSentiencePotion
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true

@@ -264,6 +264,8 @@
     - type: Slime
       splitInto: XenobiologySlimePink
       extract: PinkSlimeExtract
+      splitIntoMutation:
+        - XenobiologySlimeLightPink
     - type: Sprite
       color: "#fc86cfff"
 
@@ -302,3 +304,15 @@
       extract: OilSlimeExtract
     - type: Sprite
       color: "#262626ff"
+
+- type: entity
+  name: light pink xenobiology slime
+  id: XenobiologySlimeLightPink
+  parent: XenobiologySlimeBase
+  description: LIGHT PINK
+  components:
+    - type: Slime
+      splitInto: XenobiologySlimeLightPink
+      extract: LightPinkSlimeExtract
+    - type: Sprite
+      color: "#ff94d1ff"

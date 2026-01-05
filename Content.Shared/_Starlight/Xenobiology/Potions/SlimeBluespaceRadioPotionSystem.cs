@@ -8,7 +8,6 @@ namespace Content.Shared._Starlight.Xenobiology.Potions;
 public sealed class SlimeBluespaceRadioPotionSystem : EntitySystem
 {
     [Dependency] private readonly EntityManager _entityManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     
     public override void Initialize()
     {
