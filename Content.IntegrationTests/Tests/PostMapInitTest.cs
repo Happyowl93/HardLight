@@ -37,12 +37,15 @@ namespace Content.IntegrationTests.Tests
         {
             "StarlightCentCommG24", //starlight
             "StarlightCentCommSC17", //starlight
+            "StarlightCentCommGNT9", //starlight
+            "Dart"
         };
 
         private static readonly string[] Grids =
         {
             //"/Maps/_Starlight/Centcomms/CC_Outpost_G24",
             //"/Maps/_Starlight/Centcomms/CC_Outpost_SC17",
+            //"/Maps/_Starlight/Centcomms/CC_Outpost_GNT9",
             AdminTestArenaSystem.ArenaMapPath
         };
 
@@ -77,6 +80,7 @@ namespace Content.IntegrationTests.Tests
             "/Maps/_Starlight/nukieplanet.yml", //starlight nukie spawn map
             "/Maps/_Starlight/Centcomms/CC_Outpost_G24.yml", //starlight centcomm map
             "/Maps/_Starlight/Centcomms/CC_Outpost_SC17.yml", //starlight centcomm map
+            "/Maps/_Starlight/Centcomms/CC_Outpost_GNT9.yml", //starlight centcomm map
             "/Maps/_Starlight/Dungeon/syndie.yml",
             "/Maps/_Starlight/Shuttles/Radiotower.yml",
             "/Maps/_Starlight/Shuttles/scarletSHCdefenderFinal.yml",
@@ -113,7 +117,6 @@ namespace Content.IntegrationTests.Tests
             "StarlightLagan",
             "StarlightLobster",
             "StarlightManor",
-            "Gateway",
             "StarlightLeth",
             "StarlightMing",
             "StarlightOrigin",
@@ -121,20 +124,15 @@ namespace Content.IntegrationTests.Tests
             "StarlightPrism",
             "StarlightRemix",
             "StarlightStarboard",
-            "StarlightAmber",
             "StarlightBagel",
             "StarlightBox",
             "StarlightCentCommG24",
             "StarlightCentCommSC17",
+            "StarlightCentCommGNT9",
             "StarlightCog",
-            "StarlightCore",
-            "StarlightCrescent",
             "StarlightElkridge",
-            "StarlightExo",
             "StarlightFland",
             "StarlightHotel",
-            "StarlightMarathon",
-            "StarlightMeta",
             "StarlightOasis",
             "StarlightOmega",
             "StarlightPacked",
