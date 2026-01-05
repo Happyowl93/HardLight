@@ -104,8 +104,10 @@
 - type: marking
   id: ResomiTailStubbyProstheticWood
   bodyPart: Tail
-  markingCategory: Tail
+  markingCategory: Special
   speciesRestriction: [Resomi]
+  coloring:
+    color: white
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
     state: stubby_prosthetic_wood
@@ -113,8 +115,10 @@
 - type: marking
   id: ResomiTailStubbyProstheticHighTech
   bodyPart: Tail
-  markingCategory: Tail
+  markingCategory: Special
   speciesRestriction: [Resomi]
+  coloring:
+    type: !type:White
   forcedColoring: true
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -123,8 +127,50 @@
 - type: marking
   id: ResomiTailStubbyProstheticUnbranded
   bodyPart: Tail
-  markingCategory: Tail
+  markingCategory: Special
+  coloring:
+    type: !type:White
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
     state: stubby_prosthetic_unbranded
+
+- type: marking
+  id: ResomiTailBand
+  bodyPart: Tail
+  markingCategory: Special
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
+    state: tail_band
+
+- type: marking
+  id: ResomiTailBandMulticolored
+  bodyPart: Tail
+  markingCategory: Special
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
+    state: tail_band_multicolored_1
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
+    state: tail_band_multicolored_2
+
+- type: marking
+  id: ResomiTailBandLarge
+  bodyPart: Tail
+  markingCategory: Special
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
+    state: tail_band_large
+
+- type: marking
+  id: ResomiTailBandSplit
+  bodyPart: Tail
+  markingCategory: Special
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
+    state: tail_band_split_1
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
+    state: tail_band_split_2

@@ -64,6 +64,15 @@
     state: upper_ear
 
 - type: marking
+  id: ResomiUpperEarsShort
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: resomi_ears_short
+
+- type: marking
   id: ResomiUpperEarsAlternate
   bodyPart: HeadSide
   markingCategory: HeadSide

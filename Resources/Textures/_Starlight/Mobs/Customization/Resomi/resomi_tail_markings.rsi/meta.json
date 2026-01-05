@@ -78,6 +78,30 @@
         {
             "name": "stubby_prosthetic_unbranded",
             "directions": 4
+        },
+        {
+            "name": "tail_band_multicolored_1",
+            "directions": 4
+        },
+        {
+            "name": "tail_band_multicolored_2",
+            "directions": 4
+        },
+        {
+            "name": "tail_band",
+            "directions": 4
+        },
+        {
+            "name": "tail_band_large",
+            "directions": 4
+        },
+        {
+            "name": "tail_band_split_1",
+            "directions": 4
+        },
+        {
+            "name": "tail_band_split_2",
+            "directions": 4
         }
     ]
 }

@@ -40,6 +40,7 @@
     RLeg: MobResomiRLeg
     LFoot: MobResomiLFoot
     RFoot: MobResomiRFoot
+    Special: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
 
 - type: markingPoints
@@ -47,20 +48,20 @@
   onlyWhitelisted: true
   points:
     Special:
-      points: 1
+      points: 10
       required: false
     Hair:
       points: 1
       required: false
     Tail:
-      points: 3
-      required: false
-      #defaultMarkings: [ ResomiTail,  ResomiTailFeathers ] # This will crash if tail points =/= 2
-    Legs:
       points: 1
+      required: true
+      #defaultMarkings: [ ResomiTail ]
+    Legs:
+      points: 6
       required: false
     Arms:
-      points: 1
+      points: 6
       required: false
     Head:
       points: 4
@@ -72,7 +73,7 @@
       points: 2
       required: false
     Chest:
-      points: 1
+      points: 4
       required: false
 
 - type: humanoidBaseSprite
