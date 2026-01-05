@@ -41,8 +41,8 @@
     LFoot: MobResomiLFoot
     RFoot: MobResomiRFoot
     Special: MobHumanoidAnyMarking
-    TailExtra: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
+    TailExtras: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobResomiMarkingLimits
@@ -54,7 +54,7 @@
     Hair:
       points: 1
       required: false
-    TailExtra:
+    TailExtras:
       points: 3
       required: false
     Tail:

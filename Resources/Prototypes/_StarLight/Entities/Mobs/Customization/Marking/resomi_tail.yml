@@ -76,7 +76,7 @@
 - type: marking
   id: ResomiTailFeathers # Same as default tail but you can change the colors.
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -85,7 +85,7 @@
 - type: marking
   id: ResomiTailFeathersComplex
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -100,7 +100,7 @@
 - type: marking
   id: ResomiTailFeathersShort
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -109,7 +109,7 @@
 - type: marking
   id: ResomiTailFeathersFledgling
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -118,7 +118,7 @@
 - type: marking
   id: ResomiTailFeathersLarge
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -127,7 +127,7 @@
 - type: marking
   id: ResomiTailFeathersStubby
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -136,7 +136,7 @@
 - type: marking
   id: ResomiTailFeathersDamaged
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -146,7 +146,7 @@
 - type: marking
   id: ResomiTailStripes
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -155,7 +155,7 @@
 - type: marking
   id: ResomiTailSpots
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -164,7 +164,7 @@
 - type: marking
   id: ResomiTailProstheticWood
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   speciesRestriction: [Resomi]
   coloring:
     layers:
@@ -178,7 +178,7 @@
 - type: marking
   id: ResomiTailProstheticHighTech
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   speciesRestriction: [Resomi]
   coloring:
     layers:
@@ -193,7 +193,7 @@
 - type: marking
   id: ResomiTailProstheticUnbranded
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   coloring:
     layers:
       tail_prosthetic_unbranded:
@@ -207,7 +207,7 @@
 - type: marking
   id: ResomiTailBand
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   coloring:
     layers:
       tail_band:
@@ -221,7 +221,7 @@
 - type: marking
   id: ResomiTailBandMulticolored
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   coloring:
     layers:
       tail_band_multicolored_1:
@@ -240,7 +240,7 @@
 - type: marking
   id: ResomiTailBandLarge
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   coloring:
     layers:
       tail_band_large:
@@ -254,7 +254,7 @@
 - type: marking
   id: ResomiTailBandSplit
   bodyPart: Tail
-  markingCategory: TailExtra
+  markingCategory: TailExtras
   coloring:
     layers:
       tail_band_split_1:

@@ -7,7 +7,7 @@ namespace Content.Shared.Humanoid
     public enum HumanoidVisualLayers : byte
     {
         Special, // for the cat ears
-        TailExtra, // Starlight
+        TailExtras, // Starlight
         Tail,
         Hair,
         FacialHair,
