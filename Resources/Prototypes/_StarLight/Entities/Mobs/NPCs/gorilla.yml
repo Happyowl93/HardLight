@@ -178,12 +178,12 @@
   id: MobCargorilla
   description: Cargo's pet gorilla. He seems to have an 'I love Mom' tattoo.
   components:
-  - type: LanguageKnowledge
-    speaks:
-    - Ancestor
-    understands:
-    - Ancestor
-    - GalacticCommon
+    - type: LanguageKnowledge
+      speaks:
+      - Ancestor
+      understands:
+      - Ancestor
+      - GalacticCommon
     - type: Sprite
       drawdepth: Mobs
       layers:
