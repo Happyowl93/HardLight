@@ -25370,5 +25370,16 @@ Entries:
   id: 271400
   time: '2026-01-05T14:38:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2714
+- author: Penguinwizzard
+  changes:
+  - message: Fixed internal sequencing issue in rule component evaluation that could
+      lead to being unable to follow unclaimed spawners for nukeops and brighteyes.
+    type: Fix
+  - message: Fixed an issue where the syndicate would keep allocating more bases to
+      an established nukie team.
+    type: Fix
+  id: 265300
+  time: '2026-01-05T15:52:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2653
 Order: -1
 
