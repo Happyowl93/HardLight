@@ -25269,5 +25269,70 @@ Entries:
   id: 265400
   time: '2026-01-04T21:06:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2654
+- author: Citrea
+  changes:
+  - message: Alternate borg frames now have reasonably sensible hat placements.
+    type: Tweak
+  - message: All borgs are now pettable.
+    type: Tweak
+  - message: Medibots can be given hats again.
+    type: Fix
+  - message: Standard borg frames no longer use hat displacements for short borgs
+    type: Fix
+  id: 270400
+  time: '2026-01-04T21:17:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2704
+- author: Shades
+  changes:
+  - message: NPCs, Soviets, Ect... wont fall asleep anymore...
+    type: Fix
+  id: 264800
+  time: '2026-01-04T21:14:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2648
+- author: Fasuh
+  changes:
+  - message: Other people being unable to give vox an external tank.
+    type: Fix
+  id: 268400
+  time: '2026-01-04T21:26:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2684
+- author: redmushie
+  changes:
+  - message: Reduced containment field ejection force to prevent noclipping and getting
+      ejected into deep space
+    type: Fix
+  id: 268800
+  time: '2026-01-04T21:32:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2688
+- author: Scarlet Lightweaver
+  changes:
+  - message: Added a new admeme crate.
+    type: Add
+  id: 261400
+  time: '2026-01-04T22:38:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2614
+- author: CawsForConcern
+  changes:
+  - message: Several map are being removed due to being out-of-date, unmaintained,
+      and not being used in the map pool rotation
+    type: Remove
+  - message: Amber Station (StarlightAmber)
+    type: Remove
+  - message: Marathon Station (StarlightMarathon)
+    type: Remove
+  - message: Meta Station (StarlightMeta)
+    type: Remove
+  - message: Core Station (StarlightCore)
+    type: Remove
+  - message: Crescent Station (StarlightCrescent)
+    type: Remove
+  - message: Gateway (Gateway)
+    type: Remove
+  - message: Exo Station (StarlightExo) for now, to be re-pulled from Upstream at
+      a later point
+    type: Remove
+  id: 271000
+  time: '2026-01-05T14:38:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2710
 Order: -1
 
