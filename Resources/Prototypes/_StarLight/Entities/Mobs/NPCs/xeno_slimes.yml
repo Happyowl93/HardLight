@@ -91,8 +91,8 @@
       splitIntoMutation:
         - XenobiologySlimeDarkBlue
         - XenobiologySlimeSliver
-        - XenobiologySlimepink
-        - XenobiologySlimepink
+        - XenobiologySlimePink
+        - XenobiologySlimePink
     - type: Sprite
       color: "#34cfebff"
 
@@ -253,7 +253,7 @@
 
 - type: entity
   name: pink xenobiology slime
-  id: XenobiologySlimepink
+  id: XenobiologySlimePink
   parent: XenobiologySlimeBase
   description: PINK
   components:
