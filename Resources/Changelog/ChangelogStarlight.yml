@@ -25419,5 +25419,14 @@ Entries:
   id: 270500
   time: '2026-01-05T16:03:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2705
+- author: Happyrobot33
+  changes:
+  - message: Removed all non-starlight modified upstream maps from the files. This
+      should have no direct gameplay effect, however the download size should be smaller
+      now
+    type: Tweak
+  id: 252500
+  time: '2026-01-05T16:15:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2525
 Order: -1
 
