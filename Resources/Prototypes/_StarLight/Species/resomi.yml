@@ -41,6 +41,7 @@
     LFoot: MobResomiLFoot
     RFoot: MobResomiRFoot
     Special: MobHumanoidAnyMarking
+    TailExtra: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
 
 - type: markingPoints
@@ -53,13 +54,13 @@
     Hair:
       points: 1
       required: false
-    Tail:
-      points: 1
-      required: true
-      defaultMarkings: [ ResomiTail ]
     TailExtra:
       points: 3
       required: false
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ ResomiTailFeathered ]
     Legs:
       points: 6
       required: false

@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "tail, tail_feathers taken from Baystation. Additional markings created by Huaqas (GitHub) by modifying BayStation sprites. Original prosthetic sprites by Greenjoe12345 (GitHub).",
+    "copyright": "tail, tail_feathers taken from Baystation12 commit a41ce0bd9323bc5fcf8feb57b84f08857a89052f, and modified by Huaqas (GitHub). damaged, stubby tail/feathers and prosthetics taken from PolarisSS13 commit 4e9c367322a5a07604d120c0972adbc61fba9a25, and modified by Huaqas (GitHub). tail_bird, tail_feathers_x_x created by Huaqas (GitHub) by modifying BayStation sprites. Tail bands created by Huaqas (GitHub) and AegisShieldDev (GitHub).",
     "size": {
         "x": 32,
         "y": 32
@@ -12,7 +12,15 @@
             "directions": 4
         },
         {
+            "name": "tail_bird",
+            "directions": 4
+        },
+        {
             "name": "tail_stubby",
+            "directions": 4
+        },
+        {
+            "name": "tail_feathers_stubby",
             "directions": 4
         },
         {
@@ -25,6 +33,14 @@
         },
         {
             "name": "tail_bottom",
+            "directions": 4
+        },
+        {
+            "name": "tail_damaged",
+            "directions": 4
+        },
+        {
+            "name": "tail_feathers_damaged",
             "directions": 4
         },
         {
@@ -68,15 +84,15 @@
             "directions": 4
         },
         {
-            "name": "stubby_prosthetic_wood",
+            "name": "tail_prosthetic_wood",
             "directions": 4
         },
         {
-            "name": "stubby_prosthetic_hightech",
+            "name": "tail_prosthetic_hightech",
             "directions": 4
         },
         {
-            "name": "stubby_prosthetic_unbranded",
+            "name": "tail_prosthetic_unbranded",
             "directions": 4
         },
         {
