@@ -130,7 +130,11 @@
   parent: BaseMobGorilla
   id: MobGorilla
   components:
-    - type: MonkeyAccent
+  - type: LanguageKnowledge
+    speaks:
+    - Ancestor
+    understands:
+    - Ancestor
 
 - type: entity
   name: Rampaging Gorilla
@@ -175,6 +179,12 @@
   id: MobCargorilla
   description: Cargo's pet gorilla. He seems to have an 'I love Mom' tattoo.
   components:
+  - type: LanguageKnowledge
+    speaks:
+    - Ancestor
+    understands:
+    - Ancestor
+    - GalacticCommon
     - type: Sprite
       drawdepth: Mobs
       layers:
