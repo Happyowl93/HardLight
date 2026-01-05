@@ -25344,5 +25344,31 @@ Entries:
   id: 271100
   time: '2026-01-05T14:38:28.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2711
+- author: CawsForConcern
+  changes:
+  - message: (Lagan) Document and paperbin printer to Cargo, techs rejoice
+    type: Add
+  - message: (Lagan) Replaced HOS WT550 with the 'HOS weapon spawner' (no gameplay
+      difference, just mapping stuff)
+    type: Tweak
+  - message: (Lagan) Replaced Command doors to the NTR / BSO office with NTR-access
+      doors
+    type: Tweak
+  - message: (Lagan) Extended the Salvage/Mining Docking arm, installed a real airlock,
+      and removed an air sensor that's only job was to drive Atmos insane
+    type: Tweak
+  - message: (Lagan) Fixed the airlock to Salvage/Mining Bay being Salvage only
+    type: Fix
+  - message: (Lagan) Fixed the HOP Office having Command access doors instead of HOP-only
+      doors
+    type: Fix
+  - message: (Lagan) Fixed the recycler in Disposals being wired backwards
+    type: Fix
+  - message: (Lagan) Fixed all of the belts and the recycler in Salvage/Mining Bay
+      being wired wrong
+    type: Fix
+  id: 271400
+  time: '2026-01-05T14:38:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2714
 Order: -1
 
