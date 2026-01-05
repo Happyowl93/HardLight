@@ -545,7 +545,7 @@ accent-archaic-replacement-192 = lord
 accent-archaic-replaced-193 = chaplain
 accent-archaic-replacement-193 = vicar
 
-accent-archaic-replaced-194 = temple
+accent-archaic-replaced-194 = chapel
 accent-archaic-replacement-194 = basilica
 
 accent-archaic-replaced-195 = ask

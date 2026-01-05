@@ -489,7 +489,7 @@
 - type: entity
   id: MailingUnitChapel
   parent: MailingUnit
-  suffix: Temple # Starlight: Chapel -> Temple
+  suffix: Shrine # Starlight: Chapel -> Shrine
   components:
   - type: MailingUnit
     tag: Chapel

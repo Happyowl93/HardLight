@@ -406,7 +406,7 @@
 - type: entity
   parent: LockableButton
   id: LockableButtonChapel
-  suffix: Temple # Starlight: Chapel -> Temple
+  suffix: Shrine # Starlight: Chapel -> Shrine
   components:
   - type: AccessReader
     access: [["Chapel"]]
