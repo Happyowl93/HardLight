@@ -481,3 +481,15 @@
       layers:
         - state: icon
       color: "#fc4e4eff"
+
+- type: entity
+  parent: BaseItem
+  id: SlimeGenderChangePotion
+  name: slime gender change potion
+  components:
+    - type: SlimeGenderChangePotion
+    - type: Sprite
+      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
+      layers:
+        - state: icon
+      color: "#fc86cfff"

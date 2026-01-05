@@ -580,3 +580,25 @@
       color: "#4efc4eff"
     - type: SlimeExtract
       # Green slimes require race changing capabilities, and I'm not sure if that exists
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: PinkSlimeExtract
+  name: pink slime extract
+  components:
+    - type: Sprite
+      color: "#fc86cfff"
+    - type: SlimeExtract
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: blood
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: SlimeGenderChangePotion
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true
+        # Need to implement slime docility before we can implement the plasma reagent reaction
