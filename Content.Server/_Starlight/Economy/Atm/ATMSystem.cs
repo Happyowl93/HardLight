@@ -41,12 +41,12 @@ public sealed partial class ATMSystem : SharedATMSystem
 
     private void OnWithdraw(EntityUid uid, ATMComponent component, ATMWithdrawBuiMsg args)
     {
-        if (_playerRolesManager.GetBalance(uid) is not { } balance || balance < args.Amount || args.Amount <= 0)
+        if (_playerRolesManager.GetBalance(args.Actor) is not { } balance || balance < args.Amount || args.Amount <= 0)
             return;
 
         var newBalance = balance -= args.Amount;
 
-        _playerRolesManager.SetBalance(uid, newBalance);
+        _playerRolesManager.SetBalance(args.Actor, newBalance);
         var cash = SpawnAtPosition(_cash, Transform(uid).Coordinates);
         var stack = EnsureComp<StackComponent>(cash);
         _stack.SetCount(cash, args.Amount, stack);
