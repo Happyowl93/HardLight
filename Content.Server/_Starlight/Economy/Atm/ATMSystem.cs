@@ -62,6 +62,7 @@ public sealed partial class ATMSystem : SharedATMSystem
             && TryComp<ATMComponent>(args.Target, out var atm) 
             && _playerRolesManager.GetBalance(args.User) is { } balance)
         {
+            args.Handled = true; // If we don't do this - debug assert and crash at the dev build.
             var newBalance = balance += (int)Math.Floor(stack.Count * 0.9);
             _playerRolesManager.SetBalance(args.User, newBalance);
             QueueDel(ent);
