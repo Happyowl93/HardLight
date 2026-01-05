@@ -898,3 +898,35 @@
               scalingFactor: 0
               scalingOffset: 1
           shouldDelete: true
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: OilSlimeExtract
+  name: oil slime extract
+  components:
+    - type: Sprite
+      color: "#262626ff"
+    - type: SlimeExtract
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: Blood
+                Quantity: 1
+          effects:
+            - effect: !type:AddReagentToSolution
+                reagent: Cornoil
+                solution: container
+              scalingFactor: 10
+              scalingOffset: 0
+          shouldDelete: false
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:Explosion
+                explosionType: Default
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: false
+          delay: 5

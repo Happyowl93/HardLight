@@ -274,3 +274,15 @@
       extract: GoldSlimeExtract
     - type: Sprite
       color: "#8a7b1cff"
+
+- type: entity
+  name: oil xenobiology slime
+  id: XenobiologySlimeOil
+  parent: XenobiologySlimeBase
+  description: OIL
+  components:
+    - type: Slime
+      splitInto: XenobiologySlimeOil
+      extract: OilSlimeExtract
+    - type: Sprite
+      color: "#262626ff"
