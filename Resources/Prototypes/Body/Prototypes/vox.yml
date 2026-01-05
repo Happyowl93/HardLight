@@ -37,11 +37,11 @@
       - left hand
     right hand:
       part: RightHandVox
-      organs:
+      organs: # 🌟Starlight🌟
         hand_implant: null # 🌟Starlight🌟
     left hand:
       part: LeftHandVox
-      organs:
+      organs: # 🌟Starlight🌟
         hand_implant: null # 🌟Starlight🌟
     right leg:
       part: RightLegVox

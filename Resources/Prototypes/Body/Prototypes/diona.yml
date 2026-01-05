@@ -34,11 +34,11 @@
       - left hand
     right hand:
       part: RightHandDiona
-      organs:
+      organs: # 🌟Starlight🌟
         hand_implant: null # 🌟Starlight🌟
     left hand:
       part: LeftHandDiona
-      organs:
+      organs: # 🌟Starlight🌟
         hand_implant: null # 🌟Starlight🌟
     right leg:
       part: RightLegDiona

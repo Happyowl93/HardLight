@@ -259,21 +259,9 @@ public sealed class HypospraySystem : EntitySystem
         // 🌟Starlight🌟 end
 
         amount = realTransferAmount;
-
         return true;
     }
-
-    private bool EligibleEntity(EntityUid entity, HyposprayComponent component)
-    {
-        // TODO: Does checking for BodyComponent make sense as a "can be hypospray'd" tag?
-        // In SS13 the hypospray ONLY works on mobs, NOT beakers or anything else.
-        // But this is 14, we dont do what SS13 does just because SS13 does it.
-        return component.OnlyAffectsMobs
-            ? HasComp<SolutionContainerManagerComponent>(entity) &&
-              HasComp<MobStateComponent>(entity)
-            : HasComp<SolutionContainerManagerComponent>(entity);
-    }
-
+    
     private bool TryDraw(Entity<HyposprayComponent> entity, EntityUid target, Entity<SolutionComponent> targetSolution, EntityUid user)
     {
         if (!_solutionContainers.TryGetSolution(entity.Owner, entity.Comp.SolutionName, out var soln))
@@ -293,6 +281,17 @@ public sealed class HypospraySystem : EntitySystem
             ("amount", removedSolution.Volume),
             ("target", Identity.Entity(target, EntityManager))), entity.Owner, user);
         return true;
+    }
+
+    private bool EligibleEntity(EntityUid entity, HyposprayComponent component)
+    {
+        // TODO: Does checking for BodyComponent make sense as a "can be hypospray'd" tag?
+        // In SS13 the hypospray ONLY works on mobs, NOT beakers or anything else.
+        // But this is 14, we dont do what SS13 does just because SS13 does it.
+        return component.OnlyAffectsMobs
+            ? HasComp<SolutionContainerManagerComponent>(entity) &&
+              HasComp<MobStateComponent>(entity)
+            : HasComp<SolutionContainerManagerComponent>(entity);
     }
 
     #endregion

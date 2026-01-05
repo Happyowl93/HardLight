@@ -14,10 +14,13 @@ namespace Content.Server.Emp;
 
 public sealed class EmpSystem : SharedEmpSystem
 {
+    // 🌟Starlight🌟  start  
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly PowerCellSystem _powerCell = default!; // 🌟Starlight🌟
-    [Dependency] private readonly ItemToggleSystem _itemToggle = default!; // 🌟Starlight🌟
+    [Dependency] private readonly PowerCellSystem _powerCell = default!; 
+    [Dependency] private readonly ItemToggleSystem _itemToggle = default!; 
+
+    // 🌟Starlight🌟 end
 
     public const string EmpPulseEffectPrototype = "EffectEmpPulse";
 
@@ -38,7 +41,7 @@ public sealed class EmpSystem : SharedEmpSystem
         args.Cancelled = true;
     }
 
-    // 🌟Starlight🌟
+    // 🌟Starlight🌟 start
     private void HandleMeleeHitTrigger(EntityUid uid, EmpOnMeleeHitComponent comp, MeleeHitEvent args)
     {
         if (args.HitEntities.Count <= 0)
@@ -51,6 +54,8 @@ public sealed class EmpSystem : SharedEmpSystem
                 EmpPulse(_transform.GetMapCoordinates(target), comp.Range, comp.EnergyConsumption, comp.DisableDuration);
         }
     }
+    
+    // 🌟Starlight🌟 end
 
     private void OnRadioReceiveAttempt(EntityUid uid, EmpDisabledComponent component, ref RadioReceiveAttemptEvent args) => args.Cancelled = true;
 

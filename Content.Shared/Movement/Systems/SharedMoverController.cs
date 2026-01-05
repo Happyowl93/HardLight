@@ -558,7 +558,7 @@ public abstract partial class SharedMoverController : VirtualController
             }
         }
 
-        // Check for outer clothing (hardsuits) before shoes
+        // STARLIGHT: Check for outer clothing (hardsuits) before shoes
         if (_inventory.TryGetSlotEntity(uid, "outerClothing", out var outerClothing) &&
             FootstepModifierQuery.TryComp(outerClothing, out var outerModifier))
         {

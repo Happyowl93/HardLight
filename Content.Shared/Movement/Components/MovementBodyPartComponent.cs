@@ -35,5 +35,5 @@ public sealed partial class MovementBodyPartComponent : Component
     [DataField]
     public float MaxSpeedMod = 20.0f;
 
-
+    // 🌟Starlight🌟 End
 }

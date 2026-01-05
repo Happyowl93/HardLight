@@ -517,7 +517,7 @@ public partial class SharedBodySystem
         walkSpeed /= body.RequiredLegs;
         sprintSpeed /= body.RequiredLegs;
         acceleration /= body.RequiredLegs;
-        Movement.ChangeBaseSpeed(bodyId, walkSpeed, sprintSpeed, acceleration, movement, minSpeedMod, maxSpeedMod);
+        Movement.ChangeBaseSpeed(bodyId, walkSpeed, sprintSpeed, acceleration, movement, minSpeedMod, maxSpeedMod); // 🌟Starlight🌟
     }
 
     #endregion

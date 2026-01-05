@@ -37,11 +37,11 @@
       - left hand
     right hand:
       part: RightHandMoth
-      organs:
+      organs: # 🌟Starlight🌟
         hand_implant: null # 🌟Starlight🌟
     left hand:
       part: LeftHandMoth
-      organs:
+      organs: # 🌟Starlight🌟
         hand_implant: null # 🌟Starlight🌟
     right leg:
       part: RightLegMoth

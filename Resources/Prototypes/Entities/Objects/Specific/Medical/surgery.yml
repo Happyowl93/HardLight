@@ -62,7 +62,7 @@
     sprite: _Starlight/Objects/Specific/Medical/surgery.rsi
     state: cautery
   - type: SurgeryTool
-    speed: 1.2
+    speed: 0.5
     startSound:
       path: /Audio/_Starlight/Medical/Surgery/cautery1.ogg
     endSound:
@@ -237,7 +237,7 @@
     sprite: _Starlight/Objects/Specific/Medical/surgery.rsi
     state: scalpel
   - type: SurgeryTool
-    speed: 1.2
+    speed: 0.2
     startSound:
       path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
     endSound:
@@ -414,7 +414,7 @@
     sprite: _Starlight/Objects/Specific/Medical/surgery.rsi
     state: retractor
   - type: SurgeryTool
-    speed: 1.2
+    speed: 0.4
     startSound:
       path: /Audio/_Starlight/Medical/Surgery/retractor1.ogg
     endSound:
@@ -500,7 +500,7 @@
     sprite: _Starlight/Objects/Specific/Medical/surgery.rsi
     state: hemostat
   - type: SurgeryTool
-    speed: 1.2
+    speed: 0.4
     startSound:
       path: /Audio/_Starlight/Medical/Surgery/hemostat1.ogg
   - type: Tag
@@ -592,7 +592,7 @@
     sprite: _Starlight/Objects/Specific/Medical/surgery.rsi
     state: bonesetter
   - type: SurgeryTool
-    speed: 1.2
+    speed: 0.4
     startSound:
       path: /Audio/_Starlight/Medical/Surgery/bone_setter.ogg
   - type: Tag
@@ -746,9 +746,9 @@
     sprite: _Starlight/Objects/Specific/Medical/surgery.rsi
     state: saw
   - type: Tool
-    speedModifier: 1
+    speedModifier: 0.4
   - type: SurgeryTool
-    speed: 1.2
+    speed: 0.1
     startSound:
       path: /Audio/_Starlight/Medical/Surgery/saw.ogg
     endSound:
@@ -804,6 +804,7 @@
         - ReagentId: BoneGel
           Quantity: 30
 
+# 🌟Starlight🌟 start
 - type: entity
   name: bone gel
   id: BoneGelCyber
@@ -818,3 +819,4 @@
   - type: Tag
     tags:
       - CyberHandItem
+ # 🌟Starlight🌟 end

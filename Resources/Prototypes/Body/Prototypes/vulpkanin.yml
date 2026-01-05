@@ -37,12 +37,12 @@
       - left hand
     right hand:
       part: RightHandVulpkanin
-      organs:
-        hand_implant: null
+      organs: # 🌟Starlight🌟
+        hand_implant: null # 🌟Starlight🌟
     left hand:
       part: LeftHandVulpkanin
-      organs:
-        hand_implant: null
+      organs: # 🌟Starlight🌟
+        hand_implant: null # 🌟Starlight🌟
     right leg:
       part: RightLegVulpkanin
       connections:

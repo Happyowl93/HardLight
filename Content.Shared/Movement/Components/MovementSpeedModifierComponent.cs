@@ -96,13 +96,13 @@ namespace Content.Shared.Movement.Components
         [AutoNetworkedField, ViewVariables]
         public float SprintSpeedModifier = 1.0f;
 
-        // 🌟Starlight🌟
+        // 🌟Starlight🌟 Start
         [AutoNetworkedField, ViewVariables]
         public float MinSpeedMod = 0.0f;
 
-        // 🌟Starlight🌟
         [AutoNetworkedField, ViewVariables]
         public float MaxSpeedMod = 20.0f;
+        // 🌟Starlight🌟 End
 
         #endregion
 

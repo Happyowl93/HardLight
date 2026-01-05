@@ -16,7 +16,7 @@ namespace Content.Shared.RetractableItemAction;
 public sealed class RetractableItemActionSystem : EntitySystem
 {
     [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!; // 🌟Starlight🌟
     [Dependency] private readonly SharedContainerSystem _containers = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
@@ -42,6 +42,11 @@ public sealed class RetractableItemActionSystem : EntitySystem
 
     private void OnRetractableItemAction(Entity<RetractableItemActionComponent> ent, ref OnRetractableItemActionEvent args)
     {
+        /*  🌟Starlight🌟 Start
+         *  if (_hands.GetActiveHand(args.Performer) is not { } activeHand) // Moved
+         *      return;
+         *  🌟Starlight🌟 End */
+
         if (_actions.GetAction(ent.Owner) is not { } action)
             return;
 
@@ -52,11 +57,11 @@ public sealed class RetractableItemActionSystem : EntitySystem
             return;
 
         // 🌟Starlight🌟 start
+        // A lot of this is the same, but moved a lot
         if (ent.Comp.SpawnInHand)
         {
             if (_hands.GetActiveHand(args.Performer) is not { } activeHand)
                 return;
-            // 🌟Starlight🌟 end
 
             // Don't allow to summon an item if holding an unremoveable item unless that item is summoned by the action.
             if (_hands.GetActiveItem(ent.Owner) != null
@@ -75,7 +80,6 @@ public sealed class RetractableItemActionSystem : EntitySystem
             {
                 SummonRetractableItem(args.Performer, ent.Comp.ActionItemUid.Value, activeHand, ent.Owner);
             }
-            // 🌟Starlight🌟 start
         }
         else
         {
