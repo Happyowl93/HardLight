@@ -570,3 +570,13 @@
               scalingFactor: 0
               scalingOffset: 1
           shouldDelete: true
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: GreenSlimeExtract
+  name: green slime extract
+  components:
+    - type: Sprite
+      color: "#4efc4eff"
+    - type: SlimeExtract
+      # Green slimes require race changing capabilities, and I'm not sure if that exists

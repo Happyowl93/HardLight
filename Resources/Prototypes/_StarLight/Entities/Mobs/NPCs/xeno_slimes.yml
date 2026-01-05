@@ -57,6 +57,8 @@
       splitIntoMutation:
         - XenobiologySlimeYellow
         - XenobiologySlimeDarkPurple
+        - XenobiologySlimeRed
+        - XenobiologySlimeRed
     - type: Sprite
       color: "#f07a26ff"
 
@@ -72,6 +74,8 @@
       splitIntoMutation:
         - XenobiologySlimeDarkPurple
         - XenobiologySlimeDarkBlue
+        - XenobiologySlimeGreen
+        - XenobiologySlimeGreen
     - type: Sprite
       color: "#9721c2ff"
 
@@ -228,3 +232,15 @@
       extract: RedSlimeExtract
     - type: Sprite
       color: "#fc4e4eff"
+
+- type: entity
+  name: green xenobiology slime
+  id: XenobiologySlimeGreen
+  parent: XenobiologySlimeBase
+  description: GREEN
+  components:
+    - type: Slime
+      splitInto: XenobiologySlimeGreen
+      extract: GreenSlimeExtract
+    - type: Sprite
+      color: "#4efc4eff"
