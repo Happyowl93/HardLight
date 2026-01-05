@@ -1,0 +1,17 @@
+- type: entity
+  id: StaminaSurge
+  name: "[color=yellow]Stamina Surge[/color]"
+  description: Grants increased stamina regeneration and resistance for a while at the cost of drastically increased hunger.
+  components:
+    - type: Action
+      useDelay: 20
+      itemIconStyle: BigAction
+      icon:
+        sprite: Interface/Actions/jump.rsi
+        state: icon
+    - type: LimitedCharges
+      maxCharges: 1
+    - type: AutoRecharge
+      rechargeDuration: 30
+    - type: InstantAction
+      event: !type:StaminaSurgeActionEvent
