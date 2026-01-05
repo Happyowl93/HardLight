@@ -643,6 +643,7 @@
         type: StrippableBoundUserInterface
   - type: InventorySlots
   - type: Inventory
+    forceDisplacements: true # SL
     speciesId: hamster
     templateId: hamster
     displacements:
@@ -1473,7 +1474,6 @@
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
-  - type: MonkeyAccent
   - type: NpcFactionMember
     factions:
     - Syndicate
@@ -1698,15 +1698,6 @@
   parent: MobBaseSyndicateKobold
   suffix: syndicate agent
   components:
-  # Starlight-Start
-  - type: LanguageSpeaker
-  - type: LanguageKnowledge
-    speaks:
-    - Ancestor
-    understands:
-    - Ancestor
-    - GalacticCommon
-  # Starlight-End
     # make the player a traitor once its taken
   - type: AutoTraitor
     profile: TraitorReinforcement
@@ -1716,15 +1707,6 @@
   parent: MobBaseSyndicateKobold
   suffix: NukeOps
   components:
-  # Starlight-Start
-  - type: LanguageSpeaker
-  - type: LanguageKnowledge
-    speaks:
-    - Ancestor
-    understands:
-    - Ancestor
-    - GalacticCommon
-  # Starlight-End
   - type: NukeOperative
 
 - type: entity
