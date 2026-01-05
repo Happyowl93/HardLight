@@ -173,6 +173,7 @@
           type: BorgSelectTypeUserInterface
     - type: InventorySlots
     - type: Inventory
+      forceDisplacements: true
       speciesId: hamster
       templateId: xenomoproach
       displacements:
