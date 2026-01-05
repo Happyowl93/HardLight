@@ -1,6 +1,7 @@
-- type: gameMapPool
-  id: DefaultMapPool
-  maps: #Starlight all disabled because they dont exist anymore
+#Starlight, disabled default map pool as we deleted them
+#- type: gameMapPool
+#  id: DefaultMapPool
+#  maps:
   # - Bagel
   # - Box
   # - Elkridge
