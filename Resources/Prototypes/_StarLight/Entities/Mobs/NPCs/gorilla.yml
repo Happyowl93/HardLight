@@ -10,6 +10,7 @@
       - Ancestor
       understands:
       - Ancestor
+
     - type: Sprite
       drawdepth: Mobs
       layers:
