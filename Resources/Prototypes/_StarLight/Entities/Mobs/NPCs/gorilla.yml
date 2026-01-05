@@ -5,6 +5,11 @@
   description: A ground-dwelling, predominantly herbivorous ape that inhabits the forests of central Africa on Earth.
   abstract: true
   components:
+    - type: LanguageKnowledge
+      speaks:
+      - Ancestor
+      understands:
+      - Ancestor
     - type: Sprite
       drawdepth: Mobs
       layers:
@@ -129,12 +134,6 @@
 - type: entity
   parent: BaseMobGorilla
   id: MobGorilla
-  components:
-  - type: LanguageKnowledge
-    speaks:
-    - Ancestor
-    understands:
-    - Ancestor
 
 - type: entity
   name: Rampaging Gorilla
