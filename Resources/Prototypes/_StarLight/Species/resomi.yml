@@ -56,7 +56,10 @@
     Tail:
       points: 1
       required: true
-      #defaultMarkings: [ ResomiTail ]
+      defaultMarkings: [ ResomiTail ]
+    TailExtra:
+      points: 3
+      required: false
     Legs:
       points: 6
       required: false

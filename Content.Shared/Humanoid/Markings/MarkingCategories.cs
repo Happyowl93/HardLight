@@ -20,6 +20,7 @@ namespace Content.Shared.Humanoid.Markings
         Arms,
         Legs,
         Tail,
+        TailExtra, // Starlight
         Overlay
     }
 
@@ -49,6 +50,7 @@ namespace Content.Shared.Humanoid.Markings
                 HumanoidVisualLayers.LFoot => MarkingCategories.Legs,
                 HumanoidVisualLayers.RFoot => MarkingCategories.Legs,
                 HumanoidVisualLayers.Tail => MarkingCategories.Tail,
+                HumanoidVisualLayers.TailExtra => MarkingCategories.TailExtra, // Starlight
                 _ => MarkingCategories.Overlay
             };
         }

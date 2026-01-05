@@ -34,7 +34,7 @@
 - type: marking
   id: ResomiTailFeathers # Same as default tail but you can change the colors.
   bodyPart: Tail
-  markingCategory: Tail
+  markingCategory: TailExtra
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -43,7 +43,7 @@
 - type: marking
   id: ResomiTailFeathersComplex
   bodyPart: Tail
-  markingCategory: Tail
+  markingCategory: TailExtra
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -58,7 +58,7 @@
 - type: marking
   id: ResomiTailFeathersShort
   bodyPart: Tail
-  markingCategory: Tail
+  markingCategory: TailExtra
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -67,7 +67,7 @@
 - type: marking
   id: ResomiTailFeathersFledgling
   bodyPart: Tail
-  markingCategory: Tail
+  markingCategory: TailExtra
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -76,7 +76,7 @@
 - type: marking
   id: ResomiTailFeathersLarge
   bodyPart: Tail
-  markingCategory: Tail
+  markingCategory: TailExtra
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -86,7 +86,7 @@
 - type: marking
   id: ResomiTailStripes
   bodyPart: Tail
-  markingCategory: Tail
+  markingCategory: TailExtra
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -95,7 +95,7 @@
 - type: marking
   id: ResomiTailSpots
   bodyPart: Tail
-  markingCategory: Tail
+  markingCategory: TailExtra
   speciesRestriction: [Resomi]
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_tail_markings.rsi
@@ -104,7 +104,7 @@
 - type: marking
   id: ResomiTailStubbyProstheticWood
   bodyPart: Tail
-  markingCategory: Special
+  markingCategory: TailExtra
   speciesRestriction: [Resomi]
   coloring:
     color: white
@@ -115,7 +115,7 @@
 - type: marking
   id: ResomiTailStubbyProstheticHighTech
   bodyPart: Tail
-  markingCategory: Special
+  markingCategory: TailExtra
   speciesRestriction: [Resomi]
   coloring:
     type: !type:White
@@ -127,7 +127,7 @@
 - type: marking
   id: ResomiTailStubbyProstheticUnbranded
   bodyPart: Tail
-  markingCategory: Special
+  markingCategory: TailExtra
   coloring:
     type: !type:White
   speciesRestriction: [Resomi]
