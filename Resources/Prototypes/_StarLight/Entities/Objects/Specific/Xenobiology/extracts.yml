@@ -558,7 +558,7 @@
               scalingFactor: 0
               scalingOffset: 1
           shouldDelete: true
-        # Need to implement slime rabidity before we can implement the red reagent reaction
+        # Need to implement slime rabidity before we can implement the blood reagent reaction
         - requirements:
             reagents:
               - ReagentId: Plasma
