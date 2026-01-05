@@ -122,6 +122,7 @@
         - XenobiologySlimeOrange
         - XenobiologySlimeMetal
         - XenobiologySlimeBluespace
+        - XenobiologySlimeBluespace
     - type: Sprite
       color: "#ffeb52ff"
 
@@ -137,6 +138,7 @@
       splitIntoMutation:
         - XenobiologySlimeOrange
         - XenobiologySlimePurple
+        - XenobiologySlimeSepia
         - XenobiologySlimeSepia
     - type: Sprite
       color: "#501466ff"
@@ -154,6 +156,7 @@
         - XenobiologySlimePurple
         - XenobiologySlimeBlue
         - XenobiologySlimeCerulean
+        - XenobiologySlimeCerulean
     - type: Sprite
       color: "#132b6eff"
 
@@ -169,6 +172,7 @@
       splitIntoMutation:
         - XenobiologySlimeMetal
         - XenobiologySlimeBlue
+        - XenobiologySlimePyrite
         - XenobiologySlimePyrite
     - type: Sprite
       color: "#aab8bdff"
