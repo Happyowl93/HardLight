@@ -5,7 +5,6 @@
   description: A ground-dwelling, predominantly herbivorous ape that inhabits the forests of central Africa on Earth.
   abstract: true
   components:
-
     - type: Sprite
       drawdepth: Mobs
       layers:
