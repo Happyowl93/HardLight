@@ -25334,5 +25334,15 @@ Entries:
   id: 271000
   time: '2026-01-05T14:38:15.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2710
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Two (2) Boxer jobs have been added to Orwell, champions rejoice
+    type: Add
+  - message: (Orwell) Replaced HOS WT550 with the 'HOS weapon spawner' (no gameplay
+      difference, just mapping stuff)
+    type: Tweak
+  id: 271100
+  time: '2026-01-05T14:38:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2711
 Order: -1
 
