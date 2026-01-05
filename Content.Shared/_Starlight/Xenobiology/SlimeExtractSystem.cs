@@ -1,4 +1,4 @@
-using Content.Shared._Starlight.Xenobiology.MiscItems;
+using Content.Shared._Starlight.Xenobiology.Potions;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.EntityEffects;

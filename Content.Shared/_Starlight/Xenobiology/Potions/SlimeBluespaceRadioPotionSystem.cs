@@ -3,7 +3,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Radio.Components;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Starlight.Xenobiology.MiscItems;
+namespace Content.Shared._Starlight.Xenobiology.Potions;
 
 public sealed class SlimeBluespaceRadioPotionSystem : EntitySystem
 {

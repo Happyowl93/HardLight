@@ -2,7 +2,7 @@ using Content.Shared.Radio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Starlight.Xenobiology.MiscItems;
+namespace Content.Shared._Starlight.Xenobiology.Potions;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class SlimeBluespaceRadioPotionComponent : Component

@@ -2,7 +2,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Interaction;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Starlight.Xenobiology.MiscItems;
+namespace Content.Shared._Starlight.Xenobiology.Potions;
 
 public sealed class SlimeFireproofPotionSystem : EntitySystem
 {

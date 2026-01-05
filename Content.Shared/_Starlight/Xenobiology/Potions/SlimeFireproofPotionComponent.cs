@@ -2,7 +2,7 @@ using Content.Shared.Damage.Prototypes;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Starlight.Xenobiology.MiscItems;
+namespace Content.Shared._Starlight.Xenobiology.Potions;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SlimeFireproofPotionComponent : Component

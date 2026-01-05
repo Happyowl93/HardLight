@@ -1,8 +1,7 @@
 using Content.Shared.Clothing;
 using Content.Shared.Interaction;
-using Robust.Shared.GameStates;
 
-namespace Content.Shared._Starlight.Xenobiology.MiscItems;
+namespace Content.Shared._Starlight.Xenobiology.Potions;
 
 public sealed class SlimeSpeedPotionSystem : EntitySystem
 {

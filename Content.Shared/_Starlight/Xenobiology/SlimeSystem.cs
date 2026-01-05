@@ -1,4 +1,4 @@
-using Content.Shared._Starlight.Xenobiology.MiscItems;
+using Content.Shared._Starlight.Xenobiology.Potions;
 using Content.Shared.Coordinates;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;

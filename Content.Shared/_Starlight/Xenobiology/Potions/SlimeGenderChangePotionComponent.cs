@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Starlight.Xenobiology.MiscItems;
+namespace Content.Shared._Starlight.Xenobiology.Potions;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class SlimeGenderChangePotionComponent : Component
