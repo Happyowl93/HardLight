@@ -758,3 +758,24 @@
               scalingFactor: 0
               scalingOffset: 1
           shouldDelete: true
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: AdamantineSlimeExtract
+  name: adamantine slime extract
+  components:
+    - type: Sprite
+      color: "#407985ff"
+    - type: SlimeExtract
+      extractReactions:
+        - requirements:
+            reagents:
+              - ReagentId: Plasma
+                Quantity: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: SheetAdamantine1
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true

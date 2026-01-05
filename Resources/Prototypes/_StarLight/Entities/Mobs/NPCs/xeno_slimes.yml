@@ -278,6 +278,8 @@
     - type: Slime
       splitInto: XenobiologySlimeGold
       extract: GoldSlimeExtract
+      splitIntoMutation:
+        - XenobiologySlimeAdamantine
     - type: Sprite
       color: "#8a7b1cff"
 
@@ -316,3 +318,15 @@
       extract: LightPinkSlimeExtract
     - type: Sprite
       color: "#ff94d1ff"
+
+- type: entity
+  name: adamantine xenobiology slime
+  id: XenobiologySlimeAdamantine
+  parent: XenobiologySlimeBase
+  description: ADAMANTINE
+  components:
+    - type: Slime
+      splitInto: XenobiologySlimeAdamantine
+      extract: AdamantineSlimeExtract
+    - type: Sprite
+      color: "#407985ff"
