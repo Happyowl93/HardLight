@@ -1,81 +1,3 @@
-- type: entity
-  parent: BaseItem
-  id: SlimeSteroidPotion
-  name: slime steroid potion
-  components:
-    - type: SlimeSteroidPotion
-    - type: Sprite
-      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
-      layers:
-        - state: icon
-      color: "#501466ff"
-
-- type: entity
-  parent: BaseItem
-  id: SlimeStabilizerPotion
-  name: slime stabilizer potion
-  components:
-    - type: SlimeStabilizerPotion
-    - type: Sprite
-      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
-      layers:
-        - state: icon
-      color: "#34cfebff"
-
-- type: entity
-  parent: BaseItem
-  id: SlimeFireproofPotion
-  name: slime fireproof potion
-  components:
-    - type: SlimeFireproofPotion
-      fireproofDamageSet: SlimeFireproofPotionEffect
-    - type: Sprite
-      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
-      layers:
-        - state: icon
-      color: "#132b6eff"
-
-- type: damageModifierSet
-  id: SlimeFireproofPotionEffect
-  coefficients:
-    Heat: -10.0
-
-- type: entity
-  parent: BaseItem
-  id: YellowSlimeExtractLight
-  name: yellow slime extract light
-  components:
-    - type: Sprite
-      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_extract.rsi
-      layers:
-        - state: test_slime_extract
-      color: "#ffeb52ff"
-    - type: YellowSlimeExtractLight
-    - type: ItemToggle
-    - type: PointLight
-      enabled: true
-      radius: 2
-      netsync: false
-
-- type: entity
-  parent: BasePowerCell
-  id: YellowSlimeExtractPowercell
-  name: yellow slime extract powercell
-  components:
-    - type: Sprite
-      layers:
-        - map: [ "enum.PowerCellVisualLayers.Base" ]
-          state: microreactor
-        - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
-          state: o2
-          shader: unshaded
-      color: "#ffeb52ff" # Yes I'm just taking the microreactor sprite and painting it yellow, sue me
-    - type: PredictedBattery
-      maxCharge: 5000
-      startingCharge: 5000
-    - type: PredictedBatterySelfRecharger
-      autoRechargeRate: 50
-
 - type: entityTable
   id: SilverSlimeFoodTable
   table: !type:GroupSelector
@@ -432,64 +354,169 @@
       - !type:NestedSelector
         tableId: RandomRareSodaTable
 
-- type: entity
-  parent: BaseItem
-  id: SlimeBluespaceRadioPotion
-  name: slime bluespace radio potion
-  components:
-    - type: SlimeBluespaceRadioPotion
-      channels:
-        - "Common"
-    - type: Sprite
-      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
-      layers:
-        - state: icon
-      color: "#ffffffff"
+- type: entityTable
+  id: GoldSlimePeacefulTable
+  table: !type:GroupSelector
+    children:
+      - id: MobBat
+      - id: MobBee
+      - id: MobChicken
+      - id: MobChicken1
+      - id: MobChicken2
+      - id: MobCockroach
+      - id: MobMothroach
+      - id: MobDuckMallard
+      - id: MobDuckWhite
+      - id: MobDuckBrown
+      - id: MobButterfly
+      - id: MobCow
+      - id: MobCrab
+      - id: MobGoat
+      - id: MobGoose
+      - id: MobKangaroo
+      - id: MobMonkey
+      - id: MobKobold
+      - id: MobMouse
+      - id: MobMouse1
+      - id: MobMouse2
+      - id: MobLizard
+      - id: MobSlug
+      - id: MobFrog
+      - id: MobParrot
+      - id: MobPenguin
+      - id: MobSnake
+      - id: MobPossum
+      - id: MobRaccoon
+      - id: MobFox
+      - id: MobCorgi
+      - id: MobCorgiPuppy
+      - id: MobCat
+      - id: MobCatCalico
+      - id: MobCatSpace
+      - id: MobCatCaracal
+      - id: MobCatKitten
+      - id: MobSloth
+      - id: MobFerret
+      - id: MobHamster
+      - id: MobPig
+      - id: MobDionaNymph
+      - id: MobReindeerBuck
+      - id: MobReindeerDoe
+      - id: MobMoproach
+      - id: MobCorgiIan
+      - id: MobCorgiLisa
+      - id: MobCorgiMouse
+      - id: MobCorgiIanPup
+      - id: MobCatRuntime
+      - id: MobCatException
+      - id: MobCatFloppa
+      - id: MobBandito
+      - id: MobBingus
+      - id: MobMcGriff
+      - id: MobPaperwork
+      - id: MobWalter
+      - id: MobPossumMorty
+      - id: MobPossumPoppy
+      - id: MobRaccoonMorticia
+      - id: MobAlexander
+      - id: MobFoxRenault
+      - id: MobHamsterHamlet
+      - id: MobHamsterHamletSlippery
+      - id: MobSpiderShiva
+      - id: MobKangarooWillow
+      - id: MobSlimesPet
+      - id: MobMonkeyPunpun
+      - id: MobCrabAtmos
+      - id: MobPollyParrot
+      - id: MobCatShadow
+      - id: MobSnail
+      - id: MobSnailMoth
 
-- type: entity
-  parent: BaseItem
-  id: SlimeExtractEnhancerPotion
-  name: slime extract enhancer potion
-  components:
-    - type: SlimeExtractEnhancerPotion
-    - type: Sprite
-      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
-      layers:
-        - state: icon
-      color: "#5998b3ff"
+- type: entityTable
+  id: GoldSlimeNeutralAndHostileTable
+  table: !type:GroupSelector
+    children:
+      - id: MobGiantSpider
+      - id: MobGiantSpiderWizard
+      - id: MobMimic
+      - !type:NestedSelector
+        tableId: GoldSlimeHostileTable
 
-- type: entity
-  parent: BaseItem
-  id: SlimeSpeedPotion
-  name: slime speed potion
-  components:
-    - type: SlimeSpeedPotion
-    - type: Sprite
-      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
-      layers:
-        - state: icon
-      color: "#fc4e4eff"
-
-- type: entity
-  parent: BaseItem
-  id: SlimeMutationPotion
-  name: slime mutation potion
-  components:
-    - type: SlimeMutationPotion
-    - type: Sprite
-      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
-      layers:
-        - state: icon
-      color: "#fc4e4eff"
-
-- type: entity
-  parent: BaseItem
-  id: SlimeGenderChangePotion
-  name: slime gender change potion
-  components:
-    - type: SlimeGenderChangePotion
-    - type: Sprite
-      sprite: _Starlight/Objects/Specific/Xenobiology/test_slime_potion.rsi
-      layers:
-        - state: icon
-      color: "#fc86cfff"
+- type: entityTable
+  id: GoldSlimeHostileTable
+  table: !type:GroupSelector
+    children:
+      - id: MobAngryBee
+      - id: MobGiantSpiderAngry
+      - id: MobClownSpider
+      - id: MobArgocyteSlurva
+      - id: MobArgocyteBarrier
+      - id: MobArgocyteSkitter
+      - id: MobArgocyteSwiper
+      - id: MobArgocyteMolder
+      - id: MobArgocytePouncer
+      - id: MobArgocyteGlider
+      - id: MobArgocyteHarvester
+      - id: MobArgocyteCrawler
+      - id: MobArgocyteEnforcer
+      - id: MobArgocyteFounder
+      - id: MobArgocyteLeviathing
+      - id: MobGoliath
+      - id: MobHivelord
+      - id: MobBasilisk
+      - id: MobBehonkerElectrical
+      - id: MobBehonkerPyro
+      - id: MobBehonkerGrav
+      - id: MobBehonkerIce
+      - id: MobCarp
+      - id: MobCarpMagic
+      - id: MobCarpHolo
+      - id: MobCarpRainbow
+      - id: MobCarpDragon
+      - id: MobCarpDungeon
+      - id: MobShark
+      - id: MobCluwneBeast
+      - id: MobOreCrab
+      - id: MobQuartzCrab
+      - id: MobIronCrab
+      - id: MobCoalCrab
+      - id: MobUraniumCrab
+      - id: MobBananiumCrab
+      - id: MobSilverCrab
+      - id: MobGoldCrab
+      - id: ReagentSlime
+      - id: ReagentSlimeBeer
+      - id: ReagentSlimePax
+      - id: ReagentSlimeNocturine
+      - id: ReagentSlimeTHC
+      - id: ReagentSlimeBicaridine
+      - id: ReagentSlimeToxin
+      - id: ReagentSlimeNapalm
+      - id: ReagentSlimeOmnizine
+      - id: ReagentSlimeMuteToxin
+      - id: ReagentSlimeNorepinephricAcid
+      - id: ReagentSlimeEphedrine
+      - id: ReagentSlimeRobustHarvest
+      - id: MobFleshJared
+      - id: MobFleshGolem
+      - id: MobFleshClamp
+      - id: MobFleshLover
+      - id: MobAbomination
+      - id: MobHellspawn
+      - id: MobWatcherLavaland
+      - id: MobWatcherIcewing
+      - id: MobWatcherMagmawing
+      - id: MobWatcherPride
+      - id: MobLuminousPerson
+      - id: MobLuminousObject
+      - id: MobLuminousEntity
+      - id: MobMimicHostile
+      - id: MobLaserRaptor
+      - id: MobTomatoKiller
+      - id: MobRatKing
+      - id: MobRatKingBuff
+      - id: MobBearSpace
+      - id: MobKangarooSpace
+      - id: MobSpiderSpace
+      - id: MobCobraSpace
+      - id: MobTick
