@@ -25411,5 +25411,13 @@ Entries:
   id: 222000
   time: '2026-01-05T16:03:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2220
+- author: FeralCreature
+  changes:
+  - message: Detective's Energy Magnum is now hitscan as intended. Hitting ~~tiders~~
+      your target has never been easier!
+    type: Fix
+  id: 270500
+  time: '2026-01-05T16:03:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2705
 Order: -1
 
