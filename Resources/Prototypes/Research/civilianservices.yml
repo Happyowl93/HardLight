@@ -52,6 +52,7 @@
   - SurveillanceWirelessCameraMovableCircuitboard
   - SurveillanceWirelessCameraAnchoredCircuitboard
   - SurveillanceCameraMonitorCircuitboard
+  - SurveillanceCameraMonitorCircuitboardDesktop #Starlight
   - SurveillanceWirelessCameraMonitorCircuitboard
   - TelecomServerCircuitboard
   - HolopadMachineCircuitboard
@@ -72,6 +73,7 @@
     - SynthesizerInstrument
     - DawInstrumentMachineCircuitboard
     - MassMediaCircuitboard
+    - MassMediaCircuitboardDesktop #Starlight
     - JukeboxCircuitBoard
   radioChannels:
   - Service
