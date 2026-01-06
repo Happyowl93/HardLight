@@ -11,7 +11,7 @@ namespace Content.Shared.Radio.Components;
 ///     It should be used for intercoms and other radios in future.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)] // Starlight edit
-public sealed partial class EncryptionKeyComponent : Component
+public sealed partial class EncryptionKeyComponent : Component, ISupportsCustomChannels // Starlight edit
 {
     [DataField, AutoNetworkedField] // Starlight edit
     public HashSet<ProtoId<RadioChannelPrototype>> Channels = new();
@@ -26,7 +26,7 @@ public sealed partial class EncryptionKeyComponent : Component
     /// <summary>
     /// Set of custom channel data
     /// </summary>
-    [DataField, AutoNetworkedField] public HashSet<CustomRadioChannelData> CustomChannels = [];
+    [DataField, AutoNetworkedField] public HashSet<CustomRadioChannelData> CustomChannels { get; set; } = [];
 
     // TODO: someone please make so you can modify the sprite layers through this component. Use ClientEncryptionKeySystem. 
     

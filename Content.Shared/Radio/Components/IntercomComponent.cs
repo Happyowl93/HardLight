@@ -8,7 +8,7 @@ namespace Content.Shared.Radio.Components;
 /// Handles intercom ui and is authoritative on the channels an intercom can access.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
-public sealed partial class IntercomComponent : Component
+public sealed partial class IntercomComponent : Component, ISupportsCustomChannels //Starlight edit
 {
     /// <summary>
     /// Does this intercom require power to function
@@ -31,5 +31,5 @@ public sealed partial class IntercomComponent : Component
     [DataField, AutoNetworkedField]
     public List<ProtoId<RadioChannelPrototype>> SupportedChannels = new();
 
-    [ViewVariables, AutoNetworkedField] public List<CustomRadioChannelData> SupportedCustomChannels = []; //Starlight
+    [ViewVariables, AutoNetworkedField] public HashSet<CustomRadioChannelData> CustomChannels { get; set; } = []; //Starlight
 }

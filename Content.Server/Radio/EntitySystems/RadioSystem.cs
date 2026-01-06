@@ -310,7 +310,7 @@ public sealed class RadioSystem : EntitySystem
             {
                 if (radio.CustomChannels.All(c => c.Id != channel.Id) ||
                     (TryComp<IntercomComponent>(receiver, out var intercom) &&
-                     intercom.SupportedCustomChannels.All(c=>c.Id != channel.Id)))
+                     intercom.CustomChannels.All(c=>c.Id != channel.Id)))
                     continue;
             }
 

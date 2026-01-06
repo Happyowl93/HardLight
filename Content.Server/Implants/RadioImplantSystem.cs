@@ -26,7 +26,7 @@ public sealed class RadioImplantSystem : EntitySystem
                 ent.Comp.ActiveAddedChannels.Add(channel);
         }
         //Starlight begin
-        foreach (var channel in ent.Comp.CustomRadioChannels)
+        foreach (var channel in ent.Comp.CustomChannels)
         {
             if (activeRadio.CustomChannels.Add(channel))
                 ent.Comp.ActiveAddedCustomRadioChannels.Add(channel);
@@ -42,7 +42,7 @@ public sealed class RadioImplantSystem : EntitySystem
                 ent.Comp.TransmitterAddedChannels.Add(channel);
         }
         //Starlight begin
-        foreach (var channel in ent.Comp.CustomRadioChannels)
+        foreach (var channel in ent.Comp.CustomChannels)
         {
             if (intrinsicRadioTransmitter.CustomChannels.Add(channel))
                 ent.Comp.TransmitterAddedCustomRadioChannels.Add(channel);

@@ -12,3 +12,8 @@ public sealed partial class CustomRadioChannelData
     [DataField] public Color Color { get; set; } = Color.Lime;
     [DataField] public bool LongRange { get; set; }
 }
+
+public interface ISupportsCustomChannels
+{
+    public HashSet<CustomRadioChannelData> CustomChannels { get; set; }
+}

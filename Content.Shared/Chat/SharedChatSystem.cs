@@ -260,7 +260,7 @@ public abstract partial class SharedChatSystem : EntitySystem
                 }
         if(TryComp<IntercomComponent>(source, out var intercom))
         {
-            foreach (var channel in intercom.SupportedCustomChannels.Where(channel => channel.Id == channelId))
+            foreach (var channel in intercom.CustomChannels.Where(channel => channel.Id == channelId))
             {
                 customChannel = channel;
                 return true;
@@ -289,13 +289,16 @@ public abstract partial class SharedChatSystem : EntitySystem
                     return true;
                 }
 
+        Log.Log(LogLevel.Info, $"try to get transmitter");
         if (!TryComp<IntrinsicRadioTransmitterComponent>(source, out var radio)) return false;
+        Log.Log(LogLevel.Info, $"found transmitter");
         foreach (var channel in radio.CustomChannels.Where(channel => channel.Keycode == keycode))
         {
+            Log.Log(LogLevel.Info, $"found channel, {channel.Id} with name {channel.Name} and keycode {channel.Keycode} while searching for {keycode}");
             customChannel = channel;
             return true;
         }
-
+        Log.Log(LogLevel.Info, $"did not find a channel matching {keycode}");
         return false;
     }
     //Starlight end

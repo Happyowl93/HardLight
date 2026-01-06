@@ -12,7 +12,7 @@ namespace Content.Shared.Radio.Components;
 ///     This component is by entities that can contain encryption keys
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState] // Starlight edit
-public sealed partial class EncryptionKeyHolderComponent : Component
+public sealed partial class EncryptionKeyHolderComponent : Component, ISupportsCustomChannels // Starlight edit
 {
     /// <summary>
     ///     Whether or not encryption keys can be removed from the headset.
@@ -49,7 +49,7 @@ public sealed partial class EncryptionKeyHolderComponent : Component
     /// <summary>
     /// Combined set of custom channels provided by all contained keys.
     /// </summary>
-    [ViewVariables, AutoNetworkedField] public HashSet<CustomRadioChannelData> CustomChannels = [];
+    [ViewVariables, AutoNetworkedField] public HashSet<CustomRadioChannelData> CustomChannels { get; set; } = [];
     //Starlight end
 
     /// <summary>

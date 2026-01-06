@@ -769,7 +769,6 @@ public sealed partial class ChatUIController : UIController
         {
             chatChannel = ChatSelectChannel.Radio;
             TryGetCustomRadioChannel(text, out customChannel);
-            Log.Log(LogLevel.Info, (customChannel is null).ToString());
         }
         //Starlight end
         else

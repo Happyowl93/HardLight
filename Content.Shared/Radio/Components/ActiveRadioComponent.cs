@@ -8,7 +8,7 @@ namespace Content.Shared.Radio.Components;
 ///     This component is required to receive radio message events.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState] // Starlight edit
-public sealed partial class ActiveRadioComponent : Component
+public sealed partial class ActiveRadioComponent : Component, ISupportsCustomChannels // Starlight edit
 {
     /// <summary>
     ///     The channels that this radio is listening on.
@@ -20,7 +20,7 @@ public sealed partial class ActiveRadioComponent : Component
     /// <summary>
     /// The custom channels that this radio is listening on.
     /// </summary>
-    [DataField, AutoNetworkedField] public HashSet<CustomRadioChannelData> CustomChannels = [];
+    [DataField, AutoNetworkedField] public HashSet<CustomRadioChannelData> CustomChannels { get; set; } = [];
     //Starlight end
 
     /// <summary>

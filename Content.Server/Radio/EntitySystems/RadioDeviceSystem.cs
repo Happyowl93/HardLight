@@ -209,11 +209,11 @@ public sealed class RadioDeviceSystem : SharedRadioDeviceSystem
     private void OnIntercomEncryptionChannelsChanged(Entity<IntercomComponent> ent, ref EncryptionChannelsChangedEvent args)
     {
         ent.Comp.SupportedChannels = args.Component.Channels.Select(p => new ProtoId<RadioChannelPrototype>(p)).ToList();
-        ent.Comp.SupportedCustomChannels = args.Component.CustomChannels.ToList(); // Starlight edit
+        ent.Comp.CustomChannels = args.Component.CustomChannels;
 
         var channel = args.Component.DefaultChannel;
         //Starlight begin
-        if (ent.Comp.CurrentChannel != null && (ent.Comp.SupportedChannels.Contains(ent.Comp.CurrentChannel) || ent.Comp.SupportedCustomChannels.All(ch => ch.Id != ent.Comp.CurrentChannel)))
+        if (ent.Comp.CurrentChannel != null && (ent.Comp.SupportedChannels.Contains(ent.Comp.CurrentChannel) || ent.Comp.CustomChannels.All(ch => ch.Id != ent.Comp.CurrentChannel)))
             channel = ent.Comp.CurrentChannel;
         //Starlight end
 
@@ -250,7 +250,7 @@ public sealed class RadioDeviceSystem : SharedRadioDeviceSystem
             !ent.Comp.SupportedChannels.Contains(args.Channel))
         {
             if (!_chat.TryGetCustomChannel(ent.Owner, args.Channel, out var customChannel)) return;
-            if (ent.Comp.SupportedCustomChannels.All(ch => ch.Id != customChannel.Id)) return;
+            if (ent.Comp.CustomChannels.All(ch => ch.Id != customChannel.Id)) return;
         }
         //Starlight end
 
