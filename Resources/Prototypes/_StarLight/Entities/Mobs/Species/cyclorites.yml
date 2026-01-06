@@ -81,6 +81,8 @@
   - type: Crawler
     standTime: 4
     knockdownDamageThreshold: 10
+  - type: Stamina
+    forceStandStamina: 20
   - type: Inventory
     speciesId: cyclorite
     templateId: cyclorite
