@@ -140,7 +140,7 @@ public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjec
             return;
         
         serverGrain.UpdateResource(session.UserId, "credits", diff);
-        _sawmill.Debug($"Updated balance OLD: {data.Balance + diff} NEW: {data.Balance} DIFF: {diff}");
+        _sawmill.Debug($"Updated balance OLD: {data.Balance - diff} NEW: {data.Balance} DIFF: {diff}");
     }
 
     public PlayerData? GetPlayerData(ICommonSession session) => _players.TryGetValue(session, out var data) ? data.Data : null;
