@@ -7,17 +7,19 @@ using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Content.Server._NullLink.Core;
+using Content.Server._NullLink.Event;
 using Content.Shared._NullLink;
 
 namespace Content.Server.Starlight;
 
-public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjectInit
+public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjectInit, IEntityEventSubscriber
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IServerDbManager _dbManager = default!;
     [Dependency] private readonly IServerNetManager _netMgr = default!;
     [Dependency] private readonly IActorRouter _actors = default!;
     [Dependency] private readonly ILogManager _logger = default!;
+    [Dependency] private readonly IEntityManager _entManager = default!;
 
     private readonly Dictionary<ICommonSession, PlayerReg> _players = new();
 
@@ -28,11 +30,18 @@ public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjec
     public void Initialize() 
     {
         _netMgr.RegisterNetMessage<MsgUpdatePlayerStatus>();
+        _entManager.EventBus.SubscribeEvent<PlayerResourcesUpdatedEvent>(EventSource.Local, this, OnPlayerResourcesUpdated);
         _sawmill = _logger.GetSawmill("player_manager");
     }
 
     void IPostInjectInit.PostInject()
         => _playerManager.PlayerStatusChanged += PlayerStatusChanged;
+
+    private void OnPlayerResourcesUpdated(ref PlayerResourcesUpdatedEvent ev)
+    {
+        if (ev.Resources.TryGetValue("credits", out var balance))
+            SetBalance(ev.Player, (int)balance, skipNullLink: true); // We skip null link because it's request to update from null link itself.
+    }
 
     private void PlayerStatusChanged(object? sender, SessionStatusEventArgs e)
     {
@@ -115,13 +124,13 @@ public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjec
         return data.Balance;
     }
 
-    public void SetBalance(EntityUid uid, int value)
+    public void SetBalance(EntityUid uid, int value, bool skipNullLink = false)
     {
         if (!_playerManager.TryGetSessionByEntity(uid, out var session)) return;
-        SetBalance(session, value);
+        SetBalance(session, value, skipNullLink);
     }
 
-    public void SetBalance(ICommonSession session, int value)
+    public void SetBalance(ICommonSession session, int value, bool skipNullLink = false)
     {
         var data = GetPlayerData(session);
 
@@ -135,7 +144,8 @@ public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjec
         
         data.Balance = value;
 
-        if (!_actors.Enabled 
+        if (skipNullLink 
+            || !_actors.Enabled 
             || !_actors.TryGetServerGrain(out var serverGrain))
             return;
         

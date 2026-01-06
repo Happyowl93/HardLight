@@ -1,8 +1,10 @@
 using System.Threading.Tasks;
 using System.Diagnostics.CodeAnalysis;
+using Content.Server._NullLink.Event;
 using Content.Shared._NullLink;
 using Robust.Shared.Player;
 using Starlight.NullLink.Event;
+using Robust.Shared.GameObjects;
 
 namespace Content.Server._NullLink.PlayerData;
 
@@ -18,6 +20,8 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
             playerData.Resources[resource.Key] = resource.Value;
 
         SendPlayerResources(playerData.Session, playerData.Resources);
+        var @event = new PlayerResourcesUpdatedEvent(playerData.Session, playerData.Resources);
+        _entManager.EventBus.RaiseEvent(EventSource.Local, ref @event);
         return ValueTask.CompletedTask;
     }
     
@@ -28,6 +32,8 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
         playerData.Resources[ev.Resource] = ev.NewAmount;
 
         SendPlayerResources(playerData.Session, playerData.Resources);
+        var @event = new PlayerResourcesUpdatedEvent(playerData.Session, playerData.Resources);
+        _entManager.EventBus.RaiseEvent(EventSource.Local, ref @event);
         return ValueTask.CompletedTask;
     }
 

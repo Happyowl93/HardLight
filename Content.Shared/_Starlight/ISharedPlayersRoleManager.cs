@@ -13,6 +13,6 @@ public interface ISharedPlayersRoleManager
     int? GetBalance(EntityUid uid);
     int? GetBalance(ICommonSession session);
 
-    void SetBalance(EntityUid uid, int value);
-    void SetBalance(ICommonSession session, int value);
+    void SetBalance(EntityUid uid, int value, bool skipNullLink = false);
+    void SetBalance(ICommonSession session, int value, bool skipNullLink = false);
 }

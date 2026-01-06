@@ -69,13 +69,13 @@ public sealed class ClientPlayerManager : IClientPlayerRolesManager, IPostInject
     public int? GetBalance(ICommonSession session)
         => GetPlayerData(session) is { } data ? data.Balance : null;
 
-    public void SetBalance(EntityUid uid, int value)
+    public void SetBalance(EntityUid uid, int value, bool skipNullLink = false)
     {
         if (_player.LocalEntity == uid && _player.LocalSession != null)
-            SetBalance(_player.LocalSession, value);
+            SetBalance(_player.LocalSession, value, skipNullLink);
     } 
 
-    public void SetBalance(ICommonSession session, int value) 
+    public void SetBalance(ICommonSession session, int value, bool skipNullLink = false) 
     {
         var data = GetPlayerData(session);
 
