@@ -6,6 +6,7 @@ using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Containers;
 using Robust.Shared.Toolshed;
+using Content.Server._Starlight.Administration.Systems.Commands; // Starlight
 
 namespace Content.Server.Storage;
 
@@ -55,7 +56,7 @@ public sealed class StorageCommand : ToolshedCommand
 
     //Starlight begin
     [CommandImplementation("reshape")]
-    public EntityUid StorageResize([PipedArgument] EntityUid uid, BoxList shapes)
+    public EntityUid StorageResize([PipedArgument] EntityUid uid, Box2IList shapes)
     {
         _storage ??= GetSys<SharedStorageSystem>();
         _container ??= GetSys<SharedContainerSystem>();
@@ -69,17 +70,3 @@ public sealed class StorageCommand : ToolshedCommand
     }
     //Starlight end
 }
-
-//Starlight begin
-public readonly record struct BoxList(List<Box2i> Boxes)
-{
-    public override string ToString()
-    {
-        var str = Boxes.Aggregate("BoxList[",
-            (current, box) => current + $"{{{box.Top},{box.Left},{box.Bottom},{box.Right}}},");
-        if (str.EndsWith(',')) str = str.Remove(str.Length - 1);
-        str += ']';
-        return str;
-    }
-}
-//Starlight end
