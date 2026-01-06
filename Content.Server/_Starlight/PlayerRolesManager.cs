@@ -7,7 +7,6 @@ using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Content.Server._NullLink.Core;
-using Content.Server._NullLink.Event;
 using Content.Shared._NullLink;
 
 namespace Content.Server.Starlight;
@@ -30,18 +29,11 @@ public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjec
     public void Initialize() 
     {
         _netMgr.RegisterNetMessage<MsgUpdatePlayerStatus>();
-        _entManager.EventBus.SubscribeEvent<PlayerResourcesUpdatedEvent>(EventSource.Local, this, OnPlayerResourcesUpdated);
         _sawmill = _logger.GetSawmill("player_manager");
     }
 
     void IPostInjectInit.PostInject()
         => _playerManager.PlayerStatusChanged += PlayerStatusChanged;
-
-    private void OnPlayerResourcesUpdated(ref PlayerResourcesUpdatedEvent ev)
-    {
-        if (ev.Resources.TryGetValue("credits", out var balance))
-            SetBalance(ev.Player, (int)balance, skipNullLink: true); // We skip null link because it's request to update from null link itself.
-    }
 
     private void PlayerStatusChanged(object? sender, SessionStatusEventArgs e)
     {
