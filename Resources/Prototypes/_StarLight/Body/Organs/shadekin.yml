@@ -23,6 +23,9 @@
   - type: OrganVisualization
     layer: Eyes
     prototype: MobShadekinEyes
+  - type: Tag
+    tags:
+      - ShadekinEyes
 
 - type: entity
   id: OrganShadekinTongue
@@ -103,3 +106,19 @@
     sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
     layers:
       - state: core
+  - type: Tag
+    tags:
+      - Meat
+      - DamagedShadekinCore
+
+- type: entity
+  id: OrganShadekinCoreDamaged
+  parent: OrganShadekinCore
+  suffix: Undamaged
+  components:
+  - type: OrganShadekinCore
+    damaged: false
+  - type: Tag
+    tags:
+      - Meat
+      - ShadekinCore
