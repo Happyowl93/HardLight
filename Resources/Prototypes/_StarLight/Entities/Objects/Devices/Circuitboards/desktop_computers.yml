@@ -6,6 +6,10 @@
   components:
     - type: ComputerBoard
       prototype: ComputerAlertDesktop
+    - type: Construction
+      deconstructionTarget: null
+      graph: ComputerCircuitBoard
+      node: alertDesktop
 
 - type: entity
   parent: AtmosMonitoringComputerCircuitboard
@@ -15,6 +19,10 @@
   components:
     - type: ComputerBoard
       prototype: ComputerAtmosMonitoringDesktop
+    - type: Construction
+      deconstructionTarget: null
+      graph: ComputerCircuitBoard
+      node: tankDesktop
 
 - type: entity
   parent: SurveillanceCameraMonitorCircuitboard
@@ -24,6 +32,10 @@
   components:
   - type: ComputerBoard
     prototype: ComputerSurveillanceCameraMonitorDesktop
+  - type: Construction
+    deconstructionTarget: null
+    graph: ComputerCircuitBoard
+    node: cameraDesktop
 
 - type: entity
   parent: CargoBountyComputerCircuitboard
@@ -33,6 +45,10 @@
   components:
   - type: ComputerBoard
     prototype: ComputerCargoBountyDesktop
+  - type: Construction
+    deconstructionTarget: null
+    graph: ComputerCircuitBoard
+    node: cargoBountyDesktop
 
 - type: entity
   parent: CrewMonitoringComputerCircuitboard
@@ -42,6 +58,10 @@
   components:
   - type: ComputerBoard
     prototype: ComputerCrewMonitoringDesktop
+  - type: Construction
+    deconstructionTarget: null
+    graph: ComputerCircuitBoard
+    node: crewDesktop
 
 - type: entity
   parent: CriminalRecordsComputerCircuitboard
@@ -51,6 +71,10 @@
   components:
     - type: ComputerBoard
       prototype: ComputerCriminalRecordsDesktop
+    - type: Construction
+      deconstructionTarget: null
+      graph: ComputerCircuitBoard
+      node: crimeDesktop
 
 - type: entity
   parent: StationRecordsComputerCircuitboard
@@ -60,6 +84,10 @@
   components:
     - type: ComputerBoard
       prototype: ComputerStationRecordsDesktop
+    - type: Construction
+      deconstructionTarget: null
+      graph: ComputerCircuitBoard
+      node: stationRecordsDesktop
 
 - type: entity
   parent: ComputerMassMediaCircuitboard
@@ -69,6 +97,10 @@
   components:
     - type: ComputerBoard
       prototype: ComputerMassMediaDesktop
+    - type: Construction
+      deconstructionTarget: null
+      graph: ComputerCircuitBoard
+      node: newsDesktop
 
 - type: entity
   parent: PowerComputerCircuitboard
@@ -78,6 +110,10 @@
   components:
     - type: ComputerBoard
       prototype: ComputerPowerMonitoringDesktop
+    - type: Construction
+      deconstructionTarget: null
+      graph: ComputerCircuitBoard
+      node: powerDesktop
 
 - type: entity
   parent: SalvageJobBoardComputerCircuitboard
@@ -87,6 +123,10 @@
   components:
   - type: ComputerBoard
     prototype: ComputerSalvageJobBoardDesktop
+  - type: Construction
+    deconstructionTarget: null
+    graph: ComputerCircuitBoard
+    node: salvageJobDesktop
 
 - type: entity
   parent: CargoRequestComputerCircuitboard
@@ -96,6 +136,10 @@
   components:
     - type: ComputerBoard
       prototype: ComputerCargoOrdersDesktop
+    - type: Construction
+      deconstructionTarget: null
+      graph: ComputerCircuitBoard
+      node: cargoRequestDesktop
 
 - type: entity
   parent: CargoRequestEngineeringComputerCircuitboard
@@ -105,6 +149,10 @@
   components:
   - type: ComputerBoard
     prototype: ComputerCargoOrdersEngineeringDesktop
+  - type: Construction
+    deconstructionTarget: null
+    graph: ComputerCircuitBoard
+    node: engineeringRequestDesktop
 
 - type: entity
   parent: CargoRequestMedicalComputerCircuitboard
@@ -114,6 +162,10 @@
   components:
   - type: ComputerBoard
     prototype: ComputerCargoOrdersMedicalDesktop
+  - type: Construction
+    deconstructionTarget: null
+    graph: ComputerCircuitBoard
+    node: medicalRequestDesktop
 
 - type: entity
   parent: CargoRequestScienceComputerCircuitboard
@@ -123,6 +175,10 @@
   components:
   - type: ComputerBoard
     prototype: ComputerCargoOrdersScienceDesktop
+  - type: Construction
+    deconstructionTarget: null
+    graph: ComputerCircuitBoard
+    node: scienceRequestDesktop
 
 - type: entity
   parent: CargoRequestSecurityComputerCircuitboard
@@ -132,6 +188,10 @@
   components:
   - type: ComputerBoard
     prototype: ComputerCargoOrdersSecurityDesktop
+  - type: Construction
+    deconstructionTarget: null
+    graph: ComputerCircuitBoard
+    node: securityRequestDesktop
 
 - type: entity
   parent: CargoRequestServiceComputerCircuitboard
@@ -141,6 +201,10 @@
   components:
   - type: ComputerBoard
     prototype: ComputerCargoOrdersServiceDesktop
+  - type: Construction
+    deconstructionTarget: null
+    graph: ComputerCircuitBoard
+    node: serviceRequestDesktop
 
 # region: Custom Computers
 # Desktop computers without corresponding console

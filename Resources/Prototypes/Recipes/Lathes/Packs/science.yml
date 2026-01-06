@@ -89,7 +89,6 @@
   recipes:
   - SurveillanceCameraRouterCircuitboard
   - SurveillanceCameraMonitorCircuitboard
-  - SurveillanceCameraMonitorCircuitboardDesktop #Starlight
   - SurveillanceWirelessCameraMonitorCircuitboard
   - SurveillanceCameraWirelessRouterCircuitboard
   - ComputerTelevisionCircuitboard
