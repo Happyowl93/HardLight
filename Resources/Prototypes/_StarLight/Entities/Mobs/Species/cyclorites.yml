@@ -79,6 +79,10 @@
     narcoticScale: 0.5
   - type: MovementSpeedModifierScale
     movementSpeedScale: 0.5
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      90: 0.7 # 60% of base health based on BaseMobSpecies
+      120: 0.5 # 80% of base health based on BaseMobSpecies
   - type: Vocal
     sounds:
       Male: MaleCyclorite
