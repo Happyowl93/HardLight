@@ -23,7 +23,7 @@
         mask:
         - TabletopMachineMask
         layer:
-        - MachineLayer
+        - BulletImpassable
 # endregion: Base
 
 # region: Frame
@@ -283,6 +283,13 @@
     program: 2
     allowPercussion: true
     allowProgramChange: true # Defined in space-station-14.sf2
-  - type: Physics
-    bodyType: Static
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
+        ents: []
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
 # endregion: Custom Computers
