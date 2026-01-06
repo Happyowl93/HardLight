@@ -79,8 +79,8 @@
 - type: entity
   parent: StationRecordsComputerCircuitboard
   id: StationRecordsComputerCircuitboardDesktop
-  name: station records desktop computer board
-  description: A circuit board for a station records desktop computer.
+  name: employment records desktop computer board
+  description: A circuit board for an employment records desktop computer.
   components:
     - type: ComputerBoard
       prototype: ComputerStationRecordsDesktop
