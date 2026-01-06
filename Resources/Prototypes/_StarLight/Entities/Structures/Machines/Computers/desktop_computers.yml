@@ -283,4 +283,6 @@
     program: 2
     allowPercussion: true
     allowProgramChange: true # Defined in space-station-14.sf2
+  - type: Physics
+    bodyType: Static
 # endregion: Custom Computers
