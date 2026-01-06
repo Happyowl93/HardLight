@@ -58,7 +58,12 @@ public sealed class ThermalRegulatorSystem : EntitySystem
        
         // Starlight edit start - Don't do implicit heat regulation if the entity is dead
         // Fixes Avali not rotting
-        var totalMetabolismTempChange = -ent.Comp1.RadiatedHeat;
+        var totalMetabolismTempChange = 0.0f;
+        // Verify whether the entity can radiate heat
+        if (_actionBlockerSys.CanRadiateHeat(ent))
+        {
+            totalMetabolismTempChange = -ent.Comp1.RadiatedHeat;
+        }
 
         var heatCapacity = _tempSys.GetHeatCapacity(ent, ent);
         if (!_mobState.IsDead(ent))
