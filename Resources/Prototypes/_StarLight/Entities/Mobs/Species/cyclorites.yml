@@ -78,6 +78,9 @@
       Male: MaleCyclorite
       Female: FemaleCyclorite
       Unsexed: MaleCyclorite
+  - type: Crawler
+    standTime: 4
+    knockdownDamageThreshold: 10
   - type: Inventory
     speciesId: cyclorite
     templateId: cyclorite
