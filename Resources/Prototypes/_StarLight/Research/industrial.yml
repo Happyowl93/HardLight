@@ -84,7 +84,7 @@
   icon:
     sprite: _Starlight/Objects/Tools/cyberling.rsi
     state: ripletclaw
-  discipline: industrial
+  discipline: Industrial
   tier: 3
   cost: 9320
   recipeUnlocks:
