@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "back_patch sprites created by Huaqas (GitHub). body_stripes, body_lines, body_rings taken from commit 4e9c367322a5a07604d120c0972adbc61fba9a25.",
+    "copyright": "back_patch sprites created by Huaqas (GitHub). body_stripes, body_lines, body_rings, groin_stripes, body_coat taken from commit 4e9c367322a5a07604d120c0972adbc61fba9a25.",
     "size": {
         "x": 32,
         "y": 32
@@ -37,6 +37,14 @@
         },
         {
             "name": "body_rings",
+            "directions": 4
+        },
+        {
+            "name": "body_coat",
+            "directions": 4
+        },
+        {
+            "name": "groin_stripes",
             "directions": 4
         }
     ]

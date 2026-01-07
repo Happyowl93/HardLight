@@ -44,6 +44,15 @@
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
     state: head_stripes
 
+- type: marking
+  id: ResomiHeadCoat
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_head_markings.rsi
+    state: head_coat
+
 # Ear Markings
 - type: marking
   id: ResomiEars
@@ -203,6 +212,24 @@
     state: fluff_groin
 
 - type: marking
+  id: ResomiGroinStripes
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
+    state: groin_stripes
+
+- type: marking
+  id: ResomiBodyCoat
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_markings.rsi
+    state: body_coat
+
+- type: marking
   id: ResomiBodyStripes
   bodyPart: Chest
   markingCategory: Chest
@@ -333,6 +360,24 @@
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_arm_markings.rsi
     state: l_shoulder_fade
 
+- type: marking
+  id: ResomiRArmCoat
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_arm_markings.rsi
+    state: r_arm_coat
+
+- type: marking
+  id: ResomiLArmCoat
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_arm_markings.rsi
+    state: l_arm_coat
+
 # Leg Markings
 - type: marking
   id: ResomiLLegFeathers
@@ -427,3 +472,21 @@
   sprites:
   - sprite: _Starlight/Mobs/Customization/Resomi/resomi_leg_markings.rsi
     state: l_leg_stripes
+
+- type: marking
+  id: ResomiRLegCoat
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_leg_markings.rsi
+    state: r_leg_coat
+
+- type: marking
+  id: ResomiLLegCoat
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Resomi/resomi_leg_markings.rsi
+    state: l_leg_coat
