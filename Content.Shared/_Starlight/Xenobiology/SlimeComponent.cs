@@ -11,18 +11,6 @@ namespace Content.Shared._Starlight.Xenobiology;
 public sealed partial class SlimeComponent : Component
 {
     /// <summary>
-    /// The starting nutrition amount. (Or current, if the slime is spawned)
-    /// </summary>
-    [DataField("nutrition", required: true), AutoNetworkedField]
-    public FixedPoint2 Nutrition;
-    
-    /// <summary>
-    /// The amount the nutrition changes every second. Positive means the nutrition will increase, negative means the nutrition will decrease. Cannot go below 0.
-    /// </summary>
-    [DataField("nutritionChangePerSecond", required: true), AutoNetworkedField]
-    public FixedPoint2 NutritionChangePerSecond;
-    
-    /// <summary>
     /// The amount of damage dealt to the target entity wheb the slime eats.
     /// </summary>
     [DataField("damageOnEat", required: true), AutoNetworkedField]

@@ -12,9 +12,9 @@
       sprite: _Starlight/Mobs/XenoSlimes/test_sprite.rsi
       layers:
         - state: test_slime
+    - type: Hunger
+      baseDecayRate: 1
     - type: Slime
-      nutrition: 50
-      nutritionChangePerSecond: -1
       damageOnEat:
         types:
           Cellular: 5
@@ -91,7 +91,7 @@
       extract: BlueSlimeExtract
       splitIntoMutation:
         - XenobiologySlimeDarkBlue
-        - XenobiologySlimeSliver
+        - XenobiologySlimeSilver
         - XenobiologySlimePink
         - XenobiologySlimePink
     - type: Sprite
@@ -108,7 +108,7 @@
       extract: MetalSlimeExtract
       splitIntoMutation:
         - XenobiologySlimeYellow
-        - XenobiologySlimeSliver
+        - XenobiologySlimeSilver
     - type: Sprite
       color: "#5e5e5eff"
 
@@ -170,7 +170,7 @@
   description: SILVER
   components:
     - type: Slime
-      splitInto: XenobiologySlimeSliver
+      splitInto: XenobiologySlimeSilver
       extract: SilverSlimeExtract
       splitIntoMutation:
         - XenobiologySlimeMetal

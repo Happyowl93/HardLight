@@ -10,8 +10,8 @@
             minKey: MinimumIdleTime
             maxKey: MaximumIdleTime
           preconditions:
-            - !type:SlimeEnoughNutritionToSplitPrecondition
-              splitThreshold: 100
+            - !type:NotHungryPrecondition
+              minHungerState: Okay
 
         - !type:HTNPrimitiveTask
           operator: !type:WaitOperator
@@ -19,7 +19,7 @@
           preconditions:
             - !type:KeyExistsPrecondition
               key: IdleTime
-        
+
         - !type:HTNPrimitiveTask
           operator: !type:SlimeSplitOperator
             splitAmount: 4
@@ -29,11 +29,13 @@
           operator: !type:PickNearbyEdibleOperator
             targetKey: EatTarget
             targetMoveKey: TargetCoordinates
-            hungerThreshold: 150
             targetDamageType: Cellular
             targetDamageThreshold: 100
             only_target: Biological
             range: 4
+          preconditions:
+            - !type:HungryPrecondition
+              minHungerState: Okay
 
         - !type:HTNPrimitiveTask
           operator: !type:SetFloatOperator
@@ -59,7 +61,7 @@
           preconditions:
             - !type:KeyExistsPrecondition
               key: IdleTime
-        
+    
     - tasks:
         - !type:HTNCompoundTask
           task: IdleCompound

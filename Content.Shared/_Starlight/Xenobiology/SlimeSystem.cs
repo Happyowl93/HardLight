@@ -4,6 +4,8 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
+using Content.Shared.Nutrition.Components;
+using Content.Shared.Nutrition.EntitySystems;
 using Robust.Shared.Random;
 
 namespace Content.Shared._Starlight.Xenobiology;
@@ -16,6 +18,7 @@ public sealed class SlimeSystem : EntitySystem
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private readonly HungerSystem _hungerSystem = default!;
 
     public List<SlimeSplitRecord> SlimeSplitRecords = new();
     public List<EntityUid> SlimesToDelete = new();
@@ -37,11 +40,6 @@ public sealed class SlimeSystem : EntitySystem
     {
         base.Update(frameTime);
         var query = EntityQueryEnumerator<SlimeComponent>();
-        
-        while (query.MoveNext(out var uid, out var slime))
-        {
-            slime.Nutrition = FixedPoint2.Max(slime.Nutrition + (frameTime * slime.NutritionChangePerSecond), 0);
-        }
 
         foreach (var record in SlimeSplitRecords)
         {
@@ -71,7 +69,7 @@ public sealed class SlimeSystem : EntitySystem
 
         if (returnDamage.AnyPositive())
         {
-            slime.Comp.Nutrition += slime.Comp.NutritionOnHit;
+            _hungerSystem.ModifyHunger(slime, slime.Comp.NutritionOnHit.Float());
         }
         
         return true;
@@ -80,7 +78,9 @@ public sealed class SlimeSystem : EntitySystem
     public bool TrySplitSlime(Entity<SlimeComponent?> slime, int split_amount)
     {
         if (!Resolve(slime, ref slime.Comp, false)) return false;
-        var newNutrition = slime.Comp.Nutrition / split_amount;
+        var newNutrition = 0F;
+        if (TryComp<HungerComponent>(slime, out var hunger))
+            newNutrition = _hungerSystem.GetHunger(hunger);
         System.Random random = new System.Random();
         for (int i = 0; i < split_amount; i++)
         {
@@ -102,7 +102,7 @@ public sealed class SlimeSystem : EntitySystem
             SlimeComponent? comp = null;
             if (Resolve(split, ref comp))
             {
-                comp.Nutrition = newNutrition;
+                _hungerSystem.SetHunger(split, newNutrition);
                 comp.MutationChance = slime.Comp.MutationChance;
             }
             else return false;

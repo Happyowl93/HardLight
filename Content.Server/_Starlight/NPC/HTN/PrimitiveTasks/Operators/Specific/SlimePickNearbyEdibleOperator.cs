@@ -40,12 +40,6 @@ public sealed partial class SlimePickNearbyEdibleOperator : HTNOperator
     public string TargetMoveKey = string.Empty;
     
     /// <summary>
-    /// The amount of nutrition below which the slime will try to eat others.
-    /// </summary>
-    [DataField("hungerThreshold", required: true)]
-    public FixedPoint2 HungerThreshold = 0;
-    
-    /// <summary>
     /// The type of damage to check against when determining if the target has enough non-damage.
     /// </summary>
     [DataField("targetDamageType", required: true)]
@@ -57,7 +51,6 @@ public sealed partial class SlimePickNearbyEdibleOperator : HTNOperator
     [DataField("targetDamageThreshold", required: true)]
     public FixedPoint2 TargetDamageThreshold = 0;
     
-    public const string HungerThresholdKey = "HungerThreshold";
     public const string TargetDamageTypeKey = "TargetDamageType";
     public const string TargetDamageThresholdKey = "TargetDamageThreshold";
 
@@ -75,9 +68,6 @@ public sealed partial class SlimePickNearbyEdibleOperator : HTNOperator
         var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
         
         if (!_entManager.TryGetComponent<SlimeComponent>(owner, out var slime))
-            return (false, null);
-
-        if (HungerThreshold <= slime.Nutrition)
             return (false, null);
         
         var damageQuery = _entManager.GetEntityQuery<DamageableComponent>();
@@ -111,7 +101,6 @@ public sealed partial class SlimePickNearbyEdibleOperator : HTNOperator
                     {TargetKey, entity},
                     {TargetMoveKey, _entManager.GetComponent<TransformComponent>(entity).Coordinates},
                     {NPCBlackboard.PathfindKey, path},
-                    {HungerThresholdKey, HungerThreshold},
                     {TargetDamageTypeKey, TargetDamageType},
                     {TargetDamageThresholdKey, TargetDamageThreshold},
                 });

@@ -29,7 +29,6 @@ public sealed partial class SlimeEatOperator : HTNOperator
     {
         base.TaskShutdown(blackboard, status);
         blackboard.Remove<EntityUid>(TargetKey);
-        blackboard.Remove<FixedPoint2>(SlimePickNearbyEdibleOperator.HungerThresholdKey);
         blackboard.Remove<string>(SlimePickNearbyEdibleOperator.TargetDamageTypeKey);
         blackboard.Remove<FixedPoint2>(SlimePickNearbyEdibleOperator.TargetDamageThresholdKey);
     }
@@ -41,8 +40,7 @@ public sealed partial class SlimeEatOperator : HTNOperator
         if (!blackboard.TryGetValue<EntityUid>(TargetKey, out var target, _entMan) || _entMan.Deleted(target))
             return HTNOperatorStatus.Failed;
         
-        if (!blackboard.TryGetValue<FixedPoint2>(SlimePickNearbyEdibleOperator.HungerThresholdKey, out var hungerThreshold, _entMan) ||
-            !blackboard.TryGetValue<string>(SlimePickNearbyEdibleOperator.TargetDamageTypeKey, out var targetDamageType, _entMan) ||
+        if (!blackboard.TryGetValue<string>(SlimePickNearbyEdibleOperator.TargetDamageTypeKey, out var targetDamageType, _entMan) ||
             !blackboard.TryGetValue<FixedPoint2>(SlimePickNearbyEdibleOperator.TargetDamageThresholdKey, out var targetDamageThreshold, _entMan))
             return HTNOperatorStatus.Failed;
         
@@ -51,9 +49,6 @@ public sealed partial class SlimeEatOperator : HTNOperator
             return HTNOperatorStatus.Failed;
 
         if (!_entMan.TryGetComponent<SlimeComponent>(owner, out var slime))
-            return HTNOperatorStatus.Failed;
-        
-        if (hungerThreshold <= slime.Nutrition)
             return HTNOperatorStatus.Failed;
 
         if (!_entMan.TryGetComponent<DamageableComponent>(target, out var damage))
