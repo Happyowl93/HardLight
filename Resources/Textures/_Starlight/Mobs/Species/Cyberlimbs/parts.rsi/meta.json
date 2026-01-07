@@ -157,6 +157,34 @@
       "copyright": "Based off the arm sprite, modified by Citrea"
     },
     {
+      "name": "l_ripper_arm",
+      "directions": 4
+    },
+    {
+      "name": "l_ripper_hand",
+      "directions": 4,
+      "copyright": "Based off the arm sprite, modified by Citrea"
+    },
+    {
+      "name": "l_ripper_hand_SURG",
+      "directions": 4,
+      "copyright": "Based off the arm sprite, modified by Citrea"
+    },
+    {
+      "name": "r_ripper_arm",
+      "directions": 4
+    },
+    {
+      "name": "r_ripper_hand",
+      "directions": 4,
+      "copyright": "Based off the arm sprite, modified by Citrea"
+    },
+    {
+      "name": "r_ripper_hand_SURG",
+      "directions": 4,
+      "copyright": "Based off the arm sprite, modified by Citrea"
+    },
+    {
       "name": "l_steel_arm",
       "directions": 4
     },
