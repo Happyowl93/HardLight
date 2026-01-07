@@ -9,7 +9,12 @@ research-technology-advanced-cyberlimbs = Advanced cyberorgans
 
 research-technology-basic-implants = Basic Implants
 
+research-technology-medical-cyberlimbs = Medical cyberlimbs
+research-technology-cargo-cyberlimbs = Logistical cyberlimbs
+research-technology-security-cyberlimbs = Security cyberlimbs
+research-technology-science-cyberlimbs = Scientific cyberlimbs
 research-technology-functional-cyberlimbs = Functional cyberlimbs
+research-technology-engineering-cyberlimbs = Engineering cyberlimbs
 research-technology-nightvision-eyes = Night Vision Cyber Eyes
 research-technology-thermalvision-eyes = Thermal Vision Cyber Eyes
 

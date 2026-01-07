@@ -40,6 +40,18 @@
       "copyright": "taken from tgstation"
     },
     {
+      "name": "expwelder",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ],
+      "copyright": "Modified from indwelder by Citrea"
+    },
+    {
       "name": "indwelder-on",
       "delays": [
         [
@@ -255,6 +267,62 @@
     {
       "name": "ripletclaw-full",
       "copyright": "Citrea"
+    },
+    {
+      "name": "jaws_pry",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ],
+      "copyright": "Modified from jaws and ripletclaw by Citrea"
+    },
+    {
+      "name": "jaws_cutter",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ],
+      "copyright": "Modified from jaws and ripletclaw by Citrea"
+    },
+    {
+      "name": "drill_bolt",
+      "delays": [
+        [
+          0.3,
+          0.3
+        ]
+      ],
+      "copyright": "Modified from powerdrill and cyberwrench by Citrea"
+    },
+    {
+      "name": "drill_screw",
+      "delays": [
+        [
+          0.3,
+          0.3
+        ]
+      ],
+      "copyright": "Modified from powerdrill and cyberwrench by Citrea"
+    },
+    {
+      "name": "rcd",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ],
+      "copyright": "Modified from rcd and cyberwrench by Citrea"
     },
     {
       "name": "handheldgrinder",

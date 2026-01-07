@@ -838,3 +838,93 @@
       maxFillLevels: 1
       fillBaseName: dropper
       inHandsMaxFillLevels: 0
+
+# Engineer
+- type: entity
+  name: Cyber drill
+  parent: PowerDrill
+  id: PowerDrillCyber
+  description: A simple powered hand drill.
+  components:
+  - type: Tag
+    tags:
+    - CyberHandItem
+  - type: Sprite
+    sprite: _Starlight/Objects/Tools/cyberling.rsi
+    state: drill_screw
+  - type: MultipleTool
+    statusShowBehavior: true
+    entries:
+      - behavior: Screwing
+        sprite:
+          sprite: _Starlight/Objects/Tools/cyberling.rsi
+          state: drill_screw
+        useSound:
+          path: /Audio/Items/drill_use.ogg
+        changeSound:
+          path: /Audio/Items/change_drill.ogg
+      - behavior: Anchoring
+        sprite:
+          sprite: _Starlight/Objects/Tools/cyberling.rsi
+          state: drill_bolt
+        useSound:
+          path: /Audio/Items/drill_use.ogg
+        changeSound:
+          path: /Audio/Items/change_drill.ogg
+
+- type: entity
+  name: cybernetic jaws of life
+  parent: JawsOfLife
+  id: JawsOfLifeCyber
+  description: A set of jaws of life, compressed through the magic of science.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Tools/cyberling.rsi
+    state: jaws_pry
+  - type: Tag
+    tags:
+    - CyberHandItem
+  - type: MultipleTool
+    statusShowBehavior: true
+    entries:
+      - behavior: Prying
+        sprite:
+          sprite: _Starlight/Objects/Tools/cyberling.rsi
+          state: jaws_pry
+        useSound: /Audio/Items/jaws_pry.ogg
+        changeSound: /Audio/Items/change_jaws.ogg
+      - behavior: Cutting
+        sprite:
+          sprite: _Starlight/Objects/Tools/cyberling.rsi
+          state: jaws_cutter
+        useSound: /Audio/Items/jaws_cut.ogg
+        changeSound: /Audio/Items/change_jaws.ogg
+
+- type: entity
+  name: experimental cyber-welder
+  parent: WelderExperimental
+  id: WelderExperimentalCyber
+  description: "An experimental welder capable of self-fuel generation and less harmful to the eyes."
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Tools/cyberling.rsi
+    layers:
+    - state: expwelder
+    - state: indwelder-on
+      visible: false
+      shader: unshaded
+      map: ["enum.ToggleableVisuals.Layer"]
+  - type: Tag
+    tags:
+    - CyberHandItem
+
+
+- type: entity
+  id: RCDCyber
+  parent: RCD
+  name: Cybernetic RCD
+  description: The rapid construction device can be used to quickly place and remove various station structures and fixtures. Requires compressed matter to function.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Tools/cyberling.rsi
+    state: rcd

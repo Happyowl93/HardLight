@@ -545,6 +545,55 @@
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: r_persephone_hand_TOOLS
 
+#Engineer
+- type: humanoidBaseSprite
+  id: CyberLArmEngineer
+  matchSkin: false
+  markingsMatchSkin: false
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: l_engineer_arm
+
+- type: humanoidBaseSprite
+  id: CyberLHandEngineer
+  matchSkin: false
+  markingsMatchSkin: false
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: l_engineer_hand
+
+- type: humanoidBaseSprite
+  id: CyberLHandEngineerTools
+  matchSkin: false
+  markingsMatchSkin: false
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: l_engineer_hand_TOOLS
+
+- type: humanoidBaseSprite
+  id: CyberRArmEngineer
+  matchSkin: false
+  markingsMatchSkin: false
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: r_engineer_arm
+
+- type: humanoidBaseSprite
+  id: CyberRHandEngineer
+  matchSkin: false
+  markingsMatchSkin: false
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: r_engineer_hand
+
+- type: humanoidBaseSprite
+  id: CyberRHandEngineerTools
+  matchSkin: false
+  markingsMatchSkin: false
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: r_engineer_hand_TOOLS
+
 # Hydraulic
 - type: humanoidBaseSprite
   id: CyberLLegHydraulic

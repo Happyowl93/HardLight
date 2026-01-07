@@ -352,6 +352,99 @@
         tags:
           - CyberHandItem
 
+#Engineer
+- type: entity
+  id: LeftArmCyberEngineer
+  name: "left engineer arm"
+  parent: [PartCyber, BaseLeftArm]
+  components:
+    - type: BaseLayerId
+      layer: CyberLArmEngineer
+    - type: Sprite
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "l_engineer_arm"
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "l_engineer_arm"
+    - type: WithAttachedBodyParts
+      parts:
+        left hand: LeftHandCyberEngineer
+
+- type: entity
+  id: LeftHandCyberEngineer
+  name: "left engineer hand"
+  parent: [PartCyber, BaseLeftHand]
+  components:
+    - type: BaseLayerId
+      layer: CyberLHandEngineer
+    - type: BaseLayerIdToggled
+      layer: CyberLHandEngineerTools
+    - type: Sprite
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "l_engineer_hand"
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "l_engineer_hand"
+    - type: LimbItemStorage
+      items:
+        - JawsOfLifeCyber
+        - PowerDrillCyber
+        - WelderExperimentalCyber
+        - RCDCyber
+    - type: LimbItemDeployer
+      action: ActionToggleCyberHandLeft
+      sound: 
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      handWhitelist:
+        tags:
+          - CyberHandItem
+
+- type: entity
+  id: RightArmCyberEngineer
+  name: "right engineer arm"
+  parent: [PartCyber, BaseRightArm]
+  components:
+    - type: BaseLayerId
+      layer: CyberRArmEngineer
+    - type: Sprite
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "r_engineer_arm"
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "r_engineer_arm"
+    - type: WithAttachedBodyParts
+      parts:
+        right hand: RightHandCyberEngineer
+
+- type: entity
+  id: RightHandCyberEngineer
+  name: "right engineer hand"
+  parent: [PartCyber, BaseRightHand]
+  components:
+    - type: BaseLayerId
+      layer: CyberRHandEngineer
+    - type: BaseLayerIdToggled
+      layer: CyberRHandEngineerTools
+    - type: Sprite
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "r_engineer_hand"
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      state: "r_engineer_hand"
+    - type: LimbItemStorage
+      items:
+        - JawsOfLifeCyber
+        - PowerDrillCyber
+        - WelderExperimentalCyber
+        - RCDCyber
+    - type: LimbItemDeployer
+      action: ActionToggleCyberHandRight
+      sound: 
+        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      handWhitelist:
+        tags:
+          - CyberHandItem
+
 #Bulwark
 - type: entity
   id: LeftArmCyberBulwark

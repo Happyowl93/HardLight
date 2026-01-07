@@ -196,6 +196,34 @@
     Steel: 550
     Silver: 100
     Glass: 100
+#
+- type: latheRecipe
+  id: LeftArmCyberEngineer
+  result: LeftArmCyberEngineer
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+    Steel: 2000
+    Glass: 700
+    Plastic: 500
+    Plasma: 500
+    Silver: 100
+    Gold: 100
+
+- type: latheRecipe
+  id: RightArmCyberEngineer
+  result: RightArmCyberEngineer
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+    Steel: 2000
+    Glass: 700
+    Plastic: 500
+    Plasma: 500
+    Silver: 100
+    Gold: 100
 
 #
 - type: latheRecipe

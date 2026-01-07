@@ -148,11 +148,11 @@
 # Tier 3
 
 - type: technology
-  id: FunctionalCyberLimbsTech
-  name: research-technology-functional-cyberlimbs
+  id: MedicalCyberLimbsTech
+  name: research-technology-medical-cyberlimbs
   icon:
-    sprite: _Starlight/Interface/Actions/actions_cyber.rsi
-    state: cyber-hand-left
+    sprite: _Starlight/Objects/Tools/cyberling.rsi
+    state: autoinjector
   discipline: Biochemical
   tier: 3
   cost: 9320
@@ -161,27 +161,10 @@
     - RightArmCyberReaper
     - LeftArmCyberAngel
     - RightArmCyberAngel
-    - LeftArmCyberPersephone
-    - RightArmCyberPersephone
-    - LeftArmCyberGorilla
-    - RightArmCyberGorilla
-    - LeftArmCyberMechwright
-    - RightArmCyberMechwright
-    - LeftArmCyberSpacer
-    - RightArmCyberSpacer
-    - LeftArmCyberRiplet
-    - RightArmCyberRiplet
-    - LeftArmCyberBulwark
-    - RightArmCyberBulwark
-    - LeftArmCyberZeus
-    - RightArmCyberZeus
   technologyPrerequisites:
     - CyberLimbsTech
   radioChannels:
-  - Security
   - Medical
-  - Engineering
-  - Supply
 
 - type: technology
   id: CyberEyeNightVision
@@ -196,23 +179,6 @@
     - CyberEyeNightVision
   technologyPrerequisites:
     - CyberImplantsTech
-  radioChannels:
-  - Security
-  - Medical
-
-- type: technology
-  id: CyberEyeThermalVision
-  name: research-technology-thermalvision-eyes
-  icon:
-    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
-    state: eyes_thermal
-  discipline: Biochemical
-  tier: 3
-  cost: 9320
-  recipeUnlocks:
-    - CyberEyeThermal
-  technologyPrerequisites:
-    - CyberEyeNightVision
   radioChannels:
   - Security
   - Medical

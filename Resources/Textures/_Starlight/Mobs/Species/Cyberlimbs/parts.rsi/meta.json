@@ -327,6 +327,36 @@
       "copyright": "Citrea"
     },
     {
+      "name": "l_engineer_arm",
+      "directions": 4,
+      "copyright": "Citrea"
+    },
+    {
+      "name": "l_engineer_hand",
+      "directions": 4,
+      "copyright": "Citrea"
+    },
+    {
+      "name": "l_engineer_hand_TOOLS",
+      "directions": 4,
+      "copyright": "Citrea"
+    },
+    {
+      "name": "r_engineer_arm",
+      "directions": 4,
+      "copyright": "Citrea"
+    },
+    {
+      "name": "r_engineer_hand",
+      "directions": 4,
+      "copyright": "Citrea"
+    },
+    {
+      "name": "r_engineer_hand_TOOLS",
+      "directions": 4,
+      "copyright": "Citrea"
+    },
+    {
       "name": "l_angel_arm",
       "directions": 4,
       "copyright": "Citrea"
