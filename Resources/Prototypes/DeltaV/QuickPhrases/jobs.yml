@@ -47,8 +47,8 @@
 
 - type: quickPhrase
   parent: BaseCivilianJobPhrase
-  id: PassengerPhrase
-  text: job-name-passenger
+  id: AssistantPhrase
+  text: job-name-assistant
 
 - type: quickPhrase
   parent: BaseCivilianJobPhrase
@@ -94,7 +94,7 @@
   id: TechAssistantPhrase
   text: job-name-technical-assistant
 
-# Epistemics
+# Science
 
 - type: quickPhrase
   parent: BaseEpistemicsJobPhrase
@@ -115,6 +115,11 @@
   parent: BaseEpistemicsJobPhrase
   id: BorgPhrase
   text: job-name-borg
+
+- type: quickPhrase
+  parent: BaseEpistemicsJobPhrase
+  id: SAIPhrase
+  text: job-name-station-ai
 
 # Logistics
 
@@ -191,6 +196,11 @@
   parent: BaseSecurityJobPhrase
   id: LawyerPhrase
   text: job-name-lawyer
+
+- type: quickPhrase
+  parent: BaseSecurityJobPhrase
+  id: BrigmedicPhrase
+  text: job-name-brigmedic
 
 # Service
 
