@@ -49,7 +49,6 @@
   name: alerts-low-oxygen-name
   description: alerts-low-oxygen-desc
 
-
 - type: alert
   id: LowNitrogen
   category: Breathing
@@ -300,7 +299,6 @@
   description: alerts-no-battery-desc
   clientHandled: true # the power cell battery is read on the client so that we don't have to periodically network the charge
 
-
 - type: alert
   id: Internals
   category: Internals
@@ -419,7 +417,6 @@
   clickEvent: !type:StopPullingAlertEvent
   name: alerts-pulling-name
   description: alerts-pulling-desc
-
 
 - type: alert
   id: Bleed
