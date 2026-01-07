@@ -962,7 +962,6 @@
   components:
   - type: AutoRecharge
     rechargeDuration: 1
-      - Screwdriver 
 
 - type: entity
   id: RCDXeno
