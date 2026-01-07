@@ -1,6 +1,6 @@
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.EntityEffects;
-using Content.Shared.Starlight.EntityEffects.Effects;
+using Content.Shared._Starlight.EntityEffects.Effects.Atmos;
 
 namespace Content.Server._Starlight.EntityEffects.Effects.Atmos;
 
@@ -9,14 +9,14 @@ namespace Content.Server._Starlight.EntityEffects.Effects.Atmos;
 /// The amount changed is modified by scale.
 /// </summary>
 /// <inheritdoc cref="EntityEffectSystem{T,TEffect}"/>
-public sealed partial class ChangeGasTemperatureEntityEffectSystem : EntityEffectSystem<TransformComponent, ChangeGasTemperature>
+public sealed partial class AddHeatEntityEffectSystem : EntityEffectSystem<TransformComponent, AddHeat>
 {
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
 
-    protected override void Effect(Entity<TransformComponent> entity, ref EntityEffectEvent<ChangeGasTemperature> args)
+    protected override void Effect(Entity<TransformComponent> entity, ref EntityEffectEvent<AddHeat> args)
     {
         var tileMix = _atmosphere.GetContainingMixture(entity.AsNullable(), false, true);
         if (tileMix == null) return;
-        tileMix.Temperature += (args.Effect.Temperature * args.Scale);
+        _atmosphere.AddHeat(tileMix, args.Effect.Heat * args.Scale);
     }
 }

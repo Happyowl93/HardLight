@@ -7,7 +7,7 @@ namespace Content.Shared._Starlight.EntityEffects.Effects;
 /// This effect changes the target entity's species.
 /// </summary>
 /// <inheritdoc cref="EntityEffectSystem{T,TEffect}"/>
-public sealed partial class ChangeGasTemperatureEntityEffectSystem : EntityEffectSystem<HumanoidAppearanceComponent, ChangeSpecies>
+public sealed partial class ChangeSpeciesEntityEffectSystem : EntityEffectSystem<HumanoidAppearanceComponent, ChangeSpecies>
 {
     [Dependency] private readonly SharedHumanoidAppearanceSystem _sharedHumanoidAppearanceSystem = default!;
 
