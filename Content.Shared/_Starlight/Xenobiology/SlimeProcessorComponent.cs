@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.Xenobiology;
 
@@ -27,7 +28,7 @@ public sealed partial class SlimeProcessorComponent : Component
     /// The current list of extracts to spit out after processing.
     /// </summary>
     [ViewVariables, AutoNetworkedField]
-    public List<string> Extracts = new();
+    public List<EntProtoId> Extracts = new();
     
     /// <summary>
     /// Gets set to <see cref="ProcessingTime"/> when clicked and has extracts.

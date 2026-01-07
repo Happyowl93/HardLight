@@ -1,6 +1,7 @@
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.Xenobiology;
 
@@ -26,7 +27,7 @@ public sealed partial class SlimeComponent : Component
     /// What this slime splits into if not mutating.
     /// </summary>
     [DataField("splitInto", required: true), AutoNetworkedField]
-    public string SplitInto;
+    public EntProtoId SplitInto;
     
     /// <summary>
     /// The extract this slime provides when processed in the Slime Processor.
@@ -45,14 +46,14 @@ public sealed partial class SlimeComponent : Component
     /// If blank, will not mutate at all.
     /// </summary>
     [DataField("splitIntoMutation"), AutoNetworkedField]
-    public List<string> SplitIntoMutation = new();
+    public List<EntProtoId> SplitIntoMutation = new();
 
     /// <summary>
     /// What to turn into if mutation chance hits 100%
     /// If blank, will use normal mutation functionality
     /// </summary>
     [DataField("mutationOnMaxSplit"), AutoNetworkedField]
-    public string? MutationOnMaxSplit = null;
+    public EntProtoId? MutationOnMaxSplit = null;
 
     /// <summary>
     /// The amount of slime steroid potions that have been applied to this slime.

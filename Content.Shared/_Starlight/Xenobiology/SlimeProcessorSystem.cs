@@ -19,7 +19,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<Shared._Starlight.Xenobiology.SlimeProcessorComponent>();
+        var query = EntityQueryEnumerator<SlimeProcessorComponent>();
         while (query.MoveNext(out var uid, out var slimeProcessorComponent))
         {
             if (!slimeProcessorComponent.IsPowered)
@@ -56,7 +56,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
                 {
                     foreach (var entity in _entityLookupSystem.GetEntitiesInRange(uid, 1F))
                     {
-                        if (!_entityManager.TryGetComponent(entity, out Shared._Starlight.Xenobiology.SlimeComponent? slimeComponent)) continue;
+                        if (!_entityManager.TryGetComponent(entity, out SlimeComponent? slimeComponent)) continue;
                         if (!_entityManager.TryGetComponent(entity, out DamageableComponent? damageableComponent)) continue;
                         if (damageableComponent.TotalDamage >= 200)
                         {
