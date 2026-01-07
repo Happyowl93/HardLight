@@ -80,7 +80,7 @@ public sealed class SlimeSystem : EntitySystem
         if (!Resolve(slime, ref slime.Comp, false)) return false;
         var newNutrition = 0F;
         if (TryComp<HungerComponent>(slime, out var hunger))
-            newNutrition = _hungerSystem.GetHunger(hunger);
+            newNutrition = _hungerSystem.GetHunger(hunger) / split_amount;
         System.Random random = new System.Random();
         for (int i = 0; i < split_amount; i++)
         {
