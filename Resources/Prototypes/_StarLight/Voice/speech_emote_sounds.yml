@@ -257,7 +257,7 @@
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
-      collection: DeathGasp
+      path: /Audio/_Starlight/Voice/Resomi/resomi_deathgrasp.ogg
     Sigh:
       collection: FemaleSigh
     Crying:
