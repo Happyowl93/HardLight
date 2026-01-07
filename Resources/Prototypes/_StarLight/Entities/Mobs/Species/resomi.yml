@@ -71,7 +71,7 @@
     needsHands: false
   - type: Thirst
   - type: Icon
-    sprite: Mobs/Species/Resomi/parts.rsi
+    sprite: _Starlight/Mobs/Species/Resomi/parts.rsi
     state: full
   - type: Body
     prototype: Resomi
@@ -113,7 +113,7 @@
     handDisplacement:
       sizeMaps:
         32:
-          sprite: Mobs/Species/Resomi/displacement.rsi
+          sprite: _Starlight/Mobs/Species/Resomi/displacement.rsi
           state: inHand
   - type: Inventory
     speciesId: resomi
