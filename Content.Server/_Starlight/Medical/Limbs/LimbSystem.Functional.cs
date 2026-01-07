@@ -25,8 +25,7 @@ public sealed partial class LimbSystem : SharedLimbSystem
                     foreach (var containedEnt in child.ContainedEntities)
                     {
                         if (TryComp(containedEnt, out BodyPartComponent? innerPart)
-                            && innerPart.PartType == BodyPartType.Hand
-                            && TryComp<HandsComponent>(body, out var hands))
+                            && innerPart.PartType == BodyPartType.Hand)
                         {
                             AddLimb(body, slotFullId, (containedEnt, innerPart));
                             AddLimbVisual(body, (containedEnt, innerPart));
@@ -91,9 +90,9 @@ public sealed partial class LimbSystem : SharedLimbSystem
                     foreach (var containedEnt in child.ContainedEntities)
                     {
                         if (TryComp(containedEnt, out BodyPartComponent? innerPart)
-                            && innerPart.PartType == BodyPartType.Hand
-                            && TryComp<HandsComponent>(body, out var hands))
-                            _hands.RemoveHand((body, hands), BodySystem.GetPartSlotContainerId(limbSlotId));
+                            && innerPart.PartType == BodyPartType.Hand)
+                                if(TryComp(containedEnt, out TransformComponent? transform) && TryComp(containedEnt, out MetaDataComponent? metaData))
+                                    RemoveLimb(body, (containedEnt, transform, metaData, innerPart));
                     }
                 }
                 break;
@@ -103,6 +102,20 @@ public sealed partial class LimbSystem : SharedLimbSystem
                     _hands.RemoveHand((body, hands2), BodySystem.GetPartSlotContainerId(parentSlot.Value.Slot));
                 break;
             case BodyPartType.Leg:
+                foreach (var limbSlotId in limb.Comp3.Children.Keys)
+                {
+                    if (limbSlotId is null) continue;
+                    var child = _containers.GetContainer(limb, BodySystem.GetPartSlotContainerId(limbSlotId));
+
+                    foreach (var containedEnt in child.ContainedEntities)
+                    {
+                        if (TryComp(containedEnt, out BodyPartComponent? innerPart)
+                            && innerPart.PartType == BodyPartType.Foot)
+                                if(TryComp(containedEnt, out TransformComponent? transform) && TryComp(containedEnt, out MetaDataComponent? metaData))
+                                    RemoveLimb(body, (containedEnt, transform, metaData, innerPart));
+                    }
+                }
+                break;
             case BodyPartType.Foot:
                 break;
         }
