@@ -457,7 +457,7 @@
       state: "l_mantis_blade_arm"
     - type: WithAttachedBodyParts
       parts:
-        left hand: LeftHandCyberMantis
+        left hand: LeftHandCyberMantisBlade
 
 - type: entity
   id: LeftHandCyberMantisBlade
@@ -500,7 +500,7 @@
       state: "r_mantis_blade_arm"
     - type: WithAttachedBodyParts
       parts:
-        right hand: RightHandCyberMantis
+        right hand: RightHandCyberMantisBlade
         
 - type: entity
   id: RightHandCyberMantisBlade

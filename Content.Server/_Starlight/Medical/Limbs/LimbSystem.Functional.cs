@@ -28,8 +28,8 @@ public sealed partial class LimbSystem : SharedLimbSystem
                             && innerPart.PartType == BodyPartType.Hand
                             && TryComp<HandsComponent>(body, out var hands))
                         {
-                            _hands.AddHand((body, hands), slotFullId, limb.Comp.Symmetry == BodyPartSymmetry.Left ? HandLocation.Left : HandLocation.Right);
                             AddLimb(body, slotFullId, (containedEnt, innerPart));
+                            AddLimbVisual(body, (containedEnt, innerPart));
                         }
                     }
                 }
@@ -52,7 +52,10 @@ public sealed partial class LimbSystem : SharedLimbSystem
                     {
                         if (TryComp(containedEnt, out BodyPartComponent? innerPart)
                             && innerPart.PartType == BodyPartType.Foot)
+                        {
                             AddLimb(body, slotFullId, (containedEnt, innerPart));
+                            AddLimbVisual(body, (containedEnt, innerPart));
+                        }
                     }
                 }
                 break;
