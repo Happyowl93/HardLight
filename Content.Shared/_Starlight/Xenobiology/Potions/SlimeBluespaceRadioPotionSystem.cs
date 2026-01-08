@@ -19,9 +19,13 @@ public sealed class SlimeBluespaceRadioPotionSystem : EntitySystem
     {
         if (!args.Target.HasValue || !args.CanReach) return;
         if (!_entityManager.TryGetComponent<LanguageSpeakerComponent>(args.Target.Value, out _)) return;
-        var activeRadioComponent = _entityManager.AddComponent<ActiveRadioComponent>(args.Target.Value);
-        activeRadioComponent.Channels = ent.Comp.Channels;
-        var intrinsicRadioTransmitterComponent = _entityManager.AddComponent<IntrinsicRadioTransmitterComponent>(args.Target.Value);
+        var activeRadioComponent = _entityManager.EnsureComponent<ActiveRadioComponent>(args.Target.Value);
+        var intrinsicRadioTransmitterComponent = _entityManager.EnsureComponent<IntrinsicRadioTransmitterComponent>(args.Target.Value);
+        foreach (var channel in ent.Comp.Channels)
+        {
+            activeRadioComponent.Channels.Add(channel);
+            intrinsicRadioTransmitterComponent.Channels.Add(channel);
+        }
         intrinsicRadioTransmitterComponent.Channels = ent.Comp.Channels;
         _entityManager.AddComponent<IntrinsicRadioReceiverComponent>(args.Target.Value);
         
