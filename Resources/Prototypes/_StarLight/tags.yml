@@ -422,4 +422,6 @@
 
 - type: Tag
   id: FestiveDinner
-  
+
+- type: Tag
+  id: Sausage # MetamorphRecipe: FoodSausageBun

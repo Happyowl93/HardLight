@@ -58,10 +58,11 @@
     - type: Tag
       tags:
         - Meat
+        - Sausage
 
 - type: entity
   name: raw sausage
-  parent: FoodMealBase
+  parent: FoodMeatBase
   id: FoodSausage
   description: Don't undercook it.
   components:
@@ -69,8 +70,6 @@
       flavors:
         - meaty
         - cold
-    - type: Edible
-      transferAmount: 3
     - type: Sprite
       sprite: _Starlight/Objects/Consumable/Food/organmeats.rsi
       layers:
@@ -82,19 +81,23 @@
           reagents:
             - ReagentId: UncookedAnimalProteins
               Quantity: 5
-    - type: InternalTemperature
-      conductivity: 0.43
+    - type: InternalTemperature # same as bacon
+      conductivity: 0.44
+      thickness: 0.004
+      area: 0.0075
     - type: Construction
       graph: MeatSausage
       node: start
-      defaultTarget: meat sausage
+      defaultTarget: sausage
     - type: Tag
       tags:
         - Meat
+        - Sausage
+        - Raw
 
 - type: entity
   name: sausage
-  parent: FoodMealBase
+  parent: FoodMeatBase
   id: FoodSausageCooked
   description: If you don't know how they're made, they're delicious. After that, it's a different story.
   components:
@@ -103,7 +106,7 @@
         - meaty
         - salty
     - type: Edible
-      transferAmount: 3
+      transferAmount: 4
     - type: Sprite
       sprite: _Starlight/Objects/Consumable/Food/organmeats.rsi
       layers:
@@ -119,10 +122,15 @@
               Quantity: 9
     - type: Construction
       graph: MeatSausage
-      node: meat sausage
+      node: sausage
+    - type: FoodSequenceElement
+      entries:
+        Burger: MeatSausage
     - type: Tag
       tags:
+        - Cooked
         - Meat
+        - Sausage
 
 - type: entity
   name: sausage on a bun
@@ -136,7 +144,7 @@
         - salty
         - bun
     - type: Edible
-      transferAmount: 3
+      transferAmount: 4
     - type: Sprite
       sprite: _Starlight/Objects/Consumable/Food/organmeats.rsi
       layers:
@@ -153,3 +161,4 @@
     - type: Tag
       tags:
         - Meat
+        - Cooked
