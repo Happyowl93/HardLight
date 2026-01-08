@@ -10,7 +10,7 @@ public sealed partial class SlimeProcessorComponent : Component
     /// The amount of time it takes to process slime corpses.
     /// </summary>
     [DataField("processingTime", required: true), AutoNetworkedField]
-    public float ProcessingTime = default;
+    public TimeSpan ProcessingTime = default!;
 
     /// <summary>
     /// How many extracts are obtained per slime corpse.
@@ -21,8 +21,8 @@ public sealed partial class SlimeProcessorComponent : Component
     /// <summary>
     /// How long between each slime acquire.
     /// </summary>
-    [DataField("slimeAcquireCooldown"), AutoNetworkedField]
-    public float SlimeAcquireCooldown = default;
+    [DataField("slimeAcquireCooldown", required: true), AutoNetworkedField]
+    public TimeSpan SlimeAcquireCooldown = default!;
     
     /// <summary>
     /// The current list of extracts to spit out after processing.
@@ -31,18 +31,16 @@ public sealed partial class SlimeProcessorComponent : Component
     public List<EntProtoId> Extracts = new();
     
     /// <summary>
-    /// Gets set to <see cref="ProcessingTime"/> when clicked and has extracts.
-    /// When it hits 0, spit out the extracts
+    /// The moment in time when processing will be done.
     /// </summary>
     [ViewVariables, AutoNetworkedField]
-    public float ProcessingTimer = 0;
+    public TimeSpan? ProcessingFinishedMoment = default!;
 
     /// <summary>
-    /// Gets set to <see cref="SlimeAcquireCooldown"/> after each slime is sucked up.
-    /// When it hits 0, sucks up a new slime.
+    /// The moment in time when another slime will be sucked up.
     /// </summary>
     [ViewVariables, AutoNetworkedField]
-    public float SlimeAcquireTimer = 0;
+    public TimeSpan? SlimeAcquireMoment = default!;
 
     /// <summary>
     /// Whether this processor is processing.

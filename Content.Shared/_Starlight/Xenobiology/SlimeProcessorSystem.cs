@@ -6,6 +6,7 @@ using Content.Shared.Jittering;
 using Content.Shared.Power;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._Starlight.Xenobiology;
 
@@ -14,6 +15,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly SharedJitteringSystem _jitteringSystem = default!;
     [Dependency] private readonly EntityLookupSystem _entityLookupSystem = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
     
     public override void Update(float frameTime)
     {
@@ -25,15 +27,13 @@ public sealed class SlimeProcessorSystem : EntitySystem
             if (!slimeProcessorComponent.IsPowered)
             {
                 slimeProcessorComponent.IsProcessing = false;
-                slimeProcessorComponent.SlimeAcquireTimer = slimeProcessorComponent.SlimeAcquireCooldown;
+                slimeProcessorComponent.SlimeAcquireMoment = null;
                 continue;
             }
             
             if (slimeProcessorComponent.IsProcessing)
             {
-                slimeProcessorComponent.ProcessingTimer -= frameTime;
-
-                if (slimeProcessorComponent.ProcessingTimer <= 0) // If we are processing slimes
+                if (!slimeProcessorComponent.ProcessingFinishedMoment.HasValue || slimeProcessorComponent.ProcessingFinishedMoment.Value <= _gameTiming.CurTime)
                 {
                     System.Random random = new System.Random();
                     foreach (var proto in slimeProcessorComponent.Extracts)
@@ -46,13 +46,12 @@ public sealed class SlimeProcessorSystem : EntitySystem
                     slimeProcessorComponent.Extracts.Clear();
                     RemCompDeferred<JitteringComponent>(uid);
                     slimeProcessorComponent.IsProcessing = false;
-                    slimeProcessorComponent.SlimeAcquireTimer = slimeProcessorComponent.SlimeAcquireCooldown;
+                    slimeProcessorComponent.SlimeAcquireMoment = _gameTiming.CurTime + slimeProcessorComponent.SlimeAcquireCooldown;
                 }
             }
             else
             {
-                slimeProcessorComponent.SlimeAcquireTimer -= frameTime;
-                if (slimeProcessorComponent.SlimeAcquireTimer <= 0)
+                if (!slimeProcessorComponent.SlimeAcquireMoment.HasValue || slimeProcessorComponent.SlimeAcquireMoment.Value <= _gameTiming.CurTime)
                 {
                     foreach (var entity in _entityLookupSystem.GetEntitiesInRange(uid, 1F))
                     {
@@ -65,7 +64,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
                                 slimeProcessorComponent.Extracts.Add(slimeComponent.Extract);
                             }
                             PredictedQueueDel(entity);
-                            slimeProcessorComponent.SlimeAcquireTimer = slimeProcessorComponent.SlimeAcquireCooldown;
+                            slimeProcessorComponent.SlimeAcquireMoment = _gameTiming.CurTime + slimeProcessorComponent.SlimeAcquireCooldown;
                             break;
                         }
                     }
@@ -91,7 +90,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
         if (ent.Comp.Extracts.Count <= 0)
             return;
         
-        ent.Comp.ProcessingTimer = ent.Comp.ProcessingTime;
+        ent.Comp.ProcessingFinishedMoment = _gameTiming.CurTime + ent.Comp.ProcessingTime;
         ent.Comp.IsProcessing = true;
         _jitteringSystem.AddJitter(ent.Owner, -10, 100);
     }

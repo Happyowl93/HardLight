@@ -42,7 +42,7 @@ public sealed class SlimeExtractSystem : EntitySystem
             var shouldExhaust = false;
             foreach (var reaction in slimeExtractComponent.ExtractReactions)
             {
-                if ((reaction.ActivationMoment.HasValue && reaction.ActivationMoment.Value < _gameTiming.CurTime) && IsSolutionRequirementFulfilled(reaction.Requirements, currentSolution))
+                if ((reaction.ActivationMoment.HasValue && reaction.ActivationMoment.Value <= _gameTiming.CurTime) && IsSolutionRequirementFulfilled(reaction.Requirements, currentSolution))
                 {
                     var minimumScalingFactor = FindMinimumScalingFactor(reaction.Requirements, currentSolution);
                     foreach (var requirement in reaction.Requirements)

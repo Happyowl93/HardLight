@@ -11,8 +11,8 @@
       state: icon
       snapCardinals: true
     - type: SlimeProcessor
-      processingTime: 5
+      processingTime: 5s
       yieldMultiplier: 4
-      slimeAcquireCooldown: 5
+      slimeAcquireCooldown: 1s
     - type: Machine
       board: SlimeProcessorMachineCircuitboard
