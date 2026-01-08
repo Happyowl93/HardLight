@@ -19,6 +19,7 @@ public sealed class SlimeSystem : EntitySystem
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly HungerSystem _hungerSystem = default!;
+    [Dependency] private readonly RobustRandom _robustRandom = default!;
 
     public List<SlimeSplitRecord> SlimeSplitRecords = new();
     public List<EntityUid> SlimesToDelete = new();
@@ -81,7 +82,7 @@ public sealed class SlimeSystem : EntitySystem
         var newNutrition = 0F;
         if (TryComp<HungerComponent>(slime, out var hunger))
             newNutrition = _hungerSystem.GetHunger(hunger) / split_amount;
-        System.Random random = new System.Random();
+        var random = _robustRandom.GetRandom();
         for (int i = 0; i < split_amount; i++)
         {
             string protoName;

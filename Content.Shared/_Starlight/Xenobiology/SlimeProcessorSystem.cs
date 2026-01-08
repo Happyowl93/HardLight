@@ -84,6 +84,7 @@ public sealed class ActiveSlimeProcessorSystem : EntitySystem
 {
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly RobustRandom _robustRandom = default!;
     
     public override void Update(float frameTime)
     {
@@ -100,7 +101,7 @@ public sealed class ActiveSlimeProcessorSystem : EntitySystem
             }
 
             if (activeSlimeProcessorComponent.ProcessingFinishedMoment.Value > _gameTiming.CurTime) continue;
-            System.Random random = new System.Random();
+            var random = _robustRandom.GetRandom();
             foreach (var entity in slimeProcessorComponent.SlimeContainer.ContainedEntities)
             {
                 if (!_entityManager.TryGetComponent(entity, out SlimeComponent? slimeComponent)) continue;

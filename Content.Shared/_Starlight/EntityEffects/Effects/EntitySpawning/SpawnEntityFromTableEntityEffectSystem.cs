@@ -18,11 +18,12 @@ public sealed class SpawnEntityFromTableEntityEffectSystem : EntityEffectSystem<
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly EntityTableSystem _entityTable = default!;
     [Dependency] private readonly EntityManager _entityManager = default!;
+    [Dependency] private readonly RobustRandom _robustRandom = default!;
     
     protected override void Effect(Entity<TransformComponent> entity, ref EntityEffectEvent<SpawnEntityFromTable> args)
     {
         var quantity = args.Effect.Number * (int)Math.Floor(args.Scale);
-        var random = new System.Random();
+        var random = _robustRandom.GetRandom();
         
         if (_net.IsServer)
         {
