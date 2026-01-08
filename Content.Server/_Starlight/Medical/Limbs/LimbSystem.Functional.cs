@@ -25,10 +25,9 @@ public sealed partial class LimbSystem : SharedLimbSystem
                     foreach (var containedEnt in child.ContainedEntities)
                     {
                         if (TryComp(containedEnt, out BodyPartComponent? innerPart)
-                            && innerPart.PartType == BodyPartType.Hand
-                            && TryComp<HandsComponent>(body, out var hands))
+                            && innerPart.PartType == BodyPartType.Hand)
                         {
-                            _hands.AddHand((body, hands), slotFullId, limb.Comp.Symmetry == BodyPartSymmetry.Left ? HandLocation.Left : HandLocation.Right);
+                            AddLimb(body, slotId, (containedEnt, innerPart));
                             AddLimbVisual(body, (containedEnt, innerPart));
                         }
                     }
@@ -90,7 +89,12 @@ public sealed partial class LimbSystem : SharedLimbSystem
                         if (TryComp(containedEnt, out BodyPartComponent? innerPart)
                             && innerPart.PartType == BodyPartType.Hand
                             && TryComp<HandsComponent>(body, out var hands))
-                            _hands.RemoveHand((body, hands), BodySystem.GetPartSlotContainerId(limbSlotId));
+                            {
+                            if (TryComp(containedEnt, out TransformComponent? transform) && TryComp(containedEnt, out MetaDataComponent? metaData))
+                            {
+                                RemoveLimb(body, (containedEnt, transform, metaData, innerPart));
+                            }
+                        }
                     }
                 }
                 break;
