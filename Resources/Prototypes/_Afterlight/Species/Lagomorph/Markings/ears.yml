@@ -124,3 +124,20 @@
     - sprite: _Afterlight/Species/Lagomorph/markings.rsi
       state: rotund_inner
 
+- type: marking
+  id: LagomorphDewlap
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: dewlap
+
+- type: marking
+  id: LagomorphAntlers
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: antlers

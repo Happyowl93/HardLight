@@ -15,3 +15,30 @@
   sprites:
     - sprite: _Afterlight/Species/Lagomorph/markings.rsi
       state: right_leg_spots
+
+- type: marking
+  id: LagomorphLegSockL
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: leg_socks
+
+- type: marking
+  id: LagomorphFootSockR
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: feet_socks
+
+- type: marking
+  id: LagomorphClaws
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: claws

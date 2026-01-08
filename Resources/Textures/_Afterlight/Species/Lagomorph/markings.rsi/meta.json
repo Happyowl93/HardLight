@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Sprites by Conflee, themageofmicrosoftpaints",
+  "copyright": "Sprites by Conflee, themageofmicrosoftpaints. dewlap by DocMoth. socks, mitts, antlers and claws by SevenShades.",
   "size": {
     "x": 32,
     "y": 32
@@ -197,6 +197,42 @@
     },
     {
       "name": "short_inner",
+      "directions": 4
+    },
+    {
+      "name": "dewlap",
+      "directions": 4
+    },
+    {
+      "name": "r_hand_mitt",
+      "directions": 4
+    },
+    {
+      "name": "l_hand_mitt",
+      "directions": 4
+    },
+    {
+      "name": "r_arm_mitt",
+      "directions": 4
+    },
+    {
+      "name": "l_arm_mitt",
+      "directions": 4
+    },
+    {
+      "name": "leg_socks",
+      "directions": 4
+    },
+    {
+      "name": "feet_socks",
+      "directions": 4
+    },
+    {
+      "name": "claws",
+      "directions": 4
+    },
+    {
+      "name": "antlers",
       "directions": 4
     }
   ]
