@@ -23,21 +23,15 @@ public sealed class SlimeGenderChangePotionSystem : EntitySystem
         // Because there are 4 gender options, this potion will simply cycle through each one
         // It would be better to have a dropdown list of genders, but this works for now
         var gender = humanoidAppearanceComponent.Gender;
-        switch (gender)
+        var nextGender = gender switch
         {
-            case Gender.Neuter:
-                _sharedHumanoidAppearanceSystem.SetGender((args.Target.Value, humanoidAppearanceComponent), Gender.Epicene);
-                break;
-            case Gender.Epicene:
-                _sharedHumanoidAppearanceSystem.SetGender((args.Target.Value, humanoidAppearanceComponent), Gender.Female);
-                break;
-            case Gender.Female:
-                _sharedHumanoidAppearanceSystem.SetGender((args.Target.Value, humanoidAppearanceComponent), Gender.Male);
-                break;
-            case Gender.Male:
-                _sharedHumanoidAppearanceSystem.SetGender((args.Target.Value, humanoidAppearanceComponent), Gender.Neuter);
-                break;
-        }
+            Gender.Neuter => Gender.Epicene,
+            Gender.Epicene => Gender.Female,
+            Gender.Female => Gender.Male,
+            Gender.Male => Gender.Neuter,
+            _ => throw new ArgumentOutOfRangeException(nameof(gender), $"Unexpected gender in SlimeGenderChangePotionComponent interaction: {gender}")
+        };
+        _sharedHumanoidAppearanceSystem.SetGender((args.Target.Value, humanoidAppearanceComponent), nextGender);
         PredictedQueueDel(args.Used);
         args.Handled = true;
     }
