@@ -27,7 +27,7 @@ public sealed partial class LimbSystem : SharedLimbSystem
                         if (TryComp(containedEnt, out BodyPartComponent? innerPart)
                             && innerPart.PartType == BodyPartType.Hand)
                         {
-                            AddLimb(body, slotFullId, (containedEnt, innerPart));
+                            AddLimb(body, slotId, (containedEnt, innerPart));
                             AddLimbVisual(body, (containedEnt, innerPart));
                         }
                     }
@@ -52,7 +52,7 @@ public sealed partial class LimbSystem : SharedLimbSystem
                         if (TryComp(containedEnt, out BodyPartComponent? innerPart)
                             && innerPart.PartType == BodyPartType.Foot)
                         {
-                            AddLimb(body, slotFullId, (containedEnt, innerPart));
+                            AddLimb(body, slotId, (containedEnt, innerPart));
                             AddLimbVisual(body, (containedEnt, innerPart));
                         }
                     }
@@ -91,8 +91,11 @@ public sealed partial class LimbSystem : SharedLimbSystem
                     {
                         if (TryComp(containedEnt, out BodyPartComponent? innerPart)
                             && innerPart.PartType == BodyPartType.Hand)
-                                if(TryComp(containedEnt, out TransformComponent? transform) && TryComp(containedEnt, out MetaDataComponent? metaData))
-                                    RemoveLimb(body, (containedEnt, transform, metaData, innerPart));
+                            if (TryComp(containedEnt, out TransformComponent? transform) && TryComp(containedEnt, out MetaDataComponent? metaData))
+                            {
+                                RemoveLimb(body, (containedEnt, transform, metaData, innerPart));
+                                RemoveLimbVisual(body, (containedEnt, transform, metaData, innerPart));
+                            }
                     }
                 }
                 break;
@@ -111,8 +114,11 @@ public sealed partial class LimbSystem : SharedLimbSystem
                     {
                         if (TryComp(containedEnt, out BodyPartComponent? innerPart)
                             && innerPart.PartType == BodyPartType.Foot)
-                                if(TryComp(containedEnt, out TransformComponent? transform) && TryComp(containedEnt, out MetaDataComponent? metaData))
-                                    RemoveLimb(body, (containedEnt, transform, metaData, innerPart));
+                            if (TryComp(containedEnt, out TransformComponent? transform) && TryComp(containedEnt, out MetaDataComponent? metaData))
+                            {
+                                RemoveLimb(body, (containedEnt, transform, metaData, innerPart));
+                                RemoveLimbVisual(body, (containedEnt, transform, metaData, innerPart));
+                            }
                     }
                 }
                 break;
