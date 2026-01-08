@@ -104,9 +104,9 @@
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
-  id: ClothingUniformJumpsuitBlueShieldCaptain
+  id: ClothingUniformJumpsuitBlueShieldShirt
   name: blueshield officer's shirt
-  description: A classic suit in theme with a blueshield. 
+  description: A collared shirt and pants for the blueshield officer who likes to keep it business casual.
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Uniforms/Jumpsuit/blueshieldshirt.rsi
