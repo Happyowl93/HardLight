@@ -212,8 +212,8 @@
 
 - type: humanoidBaseSprite
   id: CyberLHandMantisBladeToggled
-  matchSkin: true
-  markingsMatchSkin: true
+  matchSkin: false
+  markingsMatchSkin: false
   baseSprite:
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: l_mantis_blade_hand_BLADE
@@ -228,8 +228,8 @@
 
 - type: humanoidBaseSprite
   id: CyberRHandMantisBlade
-  matchSkin: true
-  markingsMatchSkin: true
+  matchSkin: false
+  markingsMatchSkin: false
   baseSprite:
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: r_mantis_blade_hand
