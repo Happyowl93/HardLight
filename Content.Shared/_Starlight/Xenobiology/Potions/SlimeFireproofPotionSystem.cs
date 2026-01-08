@@ -17,7 +17,7 @@ public sealed class SlimeFireproofPotionSystem : EntitySystem
 
     private void OnAfterInteract(Entity<SlimeFireproofPotionComponent> ent, ref AfterInteractEvent args)
     {
-        if (!args.Target.HasValue) return;
+        if (!args.Target.HasValue || !args.CanReach) return;
         if (!_entityManager.TryGetComponent<DamageableComponent>(args.Target.Value,
                 out _)) return;
         if (!_prototypeManager.Resolve(ent.Comp.FireproofDamageSet, out var modifier))

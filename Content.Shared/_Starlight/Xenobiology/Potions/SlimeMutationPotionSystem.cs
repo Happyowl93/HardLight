@@ -15,7 +15,7 @@ public sealed class SlimeMutationPotionSystem : EntitySystem
     
     private void OnAfterInteract(Entity<SlimeMutationPotionComponent> ent, ref AfterInteractEvent args)
     {
-        if (!args.Target.HasValue) return;
+        if (!args.Target.HasValue || !args.CanReach) return;
         if (!_entityManager.TryGetComponent<SlimeComponent>(args.Target.Value,
                 out var slimeComponent)) return;
         if (slimeComponent.MutationChance >= 0) return;

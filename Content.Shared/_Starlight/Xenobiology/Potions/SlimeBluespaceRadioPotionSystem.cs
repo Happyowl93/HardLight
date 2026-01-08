@@ -17,7 +17,7 @@ public sealed class SlimeBluespaceRadioPotionSystem : EntitySystem
 
     private void OnAfterInteract(Entity<SlimeBluespaceRadioPotionComponent> ent, ref AfterInteractEvent args)
     {
-        if (!args.Target.HasValue) return;
+        if (!args.Target.HasValue || !args.CanReach) return;
         if (!_entityManager.TryGetComponent<LanguageSpeakerComponent>(args.Target.Value, out _)) return;
         var activeRadioComponent = _entityManager.AddComponent<ActiveRadioComponent>(args.Target.Value);
         activeRadioComponent.Channels = ent.Comp.Channels;

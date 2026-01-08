@@ -21,7 +21,7 @@ public sealed class SlimeNameChangePotionSystem : EntitySystem
     
     private void OnAfterInteract(Entity<SlimeNameChangePotionComponent> ent, ref AfterInteractEvent args)
     {
-        if (!args.Target.HasValue) return;
+        if (!args.Target.HasValue || !args.CanReach) return;
         if (!_entityManager.TryGetComponent<MindContainerComponent>(args.Target.Value,
                 out _)) return;
         _metaDataSystem.SetEntityName(args.Target.Value, ent.Comp.AssignedName);

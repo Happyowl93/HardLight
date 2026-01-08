@@ -17,7 +17,7 @@ public sealed class SlimeMindTransferencePotionSystem : EntitySystem
     
     private void OnAfterInteract(Entity<SlimeMindTransferencePotionComponent> ent, ref AfterInteractEvent args)
     {
-        if (!args.Target.HasValue) return;
+        if (!args.Target.HasValue || !args.CanReach) return;
         if (!_entityManager.TryGetComponent<MindContainerComponent>(args.User,
                 out _)) return;
         _sharedMindSystem.TransferTo(ent.Owner, args.Target.Value);

@@ -16,7 +16,7 @@ public sealed class SlimeSpeedPotionSystem : EntitySystem
     
     private void OnAfterInteract(Entity<SlimeSpeedPotionComponent> ent, ref AfterInteractEvent args)
     {
-        if (!args.Target.HasValue) return;
+        if (!args.Target.HasValue || !args.CanReach) return;
         if (!_entityManager.TryGetComponent<ClothingSpeedModifierComponent>(args.Target.Value,
                 out var clothingSpeedModifierComponent)) return;
         _clothingSpeedModifierSystem.SetWalkSpeedModifier(clothingSpeedModifierComponent, (clothingSpeedModifierComponent.WalkModifier + 1.0F) / 2.0F);

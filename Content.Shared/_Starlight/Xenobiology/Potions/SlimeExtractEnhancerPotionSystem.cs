@@ -14,7 +14,7 @@ public sealed class SlimeExtractEnhancerPotionSystem : EntitySystem
     
     private void OnAfterInteract(Entity<SlimeExtractEnhancerPotionComponent> ent, ref AfterInteractEvent args)
     {
-        if (!args.Target.HasValue) return;
+        if (!args.Target.HasValue || !args.CanReach) return;
         if (!_entityManager.TryGetComponent<SlimeExtractComponent>(args.Target.Value,
                 out var slimeExtractComponent)) return;
         slimeExtractComponent.RemainingUses += 1;

@@ -17,7 +17,7 @@ public sealed class SlimeGenderChangePotionSystem : EntitySystem
     
     private void OnAfterInteract(Entity<SlimeGenderChangePotionComponent> ent, ref AfterInteractEvent args)
     {
-        if (!args.Target.HasValue) return;
+        if (!args.Target.HasValue || !args.CanReach) return;
         if (!_entityManager.TryGetComponent<HumanoidAppearanceComponent>(args.Target.Value,
                 out var humanoidAppearanceComponent)) return;
         // Because there are 4 gender options, this potion will simply cycle through each one
