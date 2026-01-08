@@ -1,0 +1,146 @@
+# meaty dishes derived from grinding organs
+
+- type: entity
+  name: haggis
+  parent: FoodMealBase
+  id: FoodHaggis
+  description: A delicacy among Dwarves, the Scottish, and precisely no one else. Inexplicably nutritious.
+  components:
+    - type: FlavorProfile
+      flavors:
+        - meaty
+        - terrible
+    - type: Edible
+      transferAmount: 3
+    - type: Sprite
+      sprite: _Starlight/Objects/Consumable/Food/organmeats.rsi
+      layers:
+        - state: haggis
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 35
+          reagents:
+            - ReagentId: Nutriment
+              Quantity: 5
+            - ReagentId: Protein
+              Quantity: 25
+    - type: Tag
+      tags:
+        - Meat
+
+- type: entity
+  name: black pudding
+  parent: FoodMealBase
+  id: FoodBlackPudding
+  description: Just when you thought English cuisine couldn't get any worse...
+  components:
+    - type: FlavorProfile
+      flavors:
+        - savory
+        - metallic
+        - salty
+    - type: Edible
+      transferAmount: 3
+    - type: Sprite
+      sprite: _Starlight/Objects/Consumable/Food/organmeats.rsi
+      layers:
+        - state: black-pudding
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 20
+          reagents:
+            - ReagentId: Nutriment
+              Quantity: 5
+            - ReagentId: Protein
+              Quantity: 15
+    - type: Tag
+      tags:
+        - Meat
+
+- type: entity
+  name: raw sausage
+  parent: FoodMealBase
+  id: FoodSausage
+  description: Don't undercook it.
+  components:
+    - type: FlavorProfile
+      flavors:
+        - meaty
+        - cold
+    - type: Edible
+      transferAmount: 3
+    - type: Sprite
+      sprite: _Starlight/Objects/Consumable/Food/organmeats.rsi
+      layers:
+        - state: sausage-raw
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 6
+          reagents:
+            - ReagentId: UncookedAnimalProteins
+              Quantity: 5
+    - type: Tag
+      tags:
+        - Meat
+
+- type: entity
+  name: sausage
+  parent: FoodMealBase
+  id: FoodSausageCooked
+  description: If you don't know how they're made, they're delicious. After that, it's a different story.
+  components:
+    - type: FlavorProfile
+      flavors:
+        - meaty
+        - salty
+    - type: Edible
+      transferAmount: 3
+    - type: Sprite
+      sprite: _Starlight/Objects/Consumable/Food/organmeats.rsi
+      layers:
+        - state: sausage-cooked
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 20
+          reagents:
+            - ReagentId: Nutriment
+              Quantity: 8
+            - ReagentId: Protein
+              Quantity: 9
+    - type: Tag
+      tags:
+        - Meat
+
+- type: entity
+  name: sausage on a bun
+  parent: FoodMealBase
+  id: FoodSausageBun
+  description: Don't forget the condiments!
+  components:
+    - type: FlavorProfile
+      flavors:
+        - meaty
+        - salty
+        - bun
+    - type: Edible
+      transferAmount: 3
+    - type: Sprite
+      sprite: _Starlight/Objects/Consumable/Food/organmeats.rsi
+      layers:
+        - state: sausage-bun
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 40
+          reagents:
+            - ReagentId: Nutriment
+              Quantity: 18
+            - ReagentId: Protein
+              Quantity: 9
+    - type: Tag
+      tags:
+        - Meat
