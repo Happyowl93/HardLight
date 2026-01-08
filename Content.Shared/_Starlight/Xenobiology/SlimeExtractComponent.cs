@@ -27,6 +27,12 @@ public sealed partial class SlimeExtractComponent : Component
     /// </summary>
     [ViewVariables, AutoNetworkedField]
     public int RemainingUses = 1;
+    
+    /// <summary>
+    /// Whether the current slime extract is paused. Needed as AutoGenerateComponentPause is not possible on this component.
+    /// </summary>
+    [ViewVariables, AutoNetworkedField]
+    public bool CurrentlyPaused = false;
 }
 
 /// <summary>

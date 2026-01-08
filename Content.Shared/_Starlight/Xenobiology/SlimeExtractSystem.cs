@@ -22,6 +22,8 @@ public sealed class SlimeExtractSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<SlimeExtractComponent, SolutionContainerChangedEvent>(OnSolutionChanged);
+        SubscribeLocalEvent<SlimeExtractComponent, EntityPausedEvent>(OnPaused);
+        SubscribeLocalEvent<SlimeExtractComponent, EntityUnpausedEvent>(OnUnpaused);
     }
     
     /// <inheritdoc />
@@ -35,6 +37,7 @@ public sealed class SlimeExtractSystem : EntitySystem
 
         while (query.MoveNext(out var uid, out var slimeExtractComponent))
         {
+            if (slimeExtractComponent.CurrentlyPaused) continue;
             if (slimeExtractComponent.RemainingUses <= 0) continue;
             
             if (!_solutionContainerSystem.TryGetSolution(uid, slimeExtractComponent.ContainerName, out var solcom, out var currentSolution)) continue;
@@ -112,6 +115,23 @@ public sealed class SlimeExtractSystem : EntitySystem
             else
             {
                 reaction.ActivationMoment = null;
+            }
+        }
+    }
+
+    private void OnPaused(Entity<SlimeExtractComponent> entity, ref EntityPausedEvent args)
+    {
+        entity.Comp.CurrentlyPaused = true;
+    }
+    
+    private void OnUnpaused(Entity<SlimeExtractComponent> entity, ref EntityUnpausedEvent args)
+    {
+        entity.Comp.CurrentlyPaused = false;
+        foreach (var reaction in entity.Comp.ExtractReactions)
+        {
+            if (reaction.ActivationMoment.HasValue)
+            {
+                reaction.ActivationMoment += args.PausedTime;
             }
         }
     }
