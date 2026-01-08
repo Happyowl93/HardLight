@@ -2,7 +2,7 @@
   parent: SheetMetalBase
   id: SheetAdamantine
   name: adamantine
-  description: An adamantine bar, obtained from those slime rangers who refuse to go outside.
+  description: An adamantine bar, obtained from those slime wranglers who refuse to go outside.
   suffix: Full
   components:
     - type: Material
