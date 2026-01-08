@@ -7,6 +7,7 @@ using Content.Shared.Roles;
 using Content.Shared.Roles.Components;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using System.Text;
+using Robust.Shared.Audio;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -16,6 +17,8 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly SharedRoleSystem _role = default!;
     [Dependency] private readonly ObjectivesSystem _objective = default!;
+
+    public readonly SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/_Starlight/Ambience/Antag/vampire_start.ogg");
 
     public override void Initialize()
     {
@@ -44,7 +47,7 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
         {
             var name = meta?.EntityName ?? "Unknown";
             var briefing = Loc.GetString("vampire-role-greeting", ("name", name));
-            _antag.SendBriefing(target, briefing, Color.Yellow, null);
+            _antag.SendBriefing(target, briefing, Color.Yellow, BriefingSound);
 
             _role.MindHasRole<VampireRoleComponent>(mindId, out var vampRole);
             _role.MindHasRole<RoleBriefingComponent>(mindId, out var briefingComp);

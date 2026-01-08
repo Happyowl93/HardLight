@@ -578,6 +578,10 @@ public sealed partial class VampireSystem : EntitySystem
             if (!thrallCoords.TryDistance(EntityManager, _transform, coords, out var distance) || distance > range)
                 continue;
 
+            // Prevent bond beams working through walls
+            if (!_examine.InRangeUnOccluded(uid, thrall, range))
+                continue;
+
             if (TryComp<MobStateComponent>(thrall, out var thrallMobState) &&
                 thrallMobState.CurrentState != Shared.Mobs.MobState.Dead)
             {

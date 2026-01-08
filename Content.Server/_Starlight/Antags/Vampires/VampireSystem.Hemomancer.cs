@@ -523,8 +523,25 @@ public sealed partial class VampireSystem : EntitySystem
         var nearbyEntities = _lookup.GetEntitiesInRange(coords, range);
 
         foreach (var entity in nearbyEntities)
-            if (entity != uid && HasComp<HumanoidAppearanceComponent>(entity) && HasComp<BloodstreamComponent>(entity))
-                currentTargets.Add(entity);
+        {
+            if (entity == uid)
+                continue;
+
+            if (_container.IsEntityOrParentInContainer(entity))
+                continue;
+
+            if (TryComp<MobStateComponent>(entity, out var state) && state.CurrentState == Shared.Mobs.MobState.Dead)
+                continue;
+
+            if (!HasComp<HumanoidAppearanceComponent>(entity) || !HasComp<BloodstreamComponent>(entity))
+                continue;
+
+            // Prevent drain beams working through walls
+            if (!_examine.InRangeUnOccluded(uid, entity, range))
+                continue;
+
+            currentTargets.Add(entity);
+        }
 
         UpdateDrainBeamNetwork(uid, currentTargets, range);
 

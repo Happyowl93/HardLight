@@ -161,7 +161,6 @@
     - type: Transform
       noRot: false
 
-# Gotta resprite this shit
 - type: entity
   id: VampireBloodBondBeamVisual
   categories: [HideSpawnMenu]
@@ -169,7 +168,7 @@
     - type: Sprite
       sprite: /Textures/_Starlight/Vampire/Effects.rsi
       layers:
-        - state: drainbeam
+        - state: blood_bond
           map: ["enum.EffectLayers.Unshaded"]
           offset: 0, 0
           color: "#80FF80" # Light green tint
