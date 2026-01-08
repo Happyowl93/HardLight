@@ -28,12 +28,6 @@ public sealed class SlimeSystem : EntitySystem
         public Entity<SlimeComponent?> Slime = slime;
         public int SplitAmount = splitAmount;
     }
-
-    /// <inheritdoc />
-    public override void Initialize()
-    {
-        base.Initialize();
-    }
     
     /// <inheritdoc />
     public override void Update(float frameTime)
@@ -93,7 +87,7 @@ public sealed class SlimeSystem : EntitySystem
             {
                 protoName = slime.Comp.SplitInto;
             }
-            var split = _entityManager.SpawnAtPosition(protoName, slime.Owner.ToCoordinates());
+            var split = _entityManager.PredictedSpawnAtPosition(protoName, slime.Owner.ToCoordinates());
             SlimeComponent? comp = null;
             if (Resolve(split, ref comp))
             {
