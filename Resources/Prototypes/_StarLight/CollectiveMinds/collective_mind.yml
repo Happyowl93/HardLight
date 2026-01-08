@@ -66,3 +66,15 @@
   - Dantalion
   - VampireThrall
   
+
+- type: collectiveMind
+  id: Empathy
+  name: collective-mind-empathy
+  keycode: 'e'
+  color: "#8a0060"
+  showNames: true
+  canSpeak: true
+  requiredComponents: 
+  - Shadekin
+  canSpeakComponents:
+  - Brighteye

@@ -8,3 +8,4 @@ collective-mind-changeling = Ling
 collective-mind-cluwne = Cluwn
 collective-mind-nexus = Nexus User
 collective-mind-vampire-thrall = Thrall
+collective-mind-empathy = Empathy
