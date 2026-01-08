@@ -190,7 +190,8 @@ public abstract partial class SharedGunSystem
         if (component.Entities.Count > 0)
         {
             var firstAmmo = component.Entities[^1];
-            if (TryComp<MetaDataComponent>(firstAmmo, out var meta) && meta.EntityPrototype?.ID != null &&
+            var meta = MetaData(firstAmmo);
+            if (meta.EntityPrototype?.ID != null &&
                 ProtoManager.TryIndex<EntityPrototype>(meta.EntityPrototype.ID, out var entity))
             {
                 ammoTypeName = entity.Name;

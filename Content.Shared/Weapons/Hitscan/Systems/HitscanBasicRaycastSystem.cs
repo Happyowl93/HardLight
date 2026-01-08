@@ -31,22 +31,13 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
     [Dependency] private readonly ISharedAdminLogManager _log = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
-#region Starlight
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-#endregion Starlight
-
     private EntityQuery<HitscanBasicVisualsComponent> _visualsQuery;
-
-    private EntityQuery<HitscanReflectComponent> _reflectQuery; // Starlight
-    private EntityQuery<BloodstreamComponent> _bloodQuery; // Starlight
 
     public override void Initialize()
     {
         base.Initialize();
 
         _visualsQuery = GetEntityQuery<HitscanBasicVisualsComponent>();
-
-        _reflectQuery = GetEntityQuery<HitscanReflectComponent>(); // Starlight
 
         SubscribeLocalEvent<HitscanBasicRaycastComponent, HitscanTraceEvent>(OnHitscanFired);
     }
@@ -55,7 +46,7 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
     {
         var shooter = args.Shooter ?? args.Gun;
         // Starlight start - handle the shooter being the mech, not the pilot
-        if (shooter != null && TryComp<MechPilotComponent>(shooter, out var pilotA))
+        if (TryComp<MechPilotComponent>(shooter, out var pilotA))
             shooter = pilotA.Mech;
         // Starlight end
         var mapCords = _transform.ToMapCoordinates(args.FromCoordinates);
@@ -88,7 +79,7 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
         // Do visuals without an event. They should always happen and putting it on the attempt event is weird!
         // If more stuff gets added here, it should probably be turned into an event.
         // FireEffects(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle(), ent.Owner); // Starlight - comment out, as we want to aggregate these
-        
+
         args.OutputTrace.Add(GenerateTraceStep(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle())); // Starlight - add the visuals for this particular leg of the hitscan into the trace
 
         // Admin logging
