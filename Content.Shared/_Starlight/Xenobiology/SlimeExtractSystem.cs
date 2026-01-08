@@ -1,9 +1,8 @@
-using Content.Shared._Starlight.Xenobiology.Potions;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
-using Content.Shared.Interaction;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Starlight.Xenobiology;
@@ -48,7 +47,7 @@ public sealed class SlimeExtractSystem : EntitySystem
                     var minimumScalingFactor = FindMinimumScalingFactor(reaction.Requirements, currentSolution);
                     foreach (var requirement in reaction.Requirements)
                     {
-                        _solutionContainerSystem.RemoveReagent(solcom.Value, requirement.Reagent, minimumScalingFactor * requirement.Quantity);
+                        _solutionContainerSystem.RemoveReagent(solcom.Value, new ReagentId(requirement.Key, null), minimumScalingFactor * requirement.Value);
                     }
                     foreach (var effect in reaction.Effects)
                     {
@@ -80,24 +79,24 @@ public sealed class SlimeExtractSystem : EntitySystem
             _entityManager.PredictedQueueDeleteEntity(deleteRecord._entityUid);
     }
     
-    public bool IsSolutionRequirementFulfilled(Solution requiredSolution, Solution currentSolution)
+    public bool IsSolutionRequirementFulfilled(Dictionary<string, FixedPoint2> requiredSolution, Solution currentSolution)
     {
-        foreach (var req in requiredSolution.Contents)
+        foreach (var req in requiredSolution)
         {
-            if (!currentSolution.TryGetReagentQuantity(req.Reagent, out var amount)) return false;
-            if (amount < req.Quantity) return false;
+            if (!currentSolution.TryGetReagentQuantity(new ReagentId(req.Key, null), out var amount)) return false;
+            if (amount < req.Value) return false;
         }
         
         return true;
     }
 
-    public FixedPoint2 FindMinimumScalingFactor(Solution requiredSolution, Solution currentSolution)
+    public FixedPoint2 FindMinimumScalingFactor(Dictionary<string, FixedPoint2> requiredSolution, Solution currentSolution)
     {
         var minimumScalingFactor = FixedPoint2.MaxValue;
-        foreach (var req in requiredSolution.Contents)
+        foreach (var req in requiredSolution)
         {
-            if (!currentSolution.TryGetReagentQuantity(req.Reagent, out var amount)) return 0.0;
-            minimumScalingFactor = FixedPoint2.Min(minimumScalingFactor, amount/req.Quantity);
+            if (!currentSolution.TryGetReagentQuantity(new ReagentId(req.Key, null), out var amount)) return 0.0;
+            minimumScalingFactor = FixedPoint2.Min(minimumScalingFactor, amount/req.Value);
         }
         return minimumScalingFactor;
     }
@@ -109,6 +108,10 @@ public sealed class SlimeExtractSystem : EntitySystem
             if (IsSolutionRequirementFulfilled(reaction.Requirements, args.Solution))
             {
                 reaction.ActivationMoment = _gameTiming.CurTime + reaction.Delay;
+            }
+            else
+            {
+                reaction.ActivationMoment = null;
             }
         }
     }

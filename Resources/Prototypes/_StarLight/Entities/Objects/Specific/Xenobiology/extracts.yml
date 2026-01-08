@@ -32,9 +32,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Water
-                Quantity: 1
+            Water: 1
           effects:
             - effect: !type:AddReagentToSolution
                 reagent: Epinephrine
@@ -43,9 +41,7 @@
               scalingOffset: 0
           shouldDelete: false
         - requirements:
-            reagents:
-              - ReagentId: Blood
-                Quantity: 1
+            Blood: 1
           effects:
             - effect: !type:SpawnEntity
                 entity: MonkeyCube
@@ -54,9 +50,7 @@
               scalingOffset: 1
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntity
                 entity: XenobiologySlimeGray
@@ -75,9 +69,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Water
-                Quantity: 5
+            Water: 5
           effects:
             - effect: !type:AddReagentToSolution
                 reagent: OrangeSmokeCauser
@@ -86,9 +78,7 @@
               scalingOffset: 0
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Blood
-                Quantity: 1
+            Blood: 1
           effects:
             - effect: !type:AddReagentToSolution
                 reagent: CapsaicinOil
@@ -97,9 +87,7 @@
               scalingOffset: 0
           shouldDelete: false
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:CreateGas
                 gas: Plasma
@@ -126,9 +114,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Blood
-                Quantity: 1
+            Blood: 1
           effects:
             - effect: !type:AddReagentToSolution
                 reagent: RegenerativeJelly
@@ -137,9 +123,7 @@
               scalingOffset: 0
           shouldDelete: false
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntity
                 entity: SlimeSteroidPotion
@@ -158,9 +142,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Water
-                Quantity: 5
+            Water: 5
           effects:
             - effect: !type:AddReagentToSolution
                 reagent: BlueFoamCauser
@@ -169,9 +151,7 @@
               scalingOffset: 0
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Blood
-                Quantity: 1
+            Blood: 1
           effects:
             - effect: !type:SpawnEntity
                 entity: SlimeStabilizerPotion
@@ -180,9 +160,7 @@
               scalingOffset: 1
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:AddReagentToSolution
                 reagent: FrostOil
@@ -250,9 +228,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Water
-                Quantity: 1
+            Water: 1
           effects:
             - effect: !type:SpawnEntity
                 entity: SheetRGlass5
@@ -266,9 +242,7 @@
               scalingOffset: 1
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntity
                 entity: SheetPlasteel5
@@ -292,9 +266,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Water
-                Quantity: 1
+            Water: 1
           effects:
             - effect: !type:SpawnEntity
                 entity: YellowSlimeExtractLight
@@ -303,18 +275,14 @@
               scalingOffset: 1
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Blood
-                Quantity: 1
+            Blood: 1
           effects:
             - effect: !type:Emp
               scalingFactor: 1
               scalingOffset: 0
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntity
                 entity: YellowSlimeExtractPowercell
@@ -343,9 +311,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntity
                 entity: SheetPlasma3
@@ -364,9 +330,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Water
-                Quantity: 1
+            Water: 1
           effects:
             - effect: !type:SpawnEntity
                 entity: SlimeFireproofPotion
@@ -375,9 +339,7 @@
               scalingOffset: 1
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:CreateGas
                 gas: Nitrogen
@@ -400,9 +362,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Water
-                Quantity: 1
+            Water: 1
           effects:
             - effect: !type:SpawnEntityFromTable
                 number: 1
@@ -413,9 +373,7 @@
               scalingOffset: 0
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntityFromTable
                 number: 1
@@ -436,9 +394,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Water
-                Quantity: 1
+            Water: 1
           effects:
             - effect: !type:SpawnEntity
                 number: 1
@@ -447,9 +403,7 @@
               scalingOffset: 1
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntity
                 number: 1
@@ -480,9 +434,7 @@
       extractReactions:
         # The blood reaction doesn't work until the slime console is implemented.
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntity
                 number: 1
@@ -501,9 +453,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Blood
-                Quantity: 1
+            Blood: 1
           effects:
             - effect: !type:SpawnEntityFromTable
                 number: 1
@@ -522,9 +472,7 @@
               scalingOffset: 0
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntity
                 number: 1
@@ -548,9 +496,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Water
-                Quantity: 1
+            Water: 1
           effects:
             - effect: !type:SpawnEntity
                 number: 1
@@ -560,9 +506,7 @@
           shouldDelete: true
         # Need to implement slime rabidity before we can implement the blood reagent reaction
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntity
                 number: 1
@@ -581,9 +525,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Radium
-                Quantity: 1
+            Radium: 1
           effects:
             - effect: !type:AddReagentToSolution
                 reagent: UnstableMutationToxin
@@ -592,9 +534,7 @@
               scalingOffset: 0
           shouldDelete: false
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:AddReagentToSolution
                 reagent: ImperfectMutationToxin
@@ -613,9 +553,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Blood
-                Quantity: 1
+            Blood: 1
           effects:
             - effect: !type:SpawnEntity
                 number: 1
@@ -635,9 +573,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Water
-                Quantity: 1
+            Water: 1
           effects:
             - effect: !type:SpawnEntityFromTable
                 number: 1
@@ -648,9 +584,7 @@
               scalingOffset: 1
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Blood
-                Quantity: 1
+            Blood: 1
           effects:
             - effect: !type:SpawnEntityFromTable
                 number: 3
@@ -661,9 +595,7 @@
               scalingOffset: 1
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntityFromTable
                 number: 5
@@ -684,9 +616,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Blood
-                Quantity: 1
+            Blood: 1
           effects:
             - effect: !type:AddReagentToSolution
                 reagent: Cornoil
@@ -695,9 +625,7 @@
               scalingOffset: 0
           shouldDelete: false
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:Explosion
                 explosionType: Default
@@ -716,9 +644,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:AddReagentToSolution
                 reagent: AdvancedMutationToxin
@@ -737,9 +663,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Water
-                Quantity: 1
+            Water: 1
           effects:
             - effect: !type:SpawnEntity
                 number: 1
@@ -748,9 +672,7 @@
               scalingOffset: 1
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntity
                 number: 1
@@ -769,9 +691,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntity
                 number: 1
@@ -790,9 +710,7 @@
     - type: SlimeExtract
       extractReactions:
         - requirements:
-            reagents:
-              - ReagentId: Blood
-                Quantity: 1
+            Blood: 1
           effects:
             - effect: !type:SpawnEntity
                 number: 1
@@ -801,9 +719,7 @@
               scalingOffset: 1
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Plasma
-                Quantity: 1
+            Plasma: 1
           effects:
             - effect: !type:SpawnEntityFromTable
                 number: 1
@@ -814,9 +730,7 @@
               scalingOffset: 0
           shouldDelete: true
         - requirements:
-            reagents:
-              - ReagentId: Radium # should be slime jelly but that's not implemented yet
-                Quantity: 1
+            Radium: 1 # should be slime jelly but that's not implemented yet
           effects:
             - effect: !type:SpawnEntityFromTable
                 number: 1

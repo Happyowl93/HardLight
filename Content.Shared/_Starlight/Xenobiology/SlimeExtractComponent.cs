@@ -1,9 +1,7 @@
-using Content.Shared.Chemistry.Components;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
-using Robust.Shared.Timing;
 
 namespace Content.Shared._Starlight.Xenobiology;
 
@@ -41,7 +39,7 @@ public sealed partial class ExtractReaction
     /// The minimum reagent requirements.
     /// </summary>
     [DataField("requirements", required: true)]
-    public Solution Requirements = default!;
+    public Dictionary<string, FixedPoint2> Requirements = default!;
 
     /// <summary>
     /// The effects caused when there is enough of the required reagents.
