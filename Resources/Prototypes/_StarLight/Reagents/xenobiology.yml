@@ -45,27 +45,26 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:ChangeSpeciesFromTable
-          speciesTable: !type:GroupSelector
-            children:
-              - id: Arachnid
-              - id: Diona
-              - id: Dwarf
-              - id: Gingerbread
-              - id: Human
-              - id: Moth
-              - id: Reptilian
-              - id: Resomi
-              - id: Skeleton
-              - id: SlimePerson
-              - id: Vox
-              - id: Vulpkanin
-              - id: Abductor
-              - id: Avali
-              - id: Cyclorite
-              - id: Felionoid
-              - id: Shadekin
-              - id: Thaven
+        - !type:ChangeSpeciesFromList
+          speciesList:
+            - Arachnid
+            - Diona
+            - Dwarf
+            - Gingerbread
+            - Human
+            - Moth
+            - Reptilian
+            - Resomi
+            - Skeleton
+            - SlimePerson
+            - Vox
+            - Vulpkanin
+            - Abductor
+            - Avali
+            - Cyclorite
+            - Felionoid
+            - Shadekin
+            - Thaven
 
 - type: reagent
   id: ImperfectMutationToxin

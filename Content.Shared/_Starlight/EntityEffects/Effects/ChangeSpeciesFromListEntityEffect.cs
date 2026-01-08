@@ -1,5 +1,6 @@
 using Content.Shared.EntityEffects;
-using Content.Shared.EntityTable.EntitySelectors;
+using Content.Shared.Humanoid.Prototypes;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.EntityEffects.Effects;
 
@@ -7,11 +8,11 @@ namespace Content.Shared._Starlight.EntityEffects.Effects;
 /// A type of <see cref="EntityEffectBase{T}"/> for effects that changes a target entity's species from a table.
 /// </summary>
 /// <inheritdoc cref="EntityEffect"/>
-public sealed partial class ChangeSpeciesFromTable : EntityEffectBase<ChangeSpeciesFromTable>
+public sealed partial class ChangeSpeciesFromList : EntityEffectBase<ChangeSpeciesFromList>
 {
     /// <summary>
     /// Table from which we're pulling the species name
     /// </summary>
     [DataField(required: true)]
-    public EntityTableSelector SpeciesTable = default!;
+    public List<ProtoId<SpeciesPrototype>> SpeciesList = default!;
 }
