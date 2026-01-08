@@ -7,12 +7,12 @@
   - type: LanguageKnowledge
     speaks:
     - GalacticCommon
-#    - Aielic
+    - Aielic
     understands:
     - GalacticCommon
-#    - Aielic
+    - Aielic
 #    - SolCommon
-#    - Darktongue
+    - Darktongue
     - Sylvan
   - type: Absorbable
   - type: Hunger
