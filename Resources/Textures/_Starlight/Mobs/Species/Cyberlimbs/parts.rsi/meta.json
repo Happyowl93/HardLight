@@ -242,31 +242,33 @@
     },
     {
       "name": "l_mantis_blade_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "https://github.com/tgstation/tgstation/blob/8024397cc81c5f47f74cf4279e35728487d0a1a7/icons/mob/human_parts_greyscale.dmi and modified by DrSmugleaf and later Citrea"
     },
     {
       "name": "l_mantis_blade_hand",
       "directions": 4,
-      "copyright": "Based off the arm sprite, modified by Citrea"
+      "copyright": "https://github.com/tgstation/tgstation/blob/8024397cc81c5f47f74cf4279e35728487d0a1a7/icons/mob/human_parts_greyscale.dmi and modified by DrSmugleaf and later Citrea"
     },
     {
       "name": "l_mantis_blade_hand_BLADE",
       "directions": 4,
-      "copyright": "Based off the arm sprite, modified by Citrea"
+      "copyright": "Based off the arm sprite by https://github.com/GentleButter, modified by Citrea"
     },
     {
       "name": "r_mantis_blade_arm",
-      "directions": 4
+      "directions": 4,
+      "copyright": "https://github.com/tgstation/tgstation/blob/8024397cc81c5f47f74cf4279e35728487d0a1a7/icons/mob/human_parts_greyscale.dmi and modified by DrSmugleaf and later Citrea"
     },
     {
       "name": "r_mantis_blade_hand",
       "directions": 4,
-      "copyright": "Based off the arm sprite, modified by Citrea"
+      "copyright": "https://github.com/tgstation/tgstation/blob/8024397cc81c5f47f74cf4279e35728487d0a1a7/icons/mob/human_parts_greyscale.dmi and modified by DrSmugleaf and later Citrea"
     },
     {
       "name": "r_mantis_blade_hand_BLADE",
       "directions": 4,
-      "copyright": "Based off the arm sprite, modified by Citrea"
+      "copyright": "Based off the arm sprite by https://github.com/GentleButter, modified by Citrea"
     },
     {
       "name": "l_spacer_arm",
