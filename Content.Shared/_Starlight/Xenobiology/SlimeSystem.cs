@@ -22,7 +22,6 @@ public sealed class SlimeSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
 
     public List<SlimeSplitRecord> SlimeSplitRecords = new();
-    public List<EntityUid> SlimesToDelete = new();
 
     public sealed class SlimeSplitRecord(Entity<SlimeComponent?> slime, int splitAmount)
     {
@@ -46,12 +45,6 @@ public sealed class SlimeSystem : EntitySystem
             TrySplitSlime(record.Slime, record.SplitAmount);
         }
         SlimeSplitRecords.Clear();
-        
-        foreach (var slime in SlimesToDelete)
-        {
-            _entityManager.PredictedQueueDeleteEntity(slime);
-        }
-        SlimesToDelete.Clear();
     }
     
     /// <summary>
@@ -109,7 +102,7 @@ public sealed class SlimeSystem : EntitySystem
             }
             else return false;
         }
-        SlimesToDelete.Add(slime.Owner);
+        _entityManager.PredictedQueueDeleteEntity(slime.Owner);
         return true;
     }
 
