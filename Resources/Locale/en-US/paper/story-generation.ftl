@@ -103,6 +103,7 @@ story-gen-book-character44 = IAA
 story-gen-book-character45 = shadekin
 story-gen-book-character46 = avali
 story-gen-book-character47 = resomi
+story-gen-book-character48 = thaven
 # Starlight edit end
 
 story-gen-book-character-trait1 = stupid
