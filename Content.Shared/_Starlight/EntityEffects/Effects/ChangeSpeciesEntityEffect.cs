@@ -1,4 +1,6 @@
 using Content.Shared.EntityEffects;
+using Content.Shared.Humanoid.Prototypes;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.EntityEffects.Effects;
 
@@ -12,5 +14,5 @@ public sealed partial class ChangeSpecies : EntityEffectBase<ChangeSpecies>
     /// Name of the species to change to
     /// </summary>
     [DataField(required: true)]
-    public string Species = default!;
+    public ProtoId<SpeciesPrototype> Species = default!;
 }
