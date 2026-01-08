@@ -4101,13 +4101,6 @@ entities:
     - type: Transform
       pos: -5.5122957,-1.7560415
       parent: 1
-- proto: TranslatorPoweredBase
-  entities:
-  - uid: 554
-    components:
-    - type: Transform
-      pos: 7.7328014,4.5628157
-      parent: 1
 - proto: TurboItemRecharger
   entities:
   - uid: 555
