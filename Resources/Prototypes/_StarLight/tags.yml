@@ -208,6 +208,9 @@
   id: InsulatedThread
 
 - type: Tag
+  id: Labelable
+
+- type: Tag
   id: Lighters
 
 - type: Tag

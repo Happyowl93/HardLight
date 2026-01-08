@@ -35,6 +35,7 @@
     - SpiderCraft
     - AnomalyHost
     - Arachnid
+    - Labelable
   - type: Butcherable
     butcheringType: Spike
     spawned:
