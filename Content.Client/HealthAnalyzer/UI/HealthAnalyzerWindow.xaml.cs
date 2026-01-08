@@ -209,7 +209,7 @@ namespace Content.Client.HealthAnalyzer.UI
                 var groupBox = new PanelContainer
                 {
                     Margin = new Thickness(2),
-                    MinWidth = 140,
+                    MinWidth = 155,
                 };
 
                 // Boxes in the second column get right aligned
@@ -234,7 +234,7 @@ namespace Content.Client.HealthAnalyzer.UI
                     Orientation = BoxContainer.LayoutOrientation.Vertical,
                 };
 
-                var titleRow = CreateDiagnosticGroupTitleRow(groupTitleText, (float)damageAmount);
+                var titleRow = CreateDiagnosticGroupTitleRow(groupTitleText, (float)damageAmount, damageGroupId);
                 groupContainer.AddChild(titleRow);
 
                 // Add divider line under the title row
@@ -254,12 +254,21 @@ namespace Content.Client.HealthAnalyzer.UI
                         continue;
 
                     var damageTypeName = _prototypes.Index<DamageTypePrototype>(type).LocalizedName;
+                    var typeId = type.ToString().ToLowerInvariant();
 
                     var damageRow = new BoxContainer
                     {
                         Orientation = BoxContainer.LayoutOrientation.Horizontal,
                         Margin = new Thickness(0, 2),
                     };
+
+                    // Add damage type icon
+                    damageRow.AddChild(new TextureRect
+                    {
+                        SetSize = new Vector2(15, 15),
+                        Texture = GetTexture(typeId),
+                        Margin = new Thickness(0, 0, 4, 0),
+                    });
 
                     var typeLabel = new Label
                     {
@@ -351,7 +360,7 @@ namespace Content.Client.HealthAnalyzer.UI
 
         private Texture GetTexture(string texture)
         {
-            var rsiPath = new ResPath("/Textures/Objects/Devices/health_analyzer.rsi");
+            var rsiPath = new ResPath("/Textures/_Starlight/Objects/Devices/health_analyzer.rsi"); // Starlight - new rsi for new icons :)
             var rsiSprite = new SpriteSpecifier.Rsi(rsiPath, texture);
 
             var rsi = _cache.GetResource<RSIResource>(rsiSprite.RsiPath).RSI;
@@ -372,7 +381,7 @@ namespace Content.Client.HealthAnalyzer.UI
         }
 
         // Starlight begin - damage group titles get a color gradient and exclamations to indicate severity 
-        private static BoxContainer CreateDiagnosticGroupTitleRow(string text, float damageAmount)
+        private BoxContainer CreateDiagnosticGroupTitleRow(string text, float damageAmount, string damageGroupId)
         {
             // Color gradient: green (0) -> red (100+)
             var clampedDamage = Math.Min(damageAmount, 100f);
@@ -397,6 +406,17 @@ namespace Content.Client.HealthAnalyzer.UI
                 Orientation = BoxContainer.LayoutOrientation.Horizontal,
                 Margin = new Thickness(0, 0, 0, 4),
             };
+            
+            var groupId = damageGroupId.ToLowerInvariant();
+            
+            // Add damage group icon
+            titleRow.AddChild(new TextureRect
+            {
+                SetSize = new Vector2(15, 15),
+                Texture = GetTexture(groupId),
+                Margin = new Thickness(0, 0, 4, 0),
+                VerticalAlignment = VAlignment.Center,
+            });
             
             var titleLabel = new Label
             {

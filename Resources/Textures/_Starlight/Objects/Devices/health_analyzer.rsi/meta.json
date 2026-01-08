@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by github @AegisShieldDev",
+  "size": {
+    "x": 15,
+    "y": 15
+  },
+  "states": [
+    {
+      "name": "piercing",
+      "directions": 1
+    },
+    {
+      "name": "blunt",
+      "directions": 1
+    },
+    {
+      "name": "slash",
+      "directions": 1
+    },
+    {
+      "name": "brute",
+      "directions": 1
+    },
+    {
+      "name": "airloss",
+      "directions": 1
+    },
+    {
+      "name": "asphyxiation",
+      "directions": 1
+    },
+    {
+      "name": "bloodloss",
+      "directions": 1
+    },
+    {
+      "name": "genetic",
+      "directions": 1
+    },
+    {
+      "name": "cellular",
+      "directions": 1
+    },
+    {
+      "name": "radiation",
+      "directions": 1
+    },
+    {
+      "name": "poison",
+      "directions": 1
+    },
+    {
+      "name": "toxin",
+      "directions": 1
+    },
+    {
+      "name": "burn",
+      "directions": 1
+    },
+    {
+      "name": "heat",
+      "directions": 1
+    },
+    {
+      "name": "cold",
+      "directions": 1
+    },
+    {
+      "name": "caustic",
+      "directions": 1
+    },
+    {
+      "name": "shock",
+      "directions": 1
+    }
+  ]
+}
