@@ -40,17 +40,18 @@ public sealed class SlimeSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-        var query = EntityQueryEnumerator<SlimeComponent>();
 
         foreach (var record in SlimeSplitRecords)
         {
             TrySplitSlime(record.Slime, record.SplitAmount);
         }
+        SlimeSplitRecords.Clear();
         
         foreach (var slime in SlimesToDelete)
         {
             _entityManager.PredictedQueueDeleteEntity(slime);
         }
+        SlimesToDelete.Clear();
     }
     
     /// <summary>
