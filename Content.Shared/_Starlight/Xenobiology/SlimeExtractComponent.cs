@@ -3,6 +3,7 @@ using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._Starlight.Xenobiology;
 
@@ -22,12 +23,6 @@ public sealed partial class SlimeExtractComponent : Component
     /// </summary>
     [DataField("containerName", required: true), AutoNetworkedField]
     public string ContainerName = string.Empty;
-    
-    /// <summary>
-    /// How long it has been since the last injection.
-    /// </summary>
-    [ViewVariables, AutoNetworkedField]
-    public float TimeSinceLastInject = 0F;
 
     /// <summary>
     /// How many times this extract can be used before being deleted or exhausted.
@@ -64,7 +59,13 @@ public sealed partial class ExtractReaction
     /// If nonzero, how long until the effect actually occurs.
     /// </summary>
     [DataField("delay")]
-    public float Delay = 0;
+    public TimeSpan Delay = new(0, 0, 0, 0);
+    
+    /// <summary>
+    /// The moment at which the effect actually occurs.
+    /// </summary>
+    [ViewVariables]
+    public TimeSpan? ActivationMoment;
 }
 
 /// <summary>

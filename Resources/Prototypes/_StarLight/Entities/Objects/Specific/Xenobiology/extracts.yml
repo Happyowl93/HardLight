@@ -114,7 +114,7 @@
               scalingFactor: 5
               scalingOffset: 0
           shouldDelete: true
-          delay: 5
+          delay: 5s
 
 - type: entity
   parent: BaseSlimeExtract
@@ -388,7 +388,7 @@
               scalingFactor: 5
               scalingOffset: 0
           shouldDelete: true
-          delay: 5
+          delay: 5s
 
 - type: entity
   parent: BaseSlimeExtract
@@ -704,7 +704,7 @@
               scalingFactor: 0
               scalingOffset: 1
           shouldDelete: false
-          delay: 5
+          delay: 5s
 
 - type: entity
   parent: BaseSlimeExtract

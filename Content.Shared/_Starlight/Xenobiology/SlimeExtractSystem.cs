@@ -4,6 +4,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._Starlight.Xenobiology;
 
@@ -15,6 +16,7 @@ public sealed class SlimeExtractSystem : EntitySystem
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly SharedEntityEffectsSystem _entityEffectsSystem = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -36,13 +38,12 @@ public sealed class SlimeExtractSystem : EntitySystem
         {
             if (slimeExtractComponent.RemainingUses <= 0) continue;
             
-            slimeExtractComponent.TimeSinceLastInject += frameTime;
             if (!_solutionContainerSystem.TryGetSolution(uid, slimeExtractComponent.ContainerName, out var solcom, out var currentSolution)) continue;
             var shouldDelete = false;
             var shouldExhaust = false;
             foreach (var reaction in slimeExtractComponent.ExtractReactions)
             {
-                if (slimeExtractComponent.TimeSinceLastInject >= reaction.Delay && IsSolutionRequirementFulfilled(reaction.Requirements, currentSolution))
+                if ((reaction.ActivationMoment.HasValue && reaction.ActivationMoment.Value < _gameTiming.CurTime) && IsSolutionRequirementFulfilled(reaction.Requirements, currentSolution))
                 {
                     var minimumScalingFactor = FindMinimumScalingFactor(reaction.Requirements, currentSolution);
                     foreach (var requirement in reaction.Requirements)
@@ -61,13 +62,13 @@ public sealed class SlimeExtractSystem : EntitySystem
                         shouldDelete = true;
                     }
                     shouldExhaust = true;
+                    reaction.ActivationMoment = _gameTiming.CurTime + reaction.Delay;
                 }
             }
 
             if (shouldExhaust)
             {
                 slimeExtractComponent.RemainingUses -= 1;
-                slimeExtractComponent.TimeSinceLastInject = 0F;
             }
             if (shouldDelete && slimeExtractComponent.RemainingUses <= 0)
                 deleteRecords.Add(new(uid));
@@ -103,7 +104,13 @@ public sealed class SlimeExtractSystem : EntitySystem
 
     private void OnSolutionChanged(Entity<SlimeExtractComponent> entity, ref SolutionContainerChangedEvent args)
     {
-        entity.Comp.TimeSinceLastInject = 0F;
+        foreach (var reaction in entity.Comp.ExtractReactions)
+        {
+            if (IsSolutionRequirementFulfilled(reaction.Requirements, args.Solution))
+            {
+                reaction.ActivationMoment = _gameTiming.CurTime + reaction.Delay;
+            }
+        }
     }
 }
 
