@@ -42,12 +42,6 @@ public sealed partial class SlimeProcessorComponent : Component
     /// </summary>
     [ViewVariables, AutoNetworkedField]
     public bool IsProcessing = false;
-
-    /// <summary>
-    /// Whether this processor is powered.
-    /// </summary>
-    [ViewVariables, AutoNetworkedField]
-    public bool IsPowered = false;
     
     /// <summary>
     /// The name of the container the slime corpses are stored in.
