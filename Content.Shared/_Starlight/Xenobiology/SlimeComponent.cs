@@ -33,7 +33,7 @@ public sealed partial class SlimeComponent : Component
     /// The extract this slime provides when processed in the Slime Processor.
     /// </summary>
     [DataField("extract", required: true), AutoNetworkedField]
-    public string Extract;
+    public EntProtoId Extract;
 
     /// <summary>
     /// The chance of mutating upon splitting.
