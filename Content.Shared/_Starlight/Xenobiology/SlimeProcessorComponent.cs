@@ -1,3 +1,4 @@
+using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -25,12 +26,6 @@ public sealed partial class SlimeProcessorComponent : Component
     public TimeSpan SlimeAcquireCooldown = default!;
     
     /// <summary>
-    /// The current list of extracts to spit out after processing.
-    /// </summary>
-    [ViewVariables, AutoNetworkedField]
-    public List<EntProtoId> Extracts = new();
-    
-    /// <summary>
     /// The moment in time when processing will be done.
     /// </summary>
     [ViewVariables, AutoNetworkedField, AutoPausedField]
@@ -53,4 +48,15 @@ public sealed partial class SlimeProcessorComponent : Component
     /// </summary>
     [ViewVariables, AutoNetworkedField]
     public bool IsPowered = false;
+    
+    /// <summary>
+    /// The name of the container the slime corpses are stored in.
+    /// </summary>
+    public const string SlimeContainerName = "slimes";
+    
+    /// <summary>
+    /// Container for dead slimes inserted in the processor.
+    /// </summary>
+    [ViewVariables]
+    public ContainerSlot SlimeContainer = default!;
 }

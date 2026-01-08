@@ -16,5 +16,8 @@
       slimeAcquireCooldown: 1s
     - type: Machine
       board: SlimeProcessorMachineCircuitboard
-    - type: EntityStorage
-      
+    - type: ContainerContainer
+      containers:
+        slimes:
+          !type:ContainerSlot
+          showEnts: false

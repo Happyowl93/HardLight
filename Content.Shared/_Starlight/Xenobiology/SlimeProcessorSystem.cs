@@ -4,6 +4,8 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Jittering;
 using Content.Shared.Power;
+using Content.Shared.Storage.Components;
+using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -16,6 +18,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
     [Dependency] private readonly SharedJitteringSystem _jitteringSystem = default!;
     [Dependency] private readonly EntityLookupSystem _entityLookupSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
     
     public override void Update(float frameTime)
     {
@@ -36,14 +39,18 @@ public sealed class SlimeProcessorSystem : EntitySystem
                 if (!slimeProcessorComponent.ProcessingFinishedMoment.HasValue || slimeProcessorComponent.ProcessingFinishedMoment.Value <= _gameTiming.CurTime)
                 {
                     System.Random random = new System.Random();
-                    foreach (var proto in slimeProcessorComponent.Extracts)
+                    foreach (var entity in slimeProcessorComponent.SlimeContainer.ContainedEntities)
                     {
-                        Vector2 randomOffset = new Vector2(random.NextFloat(-0.2F, 0.2F), random.NextFloat(-0.2F, 0.2F));
-                        EntityCoordinates ec = new EntityCoordinates(uid, uid.ToCoordinates().Position + randomOffset);
-                        _entityManager.SpawnAtPosition(proto, ec);
+                        if (!_entityManager.TryGetComponent(entity, out SlimeComponent? slimeComponent)) continue;
+                        for (int i = 0; i < slimeProcessorComponent.YieldMultiplier + slimeComponent.SlimeSteroidAmount; i++)
+                        {
+                            Vector2 randomOffset = new Vector2(random.NextFloat(-0.2F, 0.2F), random.NextFloat(-0.2F, 0.2F));
+                            EntityCoordinates ec = new EntityCoordinates(uid, uid.ToCoordinates().Position + randomOffset);
+                            _entityManager.PredictedSpawnAtPosition(slimeComponent.Extract, ec);
+                        }
+                        PredictedQueueDel(entity);
                     }
-
-                    slimeProcessorComponent.Extracts.Clear();
+                    
                     RemCompDeferred<JitteringComponent>(uid);
                     slimeProcessorComponent.IsProcessing = false;
                     slimeProcessorComponent.SlimeAcquireMoment = _gameTiming.CurTime + slimeProcessorComponent.SlimeAcquireCooldown;
@@ -59,11 +66,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
                         if (!_entityManager.TryGetComponent(entity, out DamageableComponent? damageableComponent)) continue;
                         if (damageableComponent.TotalDamage >= 200)
                         {
-                            for (int i = 0; i < slimeProcessorComponent.YieldMultiplier + slimeComponent.SlimeSteroidAmount; i++)
-                            {
-                                slimeProcessorComponent.Extracts.Add(slimeComponent.Extract);
-                            }
-                            PredictedQueueDel(entity);
+                            _container.Insert(entity, slimeProcessorComponent.SlimeContainer);
                             slimeProcessorComponent.SlimeAcquireMoment = _gameTiming.CurTime + slimeProcessorComponent.SlimeAcquireCooldown;
                             break;
                         }
@@ -78,6 +81,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<SlimeProcessorComponent, ActivateInWorldEvent>(OnAfterActivate);
         SubscribeLocalEvent<SlimeProcessorComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<SlimeProcessorComponent, ComponentInit>(OnComponentInit);
     }
     
     private void OnPowerChanged(EntityUid uid, SlimeProcessorComponent component, ref PowerChangedEvent args)
@@ -87,11 +91,15 @@ public sealed class SlimeProcessorSystem : EntitySystem
 
     private void OnAfterActivate(Entity<SlimeProcessorComponent> ent, ref ActivateInWorldEvent args)
     {
-        if (ent.Comp.Extracts.Count <= 0)
-            return;
+        if (ent.Comp.SlimeContainer.ContainedEntities.Count <= 0) return;
         
         ent.Comp.ProcessingFinishedMoment = _gameTiming.CurTime + ent.Comp.ProcessingTime;
         ent.Comp.IsProcessing = true;
         _jitteringSystem.AddJitter(ent.Owner, -10, 100);
+    }
+
+    private void OnComponentInit(Entity<SlimeProcessorComponent> ent, ref ComponentInit args)
+    {
+        ent.Comp.SlimeContainer = _container.EnsureContainer<ContainerSlot>(ent.Owner, SlimeProcessorComponent.SlimeContainerName);
     }
 }
