@@ -8764,17 +8764,6 @@ entities:
       parent: 2
     - type: EntityStorage
       open: True
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - invalid
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: CrateElectrical
   entities:
   - uid: 1319
