@@ -10,7 +10,6 @@ namespace Content.Server._Starlight.NullSpace;
 
 public sealed class NullSpaceDrainerSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     public override void Initialize()
     {
