@@ -19,7 +19,7 @@ public sealed class SlimeSystem : EntitySystem
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly HungerSystem _hungerSystem = default!;
-    [Dependency] private readonly RobustRandom _robustRandom = default!;
+    [Dependency] private readonly IRobustRandom _robustRandom = default!;
 
     public List<SlimeSplitRecord> SlimeSplitRecords = new();
     public List<EntityUid> SlimesToDelete = new();

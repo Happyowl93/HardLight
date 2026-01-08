@@ -84,7 +84,7 @@ public sealed class ActiveSlimeProcessorSystem : EntitySystem
 {
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly RobustRandom _robustRandom = default!;
+    [Dependency] private readonly IRobustRandom _robustRandom = default!;
     
     public override void Update(float frameTime)
     {
