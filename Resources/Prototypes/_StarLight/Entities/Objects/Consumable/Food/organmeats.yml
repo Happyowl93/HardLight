@@ -82,6 +82,12 @@
           reagents:
             - ReagentId: UncookedAnimalProteins
               Quantity: 5
+    - type: InternalTemperature
+      conductivity: 0.43
+    - type: Construction
+      graph: MeatSausage
+      node: start
+      defaultTarget: meat sausage
     - type: Tag
       tags:
         - Meat
@@ -111,6 +117,9 @@
               Quantity: 8
             - ReagentId: Protein
               Quantity: 9
+    - type: Construction
+      graph: MeatSausage
+      node: meat sausage
     - type: Tag
       tags:
         - Meat

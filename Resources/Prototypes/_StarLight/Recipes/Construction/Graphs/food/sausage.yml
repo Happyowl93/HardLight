@@ -1,0 +1,15 @@
+# regular steak
+- type: constructionGraph
+  id: MeatSausage
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: meat sausage
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: meat sausage
+    entity: FoodMeatSausageCooked
