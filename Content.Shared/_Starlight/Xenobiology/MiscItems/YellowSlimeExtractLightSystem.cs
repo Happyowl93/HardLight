@@ -15,7 +15,7 @@ public sealed class YellowSlimeExtractLightSystem : EntitySystem
 
     private void OnLightToggled(Entity<YellowSlimeExtractLightComponent> ent, ref ItemToggledEvent args)
     {
-        if (ent.Comp.toggled)
+        if (ent.Comp.IsLarge)
         {
             _sharedPointLightSystem.SetRadius(ent, 2);
             _sharedPointLightSystem.SetEnergy(ent, 1);
@@ -26,6 +26,6 @@ public sealed class YellowSlimeExtractLightSystem : EntitySystem
             _sharedPointLightSystem.SetEnergy(ent, 5);
         }
 
-        ent.Comp.toggled = !ent.Comp.toggled;
+        ent.Comp.IsLarge = !ent.Comp.IsLarge;
     }
 }
