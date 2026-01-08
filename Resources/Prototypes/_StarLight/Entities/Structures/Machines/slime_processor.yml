@@ -16,3 +16,5 @@
       slimeAcquireCooldown: 1s
     - type: Machine
       board: SlimeProcessorMachineCircuitboard
+    - type: EntityStorage
+      

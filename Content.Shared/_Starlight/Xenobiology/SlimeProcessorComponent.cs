@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.Xenobiology;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class SlimeProcessorComponent : Component
 {
     /// <summary>
@@ -33,13 +33,13 @@ public sealed partial class SlimeProcessorComponent : Component
     /// <summary>
     /// The moment in time when processing will be done.
     /// </summary>
-    [ViewVariables, AutoNetworkedField]
+    [ViewVariables, AutoNetworkedField, AutoPausedField]
     public TimeSpan? ProcessingFinishedMoment = default!;
 
     /// <summary>
     /// The moment in time when another slime will be sucked up.
     /// </summary>
-    [ViewVariables, AutoNetworkedField]
+    [ViewVariables, AutoNetworkedField, AutoPausedField]
     public TimeSpan? SlimeAcquireMoment = default!;
 
     /// <summary>
