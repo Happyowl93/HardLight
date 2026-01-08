@@ -248,6 +248,7 @@
   tier: 3
   cost: 10000
   recipeUnlocks:
-  - ClothingShoesBootsSpeed
+  - LeftLegCyberSpeed
+  - RightLegCyberSpeed
   radioChannels:
   - Service

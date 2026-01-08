@@ -18006,13 +18006,13 @@ entities:
     - type: Transform
       pos: -17.670883,25.703308
       parent: 1
-- proto: ClothingShoesBootsSpeed
-  entities:
-  - uid: 2610
-    components:
-    - type: Transform
-      pos: -47.70685,20.636473
-      parent: 1
+#- proto: ClothingShoesBootsSpeed
+#  entities:
+#  - uid: 2610
+#    components:
+#    - type: Transform
+#      pos: -47.70685,20.636473
+#      parent: 1
 - proto: ClothingShoesGaloshes
   entities:
   - uid: 2611
