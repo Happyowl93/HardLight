@@ -263,8 +263,8 @@
     - type: WarpPoint
       location: The Dark
       blacklist:
-      tags:
-      - GhostOnlyWarp
+        tags:
+        - GhostOnlyWarp
     - type: DarkLight
     - type: GuideHelp
       guides:
