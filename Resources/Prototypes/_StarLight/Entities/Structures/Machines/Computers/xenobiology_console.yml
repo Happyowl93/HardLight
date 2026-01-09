@@ -5,6 +5,9 @@
   description: A computer for manipulating slimes. Can move slimes around, apply mutating potions, and even feed them!
   components:
     - type: XenobiologyConsole
+      monkeyTag: Monkey
+      monkeyCubeTag: MonkeyCube
+      monkeyProtoId: MobMonkey
     - type: Sprite
       layers:
         - map: [ "computerLayerBody" ]
@@ -23,11 +26,22 @@
       energy: 1.6
       color: "#FC0097"
     - type: Animateable
+    - type: ContainerContainer
+      containers:
+        slimes:
+          !type:ContainerSlot
+          showEnts: false
     - type: RemoteEyeConsole
       remoteEntityProto: XenobiologyConsoleEye
       color: "#00FF00"
       actions:
         - SyntrunnerActionExitConsole
+        - XenobiologyConsoleActionGrabSlime
+        - XenobiologyConsoleActionPlaceSlime
+        - XenobiologyConsoleActionPlaceMonkey
+        - XenobiologyConsoleActionRecycleMonkey
+        - XenobiologyConsoleActionApplyMutationPotion
+        - XenobiologyConsoleActionApplyStabilizerPotion
       viewOnConsolePosition: true
 
 - type: entity

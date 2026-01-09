@@ -19,7 +19,7 @@ public sealed class SlimeStabilizerPotionSystem : EntitySystem
         if (!_entityManager.TryGetComponent<SlimeComponent>(args.Target.Value,
                 out var slimeComponent)) return;
         if (slimeComponent.MutationChance <= 0) return;
-        slimeComponent.MutationChance = FixedPoint2.Max(0, slimeComponent.MutationChance - 0.15);
+        slimeComponent.MutationChance = FixedPoint2.Max(0, slimeComponent.MutationChance + SlimeStabilizerPotionComponent.MutationChangeAmount);
         PredictedQueueDel(args.Used);
         args.Handled = true;
     }
