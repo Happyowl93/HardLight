@@ -25548,5 +25548,18 @@ Entries:
   id: 271500
   time: '2026-01-09T22:24:33.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2715
+- author: CawsForConcern
+  changes:
+  - message: (Plasma) Handcuffs at Bridge replaced with Zipties
+    type: Tweak
+  - message: (Plasma) Fixed BSO's room using the wrong BSO locker variant
+    type: Fix
+  - message: (Plasma) Detective's fax machine wasn't named
+    type: Fix
+  - message: (Plasma) Some fax machine metadata issues
+    type: Fix
+  id: 276700
+  time: '2026-01-09T22:53:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2767
 Order: -1
 
