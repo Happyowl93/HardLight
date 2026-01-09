@@ -25493,5 +25493,12 @@ Entries:
   id: 275600
   time: '2026-01-09T20:55:07.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2756
+- author: Way
+  changes:
+  - message: New Colony parallax.
+    type: Add
+  id: 274300
+  time: '2026-01-09T20:59:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2743
 Order: -1
 
