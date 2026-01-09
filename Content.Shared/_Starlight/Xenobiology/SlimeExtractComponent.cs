@@ -1,6 +1,8 @@
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Starlight.Xenobiology;
@@ -45,7 +47,7 @@ public sealed partial class ExtractReaction
     /// The minimum reagent requirements.
     /// </summary>
     [DataField("requirements", required: true)]
-    public Dictionary<string, FixedPoint2> Requirements = default!;
+    public Dictionary<ProtoId<ReagentPrototype>, FixedPoint2> Requirements = default!;
 
     /// <summary>
     /// The effects caused when there is enough of the required reagents.
@@ -63,7 +65,7 @@ public sealed partial class ExtractReaction
     /// If nonzero, how long until the effect actually occurs.
     /// </summary>
     [DataField("delay")]
-    public TimeSpan Delay = new(0, 0, 0, 0);
+    public TimeSpan Delay = TimeSpan.Zero;
     
     /// <summary>
     /// The moment at which the effect actually occurs.
