@@ -25486,5 +25486,12 @@ Entries:
   id: 274400
   time: '2026-01-09T20:46:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2744
+- author: Fasuh
+  changes:
+  - message: Fixed translators working on empty batteries.
+    type: Fix
+  id: 275600
+  time: '2026-01-09T20:55:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2756
 Order: -1
 
