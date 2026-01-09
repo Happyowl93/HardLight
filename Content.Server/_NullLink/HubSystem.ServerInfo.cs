@@ -21,6 +21,8 @@ public sealed partial class HubSystem : EntitySystem
     private TimeSpan _lastSent;         
     private bool _sendScheduled;   
     private int _maxPlayers;
+    private string _mapName = "Unknown";
+    private string _gamemodeName = "Unknown";
 
     private ServerInfoRequest _serverInfo = new();
 
@@ -54,12 +56,17 @@ public sealed partial class HubSystem : EntitySystem
 
     private void OnRoundStart()
     {
+        _mapName = _gameMapManager.GetSelectedMap()?.MapName ?? "Unknown";
+        _gamemodeName = _gameTicker.CurrentPreset?.ModeTitle ?? "Unknown";
         _serverInfo = _serverInfo with
         {
             CurrentStateStartedAt = DateTime.UtcNow,
             Status = ServerStatus.Round,
             Players = _playerManager.PlayerCount,
             MaxPlayers = _maxPlayers,
+            RoundStartedAt = DateTime.UtcNow,
+            MapName = _mapName,
+            GamemodeName = _gamemodeName,
         };
         TryUpdateServerInfo();
     }
@@ -76,12 +83,17 @@ public sealed partial class HubSystem : EntitySystem
     }
     private void OnLobby()
     {
+        _mapName = "Unknown";
+        _gamemodeName = "Unknown";
         _serverInfo = _serverInfo with
         {
             CurrentStateStartedAt = DateTime.UtcNow,
             Status = ServerStatus.Lobby,
             Players = _playerManager.PlayerCount,
             MaxPlayers = _maxPlayers,
+            RoundStartedAt = null,
+            MapName = _mapName,
+            GamemodeName = _gamemodeName,
         };
         TryUpdateServerInfo();
     }
