@@ -356,7 +356,7 @@ public sealed partial class VampireEnthrallActionEvent : EntityTargetActionEvent
 public sealed partial class VampireDrinkBloodDoAfterEvent : SimpleDoAfterEvent;
 
 [Serializable, NetSerializable]
-public sealed partial class VampireDevourMouseDoAfterEvent : SimpleDoAfterEvent
+public sealed partial class VampireDevourDoAfterEvent : SimpleDoAfterEvent
 {
     [DataField]
     public float BloodFullnessRestore;

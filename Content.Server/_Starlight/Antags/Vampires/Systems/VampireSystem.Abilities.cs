@@ -59,8 +59,8 @@ public sealed partial class VampireSystem : EntitySystem
         SubscribeLocalEvent<VampireComponent, BeforeInteractHandEvent>(OnBeforeInteractHand);
         SubscribeLocalEvent<VampireComponent, VampireDrinkBloodDoAfterEvent>(OnDrinkDoAfter);
 
-        SubscribeLocalEvent<VampireDevourableComponent, UseInHandEvent>(OnMouseUseInHand);
-        SubscribeLocalEvent<VampireComponent, VampireDevourMouseDoAfterEvent>(OnMouseDevourDoAfter);
+        SubscribeLocalEvent<VampireDevourableComponent, UseInHandEvent>(OnUseInHand);
+        SubscribeLocalEvent<VampireComponent, VampireDevourDoAfterEvent>(OnDevourDoAfter);
 
         SubscribeLocalEvent<VampireComponent, VampireRejuvenateIActionEvent>(OnRejuvenateI);
         SubscribeLocalEvent<VampireComponent, VampireRejuvenateIIActionEvent>(OnRejuvenateII);
@@ -74,7 +74,7 @@ public sealed partial class VampireSystem : EntitySystem
         });
     }
 
-    private void OnMouseUseInHand(Entity<VampireDevourableComponent> ent, ref UseInHandEvent args)
+    private void OnUseInHand(Entity<VampireDevourableComponent> ent, ref UseInHandEvent args)
     {
         if (args.Handled)
             return;
@@ -95,7 +95,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (!Exists(ent.Owner))
             return;
 
-        var doAfterEv = new VampireDevourMouseDoAfterEvent
+        var doAfterEv = new VampireDevourDoAfterEvent
         {
             BloodFullnessRestore = ent.Comp.BloodFullnessRestore
         };
@@ -114,7 +114,7 @@ public sealed partial class VampireSystem : EntitySystem
             args.Handled = true;
     }
 
-    private void OnMouseDevourDoAfter(EntityUid uid, VampireComponent comp, ref VampireDevourMouseDoAfterEvent args)
+    private void OnDevourDoAfter(EntityUid uid, VampireComponent comp, ref VampireDevourDoAfterEvent args)
     {
         if (args.Handled)
             return;
