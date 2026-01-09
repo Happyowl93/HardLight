@@ -16,6 +16,8 @@
       shader: unshaded
       map: [ "light" ]
       visible: false
+  - type: Body
+    prototype: BorgSyndicateStealth
   - type: BorgChassis
     maxModules: 4
     moduleWhitelist:
