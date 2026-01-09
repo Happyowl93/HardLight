@@ -6,6 +6,7 @@ using Content.Server.GameTicking.Events;
 using Content.Server.Players.RateLimiting;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
+using Content.Shared.Administration.Events;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
@@ -33,8 +34,19 @@ public sealed partial class HubSystem : EntitySystem
         SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => OnLobby());
         SubscribeLocalEvent<RoundEndTextAppendEvent>(_ => OnRoundEnding());
         SubscribeLocalEvent<RoundStartingEvent>(_ => OnRoundStart());
+        SubscribeLocalEvent<PanicBunkerChangedEvent>(OnPanicBunkerChanged());
 
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
+    }
+
+    private void OnPanicBunkerChanged(PanicBunkerChangedEvent args)
+    {
+        if (_serverInfo.PanicBunkerActive == args.Status.Enabled) return;
+        _serverInfo = _serverInfo with
+        {
+            PanicBunkerActive = args.Status.Enabled
+        };
+        TryUpdateServerInfo();
     }
 
     private void OnSoftMaxPlayersChanged(int maxPlayers)
