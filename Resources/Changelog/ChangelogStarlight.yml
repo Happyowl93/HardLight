@@ -25532,5 +25532,21 @@ Entries:
   id: 272700
   time: '2026-01-09T21:00:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2727
+- author: Fractalflower
+  changes:
+  - message: The Syndicate has given their kobold reinforcements a class in Draconic,
+      after forgetting to teach them properly the first time.
+    type: Fix
+  - message: The monkies have learned to speak amongst themselves. Oh no.
+    type: Fix
+  - message: Cargorilla now understands Galactic Common. Additionally, all gorillas
+      now speak and understand Ancestor.
+    type: Tweak
+  - message: Canilunzt, Nekomimetic, and Moffic trait-havers can now understand Fox/Dog,
+      Cat, and Mothroach respectively.
+    type: Tweak
+  id: 271500
+  time: '2026-01-09T22:24:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2715
 Order: -1
 
