@@ -25476,5 +25476,15 @@ Entries:
   id: 267800
   time: '2026-01-09T20:19:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2678
+- author: R3v3l4t1on
+  changes:
+  - message: Changed the position of a single camera in the Engineering's engine chamber
+      so that emitters won't accidentally shoot it.
+    type: Tweak
+  - message: Fixed Oasis' mailing system.
+    type: Fix
+  id: 274400
+  time: '2026-01-09T20:46:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2744
 Order: -1
 
