@@ -34,7 +34,7 @@ public sealed partial class HubSystem : EntitySystem
         SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => OnLobby());
         SubscribeLocalEvent<RoundEndTextAppendEvent>(_ => OnRoundEnding());
         SubscribeLocalEvent<RoundStartingEvent>(_ => OnRoundStart());
-        SubscribeLocalEvent<PanicBunkerChangedEvent>(OnPanicBunkerChanged());
+        SubscribeLocalEvent<PanicBunkerChangedEvent>(OnPanicBunkerChanged);
 
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
     }
