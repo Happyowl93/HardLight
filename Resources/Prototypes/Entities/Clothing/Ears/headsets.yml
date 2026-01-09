@@ -272,9 +272,9 @@
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeySecurity
-      - EncryptionKeyMedical
-      - EncryptionKeyCommon
+- EncryptionKeySecurity # Starlight-edit: Make security channel default.
+- EncryptionKeyMedical
+- EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/brigmedic.rsi
   - type: Clothing
