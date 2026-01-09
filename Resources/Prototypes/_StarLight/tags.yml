@@ -425,3 +425,15 @@
 
 - type: Tag
   id: Sausage # MetamorphRecipe: FoodSausageBun
+  
+- type: Tag
+  id: Meson
+
+- type: Tag
+  id: DamagedShadekinCore
+
+- type: Tag
+  id: ShadekinCore
+
+- type: Tag
+  id: ShadekinEyes
