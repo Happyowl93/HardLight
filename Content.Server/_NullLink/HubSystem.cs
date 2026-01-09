@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Content.Server.Maps;
+using Content.Server.Administration.Managers;
 using Content.Server._NullLink.Core;
 using Content.Server._NullLink.Helpers;
 using Content.Shared._NullLink;
@@ -30,6 +31,7 @@ public sealed partial class HubSystem : EntitySystem, IServerObserver, IServerIn
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IGameMapManager _gameMapManager = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
+    [Dependency] private readonly IAdminManager _adminManager = default!;
 
     private ISawmill _sawmill = default!;
 
