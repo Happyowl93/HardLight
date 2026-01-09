@@ -104,9 +104,11 @@
   - type: Appearance
   - type: StaticPrice
     price: 10000
+    # region starlight
   - type: SpeedModifiedOnWield
     walkModifier: 0.90
     sprintModifier: 0.90
+    # end-region starlight
 
 - type: entity
   name: L6C ROW

@@ -268,7 +268,7 @@
   discountDownTo:
     Telecrystal: 20
   cost:
-    Telecrystal: 26
+    Telecrystal: 26 # Starlight
   categories:
   - UplinkWeaponry
 
