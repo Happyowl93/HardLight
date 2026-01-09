@@ -76,7 +76,6 @@ public sealed partial class HubSystem : EntitySystem
             Status = ServerStatus.Round,
             Players = _playerManager.PlayerCount,
             MaxPlayers = _maxPlayers,
-            RoundStartedAt = DateTime.UtcNow,
             MapName = _mapName,
             GamemodeName = _gamemodeName,
         };
@@ -103,7 +102,6 @@ public sealed partial class HubSystem : EntitySystem
             Status = ServerStatus.Lobby,
             Players = _playerManager.PlayerCount,
             MaxPlayers = _maxPlayers,
-            RoundStartedAt = null,
             MapName = _mapName,
             GamemodeName = _gamemodeName,
         };
