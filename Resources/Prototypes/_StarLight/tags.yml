@@ -229,6 +229,9 @@
   id: MagazineRifleM52
 
 - type: Tag
+  id: MagazineShotgunToz
+
+- type: Tag
   id: MagazineSMGImprovised
 
 - type: Tag
@@ -254,6 +257,9 @@
 
 - type: Tag
   id: OvenMachineBoard
+
+- type: Tag
+  id: ParaKnife
 
 - type: Tag
   id: Patch
@@ -289,6 +295,9 @@
 
 - type: Tag
   id: ShellShotgunImprovised
+
+- type: Tag
+  id: ShellShotgunToz
 
 - type: Tag
   id: ShipWreck
@@ -393,6 +402,9 @@
   id: ScanGateMachineBoard
 
 - type: Tag
+  id: TheDark
+  
+- type: Tag
   id: PersonnelStorage
 
 - type: Tag
@@ -400,6 +412,9 @@
 
 - type: Tag
   id: WallmountMassScannerElectronics
+
+- type: Tag
+  id: Bow
  
 - type: Tag
   id: SyndicateJawsOfLife
@@ -412,3 +427,7 @@
 
 - type: Tag
   id: MagazineLightRiflePan
+
+- type: Tag
+  id: FestiveDinner
+  
