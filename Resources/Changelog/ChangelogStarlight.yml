@@ -25516,5 +25516,21 @@ Entries:
   id: 272600
   time: '2026-01-09T20:59:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2726
+- author: CawsForConcern
+  changes:
+  - message: (Remix) Paperbin and document printer to NT Rep Office
+    type: Add
+  - message: (Remix) Replaced HOS WT550 with the 'HOS weapon spawner' (no gameplay
+      difference, just mapping stuff)
+    type: Tweak
+  - message: (Remix) Mapped NTR and BSO spawns
+    type: Fix
+  - message: (Remix) Mapped NTR and BSO lockers
+    type: Fix
+  - message: (Remix) Enabled NTR and BSO jobs
+    type: Fix
+  id: 272700
+  time: '2026-01-09T21:00:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2727
 Order: -1
 
