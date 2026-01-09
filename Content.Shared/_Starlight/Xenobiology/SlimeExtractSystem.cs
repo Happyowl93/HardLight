@@ -3,6 +3,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Starlight.Xenobiology;
@@ -82,23 +83,23 @@ public sealed class SlimeExtractSystem : EntitySystem
             _entityManager.PredictedQueueDeleteEntity(deleteRecord._entityUid);
     }
     
-    public bool IsSolutionRequirementFulfilled(Dictionary<string, FixedPoint2> requiredSolution, Solution currentSolution)
+    public bool IsSolutionRequirementFulfilled(Dictionary<ProtoId<ReagentPrototype>, FixedPoint2> requiredSolution, Solution currentSolution)
     {
         foreach (var req in requiredSolution)
         {
-            if (!currentSolution.TryGetReagentQuantity(new ReagentId(req.Key, null), out var amount)) return false;
+            var amount = currentSolution.GetTotalPrototypeQuantity(req.Key);
             if (amount < req.Value) return false;
         }
         
         return true;
     }
 
-    public FixedPoint2 FindMinimumScalingFactor(Dictionary<string, FixedPoint2> requiredSolution, Solution currentSolution)
+    public FixedPoint2 FindMinimumScalingFactor(Dictionary<ProtoId<ReagentPrototype>, FixedPoint2>requiredSolution, Solution currentSolution)
     {
         var minimumScalingFactor = FixedPoint2.MaxValue;
         foreach (var req in requiredSolution)
         {
-            if (!currentSolution.TryGetReagentQuantity(new ReagentId(req.Key, null), out var amount)) return 0.0;
+            var amount = currentSolution.GetTotalPrototypeQuantity(req.Key);
             minimumScalingFactor = FixedPoint2.Min(minimumScalingFactor, amount/req.Value);
         }
         return minimumScalingFactor;
