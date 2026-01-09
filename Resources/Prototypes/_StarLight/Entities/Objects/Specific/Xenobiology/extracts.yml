@@ -346,7 +346,7 @@
               scalingFactor: 5
               scalingOffset: 0
             - effect: !type:AddHeat
-                temperature: -3000
+                heat: -3000
               scalingFactor: 5
               scalingOffset: 0
           shouldDelete: true
