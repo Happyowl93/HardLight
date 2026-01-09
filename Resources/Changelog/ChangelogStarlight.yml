@@ -25468,5 +25468,13 @@ Entries:
   id: 272900
   time: '2026-01-09T20:09:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2729
+- author: FeralCreature
+  changes:
+  - message: Hand labelers now come with a built in save feature for labels you plan
+      to use again in the future. Chemists rejoice!
+    type: Add
+  id: 267800
+  time: '2026-01-09T20:19:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2678
 Order: -1
 
