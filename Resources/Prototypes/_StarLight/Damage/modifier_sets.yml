@@ -16,10 +16,7 @@
   id: Cyclorite
   coefficients:
     Blunt: 0.85 # Have you ever tried to punch a rock?
-    Slash: 0.85
-    Piercing: 0.9 # Pickaxes on the other hand work wonders.
-    Heat: 0.9
-    Shock: 0.9
+    Slash: 0.7
 
 - type: damageModifierSet
   id: Shadekin
