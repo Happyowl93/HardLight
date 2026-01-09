@@ -25493,5 +25493,60 @@ Entries:
   id: 275600
   time: '2026-01-09T20:55:07.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2756
+- author: Way
+  changes:
+  - message: New Colony parallax.
+    type: Add
+  id: 274300
+  time: '2026-01-09T20:59:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2743
+- author: CawsForConcern
+  changes:
+  - message: (Cog) Station beacon and sign for Theater (Clown / Mime room)
+    type: Add
+  - message: (Cog) Security camera in Brigmedic
+    type: Add
+  - message: (Cog) Replaced HOS WT550 with the 'HOS weapon spawner' (no gameplay difference,
+      just mapping stuff)
+    type: Tweak
+  - message: (Cog) Fixed NTRep room's door to maints being the non-maints variant
+    type: Fix
+  - message: (Cog) Fixed BSO's room using the wrong BSO locker variant
+    type: Fix
+  id: 272600
+  time: '2026-01-09T20:59:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2726
+- author: CawsForConcern
+  changes:
+  - message: (Remix) Paperbin and document printer to NT Rep Office
+    type: Add
+  - message: (Remix) Replaced HOS WT550 with the 'HOS weapon spawner' (no gameplay
+      difference, just mapping stuff)
+    type: Tweak
+  - message: (Remix) Mapped NTR and BSO spawns
+    type: Fix
+  - message: (Remix) Mapped NTR and BSO lockers
+    type: Fix
+  - message: (Remix) Enabled NTR and BSO jobs
+    type: Fix
+  id: 272700
+  time: '2026-01-09T21:00:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2727
+- author: Fractalflower
+  changes:
+  - message: The Syndicate has given their kobold reinforcements a class in Draconic,
+      after forgetting to teach them properly the first time.
+    type: Fix
+  - message: The monkies have learned to speak amongst themselves. Oh no.
+    type: Fix
+  - message: Cargorilla now understands Galactic Common. Additionally, all gorillas
+      now speak and understand Ancestor.
+    type: Tweak
+  - message: Canilunzt, Nekomimetic, and Moffic trait-havers can now understand Fox/Dog,
+      Cat, and Mothroach respectively.
+    type: Tweak
+  id: 271500
+  time: '2026-01-09T22:24:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2715
 Order: -1
 
