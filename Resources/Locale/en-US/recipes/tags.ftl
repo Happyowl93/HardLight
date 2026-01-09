@@ -124,11 +124,6 @@ construction-graph-tag-clarke-peripherals-control = clarke peripherals control m
 construction-graph-tag-ripley-central-control = ripley central control module
 construction-graph-tag-ripley-peripherals-control = ripley peripherals control module
 
-construction-graph-tag-meson = engineering goggles
-construction-graph-tag-shadekin-eye = shadekin eyes
-construction-graph-tag-shadekin-core = damaged shadekin core
-construction-graph-tag-undamaged-shadekin-core = shadekin core
-
 #SL End
 
 # structures
