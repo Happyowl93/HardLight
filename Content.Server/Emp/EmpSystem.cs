@@ -22,8 +22,6 @@ public sealed class EmpSystem : SharedEmpSystem
 
     // 🌟Starlight🌟 end
 
-    public const string EmpPulseEffectPrototype = "EffectEmpPulse";
-
     public override void Initialize()
     {
         base.Initialize();

@@ -7,25 +7,25 @@ namespace Content.Server._Starlight.Emp;
 [Access(typeof(Content.Server.Emp.EmpSystem))]
 public sealed partial class EmpOnMeleeHitComponent : Component
 {
-    [DataField("range"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float Range = 1.0f;
 
     /// <summary>
     /// How much energy will be consumed per battery in range
     /// </summary>
-    [DataField("energyConsumption"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float EnergyConsumption;
 
     /// <summary>
     /// How long it disables targets in seconds
     /// </summary>
-    [DataField("disableDuration"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public TimeSpan DisableDuration = TimeSpan.FromSeconds(60);
 
     /// <summary>
     /// How much battery power it takes to trigger the EMP
     /// </summary>
-    [DataField("energyPerUse"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float EnergyPerUse = 0f;
 
 

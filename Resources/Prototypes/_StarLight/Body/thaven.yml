@@ -37,8 +37,10 @@
       - left hand
     right hand:
       part: RightHandThaven
+      hand_implant: null
     left hand:
       part: LeftHandThaven
+      hand_implant: null
     right leg:
       part: RightLegThaven
       connections:
