@@ -55,7 +55,7 @@ public sealed partial class OrganShadekinCoreComponent : Component
     public double DmagedPrice = 200;
 
     [DataField]
-    public double UndmagedPrice = 10000;
+    public double UndmagedPrice = 30000;
 }
 #endregion
 
