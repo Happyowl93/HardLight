@@ -67,7 +67,8 @@
       required: false
     HeadTop:
       points: 2
-      required: false
+      required: true
+      defaultMarkings: [ ElfLongEarsUpwards ]
     UndergarmentTop:
       points: 1
       required: false

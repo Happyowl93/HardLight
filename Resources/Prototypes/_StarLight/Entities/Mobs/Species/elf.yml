@@ -35,7 +35,6 @@
     hideLayersOnEquip:
     - Hair
     - Snout
-    - HeadTop
   - type: Inventory
     femaleDisplacements:
       jumpsuit:
