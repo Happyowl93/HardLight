@@ -13,8 +13,7 @@ using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Content.Server._Starlight.GameTicking.Rules;
 using Content.Server._Starlight.GameTicking.Rules.Components;
 
-namespace Content.IntegrationTests.Tests.GameRules;
-
+namespace Content.IntegrationTests.Tests._Starlight.Antags;
 [TestFixture]
 public sealed class VampireRuleTest
 {
