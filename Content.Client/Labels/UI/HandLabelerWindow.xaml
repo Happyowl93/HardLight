@@ -4,7 +4,7 @@
             Title="{Loc 'hand-labeler-ui-header'}"
             SetWidth="400"
             MinWidth="150"
-            SetHeight="400">  <!-- Starlight -->
+            SetHeight="400">  <!-- Starlight - include gfx and set default height to include saved labels section nicely -->
     <BoxContainer Orientation="Vertical" SeparationOverride="4">
         <Label Name="CurrentTextLabel" Text="{Loc 'hand-labeler-current-text-label'}" />
         <LineEdit Name="LabelLineEdit" />
