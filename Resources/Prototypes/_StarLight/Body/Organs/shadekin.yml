@@ -108,11 +108,13 @@
       - state: core
   - type: Tag
     tags:
-      - Meat
       - DamagedShadekinCore
+  - type: StaticPrice
+    price: 200
+    
 
 - type: entity
-  id: OrganShadekinCoreDamaged
+  id: OrganShadekinCoreUndamaged
   parent: OrganShadekinCore
   suffix: Undamaged
   components:
@@ -120,5 +122,6 @@
     damaged: false
   - type: Tag
     tags:
-      - Meat
       - ShadekinCore
+  - type: StaticPrice
+    price: 10000
