@@ -28,23 +28,10 @@ public enum VampireLocateUiKey : byte
     Key
 }
 
-/// <summary>
-/// Vampire class types
-/// </summary>
-[Serializable, NetSerializable]
-public enum VampireClassType : byte
-{
-    None = 0,
-    Hemomancer = 1,
-    Umbrae = 2,
-    Gargantua = 3,
-    Dantalion = 4
-}
-
 [Serializable, NetSerializable]
 public sealed class VampireClassChosenBuiMsg : BoundUserInterfaceMessage
 {
-    public VampireClassType Choice { get; init; }
+    public string Choice { get; init; } = string.Empty;
 }
 
 [Serializable, NetSerializable]

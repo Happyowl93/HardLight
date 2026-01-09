@@ -1,3 +1,5 @@
+using Content.Shared.FixedPoint;
+
 namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
 [RegisterComponent]
@@ -7,13 +9,13 @@ public sealed partial class VampireSunlightComponent : Component
     ///     How much heat damage is applied when the burn effect triggers
     /// </summary>
     [DataField]
-    public float BurnDamage = 3f;
+    public FixedPoint2 BurnDamage = FixedPoint2.New(3);
 
     /// <summary>
     ///     Interval between exposure ticks while in space
     /// </summary>
     [DataField]
-    public float DamageInterval = 2f;
+    public TimeSpan DamageInterval = TimeSpan.FromSeconds(2f);
 
     /// <summary>
     ///     Blood cost per exposure tick while the vampire still has reserves
@@ -43,25 +45,25 @@ public sealed partial class VampireSunlightComponent : Component
     ///     Genetic damage applied each tick when the vampire has no blood
     /// </summary>
     [DataField]
-    public float GeneticDamagePerInterval = 10f;
+    public FixedPoint2 GeneticDamagePerInterval = FixedPoint2.New(10);
 
     /// <summary>
     ///     Threshold of accumulated genetic damage after which the vampire turns to ash
     /// </summary>
     [DataField]
-    public float GeneticDustThreshold = 100f;
+    public FixedPoint2 GeneticDustThreshold = FixedPoint2.New(100);
 
     /// <summary>
     ///     How long a vampire can linger in space before they start taking damage
     /// </summary>
     [DataField]
-    public float GracePeriod = 1.5f;
+    public TimeSpan GracePeriod = TimeSpan.FromSeconds(1.5f);
 
     /// <summary>
     ///     Minimum seconds between popup warnings to the player
     /// </summary>
     [DataField]
-    public float WarningPopupCooldown = 5f;
+    public TimeSpan WarningPopupCooldown = TimeSpan.FromSeconds(5f);
 
     /// <summary>
     ///     Localization string displayed when the vampire starts burning
@@ -70,10 +72,10 @@ public sealed partial class VampireSunlightComponent : Component
     public LocId WarningPopup = "vampire-space-burn-warning";
 
     [ViewVariables]
-    public float TimeInSpace;
+    public TimeSpan TimeInSpace;
 
     [ViewVariables]
-    public float DamageAccumulator;
+    public TimeSpan DamageAccumulator;
 
     [ViewVariables]
     public TimeSpan NextWarningPopup;

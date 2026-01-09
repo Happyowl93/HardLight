@@ -1,6 +1,6 @@
 using Content.Server.Antag;
 using Content.Server.Bible.Components;
-using Content.Server.GameTicking.Rules.Components;
+using Content.Server._Starlight.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Objectives;
 using Content.Shared.Roles;
@@ -8,8 +8,10 @@ using Content.Shared.Roles.Components;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using System.Text;
 using Robust.Shared.Audio;
+using Content.Server.GameTicking.Rules;
+using Robust.Shared.Random;
 
-namespace Content.Server.GameTicking.Rules;
+namespace Content.Server._Starlight.GameTicking.Rules;
 
 public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleComponent>
 {
@@ -42,20 +44,18 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
             _role.MindRemoveRole((mindId, mind), "MindRoleVampire");
             return false;
         }
+        
+        var meta = MetaData(target);
+        var name = meta?.EntityName ?? "Unknown";
+        var briefing = Loc.GetString("vampire-role-greeting", ("name", name));
+        _antag.SendBriefing(target, briefing, Color.Yellow, BriefingSound);
 
-        if (TryComp(target, out MetaDataComponent? meta))
+        _role.MindHasRole<VampireRoleComponent>(mindId, out var vampRole);
+        _role.MindHasRole<RoleBriefingComponent>(mindId, out var briefingComp);
+        if (vampRole is not null && briefingComp is null)
         {
-            var name = meta?.EntityName ?? "Unknown";
-            var briefing = Loc.GetString("vampire-role-greeting", ("name", name));
-            _antag.SendBriefing(target, briefing, Color.Yellow, BriefingSound);
-
-            _role.MindHasRole<VampireRoleComponent>(mindId, out var vampRole);
-            _role.MindHasRole<RoleBriefingComponent>(mindId, out var briefingComp);
-            if (vampRole is not null && briefingComp is null)
-            {
-                AddComp<RoleBriefingComponent>(vampRole.Value.Owner);
-                Comp<RoleBriefingComponent>(vampRole.Value.Owner).Briefing = briefing;
-            }
+            AddComp<RoleBriefingComponent>(vampRole.Value.Owner);
+            Comp<RoleBriefingComponent>(vampRole.Value.Owner).Briefing = briefing;
         }
 
         EnsureComp<VampireComponent>(target);
@@ -68,13 +68,13 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
         var rng = new Random();
         if (rule.EscapeObjectives.Count > 0)
         {
-            var obj = rule.EscapeObjectives[rng.Next(rule.EscapeObjectives.Count)];
+            var obj = rng.Pick(rule.EscapeObjectives);
             _mind.TryAddObjective(mindId, mind, obj);
         }
 
         if (rule.StealObjectives.Count > 0)
         {
-            var obj = rule.StealObjectives[rng.Next(rule.StealObjectives.Count)];
+            var obj = rng.Pick(rule.StealObjectives);
             _mind.TryAddObjective(mindId, mind, obj);
         }
 

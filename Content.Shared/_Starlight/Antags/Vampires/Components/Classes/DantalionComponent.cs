@@ -4,7 +4,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class DantalionComponent : Component
+public sealed partial class DantalionComponent : VampireClassComponent
 {
 	/// <summary>
 	///     Base thrall limit before blood / power bonuses

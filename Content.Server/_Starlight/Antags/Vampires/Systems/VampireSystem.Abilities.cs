@@ -1,6 +1,7 @@
 using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
+using Content.Shared._Starlight.Antags.Vampires.Prototypes;
 using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -13,6 +14,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Nutrition.Components;
@@ -25,17 +27,16 @@ using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Random;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
 
-namespace Content.Server._Starlight.Antags.Vampires;
+namespace Content.Server._Starlight.Antags.Vampires.Systems;
 
 public sealed partial class VampireSystem : EntitySystem
 {
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
@@ -44,7 +45,8 @@ public sealed partial class VampireSystem : EntitySystem
     // Damage type caches
     private readonly Dictionary<string, DamageTypePrototype?> _damageTypeCache = new();
     private readonly Dictionary<string, DamageGroupPrototype?> _damageGroupCache = new();
-    private static readonly TimeSpan _shadowSnareBlindDuration = TimeSpan.FromSeconds(20);
+    private static readonly SoundSpecifier _biteSound = new SoundPathSpecifier("/Audio/Effects/bite.ogg");
+    private static readonly SoundSpecifier _devourSound = new SoundPathSpecifier("/Audio/Effects/demon_consume.ogg");
     private readonly Dictionary<EntityUid, List<EntityUid>> _playerShadowSnares = new();
 
     private void InitializeAbilities()
@@ -57,6 +59,9 @@ public sealed partial class VampireSystem : EntitySystem
         SubscribeLocalEvent<VampireComponent, BeforeInteractHandEvent>(OnBeforeInteractHand);
         SubscribeLocalEvent<VampireComponent, VampireDrinkBloodDoAfterEvent>(OnDrinkDoAfter);
 
+        SubscribeLocalEvent<VampireDevourableComponent, UseInHandEvent>(OnMouseUseInHand);
+        SubscribeLocalEvent<VampireComponent, VampireDevourMouseDoAfterEvent>(OnMouseDevourDoAfter);
+
         SubscribeLocalEvent<VampireComponent, VampireRejuvenateIActionEvent>(OnRejuvenateI);
         SubscribeLocalEvent<VampireComponent, VampireRejuvenateIIActionEvent>(OnRejuvenateII);
 
@@ -67,6 +72,67 @@ public sealed partial class VampireSystem : EntitySystem
             subs.Event<VampireClassChosenBuiMsg>(OnVampireClassChosen);
             subs.Event<VampireClassClosedBuiMsg>(OnVampireClassClosed);
         });
+    }
+
+    private void OnMouseUseInHand(Entity<VampireDevourableComponent> ent, ref UseInHandEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        var user = args.User;
+        if (!TryComp<VampireComponent>(user, out var vamp))
+            return;
+
+        if (IsMouthBlocked(user))
+        {
+            _popup.PopupEntity(Loc.GetString("vampire-mouth-covered"), user, user);
+            return;
+        }
+
+        if (vamp.MaxBloodFullness > 0f && vamp.BloodFullness >= vamp.MaxBloodFullness)
+            return;
+
+        if (!Exists(ent.Owner))
+            return;
+
+        var doAfterEv = new VampireDevourMouseDoAfterEvent
+        {
+            BloodFullnessRestore = ent.Comp.BloodFullnessRestore
+        };
+
+        var dargs = new DoAfterArgs(EntityManager, user, ent.Comp.DevourDelay, doAfterEv, user, used: ent.Owner)
+        {
+            NeedHand = true,
+            BreakOnHandChange = true,
+            BreakOnDropItem = true,
+            BreakOnMove = false,
+            BreakOnDamage = false,
+            AttemptFrequency = AttemptFrequency.StartAndEnd
+        };
+
+        if (_doAfter.TryStartDoAfter(dargs))
+            args.Handled = true;
+    }
+
+    private void OnMouseDevourDoAfter(EntityUid uid, VampireComponent comp, ref VampireDevourMouseDoAfterEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (args.Cancelled)
+            return;
+
+        if (args.Used is not { } used || !Exists(used))
+            return;
+
+        comp.BloodFullness = MathF.Min(comp.MaxBloodFullness, comp.BloodFullness + args.BloodFullnessRestore);
+        Dirty(uid, comp);
+        UpdateVampireFedAlert(uid, comp);
+
+        _audio.PlayPvs(_devourSound, uid);
+        QueueDel(used);
+
+        args.Handled = true;
     }
 
     #region Helper Methods
@@ -98,7 +164,7 @@ public sealed partial class VampireSystem : EntitySystem
     /// <param name="damageTypeId">Damage Type</param>
     /// <param name="amount">Amount of damage</param>
     /// <param name="origin">Who applied damage to target</param>
-    private void ApplyDamage(EntityUid target, string damageTypeId, float amount, EntityUid? origin = null)
+    internal void ApplyDamage(EntityUid target, string damageTypeId, float amount, EntityUid? origin = null)
     {
         if (!TryComp<DamageableComponent>(target, out var damageable))
             return;
@@ -109,7 +175,21 @@ public sealed partial class VampireSystem : EntitySystem
 
         var spec = new DamageSpecifier();
         spec += new DamageSpecifier(damageType, FixedPoint2.New(amount));
-        EntityManager.System<DamageableSystem>().TryChangeDamage(target, spec, true, origin: origin);
+        _damageableSystem.TryChangeDamage(target, spec, true, origin: origin);
+    }
+
+    internal void ApplyDamage(EntityUid target, string damageTypeId, FixedPoint2 amount, EntityUid? origin = null)
+    {
+        if (!TryComp<DamageableComponent>(target, out var damageable))
+            return;
+
+        var damageType = GetCachedDamageType(damageTypeId);
+        if (damageType == null)
+            return;
+
+        var spec = new DamageSpecifier();
+        spec += new DamageSpecifier(damageType, amount);
+        _damageableSystem.TryChangeDamage(target, spec, true, origin: origin);
     }
 
     /// <summary>
@@ -119,7 +199,7 @@ public sealed partial class VampireSystem : EntitySystem
     /// <param name="damageTypeOrGroupId">Damage Type or Group ID</param>
     /// <param name="amount">Amount of damage</param>
     /// <param name="isGroup">Do we need to use Group ID instead of Damage Type?</param>
-    private void ApplyHealing(EntityUid target, string damageTypeOrGroupId, float amount, bool isGroup = false)
+    internal void ApplyHealing(EntityUid target, string damageTypeOrGroupId, float amount, bool isGroup = false)
     {
         if (!TryComp<DamageableComponent>(target, out var damageable))
             return;
@@ -140,13 +220,13 @@ public sealed partial class VampireSystem : EntitySystem
         }
 
         if (spec.DamageDict.Count > 0)
-            EntityManager.System<DamageableSystem>().TryChangeDamage(target, spec, true);
+            _damageableSystem.TryChangeDamage(target, spec, true);
     }
 
     /// <summary>
     /// Check if tile coordinates are valid and not blocked
     /// </summary>
-    private bool IsValidTile(EntityCoordinates coords, EntityUid? gridUid = null, MapGridComponent? gridComp = null)
+    internal bool IsValidTile(EntityCoordinates coords, EntityUid? gridUid = null, MapGridComponent? gridComp = null)
     {
         gridUid ??= _transform.GetGrid(coords);
         if (gridUid == null
@@ -159,21 +239,28 @@ public sealed partial class VampireSystem : EntitySystem
                !IsTileBlockedByEntities(coords);
     }
 
-    /// <summary>
-    /// Validates if vampire has required class for the ability
-    /// </summary>
-    private bool ValidateVampireClass(EntityUid uid, VampireComponent comp, VampireClassType requiredClass) => comp.ChosenClass == requiredClass;
+    internal bool HasChosenClass(EntityUid uid)
+        => TryComp<VampireComponent>(uid, out var vamp) && !string.IsNullOrWhiteSpace(vamp.ChosenClassId);
+
+    internal bool ValidateVampireClass(EntityUid uid, VampireComponent comp, ProtoId<VampireClassPrototype>? requiredClass)
+    {
+        _ = uid;
+        if (requiredClass == null)
+            return true;
+
+        return string.Equals(comp.ChosenClassId, requiredClass.Value.Id, StringComparison.Ordinal);
+    }
 
     /// <summary>
     /// Common validation for vampire abilities 
     /// component check + class validation + action cost
     /// </summary>
-    private bool ValidateVampireAbility(EntityUid uid, [NotNullWhen(true)] out VampireComponent? comp, VampireClassType? requiredClass = null, EntityUid? actionEntity = null)
+    internal bool ValidateVampireAbility(EntityUid uid, [NotNullWhen(true)] out VampireComponent? comp, ProtoId<VampireClassPrototype>? requiredClass = null, EntityUid? actionEntity = null)
     {
         if (!TryComp(uid, out comp))
             return false;
 
-        if (requiredClass.HasValue && !ValidateVampireClass(uid, comp, requiredClass.Value))
+        if (!ValidateVampireClass(uid, comp, requiredClass))
             return false;
 
         if (actionEntity.HasValue && !CheckAndConsumeBloodCost(uid, comp, actionEntity.Value))
@@ -185,7 +272,7 @@ public sealed partial class VampireSystem : EntitySystem
     /// <summary>
     /// Unified blood cost checking and consumption
     /// </summary>
-    private bool CheckAndConsumeBloodCost(EntityUid uid, VampireComponent comp, EntityUid? actionEntity = null, int bloodCost = 0)
+    internal bool CheckAndConsumeBloodCost(EntityUid uid, VampireComponent comp, EntityUid? actionEntity = null, int bloodCost = 0)
     {
 
         if (bloodCost <= 0 && actionEntity != null && TryComp<VampireActionComponent>(actionEntity.Value, out var vac))
@@ -216,19 +303,19 @@ public sealed partial class VampireSystem : EntitySystem
         UpdateVampireAlert(uid);
         return true;
     }
-    private bool CheckAndConsumeActionCost(EntityUid uid, VampireComponent comp, EntityUid? actionEntity)
+    internal bool CheckAndConsumeActionCost(EntityUid uid, VampireComponent comp, EntityUid? actionEntity)
         => CheckAndConsumeBloodCost(uid, comp, actionEntity);
 
     /// <summary>
     /// Checks if a tile position is blocked by solid entities(walls etc.)
     /// </summary>
-    private bool IsTileBlockedByEntities(EntityCoordinates coords)
+    internal bool IsTileBlockedByEntities(EntityCoordinates coords)
     {
         // Check for anchored entities in this position that block movement
         foreach (var ent in _lookup.GetEntitiesIntersecting(_transform.ToMapCoordinates(coords), LookupFlags.Static))
         {
             // Skip non anchored entities
-            if (!TryComp(ent, out TransformComponent? entTransform) || !entTransform.Anchored)
+            if (!Transform(ent).Anchored)
                 continue;
 
             // Check if entity has a physics component with impassable collision
@@ -359,31 +446,11 @@ public sealed partial class VampireSystem : EntitySystem
             ApplyHealing(uid, _poisonTypeId, 4);
             ApplyHealing(uid, _oxyLossTypeId, 10);
 
-            // Threshold bonuses at 300 TotalBlood
-            if (comp.TotalBlood >= 300)
-            {
-                switch (comp.ChosenClass)
-                {
-                    case VampireClassType.Hemomancer:
-                        comp.BloodFullness = MathF.Min(comp.MaxBloodFullness, comp.BloodFullness + 5f);
-                        break;
-                    case VampireClassType.Umbrae:
-                        TryBreakRandomLightNear(uid, 8f);
-                        break;
-                    case VampireClassType.Gargantua:
-                        ApplyHealing(uid, _bruteGroupId, 3, true);
-                        ApplyHealing(uid, _burnGroupId, 3, true);
-                        break;
-                    case VampireClassType.Dantalion:
-                        HealDantalionThralls(uid);
-                        break;
-                }
-            }
+            RaiseLocalEvent(uid, new VampireBloodDrankEvent(target, actualSipAmount));
 
             UpdateFullPower(uid, comp);
 
-            var biteSound = new SoundPathSpecifier("/Audio/Effects/bite.ogg");
-            _audio.PlayPvs(biteSound, target, AudioParams.Default.WithVolume(-7f));
+            _audio.PlayPvs(_biteSound, target, AudioParams.Default.WithVolume(-7f));
             var targetCoords = Transform(target).Coordinates;
             Spawn("WeaponArcBite", targetCoords);
 
@@ -492,7 +559,7 @@ public sealed partial class VampireSystem : EntitySystem
 
                 // Mute for 8 second
                 EnsureComp<MutedComponent>(target);
-                Timer.Spawn(TimeSpan.FromSeconds(args.MuteDuration), () =>
+                Timer.Spawn(args.MuteDuration, () =>
                 {
                     if (Exists(target))
                         RemComp<MutedComponent>(target);
@@ -634,7 +701,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (comp.ChosenClass != VampireClassType.None)
+        if (HasChosenClass(uid))
         {
             args.Handled = true;
             return;
@@ -662,25 +729,6 @@ public sealed partial class VampireSystem : EntitySystem
         Dirty(uid, comp);
     }
 
-    private void TryBreakRandomLightNear(EntityUid uid, float range)
-    {
-        var center = Transform(uid).Coordinates;
-        var list = new List<EntityUid>();
-
-        foreach (var ent in _lookup.GetEntitiesInRange(center, range))
-        {
-            if (TryComp<Shared.Light.Components.PoweredLightComponent>(ent, out var light) && light.On)
-                list.Add(ent);
-        }
-        if (list.Count == 0)
-            return;
-
-        var pick = _rand.Pick(list);
-
-        if (TryComp<Shared.Light.Components.PoweredLightComponent>(pick, out var pl))
-            EntityManager.System<Light.EntitySystems.PoweredLightSystem>().SetState(pick, false, pl);
-    }
-
     private bool IsMouthBlocked(EntityUid uid)
     {
         if (!HasComp<InventoryComponent>(uid))
@@ -695,31 +743,6 @@ public sealed partial class VampireSystem : EntitySystem
                 return true;
 
         return false;
-    }
-
-    private void HealDantalionThralls(EntityUid uid)
-    {
-        if (!TryComp<DantalionComponent>(uid, out var dantalion) || dantalion.Thralls.Count == 0)
-            return;
-
-        foreach (var thrall in dantalion.Thralls.ToArray())
-        {
-            if (!Exists(thrall))
-            {
-                dantalion.Thralls.Remove(thrall);
-                continue;
-            }
-
-            if (!TryComp<VampireThrallComponent>(thrall, out var thrallComp) || thrallComp.Master != uid)
-            {
-                dantalion.Thralls.Remove(thrall);
-                continue;
-            }
-
-            ApplyHealing(thrall, _bruteGroupId, 3, true);
-            ApplyHealing(thrall, _burnGroupId, 3, true);
-            ApplyHealing(thrall, _oxyLossTypeId, 5);
-        }
     }
 
     #endregion

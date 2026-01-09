@@ -50,13 +50,11 @@ roundend-prepend-vampire-drained-named = {$name} was the most bloodthirsty vampi
 vampire-class-hemomancer-tooltip = Hemomancer
     Focuses on blood magic and the manipulation of blood around you
     
-
 vampire-class-umbrae-tooltip = Umbrae
     Focuses on darkness, stealth ambushing and mobility
 
 vampire-class-gargantua-tooltip = Gargantua
     Focuses on tenacity and melee damage
-
 
 vampire-class-dantalion-tooltip = Dantalion
     Focuses on thralling and illusions

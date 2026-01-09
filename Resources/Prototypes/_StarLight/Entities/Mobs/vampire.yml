@@ -31,5 +31,4 @@
   - type: Damageable
     damageContainer: Biological
   - type: SanguinePool
-    trailInterval: 0.35
-    trailPrototype: PuddleBloodSmall
+    trailPrototype: PuddleBlood

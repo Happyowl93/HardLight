@@ -1,30 +1,84 @@
 using System.Linq;
+using System.Numerics;
+using Content.Server.Actions;
+using Content.Server.Polymorph.Systems;
 using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
+using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
+using Content.Shared.Alert;
+using Content.Shared.Body.Components;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Examine;
+using Content.Shared.Fluids.Components;
+using Content.Shared.Ghost;
 using Content.Shared.Hands.Components;
-using Content.Shared.Wieldable.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
+using Content.Shared.Maps;
+using Content.Shared.Mind.Components;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Movement.Systems;
+using Content.Shared.Popups;
+using Content.Shared.Physics;
+using Content.Shared.Polymorph;
+using Content.Shared.Warps;
+using Content.Shared.Wieldable;
+using Content.Shared.Wieldable.Components;
+using Content.Shared.Whitelist;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using System.Numerics;
-using Robust.Shared.Timing;
-using Content.Shared.Body.Components;
-using Content.Shared.Damage.Components;
-using Content.Shared.Mobs.Components;
-using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Robust.Shared.Prototypes;
-using Content.Shared.Polymorph;
-using Content.Shared.Fluids.Components;
-using Content.Shared.Physics;
+using Robust.Shared.Timing;
 
-namespace Content.Server._Starlight.Antags.Vampires;
+namespace Content.Server._Starlight.Antags.Vampires.Systems;
 
-public sealed partial class VampireSystem : EntitySystem
+public sealed class HemomancerSystem : EntitySystem
 {
     private const string BloodReagentId = "Blood";
 
-    private void InitializeHemomancer()
+    private static readonly Vector2[] _tendrilOffsets =
+    [
+        new(-1, -1), new(0, -1), new(1, -1),
+        new(-1, 0), new(0, 0), new(1, 0),
+        new(-1, 1), new(0, 1), new(1, 1),
+    ];
+
+    private readonly Dictionary<EntityUid, EntityUid> _predatorSenseUiActionEntities = new();
+
+    [Dependency] private readonly VampireSystem _vampire = default!;
+
+    [Dependency] private readonly ActionsSystem _actions = default!;
+    [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly SharedWieldableSystem _wieldable = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly TurfSystem _turf = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly PolymorphSystem _polymorph = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly MovementModStatusSystem _movementMod = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
+    [Dependency] private readonly ExamineSystemShared _examine = default!;
+    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private readonly ILogManager _log = default!;
+
+    private ISawmill? _sawmill;
+
+    public override void Initialize()
     {
+        base.Initialize();
+        _sawmill = _log.GetSawmill("Vampire.Hemomancer");
+
         SubscribeLocalEvent<VampireComponent, VampireHemomancerClawsActionEvent>(OnHemomancerClaws);
         SubscribeLocalEvent<VampireHemomancerTendrilsActionEvent>(OnHemomancerTendrils);
         SubscribeLocalEvent<VampireBloodBarrierActionEvent>(OnBloodBarrier);
@@ -34,21 +88,33 @@ public sealed partial class VampireSystem : EntitySystem
         SubscribeLocalEvent<HemomancerComponent, PolymorphedEvent>(OnHemomancerPolymorphed);
         SubscribeLocalEvent<SanguinePoolComponent, PolymorphedEvent>(OnSanguinePoolReverted);
 
-        InitializeHemomancerPredatorSense();
+        SubscribeLocalEvent<HemomancerComponent, VampireBloodDrankEvent>(OnBloodDrank);
+
+        SubscribeLocalEvent<VampireComponent, VampireLocateMindActionEvent>(OnPredatorSense);
+        Subs.BuiEvents<VampireComponent>(VampireLocateUiKey.Key, subs =>
+        {
+            subs.Event<BoundUIOpenedEvent>(OnPredatorSenseUiOpened);
+            subs.Event<BoundUIClosedEvent>(OnPredatorSenseUiClosed);
+            subs.Event<VampireLocateSelectedBuiMsg>(OnPredatorSenseSelected);
+        });
     }
 
-    private static readonly Vector2[] _tendrilOffsets = new Vector2[]
+    private void OnBloodDrank(EntityUid uid, HemomancerComponent hemomancer, ref VampireBloodDrankEvent args)
     {
-        new(-1, -1), new(0, -1), new(1, -1),
-        new(-1,  0), new(0,  0), new(1,  0),
-        new(-1,  1), new(0,  1), new(1,  1),
-    };
+        if (!TryComp<VampireComponent>(uid, out var vampire))
+            return;
+
+        if (vampire.TotalBlood < 300)
+            return;
+
+        vampire.BloodFullness = MathF.Min(vampire.MaxBloodFullness, vampire.BloodFullness + 5f);
+        Dirty(uid, vampire);
+    }
 
     private void OnHemomancerClaws(EntityUid uid, VampireComponent comp, ref VampireHemomancerClawsActionEvent args)
     {
         var action = args.Action.Owner;
-        if (args.Handled 
-            || !ValidateVampireAbility(uid, out var validatedComp, VampireClassType.Hemomancer, action))
+        if (args.Handled || !_vampire.ValidateVampireAbility(uid, out var validatedComp, "Hemomancer", action))
             return;
 
         comp = validatedComp;
@@ -78,8 +144,7 @@ public sealed partial class VampireSystem : EntitySystem
             }
         }
 
-        // Auto-wield if the claws have a wieldable component and are in hand now.
-        if (TryComp<WieldableComponent>(claws, out var wieldable) && _hands.IsHolding(uid, claws, out _))
+        if (TryComp<WieldableComponent>(claws, out var wieldable) && wieldable != null && _hands.IsHolding(uid, claws, out _))
             _wieldable.TryWield(claws, wieldable, uid);
 
         args.Handled = true;
@@ -88,10 +153,9 @@ public sealed partial class VampireSystem : EntitySystem
     private void OnHemomancerTendrils(VampireHemomancerTendrilsActionEvent args)
     {
         var action = args.Action.Owner;
-        if (args.Handled 
-            || !TryComp<VampireComponent>(args.Performer, out var comp) 
-            || !ValidateVampireClass(args.Performer, comp, VampireClassType.Hemomancer)
-            )
+        if (args.Handled
+            || !TryComp<VampireComponent>(args.Performer, out var comp)
+            || !HasComp<HemomancerComponent>(args.Performer))
             return;
 
         var targetCoords = args.Target;
@@ -101,13 +165,13 @@ public sealed partial class VampireSystem : EntitySystem
             || !TryComp<MapGridComponent>(gridUid, out var gridComp)
             || !_map.TryGetTileRef(gridUid, gridComp, tileCoords, out var tileRef)
             || _turf.IsSpace(tileRef)
-            || IsTileBlockedByEntities(tileCoords))
+            || _vampire.IsTileBlockedByEntities(tileCoords))
         {
             _popup.PopupEntity(Loc.GetString("action-vampire-hemomancer-tendrils-wrong-place"), args.Performer, args.Performer);
             return;
         }
 
-        if (!CheckAndConsumeActionCost(args.Performer, comp, action))
+        if (!_vampire.CheckAndConsumeActionCost(args.Performer, comp, action))
             return;
 
         args.Handled = true;
@@ -115,15 +179,15 @@ public sealed partial class VampireSystem : EntitySystem
         if (args.SpawnVisuals)
             SpawnTendrilVisuals(tileCoords, args.TendrilsVisualPrototype);
 
-        var delaySeconds = Math.Max(args.MinDelay, args.Delay);
-        var slowDurationSeconds = Math.Max(args.MinSlowDuration, args.SlowDuration);
+        var delay = args.Delay < args.MinDelay ? args.MinDelay : args.Delay;
+        var slowDuration = args.SlowDuration < args.MinSlowDuration ? args.MinSlowDuration : args.SlowDuration;
         var slowMultiplier = MathF.Max(args.MinSlowMultiplier, args.SlowMultiplier);
         var toxinDamage = args.ToxinDamage;
         var performerUid = args.Performer;
         var targetRange = args.TargetRange;
         var puddleId = args.TendrilsPuddlePrototype;
 
-        Timer.Spawn(TimeSpan.FromSeconds(delaySeconds), () =>
+        Timer.Spawn(delay, () =>
         {
             if (!Exists(performerUid))
                 return;
@@ -134,18 +198,17 @@ public sealed partial class VampireSystem : EntitySystem
 
             if (_map.TryGetTileRef(gridUid2.Value, gridComp2, tileCoords, out var centerTileRef)
                 && !_turf.IsSpace(centerTileRef)
-                && !IsTileBlockedByEntities(tileCoords))
+                && !_vampire.IsTileBlockedByEntities(tileCoords))
                 Spawn(puddleId, tileCoords);
 
             var hitEnemies = new HashSet<EntityUid>();
-            var slowDuration = TimeSpan.FromSeconds(slowDurationSeconds);
 
             foreach (var offset in _tendrilOffsets)
             {
                 var center = tileCoords.Offset(offset);
                 if (!_map.TryGetTileRef(gridUid2.Value, gridComp2, center, out var tileRef2)
                     || _turf.IsSpace(tileRef2)
-                    || IsTileBlockedByEntities(center))
+                    || _vampire.IsTileBlockedByEntities(center))
                     continue;
 
                 foreach (var ent in _lookup.GetEntitiesInRange(center, targetRange, LookupFlags.Dynamic | LookupFlags.Sundries))
@@ -156,8 +219,8 @@ public sealed partial class VampireSystem : EntitySystem
                     if (!TryComp<DamageableComponent>(ent, out var _))
                         continue;
 
-                    ApplyDamage(ent, _poisonTypeId, toxinDamage, performerUid);
-                    _movementMod.TryAddMovementSpeedModDuration(ent, Shared.Movement.Systems.MovementModStatusSystem.FlashSlowdown, slowDuration, slowMultiplier);
+                    _vampire.ApplyDamage(ent, "Poison", toxinDamage, performerUid);
+                    _movementMod.TryAddMovementSpeedModDuration(ent, MovementModStatusSystem.FlashSlowdown, slowDuration, slowMultiplier);
                     hitEnemies.Add(ent);
                 }
             }
@@ -175,19 +238,18 @@ public sealed partial class VampireSystem : EntitySystem
             var coords = tileCoords.Offset(offset);
             if (!_map.TryGetTileRef(gridUid.Value, gridComp, coords, out var tileRef)
                 || _turf.IsSpace(tileRef)
-                || IsTileBlockedByEntities(coords))
+                || _vampire.IsTileBlockedByEntities(coords))
                 continue;
 
-                EntityManager.SpawnEntity(tendrilVisualId, coords);
+            EntityManager.SpawnEntity(tendrilVisualId, coords);
         }
     }
 
     private void OnBloodBarrier(VampireBloodBarrierActionEvent args)
     {
-        if (args.Handled 
-            || !TryComp<VampireComponent>(args.Performer, out var comp) 
-            || !ValidateVampireClass(args.Performer, comp, VampireClassType.Hemomancer) 
-            )
+        if (args.Handled
+            || !TryComp<VampireComponent>(args.Performer, out var comp)
+            || !HasComp<HemomancerComponent>(args.Performer))
             return;
 
         var targetCoords = args.Target;
@@ -214,7 +276,7 @@ public sealed partial class VampireSystem : EntitySystem
             var pos = tileCoords.Position + (perpendicular * i);
             var barrierCoords = tileCoords.WithPosition(pos.Floored() + new Vector2(0.5f, 0.5f));
 
-            if (!IsValidTile(barrierCoords, gridUid, gridComp))
+            if (!_vampire.IsValidTile(barrierCoords, gridUid, gridComp))
                 continue;
 
             successfulPositions.Add(barrierCoords.Position);
@@ -226,7 +288,7 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        if (!CheckAndConsumeBloodCost(args.Performer, comp, args.Action.Owner))
+        if (!_vampire.CheckAndConsumeBloodCost(args.Performer, comp, args.Action.Owner))
             return;
 
         args.Handled = true;
@@ -252,7 +314,6 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        // Don't allow pooling in space / invalid tiles
         var curCoords = Transform(uid).Coordinates;
         if (_transform.GetGrid(curCoords) is not { } gridUid
             || !TryComp<MapGridComponent>(gridUid, out var gridComp)
@@ -263,7 +324,7 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        if (!CheckAndConsumeBloodCost(uid, comp, args.Action.Owner))
+        if (!_vampire.CheckAndConsumeBloodCost(uid, comp, args.Action.Owner))
             return;
 
         if (TryActivateSanguinePool(uid, args))
@@ -278,7 +339,7 @@ public sealed partial class VampireSystem : EntitySystem
             return false;
         }
 
-        var duration = Math.Max(1, args.Duration);
+        var duration = Math.Max(1, (int)MathF.Ceiling((float)args.Duration.TotalSeconds));
         var configuration = polymorphProto.Configuration with
         {
             Duration = duration
@@ -290,8 +351,6 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (TryComp<SanguinePoolComponent>(poolEntity.Value, out var poolComp))
         {
-            poolComp.TrailInterval = MathF.Max(0.1f, args.BloodDripInterval);
-            poolComp.Accumulator = 0f;
             poolComp.ExitEffectPrototype = args.ExitEffectPrototype;
             poolComp.ExitSound = args.ExitSound;
             Dirty(poolEntity.Value, poolComp);
@@ -334,12 +393,10 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnBloodEruption(EntityUid uid, VampireComponent comp, ref VampireBloodEruptionActionEvent args)
     {
-        if (args.Handled 
-            || !CheckAndConsumeBloodCost(uid, comp, args.Action.Owner))
+        if (args.Handled || !_vampire.CheckAndConsumeBloodCost(uid, comp, args.Action.Owner))
             return;
 
         var coords = Transform(uid).Coordinates;
-
         var nearbyEntities = _lookup.GetEntitiesInRange(coords, args.Range);
 
         var targetsToDamage = new HashSet<EntityUid>();
@@ -389,11 +446,14 @@ public sealed partial class VampireSystem : EntitySystem
         }
 
         foreach (var targetUid in targetsToDamage)
-            ApplyDamage(targetUid, "Blunt", args.Damage, uid);
+            _vampire.ApplyDamage(targetUid, "Blunt", args.Damage, uid);
 
         foreach (var targetUid in targetsToVisualize)
         {
             if (!TryComp(targetUid, out TransformComponent? targetXform) || _container.IsEntityOrParentInContainer(targetUid))
+                continue;
+
+            if (targetXform == null)
                 continue;
 
             var visual = Spawn("VampireBloodEruptionVisual", targetXform.Coordinates);
@@ -417,7 +477,9 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnBloodBringersRite(EntityUid uid, VampireComponent comp, ref VampireBloodBringersRiteActionEvent args)
     {
-        if (args.Handled || !comp.ActionEntities.TryGetValue("ActionVampireBloodBringersRite", out var actionEntity) || !TryComp<HemomancerComponent>(uid, out var hemomancer))
+        if (args.Handled
+            || !comp.ActionEntities.TryGetValue("ActionVampireBloodBringersRite", out var actionEntity)
+            || !TryComp<HemomancerComponent>(uid, out var hemomancer))
             return;
 
         if (!comp.FullPower)
@@ -426,7 +488,7 @@ public sealed partial class VampireSystem : EntitySystem
             args.Handled = true;
             return;
         }
-        
+
         if (hemomancer.BloodBringersRiteActive)
         {
             DeactivateBloodBringersRite(uid, hemomancer);
@@ -434,18 +496,14 @@ public sealed partial class VampireSystem : EntitySystem
         }
         else
         {
-            if (!comp.FullPower)
-            {
-                _popup.PopupEntity(Loc.GetString("action-vampire-blood-bringers-rite-not-enough-power"), uid, uid);
-                return;
-            }
             if (comp.DrunkBlood < args.Cost)
             {
                 _popup.PopupEntity(Loc.GetString("action-vampire-blood-brighters-rite-not-enough-blood"), uid, uid);
                 return;
             }
 
-            ActivateBloodBringersRite(uid, hemomancer, args.ToggleInterval, args.Cost, args.Range, args.Damage, args.HealBrute, args.HealBurn, args.HealStamina);
+            ActivateBloodBringersRite(uid, hemomancer, args.ToggleInterval, args.Cost, args.Range, args.Damage,
+                args.HealBrute, args.HealBurn, args.HealStamina);
             _popup.PopupEntity(Loc.GetString("action-vampire-blood-bringers-rite-start"), uid, uid);
         }
 
@@ -455,7 +513,15 @@ public sealed partial class VampireSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void ActivateBloodBringersRite(EntityUid uid, HemomancerComponent comp, float interval, int cost, float range, float damage, float healBrute, float healBurn, float healStamina)
+    private void ActivateBloodBringersRite(EntityUid uid,
+        HemomancerComponent comp,
+        TimeSpan interval,
+        int cost,
+        float range,
+        float damage,
+        float healBrute,
+        float healBurn,
+        float healStamina)
     {
         comp.BloodBringersRiteActive = true;
         comp.BloodBringersRiteLoopId++;
@@ -479,21 +545,30 @@ public sealed partial class VampireSystem : EntitySystem
                 var removeEvent = new VampireDrainBeamEvent(GetNetEntity(connection.Source), GetNetEntity(connection.Target), false);
                 RaiseNetworkEvent(removeEvent);
             }
+
             drainBeamComp.ActiveBeams.Clear();
         }
 
         Dirty(uid, comp);
     }
 
-    private void StartBloodBringersRiteLoop(EntityUid uid, float interval, int tickCount, int cost, float range, float damage, float healBrute, float healBurn, float healStamina)
+    private void StartBloodBringersRiteLoop(EntityUid uid,
+        TimeSpan interval,
+        int tickCount,
+        int cost,
+        float range,
+        float damage,
+        float healBrute,
+        float healBurn,
+        float healStamina)
     {
         const int MaxTicks = 150;
 
-        if (tickCount >= MaxTicks 
-            || !Exists(uid) 
-            || !TryComp<VampireComponent>(uid, out var comp) 
+        if (tickCount >= MaxTicks
+            || !Exists(uid)
+            || !TryComp<VampireComponent>(uid, out var comp)
             || !comp.ActionEntities.TryGetValue("ActionVampireBloodBringersRite", out var actionEntity)
-            || !TryComp<HemomancerComponent>(uid, out var hemomancer) 
+            || !TryComp<HemomancerComponent>(uid, out var hemomancer)
             || !hemomancer.BloodBringersRiteActive)
             return;
 
@@ -511,12 +586,13 @@ public sealed partial class VampireSystem : EntitySystem
 
             if (_actions.GetAction(actionEntity) is { } action)
                 _actions.SetToggled(action.AsNullable(), false);
+
             return;
         }
 
         comp.DrunkBlood -= cost;
         Dirty(uid, comp);
-        UpdateVampireAlert(uid);
+        _alerts.ShowAlert(uid, "VampireBlood");
 
         var coords = Transform(uid).Coordinates;
         var currentTargets = new List<EntityUid>();
@@ -536,7 +612,6 @@ public sealed partial class VampireSystem : EntitySystem
             if (!HasComp<HumanoidAppearanceComponent>(entity) || !HasComp<BloodstreamComponent>(entity))
                 continue;
 
-            // Prevent drain beams working through walls
             if (!_examine.InRangeUnOccluded(uid, entity, range))
                 continue;
 
@@ -547,20 +622,24 @@ public sealed partial class VampireSystem : EntitySystem
 
         foreach (var target in currentTargets)
         {
-            ApplyDamage(target, "Blunt", damage, uid);
+            _vampire.ApplyDamage(target, "Blunt", damage, uid);
 
-            ApplyHealing(uid, _bruteGroupId, healBrute, true);
-            ApplyHealing(uid, _burnGroupId, healBurn, true);
+            _vampire.ApplyHealing(uid, "Brute", healBrute, true);
+            _vampire.ApplyHealing(uid, "Burn", healBurn, true);
             if (TryComp<StaminaComponent>(uid, out var stam))
                 _stamina.TakeStaminaDamage(uid, -healStamina, stam);
         }
 
         var expectedLoopId = hemomancer.BloodBringersRiteLoopId;
 
-        Timer.Spawn(TimeSpan.FromSeconds(interval), () =>
+        Timer.Spawn(interval, () =>
         {
-            if (!Exists(uid) || !TryComp<HemomancerComponent>(uid, out var c2)) return;
-            if (!c2.BloodBringersRiteActive || c2.BloodBringersRiteLoopId != expectedLoopId) return;
+            if (!Exists(uid) || !TryComp<HemomancerComponent>(uid, out var c2))
+                return;
+
+            if (!c2.BloodBringersRiteActive || c2.BloodBringersRiteLoopId != expectedLoopId)
+                return;
+
             StartBloodBringersRiteLoop(uid, interval, tickCount + 1, cost, range, damage, healBrute, healBurn, healStamina);
         });
     }
@@ -606,5 +685,169 @@ public sealed partial class VampireSystem : EntitySystem
                 RaiseNetworkEvent(createEvent);
             }
         }
+    }
+
+    private void OnPredatorSense(EntityUid uid, VampireComponent comp, ref VampireLocateMindActionEvent args)
+    {
+        var actionEntity = args.Action.Owner;
+        if (args.Handled || !_vampire.ValidateVampireAbility(uid, out var validated, "Hemomancer", actionEntity))
+            return;
+
+        comp = validated;
+
+        _predatorSenseUiActionEntities[uid] = actionEntity;
+
+        _ui.CloseUi(uid, VampireLocateUiKey.Key);
+        _ui.OpenUi(uid, VampireLocateUiKey.Key, uid);
+        UpdatePredatorSenseUi(uid);
+
+        args.Handled = true;
+    }
+
+    private void OnPredatorSenseUiOpened(EntityUid uid, VampireComponent comp, BoundUIOpenedEvent args)
+    {
+        if (!Equals(args.UiKey, VampireLocateUiKey.Key))
+            return;
+
+        UpdatePredatorSenseUi(uid);
+    }
+
+    private void OnPredatorSenseUiClosed(EntityUid uid, VampireComponent comp, BoundUIClosedEvent args)
+    {
+        if (!Equals(args.UiKey, VampireLocateUiKey.Key))
+            return;
+
+        _predatorSenseUiActionEntities.Remove(uid);
+    }
+
+    private void UpdatePredatorSenseUi(EntityUid uid)
+    {
+        var casterMap = Transform(uid).MapID;
+        var targets = new List<VampireLocateTarget>();
+
+        var query = AllEntityQuery<MindContainerComponent, TransformComponent>();
+        while (query.MoveNext(out var ent, out var mindContainer, out var xform))
+        {
+            if (ent == uid)
+                continue;
+
+            if (!TryGetPredatorSenseTargetName(casterMap, ent, mindContainer, xform, out var display))
+                continue;
+
+            targets.Add(new VampireLocateTarget(GetNetEntity(ent), display));
+        }
+
+        targets.Sort(static (a, b) => string.Compare(a.DisplayName, b.DisplayName, StringComparison.CurrentCultureIgnoreCase));
+        _ui.SetUiState(uid, VampireLocateUiKey.Key, new VampireLocateBuiState { Targets = targets });
+    }
+
+    private void OnPredatorSenseSelected(EntityUid uid, VampireComponent comp, VampireLocateSelectedBuiMsg args)
+    {
+        if (args.Actor != uid)
+            return;
+
+        if (!_predatorSenseUiActionEntities.TryGetValue(uid, out var actionEntity) || !Exists(actionEntity))
+            return;
+
+        var target = GetEntity(args.Target);
+        if (!Exists(target) || !TryComp<MindContainerComponent>(target, out var mindContainer))
+            return;
+
+        var xform = Transform(target);
+
+        var casterMap = Transform(uid).MapID;
+        if (!TryGetPredatorSenseTargetName(casterMap, target, mindContainer, xform, out var targetName))
+        {
+            _popup.PopupEntity(Loc.GetString("vampire-locate-unknown"), uid, uid, PopupType.MediumCaution);
+            _ui.CloseUi(uid, VampireLocateUiKey.Key);
+            return;
+        }
+
+        if (xform.MapID != casterMap)
+        {
+            _popup.PopupEntity(Loc.GetString("vampire-locate-not-same-sector"), uid, uid, PopupType.MediumCaution);
+            return;
+        }
+
+        if (!_vampire.CheckAndConsumeBloodCost(uid, comp, actionEntity))
+            return;
+
+        var location = TryGetNearestWarpLocationName(target, out var loc)
+            ? loc
+            : Loc.GetString("vampire-locate-unknown");
+
+        _popup.PopupEntity(Loc.GetString("vampire-locate-result", ("target", targetName), ("location", location)), uid, uid,
+            PopupType.LargeCaution);
+
+        _ui.CloseUi(uid, VampireLocateUiKey.Key);
+    }
+
+    private bool TryGetPredatorSenseTargetName(
+        MapId casterMap,
+        EntityUid target,
+        MindContainerComponent mindContainer,
+        TransformComponent xform,
+        out string displayName)
+    {
+        displayName = string.Empty;
+
+        if (!mindContainer.HasMind)
+            return false;
+
+        if (xform.MapID != casterMap)
+            return false;
+
+        if (HasComp<GhostComponent>(target) || !HasComp<HumanoidAppearanceComponent>(target))
+            return false;
+
+        var name = MetaData(target).EntityName;
+        if (string.IsNullOrWhiteSpace(name))
+            return false;
+
+        displayName = name;
+        return true;
+    }
+
+    private bool TryGetNearestWarpLocationName(EntityUid target, out string location)
+    {
+        location = string.Empty;
+
+        var targetXform = Transform(target);
+        var targetMap = targetXform.MapID;
+        var targetGrid = targetXform.GridUid;
+        var targetPos = _transform.GetWorldPosition(targetXform);
+
+        float bestDistSq = float.MaxValue;
+        string? best = null;
+
+        var warps = AllEntityQuery<WarpPointComponent, TransformComponent>();
+        while (warps.MoveNext(out var warpUid, out var warp, out var warpXform))
+        {
+            if (_whitelist.IsWhitelistPass(warp.Blacklist, warpUid))
+                continue;
+
+            if (string.IsNullOrWhiteSpace(warp.Location))
+                continue;
+
+            if (warpXform.MapID != targetMap)
+                continue;
+
+            if (targetGrid != null && warpXform.GridUid != targetGrid)
+                continue;
+
+            var warpPos = _transform.GetWorldPosition(warpXform);
+            var distSq = (warpPos - targetPos).LengthSquared();
+            if (distSq >= bestDistSq)
+                continue;
+
+            bestDistSq = distSq;
+            best = warp.Location;
+        }
+
+        if (best == null)
+            return false;
+
+        location = best;
+        return true;
     }
 }

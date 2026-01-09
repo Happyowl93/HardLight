@@ -11,7 +11,7 @@ using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Wieldable;
 
-namespace Content.Server._Starlight.Antags.Vampires;
+namespace Content.Server._Starlight.Antags.Vampires.Systems;
 
 /// <summary>
 /// Handles vampiric claws lifecycle and effects

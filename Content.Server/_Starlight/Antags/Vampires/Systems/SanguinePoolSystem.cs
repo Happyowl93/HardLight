@@ -3,14 +3,19 @@ using Content.Server.Polymorph.Systems;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Antags.Vampires.Systems;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Maps;
 using Content.Shared.Fluids.Components;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Prototypes;
 
-namespace Content.Server._Starlight.Antags.Vampires;
+namespace Content.Server._Starlight.Antags.Vampires.Systems;
 
 public sealed class SanguinePoolSystem : SharedSanguinePoolSystem
 {
+    private static readonly ProtoId<ReagentPrototype> _bloodReagentId = "Blood";
+    private const int MaxPoolsProcessedPerUpdate = 64;
+
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
@@ -21,9 +26,13 @@ public sealed class SanguinePoolSystem : SharedSanguinePoolSystem
     {
         base.Update(frameTime);
 
+        var processed = 0;
         var query = EntityQueryEnumerator<SanguinePoolComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var comp, out var xform))
         {
+            if (processed++ >= MaxPoolsProcessedPerUpdate)
+                break;
+
             if (ShouldForceRevert(uid, xform))
                 continue;
 
@@ -69,7 +78,8 @@ public sealed class SanguinePoolSystem : SharedSanguinePoolSystem
         if (!_solution.TryGetSolution(uid, puddle.SolutionName, out _, out var solution))
             return false;
 
-        return solution.ContainsReagent("Blood", null);
+        // Use prototype check so blood with forensic data are still detected
+        return solution.ContainsPrototype(_bloodReagentId);
     }
 
     private bool ShouldForceRevert(EntityUid uid, TransformComponent xform)

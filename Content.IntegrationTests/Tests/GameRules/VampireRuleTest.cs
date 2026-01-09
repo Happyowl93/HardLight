@@ -1,17 +1,17 @@
 using System.Linq;
 using Content.Server.GameTicking;
-using Content.Server.GameTicking.Rules;
-using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Roles;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Objectives.Components;
-using Content.Shared._Starlight.Antags.Vampires;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 using Content.Shared.Mind;
 using Content.Shared._Starlight.Antags.Vampires.Components;
+using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
+using Content.Server._Starlight.GameTicking.Rules;
+using Content.Server._Starlight.GameTicking.Rules.Components;
 
 namespace Content.IntegrationTests.Tests.GameRules;
 
@@ -92,7 +92,10 @@ public sealed class VampireRuleTest
         Assert.That(entMan.HasComponent<VampireComponent>(player), "Player entity did not get VampireComponent.");
 
         var vampComp = entMan.GetComponent<VampireComponent>(player);
-        Assert.That(vampComp.ChosenClass, Is.EqualTo(VampireClassType.None), 
+        Assert.That(!entMan.HasComponent<HemomancerComponent>(player)
+                    && !entMan.HasComponent<UmbraeComponent>(player)
+                    && !entMan.HasComponent<DantalionComponent>(player)
+                    && !entMan.HasComponent<GargantuaComponent>(player),
             "Vampire should start without a chosen class");
         Assert.That(vampComp.TotalBlood, Is.EqualTo(0), 
             "Vampire should start with 0 blood");

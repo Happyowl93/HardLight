@@ -1,5 +1,8 @@
 namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
+using Content.Shared._Starlight.Antags.Vampires.Prototypes;
+using Robust.Shared.Prototypes;
+
 /// <summary>
 /// Attach to a spawned action entity to define Vampire-specific gating and costs
 /// - BloodToUnlock - required TotalBlood to unlock the action
@@ -16,5 +19,5 @@ public sealed partial class VampireActionComponent : Component
     public float BloodCost = 0f;
 
     [DataField]
-    public VampireClassType? RequiredClass = null;
+    public ProtoId<VampireClassPrototype>? RequiredClass = null;
 }

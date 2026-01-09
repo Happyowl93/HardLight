@@ -1,3 +1,4 @@
+using Content.Shared.Chemistry.Reagent;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -9,6 +10,12 @@ namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
 public sealed partial class VampireComponent : Component
 {
+    /// <summary>
+    /// Chosen vampire class prototype id, once selected.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public string? ChosenClassId;
+
     /// <summary>
     /// Default abilities, they will be added at start.
     /// </summary>
@@ -37,13 +44,13 @@ public sealed partial class VampireComponent : Component
     /// Lifetime total blood drunk. Used for unlocking abilities.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public int TotalBlood = 0;
+    public int TotalBlood = 1500;
 
     /// <summary>
     /// Total blood drunk by this vampire, used for blood cost calculations.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public int DrunkBlood = 0;
+    public int DrunkBlood = 1500;
 
     /// <summary>
     /// Determines whether the fangs are extended or not.
@@ -71,65 +78,6 @@ public sealed partial class VampireComponent : Component
     public float FullnessDecayPerSecond = 0.15f;
 
     /// <summary>
-    /// Action ids for the Hemomancer class
-    /// </summary>
-    [DataField]
-    public List<EntProtoId> HemomancerActions = new()
-    {
-        "ActionVampireHemomancerClaws",
-        "ActionVampireSanguinePool",
-        "ActionVampireHemomancerTendrils",
-        "ActionVampireBloodBarrier",
-        "ActionVampireBloodEruption",
-        "ActionVampireBloodBringersRite",
-        "ActionVampirePredatorSense"
-    };
-
-    /// <summary>
-    /// Action ids for the Umbrae class
-    /// </summary>
-    [DataField]
-    public List<EntProtoId> UmbraeActions = new()
-    {
-        "ActionVampireCloakOfDarkness",
-        "ActionVampireShadowSnare",
-        "ActionVampireShadowAnchor",
-        "ActionVampireShadowBoxing",
-        "ActionVampireDarkPassage",
-        "ActionVampireExtinguish",
-        "ActionVampireEternalDarkness"
-    };
-
-    /// <summary>
-    /// Action ids for the Dantalion class
-    /// </summary>
-    [DataField]
-    public List<EntProtoId> DantalionActions = new()
-    {
-        "ActionVampireEnthrall",
-        "ActionVampirePacify",
-        "ActionVampireSubspaceSwap",
-        "ActionVampireDecoy",
-        "ActionVampireRallyThralls",
-        "ActionVampireBloodBond",
-        "ActionVampireMassHysteria"
-    };
-
-    /// <summary>
-    /// Action ids for the Gargantua class
-    /// </summary>
-    [DataField]
-    public List<EntProtoId> GargantuaActions = new()
-    {
-        "ActionVampireBloodSwell",
-        "ActionVampireBloodRush",
-        "ActionVampireSeismicStomp",
-        "ActionVampireOverwhelmingForce",
-        "ActionVampireDemonicGrasp",
-        "ActionVampireCharge"
-    };
-
-    /// <summary>
     /// Action entities of the vampire, used as ActionId -> EntityUid.
     /// </summary>
     public Dictionary<EntProtoId, EntityUid> ActionEntities = new();
@@ -155,10 +103,10 @@ public sealed partial class VampireComponent : Component
     public TimeSpan HolyTickDelay = TimeSpan.FromSeconds(2);
 
     [DataField]
-    public float HolyPlaceRange = 4f;
+    public float HolyPlaceRange = 8f;
 
     [DataField]
-    public string HolyWaterReagentId = "Holywater";
+    public ProtoId<ReagentPrototype> HolyWaterReagentId = "Holywater";
 
     public TimeSpan NextHolyWaterTick = TimeSpan.Zero;
     public TimeSpan NextHolyPlaceTick = TimeSpan.Zero;
@@ -168,13 +116,10 @@ public sealed partial class VampireComponent : Component
     public int LastRefreshedBloodLevel = -1;
 
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
-    public bool FullPower = false;
+    public bool FullPower = true;
 
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public int UniqueHumanoidVictims = 0;
-
-    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
-    public VampireClassType ChosenClass = VampireClassType.None;
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
     [AutoPausedField]

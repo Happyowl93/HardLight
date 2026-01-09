@@ -8,6 +8,7 @@ using Content.Server.Polymorph.Systems;
 using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
+using Content.Shared._Starlight.Antags.Vampires.Prototypes;
 using Content.Shared.Alert;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Damage;
@@ -43,8 +44,9 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Server.Destructible;
 using Content.Shared.CollectiveMind;
+using Content.Server._Starlight.Antags.Vampires.Systems;
 
-namespace Content.Server._Starlight.Antags.Vampires;
+namespace Content.Server._Starlight.Antags.Vampires.Systems;
 
 public sealed partial class VampireSystem : EntitySystem
 {
@@ -107,10 +109,6 @@ public sealed partial class VampireSystem : EntitySystem
         SubscribeLocalEvent<VampireComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<VampireComponent, ComponentShutdown>(OnShutdown);
         InitializeAbilities();
-        InitializeHemomancer();
-        InitializeUmbrae();
-        InitializeDantalion();
-        InitializeGargantua();
         InitializeObjectives();
     }
 
@@ -148,8 +146,6 @@ public sealed partial class VampireSystem : EntitySystem
 
             HandleSpaceExposure(uid, vampire, sunlight, xform, frameTime);
         }
-
-        UpdateGargantua(frameTime);
     }
 
     private void HandleSpaceExposure(EntityUid uid, VampireComponent vampire, VampireSunlightComponent sunlight, TransformComponent xform, float frameTime)
@@ -173,7 +169,8 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        sunlight.TimeInSpace += frameTime;
+        var frameSpan = TimeSpan.FromSeconds(frameTime);
+        sunlight.TimeInSpace += frameSpan;
 
         if (sunlight.TimeInSpace < sunlight.GracePeriod)
             return;
@@ -181,10 +178,15 @@ public sealed partial class VampireSystem : EntitySystem
         if (_timing.CurTime >= sunlight.NextWarningPopup)
         {
             _popup.PopupEntity(Loc.GetString(sunlight.WarningPopup), uid, uid, PopupType.LargeCaution);
-            sunlight.NextWarningPopup = _timing.CurTime + TimeSpan.FromSeconds(sunlight.WarningPopupCooldown);
+            sunlight.NextWarningPopup = _timing.CurTime + sunlight.WarningPopupCooldown;
         }
-        sunlight.DamageAccumulator += frameTime;
-        var interval = Math.Max(sunlight.DamageInterval, 0.1f);
+
+        sunlight.DamageAccumulator += frameSpan;
+
+        var interval = sunlight.DamageInterval;
+        if (interval < TimeSpan.FromSeconds(0.1f))
+            interval = TimeSpan.FromSeconds(0.1f);
+
         while (sunlight.DamageAccumulator >= interval)
         {
             sunlight.DamageAccumulator -= interval;
@@ -196,8 +198,8 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void ResetSpaceExposure(VampireSunlightComponent sunlight)
     {
-        sunlight.TimeInSpace = 0f;
-        sunlight.DamageAccumulator = 0f;
+        sunlight.TimeInSpace = TimeSpan.Zero;
+        sunlight.DamageAccumulator = TimeSpan.Zero;
         sunlight.NextWarningPopup = TimeSpan.Zero;
     }
 
@@ -243,7 +245,7 @@ public sealed partial class VampireSystem : EntitySystem
             return true;
 
         var spec = new DamageSpecifier();
-        spec += new DamageSpecifier(damageGroup, FixedPoint2.New(sunlight.GeneticDamagePerInterval));
+        spec += new DamageSpecifier(damageGroup, sunlight.GeneticDamagePerInterval);
         _damageableSystem.TryChangeDamage(uid, spec, true);
 
         if (!TryComp(uid, out DamageableComponent? damageable) ||
@@ -253,7 +255,9 @@ public sealed partial class VampireSystem : EntitySystem
             return true;
         }
 
-        if (geneticDamage.Float() < sunlight.GeneticDustThreshold)
+        _audio.PlayPvs(_spaceBurnSound, uid);
+
+        if (geneticDamage < sunlight.GeneticDustThreshold)
             return true;
 
         DustEntity(uid);
@@ -351,7 +355,7 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void HandleClassSelection(EntityUid uid, VampireComponent comp)
     {
-        if (comp.ChosenClass != VampireClassType.None)
+        if (HasChosenClass(uid))
             return;
 
         var classSelectAction = comp.ClassSelectActionId;
@@ -422,9 +426,6 @@ public sealed partial class VampireSystem : EntitySystem
             }
             _playerShadowSnares.Remove(uid);
         }
-
-        if (TryComp<DantalionComponent>(uid, out var dantalion))
-            ReleaseAllThralls(uid, dantalion);
     }
 
     partial void UpdateVampireAlert(EntityUid uid);
@@ -444,35 +445,21 @@ public sealed partial class VampireSystem : EntitySystem
         }
 
         var enabled = vamp.TotalBlood >= vac.BloodToUnlock &&
-                     (vac.RequiredClass == null || vamp.ChosenClass == vac.RequiredClass);
+             (vac.RequiredClass == null || ValidateVampireClass(owner, vamp, vac.RequiredClass));
 
         _actions.SetEnabled(action.AsNullable(), enabled);
     }
 
     private void TryGrantClassAbilities(EntityUid uid, VampireComponent comp)
     {
-        if (comp.ChosenClass == VampireClassType.None)
+        if (string.IsNullOrWhiteSpace(comp.ChosenClassId))
             return;
 
-        switch (comp.ChosenClass)
-        {
-            case VampireClassType.Hemomancer:
-                foreach (var actionId in comp.HemomancerActions)
-                    GrantAbility(uid, comp, actionId);
-                break;
-            case VampireClassType.Umbrae:
-                foreach (var actionId in comp.UmbraeActions)
-                    GrantAbility(uid, comp, actionId);
-                break;
-            case VampireClassType.Dantalion:
-                foreach (var actionId in comp.DantalionActions)
-                    GrantAbility(uid, comp, actionId);
-                break;
-            case VampireClassType.Gargantua:
-                foreach (var actionId in comp.GargantuaActions)
-                    GrantAbility(uid, comp, actionId);
-                break;
-        }
+        if (!_proto.TryIndex<VampireClassPrototype>(comp.ChosenClassId, out var classProto))
+            return;
+
+        foreach (var actionId in classProto.Actions)
+            GrantAbility(uid, comp, actionId);
     }
 
     private void GrantAbility(EntityUid uid, VampireComponent comp, EntProtoId actionId)
@@ -655,7 +642,7 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OpenClassUi(EntityUid uid, VampireComponent comp)
     {
-        if (comp.ChosenClass != VampireClassType.None)
+        if (!string.IsNullOrWhiteSpace(comp.ChosenClassId))
             return;
         _ui.CloseUi(uid, VampireClassUiKey.Key);
         _ui.OpenUi(uid, VampireClassUiKey.Key, uid);
@@ -663,31 +650,23 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnVampireClassChosen(EntityUid uid, VampireComponent comp, VampireClassChosenBuiMsg msg)
     {
-        if (comp.ChosenClass != VampireClassType.None)
+        if (!string.IsNullOrWhiteSpace(comp.ChosenClassId))
         {
             _ui.CloseUi(uid, VampireClassUiKey.Key);
             return;
         }
 
-        comp.ChosenClass = msg.Choice;
-
-        switch (msg.Choice)
+        if (string.IsNullOrWhiteSpace(msg.Choice) || !_proto.TryIndex<VampireClassPrototype>(msg.Choice, out var classProto))
         {
-            case VampireClassType.Umbrae:
-                AddComp<UmbraeComponent>(uid);
-                break;
-            case VampireClassType.Hemomancer:
-                AddComp<HemomancerComponent>(uid);
-                break;
-            case VampireClassType.Dantalion:
-                AddComp<DantalionComponent>(uid);
-                if (TryComp<CollectiveMindComponent>(uid, out var cmComp))
-                    _collectiveMind.UpdateCollectiveMind(uid, cmComp);
-                break;
-            case VampireClassType.Gargantua:
-                AddComp<GargantuaComponent>(uid);
-                break;
+            _ui.CloseUi(uid, VampireClassUiKey.Key);
+            return;
         }
+
+        var reg = _componentFactory.GetRegistration(classProto.ClassComponent, ignoreCase: true);
+        var classComp = _componentFactory.GetComponent(reg.Type);
+        EntityManager.AddComponent(uid, classComp);
+
+        comp.ChosenClassId = classProto.ID;
 
         var classSelectAction = comp.ClassSelectActionId;
         if (comp.ActionEntities.TryGetValue(classSelectAction, out var actionEntity))
@@ -703,7 +682,7 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnVampireClassClosed(EntityUid uid, VampireComponent comp, VampireClassClosedBuiMsg _)
     {
-        if (comp.ChosenClass != VampireClassType.None)
+        if (!string.IsNullOrWhiteSpace(comp.ChosenClassId))
             return;
 
         _sawmill?.Debug($"Vampire class UI closed without selection for {ToPrettyString(uid)} (blood={comp.TotalBlood})");

@@ -1,8 +1,9 @@
-using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Content.Shared.Popups;
-using Content.Shared.Weapons.Ranged.Events;
-using Robust.Shared.Network;
 using Robust.Shared.Timing;
+using Robust.Shared.Network;
+using Content.Shared.Weapons.Ranged.Events;
+
+using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 
 namespace Content.Shared._Starlight.Antags.Vampires.Systems;
 
@@ -15,15 +16,15 @@ public sealed class GargantuaBloodSwellSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<GargantuaComponent, ShotAttemptedEvent>(OnShotAttempted);
+        SubscribeLocalEvent<ActiveBloodSwellComponent, ShotAttemptedEvent>(OnShotAttempted);
     }
 
-    private void OnShotAttempted(Entity<GargantuaComponent> ent, ref ShotAttemptedEvent args)
+    private void OnShotAttempted(Entity<ActiveBloodSwellComponent> ent, ref ShotAttemptedEvent args)
     {
-        if (!ent.Comp.BloodSwellActive)
+        if (!TryComp<GargantuaComponent>(ent.Owner, out var gargantua))
             return;
 
-        TryShowPopup(ent, args.Used);
+        TryShowPopup((ent.Owner, gargantua), args.Used);
         args.Cancel();
     }
 

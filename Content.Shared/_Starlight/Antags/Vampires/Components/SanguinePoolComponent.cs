@@ -14,22 +14,10 @@ namespace Content.Shared._Starlight.Antags.Vampires.Components;
 public sealed partial class SanguinePoolComponent : Component
 {
     /// <summary>
-    ///     How often to spawn a trailing puddle while gliding around.
-    /// </summary>
-    [DataField]
-    public float TrailInterval = 0.3f;
-
-    /// <summary>
-    ///     Prototype spawned each time <see cref="TrailInterval"/> elapses.
+    ///     Prototype spawned when the pool enters a new tile
     /// </summary>
     [DataField]
     public EntProtoId? TrailPrototype = "PuddleBlood";
-
-    /// <summary>
-    ///     Internal accumulator used by the server system.
-    /// </summary>
-    [ViewVariables]
-    public float Accumulator;
 
     [DataField]
     public EntProtoId ExitEffectPrototype = "VampireSanguinePoolIn";

@@ -2,6 +2,7 @@ using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Content.Shared.Polymorph;
 using Robust.Shared.Audio;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -46,7 +47,7 @@ public sealed partial class VampireGlareActionEvent : InstantActionEvent
     /// How many seconds do we need to mute entity in front of glare source.
     /// </summary>
     [DataField]
-    public int MuteDuration = 8;
+    public TimeSpan MuteDuration = TimeSpan.FromSeconds(8);
 }
 
 public sealed partial class VampireRejuvenateIActionEvent : InstantActionEvent;
@@ -57,6 +58,18 @@ public sealed partial class VampireClassSelectActionEvent : InstantActionEvent;
 
 public sealed partial class VampireToggleFangsActionEvent : InstantActionEvent;
 public sealed partial class VampireLocateMindActionEvent : InstantActionEvent;
+
+public sealed class VampireBloodDrankEvent : EntityEventArgs
+{
+    public EntityUid Target { get; }
+    public float Amount { get; }
+
+    public VampireBloodDrankEvent(EntityUid target, float amount)
+    {
+        Target = target;
+        Amount = amount;
+    }
+}
 
 #endregion
 
@@ -75,13 +88,13 @@ public sealed partial class VampireHemomancerTendrilsActionEvent : WorldTargetAc
     public EntProtoId TendrilsPuddlePrototype = "PuddleBlood";
 
     [DataField]
-    public float Delay = 1.0f;
+    public TimeSpan Delay = TimeSpan.FromSeconds(1);
 
     [DataField]
     public float SlowMultiplier = 0.3f;
 
     [DataField]
-    public float SlowDuration = 2.0f;
+    public TimeSpan SlowDuration = TimeSpan.FromSeconds(2);
 
     [DataField]
     public float ToxinDamage = 33.0f;
@@ -96,13 +109,13 @@ public sealed partial class VampireHemomancerTendrilsActionEvent : WorldTargetAc
     public float TargetRange = 0.9f;
 
     [DataField]
-    public float VisualSpawnDelay = 0.5f;
+    public TimeSpan VisualSpawnDelay = TimeSpan.FromSeconds(0.5);
 
     [DataField]
-    public float MinDelay = 0.0f;
+    public TimeSpan MinDelay = TimeSpan.Zero;
 
     [DataField]
-    public float MinSlowDuration = 0.1f;
+    public TimeSpan MinSlowDuration = TimeSpan.FromSeconds(0.1);
 
     [DataField]
     public float MinSlowMultiplier = 0.05f;
@@ -137,10 +150,10 @@ public sealed partial class VampireSanguinePoolActionEvent : InstantActionEvent
     public SoundSpecifier ExitSound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/exit_blood.ogg");
 
     [DataField]
-    public float BloodDripInterval = 1.0f;
+    public TimeSpan BloodDripInterval = TimeSpan.FromSeconds(1);
 
     [DataField]
-    public int Duration = 8;
+    public TimeSpan Duration = TimeSpan.FromSeconds(8);
 }
 
 // Blood Eruption
@@ -181,7 +194,7 @@ public sealed partial class VampireBloodBringersRiteActionEvent : InstantActionE
     public float HealStamina = 15f;
 
     [DataField]
-    public float ToggleInterval = 2f;
+    public TimeSpan ToggleInterval = TimeSpan.FromSeconds(2);
 
     [DataField]
     public int Cost = 10;
@@ -211,13 +224,13 @@ public sealed partial class VampireShadowAnchorActionEvent : InstantActionEvent
     /// DoAfter duration to place the anchor.
     /// </summary>
     [DataField]
-    public float PlaceDelay = 5f; 
+    public TimeSpan PlaceDelay = TimeSpan.FromSeconds(5);
 
     /// <summary>
     /// Time window to return to the anchor. After this, return triggers automatically.
     /// </summary>
     [DataField]
-    public float AutoReturnDelay = 120f; // 2min 
+    public TimeSpan AutoReturnDelay = TimeSpan.FromMinutes(2);
 }
 
 [Serializable, NetSerializable]
@@ -230,13 +243,13 @@ public sealed partial class VampireShadowAnchorDoAfterEvent : SimpleDoAfterEvent
     public int BloodCost;
 
     [DataField]
-    public float AutoReturnDelay;
+    public TimeSpan AutoReturnDelay;
 
     private VampireShadowAnchorDoAfterEvent()
     {
     }
 
-    public VampireShadowAnchorDoAfterEvent(NetCoordinates coords, int bloodCost, float autoReturnDelay)
+    public VampireShadowAnchorDoAfterEvent(NetCoordinates coords, int bloodCost, TimeSpan autoReturnDelay)
     {
         TargetCoordinates = coords;
         BloodCost = bloodCost;
@@ -269,7 +282,7 @@ public sealed partial class VampireExtinguishActionEvent : InstantActionEvent
 public sealed partial class VampireShadowBoxingActionEvent : EntityTargetActionEvent
 {
     [DataField]
-    public float Interval = 0.9f;
+    public TimeSpan Interval = TimeSpan.FromSeconds(0.9);
 
     [DataField]
     public int BrutePerTick = 6;
@@ -336,11 +349,18 @@ public sealed partial class VampireEnthrallActionEvent : EntityTargetActionEvent
     ///     Channel duration, in seconds, before the target is enthralled
     /// </summary>
     [DataField]
-    public float ChannelTime = 15f;
+    public TimeSpan ChannelTime = TimeSpan.FromSeconds(15);
 }
 
 [Serializable, NetSerializable]
 public sealed partial class VampireDrinkBloodDoAfterEvent : SimpleDoAfterEvent;
+
+[Serializable, NetSerializable]
+public sealed partial class VampireDevourMouseDoAfterEvent : SimpleDoAfterEvent
+{
+    [DataField]
+    public float BloodFullnessRestore;
+}
 
 [Serializable, NetSerializable]
 public sealed partial class VampireEnthrallDoAfterEvent : SimpleDoAfterEvent
@@ -352,26 +372,26 @@ public sealed partial class VampireEnthrallDoAfterEvent : SimpleDoAfterEvent
 public sealed partial class VampirePacifyActionEvent : EntityTargetActionEvent
 {
     [DataField]
-    public float PacifyDuration = 40f;
+    public TimeSpan PacifyDuration = TimeSpan.FromSeconds(40);
 }
         
 public sealed partial class VampireSubspaceSwapActionEvent : EntityTargetActionEvent
 {
     [DataField]
-    public float SlowDuration = 4f;
+    public TimeSpan SlowDuration = TimeSpan.FromSeconds(4);
 
     [DataField]
     public float SlowMultiplier = 0.4f;
     [DataField]
-    public float HysteriaDuration = 15f;
+    public TimeSpan HysteriaDuration = TimeSpan.FromSeconds(15);
 }
 
 public sealed partial class VampireDecoyActionEvent : InstantActionEvent
 {
     [DataField]
-    public float DecoyDuration = 6f;
+    public TimeSpan DecoyDuration = TimeSpan.FromSeconds(6);
     [DataField]
-    public float InvisibilityDuration = 6f;
+    public TimeSpan InvisibilityDuration = TimeSpan.FromSeconds(6);
 }
 
 public sealed partial class VampireRallyThrallsActionEvent : InstantActionEvent
@@ -401,7 +421,7 @@ public sealed partial class VampireBloodBondActionEvent : InstantActionEvent
     ///     Tick interval in seconds
     /// </summary>
     [DataField]
-    public float TickInterval = 1f;
+    public TimeSpan TickInterval = TimeSpan.FromSeconds(1);
 }
 
 public sealed partial class VampireMassHysteriaActionEvent : InstantActionEvent
@@ -416,13 +436,13 @@ public sealed partial class VampireMassHysteriaActionEvent : InstantActionEvent
     ///     Duration of the flash effect in seconds
     /// </summary>
     [DataField]
-    public float FlashDuration = 3f;
+    public TimeSpan FlashDuration = TimeSpan.FromSeconds(3);
 
     /// <summary>
     ///     Duration of the hysteria vision effect in seconds
     /// </summary>
     [DataField]
-    public float HysteriaDuration = 30f;
+    public TimeSpan HysteriaDuration = TimeSpan.FromSeconds(30);
     [DataField]
     public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/sound_hallucinations_im_here1.ogg");
 }
@@ -434,7 +454,7 @@ public sealed partial class VampireMassHysteriaActionEvent : InstantActionEvent
 public sealed partial class VampireBloodSwellActionEvent : InstantActionEvent
 {
     [DataField]
-    public float Duration = 30f;
+    public TimeSpan Duration = TimeSpan.FromSeconds(30);
     /// <summary>
     ///     Total blood required for the enhanced unarmed damage bonus.
     /// </summary>
@@ -451,7 +471,7 @@ public sealed partial class VampireBloodSwellActionEvent : InstantActionEvent
 public sealed partial class VampireBloodRushActionEvent : InstantActionEvent
 {
     [DataField]
-    public float Duration = 10f;
+    public TimeSpan Duration = TimeSpan.FromSeconds(10);
 
     /// <summary>
     ///     Movement speed multiplier while Blood Rush is active.
@@ -491,7 +511,7 @@ public sealed partial class VampireDemonicGraspActionEvent : WorldTargetActionEv
     ///     Duration of immobilization in seconds
     /// </summary>
     [DataField]
-    public float ImmobilizeDuration = 10f;
+    public TimeSpan ImmobilizeDuration = TimeSpan.FromSeconds(10);
 
     /// <summary>
     ///     Speed of the grasp projectile

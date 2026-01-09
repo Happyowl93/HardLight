@@ -5,7 +5,7 @@ namespace Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]
-public sealed partial class UmbraeComponent : Component
+public sealed partial class UmbraeComponent : VampireClassComponent
 {
     [AutoNetworkedField]
     public bool CloakOfDarknessActive = false;

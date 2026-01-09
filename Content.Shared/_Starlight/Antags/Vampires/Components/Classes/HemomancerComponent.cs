@@ -4,7 +4,7 @@ namespace Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]
-public sealed partial class HemomancerComponent : Component
+public sealed partial class HemomancerComponent : VampireClassComponent
 {
     [AutoNetworkedField]
     public bool InSanguinePool = false;

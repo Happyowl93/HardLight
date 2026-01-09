@@ -309,17 +309,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
                     Log.Warning($"Somehow picked {session} for an antag when this rule already selected them previously");
                     continue;
                 }
-                
-                // if (session != null && HasComp<VampireRuleComponent>(ent))
-                // {
-                //     var playerEntity = session.AttachedEntity;
-                    
-                //     if (playerEntity == null 
-                //         || HasComp<BibleUserComponent>(playerEntity)
-                //         || !TryComp<BodyComponent>(playerEntity, out var body) 
-                //         || !_body.TryGetBodyOrganEntityComps<StomachComponent>((playerEntity.Value, body), out var stomachs))
-                //         continue;
-                // }
             }
 
             if (session == null)
