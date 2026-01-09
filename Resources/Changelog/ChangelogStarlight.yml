@@ -25458,5 +25458,133 @@ Entries:
   id: 269200
   time: '2026-01-05T16:50:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2692
+- author: Conflee & Citrea
+  changes:
+  - message: Added personal desktop computers, which act as stationary, public PDAs.
+    type: Add
+  - message: Added various desktop computer versions of existing consoles. Try using
+      a screwdriver on your request console board!
+    type: Add
+  id: 272900
+  time: '2026-01-09T20:09:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2729
+- author: FeralCreature
+  changes:
+  - message: Hand labelers now come with a built in save feature for labels you plan
+      to use again in the future. Chemists rejoice!
+    type: Add
+  id: 267800
+  time: '2026-01-09T20:19:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2678
+- author: R3v3l4t1on
+  changes:
+  - message: Changed the position of a single camera in the Engineering's engine chamber
+      so that emitters won't accidentally shoot it.
+    type: Tweak
+  - message: Fixed Oasis' mailing system.
+    type: Fix
+  id: 274400
+  time: '2026-01-09T20:46:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2744
+- author: Fasuh
+  changes:
+  - message: Fixed translators working on empty batteries.
+    type: Fix
+  id: 275600
+  time: '2026-01-09T20:55:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2756
+- author: Way
+  changes:
+  - message: New Colony parallax.
+    type: Add
+  id: 274300
+  time: '2026-01-09T20:59:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2743
+- author: CawsForConcern
+  changes:
+  - message: (Cog) Station beacon and sign for Theater (Clown / Mime room)
+    type: Add
+  - message: (Cog) Security camera in Brigmedic
+    type: Add
+  - message: (Cog) Replaced HOS WT550 with the 'HOS weapon spawner' (no gameplay difference,
+      just mapping stuff)
+    type: Tweak
+  - message: (Cog) Fixed NTRep room's door to maints being the non-maints variant
+    type: Fix
+  - message: (Cog) Fixed BSO's room using the wrong BSO locker variant
+    type: Fix
+  id: 272600
+  time: '2026-01-09T20:59:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2726
+- author: CawsForConcern
+  changes:
+  - message: (Remix) Paperbin and document printer to NT Rep Office
+    type: Add
+  - message: (Remix) Replaced HOS WT550 with the 'HOS weapon spawner' (no gameplay
+      difference, just mapping stuff)
+    type: Tweak
+  - message: (Remix) Mapped NTR and BSO spawns
+    type: Fix
+  - message: (Remix) Mapped NTR and BSO lockers
+    type: Fix
+  - message: (Remix) Enabled NTR and BSO jobs
+    type: Fix
+  id: 272700
+  time: '2026-01-09T21:00:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2727
+- author: Fractalflower
+  changes:
+  - message: The Syndicate has given their kobold reinforcements a class in Draconic,
+      after forgetting to teach them properly the first time.
+    type: Fix
+  - message: The monkies have learned to speak amongst themselves. Oh no.
+    type: Fix
+  - message: Cargorilla now understands Galactic Common. Additionally, all gorillas
+      now speak and understand Ancestor.
+    type: Tweak
+  - message: Canilunzt, Nekomimetic, and Moffic trait-havers can now understand Fox/Dog,
+      Cat, and Mothroach respectively.
+    type: Tweak
+  id: 271500
+  time: '2026-01-09T22:24:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2715
+- author: CawsForConcern
+  changes:
+  - message: (Plasma) Handcuffs at Bridge replaced with Zipties
+    type: Tweak
+  - message: (Plasma) Fixed BSO's room using the wrong BSO locker variant
+    type: Fix
+  - message: (Plasma) Detective's fax machine wasn't named
+    type: Fix
+  - message: (Plasma) Some fax machine metadata issues
+    type: Fix
+  id: 276700
+  time: '2026-01-09T22:53:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2767
+- author: Shades
+  changes:
+  - message: Nullspace Goggles can be crafted.
+    type: Add
+  - message: Bright-eye DarkTile Objective scale up with how many tiles already on
+      station.
+    type: Tweak
+  - message: Nullspace Drainer now gives 100 points instead of 50.
+    type: Tweak
+  - message: Raw Bluespace Crystal should be a bit more common.
+    type: Tweak
+  - message: Artificial Bluespace Crystal price got changed. (0.5 Dimaond, 20 Plasma)
+    type: Tweak
+  - message: Fixed the ability to move the bright-eye portal with tethergun.
+    type: Fix
+  - message: Shadekin Cores can be sold! with a price!
+    type: Add
+  - message: Added a Ghost Warp to "The Dark"
+    type: Add
+  - message: Fixed where the portal should not be spawned if there was more then one
+      station.
+    type: Fix
+  id: 273100
+  time: '2026-01-09T23:07:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2731
 Order: -1
 

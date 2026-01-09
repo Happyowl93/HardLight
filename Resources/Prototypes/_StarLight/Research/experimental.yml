@@ -38,6 +38,7 @@
   cost: 10000
   recipeUnlocks:
   - ArtificialBluespaceCrystal
+  - NullspaceAnchorMachineCircuitboard
 
 # Tier 3
 - type: technology

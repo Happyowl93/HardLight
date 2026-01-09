@@ -426,3 +426,14 @@
 - type: Tag
   id: FestiveDinner
   
+- type: Tag
+  id: Meson
+
+- type: Tag
+  id: DamagedShadekinCore
+
+- type: Tag
+  id: ShadekinCore
+
+- type: Tag
+  id: ShadekinEyes
