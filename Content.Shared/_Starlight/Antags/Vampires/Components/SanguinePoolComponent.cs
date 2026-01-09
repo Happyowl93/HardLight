@@ -26,11 +26,5 @@ public sealed partial class SanguinePoolComponent : Component
     public SoundSpecifier ExitSound = new SoundPathSpecifier("/Audio/_Starlight/Effects/vampire/exit_blood.ogg");
 
     [ViewVariables]
-    public EntityUid? LastTrailGrid;
-
-    [ViewVariables]
-    public Vector2i LastTrailTile;
-
-    [ViewVariables]
-    public bool HasLastTrailTile;
+    public (EntityUid Grid, Vector2i Tile)? LastTrail;
 }

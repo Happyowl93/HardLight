@@ -44,12 +44,10 @@ public sealed class SanguinePoolSystem : SharedSanguinePoolSystem
                 continue;
 
             var tile = _map.CoordinatesToTile(gridUid, gridComp, xform.Coordinates);
-            if (comp.HasLastTrailTile && comp.LastTrailGrid == gridUid && comp.LastTrailTile == tile)
+            if (comp.LastTrail is { } last && last.Grid == gridUid && last.Tile == tile)
                 continue;
 
-            comp.LastTrailGrid = gridUid;
-            comp.LastTrailTile = tile;
-            comp.HasLastTrailTile = true;
+            comp.LastTrail = (gridUid, tile);
 
             var tileCoords = _map.GridTileToLocal(gridUid, gridComp, tile);
             if (HasBloodPuddleNearby(tileCoords))
