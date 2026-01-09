@@ -25458,5 +25458,15 @@ Entries:
   id: 269200
   time: '2026-01-05T16:50:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2692
+- author: Conflee & Citrea
+  changes:
+  - message: Added personal desktop computers, which act as stationary, public PDAs.
+    type: Add
+  - message: Added various desktop computer versions of existing consoles. Try using
+      a screwdriver on your request console board!
+    type: Add
+  id: 272900
+  time: '2026-01-09T20:09:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2729
 Order: -1
 
