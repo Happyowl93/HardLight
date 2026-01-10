@@ -18,6 +18,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Maps;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Popups;
@@ -57,6 +58,7 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly FlammableSystem _flammable = default!;
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
     private ISawmill? _sawmill;
     private static readonly ProtoId<DamageGroupPrototype> _bruteGroupId = "Brute";
     private static readonly ProtoId<DamageGroupPrototype> _burnGroupId = "Burn";
@@ -312,6 +314,7 @@ public sealed partial class VampireSystem : EntitySystem
     private bool ProcessBloodDecay(EntityUid uid, VampireComponent comp)
     {
         var before = comp.BloodFullness;
+        var wasStarving = before <= 0f;
         var changed = false;
 
         if (before > 0f)
@@ -325,6 +328,10 @@ public sealed partial class VampireSystem : EntitySystem
                 UpdateVampireFedAlert(uid, comp);
             }
         }
+
+        var isStarving = comp.BloodFullness <= 0f;
+        if (wasStarving != isStarving)
+            _movementSpeed.RefreshMovementSpeedModifiers(uid);
 
         // When blood fullness is empty, burn stored blood
         if (comp.BloodFullness <= 0f && comp.StarvationDrunkBloodDrainPerSecond > 0 && comp.DrunkBlood > 0)
@@ -423,6 +430,7 @@ public sealed partial class VampireSystem : EntitySystem
         UpdateVampireFedAlert(uid, comp);
 
         SyncVampireActions(uid, comp);
+        _movementSpeed.RefreshMovementSpeedModifiers(uid);
 
     }
 

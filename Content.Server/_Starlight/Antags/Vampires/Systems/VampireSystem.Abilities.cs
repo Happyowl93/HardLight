@@ -315,6 +315,8 @@ public sealed partial class VampireSystem : EntitySystem
         if (args.Handled)
             return;
 
+        var wasStarving = comp.BloodFullness <= 0f;
+
         if (args.Cancelled)
         {
             comp.IsDrinking = false;
@@ -351,6 +353,10 @@ public sealed partial class VampireSystem : EntitySystem
             comp.BloodDrunkFromTargets[target] += (int)actualSipAmount;
 
             comp.BloodFullness = MathF.Min(comp.MaxBloodFullness, comp.BloodFullness + actualSipAmount);
+
+            var isStarving = comp.BloodFullness <= 0f;
+            if (wasStarving != isStarving)
+                _movementSpeed.RefreshMovementSpeedModifiers(uid);
 
             // Base healing
             var baseHealSpec = new DamageSpecifier();
