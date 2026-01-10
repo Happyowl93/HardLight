@@ -25646,5 +25646,12 @@ Entries:
   id: 135800
   time: '2026-01-10T14:33:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1358
+- author: Citrea
+  changes:
+  - message: Borg hands are once again no longer being re-sorted.
+    type: Fix
+  id: 277800
+  time: '2026-01-10T16:56:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2778
 Order: -1
 
