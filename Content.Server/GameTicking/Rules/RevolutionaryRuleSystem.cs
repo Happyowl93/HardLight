@@ -34,6 +34,7 @@ using Robust.Shared.Player;
 #region Starlight
 using Content.Server.AlertLevel;
 using Content.Server.Audio;
+using Content.Shared.Changeling;
 using Content.Server.Chat.Systems;
 using Content.Server.Containers;
 using Content.Server.GameTicking.Rules;
@@ -46,10 +47,12 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Implants.Components;
 using Content.Shared.Inventory;
+using Content.Shared.NukeOps;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Store.Components;
+using Content.Shared.Starlight.Antags.Abductor;
 using Content.Shared._Starlight.Shadekin;
 using Content.Shared._Starlight.Silicons.Borgs;
 using Robust.Shared.Audio.Systems;
@@ -350,6 +353,11 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
             HasComp<MindShieldComponent>(ev.Target) ||
             HasComp<BrighteyeComponent>(ev.Target) || // Starlight Addtion
             HasComp<BorgChassisComponent>(ev.Target) || // Starlight Addition - Borgis should be emagged not flashed
+            HasComp<AbductorComponent>(ev.Target) || // Starlight
+            HasComp<NukeOperativeComponent>(ev.Target) || // Starlight
+            HasComp<WizardRoleComponent>(ev.Target) || // Starlight
+            HasComp<ChangelingComponent>(ev.Target) || // Starlight
+            HasComp<NinjaRoleComponent>(ev.Target) || // Starlight
             !HasComp<HumanoidAppearanceComponent>(ev.Target) &&
             !alwaysConvertible ||
             !_mobState.IsAlive(ev.Target) ||
