@@ -25623,5 +25623,13 @@ Entries:
   id: 277300
   time: '2026-01-10T14:15:55.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2773
+- author: Citrea
+  changes:
+  - message: Fixed hands swapping order when surgically attaching a left hand before
+      a right hand. Again.
+    type: Fix
+  id: 275900
+  time: '2026-01-10T14:20:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2759
 Order: -1
 
