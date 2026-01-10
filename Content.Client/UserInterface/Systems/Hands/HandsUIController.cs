@@ -350,7 +350,8 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
             {
                 var existingHands = HandsGui.HandContainer.ButtonCount;
                 HandsGui.HandContainer.AddButton(button);
-                button.SetPositionInParent(Math.Min((int)hand.Location, existingHands));
+                if (hand.Location != HandLocation.Middle) //Borg hand re-sorting fix again
+                    button.SetPositionInParent(Math.Min((int)hand.Location, existingHands));
             }
             // 🌟Starlight🌟  end
         }
