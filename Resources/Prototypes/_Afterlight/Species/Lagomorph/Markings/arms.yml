@@ -33,3 +33,39 @@
   sprites:
     - sprite: _Afterlight/Species/Lagomorph/markings.rsi
       state: right_arm_spots
+
+- type: marking
+  id: LagomorphArmMittsR
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: r_arm_mitt
+
+- type: marking
+  id: LagomorphArmMittsL
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: l_arm_mitt
+
+- type: marking    
+  id: LagomorphHandMittsR
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: r_hand_mitt
+  
+- type: marking
+  id: LagomorphHandMittsL
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Lagomorph]
+  sprites:
+    - sprite: _Afterlight/Species/Lagomorph/markings.rsi
+      state: l_hand_mitt
