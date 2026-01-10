@@ -1,4 +1,4 @@
-﻿∩╗┐using Robust.Client.GameObjects;
+﻿using Robust.Client.GameObjects;
 using Robust.Shared.Timing;
 using Content.Shared.Animations;
 using Robust.Client.Animations;
