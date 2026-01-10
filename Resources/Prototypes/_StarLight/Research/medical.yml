@@ -27,8 +27,8 @@
     sprite: _Starlight/Objects/Specific/Medical/medical.rsi
     state: mender
   discipline: Biochemical
-  tier: 1
-  cost: 3000
+  tier: 2
+  cost: 6000
   recipeUnlocks:
     - AutoMenderBrute
     - AutoMenderBurn
