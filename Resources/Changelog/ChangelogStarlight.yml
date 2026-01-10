@@ -25593,5 +25593,12 @@ Entries:
   id: 158100
   time: '2026-01-10T02:47:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1581
+- author: Sparlight, TwistedMystic
+  changes:
+  - message: Neck slot for smart corgis.
+    type: Add
+  id: 274700
+  time: '2026-01-10T03:59:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2747
 Order: -1
 
