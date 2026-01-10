@@ -25607,5 +25607,12 @@ Entries:
   id: 274900
   time: '2026-01-10T14:09:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2749
+- author: Sparlight, TwistedMystic
+  changes:
+  - message: Added various cloaks for smart corgis and borgis to wear.
+    type: Add
+  id: 274800
+  time: '2026-01-10T14:09:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2748
 Order: -1
 
