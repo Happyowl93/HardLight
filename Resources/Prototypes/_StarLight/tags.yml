@@ -229,6 +229,9 @@
   id: MagazineRifleM52
 
 - type: Tag
+  id: MagazineShotgunToz
+
+- type: Tag
   id: MagazineSMGImprovised
 
 - type: Tag
@@ -256,6 +259,9 @@
   id: OvenMachineBoard
 
 - type: Tag
+  id: ParaKnife
+
+- type: Tag
   id: Patch
 
 - type: Tag
@@ -281,6 +287,9 @@
 
 - type: Tag
   id: ShellShotgunImprovised
+
+- type: Tag
+  id: ShellShotgunToz
 
 - type: Tag
   id: ShipWreck
@@ -414,3 +423,14 @@
 - type: Tag
   id: FestiveDinner
   
+- type: Tag
+  id: Meson
+
+- type: Tag
+  id: DamagedShadekinCore
+
+- type: Tag
+  id: ShadekinCore
+
+- type: Tag
+  id: ShadekinEyes
