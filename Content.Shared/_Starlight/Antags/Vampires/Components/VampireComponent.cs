@@ -78,6 +78,20 @@ public sealed partial class VampireComponent : Component
     public float FullnessDecayPerSecond = 0.15f;
 
     /// <summary>
+    /// When <see cref="BloodFullness"/> is empty, apply a strong movement slowdown.
+    /// </summary>
+    [DataField]
+    public float StarvationWalkSpeedModifier = 0.2f;
+    [DataField]
+    public float StarvationSprintSpeedModifier = 0.2f;
+
+    /// <summary>
+    /// When <see cref="BloodFullness"/> is empty, drain this much <see cref="DrunkBlood"/> per second.
+    /// </summary>
+    [DataField]
+    public int StarvationDrunkBloodDrainPerSecond = 2;
+
+    /// <summary>
     /// Action entities of the vampire, used as ActionId -> EntityUid.
     /// </summary>
     public Dictionary<EntProtoId, EntityUid> ActionEntities = new();

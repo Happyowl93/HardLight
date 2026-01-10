@@ -86,6 +86,8 @@ vampire-locate-no-targets = No prey can be sensed on this sector.
 predator-sense-title = Predator Sense
 vampire-locate-search-placeholder = Search...
 
+vampiric-claws-remove-popup = You make claws disappear.
+
 # Umbrae abilities
 action-vampire-cloak-of-darkness-start = You blend into the shadows!
 action-vampire-cloak-of-darkness-stop = You step out of the shadows.

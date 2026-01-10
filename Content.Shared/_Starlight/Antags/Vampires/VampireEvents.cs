@@ -6,6 +6,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Content.Shared.FixedPoint;
 
 namespace Content.Shared._Starlight.Antags.Vampires;
 
@@ -71,6 +72,11 @@ public sealed class VampireBloodDrankEvent : EntityEventArgs
     }
 }
 
+/// <summary>
+/// Raised locally on a vampire when their progression related blood values change
+/// </summary>
+public sealed class VampireProgressionChangedEvent : EntityEventArgs { }
+
 #endregion
 
 #region Hemomancer
@@ -97,7 +103,7 @@ public sealed partial class VampireHemomancerTendrilsActionEvent : WorldTargetAc
     public TimeSpan SlowDuration = TimeSpan.FromSeconds(2);
 
     [DataField]
-    public float ToxinDamage = 33.0f;
+    public FixedPoint2 ToxinDamage = FixedPoint2.New(33);
 
     [DataField]
     public bool SpawnVisuals = true;
@@ -166,7 +172,7 @@ public sealed partial class VampireBloodEruptionActionEvent : InstantActionEvent
     public float Range = 10f;
 
     [DataField]
-    public int Damage = 15;
+    public FixedPoint2 Damage = FixedPoint2.New(15);
 
     [DataField]
     public float TargetRange = 2f;
@@ -179,16 +185,16 @@ public sealed partial class VampireBloodBringersRiteActionEvent : InstantActionE
     public float Range = 4f;
 
     [DataField]
-    public float Damage = 5f;
+    public FixedPoint2 Damage = FixedPoint2.New(5);
 
     [DataField]
     public float MaxTargetBlood = 10f;
 
     [DataField]
-    public float HealBrute = 8f;
+    public FixedPoint2 HealBrute = FixedPoint2.New(8);
 
     [DataField]
-    public float HealBurn = 2f;
+    public FixedPoint2 HealBurn = FixedPoint2.New(2);
 
     [DataField]
     public float HealStamina = 15f;

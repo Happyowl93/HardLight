@@ -1,3 +1,4 @@
+using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Hands.EntitySystems;
@@ -10,6 +11,7 @@ using Content.Shared.Body.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Wieldable;
+using Content.Server.Popups;
 
 namespace Content.Server._Starlight.Antags.Vampires.Systems;
 
@@ -18,7 +20,6 @@ namespace Content.Server._Starlight.Antags.Vampires.Systems;
 /// </summary>
 public sealed class VampiricClawsSystem : EntitySystem
 {
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!;
     [Dependency] private readonly HungerSystem _hunger = default!;
@@ -43,6 +44,8 @@ public sealed class VampiricClawsSystem : EntitySystem
 
         if (TryComp<VampireComponent>(args.User, out var vamp))
             ClearClawsReference(ent.Owner, vamp);
+        
+        _popup.PopupEntity(Loc.GetString("vampiric-claws-remove-popup"), ent.Owner, args.User);
 
         QueueDel(ent);
     }
@@ -66,6 +69,8 @@ public sealed class VampiricClawsSystem : EntitySystem
 
             vamp.BloodFullness = MathF.Min(vamp.MaxBloodFullness, vamp.BloodFullness + bloodGained);
             Dirty(args.User, vamp);
+
+            RaiseLocalEvent(args.User, new VampireProgressionChangedEvent());
 
             if (TryComp<HungerComponent>(args.User, out var hunger))
                 _hunger.ModifyHunger(args.User, bloodGained * 2, hunger);

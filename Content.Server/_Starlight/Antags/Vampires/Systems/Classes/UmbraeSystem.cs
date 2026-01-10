@@ -6,8 +6,12 @@ using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Content.Shared.Alert;
+using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
+using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using Content.Shared.Light.Components;
@@ -28,6 +32,8 @@ namespace Content.Server._Starlight.Antags.Vampires.Systems;
 
 public sealed class UmbraeSystem : EntitySystem
 {
+    private static readonly ProtoId<DamageTypePrototype> _bluntTypeId = "Blunt";
+
     [Dependency] private readonly VampireSystem _vampire = default!;
 
     [Dependency] private readonly ActionsSystem _actions = default!;
@@ -44,6 +50,8 @@ public sealed class UmbraeSystem : EntitySystem
 
     [Dependency] private readonly PoweredLightSystem _poweredLightSystem = default!;
     [Dependency] private readonly TemperatureSystem _temperatureSystem = default!;
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
 
     public override void Initialize()
     {
@@ -645,7 +653,8 @@ public sealed class UmbraeSystem : EntitySystem
             var curDist = (_transform.GetWorldPosition(Transform(uid)) - _transform.GetWorldPosition(Transform(tgt.Value))).Length();
             if (curDist <= arguments.Range)
             {
-                _vampire.ApplyDamage(tgt.Value, "Blunt", arguments.BrutePerTick, uid);
+                var spec = new DamageSpecifier(_proto.Index<DamageTypePrototype>(_bluntTypeId), FixedPoint2.New(arguments.BrutePerTick));
+                _damageableSystem.TryChangeDamage(tgt.Value, spec, true, origin: uid);
                 if (arguments.HitSound != null)
                     _audio.PlayPvs(arguments.HitSound, tgt.Value);
                 var punchEffect = Spawn("WeaponArcPunch", Transform(tgt.Value).Coordinates);

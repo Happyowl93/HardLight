@@ -47,9 +47,7 @@ public sealed class ShadowSnareSystem : EntitySystem
             return;
 
         // Apply brute damage
-        var damage = new DamageSpecifier();
-        damage.DamageDict["Blunt"] = component.BruteDamage;
-        _damageable.TryChangeDamage(target, damage, true, origin: uid);
+        _damageable.TryChangeDamage(target, component.Damage, true, origin: uid);
 
         // Apply temporary blindness using flash system
         var blindDuration = TimeSpan.FromSeconds(component.BlindDuration);

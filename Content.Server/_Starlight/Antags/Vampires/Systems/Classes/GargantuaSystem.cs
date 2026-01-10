@@ -12,6 +12,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Ensnaring.Components;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Mobs.Components;
@@ -25,6 +26,7 @@ using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
+using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -34,6 +36,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -45,6 +48,9 @@ public sealed class GargantuaSystem : EntitySystem
     private const string BloodRushActionId = "ActionVampireBloodRush";
     private const string OverwhelmingForceActionId = "ActionVampireOverwhelmingForce";
     private const string ChargeActionId = "ActionVampireCharge";
+
+    private static readonly ProtoId<DamageGroupPrototype> _bruteGroupId = "Brute";
+    private static readonly ProtoId<DamageGroupPrototype> _burnGroupId = "Burn";
 
     [Dependency] private readonly VampireSystem _vampire = default!;
 
@@ -58,6 +64,7 @@ public sealed class GargantuaSystem : EntitySystem
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly DestructibleSystem _destructible = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
@@ -129,8 +136,10 @@ public sealed class GargantuaSystem : EntitySystem
         if (vampire.TotalBlood < 300)
             return;
 
-        _vampire.ApplyHealing(uid, "Brute", 3, true);
-        _vampire.ApplyHealing(uid, "Burn", 3, true);
+        var spec = new DamageSpecifier();
+        spec += new DamageSpecifier(_proto.Index<DamageGroupPrototype>(_bruteGroupId), -FixedPoint2.New(3));
+        spec += new DamageSpecifier(_proto.Index<DamageGroupPrototype>(_burnGroupId), -FixedPoint2.New(3));
+        _damageableSystem.TryChangeDamage(uid, spec, true);
     }
 
     private bool TryGetVampireActionEvent<T>(VampireComponent vampire, string actionId, out T ev)

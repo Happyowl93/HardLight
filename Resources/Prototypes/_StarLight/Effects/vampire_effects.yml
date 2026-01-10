@@ -354,6 +354,9 @@
     - type: StepTrigger
       requiredTriggeredSpeed: -1
     - type: ShadowSnare
+      damage:
+        types:
+          Blunt: 20
     - type: Clickable
 
 # Ensnare entity spawned when shadow snare triggers

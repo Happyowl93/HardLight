@@ -41,10 +41,6 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-
-    // Damage type caches
-    private readonly Dictionary<string, DamageTypePrototype?> _damageTypeCache = new();
-    private readonly Dictionary<string, DamageGroupPrototype?> _damageGroupCache = new();
     private static readonly SoundSpecifier _biteSound = new SoundPathSpecifier("/Audio/Effects/bite.ogg");
     private static readonly SoundSpecifier _devourSound = new SoundPathSpecifier("/Audio/Effects/demon_consume.ogg");
     private readonly Dictionary<EntityUid, List<EntityUid>> _playerShadowSnares = new();
@@ -136,92 +132,6 @@ public sealed partial class VampireSystem : EntitySystem
     }
 
     #region Helper Methods
-
-    private DamageTypePrototype? GetCachedDamageType(string protoId)
-    {
-        if (_damageTypeCache.TryGetValue(protoId, out var cached))
-            return cached;
-
-        var result = _proto.TryIndex<DamageTypePrototype>(protoId, out var proto) ? proto : null;
-        _damageTypeCache[protoId] = result;
-        return result;
-    }
-
-    private DamageGroupPrototype? GetCachedDamageGroup(string protoId)
-    {
-        if (_damageGroupCache.TryGetValue(protoId, out var cached))
-            return cached;
-
-        var result = _proto.TryIndex<DamageGroupPrototype>(protoId, out var proto) ? proto : null;
-        _damageGroupCache[protoId] = result;
-        return result;
-    }
-
-    /// <summary>
-    /// Apply damage to target
-    /// </summary>
-    /// <param name="target">Target Entity</param>
-    /// <param name="damageTypeId">Damage Type</param>
-    /// <param name="amount">Amount of damage</param>
-    /// <param name="origin">Who applied damage to target</param>
-    internal void ApplyDamage(EntityUid target, string damageTypeId, float amount, EntityUid? origin = null)
-    {
-        if (!TryComp<DamageableComponent>(target, out var damageable))
-            return;
-
-        var damageType = GetCachedDamageType(damageTypeId);
-        if (damageType == null)
-            return;
-
-        var spec = new DamageSpecifier();
-        spec += new DamageSpecifier(damageType, FixedPoint2.New(amount));
-        _damageableSystem.TryChangeDamage(target, spec, true, origin: origin);
-    }
-
-    internal void ApplyDamage(EntityUid target, string damageTypeId, FixedPoint2 amount, EntityUid? origin = null)
-    {
-        if (!TryComp<DamageableComponent>(target, out var damageable))
-            return;
-
-        var damageType = GetCachedDamageType(damageTypeId);
-        if (damageType == null)
-            return;
-
-        var spec = new DamageSpecifier();
-        spec += new DamageSpecifier(damageType, amount);
-        _damageableSystem.TryChangeDamage(target, spec, true, origin: origin);
-    }
-
-    /// <summary>
-    /// Apply healing to target
-    /// </summary>
-    /// <param name="target">Target Entity</param>
-    /// <param name="damageTypeOrGroupId">Damage Type or Group ID</param>
-    /// <param name="amount">Amount of damage</param>
-    /// <param name="isGroup">Do we need to use Group ID instead of Damage Type?</param>
-    internal void ApplyHealing(EntityUid target, string damageTypeOrGroupId, float amount, bool isGroup = false)
-    {
-        if (!TryComp<DamageableComponent>(target, out var damageable))
-            return;
-
-        var spec = new DamageSpecifier();
-
-        if (isGroup)
-        {
-            var damageGroup = GetCachedDamageGroup(damageTypeOrGroupId);
-            if (damageGroup != null)
-                spec += new DamageSpecifier(damageGroup, -FixedPoint2.New(amount));
-        }
-        else
-        {
-            var damageType = GetCachedDamageType(damageTypeOrGroupId);
-            if (damageType != null)
-                spec += new DamageSpecifier(damageType, -FixedPoint2.New(amount));
-        }
-
-        if (spec.DamageDict.Count > 0)
-            _damageableSystem.TryChangeDamage(target, spec, true);
-    }
 
     /// <summary>
     /// Check if tile coordinates are valid and not blocked
@@ -434,6 +344,8 @@ public sealed partial class VampireSystem : EntitySystem
             comp.DrunkBlood += (int)actualSipAmount;
             comp.TotalBlood += (int)actualSipAmount;
 
+            RaiseLocalEvent(uid, new VampireProgressionChangedEvent());
+
             if (!comp.BloodDrunkFromTargets.ContainsKey(target))
                 comp.BloodDrunkFromTargets[target] = 0;
             comp.BloodDrunkFromTargets[target] += (int)actualSipAmount;
@@ -441,10 +353,12 @@ public sealed partial class VampireSystem : EntitySystem
             comp.BloodFullness = MathF.Min(comp.MaxBloodFullness, comp.BloodFullness + actualSipAmount);
 
             // Base healing
-            ApplyHealing(uid, _bruteGroupId, 2, true);
-            ApplyHealing(uid, _burnGroupId, 2, true);
-            ApplyHealing(uid, _poisonTypeId, 4);
-            ApplyHealing(uid, _oxyLossTypeId, 10);
+            var baseHealSpec = new DamageSpecifier();
+            baseHealSpec += new DamageSpecifier(_proto.Index<DamageGroupPrototype>(_bruteGroupId), -FixedPoint2.New(2));
+            baseHealSpec += new DamageSpecifier(_proto.Index<DamageGroupPrototype>(_burnGroupId), -FixedPoint2.New(2));
+            baseHealSpec += new DamageSpecifier(_proto.Index<DamageTypePrototype>(_poisonTypeId), -FixedPoint2.New(4));
+            baseHealSpec += new DamageSpecifier(_proto.Index<DamageTypePrototype>(_oxyLossTypeId), -FixedPoint2.New(10));
+            _damageableSystem.TryChangeDamage(uid, baseHealSpec, true);
 
             RaiseLocalEvent(uid, new VampireBloodDrankEvent(target, actualSipAmount));
 
@@ -458,8 +372,6 @@ public sealed partial class VampireSystem : EntitySystem
 
             UpdateVampireAlert(uid);
             UpdateVampireFedAlert(uid, comp);
-
-            EnsureRejuvenateUpgrade(uid, comp);
 
             var currentDrunkFromTarget = comp.BloodDrunkFromTargets.GetValueOrDefault(target, 0);
             if (comp.FangsExtended && currentDrunkFromTarget < comp.MaxBloodPerTarget)
@@ -682,10 +594,12 @@ public sealed partial class VampireSystem : EntitySystem
             if (!Exists(uid))
                 return;
 
-            ApplyHealing(uid, _bruteGroupId, 4, true);
-            ApplyHealing(uid, _burnGroupId, 4, true);
-            ApplyHealing(uid, _poisonTypeId, 4);
-            ApplyHealing(uid, _oxyLossTypeId, 5);
+            var healSpec = new DamageSpecifier();
+            healSpec += new DamageSpecifier(_proto.Index<DamageGroupPrototype>(_bruteGroupId), -FixedPoint2.New(4));
+            healSpec += new DamageSpecifier(_proto.Index<DamageGroupPrototype>(_burnGroupId), -FixedPoint2.New(4));
+            healSpec += new DamageSpecifier(_proto.Index<DamageTypePrototype>(_poisonTypeId), -FixedPoint2.New(4));
+            healSpec += new DamageSpecifier(_proto.Index<DamageTypePrototype>(_oxyLossTypeId), -FixedPoint2.New(5));
+            _damageableSystem.TryChangeDamage(uid, healSpec, true);
 
             if (remaining > 1)
                 Timer.Spawn(interval, () => DoHealTick(remaining - 1));

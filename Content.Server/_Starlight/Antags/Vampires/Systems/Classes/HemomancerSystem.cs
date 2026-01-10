@@ -8,9 +8,12 @@ using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Content.Shared.Alert;
 using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Examine;
+using Content.Shared.FixedPoint;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Hands.Components;
@@ -40,6 +43,11 @@ public sealed class HemomancerSystem : EntitySystem
 {
     private const string BloodReagentId = "Blood";
 
+    private static readonly ProtoId<DamageTypePrototype> _poisonTypeId = "Poison";
+    private static readonly ProtoId<DamageTypePrototype> _bluntTypeId = "Blunt";
+    private static readonly ProtoId<DamageGroupPrototype> _bruteGroupId = "Brute";
+    private static readonly ProtoId<DamageGroupPrototype> _burnGroupId = "Burn";
+
     private static readonly Vector2[] _tendrilOffsets =
     [
         new(-1, -1), new(0, -1), new(1, -1),
@@ -67,6 +75,7 @@ public sealed class HemomancerSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly MovementModStatusSystem _movementMod = default!;
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
@@ -219,7 +228,8 @@ public sealed class HemomancerSystem : EntitySystem
                     if (!TryComp<DamageableComponent>(ent, out var _))
                         continue;
 
-                    _vampire.ApplyDamage(ent, "Poison", toxinDamage, performerUid);
+                    var poisonSpec = new DamageSpecifier(_proto.Index<DamageTypePrototype>(_poisonTypeId), toxinDamage);
+                    _damageableSystem.TryChangeDamage(ent, poisonSpec, true, origin: performerUid);
                     _movementMod.TryAddMovementSpeedModDuration(ent, MovementModStatusSystem.FlashSlowdown, slowDuration, slowMultiplier);
                     hitEnemies.Add(ent);
                 }
@@ -445,8 +455,12 @@ public sealed class HemomancerSystem : EntitySystem
             }
         }
 
+        var blunt = _proto.Index<DamageTypePrototype>(_bluntTypeId);
         foreach (var targetUid in targetsToDamage)
-            _vampire.ApplyDamage(targetUid, "Blunt", args.Damage, uid);
+        {
+            var spec = new DamageSpecifier(blunt, args.Damage);
+            _damageableSystem.TryChangeDamage(targetUid, spec, true, origin: uid);
+        }
 
         foreach (var targetUid in targetsToVisualize)
         {
@@ -518,9 +532,9 @@ public sealed class HemomancerSystem : EntitySystem
         TimeSpan interval,
         int cost,
         float range,
-        float damage,
-        float healBrute,
-        float healBurn,
+        FixedPoint2 damage,
+        FixedPoint2 healBrute,
+        FixedPoint2 healBurn,
         float healStamina)
     {
         comp.BloodBringersRiteActive = true;
@@ -557,9 +571,9 @@ public sealed class HemomancerSystem : EntitySystem
         int tickCount,
         int cost,
         float range,
-        float damage,
-        float healBrute,
-        float healBurn,
+        FixedPoint2 damage,
+        FixedPoint2 healBrute,
+        FixedPoint2 healBurn,
         float healStamina)
     {
         const int MaxTicks = 150;
@@ -620,14 +634,23 @@ public sealed class HemomancerSystem : EntitySystem
 
         UpdateDrainBeamNetwork(uid, currentTargets, range);
 
-        foreach (var target in currentTargets)
+        var count = currentTargets.Count;
+        if (count > 0)
         {
-            _vampire.ApplyDamage(target, "Blunt", damage, uid);
+            var bluntType = _proto.Index<DamageTypePrototype>(_bluntTypeId);
+            foreach (var target in currentTargets)
+            {
+                var dmgSpec = new DamageSpecifier(bluntType, damage);
+                _damageableSystem.TryChangeDamage(target, dmgSpec, true, origin: uid);
+            }
 
-            _vampire.ApplyHealing(uid, "Brute", healBrute, true);
-            _vampire.ApplyHealing(uid, "Burn", healBurn, true);
+            var selfHealSpec = new DamageSpecifier();
+            selfHealSpec += new DamageSpecifier(_proto.Index<DamageGroupPrototype>(_bruteGroupId), -(healBrute * count));
+            selfHealSpec += new DamageSpecifier(_proto.Index<DamageGroupPrototype>(_burnGroupId), -(healBurn * count));
+            _damageableSystem.TryChangeDamage(uid, selfHealSpec, true);
+
             if (TryComp<StaminaComponent>(uid, out var stam))
-                _stamina.TakeStaminaDamage(uid, -healStamina, stam);
+                _stamina.TakeStaminaDamage(uid, -healStamina * count, stam);
         }
 
         var expectedLoopId = hemomancer.BloodBringersRiteLoopId;

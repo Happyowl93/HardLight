@@ -1,3 +1,4 @@
+using Content.Shared.Damage;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -7,8 +8,14 @@ namespace Content.Shared._Starlight.Antags.Vampires.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class ShadowSnareComponent : Component
 {
-    [DataField, AutoNetworkedField]
-    public float BruteDamage = 20f;
+    [DataField]
+    public DamageSpecifier Damage = new()
+    {
+        DamageDict = new()
+        {
+            { "Blunt", 20f }
+        }
+    };
 
     [DataField, AutoNetworkedField]
     public float BlindDuration = 20f;

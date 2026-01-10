@@ -2,7 +2,7 @@ using Content.Shared.FixedPoint;
 
 namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
-[RegisterComponent]
+[RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class VampireSunlightComponent : Component
 {
     /// <summary>
@@ -72,11 +72,14 @@ public sealed partial class VampireSunlightComponent : Component
     public LocId WarningPopup = "vampire-space-burn-warning";
 
     [ViewVariables]
-    public TimeSpan TimeInSpace;
+    [AutoPausedField]
+    public TimeSpan? TimeEnteredSpace;
 
     [ViewVariables]
-    public TimeSpan DamageAccumulator;
+    [AutoPausedField]
+    public TimeSpan? NextDamageTime;
 
     [ViewVariables]
+    [AutoPausedField]
     public TimeSpan NextWarningPopup;
 }
