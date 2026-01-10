@@ -233,6 +233,11 @@ public sealed partial class GameTicker
         var rules = new List<EntityUid>(GetAddedGameRules());
         foreach (var rule in rules)
         {
+            // Starlight start
+            // We're only handling rules that aren't intentionally delayed. If a rule _is_ supposed to be delayed, ignore it.
+            if (HasComp<DelayedStartRuleComponent>(rule))
+                continue;
+            // Starlight end
             StartGameRule(rule);
         }
 
@@ -253,6 +258,9 @@ public sealed partial class GameTicker
             Log.Warning($"Rules added while starting preset rules - count updated from {expectedRuleCount} to {rules.Count}. Doing another pass to start extra rule(s)...");
             foreach (var rule in rules)
             {
+                // We're only handling rules that aren't intentionally delayed. If a rule _is_ supposed to be delayed, ignore it.
+                if (HasComp<DelayedStartRuleComponent>(rule))
+                    continue;
                 StartGameRule(rule);
             }
 

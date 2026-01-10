@@ -421,9 +421,11 @@ namespace Content.Server.GameTicking
             // MapInitialize *before* spawning players, our codebase is too shit to do it afterwards...
             _map.InitializeMap(DefaultMap);
 
+            StartGamePresetRules(); // Starlight - Start any map-attached game rules
+
             SpawnPlayers(readyPlayers, readyPlayerIds, force);
 
-            StartGamePresetRules(); // Starlight - Start any map- or player-attached game rules
+            StartGamePresetRules(); // Starlight - Start any player-attached game rules
 
             _roundStartDateTime = DateTime.UtcNow;
             RunLevel = GameRunLevel.InRound;
