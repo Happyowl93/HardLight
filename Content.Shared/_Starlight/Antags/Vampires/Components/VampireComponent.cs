@@ -121,7 +121,7 @@ public sealed partial class VampireComponent : Component
 
     [DataField]
     public ProtoId<ReagentPrototype> HolyWaterReagentId = "Holywater";
-
+    [AutoPausedField]
     public TimeSpan NextHolyWaterTick = TimeSpan.Zero;
     public TimeSpan NextHolyPlaceTick = TimeSpan.Zero;
     public TimeSpan NextHolyPlacePopup = TimeSpan.Zero;
