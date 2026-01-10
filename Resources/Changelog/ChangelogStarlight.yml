@@ -25614,5 +25614,14 @@ Entries:
   id: 274800
   time: '2026-01-10T14:09:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2748
+- author: Citrea
+  changes:
+  - message: Clumsy creatures are no longer bonked on unbonkable structures.
+    type: Fix
+  - message: As a result of previous fix, the biomass reclaimer works properly again.
+    type: Fix
+  id: 277300
+  time: '2026-01-10T14:15:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2773
 Order: -1
 
