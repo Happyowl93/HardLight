@@ -141,14 +141,14 @@ public sealed partial class BorgTypePrototype : IPrototype
     /// </summary>
     /// <seealso cref="InteractionPopupComponent"/>
     [DataField]
-    public string PetSuccessString { get; set; } = "petting-success-generic-cyborg";
+    public LocId PetSuccessString { get; set; } = "petting-success-generic-cyborg";
 
     /// <summary>
     /// String to use on petting failure.
     /// </summary>
     /// <seealso cref="InteractionPopupComponent"/>
     [DataField]
-    public string PetFailureString { get; set; } = "petting-failure-generic-cyborg";
+    public LocId PetFailureString { get; set; } = "petting-failure-generic-cyborg";
 
     //
     // Sounds
