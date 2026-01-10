@@ -106,7 +106,7 @@ namespace Content.Shared.Movement.Systems
             Dirty(uid, move);
         }
 
-        public void RefreshMovementSpeedModifiers(EntityUid uid, MovementSpeedModifierComponent? move = null)
+        public void RefreshMovementSpeedModifiers(EntityUid uid, MovementSpeedModifierComponent? move = null, bool applyScalar = true)
         {
             if (!Resolve(uid, ref move, false))
                 return;
@@ -114,16 +114,15 @@ namespace Content.Shared.Movement.Systems
             if (_timing.ApplyingState)
                 return;
             
-            var scalar = 1f;
-            
-            if (TryComp<MovementSpeedModifierScaleComponent>(uid, out var comp))
+            var ev = new RefreshMovementSpeedModifiersEvent();
+            RaiseLocalEvent(uid, ev);
+                
+            if (TryComp<MovementSpeedModifierScaleComponent>(uid, out var comp) && applyScalar) 
             {
-                scalar = comp.MovementSpeedScale;
+                ev.WalkSpeedModifier = (ev.WalkSpeedModifier - 1) * comp.MovementSpeedScale + 1;
+                ev.SprintSpeedModifier = (ev.SprintSpeedModifier - 1) * comp.MovementSpeedScale + 1;
             }
             
-            var ev = new RefreshMovementSpeedModifiersEvent(scalar);
-            RaiseLocalEvent(uid, ev);
-
             if (MathHelper.CloseTo(ev.WalkSpeedModifier, move.WalkSpeedModifier) &&
                 MathHelper.CloseTo(ev.SprintSpeedModifier, move.SprintSpeedModifier))
                 return;
@@ -189,12 +188,12 @@ namespace Content.Shared.Movement.Systems
     ///     should hook into this event and set it then. If you want this event to be raised,
     ///     call <see cref="MovementSpeedModifierSystem.RefreshMovementSpeedModifiers"/>.
     /// </summary>
-    public sealed class RefreshMovementSpeedModifiersEvent(float scalar) : EntityEventArgs, IInventoryRelayEvent
+    public sealed class RefreshMovementSpeedModifiersEvent: EntityEventArgs, IInventoryRelayEvent
     {
         public SlotFlags TargetSlots { get; } = ~SlotFlags.POCKET;
 
-        public float WalkSpeedModifier { get; private set; } = 1.0f;
-        public float SprintSpeedModifier { get; private set; } = 1.0f;
+        public float WalkSpeedModifier { get; set; } = 1.0f;
+        public float SprintSpeedModifier { get; set; } = 1.0f;
 
         public void ModifySpeed(float walk, float sprint)
         {
@@ -205,18 +204,6 @@ namespace Content.Shared.Movement.Systems
         public void ModifySpeed(float mod)
         {
             ModifySpeed(mod, mod);
-        }
-
-        // Use these when you want the modifiers to be adjusted and pushed towards the center, aka for reagent and clothes modifiers.
-        public void ModifySpeedScaled(float walk, float sprint)
-        {
-            WalkSpeedModifier *= ((walk - 1) * scalar + 1);
-            SprintSpeedModifier *= ((sprint - 1) * scalar + 1);
-        }
-
-        public void ModifySpeedScaled(float mod)
-        {
-            ModifySpeedScaled(mod, mod);
         }
     }
 

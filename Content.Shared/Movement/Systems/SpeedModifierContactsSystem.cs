@@ -139,7 +139,7 @@ public sealed class SpeedModifierContactsSystem : EntitySystem
             walkSpeed = MathF.Max(walkSpeed, evMax.MaxWalkSlowdown);
             sprintSpeed = MathF.Max(sprintSpeed, evMax.MaxSprintSlowdown);
 
-            args.ModifySpeedScaled(walkSpeed, sprintSpeed);
+            args.ModifySpeed(walkSpeed, sprintSpeed);
         }
 
         // no longer colliding with anything

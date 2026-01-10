@@ -11,7 +11,7 @@ namespace Content.Shared._Starlight.Movement.Components;
 public sealed partial class MovementSpeedModifierScaleComponent : Component
 {
     /// <summary>
-    ///     Sets the scale that all speed modifiers are scaled by if used with ModifySpeedScaled.
+    ///     TODO: Change Summary - Sets the scale that all speed modifiers are scaled by if used with ModifySpeedScaled.
     /// </summary>
     [DataField, AutoNetworkedField]
     public float MovementSpeedScale = 1f;
