@@ -43,6 +43,7 @@
   id: Moth
   name: Moth
   description: a cute moth!
+  colorizeable: true
   spriteSpecifier:
     sprite:
       sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
