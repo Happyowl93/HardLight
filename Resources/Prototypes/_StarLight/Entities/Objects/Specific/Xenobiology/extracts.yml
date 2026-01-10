@@ -11,6 +11,8 @@
       solutions:
         container:
           maxVol: 150
+    - type: Item
+      size: Tiny
     - type: MixableSolution
       solution: container
     - type: DrawableSolution
