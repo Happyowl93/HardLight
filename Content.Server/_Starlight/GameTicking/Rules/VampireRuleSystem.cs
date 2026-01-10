@@ -50,9 +50,10 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
         var briefing = Loc.GetString("vampire-role-greeting", ("name", name));
         _antag.SendBriefing(target, briefing, Color.Yellow, BriefingSound);
 
-        _role.MindHasRole<VampireRoleComponent>(mindId, out var vampRole);
-        _role.MindHasRole<RoleBriefingComponent>(mindId, out var briefingComp);
-        if (vampRole is not null && briefingComp is null)
+        if (
+             _role.MindHasRole<VampireRoleComponent>(mindId, out var vampRole)
+          && _role.MindHasRole<RoleBriefingComponent>(mindId, out var briefingComp)
+        )
         {
             AddComp<RoleBriefingComponent>(vampRole.Value.Owner);
             Comp<RoleBriefingComponent>(vampRole.Value.Owner).Briefing = briefing;
