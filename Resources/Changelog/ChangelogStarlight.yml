@@ -25660,5 +25660,81 @@ Entries:
   id: 278100
   time: '2026-01-10T19:41:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2781
+- author: Citrea & sprites by Maitake
+  changes:
+  - message: Welding implants work for Shadekin and Resomi now.
+    type: Fix
+  - message: Left cyberlegs no longer move around while in side view.
+    type: Fix
+  - message: Many surgery steps are now slightly more sensible.
+    type: Tweak
+  - message: Reaper arms now have a bone gel attachment, bringing them up to standard
+      for a full surgical kit.
+    type: Tweak
+  - message: Syndicate eye implants work now and are available from the traitor uplink.
+    type: Tweak
+  - message: Mantis blades now conform to skin tone.
+    type: Tweak
+  - message: Thermal vision cyber eyes are now Arsenal tech
+    type: Tweak
+  - message: Cyberarms now have corresponding cyberhands, which deploy the tools instead
+      of the arms. Especially noticeable with bulwark arms!
+    type: Add
+  - message: Added Spacer Arm, a cybernetic arm specialised in salvage activities.
+    type: Add
+  - message: Added G.O.R.I.L.L.A Arm, a cybernetic arm specialised in anomalous research.
+    type: Add
+  - message: Added Angel Arm, a cybernetic arm specialised in paramedic duties.
+    type: Add
+  - message: Added Persephone Arm, a cybernetic arm specialised in botany.
+    type: Add
+  - message: Added Zeus Arm, a cybernetic arm sporting a stun fist and melee-range
+      EMP device.
+    type: Add
+  - message: Added Riplet Arm, a cybernetic arm allowing a cargo technician to pick
+      up an entire crate - like a small Ripley!
+    type: Add
+  - message: Added Engineer Arm, a cybernetic arm containing a full advanced tool
+      set and RCD, at a high price.
+    type: Add
+  - message: Added Hydraulic Legs. They are quite loud, but can carry anything you
+      could ever want with ease.
+    type: Add
+  - message: Added Pilebunker Legs to let their users jump.
+    type: Add
+  - message: Added Insulation Hand Implant.
+    type: Add
+  - message: Added Forensics Hand Implant.
+    type: Add
+  - message: Added Claws Hand Implant.
+    type: Add
+  - message: Added Thrusters Hand Implant.
+    type: Add
+  - message: Added Diagnostics Eye Implant - most of this was already done, credit
+      to @Rinary1
+    type: Add
+  - message: Added Chemistry Eye Implant.
+    type: Add
+  - message: Restored functionality of Syndicate Eye Implant.
+    type: Add
+  - message: Added Radio Brain Implant.
+    type: Add
+  - message: Added Expedition Radio Brain Implant.
+    type: Add
+  - message: Added Translator Brain Implant.
+    type: Add
+  - message: Added Nexus Brain Implant. Not printable, but comes with any Resomi or
+      Avali!
+    type: Add
+  - message: Added Forensics and Claw implants to traitor uplink.
+    type: Add
+  - message: Added Expedition Radio Brain Implant and Spacer Arms to salvage ticket
+      vendor.
+    type: Add
+  - message: Added Mechwright arm to unlockable trinkets (20 hours of Station Engineer)
+    type: Add
+  id: 129500
+  time: '2026-01-11T05:21:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1295
 Order: -1
 
