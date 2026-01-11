@@ -155,18 +155,6 @@
   groupBy: "smokeables"
 
 - type: loadout
-  id: FancyPen
-  effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:RoleTimeRequirement
-        role: JobLibrarian
-        time: 3600 # 1 hour of reading books (a fate worse than death)
-  storage:
-    back:
-      - LuxuryPen
-
-- type: loadout
   id: HonkImplant
   effects:
     - !type:JobRequirementLoadoutEffect
@@ -489,6 +477,45 @@
     back: 
       - LeftArmCyberRipper
 
+  id: rightmechwrightarm
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:RoleTimeRequirement
+        role: JobStationEngineer
+        time: 72000 # 20 hours of banging wrenches on things
+  storage:
+    back: 
+      - RightArmCyberMechwright
+
+- type: loadout
+  id: CigPackBub
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:DepartmentTimeRequirement
+        department: Medical
+        time: 72000 # 20hrs of treating patients as Dr. House
+  storage:
+    back: 
+      - CigPackBub
+  groupBy: "smokeables"
+
+- type: loadout
+  id: PillCanisterPsicodine
+  storage:
+    back:
+    - PillCanisterPsicodine
+
+- type: loadout
+  id: ClothingDogTags
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: NoviceOfficer
+  storage:
+    back:
+    - ClothingDogTags
+
 - type: loadout
   id: PersonalAI
   effects:
@@ -510,21 +537,3 @@
   storage:
     back: 
       - GoldenPersonalAI
-
-  id: CigPackBub
-  effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:DepartmentTimeRequirement
-        department: Medical
-        time: 72000 # 20hrs of treating patients as Dr. House
-  storage:
-    back: 
-      - CigPackBub
-  groupBy: "smokeables"
-
-- type: loadout
-  id: PillCanisterPsicodine
-  storage:
-    back:
-    - PillCanisterPsicodine
