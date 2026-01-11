@@ -25745,5 +25745,16 @@ Entries:
   id: 278700
   time: '2026-01-11T18:00:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2787
+- author: FeralCreature, AegisShield
+  changes:
+  - message: Health analyzers now show all chemicals currently metabolizing in the
+      bloodstream of the scanned entity.
+    type: Add
+  - message: Adjusted the interface of health analyzers to increase readability and
+      improve appearance.
+    type: Tweak
+  id: 273000
+  time: '2026-01-11T23:10:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2730
 Order: -1
 
