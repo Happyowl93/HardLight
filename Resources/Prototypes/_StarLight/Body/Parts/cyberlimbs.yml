@@ -9,6 +9,8 @@
       reagents:
       - ReagentId: Iron
         Quantity: 30
+  - type: RoundstartImplantable
+    cost: 0
 
 - type: entity
   id: LeftArmCyber
@@ -29,7 +31,7 @@
       parts:
         left hand: LeftHandCyber
     - type: RoundstartImplantable
-      cost: 1
+      cost: 0
 
 - type: entity
   id: RightArmCyber
@@ -50,7 +52,7 @@
       parts:
         right hand: RightHandCyber
     - type: RoundstartImplantable
-      cost: 1
+      cost: 0
 
 - type: entity
   id: LeftHandCyber
@@ -68,7 +70,7 @@
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_hand"
     - type: RoundstartImplantable
-      cost: 1
+      cost: 0
 
 - type: entity
   id: RightHandCyber
@@ -86,7 +88,7 @@
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_hand"
     - type: RoundstartImplantable
-      cost: 1
+      cost: 0
 
 - type: entity
   id: LeftLegCyber
@@ -110,7 +112,7 @@
       parts:
         left foot: LeftFootCyber
     - type: RoundstartImplantable
-      cost: 2
+      cost: 0
 
 - type: entity
   id: RightLegCyber
@@ -134,7 +136,7 @@
       parts:
         right foot: RightFootCyber
     - type: RoundstartImplantable
-      cost: 2
+      cost: 0
 
 - type: entity
   id: LeftFootCyber
@@ -152,7 +154,7 @@
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_foot"
     - type: RoundstartImplantable
-      cost: 1
+      cost: 0
 
 - type: entity
   id: RightFootCyber
@@ -170,7 +172,7 @@
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_foot"
     - type: RoundstartImplantable
-      cost: 1
+      cost: 0
 
 #reaper
 - type: entity
