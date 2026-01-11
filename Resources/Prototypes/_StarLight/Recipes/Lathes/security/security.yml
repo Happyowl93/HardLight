@@ -128,3 +128,56 @@
   completetime: 2
   materials:
     Plastic: 600
+#
+- type: latheRecipe
+  id: LeftArmCyberZeus
+  result: LeftArmCyberZeus
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 450
+    Silver: 100
+    Glass: 100
+    Plasma: 100
+
+- type: latheRecipe
+  id: RightArmCyberZeus
+  result: RightArmCyberZeus
+  categories:
+  - Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 450
+    Silver: 100
+    Glass: 100
+    Plasma: 100
+
+#IMPLANTS
+
+#Hand
+
+- type: latheRecipe
+  id: HandImplantClaws
+  result: HandImplantClaws
+  categories:
+  - Implants
+  completetime: 4
+  materials:
+    Plasteel: 500
+    Steel: 200
+    Plasma: 300
+    Glass: 150
+
+- type: latheRecipe
+  id: HandImplantForensics
+  result: HandImplantForensics
+  categories:
+  - Implants
+  completetime: 4
+  materials:
+    Steel: 200
+    Plasma: 300
+    Glass: 150
