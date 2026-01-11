@@ -367,8 +367,8 @@ public sealed partial class StationSystem : SharedStationSystem
         AddGridToStation(station, gridId, null, data, name);
         var ev = new StationPostInitEvent((station, data));
         RaiseLocalEvent(station, ref ev, true);
-        if (comp is null) return station;
-        if (!comp.AllowEvents)
+        if (comp is null) return station; // Starlight
+        if (!comp.AllowEvents) // Starlight
             RemComp<StationEventEligibleComponent>(station);
         return station;
     }

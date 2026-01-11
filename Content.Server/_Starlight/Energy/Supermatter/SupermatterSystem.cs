@@ -134,7 +134,6 @@ public sealed class SupermatterSystem : AccUpdateEntitySystem
 
         if (currentDurability > lastDurability)
             _radioSystem.SendRadioMessage(supermatter.Owner, $"The crystal is regenerating. Durability: {currentDurability}%", _engi, supermatter.Owner);
-        //Starlight begin - Stop dispatching server announcements for this.
         else
             _radioSystem.SendRadioMessage(supermatter.Owner,
                 $"Attention! The crystal is destabilizing. Durability: {currentDurability}%", _engi, supermatter.Owner);
@@ -145,7 +144,6 @@ public sealed class SupermatterSystem : AccUpdateEntitySystem
         //         case > 25: _chat.DispatchServerAnnouncement($"Critical state of the crystal! Durability: {currentDurability}%", Color.OrangeRed); break;
         //         default: _chat.DispatchServerAnnouncement($"Crystal destruction is inevitable. Current durability: {currentDurability}%", Color.Red); break;
         //     }
-        //Starlight end
     }
 
     private void HandleDestruction(Entity<SupermatterComponent> supermatter)
