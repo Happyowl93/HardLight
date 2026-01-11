@@ -68,3 +68,6 @@ uplink-lube-grenade-desc = Special grenade for shenanigans, releasing large clou
 
 uplink-glue-grenade-name = Glue Grenade
 uplink-glue-grenade-desc = Special grenade for shenanigans, releasing large cloud of glue foam.
+
+uplink-pizza-bomb-name = Nefarious Pizza bomb
+uplink-pizza-bomb-desc = A pizza box wired with explosives. Explodes within seconds of being opened.

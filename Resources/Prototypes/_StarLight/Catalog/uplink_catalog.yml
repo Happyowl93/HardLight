@@ -536,3 +536,15 @@
   categories:
   - UplinkDisruption
 
+- type: listing
+  id: UplinkPizzaBomb
+  name: uplink-pizza-bomb-name
+  description: uplink-pizza-bomb-desc
+  productEntity: Pizzabomb
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost: 
+    Telecrystal: 4
+  categories:
+      - UplinkExplosives
