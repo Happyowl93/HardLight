@@ -47,6 +47,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Implants.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Ninja.Components;
 using Content.Shared.NukeOps;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.Borgs.Components;
@@ -357,7 +358,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
             HasComp<NukeOperativeComponent>(ev.Target) || // Starlight
             HasComp<WizardRoleComponent>(ev.Target) || // Starlight
             HasComp<ChangelingComponent>(ev.Target) || // Starlight
-            HasComp<NinjaRoleComponent>(ev.Target) || // Starlight
+            HasComp<SpaceNinjaComponent>(ev.Target) || // Starlight
             !HasComp<HumanoidAppearanceComponent>(ev.Target) &&
             !alwaysConvertible ||
             !_mobState.IsAlive(ev.Target) ||
