@@ -49,7 +49,7 @@ public sealed partial class ATMSystem : SharedATMSystem
         _playerRolesManager.SetBalance(args.Actor, newBalance);
         var cash = SpawnAtPosition(_cash, Transform(uid).Coordinates);
         var stack = EnsureComp<StackComponent>(cash);
-        _stack.SetCount(cash, args.Amount, stack);
+        _stack.SetCount((cash, stack), args.Amount);
         _hands.TryPickup(args.Actor, cash);
         _uiSystem.SetUiState(uid, ATMUIKey.Key, new ATMBuiState() { Balance = newBalance });
         _audioSystem.PlayPvs(component.WithdrawSound, uid);
