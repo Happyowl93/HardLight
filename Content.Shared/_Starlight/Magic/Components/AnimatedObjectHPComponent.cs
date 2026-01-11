@@ -1,10 +1,11 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Shared.Magic.Components;
+namespace Content.Shared._Starlight.Magic.Components;
 
 /// <summary>
-/// Defines HP ranges for animated objects based on their size.
+/// Starlight: Defines HP ranges for animated objects based on their size.
+/// This allows per-staff configuration of HP ranges for animated objects.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class AnimatedObjectHPComponent : Component

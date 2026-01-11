@@ -1,4 +1,5 @@
 using Content.Shared.Magic.Components;
+using Content.Shared._Starlight.Magic.Components;
 using Content.Shared.Magic.Events;
 using Content.Shared.Item;
 using Content.Shared.Physics;

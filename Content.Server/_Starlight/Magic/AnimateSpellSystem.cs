@@ -6,17 +6,18 @@ using Content.Shared.Destructible;
 using Content.Shared.Destructible.Thresholds.Triggers;
 using Content.Shared.Item;
 using Content.Shared.Magic.Components;
+using Content.Shared._Starlight.Magic.Components;
 using Content.Shared.Magic.Events;
 using Content.Shared.Magic.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Random;
 using Robust.Shared.Log;
 
-namespace Content.Server.Magic;
+namespace Content.Server._Starlight.Magic;
 
 /// <summary>
-/// Server-side system for handling animated objects, specifically setting their HP based on size.
-/// Starlight edit: HP ranges are configurable per-staff via AnimatedObjectHPComponent
+/// Starlight: Server-side system for handling animated objects, specifically setting their HP based on size.
+/// HP ranges are configurable per-staff via AnimatedObjectHPComponent.
 /// </summary>
 public sealed class AnimateSpellSystem : EntitySystem
 {

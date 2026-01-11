@@ -1,9 +1,9 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Magic.Components;
+namespace Content.Shared._Starlight.Magic.Components;
 
 /// <summary>
-/// Stores the original item size of an animated object before ItemComponent is removed.
+/// Starlight: Stores the original item size of an animated object before ItemComponent is removed.
 /// Used by server to determine appropriate HP values.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
