@@ -94,7 +94,8 @@ public sealed class ActionButton : Control, IEntityControl
         {
             HorizontalExpand = true,
             VerticalExpand = true,
-            Visible = false
+            MaxSize = new Vector2(64, 64),
+            Visible = false,
         };
         _bigActionIcon.DisplayRect.Stretch = StretchMode.Scale; // Starlight-edit: Animated Actions
         _smallActionIcon = new AnimatedTextureRect // Starlight-edit: Animated Actions
