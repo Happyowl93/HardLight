@@ -556,7 +556,7 @@
 - type: entity
   id: PlayerBorgBattery
   parent: BorgChassisSelectable
-  suffix: Battery
+  suffix: Battery, Brain # Starlight edit
   components:
   - type: ContainerFill
     containers:
