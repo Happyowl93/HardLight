@@ -66,7 +66,7 @@
   id: OrganAvaliEyes
   parent: OrganHumanEyes
   name: eyes
-  suffix: Moth
+  suffix: Avali
   description: "The eyes of an Avali."
   components:
   - type: OrganVisualization

@@ -2,7 +2,7 @@
   id: OrganFelionoidEyes
   parent: OrganHumanEyes
   name: eyes
-  suffix: Moth
+  suffix: Felionoid
   description: "The eyes of a Felionoid."
   components:
   - type: OrganVisualization

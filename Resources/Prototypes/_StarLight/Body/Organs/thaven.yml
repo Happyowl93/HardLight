@@ -13,7 +13,7 @@
   id: OrganThavenEyes
   parent: OrganHumanEyes
   name: eyes
-  suffix: Moth
+  suffix: Thaven
   description: "The eyes of a Thaven."
   components:
   - type: OrganVisualization
