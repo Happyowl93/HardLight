@@ -306,6 +306,9 @@
   id: ModularBarrel
 
 - type: Tag
+  id: Nexus
+
+- type: Tag
   id: OmniCyberEyes
 
 - type: Tag
