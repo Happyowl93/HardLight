@@ -351,6 +351,7 @@
       # TODO: WizardComp as needed
       components:
       - type: UniversalLanguageSpeaker
+      - type: WizardRole # Starlight
       - type: NpcFactionMember
         factions:
         - Wizard
