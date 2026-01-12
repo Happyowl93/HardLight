@@ -405,6 +405,15 @@
               scalingOffset: 1
           shouldDelete: true
         - requirements:
+            Blood: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: FloorTileItemBluespace25
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true
+        - requirements:
             Plasma: 1
           effects:
             - effect: !type:SpawnEntity
@@ -422,8 +431,16 @@
     - type: Sprite
       color: "#c9b7a9ff"
     - type: SlimeExtract
-# Extract reactions for sepia extracts are currently unimplemented as there are no handheld cameras, tiles capable of slowing down, or the ability to stop time.
-# We either need to make these things or come up with different reactions and make this our own thing
+      extractReactions:
+        - requirements:
+            Blood: 1
+          effects:
+            - effect: !type:SpawnEntity
+                number: 1
+                entity: FloorTileItemSepiaXenobiology25
+              scalingFactor: 0
+              scalingOffset: 1
+          shouldDelete: true
 
 - type: entity
   parent: BaseSlimeExtract
