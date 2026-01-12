@@ -25868,5 +25868,12 @@ Entries:
   id: 276400
   time: '2026-01-12T22:03:32.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2764
+- author: Coolsurf6
+  changes:
+  - message: Scrubbed secret CC knowledge from Magistrate guidebook entry
+    type: Tweak
+  id: 273800
+  time: '2026-01-12T22:03:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2738
 Order: -1
 
