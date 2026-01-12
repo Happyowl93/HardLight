@@ -308,6 +308,8 @@
       doAfterDelay: 13
       allowSelfRepair: true
     - type: BorgChassis
+      jobIconOverride: JobIconXenoborg
+      jobTitleOverride: chat-radio-xenoborg
       maxModules: 7
       hasMindState: borg_e
       noMindState: borg_e_r
