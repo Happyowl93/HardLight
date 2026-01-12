@@ -25853,5 +25853,13 @@ Entries:
   id: 275200
   time: '2026-01-12T21:43:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2752
+- author: Citrea
+  changes:
+  - message: To more easily comply with SOP, surgery consent forms now come with a
+      checkbox to refuse anesthetics, if such is desired.
+    type: Tweak
+  id: 277400
+  time: '2026-01-12T21:59:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2774
 Order: -1
 
