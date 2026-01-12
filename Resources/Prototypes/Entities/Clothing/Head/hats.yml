@@ -335,10 +335,10 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
-  - type: PilotedClothing
-    pilotWhitelist:
-      tags:
-        - ChefPilot
+  # - type: PilotedClothing // Starlight - WHAT THE FUCK IS THIS SYSTEM? JUST RELAY INFO WITH INPUT DELAYS? NO PREDICTION WHAT THE HELL IS IT USED FOR? I SHOULD KICK YOUR ASS!
+  #   pilotWhitelist:
+  #     tags:
+  #       - ChefPilot
   - type: Tag
     tags:
     - PetWearable
