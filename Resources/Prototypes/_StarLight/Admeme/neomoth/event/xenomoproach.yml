@@ -483,7 +483,7 @@
       description: ghost-role-information-xenomoproach-description
       rules: ghost-role-information-xenomoproach-rules
       mindRoles:
-        - XenoborgRole
+        - MindRoleXenoborg
     - type: GhostTakeoverAvailable
 
 - type: entity
