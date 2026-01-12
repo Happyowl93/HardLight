@@ -88,9 +88,10 @@ public sealed class SolutionInjectOnCollideSystem : EntitySystem
         if (!_solutionContainer.TryGetSolution(injector.Owner, injector.Comp.Solution, out var injectorSolution))
             return false;
 
-        // STARLIGHT START: Check if the solution actually has any volume to inject
+        // starlight-start: Check if the solution actually has any volume to inject
         if (injectorSolution.Value.Comp.Solution.Volume <= 0)
             return false;
+        // starlight-end
 
         // Build a list of bloodstreams to inject into
         var targetBloodstreams = new ValueList<Entity<BloodstreamComponent>>();
@@ -99,6 +100,7 @@ public sealed class SolutionInjectOnCollideSystem : EntitySystem
             if (Deleted(target))
                 continue;
 
+            // starlight-start
             // Use our new cancellable event system instead of hardcoded checks
             var injectAttempt = new SolutionInjectAttemptEvent(target, source, injector.Owner);
             RaiseLocalEvent(target, ref injectAttempt, true);
@@ -107,7 +109,7 @@ public sealed class SolutionInjectOnCollideSystem : EntitySystem
 
             // Fallback to old hardcoded logic for backwards compatibility
             // TODO: Remove this once all immunity systems use the new event
-            // STARLIGHT END
+            // starlight-end
             if (!injector.Comp.PierceArmor && _inventory.TryGetSlotEntity(target, "outerClothing", out var suit) && _tag.HasTag(suit.Value, HardsuitTag))
             {
                 // Only show popup to attacker
