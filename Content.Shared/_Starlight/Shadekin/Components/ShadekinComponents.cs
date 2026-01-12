@@ -55,6 +55,12 @@ public sealed partial class OrganShadekinCoreComponent : Component
 
     [DataField]
     public bool Damaged = true;
+
+    [DataField]
+    public double DmagedPrice = 200;
+
+    [DataField]
+    public double UndmagedPrice = 30000;
 }
 #endregion
 
