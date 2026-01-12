@@ -25797,5 +25797,32 @@ Entries:
   id: 118300
   time: '2026-01-12T21:11:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1183
+- author: neomoth
+  changes:
+  - message: New breath mask sprite for hamsters/mothroaches. Looks less jank when
+      they pull it down now.
+    type: Add
+  - message: Xenomoproaches can now wear headsets to make recon easier.
+    type: Add
+  - message: Mothroach displacements now account for the fact that their antennae
+      do in fact exist, so it should prevent headwear from covering it weirdly.
+    type: Tweak
+  - message: Xenomoproaches now escape inventories way quicker.
+    type: Tweak
+  - message: Mothroach displacements adjusted to hopefully prevent sprite issues.
+    type: Fix
+  - message: Xenomoproaches now use their displacements.
+    type: Fix
+  - message: Xenomoproaches now use the correct job icon on comms.
+    type: Fix
+  - message: Xenomoproaches now give their xenoborg briefing when initially controlled
+      by a player instead of altered silicon briefing.
+    type: Fix
+  - message: Xenomoproaches can no longer be unlocked while holding them, and no longer
+      provide xenoborg access to those holding one.
+    type: Fix
+  id: 276300
+  time: '2026-01-12T21:27:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2763
 Order: -1
 
