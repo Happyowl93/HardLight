@@ -6,9 +6,6 @@ abductors-ui-attract = Attract
 
 abductors-ui-gizmo-transferred = Target information transferred
 
-# Observation Console
-console-occupied = The console is occupied by someone else!
-
 # Experiment tab
 
 abductors-ui-experiment = Experiment
@@ -25,8 +22,6 @@ abductors-ui-lock-armor = Lock Armor
 abductors-ui-unlock-armor = Unlock Armor
 
 abductors-ui-vest-linked = Vest linked
-
-need-switch-mode = You need to change the armor mode!
 
 # Shop tab
 
