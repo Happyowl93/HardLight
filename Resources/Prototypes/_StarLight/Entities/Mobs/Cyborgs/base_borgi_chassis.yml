@@ -2,6 +2,7 @@
   parent: [ MobCorgiSmart, BaseBorgiLanguages ]
   id: BaseBorgiChassis
   save: false
+  abstract: true
   components:
     - type: RandomMetadata
       nameSegments:
@@ -189,6 +190,7 @@
   name: Smart Borgi
   description: A unusually smart dog, loves stating it's laws.
   save: false
+  abstract: true
   components:
     - type: AccessReader
       access: [["Command"], ["Robotics"]]
