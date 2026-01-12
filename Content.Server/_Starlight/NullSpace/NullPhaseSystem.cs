@@ -56,8 +56,9 @@ public sealed class NullSpacePhaseSystem : EntitySystem
             return;
 
         EnsureComp<NullPhaseComponent>(args.Equipee);
-        if (!component.PreventLightFlicker) return;
-        if (!TryComp<ShadekinComponent>(args.Equipee, out var shadekin)) return;
+        if (!component.PreventLightFlicker 
+            || !TryComp<ShadekinComponent>(args.Equipee, out var shadekin)) 
+            return;
         component.OriginalFlickerFlagState = shadekin.DoLightFlicker;
         shadekin.DoLightFlicker = false;
     }
