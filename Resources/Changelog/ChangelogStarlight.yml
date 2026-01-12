@@ -25783,5 +25783,97 @@ Entries:
   id: 279000
   time: '2026-01-12T02:07:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2790
+- author: Aedler
+  changes:
+  - message: Hardsuits (if helmets enabled) now block tranquilizer shells and Wonderprod
+      injections, now with a popup to notify you. (Other means of feedback later)
+    type: Tweak
+  - message: Wonderprod act as a slower beefier stun baton instead if used against
+      hardsuits.
+    type: Tweak
+  - message: Abductors recall to ship is canceled if stunned, cuffed or dead. They
+      can still return if crit.
+    type: Fix
+  id: 118300
+  time: '2026-01-12T21:11:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1183
+- author: neomoth
+  changes:
+  - message: New breath mask sprite for hamsters/mothroaches. Looks less jank when
+      they pull it down now.
+    type: Add
+  - message: Xenomoproaches can now wear headsets to make recon easier.
+    type: Add
+  - message: Mothroach displacements now account for the fact that their antennae
+      do in fact exist, so it should prevent headwear from covering it weirdly.
+    type: Tweak
+  - message: Xenomoproaches now escape inventories way quicker.
+    type: Tweak
+  - message: Mothroach displacements adjusted to hopefully prevent sprite issues.
+    type: Fix
+  - message: Xenomoproaches now use their displacements.
+    type: Fix
+  - message: Xenomoproaches now use the correct job icon on comms.
+    type: Fix
+  - message: Xenomoproaches now give their xenoborg briefing when initially controlled
+      by a player instead of altered silicon briefing.
+    type: Fix
+  - message: Xenomoproaches can no longer be unlocked while holding them, and no longer
+      provide xenoborg access to those holding one.
+    type: Fix
+  id: 276300
+  time: '2026-01-12T21:27:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2763
+- author: neomoth
+  changes:
+  - message: Lights only go out on the station that had its alert level set to delta
+      or epsilon, no more pitch black CC after nuke explodes.
+    type: Tweak
+  - message: Screens now only show the alert level of the station that they are on.
+    type: Tweak
+  - message: Station events choose their target station on add now instead of as it
+      starts.
+    type: Tweak
+  - message: Station events now only broadcast their announcement to people currently
+      on a grid belonging to the target station.
+    type: Tweak
+  - message: Midround stations must now opt-in to having events target it.
+    type: Tweak
+  - message: Supermatter destabilizing now only broadcasts over radio instead of a
+      global announcement.
+    type: Tweak
+  id: 261800
+  time: '2026-01-12T21:49:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2618
+- author: neomoth
+  changes:
+  - message: Adds a toggle to shadekins to prevent flickering the lights when entering
+      or leaving nullspace. Epileptics rejoice.
+    type: Add
+  id: 275200
+  time: '2026-01-12T21:43:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2752
+- author: Citrea
+  changes:
+  - message: To more easily comply with SOP, surgery consent forms now come with a
+      checkbox to refuse anesthetics, if such is desired.
+    type: Tweak
+  id: 277400
+  time: '2026-01-12T21:59:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2774
+- author: DocMoth
+  changes:
+  - message: upped limit of Red Regalia to 2
+    type: Tweak
+  id: 276400
+  time: '2026-01-12T22:03:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2764
+- author: Coolsurf6
+  changes:
+  - message: Scrubbed secret CC knowledge from Magistrate guidebook entry
+    type: Tweak
+  id: 273800
+  time: '2026-01-12T22:03:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2738
 Order: -1
 
