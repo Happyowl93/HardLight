@@ -68,6 +68,16 @@
     prototypes:
       Default: MobHumanoidEyes
       Resomi: MobResomiEyes
+      Moth: MobMothEyes
+      Felionoid: ModFelionoidEyes
+      Thaven: MobThavenEyes
+      Avali: MobAvaliEyes
+      Shadekin: MobShadekinEyes
+      Arachnid: MobArachnidEyes
+      Diona: MobDionaEyes
+      Vox: MobVoxEyes
+      Cyclorite: MobCycloriteEyes
+      Abductor: MobAbductorEyes
 
 - type: entity
   id: BudgetCyberTongue
