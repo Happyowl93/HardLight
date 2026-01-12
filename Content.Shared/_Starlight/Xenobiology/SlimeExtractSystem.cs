@@ -1,9 +1,11 @@
+using Content.Shared._Starlight.Utility;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Starlight.Xenobiology;
@@ -17,6 +19,7 @@ public sealed class SlimeExtractSystem : EntitySystem
     [Dependency] private readonly SharedEntityEffectsSystem _entityEffectsSystem = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly TimedEventSystem _timedEventSystem = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -25,62 +28,7 @@ public sealed class SlimeExtractSystem : EntitySystem
         SubscribeLocalEvent<SlimeExtractComponent, SolutionContainerChangedEvent>(OnSolutionChanged);
         SubscribeLocalEvent<SlimeExtractComponent, EntityPausedEvent>(OnPaused);
         SubscribeLocalEvent<SlimeExtractComponent, EntityUnpausedEvent>(OnUnpaused);
-    }
-    
-    /// <inheritdoc />
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-        var query = EntityQueryEnumerator<SlimeExtractComponent>();
-
-        List<ApplyEffectRecord> applyEffectRecords = new();
-        List<DeleteRecord> deleteRecords = new();
-
-        while (query.MoveNext(out var uid, out var slimeExtractComponent))
-        {
-            if (slimeExtractComponent.CurrentlyPaused) continue;
-            if (slimeExtractComponent.RemainingUses <= 0) continue;
-            
-            if (!_solutionContainerSystem.TryGetSolution(uid, slimeExtractComponent.ContainerName, out var solcom, out var currentSolution)) continue;
-            var shouldDelete = false;
-            var shouldExhaust = false;
-            foreach (var reaction in slimeExtractComponent.ExtractReactions)
-            {
-                if ((reaction.ActivationMoment.HasValue && reaction.ActivationMoment.Value <= _gameTiming.CurTime) && IsSolutionRequirementFulfilled(reaction.Requirements, currentSolution))
-                {
-                    var minimumScalingFactor = FindMinimumScalingFactor(reaction.Requirements, currentSolution);
-                    foreach (var requirement in reaction.Requirements)
-                    {
-                        _solutionContainerSystem.RemoveReagent(solcom.Value, new ReagentId(requirement.Key, null), minimumScalingFactor * requirement.Value);
-                    }
-                    foreach (var effect in reaction.Effects)
-                    {
-                        // Need to defer the application of effects in order to avoid modifying the query's collection
-                        // Because the rainbow extract can summon other extracts
-                        var factor = (minimumScalingFactor * effect.ScalingFactor) + effect.ScalingOffset;
-                        applyEffectRecords.Add(new(uid, effect.Effect, factor.Float()));
-                    }
-                    if (reaction.ShouldDelete)
-                    {
-                        shouldDelete = true;
-                    }
-                    shouldExhaust = true;
-                    reaction.ActivationMoment = _gameTiming.CurTime + reaction.Delay;
-                }
-            }
-
-            if (shouldExhaust)
-            {
-                slimeExtractComponent.RemainingUses -= 1;
-            }
-            if (shouldDelete && slimeExtractComponent.RemainingUses <= 0)
-                deleteRecords.Add(new(uid));
-        }
-        
-        foreach (var applyEffectRecord in applyEffectRecords)
-            _entityEffectsSystem.TryApplyEffect(applyEffectRecord._entityUid, applyEffectRecord._entityEffect, applyEffectRecord._scale);
-        foreach (var deleteRecord in deleteRecords)
-            _entityManager.PredictedQueueDeleteEntity(deleteRecord._entityUid);
+        SubscribeLocalEvent<SlimeExtractComponent, TriggerReactionEvent>(OnTriggerReaction);
     }
     
     public bool IsSolutionRequirementFulfilled(Dictionary<ProtoId<ReagentPrototype>, FixedPoint2> requiredSolution, Solution currentSolution)
@@ -107,15 +55,30 @@ public sealed class SlimeExtractSystem : EntitySystem
 
     private void OnSolutionChanged(Entity<SlimeExtractComponent> entity, ref SolutionContainerChangedEvent args)
     {
-        foreach (var reaction in entity.Comp.ExtractReactions)
+        for (var i = 0; i <  entity.Comp.ExtractReactions.Count; i++)
         {
+            var reaction = entity.Comp.ExtractReactions[i];
             if (IsSolutionRequirementFulfilled(reaction.Requirements, args.Solution))
             {
-                reaction.ActivationMoment = _gameTiming.CurTime + reaction.Delay;
+                if (!entity.Comp.CurrentlyPaused)
+                {
+                    if (reaction.ActivationGuid.HasValue) // If we already have an event scheduled, restart it
+                        _timedEventSystem.TryDeleteEvent(reaction.ActivationGuid.Value, out _);
+                    var guid = _timedEventSystem.ScheduleEvent(entity.Owner, new TriggerReactionEvent(i), _gameTiming.CurTime + reaction.Delay);
+                    reaction.ActivationGuid = guid;
+                }
+                else
+                {
+                    reaction.PausedEvent = new PausedEvent(new TriggerReactionEvent(i), _gameTiming.CurTime + reaction.Delay);
+                }
             }
             else
             {
-                reaction.ActivationMoment = null;
+                if (reaction.ActivationGuid.HasValue)
+                {
+                    _timedEventSystem.TryDeleteEvent(reaction.ActivationGuid.Value, out _);
+                    reaction.ActivationGuid = null;
+                }
             }
         }
     }
@@ -123,41 +86,60 @@ public sealed class SlimeExtractSystem : EntitySystem
     private void OnPaused(Entity<SlimeExtractComponent> entity, ref EntityPausedEvent args)
     {
         entity.Comp.CurrentlyPaused = true;
+        foreach (var reaction in entity.Comp.ExtractReactions)
+        {
+            if (reaction.ActivationGuid.HasValue)
+            {
+                if (_timedEventSystem.TryDeleteEvent(reaction.ActivationGuid.Value, out var record))
+                {
+                    reaction.PausedEvent = new PausedEvent(record.Args, record.TimeStamp);
+                    reaction.ActivationGuid = null;
+                }
+            }
+        }
     }
     
     private void OnUnpaused(Entity<SlimeExtractComponent> entity, ref EntityUnpausedEvent args)
     {
         entity.Comp.CurrentlyPaused = false;
-        foreach (var reaction in entity.Comp.ExtractReactions)
+        for (var i = 0; i <  entity.Comp.ExtractReactions.Count; i++)
         {
-            if (reaction.ActivationMoment.HasValue)
+            var reaction = entity.Comp.ExtractReactions[i];
+            if (reaction.PausedEvent is not null)
             {
-                reaction.ActivationMoment += args.PausedTime;
+                var guid = _timedEventSystem.ScheduleEvent(entity.Owner, reaction.PausedEvent.ExtractReactionIndex, reaction.PausedEvent.TimeStamp + args.PausedTime);
+                reaction.ActivationGuid = guid;
+            }
+        }
+    }
+
+    private void OnTriggerReaction(Entity<SlimeExtractComponent> entity, ref TriggerReactionEvent args)
+    {
+        if (!_solutionContainerSystem.TryGetSolution(entity.Owner, entity.Comp.ContainerName, out var solutionComponent, out var currentSolution)) return;
+        var reaction = entity.Comp.ExtractReactions[args.ExtractReactionIndex];
+        if (IsSolutionRequirementFulfilled(reaction.Requirements, currentSolution))
+        {
+            var minimumScalingFactor = FindMinimumScalingFactor(reaction.Requirements, currentSolution);
+            foreach (var requirement in reaction.Requirements)
+            {
+                _solutionContainerSystem.RemoveReagent(solutionComponent.Value, new ReagentId(requirement.Key, null), minimumScalingFactor * requirement.Value);
+            }
+            foreach (var effect in reaction.Effects)
+            {
+                var factor = (minimumScalingFactor * effect.ScalingFactor) + effect.ScalingOffset;
+                _entityEffectsSystem.TryApplyEffect(entity.Owner, effect.Effect, factor.Float());
+            }
+            entity.Comp.RemainingUses -= 1;
+            if (reaction.ShouldDelete && entity.Comp.RemainingUses <= 0)
+            {
+                PredictedQueueDel(entity.Owner);
             }
         }
     }
 }
 
-internal record DeleteRecord
-{
-    public EntityUid _entityUid;
-    
-    public DeleteRecord(EntityUid entityUid)
-    {
-        _entityUid = entityUid;
-    }
-}
+[Serializable, NetSerializable]
+public record TriggerReactionEvent(int ExtractReactionIndex);
 
-internal record ApplyEffectRecord
-{
-    public EntityUid _entityUid;
-    public EntityEffect _entityEffect;
-    public float _scale;
-
-    public ApplyEffectRecord(EntityUid entityUid, EntityEffect entityEffect, float scale)
-    {
-        _entityUid = entityUid;
-        _entityEffect = entityEffect;
-        _scale = scale;
-    }
-}
+[Serializable, NetSerializable]
+public record PausedEvent(object ExtractReactionIndex, TimeSpan TimeStamp);

@@ -1,3 +1,4 @@
+using Content.Shared._Starlight.Utility;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
@@ -68,10 +69,16 @@ public sealed partial class ExtractReaction
     public TimeSpan Delay = TimeSpan.Zero;
     
     /// <summary>
-    /// The moment at which the effect actually occurs.
+    /// The GUID of the timed event.
     /// </summary>
     [ViewVariables]
-    public TimeSpan? ActivationMoment;
+    public Guid? ActivationGuid;
+
+    /// <summary>
+    /// The timed event that existed
+    /// </summary>
+    [ViewVariables]
+    public PausedEvent? PausedEvent;
 }
 
 /// <summary>
