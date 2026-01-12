@@ -25845,5 +25845,13 @@ Entries:
   id: 261800
   time: '2026-01-12T21:49:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2618
+- author: neomoth
+  changes:
+  - message: Adds a toggle to shadekins to prevent flickering the lights when entering
+      or leaving nullspace. Epileptics rejoice.
+    type: Add
+  id: 275200
+  time: '2026-01-12T21:43:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2752
 Order: -1
 
