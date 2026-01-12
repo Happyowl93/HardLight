@@ -265,6 +265,7 @@
   id: DerelictBorgiSpawn
   components:
     - type: StationEvent
+      globalAnnouncement: false # Starlight
       weight: 5
       earliestStart: 15
       reoccurrenceDelay: 20
@@ -316,7 +317,8 @@
     - prefRoles: [ Brighteye ]
       playerRatio: 1
       spawnerPrototype: SpawnPointGhostBrighteye
-      startingGear: BrighteyeGear
+      roleLoadout:
+      - AntagBrighteye
       briefing:
         text: brighteye-role-greeting
         color: "#F200FF"
@@ -341,3 +343,13 @@
     - id: RailroadingBrighteye
   - type: DynamicRuleCost
     cost: 150
+
+# This is used for admin/tools to spawn the dark without any antag.
+- type: entity
+  parent: BaseGameRule
+  id: TheDarkMap
+  components:
+  - type: StationEvent
+  - type: LoadMapRule
+    mapPath: /Maps/_Starlight/TheDark/Hideout.yml
+    mapTag: TheDark
