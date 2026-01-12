@@ -66,8 +66,9 @@ public sealed class NullSpacePhaseSystem : EntitySystem
     private void OnUnequipped(EntityUid uid, NullPhaseComponent component, GotUnequippedEvent args)
     {
         RemComp<NullPhaseComponent>(args.Equipee);
-        if (!component.PreventLightFlicker) return;
-        if (!TryComp<ShadekinComponent>(args.Equipee, out var shadekin)) return;
+        if (!component.PreventLightFlicker 
+            || !TryComp<ShadekinComponent>(args.Equipee, out var shadekin)) 
+            return;
         shadekin.DoLightFlicker = component.OriginalFlickerFlagState;
     }
 
