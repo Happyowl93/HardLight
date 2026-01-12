@@ -1,4 +1,5 @@
 using Content.Shared.CCVar;
+using Content.Shared.NPC; // Starlight
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
@@ -79,6 +80,7 @@ public sealed class SSDIndicatorSystem : EntitySystem
         {
             // Forces the entity to sleep when the time has come
             if (!ssd.IsSSD
+                || HasComp<ActiveNPCComponent>(uid) // Starlight
                 || ssd.NextUpdate > curTime
                 || ssd.FallAsleepTime > curTime
                 || TerminatingOrDeleted(uid))
