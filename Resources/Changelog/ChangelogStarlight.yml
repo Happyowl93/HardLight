@@ -25756,5 +25756,17 @@ Entries:
   id: 273000
   time: '2026-01-11T23:10:39.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2730
+- author: Citrea
+  changes:
+  - message: Laspi heads can be closed again.
+    type: Fix
+  - message: Laspi no longer have skulls in their arms.
+    type: Fix
+  - message: The blueprints for the new cyberlegs had been misplaced during transfer.
+      We have located them again, and you should find them in your medfab.
+    type: Fix
+  id: 278800
+  time: '2026-01-12T00:29:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2788
 Order: -1
 
