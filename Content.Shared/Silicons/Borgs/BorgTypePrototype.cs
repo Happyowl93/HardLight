@@ -94,11 +94,13 @@ public sealed partial class BorgTypePrototype : IPrototype
     // Visual information
     //
 
+    // Starlight start
     /// <summary>
     /// The path to the borg type's sprites.
     /// </summary>
     [DataField]
-    public string SpritePath { get; set; } = "Mobs/Silicon/Chassis/generic.rsi";
+    public ResPath SpritePath { get; set; } = new("Mobs/Silicon/Chassis/generic.rsi");
+    // Starlight end
 
     /// <summary>
     /// The sprite state for the main borg body.
@@ -163,8 +165,8 @@ public sealed partial class BorgTypePrototype : IPrototype
     // Starlight-start
     [DataField]
     public string? DefaultSubtype;
-    
+
     [DataField]
-    public HashSet<JobRequirement> Requirements = new (); // Starlight-edit
+    public HashSet<JobRequirement> Requirements = new ();
     // Starlight-end
 }
