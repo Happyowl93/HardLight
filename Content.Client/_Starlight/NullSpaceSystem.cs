@@ -64,7 +64,8 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
 
     private void GotEquippedEvent(EntityUid uid, ShowNullSpaceComponent component, GotEquippedEvent args)
     {
-        if (!component.ShowShader)
+        if (args.Equipee != _playerMan.LocalEntity
+            || !component.ShowShader)
             return;
 
         _overlayMan.AddOverlay(_overlay);
