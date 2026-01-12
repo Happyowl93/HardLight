@@ -13,6 +13,7 @@ marking-ResomiHeadWar-head_war = War
 marking-ResomiHeadCoat = Coat
 marking-ResomiHeadCoat-head_coat = Coat
 
+marking-ResomiEars = Resomi Ears
 marking-ResomiUpperEars = Resomi Upper Ears
 marking-ResomiUpperEars-upper_ear = Resomi Upper Ears
 marking-ResomiUpperEarsShort = Resomi Upper Ears (Short)
@@ -87,10 +88,10 @@ marking-ResomiLLegStripes = Left Leg Stripes
 marking-ResomiLLegStripes-l_leg_stripes = Left Leg Stripes
 marking-ResomiRLegStripes = Right Leg Stripes
 marking-ResomiRLegStripes-r_leg_stripes = Right Leg Stripes
-marking-ResomiLLegCoat = Left Leg Stripes
-marking-ResomiLLegCoat-l_leg_coat = Left Leg Stripes
-marking-ResomiRLegCoat = Right Leg Stripes
-marking-ResomiRLegCoat-r_leg_coat = Right Leg Stripes
+marking-ResomiLLegCoat = Left Leg Coat
+marking-ResomiLLegCoat-l_leg_coat = Left Leg Coat
+marking-ResomiRLegCoat = Right Leg Coat
+marking-ResomiRLegCoat-r_leg_coat = Right Leg Coat
 
 marking-ResomiLArmFeathers = Left Hand Feathers
 marking-ResomiLArmFeathers-l_hand_feathers = Hand Feathers
