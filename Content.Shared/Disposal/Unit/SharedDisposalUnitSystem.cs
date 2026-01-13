@@ -146,7 +146,11 @@ public abstract class SharedDisposalUnitSystem : EntitySystem
             Act = () =>
             {
                 // STARLIGHT START
-                if (component.Container.ContainedEntities.Count > component.MaxItems) return;
+                if (component.Container.ContainedEntities.Count > component.MaxItems)
+                {
+                    _popupSystem.PopupClient(Loc.GetString("disposal-unit-full"), uid);
+                    return;
+                }
                 // STARLIGHT END
                 
                 _handsSystem.TryDropIntoContainer((args.User, args.Hands), args.Using.Value, component.Container, checkActionBlocker: false);
