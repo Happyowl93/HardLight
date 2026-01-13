@@ -76,6 +76,30 @@ public sealed partial class SlimeTargetKnownEdibleTargetOperator : HTNOperator
             });
         }
         
+        // We couldn't find any slimes in regular eating range, but that's fine. We can rely on other slimes!
+        foreach (var entity in _slimeBrainSystem.TargetFood)
+        {
+            // Yes this is the same as in the regualr loop, but the alternative is really weird task management due to the await.
+            if (!_slimeBrainSystem.IsEdibleBySlimeTest(entity))
+            {
+                _slimeBrainSystem.TargetFood.Remove(entity);
+                continue;
+            }
+
+            var pathRange = SharedInteractionSystem.InteractionRange - 1f;
+            var path = await _pathfinding.GetPath(owner, entity, pathRange, cancelToken);
+
+            if (path.Result == PathResult.NoPath)
+                continue;
+
+            return (true, new Dictionary<string, object>()
+            {
+                {TargetKey, entity},
+                {TargetMoveKey, _entManager.GetComponent<TransformComponent>(entity).Coordinates},
+                {NPCBlackboard.PathfindKey, path},
+            });
+        }
+        
         return (false, null);
     }
 }
