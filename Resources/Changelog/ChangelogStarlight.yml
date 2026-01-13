@@ -25875,5 +25875,14 @@ Entries:
   id: 273800
   time: '2026-01-12T22:03:39.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2738
+- author: STARLIGHT TEAM
+  changes:
+  - message: Fixed yellow slime extract light's blinking on toggle.
+    type: Fix
+  - message: Fixed broken RSI on an outdated test sprite.
+    type: Fix
+  id: 279900
+  time: '2026-01-13T01:15:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2799
 Order: -1
 
