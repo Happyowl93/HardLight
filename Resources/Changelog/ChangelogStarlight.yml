@@ -26071,5 +26071,17 @@ Entries:
   id: 266300
   time: '2026-01-13T18:23:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2663
+- author: teapoterror
+  changes:
+  - message: Decimus Icon
+    type: Add
+  - message: NTSF Icon
+    type: Add
+  - message: Altered the existing NTSF & Decimus roles to have the new Icons instead
+      of the NanoTrasen Icon.
+    type: Tweak
+  id: 266700
+  time: '2026-01-13T18:36:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2667
 Order: -1
 
