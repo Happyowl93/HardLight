@@ -26010,5 +26010,66 @@ Entries:
   id: 236400
   time: '2026-01-13T13:40:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2364
+- author: CawsForConcern
+  changes:
+  - message: (Plasma) The plasma chamber now actually has three times the plasma of
+      other stations (was previously 2/3rds vacuum)
+    type: Tweak
+  - message: (Plasma) Un-offset the map (meaning that teleporting to specific coordinates
+      will work as expected in mapping mode now)
+    type: Fix
+  - message: (Plasma) BSO Suit Storage re-added (oops)
+    type: Fix
+  - message: (Plasma) Fixed the entire mail system! Stuff shouldn't get stuck in disposal
+      pipe hell anymore
+    type: Fix
+  - message: (Plasma) Increased Plasma's cargo shuttle generator from 15kW to 20kW
+      to resolve power issues
+    type: Fix
+  id: 280600
+  time: '2026-01-13T18:03:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2806
+- author: STARLIGHT TEAM
+  changes:
+  - message: Removed Eli Vance voice.
+    type: Remove
+  - message: Changed felionoid voice to louder version.
+    type: Tweak
+  - message: Fixed translation line missing.
+    type: Fix
+  - message: Added Blah-DOS voice.
+    type: Add
+  - message: Added Talk-Box voice.
+    type: Add
+  id: 272300
+  time: '2026-01-13T18:23:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2723
+- author: Huaqas, AegisShield, neurovermi
+  changes:
+  - message: Resomi are now an odd amount of pixels wide. I heard it was really painful
+      for the Resomi.
+    type: Tweak
+  - message: All Resomi sprite states have been updated to reflect the new Resomi
+      body sprite.
+    type: Tweak
+  - message: New sprite states for select hard/soft/cosmetic suits and body armors.
+    type: Add
+  - message: Resomi now have a deathgrasp.
+    type: Add
+  - message: 19 new Resomi Hairstyles
+    type: Add
+  - message: Resomi hair, and head markings are hidden under helmets.
+    type: Tweak
+  - message: Resomi tails have had internal restructuring and may break your Resomi
+      character's tails.
+    type: Tweak
+  - message: 5 new Resomi tails markings, 6 new tail feathers marking, 3 new tail
+      prosthetics and 4 new tail band accessories.
+    type: Add
+  - message: new Resomi jewellery, ear, head, arm, leg and chest markings.
+    type: Add
+  id: 266300
+  time: '2026-01-13T18:23:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2663
 Order: -1
 
