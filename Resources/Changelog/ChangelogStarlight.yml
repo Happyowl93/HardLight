@@ -26101,5 +26101,24 @@ Entries:
   id: 280900
   time: '2026-01-13T19:29:14.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2809
+- author: Rhetorica
+  changes:
+  - message: animal organs can now be processed in a reagent grinder
+    type: Tweak
+  - message: Haggis, made of an animal stomach and some uncooked protein
+    type: Add
+  - message: Black Pudding, made of blood, water, and fat
+    type: Add
+  - message: Raw Sausage, made of uncooked protein and 1u of enzyme as a catalyst
+    type: Add
+  - message: Cooked Sausage, grilled or fried
+    type: Add
+  - message: Sausage on a bun, just like a hamburger
+    type: Add
+  - message: Peas now have 2x yield of Hummus
+    type: Tweak
+  id: 276100
+  time: '2026-01-13T19:46:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2761
 Order: -1
 
