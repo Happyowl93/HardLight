@@ -25996,5 +25996,19 @@ Entries:
   id: 230300
   time: '2026-01-13T13:36:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2303
+- author: ankle & CawsForConcern
+  changes:
+  - message: New Resomi crying sounds by ankle (Resomi rejoice)
+    type: Add
+  - message: Resomi whistle was stereo (making it too loud), fixed to be mono
+    type: Fix
+  - message: Removed old resomi crying sounds (stereo, low quality, and unattributed)
+    type: Remove
+  - message: Removed resomi scream due to unattributed copyright, replaced with the
+      avali scream for now
+    type: Remove
+  id: 236400
+  time: '2026-01-13T13:40:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2364
 Order: -1
 
