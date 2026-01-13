@@ -23,8 +23,9 @@ public sealed class DefaultBorgModulesSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, DefaultBorgModulesComponent comp, MapInitEvent ev)
     {
-        if (!TryComp<BorgChassisComponent>(uid, out var chassis)) return;
-        var manager = EnsureComp<ContainerManagerComponent>(uid);
+        if (!TryComp<BorgChassisComponent>(uid, out var chassis) 
+            || !TryComp<ContainerManagerComponent>(uid, out var manager)) 
+            return;
         var xform = Transform(uid);
         // get existing protos
         var existingPrototypes = chassis.ModuleContainer.ContainedEntities.Select(ent => MetaData(ent).EntityPrototype?.ID).ToList();
