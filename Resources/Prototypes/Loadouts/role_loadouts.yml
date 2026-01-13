@@ -15,12 +15,12 @@
   - Pins # Starlight
   - CapPens # Starlight
   - CaptainJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - HoPHead
   - HoPNeck
   - HoPJumpsuit
@@ -34,7 +34,7 @@
   - Pins # Starlight
   - HoPPens # Starlight
   - HoPJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 # Silicons
 - type: roleLoadout
@@ -55,7 +55,7 @@
 - type: roleLoadout
   id: JobAssistant
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - AssistantJumpsuit
   - AssistantBackpack #starlight
   - AssistantNeck
@@ -71,12 +71,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - AssistantJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBartender
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - BartenderHead
   - BartenderJumpsuit
   - CommonBackpack
@@ -89,12 +89,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - BartenderJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobServiceWorker
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - BartenderJumpsuit
   - CommonBackpack
   - CivilianShoes # 🌟Starlight🌟
@@ -105,12 +105,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - ServiceWorkerJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobChef
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - ChefHead
   - ChefMask
   - ChefJumpsuit
@@ -124,12 +124,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - ChefJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobLibrarian
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - LibrarianJumpsuit
   - CommonBackpack
   - CivilianShoes # 🌟Starlight🌟
@@ -140,12 +140,12 @@
   - Pins # Starlight
   - LuxuryPens # Starlight
   - LibrarianJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobLawyer
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - LawyerNeck
   - LawyerJumpsuit
   - CommonBackpack
@@ -156,12 +156,12 @@
   - Pins # Starlight
   - LuxuryPens # Starlight
   - LawyerJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobChaplain
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - ChaplainHead
   - ChaplainMask
   - ChaplainNeck
@@ -177,12 +177,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - ChaplainJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobJanitor
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - JanitorHead
   - JanitorJumpsuit
   - JanitorGloves
@@ -195,12 +195,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - JanitorJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBotanist
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - BotanistHead
   - BotanistJumpsuit
   - BotanistBackpack
@@ -213,13 +213,13 @@
   - Pins # Starlight
   - Pens # Starlight
   - BotanistJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobClown
   canCustomizeName: true
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - ClownHead
   - ClownJumpsuit
   - ClownBackpack
@@ -237,7 +237,7 @@
   id: JobMime
   canCustomizeName: true
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - MimeHead
   - MimeMask
   - MimeJumpsuit
@@ -256,7 +256,7 @@
   id: JobMusician
   canCustomizeName: true
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - MusicianJumpsuit
   - CommonBackpack
   - MusicianOuterClothing
@@ -269,13 +269,13 @@
   - Pens # Starlight
   - MusicianJobTrinkets
   - Instruments
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 # Cargo
 - type: roleLoadout
   id: JobQuartermaster
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - QuartermasterHead
   - QuartermasterNeck
   - QuartermasterJumpsuit
@@ -289,12 +289,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - QuartermasterJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobCargoTechnician
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - CargoTechnicianHead
   - CargoTechnicianJumpsuit
   - CargoTechnicianBackpack
@@ -308,12 +308,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - CargoTechnicianJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobSalvageSpecialist
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - SalvageSpecialistBackpack
   - SalvageSpecialistJumpsuit # afterlight
   - SalvageSpecialistOuterClothing
@@ -326,13 +326,13 @@
   - Pins # Starlight
   - Pens # Starlight
   - SalvageSpecialistJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 # Engineering
 - type: roleLoadout
   id: JobChiefEngineer
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - ChiefEngineerHead
   - ChiefEngineerJumpsuit
   - StationEngineerBackpack
@@ -345,12 +345,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - ChiefEngineerJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobTechnicalAssistant
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - TechnicalAssistantJumpsuit
   - StationEngineerBackpack
   - SurvivalExtended
@@ -359,12 +359,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - TechnicalAssistantJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobStationEngineer
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - StationEngineerHead
   - StationEngineerJumpsuit
   - StationEngineerBackpack
@@ -377,12 +377,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - StationEngineerJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - AtmosphericTechnicianJumpsuit
   - AtmosphericTechnicianBackpack
   - AtmosphericTechnicianOuterClothing
@@ -393,13 +393,13 @@
   - Pins # Starlight
   - Pens # Starlight
   - AtmosphericTechnicianJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 # Science
 - type: roleLoadout
   id: JobResearchDirector
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - ResearchDirectorHead
   - ResearchDirectorNeck
   - ResearchDirectorJumpsuit
@@ -414,12 +414,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - ResearchDirectorJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobScientist
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - ScientistHead
   - ScientistNeck
   - ScientistJumpsuit
@@ -435,12 +435,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - ScientistJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobResearchAssistant
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - ResearchAssistantJumpsuit
   - ScientistBackpack
   - Glasses
@@ -450,7 +450,7 @@
   - Pins # Starlight
   - Pens # Starlight
   - ResearchAssistantJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 # Security
 - type: roleLoadout
@@ -471,7 +471,7 @@
   - Pins # Starlight
   - Pens # Starlight
   - HeadofSecurityJobTrinkets
-#  - GroupSpeciesBreathToolSecurity - Starlight removed
+  - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
   id: JobWarden
@@ -489,7 +489,7 @@
   - Pins # Starlight
   - Pens # Starlight
   - WardenJobTrinkets
-#  - GroupSpeciesBreathToolSecurity - Starlight removed
+  - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -510,7 +510,7 @@
   - Pins # Starlight
   - Pens # Starlight
   - SecurityJobTrinkets
-#  - GroupSpeciesBreathToolSecurity - Starlight removed
+  - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
   id: JobDetective
@@ -528,7 +528,7 @@
   - Pins # Starlight
   - Pens # Starlight
   - DetectiveJobTrinkets
-#  - GroupSpeciesBreathToolSecurity - Starlight removed
+  - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -543,13 +543,13 @@
   - Pins # Starlight
   - Pens # Starlight
   - SecurityCadetJobTrinkets
-#  - GroupSpeciesBreathToolSecurity - Starlight removed
+  - GroupSpeciesBreathToolSecurity
 
 # Medical
 - type: roleLoadout
   id: JobChiefMedicalOfficer
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - ChiefMedicalOfficerHead
   - MedicalMask
   - ChiefMedicalOfficerJumpsuit
@@ -565,12 +565,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - ChiefMedicalOfficerJobTrinkets
-#  - GroupSpeciesBreathToolMedical - Starlight removed
+  - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobMedicalDoctor
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - MedicalDoctorHead
   - MedicalMask
   - MedicalDoctorJumpsuit
@@ -586,12 +586,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - MedicalDoctorJobTrinkets
-#  - GroupSpeciesBreathToolMedical - Starlight removed
+  - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobMedicalIntern
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - MedicalInternJumpsuit
   - MedicalBackpack
   - MedicalEyewear
@@ -601,12 +601,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - MedicalInternJobTrinkets
-#  - GroupSpeciesBreathToolMedical - Starlight removed
+  - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobChemist
   groups:
-# - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - ChemistHead # Starlight
   - MedicalMask
   - ChemistJumpsuit
@@ -625,12 +625,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - ChemistJobTrinkets
-#  - GroupSpeciesBreathToolMedical - Starlight removed
+  - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobParamedic
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - ParamedicHead
   - MedicalMask
   - ParamedicJumpsuit
@@ -646,13 +646,13 @@
   - Pins # Starlight
   - Pens # Starlight
   - ParamedicJobTrinkets
-#  - GroupSpeciesBreathToolMedical - Starlight removed
+  - GroupSpeciesBreathToolMedical
 
 # Wildcards
 - type: roleLoadout
   id: JobZookeeper
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - CommonBackpack
   - CivilianShoes # 🌟Starlight🌟
   - Glasses
@@ -662,12 +662,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - ZookeeperJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobReporter
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - ReporterJumpsuit
   - CommonBackpack
   - CivilianShoes # 🌟Starlight🌟
@@ -678,12 +678,12 @@
   - Pins # Starlight
   - LuxuryPens # Starlight
   - ReporterJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobPsychologist
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - PsychologistJumpsuit
   - MedicalBackpack
   - CivilianShoes # 🌟Starlight🌟
@@ -694,12 +694,12 @@
   - Pins # Starlight
   - Pens # Starlight
   - PsychologistJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBoxer
   groups:
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
   - BoxerJumpsuit
   - BoxerGloves
   - CommonBackpack
@@ -710,78 +710,76 @@
   - Pins # Starlight
   - Pens # Starlight
   - BoxerJobTrinkets
-#  - GroupSpeciesBreathTool - Starlight removed
+  - GroupSpeciesBreathTool
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit
 
-# Starlight edit start - vox no longer spawn with gas tanks
 # gives vox a harness and breathing mask
 # nitrogen tank not included
-# - type: roleLoadout
-#   id: RoleSurvivalVoxSupport
-#   groups:
-#   - GroupSpeciesBreathTool
-#   - GroupTankHarness
+- type: roleLoadout
+  id: RoleSurvivalVoxSupport
+  groups:
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
 
 # gives vox a nitrogen breathing tank
 # other species get nothing
-# - type: roleLoadout
-#   id: RoleSurvivalVoxTank
-#   groups:
-#   - GroupEVATankVox
-# Starlight edit end
+- type: roleLoadout
+  id: RoleSurvivalVoxTank
+  groups:
+  - GroupEVATankVox
 
 - type: roleLoadout
   id: RoleSurvivalStandard
   groups:
   - Survival
-#  - GroupSpeciesBreathTool - Starlight removed
-#  - GroupTankHarness - Starlight removed
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
 
 - type: roleLoadout
   id: RoleSurvivalClown
   groups:
   - SurvivalClown
-#  - GroupTankHarness - Starlight removed
+  - GroupTankHarness
 
 - type: roleLoadout
   id: RoleSurvivalExtended
   groups:
   - SurvivalExtended
-#  - GroupSpeciesBreathTool - Starlight removed
-#  - GroupTankHarness - Starlight removed
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
 
 - type: roleLoadout
   id: RoleSurvivalMedical
   groups:
   - SurvivalMedical
-#  - GroupSpeciesBreathToolMedical - Starlight removed
-#  - GroupTankHarness - Starlight removed
+  - GroupSpeciesBreathToolMedical
+  - GroupTankHarness
 
 - type: roleLoadout
   id: RoleSurvivalSecurity
   groups:
   - SurvivalSecurity
-#  - GroupSpeciesBreathToolSecurity - Starlight removed
-#  - GroupTankHarness - Starlight removed
+  - GroupSpeciesBreathToolSecurity
+  - GroupTankHarness
 
 - type: roleLoadout
   id: RoleSurvivalSyndicate
   groups:
   - SurvivalSyndicate
-#  - GroupSpeciesBreathTool - Starlight removed
-#  - GroupTankHarness - Starlight removed
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
 
 - type: roleLoadout
   id: RoleSurvivalNukie
   groups:
   - SurvivalSyndicate
-#  - GroupSpeciesBreathTool - Starlight removed
-#  - GroupPocketTankDouble - Starlight removed
+  - GroupSpeciesBreathTool
+  - GroupPocketTankDouble
 
 - type: roleLoadout
   id: RoleSurvivalEVA
   groups:
-#  - GroupEVATank - Starlight removed
+  - GroupEVATank
   - SurvivalExtended
