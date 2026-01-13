@@ -7,7 +7,8 @@
   components:
   - type: OrganVisualization
     layer: Eyes
-    prototype: MobResomiEyes
+    prototypes:
+      Default: MobResomiEyes
   - type: FunctionalOrgan
     comps: 
     - type: NightVision
