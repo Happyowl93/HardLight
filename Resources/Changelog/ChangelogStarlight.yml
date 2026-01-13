@@ -25875,5 +25875,63 @@ Entries:
   id: 273800
   time: '2026-01-12T22:03:39.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2738
+- author: STARLIGHT TEAM
+  changes:
+  - message: Fixed yellow slime extract light's blinking on toggle.
+    type: Fix
+  - message: Fixed broken RSI on an outdated test sprite.
+    type: Fix
+  id: 279900
+  time: '2026-01-13T01:15:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2799
+- author: neomoth
+  changes:
+  - message: Fix the stupid fucking annoying ass holopad bug that's been annoying
+      everyone for months on end. Hallelujah.
+    type: Fix
+  id: 279700
+  time: '2026-01-13T01:38:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2797
+- author: Fasuh
+  changes:
+  - message: Fixed breathable organs activating on a wrong verb.
+    type: Fix
+  id: 274500
+  time: '2026-01-13T04:02:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2745
+- author: Fasuh
+  changes:
+  - message: Added back Vox gas tanks, tank harnesses, and masks on roundstart.
+    type: Add
+  - message: Removed gas tank lungs from Vox.
+    type: Remove
+  id: 274600
+  time: '2026-01-13T04:02:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2746
+- author: Fasuh
+  changes:
+  - message: Added new magnet animation on bags.
+    type: Add
+  - message: Added sounds and visual indicator to mail bag magnet.
+    type: Add
+  - message: Changed the interaction UX on mail bag.
+    type: Tweak
+  id: 275300
+  time: '2026-01-13T04:03:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2753
+- author: Penguinwizzard
+  changes:
+  - message: Stations can now be cursed!
+    type: Add
+  id: 266200
+  time: '2026-01-13T06:15:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2662
+- author: Sparlight
+  changes:
+  - message: Fixed borgi cubes sometimes not hydrating.
+    type: Fix
+  id: 279500
+  time: '2026-01-13T07:50:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2795
 Order: -1
 
