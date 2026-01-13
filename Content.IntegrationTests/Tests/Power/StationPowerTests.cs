@@ -21,6 +21,8 @@ public sealed class StationPowerTests
 
     private static readonly string[] GameMaps =
     [
+        // Starlight-gripe - why does upstream replicate their map list here, when they already have it for other tests?
+        /* Starlight-comment start - we removed these maps from our repo to save on size
         "Bagel",
         "Box",
         "Elkridge",
@@ -33,6 +35,41 @@ public sealed class StationPowerTests
         "Snowball",
         "Reach",
         "Exo",
+        */// Starlight-comment end
+        //Starlight, do not accept any upstream maps into this list, we are keeping them out for package size and just general management reasons
+        #region Starlight
+        "StarlightBarratry",
+        "StarlightCork",
+        "StarlightKiloton",
+        "StarlightLagan",
+        "StarlightLobster",
+        "StarlightManor",
+        "StarlightLeth",
+        "StarlightMing",
+        "StarlightOrigin",
+        "StarlightOrwell",
+        "StarlightPrism",
+        "StarlightRemix",
+        "StarlightStarboard",
+        "StarlightBagel",
+        "StarlightBox",
+        "StarlightCentCommG24",
+        "StarlightCentCommSC17",
+        "StarlightCentCommGNT9",
+        "StarlightCog",
+        "StarlightElkridge",
+        "StarlightFland",
+        "StarlightHotel",
+        "StarlightOasis",
+        "StarlightOmega",
+        "StarlightPacked",
+        "StarlightReach",
+        "StarlightSaltern",
+        "StarlightSilica",
+        "StarlightCluster",
+        "StarlightStationBuilding",
+        "StarlightPlasma"
+        #endregion
     ];
 
     [Explicit]
