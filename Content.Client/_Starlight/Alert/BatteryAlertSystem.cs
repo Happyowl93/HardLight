@@ -11,6 +11,8 @@ public sealed partial class BatteryAlertSystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
+    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     // How often to update the battery alert.
     // Also gets updated instantly when switching bodies or a battery is inserted or removed.
@@ -28,7 +30,7 @@ public sealed partial class BatteryAlertSystem : EntitySystem
         SubscribeLocalEvent<BatteryAlertComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
         SubscribeLocalEvent<BatteryAlertComponent, PowerCellChangedEvent>(OnPowerCellChanged);
 
-        _chassisQuery = GetEntityQuery<BorgChassisComponent>();
+        _alertQuery = GetEntityQuery<BatteryAlertComponent>();
         _slotQuery = GetEntityQuery<PowerCellSlotComponent>();
     }
     
@@ -50,7 +52,7 @@ public sealed partial class BatteryAlertSystem : EntitySystem
         if (!Resolve(uid, ref comp, false))
             return false;
         
-        if (!_powerCell.TryGetBatteryFromSlot(uid, out var battery, slotComponent))
+        if (!_powerCell.TryGetBatteryFromSlot((uid, slotComponent), out var battery))
         {
             _alerts.ClearAlert(uid, comp.BatteryAlert);
             _alerts.ShowAlert(uid, comp.NoBatteryAlert);
@@ -58,11 +60,11 @@ public sealed partial class BatteryAlertSystem : EntitySystem
         }
 
         // Alert levels from 0 to 10.
-        var chargePercent = (short)MathF.Round(battery.CurrentCharge / battery.MaxCharge * 10f);
+        var chargePercent = (short)MathF.Round(battery.LastCharge / battery.MaxCharge * 10f);
 
         // we make sure 0 only shows if they have absolutely no battery.
         // also account for floating point imprecision
-        if (chargePercent == 0 && _powerCell.HasDrawCharge(uid, cell: slotComponent))
+        if (chargePercent == 0 && _powerCell.HasDrawCharge((uid, null, slotComponent))
         {
             chargePercent = 1;
         }
@@ -88,9 +90,9 @@ public sealed partial class BatteryAlertSystem : EntitySystem
 
         _nextAlertUpdate = curTime + AlertUpdateDelay;
 
-        if (!_chassisQuery.TryComp(localPlayer, out var chassis))
+        if (!_alertQuery.TryComp(localPlayer, out var alert) || !_slotQuery.TryComp(localPlayer, out var slot))
             return;
 
-        UpdateBatteryAlert(localPlayer, chassis);
+        TryUpdateBatteryAlert(localPlayer, alert, slot);
     }
 }
