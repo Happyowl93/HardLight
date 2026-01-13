@@ -1,0 +1,81 @@
+using System.Threading;
+using System.Threading.Tasks;
+using Content.Server._Starlight.Xenobiology;
+using Content.Server.NPC;
+using Content.Server.NPC.HTN.PrimitiveTasks;
+using Content.Server.NPC.Pathfinding;
+using Content.Shared._Starlight.Xenobiology;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.FixedPoint;
+using Content.Shared.Interaction;
+using Content.Shared.Mobs.Components;
+using Robust.Shared.Prototypes;
+
+namespace Content.Server._Starlight.NPC.HTN.PrimitiveTasks.Operators.Xenobiology;
+
+public sealed partial class SlimeTargetKnownEdibleTargetOperator : HTNOperator
+{
+    [Dependency] private readonly IEntityManager _entManager = default!;
+    
+    private SlimeBrainSystem _slimeBrainSystem = default!;
+    private EntityLookupSystem _lookup = default!;
+    private PathfindingSystem _pathfinding = default!;
+    
+    /// <summary>
+    /// Target entity to eat.
+    /// </summary>
+    [DataField("targetKey", required: true)]
+    public string TargetKey = string.Empty;
+    
+    /// <summary>
+    /// Target entitycoordinates to move to.
+    /// </summary>
+    [DataField("targetMoveKey", required: true)]
+    public string TargetMoveKey = string.Empty;
+    
+    public override void Initialize(IEntitySystemManager sysManager)
+    {
+        base.Initialize(sysManager);
+        _slimeBrainSystem = sysManager.GetEntitySystem<SlimeBrainSystem>();
+        _lookup = sysManager.GetEntitySystem<EntityLookupSystem>();
+        _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
+    }
+    
+    public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard,
+        CancellationToken cancelToken)
+    {
+        var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
+        
+        if (!_entManager.TryGetComponent<SlimeComponent>(owner, out var slime))
+            return (false, null);
+
+        foreach (var entity in _lookup.GetEntitiesInRange(owner, _slimeBrainSystem.FoodSearchRange))
+        {
+            // We need to find nearby edible targets that are in the known edible targets set
+            // If we find one and it passes all tests, we designate that as our target
+            // If we find one but it fails a test, we remove it from the known edible targets set
+            if (!_slimeBrainSystem.TargetFood.Contains(entity)) continue;
+            if (!_slimeBrainSystem.IsEdibleBySlimeTest(entity))
+            {
+                _slimeBrainSystem.TargetFood.Remove(entity);
+                continue;
+            }
+
+            var pathRange = SharedInteractionSystem.InteractionRange - 1f;
+            var path = await _pathfinding.GetPath(owner, entity, pathRange, cancelToken);
+
+            if (path.Result == PathResult.NoPath)
+                continue;
+
+            return (true, new Dictionary<string, object>()
+            {
+                {TargetKey, entity},
+                {TargetMoveKey, _entManager.GetComponent<TransformComponent>(entity).Coordinates},
+                {NPCBlackboard.PathfindKey, path},
+            });
+        }
+        
+        return (false, null);
+    }
+}
