@@ -241,7 +241,7 @@
 - type: loadoutGroup
   id: BlueShieldOuterclothing
   name: loadout-group-blueshield-outerclothing
-  minLimit: 0
+  minLimit: 1
   defaultSelected: 1
   loadouts:
   - BlueShieldVest

@@ -256,7 +256,8 @@
        !type:String
        pda-veteranblueshield
   - type: PdaBorderColor
-    borderColor: "#38476b"
+    borderColor: "#202125"
+    accentHColor: "#004281"
     accentVColor: "#c2c1c9"
   - type: Icon
     sprite: _Starlight/Objects/Devices/pda.rsi

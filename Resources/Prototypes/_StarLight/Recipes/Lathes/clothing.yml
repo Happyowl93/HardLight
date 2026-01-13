@@ -1,0 +1,4 @@
+- type: latheRecipe
+  parent: BaseCommandJumpsuitRecipe
+  id: ClothingUniformJumpskirtBlueShieldSkirt 
+  result: ClothingUniformJumpskirtBlueShieldSkirt 
