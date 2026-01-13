@@ -25987,5 +25987,14 @@ Entries:
   id: 210400
   time: '2026-01-13T13:13:11.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2104
+- author: Fractalflower
+  changes:
+  - message: Terror spiders can now speak/understand Xeno and Chittin
+    type: Add
+  - message: Terror spiders can now hiss
+    type: Add
+  id: 230300
+  time: '2026-01-13T13:36:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2303
 Order: -1
 
