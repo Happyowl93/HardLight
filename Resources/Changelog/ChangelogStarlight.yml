@@ -26120,5 +26120,12 @@ Entries:
   id: 276100
   time: '2026-01-13T19:46:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2761
+- author: Sparlight
+  changes:
+  - message: Smart Corgis (and borgis) now have forensic information..
+    type: Add
+  id: 271600
+  time: '2026-01-13T22:38:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2716
 Order: -1
 
