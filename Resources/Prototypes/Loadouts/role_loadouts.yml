@@ -12,6 +12,8 @@
   - SurvivalExtended
   - Trinkets
   - Scarves # Starlight
+  - CapPens # Starlight
+  - CaptainJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -28,6 +30,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - HoPPens # Starlight
+  - HoPJobTrinkets
   - GroupSpeciesBreathTool
 
 # Silicons
@@ -35,6 +39,10 @@
   id: JobBorg
   nameDataset: NamesBorg
   canCustomizeName: true
+  # Starlight Start: Selectable Silicon Brain
+  groups:
+  - SiliconBrainType
+  # Starlight End
 
 - type: roleLoadout
   id: JobStationAi
@@ -58,6 +66,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - AssistantJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -73,6 +83,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - BartenderJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -86,6 +98,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - ServiceWorkerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -102,6 +116,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - ChefJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -115,6 +131,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - LuxuryPens # Starlight
+  - LibrarianJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -128,6 +146,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - LuxuryPens # Starlight
+  - LawyerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -146,6 +166,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - ChaplainJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -161,7 +183,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
-  - JanitorPlunger
+  - Pens # Starlight
+  - JanitorJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -177,6 +200,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - BotanistJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -193,6 +218,8 @@
   - SurvivalClown
   - Trinkets
   - Scarves # Starlight
+  - ClownPens # Starlight
+  - ClownJobTrinkets
 
 - type: roleLoadout
   id: JobMime
@@ -209,9 +236,12 @@
   - SurvivalMime
   - Trinkets
   - Scarves # Starlight
+  - MimePens # Starlight
+  - MimeJobTrinkets
 
 - type: roleLoadout
   id: JobMusician
+  canCustomizeName: true
   groups:
   - GroupTankHarness
   - MusicianJumpsuit
@@ -222,6 +252,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - MusicianJobTrinkets
   - Instruments
   - GroupSpeciesBreathTool
 
@@ -240,6 +272,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - QuartermasterJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -256,6 +290,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -266,10 +302,13 @@
   - SalvageSpecialistJumpsuit # afterlight
   - SalvageSpecialistOuterClothing
   - SalvageSpecialistShoes
+  - SalvageSpecialistPDA # Starlight
   - Glasses
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - SalvageSpecialistJobTrinkets
   - GroupSpeciesBreathTool
 
 # Engineering
@@ -286,6 +325,8 @@
   - SurvivalExtended
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -297,6 +338,8 @@
   - SurvivalExtended
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -312,6 +355,8 @@
   - SurvivalExtended
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -325,6 +370,8 @@
   - SurvivalExtended
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - AtmosphericTechnicianJobTrinkets
   - GroupSpeciesBreathTool
 
 # Science
@@ -343,6 +390,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - ResearchDirectorJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -361,6 +410,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - ScientistJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -373,6 +424,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - ResearchAssistantJobTrinkets
   - GroupSpeciesBreathTool
 
 # Security
@@ -391,7 +444,8 @@
   - SurvivalSecurity
   - Trinkets
   - Scarves # Starlight
-  - SecurityStar
+  - Pens # Starlight
+  - HeadofSecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -407,7 +461,8 @@
   - SurvivalSecurity
   - Trinkets
   - Scarves # Starlight
-  - SecurityStar
+  - Pens # Starlight
+  - WardenJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -426,7 +481,8 @@
   - SurvivalSecurity
   - Trinkets
   - Scarves # Starlight
-  - SecurityStar
+  - Pens # Starlight
+  - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -442,7 +498,8 @@
   - SurvivalSecurity
   - Trinkets
   - Scarves # Starlight
-  - SecurityStar
+  - Pens # Starlight
+  - DetectiveJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -455,6 +512,8 @@
   - SurvivalSecurity
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - SecurityCadetJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
 # Medical
@@ -474,6 +533,8 @@
   - SurvivalMedical
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -492,6 +553,8 @@
   - SurvivalMedical
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -504,21 +567,31 @@
   - SurvivalMedical
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobChemist
   groups:
   - GroupTankHarness
+  - ChemistHead # Starlight
   - MedicalMask
   - ChemistJumpsuit
   - MedicalGloves
   - ChemistBackpack
+  - ChemistBag # Starlight
   - ChemistOuterClothing
-  - MedicalShoes
+  - ChemistShoes # Starlight
+  - ChemistPDA # Starlight
+  - ChemistEyewear # Starlight
+  - ChemistBeaker # Starlight
+  - ChemistLabeler # Starlight
   - SurvivalMedical
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
@@ -532,10 +605,13 @@
   - MedicalBackpack
   - ParamedicOuterClothing
   - ParamedicShoes
+  - ParamedicPDA # Starlight
   - MedicalEyewear
   - SurvivalMedical
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 # Wildcards
@@ -549,6 +625,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - ZookeeperJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -562,6 +640,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - LuxuryPens # Starlight
+  - ReporterJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -575,6 +655,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - PsychologistJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -588,6 +670,8 @@
   - Survival
   - Trinkets
   - Scarves # Starlight
+  - Pens # Starlight
+  - BoxerJobTrinkets
   - GroupSpeciesBreathTool
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
