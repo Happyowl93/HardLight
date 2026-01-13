@@ -75,7 +75,7 @@ namespace Content.IntegrationTests.Tests
             {"/Maps/_Starlight/Shuttles/RecluseClassSHC.yml", ["RubberStampSyndicate"]},
             {"/Maps/_Starlight/Shuttles/Signaleer.yml", ["RubberStampSyndicate"]},
             {"/Maps/_Starlight/Nonstations/nukieplanet.yml", ["RubberStampSyndicate"]},
-            {"/Maps/_Starlight/Nonstations/nukieplanet.yml", ["RubberStampSyndicate"]},
+            {"/Maps/_Starlight/Nonstations/westernsyndie.yml", ["RubberStampSyndicate"]},
             {"/Maps/_Starlight/Dungeon/syndie.yml", ["RubberStampSyndicate"]},
             {"/Maps/_Starlight/Shuttles/scarletSHCdefenderFinal.yml", ["RubberStampSyndicate", "TraitorCodePaper"]},
             {"/Maps/_Starlight/Centcomms/CC_Outpost_SC17.yml", ["BoxFolderCentCom", "RubberStampCentcom"]},
