@@ -26083,5 +26083,15 @@ Entries:
   id: 266700
   time: '2026-01-13T18:36:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2667
+- author: Citrea
+  changes:
+  - message: We have received repeated complaints about how it's unethical to attach
+      cybernetic arms to resomi eyesockets. In response, we have decided to add functionality
+      for cyberware to automatically reconfigure into something apropriate for their
+      size.
+    type: Add
+  id: 254800
+  time: '2026-01-13T19:21:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2548
 Order: -1
 
