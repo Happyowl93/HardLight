@@ -26093,5 +26093,13 @@ Entries:
   id: 254800
   time: '2026-01-13T19:21:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2548
+- author: Shades
+  changes:
+  - message: Added end-of-round popup with rules. It can be hidden after the first
+      time it appears.
+    type: Add
+  id: 280900
+  time: '2026-01-13T19:29:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2809
 Order: -1
 
