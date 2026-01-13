@@ -25908,5 +25908,16 @@ Entries:
   id: 274600
   time: '2026-01-13T04:02:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2746
+- author: Fasuh
+  changes:
+  - message: Added new magnet animation on bags.
+    type: Add
+  - message: Added sounds and visual indicator to mail bag magnet.
+    type: Add
+  - message: Changed the interaction UX on mail bag.
+    type: Tweak
+  id: 275300
+  time: '2026-01-13T04:03:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2753
 Order: -1
 
