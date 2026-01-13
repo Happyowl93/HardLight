@@ -25980,5 +25980,12 @@ Entries:
   id: 213500
   time: '2026-01-13T13:14:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2135
+- author: Fractalflower
+  changes:
+  - message: Glasses now properly fix short-sightedness.
+    type: Tweak
+  id: 210400
+  time: '2026-01-13T13:13:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2104
 Order: -1
 
