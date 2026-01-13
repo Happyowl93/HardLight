@@ -327,7 +327,7 @@
     - type: SlimeExtract
       extractReactions:
         - YellowSlimeExtractWaterReaction
-        - YellowSlimeExtractBloodReaction
+        #- YellowSlimeExtractBloodReaction
         - YellowSlimeExtractPlasmaReaction
 
 - type: extractReaction
@@ -342,15 +342,16 @@
       scalingOffset: 1
   shouldDelete: true
 
-- type: extractReaction
-  id: YellowSlimeExtractBloodReaction
-  requirements:
-    Blood: 1
-  effects:
-    - effect: !type:Emp
-      scalingFactor: 1
-      scalingOffset: 0
-  shouldDelete: true
+# Yellow blood reaction removed until the EMP system is reworked, because right now its broken.
+#- type: extractReaction
+#  id: YellowSlimeExtractBloodReaction
+#  requirements:
+#    Blood: 1
+#  effects:
+#    - effect: !type:Emp
+#      scalingFactor: 1
+#      scalingOffset: 0
+#  shouldDelete: true
 
 - type: extractReaction
   id: YellowSlimeExtractPlasmaReaction

@@ -19,7 +19,6 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<XenobiologyConsoleComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<XenobiologyConsoleComponent, AfterInteractUsingEvent>(OnAfterInteractUsing);
         
         SubscribeLocalEvent<ConsoleGrabSlimeEvent>(OnConsoleGrabSlime);
@@ -29,8 +28,6 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         SubscribeLocalEvent<ConsoleApplyMutationPotionEvent>(OnConsoleApplyMutationPotion);
         SubscribeLocalEvent<ConsoleApplyStabilizerPotionEvent>(OnConsoleApplyStabilizerPotion);
     }
-
-    private void OnComponentInit(Entity<XenobiologyConsoleComponent> entity, ref ComponentInit args) => entity.Comp.SlimeContainer = _container.EnsureContainer<ContainerSlot>(entity.Owner, XenobiologyConsoleComponent.SlimeContainerName);
 
     private void OnAfterInteractUsing(Entity<XenobiologyConsoleComponent> entity, ref AfterInteractUsingEvent args)
     {
@@ -82,6 +79,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
     private void OnConsoleGrabSlime(ConsoleGrabSlimeEvent args)
     {
         if (!VerifyComponents(args, out var remoteEyeActorComponent, out var xenobiologyConsoleComponent, out var remoteEntity)) return;
+        xenobiologyConsoleComponent.SlimeContainer = _container.EnsureContainer<ContainerSlot>(remoteEntity.Value, XenobiologyConsoleComponent.SlimeContainerName);
         foreach (var possibleSlime in _entityLookupSystem.GetEntitiesInRange(remoteEntity.Value, 0.5F))
         {
             if (_entityManager.TryGetComponent<SlimeComponent>(possibleSlime, out _))

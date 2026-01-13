@@ -27,10 +27,6 @@
       color: "#FC0097"
     - type: Animateable
     - type: ContainerContainer
-      containers:
-        slimes:
-          !type:ContainerSlot
-          showEnts: false
     - type: RemoteEyeConsole
       remoteEntityProto: XenobiologyConsoleEye
       color: "#00FF00"
