@@ -25919,5 +25919,12 @@ Entries:
   id: 275300
   time: '2026-01-13T04:03:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2753
+- author: Penguinwizzard
+  changes:
+  - message: Stations can now be cursed!
+    type: Add
+  id: 266200
+  time: '2026-01-13T06:15:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2662
 Order: -1
 
