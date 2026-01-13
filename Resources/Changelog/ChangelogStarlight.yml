@@ -25884,5 +25884,13 @@ Entries:
   id: 279900
   time: '2026-01-13T01:15:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2799
+- author: neomoth
+  changes:
+  - message: Fix the stupid fucking annoying ass holopad bug that's been annoying
+      everyone for months on end. Hallelujah.
+    type: Fix
+  id: 279700
+  time: '2026-01-13T01:38:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2797
 Order: -1
 
