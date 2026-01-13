@@ -25946,5 +25946,19 @@ Entries:
   id: 194900
   time: '2026-01-13T12:40:32.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1949
+- author: Fractalflower
+  changes:
+  - message: Added miscellaneous item slot, for pins/medals/etc
+    type: Add
+  - message: Changed gender pins & medals slot to misc slot
+    type: Tweak
+  - message: Added a pin loadout slot.
+    type: Add
+  - message: Fixed bug whe brigmedics and salvage leads are not permitted to bring
+      a scarf to work.
+    type: Fix
+  id: 197000
+  time: '2026-01-13T12:54:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1970
 Order: -1
 
