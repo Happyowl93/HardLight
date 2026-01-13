@@ -34,8 +34,14 @@ public sealed partial class SlimeExtractComponent : Component
     public bool CurrentlyPaused = false;
 
     /// <summary>
-    /// The time at which each reaction will activate next, if at all, to handle delayed reactions
+    /// The GUIDs for each timed reaction event to handle delayed reactions
     /// </summary>
     [ViewVariables, AutoNetworkedField]
-    public Dictionary<ProtoId<ExtractReactionPrototype>, TimeSpan> ActivationTimes = new();
+    public Dictionary<ProtoId<ExtractReactionPrototype>, Guid> ReactionGuids = new();
+
+    /// <summary>
+    /// The events that are delayed in case of this slime extract becoming paused.
+    /// </summary>
+    [ViewVariables, AutoNetworkedField]
+    public Dictionary<ProtoId<ExtractReactionPrototype>, PausedEvent> PausedEvents = new();
 }
