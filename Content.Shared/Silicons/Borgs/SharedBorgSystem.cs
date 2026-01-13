@@ -36,6 +36,11 @@ using Content.Shared.Radio.Components;
 using Content.Shared._Starlight.Silicons.Borgs;
 using Content.Shared.Actions.Components;
 using Content.Shared.Starlight.TextToSpeech;
+// Starlight begin
+using System.Linq;
+using Content.Shared.Tag;
+using Robust.Shared.Prototypes;
+// Starlight end
 
 namespace Content.Shared.Silicons.Borgs;
 
@@ -67,6 +72,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
     [Dependency] private readonly SharedHandheldLightSystem _handheldLight = default!;
     [Dependency] private readonly SharedAccessSystem _access = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly TagSystem _tag = default!; // Starlight
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -356,8 +362,29 @@ public abstract partial class SharedBorgSystem : EntitySystem
     {
         if (args.NewMobState == MobState.Alive)
             TryActivate(chassis, args.Origin);
+        // Starlight begin
         else
+        {
             SetActive(chassis, false, user: args.Origin);
+            
+            foreach (var ent in chassis.Comp.ModuleContainer.ContainedEntities.ToList())
+            {
+                if (!TryComp<ItemBorgModuleComponent>(ent, out var module)) continue;
+                if (!TryComp<ContainerManagerComponent>(ent, out var manager)) continue;
+                if (!_container.TryGetContainer(ent, module.HoldingContainer, out var container, manager)) continue;
+                foreach (var item in container.ContainedEntities.ToList())
+                {
+                    if (_tag.HasTag(item, new ProtoId<TagPrototype>("BorgItem"))) continue;
+                    var c = container;
+                    while (true)
+                    {
+                        _container.Remove(item, c);
+                        if (!_container.TryGetContainingContainer(c.Owner, out c)) break;
+                    }
+                }
+            }
+        }
+        // Starlight end
     }
 
     private void OnBeingGibbed(Entity<BorgChassisComponent> chassis, ref BeingGibbedEvent args)

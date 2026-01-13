@@ -37,6 +37,9 @@
   id: BoneGel
 
 - type: Tag
+  id: BorgItem
+
+- type: Tag
   id: BorgModulePurrfus
 
 - type: Tag

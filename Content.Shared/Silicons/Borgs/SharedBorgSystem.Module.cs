@@ -4,6 +4,10 @@ using Content.Shared.Interaction.Components;
 using Content.Shared.Localizations;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Shared.Containers;
+// Starlight begin
+using Content.Shared.Tag;
+using Robust.Shared.Prototypes;
+// Starlight end
 
 namespace Content.Shared.Silicons.Borgs;
 
@@ -197,6 +201,7 @@ public abstract partial class SharedBorgSystem
                 _hands.DoPickup(chassis, handId, pickUp, hands);
                 if (!hand.ForceRemovable && hand.Hand.Whitelist == null && hand.Hand.Blacklist == null)
                 {
+                    _tag.AddTag(pickUp, new ProtoId<TagPrototype>("BorgItem")); // Starlight
                     EnsureComp<UnremoveableComponent>(pickUp);
                 }
             }
