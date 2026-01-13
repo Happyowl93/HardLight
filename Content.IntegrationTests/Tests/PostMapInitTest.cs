@@ -86,7 +86,7 @@ namespace Content.IntegrationTests.Tests
            #region starlight
             "/Maps/nanoStation.yml",
             "/Maps/_Starlight/Nonstations/nukieplanet.yml", //starlight nukie spawn map
-            "/Maps/_Starlight/Shuttles/Nonstations/nukiewestern.yml", //starlight nukie spawn map
+            "/Maps/_Starlight/Nonstations/nukiewestern.yml", //starlight nukie spawn map
             "/Maps/_Starlight/Centcomms/CC_Outpost_G24.yml", //starlight centcomm map
             "/Maps/_Starlight/Centcomms/CC_Outpost_SC17.yml", //starlight centcomm map
             "/Maps/_Starlight/Centcomms/CC_Outpost_GNT9.yml", //starlight centcomm map
