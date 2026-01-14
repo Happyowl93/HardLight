@@ -1,4 +1,6 @@
 using Content.Shared.Damage.Prototypes;
+using Content.Shared._Starlight.Language;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -8,7 +10,7 @@ namespace Content.Server._Starlight.Traits.Assorted;
 ///     When applied to a player entity, causes them to take damage and cough when speaking normally.
 ///     Whispering bypasses this effect.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class DamagedThroatComponent : Component
 {
     /// <summary>
@@ -16,6 +18,15 @@ public sealed partial class DamagedThroatComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<DamageTypePrototype> DamageType = "Blunt";
+
+    /// <summary>
+    ///     Languages that should not trigger damage (e.g., sign language).
+    /// </summary>
+    [DataField]
+    public List<ProtoId<LanguagePrototype>> ExcludedLanguages = new()
+    {
+        "Sign"
+    };
 
     /// <summary>
     ///     The base damage to apply when speaking normally (starts at this value).
@@ -45,18 +56,20 @@ public sealed partial class DamagedThroatComponent : Component
     ///     The chance (0.0 to 1.0) to cough when speaking normally.
     /// </summary>
     [DataField]
-    public float CoughChance = 0.3f;
+    public float CoughChance = 0.6f;
 
     /// <summary>
     ///     The minimum time between damage applications.
     /// </summary>
     [DataField]
+    [AutoPausedField]
     public TimeSpan Cooldown = TimeSpan.FromSeconds(1);
 
     /// <summary>
     ///     Time without speaking normally before damage resets to base.
     /// </summary>
     [DataField]
+    [AutoPausedField]
     public TimeSpan ResetCooldown = TimeSpan.FromSeconds(30);
 
     /// <summary>
