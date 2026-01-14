@@ -26287,5 +26287,12 @@ Entries:
   id: 252700
   time: '2026-01-14T16:43:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2527
+- author: scarlet lightweaver
+  changes:
+  - message: THE WIZARD HAS BEGUN A COLD ERA LOOK FOR A NEW SPELL IN THE GRIMORE!
+    type: Add
+  id: 230800
+  time: '2026-01-14T16:50:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2308
 Order: -1
 
