@@ -26250,5 +26250,12 @@ Entries:
   id: 258000
   time: '2026-01-14T02:28:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2580
+- author: STARLIGHT TEAM
+  changes:
+  - message: Fixed Lobby Hub.
+    type: Fix
+  id: 281700
+  time: '2026-01-14T07:50:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2817
 Order: -1
 
