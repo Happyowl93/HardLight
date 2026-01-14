@@ -21,3 +21,11 @@
   color: "#963dca"
   # long range since otherwise it'd defeat the point of a handheld radio independent of telecomms
   longRange: true
+
+- type: radioChannel
+  id: SyndicateOperative
+  name: chat-radio-syndicate-operative
+  keycode: 'l'
+  frequency: 1215
+  color: "#d52a2a"
+  longRange: true

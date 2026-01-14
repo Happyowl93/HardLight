@@ -65,3 +65,21 @@
     - type: Tag
       tags:
         - EncryptionCargo
+
+- type: entity
+  parent: [ EncryptionKey, BaseSyndicateContraband ]
+  id: EncryptionKeySyndicateOperative
+  name: blood-red encryption key
+  description: A dual encryption key used by... wait... Who is the owner of this chip?
+  components:
+    - type: EncryptionKey
+      channels:
+        - SyndicateOperative
+      defaultChannel: SyndicateOperative
+    - type: Sprite
+      layers:
+        - state: crypt_red
+        - sprite: _Starlight/Objects/Devices/encryption_keys.rsi
+          state: syndicate-operative_label
+    - type: StaticPrice
+      price: 1000

@@ -1,15 +1,32 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Created by JustAdler for https://github.com/ss14Starlight/space-station-14 | expedition_label by mikeysaurus",
+  "copyright": "See below.",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
-    {"name": "crypt_soviet"},
-    {"name": "soviet_label"},
-    {"name": "expedition_label"},
-    {"name": "salvage_label"}
+    {
+      "name": "crypt_soviet",
+      "copyright": "by JustAdler"
+      
+    },
+    {
+      "name": "soviet_label",
+      "copyright": "by JustAdler"
+    },
+    {
+      "name": "expedition_label",
+      "copyright": "by mikeysaurus"
+    },
+    {
+      "name": "salvage_label",
+      "copyright": "by mikeysaurus"
+    },
+    {
+      "name": "syndicate-operative_label",
+      "copyright": "by mikeysaurus"
+    }
   ]
 }
