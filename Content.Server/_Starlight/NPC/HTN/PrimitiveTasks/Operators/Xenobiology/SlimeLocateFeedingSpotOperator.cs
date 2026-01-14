@@ -7,37 +7,32 @@ using Content.Server.NPC.Pathfinding;
 using Content.Shared._Starlight.Xenobiology;
 using Content.Shared.Interaction;
 using Content.Shared.Tag;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server._Starlight.NPC.HTN.PrimitiveTasks.Operators.Xenobiology;
 
-public sealed partial class SlimeFindEdibleTargetOperator : HTNOperator
+public sealed partial class SlimeLocateFeedingSpotOperator : HTNOperator
 {
     /*
-     * This class collects known edible targets for the hive mind.
-     * With this, slimes should bunch up around nearby edible targets, and not aimlessly and separately search for targets.
+     * This locates a feeding spot for the slime to go to and directs them there.
+     * Should be used when there are no nearby food sources.
      */
     
     [Dependency] private readonly IEntityManager _entManager = default!;
 
     private SlimeBrainSystem _slimeBrainSystem = default!;
-    private EntityLookupSystem _lookup = default!;
     private PathfindingSystem _pathfinding = default!;
-    private TagSystem _tagSystem = default!;
     
     /// <summary>
-    /// The tag an entity must have in order to be considered safe to eat (not desperate).
+    /// Target entitycoordinates to move to.
     /// </summary>
-    [DataField(required: true)]
-    public ProtoId<TagPrototype> TargetFoodTag = default!;
+    [DataField("targetMoveKey", required: true)]
+    public string TargetMoveKey = string.Empty;
     
     public override void Initialize(IEntitySystemManager sysManager)
     {
         base.Initialize(sysManager);
         _slimeBrainSystem = sysManager.GetEntitySystem<SlimeBrainSystem>();
-        _lookup = sysManager.GetEntitySystem<EntityLookupSystem>();
         _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
-        _tagSystem = sysManager.GetEntitySystem<TagSystem>();
     }
     
     public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard,
@@ -48,29 +43,24 @@ public sealed partial class SlimeFindEdibleTargetOperator : HTNOperator
         if (!_entManager.TryGetComponent<SlimeComponent>(owner, out var slime))
             return (false, null);
         
-        foreach (var entity in _lookup.GetEntitiesInRange(owner, _slimeBrainSystem.FoodSearchRange))
+        if (!_entManager.TryGetComponent<TransformComponent>(owner, out var slimeTransform))
+            return (false, null);
+
+        foreach (var spot in _slimeBrainSystem.KnownFoodLocations)
         {
-            if (!_slimeBrainSystem.IsEdibleBySlimeTest(entity)) continue;
-                
             var pathRange = SharedInteractionSystem.InteractionRange - 1f;
-            var path = await _pathfinding.GetPath(owner, entity, pathRange, cancelToken);
+            var path = await _pathfinding.GetPath(owner, slimeTransform.Coordinates, spot, pathRange, cancelToken);
 
             if (path.Result == PathResult.NoPath)
                 continue;
 
-            if (_tagSystem.HasTag(entity, TargetFoodTag))
+            return (true, new Dictionary<string, object>()
             {
-                _slimeBrainSystem.TargetFood.Add(entity);
-                return (true, null);
-            }
-            else
-            {
-                _slimeBrainSystem.DesperateTargetFood.Add(entity);
-                return (false, null);
-            }
+                {TargetMoveKey, slimeTransform.Coordinates},
+                {NPCBlackboard.PathfindKey, path},
+            });
         }
         
-        _slimeBrainSystem.SlimeUnsuccessfulFoodFind(owner);
         return (false, null);
     }
 }

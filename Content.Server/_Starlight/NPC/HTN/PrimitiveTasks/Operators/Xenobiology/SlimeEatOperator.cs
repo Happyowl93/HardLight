@@ -3,9 +3,6 @@ using Content.Server.NPC;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.HTN.PrimitiveTasks;
 using Content.Shared._Starlight.Xenobiology;
-using Content.Shared.Damage.Components;
-using Content.Shared.FixedPoint;
-using Content.Shared.Mobs.Components;
 
 namespace Content.Server._Starlight.NPC.HTN.PrimitiveTasks.Operators.Xenobiology;
 
@@ -49,7 +46,9 @@ public sealed partial class SlimeEatOperator : HTNOperator
 
         if (!_slimeSystem.TryEat((owner, slime), target))
             return HTNOperatorStatus.Failed;
-
+        
+        _slimeBrainSystem.SlimeSuccessfulEat(owner);
+        
         return HTNOperatorStatus.Finished;
     }
 }

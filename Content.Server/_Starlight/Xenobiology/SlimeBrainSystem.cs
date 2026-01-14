@@ -3,8 +3,9 @@ using Content.Shared._Starlight.Xenobiology;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
-using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Tag;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Starlight.Xenobiology;
@@ -25,6 +26,12 @@ namespace Content.Server._Starlight.Xenobiology;
  * Because updating mood every tick sounds like a performance nightmare.
  */
 
+public enum SlimeMood
+{
+    Calm,
+    Desperate,
+}
+
 public sealed class SlimeBrainSystem : EntitySystem
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
@@ -32,7 +39,22 @@ public sealed class SlimeBrainSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly PathfindingSystem _pathfinding = default!;
     
+    /// <summary>
+    /// The set of food targets slimes can safely eat.
+    /// </summary>
     public HashSet<EntityUid> TargetFood = new();
+    
+    /// <summary>
+    /// The set of food targets slimes can eat, but will only eat under desperate circumstances (lack of food and no other option)
+    /// </summary>
+    public HashSet<EntityUid> DesperateTargetFood = new();
+
+    /// <summary>
+    /// The locations marked by slimes indicating there may be food nearby.
+    /// Specifically, if a slime eats a monkey at a spot, they will mark it as a known food location.
+    /// If a slime arrived to the spot and doesn't find any food to eat, they will un-mark it.
+    /// </summary>
+    public HashSet<EntityCoordinates> KnownFoodLocations = new();
 
     /// <summary>
     /// How far to look for food at each slime.
@@ -52,17 +74,13 @@ public sealed class SlimeBrainSystem : EntitySystem
 
     public bool IsEdibleBySlimeTest(EntityUid entity)
     {
-        var damageQuery = _entManager.GetEntityQuery<DamageableComponent>();
-        var slimeQuery = _entManager.GetEntityQuery<SlimeComponent>();
-        var mobStateQuery = _entManager.GetEntityQuery<MobStateComponent>();
-        
         // Don't cannibalize other slimes
-        if (slimeQuery.HasComponent(entity)) return false;
+        if (_entManager.HasComponent<SlimeComponent>(entity)) return false;
 
-        if (!damageQuery.TryGetComponent(entity, out var damage)) return false;
+        if (!_entManager.TryGetComponent<DamageableComponent>(entity, out var damage)) return false;
         
         // Don't target entities that aren't mobs
-        if (!mobStateQuery.HasComponent(entity)) return false;
+        if (!_entManager.HasComponent<MobStateComponent>(entity)) return false;
 
         // Don't target entities in the wrong damage group
         if (OnlyTarget.HasValue)
@@ -73,5 +91,23 @@ public sealed class SlimeBrainSystem : EntitySystem
         if (!(damage.TotalDamage < TargetDamageThreshold)) return false;
 
         return true;
+    }
+
+    /// <summary>
+    /// Called by slimes if they successfully eat food.
+    /// </summary>
+    /// <param name="entity">The slime entity.</param>
+    public void SlimeSuccessfulEat(EntityUid entity)
+    {
+        KnownFoodLocations.Add(_entManager.GetComponent<TransformComponent>(entity).Coordinates);
+    }
+
+    /// <summary>
+    /// Called by slimes if they couldn't find anything nearby to eat.
+    /// </summary>
+    /// <param name="entity">The slime entity.</param>
+    public void SlimeUnsuccessfulFoodFind(EntityUid entity)
+    {
+        KnownFoodLocations.Remove(_entManager.GetComponent<TransformComponent>(entity).Coordinates);
     }
 }

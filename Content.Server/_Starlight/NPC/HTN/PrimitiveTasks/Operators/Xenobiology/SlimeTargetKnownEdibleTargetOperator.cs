@@ -5,12 +5,7 @@ using Content.Server.NPC;
 using Content.Server.NPC.HTN.PrimitiveTasks;
 using Content.Server.NPC.Pathfinding;
 using Content.Shared._Starlight.Xenobiology;
-using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Prototypes;
-using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
-using Content.Shared.Mobs.Components;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server._Starlight.NPC.HTN.PrimitiveTasks.Operators.Xenobiology;
 
