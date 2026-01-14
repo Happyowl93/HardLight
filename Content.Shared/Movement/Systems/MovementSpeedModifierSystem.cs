@@ -1,4 +1,3 @@
-using Content.Shared._Starlight.Movement.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Inventory;
 using Content.Shared.Movement.Components;
@@ -106,7 +105,7 @@ namespace Content.Shared.Movement.Systems
             Dirty(uid, move);
         }
 
-        public void RefreshMovementSpeedModifiers(EntityUid uid, MovementSpeedModifierComponent? move = null, bool applyScalar = true)
+        public void RefreshMovementSpeedModifiers(EntityUid uid, MovementSpeedModifierComponent? move = null)
         {
             if (!Resolve(uid, ref move, false))
                 return;
@@ -116,12 +115,6 @@ namespace Content.Shared.Movement.Systems
             
             var ev = new RefreshMovementSpeedModifiersEvent();
             RaiseLocalEvent(uid, ev);
-                
-            if (TryComp<MovementSpeedModifierScaleComponent>(uid, out var comp) && applyScalar) 
-            {
-                ev.WalkSpeedModifier = (ev.WalkSpeedModifier - 1) * comp.MovementSpeedScale + 1;
-                ev.SprintSpeedModifier = (ev.SprintSpeedModifier - 1) * comp.MovementSpeedScale + 1;
-            }
             
             if (MathHelper.CloseTo(ev.WalkSpeedModifier, move.WalkSpeedModifier) &&
                 MathHelper.CloseTo(ev.SprintSpeedModifier, move.SprintSpeedModifier))

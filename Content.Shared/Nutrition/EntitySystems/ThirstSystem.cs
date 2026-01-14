@@ -57,7 +57,7 @@ public sealed class ThirstSystem : EntitySystem
         DirtyFields(uid, component, null, nameof(ThirstComponent.NextUpdateTime), nameof(ThirstComponent.CurrentThirstThreshold), nameof(ThirstComponent.LastThirstThreshold));
 
         TryComp(uid, out MovementSpeedModifierComponent? moveMod);
-            _movement.RefreshMovementSpeedModifiers(uid, moveMod, false);
+            _movement.RefreshMovementSpeedModifiers(uid, moveMod);
     }
 
     private void OnRefreshMovespeed(EntityUid uid, ThirstComponent component, RefreshMovementSpeedModifiersEvent args)
@@ -151,7 +151,7 @@ public sealed class ThirstSystem : EntitySystem
         if (IsMovementThreshold(component.LastThirstThreshold) != IsMovementThreshold(component.CurrentThirstThreshold) &&
                 TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
         {
-            _movement.RefreshMovementSpeedModifiers(uid, movementSlowdownComponent, false);
+            _movement.RefreshMovementSpeedModifiers(uid, movementSlowdownComponent);
         }
 
         // Update UI
@@ -192,7 +192,7 @@ public sealed class ThirstSystem : EntitySystem
                 component.ActualDecayRate = thirstMultiplier * component.BaseDecayRate * 0.8f; // Starlight-edit
                 return;
             case ThirstThreshold.Parched:
-                _movement.RefreshMovementSpeedModifiers(uid, null, false);
+                _movement.RefreshMovementSpeedModifiers(uid);
                 component.LastThirstThreshold = component.CurrentThirstThreshold;
                 component.ActualDecayRate = thirstMultiplier * component.BaseDecayRate * 0.6f; // Starlight-edit
                 return;
