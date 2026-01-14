@@ -32,6 +32,7 @@
       color: "#00FF00"
       actions:
         - SyntrunnerActionExitConsole
+        - XenobiologyConsoleActionAnalyzeSlime
         - XenobiologyConsoleActionGrabSlime
         - XenobiologyConsoleActionPlaceSlime
         - XenobiologyConsoleActionPlaceMonkey

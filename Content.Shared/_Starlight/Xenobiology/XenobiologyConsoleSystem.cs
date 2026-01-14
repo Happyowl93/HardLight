@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared._Starlight.Computers.RemoteEye;
+using Content.Shared._Starlight.Xenobiology.MiscItems;
 using Content.Shared._Starlight.Xenobiology.Potions;
 using Content.Shared.Actions;
 using Content.Shared.Damage.Components;
@@ -27,6 +28,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         SubscribeLocalEvent<ConsoleRecycleMonkeyCorpseEvent>(OnConsoleRecycleMonkeyCorpse);
         SubscribeLocalEvent<ConsoleApplyMutationPotionEvent>(OnConsoleApplyMutationPotion);
         SubscribeLocalEvent<ConsoleApplyStabilizerPotionEvent>(OnConsoleApplyStabilizerPotion);
+        SubscribeLocalEvent<ConsoleGetSlimeInfoEvent>(OnConsoleGetSlimeInfo);
     }
 
     private void OnAfterInteractUsing(Entity<XenobiologyConsoleComponent> entity, ref AfterInteractUsingEvent args)
@@ -156,6 +158,27 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         }
         args.Handled = true;
     }
+
+    private void OnConsoleGetSlimeInfo(ConsoleGetSlimeInfoEvent args)
+    {
+        if (!VerifyComponents(args, out var remoteEyeActorComponent, out var xenobiologyConsoleComponent, out var remoteEntity)) return;
+        if (!remoteEyeActorComponent.VirtualItem.HasValue) return;
+        foreach (var possibleSlime in _entityLookupSystem.GetEntitiesInRange(remoteEntity.Value, 0.5F))
+        {
+            if (_entityManager.TryGetComponent<SlimeComponent>(possibleSlime, out var slimeComponent))
+            {
+                var ev = new ConsoleMsgToScannerEvent(args.Performer, possibleSlime);
+                RaiseLocalEvent(remoteEyeActorComponent.VirtualItem.Value, ev);
+                break;
+            }
+        }
+        args.Handled = true;
+    }
+}
+
+public sealed partial class ConsoleGetSlimeInfoEvent : InstantActionEvent
+{
+
 }
 
 public sealed partial class ConsoleGrabSlimeEvent : InstantActionEvent

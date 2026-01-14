@@ -1,4 +1,20 @@
 - type: entity
+  id: XenobiologyConsoleActionAnalyzeSlime
+  name: Analyze Slime
+  description: Get the info of a slime right under the camera's eye.
+  components:
+    - type: Action
+      priority: -11
+      itemIconStyle: BigAction
+      checkConsciousness: false
+      checkCanInteract: false
+      icon:
+        sprite: _Starlight/Interface/Actions/actions_borg.rsi
+        state: bookkeeping-module
+    - type: InstantAction
+      event: !type:ConsoleGetSlimeInfoEvent
+
+- type: entity
   id: XenobiologyConsoleActionGrabSlime
   name: Grab Slime
   description: Grab a slime from right under the camera's eye.
