@@ -61,7 +61,7 @@
 
 - type: entity
   id: ClothingBeltBlueShieldWebbingFilled
-  parent: ClothingBeltBlueShieldMedicalBelt
+  parent: ClothingBeltBlueShieldWebbing 
   suffix: Filled
   components:
   - type: EntityTableContainerFill
@@ -77,7 +77,7 @@
 
 - type: entity
   id: ClothingBeltBlueShieldMedicalBeltFilled
-  parent: ClothingBeltBlueShieldWebbing
+  parent: ClothingBeltBlueShieldMedicalBelt
   suffix: Filled
   components:
   - type: EntityTableContainerFill
