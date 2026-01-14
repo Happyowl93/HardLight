@@ -23,7 +23,7 @@
       mutationOnMaxSplit: XenobiologySlimeRainbow
     - type: HTN
       rootTask:
-        task: SlimeEatCompound
+        task: SlimeMainCompound
     - type: Temperature
       coldDamage:
         types:
