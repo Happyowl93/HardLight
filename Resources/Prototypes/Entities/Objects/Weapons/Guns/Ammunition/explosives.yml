@@ -43,8 +43,6 @@
 # Grenades
 
 - type: entity
-  abstract: true
-  parent: [BaseItem, BaseMajorContraband]
   id: BaseGrenade
   name: base grenade
   parent: BaseItem # Starlight edit: Removes major contraband from grenades
@@ -58,7 +56,6 @@
   - type: Sprite
 
 - type: entity
-  parent: BaseGrenade
   id: GrenadeBaton
   name: baton grenade
   parent: [ BaseGrenade, BaseSecurityContraband] # Starlight edit: Major -> Security contraband
@@ -76,7 +73,6 @@
     suffix: false
 
 - type: entity
-  parent: BaseGrenade
   id: GrenadeBlast
   name: blast grenade
   parent: [ BaseGrenade, BaseSyndicateContraband ] # Starlight edit: Major -> Syndicate contraband
@@ -94,7 +90,6 @@
     suffix: false
 
 - type: entity
-  parent: BaseGrenade
   id: GrenadeFlash
   name: flash grenade
   parent: [ BaseGrenade, BaseSecurityContraband] # Starlight edit: Major -> Security contraband
@@ -112,7 +107,6 @@
     suffix: false
 
 - type: entity
-  parent: BaseGrenade
   id: GrenadeFrag
   name: frag grenade
   parent: [ BaseGrenade, BaseSyndicateContraband ] # Starlight edit: Major -> Syndicate contraband
@@ -151,7 +145,6 @@
     - Cleanade # Starlight end - hydra whitelist
 
 - type: entity
-  parent: BaseGrenade
   id: GrenadeEMP
   name: EMP grenade
   parent: [ BaseGrenade, BaseSecurityContraband] # Starlight edit: Major -> Security contraband
