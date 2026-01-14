@@ -64,10 +64,8 @@ public sealed partial class BatteryAlertSystem : EntitySystem
 
         // we make sure 0 only shows if they have absolutely no battery.
         // also account for floating point imprecision
-        if (chargePercent == 0 && _powerCell.HasDrawCharge((uid, null, slotComponent))
-        {
+        if (chargePercent == 0 && _powerCell.HasDrawCharge((uid, null, slotComponent)))
             chargePercent = 1;
-        }
 
         _alerts.ClearAlert(uid, comp.NoBatteryAlert);
         _alerts.ShowAlert(uid, comp.BatteryAlert, chargePercent);
