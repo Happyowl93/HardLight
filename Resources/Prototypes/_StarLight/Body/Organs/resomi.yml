@@ -74,7 +74,7 @@
   parent: OrganHumanBrain
   name: brain
   suffix: Resomi
-  description: "The brain of a Resomi. Where Resomi think of evil thots."
+  description: "The brain of a Resomi. Where Resomi think of evil thoughts."
   components:
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Resomi/organs.rsi
