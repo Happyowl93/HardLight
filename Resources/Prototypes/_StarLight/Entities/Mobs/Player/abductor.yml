@@ -10,6 +10,7 @@
       - Abductor
       - AbductorScientist
       - CanPilot
+  - type: CantBecomeRevolutionary # Starlight
       
 - type: entity
   name: abductor scientist

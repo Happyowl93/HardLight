@@ -41,6 +41,7 @@
       - type: NpcFactionMember
         factions:
         - Abductor
+      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleLoneAbductor
     - spawnerPrototype: AbductorAgentSpawner
@@ -66,6 +67,7 @@
       - type: NpcFactionMember
         factions:
         - Abductor
+      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleLoneAbductor
       
@@ -331,6 +333,7 @@
       - type: CombatMode
         disarmFailChance: 0.5
         canDisarm: true
+      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleBrighteye
   - type: AntagObjectives

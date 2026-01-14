@@ -267,6 +267,7 @@
         - NamesNinjaTitle
         - NamesNinja
         nameFormat: name-format-ninja
+      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleNinja
   - type: DynamicRuleCost
@@ -351,7 +352,6 @@
       # TODO: WizardComp as needed
       components:
       - type: UniversalLanguageSpeaker
-      - type: WizardRole # Starlight
       - type: NpcFactionMember
         factions:
         - Wizard
@@ -360,6 +360,7 @@
         - NamesWizardFirst
         - NamesWizardLast
         nameFormat: name-format-wizard
+      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleWizard
 
@@ -599,6 +600,7 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleLoneops
   - type: DynamicRuleCost

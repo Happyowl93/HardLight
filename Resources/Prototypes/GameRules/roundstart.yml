@@ -176,6 +176,7 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleNukeopsCommander
     - prefRoles: [ NukeopsMedic ]
@@ -193,6 +194,7 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleNukeopsMedic
     - prefRoles: [ Nukeops ]
@@ -212,6 +214,7 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleNukeops
   - type: DynamicRuleCost
@@ -308,6 +311,7 @@
           enum.StoreUiKey.Key:
             type: StoreBoundUserInterface
             requireInputValidation: false
+      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleChangeling
   - type: AntagObjectives
@@ -393,7 +397,6 @@
       # TODO: WizardComp as needed
       components:
       - type: UniversalLanguageSpeaker # Starlight-edit: Languages
-      - type: WizardRole # Starlight
       - type: NpcFactionMember
         factions:
         - Wizard
@@ -402,6 +405,7 @@
         - NamesWizardFirst
         - NamesWizardLast
         nameFormat: name-format-wizard
+      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleWizard
   - type: DynamicRuleCost

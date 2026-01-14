@@ -10,6 +10,7 @@ using Content.Server.Roles;
 using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
+using Content.Shared._Starlight.Revolutionary.Components;
 using Content.Shared.Database;
 using Content.Shared.Flash;
 using Content.Shared.GameTicking.Components;
@@ -34,7 +35,6 @@ using Robust.Shared.Player;
 #region Starlight
 using Content.Server.AlertLevel;
 using Content.Server.Audio;
-using Content.Shared.Changeling;
 using Content.Server.Chat.Systems;
 using Content.Server.Containers;
 using Content.Server.GameTicking.Rules;
@@ -47,14 +47,10 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Implants.Components;
 using Content.Shared.Inventory;
-using Content.Shared.Ninja.Components;
-using Content.Shared.NukeOps;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Store.Components;
-using Content.Shared.Starlight.Antags.Abductor;
-using Content.Shared._Starlight.Shadekin;
 using Content.Shared._Starlight.Silicons.Borgs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Audio;
@@ -352,13 +348,8 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
 
         if (HasComp<RevolutionaryComponent>(ev.Target) ||
             HasComp<MindShieldComponent>(ev.Target) ||
-            HasComp<BrighteyeComponent>(ev.Target) || // Starlight Addtion
             HasComp<BorgChassisComponent>(ev.Target) || // Starlight Addition - Borgis should be emagged not flashed
-            HasComp<AbductorComponent>(ev.Target) || // Starlight
-            HasComp<NukeOperativeComponent>(ev.Target) || // Starlight
-            HasComp<WizardRoleComponent>(ev.Target) || // Starlight
-            HasComp<ChangelingComponent>(ev.Target) || // Starlight
-            HasComp<SpaceNinjaComponent>(ev.Target) || // Starlight
+            HasComp<CantBecomeRevolutionaryComponent>(ev.Target) || // Starlight - applied to most major antags
             !HasComp<HumanoidAppearanceComponent>(ev.Target) &&
             !alwaysConvertible ||
             !_mobState.IsAlive(ev.Target) ||

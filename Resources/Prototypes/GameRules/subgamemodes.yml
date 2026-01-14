@@ -57,6 +57,7 @@
         - type: ChangelingDevour
         - type: ChangelingIdentity
         - type: ChangelingTransform
+        - type: CantBecomeRevolutionary # Starlight
 
 - type: entity
   parent: BaseGameRule
@@ -99,7 +100,6 @@
       # TODO: WizardComp as needed
       components:
       - type: UniversalLanguageSpeaker # Starlight-edit: Languages
-      - type: WizardRole # Starlight
       - type: NpcFactionMember
         factions:
         - Wizard
@@ -108,6 +108,7 @@
         - NamesWizardFirst
         - NamesWizardLast
         nameFormat: name-format-wizard
+      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleWizard
 
