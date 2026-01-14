@@ -187,9 +187,6 @@
   id: GearAcidifier
 
 - type: Tag
-  id: Ghost
-
-- type: Tag
   id: GasTank
 
 - type: Tag
