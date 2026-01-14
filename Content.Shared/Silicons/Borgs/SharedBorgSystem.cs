@@ -39,7 +39,6 @@ using Content.Shared.Starlight.TextToSpeech;
 // Starlight begin
 using System.Linq;
 using Content.Shared.Tag;
-using Robust.Shared.Prototypes;
 // Starlight end
 
 namespace Content.Shared.Silicons.Borgs;
@@ -375,12 +374,8 @@ public abstract partial class SharedBorgSystem : EntitySystem
                 foreach (var item in container.ContainedEntities.ToList())
                 {
                     if (_tag.HasTag(item, chassis.Comp.ModuleItemTag)) continue;
-                    var c = container;
-                    while (true)
-                    {
-                        _container.Remove(item, c);
-                        if (!_container.TryGetContainingContainer(c.Owner, out c)) break;
-                    }
+                    while (_container.TryGetContainingContainer(item, out var containing))
+                        if (!_container.Remove(item, containing)) break;
                 }
             }
         }

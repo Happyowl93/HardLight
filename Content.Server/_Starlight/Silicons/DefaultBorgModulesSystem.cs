@@ -40,7 +40,7 @@ public sealed class DefaultBorgModulesSystem : EntitySystem
         // insert the ones that dont exist, default them
         foreach (var id in needToInsert)
         {
-            if (!_proto.Resolve(id, out _)) return;
+            if (!_proto.Resolve(id, out _)) continue;
             var ent = SpawnInContainerOrDrop(id, uid, chassis.ModuleContainer.ID, xform, manager);
             if (!TryComp<BorgModuleComponent>(ent, out var module))
             {

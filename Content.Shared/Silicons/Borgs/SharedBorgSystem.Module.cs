@@ -4,10 +4,7 @@ using Content.Shared.Interaction.Components;
 using Content.Shared.Localizations;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Shared.Containers;
-// Starlight begin
-using Content.Shared.Tag;
-using Robust.Shared.Prototypes;
-// Starlight end
+using Content.Shared.Tag; // Starlight
 
 namespace Content.Shared.Silicons.Borgs;
 
