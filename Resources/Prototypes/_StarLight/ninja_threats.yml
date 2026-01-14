@@ -4,11 +4,6 @@
   rule: UnknownShuttleHonki
 
 - type: ninjaHackingThreat
-  id: Eeeplet
-  announcement: terror-eeep
-  rule: EeepEvent
-
-- type: ninjaHackingThreat
   id: LoneOp
   announcement: terror-lone-op
   rule: LoneOpsSpawn
