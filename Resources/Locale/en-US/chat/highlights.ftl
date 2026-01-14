@@ -47,11 +47,9 @@ highlights-passenger = Passenger, Greytider, "Tider"
 highlights-service-worker = Service Worker
 
 # Station-specific
-highlights-boxer = Boxer
 highlights-reporter = Reporter, Journalist
 highlights-zookeeper = Zookeeper
-# Starlight: adding more:
-highlights-psychologist = Psychologist, Psychology, Psych
+highlights-psychologist = Psychologist, Psychology, Psych, Shrink
 
 # Silicon
 highlights-personal-ai = Personal AI, "pAI"
