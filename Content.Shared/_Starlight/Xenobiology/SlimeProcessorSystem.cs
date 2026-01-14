@@ -5,6 +5,8 @@ using Content.Shared.Interaction;
 using Content.Shared.Jittering;
 using Content.Shared.Power;
 using Content.Shared.Verbs;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
@@ -17,6 +19,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly SharedJitteringSystem _jitteringSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
 
     public override void Initialize()
     {
@@ -56,6 +59,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
     {
         EnableProcessing(ent, _entityManager, _gameTiming);
         _jitteringSystem.AddJitter(ent.Owner, -10, 100);
+        _audioSystem.PlayPredicted(new SoundPathSpecifier("/Audio/Machines/blender.ogg"), ent.Owner, null);
     }
 
     private static bool CanActivate(Entity<SlimeProcessorComponent> ent) => ent.Comp.SlimeContainer.ContainedEntities.Count > 0;
