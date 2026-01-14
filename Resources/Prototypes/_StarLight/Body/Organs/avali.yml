@@ -98,7 +98,7 @@
   id: OrganAvaliBrain
   parent: OrganHumanBrain
   suffix: Avali
-  description: "The brain of an Avali. Where Avali think of evil thots"
+  description: "The brain of an Avali. Where Avali think of evil thoughts"
   components:
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Avali/organs.rsi
