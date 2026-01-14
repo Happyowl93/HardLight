@@ -48,7 +48,6 @@ highlights-service-worker = Service Worker
 
 # Station-specific
 highlights-reporter = Reporter, Journalist
-highlights-zookeeper = Zookeeper
 highlights-psychologist = Psychologist, Psychology, Psych, Shrink
 
 # Silicon
