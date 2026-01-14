@@ -1,12 +1,12 @@
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat;
-using Content.Shared.DeltaV.AACTablet;
-using Content.Shared.DeltaV.QuickPhrase;
+using Content.Shared._Starlight.AACTablet;
+using Content.Shared._Starlight.QuickPhrase;
 using Content.Shared.IdentityManagement;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Server.DeltaV.AACTablet;
+namespace Content.Server._Starlight.AACTablet;
 
 public sealed class AACTabletSystem : EntitySystem
 {

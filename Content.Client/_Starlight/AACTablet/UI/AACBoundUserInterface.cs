@@ -1,8 +1,8 @@
-using Content.Shared.DeltaV.AACTablet;
+using Content.Shared._Starlight.AACTablet;
 using Robust.Shared.Localization;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.DeltaV.AACTablet.UI;
+namespace Content.Client._Starlight.AACTablet.UI;
 
 public sealed class AACBoundUserInterface : BoundUserInterface
 {

@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.DeltaV.AACTablet;
+namespace Content.Shared._Starlight.AACTablet;
 
 [Serializable, NetSerializable]
 public enum AACTabletKey : byte

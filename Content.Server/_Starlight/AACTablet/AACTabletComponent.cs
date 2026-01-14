@@ -1,4 +1,4 @@
-namespace Content.Server.DeltaV.AACTablet;
+namespace Content.Server._Starlight.AACTablet;
 
 [RegisterComponent]
 public sealed partial class AACTabletComponent : Component
