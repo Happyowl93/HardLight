@@ -8,6 +8,8 @@
       monkeyTag: Monkey
       monkeyCubeTag: MonkeyCube
       monkeyProtoId: MobMonkey
+    - type: Computer
+      board: XenobiologyConsoleCircuitboard
     - type: Sprite
       layers:
         - map: [ "computerLayerBody" ]
