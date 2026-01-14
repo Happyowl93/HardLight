@@ -4,7 +4,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Jittering;
 using Content.Shared.Power;
-using Content.Shared.Storage.Components;
+using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
@@ -17,22 +17,49 @@ public sealed class SlimeProcessorSystem : EntitySystem
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly SharedJitteringSystem _jitteringSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<SlimeProcessorComponent, ActivateInWorldEvent>(OnAfterActivate);
         SubscribeLocalEvent<SlimeProcessorComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<SlimeProcessorComponent, GetVerbsEvent<InteractionVerb>>(OnGetVerb);
     }
 
     private void OnAfterActivate(Entity<SlimeProcessorComponent> ent, ref ActivateInWorldEvent args)
     {
-        if (ent.Comp.SlimeContainer.ContainedEntities.Count <= 0) return;
+        if (CanActivate(ent))
+            EnableProcessingWrapper(ent);
+    }
+
+    private void OnGetVerb(Entity<SlimeProcessorComponent> ent, ref GetVerbsEvent<InteractionVerb> args)
+    {
+        if (!args.CanInteract || !args.CanAccess)
+            return;
+        
+        var itemVerb = new InteractionVerb();
+        itemVerb.Text = Loc.GetString("comp-slime-processor-verb-activate");
+        if (CanActivate(ent))
+        {
+            itemVerb.Message = Loc.GetString("comp-slime-processor-verb-activate-message-success");
+        }
+        else
+        {
+            itemVerb.Disabled = true;
+            itemVerb.Message = Loc.GetString("comp-slime-processor-verb-activate-message-no-slimes");
+        }
+        itemVerb.Act = () => EnableProcessingWrapper(ent);
+        args.Verbs.Add(itemVerb);
+    }
+
+    private void EnableProcessingWrapper(Entity<SlimeProcessorComponent> ent)
+    {
         EnableProcessing(ent, _entityManager, _gameTiming);
         _jitteringSystem.AddJitter(ent.Owner, -10, 100);
     }
-    
+
+    private static bool CanActivate(Entity<SlimeProcessorComponent> ent) => ent.Comp.SlimeContainer.ContainedEntities.Count > 0;
+
     private void OnPowerChanged(Entity<SlimeProcessorComponent> ent, ref PowerChangedEvent args)
     {
         if (!args.Powered)
