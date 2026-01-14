@@ -374,7 +374,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
                 if (!_container.TryGetContainer(ent, module.HoldingContainer, out var container, manager)) continue;
                 foreach (var item in container.ContainedEntities.ToList())
                 {
-                    if (_tag.HasTag(item, new ProtoId<TagPrototype>("BorgItem"))) continue;
+                    if (_tag.HasTag(item, chassis.Comp.ModuleItemTag)) continue;
                     var c = container;
                     while (true)
                     {

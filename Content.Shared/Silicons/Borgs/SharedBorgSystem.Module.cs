@@ -199,9 +199,10 @@ public abstract partial class SharedBorgSystem
             if (item is { } pickUp)
             {
                 _hands.DoPickup(chassis, handId, pickUp, hands);
+                
                 if (!hand.ForceRemovable && hand.Hand.Whitelist == null && hand.Hand.Blacklist == null)
                 {
-                    _tag.AddTag(pickUp, new ProtoId<TagPrototype>("BorgItem")); // Starlight
+                    _tag.AddTag(pickUp, chassis.Comp.ModuleItemTag); // Starlight
                     EnsureComp<UnremoveableComponent>(pickUp);
                 }
             }
