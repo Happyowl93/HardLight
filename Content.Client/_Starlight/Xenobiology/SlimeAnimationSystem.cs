@@ -9,9 +9,6 @@ public sealed class SlimeAnimationSystem : EntitySystem
 {
     [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly AnimationPlayerSystem _animation = default!;
-
-    [Dependency] private readonly ILogManager _logManager = default!;
-    private ISawmill _sawmill = default!;
     
     private const string SlimeEatAnimationKey = "slime-eat";
 
@@ -19,15 +16,14 @@ public sealed class SlimeAnimationSystem : EntitySystem
     {
         base.Initialize();
         SubscribeNetworkEvent<SlimeBiteAnimationMessage>(OnSlimeBiteAnimation);
-
-        _sawmill = _logManager.GetSawmill("slime");
     }
 
     private void OnSlimeBiteAnimation(SlimeBiteAnimationMessage args)
     {
-        _sawmill.Log(LogLevel.Debug, "1");
-        _animation.Play(GetEntity(args.Entity), GetSlimeEatAnimation(args.Angle), SlimeEatAnimationKey);
-        _sawmill.Log(LogLevel.Debug, "2");
+        var entityUid = GetEntity(args.Entity);
+        if (_animation.HasRunningAnimation(entityUid, SlimeEatAnimationKey)) 
+            _animation.Stop(entityUid, SlimeEatAnimationKey);
+        _animation.Play(entityUid, GetSlimeEatAnimation(args.Angle), SlimeEatAnimationKey);
     }
 
     private Animation GetSlimeEatAnimation(Angle rot)
@@ -36,8 +32,6 @@ public sealed class SlimeAnimationSystem : EntitySystem
         const float Length = 0.15f;
         var startOffset = rot.RotateVec(new Vector2(0f, 0f));
         var endOffset = rot.RotateVec(new Vector2(0f, -Distance));
-        
-        _sawmill.Log(LogLevel.Debug, $"endOffset: ({endOffset.X}, {endOffset.Y})");
 
         return new Animation()
         {

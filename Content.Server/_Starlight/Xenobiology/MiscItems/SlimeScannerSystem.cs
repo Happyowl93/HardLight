@@ -31,6 +31,11 @@ public sealed class SlimeScannerSystem : EntitySystem
         if (!_entityManager.TryGetComponent<HungerComponent>(args.Target, out var hunger)) return;
         
         SendInformation(actor, slime, metaData, hunger);
+        RaiseNetworkEvent(new SlimeScannerSoundMessage()
+        {
+            Owner = GetNetEntity(entity.Owner, MetaData(entity.Owner)),
+            User = GetNetEntity(args.User, MetaData(args.User)),
+        });
     }
 
     private void OnConsoleMsgToScanner(Entity<XenobiologyConsoleComponent> entity, ref ConsoleMsgToScannerEvent args)
