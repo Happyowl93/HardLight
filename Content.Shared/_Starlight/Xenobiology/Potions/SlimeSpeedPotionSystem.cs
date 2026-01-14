@@ -30,6 +30,7 @@ public sealed class SlimeSpeedPotionSystem : EntitySystem
                 out var clothingSpeedModifierComponent)) return false;
         _clothingSpeedModifierSystem.SetWalkSpeedModifier(clothingSpeedModifierComponent, (clothingSpeedModifierComponent.WalkModifier + 1.0F) / 2.0F);
         _clothingSpeedModifierSystem.SetSprintSpeedModifier(clothingSpeedModifierComponent, (clothingSpeedModifierComponent.SprintModifier + 1.0F) / 2.0F);
+        Dirty(target, clothingSpeedModifierComponent);
         return true;
     }
 
