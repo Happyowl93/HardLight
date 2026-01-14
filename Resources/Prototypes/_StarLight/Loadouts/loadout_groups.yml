@@ -25,6 +25,30 @@
   - ScarfPrideLongBacon
 
 - type: loadoutGroup
+  id: Pins
+  name: loadout-group-pins
+  minLimit: 0
+  loadouts:
+  - ClothingNeckLGBTPin
+  - ClothingNeckAllyPin
+  - ClothingNeckAromanticPin
+  - ClothingNeckAroacePin
+  - ClothingNeckAsexualPin
+  - ClothingNeckBisexualPin
+  - ClothingNeckGayPin
+  - ClothingNeckIntersexPin
+  - ClothingNeckLesbianPin
+  - ClothingNeckNonBinaryPin
+  - ClothingNeckPansexualPin
+  - ClothingNeckPluralPin
+  - ClothingNeckOmnisexualPin
+  - ClothingNeckGenderqueerPin
+  - ClothingNeckGenderfluidPin
+  - ClothingNeckTransPin
+  - ClothingNeckAutismPin
+  - ClothingNeckGoldAutismPin
+  
+- type: loadoutGroup
   id: Pens
   name: loadout-group-pens
   minLimit: 1
@@ -416,6 +440,48 @@
     - SalvagePDA
     - VeteranSalvagePDA
 
+# Boxer
+- type: loadoutGroup
+  id: BoxerJumpsuit
+  name: loadout-group-boxer-jumpsuit
+  loadouts:
+  - BoxerShorts
+  - BoxerShortsWithTop
+
+- type: loadoutGroup
+  id: BoxerGloves
+  name: loadout-group-boxer-gloves
+  loadouts:
+  - RedBoxingGloves
+  - BlueBoxingGloves
+  - GreenBoxingGloves
+  - YellowBoxingGloves
+
+- type: loadoutGroup
+  id: BoxerJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieBoxer
+
+# Zookeeper
+- type: loadoutGroup
+  id: ZookeeperJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieZookeeper
+
+# Silicon Brain Type
+- type: loadoutGroup
+  id: SiliconBrainType
+  name: loadout-group-borg-brain-type
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - LoadoutSiliconPositronicBrain
+  - LoadoutSiliconSpeciesBrain
+
 # Chemist
 - type: loadoutGroup
   id: ChemistHead
@@ -479,7 +545,7 @@
 - type: loadoutGroup
   id: BrigmedicMask
   name: loadout-group-brigmedic-mask
-  minLimit: 0
+  minLimit: 1
   loadouts:
     - BrigmedicBreathMaskMedicalSecurity
     - BrigmedicMaskGasSecurity
@@ -497,8 +563,8 @@
   name: loadout-group-brigmedic-id
   loadouts:
     - BrigmedicPDA
-    - CorpsmanPDA
     - VeteranBrigmedicPDA
+    - CorpsmanPDA
     - VeteranCorpsmanPDA
 
 - type: loadoutGroup
@@ -507,3 +573,35 @@
   loadouts:
     - DarkBeaker
     - SilverBeakerBrigmedic
+
+# Brighteye
+- type: loadoutGroup
+  id: BrighteyeJumpsuit
+  name: loadout-group-brighteye-jumpsuit
+  loadouts:
+    - BrighteyeTatteredClothes
+    - BrighteyeGladiator
+
+- type: loadoutGroup
+  id: BrighteyeNeck
+  name: Loadout-group-brighteye-neck
+  loadouts:
+    - BrighteyeTatteredHood
+    - BrighteyeMantle
+    - BrighteyeOldMantle
+    - BrighteyeGoliathCloak
+    - BrighteyeCloakVoid
+
+- type: loadoutGroup
+  id: BrighteyeShoes
+  name: loadout-group-civilian-shoes
+  loadouts:
+    - BrighteyeClothWrapShoe
+    - BlackShoes
+
+- type: loadoutGroup
+  id: BrighteyeGloves
+  minLimit: 0
+  name: loadout-group-brighteye-gloves
+  loadouts:
+    - BrighteyeClothWrapGlove

@@ -13,3 +13,8 @@ stack-bluespacecrystal = {$amount ->
     [1] bluespace
     *[other] bluespaces
 }
+
+stack-adamantine = {$amount ->
+    [1] adamantine bar
+    *[other] adamantine bars
+}
