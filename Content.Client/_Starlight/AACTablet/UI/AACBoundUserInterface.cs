@@ -1,4 +1,5 @@
 using Content.Shared.DeltaV.AACTablet;
+using Robust.Shared.Localization;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client.DeltaV.AACTablet.UI;
@@ -6,6 +7,7 @@ namespace Content.Client.DeltaV.AACTablet.UI;
 public sealed class AACBoundUserInterface : BoundUserInterface
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly ILocalizationManager _localizationManager = default!;
 
     [ViewVariables]
     private AACWindow? _window;
@@ -18,7 +20,7 @@ public sealed class AACBoundUserInterface : BoundUserInterface
     {
         base.Open();
         _window?.Close();
-        _window = new AACWindow(this, _prototypeManager);
+        _window = new AACWindow(_prototypeManager, _localizationManager);
         _window.OpenCentered();
 
         _window.PhraseButtonPressed += OnPhraseButtonPressed;
@@ -31,6 +33,6 @@ public sealed class AACBoundUserInterface : BoundUserInterface
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
-        _window?.Dispose();
+        _window?.Close();
     }
 }

@@ -12,8 +12,6 @@ public enum AACTabletKey : byte
 public sealed class AACTabletSendPhraseMessage : BoundUserInterfaceMessage
 {
     public string PhraseID;
-    public AACTabletSendPhraseMessage(string phraseId)
-    {
+    public AACTabletSendPhraseMessage(string phraseId) =>
         PhraseID = phraseId;
-    }
 }

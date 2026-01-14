@@ -13,19 +13,20 @@ namespace Content.Client.DeltaV.AACTablet.UI;
 [GenerateTypedNameReferences]
 public sealed partial class AACWindow : FancyWindow
 {
-    private IPrototypeManager _prototypeManager;
+    private readonly IPrototypeManager _prototypeManager;
+    private readonly ILocalizationManager _loc;
     public event Action<string>? PhraseButtonPressed;
 
-    public AACWindow(AACBoundUserInterface ui, IPrototypeManager prototypeManager)
+    public AACWindow(IPrototypeManager prototypeManager, ILocalizationManager loc)
     {
         RobustXamlLoader.Load(this);
         _prototypeManager = prototypeManager;
-        PopulateGui(ui);
+        _loc = loc;
+        PopulateGui();
     }
 
-    private void PopulateGui(AACBoundUserInterface ui)
+    private void PopulateGui()
     {
-        var loc = IoCManager.Resolve<ILocalizationManager>();
         var phrases = _prototypeManager.EnumeratePrototypes<QuickPhrasePrototype>().ToList();
 
         // take ALL phrases and turn them into tabs and groups, so the buttons are sorted and tabbed
@@ -38,7 +39,7 @@ public sealed partial class AACWindow : FancyWindow
                     .OrderBy(gg => gg.Key)
                     .ToDictionary(
                         gg => gg.Key,
-                        gg => gg.OrderBy(p => loc.GetString(p.Text)).ToList()
+                        gg => gg.OrderBy(p => _loc.GetString(p.Text)).ToList()
                     )
             );
 
@@ -49,11 +50,10 @@ public sealed partial class AACWindow : FancyWindow
     private TabContainer CreateTabContainer(Dictionary<string, Dictionary<string, List<QuickPhrasePrototype>>> sortedTabs)
     {
         var tabContainer = new TabContainer();
-        var loc = IoCManager.Resolve<ILocalizationManager>();
 
         foreach (var tab in sortedTabs)
         {
-            var tabName = loc.GetString(tab.Key);
+            var tabName = _loc.GetString(tab.Key);
             var boxContainer = CreateBoxContainerForTab(tab.Value);
             tabContainer.AddChild(boxContainer);
             tabContainer.SetTabTitle(tabContainer.ChildCount - 1, tabName);
@@ -81,11 +81,10 @@ public sealed partial class AACWindow : FancyWindow
 
     private GridContainer CreateButtonContainerForGroup(List<QuickPhrasePrototype> phrases)
     {
-        var loc = IoCManager.Resolve<ILocalizationManager>();
         var buttonContainer = CreateButtonContainer();
         foreach (var phrase in phrases)
         {
-            var text = loc.GetString(phrase.Text);
+            var text = _loc.GetString(phrase.Text);
             var button = CreatePhraseButton(text, phrase.StyleClass);
             button.OnPressed += _ => OnPhraseButtonPressed(phrase.ID);
             buttonContainer.AddChild(button);
@@ -136,7 +135,7 @@ public sealed partial class AACWindow : FancyWindow
         var paddingSize = spaceWidth * 2;
         var gutterScale = (columnCount - 1) / columnCount;
         var columnWidth = (parentWidth - paddingSize) / columnCount;
-        var buttonWidth = columnWidth - spaceWidth * gutterScale;
+        var buttonWidth = columnWidth - (spaceWidth * gutterScale);
         return buttonWidth;
     }
 
