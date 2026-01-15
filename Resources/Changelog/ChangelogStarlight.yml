@@ -26323,5 +26323,12 @@ Entries:
   id: 282300
   time: '2026-01-14T23:43:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2823
+- author: Jezithyr
+  changes:
+  - message: TEG flatpack crate to engineering orders for 6000 credits.
+    type: Add
+  id: 282100
+  time: '2026-01-15T08:00:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2821
 Order: -1
 
