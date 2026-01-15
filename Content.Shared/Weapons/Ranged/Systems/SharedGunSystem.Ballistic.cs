@@ -276,8 +276,8 @@ public abstract partial class SharedGunSystem
                     {
                         component.Entities.RemoveAt(component.Entities.Count - 1);
                         Containers.Remove(existingEnt, component.Container);
-                        ammoEntity = existingEnt;
                     }
+                    ammoEntity = existingEnt;
                 }
                 else
                 {
