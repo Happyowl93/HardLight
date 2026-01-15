@@ -22,6 +22,6 @@ public sealed class XenobiologyConsoleMessageSystem : EntitySystem
         if (!_entityManager.TryGetComponent<ActorComponent>(args.User, out var actor)) return;
         
         var channel = actor.PlayerSession.Channel;
-        _chatManager.ChatMessageToOne(ChatChannel.Local, args.Message, args.Message, EntityUid.Invalid, false, channel);
+        _chatManager.ChatMessageToOne(ChatChannel.Local, args.Message.ToString(), args.Message.ToString(), EntityUid.Invalid, false, channel);
     }
 }

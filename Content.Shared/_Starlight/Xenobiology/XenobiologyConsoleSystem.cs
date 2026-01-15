@@ -7,6 +7,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Tag;
 using Robust.Shared.Containers;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._Starlight.Xenobiology;
 
@@ -37,7 +38,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         {
             entity.Comp.MonkeyCubes += 1;
             PredictedQueueDel(args.Used);
-            RaiseLocalEvent(new ConsoleTextMsgEvent(args.User, $"Thanks for inserting a monkey cube! The console now has {entity.Comp.MonkeyCubes} cube(s)."));
+            RaiseLocalEvent(new ConsoleTextMsgEvent(args.User, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-monkey-cube-inserted", ("cubes", entity.Comp.MonkeyCubes)))));
             args.Handled = true;
             return;
         }
@@ -46,7 +47,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         {
             entity.Comp.MutationPotions += 1;
             PredictedQueueDel(args.Used);
-            RaiseLocalEvent(new ConsoleTextMsgEvent(args.User, $"Thanks for inserting a mutation potion! The console now has {entity.Comp.MutationPotions} mutation potions(s)."));
+            RaiseLocalEvent(new ConsoleTextMsgEvent(args.User, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-mutation-potion-inserted", ("potions", entity.Comp.MutationPotions)))));
             args.Handled = true;
             return;
         }
@@ -55,7 +56,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         {
             entity.Comp.StabilizerPotions += 1;
             PredictedQueueDel(args.Used);
-            RaiseLocalEvent(new ConsoleTextMsgEvent(args.User, $"Thanks for inserting a stabilizer potion! The console now has {entity.Comp.StabilizerPotions} stabilizer potions(s)."));
+            RaiseLocalEvent(new ConsoleTextMsgEvent(args.User, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-stabilizer-potion-inserted", ("potions", entity.Comp.StabilizerPotions)))));
             args.Handled = true;
             return;
         }
@@ -92,14 +93,14 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
             {
                 slimeFound = true;
                 if (_container.Insert(possibleSlime, xenobiologyConsoleComponent.SlimeContainer))
-                    RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Picked up a {MetaData(possibleSlime).EntityName}."));
+                    RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-slime-picked-up", ("name", MetaData(possibleSlime).EntityName)))));
                 else
-                    RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Could not pick up {MetaData(possibleSlime).EntityName}. Try dropping some slimes."));
+                    RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-slime-picked-up-fail-full", ("name", MetaData(possibleSlime).EntityName)))));
                 break;
             }
         }
         if (!slimeFound)
-            RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, "No slimes found. Try moving closer to one."));
+            RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-slime-picked-up-fail-none-found"))));
         args.Handled = true;
     }
 
@@ -108,13 +109,13 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         if (!VerifyComponents(args, out var remoteEyeActorComponent, out var xenobiologyConsoleComponent, out var remoteEntity)) return;
         if (xenobiologyConsoleComponent.SlimeContainer.ContainedEntities.Count <= 0)
         {
-            RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, "No slimes stored. Try picking up one."));
+            RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-slime-placed-down-fail-none-stored"))));
             args.Handled = true;
             return;
         }
         var slime = xenobiologyConsoleComponent.SlimeContainer.ContainedEntities[0];
         _container.Remove(slime, xenobiologyConsoleComponent.SlimeContainer, destination: Transform(remoteEntity.Value).Coordinates);
-        RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Placed down a {MetaData(slime).EntityName}."));
+        RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-slime-placed-down", ("name", MetaData(slime).EntityName)))));
         args.Handled = true;
     }
 
@@ -123,13 +124,13 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         if (!VerifyComponents(args, out var remoteEyeActorComponent, out var xenobiologyConsoleComponent, out var remoteEntity)) return;
         if (xenobiologyConsoleComponent.MonkeyCubes < 1)
         {
-            RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Not enough monkey cubes stored ({xenobiologyConsoleComponent.MonkeyCubes}). Try inserting one, or recycling some already eaten monkeys."));
+            RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-monkey-placed-fail-empty", ("cubes", xenobiologyConsoleComponent.MonkeyCubes)))));
             args.Handled = true;
             return;
         }
         _entityManager.PredictedSpawnAtPosition(xenobiologyConsoleComponent.MonkeyProtoId, Transform(remoteEntity.Value).Coordinates);
         xenobiologyConsoleComponent.MonkeyCubes -= 1;
-        RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Placed down a monkey. You now have {xenobiologyConsoleComponent.MonkeyCubes} cubes."));
+        RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-monkey-placed", ("cubes", xenobiologyConsoleComponent.MonkeyCubes)))));
         args.Handled = true;
     }
 
@@ -152,9 +153,9 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
 
         RaiseLocalEvent(monkeysFound > 0
             ? new ConsoleTextMsgEvent(args.Performer,
-                $"Recycled {monkeysFound} monkey(s). You now have {xenobiologyConsoleComponent.MonkeyCubes}.")
+                FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-monkey-recycled", ("monkeys", monkeysFound), ("cubes", xenobiologyConsoleComponent.MonkeyCubes))))
             : new ConsoleTextMsgEvent(args.Performer,
-                "No monkeys were found to recycle. Try getting closer or making sure they are damaged enough."));
+                FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-monkey-recycled-failed-none"))));
 
         args.Handled = true;
     }
@@ -164,7 +165,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         if (!VerifyComponents(args, out var remoteEyeActorComponent, out var xenobiologyConsoleComponent, out var remoteEntity)) return;
         if (xenobiologyConsoleComponent.MutationPotions < 1)
         {
-            RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Not enough mutation potions stored ({xenobiologyConsoleComponent.MutationPotions}). Try inserting one."));
+            RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-mutation-potion-applied-failed-empty"))));
             args.Handled = true;
             return;
         }
@@ -174,7 +175,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
             {
                 slimeComponent.MutationChance += SlimeMutationPotionComponent.MutationChangeAmount;
                 xenobiologyConsoleComponent.MutationPotions -= 1;
-                RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Applied a mutation potion to a {MetaData(possibleSlime).EntityName}. It now has a mutation chance of {slimeComponent.MutationChance}"));
+                RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-mutation-potion-applied", ("name", MetaData(possibleSlime).EntityName), ("chance", slimeComponent.MutationChance)))));
                 break;
             }
         }
@@ -186,7 +187,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         if (!VerifyComponents(args, out var remoteEyeActorComponent, out var xenobiologyConsoleComponent, out var remoteEntity)) return;
         if (xenobiologyConsoleComponent.StabilizerPotions < 1)
         {
-            RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Not enough stabilizer potions stored ({xenobiologyConsoleComponent.StabilizerPotions}). Try inserting one."));
+            RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-stabilizer-potion-applied-failed-empty"))));
             args.Handled = true;
             return;
         }
@@ -196,7 +197,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
             {
                 slimeComponent.MutationChance += SlimeStabilizerPotionComponent.MutationChangeAmount;
                 xenobiologyConsoleComponent.StabilizerPotions -= 1;
-                RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Applied a stabilizer potion to a {MetaData(possibleSlime).EntityName}. It now has a mutation chance of {slimeComponent.MutationChance}"));
+                RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-stabilizer-potion-applied", ("name", MetaData(possibleSlime).EntityName), ("chance", slimeComponent.MutationChance)))));
                 break;
             }
         }
@@ -255,8 +256,8 @@ public sealed partial class ConsoleApplyStabilizerPotionEvent : InstantActionEve
 
 }
 
-public sealed partial class ConsoleTextMsgEvent(EntityUid user, string message)
+public sealed partial class ConsoleTextMsgEvent(EntityUid user, FormattedMessage message)
 {
     public EntityUid User = user;
-    public string Message = message;
+    public FormattedMessage Message = message;
 }
