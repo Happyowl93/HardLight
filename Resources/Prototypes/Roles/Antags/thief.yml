@@ -5,12 +5,10 @@
   setPreference: true
   objective: roles-antag-thief-objective
   guides: [ Thieves ]
-  # Starlight-start
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 12h
-  playTimeTracker: AntagThief
-  # Starlight-end
+    time: 3h # Starlight
+  playTimeTracker: AntagThief # Starlight
 
 - type: startingGear
   id: ThiefGear
