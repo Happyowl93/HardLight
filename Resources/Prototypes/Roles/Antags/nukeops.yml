@@ -6,13 +6,10 @@
   objective: roles-antag-nuclear-operative-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 72h # Starlight
-  - !type:RoleTimeRequirement #Starlight - former time allowed you to literally play 6 hours of cadet and get nukie
-    role: JobSecurityOfficer
-    time: 15h
-  - !type:DepartmentTimeRequirement #Starlight - at the very least please know basic med
-    department: Medical
-    time: 10h
+    time: 24h # Starlight
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 6h # Starlight
   guides: [ NuclearOperatives ]
   previewStartingGear: SyndicateOperativeGearFull
   playTimeTracker: AntagNukeops # Starlight
@@ -25,16 +22,16 @@
   objective: roles-antag-nuclear-operative-agent-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 72h # Starlight
+    time: 24h # Starlight
   - !type:RoleTimeRequirement
     role: JobChemist
-    time: 18h # Starlight - chem knowledge is vital, and since you are a solo chemist, tasked with remembering every chem mix you need, this is a fair time.
+    time: 6h # Starlight
   - !type:RoleTimeRequirement
     role: JobSurgeon
     time: 3h # Starlight
-  - !type:RoleTimeRequirement #Starlight
-    role: JobSecurityOfficer
-    time: 15h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 3h # Starlight
   guides: [ NuclearOperatives ]
   previewStartingGear: SyndicateOperativeMedicFull
   playTimeTracker: AntagNukeopsMedic # Starlight
@@ -47,16 +44,13 @@
   objective: roles-antag-nuclear-operative-commander-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 96h # Starlight
-  - !type:RoleTimeRequirement #Starlight
-    role: JobSecurityOfficer
-    time: 25h
+    time: 24h # Starlight
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 12h # Starlight
   - !type:DepartmentTimeRequirement
     department: Command
-    time: 12h # Starlight
-  - !type:DepartmentTimeRequirement #Starlight
-    department: Medical
-    time: 10h
+    time: 6h # Starlight
   # should be changed to nukie playtime when thats tracked (wyci)
   guides: [ NuclearOperatives ]
   previewStartingGear: SyndicateCommanderGearFull

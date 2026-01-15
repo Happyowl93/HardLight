@@ -6,16 +6,16 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 10h # Starlight
+      time: 5h # Starlight
     - !type:RoleTimeRequirement
       role: JobDetective
-      time: 10h # knowing how to use the tools is important # Starlight
+      time: 5h # knowing how to use the tools is important # Starlight
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 25h
+      time: 5h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 60h # Starlight - Literally the most pressured role in the game, you need extensive knowledge of your department
+      time: 20h # Starlight
 
   weight: 10
   startingGear: HoSGear
