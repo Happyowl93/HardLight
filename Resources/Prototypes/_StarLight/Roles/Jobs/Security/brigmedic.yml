@@ -6,10 +6,13 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 36000 # 10 hrs
+      time: 10h
+    - !type:RoleTimeRequirement
+      role: JobChemist
+      time: 10h #yes, chem knowledge is necessary
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 28800 # 8 hrs
+      time: 20h #less of a secoff more of a medic
   startingGear: BrigmedicGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos

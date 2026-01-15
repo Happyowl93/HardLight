@@ -6,7 +6,9 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Cargo
-      time: 2.5h
+      time: 10h #Starlight
+    - !type:OverallPlaytimeRequirement #Starlight
+      time: 16h
   icon: "JobIconSalvageSpec" # Starlight - New distinct icon
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-qm

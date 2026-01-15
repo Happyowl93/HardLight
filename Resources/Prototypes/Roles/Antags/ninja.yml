@@ -10,7 +10,9 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 3h
+    time: 9h
+  - !type:OverallPlaytimeRequirement
+    time: 48h
   playTimeTracker: AntagNinja
   # Starlight end
 

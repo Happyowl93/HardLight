@@ -7,7 +7,7 @@
   # Starlight start
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 24h
+    time: 48h # this antag is hard to change times for since its absolute random
   playTimeTracker: AntagParadoxClone
   # Starlight end
 
