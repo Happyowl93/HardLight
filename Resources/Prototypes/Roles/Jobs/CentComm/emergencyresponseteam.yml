@@ -6,13 +6,16 @@
   playTimeTracker: JobERTLeader
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 72000 # 20h
+    time: 96h
   - !type:DepartmentTimeRequirement
     department: CentralCommand
-    time: 36000 # 10h
+    time: 10h
   - !type:DepartmentTimeRequirement
     department: Command
-    time: 36000 # 10h
+    time: 20h #Starlight
+  - !type:RoleTimeRequirement
+    role: JobSecurityOfficer
+    time: 25h #Starlight, if theyre not an admin, they NEED to be good in combat (this prolly isnt even needed with CC hours)
   setPreference: false
   startingGear: ERTLeaderGearEVA
   icon: "JobIconCentComm"
@@ -119,10 +122,10 @@
   playTimeTracker: JobERTChaplain
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 72000 # 20h
+    time: 72h #Starlight
   - !type:RoleTimeRequirement
     role: JobChaplain
-    time: 18000 # 5h
+    time: 5h
   setPreference: false
   startingGear: ERTChaplainGear
   icon: "JobIconCentComm"
@@ -219,10 +222,10 @@
   playTimeTracker: JobERTEngineer
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 72000 # 20h
+    time: 72h #Starlight
   - !type:RoleTimeRequirement
     role: JobStationEngineer
-    time: 18000 # 5h
+    time: 10h #Starlight
   setPreference: false
   startingGear: ERTEngineerGearEVA
   icon: "JobIconCentComm"
@@ -308,10 +311,10 @@
   playTimeTracker: JobERTSecurity
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 72000 # 20h
+    time: 72h #Starlight
   - !type:RoleTimeRequirement
     role: JobSecurityOfficer
-    time: 18000 # 5h
+    time: 15h #Starlight, your whole job here is fighting and following orders.
   setPreference: false
   startingGear: ERTEngineerGearEVA
   icon: "JobIconCentComm"
@@ -415,13 +418,16 @@
   playTimeTracker: JobERTMedical
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 72000 # 20h
+    time: 72h #Starlight
   - !type:RoleTimeRequirement
     role: JobMedicalDoctor
-    time: 18000 # 5h
+    time: 10h #Starlight
   - !type:RoleTimeRequirement
     role: JobChemist
-    time: 18000 # 5h
+    time: 10h #Starlight
+  - !type:RoleTimeRequirement
+    role: JobSecurityOfficer
+    time: 10h #Starlight, youre a medic but you WILL be fighting at some point
   setPreference: false
   startingGear: ERTMedicalGearEVA
   icon: "JobIconCentComm"
@@ -499,10 +505,10 @@
   playTimeTracker: JobERTJanitor
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 72000 # 20h
+    time: 72h #Starlight
   - !type:RoleTimeRequirement
     role: JobJanitor
-    time: 18000 # 5h
+    time: 5h
   setPreference: false
   startingGear: ERTJanitorGearEVA
   icon: "JobIconCentComm"

@@ -6,10 +6,13 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 72000 # 20 hrs
+      time: 60h #you are the sole bodyguard of the highest ranking people on the station, you have to be good.
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 72000 # 20 hrs
+      time: 30h
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 15h #you need to know how to treat people as this role its necessary
     - !type:RolesRequirement
       proto: ExtRolesReq
   startingGear: BlueShieldGear

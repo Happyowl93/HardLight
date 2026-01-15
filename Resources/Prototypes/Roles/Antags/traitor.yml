@@ -5,9 +5,12 @@
   setPreference: true
   objective: roles-antag-syndicate-agent-objective
   guides: [ Traitors ]
+  # Starlight-start
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3h # Starlight
+    time: 24h # Starlight
+  playTimeTracker: AntagTraitor
+  # Starlight-end
 
 - type: antag
   id: TraitorSleeper
@@ -16,9 +19,12 @@
   setPreference: true
   objective: roles-antag-syndicate-agent-sleeper-objective
   guides: [ Traitors ]
+  # Starlight-start
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3h # Starlight
+    time: 24h
+  playTimeTracker: AntagTraitor
+  # Starlight-end
 
 # Syndicate Operative Outfit - Monkey
 - type: startingGear

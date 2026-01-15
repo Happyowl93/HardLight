@@ -5,15 +5,18 @@
   setPreference: true
   objective: roles-antag-rev-head-objective
   guides: [ Revolutionaries ]
+  # Starlight-start
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 24h # Starlight
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 6h # Starlight
+    time: 72h
+  - !type:RoleTimeRequirement
+    role: JobSecurityOfficer
+    time: 9h
   - !type:DepartmentTimeRequirement
     department: Command
-    time: 6h # Starlight
+    time: 12h
+  playTimeTracker: AntagHeadRev
+  # Starlight-end
 
 - type: antag
   id: Rev
@@ -22,6 +25,7 @@
   setPreference: false
   objective: roles-antag-rev-objective
   guides: [ Revolutionaries ]
+  playTimeTracker: AntagRev # Starlight
 
 - type: startingGear
   id: HeadRevGear
