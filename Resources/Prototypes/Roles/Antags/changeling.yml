@@ -4,7 +4,10 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-changeling-description
+  # Starlight start
   guides: [ Changelings ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 24h #Starlight edit
+    time: 24h
+  playTimeTracker: AntagChangeling
+  # Starlight end

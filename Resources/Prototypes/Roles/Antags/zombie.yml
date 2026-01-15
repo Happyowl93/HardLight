@@ -5,12 +5,15 @@
   setPreference: true
   objective: roles-antag-initial-infected-objective
   guides: [ Zombies ]
+  # Starlight-start
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 24h # Starlight
-  - !type:DepartmentTimeRequirement # Starlight
+    time: 24h
+  - !type:DepartmentTimeRequirement
     department: Medical
     time: 10h
+  playTimeTracker: AntagInitialInfected
+  # Starlight-end
 
 - type: antag
   id: Zombie
@@ -19,3 +22,4 @@
   setPreference: false
   objective: roles-antag-zombie-objective
   guides: [ Zombies ]
+  playTimeTracker: AntagZombie # Starlight
