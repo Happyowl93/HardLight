@@ -30,13 +30,13 @@ namespace Content.Server.Voting.Managers
     {
 
         #region Starlight data collection
-        private static readonly Histogram _gamemode_vote = Metrics.CreateHistogram(
+        private static readonly Counter _gamemode_vote = Metrics.CreateCounter(
             "sl_gamemode_vote",
             "Gamemode vote results",
             [ "option" ]
         );
 
-        private static readonly Histogram _map_vote = Metrics.CreateHistogram(
+        private static readonly Counter _map_vote = Metrics.CreateCounter(
             "sl_map_vote",
             "Map/Station vote results",
             [ "option" ]
@@ -314,7 +314,7 @@ namespace Content.Server.Voting.Managers
                 {
                     _gamemode_vote.WithLabels(
                         options.Options[i].text
-                    ).Observe(args.Votes[i]);
+                    ).Inc(args.Votes[i]);
                 }
                 #endregion
                 //add the key we picked to the cooldown list
@@ -381,7 +381,7 @@ namespace Content.Server.Voting.Managers
                     {
                         _map_vote.WithLabels(
                             options.Options[i].text
-                        ).Observe(args.Votes[i]);
+                        ).Inc(args.Votes[i]);
                     }
                     #endregion
                     if (_gameMapManager.TrySelectMapIfEligible(picked.ID))
