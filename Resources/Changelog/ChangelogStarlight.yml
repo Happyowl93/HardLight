@@ -26421,5 +26421,21 @@ Entries:
   id: 259100
   time: '2026-01-15T20:57:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2591
+- author: R3v3l4t1on
+  changes:
+  - message: Thrusters/gyros can no longer be turned off (this did nothing for power
+      saving anyway so).
+    type: Remove
+  - message: Thrusters can no longer be rotated whilst anchored.
+    type: Remove
+  - message: (Un)anchoring thrusters/gyroscopes now takes 10 seconds.
+    type: Tweak
+  - message: Xenoborg thrusters are now called xenoborg thrusters.
+    type: Tweak
+  - message: Fixed debug gyroscopes being called thrusters.
+    type: Fix
+  id: 259700
+  time: '2026-01-15T21:00:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2597
 Order: -1
 
