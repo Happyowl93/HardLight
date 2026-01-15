@@ -72,7 +72,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: CopperBlood
-        Quantity: 1
+        Quantity: 300
   - type: MovementSpeedModifierScale
     movementSpeedScale: 0.5
   - type: SlowOnDamage
