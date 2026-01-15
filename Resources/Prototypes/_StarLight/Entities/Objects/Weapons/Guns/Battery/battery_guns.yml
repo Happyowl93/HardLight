@@ -94,6 +94,7 @@
   id: WeaponMiniEnergyGun
   description: An energy gun capable of switching between lethal and debilitating lasers.
   components:
+  - type: StationGridMemory
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Battery/mini.rsi
     layers:
@@ -164,6 +165,7 @@
   id: WeaponDominator
   description: A high-tech weapon created by the law enforcement organization Sibyl System, designed specifically to fight crime.
   components:
+  - type: StationGridMemory
   - type: Appearance
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Battery/dominator.rsi
@@ -267,11 +269,10 @@
       fireCost: 750
       magState: destroy
       visualState: destroy-unshaded
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 1500
     startingCharge: 1500
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 20
 
 - type: entity
@@ -312,13 +313,11 @@
       fireCost: 1000
       magState: destroy
       visualState: destroy-unshaded
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 2000
     startingCharge: 2000
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 100
-    autoRechargePause: true
     autoRechargePauseTime: 44
 
 - type: entity
@@ -342,10 +341,8 @@
     - Back
   - type: Gun
     fireRate: 0.6
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 40 #100sec+60Sec Pause
-    autoRechargePause: true
     autoRechargePauseTime: 60
   - type: BatteryAmmoProvider
     proto: EmpPulse
@@ -381,10 +378,8 @@
     - 0, 0, 3, 1
   - type: Gun
     fireRate: 0.6
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 40 #100sec+60Sec Pause
-    autoRechargePause: true
     autoRechargePauseTime: 60
   - type: BatteryAmmoProvider
     proto: EmpPulse
@@ -415,7 +410,7 @@
     availableModes:
     - SemiAuto
     - FullAuto #Just allows people to hold down left click
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 1500 # ~2:30 minutes for recharge
     startingCharge: 1500
   - type: BatteryAmmoProvider
@@ -467,8 +462,7 @@
     size: Small
     shape:
     - 0, 0, 1, 1
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 200
   - type: MagazineVisuals
     magState: stun
@@ -531,7 +525,7 @@
       fireCost: 200
       magState: destroy
       visualState: destroy
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 2600
     startingCharge: 2600
 
@@ -573,7 +567,7 @@
       fireCost: 100
       magState: kill
       visualState: kill
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 1500
     startingCharge: 1500
 
@@ -700,7 +694,7 @@
       fireCost: 100
       magState: destroy
       visualState: destroy
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 3300
     startingCharge: 3300
 
@@ -754,7 +748,7 @@
       fireCost: 10
       magState: destroy
       visualState: destroy
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 2640
     startingCharge: 2640
 
@@ -786,11 +780,10 @@
       fireCost: 100
       magState: destroy
       visualState: destroy
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 2000
     startingCharge: 2000
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 500
 
 - type: entity
@@ -812,10 +805,8 @@
     - type: BatteryAmmoProvider
       proto: ProjectilePolyboltJohnToe
       fireCost: 200
-    - type: BatterySelfRecharger
-      autoRecharge: true
+    - type: PredictedBatterySelfRecharger
       autoRechargeRate: 40 #every 5 seconds another becomes toe.
-      autoRechargePause: false
     - type: MagazineVisuals
       magState: mag
       steps: 5
@@ -881,13 +872,11 @@
   #- type: StealTarget
     #stealGroup: WeaponEnergyShotgun
   #- type: GunRequiresWield #remove when inaccuracy on spreads is fixed
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 1500
     startingCharge: 1500
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 80
-    autoRechargePause: true
     autoRechargePauseTime: 10
 
 - type: entity
@@ -925,11 +914,9 @@
     - proto: DeleteBeam
       fireCost: 10
       #magState: delete
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 500
     startingCharge: 500
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 50
-    autoRechargePause: true
     autoRechargePauseTime: 10

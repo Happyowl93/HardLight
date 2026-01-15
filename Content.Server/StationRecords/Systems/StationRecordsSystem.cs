@@ -15,6 +15,10 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Log;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+// Starlight Start
+using Content.Shared.Silicons.StationAi;
+using Content.Shared.Silicons.Borgs.Components;
+// Starlight End
 
 namespace Content.Server.StationRecords.Systems;
 
@@ -133,9 +137,16 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
             specie = profile.CustomSpecieName + " (" + profile.Species + ")";
         /// Starlight - End
 
-        CreateGeneralRecord(station, idUid, profile.Name, profile.Age, specie, profile.Gender, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records); // Starlight Edited (profile.Species -> specie)
+        // Starlight Start: Silicons use the correct name for mail
+        string characterName = profile.Name;
+        if (HasComp<StationAiHeldComponent>(player) || HasComp<BorgChassisComponent>(player))
+        {
+            var metaData = MetaData(player);
+            characterName = metaData.EntityName;
+        }
+        // Starlight End
+        CreateGeneralRecord(station, idUid, characterName, profile.Age, specie, profile.Gender, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records); // Starlight Edited (profile.Species -> specie, profile.Name -> characterName)
     }
-
 
     /// <summary>
     ///     Create a general record to store in a station's record set.

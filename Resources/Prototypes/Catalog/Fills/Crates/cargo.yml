@@ -73,17 +73,14 @@
   id: LotteryJunkEntityTable
   table: !type:GroupSelector
     children:
+    - !type:NestedSelector
+      tableId: AllBananaPeelsTable
+      weight: 4
     - id: CigaretteSpent
     - id: FoodBowlBigTrash
     - id: FoodFrozenPopsicleTrash
     - id: FoodCornTrash
-    - id: TrashBananaPeel
-    - id: TrashBananaPeelExplosive
-      weight: 0.01
     - id: FoodTinBeansTrash
-    - id: TrashBakedBananaPeel
-    - id: TrashMimanaPeel
-    - id: TrashBananiumPeel
 
 - type: entityTable
   id: LotteryCanistersEntityTable
@@ -113,6 +110,7 @@
     - id: WeaponPistolCHIMP
       weight: 0.1
     - id: WeaponSniperMosin
+    - id: WeaponShotgunToz106Extended # Starlight
     - id: WeaponMakeshiftLaser
       weight: 0.1
     - id: Sledgehammer
@@ -124,13 +122,10 @@
     - id: WeaponShotgunHandmade
     - id: WeaponFlareGun
     - id: Bola
-    - id: ToySword
     - id: Shovel
-    - id: WeaponWaterPistol
-    - id: WeaponWaterBlaster
     - id: WeaponTurretXeno
-    - id: WeaponRifleFoam
-      weight: 3
+    - !type:NestedSelector
+      tableId: AllToyWeaponsTable
 
 - type: entityTable
   id: LotteryClothingEntityTable
@@ -152,7 +147,6 @@
       prob: 0.01
     - id: ClothingHeadHatWhiteCatEars #Starlight
       prob: 0.05
-      orGroup: Clothes
     - id: ClothingHeadHatDogEars
     - id: ClothingOuterArmorReflective
     - id: ClothingUniformJumpskirtSyndieFormalDress
@@ -167,11 +161,13 @@
     - id: ClothingUnderSocksCoder
     - id: ClothingUniformJumpskirtOfLife
       prob: 0.01
-      orGroup: Clothes
     - id: ClothingOuterHardsuitLuxmax #starlight
       prob: 0.001
-      orGroup: Clothes #/starlight
-    #swag
+
+- type: entityTable
+  id: LotterySwagEntityTable
+  table: !type:GroupSelector
+    children:
     - id: ClothingNeckBling
     - id: ClothingShoesBling
     - id: IngotGold1
@@ -256,11 +252,9 @@
       weight: 0.8
     - id: GrenadeFoamDart
       prob: 0.001
-      orGroup: NotUseful
-    #Starlight
+    #Starlight Start
     - id: BottleShip
       prob: 0.01
-      orGroup: NotUseful
     - id: EmeraldLizitar
       prob: 0.01
-      orGroup: Weapons
+    #Starlight end

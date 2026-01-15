@@ -31,7 +31,9 @@
     state: ointment
   - type: Item
     heldPrefix: ointment
-    storedRotation: 45
+    storedSprite:
+      state: ointment-storage
+      sprite: Objects/Specific/Medical/medical.rsi
   - type: Healing
     damageContainers:
       - Biological
@@ -1141,9 +1143,11 @@
   components:
   - type: Label
     currentLabel: psicodine 10u
-  - type: StorageFill
-    contents:
-    - id: PillPsicodine
-      amount: 5
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: PillPsicodine
+          amount: 5
 
 ### SL end
