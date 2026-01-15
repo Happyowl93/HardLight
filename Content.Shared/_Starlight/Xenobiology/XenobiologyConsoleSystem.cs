@@ -85,10 +85,12 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
     {
         if (!VerifyComponents(args, out var remoteEyeActorComponent, out var xenobiologyConsoleComponent, out var remoteEntity)) return;
         xenobiologyConsoleComponent.SlimeContainer = _container.EnsureContainer<ContainerSlot>(remoteEntity.Value, XenobiologyConsoleComponent.SlimeContainerName);
+        var slimeFound = false;
         foreach (var possibleSlime in _entityLookupSystem.GetEntitiesInRange(remoteEntity.Value, 0.5F))
         {
             if (_entityManager.TryGetComponent<SlimeComponent>(possibleSlime, out _))
             {
+                slimeFound = true;
                 if (_container.Insert(possibleSlime, xenobiologyConsoleComponent.SlimeContainer))
                     RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Picked up a {MetaData(possibleSlime).EntityName}."));
                 else
@@ -96,7 +98,8 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
                 break;
             }
         }
-        RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, "No slimes found. Try moving closer to one."));
+        if (!slimeFound)
+            RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, "No slimes found. Try moving closer to one."));
         args.Handled = true;
     }
 
@@ -106,6 +109,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         if (xenobiologyConsoleComponent.SlimeContainer.ContainedEntities.Count <= 0)
         {
             RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, "No slimes stored. Try picking up one."));
+            args.Handled = true;
             return;
         }
         var slime = xenobiologyConsoleComponent.SlimeContainer.ContainedEntities[0];
@@ -120,6 +124,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         if (xenobiologyConsoleComponent.MonkeyCubes < 1)
         {
             RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Not enough monkey cubes stored ({xenobiologyConsoleComponent.MonkeyCubes}). Try inserting one, or recycling some already eaten monkeys."));
+            args.Handled = true;
             return;
         }
         _entityManager.PredictedSpawnAtPosition(xenobiologyConsoleComponent.MonkeyProtoId, Transform(remoteEntity.Value).Coordinates);
@@ -131,6 +136,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
     private void OnConsoleRecycleMonkeyCorpse(ConsoleRecycleMonkeyCorpseEvent args)
     {
         if (!VerifyComponents(args, out var remoteEyeActorComponent, out var xenobiologyConsoleComponent, out var remoteEntity)) return;
+        var monkeysFound = 0;
         foreach (var possibleMonkey in _entityLookupSystem.GetEntitiesInRange(remoteEntity.Value, 0.5F))
         {
             if (_tagSystem.HasTag(possibleMonkey, xenobiologyConsoleComponent.MonkeyTag))
@@ -140,10 +146,16 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
                 if (damageableComponent.TotalDamage < 100) continue; // Slimes don't eat monkeys above 100 damage
                 PredictedQueueDel(possibleMonkey);
                 xenobiologyConsoleComponent.MonkeyCubes += 0.5D;
-                break;
+                monkeysFound += 1;
             }
         }
-        RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Attempted to recycle monkeys. You now have {xenobiologyConsoleComponent.MonkeyCubes}.\nIf no monkeys were recycled, check that you were close enough and that the monkeys are damaged enough."));
+
+        RaiseLocalEvent(monkeysFound > 0
+            ? new ConsoleTextMsgEvent(args.Performer,
+                $"Recycled {monkeysFound} monkey(s). You now have {xenobiologyConsoleComponent.MonkeyCubes}.")
+            : new ConsoleTextMsgEvent(args.Performer,
+                "No monkeys were found to recycle. Try getting closer or making sure they are damaged enough."));
+
         args.Handled = true;
     }
 
@@ -153,6 +165,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         if (xenobiologyConsoleComponent.MutationPotions < 1)
         {
             RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Not enough mutation potions stored ({xenobiologyConsoleComponent.MutationPotions}). Try inserting one."));
+            args.Handled = true;
             return;
         }
         foreach (var possibleSlime in _entityLookupSystem.GetEntitiesInRange(remoteEntity.Value, 0.5F))
@@ -174,6 +187,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         if (xenobiologyConsoleComponent.StabilizerPotions < 1)
         {
             RaiseLocalEvent(new ConsoleTextMsgEvent(args.Performer, $"Not enough stabilizer potions stored ({xenobiologyConsoleComponent.StabilizerPotions}). Try inserting one."));
+            args.Handled = true;
             return;
         }
         foreach (var possibleSlime in _entityLookupSystem.GetEntitiesInRange(remoteEntity.Value, 0.5F))
