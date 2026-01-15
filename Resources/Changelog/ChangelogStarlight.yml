@@ -26353,5 +26353,12 @@ Entries:
   id: 282000
   time: '2026-01-15T19:09:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2820
+- author: Citrea
+  changes:
+  - message: Persephone arm tools are now working as intended.
+    type: Fix
+  id: 282800
+  time: '2026-01-15T19:15:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2828
 Order: -1
 
