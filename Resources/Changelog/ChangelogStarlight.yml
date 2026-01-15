@@ -26487,5 +26487,36 @@ Entries:
   id: 264400
   time: '2026-01-15T21:31:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2644
+- author: Roro
+  changes:
+  - message: Playtime requirements for antags has been changed across the board, significantly
+      higher, reason being they made no sense before.
+    type: Tweak
+  - message: Nukies are now significantly harder to unlock and require much more playtime,
+      before this, you used to be able to unlock nukie before you unlocked secoff,
+      which is insane.
+    type: Tweak
+  - message: All command jobs require a bit more departmental playtime to play.
+    type: Tweak
+  - message: HoS and Ward now require much more sec playtime to unlock.
+    type: Tweak
+  - message: Brigmed now requires chemist time to unlock.
+    type: Tweak
+  - message: Many jobs have had their playtimes tweaked, read pr to see, too many
+      to list in changelog.
+    type: Tweak
+  - message: Bloodred magboots have been buffed, now function like jackboots, less
+      slowdown on low health and hold a pistol or knife.
+    type: Tweak
+  - message: Nukies can now grab syndicate backpacks from their Syndiedrobe north
+      of where they spawn, it offers less storage but NO slowdown.
+    type: Tweak
+  - message: Lings can no longer spawn in Revs and Nukeops.
+    type: Tweak
+  - message: Revs now have the same chance to roll as Nukeops and Zeds in secret.
+    type: Tweak
+  id: 266400
+  time: '2026-01-15T21:59:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2664
 Order: -1
 
