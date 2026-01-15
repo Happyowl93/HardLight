@@ -26315,5 +26315,13 @@ Entries:
   id: 278900
   time: '2026-01-14T17:45:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2789
+- author: Way
+  changes:
+  - message: Removed "Clanker" from the list of randomly chosen names for Borgs upon
+      new ruling.
+    type: Remove
+  id: 282300
+  time: '2026-01-14T23:43:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2823
 Order: -1
 
