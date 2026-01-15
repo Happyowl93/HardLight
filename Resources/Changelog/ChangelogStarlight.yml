@@ -26459,5 +26459,33 @@ Entries:
   id: 261100
   time: '2026-01-15T21:16:53.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2611
+- author: Seaborne
+  changes:
+  - message: Added Prescription Medical Glasses to a Nanomed Plus near you!
+    type: Add
+  - message: Added Prescription Chemical Glasses to the Chemdrobe.
+    type: Add
+  - message: Added Prescription Security Glasses, located in Sectech, now lacking
+      flash shielding.
+    type: Add
+  - message: Added Prescription Brigmedic Glasses, exclusive to loadout!
+    type: Add
+  - message: Added Medical, Chemical, Security, and Brigmedic prescription glasses
+      to their respective job loadouts! Shortsighted people rejoice!
+    type: Tweak
+  id: 264100
+  time: '2026-01-15T21:26:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2641
+- author: Makeshift
+  changes:
+  - message: 'Packed: Named all faxes.'
+    type: Fix
+  - message: 'Packed: Swapped the MegaSeed in the brig for the correct, unlocked variant.'
+    type: Fix
+  - message: 'Packed: Added HV and Solar Assembly crates to where they were missing.'
+    type: Add
+  id: 264400
+  time: '2026-01-15T21:31:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2644
 Order: -1
 
