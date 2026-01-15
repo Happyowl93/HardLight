@@ -26374,5 +26374,12 @@ Entries:
   id: 283100
   time: '2026-01-15T19:16:31.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2831
+- author: TacoLlama
+  changes:
+  - message: Added Cyborg surgery module
+    type: Add
+  id: 240600
+  time: '2026-01-15T19:27:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2406
 Order: -1
 
