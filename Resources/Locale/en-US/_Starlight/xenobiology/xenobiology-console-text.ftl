@@ -1,3 +1,6 @@
+# The selectors in the case of 1 just don't work for some reason.
+# Guess we're always going for plural?
+
 xenobiology-console-monkey-cube-inserted = Thanks for inserting a monkey cube! The console now has {$cubes} {$cubes ->
     [1] cube
     *[other] cubes
