@@ -26437,5 +26437,12 @@ Entries:
   id: 259700
   time: '2026-01-15T21:00:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2597
+- author: Penguinwizzard
+  changes:
+  - message: Added playtime tracking for a number of additional roles.
+    type: Add
+  id: 263300
+  time: '2026-01-15T21:05:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2633
 Order: -1
 
