@@ -26323,5 +26323,72 @@ Entries:
   id: 282300
   time: '2026-01-14T23:43:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2823
+- author: Jezithyr
+  changes:
+  - message: TEG flatpack crate to engineering orders for 6000 credits.
+    type: Add
+  id: 282100
+  time: '2026-01-15T08:00:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2821
+- author: Conflee
+  changes:
+  - message: Added Space Mall, a new mall-themed station orbiting an inhabited colony
+      world. Features many gimmicks like guaranteed visitor shuttle gamerule, the
+      colony parallax. a mall layout, mall back halls, food court, and several shops
+      like the toy and clothing stores. **_THIS STATION IS NOT IN THE DEFAULT MAP
+      POOL, IT IS ADMEME ONLY FOR NOW FOR TESTING._**
+    type: Add
+  - message: Upped the max population for Kiloton to 350, and added a max pop of 350
+      to Fland. No station works over 200, but these two are less broken over 200
+      than most, and we've been hitting 200+ recently.
+    type: Tweak
+  id: 282200
+  time: '2026-01-15T18:02:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2822
+- author: Huaqas
+  changes:
+  - message: Updated a bunch of Resomi displacement maps to fix issues and bugs with
+      the new body shape..
+    type: Tweak
+  id: 282000
+  time: '2026-01-15T19:09:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2820
+- author: Citrea
+  changes:
+  - message: Persephone arm tools are now working as intended.
+    type: Fix
+  id: 282800
+  time: '2026-01-15T19:15:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2828
+- author: Citrea
+  changes:
+  - message: Functional cyberlimbs are now researchable one tier earlier
+    type: Tweak
+  id: 279400
+  time: '2026-01-15T19:16:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2794
+- author: Shades
+  changes:
+  - message: Antags always spawning as Humans (Nukies, Wizards, Ect...)
+    type: Fix
+  id: 283100
+  time: '2026-01-15T19:16:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2831
+- author: TacoLlama
+  changes:
+  - message: Added Cyborg surgery module
+    type: Add
+  id: 240600
+  time: '2026-01-15T19:27:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2406
+- author: Arkanic
+  changes:
+  - message: harm batonging cadet npc
+    type: Add
+  - message: gnome smite, turns target into a gnome complete with gnomish giggling
+    type: Add
+  id: 244700
+  time: '2026-01-15T20:03:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2447
 Order: -1
 
