@@ -6,12 +6,16 @@
   objective: roles-antag-nuclear-operative-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 24h # Starlight
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 6h # Starlight
+    time: 72h # Starlight
+  - !type:RoleTimeRequirement #Starlight - former time allowed you to literally play 6 hours of cadet and get nukie
+    role: JobSecurityOfficer
+    time: 15h
+  - !type:DepartmentTimeRequirement #Starlight - at the very least please know basic med
+    department: Medical
+    time: 10h
   guides: [ NuclearOperatives ]
   previewStartingGear: SyndicateOperativeGearFull
+  playTimeTracker: AntagNukeops # Starlight
 
 - type: antag
   id: NukeopsMedic
@@ -21,18 +25,19 @@
   objective: roles-antag-nuclear-operative-agent-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 24h # Starlight
+    time: 72h # Starlight
   - !type:RoleTimeRequirement
     role: JobChemist
-    time: 6h # Starlight
+    time: 18h # Starlight - chem knowledge is vital, and since you are a solo chemist, tasked with remembering every chem mix you need, this is a fair time.
   - !type:RoleTimeRequirement
     role: JobSurgeon
     time: 3h # Starlight
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 3h # Starlight
+  - !type:RoleTimeRequirement #Starlight
+    role: JobSecurityOfficer
+    time: 15h
   guides: [ NuclearOperatives ]
   previewStartingGear: SyndicateOperativeMedicFull
+  playTimeTracker: AntagNukeopsMedic # Starlight
 
 - type: antag
   id: NukeopsCommander
@@ -42,16 +47,20 @@
   objective: roles-antag-nuclear-operative-commander-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 24h # Starlight
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 12h # Starlight
+    time: 96h # Starlight
+  - !type:RoleTimeRequirement #Starlight
+    role: JobSecurityOfficer
+    time: 25h
   - !type:DepartmentTimeRequirement
     department: Command
-    time: 6h # Starlight
+    time: 12h # Starlight
+  - !type:DepartmentTimeRequirement #Starlight
+    department: Medical
+    time: 10h
   # should be changed to nukie playtime when thats tracked (wyci)
   guides: [ NuclearOperatives ]
   previewStartingGear: SyndicateCommanderGearFull
+  playTimeTracker: AntagNukeopsCommander # Starlight
 
 - type: startingGear
   id: SyndicateOperativeGearFullNoUplink
@@ -71,7 +80,7 @@
     back:
     - WeaponPistolViper
     - PinpointerSyndicateNuclear
-    - DeathAcidifierImplanter
+    - GearAcidifierImplanter # Starlight edit
 
 #Nuclear Operative Gear
 - type: startingGear
@@ -131,7 +140,7 @@
     - PinpointerSyndicateNuclear
     - HandheldHealthAnalyzer
     - CombatMedipen
-    - DeathAcidifierImplanter
+    - GearAcidifierImplanter # Starlight edit
 
 - type: chameleonOutfit
   id: NukeopsMedicOutfit

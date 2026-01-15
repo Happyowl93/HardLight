@@ -4,6 +4,7 @@
   antagonist: true
   objective: roles-antag-survivor-objective
   # guides: [  ]
+  playTimeTracker: AntagSurvivor # Starlight
 
 - type: antag
   id: Wizard
@@ -13,11 +14,12 @@
   objective: roles-antag-wizard-objective # TODO: maybe give random objs and stationary ones from AntagObjectives and AntagRandomObjectives
   requirements: # I hate time locked roles but this should be enough time for someone to be acclimated
   - !type:OverallPlaytimeRequirement
-    time: 24h # Starlight
+    time: 48h # Starlight
   - !type:DepartmentTimeRequirement
     department: Security
     time: 6h # Starlight
   guides: [ Wizard ]
   previewStartingGear: WizardBlueGear
+  playTimeTracker: AntagWizard # Starlight
 
 # See wizard_startinggear for wiz start gear options
