@@ -26390,5 +26390,12 @@ Entries:
   id: 244700
   time: '2026-01-15T20:03:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2447
+- author: Penguinwizzard
+  changes:
+  - message: Fixed a few irregular pluralizations in the localization string system.
+    type: Fix
+  id: 256000
+  time: '2026-01-15T20:36:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2560
 Order: -1
 
