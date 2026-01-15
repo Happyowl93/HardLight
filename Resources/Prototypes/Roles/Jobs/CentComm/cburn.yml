@@ -5,13 +5,13 @@
   playTimeTracker: JobCBURN
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 72h #Starlight
+    time: 72000 # 20h
   - !type:RoleTimeRequirement
     role: JobMedicalDoctor
-    time: 10h #Starlight
+    time: 18000 # 5h
   - !type:RoleTimeRequirement
     role: JobSecurityOfficer
-    time: 10h #Starlight
+    time: 18000 # 5h
   setPreference: false
   startingGear: CBURNGear
   icon: "JobIconCentComm"

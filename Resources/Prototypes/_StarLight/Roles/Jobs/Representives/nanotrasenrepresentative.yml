@@ -6,7 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 40h #parity with magi, git gud at command before you boss em around
+      time: 72000 # 20 hrs
     - !type:RolesRequirement
       proto: ExtRolesReq
   startingGear: NanoTrasenRepresentativeGear
