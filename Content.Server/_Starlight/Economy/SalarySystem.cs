@@ -68,7 +68,7 @@ public sealed partial class SalarySystem : SharedSalarySystem
         base.Initialize();
     }
 
-    private void UpdateBonusMultiplier(int value) 
+    private void UpdateBonusMultiplier(float value) 
         => _defaultBonusMultiplier = value;
     
     public override void Update(float frameTime)
