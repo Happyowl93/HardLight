@@ -1,70 +1,71 @@
 - type: playTimeTracker
-  id: JobBrigmedic
+  id: AntagDragon
 
 - type: playTimeTracker
-  id: JobRoboticist
+  id: AntagNinja
 
 - type: playTimeTracker
-  id: JobMagistrate
+  id: AntagChangeling
 
 - type: playTimeTracker
-  id: JobNanoTrasenRepresentative
+  id: AntagNukeops
 
 - type: playTimeTracker
-  id: JobIAA
+  id: AntagNukeopsMedic
 
 - type: playTimeTracker
-  id: JobCentralCommandOperator
+  id: AntagNukeopsCommander
 
 - type: playTimeTracker
-  id: JobBlueShield
+  id: AntagParadoxClone
 
 - type: playTimeTracker
-  id: JobConsortiumBlueShield
+  id: AntagHeadRev
 
 - type: playTimeTracker
-  id: JobMiningSpecialist
+  id: AntagRev
 
 - type: playTimeTracker
-  id: JobSurgeon
-  
-- type: playTimeTracker
-  id: JobMailTech
+  id: AntagSubvertedSilicon
 
 - type: playTimeTracker
-  id: JobSalvageLead
+  id: AntagThief
 
 - type: playTimeTracker
-  id: JobNTSF
-  
-- type: playTimeTracker
-  id: JobDecimus
-  
-- type: playTimeTracker
-  id: JobBoxer
+  id: AntagTraitor
 
 - type: playTimeTracker
-  id: JobZookeeper
-
-# Other ghosts
+  id: AntagVampire
 
 - type: playTimeTracker
-  id: GhostPAI
+  id: AntagSurvivor
 
 - type: playTimeTracker
-  id: GhostCritterHarmless
+  id: AntagWizard
 
 - type: playTimeTracker
-  id: GhostBotHarmless
+  id: AntagMothershipCore
 
 - type: playTimeTracker
-  id: GhostNecktie
+  id: AntagXenoborg
 
 - type: playTimeTracker
-  id: GhostSkeleton
+  id: AntagInitialInfected
 
 - type: playTimeTracker
-  id: GhostXeno
+  id: AntagZombie
 
 - type: playTimeTracker
-  id: Observer
+  id: AntagLoneAbductor
+
+- type: playTimeTracker
+  id: AntagPirate
+
+- type: playTimeTracker
+  id: AntagPirateCaptain
+
+- type: playTimeTracker
+  id: AntagRatKing
+
+- type: playTimeTracker
+  id: AntagSSF
