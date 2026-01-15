@@ -26518,5 +26518,15 @@ Entries:
   id: 266400
   time: '2026-01-15T21:59:11.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2664
+- author: CawsForConcern
+  changes:
+  - message: Added Xenoborgs to Beta's Secret rotation (secret enjoyers rejoice)
+    type: Add
+  - message: Tweaked Beta's Secret gamemode values to be round numbers, some gamemode
+      odds tweaked
+    type: Tweak
+  id: 282900
+  time: '2026-01-15T23:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2829
 Order: -1
 
