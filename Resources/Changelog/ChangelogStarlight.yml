@@ -26444,5 +26444,13 @@ Entries:
   id: 263300
   time: '2026-01-15T21:05:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2633
+- author: Penguinwizzard
+  changes:
+  - message: We talked to the finance department and it's now possible to adjust pay
+      on a system-by-system basis.
+    type: Add
+  id: 247400
+  time: '2026-01-15T21:13:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2474
 Order: -1
 
