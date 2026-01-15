@@ -26367,5 +26367,12 @@ Entries:
   id: 279400
   time: '2026-01-15T19:16:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2794
+- author: Shades
+  changes:
+  - message: Antags always spawning as Humans (Nukies, Wizards, Ect...)
+    type: Fix
+  id: 283100
+  time: '2026-01-15T19:16:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2831
 Order: -1
 
