@@ -26412,5 +26412,14 @@ Entries:
   id: 257000
   time: '2026-01-15T20:53:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2570
+- author: Penguinwizzard
+  changes:
+  - message: We've found a way to save some budget on pest control for the stations
+      by simply not doing it. You'll probably be fine. If you do notice any critters
+      running around the maintenance tunnels, get the zookeeper to take care of them.
+    type: Add
+  id: 259100
+  time: '2026-01-15T20:57:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2591
 Order: -1
 
