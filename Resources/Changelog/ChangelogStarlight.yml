@@ -26528,5 +26528,12 @@ Entries:
   id: 282900
   time: '2026-01-15T23:01:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2829
+- author: Happyrobot33
+  changes:
+  - message: Revert role timer changes for now pending additional changes
+    type: Tweak
+  id: 283500
+  time: '2026-01-15T23:08:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2835
 Order: -1
 
