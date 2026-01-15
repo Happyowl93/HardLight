@@ -211,7 +211,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         {
             if (_entityManager.TryGetComponent<SlimeComponent>(possibleSlime, out var slimeComponent))
             {
-                var ev = new ConsoleMsgToScannerEvent(remoteEntity.Value, possibleSlime);
+                var ev = new ConsoleMsgToScannerEvent(args.Performer, possibleSlime);
                 RaiseLocalEvent(remoteEyeActorComponent.VirtualItem.Value, ev);
                 break;
             }

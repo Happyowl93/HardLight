@@ -55,7 +55,7 @@ public sealed class SlimeScannerSystem : EntitySystem
         var channel = actor.PlayerSession.Channel;
         var name = metaData.EntityName;
         var nutrition = FixedPoint2.New(_hungerSystem.GetHunger(hunger));
-        var message = $"Name:\t[Bold]{name}[/Bold]\nNutrition:\t[Bold]{nutrition}[/Bold]";
+        var message = $"Name:\t[Bold]{name}[/Bold]\nNutrition:\t[Bold]{nutrition}[/Bold]\nMutation Chance:\t[Bold]{slime.MutationChance * 100F}%[/Bold]";
         _chatManager.ChatMessageToOne(ChatChannel.Local, message, message, EntityUid.Invalid, false, channel);
     }
 }
