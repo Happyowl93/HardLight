@@ -16,4 +16,4 @@ public sealed class MovementSpeedModifierScaleSystem : EntitySystem
         args.WalkSpeedModifier = (args.WalkSpeedModifier - 1) * comp.MovementSpeedScale + 1;
         args.SprintSpeedModifier = (args.SprintSpeedModifier - 1) * comp.MovementSpeedScale + 1;
     }
-} 
+}
