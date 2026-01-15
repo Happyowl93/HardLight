@@ -7,6 +7,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Item;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
+using Content.Shared.Explosion;
 
 namespace Content.Shared._Starlight.NullSpace;
 
@@ -27,6 +28,7 @@ public abstract partial class SharedNullSpaceSystem : EntitySystem
         SubscribeLocalEvent<NullSpaceComponent, PickupAttemptEvent>(OnAttempt);
         SubscribeLocalEvent<NullSpaceComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<NullSpaceComponent, PreventCollideEvent>(PreventCollision);
+        SubscribeLocalEvent<NullSpaceComponent, GetExplosionResistanceEvent>(OnGetExplosionResistance);
     }
 
     private void OnMobStateChanged(EntityUid uid, NullSpaceComponent component, MobStateChangedEvent args)
@@ -82,4 +84,9 @@ public abstract partial class SharedNullSpaceSystem : EntitySystem
             
         args.Cancelled = true;
     }
+
+    private void OnGetExplosionResistance(EntityUid uid, NullSpaceComponent component, ref GetExplosionResistanceEvent args)
+        {
+            args.DamageCoefficient = 0;
+        }
 }

@@ -12,7 +12,6 @@ using Content.Shared._Starlight.NullSpace;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server._Starlight.Weapons.Ranged;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
@@ -22,6 +21,7 @@ using Robust.Server.Player;
 using Robust.Shared.Player;
 using Robust.Shared.Enums;
 using Content.Server._Starlight.Bluespace;
+using Content.Shared.Shuttles.Components;
 
 namespace Content.Server._Starlight.NullSpace;
 
@@ -84,6 +84,7 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
 
         EnsureComp<PressureImmunityComponent>(uid);
         EnsureComp<MovementIgnoreGravityComponent>(uid);
+        EnsureComp<FTLSmashImmuneComponent>(uid);
 
         if (TryComp<HandsComponent>(uid, out var handsComponent))
         {
@@ -139,6 +140,7 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
         RemComp<StealthComponent>(uid);
         RemComp<PressureImmunityComponent>(uid);
         RemComp<MovementIgnoreGravityComponent>(uid);
+        RemComp<FTLSmashImmuneComponent>(uid);
 
         _virtualItem.DeleteInHandsMatching(uid, uid);
     }
