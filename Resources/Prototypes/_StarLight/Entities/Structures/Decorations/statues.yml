@@ -40,6 +40,3 @@
       sprite: _Starlight/Structures/Decorations/Phoronic.rsi
       state: phoronic
     - type: SpriteFade
-    - type: Tag
-      tags:
-        - TheDark
