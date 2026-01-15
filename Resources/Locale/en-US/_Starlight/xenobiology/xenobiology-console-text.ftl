@@ -1,15 +1,15 @@
 xenobiology-console-monkey-cube-inserted = Thanks for inserting a monkey cube! The console now has {$cubes} {$cubes ->
-    [one] cube
+    [1] cube
     *[other] cubes
     }.
 
 xenobiology-console-mutation-potion-inserted = Thanks for inserting a mutation potion! The console now has {$potions} {$potions ->
-    [one] potion
+    [1] potion
     *[other] potions
     }.
 
 xenobiology-console-stabilizer-potion-inserted = Thanks for inserting a stabilizer potion! The console now has {$potions} {$potions ->
-    [one] potion
+    [1] potion
     *[other] potions
     }.
 
@@ -21,16 +21,16 @@ xenobiology-console-slime-placed-down = Placed down {$name}.
 xenobiology-console-slime-placed-down-fail-none-stored = No slimes stored. Try picking up one.
 
 xenobiology-console-monkey-placed = Placed down a monkey. You now have {$cubes} {$cubes ->
-    [one] cube
+    [1] cube
     *[other] cubes
     }.
 xenobiology-console-monkey-placed-fail-empty = Not enough monkey cubes stored ({$cubes}). Try inserting one, or recycling some already eaten monkeys.
 
 xenobiology-console-monkey-recycled = Recycled {$monkeys} {$monkeys ->
-    [one] monkey
+    [1] monkey
     *[other] monkeys
     }. You now have {$cubes} {$cubes ->
-    [one] cube
+    [1] cube
     *[other] cubes
     }.
 xenobiology-console-monkey-recycled-failed-none = No monkeys were found to recycle. Try getting closer or making sure they are damaged enough.
