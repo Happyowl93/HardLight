@@ -26345,5 +26345,13 @@ Entries:
   id: 282200
   time: '2026-01-15T18:02:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2822
+- author: Huaqas
+  changes:
+  - message: Updated a bunch of Resomi displacement maps to fix issues and bugs with
+      the new body shape..
+    type: Tweak
+  id: 282000
+  time: '2026-01-15T19:09:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2820
 Order: -1
 
