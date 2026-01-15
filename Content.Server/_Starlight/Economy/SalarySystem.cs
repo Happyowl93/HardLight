@@ -56,12 +56,21 @@ public sealed partial class SalarySystem : SharedSalarySystem
     private readonly Stopwatch _stopwatch = new();
     private readonly Dictionary<ICommonSession, TimeSpan> _lastSalary = [];
     private SalariesPrototype _salaries = new();
+    private float _defaultBonusMultiplier = 1.0f;
+    
     public override void Initialize()
     {
         SubscribeLocalEvent<RoundStartingEvent>(ev => _lastSalary.Clear());
+        _configurationManager.OnValueChanged(StarlightCCVars.SalaryMultiplier, UpdateBonusMultiplier, true);
+        
         _salaries = _prototypes.Index<SalariesPrototype>("standart");
+        
         base.Initialize();
     }
+
+    private void UpdateBonusMultiplier(int value) 
+        => _defaultBonusMultiplier = value;
+    
     public override void Update(float frameTime)
     {
         _delayAccumulator += frameTime;
@@ -108,7 +117,7 @@ public sealed partial class SalarySystem : SharedSalarySystem
 
     private int CalculateSalaryWithBonuses(int baseSalary, ICommonSession session)
     {
-        var bonusMultiplier = 1.0;
+        var bonusMultiplier = _defaultBonusMultiplier;
 
         if (!_nullLinkRoles.TryGetPlayerData(session.UserId, out var playerData))
             return baseSalary;
@@ -116,10 +125,6 @@ public sealed partial class SalarySystem : SharedSalarySystem
         foreach (var bonus in _prototypes.EnumeratePrototypes<SalaryRoleBonusPrototype>())
             if(bonus.Roles.Any(playerData.Roles.Contains))
                 bonusMultiplier += bonus.Multiplayer;
-
-        var serverSalaryMultiplier = _configurationManager.GetCVar(StarlightCCVars.SalaryMultiplier);
-
-        bonusMultiplier *= serverSalaryMultiplier;
 
         return (int)Math.Ceiling(baseSalary * bonusMultiplier);
     }
