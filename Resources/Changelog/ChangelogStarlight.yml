@@ -26397,5 +26397,13 @@ Entries:
   id: 256000
   time: '2026-01-15T20:36:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2560
+- author: Penguinwizzard
+  changes:
+  - message: Added bitterant to the trade station's plastitanium wall mixture to keep
+      fish from nibbling at it.
+    type: Tweak
+  id: 257200
+  time: '2026-01-15T20:47:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2572
 Order: -1
 
