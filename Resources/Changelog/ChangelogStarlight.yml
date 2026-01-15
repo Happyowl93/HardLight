@@ -26360,5 +26360,12 @@ Entries:
   id: 282800
   time: '2026-01-15T19:15:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2828
+- author: Citrea
+  changes:
+  - message: Functional cyberlimbs are now researchable one tier earlier
+    type: Tweak
+  id: 279400
+  time: '2026-01-15T19:16:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2794
 Order: -1
 
