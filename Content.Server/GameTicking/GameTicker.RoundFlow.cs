@@ -8,6 +8,7 @@ using Content.Server.Roles;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
+using Content.Shared.Maps;
 using Content.Shared.Mind;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
@@ -25,6 +26,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Text.RegularExpressions;
+using Content.Server._Starlight.BugReports; // Starlight
 
 namespace Content.Server.GameTicking
 {
@@ -33,7 +35,7 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly DiscordWebhook _discord = default!;
         [Dependency] private readonly RoleSystem _role = default!;
         [Dependency] private readonly ITaskManager _taskManager = default!;
-        
+        [Dependency] private readonly IBugReportManager _bugManager = default!; // Starlight
 
         private static readonly Counter RoundNumberMetric = Metrics.CreateCounter(
             "ss14_round_number",
@@ -390,6 +392,8 @@ namespace Content.Server.GameTicking
 #endif
 
                 readyPlayers.Add(session);
+
+                // Starlight - we've removed some code here for generating a random humanoid profile for players without any profiles on roundstart.
                 readyPlayerIds.Add(userId);
             }
 
@@ -420,7 +424,11 @@ namespace Content.Server.GameTicking
             // MapInitialize *before* spawning players, our codebase is too shit to do it afterwards...
             _map.InitializeMap(DefaultMap);
 
+            StartGamePresetRules(); // Starlight - Start any map-attached game rules
+
             SpawnPlayers(readyPlayers, readyPlayerIds, force);
+
+            StartGamePresetRules(); // Starlight - Start any player-attached game rules
 
             _roundStartDateTime = DateTime.UtcNow;
             RunLevel = GameRunLevel.InRound;
@@ -723,6 +731,8 @@ namespace Content.Server.GameTicking
             _mapManager.Restart();
 
             _banManager.Restart();
+            
+            _bugManager.Restart(); // Starlight
 
             _gameMapManager.ClearSelectedMap();
 

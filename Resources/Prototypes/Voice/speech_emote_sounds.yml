@@ -53,6 +53,10 @@
       path: /Audio/_Starlight/Effects/yip.ogg
     Whine:
       collection: Whine
+    Growl:
+      collection: Growl
+    Howl:
+      path: /Audio/_Starlight/Effects/howl.ogg
     #endregion Starlight
 
 - type: emoteSounds
@@ -109,6 +113,10 @@
       path: /Audio/_Starlight/Effects/yip.ogg
     Whine:
       collection: Whine
+    Growl:
+      collection: Growl
+    Howl:
+      path: /Audio/_Starlight/Effects/howl.ogg
     #endregion Starlight
 
 - type: emoteSounds
@@ -134,6 +142,12 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: DeathGasp
+    Liss:
+      collection: ReptilianHiss
+    Lurr:
+      path: /Audio/_Starlight/Voice/Reptilian/lizard_purr.ogg
+    Rattle:
+      path: /Audio/_Starlight/Voice/Reptilian/lizard_rattle.ogg
 
 - type: emoteSounds
   id: FemaleReptilian
@@ -158,6 +172,46 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+    # Starlight-Start
+    Liss:
+      collection: ReptilianHiss
+    Lurr:
+      path: /Audio/_Starlight/Voice/Reptilian/lizard_purr.ogg
+    Rattle:
+      path: /Audio/_Starlight/Voice/Reptilian/lizard_rattle.ogg
+    # Starlight-End
+
+- type: emoteSounds
+  id: UnisexReptilian
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/Voice/Reptilian/reptilian_scream.ogg
+    Laugh:
+      path: /Audio/Animals/lizard_happy.ogg
+    Honk:
+      collection: BikeHorn
+    Whistle:
+      collection: Whistles
+    Crying:
+      collection: FemaleCry
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+    # Starlight-Start
+    Liss:
+      collection: ReptilianHiss
+    Lurr:
+      path: /Audio/_Starlight/Voice/Reptilian/lizard_purr.ogg
+    Rattle:
+      path: /Audio/_Starlight/Voice/Reptilian/lizard_rattle.ogg
+    # Starlight-End
 
 - type: emoteSounds
   id: MaleSlime
@@ -214,6 +268,12 @@
     Whine:
       collection: Whine
     #endregion Afterlight
+    #region Starlight
+    Bubble:
+      collection: Bubbles
+    Pop:
+      collection: Pops
+    #endregion Starlight
   params:
     variation: 0.125
 
@@ -272,6 +332,12 @@
     Whine:
       collection: Whine
     #endregion Afterlight
+    #region Starlight
+    Bubble:
+      collection: Bubbles
+    Pop:
+      collection: Pops
+    #endregion Starlight
   params:
     variation: 0.125
 
@@ -282,15 +348,29 @@
       path: /Audio/Voice/Vox/shriek1.ogg
     Laugh:
       path: /Audio/Voice/Vox/vox_laugh.ogg
+    Cough:
+      path: /Audio/Voice/Vox/vox_cough.ogg
+    Sigh:
+      path: /Audio/Voice/Vox/vox_sigh.ogg
+    Click:
+      path: /Audio/Voice/Vox/vox_click.ogg
+    Chitter:
+      path: /Audio/Voice/Vox/vox_chitter.ogg
     Honk:
       collection: BikeHorn
+    Crying:
+      path: /Audio/Voice/Vox/vox_cry.ogg
     Weh:
       collection: Weh
     Hew:
       collection: Hew
+    Gasp:
+      path: /Audio/Effects/Gasp/vox_gasp.ogg
+    DefaultDeathgasp:
+      path: /Audio/Effects/Gasp/vox_DeathGasp.ogg
   params:
     variation: 0.125
-    # We need vox sounds for the other emotes
+    # TODO: We need vox sounds for the other emotes
 
 - type: emoteSounds
   id: UnisexDiona
@@ -333,8 +413,18 @@
       collection: Hew
     Honk:
       collection: BikeHorn
+    #region Starlight
+    Crying:
+      path: /Audio/_Starlight/Voice/Arachnid/arachnid_cry.ogg
+    Cough:
+      path: /Audio/_Starlight/Voice/Arachnid/arachnid_cough.ogg
+    Yawn:
+      path: /Audio/_Starlight/Voice/Arachnid/arachnid_yawn.ogg
+    Sigh:
+      path: /Audio/_Starlight/Voice/Arachnid/arachnid_sigh.ogg
     Gasp:
-      collection: MaleGasp
+      path: /Audio/_Starlight/Voice/Arachnid/arachnid_gasp.ogg
+    #endregion Starlight
     DefaultDeathgasp:
       collection: DeathGasp
 
@@ -445,8 +535,18 @@
       collection: Hew
     Honk:
       collection: BikeHorn
+    #region Starlight
+    Crying:
+      /Audio/_Starlight/Voice/Moth/moth_cry.ogg
+    Cough:
+      /Audio/_Starlight/Voice/Moth/moth_cough.ogg
+    Yawn:
+      /Audio/_Starlight/Voice/Moth/moth_yawn.ogg
+    Sigh:
+      /Audio/_Starlight/Voice/Moth/moth_sigh.ogg
     Gasp:
-      collection: MaleGasp
+      path: /Audio/_Starlight/Voice/Moth/moth_gasp.ogg
+    #endregion Starlight
     DefaultDeathgasp:
       collection: MothDeathGasp
 
@@ -493,52 +593,6 @@
       path: /Audio/Effects/Cargo/ping.ogg
 
 - type: emoteSounds
-  id: UnisexResomi
-  params:
-    variation: 0.125
-  sounds:
-    Scream:
-      path: /Audio/Voice/Resomi/resomi_scream.ogg
-    Laugh:
-      collection: ResomiLaugh
-    Honk:
-      collection: BikeHorn
-    Whistle:
-      path: /Audio/Voice/Resomi/resomi_whistle.ogg
-    Chirp:
-      collection: ResomiChirp
-    Weh:
-      collection: Weh
-    Hew:
-      collection: Hew
-    Gasp:
-      collection: FemaleGasp
-    DefaultDeathgasp:
-      collection: DeathGasp
-    Sigh:
-      collection: FemaleSigh
-    Crying:
-      collection: ResomiCry
-    Cough:
-      collection: FemaleCoughs
-    Yawn:
-      collection: FemaleYawn
-    Hisses:
-      collection: FelionoidHisses
-    Purr:
-      collection: FelionoidPurrs
-    Growl:
-      collection: FelionoidGrowls
-    Trill:
-      collection: FelionoidTrills
-    Scree:
-      collection: ResomiScrees
-    Call:
-      collection: ResomiCalls
-    Squawk:
-      collection: ResomiSquawk
-
-- type: emoteSounds
   id: UnisexSiliconXenoborg
   params:
     variation: 0.05
@@ -559,6 +613,103 @@
       collection: XenoborgBikeHorn
     Ping:
       collection: XenoborgPing
+
+# Vulp Sounds
+- type: emoteSounds
+  id: MaleVulpkanin
+  params:
+    variation: 0.125
+  sounds:
+    Laugh:
+      collection: MaleLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Whistle:
+      collection: Whistles
+    Sigh:
+      collection: MaleSigh
+    Scream:
+      collection: VulpkaninScreams
+    Growl:
+      collection: Growl #Starlight growl
+    Snarl:
+      collection: VulpkaninSnarls
+    Bark:
+      collection: Bark #Starlight bark
+    Whine:
+      collection: Whine #Starlight
+    Crying:
+      collection: MaleCry
+    Howl:
+      path: /Audio/_Starlight/Effects/howl.ogg #Starlight howl
+    Yip:
+      path: /Audio/_Starlight/Effects/yip.ogg #Starlight Yip
+    # STARLIGHT START
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Honk:
+      collection: BikeHorn
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+    # STARLIGHT END
+
+- type: emoteSounds
+  id: FemaleVulpkanin
+  params:
+    variation: 0.125
+  sounds:
+    Laugh:
+      collection: FemaleLaugh
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    Whistle:
+      collection: Whistles
+    Sigh:
+      collection: FemaleSigh
+    Scream:
+      collection: VulpkaninScreams
+    Growl:
+      collection: Growl #Starlight growl
+    Snarl:
+      collection: VulpkaninSnarls
+    Bark:
+      collection: Bark #Starlight bark
+    Whine:
+      collection: Whine # Starlight
+    Crying:
+      collection: FemaleCry
+    Howl:
+      path: /Audio/_Starlight/Effects/howl.ogg #Starlight howl
+    Yip:
+      path: /Audio/_Starlight/Effects/yip.ogg #Starlight Yip
+    # STARLIGHT START
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Honk:
+      collection: BikeHorn
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+    # STARLIGHT END
 
 # body emotes
 - type: emoteSounds
@@ -609,6 +760,35 @@
         volume: -6
     Salute:
       collection: Salutes
+
+# Starlight BEGIN: Moths used to just use GenericBodyEmotes
+- type: emoteSounds
+  id: MothBodyEmotes
+  sounds:
+    FlapWings: # Starlight: Flap wings
+      path: /Audio/_Starlight/Voice/Moth/moth_flapwings.ogg
+    Clap:
+      collection: Claps
+    ClapSingle:
+      collection: ClapSingle
+    Snap:
+      collection: Snaps
+      params:
+        volume: -6
+    Salute:
+      collection: Salutes
+# Starlight END
+
+# Starlight BEGIN: Mothroaches and moproaches get wing flap
+- type: emoteSounds
+  id: MothroachBodyEmotes
+  sounds:
+    FlapWings:
+      path: /Audio/_Starlight/Voice/Moth/moth_flapwings.ogg
+      params:
+        pitch: 1.45
+    
+# Starlight END
 
 # mobs
 - type: emoteSounds

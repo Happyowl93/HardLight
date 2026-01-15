@@ -116,10 +116,6 @@ chat-speech-verb-vox-1 = screeches
 chat-speech-verb-vox-2 = shrieks
 chat-speech-verb-vox-3 = croaks
 
-chat-speech-verb-name-resomi = Resomi
-chat-speech-verb-resomi-1 = squawks
-chat-speech-verb-resomi-2 = chirps
-
 chat-speech-verb-name-canine = Canine
 chat-speech-verb-canine-1 = barks
 chat-speech-verb-canine-2 = woofs
@@ -165,6 +161,12 @@ chat-speech-verb-name-electricity = Electricity
 chat-speech-verb-electricity-1 = crackles
 chat-speech-verb-electricity-2 = buzzes
 chat-speech-verb-electricity-3 = screeches
+
+chat-speech-verb-vulpkanin-1 = rawrs
+chat-speech-verb-vulpkanin-2 = barks
+chat-speech-verb-vulpkanin-3 = rurs
+chat-speech-verb-vulpkanin-4 = yaps
+chat-speech-verb-vulpkanin = Vulpkanin
 
 chat-speech-verb-name-wawa = Wawa
 chat-speech-verb-wawa-1 = intones

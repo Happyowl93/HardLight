@@ -43,6 +43,7 @@
     - Revolutionary
     - Zombie
     - Wizard
+    - Xenoborgs
     - KesslerSyndromeScheduler
     - RampingStationEventScheduler
     - SLChangeling #Starlight
@@ -66,6 +67,7 @@
     - Revolutionary
     - Zombie
     - Wizard
+    - Xenoborgs
     - BasicStationEventScheduler
     - KesslerSyndromeScheduler
     - MeteorSwarmMildScheduler
@@ -103,6 +105,23 @@
   - BasicRoundstartVariation
 
 - type: gamePreset
+  id: Dynamic
+  alias:
+  - dynamic
+  - multiantag
+  - director
+  name: dynamic-title
+  showInVote: false # admin-only for now until we fix some bugs
+  description: dynamic-description
+  rules:
+  - DynamicRule
+  - DummyNonAntag
+  - DynamicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
   id: Secret
   alias:
     - secret
@@ -114,30 +133,6 @@
   rules:
     - Secret
     - RailroadingMinor # 🌟Starlight🌟
-
-- type: gamePreset
-  id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
-  alias:
-    - secretextended
-  name: secret-title
-  showInVote: false #Admin Use
-  description: secret-description
-  rules:
-    - BasicStationEventScheduler
-    - MeteorSwarmScheduler
-    - SpaceTrafficControlEventScheduler
-    - BasicRoundstartVariation
-
-- type: gamePreset
-  id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
-  alias:
-  - secretgreenshift
-  name: secret-title
-  showInVote: false #Admin Use
-  description: secret-description
-  rules:
-  - SpaceTrafficControlFriendlyEventScheduler
-  - BasicRoundstartVariation
 
 - type: gamePreset
   id: Sandbox
@@ -169,19 +164,21 @@
   - BasicRoundstartVariation
   - RailroadingMinor # 🌟Starlight🌟
 
-- type: gamePreset
-  id: Deathmatch
-  alias:
-    - deathmatch
-    - dm
-  name: death-match-title
-  description: death-match-description
-  minPlayers: 4
-  maxPlayers: 15
-  showInVote: true
-  supportedMaps: DeathMatchMapPool
-  rules:
-    - DeathMatch31
+#Starlight start, disabled because maps are removed
+# - type: gamePreset
+#   id: Deathmatch
+#   alias:
+#     - deathmatch
+#     - dm
+#   name: death-match-title
+#   description: death-match-description
+#   minPlayers: 4
+#   maxPlayers: 15
+#   showInVote: true
+#   supportedMaps: DeathMatchMapPool
+#   rules:
+#     - DeathMatch31
+#Starlight end
 
 - type: gamePreset
   id: Nukeops
@@ -236,6 +233,22 @@
   - BasicRoundstartVariation
 
 - type: gamePreset
+  id: Xenoborgs
+  alias:
+    - xenoborgs
+  name: xenoborgs-title
+  description: xenoborgs-description
+  showInVote: false
+  rules:
+  - Xenoborgs
+  # - DummyNonAntagChance 🌟Starlight🌟
+  - SubGamemodesRuleNoWizardNoXenoborg # no two motherships
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
   id: Zombie
   alias:
   - zombie
@@ -280,7 +293,7 @@
   - vampires
   name: vampire-gamemode-title
   description: vampire-gamemode-description
-  showInVote: true # 🌟Starlight🌟
+  showInVote: false # 🌟Starlight🌟 - Leave disabled until they are reworked
   minPlayers: 50 # 🌟Starlight🌟
   rules:
   - Vampire
@@ -345,7 +358,7 @@
   showInVote: true
   minPlayers: 60
   rules:
-    - DerelictCyborgSpawn
+    - DerelictGenericCyborgSpawn
     - BasicStationEventScheduler
     - MeteorSwarmMildScheduler
     - SubGamemodesRule

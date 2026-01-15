@@ -35,12 +35,6 @@
     count: 8
 
 - type: localizedDataset
-  id: PlushiesTrystan
-  values:
-    prefix: plushie-trystan-
-    count: 6
-
-- type: localizedDataset
   id: PlushiesOp
   values:
     prefix: plushie-op-
@@ -149,7 +143,31 @@
     count: 10
 
 - type: localizedDataset
+  id: PlushiesNebula
+  values:
+    prefix: plushie-nebula-
+    count: 8
+
+- type: localizedDataset
   id: PlushiesKilla
   values:
     prefix: plushie-killa-
     count: 5
+
+- type: localizedDataset
+  id: PlushiesEina
+  values:
+    prefix: plushie-eina-
+    count: 6
+
+- type: localizedDataset
+  id: PlushiesEinalia
+  values:
+    prefix: plushie-einalia-
+    count: 6
+
+- type: localizedDataset
+  id: PlushiesLiz
+  values:
+    prefix: plushie-liz-
+    count: 6

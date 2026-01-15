@@ -1,7 +1,19 @@
-# ALPHABETIZE
+# PLEASE, KEEP THIS FILE ALPHABETIZED
+
+- type: Tag
+  id: AbductedTraitBackground
+
+- type: Tag
+  id: Abductor
+
+- type: Tag
+  id: AbductorScientist
 
 - type: Tag
   id: Arachnid
+
+- type: Tag
+  id: AutoMender
 
 - type: Tag
   id: Avali
@@ -19,10 +31,25 @@
   id: BladeSteel
 
 - type: Tag
+  id: BloodSplatter
+
+- type: Tag
   id: Bola
 
 - type: Tag
+  id: BoneGel
+
+- type: Tag
   id: BorgModulePurrfus
+
+- type: Tag
+  id: BorgModuleSecurity
+
+- type: Tag
+  id: BorgModuleSyndicateStealth
+
+- type: Tag
+  id: Bow
 
 - type: Tag
   id: CantInteract
@@ -46,16 +73,97 @@
   id: CentcommVibroblade
 
 - type: Tag
+  id: CheapInsulatedFabric
+
+- type: Tag
+  id: CivilianTraitBackground
+
+- type: Tag
+  id: ClarkeCentralControlModule
+
+- type: Tag
+  id: ClarkeHead
+
+- type: Tag
+  id: ClarkeLArm
+
+- type: Tag
+  id: ClarkePeripheralsControlModule
+
+- type: Tag
+  id: ClarkeRArm
+
+- type: Tag
+  id: ClarkeTreads
+
+- type: Tag
   id: ClownKudzu
 
 - type: Tag
+  id: CluwneBeastWearable
+
+- type: Tag
+  id: Compy
+
+- type: Tag
+  id: Condiment
+
+- type: Tag
+  id: CyberHandItem
+
+- type: Tag
+  id: DamagedShadekinCore
+
+- type: Tag
+  id: DeificEncounterTraitBackground
+
+- type: Tag
+  id: Dinnerware
+
+- type: Tag
   id: Diona
+
+- type: Tag
+  id: Disabler
+
+- type: Tag
+  id: DisposalPipe
 
 - type: Tag
   id: DockEscape
 
 - type: Tag
   id: DockGamma
+
+- type: Tag
+  id: DrinkCarton
+
+- type: Tag
+  id: DurandArmor
+
+- type: Tag
+  id: DurandCentralControlModule
+
+- type: Tag
+  id: DurandHead
+
+- type: Tag
+  id: DurandLArm
+
+- type: Tag
+  id: DurandLLeg
+
+- type: Tag
+  id: DurandPeripheralsControlModule
+
+- type: Tag
+  id: DurandRArm
+
+- type: Tag
+  id: DurandRLeg
+
+- type: Tag
+  id: DurandTargetingControlModule
 
 - type: Tag
   id: ElderArena
@@ -67,10 +175,58 @@
   id: Felionoid
 
 - type: Tag
+  id: FestiveDinner
+
+- type: Tag
+  id: fingerlessinsuls
+
+- type: Tag
+  id: FormerSoldierTraitBackground
+
+- type: Tag
+  id: GearAcidifier
+
+- type: Tag
+  id: GasTank
+
+- type: Tag
+  id: Ghost
+
+- type: Tag
+  id: GygaxArmor
+
+- type: Tag
+  id: GygaxCentralControlModule
+
+- type: Tag
+  id: GygaxHead
+
+- type: Tag
+  id: GygaxLArm
+
+- type: Tag
+  id: GygaxLLeg
+
+- type: Tag
+  id: GygaxPeripheralsControlModule
+
+- type: Tag
+  id: GygaxRArm
+
+- type: Tag
+  id: GygaxRLeg
+
+- type: Tag
+  id: GygaxTargetingControlModule
+
+- type: Tag
   id: HiltPlasteel
 
 - type: Tag
   id: HiltWood
+
+- type: Tag
+  id: ImprovisedAmmoBox
 
 - type: Tag
   id: ImprovisedCrowbar
@@ -88,10 +244,31 @@
   id: ImprovisedWrench
 
 - type: Tag
+  id: InsulatedFabric
+
+- type: Tag
+  id: InsulatedThread
+
+- type: Tag
+  id: L6Saw
+
+- type: Tag
   id: LightRifleHeavy
 
 - type: Tag
+  id: Lighters
+
+- type: Tag
+  id: Locker
+
+- type: Tag
   id: MagazineBattery
+
+- type: Tag
+  id: MagazineBoxLightRifle
+
+- type: Tag
+  id: MagazineLightRiflePan
 
 - type: Tag
   id: MagazineMagnumSubMachineGun
@@ -115,7 +292,16 @@
   id: MagazineSMGUzi
 
 - type: Tag
+  id: MagazineShotgunToz
+
+- type: Tag
+  id: MagicalEncounterTraitBackground
+
+- type: Tag
   id: MedCyberEyes
+
+- type: Tag
+  id: Meson
 
 - type: Tag
   id: MicroManipulatorStockPart
@@ -124,10 +310,19 @@
   id: ModularBarrel
 
 - type: Tag
+  id: Nexus
+
+- type: Tag
   id: OmniCyberEyes
 
 - type: Tag
   id: OvenMachineBoard
+
+- type: Tag
+  id: PaddyMech
+
+- type: Tag
+  id: ParaKnife
 
 - type: Tag
   id: Patch
@@ -136,25 +331,72 @@
   id: PatchPack
 
 - type: Tag
+  id: PersonnelStorage
+
+- type: Tag
+  id: PettyCriminalTraitBackground
+
+- type: Tag
+  id: PlasteelFilament
+
+- type: Tag
   id: PowerCellTiny
+
+- type: Tag
+  id: PrototypeJawsOfLife
 
 - type: Tag
   id: PrototypeVibroblade
 
 - type: Tag
+  id: RequiredForLmgTag
+
+- type: Tag
   id: Resomi
+
+- type: Tag
+  id: RomerolDisasterSurvivorTraitBackground
+  
+- type: Tag
+  id: ReflectiveArmorHelmet
+    # Tag for reflective helmet, used for set bonus detection by ReflectiveSetBonusSystem
+
+- type: Tag
+  id: ReflectiveArmorVest
+    # Tag for reflective vest, used for set bonus detection by ReflectiveSetBonusSystem
+
+- type: Tag
+  id: Sausage # MetamorphRecipe: FoodSausageBun
+
+- type: Tag
+  id: ScanGateMachineBoard
 
 - type: Tag
   id: SecCyberEyes
 
 - type: Tag
+  id: SecuredLocker
+
+- type: Tag
+  id: ShadekinCore
+
+- type: Tag
+  id: ShadekinEyes
+
+- type: Tag
   id: ShellShotgunImprovised
+
+- type: Tag
+  id: ShellShotgunToz
 
 - type: Tag
   id: ShipWreck
 
 - type: Tag
   id: ShowWires
+
+- type: Tag
+  id: Skating
 
 - type: Tag
   id: SovietDungeon
@@ -178,43 +420,37 @@
   id: SwordForged
 
 - type: Tag
-  id: SyndieDungeon
+  id: SyndicateJawsOfLife
 
 - type: Tag
-  id: Compy
+  id: SyndieDungeon
 
 - type: Tag
   id: Table
 
 - type: Tag
-  id: SecuredLocker
+  id: TheDark
 
 - type: Tag
-  id: Locker
+  id: ThermiteIgnitor
 
 - type: Tag
-  id: CivilianTraitBackground
+  id: TiderAnvilMats
 
 - type: Tag
-  id: FormerSoldierTraitBackground
+  id: TiderAnvilParts
 
 - type: Tag
-  id: RomerolDisasterSurvivorTraitBackground
+  id: UnDissolvable
 
+- type: Tag
+  id: Vial
+
+- type: Tag
+  id: WallmountMassScannerElectronics
+
+- type: Tag
+  id: XenomoproachWearable # Allows xenomoproach to wear it, really only used for headsets. No system in place to use differing displacements for something with a given prefix/suffix, so this is needed for now.
+  
 - type: Tag
   id: XenosDisasterSurvivorTraitBackground
-
-- type: Tag
-  id: DeificEncounterTraitBackground
-
-- type: Tag
-  id: MagicalEncounterTraitBackground
-
-- type: Tag
-  id: AbductedTraitBackground
-
-- type: Tag
-  id: PettyCriminalTraitBackground
-
-- type: Tag
-  id: ScanGateMachineBoard

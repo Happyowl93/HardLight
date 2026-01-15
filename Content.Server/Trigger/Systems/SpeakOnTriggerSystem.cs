@@ -1,9 +1,9 @@
 using Content.Server.Chat.Systems;
+using Content.Shared.Chat;
 using Content.Shared.Trigger;
 using Content.Shared.Trigger.Components.Effects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Content.Shared.Chat; // Starlight
 
 namespace Content.Server.Trigger.Systems;
 
@@ -35,7 +35,7 @@ public sealed class SpeakOnTriggerSystem : EntitySystem
             message = Loc.GetString(ent.Comp.Text);
         else
         {
-            if (!_prototypeManager.TryIndex(ent.Comp.Pack, out var messagePack))
+            if (!_prototypeManager.Resolve(ent.Comp.Pack, out var messagePack))
                 return;
             message = Loc.GetString(_random.Pick(messagePack.Values));
         }

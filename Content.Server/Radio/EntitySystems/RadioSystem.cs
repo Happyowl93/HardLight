@@ -1,23 +1,30 @@
 using System.Linq;
+using Content.Server._Starlight.Language;
+using Content.Server._Starlight.Radio.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.Power.Components;
-using Content.Shared.Radio.Components;
 using Content.Server.Starlight.TTS;
 using Content.Server.VoiceMask;
+using Content.Shared;
+using Content.Shared._Starlight.Language;
+using Content.Shared._Starlight.Language.Systems;
+using Content.Shared._Starlight.Silicons.Borgs;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
-using Content.Shared.Inventory;
 using Content.Shared.Chat;
+using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Database;
+using Content.Shared.Inventory;
 using Content.Shared.PDA;
 using Content.Shared.Radio;
-using Content.Shared.Radio.Components;
-using Content.Shared.Roles;
 using Content.Shared.Speech;
-using Content.Shared.StatusIcon;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Silicons.StationAi;
+using Content.Shared.Radio.Components;
+using Content.Shared.Roles;
+using Content.Shared.Starlight.TextToSpeech;
+using Content.Shared.StatusIcon;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
@@ -27,16 +34,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
-using Content.Shared.Clothing.EntitySystems;
-using Content.Shared;
-using Content.Server.Radio.Components;
-using Content.Server._Starlight.Radio.Systems;
-// Starlight - Start
-using Content.Shared._Starlight.Language;
-using Content.Shared._Starlight.Language.Systems;
-using Content.Server._Starlight.Language;
-using Content.Shared._Starlight.Silicons.Borgs;
-// Starlight - End
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -64,7 +61,9 @@ public sealed class RadioSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<IntrinsicRadioReceiverComponent, RadioReceiveEvent>(OnIntrinsicReceive);
+        SubscribeLocalEvent<IntrinsicRadioReceiverComponent, EncryptionChannelsChangedEvent>(OnReceiverEncryptionChannelsChanged); // 🌟Starlight🌟
         SubscribeLocalEvent<IntrinsicRadioTransmitterComponent, EntitySpokeEvent>(OnIntrinsicSpeak);
+        SubscribeLocalEvent<IntrinsicRadioTransmitterComponent, EncryptionChannelsChangedEvent>(OnTransmitterEncryptionChannelsChanged); // 🌟Starlight🌟
 
         _exemptQuery = GetEntityQuery<TelecomExemptComponent>();
     }
@@ -88,6 +87,8 @@ public sealed class RadioSystem : EntitySystem
 
             if (listener != null && !_language.CanUnderstand(listener, args.Language.ID))
                 msg = args.LanguageObfuscatedChatMsg;
+            else if(args.MessageSource != uid)
+                args.Receivers.Add(uid);
 
             _netMan.ServerSendMessage(new MsgChatMessage { Message = msg }, actor.PlayerSession.Channel);
             // Starlight - End
@@ -146,7 +147,7 @@ public sealed class RadioSystem : EntitySystem
         name = FormattedMessage.EscapeText(name);
 
         SpeechVerbPrototype speech;
-        if (evt.SpeechVerb != null && _prototype.TryIndex(evt.SpeechVerb, out var evntProto))
+        if (evt.SpeechVerb != null && _prototype.Resolve(evt.SpeechVerb, out var evntProto))
             speech = evntProto;
         else
             speech = _chat.GetSpeechVerb(messageSource, message);
@@ -255,10 +256,10 @@ public sealed class RadioSystem : EntitySystem
             }
         }
 
-        if (HasComp<BorgChassisComponent>(messageSource) || HasComp<BorgBrainComponent>(messageSource))
+        if (TryComp<BorgChassisComponent>(messageSource, out var chassis) || HasComp<BorgBrainComponent>(messageSource)) // Starlight edit
         {
-            iconId = "JobIconBorg";
-            jobName = Loc.GetString("job-name-borg");
+            iconId = chassis?.JobIconOverride ?? "JobIconBorg"; // Starlight edit
+            jobName = Loc.GetString(chassis?.LocalizedJobTitle ?? "job-name-borg"); // Starlight edit
         }
 
         if (HasComp<StationAiHeldComponent>(messageSource) || (TryComp<StationAIShuntComponent>(messageSource, out var aiShunt) && aiShunt.Return.HasValue))
@@ -324,4 +325,13 @@ public sealed class RadioSystem : EntitySystem
         }
         return false;
     }
+
+    #region Starlight
+    private void OnTransmitterEncryptionChannelsChanged(Entity<IntrinsicRadioTransmitterComponent> ent, ref EncryptionChannelsChangedEvent args) => ent.Comp.Channels = [.. args.Component.Channels.Select(p => new ProtoId<RadioChannelPrototype>(p))];
+    private void OnReceiverEncryptionChannelsChanged(Entity<IntrinsicRadioReceiverComponent> ent, ref EncryptionChannelsChangedEvent args)
+    {
+        if(TryComp(ent.Owner, out ActiveRadioComponent? radio))
+            radio.Channels = [.. args.Component.Channels.Select(p => new ProtoId<RadioChannelPrototype>(p))]; 
+    }
+    #endregion Starlight
 }

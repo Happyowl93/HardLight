@@ -32,6 +32,12 @@
     uiWindowPos: 1,1
     strippingWindowPos: 0,1
     displayName: Neck
+  - name: misc # Starlight start
+    slotTexture: neck
+    slotFlags: MISC
+    uiWindowPos: 2,0
+    strippingWindowPos: 2,1
+    displayName: Misc # Starlight end
   - name: jumpsuit
     slotTexture: uniform
     slotFlags: INNERCLOTHING
@@ -59,6 +65,18 @@
     dependsOnComponents:
     - type: AllowSuitStorage
     displayName: Suit Storage
+  - name: back
+    slotTexture: back
+    fullTextureName: template_small
+    slotFlags: BACK
+    slotGroup: SecondHotbar
+    stripTime: 6
+    uiWindowPos: 3,2
+    strippingWindowPos: 0,5
+    displayName: Back
+    whitelist:
+      tags:
+      - ScurretWearable
   - name: outerClothing
     slotTexture: suit
     slotFlags: OUTERCLOTHING

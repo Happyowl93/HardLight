@@ -8,6 +8,7 @@ construction-graph-tag-clown-bike-horn = bike horn
 construction-graph-tag-clowne-horn = broken bike horn
 construction-graph-tag-happy-honk-meal = happy honk meal
 construction-graph-tag-woeful-cluwne-meal = woeful cluwne meal
+construction-graph-tag-boxhug = a box of hugs
 
 # mime
 construction-graph-tag-suspenders = suspenders
@@ -100,6 +101,7 @@ construction-graph-tag-ripley-central-control-module = ripley central control mo
 construction-graph-tag-ripley-peripherals-control-module = ripley peripherals control module
 
 #SL Start
+
 construction-graph-tag-exosuit-air-tank = exosuit air tank
 construction-graph-tag-exosuit-thruster = exosuit thruster
 
@@ -122,14 +124,13 @@ construction-graph-tag-clarke-peripherals-control = clarke peripherals control m
 construction-graph-tag-ripley-central-control = ripley central control module
 construction-graph-tag-ripley-peripherals-control = ripley peripherals control module
 
-
-
 #SL End
 
 # structures
 construction-graph-tag-door-electronics-circuit-board = door electronics circuit board
 construction-graph-tag-firelock-electronics-circuit-board = firelock electronics circuit board
 construction-graph-tag-conveyor-belt-assembly = conveyor belt assembly
+construction-graph-tag-station-ai-core-electronics = station AI core electronics
 
 # tools
 construction-graph-tag-multitool = a multitool
@@ -152,6 +153,7 @@ construction-graph-tag-wallmount-substation-circuit-board = wallmount substation
 construction-graph-tag-surveillance-camera-monitor-board = surveillance camera monitor board
 construction-graph-tag-television-board = television board
 construction-graph-tag-freezer-electronics = freezer electronics
+construction-graph-tag-turret-control-electronics = sentry turret control panel electronics
 
 # crystals
 construction-graph-tag-cyan-crystal-shard = cyan crystal shard

@@ -16,10 +16,17 @@ public sealed class RandomSentienceRule : StationEventSystem<RandomSentienceRule
 
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+
     protected override void Started(EntityUid uid, RandomSentienceRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
-        if (!TryGetRandomStation(out var station))
-            return;
+        //Starlight begin | Prefer target station if there is one, if SOMEHOW that odesn't exist, fallback to existing trygetrandomstation call
+        EntityUid? station = null;
+        if (!TryComp<StationEventComponent>(uid, out var stationEvent)) return;
+        station = stationEvent.TargetStation;
+        if (station is null)
+            if (!TryGetRandomStation(out station))
+                return;
+        //Starlight end
 
         var targetList = new List<Entity<SentienceTargetComponent>>();
         var query = EntityQueryEnumerator<SentienceTargetComponent, TransformComponent>();

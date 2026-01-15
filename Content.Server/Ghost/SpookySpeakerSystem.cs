@@ -1,10 +1,10 @@
 using Content.Server.Chat.Systems;
 using Content.Server.Ghost.Components;
+using Content.Shared.Chat;
 using Content.Shared.Random.Helpers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Shared.Chat; // Starlight
 
 namespace Content.Server.Ghost;
 
@@ -33,7 +33,7 @@ public sealed class SpookySpeakerSystem : EntitySystem
         if (curTime < entity.Comp.NextSpeakTime)
             return;
 
-        if (!_proto.TryIndex(entity.Comp.MessageSet, out var messages))
+        if (!_proto.Resolve(entity.Comp.MessageSet, out var messages))
             return;
 
         // Grab a random localized message from the set
