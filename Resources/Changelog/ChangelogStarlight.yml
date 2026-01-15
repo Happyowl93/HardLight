@@ -26452,5 +26452,12 @@ Entries:
   id: 247400
   time: '2026-01-15T21:13:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2474
+- author: R3v3l4t1on
+  changes:
+  - message: CentComm AI core. With CC comms/access.
+    type: Add
+  id: 261100
+  time: '2026-01-15T21:16:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2611
 Order: -1
 
