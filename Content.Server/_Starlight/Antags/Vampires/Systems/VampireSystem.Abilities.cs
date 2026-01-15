@@ -568,13 +568,14 @@ public sealed partial class VampireSystem : EntitySystem
         FixedPoint2 MaxRemove = FixedPoint2.New(10);
 
         if (!TryComp<BloodstreamComponent>(uid, out var blood)
-            || blood.ChemicalSolution is not { } solEnt
-            || !TryComp(solEnt, out SolutionComponent? solution))
+            || !_solution.ResolveSolution(uid, blood.BloodSolutionName, ref blood.BloodSolution, out var bloodstreamSolution))
             return;
+
+        var solEnt = blood.BloodSolution.Value;
 
         var toRemove = FixedPoint2.Zero;
 
-        foreach (var quant in solution.Solution.Contents.ToArray())
+        foreach (var quant in bloodstreamSolution.Contents.ToArray())
         {
             if (toRemove >= MaxRemove)
                 break;
