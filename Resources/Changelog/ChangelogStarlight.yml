@@ -26535,5 +26535,12 @@ Entries:
   id: 283500
   time: '2026-01-15T23:08:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2835
+- author: mikeysaurus
+  changes:
+  - message: Science research unlocks only play TTS in the science radio channel.
+    type: Tweak
+  id: 267900
+  time: '2026-01-15T23:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2679
 Order: -1
 
