@@ -304,7 +304,7 @@
   cost: 15000
   recipeUnlocks:
   - GrenadeEMP
-  - GrenadeFrag # starlight
+#  - GrenadeFrag starlight
   - PowerCageHigh
   - ShuttleGunDusterCircuitboard
   technologyPrerequisites:

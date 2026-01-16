@@ -163,7 +163,7 @@
   - GrenadeBlast
   - GrenadeEMP
   - GrenadeFlash
-  - GrenadeFrag
+#  - GrenadeFrag
   - MagazineGrenadeEmpty
 
 # Shared between secfab and emagged protolathe
