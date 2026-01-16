@@ -26592,5 +26592,12 @@ Entries:
   id: 284100
   time: '2026-01-16T18:19:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2841
+- author: Scarlet/hydetime
+  changes:
+  - message: Added a new ''Damaged Throat'' Trait
+    type: Add
+  id: 246500
+  time: '2026-01-16T18:50:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2465
 Order: -1
 
