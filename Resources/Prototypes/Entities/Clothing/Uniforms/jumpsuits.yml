@@ -142,7 +142,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitChaplain
-  name: chaplain jumpsuit
+  name: chaplain jumpsuit # Starlight: chaplain's -> chaplain
   description: It's a black jumpsuit, often worn by religious folk.
   components:
     - type: Sprite
