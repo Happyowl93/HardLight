@@ -20,6 +20,7 @@ job-description-paramedic = Rescue critically injured patients all over the stat
 job-description-detective = Investigate crime scenes using forensic tools, ensure that the guilty party is found, and have a couple smokes.
 job-description-doctor = Diagnose and heal crewmembers through medicinal chemicals, advanced medicine, and defibrillators. Make sure the dead don't rot, and that cadavers are in the morgue.
 job-description-engineer = Keep the station's main engine & solars active, optimize the power network, and make emergency repairs using your hardsuit in spaced areas.
+# Starlight: revised:
 job-description-ertchaplain = See to the crew's last rites.
 job-description-ertengineer = Ensure that the station has power and clean air.
 job-description-ertjanitor = Ensure that the station is properly cleaned--for morale.
