@@ -179,7 +179,7 @@
 - type: entity
   parent: [ IDCardStandard, BaseCargoContraband ]
   id: MailTechIDCard
-  name: mailtech ID card
+  name: mail techician ID card
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Misc/id_cards.rsi
@@ -196,6 +196,25 @@
       state: MailTech
   - type: PresetIdCard
     job: MailTech
+
+- type: entity
+  parent: [ IDCardStandard, BaseSecurityContraband ]
+  id: DutyOfficerIDCard
+  name: duty officer ID card
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Misc/id_cards.rsi
+    layers:
+    - state: default
+    - state: stripe_top
+      color: *color-security-top
+    - state: stripe_bottom
+      color: *color-security-bottom
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: DutyOfficer
+  - type: PresetIdCard
+    job: DutyOfficer
 
 - type: entity
   parent: IDCardStandard

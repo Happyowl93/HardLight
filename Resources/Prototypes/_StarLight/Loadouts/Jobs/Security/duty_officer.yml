@@ -1,0 +1,131 @@
+- type: loadoutEffectGroup
+  id: SeniorDutyOfficer
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:RoleTimeRequirement
+        role: JobWarden
+        time: 21600 #6 hrs
+# Head
+- type: loadout
+  id: DutyOfficerHead
+  equipment:
+    head: ClothingHeadHatDutyOfficer
+
+- type: loadout
+  id: DutyOfficerHelmetRiot
+  equipment:
+    head: ClothingHeadHelmetRiot
+
+- type: loadout
+  id: DutyOfficerHelmetStabproof
+  equipment:
+    head: ClothingHeadHelmetStabproof
+
+- type: loadout
+  id: DutyOfficerHat
+  equipment:
+    head: ClothingHeadHatSecsoft
+
+- type: loadout
+  id: DutyOfficerBeret
+  equipment:
+    head: ClothingHeadHatBeretSecurity
+
+
+# Jumpsuit
+- type: loadout
+  id: DutyOfficerJumpsuitGrey
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSecGrey
+
+- type: loadout
+  id: DutyOfficerJumpskirtGrey
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSecGrey
+
+# Back
+- type: loadout
+  id: DutyOfficerBackpack
+  equipment:
+    back: ClothingBackpackSecurity
+
+- type: loadout
+  id: DutyOfficerSatchel
+  equipment:
+    back: ClothingBackpackSatchelSecurity
+
+- type: loadout
+  id: DutyOfficerDuffel
+  equipment:
+    back: ClothingBackpackDuffelSecurity
+
+# Belt
+- type: loadout
+  id: DutyOfficerBelt
+  equipment:
+    belt: ClothingBeltDutyOfficerFilled
+
+- type: loadout
+  id: DutyOfficerWebbing
+  equipment:
+    belt: ClothingBeltDutyOfficerWebbingFilled
+
+# Outerclothing
+- type: loadout
+  id: BrigArmorVest
+  equipment:
+    outerClothing: ClothingOuterArmorBasic
+
+- type: loadout
+  id: brigArmorVestSlim
+  equipment:
+    outerClothing: ClothingOuterArmorBasicSlim
+
+- type: loadout
+  id: brigArmorVestStab
+  equipment:
+    outerClothing: ClothingOuterArmorStab
+
+- type: loadout
+  id: ArmourRiot
+  effects:
+    - !type:GroupLoadoutEffect
+      proto: SeniorDutyOfficer
+  equipment:
+    outerClothing: ClothingOuterArmorRiot
+
+
+- type: loadout
+  id: DutyOfficerWintercoat
+  equipment:
+    outerClothing: ClothingOuterWinterSec
+
+# Shoes
+- type: loadout
+  id: brigCombatBoots
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+
+- type: loadout
+  id: brigJackBoots
+  equipment:
+    shoes: ClothingShoesBootsJackFilled
+
+
+# PDA
+- type: loadout
+  id: DutyOfficerPDA
+  equipment:
+    id: DutyOfficerPDA
+
+
+- type: loadout
+  id: DutyOfficerGlasses
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+
+- type: loadout
+  id: DutyOfficerHud
+  equipment:
+    eyes: ClothingEyesHudSecurity
