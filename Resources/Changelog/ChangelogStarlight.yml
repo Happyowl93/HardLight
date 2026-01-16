@@ -26566,5 +26566,12 @@ Entries:
   id: 283900
   time: '2026-01-16T09:00:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2839
+- author: Rinary
+  changes:
+  - message: Fixed pump shotguns.
+    type: Fix
+  id: 283200
+  time: '2026-01-16T16:13:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2832
 Order: -1
 
