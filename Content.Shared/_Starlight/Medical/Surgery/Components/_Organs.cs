@@ -46,6 +46,9 @@ public sealed partial class OrganVisualizationComponent : Component
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class FunctionalOrganComponent : Component
 {
+    [DataField]
+    public bool IsCybernetic = true;
+    
     [DataField("comps")]
     public ComponentRegistry? Components;
 }

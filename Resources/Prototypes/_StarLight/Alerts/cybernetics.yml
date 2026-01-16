@@ -1,0 +1,7 @@
+- type: alert
+  id: CyberneticDisruption
+  icons:
+  - sprite: /Textures/_Starlight/Effects/cloud_emotes.rsi #Should probably draw a proper icon
+    state: emote_weh
+  name: alerts-cybernetic-disruption-name
+  description: alerts-cybernetic-disruption-desc

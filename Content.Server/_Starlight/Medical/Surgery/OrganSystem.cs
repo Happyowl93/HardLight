@@ -12,6 +12,8 @@ using Content.Shared.Humanoid;
 using Content.Shared.Radio.Components;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Starlight.Antags.Abductor;
+using Content.Shared.Starlight.Cybernetics;
+using Content.Shared.Starlight.Cybernetics.Components;
 using Content.Shared.Starlight.Medical.Surgery.Events;
 using Content.Shared.Starlight.Medical.Surgery.Steps.Parts;
 using Content.Shared.Tag;
@@ -53,6 +55,8 @@ public sealed partial class OrganSystem : EntitySystem
 
         SubscribeLocalEvent<OrganVisualizationComponent, SurgeryOrganImplantationCompleted>(OnVisualizationImplanted);
         SubscribeLocalEvent<OrganVisualizationComponent, SurgeryOrganExtracted>(OnVisualizationExtracted);
+
+        SubscribeLocalEvent<FunctionalOrganComponent, CyberneticDisruptionEvent>(OnCyberneticsDisrupted);
     }
 
     //
@@ -210,5 +214,17 @@ public sealed partial class OrganSystem : EntitySystem
         _humanoidAppearanceSystem.SetBaseLayerId(args.Body, ent.Comp.Layer, 
         TryComp(args.Body, out HumanoidAppearanceComponent? humanoid) && ent.Comp.Prototypes.TryGetValue(humanoid.Species, out var layer)? layer :
         ent.Comp.Prototypes.TryGetValue("Default", out var defaultLayer)? defaultLayer : null);
+    }
+
+    private void OnCyberneticsDisrupted(Entity<FunctionalOrganComponent> ent, ref CyberneticDisruptionEvent args)
+    {
+        if(!ent.Comp.IsCybernetic)
+            return;
+
+        if (TryComp(args.Target, out CyberneticDisruptionComponent? _))
+        {
+            // Nothing happens here yet
+            return;
+        }
     }
 }
