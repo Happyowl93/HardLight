@@ -1211,7 +1211,7 @@
 - type: entity
   parent: ERTLeaderPDA
   id: ERTJanitorPDA
-  name: ERT janitor PDA
+  name: ERT janitor PDA # Starlight: capitalization
   suffix: Janitor
   description: Red for firepower. It's squeaky clean. # Starlight
   components:
@@ -1221,7 +1221,7 @@
 - type: entity
   parent: ERTLeaderPDA
   id: ERTMedicPDA
-  name: ERT medic PDA
+  name: ERT medic PDA # Starlight: capitalization
   suffix: Medic
   description: Red for firepower. It's shiny and sterile. # Starlight
   components:
@@ -1231,7 +1231,7 @@
 - type: entity
   parent: ERTLeaderPDA
   id: ERTSecurityPDA
-  name: ERT security PDA
+  name: ERT security PDA # Starlight: capitalization
   suffix: Security
   description: Red for firepower. It has tally marks etched on the side. # Starlight
   components:
