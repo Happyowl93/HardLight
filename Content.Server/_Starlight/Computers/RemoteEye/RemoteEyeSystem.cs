@@ -41,7 +41,7 @@ public sealed partial class RemoteEyeSystem : SharedRemoteEyeSystem
         SubscribeLocalEvent<RemoteEyeActorComponent, PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<RemoteEyeActorComponent, GetVisMaskEvent>(OnGetVisMask);
         SubscribeLocalEvent<ExitConsoleEvent>(OnExit);
-        
+    
         Subs.BuiEvents<RemoteEyeConsoleComponent>(RemoteEyeUIKey.Key, subs => subs.Event<BeaconChosenBuiMsg>(OnBeaconChosenBuiMsg));
         SubscribeLocalEvent<RemoteEyeConsoleComponent, ActivateInWorldEvent>(OnActivateInWorld);
         base.Initialize();
