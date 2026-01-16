@@ -37,7 +37,7 @@
 
 - type: entity
   name: Xenobiology Console Camera Tagger
-  id: XenobiologyConosleCameraTagger
+  id: XenobiologyConsoleCameraTagger
   parent: BaseItem
   description: Can tag any camera to register it to the xenobiology network. Spy on slimes further away, or even your neighbors!
   components:
