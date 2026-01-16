@@ -40,16 +40,3 @@
           children:
           - id: EncryptionKeySalvage
             amount: 4
-
-# Syndicate Encryption Keys
-- type: entity
-  name: syndicate operative encryption key box
-  parent: [BoxEncryptionKeyAssistant, BaseSyndicateContraband]
-  id: BoxEncryptionKeySyndicateOperative
-  components:
-    - type: EntityTableContainerFill
-      containers:
-        storagebase: !type:AllSelector
-          children:
-            id: EncryptionKeySyndicateOperative
-            amount: 4
