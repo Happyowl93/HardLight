@@ -29,6 +29,9 @@
             "name": "mats-module"
         },
         {
+            "name": "loading-module"
+        },
+        {
             "name": "hands",
             "directions": 1
         }

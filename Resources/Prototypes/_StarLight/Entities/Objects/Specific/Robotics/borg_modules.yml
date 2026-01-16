@@ -616,7 +616,6 @@
     - state: icon-mats
   - type: ItemBorgModule
     hands:
-    - item: BorgClamp
     - item: BorgHold
     - item: BorgHold
     - hand: #For loading lathes and making crates
@@ -688,4 +687,4 @@
     - item: BorgClamp
     - item: BorgClamp
   - type: BorgModuleIcon
-    icon: { sprite: _Starlight/Interface/Actions/actions_borg.rsi, state: mats-module }
+    icon: { sprite: _Starlight/Interface/Actions/actions_borg.rsi, state: loading-module }
