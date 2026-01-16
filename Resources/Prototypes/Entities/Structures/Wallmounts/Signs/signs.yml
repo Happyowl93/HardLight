@@ -451,7 +451,7 @@
 - type: entity
   parent: BaseSign
   id: SignChapel
-  name: shrine sign
+  name: shrine sign # Starlight: Chapel -> Shrine
   description: A sign indicating the Shrine. # Starlight: Chapel -> Shrine
   components:
   - type: Sprite
