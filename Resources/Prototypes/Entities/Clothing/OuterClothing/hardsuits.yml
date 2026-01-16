@@ -1038,7 +1038,7 @@
   parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndie ]
   id: ClothingOuterHardsuitERTChaplain
   name: ERT chaplain hardsuit
-  description: A protective hardsuit worn by the Chaplains of an Emergency Response Team.
+  description: A protective hardsuit worn by the Chaplains of an Emergency Response Team. # Starlight: Capitalization
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi #if you change this, please update the humanoid.yml with a better markers sprite.
