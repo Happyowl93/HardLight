@@ -73,22 +73,28 @@
             "name": "janitor_open"
         },
         {
-            "name": "magi"
+            "name": "magi",
+			"copyright": "wonderfulnewworld"
         },
         {
-            "name": "magi_door"
+            "name": "magi_door",
+			"copyright": "wonderfulnewworld"
         },
         {
-            "name": "magi_open"
+            "name": "magi_open",
+			"copyright": "wonderfulnewworld"
         },
         {
-            "name": "iaa"
+            "name": "iaa",
+			"copyright": "wonderfulnewworld"
         },
         {
-            "name": "iaa_door"
+            "name": "iaa_door",
+			"copyright": "wonderfulnewworld"
         },
         {
-            "name": "iaa_open"
+            "name": "iaa_open",
+			"copyright": "wonderfulnewworld"
         }
     ]
 }
