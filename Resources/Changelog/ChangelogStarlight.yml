@@ -26518,5 +26518,44 @@ Entries:
   id: 266400
   time: '2026-01-15T21:59:11.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2664
+- author: CawsForConcern
+  changes:
+  - message: Added Xenoborgs to Beta's Secret rotation (secret enjoyers rejoice)
+    type: Add
+  - message: Tweaked Beta's Secret gamemode values to be round numbers, some gamemode
+      odds tweaked
+    type: Tweak
+  id: 282900
+  time: '2026-01-15T23:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2829
+- author: Happyrobot33
+  changes:
+  - message: Revert role timer changes for now pending additional changes
+    type: Tweak
+  id: 283500
+  time: '2026-01-15T23:08:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2835
+- author: mikeysaurus
+  changes:
+  - message: Science research unlocks only play TTS in the science radio channel.
+    type: Tweak
+  id: 267900
+  time: '2026-01-15T23:01:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2679
+- author: Happyrobot33
+  changes:
+  - message: Revert CC core due to test failures, to be re added later after its fixed
+    type: Remove
+  id: 283600
+  time: '2026-01-16T00:03:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2836
+- author: Coolsurf6
+  changes:
+  - message: Warden SoP now includes the Energy Shotgun and Due Process in standard
+      equipment
+    type: Tweak
+  id: 273900
+  time: '2026-01-16T01:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2739
 Order: -1
 
