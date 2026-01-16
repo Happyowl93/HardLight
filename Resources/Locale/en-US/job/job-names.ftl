@@ -99,6 +99,7 @@ JobLawyer = Lawyer
 JobLibrarian = Librarian
 # Starlight: Capitalization
 JobMedicalDoctor = Medical Doctor
+# Starlight: Capitalization
 JobMedicalIntern = Medical Intern
 JobMime = Mime
 JobMusician = Musician
