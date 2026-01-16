@@ -10,3 +10,9 @@ action-speech-spell-babel = Ya' Ni Lau' Re el
 
 tower-of-babel-shifted = Your tongue becomes twisted
 tower-of-babel-returned = Your tongue settles back into place
+
+spellbook-event-mana-blade-name = Spectral Blade
+spellbook-event-mana-blade-description = Channel your power into your hand and create a sword out of hardened mana.
+
+spellbook-icestorm-name = Ice Storm
+spellbook-icestorm-desc = Unleash a freezing blast of ice that chills everything it touches to the bone!

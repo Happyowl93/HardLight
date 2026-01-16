@@ -1,7 +1,25 @@
 - type: entity
+  id: BaseColdBird
+  abstract: true
+  components:
+    - type: Temperature
+      heatDamageThreshold: 310
+      coldDamageThreshold: 223
+      currentTemperature: 261
+      specificHeat: 48
+    - type: ThermalRegulator
+      metabolismHeat: 400 # icebirb go brrr
+      radiatedHeat: 100
+      implicitHeatRegulation: 1500
+      sweatHeatRegulation: 2000
+      shiveringHeatRegulation: 2000
+      normalBodyTemperature: 261
+      thermalRegulationTemperatureThreshold: 1
+
+- type: entity
   save: false
   name: Urist McAvali
-  parent: [ BaseMobSpeciesOrganic, BaseSpeciesPickupable ]
+  parent: [ BaseColdBird, BaseMobSpeciesOrganic, BaseSpeciesPickupable ]
   id: BaseMobAvali
   abstract: true
   components:
@@ -22,6 +40,9 @@
     - type: Absorbable
     - type: HumanoidAppearance
       species: Avali
+      hideLayersOnEquip:
+      - Tail
+      - HeadTop
     - type: Hunger # on 2x more
       thresholds:
         Overfed: 250
@@ -70,6 +91,11 @@
             32:
               sprite: _Starlight/Mobs/Species/Avali/displacement.rsi
               state: back
+        gloves:
+          sizeMaps:
+            32:
+              sprite: _Starlight/Mobs/Species/Avali/displacement.rsi
+              state: gloves
     - type: Butcherable
       butcheringType: Spike
       spawned:
@@ -119,7 +145,10 @@
           sprite: Mobs/Effects/brute_damage.rsi
           color: "#6C3BAA"
     - type: Bloodstream
-      bloodReagent: AvaliBlood
+      bloodReferenceSolution:
+        reagents:
+        - ReagentId: AvaliBlood
+          Quantity: 300
     - type: MeleeWeapon
       soundHit:
         path: /Audio/Weapons/pierce.ogg
@@ -128,22 +157,19 @@
       damage:
         types:
           Slash: 6.25
-    - type: Temperature
-      heatDamageThreshold: 310
-      coldDamageThreshold: 223
-      currentTemperature: 261
-      specificHeat: 48
-    - type: ThermalRegulator
-      metabolismHeat: 400 # icebirb go brrr
-      radiatedHeat: 100
-      implicitHeatRegulation: 1500
-      sweatHeatRegulation: 2000
-      shiveringHeatRegulation: 2000
-      normalBodyTemperature: 261
-      thermalRegulationTemperatureThreshold: 1
     - type: Stasis
       enterStasisAction: ActionStasisEnter
       exitStasisAction: ActionStasisExit
+      updateInterval: 1s
+      healingPerUpdate:
+        types:
+          Heat: 2
+          Cold: 2
+        groups:
+          Brute: 6
+      bleedHealPerUpdate: 1.0
+      critHealingModifier: 2.0
+      stasisDamageReduction: 0.5
 
 # Chirp!
 
@@ -190,5 +216,10 @@
             32:
               sprite: _Starlight/Mobs/Species/Avali/displacement.rsi
               state: back
+        gloves:
+          sizeMaps:
+            32:
+              sprite: _Starlight/Mobs/Species/Avali/displacement.rsi
+              state: gloves
 
 # Chirp!

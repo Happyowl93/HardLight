@@ -110,7 +110,6 @@
   - MagazineShotgun
   - MagazineShotgunEmpty
   - MagazineShotgunSlug
-
   - SpeedLoaderMagnumBasic
   - SpeedLoaderShotgunEmpty
   - SpeedLoaderShotgunSlug
@@ -157,6 +156,8 @@
   - ScienceExplosives # sec gets everything for modular grenade making that sci does
   id: StarlightSecurityExplosives
   recipes:
+  - CableDetStack1
+  - EmptyDetonator
   - ExplosivePayload
   - GrenadeBaton
   - GrenadeBlast
@@ -262,7 +263,22 @@
   - WeaponMechCombatShotgun
   - WeaponMechCombatShotgunIncendiary
   - WeaponMechCombatUltraRifle
+  - WeaponMechCombatXray
+  - WeaponMechChainSword
+  - WeaponMechCombatIon
+  - WeaponMechCombatAMLG90
+  - WeaponMechCombatDisabler
+  - WeaponMechCombatFlashbangLauncher
+  - WeaponMechCombatTaser
+  - WeaponMechCombatImmolationGun
+  - WeaponMechCombatSolarisLaser
+  - WeaponMechCombatFiredartLaser
 
+- type: latheRecipePack
+  id: StarlightSecurityMechsSystems
+  recipes:
+  - MechEquipmentSecGrabber
+  
 - type: latheRecipePack
   id: StarlightSecurityMechs
   recipes:
@@ -293,3 +309,12 @@
   recipes:
   - LeftArmCyberBulwark
   - RightArmCyberBulwark
+  - LeftArmCyberZeus
+  - RightArmCyberZeus
+
+- type: latheRecipePack
+  id: SecurityImplants
+  recipes:
+  - HandImplantClaws
+  - HandImplantForensics
+

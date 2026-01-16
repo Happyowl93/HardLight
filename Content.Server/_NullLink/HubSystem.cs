@@ -1,6 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Linq;
 using System.Threading.Tasks;
+using Content.Server.Maps;
 using Content.Server._NullLink.Core;
 using Content.Server._NullLink.Helpers;
 using Content.Shared._NullLink;
@@ -13,6 +14,7 @@ using Robust.Shared.Timing;
 using Starlight.NullLink;
 using NLServer = Starlight.NullLink.Server;
 using NLServerInfo = Starlight.NullLink.ServerInfo;
+using Content.Server.GameTicking;
 
 namespace Content.Server._NullLink;
 
@@ -26,6 +28,8 @@ public sealed partial class HubSystem : EntitySystem, IServerObserver, IServerIn
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IGameMapManager _gameMapManager = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -72,7 +76,7 @@ public sealed partial class HubSystem : EntitySystem, IServerObserver, IServerIn
 
         SendUpdate();
 
-        if (_processingResubscribe) return;
+        if (_processingResubscribe || (_timing.RealTime - _lastResubscribe) < _grainDelay) return;
         _processingResubscribe = true;
         Resubscribe();
     }
@@ -196,6 +200,6 @@ public sealed partial class HubSystem : EntitySystem, IServerObserver, IServerIn
             Status = (NullLink.ServerStatus)info.Status,
             Players = info.Players,
             MaxPlayers = info.MaxPlayers,
-            СurrentStateStartedAt = info.СurrentStateStartedAt
+            СurrentStateStartedAt = info.CurrentStateStartedAt
         };
 }
