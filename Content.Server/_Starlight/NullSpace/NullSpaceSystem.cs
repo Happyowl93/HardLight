@@ -22,6 +22,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Enums;
 using Content.Server._Starlight.Bluespace;
 using Content.Shared.Shuttles.Components;
+using Content.Shared.Stunnable;
 
 namespace Content.Server._Starlight.NullSpace;
 
@@ -81,6 +82,8 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
         _stealth.SetVisibility(uid, 0.8f, stealth);
 
         SuppressFactions(uid, component, true);
+
+        RemComp<KnockedDownComponent>(uid);
 
         EnsureComp<PressureImmunityComponent>(uid);
         EnsureComp<MovementIgnoreGravityComponent>(uid);

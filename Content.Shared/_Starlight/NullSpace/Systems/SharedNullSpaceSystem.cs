@@ -8,6 +8,7 @@ using Content.Shared.Item;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Explosion;
+using Content.Shared.Stunnable;
 
 namespace Content.Shared._Starlight.NullSpace;
 
@@ -29,6 +30,7 @@ public abstract partial class SharedNullSpaceSystem : EntitySystem
         SubscribeLocalEvent<NullSpaceComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<NullSpaceComponent, PreventCollideEvent>(PreventCollision);
         SubscribeLocalEvent<NullSpaceComponent, GetExplosionResistanceEvent>(OnGetExplosionResistance);
+        SubscribeLocalEvent<NullSpaceComponent, KnockDownAttemptEvent>(OnKnockdownAttempt);
     }
 
     private void OnMobStateChanged(EntityUid uid, NullSpaceComponent component, MobStateChangedEvent args)
@@ -41,6 +43,11 @@ public abstract partial class SharedNullSpaceSystem : EntitySystem
             if (TryComp<PullableComponent>(uid, out var pullable) && pullable.BeingPulled)
                 _pulling.TryStopPull(uid, pullable);
         }
+    }
+
+    private void OnKnockdownAttempt(EntityUid uid, NullSpaceComponent component, ref KnockDownAttemptEvent args)
+    {
+        args.Cancelled = true;
     }
 
     private void OnShootAttempt(Entity<NullSpaceComponent> ent, ref ShotAttemptedEvent args)
