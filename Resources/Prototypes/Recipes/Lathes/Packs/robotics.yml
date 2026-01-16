@@ -21,9 +21,7 @@
   - BorgModuleFireExtinguisher
   - BorgModuleInflatable
   - BorgModuleArtistry
-  # Starlight-start
-  - BorgModuleUppies
-  # Starlight-end
+  - BorgModuleUppies # Starlight
 
 - type: latheRecipePack
   id: BorgLimbsStatic
@@ -51,6 +49,7 @@
   - BorgModuleAdvancedChemical
   - BorgModuleAdvancedMining
   - BorgMouleAdvancedLoading # Starlight
+  - BorgModuleSurgical # Starlight
 
 - type: latheRecipePack
   id: MechParts
