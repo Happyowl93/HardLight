@@ -540,6 +540,7 @@
     - ChemicalHud
     - ChemicalEyePatchHud
     - ChemicalJensens
+    - ChemicalGlassesPrescription
 
 - type: loadoutGroup
   id: ChemistBeaker
