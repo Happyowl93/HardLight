@@ -26557,5 +26557,47 @@ Entries:
   id: 273900
   time: '2026-01-16T01:17:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2739
+- author: neomoth
+  changes:
+  - message: Fix the zombie infection probability check, now instead of more resistance
+      making it more likely to be infected, it now correctly reduces the chances of
+      being infected.
+    type: Fix
+  id: 283900
+  time: '2026-01-16T09:00:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2839
+- author: Rinary
+  changes:
+  - message: Fixed pump shotguns.
+    type: Fix
+  id: 283200
+  time: '2026-01-16T16:13:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2832
+- author: AegisShieldDev
+  changes:
+  - message: Fixed Markings and Hair sprites
+    type: Fix
+  - message: Adjusted a dozen different markings that were off by a row or column
+    type: Fix
+  - message: Fixed Backpack sprite layering
+    type: Fix
+  id: 281600
+  time: '2026-01-16T18:11:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2816
+- author: CawsForConcern
+  changes:
+  - message: Xenoborgs now only needs 20 minimum readied players to start instead
+      of 40 (same as Nukeops, Zombies)
+    type: Tweak
+  id: 284100
+  time: '2026-01-16T18:19:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2841
+- author: Scarlet/hydetime
+  changes:
+  - message: Added a new ''Damaged Throat'' Trait
+    type: Add
+  id: 246500
+  time: '2026-01-16T18:50:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2465
 Order: -1
 
