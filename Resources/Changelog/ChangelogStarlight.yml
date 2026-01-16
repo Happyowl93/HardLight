@@ -26573,5 +26573,24 @@ Entries:
   id: 283200
   time: '2026-01-16T16:13:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2832
+- author: AegisShieldDev
+  changes:
+  - message: Fixed Markings and Hair sprites
+    type: Fix
+  - message: Adjusted a dozen different markings that were off by a row or column
+    type: Fix
+  - message: Fixed Backpack sprite layering
+    type: Fix
+  id: 281600
+  time: '2026-01-16T18:11:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2816
+- author: CawsForConcern
+  changes:
+  - message: Xenoborgs now only needs 20 minimum readied players to start instead
+      of 40 (same as Nukeops, Zombies)
+    type: Tweak
+  id: 284100
+  time: '2026-01-16T18:19:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2841
 Order: -1
 
