@@ -48,6 +48,7 @@ highlights-service-worker = Service Worker
 
 # Station-specific
 highlights-reporter = Reporter, Journalist
+# Starlight: adding more titles for Psychologist
 highlights-psychologist = Psychologist, Psychology, Psych, Shrink
 
 # Silicon
