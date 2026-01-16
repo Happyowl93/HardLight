@@ -110,7 +110,7 @@ public sealed partial class MechSystem : SharedMechSystem
         SubscribeLocalEvent<MechPilotComponent, ExhaleLocationEvent>(OnExhale);
         SubscribeLocalEvent<MechPilotComponent, AtmosExposedGetAirEvent>(OnExpose);
 
-        SubscribeLocalEvent<MechAirComponent, ComponentStartup>(OnInitializeAir); // STARLIGHT
+        SubscribeLocalEvent<MechAirComponent, MapInitEvent>(OnInitializeAir); // STARLIGHT
 
         #region Equipment UI message relays
         SubscribeLocalEvent<MechComponent, MechGrabberEjectMessage>(ReceiveEquipmentUiMesssages);
@@ -727,7 +727,7 @@ public sealed partial class MechSystem : SharedMechSystem
     }
 
     // STARLIGHT BEGIN
-    private void OnInitializeAir(EntityUid uid, MechAirComponent comp, ComponentStartup args)
+    private void OnInitializeAir(EntityUid uid, MechAirComponent comp, MapInitEvent args)
     {
         var moles = Atmospherics.OneAtmosphere * comp.Air.Volume / (Atmospherics.R * Atmospherics.T20C);
         // "Skin" interactions will still have issues (ex. slime + h2o), so choosing a safe gas here
