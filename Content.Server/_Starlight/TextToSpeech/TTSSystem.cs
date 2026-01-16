@@ -6,6 +6,7 @@ using Content.Server._Starlight.Radio.Systems;
 using Content.Server.Chat.Systems;
 using Content.Server.Starlight.TextToSpeech;
 using Content.Shared._Starlight.Language;
+using Content.Shared.Chat;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -92,7 +93,8 @@ public sealed partial class TTSSystem : EntitySystem
     private void OnRadioReceiveEvent(RadioSpokeEvent args)
     {
         if (!_isEnabled
-            || args.Message.Length > MaxChars)
+            || args.Message.Length > MaxChars
+            || args.SuppressTTS)
             return;
 
         args.Message = StripRichTextTags(args.Message);

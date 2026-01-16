@@ -1,16 +1,14 @@
 using System.Numerics;
 using Content.Server.Audio;
-using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Shuttles.Components;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Temperature;
-using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Components;
@@ -42,7 +40,7 @@ public sealed class ThrusterSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<ThrusterComponent, ActivateInWorldEvent>(OnActivateThruster);
+        // SubscribeLocalEvent<ThrusterComponent, ActivateInWorldEvent>(OnActivateThruster); // Starlight; no more toggling thrusters
         SubscribeLocalEvent<ThrusterComponent, ComponentInit>(OnThrusterInit);
         SubscribeLocalEvent<ThrusterComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<ThrusterComponent, ComponentShutdown>(OnThrusterShutdown);
@@ -61,11 +59,11 @@ public sealed class ThrusterSystem : EntitySystem
     private void OnThrusterExamine(EntityUid uid, ThrusterComponent component, ExaminedEvent args)
     {
         // Powered is already handled by other power components
-        var enabled = Loc.GetString(component.Enabled ? "thruster-comp-enabled" : "thruster-comp-disabled");
+        // var enabled = Loc.GetString(component.Enabled ? "thruster-comp-enabled" : "thruster-comp-disabled"); // Starlight; no more toggling thrusters
 
         using (args.PushGroup(nameof(ThrusterComponent)))
         {
-            args.PushMarkup(enabled);
+            // args.PushMarkup(enabled); // Starlight; no more toggling thrusters
 
             if (component.Type == ThrusterType.Linear &&
                 TryComp(uid, out TransformComponent? xform) &&
@@ -135,24 +133,26 @@ public sealed class ThrusterSystem : EntitySystem
 
     }
 
-    private void OnActivateThruster(EntityUid uid, ThrusterComponent component, ActivateInWorldEvent args)
-    {
-        if (args.Handled || !args.Complex)
-            return;
+    // region Starlight; no more toggling thrusters
+    // private void OnActivateThruster(EntityUid uid, ThrusterComponent component, ActivateInWorldEvent args)
+    // {
+    //     if (args.Handled || !args.Complex)
+    //         return;
 
-        component.Enabled ^= true;
+    //     component.Enabled ^= true;
 
-        if (!component.Enabled)
-        {
-            DisableThruster(uid, component);
-            args.Handled = true;
-        }
-        else if (CanEnable(uid, component))
-        {
-            EnableThruster(uid, component);
-            args.Handled = true;
-        }
-    }
+    //     if (!component.Enabled)
+    //     {
+    //         DisableThruster(uid, component);
+    //         args.Handled = true;
+    //     }
+    //     else if (CanEnable(uid, component))
+    //     {
+    //         EnableThruster(uid, component);
+    //         args.Handled = true;
+    //     }
+    // }
+    // end region Starlight
 
     /// <summary>
     /// If the thruster rotates change the direction where the linear thrust is applied
