@@ -35,7 +35,6 @@ public enum SlimeMood
 public sealed class SlimeBrainSystem : EntitySystem
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly SlimeBrainSystem _slimeBrainSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly PathfindingSystem _pathfinding = default!;
     
