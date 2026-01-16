@@ -27,7 +27,7 @@ public sealed class SlimeScannerSystem : EntitySystem
     {
         if (!_entityManager.TryGetComponent<ActorComponent>(args.User, out var actor)) return;
         if (!_entityManager.TryGetComponent<SlimeComponent>(args.Target, out var slime)) return;
-        if (!_entityManager.TryGetComponent<MetaDataComponent>(args.Target, out var metaData)) return;
+        var metaData = MetaData(args.Target.Value);
         if (!_entityManager.TryGetComponent<HungerComponent>(args.Target, out var hunger)) return;
         
         SendInformation(actor, slime, metaData, hunger);
@@ -42,7 +42,7 @@ public sealed class SlimeScannerSystem : EntitySystem
     {
         if (!_entityManager.TryGetComponent<ActorComponent>(args.User, out var actor)) return;
         if (!_entityManager.TryGetComponent<SlimeComponent>(args.Target, out var slime)) return;
-        if (!_entityManager.TryGetComponent<MetaDataComponent>(args.Target, out var metaData)) return;
+        var metaData = MetaData(args.Target);
         if (!_entityManager.TryGetComponent<HungerComponent>(args.Target, out var hunger)) return;
         
         SendInformation(actor, slime, metaData, hunger);
