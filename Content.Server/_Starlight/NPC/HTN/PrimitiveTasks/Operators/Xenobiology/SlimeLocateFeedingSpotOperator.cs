@@ -46,7 +46,7 @@ public sealed partial class SlimeLocateFeedingSpotOperator : HTNOperator
         if (!_entManager.TryGetComponent<TransformComponent>(owner, out var slimeTransform))
             return (false, null);
 
-        foreach (var spot in _slimeBrainSystem.KnownFoodLocations)
+        foreach (var spot in _slimeBrainSystem.AcquireFeedingSpots())
         {
             var pathRange = SharedInteractionSystem.InteractionRange - 1f;
             var path = await _pathfinding.GetPath(owner, slimeTransform.Coordinates, spot, pathRange, cancelToken);

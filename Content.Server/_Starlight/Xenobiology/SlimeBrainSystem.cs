@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Server.NPC.Pathfinding;
 using Content.Shared._Starlight.Xenobiology;
 using Content.Shared.Damage.Components;
@@ -41,19 +42,14 @@ public sealed class SlimeBrainSystem : EntitySystem
     /// <summary>
     /// The set of food targets slimes can safely eat.
     /// </summary>
-    public HashSet<EntityUid> TargetFood = new();
-    
-    /// <summary>
-    /// The set of food targets slimes can eat, but will only eat under desperate circumstances (lack of food and no other option)
-    /// </summary>
-    public HashSet<EntityUid> DesperateTargetFood = new();
+    private HashSet<EntityUid> TargetFood = new();
 
     /// <summary>
     /// The locations marked by slimes indicating there may be food nearby.
     /// Specifically, if a slime eats a monkey at a spot, they will mark it as a known food location.
     /// If a slime arrived to the spot and doesn't find any food to eat, they will un-mark it.
     /// </summary>
-    public HashSet<EntityCoordinates> KnownFoodLocations = new();
+    private HashSet<EntityCoordinates> KnownFoodLocations = new();
 
     /// <summary>
     /// How far to look for food at each slime.
@@ -90,6 +86,70 @@ public sealed class SlimeBrainSystem : EntitySystem
         if (!(damage.TotalDamage < TargetDamageThreshold)) return false;
 
         return true;
+    }
+
+    /// <summary>
+    /// Attempts to add a food target to the slime brain. Targets are only added if they pass the edible slime test (see <see cref="IsEdibleBySlimeTest"/>).
+    /// </summary>
+    /// <param name="entity">The entity to add.</param>
+    /// <returns>Returns true if successful, returns false if the target food fails the test and thus cannot be added.</returns>
+    public bool TryAddTargetFood(EntityUid entity)
+    {
+        if (IsEdibleBySlimeTest(entity))
+        {
+            TargetFood.Add(entity);
+            return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Grabs the set of valid food targets that are known to the brain
+    /// </summary>
+    /// <returns>The set of valid food targets. May be empty.</returns>
+    public HashSet<EntityUid> AcquireTargetFoods()
+    {
+        HashSet<EntityUid> targetsToReturn = new();
+        HashSet<EntityUid> targetsToDelete = new();
+        foreach (var possibleTarget in TargetFood)
+        {
+            if (IsEdibleBySlimeTest(possibleTarget))
+            {
+                targetsToReturn.Add(possibleTarget);
+            }
+            else
+            {
+                targetsToDelete.Add(possibleTarget);
+            }
+        }
+        foreach (var delete in targetsToDelete)
+        {
+            TargetFood.Remove(delete);
+        }
+        return targetsToReturn;
+    }
+
+    /// <summary>
+    /// Adds a given coordinate to the known feeding spots set.
+    /// </summary>
+    /// <param name="coordinates">The feeding spot location to add.</param>
+    public void AddFeedingSpot(EntityCoordinates coordinates) => KnownFoodLocations.Add(coordinates);
+
+    /// <summary>
+    /// Retrieves the set of feeding spots known to the slime brain.
+    /// </summary>
+    /// <returns>The set of feeding spots.</returns>
+    /// YES I KNOW THIS IS A CLONE OPERATION GET OFF MY BACK
+    public HashSet<EntityCoordinates> AcquireFeedingSpots()
+    {
+        HashSet<EntityCoordinates> coordsToReturn = new();
+        foreach (var coord in KnownFoodLocations)
+        {
+            coordsToReturn.Add(coord);
+        }
+
+        return coordsToReturn;
     }
 
     /// <summary>

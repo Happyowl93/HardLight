@@ -16,13 +16,13 @@ public sealed partial class SlimeFindEdibleTargetOperator : HTNOperator
     /*
      * This class collects known edible targets for the hive mind.
      * With this, slimes should bunch up around nearby edible targets, and not aimlessly and separately search for targets.
+     * This doesn't require pathfinding, so slimes can theoretically smell targets through walls.
      */
     
     [Dependency] private readonly IEntityManager _entManager = default!;
 
     private SlimeBrainSystem _slimeBrainSystem = default!;
     private EntityLookupSystem _lookup = default!;
-    private PathfindingSystem _pathfinding = default!;
     private TagSystem _tagSystem = default!;
     
     /// <summary>
@@ -36,7 +36,6 @@ public sealed partial class SlimeFindEdibleTargetOperator : HTNOperator
         base.Initialize(sysManager);
         _slimeBrainSystem = sysManager.GetEntitySystem<SlimeBrainSystem>();
         _lookup = sysManager.GetEntitySystem<EntityLookupSystem>();
-        _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
         _tagSystem = sysManager.GetEntitySystem<TagSystem>();
     }
     
@@ -44,32 +43,19 @@ public sealed partial class SlimeFindEdibleTargetOperator : HTNOperator
         CancellationToken cancelToken)
     {
         var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
-        
+
         if (!_entManager.TryGetComponent<SlimeComponent>(owner, out var slime))
             return (false, null);
-        
+
         foreach (var entity in _lookup.GetEntitiesInRange(owner, _slimeBrainSystem.FoodSearchRange))
         {
-            if (!_slimeBrainSystem.IsEdibleBySlimeTest(entity)) continue;
-                
-            var pathRange = SharedInteractionSystem.InteractionRange - 1f;
-            var path = await _pathfinding.GetPath(owner, entity, pathRange, cancelToken);
-
-            if (path.Result == PathResult.NoPath)
-                continue;
-
             if (_tagSystem.HasTag(entity, TargetFoodTag))
             {
-                _slimeBrainSystem.TargetFood.Add(entity);
+                _slimeBrainSystem.TryAddTargetFood(entity);
                 return (true, null);
             }
-            else
-            {
-                _slimeBrainSystem.DesperateTargetFood.Add(entity);
-                return (false, null);
-            }
         }
-        
+
         _slimeBrainSystem.SlimeUnsuccessfulFoodFind(owner);
         return (false, null);
     }

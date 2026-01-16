@@ -47,15 +47,7 @@ public sealed partial class SlimeTargetKnownEdibleTargetOperator : HTNOperator
 
         foreach (var entity in _lookup.GetEntitiesInRange(owner, _slimeBrainSystem.FoodSearchRange))
         {
-            // We need to find nearby edible targets that are in the known edible targets set
-            // If we find one and it passes all tests, we designate that as our target
-            // If we find one but it fails a test, we remove it from the known edible targets set
-            if (!_slimeBrainSystem.TargetFood.Contains(entity)) continue;
-            if (!_slimeBrainSystem.IsEdibleBySlimeTest(entity))
-            {
-                _slimeBrainSystem.TargetFood.Remove(entity);
-                continue;
-            }
+            if (!_slimeBrainSystem.AcquireTargetFoods().Contains(entity)) continue;
 
             var pathRange = SharedInteractionSystem.InteractionRange - 1f;
             var path = await _pathfinding.GetPath(owner, entity, pathRange, cancelToken);
