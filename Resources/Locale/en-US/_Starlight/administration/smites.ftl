@@ -8,3 +8,6 @@ admin-verb-make-adminmouse = Makes yourself an Admin Mouse.
 
 admin-verb-text-make-mentormouse = Become Mentor Mouse
 admin-verb-make-mentormouse = Makes yourself a Mentor Mouse.
+
+admin-smite-gnome-name = Gnomify
+admin-smite-gnome-description = Makes the target very whimsical.
