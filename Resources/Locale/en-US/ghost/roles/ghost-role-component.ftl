@@ -164,7 +164,7 @@ ghost-role-information-closet-skeleton-description = You are arguably one of the
 
 ghost-role-information-remilia-name = Remilia, the Chaplain's Familiar
 # Starlight:
-ghost-role-information-remilia-description = Follow and obey the Chaplain. Eat fruit. Whisper in a secret language about all the naughty things you've seen. Screech loudly into people's ears and write it off as echolocation.
+ghost-role-information-remilia-description = Follow and obey the Chaplain. Eat fruit. Whisper in a secret language about all the things you've seen. Screech loudly into people's ears and write it off as echolocation.
 
 ghost-role-information-cerberus-name = Cerberus, Evil Familiar
 ghost-role-information-cerberus-description = Obey your master. Spread chaos.
