@@ -180,7 +180,6 @@
   name: paperwork cyborg module
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Specific/Robotics/borgmodule.rsi
     layers:
     - state: command
     - state: icon-paperwork
@@ -612,12 +611,12 @@
   name: hauling cyborg module
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Specific/Robotics/borgmodule.rsi
     layers:
     - state: hauling
     - state: icon-mats
   - type: ItemBorgModule
     hands:
+    - item: BorgClamp
     - item: BorgHold
     - item: BorgHold
     - hand: #For loading lathes and making crates
@@ -653,13 +652,12 @@
   name: mail cyborg module
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Specific/Robotics/borgmodule.rsi
     layers:
     - state: hauling
     - state: icon-mail
   - type: ItemBorgModule
     hands:
-    - item: BorgMailBag
+    - item: MailBag
     - hand:
         emptyRepresentative: BorgModuleMailPlaceholder
         emptyLabel: borg-slot-mail-empty
@@ -674,3 +672,20 @@
           - Delivery
   - type: BorgModuleIcon
     icon: { sprite: _Starlight/Interface/Actions/actions_borg.rsi, state: mail-module }
+
+- type: entity
+  id: BorgMouleAdvancedLoading
+  parent: [ BaseBorgModuleSupply, BaseProviderBorgModule ]
+  name: loading cyborg module
+  description: Advanced module for cargo cyborgs, with specialised hydraulic clamps
+  components:
+  - type: Sprite
+    layers:
+    - state: hauling
+    - state: icon-loading
+  - type: ItemBorgModule
+    hands:
+    - item: BorgClamp
+    - item: BorgClamp
+  - type: BorgModuleIcon
+    icon: { sprite: _Starlight/Interface/Actions/actions_borg.rsi, state: mats-module }

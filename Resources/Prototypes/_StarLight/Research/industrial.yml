@@ -18,6 +18,7 @@
   - RipleyCentralElectronics
   - RipleyPeripheralsElectronics
   - MechEquipmentGrabber
+  - BorgMouleAdvancedLoading
   radioChannels:
   - Supply
 

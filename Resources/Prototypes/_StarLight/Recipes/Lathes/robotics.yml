@@ -58,3 +58,10 @@
   parent: BaseBorgModuleRecipe
   id: BorgModuleUppies
   result: BorgModuleUppies
+
+# Custom advanced modules
+
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgMouleAdvancedLoading
+  result: BorgMouleAdvancedLoading

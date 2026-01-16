@@ -35,31 +35,6 @@
     containers:
       entity_storage: !type:Container
 
-# mail bag
-- type: entity
-  name: integrated mail bag
-  id: BorgMailBag
-  categories: [ HideSpawnMenu ]
-  parent: BaseStorageItem
-  description: A bag for carrying mail around the station built into a cyborg's chassis
-  components:
-  - type: Sprite
-    sprite: Objects/Specific/Cargo/mail_bag.rsi
-    state: icon
-  - type: Item
-    size: Ginormous
-  - type: Storage
-    maxItemSize: Normal
-    grid:
-    - 0,0,11,3
-    quickInsert: true
-    areaInsert: true
-    whitelist:
-      components:
-      - Delivery
-    openOnActivate: true
-  - type: Dumpable
-
 # hydraulic clamp
 
 - type: entity
@@ -84,10 +59,10 @@
           disableEject: true
           swap: false
     - type: Sprite
-      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      sprite: _Starlight/Objects/Specific/Cargo/borg_clamp.rsi
       layers:
-        - state: ripletclaw
-        - state: ripletclaw-full
+        - state: clamp
+        - state: clamp-full
           map: [ "enum.ToggleableVisuals.Layer" ]
           visible: false
     - type: DoAfter
@@ -98,6 +73,11 @@
         path: /Audio/Items/change_jaws.ogg
       soundDeactivate:
         path: /Audio/Items/change_jaws.ogg
+    - type: MeleeWeapon
+      wideAnimationRotation: -90
+      damage:
+        types:
+          Blunt: 10
     - type: Appearance
     - type: GenericVisualizer
       visuals:
