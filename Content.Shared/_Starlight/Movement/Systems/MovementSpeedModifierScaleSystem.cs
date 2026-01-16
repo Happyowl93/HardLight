@@ -1,5 +1,5 @@
 using Content.Shared._Starlight.Movement.Components;
-using Content.Shared.Movement.Systems;
+using Content.Shared._Starlight.Movement.Events;
 
 namespace Content.Shared._Starlight.Movement.Systems;
 
@@ -7,13 +7,11 @@ public sealed class MovementSpeedModifierScaleSystem : EntitySystem
 {
 
     public override void Initialize()
-    {
-        SubscribeLocalEvent<MovementSpeedModifierScaleComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovement);
-    }
+        => SubscribeLocalEvent<MovementSpeedModifierScaleComponent, ApplyMovementScaleModifierEvent>(OnRefreshMovement);
 
-    private void OnRefreshMovement(EntityUid uid, MovementSpeedModifierScaleComponent comp, ref RefreshMovementSpeedModifiersEvent args)
+    private void OnRefreshMovement(EntityUid uid, MovementSpeedModifierScaleComponent comp, ref ApplyMovementScaleModifierEvent args)
     {
-        args.WalkSpeedModifier = (args.WalkSpeedModifier - 1) * comp.MovementSpeedScale + 1;
-        args.SprintSpeedModifier = (args.SprintSpeedModifier - 1) * comp.MovementSpeedScale + 1;
+        args.ChangedWalkSpeedModifier = ((args.OriginalWalkSpeedModifier - 1) * comp.MovementSpeedScale) + 1;
+        args.ChangedSprintSpeedModifier = ((args.OriginalSprintSpeedModifier - 1) * comp.MovementSpeedScale) + 1;
     }
 }
