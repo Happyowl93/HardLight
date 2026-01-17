@@ -657,6 +657,7 @@
   components:
     - type: LargeGrabber
       maxContents: 1
+      dropOnContainerChange: true
     - type: ContainerContainer
       containers:
         item-container: !type:Container
