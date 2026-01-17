@@ -177,9 +177,12 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleNukeopsCommander
+      # Starlight-start
+      tags:
+        - CantBecomeRevolutionary
+      # Starlight-end
     - prefRoles: [ NukeopsMedic ]
       fallbackRoles: [ Nukeops, NukeopsCommander ]
       spawnerPrototype: SpawnPointNukeopsMedic
@@ -195,9 +198,12 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleNukeopsMedic
+      # Starlight-start
+      tags:
+        - CantBecomeRevolutionary
+      # Starlight-end
     - prefRoles: [ Nukeops ]
       fallbackRoles: [ NukeopsCommander, NukeopsMedic ]
       spawnerPrototype: SpawnPointNukeopsOperative
@@ -215,9 +221,12 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleNukeops
+      # Starlight-start
+      tags:
+        - CantBecomeRevolutionary
+      # Starlight-end
   - type: DynamicRuleCost
     cost: 200
 
@@ -312,9 +321,12 @@
           enum.StoreUiKey.Key:
             type: StoreBoundUserInterface
             requireInputValidation: false
-      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleChangeling
+      # Starlight-start
+      tags:
+        - CantBecomeRevolutionary
+      # Starlight-end
   - type: AntagObjectives
     objectives:
     - ChangelingSurviveObjective
@@ -343,11 +355,12 @@
         # Starlight-start
         blacklist:
           components:
-          - CantBecomeRevolutionary
           - Revolutionary
           - BorgChassis
           - MindShield
           - Zombie
+          tags:
+          - CantBecomeRevolutionary
         whitelist:
           components:
           - HumanoidAppearance
@@ -418,9 +431,12 @@
         - NamesWizardFirst
         - NamesWizardLast
         nameFormat: name-format-wizard
-      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleWizard
+      # Starlight-start
+      tags:
+        - CantBecomeRevolutionary
+      # Starlight-end
   - type: DynamicRuleCost
     cost: 150
 
