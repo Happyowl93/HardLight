@@ -340,6 +340,14 @@
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
+        # Starlight-start
+        blacklist:
+          components:
+          - CantBecomeRevolutionary
+          - Revolutionary
+          - BorgChassis
+          - MindShield
+        # Starlight-end
       mindRoles:
       - MindRoleHeadRevolutionary
   - type: DynamicRuleCost
