@@ -351,11 +351,9 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
         if (!_mind.TryGetMind(ev.Target, out var mindId, out var mind) && !alwaysConvertible)
             return;
 
-        if (_whitelistSystem.CheckBoth(ev.Target, comp.Blacklist, comp.Whitelist) // Starlight-edit: rework all has comp to whitelist & blacklist.
-            !HasComp<HumanoidAppearanceComponent>(ev.Target) &&
+        if (_whitelistSystem.CheckBoth(ev.Target, comp.Blacklist, comp.Whitelist) && // Starlight-edit: rework all has comp to whitelist & blacklist.
             !alwaysConvertible ||
-            !_mobState.IsAlive(ev.Target) ||
-            HasComp<ZombieComponent>(ev.Target))
+            !_mobState.IsAlive(ev.Target))
         {
             return;
         }
