@@ -2,7 +2,7 @@
   id: SSF
   name: roles-antag-ssf-name
   antagonist: true
-  setPreference: true
+  setPreference: false
   objective: roles-antag-ssf-objective
   requirements:
   - !type:OverallPlaytimeRequirement
@@ -10,3 +10,4 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 36000 # 10h
+  playTimeTracker: AntagSSF

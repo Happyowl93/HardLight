@@ -117,7 +117,7 @@
   - type: XenoborgsRule
   - type: RuleGrids
   - type: GameRule
-    minPlayers: 40
+    minPlayers: 20 # Starlight
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/mothership.yml
   - type: AntagMultipleRoleSpawner
@@ -131,11 +131,19 @@
     - prefRoles: [ MothershipCore ]
       fallbackRoles: [ Xenoborg ]
       spawnerPrototype: SpawnPointGhostRoleMothershipCore
+      # Starlight Start
+      roleLoadout:
+      - AntagMothership
+      # Starlight End
       mindRoles:
       - MindRoleMothershipCore
     - prefRoles: [ Xenoborg ]
       fallbackRoles: [ MothershipCore ]
       spawnerPrototype: SpawnPointGhostRoleXenoborg
+      # Starlight Start
+      roleLoadout:
+      - AntagXenoborg
+      # Starlight End
       mindRoles:
       - MindRoleXenoborg
       min: 4
