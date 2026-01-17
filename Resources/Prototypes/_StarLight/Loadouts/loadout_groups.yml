@@ -600,6 +600,22 @@
     - DutyOfficerBelt
     - DutyOfficerWebbing
 
+- type: loadoutGroup
+  id: DutyOfficerOuterClothing
+  name: loadout-group-dutyofficer-outerclothing
+  minLimit: 0 # starlight
+  defaultSelected: 1 # starlight
+  loadouts:
+  - DutyOfficerArmorRiot
+  - ArmorVest
+  - ArmorVestSlim
+  - ArmorVestPlate
+  - ArmorVestStab
+  - ArmorVestHeatAbsorb
+  - SecurityOfficerWintercoat
+  - SecurityBomber #Starlight
+  - WindbreakerSecurity #Starlight
+
 # Brighteye
 - type: loadoutGroup
   id: BrighteyeJumpsuit

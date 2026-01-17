@@ -155,14 +155,14 @@
 - type: roleLoadout
   id: JobDutyOfficer
   groups:
-  - SecurityEyewear
   - DutyOfficerHead
   - DutyOfficerJumpsuit
   - SecurityBackpack
+  - SecurityEyewear
+  - DutyOfficerOuterClothing
   - SecurityShoes
-  - SecurityNonLethalWeapon
   - DutyOfficerBelt
-  - SecuritySidearm
+  - SecurityNonLethalWeapon
   - SurvivalSecurity
   - Trinkets
   - Scarves

@@ -83,11 +83,14 @@
     children:
     - id: Stunbaton
     - id: Handcuffs
+    - id: Handcuffs
     - id: HoloprojectorSecurity
     - id: RadioHandheldSecurity
-    - id: Zipties
-    - id: Zipties
     - id: TearGasGrenade
+    - id: TearGasGrenade
+    - id: GrenadeFlashBang
+    - id: GrenadeFlashBang
+    - id: Zipties
 
 - type: entity
   id: ClothingBeltDutyOfficerFilled

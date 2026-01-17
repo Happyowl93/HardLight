@@ -9,13 +9,12 @@
       time: 18000 # 5 hrs
   startingGear: DutyOfficerGear
   icon: "JobIconDutyOfficer"
-  supervisors: job-supervisors-hoswarden
+  supervisors: job-supervisors-warden
   canBeAntag: false
   access:
   - Security
   - Brig
   - Maintenance
-  - Service # Why do they have service access?
   - External
   - Cryogenics # Officer gets this for some reason, so making it consistent.
 

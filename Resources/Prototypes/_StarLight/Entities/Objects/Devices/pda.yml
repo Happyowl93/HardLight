@@ -139,17 +139,19 @@
 
 - type: entity
   parent: BaseSecurityPDA
-  id: DutyofficerPDA
+  id: DutyOfficerPDA
   name: duty officer PDA
   description: Look around, there was never a way out. Every path leads down.
   components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Devices/pda.rsi
   - type: Pda
     id: DutyOfficerIDCard
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
         !type:String
-        pda-security
+        pda-dutyofficer
   - type: PdaBorderColor
     borderColor: "#A32D26"
   - type: Icon

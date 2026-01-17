@@ -43,6 +43,13 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtSecBlue
 
+# Outer Clothing
+- type: loadout
+  id: DutyOfficerArmorRiot
+  equipment:
+    outerClothing: ClothingOuterArmorRiot
+
+
 # Belt
 - type: loadout
   id: DutyOfficerBelt
