@@ -713,7 +713,7 @@
     icon: { sprite: _Starlight/Interface/Actions/actions_borg.rsi, state: mail-module }
 
 - type: entity
-  id: BorgMouleAdvancedLoading
+  id: BorgModuleAdvancedLoading
   parent: [ BaseBorgModuleSupply, BaseProviderBorgModule ]
   name: loading cyborg module
   description: Advanced module for cargo cyborgs, with specialised hydraulic clamps

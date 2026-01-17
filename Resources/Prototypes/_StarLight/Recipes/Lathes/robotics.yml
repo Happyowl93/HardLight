@@ -68,5 +68,5 @@
 # Custom advanced modules
 - type: latheRecipe
   parent: BaseGoldBorgModuleRecipe
-  id: BorgMouleAdvancedLoading
-  result: BorgMouleAdvancedLoading
+  id: BorgModuleAdvancedLoading
+  result: BorgModuleAdvancedLoading
