@@ -10,7 +10,6 @@ using Content.Server.Roles;
 using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
-using Content.Shared._Starlight.Revolutionary.Components;
 using Content.Shared.Database;
 using Content.Shared.Flash;
 using Content.Shared.GameTicking.Components;
