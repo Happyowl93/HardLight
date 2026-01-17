@@ -555,7 +555,6 @@
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: NukeOperative
-    - type: CantBecomeRevolutionary # Starlight
 
 - type: entity
   id: RandomHumanoidSpawnerCluwne
