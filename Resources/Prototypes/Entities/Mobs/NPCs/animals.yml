@@ -3033,7 +3033,11 @@
   - type: MessyDrinker
   - type: Puller
     needsHands: false
+  # Starlight Edit start
   - type: Blindable # Starlight - why is this not base?
+  - type: ThermalRegulator # Starlight - Lower radiated heat, Corgis are smaller so their body surface area is also smaller.
+    radiatedHeat: 35 # Starlight - This affects them reallistically only when dead in a spaced room, makes the cold damage scale slower.
+  # Starlight Edit end
 
 - type: entity
   parent: MobCorgiBase
