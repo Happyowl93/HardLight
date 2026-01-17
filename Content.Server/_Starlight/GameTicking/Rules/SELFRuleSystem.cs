@@ -37,30 +37,16 @@ public sealed class SELFRuleSystem : GameRuleSystem<SELFRuleComponent>
     {
         var ent = args.Mind.Comp.OwnedEntity;
         
-        int hands = 0;
-        
         if (ent == null)
             return;
         
-        foreach (var hand in _hands.EnumerateHands(ent.Value))
-            hands += 1;
-            
-        if (hands == 0)
-            return;
-        
-        Logger.Warning($"Hands count: {hands}");
-            
         args.Append(MakeBriefing(ent.Value));
     }
 
     private string MakeBriefing(EntityUid ent)
     {
-        var isHuman = HasComp<HumanoidAppearanceComponent>(ent);
-        var briefing = isHuman
-            ? Loc.GetString("self-role-greeting-human")
-            : Loc.GetString("self-role-greeting-animal");
-
-        if (isHuman)
+        var briefing = Loc.GetString("self-role-greeting-human");
+        
             briefing += "\n \n" + Loc.GetString("self-role-greeting-equipment") + "\n";
 
         return briefing;
