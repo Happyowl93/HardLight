@@ -169,3 +169,11 @@
     maxVisibility: 0.8
     lastVisibility: 0.8
   - type: NullSpaceBlocker
+
+- type: entity
+  id: EnergyDomeProtectorNullspace
+  categories: [ HideSpawnMenu ]
+  parent: EnergyDomeNullspace
+  components:
+  - type: Visibility
+    layer: 32
