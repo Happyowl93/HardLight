@@ -26654,5 +26654,15 @@ Entries:
   id: 272000
   time: '2026-01-17T10:26:14.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2720
+- author: Citrea
+  changes:
+  - message: Tables no longer slow you down if you properly climb onto them.
+    type: Tweak
+  - message: Tables no longer slow you down if you have the audacity to be in their
+      presence.
+    type: Fix
+  id: 277200
+  time: '2026-01-17T10:35:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2772
 Order: -1
 
