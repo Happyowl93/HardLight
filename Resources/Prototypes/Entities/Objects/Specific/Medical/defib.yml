@@ -129,4 +129,4 @@
     activatedDamage:
       types:
         # Blunt: 8 # Starlight removal
-        Shock: 6.5 # Starlight change: 16 -> 6.5
+        Shock: 10 # Starlight change: 16 -> 10
