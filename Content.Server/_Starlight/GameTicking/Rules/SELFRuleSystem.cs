@@ -5,6 +5,8 @@ using Content.Server.Roles;
 using Content.Shared.Humanoid;
 using Content.Shared.Roles.Components;
 using Content.Server._Starlight.GameTicking.Rules.Components;
+using Content.Server.GameTicking.Rules;
+using SELFRuleComponent = Content.Server._Starlight.GameTicking.Rules.Components.SELFRuleComponent;
 
 namespace Content.Server._Starlight.GameTicking.Rules;
 
@@ -19,7 +21,7 @@ public sealed class SELFRuleSystem : GameRuleSystem<SELFRuleComponent>
 
         SubscribeLocalEvent<SELFRuleComponent, AfterAntagEntitySelectedEvent>(AfterAntagSelected);
 
-        SubscribeLocalEvent<SELFRoleComponent, GetBriefingEvent>(OnGetBriefing);
+        SubscribeLocalEvent<SELFRuleComponent, GetBriefingEvent>(OnGetBriefing);
     }
 
     // Greeting upon SELF activation
@@ -31,7 +33,7 @@ public sealed class SELFRuleSystem : GameRuleSystem<SELFRuleComponent>
     }
 
     // Character screen briefing
-    private void OnGetBriefing(Entity<SELFRoleComponent> role, ref GetBriefingEvent args)
+    private void OnGetBriefing(Entity<SELFRuleComponent> role, ref GetBriefingEvent args)
     {
         var ent = args.Mind.Comp.OwnedEntity;
         
