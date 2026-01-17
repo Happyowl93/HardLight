@@ -274,9 +274,12 @@
         - NamesNinjaTitle
         - NamesNinja
         nameFormat: name-format-ninja
-      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleNinja
+      # Starlight-start
+      tags:
+        - CantBecomeRevolutionary
+      # Starlight-end
   - type: DynamicRuleCost
     cost: 75
 
@@ -367,9 +370,12 @@
         - NamesWizardFirst
         - NamesWizardLast
         nameFormat: name-format-wizard
-      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleWizard
+      # Starlight-start
+      tags:
+        - CantBecomeRevolutionary
+      # Starlight-end
 
 # disabled until event is rewritten to be more interesting
 #- type: entity
@@ -614,9 +620,12 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleLoneops
+      # Starlight-start
+      tags:
+        - CantBecomeRevolutionary
+      # Starlight-end
   - type: DynamicRuleCost
     cost: 75
 
