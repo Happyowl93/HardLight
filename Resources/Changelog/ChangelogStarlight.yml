@@ -26709,5 +26709,12 @@ Entries:
   id: 284900
   time: '2026-01-17T12:16:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2849
+- author: Coolsurf6
+  changes:
+  - message: Fixed Bagel having an unpowered air vent
+    type: Fix
+  id: 272100
+  time: '2026-01-17T12:33:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2721
 Order: -1
 
