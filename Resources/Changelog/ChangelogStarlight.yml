@@ -26695,5 +26695,12 @@ Entries:
   id: 280500
   time: '2026-01-17T11:45:28.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2805
+- author: FoxStellar
+  changes:
+  - message: Added the Automenders to research!
+    type: Add
+  id: 269900
+  time: '2026-01-17T12:11:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2699
 Order: -1
 
