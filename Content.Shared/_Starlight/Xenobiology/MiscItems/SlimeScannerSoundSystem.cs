@@ -6,6 +6,8 @@ namespace Content.Shared._Starlight.Xenobiology.MiscItems;
 public sealed class SlimeScannerSoundSystem : EntitySystem
 {
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+
+    private static readonly SoundPathSpecifier _scannerSound = new("/Audio/Items/Medical/healthscanner.ogg");
     
     public override void Initialize()
     {
@@ -15,6 +17,6 @@ public sealed class SlimeScannerSoundSystem : EntitySystem
     
     private void OnSlimeScannerSound(SlimeScannerSoundMessage args)
     {
-        _audioSystem.PlayPredicted(new SoundPathSpecifier("/Audio/Items/Medical/healthscanner.ogg"), GetEntity(args.Owner), GetEntity(args.User));
+        _audioSystem.PlayPredicted(_scannerSound, GetEntity(args.Owner), GetEntity(args.User));
     }
 }
