@@ -26,6 +26,7 @@
   - type: ObserverRole
   - type: MindRole
     sortWeight: -10
+    fallbackPlayTimeTracker: Observer
 
 #Ghost Roles
 - type: entity
