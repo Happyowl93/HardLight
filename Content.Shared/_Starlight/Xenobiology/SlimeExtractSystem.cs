@@ -57,6 +57,7 @@ public sealed class SlimeExtractSystem : EntitySystem
 
     private void OnSolutionChanged(Entity<SlimeExtractComponent> entity, ref SolutionContainerChangedEvent args)
     {
+        if (TerminatingOrDeleted(entity.Owner)) return;
         _entityManager.EnsureComponent<SlimeExtractActiveReactionComponent>(entity.Owner,
             out var activeReactionComponent);
         foreach (var extractReactionProto in entity.Comp.ExtractReactions)
