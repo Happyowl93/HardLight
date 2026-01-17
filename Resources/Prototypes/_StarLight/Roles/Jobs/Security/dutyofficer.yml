@@ -1,0 +1,33 @@
+- type: job
+  id: DutyOfficer
+  name: job-name-dutyofficer
+  description: job-description-dutyofficer
+  playTimeTracker: JobDutyOfficer
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 18000 # 5 hrs
+  startingGear: DutyOfficerGear
+  icon: "JobIconDutyOfficer"
+  supervisors: job-supervisors-hoswarden
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service # Why do they have service access?
+  - External
+  - Cryogenics # Officer gets this for some reason, so making it consistent.
+
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: DutyOfficerGear
+  equipment:
+    id: DutyOfficerPDA
+    ears: ClothingHeadsetSecurity
+  storage:
+    back:
+      - Flash

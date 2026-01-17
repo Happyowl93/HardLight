@@ -4,8 +4,8 @@
     - !type:JobRequirementLoadoutEffect
       requirement:
         !type:RoleTimeRequirement
-        role: JobWarden
-        time: 21600 #6 hrs
+        role: JobDutyOfficer
+        time: 216000 #60 hrs. No actual benefit for it at this time. PDA will be added with clothes at some point in the future, and a winter coat inspired by Warden.
 # Head
 - type: loadout
   id: DutyOfficerHead
@@ -13,52 +13,35 @@
     head: ClothingHeadHatDutyOfficer
 
 - type: loadout
+  id: DutyOfficerBeret
+  equipment:
+    head: ClothingHeadHatBeretDutyOfficer
+
+- type: loadout
   id: DutyOfficerHelmetRiot
   equipment:
     head: ClothingHeadHelmetRiot
 
-- type: loadout
-  id: DutyOfficerHelmetStabproof
-  equipment:
-    head: ClothingHeadHelmetStabproof
-
-- type: loadout
-  id: DutyOfficerHat
-  equipment:
-    head: ClothingHeadHatSecsoft
-
-- type: loadout
-  id: DutyOfficerBeret
-  equipment:
-    head: ClothingHeadHatBeretSecurity
-
-
 # Jumpsuit
 - type: loadout
-  id: DutyOfficerJumpsuitGrey
+  id: DutyOfficerJumpsuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSecGrey
+    jumpsuit: ClothingUniformJumpsuitDutyOfficer
 
 - type: loadout
-  id: DutyOfficerJumpskirtGrey
+  id: DutyOfficerJumpskirt
   equipment:
-    jumpsuit: ClothingUniformJumpskirtSecGrey
-
-# Back
-- type: loadout
-  id: DutyOfficerBackpack
-  equipment:
-    back: ClothingBackpackSecurity
+    jumpsuit: ClothingUniformJumpskirtDutyOfficer
 
 - type: loadout
-  id: DutyOfficerSatchel
+  id: DutyOfficerJumpsuitBlue
   equipment:
-    back: ClothingBackpackSatchelSecurity
+    jumpsuit: ClothingUniformJumpsuitSecBlue
 
 - type: loadout
-  id: DutyOfficerDuffel
+  id: DutyOfficerJumpskirtBlue
   equipment:
-    back: ClothingBackpackDuffelSecurity
+    jumpsuit: ClothingUniformJumpskirtSecBlue
 
 # Belt
 - type: loadout
@@ -71,61 +54,10 @@
   equipment:
     belt: ClothingBeltDutyOfficerWebbingFilled
 
-# Outerclothing
-- type: loadout
-  id: BrigArmorVest
-  equipment:
-    outerClothing: ClothingOuterArmorBasic
-
-- type: loadout
-  id: brigArmorVestSlim
-  equipment:
-    outerClothing: ClothingOuterArmorBasicSlim
-
-- type: loadout
-  id: brigArmorVestStab
-  equipment:
-    outerClothing: ClothingOuterArmorStab
-
-- type: loadout
-  id: ArmourRiot
-  effects:
-    - !type:GroupLoadoutEffect
-      proto: SeniorDutyOfficer
-  equipment:
-    outerClothing: ClothingOuterArmorRiot
-
-
-- type: loadout
-  id: DutyOfficerWintercoat
-  equipment:
-    outerClothing: ClothingOuterWinterSec
-
-# Shoes
-- type: loadout
-  id: brigCombatBoots
-  equipment:
-    shoes: ClothingShoesBootsCombatFilled
-
-- type: loadout
-  id: brigJackBoots
-  equipment:
-    shoes: ClothingShoesBootsJackFilled
-
 
 # PDA
-- type: loadout
-  id: DutyOfficerPDA
-  equipment:
-    id: DutyOfficerPDA
-
-
-- type: loadout
-  id: DutyOfficerGlasses
-  equipment:
-    eyes: ClothingEyesGlassesSecurity
-
-- type: loadout
-  id: DutyOfficerHud
-  equipment:
-    eyes: ClothingEyesHudSecurity
+#- type: loadout
+#  id: DutyOfficerPDA
+#  equipment:
+#    id: DutyOfficerPDA
+# Not needed until they get a senior PDA

@@ -186,6 +186,18 @@
     zombificationResistanceCoefficient: 0.95
 
 - type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformJumpsuitDutyOfficer
+  name: duty officer's uniform
+  description: A vibrant security suit for the warden's partner in chains.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/dutyofficer.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/dutyofficer.rsi
+
+
+- type: entity
   parent: [ClothingUniformBase, BaseCentcommContraband]
   id: ClothingUniformNTNCFatigues
   name: NTNC Fatigues

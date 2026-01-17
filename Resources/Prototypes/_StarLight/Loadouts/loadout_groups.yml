@@ -575,6 +575,31 @@
     - DarkBeaker
     - SilverBeakerBrigmedic
 
+# Duty Officer
+- type: loadoutGroup
+  id: DutyOfficerHead
+  name: loadout-group-dutyofficer-head
+  loadouts:
+  - DutyOfficerHead
+  - DutyOfficerBeret
+  - DutyOfficerHelmetRiot
+
+- type: loadoutGroup
+  id: DutyOfficerJumpsuit
+  name: loadout-group-dutyofficer-jumpsuit
+  loadouts:
+  - DutyOfficerJumpsuit
+  - DutyOfficerJumpskirt
+  - DutyOfficerJumpsuitBlue
+  - DutyOfficerJumpskirtBlue
+
+- type: loadoutGroup
+  id: DutyOfficerBelt
+  name: loadout-group-dutyofficer-belt
+  loadouts:
+    - DutyOfficerBelt
+    - DutyOfficerWebbing
+
 # Brighteye
 - type: loadoutGroup
   id: BrighteyeJumpsuit
