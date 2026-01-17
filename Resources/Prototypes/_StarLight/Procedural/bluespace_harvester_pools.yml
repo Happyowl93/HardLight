@@ -26,15 +26,15 @@
 - type: weightedRandomEntity
   id: BluespaceHarvesterSnackTable
   weights:
-    RandomSnackTable: 1
+    RandomSnacks: 1
 
 - type: weightedRandomEntity
   id: BluespaceHarvesterBasicMaterialsTable
   weights:
-    SheetPlasteel30: 1
-    SheetSteel30: 1
-    SheetPlastic30: 1
-    SheetGlass30: 1
+    SheetPlasteel: 1
+    SheetSteel: 1
+    SheetPlastic: 1
+    SheetGlass: 1
 
 - type: weightedRandomEntity
   id: BluespaceHarvesterArtifactTable
