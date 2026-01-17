@@ -127,3 +127,14 @@
   components:
   - type: Implanter
     implant: GearAcidifierImplant
+
+#SELF
+- type: entity
+  id: SELFStorageImplanter
+  name: self storage implanter
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: SELFStorageImplant
+
+

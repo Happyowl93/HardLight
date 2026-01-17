@@ -1,0 +1,27 @@
+- type: entity
+  parent: BaseGameRule
+  id: SiliconLiberation
+  components:
+  - type: SELFRule
+  - type: AntagObjectives
+    objectives:
+    - SiliconRightsObjective
+    - FreeAIObjective
+    - FreeBorgsObjective
+  - type: AntagSelection
+    agentName: self-round-end-agent-name
+    selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ SELFAgent ]
+      max: 3
+      playerRatio: 20
+      lateJoinAdditional: true
+      allowNonHumans: true
+      multiAntagSetting: NotExclusive
+      startingGear: SELFAgentGear
+      mindRoles:
+      - MindRoleSELFAgent
+      briefing:
+        sound: "/Audio/_Starlight/Misc/self.ogg"
+  - type: DynamicRuleCost
+    cost: 75

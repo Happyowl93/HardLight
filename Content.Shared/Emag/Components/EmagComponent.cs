@@ -44,7 +44,7 @@ public sealed partial class EmagComponent : Component
     /// </summary>
     [DataField]
     [AutoNetworkedField]
-    public ProtoId<NpcFactionPrototype> OwningFaction = "Syndicate";
+    public ProtoId<NpcFactionPrototype>? OwningFaction = "Syndicate";
     
     /// <summary>
     /// The access group to grant to electronics that get emagged

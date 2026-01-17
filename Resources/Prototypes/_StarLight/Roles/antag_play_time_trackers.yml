@@ -69,3 +69,6 @@
 
 - type: playTimeTracker
   id: AntagSSF
+
+- type: playTimeTracker
+  id: AntagSELFAgent
