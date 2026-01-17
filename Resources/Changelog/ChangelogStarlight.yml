@@ -26723,5 +26723,13 @@ Entries:
   id: 273200
   time: '2026-01-17T12:47:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2732
+- author: mikeysaurus
+  changes:
+  - message: Abductors, Nukies, Wizards, Changelings, and Space Ninjas can no longer
+      be converted by a Head Revolutionary.
+    type: Tweak
+  id: 278600
+  time: '2026-01-17T12:52:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2786
 Order: -1
 
