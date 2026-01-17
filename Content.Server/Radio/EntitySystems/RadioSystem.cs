@@ -243,18 +243,15 @@ public sealed class RadioSystem : EntitySystem
         string message,
         CustomRadioChannelData channel,
         EntityUid radioSource,
-        LanguagePrototype? language = null, // Starlight
+        LanguagePrototype? language = null,
         bool escapeMarkup = true)
     {
-        // Starlight - start
         if (language == null)
             language = _language.GetLanguage(messageSource);
 
         if (!language.SpeechOverride.AllowRadio)
             return;
-        // Starlight - End
 
-        // TODO if radios ever garble / modify messages, feedback-prevention needs to be handled better than this.
         if (!_messages.Add(message))
             return;
 
@@ -284,15 +281,12 @@ public sealed class RadioSystem : EntitySystem
 
         var wrappedMessage = WrapCustomRadioMessage(messageSource, channel, name, content, language, false);
 
-        // most radios are relayed to chat, so lets parse the chat message beforehand
-
-        var msg = new ChatMessage(ChatChannel.Radio, content, wrappedMessage, NetEntity.Invalid, null); // Starlight
+        var msg = new ChatMessage(ChatChannel.Radio, content, wrappedMessage, NetEntity.Invalid, null);
 
         var obfuscated = _language.ObfuscateSpeech(content, language);
         var obfuscatedWrapped = WrapCustomRadioMessage(messageSource, channel, name, obfuscated, language, true);
         var notUdsMsg = new ChatMessage(ChatChannel.Radio, obfuscated, obfuscatedWrapped, NetEntity.Invalid, null) { Chime = chime, };
         var ev = new RadioReceiveEvent(messageSource, null, msg, notUdsMsg, language, radioSource, []);
-        // Starlight - End
 
         var sendAttemptEv = new CustomRadioSendAttemptEvent(channel, radioSource);
         RaiseLocalEvent(ref sendAttemptEv);
@@ -317,19 +311,16 @@ public sealed class RadioSystem : EntitySystem
             if (!channel.LongRange && transform.MapID != sourceMapId && !radio.GlobalReceive)
                 continue;
 
-            // don't need telecom server for long range channels or handheld radios and intercoms
             var needServer = !channel.LongRange && !sourceServerExempt;
             if (needServer && !hasActiveServer)
                 continue;
 
-            // check if message can be sent to specific receiver
             var attemptEv = new CustomRadioReceiveAttemptEvent(channel, radioSource, receiver);
             RaiseLocalEvent(ref attemptEv);
             RaiseLocalEvent(receiver, ref attemptEv);
             if (attemptEv.Cancelled)
                 continue;
 
-            // send the message
             RaiseLocalEvent(receiver, ref ev);
 
         }
@@ -338,7 +329,7 @@ public sealed class RadioSystem : EntitySystem
         {
             Source = messageSource,
             Message = message,
-            Language = language, // Starlight-edit: Languages
+            Language = language,
             Receivers = [.. ev.Receivers]
         });
 
@@ -347,7 +338,7 @@ public sealed class RadioSystem : EntitySystem
         else
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Radio message from {ToPrettyString(messageSource):user} on {channel.LocalizedName}: {message}");
 
-        _replay.RecordServerMessage(msg); // Starlight-edit: Languages
+        _replay.RecordServerMessage(msg);
         _messages.Remove(message);
     }
     
