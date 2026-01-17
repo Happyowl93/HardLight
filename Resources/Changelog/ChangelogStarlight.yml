@@ -26549,5 +26549,13 @@ Entries:
   id: 283600
   time: '2026-01-16T00:03:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2836
+- author: Coolsurf6
+  changes:
+  - message: Warden SoP now includes the Energy Shotgun and Due Process in standard
+      equipment
+    type: Tweak
+  id: 273900
+  time: '2026-01-16T01:17:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2739
 Order: -1
 
