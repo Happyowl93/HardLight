@@ -26716,5 +26716,12 @@ Entries:
   id: 272100
   time: '2026-01-17T12:33:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2721
+- author: Sparlight
+  changes:
+  - message: Added corgi-specific HUD icons for corgis, smart corgis, and borgis.
+    type: Add
+  id: 273200
+  time: '2026-01-17T12:47:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2732
 Order: -1
 
