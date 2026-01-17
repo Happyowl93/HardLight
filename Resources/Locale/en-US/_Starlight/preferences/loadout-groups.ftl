@@ -12,6 +12,9 @@ loadout-group-assistant-glasses = Assistant glasses
 loadout-group-assistant-head = Assistant head
 loadout-group-assistant-backpack = Assistant backpack
 
+loadout-group-boxer-jumpsuit = Boxer jumpsuit
+loadout-group-boxer-gloves = Boxer gloves
+
 # Command
 
 loadout-group-nanotrasenrepresentative-head = NanoTrasen representative head
@@ -44,6 +47,8 @@ loadout-group-brigmedic-mask = Brigmedic mask
 loadout-group-brigmedic-tie = Brigmedic tie
 
 # Law
+loadout-group-magistrate-jumpsuit = Magistrate jumpsuit
+loadout-group-magistrate-eyewear = Magistrate eyewear
 loadout-group-magistrate-shoes = Magistrate shoes
 loadout-group-iia-shoes = Lawyer shoes
 
@@ -57,7 +62,7 @@ loadout-group-mining-specialist-jumpsuit = Mining Specialist jumpsuit
 loadout-group-salvagelead-id = Salvage Lead ID
 loadout-group-mining-id = Mining Specialist ID
 loadout-group-salvage-id = Salvage Specialist ID
-loadout-group-salvage-lead-mantle = Salvage Lead mantle 
+loadout-group-salvage-lead-mantle = Salvage Lead mantle
 
 # Silicons
 loadout-group-borg-brain-type = Cyborg Brain Type
@@ -74,6 +79,7 @@ loadout-group-chemist-shoes = Chemist shoes
 
 # Other
 loadout-group-scarves = Scarf
+loadout-group-pins = Pins
 loadout-group-pens = Pen
 
 # Brighteye
