@@ -156,7 +156,11 @@ namespace Content.Client.HealthAnalyzer.UI
                 });
 
             // Damage Groups
-
+            /* Starlight begin - old damage group sorting by highest damage
+            var damageSortedGroups =
+                damageable.DamagePerGroup.OrderByDescending(damage => damage.Value)
+                    .ToDictionary(x => x.Key, x => x.Value);
+            Starlight end */
             IReadOnlyDictionary<string, FixedPoint2> damagePerType = damageable.Damage.DamageDict;
 
             //Starlight begin - Sort damage groups in a fixed order and add metabolizing section
