@@ -9,5 +9,5 @@ public sealed partial class FiringPinComponent : Component
     /// What kind of pin is this? determines what guns it fits in
     /// </summary>
     [DataField]
-    public ProtoId<FiringPinClassPrototype> PinType = "Rifle";
+    public string PinType = "Rifle";
 }
