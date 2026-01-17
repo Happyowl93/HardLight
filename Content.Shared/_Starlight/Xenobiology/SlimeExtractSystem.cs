@@ -95,7 +95,9 @@ public sealed class SlimeExtractSystem : EntitySystem
                         var minimumScalingFactor = FindMinimumScalingFactor(reaction.Requirements, currentSolution);
                         foreach (var requirement in reaction.Requirements)
                         {
-                            _solutionContainerSystem.RemoveReagent(solutionComponent.Value, new ReagentId(requirement.Key, null), minimumScalingFactor * requirement.Value);
+                            var reagentToRemove = new ReagentQuantity(new ReagentId(requirement.Key, null),
+                                minimumScalingFactor * requirement.Value);
+                            currentSolution.RemoveReagent(reagentToRemove, false, true);
                         }
                         foreach (var effect in reaction.Effects)
                         {
