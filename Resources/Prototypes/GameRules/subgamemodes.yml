@@ -57,7 +57,10 @@
         - type: ChangelingDevour
         - type: ChangelingIdentity
         - type: ChangelingTransform
-        - type: CantBecomeRevolutionary # Starlight
+      # Starlight-start
+      tags:
+        - CantBecomeRevolutionary
+      # Starlight-end
 
 - type: entity
   parent: BaseGameRule
@@ -108,9 +111,12 @@
         - NamesWizardFirst
         - NamesWizardLast
         nameFormat: name-format-wizard
-      - type: CantBecomeRevolutionary # Starlight
       mindRoles:
       - MindRoleWizard
+      # Starlight-start
+      tags:
+        - CantBecomeRevolutionary
+      # Starlight-end
 
 - type: entity
   parent: BaseGameRule
