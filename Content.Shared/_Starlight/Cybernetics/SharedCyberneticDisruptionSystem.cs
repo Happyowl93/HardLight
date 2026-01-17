@@ -51,9 +51,12 @@ public abstract partial class SharedCyberneticDisruptionSystem : EntitySystem
             RaiseLocalEvent(action.Owner, ref ev);
     }
 
-    public bool TryAddCyberneticDisruptionDuration(EntityUid uid, TimeSpan duration)
+    public bool TryAddCyberneticDisruptionDuration(EntityUid uid, TimeSpan duration, bool refreshDuration = false)
     {
-        if (!_status.TryAddStatusEffectDuration(uid, DisruptionId, duration))
+        if (refreshDuration && !_status.TrySetStatusEffectDuration(uid, DisruptionId, duration))
+            return false;
+
+        if (!refreshDuration && !_status.TryAddStatusEffectDuration(uid, DisruptionId, duration))
             return false;
 
         OnCyberneticDisruptionSuccessful(uid, duration);

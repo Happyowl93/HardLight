@@ -1,4 +1,7 @@
-﻿namespace Content.Shared.Starlight.Cybernetics;
+﻿using Content.Shared.DoAfter;
+using Robust.Shared.Serialization;
+
+namespace Content.Shared.Starlight.Cybernetics;
 
 /// <summary>
 /// This contains all the events raised by the CyberneticDisruptionSystem
@@ -15,3 +18,11 @@ public record struct CyberneticDisruptionEvent(EntityUid Target);
 /// </summary>
 [ByRefEvent]
 public record struct CyberneticDisruptionEndAttemptEvent(bool Cancelled);
+
+/// <summary>
+///     Raised on a disruptor when the doafter finishes
+/// </summary>
+[Serializable, NetSerializable]
+public sealed partial class CyberneticDisruptorDoafterEvent : SimpleDoAfterEvent
+{
+}
