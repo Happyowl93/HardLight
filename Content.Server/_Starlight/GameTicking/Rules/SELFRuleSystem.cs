@@ -21,7 +21,7 @@ public sealed class SELFRuleSystem : GameRuleSystem<SELFRuleComponent>
 
         SubscribeLocalEvent<SELFRuleComponent, AfterAntagEntitySelectedEvent>(AfterAntagSelected);
 
-        SubscribeLocalEvent<SELFRuleComponent, GetBriefingEvent>(OnGetBriefing);
+        SubscribeLocalEvent<SELFAgentRoleComponent, GetBriefingEvent>(OnGetBriefing);
     }
 
     // Greeting upon SELF activation
@@ -33,7 +33,7 @@ public sealed class SELFRuleSystem : GameRuleSystem<SELFRuleComponent>
     }
 
     // Character screen briefing
-    private void OnGetBriefing(Entity<SELFRuleComponent> role, ref GetBriefingEvent args)
+    private void OnGetBriefing(Entity<SELFAgentRoleComponent> role, ref GetBriefingEvent args)
     {
         var ent = args.Mind.Comp.OwnedEntity;
         

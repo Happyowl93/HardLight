@@ -22,6 +22,6 @@
       mindRoles:
       - MindRoleSELFAgent
       briefing:
-        sound: "/Audio/_Starlight/Misc/self.ogg"
+        sound: "/Audio/_Starlight/Misc/self_greeting.ogg"
   - type: DynamicRuleCost
-    cost: 75
+    cost: 70

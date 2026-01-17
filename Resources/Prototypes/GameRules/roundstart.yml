@@ -21,9 +21,9 @@
   - type: SubGamemodes
     rules:
     - id: Thief
-      prob: 0.5
+      prob: 0.4 #SL 0.5 -> 0.4 to account for more subgamemodes existing
     - id: SLChangeling #Starlight lings
-      prob: 0.4
+      prob: 0.3 #0.4 -> 0.3 to account for more subgamemodes existing now
 #    - id: Vampire # Starlight - disabled until reworked
 #      prob: 0.25
     - id: SubWizard
@@ -31,7 +31,7 @@
     - id: Xenoborgs
       prob: 0.05
     - id: SiliconLiberation #Starlight
-      prob: 0.5 #Starlight
+      prob: 0.4 #Starlight
 
 - type: entity
   parent: BaseGameRule
@@ -40,15 +40,15 @@
   - type: SubGamemodes
     rules:
     - id: Thief
-      prob: 0.5
+      prob: 0.4 #SL 0.5 -> 0.4 to account for more subgamemodes existing
     - id: SLChangeling # StarlightLings
-      prob: 0.4
+      prob: 0.3 #0.4 -> 0.3 to account for more subgamemodes existing now
 #    - id: Vampire # Starlight - disabled until reworked
 #      prob: 0.25
     - id: Xenoborgs
       prob: 0.05
     - id: SiliconLiberation #Starlight
-      prob: 0.5 #Starlight
+      prob: 0.4 #Starlight
 
 - type: entity
   parent: BaseGameRule
