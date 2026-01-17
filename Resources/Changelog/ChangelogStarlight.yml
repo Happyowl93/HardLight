@@ -26673,5 +26673,27 @@ Entries:
   id: 271800
   time: '2026-01-17T11:00:21.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2718
+- author: Arkanic
+  changes:
+  - message: Added firing pins to all guns. These come in different varieties, and
+      can be removed with a screwdriver to render a gun inoperable. Some pins are
+      more rare than others.
+    type: Add
+  - message: Added thieving objectives for certain types of firing pins
+    type: Add
+  - message: Added expedition firing pin which can be researched and manufactured
+      by science. This pin only allows a gun to be fired off station, providing a
+      way to manage salvage weaponry if so desired
+    type: Add
+  id: 229200
+  time: '2026-01-17T11:29:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2292
+- author: Artifyber, InanimateIJK
+  changes:
+  - message: New Lobby Track, Unity.
+    type: Add
+  id: 280500
+  time: '2026-01-17T11:45:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2805
 Order: -1
 
