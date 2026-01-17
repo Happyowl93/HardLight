@@ -385,6 +385,13 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+      firing_pin: !type:Container
+  - type: ContainerFill
+    containers:
+      firing_pin:
+      - FiringPinMakeshift
+  - type: FiringPinHolder
+    supportedPins: [ Makeshift, GunUpgrade ]
   - type: Appearance
   - type: StaticPrice
     price: 1
