@@ -4,7 +4,7 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-selfagent-description
-  guides: [ SiliconLiberation, Roboticist ]
+  guides: [ SiliconLiberation ]
   roleLoadout: [ SELFAgentGear ]
   requirements:
   - !type:OverallPlaytimeRequirement
