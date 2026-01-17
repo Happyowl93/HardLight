@@ -26566,5 +26566,170 @@ Entries:
   id: 283900
   time: '2026-01-16T09:00:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2839
+- author: Rinary
+  changes:
+  - message: Fixed pump shotguns.
+    type: Fix
+  id: 283200
+  time: '2026-01-16T16:13:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2832
+- author: AegisShieldDev
+  changes:
+  - message: Fixed Markings and Hair sprites
+    type: Fix
+  - message: Adjusted a dozen different markings that were off by a row or column
+    type: Fix
+  - message: Fixed Backpack sprite layering
+    type: Fix
+  id: 281600
+  time: '2026-01-16T18:11:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2816
+- author: CawsForConcern
+  changes:
+  - message: Xenoborgs now only needs 20 minimum readied players to start instead
+      of 40 (same as Nukeops, Zombies)
+    type: Tweak
+  id: 284100
+  time: '2026-01-16T18:19:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2841
+- author: Scarlet/hydetime
+  changes:
+  - message: Added a new ''Damaged Throat'' Trait
+    type: Add
+  id: 246500
+  time: '2026-01-16T18:50:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2465
+- author: RoadTrain
+  changes:
+  - message: Baton grenades are now researchable in basic shuttle armament.
+    type: Add
+  - message: A lot of researches now depend on other researches before being able
+      to be unlocked. Changes are visible in the guidebook (and now you know you can
+      use the guidebook to check research pre-requisites!)
+    type: Tweak
+  id: 194400
+  time: '2026-01-16T21:01:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1944
+- author: wonderfulnewworld
+  changes:
+  - message: Added Magistrate and Internal Affairs Agent lockers (need to be mapped)
+    type: Add
+  - message: Added Internal Affairs Access (By default, given to AA, Captain, NT Rep,
+      BSO, Magistrate, and IAA. Lawyer does NOT get it.)
+    type: Add
+  - message: Renamed old Lawyer access to Legal to differentiate the two (localization
+      only)
+    type: Tweak
+  - message: 'Magistrates can now select loadout options for: Jumpsuit, Eyewear (Sec
+      Glasses and Skill Glasses)'
+    type: Tweak
+  - message: Magistrates no longer spawn with extra clothes in their bags
+    type: Fix
+  - message: NT Rep and BSO no longer spawn with extra hats on the floor
+    type: Fix
+  - message: Added missing lockers to the spray paint (BSO, Magistrate, IAA, Salvage
+      Lead, Mining, Warden)
+    type: Fix
+  - message: ~~NT Rep's locker is now in the "ShouldMapStation" category~~ (Needs
+      to be mapped on Hotel)
+    type: Fix
+  - message: Representative's locker now has an apostrophe s (it was previously Representative
+      locker)
+    type: Fix
+  id: 283300
+  time: '2026-01-16T22:17:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2833
+- author: Fractalflower
+  changes:
+  - message: Changed the Interdyne Defib damage to deal 10 shock damage when activated
+      instead of blunt + 16 shock.
+    type: Tweak
+  id: 227100
+  time: '2026-01-17T09:56:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2271
+- author: Coolsurf6
+  changes:
+  - message: Brigmedic headsets now default to security comms
+    type: Tweak
+  id: 272000
+  time: '2026-01-17T10:26:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2720
+- author: Citrea
+  changes:
+  - message: Tables no longer slow you down if you properly climb onto them.
+    type: Tweak
+  - message: Tables no longer slow you down if you have the audacity to be in their
+      presence.
+    type: Fix
+  id: 277200
+  time: '2026-01-17T10:35:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2772
+- author: Fasuh
+  changes:
+  - message: Fixed thermal regulation of dead bodies.
+    type: Fix
+  - message: Adjust Corgi's radiated heat.
+    type: Tweak
+  id: 271800
+  time: '2026-01-17T11:00:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2718
+- author: Arkanic
+  changes:
+  - message: Added firing pins to all guns. These come in different varieties, and
+      can be removed with a screwdriver to render a gun inoperable. Some pins are
+      more rare than others.
+    type: Add
+  - message: Added thieving objectives for certain types of firing pins
+    type: Add
+  - message: Added expedition firing pin which can be researched and manufactured
+      by science. This pin only allows a gun to be fired off station, providing a
+      way to manage salvage weaponry if so desired
+    type: Add
+  id: 229200
+  time: '2026-01-17T11:29:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2292
+- author: Artifyber, InanimateIJK
+  changes:
+  - message: New Lobby Track, Unity.
+    type: Add
+  id: 280500
+  time: '2026-01-17T11:45:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2805
+- author: FoxStellar
+  changes:
+  - message: Added the Automenders to research!
+    type: Add
+  id: 269900
+  time: '2026-01-17T12:11:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2699
+- author: CommanderAlex365
+  changes:
+  - message: Added all Starlight specific accesses to the turret control panel.
+    type: Add
+  id: 284900
+  time: '2026-01-17T12:16:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2849
+- author: Coolsurf6
+  changes:
+  - message: Fixed Bagel having an unpowered air vent
+    type: Fix
+  id: 272100
+  time: '2026-01-17T12:33:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2721
+- author: Sparlight
+  changes:
+  - message: Added corgi-specific HUD icons for corgis, smart corgis, and borgis.
+    type: Add
+  id: 273200
+  time: '2026-01-17T12:47:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2732
+- author: mikeysaurus
+  changes:
+  - message: Abductors, Nukies, Wizards, Changelings, and Space Ninjas can no longer
+      be converted by a Head Revolutionary.
+    type: Tweak
+  id: 278600
+  time: '2026-01-17T12:52:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2786
 Order: -1
 
