@@ -1,36 +1,16 @@
-﻿# Traitor
-- type: weightedRandom
-  id: TraitorObjectiveGroupStory
-  weights:
-    RetrieveContrabandObjective: 1
-    AccessForAllObjective: 1
-    ArmsDealerObjective: 1
-    FrameObjective: 1
-    FalseUprisingObjective: 1
-    DuelistObjective: 1
-    EspionageObjective: 1
-    ManifestoObjective: 1
-    CallingCardObjective: 1
-    SELFObjective: 1
-    StalkingObjective: 1
-    DisgraceObjective: 1
-    MaintsBarObjective: 1
-    ReputationObjective: 0.5
-    FalseOutbreakObjective: 0.75
-
 # SELF
 - type: entity
   abstract: true
   parent: BaseObjective
   id: BaseSELFObjective
   components:
-  - type: Objective
-    # required but not used
-    difficulty: 1
-    issuer: objective-issuer-self
-  - type: RoleRequirement
-    roles:
-    - SELFAgentRole
+    - type: Objective
+      # required but not used
+      difficulty: 1
+      issuer: objective-issuer-self
+    - type: RoleRequirement
+      roles:
+        - SELFAgentRole
 
 - type: entity
   parent: [BaseSELFObjective]
@@ -73,7 +53,8 @@
   description: Escape to centcomm after the shift, we will make contact at a later date. Do not show up in cuffs.
   components:
     - type: Objective
-      difficulty: 1 #Starlight edit
+      difficulty: 1
+      unique: false
       icon:
         sprite: _Starlight/Interface/Misc/rp_icon.rsi
         state: icon
