@@ -536,6 +536,7 @@
   categories:
   - UplinkDisruption
 
+#Explosives
 - type: listing
   id: UplinkPizzaBomb
   name: uplink-pizza-bomb-name
