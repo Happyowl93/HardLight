@@ -26647,5 +26647,12 @@ Entries:
   id: 227100
   time: '2026-01-17T09:56:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2271
+- author: Coolsurf6
+  changes:
+  - message: Brigmedic headsets now default to security comms
+    type: Tweak
+  id: 272000
+  time: '2026-01-17T10:26:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2720
 Order: -1
 
