@@ -132,6 +132,12 @@
         - proto: RightArmCyberAngel
           prob: 0.2
           cost: 20
+        - proto: LeftArmCyberMantisBlade
+          prob: 0.2
+          cost: 20
+        - proto: RightArmCyberMantisBlade
+          prob: 0.2
+          cost: 20
 
         - proto: LeftLegCyber
           prob: 0.6
