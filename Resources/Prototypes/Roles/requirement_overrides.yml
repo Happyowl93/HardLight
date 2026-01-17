@@ -144,7 +144,7 @@
     DutyOfficer:
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 10h
+      time: 5h
     SecurityCadet:
     - !type:OverallPlaytimeRequirement
       time: 30h
