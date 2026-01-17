@@ -1,14 +1,15 @@
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
 using Content.Shared.Database;
-using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Starlight.Cybernetics.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Actions;
+using Content.Shared.Humanoid;
+using Content.Shared.Projectiles;
+using Robust.Shared.Random;
 
 namespace Content.Shared.Starlight.Cybernetics;
 
@@ -22,6 +23,7 @@ public abstract partial class SharedCyberneticDisruptionSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _status = default!;
     [Dependency] private readonly SharedBodySystem _bodySystem = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -32,6 +34,8 @@ public abstract partial class SharedCyberneticDisruptionSystem : EntitySystem
         SubscribeLocalEvent<CyberneticDisruptionStatusEffectComponent, StatusEffectAppliedEvent>(OnCyberneticDisruptionStatusApplied);
         SubscribeLocalEvent<CyberneticDisruptionStatusEffectComponent, StatusEffectRemovedEvent>(OnCyberneticDisruptionStatusRemoved);
         SubscribeLocalEvent<CyberneticDisruptionStatusEffectComponent, StatusEffectRelayedEvent<CyberneticDisruptionEndAttemptEvent>>(OnCyberneticDisruptionEndAttempt);
+
+        SubscribeLocalEvent<CyberneticDisruptionOnCollideComponent, ProjectileHitEvent>(OnProjectileHit);
     }
 
     private void OnCyberneticDisruptionShutdown(Entity<CyberneticDisruptionComponent> ent, ref ComponentShutdown args) => UpdateCybernetics(ent, ent.Comp, args);
@@ -110,5 +114,20 @@ public abstract partial class SharedCyberneticDisruptionSystem : EntitySystem
         var ev = args.Args;
         ev.Cancelled = true;
         args.Args = ev;
+    }
+
+    private void OnProjectileHit(EntityUid uid, CyberneticDisruptionOnCollideComponent component, ref ProjectileHitEvent args)
+    {
+        OnCollide(uid, component, args.Target);
+    }
+
+    private void OnCollide(EntityUid uid, CyberneticDisruptionOnCollideComponent component, EntityUid target)
+    {
+        // you can't disrupt cybernetics on things which cannot have cybernetics in the first place
+        if (!HasComp<HumanoidAppearanceComponent>(target))
+            return;
+
+        if(_random.NextFloat() <= component.DisableChance)
+            TryAddCyberneticDisruptionDuration(target, component.Duration);
     }
 }

@@ -1,10 +1,4 @@
-﻿using Content.Shared.Alert;
-using Content.Shared.DoAfter;
-using Content.Shared.Popups;
-using Robust.Shared.Serialization;
-using Content.Shared.Inventory; // Starlight-edit
-
-namespace Content.Shared.Starlight.Cybernetics;
+﻿namespace Content.Shared.Starlight.Cybernetics;
 
 /// <summary>
 /// This contains all the events raised by the CyberneticDisruptionSystem

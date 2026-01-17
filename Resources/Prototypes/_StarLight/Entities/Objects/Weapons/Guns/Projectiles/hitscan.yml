@@ -1316,6 +1316,8 @@
   components:
   - type: HitscanStaminaDamage
     staminaDamage: 25
+  - type: HitscanCyberneticDisruption
+    disableChance: 0.1
 
 - type: entity
   id: DisablerBoltSmg
@@ -1325,6 +1327,8 @@
   components:
   - type: HitscanStaminaDamage
     staminaDamage: 15
+  - type: HitscanCyberneticDisruption
+    disableChance: 0.1
       
 - type: entity
   id: TaserBolt
