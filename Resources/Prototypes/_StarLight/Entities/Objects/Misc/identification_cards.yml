@@ -179,7 +179,7 @@
 - type: entity
   parent: [ IDCardStandard, BaseCargoContraband ]
   id: MailTechIDCard
-  name: mail techician ID card
+  name: mail technician ID card
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Misc/id_cards.rsi
