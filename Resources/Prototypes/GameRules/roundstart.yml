@@ -347,6 +347,10 @@
           - Revolutionary
           - BorgChassis
           - MindShield
+          - Zombie
+        whitelist:
+          components:
+          - HumanoidAppearance
         # Starlight-end
       mindRoles:
       - MindRoleHeadRevolutionary
