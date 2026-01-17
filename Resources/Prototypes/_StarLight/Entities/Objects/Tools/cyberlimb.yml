@@ -275,6 +275,11 @@
       - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
+    - type: GunWieldBonus
+      minAngle: -1
+      maxAngle: -55
+    - type: Wieldable
+      freeHandsRequired: 2
     - type: AmmoCounter
     - type: Appearance
     - type: GenericVisualizer
