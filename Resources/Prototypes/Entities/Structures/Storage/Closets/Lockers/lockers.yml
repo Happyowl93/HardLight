@@ -388,7 +388,7 @@
     stateDoorOpen: sec_open
     stateDoorClosed: sec_door
   - type: AccessReader
-    access: [["Security"]]
+    access: [["Security"], ["Cadet"]] # Starlight: add cadet
 
 - type: entity
   id: GunSafe
@@ -618,12 +618,12 @@
 # Representative
 - type: entity
   id: LockerRepresentative
-  name: representative locker
+  name: representative's locker # Starlight, added apostrophe s
   parent: LockerBaseSecure
   components:
   - type: Appearance
   - type: AccessReader
-    access: [["Command"]]
+    access: [["Ntrep"]] # Starlight
   - type: EntityStorageVisuals
     stateBaseClosed: hop
     stateDoorOpen: hop_open
