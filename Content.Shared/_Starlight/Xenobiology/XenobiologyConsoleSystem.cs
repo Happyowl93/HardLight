@@ -3,10 +3,13 @@ using Content.Shared._Starlight.Computers.RemoteEye;
 using Content.Shared._Starlight.Xenobiology.MiscItems;
 using Content.Shared._Starlight.Xenobiology.Potions;
 using Content.Shared.Actions;
+using Content.Shared.Construction;
 using Content.Shared.Damage.Components;
+using Content.Shared.Destructible;
 using Content.Shared.Interaction;
 using Content.Shared.Tag;
 using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._Starlight.Xenobiology;
@@ -18,10 +21,15 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly EntityLookupSystem _entityLookupSystem = default!;
 
+    private static readonly EntProtoId _monkeyCubeName = "MonkeyCube";
+    private static readonly EntProtoId _mutationPotionName = "SlimeMutationPotion";
+    private static readonly EntProtoId _stabilizerPotionName = "SlimeStabilizerPotion";
+
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<XenobiologyConsoleComponent, AfterInteractUsingEvent>(OnAfterInteractUsing);
+        SubscribeLocalEvent<XenobiologyConsoleComponent, MachineDeconstructedEvent>(OnMachineDeconstruction);
         
         SubscribeLocalEvent<ConsoleGrabSlimeEvent>(OnConsoleGrabSlime);
         SubscribeLocalEvent<ConsolePlaceSlimeEvent>(OnConsolePlaceSlime);
@@ -51,7 +59,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
             args.Handled = true;
             return;
         }
-        
+
         if (_entityManager.HasComponent<SlimeStabilizerPotionComponent>(args.Used))
         {
             entity.Comp.StabilizerPotions += 1;
@@ -60,6 +68,16 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
             args.Handled = true;
             return;
         }
+    }
+
+    private void OnMachineDeconstruction(Entity<XenobiologyConsoleComponent> entity, ref MachineDeconstructedEvent args)
+    {
+        for (var i = 0; i < entity.Comp.MonkeyCubes; i++)
+            SpawnNextToOrDrop(_monkeyCubeName, entity.Owner);
+        for (var i = 0; i < entity.Comp.MutationPotions; i++)
+            SpawnNextToOrDrop(_mutationPotionName, entity.Owner);
+        for (var i = 0; i < entity.Comp.StabilizerPotions; i++)
+            SpawnNextToOrDrop(_stabilizerPotionName, entity.Owner);
     }
     
     private bool VerifyComponents(InstantActionEvent args, [NotNullWhen(true)] out RemoteEyeActorComponent? remoteEyeActorComponent,
