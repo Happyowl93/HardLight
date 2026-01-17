@@ -320,6 +320,8 @@
     containers:
       firing_pin:
       - FiringPinMakeshift
+  - type: FiringPinHolder
+    supportedPins: [ Makeshift, GunUpgrade ]
   - type: Appearance
   - type: StaticPrice
     price: 400
