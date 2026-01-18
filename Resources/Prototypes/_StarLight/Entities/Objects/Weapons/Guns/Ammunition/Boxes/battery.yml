@@ -23,7 +23,7 @@
     zeroVisible: false
   - type: Appearance
 
-  - type: entity
+- type: entity
   parent: BaseMagazineBoxBattery
   id: MagazineBoxBattery
   name: ammunition box (laser)
