@@ -447,6 +447,7 @@
     - StarlightSecurityWeapons
     - SecurityDisablers
     - SecurityCyberLimbs
+    - SecurityImplants # 🌟Starlight🌟
     - StarlightSecurityMechsWeapons
     - StarlightSecurityTechFabLootable
   #region Starlight secfab emagging
@@ -527,6 +528,7 @@
     - StarlightMedicalStatic # Starlight
     dynamicPacks:
     - StarlightSurgeryDynamic
+    - StarlightAutomendersDynamic # Starlight-edit
     - StarlightCyberlimbDynamic
     - StarlightCyberOrgansDynamic
     - StarlightImplantDynamic
