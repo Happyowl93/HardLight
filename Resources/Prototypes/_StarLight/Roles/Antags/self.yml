@@ -4,7 +4,7 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-selfagent-description
-  guides: [ SiliconLiberation ]
+  guides: [ SELFAgent ]
   #roleLoadout: [ SELFAgentGear ] #commenting out for now, I may add like, a hat or protest signs for SELF later locked in loadouts behind playtime
   requirements:
   - !type:OverallPlaytimeRequirement
