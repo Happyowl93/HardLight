@@ -359,6 +359,7 @@
       - nano-trasen-employee-sop-bso
       - nano-trasen-employee-sop-magistrate
       - nano-trasen-employee-sop-iaa
+      - nano-trasen-employee-sop-nct
 
 
 - type: guideEntry
@@ -385,7 +386,11 @@
   text: "/ServerInfo/Guidebook/StarlightSOP/NanoTrasenEmployeeSOP/nano-trasen-employee-sop-iaa.xml"
   priority: 4
 
-
+- type: guideEntry
+  id: nano-trasen-employee-sop-nct
+  name: guide-entry-sl-nano-trasen-employee-sop-nct
+  text: "/ServerInfo/Guidebook/StarlightSOP/NanoTrasenEmployeeSOP/nano-trasen-employee-sop-nct.xml"
+  priority: 5
 
 - type: guideEntry
   id: engineering-sop-intro

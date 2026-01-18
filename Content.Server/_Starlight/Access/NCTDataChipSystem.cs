@@ -65,7 +65,7 @@ namespace Content.Server._Starlight.Access.Systems
 
         private void OnAfterInteract(EntityUid uid, NCTDataChipComponent component, AfterInteractEvent args)
         {
-            if (args.Target == null || !args.CanReach || component.Owner.HasValue ||
+            if (args.Target == null || !args.CanReach || !component.Owner.HasValue ||
                 !TryComp<AccessComponent>(args.Target, out var targetAccess) || !TryComp<IdCardComponent>(args.Target, out var trainee))
                 return;
 
