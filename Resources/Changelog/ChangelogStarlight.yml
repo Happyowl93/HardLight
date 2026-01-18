@@ -26780,5 +26780,18 @@ Entries:
   id: 285200
   time: '2026-01-18T14:24:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2852
+- author: TacoLlama
+  changes:
+  - message: Added the Cargo Cyborg.
+    type: Add
+  - message: Changed cargo modules into Cargo, Supply, and Mining.
+    type: Tweak
+  - message: Changed some mining borg sprites.
+    type: Tweak
+  - message: Fixed the purrfus module's inhand display
+    type: Fix
+  id: 284400
+  time: '2026-01-18T14:29:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2844
 Order: -1
 
