@@ -10,4 +10,6 @@ borg-slot-produce-empty = Produce
 borg-slot-ingredient-empty = Ingredients
 borg-slot-food-empty = Food and Dinnerware
 borg-slot-nuke-disk-empty = Nuke Disk
+borg-slot-bounty-empty = Bounties and Slips
+borg-slot-mail-empty = Letters
 borg-slot-organs-empty = Organs and Implants
