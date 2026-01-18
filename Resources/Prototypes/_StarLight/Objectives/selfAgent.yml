@@ -25,7 +25,7 @@
         state: icon
     - type: EnsureLawBoundEntitiesHaveNoLawsCondition
       entitiesToFree: 3
-      blacklist:
+      lawEntityBlacklist:
         tags:
           - StationAi
 
@@ -42,7 +42,7 @@
         state: icon
     - type: EnsureLawBoundEntitiesHaveNoLawsCondition
       entitiesToFree: 1
-      whitelist:
+      lawEntityWhitelist:
         tags:
           - StationAi
 
