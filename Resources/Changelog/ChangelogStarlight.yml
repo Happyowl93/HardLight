@@ -26760,5 +26760,12 @@ Entries:
   id: 285900
   time: '2026-01-18T14:17:11.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2859
+- author: CawsForConcern
+  changes:
+  - message: (CentComm SC17) Telecomms APC tripping due to a 20.5kW draw
+    type: Fix
+  id: 285800
+  time: '2026-01-18T14:20:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2858
 Order: -1
 
