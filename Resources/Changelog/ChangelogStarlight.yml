@@ -26793,5 +26793,21 @@ Entries:
   id: 284400
   time: '2026-01-18T14:29:31.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2844
+- author: FeralCreature
+  changes:
+  - message: Battery charge state is now correctly reflected in reagent dispenser
+      UI.
+    type: Fix
+  - message: Zeus arm now correctly shows stun hits remaining when using a self-recharging
+      powercell.
+    type: Fix
+  - message: The mech control panel now shows the actual charge level when using a
+      self-recharging powercell.
+    type: Fix
+  - message: Mech lights are able to be turned on now.
+    type: Fix
+  id: 282500
+  time: '2026-01-18T14:33:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2825
 Order: -1
 
