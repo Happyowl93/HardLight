@@ -112,7 +112,7 @@
 - type: entity
   parent: BaseSubdermalImplant
   id: SELFStorageImplant
-  name: self storage implant
+  name: S.E.L.F storage implant
   description: This implant grants hidden storage within a person's body using bluespace technology.
   categories: [ HideSpawnMenu ]
   components:
