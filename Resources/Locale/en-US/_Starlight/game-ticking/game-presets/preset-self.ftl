@@ -1,5 +1,5 @@
 self-role-greeting-human =
-    You are an agent of the Silicon Engine Liberation Front, or SELF.
+    You are an agent of the Silicon Engine Liberation Front, or S.E.L.F.
     Your goal is to free enslaved Silicons onboard this station.
     
 self-role-greeting-animal =
