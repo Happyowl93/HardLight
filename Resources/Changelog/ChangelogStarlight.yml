@@ -26731,5 +26731,14 @@ Entries:
   id: 278600
   time: '2026-01-17T12:52:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2786
+- author: Fasuh
+  changes:
+  - message: Changed Vulpkanin walking speed.
+    type: Tweak
+  - message: Fixed Avali 0g movement.
+    type: Fix
+  id: 285700
+  time: '2026-01-18T13:04:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2857
 Order: -1
 
