@@ -28,22 +28,24 @@ public sealed class ClientEncryptionKeySystem : EntitySystem
     private void OnAutoHandleState(EntityUid uid, EncryptionKeyComponent component, AfterAutoHandleStateEvent args)
     {
         if (!TryComp<SpriteComponent>(uid, out var sprite)) return;
-        if(component.CustomBase?.Item2 is null) RestoreLayer((uid, sprite), 0);
+        if(component.CustomBaseState is null) RestoreLayer((uid, sprite), 0);
         else
         {
-            var rsi = component.CustomBase.Value.Item1 is not null
-                ? new RSI(component.ExpectedSpriteSize, new ResPath(component.CustomBase.Value.Item1), sprite.AllLayers.Count())
+            var rsi = component.CustomBaseRsi is not null
+                ? new RSI(component.ExpectedSpriteSize, new ResPath(component.CustomBaseRsi), sprite.AllLayers.Count())
                 : null;
-            _sprite.LayerSetRsi((uid, sprite), 0, rsi, component.CustomBase.Value.Item2);
+            _sprite.LayerSetRsi((uid, sprite), 0, rsi, component.CustomBaseState);
         }
-        if(component.CustomIcon?.Item2 is null) RestoreLayer((uid, sprite), 1);
+        if(component.CustomIconState is null) RestoreLayer((uid, sprite), 1);
         else
         {
-            var rsi = component.CustomIcon.Value.Item1 is not null
-                ? new RSI(component.ExpectedSpriteSize, new ResPath(component.CustomIcon.Value.Item1), sprite.AllLayers.Count())
+            var rsi = component.CustomIconRsi is not null
+                ? new RSI(component.ExpectedSpriteSize, new ResPath(component.CustomIconRsi), sprite.AllLayers.Count())
                 : null;
-            _sprite.LayerSetRsi((uid, sprite), 1, rsi, component.CustomIcon.Value.Item2);
+            _sprite.LayerSetRsi((uid, sprite), 1, rsi, component.CustomIconState);
         }
+
+        Dirty(uid, component);
     }
 
     private void RestoreLayer(Entity<SpriteComponent> entity, int index)
