@@ -1,2 +1,2 @@
-admin-verb-make-selfagent = Make the target into a SELF Agent.
-admin-verb-text-make-selfagent = Make SELF Agent
+admin-verb-make-selfagent = Make the target into a S.E.L.F Agent.
+admin-verb-text-make-selfagent = Make S.E.L.F Agent
