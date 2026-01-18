@@ -26767,5 +26767,18 @@ Entries:
   id: 285800
   time: '2026-01-18T14:20:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2858
+- author: FeralCreature, AegisShield
+  changes:
+  - message: New icon for the burn damage group in health analyzer window.
+    type: Tweak
+  - message: Damage group boxes in the health analyzer window remain static instead
+      of sorting by highest damage.
+    type: Tweak
+  - message: Health Analyzer no longer shows someones entire blood supply as a metabolizing
+      reagent.
+    type: Fix
+  id: 285200
+  time: '2026-01-18T14:24:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2852
 Order: -1
 
