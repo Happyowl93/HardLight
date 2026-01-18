@@ -26823,5 +26823,37 @@ Entries:
   id: 284600
   time: '2026-01-18T15:27:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2846
+- author: CawsForConcern
+  changes:
+  - message: (Leth) Wall-mounted mass scanners by Cargo
+    type: Add
+  - message: (Leth) Sprinkled some of the new computers (by Conf) around the station
+    type: Add
+  - message: (Leth) Magistrate Locker
+    type: Add
+  - message: (Leth) IAA Lockers
+    type: Add
+  - message: (Leth) Removed windows from the Red-Alert Armory on Leth to prevent turrets
+      from shooting people in the hallway
+    type: Tweak
+  - message: (Leth) Reorganized the Blue-Alert Armory on Leth so the turret doesn't
+      block movement
+    type: Tweak
+  - message: (Leth) Replaced HOS WT550 with the 'HOS weapon spawner' (no gameplay
+      difference, just mapping stuff)
+    type: Tweak
+  - message: (Leth) Mining Signage on the inside-face of Cargo Bay added
+    type: Tweak
+  - message: (Leth) Re-enabled StationPowerTests for Leth
+    type: Tweak
+  - message: (Leth) Fixed West Thrusters APC tripping from a 40kW power draw
+    type: Fix
+  - message: (Leth) Fixed South Thrusters APC tripping from a 40kW power draw
+    type: Fix
+  - message: (Leth) Fixed East Thrusters APC tripping from a 40kW power draw
+    type: Fix
+  id: 286600
+  time: '2026-01-18T16:31:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2866
 Order: -1
 
