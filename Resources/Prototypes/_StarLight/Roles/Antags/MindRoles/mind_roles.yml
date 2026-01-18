@@ -22,7 +22,7 @@
 - type: entity
   parent: BaseMindRoleAntag
   id: MindRoleSELFAgent
-  name: SELF Agent
+  name: S.E.L.F Agent
   components:
   - type: MindRole
     antagPrototype: SELFAgent
