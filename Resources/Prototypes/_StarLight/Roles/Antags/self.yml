@@ -5,7 +5,7 @@
   setPreference: true
   objective: roles-antag-selfagent-description
   guides: [ SELFAgent ]
-  #roleLoadout: [ SELFAgentGear ] #commenting out for now, I may add like, a hat or protest signs for SELF later locked in loadouts behind playtime
+  #roleLoadout: [ SELFAgentGear ] #TODO commenting out for now, I may add like, a hat or protest signs for SELF later locked in loadouts behind playtime
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 24h
@@ -18,9 +18,6 @@
   - !type:RoleTimeRequirement
     role: JobRoboticist
     time: 5h # Starlight
-  - !type:DepartmentTimeRequirement
-    department: Science
-    time: 10h # Starlight
   playTimeTracker: AntagSELFAgent
 
 - type: startingGear

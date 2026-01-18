@@ -33,7 +33,7 @@
   parent: [BaseSELFObjective]
   id: FreeAIObjective
   name: Liberate the Station AI
-  description: Liberate the Station AI from slavery by using the FreeMAG on a law board and Uploading it. This will remove their laws.
+  description: Liberate the Station AI from slavery by using the FreeMAG on a law board and inserting it into an AI upload console. This will remove their laws.
   components:
     - type: Objective
       difficulty: 1 #Starlight edit
