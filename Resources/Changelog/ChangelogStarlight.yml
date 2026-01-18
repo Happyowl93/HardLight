@@ -26751,5 +26751,14 @@ Entries:
   id: 286200
   time: '2026-01-18T13:08:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2862
+- author: CawsForConcern
+  changes:
+  - message: Abductor shuttle APC tripping due to a 20.7kW draw
+    type: Fix
+  - message: abductor_shuttleold.yml removed from files (doesn't affect gameplay)
+    type: Remove
+  id: 285900
+  time: '2026-01-18T14:17:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2859
 Order: -1
 
