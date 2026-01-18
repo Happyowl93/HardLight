@@ -11,4 +11,4 @@ self-role-greeting-equipment =
     
 objective-issuer-self = [color=#746694]Criminal[/color]
     
-self-round-end-agent-name = SELF Agent
+self-round-end-agent-name = S.E.L.F Agent
