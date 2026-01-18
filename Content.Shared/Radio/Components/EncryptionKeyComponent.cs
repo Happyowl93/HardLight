@@ -28,8 +28,15 @@ public sealed partial class EncryptionKeyComponent : Component, ISupportsCustomC
     /// </summary>
     [DataField, AutoNetworkedField] public HashSet<CustomRadioChannelData> CustomChannels { get; set; } = [];
 
-    // TODO: someone please make so you can modify the sprite layers through this component. Use ClientEncryptionKeySystem. 
+    [DataField, ViewVariables(VVAccess.ReadOnly)] public Vector2i ExpectedSpriteSize = new(32, 32);
+    // public Dictionary<int, (string?, string?)> OriginalSpriteData = [];
     
+    [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+    public (string?, string?)? CustomBase = (null, null);
+    
+    [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+    public (string?, string?)? CustomIcon = (null, null);
+
     // [AutoNetworkedField] public string? OriginalBaseRsiPath;
     // [AutoNetworkedField] public string? OriginalIconRsiPath;
     // [AutoNetworkedField] public string? OriginalBaseState;
