@@ -26895,5 +26895,16 @@ Entries:
   id: 287700
   time: '2026-01-19T15:01:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2877
+- author: Shades
+  changes:
+  - message: Added Admin&Mentor Mouse!
+    type: Add
+  - message: Changed Sprites for Mices... they are now adorable!
+    type: Tweak
+  - message: However Rat King Servant... Less adorable.
+    type: Tweak
+  id: 279300
+  time: '2026-01-19T17:19:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2793
 Order: -1
 
