@@ -26864,5 +26864,14 @@ Entries:
   id: 287300
   time: '2026-01-19T07:17:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2873
+- author: redmushie
+  changes:
+  - message: Patched paperwork labels on items being able to execute console commands
+    type: Fix
+  - message: Labelers now support basic markup again (color, bold, italic)
+    type: Add
+  id: 286900
+  time: '2026-01-19T08:23:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2869
 Order: -1
 
