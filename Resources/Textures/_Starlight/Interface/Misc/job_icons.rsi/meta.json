@@ -39,6 +39,11 @@
 	            "license": "CC-BY-SA-3.0"
 		},
         {
+	            "name": "NanotrasenCareerTrainer",
+	            "copyright": "by ShadesMars",
+	            "license": "CC-BY-SA-3.0"
+		},
+        {
             "name": "CentCommOperator"
         },
         {
