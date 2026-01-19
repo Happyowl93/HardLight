@@ -1,7 +1,8 @@
 using Content.Server._NullLink.Core;
 using Content.Shared._NullLink;
+using Content.Shared.NullLink.CCVar;
 using Content.Shared.Starlight;
-using Robust.Shared.Localization;
+using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 
 namespace Content.Server._NullLink;
@@ -10,6 +11,19 @@ public sealed class NullLinkPlayerResourcesManager : SharedNullLinkPlayerResourc
 {
     [Dependency] private readonly ISharedPlayersRoleManager _sharedPlayers = default!;
     [Dependency] private readonly IActorRouter _actors = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+
+    private bool _resourcesEnabled = false;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        _cfg.OnValueChanged(NullLinkCCVars.ResourcesEnabled, UpdateResources);
+    }
+
+    private void UpdateResources(bool obj) 
+        => _resourcesEnabled = obj;
 
     public override bool TryUpdateResource(ICommonSession session, string id, double value, bool skipNullLink = false)
     {
@@ -47,9 +61,10 @@ public sealed class NullLinkPlayerResourcesManager : SharedNullLinkPlayerResourc
 
         data.Resources[id] = value;
 
-        if (skipNullLink
+        if (!_resourcesEnabled 
+            || skipNullLink
             || !_actors.Enabled
-            || !_actors.TryGetServerGrain(out var serverGrain))
+            || !_actors.TryGetServerGrain(out var serverGrain) )
             return true;
 
         serverGrain.UpdateResource(session.UserId, "credits", diff);

@@ -17,5 +17,4 @@ public interface INullLinkPlayerManager
     bool TryGetPlayerData(Guid userId, [NotNullWhen(true)] out PlayerData? playerData);
     ValueTask UpdateRoles(RolesChangedEvent ev);
     ValueTask UpdateResource(ResourceChangedEvent ev);
-    bool TryGetResource(Guid userId, string id, [NotNullWhen(true)] out double? value);
 }

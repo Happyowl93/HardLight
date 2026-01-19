@@ -1,10 +1,9 @@
 using System.Threading.Tasks;
 using System.Diagnostics.CodeAnalysis;
-using Content.Server._NullLink.Event;
 using Content.Shared._NullLink;
 using Robust.Shared.Player;
 using Starlight.NullLink.Event;
-using Robust.Shared.GameObjects;
+using Content.Shared.NullLink.CCVar;
 
 namespace Content.Server._NullLink.PlayerData;
 
@@ -12,7 +11,8 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
 {
     public ValueTask SyncResources(PlayerResourcesSyncEvent ev)
     {
-        if (!_playerById.TryGetValue(ev.Player, out var playerData))
+        if (!_resourcesEnabled
+            || !_playerById.TryGetValue(ev.Player, out var playerData))
             return ValueTask.CompletedTask;
         playerData.Resources.Clear();
 
@@ -26,7 +26,8 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
     
     public ValueTask UpdateResource(ResourceChangedEvent ev)
     {
-        if (!_playerById.TryGetValue(ev.Player, out var playerData))
+        if (!_resourcesEnabled
+            || !_playerById.TryGetValue(ev.Player, out var playerData))
             return ValueTask.CompletedTask;
         playerData.Resources[ev.Resource] = ev.NewAmount;
 
@@ -40,15 +41,4 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
         {
             Resources = resources
         }, session.Channel);
-
-    public bool TryGetResource(Guid userId, string id, [NotNullWhen(true)] out double? value)
-    {
-        value = null;
-        if (!TryGetPlayerData(userId, out var data) 
-            || !data.Resources.TryGetValue(id, out var Value))
-            return false;
-
-        value = Value;
-        return true;
-    }
 }
