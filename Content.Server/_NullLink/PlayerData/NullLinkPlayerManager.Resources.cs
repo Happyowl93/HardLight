@@ -20,8 +20,7 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
             playerData.Resources[resource.Key] = resource.Value;
 
         SendPlayerResources(playerData.Session, playerData.Resources);
-        var @event = new PlayerResourcesUpdatedEvent(playerData.Session, playerData.Resources);
-        _entManager.EventBus.RaiseEvent(EventSource.Local, ref @event);
+        _playerResourcesManager.TrySetResources(playerData.Session, playerData.Resources);
         return ValueTask.CompletedTask;
     }
     
@@ -32,8 +31,7 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
         playerData.Resources[ev.Resource] = ev.NewAmount;
 
         SendPlayerResources(playerData.Session, playerData.Resources);
-        var @event = new PlayerResourcesUpdatedEvent(playerData.Session, playerData.Resources);
-        _entManager.EventBus.RaiseEvent(EventSource.Local, ref @event);
+        _playerResourcesManager.TrySetResources(playerData.Session, playerData.Resources);
         return ValueTask.CompletedTask;
     }
 

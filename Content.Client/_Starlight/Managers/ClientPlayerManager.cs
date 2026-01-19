@@ -31,11 +31,11 @@ public sealed class ClientPlayerManager : IClientPlayerRolesManager, IPostInject
 
     private void OnPlayerResourcesUpdated()
     {
-        if (!_nullLinkResourcesManager.TryGetResource("credits", out var balance) 
-            || _player.LocalSession == null)
+        if (!_nullLinkResourcesManager.TryGetResources(out var resources) 
+            || _player.LocalSession == null || _playerData == null)
             return;
 
-        SetBalance(_player.LocalSession, (int)balance);
+        _playerData!.Resources = resources;
     }
 
     private void UpdateMessageRx(MsgUpdatePlayerStatus message)
@@ -62,26 +62,4 @@ public sealed class ClientPlayerManager : IClientPlayerRolesManager, IPostInject
 
     public PlayerData? GetPlayerData(ICommonSession session)
         => _player.LocalUser == session.UserId ? _playerData : null;
-
-    public int? GetBalance(EntityUid uid)
-        => _player.LocalEntity == uid && _player.LocalSession != null ? GetBalance(_player.LocalSession) : null;
-
-    public int? GetBalance(ICommonSession session)
-        => GetPlayerData(session) is { } data ? data.Balance : null;
-
-    public void SetBalance(EntityUid uid, int value, bool skipNullLink = false)
-    {
-        if (_player.LocalEntity == uid && _player.LocalSession != null)
-            SetBalance(_player.LocalSession, value, skipNullLink);
-    } 
-
-    public void SetBalance(ICommonSession session, int value, bool skipNullLink = false) 
-    {
-        var data = GetPlayerData(session);
-
-        if (data == null)
-            return;
-
-        data.Balance = value;
-    }
 }

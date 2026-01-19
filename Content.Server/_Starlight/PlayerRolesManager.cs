@@ -19,6 +19,7 @@ public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjec
     [Dependency] private readonly IActorRouter _actors = default!;
     [Dependency] private readonly ILogManager _logger = default!;
     [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private readonly ISharedNullLinkPlayerResourcesManager _playerResourcesManager = default!;
 
     private readonly Dictionary<ICommonSession, PlayerReg> _players = new();
 
@@ -43,12 +44,15 @@ public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjec
             Login(e.Session);
         else if (e.NewStatus == SessionStatus.Disconnected)
         {
-            if(_players.Remove(e.Session, out var data))
-            _ = _dbManager.SetPlayerDataForAsync(e.Session.UserId, new StarLightModel.PlayerDataDTO
+            if (_players.Remove(e.Session, out var data))
             {
-                GhostTheme = data!.Data.GhostTheme,
-                Balance = data!.Data.Balance
-            });
+                data!.Data.Resources.TryGetValue("credits", out var balance);
+                _ = _dbManager.SetPlayerDataForAsync(e.Session.UserId, new StarLightModel.PlayerDataDTO
+                {
+                    GhostTheme = data!.Data.GhostTheme,
+                    Balance = (int)balance
+                });
+            }
         }
     }
     private void UpdatePlayerStatus(ICommonSession session)
@@ -87,62 +91,20 @@ public sealed partial class PlayerRolesManager : IPlayerRolesManager, IPostInjec
             await _dbManager.SetPlayerDataForAsync(session.UserId, dbData);
         }
 
-        return new PlayerData
+        var data = new PlayerData
         {
             Title = dbData.Title,
-            Balance = dbData.Balance,
             GhostTheme = dbData.GhostTheme
         };
+
+        data.Resources["credits"] = dbData.Balance;
+
+        return data;
     }
     public PlayerData? GetPlayerData(EntityUid uid)
     {
         if (!_playerManager.TryGetSessionByEntity(uid, out var session)) return null;
         return GetPlayerData(session);
-    }
-
-    public int? GetBalance(EntityUid uid)
-    {
-        if (!_playerManager.TryGetSessionByEntity(uid, out var session)) return null;
-        return GetBalance(session);
-    }
-
-    public int? GetBalance(ICommonSession session)
-    {
-        var data = GetPlayerData(session);
-
-        if (data == null)
-            return null;
-        
-        return data.Balance;
-    }
-
-    public void SetBalance(EntityUid uid, int value, bool skipNullLink = false)
-    {
-        if (!_playerManager.TryGetSessionByEntity(uid, out var session)) return;
-        SetBalance(session, value, skipNullLink);
-    }
-
-    public void SetBalance(ICommonSession session, int value, bool skipNullLink = false)
-    {
-        var data = GetPlayerData(session);
-
-        if (data == null)
-            return;
-
-        var diff = value - data.Balance;
-
-        if (diff == 0) // If we don't have any difference - we don't need to call null link.
-            return;
-        
-        data.Balance = value;
-
-        if (skipNullLink 
-            || !_actors.Enabled 
-            || !_actors.TryGetServerGrain(out var serverGrain))
-            return;
-        
-        serverGrain.UpdateResource(session.UserId, "credits", diff);
-        _sawmill.Debug($"Updated balance OLD: {data.Balance - diff} NEW: {data.Balance} DIFF: {diff}");
     }
 
     public PlayerData? GetPlayerData(ICommonSession session) => _players.TryGetValue(session, out var data) ? data.Data : null;

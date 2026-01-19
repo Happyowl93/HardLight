@@ -12,11 +12,12 @@ using Content.Server.Mind;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Server.Administration.Managers;
+using Content.Shared._NullLink;
 
 namespace Content.Shared.Starlight.Economy.Atm;
 public sealed partial class ATMSystem : SharedATMSystem
 {
-    [Dependency] private readonly IPlayerRolesManager _playerRolesManager = default!;
+    [Dependency] private readonly ISharedNullLinkPlayerResourcesManager _playerResources = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly StackSystem _stack = default!;
@@ -41,17 +42,17 @@ public sealed partial class ATMSystem : SharedATMSystem
 
     private void OnWithdraw(EntityUid uid, ATMComponent component, ATMWithdrawBuiMsg args)
     {
-        if (_playerRolesManager.GetBalance(args.Actor) is not { } balance || balance < args.Amount || args.Amount <= 0)
+        if (!_playerResources.TryGetResource(args.Actor, "credits", out var balance) || balance < args.Amount || args.Amount <= 0)
             return;
 
-        var newBalance = balance -= args.Amount;
+        var newBalance = balance - args.Amount;
 
-        _playerRolesManager.SetBalance(args.Actor, newBalance);
+        _playerResources.TryUpdateResource(args.Actor, "credits", -args.Amount);
         var cash = SpawnAtPosition(_cash, Transform(uid).Coordinates);
         var stack = EnsureComp<StackComponent>(cash);
         _stack.SetCount((cash, stack), args.Amount);
         _hands.TryPickup(args.Actor, cash);
-        _uiSystem.SetUiState(uid, ATMUIKey.Key, new ATMBuiState() { Balance = newBalance });
+        _uiSystem.SetUiState(uid, ATMUIKey.Key, new ATMBuiState() { Balance = (int)newBalance });
         _audioSystem.PlayPvs(component.WithdrawSound, uid);
     }
 
@@ -60,27 +61,28 @@ public sealed partial class ATMSystem : SharedATMSystem
         if (TryComp<StackComponent>(ent.Owner, out var stack)
             && args.Target.HasValue
             && TryComp<ATMComponent>(args.Target, out var atm) 
-            && _playerRolesManager.GetBalance(args.User) is { } balance)
+            && _playerResources.TryGetResource(args.User, "credits", out var balance))
         {
             args.Handled = true; // If we don't do this - debug assert and crash at the dev build.
-            var newBalance = balance += (int)Math.Floor(stack.Count * 0.9);
-            _playerRolesManager.SetBalance(args.User, newBalance);
+            var diff = (int)Math.Floor(stack.Count * 0.9);
+            var newBalance = balance += diff;
+            _playerResources.TryUpdateResource(args.User, "credits", diff);
             QueueDel(ent);
-            _uiSystem.SetUiState(args.Target.Value, ATMUIKey.Key, new ATMBuiState() { Balance = newBalance });
+            _uiSystem.SetUiState(args.Target.Value, ATMUIKey.Key, new ATMBuiState() { Balance = (int)newBalance });
             _audioSystem.PlayPvs(atm.DepositSound, args.Target.Value);
         }
     }
 
     private void OnTransfer(EntityUid uid, ATMComponent component, ATMTransferBuiMsg args)
     {
-        if (_playerRolesManager.GetBalance(args.Actor) is not { } balance)
+        if (!_playerResources.TryGetResource(args.Actor, "credits", out var balance))
             return;
 
         if (string.IsNullOrWhiteSpace(args.Recipient))
         {
             _uiSystem.SetUiState(uid, ATMUIKey.Key, new ATMBuiState
             {
-                Balance = balance,
+                Balance = (int)balance,
                 Message = Loc.GetString("economy-atm-transfer-error-no-recipient"),
                 IsError = true
             });
@@ -91,7 +93,7 @@ public sealed partial class ATMSystem : SharedATMSystem
         {
             _uiSystem.SetUiState(uid, ATMUIKey.Key, new ATMBuiState
             {
-                Balance = balance,
+                Balance = (int)balance,
                 Message = Loc.GetString("economy-atm-transfer-error-generic"),
                 IsError = true
             });
@@ -118,7 +120,7 @@ public sealed partial class ATMSystem : SharedATMSystem
 
             _uiSystem.SetUiState(uid, ATMUIKey.Key, new ATMBuiState
             {
-                Balance = balance,
+                Balance = (int)balance,
                 Message = Loc.GetString(key),
                 IsError = true
             });
@@ -131,7 +133,7 @@ public sealed partial class ATMSystem : SharedATMSystem
         {
             _uiSystem.SetUiState(uid, ATMUIKey.Key, new ATMBuiState
             {
-                Balance = balance,
+                Balance = (int)balance,
                 Message = Loc.GetString("economy-atm-transfer-error-self"),
                 IsError = true
             });
@@ -140,11 +142,11 @@ public sealed partial class ATMSystem : SharedATMSystem
 
         lock (_transferLock)
         {
-            if (_playerRolesManager.GetBalance(recipientSession) is not { } recipientBalance)
+            if (!_playerResources.TryGetResource(recipientSession, "credits", out _))
             {
                 _uiSystem.SetUiState(uid, ATMUIKey.Key, new ATMBuiState
                 {
-                    Balance = balance,
+                    Balance = (int)balance,
                     Message = Loc.GetString("economy-atm-transfer-error-no-recipient"),
                     IsError = true
                 });
@@ -153,7 +155,8 @@ public sealed partial class ATMSystem : SharedATMSystem
 
             var newBalance = balance -= args.Amount;
 
-            _playerRolesManager.SetBalance(recipientSession, recipientBalance += args.Amount);
+            _playerResources.TryUpdateResource(recipientSession, "credits", args.Amount);
+            _playerResources.TryUpdateResource(args.Actor, "credits", -args.Amount);
 
             var recipientName = _mind.TryGetMind(recipientSession.UserId, out _, out var rMind)
                 ? rMind.CharacterName ?? recipientSession.Name
@@ -161,7 +164,7 @@ public sealed partial class ATMSystem : SharedATMSystem
 
             _uiSystem.SetUiState(uid, ATMUIKey.Key, new ATMBuiState
             {
-                Balance = newBalance,
+                Balance = (int)newBalance,
                 Message = Loc.GetString("economy-atm-transfer-success", ("amount", args.Amount), ("recipient", recipientName)),
                 IsError = false
             });
@@ -175,8 +178,8 @@ public sealed partial class ATMSystem : SharedATMSystem
 
     private void OnBeforeActivatableUIOpen(Entity<ATMComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
-        var balance = _playerRolesManager.GetBalance(args.User);
+        _playerResources.TryGetResource(args.User, "credits", out var balance);
 
-        _uiSystem.SetUiState(ent.Owner, ATMUIKey.Key, new ATMBuiState() { Balance = balance ?? 0 });
+        _uiSystem.SetUiState(ent.Owner, ATMUIKey.Key, new ATMBuiState() { Balance = (int?)balance ?? 0 });
     }
 }

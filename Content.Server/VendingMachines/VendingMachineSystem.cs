@@ -17,6 +17,7 @@ using Content.Shared.Wall;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+
 // 🌟Starlight🌟 
 using Content.Server.Economy;
 using Content.Shared.Economy;
@@ -24,9 +25,10 @@ using Content.Shared.Emag.Components;
 using Content.Shared.Tag; 
 using Content.Shared.Cargo.Components; 
 using Content.Server.Administration.Managers; 
-using Content.Shared.Administration.Logs; // Starlight-edit
+using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
-using Robust.Shared.Player; // Starlight-edit
+using Content.Shared._NullLink;
+using Robust.Shared.Player;
 
 namespace Content.Server.VendingMachines
 {
@@ -39,7 +41,7 @@ namespace Content.Server.VendingMachines
         // 🌟Starlight🌟 start 
         [Dependency] private readonly ItemPriceManager _itemPriceManager = default!; 
         [Dependency] private readonly IComponentFactory _componentFactory = default!; 
-        [Dependency] private readonly IPlayerRolesManager _playerRolesManager = default!; 
+        [Dependency] private readonly ISharedNullLinkPlayerResourcesManager _playerResources = default!;
         [Dependency] private readonly TagSystem _tag = default!; 
         [Dependency] private readonly CargoSystem _cargoSystem = default!;
         [Dependency] private readonly Content.Server.Station.Systems.StationSystem _stationSystem = default!;
@@ -256,13 +258,12 @@ namespace Content.Server.VendingMachines
                 var price = entry?.Price ?? 0;
                 if (price > 0)
                 {
-                    var playerData = _playerRolesManager.GetPlayerData(buyerUid);
-                    if (_playerRolesManager.GetBalance(buyerUid) is { } balance && balance >= price) // Double-check sufficient funds
+                    if (_playerResources.TryGetResource(buyerUid, "credits", out var balance) && balance >= price) // Double-check sufficient funds
                     {
-                        _playerRolesManager.SetBalance(buyerUid, balance -= price);
+                        _playerResources.TryUpdateResource(buyerUid, "credits", -price);
                         vendComponent.DebitApplied = true;
                         Popup.PopupEntity($"Debited {price}\u20a1. Balance: {balance}\u20a1", uid, buyerUid);
-                        SendBalanceUpdate(uid, buyerUid, balance);
+                        SendBalanceUpdate(uid, buyerUid, (int)(balance -= price));
 
                         // Alogs
                         _adminLogger.Add(
@@ -337,10 +338,10 @@ namespace Content.Server.VendingMachines
         {
             if (!Equals(args.UiKey, VendingMachineUiKey.Key) 
                 || !component.ShowPrices 
-                || _playerRolesManager.GetBalance(args.Actor) is not { } balance)
+                || !_playerResources.TryGetResource(args.Actor, "credits", out var balance))
                 return;
 
-            SendBalanceUpdate(uid, args.Actor, balance);
+            SendBalanceUpdate(uid, args.Actor, (int)balance);
         }
 
         private void OnTryVocalize(Entity<VendingMachineComponent> ent, ref TryVocalizeEvent args)
@@ -456,10 +457,10 @@ namespace Content.Server.VendingMachines
         protected override void OnRequestBalanceMessage(Entity<VendingMachineComponent> entity, ref VendingMachineRequestBalanceMessage args)
         {
             if (args.Actor is not { Valid: true } actor 
-                || _playerRolesManager.GetBalance(actor) is not { } balance)
+                || !_playerResources.TryGetResource(actor, "credits", out var balance))
                 return;
 
-            SendBalanceUpdate(entity.Owner, actor, balance);
+            SendBalanceUpdate(entity.Owner, actor, (int)balance);
         }
 
         /// <summary>
@@ -491,7 +492,7 @@ namespace Content.Server.VendingMachines
                 return;
 
             // Get balance for payment
-            if (_playerRolesManager.GetBalance(sender) is not { } balance)
+            if (!_playerResources.TryGetResource(sender, "credits", out var balance))
                 return;
 
             // Get inventory entry for the correct inventory bucket

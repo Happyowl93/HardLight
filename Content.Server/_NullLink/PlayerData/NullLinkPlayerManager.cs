@@ -30,7 +30,7 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTrackingManager = default!;
-    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private readonly ISharedNullLinkPlayerResourcesManager _playerResourcesManager = default!;
 
     private readonly ConcurrentDictionary<Guid, PlayerData> _playerById = [];
     private readonly ConcurrentDictionary<Guid, ICommonSession> _mentors = [];
