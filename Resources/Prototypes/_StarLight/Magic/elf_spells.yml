@@ -1,0 +1,27 @@
+# Luminous Orb
+
+- type: entity
+  parent: BaseAction
+  id: ActionGlow
+  name: Luminous Orb
+  description: Creates a short-lived luminous ball of light.
+  components:
+  - type: Magic
+    requiresClothes: false
+  - type: Action
+    useDelay: 15
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Fun/pondering_orb.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:SpawnItemInHandEvent
+      spawned: LuminousOrb
+
+# Spark
+
+# Hemostasis
+
+# Purify
+
+# Cleanse

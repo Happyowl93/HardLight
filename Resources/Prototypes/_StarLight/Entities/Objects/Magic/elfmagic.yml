@@ -1,0 +1,18 @@
+# Luminous Orb
+
+- type: entity
+  name: Luminous Orb
+  parent: BaseItem
+  id: LuminousOrb
+  description: Destined to burn out and fade away.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/pondering_orb.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Fun/pondering_orb.rsi
+    size: Tiny
+  - type: PointLight
+    energy: 20
+    radius: 4.1
+    color: "#FFC0CBFF"

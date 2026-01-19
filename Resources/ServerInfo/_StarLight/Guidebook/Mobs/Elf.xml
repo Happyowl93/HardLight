@@ -5,7 +5,10 @@
     <GuideEntityEmbed Entity="MobElf" Caption=""/>
   </Box>
 
-  Elves are hard to distinguish from humans for most. They can usually be spotted by their pointed ears, though the effect is sometimes not obvious.
+  Although superficially similar to Humans and Dwarves, Elves are easily identified by their pointy ears.
+  
+  ## Cantrips
+    All Elves start with an [color=#1e90ff]abridged grimoire[/color] containing a few simple magical spells that help with survival. You may select two to memorize for the duration of the shift. Once you have read from this book, it can generally be discarded; others cannot read your grimoire or study from it. (If you have the Magical Encounter background, there are rumors that Wizarding Federation agents sometimes have access to physical [color=#ff20ff]WizCoin[/color]s, which may be a means to mastering more of your grimoire...)
   
   ## Damage
     The body of an Elf is attuned to magic, not bruality. As a result they take [color=#ffa500]10% more damage from Blunt[/color] but [color=#1e90ff]25% less damage from Poison and Cellular decay[/color].

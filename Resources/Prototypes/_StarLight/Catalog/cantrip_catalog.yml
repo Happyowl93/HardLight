@@ -1,0 +1,14 @@
+# Elf cantrips
+
+- type: listing
+  id: CantripGlow
+  name: cantrip-glow-name
+  description: cantrip-glow-description
+  productAction: ActionGlow
+  cost:
+    WizCoin: 1
+  categories:
+  - CantripsStandard
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
