@@ -15,7 +15,7 @@ public sealed class NullLinkPlayerResourcesManager : SharedNullLinkPlayerResourc
 
     public override void Initialize()
     {
-        this.Initialize();
+        base.Initialize();
         _netMgr.RegisterNetMessage<MsgUpdatePlayerResources>(Update);
     }
 
