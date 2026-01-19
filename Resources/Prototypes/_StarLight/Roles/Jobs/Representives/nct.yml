@@ -46,3 +46,10 @@
     gloves: ClothingHandsGlovesColorWhite
     outerClothing: ClothingOuterCoatNCT
     suitstorage: Flash
+
+- type: chameleonOutfit
+  id: NanotrasenCareerTrainerChameleonOutfit
+  job: NanotrasenCareerTrainer
+  hasMindShield: true
+  equipment:
+    outerClothing: ClothingOuterCoatNCT
