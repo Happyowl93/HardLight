@@ -357,11 +357,13 @@ namespace Content.Client.Chemistry.UI
             var rowCount = 0;
 
             // Handle entities if they are not null
-            var entities = info.PillEntities ?? info.PatchEntities; // Starlight edit
+            // Starlight-start
+            var entities = info.PillEntities ?? info.PatchEntities;
             if (entities != null)
             {
                 foreach (var (id, quantity) in entities.Select(x => (x.Id, x.Quantity)))
                 {
+                    // Starlight-end
                     control.Children.Add(BuildReagentRow(default(Color), rowCount++, id, default(ReagentId), quantity, false, addReagentButtons));
                 }
             }
