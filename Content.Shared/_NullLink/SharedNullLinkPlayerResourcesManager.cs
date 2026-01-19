@@ -4,6 +4,7 @@ using Robust.Shared.Player;
 
 namespace Content.Shared._NullLink;
 
+[Virtual]
 public abstract class SharedNullLinkPlayerResourcesManager : ISharedNullLinkPlayerResourcesManager
 {
     [Dependency] private readonly ILogManager _logManager = default!;
