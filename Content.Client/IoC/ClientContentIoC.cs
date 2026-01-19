@@ -74,6 +74,7 @@ namespace Content.Client.IoC
             collection.Register<INullLinkPlayerRolesManager, NullLinkPlayerRolesManager>();
             collection.Register<INullLinkPlayerResourcesManager, NullLinkPlayerResourcesManager>();
             collection.Register<ISharedNullLinkPlayerRolesReqManager, PlayerRolesReqManager>();
+            collection.Register<ISharedNullLinkPlayerResourcesManager, SharedNullLinkPlayerResourcesManager>();
             collection.Register<INullLinkPlayTimeManager, NullLinkPlayTimeManager>();
             // NullLink end
 
