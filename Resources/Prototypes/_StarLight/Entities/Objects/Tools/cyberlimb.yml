@@ -460,8 +460,7 @@
         fireCost: 100
     - type: StaticPrice
       price: 0
-    - type: BatterySelfRecharger
-      autoRecharge: true
+    - type: PredictedBatterySelfRecharger
       autoRechargeRate: 2 # takes 6 minutes to charge itself back to full
     - type: Tag
       tags:
@@ -641,8 +640,7 @@
   - type: Tag
     tags:
       - PowerCellTiny
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 3 # Full charge in two minutes
     autoRechargePauseTime: 30
   - type: GenericVisualizer
@@ -928,7 +926,6 @@
   - type: Tag
     tags:
     - CyberHandItem
-
 
 - type: entity
   id: RCDCyber
