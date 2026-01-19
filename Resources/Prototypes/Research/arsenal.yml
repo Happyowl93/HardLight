@@ -13,6 +13,9 @@
   - WeaponProtoKineticAccelerator
   - ShuttleGunKineticCircuitboard
   - MechEquipmentKineticAccelerator
+  - FiringPinExpedition # Starlight
+  technologyPrerequisites:
+  - SalvageEquipment # starlight
   radioChannels:
   - Supply
   # These are roundstart but not replenishable for salvage
@@ -218,6 +221,12 @@
   - PKAUpgradeDamage
   - PKAUpgradeRange
   - PKAUpgradeFireRate
+  # region starlight
+  technologyPrerequisites:
+  - SalvageWeapons
+  radioChannels:
+  - Supply
+  # end region
 
 - type: technology
   id: BasicShuttleArmament
@@ -237,10 +246,15 @@
   # - GrenadeFlash
   # - GrenadeBlast
   # - ShuttleGunFriendshipCircuitboard # SL end
+  - MagazineGrenadeEmpty
+  - GrenadeBaton # starlight TODO move to riot control or smth if a sec nade launcher is added?
+  - GrenadeBlast
+  - GrenadeFlash
   - ShuttleGunSvalinnMachineGunCircuitboard
   - ShuttleGunPerforatorCircuitboard
   technologyPrerequisites:
   - SalvageWeapons
+  - Shuttlecraft # starlight
   radioChannels:
   - Security
 
