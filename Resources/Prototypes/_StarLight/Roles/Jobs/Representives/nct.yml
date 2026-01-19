@@ -30,6 +30,9 @@
   special:
     - !type:AddImplantSpecial
       implants: [MindShieldImplant]
+    - !type:AddComponentSpecial
+      components:
+        - type: NoObjectiveTarget
 
 - type: startingGear
   id: NanotrasenCareerTrainerGear
@@ -42,4 +45,4 @@
     belt: BoxFolderNanoTrasenClipboard
     gloves: ClothingHandsGlovesColorWhite
     outerClothing: ClothingOuterCoatNCT
-    suitstorage: WeaponMiniEnergyGun
+    suitstorage: Flash
