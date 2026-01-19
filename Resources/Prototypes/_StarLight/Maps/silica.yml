@@ -74,6 +74,7 @@
             #law (3)
             Magistrate: [ 1, 1 ]
             IAA: [ 2, 2 ]
-            #Representives (2)
+            #Representives (3)
             BlueShield: [ 1, 1 ]
             NanoTrasenRepresentative: [ 1, 1 ]
+            NanotrasenCareerTrainer: [ 1, 2 ]
