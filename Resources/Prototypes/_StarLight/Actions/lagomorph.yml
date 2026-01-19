@@ -7,8 +7,8 @@
       useDelay: 20
       itemIconStyle: BigAction
       icon:
-        sprite: Interface/Actions/jump.rsi
-        state: icon
+        sprite: _Starlight/Interface/Actions/actions_lagomorph.rsi
+        state: stamina-active
     - type: LimitedCharges
       maxCharges: 1
     - type: AutoRecharge

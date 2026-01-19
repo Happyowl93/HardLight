@@ -20,7 +20,7 @@
       - right leg
       - left leg
       organs:
-        heart: OrganHumanHeart
+        heart: OrganLagomorphHeart
         lungs: OrganHumanLungs
         stomach: OrganLagomorphStomach
         liver: OrganHumanLiver
@@ -50,27 +50,3 @@
       part: RightFootLagomorph
     left foot:
       part: LeftFootLagomorph
-
-- type: entity
-  id: OrganLagomorphStomach
-  parent: [OrganAnimalStomach, BaseOrganStomach]
-  name: stomach
-  description: "Gross. This is hard to stomach."
-  components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/organs.rsi
-    state: stomach
-  - type: Item
-    size: Small
-    heldPrefix: stomach
-  - type: SolutionContainerManager
-    solutions:
-      stomach:
-        maxVol: 50
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
-  - type: Metabolizer
-    updateInterval: 1.33
