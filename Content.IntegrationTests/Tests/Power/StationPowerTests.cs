@@ -44,7 +44,7 @@ public sealed class StationPowerTests
         "StarlightLagan",
         "StarlightLobster",
         "StarlightManor",
-        //"StarlightLeth", // Disabled due to failures - re-enable when fixed
+        "StarlightLeth",
         "StarlightMing",
         "StarlightOrigin",
         "StarlightOrwell",
