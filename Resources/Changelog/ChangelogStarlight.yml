@@ -26922,5 +26922,13 @@ Entries:
   id: 288000
   time: '2026-01-19T19:44:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2880
+- author: Penguinwizzard
+  changes:
+  - message: Turns out that we were issuing wildly incorrect guidebooks on Shadekin;
+      an updated edition should now be available for crews.
+    type: Fix
+  id: 288100
+  time: '2026-01-19T20:24:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2881
 Order: -1
 
