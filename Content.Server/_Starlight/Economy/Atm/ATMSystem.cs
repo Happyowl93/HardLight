@@ -17,6 +17,7 @@ using Content.Shared._NullLink;
 namespace Content.Shared.Starlight.Economy.Atm;
 public sealed partial class ATMSystem : SharedATMSystem
 {
+    [Dependency] private readonly IPlayerRolesManager _playerRolesManager = default!;
     [Dependency] private readonly ISharedNullLinkPlayerResourcesManager _playerResources = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
