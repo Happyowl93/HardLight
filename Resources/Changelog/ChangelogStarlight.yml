@@ -26906,5 +26906,13 @@ Entries:
   id: 279300
   time: '2026-01-19T17:19:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2793
+- author: redmushie
+  changes:
+  - message: The ChemMaster will now only allow you to produce the correct item for
+      the inserted container (pills for pill bottles, etc)
+    type: Fix
+  id: 287600
+  time: '2026-01-19T17:19:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2876
 Order: -1
 
