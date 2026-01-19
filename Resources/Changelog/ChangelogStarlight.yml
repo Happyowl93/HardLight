@@ -26914,5 +26914,13 @@ Entries:
   id: 287600
   time: '2026-01-19T17:19:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2876
+- author: Conflee
+  changes:
+  - message: Gave the "Misc" item slot it's own unique texture in all HUD themes,
+      instead of it just using the Neck texture.
+    type: Tweak
+  id: 288000
+  time: '2026-01-19T19:44:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2880
 Order: -1
 
