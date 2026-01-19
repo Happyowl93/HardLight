@@ -109,7 +109,7 @@ public sealed class SlimeExtractSystem : EntitySystem
                 }
             }
 
-            if (wasActivated) slimeExtractComponent.RemainingUses += 1;
+            if (wasActivated) slimeExtractComponent.RemainingUses -= 1;
             if (shouldDelete && slimeExtractComponent.RemainingUses <= 0)
             {
                 PredictedQueueDel(uid);
