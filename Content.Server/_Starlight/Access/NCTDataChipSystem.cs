@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._Starlight.Mentor;
 using Content.Server.Access.Components;
 using Content.Server.Access.Systems;
 using Content.Server.Popups;
@@ -35,15 +36,7 @@ namespace Content.Server._Starlight.Access.Systems
             if (args.Handled)
                 return;
 
-            if (!component.Owner.HasValue)
-            {
-                component.Owner = args.User;
-
-                _popupSystem.PopupEntity(Loc.GetString("nctdatachip-reset"), uid, args.User);
-                args.Handled = true;
-                return;
-            }
-            else if (args.User != component.Owner)
+            if (!HasComp<NCTAgentComponent>(args.User))
             {
                 _popupSystem.PopupEntity(Loc.GetString("nctdatachip-denied"), uid, args.User);
                 args.Handled = true;
@@ -65,11 +58,11 @@ namespace Content.Server._Starlight.Access.Systems
 
         private void OnAfterInteract(EntityUid uid, NCTDataChipComponent component, AfterInteractEvent args)
         {
-            if (args.Target == null || !args.CanReach || !component.Owner.HasValue ||
+            if (args.Target == null || !args.CanReach ||
                 !TryComp<AccessComponent>(args.Target, out var targetAccess) || !TryComp<IdCardComponent>(args.Target, out var trainee))
                 return;
 
-            if (args.User != component.Owner)
+            if (!HasComp<NCTAgentComponent>(args.User))
             {
                 _popupSystem.PopupEntity(Loc.GetString("nctdatachip-denied"), uid, args.User);
                 return;
