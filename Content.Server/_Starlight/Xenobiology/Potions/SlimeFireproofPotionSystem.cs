@@ -25,6 +25,7 @@ public sealed class SlimeFireproofPotionSystem : EntitySystem
     private void OnAfterInteract(Entity<SlimeFireproofPotionComponent> ent, ref AfterInteractEvent args)
     {
         if (!args.Target.HasValue || !args.CanReach) return;
+        args.Handled = true;
         var successfulChange = false;
         var temperatureProtectionComponent = _entityManager.EnsureComponent<TemperatureProtectionComponent>(args.Target.Value);
         if (temperatureProtectionComponent.HeatingCoefficient > 0.0F)
@@ -52,6 +53,5 @@ public sealed class SlimeFireproofPotionSystem : EntitySystem
         _popupSystem.PopupEntity($"Successfully applied fireproof potion! {ent.Comp.RemainingUses} use{plural} remaining.", args.User, args.User);
         if (ent.Comp.RemainingUses <= 0)
             PredictedQueueDel(args.Used);
-        args.Handled = true;
     }
 }

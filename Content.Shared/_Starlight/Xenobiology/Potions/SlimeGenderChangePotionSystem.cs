@@ -1,5 +1,6 @@
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
+using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Enums;
 
@@ -9,6 +10,7 @@ public sealed class SlimeGenderChangePotionSystem : EntitySystem
 {
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly SharedHumanoidAppearanceSystem _sharedHumanoidAppearanceSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _sharedPopupSystem = default!;
     
     public override void Initialize()
     {
@@ -20,13 +22,23 @@ public sealed class SlimeGenderChangePotionSystem : EntitySystem
     private void OnAfterInteract(Entity<SlimeGenderChangePotionComponent> ent, ref AfterInteractEvent args)
     {
         if (!args.Target.HasValue || !args.CanReach) return;
+        args.Handled = true;
         if (!_entityManager.TryGetComponent<HumanoidAppearanceComponent>(args.Target.Value,
                 out var humanoidAppearanceComponent)) return;
-        if (!ent.Comp.Gender.HasValue) return;
-        if (ent.Comp.Gender.Value == humanoidAppearanceComponent.Gender) return;
+        if (!ent.Comp.Gender.HasValue)
+        {
+            _sharedPopupSystem.PopupPredicted("Please select a gender first.", args.User, args.User);
+            return;
+        }
+
+        if (ent.Comp.Gender.Value == humanoidAppearanceComponent.Gender)
+        {
+            _sharedPopupSystem.PopupPredicted($"Target's gender is already {ent.Comp.Gender.Value}.", args.User, args.User);
+            return;
+        }
         _sharedHumanoidAppearanceSystem.SetGender((args.Target.Value, humanoidAppearanceComponent), ent.Comp.Gender.Value);
+        _sharedPopupSystem.PopupPredicted($"Target's gender set to {ent.Comp.Gender.Value}.", args.User, args.User);
         PredictedQueueDel(args.Used);
-        args.Handled = true;
     }
 
     private void OnGetVerbs(Entity<SlimeGenderChangePotionComponent> entity, ref GetVerbsEvent<InteractionVerb> args)
