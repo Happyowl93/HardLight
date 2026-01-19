@@ -26855,5 +26855,45 @@ Entries:
   id: 286600
   time: '2026-01-18T16:31:15.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2866
+- author: Penguinwizzard
+  changes:
+  - message: We're once again doing some sweeping of your maintenance tunnels, but
+      only if we're sending a light crew; if you're well-staffed enough, you need
+      to handle it yourselves.
+    type: Add
+  id: 287300
+  time: '2026-01-19T07:17:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2873
+- author: redmushie
+  changes:
+  - message: Patched paperwork labels on items being able to execute console commands
+    type: Fix
+  - message: Labelers now support basic markup again (color, bold, italic)
+    type: Add
+  id: 286900
+  time: '2026-01-19T08:23:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2869
+- author: Coolsurf6
+  changes:
+  - message: The LR-30 Laser Rifle now replaces one Laser Carbine in the Armory Laser
+      Safe.
+    type: Tweak
+  id: 286100
+  time: '2026-01-19T08:24:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2861
+- author: CawsForConcern
+  changes:
+  - message: Remix (Admeme Station), to be replaced with a new station down the line
+    type: Remove
+  id: 287000
+  time: '2026-01-19T08:22:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2870
+- author: redmushie
+  changes:
+  - message: Patches can now be grinded to recover their reagents
+    type: Add
+  id: 287700
+  time: '2026-01-19T15:01:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2877
 Order: -1
 
