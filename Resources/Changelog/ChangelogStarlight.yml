@@ -26873,5 +26873,13 @@ Entries:
   id: 286900
   time: '2026-01-19T08:23:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2869
+- author: Coolsurf6
+  changes:
+  - message: The LR-30 Laser Rifle now replaces one Laser Carbine in the Armory Laser
+      Safe.
+    type: Tweak
+  id: 286100
+  time: '2026-01-19T08:24:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2861
 Order: -1
 
