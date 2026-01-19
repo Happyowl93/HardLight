@@ -2,6 +2,7 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.EntityEffects;
+using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -19,9 +20,6 @@ public sealed class SlimeExtractSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-    [Dependency] private readonly ILogManager _logManager = default!;
-    private ISawmill _sawmill = default!;
-
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -29,8 +27,7 @@ public sealed class SlimeExtractSystem : EntitySystem
         SubscribeLocalEvent<SlimeExtractComponent, SolutionContainerChangedEvent>(OnSolutionChanged);
         SubscribeLocalEvent<SlimeExtractActiveReactionComponent, EntityPausedEvent>(OnPaused);
         SubscribeLocalEvent<SlimeExtractActiveReactionComponent, EntityUnpausedEvent>(OnUnpaused);
-
-        _sawmill = _logManager.GetSawmill("slime");
+        SubscribeLocalEvent<SlimeExtractComponent, ExaminedEvent>(OnExamined);
     }
     
     public bool IsSolutionRequirementFulfilled(Dictionary<ProtoId<ReagentPrototype>, FixedPoint2> requiredSolution, Solution currentSolution)
@@ -129,5 +126,17 @@ public sealed class SlimeExtractSystem : EntitySystem
         {
             entity.Comp.ActiveReactions[activeReaction] += args.PausedTime;
         }
+    }
+    
+    private void OnExamined(Entity<SlimeExtractComponent> ent, ref ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange)
+            return;
+
+        var str = ent.Comp.RemainingUses <= 0
+            ? Loc.GetString("slime-extract-exhausted")
+            : Loc.GetString("slime-extract-not-exhausted");
+
+        args.PushMarkup(str);
     }
 }
