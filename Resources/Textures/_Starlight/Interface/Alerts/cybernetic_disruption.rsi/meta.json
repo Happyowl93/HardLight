@@ -8,7 +8,24 @@
   },
   "states": [
     {
-      "name": "cybernetic_disruption"
+      "name": "cybernetic_disruption",
+            "delays": [
+                [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ]
+            ]
     }
   ]
 }
