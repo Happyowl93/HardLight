@@ -117,6 +117,8 @@ internal static class ServerContentIoC
         deps.Register<INullLinkPlayTimeManager, NullLinkPlayTimeManager>();
         deps.Register<INullLinkEventBusManager, NullLinkEventBusManager>();
         deps.Register<ISharedNullLinkPlayerRolesReqManager, PlayerRolesReqManager>();
+        deps.Register<ISharedNullLinkPlayerResourcesManager, SharedNullLinkPlayerResourcesManager>();
+
         // nulllink end
     }
 }
