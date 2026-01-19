@@ -84,3 +84,9 @@ loadout-group-pens = Pen
 loadout-group-brighteye-jumpsuit = Brighteye jumpsuit
 Loadout-group-brighteye-neck = Brighteye neck
 loadout-group-brighteye-gloves = Brighteye gloves
+
+# NCT
+loadout-group-NanotrasenCareerTrainer-jumpsuit = Nanotrasen Career Trainer jumpsuit
+loadout-group-NanotrasenCareerTrainer-hat = Nanotrasen Career Trainer hat
+loadout-group-NanotrasenCareerTrainer-shoes = Nanotrasen Career Trainer shoes
+loadout-group-NanotrasenCareerTrainer-eyewear = Nanotrasen Career Trainer eyewear

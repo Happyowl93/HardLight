@@ -637,14 +637,6 @@
   - BeretNCTBlack
 
 - type: loadoutGroup
-  id: NanotrasenCareerTrainerHat
-  name: loadout-group-NanotrasenCareerTrainer-hat
-  loadouts:
-  - Drilltrainer
-  - BeretNCTGreen
-  - BeretNCTBlack
-
-- type: loadoutGroup
   id: NanotrasenCareerTrainerShoes
   name: loadout-group-NanotrasenCareerTrainer-shoes
   loadouts:
@@ -652,3 +644,10 @@
   - LaceupShoes
   - Heels
   - LeatherShoes
+
+- type: loadoutGroup
+  id: NanotrasenCareerTrainerEyewear
+  name: loadout-group-NanotrasenCareerTrainer-eyewear
+  loadouts:
+  - NanoTrasenRepresentativeGlasses
+  - NanoTrasenRepresentativeHud
