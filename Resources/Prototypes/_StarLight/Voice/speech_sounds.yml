@@ -59,7 +59,6 @@
     - /Audio/_Starlight/Voice/Lagomorph/scream2.ogg
     - /Audio/_Starlight/Voice/Lagomorph/scream3.ogg
 
-
 - type: soundCollection
   id: LagomorphSqueak
   files:
@@ -84,3 +83,8 @@
   files:
     - /Audio/_Starlight/Voice/Lagomorph/sneeze1.ogg
     - /Audio/_Starlight/Voice/Lagomorph/sneeze2.ogg
+
+- type: soundCollection
+  id: LagomorphStomp
+  files:
+    - /Audio/Voice/Reptilian/reptilian_tailthump.ogg

@@ -74,7 +74,12 @@ marking-LagomorphBraceletL = Left Bracelet
 
 # underwear
 marking-LagomorphBinderTop = Binder
+marking-LagomorphBinderTop-binder_top = Binder
 marking-LagomorphBoxers = Boxers
+marking-LagomorphBoxers-boxer_bottoms = Boxers
 marking-LagomorphBraTop = Bra
+marking-LagomorphBraTop-bra_top = Bra
 marking-LagomorphPanties = Panties
+marking-LagomorphPanties-panty_bottoms = Panties
 marking-LagomorphTankTop = Tank Top
+marking-LagomorphTankTop-tank_top = Tank Top
