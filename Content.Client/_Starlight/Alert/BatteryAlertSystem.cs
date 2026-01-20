@@ -4,6 +4,7 @@ using Content.Shared.PowerCell;
 using Content.Shared.PowerCell.Components;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Client.Player;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Starlight.Alert;
