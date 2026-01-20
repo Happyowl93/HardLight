@@ -27059,5 +27059,15 @@ Entries:
   id: 289400
   time: '2026-01-20T18:05:33.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2894
+- author: teapoterror
+  changes:
+  - message: Problematic APC from Colt Station
+    type: Remove
+  - message: HyperCap APC in place of previous APC in order to prevent power issues.
+      Get back to nuking.
+    type: Add
+  id: 288800
+  time: '2026-01-20T18:21:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2888
 Order: -1
 
