@@ -128,7 +128,6 @@ namespace Content.IntegrationTests.Tests
             "StarlightManor",
             "StarlightLeth",
             "StarlightMing",
-            "StarlightOrigin",
             "StarlightOrwell",
             "StarlightPrism",
             "StarlightStarboard",
