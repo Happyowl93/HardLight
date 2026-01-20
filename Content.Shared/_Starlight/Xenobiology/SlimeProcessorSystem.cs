@@ -168,13 +168,12 @@ public sealed class CollectingSlimeProcessorSystem : EntitySystem
             }
 
             if (collectingSlimeProcessorComponent.SlimeAcquireMoment.Value > _gameTiming.CurTime) continue;
-            foreach (var entity in _entityLookupSystem.GetEntitiesInRange(uid, 1F))
+            foreach (var entity in _entityLookupSystem.GetEntitiesInRange<SlimeComponent>(Transform(uid).Coordinates, 1F))
             {
-                if (!_entityManager.TryGetComponent(entity, out SlimeComponent? slimeComponent)) continue;
                 if (!_entityManager.TryGetComponent(entity, out DamageableComponent? damageableComponent)) continue;
                 if (damageableComponent.TotalDamage >= 200)
                 {
-                    _container.Insert(entity, slimeProcessorComponent.SlimeContainer);
+                    _container.Insert(entity.Owner, slimeProcessorComponent.SlimeContainer);
                     collectingSlimeProcessorComponent.SlimeAcquireMoment = _gameTiming.CurTime + slimeProcessorComponent.SlimeAcquireCooldown;
                     break;
                 }

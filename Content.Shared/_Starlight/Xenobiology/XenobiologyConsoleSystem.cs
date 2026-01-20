@@ -105,17 +105,14 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
         if (!VerifyComponents(args, out var remoteEyeActorComponent, out var xenobiologyConsoleComponent, out var remoteEntity)) return;
         xenobiologyConsoleComponent.SlimeContainer = _container.EnsureContainer<ContainerSlot>(remoteEntity.Value, XenobiologyConsoleComponent.SlimeContainerName);
         var slimeFound = false;
-        foreach (var possibleSlime in _entityLookupSystem.GetEntitiesInRange(remoteEntity.Value, 0.5F))
+        foreach (var slime in _entityLookupSystem.GetEntitiesInRange<SlimeComponent>(Transform(remoteEntity.Value).Coordinates, 0.5F))
         {
-            if (_entityManager.TryGetComponent<SlimeComponent>(possibleSlime, out _))
-            {
-                slimeFound = true;
-                if (_container.Insert(possibleSlime, xenobiologyConsoleComponent.SlimeContainer))
-                    RaiseLocalEvent(new ConsolePopupEvent(remoteEntity.Value, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-slime-picked-up", ("name", MetaData(possibleSlime).EntityName)))));
-                else
-                    RaiseLocalEvent(new ConsolePopupEvent(remoteEntity.Value, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-slime-picked-up-fail-full", ("name", MetaData(possibleSlime).EntityName)))));
-                break;
-            }
+            slimeFound = true;
+            if (_container.Insert(slime.Owner, xenobiologyConsoleComponent.SlimeContainer))
+                RaiseLocalEvent(new ConsolePopupEvent(remoteEntity.Value, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-slime-picked-up", ("name", MetaData(slime).EntityName)))));
+            else
+                RaiseLocalEvent(new ConsolePopupEvent(remoteEntity.Value, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-slime-picked-up-fail-full", ("name", MetaData(slime).EntityName)))));
+            break;
         }
         if (!slimeFound)
             RaiseLocalEvent(new ConsolePopupEvent(remoteEntity.Value, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-slime-picked-up-fail-none-found"))));
@@ -187,15 +184,12 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
             args.Handled = true;
             return;
         }
-        foreach (var possibleSlime in _entityLookupSystem.GetEntitiesInRange(remoteEntity.Value, 0.5F))
+        foreach (var slime in _entityLookupSystem.GetEntitiesInRange<SlimeComponent>(Transform(remoteEntity.Value).Coordinates, 0.5F))
         {
-            if (_entityManager.TryGetComponent<SlimeComponent>(possibleSlime, out var slimeComponent))
-            {
-                slimeComponent.MutationChance += SlimeMutationPotionComponent.MutationChangeAmount;
-                xenobiologyConsoleComponent.MutationPotions -= 1;
-                RaiseLocalEvent(new ConsolePopupEvent(remoteEntity.Value, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-mutation-potion-applied", ("name", MetaData(possibleSlime).EntityName), ("chance", slimeComponent.MutationChance)))));
-                break;
-            }
+            slime.Comp.MutationChance += SlimeMutationPotionComponent.MutationChangeAmount;
+            xenobiologyConsoleComponent.MutationPotions -= 1;
+            RaiseLocalEvent(new ConsolePopupEvent(remoteEntity.Value, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-mutation-potion-applied", ("name", MetaData(slime).EntityName), ("chance", slime.Comp.MutationChance)))));
+            break;
         }
         args.Handled = true;
     }
@@ -209,15 +203,12 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
             args.Handled = true;
             return;
         }
-        foreach (var possibleSlime in _entityLookupSystem.GetEntitiesInRange(remoteEntity.Value, 0.5F))
+        foreach (var slime in _entityLookupSystem.GetEntitiesInRange<SlimeComponent>(Transform(remoteEntity.Value).Coordinates, 0.5F))
         {
-            if (_entityManager.TryGetComponent<SlimeComponent>(possibleSlime, out var slimeComponent))
-            {
-                slimeComponent.MutationChance += SlimeStabilizerPotionComponent.MutationChangeAmount;
-                xenobiologyConsoleComponent.StabilizerPotions -= 1;
-                RaiseLocalEvent(new ConsolePopupEvent(remoteEntity.Value, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-stabilizer-potion-applied", ("name", MetaData(possibleSlime).EntityName), ("chance", slimeComponent.MutationChance)))));
-                break;
-            }
+            slime.Comp.MutationChance += SlimeStabilizerPotionComponent.MutationChangeAmount;
+            xenobiologyConsoleComponent.StabilizerPotions -= 1;
+            RaiseLocalEvent(new ConsolePopupEvent(remoteEntity.Value, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-stabilizer-potion-applied", ("name", MetaData(slime).EntityName), ("chance", slime.Comp.MutationChance)))));
+            break;
         }
         args.Handled = true;
     }
@@ -226,14 +217,11 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
     {
         if (!VerifyComponents(args, out var remoteEyeActorComponent, out var xenobiologyConsoleComponent, out var remoteEntity)) return;
         if (!remoteEyeActorComponent.VirtualItem.HasValue) return;
-        foreach (var possibleSlime in _entityLookupSystem.GetEntitiesInRange(remoteEntity.Value, 0.5F))
+        foreach (var slime in _entityLookupSystem.GetEntitiesInRange<SlimeComponent>(Transform(remoteEntity.Value).Coordinates, 0.5F))
         {
-            if (_entityManager.TryGetComponent<SlimeComponent>(possibleSlime, out var slimeComponent))
-            {
-                var ev = new ConsoleMsgToScannerEvent(args.Performer, possibleSlime);
-                RaiseLocalEvent(remoteEyeActorComponent.VirtualItem.Value, ev);
-                break;
-            }
+            var ev = new ConsoleMsgToScannerEvent(args.Performer, slime.Owner);
+            RaiseLocalEvent(remoteEyeActorComponent.VirtualItem.Value, ev);
+            break;
         }
         args.Handled = true;
     }
