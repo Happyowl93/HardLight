@@ -26930,5 +26930,40 @@ Entries:
   id: 288100
   time: '2026-01-19T20:24:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2881
+- author: STARLIGHT TEAM
+  changes:
+  - message: NCT Job.
+    type: Add
+  - message: Merged Ahelp/Mhelp, its should be easier to access it now.
+    type: Tweak
+  id: 287200
+  time: '2026-01-19T22:05:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2872
+- author: Shades
+  changes:
+  - message: Added the NCT Terminal.
+    type: Add
+  - message: NCT Data Chip is now fully only usable by NCT Agent.
+    type: Tweak
+  id: 288200
+  time: '2026-01-20T00:31:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2882
+- author: wonderfulnewworld, Conflee, and BORT
+  changes:
+  - message: Added Duty Officer, a new Security role whose sole purpose is helping
+      Warden manage sentencing/GenPop better, as Wardens have long complained about
+      being overworked due to having so many responsibilities. This role already has
+      SoP on the wiki, so this is just formalizing it. (Needs to be mapped.)
+    type: Add
+  - message: Added Duty Officer's clothes to the uniform printer
+    type: Add
+  - message: Added Blue Skirt and Tie to match the Blue Shirt and Tie that already
+      exists as a security officer loadout
+    type: Add
+  - message: Brigmedic can now correctly spawn with their Security Star
+    type: Fix
+  id: 285000
+  time: '2026-01-20T01:25:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2850
 Order: -1
 
