@@ -928,7 +928,7 @@
 - type: entity
   id: LeftArmCyberGorilla
   name: "left G.O.R.I.L.L.A arm"
-  parent: [PartCyber, BaseLeftArm]
+  parent: [PartCyber, BaseLeftArm, BaseScienceContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -947,7 +947,7 @@
 - type: entity
   id: LeftHandCyberGorilla
   name: "left G.O.R.I.L.L.A hand"
-  parent: [PartCyber, BaseLeftHand]
+  parent: [PartCyber, BaseLeftHand, BaseScienceContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -979,7 +979,7 @@
 - type: entity
   id: RightArmCyberGorilla
   name: "right G.O.R.I.L.L.A arm"
-  parent: [PartCyber, BaseRightArm]
+  parent: [PartCyber, BaseRightArm, BaseScienceContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -998,7 +998,7 @@
 - type: entity
   id: RightHandCyberGorilla
   name: "right G.O.R.I.L.L.A hand"
-  parent: [PartCyber, BaseRightHand]
+  parent: [PartCyber, BaseRightHand, BaseScienceContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -1134,7 +1134,7 @@
 - type: entity
   id: LeftArmCyberZeus
   name: "left zeus arm"
-  parent: [PartCyber, BaseLeftArm]
+  parent: [PartCyber, BaseLeftArm, BaseSecurityContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -1153,7 +1153,7 @@
 - type: entity
   id: LeftHandCyberZeus
   name: "left zeus hand"
-  parent: [PartCyber, BaseLeftHand]
+  parent: [PartCyber, BaseLeftHand, BaseSecurityContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -1184,7 +1184,7 @@
 - type: entity
   id: RightArmCyberZeus
   name: "right zeus arm"
-  parent: [PartCyber, BaseRightArm]
+  parent: [PartCyber, BaseRightArm, BaseSecurityContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -1203,7 +1203,7 @@
 - type: entity
   id: RightHandCyberZeus
   name: "right zeus hand"
-  parent: [PartCyber, BaseRightHand]
+  parent: [PartCyber, BaseRightHand, BaseSecurityContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -1548,7 +1548,7 @@
 - type: entity
   id: LeftArmCyberHerakles
   name: "left herakles arm"
-  parent: [PartCyber, BaseLeftArm]
+  parent: [PartCyber, BaseLeftArm, BaseSecurityContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -1567,7 +1567,7 @@
 - type: entity
   id: LeftHandCyberHerakles
   name: "left herakles hand"
-  parent: [PartCyber, BaseLeftHand]
+  parent: [PartCyber, BaseLeftHand, BaseSecurityContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -1598,7 +1598,7 @@
 - type: entity
   id: RightArmCyberHerakles
   name: "right herakles arm"
-  parent: [PartCyber, BaseRightArm]
+  parent: [PartCyber, BaseRightArm, BaseSecurityContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -1617,7 +1617,7 @@
 - type: entity
   id: RightHandCyberHerakles
   name: "right herakles hand"
-  parent: [PartCyber, BaseRightHand]
+  parent: [PartCyber, BaseRightHand, BaseSecurityContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -1649,7 +1649,7 @@
 - type: entity
   id: LeftArmCyberInvestigator
   name: "left investigator arm"
-  parent: [PartCyber, BaseLeftArm]
+  parent: [PartCyber, BaseLeftArm, BaseScienceContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -1668,7 +1668,7 @@
 - type: entity
   id: LeftHandCyberInvestigator
   name: "left investigator hand"
-  parent: [PartCyber, BaseLeftHand]
+  parent: [PartCyber, BaseLeftHand, BaseScienceContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -1703,7 +1703,7 @@
 - type: entity
   id: RightArmCyberInvestigator
   name: "right investigator arm"
-  parent: [PartCyber, BaseRightArm]
+  parent: [PartCyber, BaseRightArm, BaseScienceContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -1722,7 +1722,7 @@
 - type: entity
   id: RightHandCyberInvestigator
   name: "right investigator hand"
-  parent: [PartCyber, BaseRightHand]
+  parent: [PartCyber, BaseRightHand, BaseScienceContraband]
   components:
     - type: BaseLayerId
       layers:
@@ -1863,6 +1863,7 @@
   id: LeftLegCyberCargo
   name: "left cargo cyber leg"
   parent: [PartCyber, BaseLeftLeg]
+  description: Wait a moment... This is just an older model of cyberleg someone strapped a pouch to!
   components:
     - type: BaseLayerId
       layers:
@@ -1874,6 +1875,9 @@
     - type: Icon
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_leg_cargo"
+    - type: MovementBodyPart
+      sprintSpeed : 4.05
+      maxDensity: 111
     - type: WithAttachedBodyParts
       parts:
         left foot: LeftFootCyber
@@ -1911,6 +1915,7 @@
   id: RightLegCyberCargo
   name: "right cargo cyber leg"
   parent: [PartCyber, BaseRightLeg]
+  description: Wait a moment... This is just an older model of cyberleg someone strapped a pouch to!
   components:
     - type: BaseLayerId
       layers:
@@ -1922,6 +1927,9 @@
     - type: Icon
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_leg_cargo"
+    - type: MovementBodyPart
+      sprintSpeed : 4.05
+      maxDensity: 111
     - type: WithAttachedBodyParts
       parts:
         right foot: RightFootCyber

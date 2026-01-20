@@ -161,6 +161,12 @@
         - proto: RightLegCyber
           prob: 0.4
           cost: 10
+        - proto: LeftLegCyberCargo
+          prob: 0.4
+          cost: 10
+        - proto: RightLegCyberCargo
+          prob: 0.4
+          cost: 10
         - proto: LeftLegCyberHydraulic
           prob: 0.2
           cost: 10

@@ -132,6 +132,24 @@
         - proto: RightArmCyberAngel
           prob: 0.2
           cost: 20
+        - proto: LeftArmCyberInvestigator
+          prob: 0.2
+          cost: 20
+        - proto: RightArmCyberInvestigator
+          prob: 0.2
+          cost: 20
+        - proto: LeftArmCyberScribe
+          prob: 0.2
+          cost: 20
+        - proto: RightArmCyberScribe
+          prob: 0.2
+          cost: 20
+        - proto: LeftArmCyberHerakles
+          prob: 0.2
+          cost: 20
+        - proto: RightArmCyberHerakles
+          prob: 0.2
+          cost: 20
         - proto: LeftArmCyberMantisBlade
           prob: 0.2
           cost: 20
@@ -143,6 +161,12 @@
           prob: 0.6
           cost: 10
         - proto: RightLegCyber
+          prob: 0.6
+          cost: 10
+        - proto: LeftLegCyberCargo
+          prob: 0.6
+          cost: 10
+        - proto: RightLegCyberCargo
           prob: 0.6
           cost: 10
         - proto: LeftLegCyberHydraulic
