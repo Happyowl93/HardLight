@@ -46,7 +46,6 @@ public sealed class StationPowerTests
         "StarlightManor",
         "StarlightLeth",
         "StarlightMing",
-        "StarlightOrigin",
         "StarlightOrwell",
         "StarlightPrism",
         "StarlightStarboard",
