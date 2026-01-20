@@ -703,7 +703,7 @@
   - type: DeviceNetwork
     deviceNetId: Wired
   - type: DeviceLinkSource
-    range: 6 # Requested by Conflee to have a larger range.
+    range: 4
     ports:
       - BodyScannerSender
   # Starlight-end
