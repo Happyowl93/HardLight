@@ -111,10 +111,10 @@ marking-ResomiLShoulderFade-l_shoulder_fade = Left Shoulder Fade
 marking-ResomiLShoulderFade = Left Shoulder Fade
 marking-ResomiRShoulderFade-r_shoulder_fade = Right Shoulder Fade
 marking-ResomiRShoulderFade = Right Shoulder Fade
-marking-ResomiLArmCoat = Left Arm Stripes
-marking-ResomiLArmCoat-l_leg_coat = Left Arm Stripes
-marking-ResomiRArmCoat = Right Arm Stripes
-marking-ResomiRArmCoat-r_leg_coat = Right Arm Stripes
+marking-ResomiLArmCoat = Left Arm Coat
+marking-ResomiLArmCoat-l_leg_coat = Left Arm Coat
+marking-ResomiRArmCoat = Right Arm Coat
+marking-ResomiRArmCoat-r_leg_coat = Right Arm Coat
 
 marking-ResomiTail = Resomi Tail
 marking-ResomiTail-tail = Resomi Tail
