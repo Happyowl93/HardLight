@@ -26965,5 +26965,74 @@ Entries:
   id: 285000
   time: '2026-01-20T01:25:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2850
+- author: Penguinwizzard
+  changes:
+  - message: Fixed ability to use the new gear denial implants while crit.
+    type: Fix
+  id: 288500
+  time: '2026-01-20T14:13:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2885
+- author: Rinary
+  changes:
+  - message: Fixed gnome smith.
+    type: Fix
+  - message: Fixed head rev flash.
+    type: Fix
+  id: 288600
+  time: '2026-01-20T15:16:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2886
+- author: Shades
+  changes:
+  - message: Rat King has now a 1/5 chance to spawn a larger servant!
+    type: Add
+  - message: Changed Rat King Sprite.
+    type: Tweak
+  - message: Rat King Servant having error sprite on death.
+    type: Fix
+  id: 289000
+  time: '2026-01-20T17:35:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2890
+- author: CawsForConcern
+  changes:
+  - message: O2 and N2 canisters to 'Breaker' mining shuttle
+    type: Add
+  - message: Wall defib to 'Breaker' mining shuttle
+    type: Add
+  - message: Lighting made less harsh on 'Pioneer' salvage shuttle (retinas rejoice)
+    type: Tweak
+  - message: Canisters on 'Pioneer' salvage shuttle start wrenched down
+    type: Tweak
+  - message: '''Breaker'' mining shuttle APC power tripping due to 22.8kW draw'
+    type: Fix
+  - message: '''Pioneer'' salvage shuttle APC power tripping due to 21.2kW draw'
+    type: Fix
+  - message: '''Reclaimer'' salvage shuttle from the files'
+    type: Remove
+  id: 288900
+  time: '2026-01-20T17:39:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2889
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Evac shuttle APC power tripping issues in the Engineering section
+    type: Fix
+  - message: (Fland / Orwell) Evac shuttle air section exploding due to delta pressure
+      issues
+    type: Fix
+  - message: (Starboard) The whole evac shuttle was wired to a singular Sisyphean
+      APC
+    type: Fix
+  - message: (Barratry / Lagan) Evac shuttle APC power tripping on Bridge
+    type: Fix
+  id: 289100
+  time: '2026-01-20T17:48:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2891
+- author: CawsForConcern
+  changes:
+  - message: (Nukie Planet) Hellfire Heaters / Freezers were tripping the Engineering
+      APC by drawing 80kW (!!) and turning gravity off
+    type: Fix
+  id: 289200
+  time: '2026-01-20T17:57:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2892
 Order: -1
 
