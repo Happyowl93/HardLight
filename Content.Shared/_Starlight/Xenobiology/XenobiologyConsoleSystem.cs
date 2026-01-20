@@ -122,6 +122,7 @@ public sealed class XenobiologyConsoleSystem : EntitySystem
     private void OnConsolePlaceSlime(ConsolePlaceSlimeEvent args)
     {
         if (!VerifyComponents(args, out var remoteEyeActorComponent, out var xenobiologyConsoleComponent, out var remoteEntity)) return;
+        xenobiologyConsoleComponent.SlimeContainer = _container.EnsureContainer<ContainerSlot>(remoteEntity.Value, XenobiologyConsoleComponent.SlimeContainerName);
         if (xenobiologyConsoleComponent.SlimeContainer.ContainedEntities.Count <= 0)
         {
             RaiseLocalEvent(new ConsolePopupEvent(remoteEntity.Value, FormattedMessage.FromMarkupPermissive(Loc.GetString("xenobiology-console-slime-placed-down-fail-none-stored"))));
