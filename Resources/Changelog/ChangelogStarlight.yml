@@ -27095,5 +27095,26 @@ Entries:
   id: 289500
   time: '2026-01-20T18:25:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2895
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) Enabled Duty Officers
+    type: Add
+  - message: (Orwell) Enabled Nanotrasen Career Trainers (NCT)
+    type: Add
+  - message: (Orwell) New NCT office across from Bridge
+    type: Add
+  - message: (Orwell) New wall-mounted mass scanners by Cargo
+    type: Add
+  - message: (Orwell) Magistrate Locker
+    type: Add
+  - message: (Orwell) IAA Lockers
+    type: Add
+  - message: (Orwell) SpawnPointLateJoin by Arrivals
+    type: Add
+  - message: (Orwell) AI Restoration Consoles in RD Office and AI Core
+    type: Add
+  id: 289700
+  time: '2026-01-20T19:25:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2897
 Order: -1
 
