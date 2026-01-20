@@ -26965,5 +26965,12 @@ Entries:
   id: 285000
   time: '2026-01-20T01:25:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2850
+- author: Penguinwizzard
+  changes:
+  - message: Fixed ability to use the new gear denial implants while crit.
+    type: Fix
+  id: 288500
+  time: '2026-01-20T14:13:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2885
 Order: -1
 
