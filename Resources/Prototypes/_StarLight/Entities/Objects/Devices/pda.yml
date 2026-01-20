@@ -579,3 +579,30 @@
       - WantedListCartridge
       - LogProbeCartridge
       - AstroNavCartridge
+
+- type: entity
+  parent: BasePDA
+  id: NanotrasenCareerTrainerPDA
+  name: Nanotrasen Career Trainer PDA
+  components:
+  - type: Pda
+    id: NanotrasenCareerTrainerIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-ntrep
+  - type: PdaBorderColor
+    borderColor: "#1c1c1c"
+    accentHColor: "#ffce5b"
+  - type: Icon
+    state: pda-ntrep
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - MedTekCartridge
+      - AstroNavCartridge

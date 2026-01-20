@@ -565,3 +565,14 @@
       sprite: _Starlight/Clothing/Uniforms/Jumpsuit/salvagebrown.rsi
     - type: Clothing
       sprite: _Starlight/Clothing/Uniforms/Jumpsuit/salvagebrown.rsi
+
+- type: entity
+  parent: [ ClothingUniformBase, BaseCommandContraband ]
+  id: ClothingUniformJumpsuitNCT
+  name: NT Career Trainer's uniform
+  description: A neatly pressed olive green shirt paired with black jeans, worn by those dedicated to shaping the future of the workforce.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/nct.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/nct.rsi
