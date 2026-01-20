@@ -60,7 +60,6 @@ public sealed class StationPowerTests
         "StarlightFland",
         "StarlightHotel",
         "StarlightOasis",
-        "StarlightOmega",
         "StarlightPacked",
         "StarlightReach",
         "StarlightSaltern",
