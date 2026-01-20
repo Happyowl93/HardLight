@@ -27152,5 +27152,12 @@ Entries:
   id: 290200
   time: '2026-01-20T20:56:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2902
+- author: Seaborne
+  changes:
+  - message: Fixed prescription medical glasses icon sprite!.
+    type: Fix
+  id: 290000
+  time: '2026-01-20T21:02:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2900
 Order: -1
 
