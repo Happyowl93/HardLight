@@ -466,27 +466,7 @@
       "copyright": "Citrea"
     },
     {
-      "name": "l_herakles_arm",
-      "directions": 4,
-      "copyright": "Citrea"
-    },
-    {
-      "name": "l_herakles_hand",
-      "directions": 4,
-      "copyright": "Citrea"
-    },
-    {
       "name": "l_herakles_hand_TOOLS",
-      "directions": 4,
-      "copyright": "Citrea"
-    },
-    {
-      "name": "r_herakles_arm",
-      "directions": 4,
-      "copyright": "Citrea"
-    },
-    {
-      "name": "r_herakles_hand",
       "directions": 4,
       "copyright": "Citrea"
     },

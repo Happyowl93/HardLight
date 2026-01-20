@@ -2,6 +2,7 @@
 using Content.Server._Starlight.Language;
 using Content.Server.Humanoid;
 using Content.Shared._Starlight.Language.Components.Translators;
+using Content.Shared.Actions;
 using Content.Shared.CollectiveMind;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -16,10 +17,11 @@ using Content.Shared.Starlight.Cybernetics;
 using Content.Shared.Starlight.Cybernetics.Components;
 using Content.Shared.Starlight.Medical.Surgery.Events;
 using Content.Shared.Starlight.Medical.Surgery.Steps.Parts;
-using Content.Shared.Storage;
 using Content.Shared.Tag;
 using Content.Shared.VentCraw;
 using Robust.Shared.Containers;
+using Robust.Shared.Network;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Starlight.Medical.Surgery;
 public sealed partial class OrganSystem : EntitySystem
@@ -32,6 +34,9 @@ public sealed partial class OrganSystem : EntitySystem
     [Dependency] private readonly SharedCollectiveMindSystem _collectiveMind = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
 
     public override void Initialize()
     {
@@ -42,8 +47,8 @@ public sealed partial class OrganSystem : EntitySystem
         SubscribeLocalEvent<TaggedOrganComponent, SurgeryOrganImplantationCompleted>(OnTaggedOrganImplanted);
         SubscribeLocalEvent<TaggedOrganComponent, SurgeryOrganExtracted>(OnTaggedOrganExtracted);
 
-        SubscribeLocalEvent<FunctionalOrganComponent, SurgeryOrganImplantationCompleted>(OnStorageOrganImplanted);
-        SubscribeLocalEvent<FunctionalOrganComponent, SurgeryOrganExtracted>(OnStorageOrganExtracted);
+        SubscribeLocalEvent<StorageOrganComponent, SurgeryOrganImplantationCompleted>(OnStorageOrganImplanted);
+        SubscribeLocalEvent<StorageOrganComponent, SurgeryOrganExtracted>(OnStorageOrganExtracted);
 
         SubscribeLocalEvent<OrganEyesComponent, SurgeryOrganImplantationCompleted>(OnEyeImplanted);
         SubscribeLocalEvent<OrganEyesComponent, SurgeryOrganExtracted>(OnEyeExtracted);
@@ -138,13 +143,25 @@ public sealed partial class OrganSystem : EntitySystem
 
     private void OnStorageOrganImplanted(Entity<StorageOrganComponent> ent, ref SurgeryOrganImplantationCompleted args)
     {
-        var storageComp = EnsureComp<StorageComponent>(args.Body);
+        // The results of the container change are already networked on their own
+        if (_timing.ApplyingState)
+            return;
+
+        Dirty(ent);
+
+        if (ent.Comp.OrganAction != null)
+            _actions.AddAction(args.Body, ref ent.Comp.ActionEntity, ent.Comp.OrganAction, ent.Owner);
 
     }
 
     private void OnStorageOrganExtracted(Entity<StorageOrganComponent> ent, ref SurgeryOrganExtracted args)
     {
-        
+        // The results of the container change are already networked on their own
+        if (_timing.ApplyingState)
+            return;
+
+        _actions.RemoveAction(args.Body, ent.Comp.ActionEntity);
+        ent.Comp.ActionEntity = null;
     }
 
     //

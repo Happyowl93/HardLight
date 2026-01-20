@@ -1873,11 +1873,31 @@
       footstepSoundCollection:
         path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
         volume: 0.1
+    - type: LimbWithAction
+      action: ActionOpenStorageLeftLeg
     - type: StorageOrgan
+      organAction: ActionOpenStorageLeftLeg
+      actionKey: LeftLeg
+    - type: Storage
+      clickInsert: false
+      showVerb: false
+      openOnActivate: false
       grid:
-      - 0,0,1,3
-      - 3,0,6,3
-      - 8,0,9,3
+      - 0,0,1,2
+      maxItemSize: Large
+      storageInsertSound:
+        path: /Audio/Voice/Slime/slime_squish.ogg
+    - type: PrivateStorage
+      accessDelay: 3.0
+      accessPopup: "cargo-leg-left-storage-accessing"
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          ents: []
+    - type: UserInterface
+      interfaces:
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
 
 - type: entity
   id: RightLegCyberCargo
@@ -1901,8 +1921,28 @@
       footstepSoundCollection:
         path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
         volume: 0.1
+    - type: LimbWithAction
+      action: ActionOpenStorageRightLeg
     - type: StorageOrgan
+      organAction: ActionOpenStorageRightLeg
+      actionKey: RightLeg
+    - type: Storage
+      clickInsert: false
+      showVerb: false
+      openOnActivate: false
       grid:
-      - 0,0,1,3
-      - 3,0,6,3
-      - 8,0,9,3
+      - 0,0,1,2
+      maxItemSize: Large
+      storageInsertSound:
+        path: /Audio/Voice/Slime/slime_squish.ogg
+    - type: PrivateStorage
+      accessDelay: 3.0
+      accessPopup: "cargo-leg-right-storage-accessing"
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          ents: []
+    - type: UserInterface
+      interfaces:
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
