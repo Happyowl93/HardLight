@@ -27131,5 +27131,12 @@ Entries:
   id: 289800
   time: '2026-01-20T20:35:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2898
+- author: CawsForConcern
+  changes:
+  - message: Oasis has been retired, removed from map pool and gamefiles
+    type: Remove
+  id: 290100
+  time: '2026-01-20T20:48:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2901
 Order: -1
 
