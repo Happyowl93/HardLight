@@ -27138,5 +27138,12 @@ Entries:
   id: 290100
   time: '2026-01-20T20:48:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2901
+- author: CawsForConcern
+  changes:
+  - message: Origin Station has been retired, removed from map pool and gamefiles
+    type: Remove
+  id: 289900
+  time: '2026-01-20T20:51:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2899
 Order: -1
 
