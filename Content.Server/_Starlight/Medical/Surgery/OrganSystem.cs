@@ -16,6 +16,7 @@ using Content.Shared.Starlight.Cybernetics;
 using Content.Shared.Starlight.Cybernetics.Components;
 using Content.Shared.Starlight.Medical.Surgery.Events;
 using Content.Shared.Starlight.Medical.Surgery.Steps.Parts;
+using Content.Shared.Storage;
 using Content.Shared.Tag;
 using Content.Shared.VentCraw;
 using Robust.Shared.Containers;
@@ -40,6 +41,9 @@ public sealed partial class OrganSystem : EntitySystem
 
         SubscribeLocalEvent<TaggedOrganComponent, SurgeryOrganImplantationCompleted>(OnTaggedOrganImplanted);
         SubscribeLocalEvent<TaggedOrganComponent, SurgeryOrganExtracted>(OnTaggedOrganExtracted);
+
+        SubscribeLocalEvent<FunctionalOrganComponent, SurgeryOrganImplantationCompleted>(OnStorageOrganImplanted);
+        SubscribeLocalEvent<FunctionalOrganComponent, SurgeryOrganExtracted>(OnStorageOrganExtracted);
 
         SubscribeLocalEvent<OrganEyesComponent, SurgeryOrganImplantationCompleted>(OnEyeImplanted);
         SubscribeLocalEvent<OrganEyesComponent, SurgeryOrganExtracted>(OnEyeExtracted);
@@ -128,6 +132,19 @@ public sealed partial class OrganSystem : EntitySystem
         if(ent.Comp.RemoveTags.Count > 0)
             _tag.AddTags(args.Body, ent.Comp.RemoveTags);
         UpdateEntity(args.Body, ent.Comp);
+    }
+
+    //
+
+    private void OnStorageOrganImplanted(Entity<StorageOrganComponent> ent, ref SurgeryOrganImplantationCompleted args)
+    {
+        var storageComp = EnsureComp<StorageComponent>(args.Body);
+
+    }
+
+    private void OnStorageOrganExtracted(Entity<StorageOrganComponent> ent, ref SurgeryOrganExtracted args)
+    {
+        
     }
 
     //

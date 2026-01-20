@@ -63,6 +63,13 @@ public sealed partial class TaggedOrganComponent : Component
     public List<ProtoId<TagPrototype>> RemoveTags = new();
 }
 
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
+public sealed partial class StorageOrganComponent : Component
+{
+    [DataField]
+    public List<Box2i> Grid = new();
+}
+
 [RegisterComponent, NetworkedComponent]
 public sealed partial class OrganDamageComponent : Component
 {
