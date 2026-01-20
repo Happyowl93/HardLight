@@ -33,6 +33,7 @@
     - !type:AddComponentSpecial
       components:
         - type: NoObjectiveTarget
+        - type: NCTAgent
 
 - type: startingGear
   id: NanotrasenCareerTrainerGear

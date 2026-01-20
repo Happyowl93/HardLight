@@ -7,9 +7,6 @@ namespace Content.Server.Access.Components;
 public sealed partial class NCTDataChipComponent : Component
 {
     [DataField]
-    public EntityUid? Owner;
-
-    [DataField]
     public string Trainee = "";
 
     [DataField]
