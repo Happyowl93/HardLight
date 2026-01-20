@@ -48,6 +48,11 @@
     speechSounds: ALLagomorph
     speechVerb: Lagomorph
     allowedEmotes: ['Squeek', 'Snort', 'LagomorphSneeze', 'LagomorphSnore', 'LagomorphStomp']
+  - type: ChatListenerRange # way better at hearing, +2 to all
+    voiceRange: 12
+    whisperClearRange: 4
+    whisperMuffledRange: 7
+    allowExtendListenRange: true
   - type: Vocal
     sounds:
       Male: MaleLagomorph
