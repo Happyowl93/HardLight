@@ -1128,16 +1128,12 @@
     solutions:
       beaker:
         maxVol: 30
-  - type: MixableSolution
-    solution: beaker
-  - type: RefillableSolution
-    solution: beaker
-  - type: DrainableSolution
-    solution: beaker
   - type: ExaminableSolution
     solution: beaker
     exactVolume: true
   - type: DrawableSolution
+    solution: beaker
+  - type: Spillable
     solution: beaker
   - type: SolutionTransfer
     maxTransferAmount: 30
@@ -1154,7 +1150,19 @@
     damage:
       types:
         Blunt: 0
-  - type: Spillable
+
+- type: entity
+  id: VialCyberEmpty
+  parent: VialCyber
+  name: cybernetic vial
+  description: Fluid storage, integrated right into your arm!
+  suffix: Water
+  components:
+  - type: MixableSolution
+    solution: beaker
+  - type: RefillableSolution
+    solution: beaker
+  - type: DrainableSolution
     solution: beaker
 
 - type: entity

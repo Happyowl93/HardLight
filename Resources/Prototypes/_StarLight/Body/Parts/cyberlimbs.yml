@@ -9,6 +9,10 @@
       reagents:
       - ReagentId: Iron
         Quantity: 30
+  - type: Item
+    size: Large
+    shape:
+      - 0,0,0,1
 
 - type: entity
   id: LeftArmCyber
@@ -1688,7 +1692,7 @@
       items:
         - RadcasterCyber
         - FreezeRayCyber
-        - VialCyber
+        - VialCyberEmpty
         - VialCyberWater
         - VialCyberBlood
         - NodeScannerCyber
@@ -1742,7 +1746,7 @@
       items:
         - RadcasterCyber
         - FreezeRayCyber
-        - VialCyber
+        - VialCyberEmpty
         - VialCyberWater
         - VialCyberBlood
         - NodeScannerCyber
@@ -1898,8 +1902,6 @@
       grid:
       - 0,0,1,2
       maxItemSize: Large
-      storageInsertSound:
-        path: /Audio/Voice/Slime/slime_squish.ogg
     - type: PrivateStorage
       accessDelay: 3.0
       accessPopup: "cargo-leg-left-storage-accessing"
@@ -1951,8 +1953,6 @@
       grid:
       - 0,0,1,2
       maxItemSize: Large
-      storageInsertSound:
-        path: /Audio/Voice/Slime/slime_squish.ogg
     - type: PrivateStorage
       accessDelay: 3.0
       accessPopup: "cargo-leg-right-storage-accessing"
