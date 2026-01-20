@@ -58,7 +58,6 @@ public sealed class StationPowerTests
         "StarlightElkridge",
         "StarlightFland",
         "StarlightHotel",
-        "StarlightOmega",
         "StarlightPacked",
         "StarlightReach",
         "StarlightSaltern",
