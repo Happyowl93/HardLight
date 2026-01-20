@@ -13,6 +13,7 @@ job-name-decimus = Decimus Operative
 job-name-nct = Nanotrasen Career Trainer
 
 job-name-salvagelead = Salvage Lead
+job-name-dutyofficer = Duty Officer
 job-name-abductor = Abductor
 job-title-borgi = Borgi
 

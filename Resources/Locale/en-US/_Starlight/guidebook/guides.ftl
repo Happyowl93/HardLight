@@ -67,6 +67,7 @@ guide-entry-sl-money-accounts-and-space-credits = Money Accounts and Space Credi
 guide-entry-sl-security-sop-intro = Security
 guide-entry-sl-security-sop-cadet = Cadet
 guide-entry-sl-security-sop-securityofficer = Security Officer
+guide-entry-sl-security-sop-dutyofficer = Duty Officer
 guide-entry-sl-security-sop-detective = Detective
 guide-entry-sl-security-sop-brigmedic = Brigmedic
 guide-entry-sl-security-sop-warden = Warden

@@ -75,6 +75,28 @@
   - type: Clothing
     sprite: _Starlight/Clothing/Uniforms/Jumpskirt/corpsman_trauma.rsi
 
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtSecBlue
+  name: blue skirt and tie
+  description: Stylish and functional.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpskirt/security_blue.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpskirt/security_blue.rsi
+
+- type: entity
+  parent: [ClothingUniformSkirtBase, BaseSecurityContraband]
+  id: ClothingUniformJumpskirtDutyOfficer
+  name: duty officer's uniform
+  description: A vibrant security skirt for the warden's partner in chains.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpskirt/dutyofficer.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpskirt/dutyofficer.rsi
+
 # Fashion-O-Mat-Start, not obtainable any other way, unless mapped
 # All CC/Synd stuff in Fashion-O-Mat is replica
 
