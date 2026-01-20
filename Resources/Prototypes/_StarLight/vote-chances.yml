@@ -1,7 +1,6 @@
 - type: roundvotingchances
   id: Basic
   chances:
-    # No, these numbers do not need to add up to an exact total. Tweak as you like.
     Survival: 10
     KesslerSyndrome: 10
     Greenshift: 40
