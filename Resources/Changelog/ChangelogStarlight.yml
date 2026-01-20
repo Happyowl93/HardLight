@@ -26981,5 +26981,16 @@ Entries:
   id: 288600
   time: '2026-01-20T15:16:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2886
+- author: Shades
+  changes:
+  - message: Rat King has now a 1/5 chance to spawn a larger servant!
+    type: Add
+  - message: Changed Rat King Sprite.
+    type: Tweak
+  - message: Rat King Servant having error sprite on death.
+    type: Fix
+  id: 289000
+  time: '2026-01-20T17:35:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2890
 Order: -1
 
