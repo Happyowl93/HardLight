@@ -27116,5 +27116,20 @@ Entries:
   id: 289700
   time: '2026-01-20T19:25:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2897
+- author: CawsForConcern
+  changes:
+  - message: ERT Shuttle APC tripping fixed
+    type: Fix
+  - message: Lance Pirates APC tripping fixed
+    type: Fix
+  - message: NTSV Harrier Class APC tripping fixed
+    type: Fix
+  - message: Fire Response visitor shuttle APC tripping fixed
+    type: Fix
+  - message: Signaleer APC tripping fixed
+    type: Fix
+  id: 289800
+  time: '2026-01-20T20:35:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2898
 Order: -1
 
