@@ -1585,7 +1585,8 @@
       state: "l_bulwark_hand"
     - type: LimbItemStorage
       items:
-        - CyberToolMiniHoe
+        - MeleeWeaponCyberHerakles
+        - HoloRestrainerCyber
     - type: LimbItemDeployer
       action: ActionToggleCyberHandLeft
       sound:
@@ -1634,7 +1635,8 @@
       state: "r_bulwark_hand"
     - type: LimbItemStorage
       items:
-        - CyberToolMiniHoe
+        - MeleeWeaponCyberHerakles
+        - HoloRestrainerCyber
     - type: LimbItemDeployer
       action: ActionToggleCyberHandRight
       sound:
@@ -1684,9 +1686,12 @@
       state: "l_investigator_hand"
     - type: LimbItemStorage
       items:
-        - PenCyber
-        - StampCyber
-        - PrinterCyber
+        - RadcasterCyber
+        - FreezeRayCyber
+        - VialCyber
+        - VialCyberWater
+        - VialCyberBlood
+        - NodeScannerCyber
     - type: LimbItemDeployer
       action: ActionToggleCyberHandLeft
       sound:
@@ -1735,9 +1740,12 @@
       state: "r_investigator_hand"
     - type: LimbItemStorage
       items:
-        - PenCyber
-        - StampCyber
-        - PrinterCyber
+        - RadcasterCyber
+        - FreezeRayCyber
+        - VialCyber
+        - VialCyberWater
+        - VialCyberBlood
+        - NodeScannerCyber
     - type: LimbItemDeployer
       action: ActionToggleCyberHandRight
       sound:
