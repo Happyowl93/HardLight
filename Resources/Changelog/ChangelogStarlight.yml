@@ -27034,5 +27034,30 @@ Entries:
   id: 289200
   time: '2026-01-20T17:57:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2892
+- author: Conflee
+  changes:
+  - message: Added Space Mall to the map pool officially. It will now appear in normal
+      rounds from 60-350 pop.
+    type: Add
+  - message: (Space Mall) Added Duty Officer and NanoTrasen Career Trainers to the
+      station.
+    type: Add
+  - message: (Space Mall) Fixed missing tiles under a couple doors.
+    type: Fix
+  - message: (Space Mall) Fixed 1 incorrect turnstile in Genpop letting prisoners
+      enter the Security Front Desk.
+    type: Fix
+  - message: (Space Mall) Fixed Disposals linking and the pipe no longer throws trash
+      into the wall so hard it bounces off the belt.
+    type: Fix
+  - message: (Space Mall) Swapped the Syndicate Jetpacks in EVA with normal ones-
+      those are HoP's but you wouldn't tell the police on them right? You aren't a
+      Narc right Nerevarine?
+    type: Fix
+  - message: (Space Mall) Gave janitors 300% more bucket. Dear god.
+    type: Fix
+  id: 289400
+  time: '2026-01-20T18:05:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2894
 Order: -1
 
