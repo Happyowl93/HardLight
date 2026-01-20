@@ -27159,5 +27159,12 @@ Entries:
   id: 290000
   time: '2026-01-20T21:02:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2900
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) Removed 2nd Warden (replaced by Duty Officer slots)
+    type: Tweak
+  id: 290300
+  time: '2026-01-20T21:07:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2903
 Order: -1
 
