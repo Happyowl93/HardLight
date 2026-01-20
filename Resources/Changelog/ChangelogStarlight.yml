@@ -27026,5 +27026,13 @@ Entries:
   id: 289100
   time: '2026-01-20T17:48:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2891
+- author: CawsForConcern
+  changes:
+  - message: (Nukie Planet) Hellfire Heaters / Freezers were tripping the Engineering
+      APC by drawing 80kW (!!) and turning gravity off
+    type: Fix
+  id: 289200
+  time: '2026-01-20T17:57:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2892
 Order: -1
 
