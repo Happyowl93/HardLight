@@ -27166,5 +27166,14 @@ Entries:
   id: 290300
   time: '2026-01-20T21:07:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2903
+- author: neomoth
+  changes:
+  - message: Changed body scanner computer's device range from 2 to 4.
+    type: Tweak
+  - message: Changed artifact analyzer computer's device range from 5 to 9.
+    type: Tweak
+  id: 279800
+  time: '2026-01-20T21:20:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2798
 Order: -1
 
