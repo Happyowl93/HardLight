@@ -27,10 +27,8 @@ public sealed class RadioImplantSystem : EntitySystem
         }
         //Starlight begin
         foreach (var channel in ent.Comp.CustomChannels)
-        {
             if (activeRadio.CustomChannels.Add(channel))
                 ent.Comp.ActiveAddedCustomRadioChannels.Add(channel);
-        }
         //Starlight end
 
         EnsureComp<IntrinsicRadioReceiverComponent>(args.Implanted);
@@ -43,10 +41,8 @@ public sealed class RadioImplantSystem : EntitySystem
         }
         //Starlight begin
         foreach (var channel in ent.Comp.CustomChannels)
-        {
             if (intrinsicRadioTransmitter.CustomChannels.Add(channel))
                 ent.Comp.TransmitterAddedCustomRadioChannels.Add(channel);
-        }
         //Starlight end
     }
 

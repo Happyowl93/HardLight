@@ -117,9 +117,7 @@ public sealed class JammerSystem : SharedJammerSystem
     private void OnCustomRadioSendAttempt(ref CustomRadioSendAttemptEvent args)
     {
         if (ShouldCancelSend(args.RadioSource, args.Channel.Frequency))
-        {
             args.Cancelled = true;
-        }
     }
     //Starlight end
 

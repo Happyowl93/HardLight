@@ -76,10 +76,7 @@ public sealed class RadioSystem : EntitySystem
         }
         //Starlight begin
         if (args.UsingCustomChannel && args.CustomChannel is not null)
-        {
-            // Custom channel data is already confirmed to exist on this headset
-            SendCustomRadioMessage(uid, args.Message, args.CustomChannel, uid, args.Language);
-        }
+            SendCustomRadioMessage(uid, args.Message, args.CustomChannel, uid, args.Language); // Custom channel data is already confirmed to exist on this headset
         //Starlight end
     }
 

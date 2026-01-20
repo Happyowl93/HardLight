@@ -168,14 +168,12 @@ public sealed class RadioDeviceSystem : SharedRadioDeviceSystem
             return; // no feedback loops please.
 
         //Starlight begin
-        if (_protoMan.TryIndex<RadioChannelPrototype>(component.BroadcastChannel, out var channel))
-        {
-            if (_recentlySent.Add((args.Message, args.Source, channel.ID)))
-                _radio.SendRadioMessage(args.Source, args.Message, channel, uid);
-        }
-        else if (_chat.TryGetCustomChannel(uid, component.BroadcastChannel, out var customChannel))
-            if (_recentlySent.Add((args.Message, args.Source, customChannel.Id)))
-                _radio.SendCustomRadioMessage(args.Source, args.Message, customChannel, uid);
+        if (_protoMan.TryIndex<RadioChannelPrototype>(component.BroadcastChannel, out var channel) &&
+            _recentlySent.Add((args.Message, args.Source, channel.ID)))
+            _radio.SendRadioMessage(args.Source, args.Message, channel, uid);
+        else if (_chat.TryGetCustomChannel(uid, component.BroadcastChannel, out var customChannel) && 
+                 _recentlySent.Add((args.Message, args.Source, customChannel.Id)))
+            _radio.SendCustomRadioMessage(args.Source, args.Message, customChannel, uid);
         //Starlight end
     }
 

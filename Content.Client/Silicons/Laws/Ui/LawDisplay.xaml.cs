@@ -122,14 +122,11 @@ public sealed partial class LawDisplay : Control
 
                 radioChannelButton.OnPressed += _ =>
                 {
-                    if (radioChannel.Id == SharedChatSystem.CommonChannel)
-                    {
-                        _chatManager.SendMessage($"{SharedChatSystem.RadioCommonPrefix} {lawIdentifierPlaintext}: {lawDescriptionPlaintext}", ChatSelectChannel.Radio);
-                    }
-                    else
-                    {
-                        _chatManager.SendMessage($"{SharedChatSystem.RadioChannelPrefix}{radioChannel.Keycode} {lawIdentifierPlaintext}: {lawDescriptionPlaintext}", ChatSelectChannel.Radio);
-                    }
+                    _chatManager.SendMessage(
+                        radioChannel.Id == SharedChatSystem.CommonChannel
+                            ? $"{SharedChatSystem.RadioCommonPrefix} {lawIdentifierPlaintext}: {lawDescriptionPlaintext}"
+                            : $"{SharedChatSystem.RadioChannelPrefix}{radioChannel.Keycode} {lawIdentifierPlaintext}: {lawDescriptionPlaintext}",
+                        ChatSelectChannel.Radio);
                     _nextAllowedPress[radioChannelButton] = _timing.CurTime + PressCooldown;
                 };
 
