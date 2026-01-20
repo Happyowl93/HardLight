@@ -72,6 +72,22 @@
 
 - type: jobIcon
   parent: JobIcon
+  id: JobIconDecimus
+  icon:
+    sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
+    state: Decimus
+  jobName: job-name-Decimus
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNTSF
+  icon:
+    sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
+    state: NTSF
+  jobName: job-name-NTSF
+
+- type: jobIcon
+  parent: JobIcon
   id: JobIconCentCommOperator
   icon:
     sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
@@ -157,3 +173,11 @@
     sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
     state: SyndicateJanitor
   jobName: job-name-Syndicate-Janitor
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNanotrasenCareerTrainer
+  icon:
+    sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
+    state: NanotrasenCareerTrainer
+  jobName: job-name-nct

@@ -62,7 +62,9 @@ public sealed class RadioSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<IntrinsicRadioReceiverComponent, RadioReceiveEvent>(OnIntrinsicReceive);
+        SubscribeLocalEvent<IntrinsicRadioReceiverComponent, EncryptionChannelsChangedEvent>(OnReceiverEncryptionChannelsChanged); // 🌟Starlight🌟
         SubscribeLocalEvent<IntrinsicRadioTransmitterComponent, EntitySpokeEvent>(OnIntrinsicSpeak);
+        SubscribeLocalEvent<IntrinsicRadioTransmitterComponent, EncryptionChannelsChangedEvent>(OnTransmitterEncryptionChannelsChanged); // 🌟Starlight🌟
 
         _exemptQuery = GetEntityQuery<TelecomExemptComponent>();
     }
@@ -110,9 +112,10 @@ public sealed class RadioSystem : EntitySystem
         ProtoId<RadioChannelPrototype> channel,
         EntityUid radioSource,
         LanguagePrototype? language = null, // Starlight
+        bool suppressTTS = false, // Starlight
         bool escapeMarkup = true)
     {
-        SendRadioMessage(messageSource, message, _prototype.Index(channel), radioSource, escapeMarkup: escapeMarkup, language: language); // Starlight
+        SendRadioMessage(messageSource, message, _prototype.Index(channel), radioSource, escapeMarkup: escapeMarkup, language: language, suppressTTS: suppressTTS); // Starlight
     }
 
     /// <summary>
@@ -126,6 +129,7 @@ public sealed class RadioSystem : EntitySystem
         RadioChannelPrototype channel,
         EntityUid radioSource,
         LanguagePrototype? language = null, // Starlight
+        bool suppressTTS = false, // Starlight
         bool escapeMarkup = true)
     {
         // Starlight - start
@@ -220,6 +224,7 @@ public sealed class RadioSystem : EntitySystem
             Source = messageSource,
             Message = message,
             Language = language, // Starlight-edit: Languages
+            SuppressTTS = suppressTTS, // Starlight
             Receivers = [.. ev.Receivers]
         });
 
@@ -477,4 +482,13 @@ public sealed class RadioSystem : EntitySystem
         }
         return false;
     }
+
+    #region Starlight
+    private void OnTransmitterEncryptionChannelsChanged(Entity<IntrinsicRadioTransmitterComponent> ent, ref EncryptionChannelsChangedEvent args) => ent.Comp.Channels = [.. args.Component.Channels.Select(p => new ProtoId<RadioChannelPrototype>(p))];
+    private void OnReceiverEncryptionChannelsChanged(Entity<IntrinsicRadioReceiverComponent> ent, ref EncryptionChannelsChangedEvent args)
+    {
+        if(TryComp(ent.Owner, out ActiveRadioComponent? radio))
+            radio.Channels = [.. args.Component.Channels.Select(p => new ProtoId<RadioChannelPrototype>(p))]; 
+    }
+    #endregion Starlight
 }

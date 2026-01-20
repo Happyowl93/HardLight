@@ -119,3 +119,41 @@
       - state: green
       - state: surgeon
       - state: jobicon
+
+- type: entity
+  id: SpawnPointBoxer
+  parent: SpawnPointJobBase
+  name: boxer
+  components:
+  - type: SpawnPoint
+    job_id: Boxer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: boxer
+
+- type: entity
+  id: SpawnPointZookeeper
+  parent: SpawnPointJobBase
+  name: zookeeper
+  components:
+  - type: SpawnPoint
+    job_id: Zookeeper
+  - type: Sprite
+    layers:
+      - state: green
+      - state: zookeeper
+
+- type: entity
+  id: SpawnPointNCT
+  parent: SpawnPointJobBase
+  name: Nanotrasen Career Trainer
+  components:
+  - type: SpawnPoint
+    job_id: NanotrasenCareerTrainer
+  - type: Sprite
+    sprite: _Starlight/Markers/jobs.rsi
+    layers:
+      - state: green
+      - state: nct
+      - state: jobicon

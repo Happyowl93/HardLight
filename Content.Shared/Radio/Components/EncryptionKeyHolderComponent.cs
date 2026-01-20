@@ -57,4 +57,9 @@ public sealed partial class EncryptionKeyHolderComponent : Component, ISupportsC
     /// </summary>
     [ViewVariables, AutoNetworkedField] // Starlight edit
     public string? DefaultChannel;
+
+    #region Starlight
+    [DataField]
+    public bool CanBeExamined = true;
+    #endregion Starlight
 }
