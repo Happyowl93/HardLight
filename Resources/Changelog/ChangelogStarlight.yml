@@ -27011,5 +27011,20 @@ Entries:
   id: 288900
   time: '2026-01-20T17:39:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2889
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Evac shuttle APC power tripping issues in the Engineering section
+    type: Fix
+  - message: (Fland / Orwell) Evac shuttle air section exploding due to delta pressure
+      issues
+    type: Fix
+  - message: (Starboard) The whole evac shuttle was wired to a singular Sisyphean
+      APC
+    type: Fix
+  - message: (Barratry / Lagan) Evac shuttle APC power tripping on Bridge
+    type: Fix
+  id: 289100
+  time: '2026-01-20T17:48:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2891
 Order: -1
 
