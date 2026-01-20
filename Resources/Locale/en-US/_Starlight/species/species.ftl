@@ -4,3 +4,5 @@ species-name-abductor = Abductor
 species-name-avali = Avali
 species-name-shadekin = Shadekin
 species-name-lagomorph = Lagomorph
+species-name-thaven = Thaven
+species-name-resomi = Resomi
