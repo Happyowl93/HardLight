@@ -170,6 +170,7 @@ public sealed class CollectingSlimeProcessorSystem : EntitySystem
             if (collectingSlimeProcessorComponent.SlimeAcquireMoment.Value > _gameTiming.CurTime) continue;
             foreach (var entity in _entityLookupSystem.GetEntitiesInRange<SlimeComponent>(Transform(uid).Coordinates, 1F))
             {
+                if (_container.IsEntityOrParentInContainer(entity.Owner)) continue;
                 if (!_entityManager.TryGetComponent(entity, out DamageableComponent? damageableComponent)) continue;
                 if (damageableComponent.TotalDamage >= 200)
                 {
