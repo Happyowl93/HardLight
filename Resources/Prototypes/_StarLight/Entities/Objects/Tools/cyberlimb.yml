@@ -1130,8 +1130,6 @@
         maxVol: 30
   - type: MixableSolution
     solution: beaker
-  - type: RefillableSolution
-    solution: beaker
   - type: DrainableSolution
     solution: beaker
   - type: ExaminableSolution
