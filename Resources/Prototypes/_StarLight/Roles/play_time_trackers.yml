@@ -5,6 +5,9 @@
   id: JobRoboticist
 
 - type: playTimeTracker
+  id: JobDutyOfficer
+
+- type: playTimeTracker
   id: JobMagistrate
 
 - type: playTimeTracker
