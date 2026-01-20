@@ -141,7 +141,6 @@ namespace Content.IntegrationTests.Tests
             "StarlightElkridge",
             "StarlightFland",
             "StarlightHotel",
-            "StarlightOasis",
             "StarlightOmega",
             "StarlightPacked",
             "StarlightReach",
