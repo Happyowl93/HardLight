@@ -27131,5 +27131,101 @@ Entries:
   id: 289800
   time: '2026-01-20T20:35:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2898
+- author: CawsForConcern
+  changes:
+  - message: Oasis has been retired, removed from map pool and gamefiles
+    type: Remove
+  id: 290100
+  time: '2026-01-20T20:48:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2901
+- author: CawsForConcern
+  changes:
+  - message: Origin Station has been retired, removed from map pool and gamefiles
+    type: Remove
+  id: 289900
+  time: '2026-01-20T20:51:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2899
+- author: CawsForConcern
+  changes:
+  - message: Omega has been retired, removed from map pool and gamefiles
+    type: Remove
+  id: 290200
+  time: '2026-01-20T20:56:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2902
+- author: Seaborne
+  changes:
+  - message: Fixed prescription medical glasses icon sprite!.
+    type: Fix
+  id: 290000
+  time: '2026-01-20T21:02:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2900
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) Removed 2nd Warden (replaced by Duty Officer slots)
+    type: Tweak
+  id: 290300
+  time: '2026-01-20T21:07:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2903
+- author: neomoth
+  changes:
+  - message: Changed body scanner computer's device range from 2 to 4.
+    type: Tweak
+  - message: Changed artifact analyzer computer's device range from 5 to 9.
+    type: Tweak
+  id: 279800
+  time: '2026-01-20T21:20:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2798
+- author: STARLIGHT TEAM
+  changes:
+  - message: Added Xenobiology Console.
+    type: Add
+  - message: Added Xenobiology Console Camera Tagger.
+    type: Add
+  - message: Added Handheld Slime Scanner.
+    type: Add
+  - message: Added Slime Extract Bag.
+    type: Add
+  - message: Added blood reactions for sepia and bluespace extracts.
+    type: Add
+  - message: Added Bluespace tiles.
+    type: Add
+  - message: Added Sepia tiles.
+    type: Add
+  - message: Added xenobiology starter crate for cargo.
+    type: Add
+  - message: Added basic xenobiology technology.
+    type: Add
+  - message: Added eating sound and animation to slimes when they attempt to eat monkeys.
+    type: Tweak
+  - message: Slimes will now swarm monkeys all at once.
+    type: Tweak
+  - message: Slimes will ignore non-monkeys as possible food targets (will be changed
+      when slimes receive an AI update).
+    type: Tweak
+  - message: Added processing sound to slime processor when activated.
+    type: Tweak
+  - message: Added interaction verb to slime processor.
+    type: Tweak
+  - message: Gender change potion now uses verbs.
+    type: Tweak
+  - message: All potions now provide feedback in the form of popups.
+    type: Tweak
+  - message: Inspecting extracts will now tell you whether they are exhausted.
+    type: Tweak
+  - message: Fireproof potions now correctly shield all fire damage and can no longer
+      cause healing.
+    type: Fix
+  - message: Fixed metal slimes not mutating into gold slimes.
+    type: Fix
+  id: 282600
+  time: '2026-01-20T22:37:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2826
+- author: redmushie
+  changes:
+  - message: Xenoborgs are now in the preset voting pool
+    type: Add
+  id: 289600
+  time: '2026-01-21T10:06:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2896
 Order: -1
 
