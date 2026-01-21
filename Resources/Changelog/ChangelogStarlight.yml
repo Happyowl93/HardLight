@@ -27290,5 +27290,41 @@ Entries:
   id: 290900
   time: '2026-01-21T18:47:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2909
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Duty Officers
+    type: Add
+  - message: (Hotel) Nanotrasen Career Trainers
+    type: Add
+  - message: (Hotel) NCT Office, where Library used to be
+    type: Add
+  - message: (Hotel) New Library south of the Arcade
+    type: Add
+  - message: (Hotel) IAA lockers
+    type: Add
+  - message: (Hotel) Magistrate locker
+    type: Add
+  - message: (Hotel) SpawnPointLateJoin by Arrivals
+    type: Add
+  - message: (Hotel) That bit of Medical no longer dead-ends if you don't have Medical
+      access. The maints corridor now connects all the way to Cargo Front
+    type: Add
+  - message: (Hotel) AI Restoration consoles in RD's Office and AI Upload
+    type: Add
+  - message: (Hotel) Xenobio Department
+    type: Add
+  - message: (Hotel) Robotics has been full remade
+    type: Add
+  - message: (Hotel) Wall-mounted mass scanners at Cargo Front
+    type: Add
+  - message: (Hotel) Cargo locker room and QM have been moved south of Cargo Bay
+    type: Add
+  - message: (Hotel) Salavee and Mining have been moved further south of Cargo Bay
+    type: Add
+  - message: (Hotel) Halved the size of the Morgue
+    type: Tweak
+  id: 291200
+  time: '2026-01-21T18:53:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2912
 Order: -1
 
