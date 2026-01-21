@@ -27227,5 +27227,149 @@ Entries:
   id: 289600
   time: '2026-01-21T10:06:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2896
+- author: Rinary
+  changes:
+  - message: Changed `forcemap` command name to `setgamemap` to fix confusion.
+    type: Tweak
+  - message: Changed `golobby` and `forcegamepreset` commands flag to DANGER, so regular
+      admins can't use them.
+    type: Tweak
+  id: 291800
+  time: '2026-01-21T17:49:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2918
+- author: Conflee
+  changes:
+  - message: (Box) Added NCT, Duty Officer, Speakers, IAA/Magistrate Lockers, and
+      Xenobiology Ruins
+    type: Add
+  id: 290500
+  time: '2026-01-21T17:56:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2905
+- author: Conflee
+  changes:
+  - message: (Fland) Added Xenobio ruins, NCT, Duty Officer, IAA/Magistrate lockers,
+      Speakers, etc
+    type: Add
+  id: 290800
+  time: '2026-01-21T18:12:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2908
+- author: Penguinwizzard
+  changes:
+  - message: Removed present anomaly for the year.
+    type: Remove
+  id: 291400
+  time: '2026-01-21T18:16:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2914
+- author: KarmaKitsuna
+  changes:
+  - message: Added a pizza bomb to the syndicate and nuclear operative uplinks.
+    type: Add
+  id: 285100
+  time: '2026-01-21T18:35:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2851
+- author: Ohelig
+  changes:
+  - message: Silica trash now lands on the belt in disposals.
+    type: Fix
+  id: 291500
+  time: '2026-01-21T18:40:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2915
+- author: Conflee
+  changes:
+  - message: (Cog) Added Xenobio ruins, IAA/Magi lockers, Magi office, NCT office,
+      Speakers, etc etc
+    type: Add
+  id: 290600
+  time: '2026-01-21T18:44:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2906
+- author: Conflee
+  changes:
+  - message: (Kiloton) Added Xenobio ruins, speakers, IAA/Magistrate lockers, speakers,
+      NCT, Duty Officer, etc
+    type: Add
+  id: 290900
+  time: '2026-01-21T18:47:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2909
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Duty Officers
+    type: Add
+  - message: (Hotel) Nanotrasen Career Trainers
+    type: Add
+  - message: (Hotel) NCT Office, where Library used to be
+    type: Add
+  - message: (Hotel) New Library south of the Arcade
+    type: Add
+  - message: (Hotel) IAA lockers
+    type: Add
+  - message: (Hotel) Magistrate locker
+    type: Add
+  - message: (Hotel) SpawnPointLateJoin by Arrivals
+    type: Add
+  - message: (Hotel) That bit of Medical no longer dead-ends if you don't have Medical
+      access. The maints corridor now connects all the way to Cargo Front
+    type: Add
+  - message: (Hotel) AI Restoration consoles in RD's Office and AI Upload
+    type: Add
+  - message: (Hotel) Xenobio Department
+    type: Add
+  - message: (Hotel) Robotics has been full remade
+    type: Add
+  - message: (Hotel) Wall-mounted mass scanners at Cargo Front
+    type: Add
+  - message: (Hotel) Cargo locker room and QM have been moved south of Cargo Bay
+    type: Add
+  - message: (Hotel) Salavee and Mining have been moved further south of Cargo Bay
+    type: Add
+  - message: (Hotel) Halved the size of the Morgue
+    type: Tweak
+  id: 291200
+  time: '2026-01-21T18:53:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2912
+- author: CawsForConcern
+  changes:
+  - message: Nanotrasen Career Trainer station beacon text has now been fixed. Visit
+      your local NCT Office today!
+    type: Fix
+  id: 292000
+  time: '2026-01-21T18:57:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2920
+- author: Makeshift
+  changes:
+  - message: (Elkridge) Duty Officer
+    type: Add
+  - message: (Elkridge) NT Career Trainers
+    type: Add
+  - message: (Elkridge) The spare room near engineering has been converted into an
+      NCT office
+    type: Add
+  - message: (Elkridge) Wall-mounted mass scanner in front of cargo
+    type: Add
+  - message: (Elkridge) IAA Lockers
+    type: Add
+  - message: (Elkridge) Magistrate Locker
+    type: Add
+  - message: (Elkridge) AI restoration Consoles in RD's room and AI
+    type: Add
+  - message: (Elkridge) SpawnPointLateJoin by Arrivals
+    type: Add
+  id: 291600
+  time: '2026-01-21T19:06:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2916
+- author: Vonte
+  changes:
+  - message: Fixed resomi cold slowdown bug.
+    type: Fix
+  id: 292200
+  time: '2026-01-21T19:19:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2922
+- author: Penguinwizzard
+  changes:
+  - message: Added test coverage to ensure that even rarely-seen shuttles shouldn't
+      have overloaded power on startup.
+    type: Add
+  id: 289300
+  time: '2026-01-21T20:06:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2893
 Order: -1
 
