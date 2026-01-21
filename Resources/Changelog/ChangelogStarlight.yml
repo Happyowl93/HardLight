@@ -27260,5 +27260,35 @@ Entries:
   id: 291400
   time: '2026-01-21T18:16:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2914
+- author: KarmaKitsuna
+  changes:
+  - message: Added a pizza bomb to the syndicate and nuclear operative uplinks.
+    type: Add
+  id: 285100
+  time: '2026-01-21T18:35:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2851
+- author: Ohelig
+  changes:
+  - message: Silica trash now lands on the belt in disposals.
+    type: Fix
+  id: 291500
+  time: '2026-01-21T18:40:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2915
+- author: Conflee
+  changes:
+  - message: (Cog) Added Xenobio ruins, IAA/Magi lockers, Magi office, NCT office,
+      Speakers, etc etc
+    type: Add
+  id: 290600
+  time: '2026-01-21T18:44:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2906
+- author: Conflee
+  changes:
+  - message: (Kiloton) Added Xenobio ruins, speakers, IAA/Magistrate lockers, speakers,
+      NCT, Duty Officer, etc
+    type: Add
+  id: 290900
+  time: '2026-01-21T18:47:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2909
 Order: -1
 
