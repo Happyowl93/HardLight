@@ -453,9 +453,6 @@
   id: TiderAnvilParts
 
 - type: Tag
-  id: TwinPointer
-
-- type: Tag
   id: UnDissolvable
 
 - type: Tag

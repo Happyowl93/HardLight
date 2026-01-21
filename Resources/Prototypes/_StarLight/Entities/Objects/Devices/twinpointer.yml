@@ -46,9 +46,6 @@
     - type: Item
       sprite: Objects/Devices/pinpointer.rsi
     - type: Pinpointer
-    - type: Tag
-      tags:
-        - TwinPointer
         
 - type: entity
   name: right twinpointer
@@ -73,6 +70,3 @@
     - type: Item
       sprite: Objects/Devices/pinpointer.rsi
     - type: Pinpointer
-    - type: Tag
-      tags:
-        - TwinPointer
