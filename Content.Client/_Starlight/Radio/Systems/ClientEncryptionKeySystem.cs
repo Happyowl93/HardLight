@@ -1,7 +1,6 @@
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Server.Administration.Systems;
 using Content.Shared.Radio.Components;
-using Content.Shared.Radio.EntitySystems;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
@@ -17,11 +16,13 @@ public sealed class ClientEncryptionKeySystem : EntitySystem
     [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IComponentFactory _factory = default!;
+    [Dependency] private readonly StarlightEntitySystem _sl = default!;
+    private EntityUid singleton;
     
     public override void Initialize()
     {
         base.Initialize();
-
+        
         SubscribeLocalEvent<EncryptionKeyComponent, AfterAutoHandleStateEvent>(OnAutoHandleState);
     }
     
@@ -50,25 +51,26 @@ public sealed class ClientEncryptionKeySystem : EntitySystem
 
     private void RestoreLayer(Entity<SpriteComponent> entity, int index)
     {
-        if (!TryGetPrototypeSprite(entity, out var sprite)) return;
-        // Yes, this is obsolete. No, I cannot use SpriteSystem. Those require it to be attached to an entity, which does not work here.
-#pragma warning disable CS0618 // Type or member is obsolete
-        sprite.TryGetLayer(index, out var layer);
-#pragma warning restore CS0618 // Type or member is obsolete
-        if (layer is null) return;
+        var meta = MetaData(entity);
+        if (meta.EntityPrototype is null) return;
+        _sl.TryGetSingleton(meta.EntityPrototype, out singleton);
+        if (singleton == EntityUid.Invalid) return;
+        if(!TryComp<SpriteComponent>(singleton, out var sprite)) return;
+        if (!_sprite.TryGetLayer((singleton, sprite), index, out var layer, false)) return;
         _sprite.LayerSetRsi((entity.Owner, entity.Comp), index, layer.RSI, layer.State);
     }
-
-    private bool TryGetPrototypeSprite(EntityUid uid, [NotNullWhen(true)] out SpriteComponent? sprite)
-    {
-        sprite = null;
-        var protoId = MetaData(uid).EntityPrototype;
-        if(protoId is null) return false;
-        if (!_proto.Resolve(protoId, out var proto)) return false;
-        if (!proto.Components.TryGetComponent(_factory.GetRegistration<SpriteComponent>().Name,
-                out var iComp)) return false;
-        if (iComp is not SpriteComponent protoSprite) return false;
-        sprite = protoSprite;
-        return true;
-    }
+    
+    // Saved here commented out so that if/when the PR I made to RT gets merged, I can swap back to this instead.
+    // private bool TryGetPrototypeSprite(EntityUid uid, [NotNullWhen(true)] out SpriteComponent? sprite)
+    // {
+    //     sprite = null;
+    //     var protoId = MetaData(uid).EntityPrototype;
+    //     if(protoId is null) return false;
+    //     if (!_proto.Resolve(protoId, out var proto)) return false;
+    //     if (!proto.Components.TryGetComponent(_factory.GetRegistration<SpriteComponent>().Name,
+    //             out var iComp)) return false;
+    //     if (iComp is not SpriteComponent protoSprite) return false;
+    //     sprite = protoSprite;
+    //     return true;
+    // }
 }
