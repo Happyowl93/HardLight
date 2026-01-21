@@ -6,5 +6,4 @@ namespace Content.Shared._Starlight.Storage;
 [Access(typeof(SharedTwinPointerSystem))]
 public sealed partial class TwinPointerComponent : Component
 {
-    
 }
