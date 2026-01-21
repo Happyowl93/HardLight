@@ -18,8 +18,7 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon2.ogg
-    angle: 0
-    cameraRecoilScalar: 0.0
+    cameraRecoilScalar: 0.1
     projectileSpeed: 2.0
   - type: BatteryAmmoProvider
     proto: RadOrb
@@ -41,6 +40,7 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
+    cameraRecoilScalar: 0.1
   - type: Sprite
     sprite: _Starlight/Objects/Tools/cyberling.rsi
     state: freeze_ray
