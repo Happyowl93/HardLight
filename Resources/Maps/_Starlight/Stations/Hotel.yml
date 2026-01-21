@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/21/2026 03:39:01
-  entityCount: 21727
+  time: 01/21/2026 03:44:55
+  entityCount: 21733
 maps:
 - 1
 grids:
@@ -6478,7 +6478,7 @@ entities:
       pos: 8.5,6.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -76056.305
+      secondsUntilStateChange: -76406.43
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8257,7 +8257,7 @@ entities:
       pos: 2.5,-7.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38180.387
+      secondsUntilStateChange: -38530.508
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8423,7 +8423,7 @@ entities:
       pos: -38.5,10.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -90231.77
+      secondsUntilStateChange: -90581.9
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8439,7 +8439,7 @@ entities:
       pos: -36.5,-10.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -90130.84
+      secondsUntilStateChange: -90480.97
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -115752,6 +115752,17 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraCommand
       id: nt rep
+  - uid: 21728
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -3.5,-27.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraCommand
+      nameSet: True
+      id: nanotrasen career office
 - proto: SurveillanceCameraConstructed
   entities:
   - uid: 17683
@@ -116437,6 +116448,17 @@ entities:
       parent: 2
     - type: SurveillanceCamera
       id: canister storage
+  - uid: 21729
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -17.5,-16.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraScience
+      nameSet: True
+      id: science offices
 - proto: SurveillanceCameraSecurity
   entities:
   - uid: 17775
@@ -116706,6 +116728,49 @@ entities:
       parent: 2
     - type: SurveillanceCamera
       id: cargo front
+  - uid: 21730
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -27.5,-32.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSupply
+      nameSet: True
+      id: cargo bay
+  - uid: 21731
+    components:
+    - type: Transform
+      pos: -24.5,-41.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSupply
+      nameSet: True
+      id: cargo mail
+  - uid: 21732
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -28.5,-47.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSupply
+      nameSet: True
+      id: qm
+  - uid: 21733
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -27.5,-54.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSupply
+      nameSet: True
+      id: salvage bay
 - proto: SurveillanceCameraWirelessRouterEntertainment
   entities:
   - uid: 17815
