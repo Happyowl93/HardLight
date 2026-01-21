@@ -24,8 +24,7 @@ public sealed class HoloItemSystem : EntitySystem
 
     private void OnExamine(EntityUid uid, HoloItemComponent component, ExaminedEvent args)
     {
-        // TODO: This should probably be using an itemstatus
-        // TODO: I'm too lazy to do this rn but it's literally copy-paste from emag.
+        // uses the exact same process as holosigns
         var charges = _powerCell.GetRemainingUses(uid, component.ChargeUse);
         var maxCharges = _powerCell.GetMaxUses(uid, component.ChargeUse);
 

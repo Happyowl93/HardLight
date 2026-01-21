@@ -1183,7 +1183,7 @@
   id: VialCyberBlood
   parent: VialCyber
   name: cybernetic vial
-  description: Fluid storage, integrated right into your arm! This one slowly draws blood from you...
+  description: Fluid storage, integrated right into your arm! This one slowly draws blood from... somewhere. It does not seem to be yours..?
   suffix: Blood
   components:
   - type: SolutionRegeneration
