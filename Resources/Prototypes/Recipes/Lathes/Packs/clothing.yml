@@ -52,11 +52,10 @@
   - ClothingUniformJumpskirtEliteBlueShield
   - ClothingUniformJumpsuitBlueShield
   - ClothingUniformJumpsuitEliteBlueShield
-  - ClothingUniformJumpsuitBlueShieldShirt # Starlight
-  - ClothingUniformJumpskirtBlueShieldSkirt # Starlight
-  # - ClothingUniformJumpsuitBlueShieldCaptain
-  - ClothingUniformJumpsuitFormalBlueShield
-  # NTR ## afterlight end, starlight start
+  - ClothingUniformJumpsuitFormalBlueShield # afterlight end
+  - ClothingUniformJumpsuitBlueShieldShirt # starlight start
+  - ClothingUniformJumpskirtBlueShieldSkirt 
+  # NTR
   - ClothingUniformJumpskirtNtrep
   - ClothingUniformJumpsuitNtrep
   - ClothingUniformJumpsuitNtrepFormal # starlight end
