@@ -27334,5 +27334,42 @@ Entries:
   id: 292000
   time: '2026-01-21T18:57:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2920
+- author: Makeshift
+  changes:
+  - message: (Elkridge) Duty Officer
+    type: Add
+  - message: (Elkridge) NT Career Trainers
+    type: Add
+  - message: (Elkridge) The spare room near engineering has been converted into an
+      NCT office
+    type: Add
+  - message: (Elkridge) Wall-mounted mass scanner in front of cargo
+    type: Add
+  - message: (Elkridge) IAA Lockers
+    type: Add
+  - message: (Elkridge) Magistrate Locker
+    type: Add
+  - message: (Elkridge) AI restoration Consoles in RD's room and AI
+    type: Add
+  - message: (Elkridge) SpawnPointLateJoin by Arrivals
+    type: Add
+  id: 291600
+  time: '2026-01-21T19:06:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2916
+- author: Vonte
+  changes:
+  - message: Fixed resomi cold slowdown bug.
+    type: Fix
+  id: 292200
+  time: '2026-01-21T19:19:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2922
+- author: Penguinwizzard
+  changes:
+  - message: Added test coverage to ensure that even rarely-seen shuttles shouldn't
+      have overloaded power on startup.
+    type: Add
+  id: 289300
+  time: '2026-01-21T20:06:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2893
 Order: -1
 
