@@ -160,7 +160,7 @@ public sealed class CollectingSlimeProcessorSystem : EntitySystem
         while (query.MoveNext(out var uid, out var collectingSlimeProcessorComponent))
         {
             if (!_entityManager.TryGetComponent(uid, out SlimeProcessorComponent? slimeProcessorComponent)) continue;
-            slimeProcessorComponent.SlimeContainer = _container.EnsureContainer<ContainerSlot>(uid, SlimeProcessorComponent.SlimeContainerName);
+            slimeProcessorComponent.SlimeContainer = _container.EnsureContainer<Container>(uid, SlimeProcessorComponent.SlimeContainerName);
             if (!collectingSlimeProcessorComponent.SlimeAcquireMoment.HasValue)
             {
                 collectingSlimeProcessorComponent.SlimeAcquireMoment = _gameTiming.CurTime + slimeProcessorComponent.SlimeAcquireCooldown;
