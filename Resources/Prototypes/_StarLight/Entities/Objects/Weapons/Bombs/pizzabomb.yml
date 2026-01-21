@@ -21,4 +21,4 @@
     totalIntensity: 130
     intensitySlope: 10
     maxIntensity: 10
-    canCreateVaccum: false
+    canCreateVacuum: false
