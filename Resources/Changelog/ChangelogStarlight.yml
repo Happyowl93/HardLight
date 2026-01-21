@@ -27326,5 +27326,13 @@ Entries:
   id: 291200
   time: '2026-01-21T18:53:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2912
+- author: CawsForConcern
+  changes:
+  - message: Nanotrasen Career Trainer station beacon text has now been fixed. Visit
+      your local NCT Office today!
+    type: Fix
+  id: 292000
+  time: '2026-01-21T18:57:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2920
 Order: -1
 
