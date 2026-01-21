@@ -18,7 +18,7 @@ namespace Content.IntegrationTests.Tests._Starlight.Power;
 
 public sealed class GridPowerTests
 {
-    private static readonly ProtoId<GameMapPrototype> EmptyMap = "Empty";
+    private const string EmptyMap = "Empty";
 
     private static readonly ResPath[] GridPaths =
     [
@@ -95,7 +95,7 @@ public sealed class GridPowerTests
         // Load the map and grid
         await server.WaitAssertion(() =>
         {
-            Assert.That(protoMan.TryIndex(EmptyMap, out var mapProto));
+            Assert.That(protoMan.TryIndex<GameMapPrototype>(EmptyMap, out var mapProto));
             var opts = DeserializationOptions.Default with { InitializeMaps = true };
             ticker.LoadGameMap(mapProto, out mapId, opts);
             var loadedGrid = loader.TryLoadGrid(mapId, gridFilePath, out var grid);
