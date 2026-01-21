@@ -62,7 +62,7 @@ public sealed class SlimeProcessorSystem : EntitySystem
         _audioSystem.PlayPredicted(new SoundPathSpecifier("/Audio/Machines/blender.ogg"), ent.Owner, null);
     }
 
-    private static bool CanActivate(Entity<SlimeProcessorComponent> ent) => ent.Comp.SlimeContainer.ContainedEntities.Count > 0;
+    private bool CanActivate(Entity<SlimeProcessorComponent> ent) => ent.Comp.SlimeContainer.ContainedEntities.Count > 0 && !_entityManager.HasComponent<ActiveSlimeProcessorComponent>(ent.Owner);
 
     private void OnPowerChanged(Entity<SlimeProcessorComponent> ent, ref PowerChangedEvent args)
     {
