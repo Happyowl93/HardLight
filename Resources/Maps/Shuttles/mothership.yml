@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/22/2025 23:34:12
+  time: 01/21/2026 07:42:23
   entityCount: 585
 maps: []
 grids:
@@ -159,6 +159,8 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: NavMap
+    - type: ExplosionAirtightGrid
 - proto: AirlockGlassShuttleXenoborgLocked
   entities:
   - uid: 107
@@ -166,11 +168,15 @@ entities:
     - type: Transform
       pos: -0.5,-11.5
       parent: 1
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 108
     components:
     - type: Transform
       pos: 1.5,-11.5
       parent: 1
+    - type: AccessReader
+      accessListsOriginal: []
 - proto: AirlockXenoborgLocked
   entities:
   - uid: 27
@@ -184,11 +190,15 @@ entities:
     - type: Transform
       pos: -0.5,-5.5
       parent: 1
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 105
     components:
     - type: Transform
       pos: 1.5,-5.5
       parent: 1
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 106
     components:
     - type: Transform
@@ -199,6 +209,12 @@ entities:
     - type: Transform
       pos: 0.5,-2.5
       parent: 1
+    - type: Door
+      secondsUntilStateChange: -852.1157
+      state: Opening
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: True
   - uid: 365
     components:
     - type: Transform
@@ -1009,11 +1025,21 @@ entities:
       parent: 1
 - proto: BlastDoorXenoborg
   entities:
+  - uid: 328
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,-11.5
+      parent: 1
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 370
     components:
     - type: Transform
       pos: 0.5,-5.5
       parent: 1
+    - type: AccessReader
+      accessListsOriginal: []
 - proto: BlastDoorXenoborgOpen
   entities:
   - uid: 94
@@ -1999,6 +2025,12 @@ entities:
       parent: 1
 - proto: ConveyorBelt
   entities:
+  - uid: 4
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,-11.5
+      parent: 1
   - uid: 243
     components:
     - type: Transform
@@ -2929,12 +2961,12 @@ entities:
         - - Middle
           - Off
         111:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
         - - Middle
           - Off
+        - - Right
+          - Reverse
+        - - Left
+          - Forward
         245:
         - - Left
           - Reverse
@@ -2970,14 +3002,21 @@ entities:
           - Forward
         - - Middle
           - Off
-  - uid: 328
-    components:
-    - type: Transform
-      pos: 1.5,-4.5
-      parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
         370:
+        - - Left
+          - Open
+        - - Right
+          - Open
+        - - Middle
+          - Close
+        4:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        328:
         - - Left
           - Open
         - - Right
@@ -3074,11 +3113,6 @@ entities:
     components:
     - type: Transform
       pos: -1.5,-11.5
-      parent: 1
-  - uid: 4
-    components:
-    - type: Transform
-      pos: 0.5,-11.5
       parent: 1
   - uid: 6
     components:
