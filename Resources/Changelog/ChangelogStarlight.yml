@@ -27245,5 +27245,13 @@ Entries:
   id: 290500
   time: '2026-01-21T17:56:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2905
+- author: Conflee
+  changes:
+  - message: (Fland) Added Xenobio ruins, NCT, Duty Officer, IAA/Magistrate lockers,
+      Speakers, etc
+    type: Add
+  id: 290800
+  time: '2026-01-21T18:12:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2908
 Order: -1
 
