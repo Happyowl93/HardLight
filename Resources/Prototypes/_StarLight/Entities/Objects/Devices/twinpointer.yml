@@ -28,6 +28,7 @@
   description: The left half of a pair of twinpointers. Great when you're never right.
   id: TwinPointerLeft
   parent: PinpointerBase
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       noRot: True
@@ -54,6 +55,7 @@
   description: The right half of a pair of twinpointers. Perfect when you have nothing left.
   id: TwinPointerRight
   parent: PinpointerBase
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       noRot: True
