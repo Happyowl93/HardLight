@@ -27253,5 +27253,12 @@ Entries:
   id: 290800
   time: '2026-01-21T18:12:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2908
+- author: Penguinwizzard
+  changes:
+  - message: Removed present anomaly for the year.
+    type: Remove
+  id: 291400
+  time: '2026-01-21T18:16:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2914
 Order: -1
 
