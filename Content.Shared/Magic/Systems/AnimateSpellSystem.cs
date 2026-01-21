@@ -1,5 +1,5 @@
 using Content.Shared.Magic.Components;
-using Content.Shared._Starlight.Magic.Components;
+using Content.Shared._Starlight.Magic.Components; // Starlight: AnimatedObjectSizeComponent
 using Content.Shared.Magic.Events;
 using Content.Shared.Item;
 using Content.Shared.Physics;
@@ -20,9 +20,12 @@ public sealed class AnimateSpellSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<AnimateComponent, MapInitEvent>(OnAnimate);
+        // Starlight-start: Store item size before Item component removal for HP calculation
         SubscribeLocalEvent<ChangeComponentsSpellEvent>(OnChangeComponentsSpell);
+        // Starlight-end
     }
 
+    // Starlight-start: Store item size BEFORE Item component gets removed
     // Store item size BEFORE Item component gets removed
     private void OnChangeComponentsSpell(ChangeComponentsSpellEvent ev)
     {
@@ -37,6 +40,7 @@ public sealed class AnimateSpellSystem : EntitySystem
             sizeComp.OriginalSize = item.Size.Id;
         }
     }
+    // Starlight-end
 
     private void OnAnimate(Entity<AnimateComponent> ent, ref MapInitEvent args)
     {
@@ -74,5 +78,7 @@ public sealed class AnimateSpellSystem : EntitySystem
     }
 }
 
+// Starlight-start: Event for server-side HP setting
 [ByRefEvent]
 public readonly record struct AnimateSpellEvent;
+// Starlight-end
