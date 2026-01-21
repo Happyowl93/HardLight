@@ -44,6 +44,12 @@ loadout-group-brigmedic-beaker = Brigmedic beaker
 loadout-group-brigmedic-mask = Brigmedic mask
 loadout-group-brigmedic-tie = Brigmedic tie
 
+loadout-group-dutyofficer-head = Duty officer head
+loadout-group-dutyofficer-jumpsuit = Duty officer jumpsuit
+loadout-group-dutyofficer-outerclothing = Duty officer outer clothing
+loadout-group-dutyofficer-belt = Duty officer belt
+
+
 # Law
 loadout-group-magistrate-jumpsuit = Magistrate jumpsuit
 loadout-group-magistrate-eyewear = Magistrate eyewear
