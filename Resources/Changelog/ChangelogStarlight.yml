@@ -27356,5 +27356,12 @@ Entries:
   id: 291600
   time: '2026-01-21T19:06:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2916
+- author: Vonte
+  changes:
+  - message: Fixed resomi cold slowdown bug.
+    type: Fix
+  id: 292200
+  time: '2026-01-21T19:19:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2922
 Order: -1
 
