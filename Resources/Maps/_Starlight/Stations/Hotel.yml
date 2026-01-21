@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/21/2026 03:33:15
-  entityCount: 21724
+  time: 01/21/2026 03:38:14
+  entityCount: 21726
 maps:
 - 1
 grids:
@@ -6478,7 +6478,7 @@ entities:
       pos: 8.5,6.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -75714.3
+      secondsUntilStateChange: -76010.63
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8257,7 +8257,7 @@ entities:
       pos: 2.5,-7.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -37838.383
+      secondsUntilStateChange: -38134.715
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8423,7 +8423,7 @@ entities:
       pos: -38.5,10.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -89889.77
+      secondsUntilStateChange: -90186.11
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8439,7 +8439,7 @@ entities:
       pos: -36.5,-10.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -89788.84
+      secondsUntilStateChange: -90085.18
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -59221,6 +59221,11 @@ entities:
     components:
     - type: Transform
       pos: -6.5,-55.5
+      parent: 2
+  - uid: 21726
+    components:
+    - type: Transform
+      pos: -30.5,-50.5
       parent: 2
 - proto: DonkpocketBoxSpawner
   entities:
@@ -114040,6 +114045,11 @@ entities:
     components:
     - type: Transform
       pos: -11.5,20.5
+      parent: 2
+  - uid: 21725
+    components:
+    - type: Transform
+      pos: -30.5,-49.5
       parent: 2
 - proto: SpawnMobShiva
   entities:
