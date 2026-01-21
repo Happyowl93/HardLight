@@ -27220,5 +27220,12 @@ Entries:
   id: 282600
   time: '2026-01-20T22:37:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2826
+- author: redmushie
+  changes:
+  - message: Xenoborgs are now in the preset voting pool
+    type: Add
+  id: 289600
+  time: '2026-01-21T10:06:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2896
 Order: -1
 
