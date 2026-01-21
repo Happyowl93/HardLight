@@ -1,6 +1,6 @@
 # Starlight-start: Removed hardcoded Destructible component - now added dynamically by AnimateSpellSystem with HP based on entity size
-- type: entity
 # Starlight-end
+- type: entity
   parent: BaseEntitySpellAction
   id: ActionAnimateSpell
   name: Animate
@@ -58,6 +58,7 @@
         damageContainer: ManifestedSpirit
         damageModifierSet: ManifestedSpirit
       # Starlight-start: Destructible component is now added dynamically by AnimateSpellSystem with HP based on entity size
+      # - type: Destructible
       # Starlight-end
       - type: Hands
       - type: CanEscapeInventory

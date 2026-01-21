@@ -16,7 +16,7 @@ using Robust.Shared.Log;
 namespace Content.Server._Starlight.Magic;
 
 /// <summary>
-/// Starlight: Server-side system for handling animated objects, specifically setting their HP based on size.
+/// Server-side system for handling animated objects, specifically setting their HP based on size.
 /// HP ranges are configurable per-staff via AnimatedObjectHPComponent.
 /// </summary>
 public sealed class AnimateSpellSystem : EntitySystem
