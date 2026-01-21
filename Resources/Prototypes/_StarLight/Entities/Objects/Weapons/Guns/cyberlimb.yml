@@ -18,8 +18,11 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon2.ogg
+    angle: 0
+    cameraRecoilScalar: 0.0
+    projectileSpeed: 2.0
   - type: BatteryAmmoProvider
-    proto: RadRay
+    proto: RadOrb
     fireCost: 1000
   - type: PredictedBatterySelfRecharger
     autoRechargeRate: 100

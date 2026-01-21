@@ -1588,14 +1588,3 @@
     impactFlash:
       sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
       state: impact_omni
-
-- type: entity
-  parent: XrayLaser
-  id: RadRay
-  name: radiation beam
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: HitscanBasicDamage
-    damage:
-      types:
-        Radiation: 20
