@@ -1,6 +1,6 @@
 ﻿- type: entity
   parent: BoxCardboard
-  id: TwinPointerBox
+  id: TwinPointerKit
   name: twinpointer kit
   description: A box containing a pair of twinpointers for mutually assured direction.
   components:
