@@ -433,7 +433,7 @@
   name: chat-emote-name-squee
   category: Vocal
   available: false
-  icon: _Starlight/Interface/Emotes/bnuuy_emote.png
+  icon: _Starlight/Interface/Emotes/emote-neutral.png
   whitelist:
     components:
     - Vocal
