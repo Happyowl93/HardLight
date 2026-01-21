@@ -4,7 +4,7 @@ using Robust.Shared.Containers;
 
 namespace Content.Server._Starlight.Storage;
 
-public sealed class TwinPointerSystem : SharedTwinPointerSystem
+public sealed class TwinPointerSystem : EntitySystem
 {
     [Dependency] private readonly SharedPinpointerSystem _pinpointerSystem = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
@@ -12,10 +12,10 @@ public sealed class TwinPointerSystem : SharedTwinPointerSystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<TwinPointerComponent, MapInitEvent>(Handler);
+        SubscribeLocalEvent<TwinPointerBoxComponent, MapInitEvent>(Handler);
     }
 
-    private void Handler(EntityUid uid, TwinPointerComponent component, MapInitEvent args)
+    private void Handler(EntityUid uid, TwinPointerBoxComponent boxComponent, MapInitEvent args)
     {
         if (!_container.TryGetContainer(uid, "storagebase", out var contained))
             return;
