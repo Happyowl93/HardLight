@@ -31,9 +31,24 @@ public sealed partial class BluespaceHarvesterComponent : Component
 
     // Dangerous mode settings
     [DataField] public int DangerousLevelThreshold = 7;
-    [DataField] public float BaseAnomalyChancePerSecond = 0.0005f; // 0.05% per second at level 7
-    [DataField] public float AnomalyChancePerLevelAboveThreshold = 0.01f; // +1% per level 
-    [DataField] public EntProtoId AnomalyPrototype = "AnomalyFlesh";
+    [DataField] public float BasePortalChancePerSecond = 0.005f; // 0.5% per second at level 7
+    [DataField] public float PortalChancePerLevelAboveThreshold = 0.01f; // +1% per level above threshold
+    [DataField] public EntProtoId PortalPrototype = "BluespaceHarvesterPortal";
+    [DataField] public List<EntProtoId> PortalMobPrototypes = new()
+    {
+        "MobBluespaceHarvesterMiGo",
+        "MobBluespaceHarvesterBlankBody",
+        "MobBluespaceHarvesterOtherthing"
+    };
+
+    [DataField] public int MinMobsPerPortal = 2;
+    [DataField] public int MaxMobsPerPortal = 5;
+
+    [DataField] public float PortalMinDistance = 3f;
+
+    [DataField] public float PortalMaxDistance = 5f;
+
+    [DataField] public float PortalBlockDuration = 30f;
 
     [ViewVariables(VVAccess.ReadOnly)]
     public int CurrentLevel;
@@ -42,7 +57,16 @@ public sealed partial class BluespaceHarvesterComponent : Component
     public float PointAccumulator; // for fractional point accumulation
 
     [ViewVariables(VVAccess.ReadOnly)]
-    public float AnomalyAccumulator; // for anomaly spawn timing
+    public float PortalAccumulator; // for portal spawn timing
+
+    /// <summary>
+    /// Whether the harvester is currently blocked due to an active portal
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly)]
+    public bool IsBlocked;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntityUid? ActivePortal;
 
     public int LastUiCurrentLevel;
     public int LastUiDesiredLevel;
@@ -51,5 +75,6 @@ public sealed partial class BluespaceHarvesterComponent : Component
     public float LastUiCurrentPower;
     public float LastUiNextPower;
     public float LastUiNetworkSupply;
-    public bool LastUiDangerousMode;
+    public bool LastUiIsBlocked;
 }
+

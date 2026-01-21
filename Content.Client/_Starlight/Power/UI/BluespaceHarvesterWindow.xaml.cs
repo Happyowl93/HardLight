@@ -96,7 +96,8 @@ public sealed partial class BluespaceHarvesterWindow : DefaultWindow
         NetworkSupplyValue.Text = FormatPower(state.NetworkSupply);
 
         // Show danger warning when in "dangerous" mode (level >= 7)
-        DangerWarningPanel.Visible = state.DangerousMode;
+        DangerWarningPanel.Visible = state.DangerousMode && !state.IsBlocked;
+        BlockedWarningPanel.Visible = state.IsBlocked;
 
         AvailablePointsValue.Text = state.AvailablePoints.ToString();
         TotalPointsValue.Text = state.TotalPoints.ToString();

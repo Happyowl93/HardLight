@@ -57,6 +57,13 @@
                     </PanelContainer.PanelOverride>
                     <Label Name="DangerWarningLabel" Text="{Loc bluespace-harvester-danger-warning}" Modulate="#ff6666" />
                 </PanelContainer>
+
+                <PanelContainer Name="BlockedWarningPanel" Visible="False">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#5a1a3a" BorderColor="#ff00ff" BorderThickness="2 2 2 2" ContentMarginLeftOverride="6" ContentMarginRightOverride="6" ContentMarginTopOverride="4" ContentMarginBottomOverride="4"/>
+                    </PanelContainer.PanelOverride>
+                    <Label Name="BlockedWarningLabel" Text="{Loc bluespace-harvester-blocked-warning}" Modulate="#ff77ff" />
+                </PanelContainer>
             </BoxContainer>
         </PanelContainer>
 

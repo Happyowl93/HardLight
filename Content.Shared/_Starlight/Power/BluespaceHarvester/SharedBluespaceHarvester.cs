@@ -36,6 +36,7 @@ public sealed class BluespaceHarvesterUiState : BoundUserInterfaceState
     public int AvailablePoints;
     public int TotalPoints;
     public bool DangerousMode;
+    public bool IsBlocked;
     public BluespaceHarvesterPoolEntry[] Pools;
 
     public BluespaceHarvesterUiState(
@@ -47,8 +48,8 @@ public sealed class BluespaceHarvesterUiState : BoundUserInterfaceState
         float networkSupply,
         int availablePoints,
         int totalPoints,
-        bool dangerousMode,
-        BluespaceHarvesterPoolEntry[] pools)
+        BluespaceHarvesterPoolEntry[] pools,
+        bool isBlocked = false)
     {
         CurrentLevel = currentLevel;
         DesiredLevel = desiredLevel;
@@ -58,7 +59,8 @@ public sealed class BluespaceHarvesterUiState : BoundUserInterfaceState
         NetworkSupply = networkSupply;
         AvailablePoints = availablePoints;
         TotalPoints = totalPoints;
-        DangerousMode = dangerousMode;
+        DangerousMode = currentLevel >= 7;
+        IsBlocked = isBlocked;
         Pools = pools;
     }
 }

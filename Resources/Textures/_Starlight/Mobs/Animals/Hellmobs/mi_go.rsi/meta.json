@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Paradise Station 13 RU",
+  "states": [
+    {
+        "name": "migo_base",
+        "directions": 4
+    },
+    {
+        "name": "migo_move",
+        "delays":[
+            [0.1,0.1,0.1],
+            [0.1,0.1,0.1],
+            [0.1,0.1,0.1],
+            [0.1,0.1,0.1]
+        ],
+        "directions": 4
+    },
+    {
+        "name": "migo_dead"
+    }
+  ]
+}

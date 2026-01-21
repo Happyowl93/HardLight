@@ -1,12 +1,10 @@
 using System.Linq;
 using System.Numerics;
-using Content.Server.Anomaly;
+using Content.Server.Chat.Systems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Server.Station.Systems;
 using Content.Shared._Starlight.Power.BluespaceHarvester;
 using Content.Shared.Random.Helpers;
-using Content.Shared.Station.Components;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
@@ -21,14 +19,13 @@ namespace Content.Server._Starlight.Power.EntitySystems;
 /// </summary>
 public sealed class BluespaceHarvesterSystem : EntitySystem
 {
-    private const float PowerEpsilon = 0.01f; // just not to hardcode it in
+    private const float PowerEpsilon = 0.01f;
 
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly PowerNetSystem _powerNet = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly AnomalySystem _anomaly = default!;
 
     public override void Initialize()
     {
@@ -38,6 +35,7 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
         SubscribeLocalEvent<BluespaceHarvesterComponent, BeforeActivatableUIOpenEvent>(OnBeforeUiOpen);
         SubscribeLocalEvent<BluespaceHarvesterComponent, BluespaceHarvesterSetLevelMessage>(OnSetLevel);
         SubscribeLocalEvent<BluespaceHarvesterComponent, BluespaceHarvesterPurchaseMessage>(OnPurchase);
+        SubscribeLocalEvent<BluespaceHarvesterPortalComponent, ComponentShutdown>(OnPortalShutdown);
     }
 
     private void OnMapInit(EntityUid uid, BluespaceHarvesterComponent component, MapInitEvent args)
@@ -77,6 +75,9 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
         if (!TryComp<PowerConsumerComponent>(uid, out var powerConsumer))
             return;
 
+        if (component.IsBlocked)
+            return;
+
         if (!_prototype.TryIndex<BluespaceHarvesterPoolPrototype>(args.PoolId, out var pool))
             return;
 
@@ -100,6 +101,19 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
         UpdateUi(uid, component, powerConsumer, true);
     }
 
+    private void OnPortalShutdown(EntityUid uid, BluespaceHarvesterPortalComponent portal, ComponentShutdown args)
+    {
+        if (portal.SourceHarvester == null || !TryComp<BluespaceHarvesterComponent>(portal.SourceHarvester, out var harvester))
+            return;
+
+        // Unblock the harvester when the portal is deleted
+        if (harvester.ActivePortal == uid)
+        {
+            harvester.IsBlocked = false;
+            harvester.ActivePortal = null;
+        }
+    }
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -107,6 +121,17 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
         var query = EntityQueryEnumerator<BluespaceHarvesterComponent, PowerConsumerComponent>();
         while (query.MoveNext(out var uid, out var component, out var powerConsumer))
         {
+            if (component.ActivePortal != null && !Exists(component.ActivePortal.Value))
+            {
+                component.ActivePortal = null;
+                component.IsBlocked = false;
+            }
+            if (component.IsBlocked)
+            {
+                UpdateUi(uid, component, powerConsumer);
+                continue;
+            }
+
             UpdateDrawRate(component, powerConsumer);
 
             var currentLevel = CalculateCurrentLevel(component, powerConsumer.ReceivedPower);
@@ -132,55 +157,65 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
                 }
             }
 
-            // Dangerous mode
+            // Check for portal spawn in dangerous mode
             if (component.CurrentLevel >= component.DangerousLevelThreshold)
             {
-                TrySpawnAnomalies(uid, component, frameTime);
+                TrySpawnPortal(uid, component, frameTime);
             }
 
             UpdateUi(uid, component, powerConsumer);
         }
     }
 
-    /// <summary>
-    /// At dangerous levels, theres a chance per second to spawn flesh anomalies across the station.
-    /// This spreads the danger to prevent players from isolating the harvester.
-    /// </summary>
-    private void TrySpawnAnomalies(EntityUid uid, BluespaceHarvesterComponent component, float frameTime)
+    private void TrySpawnPortal(EntityUid uid, BluespaceHarvesterComponent component, float frameTime)
     {
-        // Calculate chances
+        // Dont spawn another portal while one is active
+        if (component.IsBlocked || component.ActivePortal != null)
+            return;
+
         var levelsAboveThreshold = component.CurrentLevel - component.DangerousLevelThreshold;
-        var chancePerSecond = component.BaseAnomalyChancePerSecond
-            + (levelsAboveThreshold * component.AnomalyChancePerLevelAboveThreshold);
 
-        component.AnomalyAccumulator += frameTime;
+        // Calculate chances
+        var chancePerSecond = component.BasePortalChancePerSecond +
+                              (levelsAboveThreshold * component.PortalChancePerLevelAboveThreshold);
 
-        // Check once per second to avoid too frequent rolls
-        if (component.AnomalyAccumulator < 1f)
+        component.PortalAccumulator += frameTime;
+
+        if (component.PortalAccumulator < 1f)
             return;
 
-        component.AnomalyAccumulator -= 1f;
+        component.PortalAccumulator -= 1f;
 
-        if (!_random.Prob(chancePerSecond))
+        if (!_random.Prob((float)chancePerSecond))
             return;
 
-        // Get the station that owns this harvester to spawn anomalies across it
-        var stationUid = _station.GetOwningStation(uid);
-        if (stationUid == null || !TryComp<StationDataComponent>(stationUid, out var stationData))
+        // Spawn the portal near the harvester
+        var xform = Transform(uid);
+        var angle = _random.NextAngle();
+        var distance = _random.NextFloat(component.PortalMinDistance, component.PortalMaxDistance);
+        var offset = angle.ToVec() * distance;
+        var portalCoords = xform.Coordinates.Offset(offset);
+
+        var portalUid = Spawn(component.PortalPrototype, portalCoords);
+
+        if (TryComp<BluespaceHarvesterPortalComponent>(portalUid, out var portalComp))
+            portalComp.SourceHarvester = uid;
+
+        component.ActivePortal = portalUid;
+        component.IsBlocked = true;
+        component.DesiredLevel = 0; // Reset level to 0 when portal spawns
+
+        var mobCount = _random.Next(component.MinMobsPerPortal, component.MaxMobsPerPortal + 1);
+        for (var i = 0; i < mobCount; i++)
         {
-            // Spawn near harvester if not on a station
-            var xform = Transform(uid);
-            var offset = new Vector2(_random.NextFloat(-3f, 3f), _random.NextFloat(-3f, 3f));
-            var spawnCoords = xform.Coordinates.Offset(offset);
-            Spawn(component.AnomalyPrototype, spawnCoords);
-            return;
+            var mobProto = _random.Pick(component.PortalMobPrototypes);
+            var mobAngle = _random.NextAngle();
+            var mobOffset = mobAngle.ToVec() * _random.NextFloat(0.5f, 1.5f);
+            var mobCoords = portalCoords.Offset(mobOffset);
+            Spawn(mobProto, mobCoords);
         }
-
-        var grid = _station.GetLargestGrid((stationUid.Value, stationData));
-        if (grid == null)
-            return;
-
-        _anomaly.SpawnOnRandomGridLocation(grid.Value, component.AnomalyPrototype);
+        var msg = Loc.GetString("bluespace-harvester-portal-warning");
+        _chat.DispatchGlobalAnnouncement(msg, playSound: true, colorOverride: Color.Red);
     }
 
     private static int ClampDesiredLevel(BluespaceHarvesterComponent component, int level)
@@ -226,7 +261,7 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
 
     private static void UpdateDrawRate(BluespaceHarvesterComponent component, PowerConsumerComponent powerConsumer)
     {
-        if (component.DesiredLevel <= 0)
+        if (component.DesiredLevel <= 0 || component.IsBlocked)
         {
             powerConsumer.DrawRate = 0f;
             return;
@@ -241,11 +276,14 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
         var currentPower = powerConsumer.ReceivedPower;
         var powerForNext = GetPowerForNextLevel(component, component.CurrentLevel);
 
-        // Get network max supply
-        var networkSupply = GetNetworkSupply(powerConsumer);
-        var dangerousMode = component.CurrentLevel >= component.DangerousLevelThreshold;
+        // Get theoretical network supply from power network
+        var networkSupply = 0f;
+        if (powerConsumer.Net?.NetworkNode is { } networkNode)
+        {
+            var stats = _powerNet.GetNetworkStatistics(networkNode);
+            networkSupply = stats.SupplyTheoretical;
+        }
 
-        // Build pool list from prototypes each update
         var pools = _prototype.EnumeratePrototypes<BluespaceHarvesterPoolPrototype>()
             .Where(pool => pool.Enabled)
             .OrderBy(pool => pool.Order)
@@ -253,13 +291,12 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
             .Select(pool => new BluespaceHarvesterPoolEntry(pool.ID, pool.Name, pool.Cost, pool.Enabled))
             .ToArray();
 
-        // Only send UI update if something actually changed
         var changed = force
                       || component.LastUiCurrentLevel != component.CurrentLevel
                       || component.LastUiDesiredLevel != component.DesiredLevel
                       || component.LastUiPoints != component.Points
                       || component.LastUiTotalPoints != component.TotalPoints
-                      || component.LastUiDangerousMode != dangerousMode
+                      || component.LastUiIsBlocked != component.IsBlocked
                       || !MathHelper.CloseTo(component.LastUiCurrentPower, currentPower)
                       || !MathHelper.CloseTo(component.LastUiNextPower, powerForNext)
                       || !MathHelper.CloseTo(component.LastUiNetworkSupply, networkSupply);
@@ -274,7 +311,7 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
         component.LastUiCurrentPower = currentPower;
         component.LastUiNextPower = powerForNext;
         component.LastUiNetworkSupply = networkSupply;
-        component.LastUiDangerousMode = dangerousMode;
+        component.LastUiIsBlocked = component.IsBlocked;
 
         var state = new BluespaceHarvesterUiState(
             component.CurrentLevel,
@@ -285,22 +322,10 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
             networkSupply,
             component.Points,
             component.TotalPoints,
-            dangerousMode,
-            pools);
+            pools,
+            component.IsBlocked);
 
         _ui.SetUiState(uid, BluespaceHarvesterUiKey.Key, state);
     }
-
-    /// <summary>
-    /// Gets THEORETICAL max supply from the power network this consumer is connected to
-    /// </summary>
-    private float GetNetworkSupply(PowerConsumerComponent powerConsumer)
-    {
-        var net = powerConsumer.Net;
-        if (net == null)
-            return 0f;
-
-        var stats = _powerNet.GetNetworkStatistics(net.NetworkNode);
-        return stats.SupplyTheoretical;
-    }
 }
+
