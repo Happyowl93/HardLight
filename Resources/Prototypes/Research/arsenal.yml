@@ -247,9 +247,6 @@
   # - GrenadeBlast
   # - ShuttleGunFriendshipCircuitboard # SL end
   - MagazineGrenadeEmpty
-  - GrenadeBaton # starlight TODO move to riot control or smth if a sec nade launcher is added?
-  - GrenadeBlast
-  - GrenadeFlash
   - ShuttleGunSvalinnMachineGunCircuitboard
   - ShuttleGunPerforatorCircuitboard
   technologyPrerequisites:
