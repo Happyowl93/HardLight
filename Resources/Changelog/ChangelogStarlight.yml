@@ -27227,5 +27227,15 @@ Entries:
   id: 289600
   time: '2026-01-21T10:06:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2896
+- author: Rinary
+  changes:
+  - message: Changed `forcemap` command name to `setgamemap` to fix confusion.
+    type: Tweak
+  - message: Changed `golobby` and `forcegamepreset` commands flag to DANGER, so regular
+      admins can't use them.
+    type: Tweak
+  id: 291800
+  time: '2026-01-21T17:49:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2918
 Order: -1
 
