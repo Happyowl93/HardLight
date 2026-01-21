@@ -2,7 +2,7 @@
 
 - type: entity
   parent: BaseAction
-  id: ActionGlow
+  id: ActionCantripGlow
   name: Luminous Orb
   description: Creates a short-lived luminous ball of light.
   components:
@@ -20,8 +20,102 @@
 
 # Spark
 
+- type: entity
+  parent: BaseAction
+  id: ActionCantripSpark
+  name: Luminous Orb
+  description: Creates a short-lived luminous ball of light.
+  components:
+  - type: Magic
+    requiresClothes: false
+  - type: Action
+    useDelay: 45
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Fun/pondering_orb.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:SpawnItemInHandEvent
+      spawned: LuminousOrb
+
 # Hemostasis
+
+- type: entity
+  parent: BaseAction
+  id: ActionCantripBandage
+  name: Luminous Orb
+  description: Creates a short-lived luminous ball of light.
+  components:
+  - type: Magic
+    requiresClothes: false
+  - type: Action
+    useDelay: 45
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Fun/pondering_orb.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:SpawnItemInHandEvent
+      spawned: LuminousOrb
+
+# Cleanse
+
+- type: entity
+  parent: BaseAction
+  id: ActionCantripMop
+  name: Luminous Orb
+  description: Creates a short-lived luminous ball of light.
+  components:
+  - type: Magic
+    requiresClothes: false
+  - type: Action
+    useDelay: 45
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Fun/pondering_orb.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:SpawnItemInHandEvent
+      spawned: LuminousOrb
 
 # Purify
 
-# Cleanse
+- type: entity
+  parent: BaseAction
+  id: ActionCantripAntidote
+  name: Luminous Orb
+  description: Creates a short-lived luminous ball of light.
+  components:
+  - type: Magic
+    requiresClothes: false
+  - type: Action
+    useDelay: 45
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Fun/pondering_orb.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:SpawnItemInHandEvent
+      spawned: LuminousOrb
+
+# Psychic Whisper
+
+- type: entity
+  parent: BaseAction
+  id: ActionCantripMessage
+  name: Luminous Orb
+  description: Creates a short-lived luminous ball of light.
+  components:
+  - type: Magic
+    requiresClothes: false
+  - type: Action
+    useDelay: 45
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Fun/pondering_orb.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:SpawnItemInHandEvent
+      spawned: LuminousOrb
+
+
