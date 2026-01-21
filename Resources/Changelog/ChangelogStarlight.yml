@@ -27260,5 +27260,12 @@ Entries:
   id: 291400
   time: '2026-01-21T18:16:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2914
+- author: KarmaKitsuna
+  changes:
+  - message: Added a pizza bomb to the syndicate and nuclear operative uplinks.
+    type: Add
+  id: 285100
+  time: '2026-01-21T18:35:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2851
 Order: -1
 
