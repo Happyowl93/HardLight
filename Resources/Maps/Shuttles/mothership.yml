@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/21/2026 07:42:23
-  entityCount: 585
+  time: 01/22/2026 01:21:25
+  entityCount: 587
 maps: []
 grids:
 - 1
@@ -210,7 +210,7 @@ entities:
       pos: 0.5,-2.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -852.1157
+      secondsUntilStateChange: -2040.43
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -1174,6 +1174,13 @@ entities:
     - type: Transform
       pos: 5.5,2.5
       parent: 1
+- proto: ButtonFrameCautionSecurity
+  entities:
+  - uid: 5
+    components:
+    - type: Transform
+      pos: -0.5,-2.5
+      parent: 1
 - proto: CableApcExtension
   entities:
   - uid: 261
@@ -2073,12 +2080,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-1.5
       parent: 1
-  - uid: 251
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,-0.5
-      parent: 1
   - uid: 455
     components:
     - type: Transform
@@ -2464,6 +2465,19 @@ entities:
     - type: Transform
       pos: -2.5,-4.5
       parent: 1
+- proto: Paper
+  entities:
+  - uid: 587
+    components:
+    - type: Transform
+      rot: -0.39702898170799017 rad
+      pos: -0.8333173,-3.5268762
+      parent: 1
+    - type: Paper
+      content: The radio jammer from the heavy borg also jams multitool links. Remember this when trying to close your blast doors.
+    - type: CollisionWake
+      enabled: False
+    - type: Conveyed
 - proto: PoweredlightBlue
   entities:
   - uid: 127
@@ -2641,6 +2655,23 @@ entities:
         - - Pressed
           - Toggle
         446:
+        - - Pressed
+          - Toggle
+    - type: Fixtures
+      fixtures: {}
+  - uid: 586
+    components:
+    - type: MetaData
+      name: recycler blast doors
+    - type: Transform
+      pos: -0.5,-2.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        370:
+        - - Pressed
+          - Toggle
+        328:
         - - Pressed
           - Toggle
     - type: Fixtures
@@ -2918,20 +2949,15 @@ entities:
       parent: 1
 - proto: TwoWayLever
   entities:
-  - uid: 5
+  - uid: 251
     components:
+    - type: MetaData
+      name: conveyor control
     - type: Transform
-      pos: 0.5,1.5
+      pos: -0.5,-3.5
       parent: 1
     - type: DeviceLinkSource
       linkedPorts:
-        251:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
         250:
         - - Left
           - Reverse
@@ -2961,12 +2987,12 @@ entities:
         - - Middle
           - Off
         111:
-        - - Middle
-          - Off
-        - - Right
-          - Reverse
         - - Left
           - Forward
+        - - Right
+          - Reverse
+        - - Middle
+          - Off
         245:
         - - Left
           - Reverse
@@ -3002,13 +3028,6 @@ entities:
           - Forward
         - - Middle
           - Off
-        370:
-        - - Left
-          - Open
-        - - Right
-          - Open
-        - - Middle
-          - Close
         4:
         - - Left
           - Reverse
@@ -3016,13 +3035,6 @@ entities:
           - Forward
         - - Middle
           - Off
-        328:
-        - - Left
-          - Open
-        - - Right
-          - Open
-        - - Middle
-          - Close
   - uid: 453
     components:
     - type: Transform
