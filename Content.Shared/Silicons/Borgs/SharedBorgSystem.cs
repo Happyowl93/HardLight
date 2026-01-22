@@ -176,9 +176,9 @@ public abstract partial class SharedBorgSystem : EntitySystem
         if (args.Container != chassis.Comp.BrainContainer)
             return;
 
-        if (HasComp<BorgBrainComponent>(args.Entity) && _mind.TryGetMind(args.Entity, out var mindId, out var mind))
+        //#region Starlight
+        if (TryComp(args.Entity, out BorgBrainComponent? brain) && _mind.TryGetMind(args.Entity, out var mindId, out var mind))
         {
-            //#region Starlight
             //re-target the station-AI's shunt target to the chassis insteaf of the brain
             if (TryComp<StationAIShuntComponent>(args.Entity, out var shunt) &&
                 TryComp<StationAIShuntableComponent>(shunt.Return, out var shuntable) &&
@@ -189,9 +189,20 @@ public abstract partial class SharedBorgSystem : EntitySystem
                     borgShunt.Return = shunt.Return;
                     borgShunt.ReturnAction = _actions.AddAction(chassis, shuntable.UnshuntAction);
                 }
-            //#endregion Starlight
-            _mind.TransferTo(mindId, chassis.Owner, mind: mind);
+        
+                //Get borging consent
+                if(!brain.BorgConsent)
+                    RaiseLocalEvent(args.Entity, new AskBorgingChoiceEvent());
+                else
+                    TransferMindToChassis(args.Entity, mindId, mind);
+                    
+                //regardless of outcome here, the player will either be
+                //choosing to play borg or be ghosted, and we do not want 
+                //to ask whoever chooses to take over the gost role again 
+                //if they get a chassis transfer.
+                brain.BorgConsent = true; 
         }
+        //#endregion Starlight
     }
 
     protected virtual void OnRemoved(Entity<BorgChassisComponent> chassis, ref EntRemovedFromContainerMessage args)
@@ -407,12 +418,12 @@ public abstract partial class SharedBorgSystem : EntitySystem
             _throwing.TryThrow(brain, _random.NextVector2() * 5, 5f);
             return;
         }
-
+        
         //Starlight Start
         if(!brain.Comp.BorgConsent)
-            RaiseLocalEvent(brain, new AskBorgingChoiceEvent());
+            RaiseLocalEvent(brain.Owner, new AskBorgingChoiceEvent());
         else
-            TransferMindToChassis(brain, mindId, mind);
+            TransferMindToChassis(brain.Owner, mindId, mind);
             
         //regardless of outcome here, the player will either be
         //choosing to play borg or be ghosted, and we do not want 

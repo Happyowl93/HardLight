@@ -22,6 +22,7 @@ using Robust.Server.Player;
 using Content.Server._Starlight.Silicons;
 using Content.Shared.Mind;
 using Content.Server.Ghost.Roles.Components;
+using Content.Server.Ghost;
 // Starlight End
 
 namespace Content.Server.Silicons.Borgs;
@@ -43,6 +44,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
     [Dependency] private readonly EuiManager _euiManager = null!;
     [Dependency] private readonly IPlayerManager _playerManager = null!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly GhostSystem _ghostSystem = default!;
     //Starlight End
 
     public static readonly ProtoId<JobPrototype> BorgJobId = "Borg";
@@ -87,6 +89,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
     private void OnAskForBorging(EntityUid uid, BorgBrainComponent component, AskBorgingChoiceEvent args)
     {
 
+        Logger.Log(LogLevel.Debug, "Event Received");
         if (!_mind.TryGetMind(uid, out var mindId, out var mind))
             return;
 
@@ -98,16 +101,18 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
     public void OpenGhostRole(EntityUid uid, EntityUid mindId, MindComponent mind)
     { 
+        if (!_ghostSystem.OnGhostAttempt(mindId, false)) //Set player as ghost, if this fails we leave them in there
+            return;
+
         var ghostRole = EnsureComp<GhostRoleComponent>(uid);
         EnsureComp<GhostTakeoverAvailableComponent>(uid);
 
         //GhostRoleComponent inherits custom settings from the ToggleableGhostRoleComponent
-        ghostRole.RoleName = Loc.GetString("positronic-brain-role-name");
-        ghostRole.RoleDescription = Loc.GetString("positronic-brain-role-description");
+        ghostRole.RoleName = Loc.GetString("broken-borg-brain-role-name");
+        ghostRole.RoleDescription = Loc.GetString("broken-borg-brain-role-description");
         ghostRole.RoleRules = Loc.GetString("ghost-role-information-silicon-rules");
-        ghostRole.JobProto = "Borg";
+        ghostRole.JobProto = BorgJobId;
         ghostRole.MindRoles = ["MindRoleGhostRoleSilicon"];
-        //Open ghost role here
     }
     // Starlight End
 }

@@ -3,24 +3,15 @@ using Content.Server.Silicons.Borgs;
 using Content.Shared._Starlight.Silicons.Borgs;
 using Content.Shared.Eui;
 using Content.Shared.Mind;
-using Content.Shared.Silicons.Borgs;
 
 namespace Content.Server._Starlight.Silicons;
 
-public sealed class AcceptBorgingEui : BaseEui
+public sealed class AcceptBorgingEui(EntityUid brain, EntityUid mindId, MindComponent mind, BorgSystem borgingSys) : BaseEui
 {
-    private readonly EntityUid _brain;
-    private readonly EntityUid _mindId;
-    private readonly MindComponent _mind;
-    private readonly BorgSystem _borgingSystem;
-
-    public AcceptBorgingEui(EntityUid brain, EntityUid mindId, MindComponent mind, BorgSystem borgingSys)
-    {
-        _brain = brain;
-        _mindId = mindId;
-        _mind = mind;
-        _borgingSystem = borgingSys;
-    }
+    private readonly EntityUid _brain = brain;
+    private readonly EntityUid _mindId = mindId;
+    private readonly MindComponent _mind = mind;
+    private readonly BorgSystem _borgingSystem = borgingSys;
 
     public override void HandleMessage(EuiMessageBase msg)
     {
