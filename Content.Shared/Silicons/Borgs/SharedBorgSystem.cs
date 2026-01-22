@@ -67,6 +67,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
     [Dependency] private readonly SharedHandheldLightSystem _handheldLight = default!;
     [Dependency] private readonly SharedAccessSystem _access = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly EuiManager _euiManager = null!; //starlight
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -407,6 +408,15 @@ public abstract partial class SharedBorgSystem : EntitySystem
             _throwing.TryThrow(brain, _random.NextVector2() * 5, 5f);
             return;
         }
+
+        //Starlight Start
+
+        _euiManager.OpenEui(new AcceptBorgingEui(mindEnt, mind, this), client);
+    }
+
+    private void OnBrainAcceptBorging(Entity<BorgBrainComponent> brain, ref MindAddedMessage args)
+    {
+        //Starlight End
 
         //Starlight, load borg voice
 		if (TryComp<TextToSpeechComponent>(brain, out var ttscomp))
