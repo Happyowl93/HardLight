@@ -107,7 +107,6 @@ public sealed partial class BorgSystem : SharedBorgSystem
         var ghostRole = EnsureComp<GhostRoleComponent>(uid);
         EnsureComp<GhostTakeoverAvailableComponent>(uid);
 
-        //GhostRoleComponent inherits custom settings from the ToggleableGhostRoleComponent
         ghostRole.RoleName = Loc.GetString("broken-borg-brain-role-name");
         ghostRole.RoleDescription = Loc.GetString("broken-borg-brain-role-description");
         ghostRole.RoleRules = Loc.GetString("ghost-role-information-silicon-rules");
