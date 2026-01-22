@@ -1223,10 +1223,20 @@
     - state: cabinet
     - state: cabinet_open
       map: ["openLayer"]
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 12
+    soundHit:
+      collection: MetalSlam
   - type: Storage
     maxItemSize: Small
     grid:
     - 0,0,4,3
+    whitelist:
+      tags:
+      - Document
   - type: Appearance
   - type: UserInterface
     interfaces:
