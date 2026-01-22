@@ -27371,5 +27371,25 @@ Entries:
   id: 289300
   time: '2026-01-21T20:06:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2893
+- author: STARLIGHT TEAM
+  changes:
+  - message: Added name and description to xenobiology console eye.
+    type: Tweak
+  - message: Slime processors can now store multiple slime corpses and process them
+      all at once.
+    type: Tweak
+  - message: Fixed slimes being deleted if a player leaves the xenobiology console
+      without placing stored slimes back down.
+    type: Fix
+  - message: Fixed slimes getting confused by dead monkeys and no longer eating.
+    type: Fix
+  - message: Fixed xenobiology console still being usable without power. Now it kicks
+      out users and prevents use until power is restored.
+    type: Fix
+  - message: Fixed being able to activate a slime processor while its already running.
+    type: Fix
+  id: 291300
+  time: '2026-01-22T01:23:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2913
 Order: -1
 
