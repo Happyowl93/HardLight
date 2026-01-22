@@ -62,11 +62,12 @@ public sealed class AnimateSpellSystem : EntitySystem
             _physics.SetCollisionLayer(ent, key, fixture, (int)(CollisionGroup.FlyingMobLayer | CollisionGroup.MidImpassable), fixtures, physics);
             _physics.SetHard(ent, fixture, true, fixtures);
         }
-        // Starlight-end
+        // Original code (removed):
         // var fixture = fixtures.Fixtures.First();
         // _physics.SetCollisionMask(ent, fixture.ID, fixture, (int)CollisionGroup.FlyingMobMask, fixtures, physics);
         // _physics.SetCollisionLayer(ent, fixture.ID, fixture, (int)(CollisionGroup.FlyingMobLayer | CollisionGroup.MidImpassable), fixtures, physics);
         // _physics.SetHard(ent, fixture, true, fixtures);
+        // Starlight-end
         
         _physics.SetBodyType(ent, BodyType.KinematicController, fixtures, physics, xform);
         _physics.SetBodyStatus(ent, physics, BodyStatus.InAir, true);
@@ -82,5 +83,3 @@ public sealed class AnimateSpellSystem : EntitySystem
 [ByRefEvent]
 public readonly record struct AnimateSpellEvent;
 // Starlight-end
-// [ByRefEvent]
-// public readonly record struct AnimateSpellEvent;
