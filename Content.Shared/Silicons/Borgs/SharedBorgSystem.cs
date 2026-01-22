@@ -67,7 +67,6 @@ public abstract partial class SharedBorgSystem : EntitySystem
     [Dependency] private readonly SharedHandheldLightSystem _handheldLight = default!;
     [Dependency] private readonly SharedAccessSystem _access = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly EuiManager _euiManager = null!; //starlight
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -410,21 +409,32 @@ public abstract partial class SharedBorgSystem : EntitySystem
         }
 
         //Starlight Start
-
-        _euiManager.OpenEui(new AcceptBorgingEui(mindEnt, mind, this), client);
+        if(!brain.Comp.BorgConsent)
+            RaiseLocalEvent(brain, new AskBorgingChoiceEvent());
+        else
+            TransferMindToChassis(brain, mindId, mind);
+            
+        //regardless of outcome here, the player will either be
+        //choosing to play borg or be ghosted, and we do not want 
+        //to ask whoever chooses to take over the gost role again 
+        //if they get a chassis transfer.
+        brain.Comp.BorgConsent = true; 
     }
 
-    private void OnBrainAcceptBorging(Entity<BorgBrainComponent> brain, ref MindAddedMessage args)
+    public void TransferMindToChassis(EntityUid uid, EntityUid mindId, MindComponent mind)
     {
-        //Starlight End
+        if (!_container.TryGetContainingContainer(uid, out var container))
+            return;
 
-        //Starlight, load borg voice
-		if (TryComp<TextToSpeechComponent>(brain, out var ttscomp))
+        var borg = container.Owner;
+
+        //load borg voice
+        if (TryComp<TextToSpeechComponent>(uid, out var ttscomp))
 		{
 			if(mind != null)
 			    ttscomp.VoicePrototypeId = mind.SiliconVoice;
 		}
-        //Starlight end
+        //Starlight End
 
         _mind.TransferTo(mindId, borg, mind: mind);
     }
