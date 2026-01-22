@@ -1489,6 +1489,7 @@
         - PenCyber
         - StampCyber
         - PrinterCyber
+        - FilingCabinetCyber
     - type: LimbItemDeployer
       action: ActionToggleCyberHandLeft
       sound:
@@ -1540,6 +1541,7 @@
         - PenCyber
         - StampCyber
         - PrinterCyber
+        - FilingCabinetCyber
     - type: LimbItemDeployer
       action: ActionToggleCyberHandRight
       sound:

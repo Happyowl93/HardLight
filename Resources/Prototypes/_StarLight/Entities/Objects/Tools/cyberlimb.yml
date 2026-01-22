@@ -1206,3 +1206,33 @@
     sprite: _Starlight/Objects/Tools/cyberling.rsi
     layers:
       - state: node_scanner
+
+- type: entity
+  id: FilingCabinetCyber
+  parent: [ BaseItem, BaseBagOpenClose ]
+  name: cybernetic file keeper
+  description: Keeping all your forms organised since 2524!
+  components:
+  - type: Tag
+    tags:
+    - CyberHandItem
+  - type: Sprite
+    sprite: _Starlight/Objects/Tools/cyberling.rsi
+    state: cabinet
+    layers:
+    - state: cabinet
+    - state: cabinet_open
+      map: ["openLayer"]
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,4,3
+  - type: Appearance
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: InteractionOutline
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container

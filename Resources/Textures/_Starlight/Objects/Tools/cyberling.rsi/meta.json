@@ -581,6 +581,26 @@
       "copyright": "Citrea"
     },
     {
+      "name": "cabinet",
+      "delays": [
+        [
+          0.3,
+          0.3
+        ]
+      ],
+      "copyright": "Citrea"
+    },
+    {
+      "name": "cabinet_open",
+      "delays": [
+        [
+          0.3,
+          0.3
+        ]
+      ],
+      "copyright": "Citrea"
+    },
+    {
       "name": "cyber_vial-1",
       "copyright": "Citrea"
     },
