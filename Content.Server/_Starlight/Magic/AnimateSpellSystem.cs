@@ -11,7 +11,6 @@ using Content.Shared.Magic.Events;
 using Content.Shared.Magic.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Random;
-using Robust.Shared.Log;
 
 namespace Content.Server._Starlight.Magic;
 
@@ -22,16 +21,12 @@ namespace Content.Server._Starlight.Magic;
 public sealed class AnimateSpellSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
-    
-    private ISawmill _sawmill = default!;
     
     private EntityUid? _lastActionUsed; // Track the last action used for animated objects
 
     public override void Initialize()
     {
         base.Initialize();
-        _sawmill = _logManager.GetSawmill("animate_spell");
         SubscribeLocalEvent<AnimateComponent, AnimateSpellEvent>(OnAnimateSpell);
         SubscribeLocalEvent<ChangeComponentsSpellEvent>(OnChangeComponentsSpell);
     }
@@ -48,14 +43,11 @@ public sealed class AnimateSpellSystem : EntitySystem
 
     private void SetAnimatedObjectHP(EntityUid uid, EntityUid? action)
     {
-        _sawmill.Info($"SetAnimatedObjectHP called for entity {ToPrettyString(uid)}");
-        
         // Try to get HP configuration from the staff (action container)
         AnimatedObjectHPComponent? hpConfig = null;
         if (action != null && TryComp<ActionComponent>(action.Value, out var actionComp) && actionComp.Container != null)
         {
             TryComp<AnimatedObjectHPComponent>(actionComp.Container.Value, out hpConfig);
-            _sawmill.Info($"Action: {ToPrettyString(action.Value)}, Container: {ToPrettyString(actionComp.Container.Value)}, HP Config found: {hpConfig != null}");
         }
 
         // Use default values if no config found on staff
@@ -82,14 +74,12 @@ public sealed class AnimateSpellSystem : EntitySystem
             };
             
             hp = _random.Next(min, max + 1);
-            _sawmill.Info($"Entity had item size {sizeId}, HP set to {hp} (range {min}-{max})");
         }
         else
         {
             // Objects that were never items - furniture, structures, etc.
             var (min, max) = hpConfig.NonItemHP;
             hp = _random.Next(min, max + 1);
-            _sawmill.Info($"Entity was not an item, HP set to {hp} (range {min}-{max})");
         }
 
         // Add or update Destructible component with size-based HP
@@ -115,7 +105,5 @@ public sealed class AnimateSpellSystem : EntitySystem
                 }
             }
         };
-        
-        _sawmill.Info($"Destructible component added with threshold damage: {hp}");
     }
 }
