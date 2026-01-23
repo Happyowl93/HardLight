@@ -5,26 +5,24 @@ namespace Content.Shared._Starlight.Plushies;
 
 /// <summary>
 /// Component for items that show a configurable cuddle message when used in hand (Z key).
-/// The message supports a {0} placeholder that will be replaced with the character's name.
-/// This component is networked so both server and client have access to the message data.
+/// Uses FTL localization for the message.
 /// </summary>
 /// <example>
 /// Example usage in YAML:
 /// <code>
 /// - type: CuddleMessage
-///   message: "{0} cuddles the blue shark."
+///   localizedMessageKey: plushie-large-soft-shark-cuddle
 /// </code>
 /// </example>
 [RegisterComponent, NetworkedComponent]
 public sealed partial class CuddleMessageComponent : Component
 {
     /// <summary>
-    /// The message template to display when the item is used in hand.
-    /// Use {0} as a placeholder for the character's name.
-    /// Example: "{0} cuddles the plushie." becomes "John Smith cuddles the plushie."
+    /// The FTL localization key for the cuddle message.
+    /// The localization should accept a $user parameter.
     /// </summary>
-    [DataField]
-    public string Message = "{0} cuddles the plushie.";
+    [DataField(required: true)]
+    public string LocalizedMessageKey = string.Empty;
 
     /// <summary>
     /// Whether this item should be prevented from being eaten.

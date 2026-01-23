@@ -1919,7 +1919,7 @@
       state: icon
     # Shows cuddle message when used in hand
     - type: CuddleMessage
-      message: "{0} cuddles the large blue shark."
+      localizedMessageKey: plushie-large-soft-shark-cuddle
     - type: EmitSoundOnUse
       sound:
         path: /Audio/Effects/thudswoosh.ogg
@@ -1943,9 +1943,6 @@
       soundHit:
         path: /Audio/Items/Toys/rawr.ogg
       animation: WeaponArcBite
-    - type: Edible
-      useSound:
-        path: /Audio/Items/Toys/rawr.ogg
     - type: UseDelay
       delay: 1.0
     - type: Tag
