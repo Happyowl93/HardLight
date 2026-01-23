@@ -27418,5 +27418,40 @@ Entries:
   id: 293800
   time: '2026-01-23T02:02:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2938
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Xenobio
+    type: Add
+  - message: (Cluster) Duty Officers
+    type: Add
+  - message: (Cluster) Nanotrasen Careet Trainers
+    type: Add
+  - message: (Cluster) NCT Office by Evac
+    type: Add
+  - message: (Cluster) Magistrate Locker
+    type: Add
+  - message: (Cluster) IAA Lockers
+    type: Add
+  - message: (Cluster) Wall-mounted mass scanners at Cargo Front
+    type: Add
+  - message: (Cluster) AI Restoration consoles in RD Office & AI Core
+    type: Add
+  - message: (Cluster) Head of Security weapon spawner to HOS Office
+    type: Add
+  - message: (Cluster) Additional signage that points at the Space Bar
+    type: Add
+  - message: (Cluster) Made Evac a little longer
+    type: Tweak
+  - message: (Cluster) Moved the gas pumps off the gas filters in Atmospherics
+    type: Tweak
+  - message: (Cluster) Some map beacons that overlapped too much
+    type: Tweak
+  - message: (Cluster) Missing pipe to the spare burn chamber
+    type: Fix
+  - message: (Cluster) Old maints Bar
+    type: Remove
+  id: 294300
+  time: '2026-01-23T12:41:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2943
 Order: -1
 
