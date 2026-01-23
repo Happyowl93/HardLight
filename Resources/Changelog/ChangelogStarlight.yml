@@ -27371,5 +27371,52 @@ Entries:
   id: 289300
   time: '2026-01-21T20:06:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2893
+- author: STARLIGHT TEAM
+  changes:
+  - message: Added name and description to xenobiology console eye.
+    type: Tweak
+  - message: Slime processors can now store multiple slime corpses and process them
+      all at once.
+    type: Tweak
+  - message: Fixed slimes being deleted if a player leaves the xenobiology console
+      without placing stored slimes back down.
+    type: Fix
+  - message: Fixed slimes getting confused by dead monkeys and no longer eating.
+    type: Fix
+  - message: Fixed xenobiology console still being usable without power. Now it kicks
+      out users and prevents use until power is restored.
+    type: Fix
+  - message: Fixed being able to activate a slime processor while its already running.
+    type: Fix
+  id: 291300
+  time: '2026-01-22T01:23:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2913
+- author: STARLIGHT TEAM
+  changes:
+  - message: Hopefully fixed a PVS bug where an eating slime entering PVS range would
+      cause a client crash.
+    type: Fix
+  id: 292500
+  time: '2026-01-22T02:57:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2925
+- author: Ohelig
+  changes:
+  - message: Add a blast door to the entrance of the xenoborg mothership
+    type: Tweak
+  - message: Move lever controls for conveyor on xenoborg mothership
+    type: Tweak
+  - message: Fix recycler direction on xenoborg mothership
+    type: Fix
+  id: 292700
+  time: '2026-01-22T19:43:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2927
+- author: Walksanatora
+  changes:
+  - message: Xenobiology Starter Crate and T1 research are removed until xenobiology
+      is more balanced (admemes can still spawn requsite stuffs, including tech disk)
+    type: Remove
+  id: 293800
+  time: '2026-01-23T02:02:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2938
 Order: -1
 
