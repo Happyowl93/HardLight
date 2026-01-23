@@ -16,7 +16,7 @@ public sealed partial class CuddleMessageComponent : Component
     /// The localization should accept a $user parameter.
     /// </summary>
     [DataField(required: true)]
-    public string LocalizedMessageKey = string.Empty;
+    public LocId LocalizedMessageKey = string.Empty;
 
     /// <summary>
     /// Whether this item should be prevented from being eaten.
