@@ -27543,5 +27543,24 @@ Entries:
   id: 291900
   time: '2026-01-23T17:14:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2919
+- author: Rhetorica
+  changes:
+  - message: Chapel to Shrine
+    type: Tweak
+  - message: various crosses to generic religious symbol
+    type: Tweak
+  - message: BSO contra class
+    type: Add
+  - message: '''thy'' to ''yon'' in Archaic accent'
+    type: Tweak
+  - message: Various typos and bad grammar in some item descs
+    type: Fix
+  - message: Chapel/Shrine pews can now be destroyed into wood
+    type: Add
+  - message: Borgs and Borgis couldn't understand Classical, Aielic, or Grumbakul
+    type: Fix
+  id: 266100
+  time: '2026-01-23T18:24:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2661
 Order: -1
 
