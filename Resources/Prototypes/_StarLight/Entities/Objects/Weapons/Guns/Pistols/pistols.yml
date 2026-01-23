@@ -42,6 +42,7 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+      firing_pin: !type:Container
   - type: StaticPrice
     price: 150
 
@@ -195,7 +196,7 @@
 
 - type: entity
   name: stechkin pistol
-  parent: [WeaponPistolMk58, BaseSecurityContraband]
+  parent: [BaseSecurityContraband, WeaponPistolMk58]
   id: WeaponPistolStechkin
   description: A small, easily concealable .40 handgun. Has a threaded barrel for suppressors. Uses .40 ammo.
   components:
@@ -268,7 +269,7 @@
 
 - type: entity
   name: Jungle Hawk
-  parent: [ BaseSecuritySalvageContraband, WeaponPistolN1984 ]
+  parent: [ BaseSyndicateContraband, WeaponPistolN1984 ]
   id: WeaponPistolDeagle
   description: A high-caliber handgun designed for putting down large game.
   components:
@@ -407,6 +408,12 @@
       - id: RifleStock
         launchAngle: 180
         prob: 0.80
+  - type: ContainerFill
+    containers:
+      firing_pin:
+      - FiringPinMakeshift
+  - type: FiringPinHolder
+    supportedPins: [ Makeshift, GunUpgrade ]
 
 - type: entity
   name: improvised pistol

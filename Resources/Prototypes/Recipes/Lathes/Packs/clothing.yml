@@ -26,6 +26,8 @@
   - ClothingUniformJumpsuitQMTurtleneck
   - ClothingUniformJumpskirtQMTurtleneck
   - ClothingUniformJumpsuitQMFormal
+  - ClothingHeadHatBeretCargo # starlight
+  - ClothingHeadHatBeretCargoFormal # starlight
 
 - type: latheRecipePack
   id: ClothingCommand
@@ -141,6 +143,10 @@
   - ClothingHeadHatBeretBrigmedic
   - ClothingUniformJumpsuitBrigmedic
   - ClothingUniformJumpskirtBrigmedic
+  - ClothingHeadHatBeretDutyOfficer # Starlight
+  - ClothingHeadHatDutyOfficer # Starlight
+  - ClothingUniformJumpsuitDutyOfficer # Starlight
+  - ClothingUniformJumpskirtDutyOfficer # Starlight
   - ClothingHeadHatBeretWarden
   - ClothingHeadHatWarden
   - ClothingUniformJumpsuitWarden
@@ -156,11 +162,13 @@
   - ClothingUniformJumpsuitChef
   - ClothingUniformJumpskirtChef
   - ClothingUniformJumpsuitClown
+  - ClothingUniformJumpskirtClown
   - ClothingUniformJumpsuitHydroponics
   - ClothingUniformJumpskirtHydroponics
   - ClothingUniformJumpsuitJanitor
   - ClothingUniformJumpskirtJanitor
   - ClothingUniformJumpsuitLawyerBlack
+  - ClothingUniformJumpskirtLawyerBlack
   - ClothingUniformJumpsuitLibrarian
   - ClothingUniformJumpskirtColorLightBrown
   - ClothingUniformJumpsuitMime
@@ -230,6 +238,7 @@
   - CarpetPurple
   - CarpetCyan
   - CarpetWhite
+  - CarpetSkyBlue
 
 - type: latheRecipePack
   id: ClothingCentComm

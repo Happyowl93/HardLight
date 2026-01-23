@@ -6,6 +6,7 @@ using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Server.Popups;
 using Content.Shared.Atmos;
+using Content.Shared.Chat;
 using Content.Shared.Dataset;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
@@ -14,7 +15,6 @@ using Content.Shared.Random.Helpers;
 using Content.Shared.RatKing;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
-using Content.Shared.Chat; // Starlight
 
 namespace Content.Server.RatKing
 {
@@ -27,6 +27,7 @@ namespace Content.Server.RatKing
         [Dependency] private readonly HungerSystem _hunger = default!;
         [Dependency] private readonly NPCSystem _npc = default!;
         [Dependency] private readonly PopupSystem _popup = default!;
+        [Dependency] private readonly IRobustRandom _random = default!; // Starlight
 
         public override void Initialize()
         {
@@ -56,7 +57,15 @@ namespace Content.Server.RatKing
             }
             args.Handled = true;
             _hunger.ModifyHunger(uid, -component.HungerPerArmyUse, hunger);
-            var servant = Spawn(component.ArmyMobSpawnId, Transform(uid).Coordinates);
+
+            // Starlight - Start
+            var selectedservant = component.ArmyMobSpawnId;
+            if (_random.Next(1, 6) == 1)
+                selectedservant = component.ArmyLargeMobSpawnId;
+
+            var servant = Spawn(selectedservant, Transform(uid).Coordinates);
+            // Starlight - End
+
             var comp = EnsureComp<RatKingServantComponent>(servant);
             comp.King = uid;
             Dirty(servant, comp);

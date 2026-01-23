@@ -20,11 +20,14 @@
   setPreference: true
   access:
   - Magistrate
+  - IAA
   - Lawyer
   - Brig
   - Security
   - Command
   - Maintenance
+  - GenpopEnter
+  - GenpopLeave
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -35,9 +38,9 @@
 - type: startingGear
   id: MagistrateGear
   equipment:
-    jumpsuit: MagistrateUniformSuit
+    #jumpsuit: MagistrateUniformSuit
     #shoes: ClothingShoesBootsLaceup
-    eyes: ClothingEyesGlassesSecurity
+    #eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesColorWhite
     outerClothing: ClothingOuterRobesJudge
     id: MagistratePDA
@@ -50,7 +53,7 @@
     - ClothingNeckLawyerbadge
     - GavelHammer
     - GavelBlock
-    - MagistrateUniformSkirt
+    #- MagistrateUniformSkirt
 
 - type: chameleonOutfit
   id: MagistrateChameleonOutfit

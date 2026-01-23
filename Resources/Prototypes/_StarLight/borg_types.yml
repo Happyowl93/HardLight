@@ -36,36 +36,6 @@
 # Syndicate borgs
 
 - type: borgType
-  id: SyndicateAssault
-
-  # Description
-  dummyPrototype: BorgChassisSyndicateAssault
-
-  # Functional
-  moduleWhitelist:
-    tags:
-    - BorgModuleGeneric
-    - BorgModuleSyndicate
-    - BorgModuleSyndicateAssault
-
-  defaultModules:
-  - BorgModuleTool
-  - BorgModuleOperative
-  - BorgModuleL6C
-  - BorgModuleDoubleEsword
-
-  radioChannels:
-  - Syndicate
-
-  # Visual
-  inventoryTemplateId: borgShort
-  spritePath: Mobs/Silicon/Chassis/synd_sec.rsi
-
-  # Pet
-  petSuccessString: petting-success-syndicate-cyborg
-  petFailureString: petting-failure-syndicate-cyborg
-
-- type: borgType
   id: SyndicateMedical
 
   # Description
@@ -190,4 +160,37 @@
 
   # Pet
   petSuccessString: petting-success-generic-cyborg
-  petFailureString: petting-failure-generic-cyborg# Purrfus borg
+  petFailureString: petting-failure-generic-cyborg
+
+# Cargo borg
+- type: borgType
+  id: cargo
+
+  # Description
+  dummyPrototype: BorgChassisCargo
+
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleCargo
+    - BorgModuleSupply
+
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleAppraisal
+  - BorgModuleHold
+  - BorgModuleMail
+
+  radioChannels:
+  - Supply
+  - Science
+
+  # Visual
+  inventoryTemplateId: borgTall
+  spritePath: Mobs/Silicon/Chassis/cargo.rsi
+
+  # Pet
+  petSuccessString: petting-success-cargo-cyborg
+  petFailureString: petting-failure-cargo-cyborg

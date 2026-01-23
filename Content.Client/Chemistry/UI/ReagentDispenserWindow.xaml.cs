@@ -83,7 +83,7 @@ namespace Content.Client.Chemistry.UI
         public void UpdateEnergyDisplay(float energyAmount)
         {
             EnergyDisplayBar.Value = energyAmount;
-            EnergyDisplay.Text = Loc.GetString("mech-energy-display", ("amount", (int)Math.Round(energyAmount * 100)));
+            EnergyDisplay.Text = Loc.GetString("mech-energy-display", ("amount", (int)MathF.Round(energyAmount * 100))); // Starlight: Use MathF
         }
         // Starlight End
 
@@ -120,7 +120,7 @@ namespace Content.Client.Chemistry.UI
                 var quantityLabel = new Label
                 {
                     Text = Loc.GetString("reagent-dispenser-window-quantity-label-text", ("quantity", quantity)),
-                    StyleClasses = { StyleNano.StyleClassLabelSecondaryColor },
+                    StyleClasses = { StyleClass.LabelWeak },
                 };
 
                 ContainerInfo.Children.Add(new BoxContainer
