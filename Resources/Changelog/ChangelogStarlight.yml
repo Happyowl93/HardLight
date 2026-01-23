@@ -27562,5 +27562,12 @@ Entries:
   id: 266100
   time: '2026-01-23T18:24:33.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2661
+- author: Scarlet Lightweaver
+  changes:
+  - message: Added a large shark you can order at cargo! Rawr!
+    type: Add
+  id: 294800
+  time: '2026-01-23T21:17:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2948
 Order: -1
 
