@@ -7,3 +7,13 @@
   cost: 800
   category: cargoproduct-category-name-fun
   group: market
+
+- type: cargoProduct
+  id: FunMegaShark
+  icon:
+    sprite: _Starlight/Objects/Fun/Plushies/Large_Blahaj.rsi
+    state: icon
+  product: CrateFunMegaShark
+  cost: 2500
+  category: cargoproduct-category-name-fun
+  group: market
