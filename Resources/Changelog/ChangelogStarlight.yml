@@ -27511,5 +27511,12 @@ Entries:
   id: 294200
   time: '2026-01-23T16:34:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2942
+- author: Ohelig
+  changes:
+  - message: Added empty gas canister variants.
+    type: Add
+  id: 294400
+  time: '2026-01-23T16:41:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2944
 Order: -1
 
