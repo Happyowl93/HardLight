@@ -19,7 +19,7 @@ public sealed partial class FiringPinHolderComponent : Component
     /// How long it takes to remove the pin from the gun
     /// </summary>
     [DataField]
-    public float PinExtractionDelay = 15f; // doafters don't support timespans....
+    public float PinExtractionDelay = 10f; // doafters don't support timespans....
 
     /// <summary>
     /// What pins actually fit this gun?
