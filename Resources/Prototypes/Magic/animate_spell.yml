@@ -42,9 +42,7 @@
         altDisarm: false
         soundHit: /Audio/Weapons/smash.ogg
         range: 1.2
-        # Starlight-start: Increased from 0 to allow animated objects to attack in a wider arc
-        angle: 60
-        # Starlight-end
+        angle: 60 # Starlight: Increased from 0 to allow animated objects to attack in a wider arc
         damage:
           types:
             Blunt: 10

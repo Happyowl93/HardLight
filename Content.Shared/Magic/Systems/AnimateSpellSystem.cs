@@ -1,5 +1,5 @@
 using Content.Shared.Magic.Components;
-using Content.Shared._Starlight.Magic.Components; // Starlight: AnimatedObjectSizeComponent
+using Content.Shared._Starlight.Magic.Components;
 using Content.Shared.Magic.Events;
 using Content.Shared.Item;
 using Content.Shared.Physics;
@@ -62,7 +62,6 @@ public sealed class AnimateSpellSystem : EntitySystem
             _physics.SetCollisionLayer(ent, key, fixture, (int)(CollisionGroup.FlyingMobLayer | CollisionGroup.MidImpassable), fixtures, physics);
             _physics.SetHard(ent, fixture, true, fixtures);
         }
-        // Original code (removed):
         // var fixture = fixtures.Fixtures.First();
         // _physics.SetCollisionMask(ent, fixture.ID, fixture, (int)CollisionGroup.FlyingMobMask, fixtures, physics);
         // _physics.SetCollisionLayer(ent, fixture.ID, fixture, (int)(CollisionGroup.FlyingMobLayer | CollisionGroup.MidImpassable), fixtures, physics);
@@ -79,7 +78,6 @@ public sealed class AnimateSpellSystem : EntitySystem
     }
 }
 
-// Starlight-start: Event for server-side HP setting
+// Starlight: Event for server-side HP setting
 [ByRefEvent]
 public readonly record struct AnimateSpellEvent;
-// Starlight-end
