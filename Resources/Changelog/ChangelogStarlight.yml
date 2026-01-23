@@ -27532,5 +27532,16 @@ Entries:
   id: 292800
   time: '2026-01-23T16:55:21.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2928
+- author: Fasuh
+  changes:
+  - message: Added taser immunity to all hardsuits.
+    type: Add
+  - message: Removed taser immunity from web vests.
+    type: Remove
+  - message: Fixed taser immunity preventing crawling.
+    type: Fix
+  id: 291900
+  time: '2026-01-23T17:14:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2919
 Order: -1
 
