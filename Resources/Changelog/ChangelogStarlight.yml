@@ -27410,5 +27410,13 @@ Entries:
   id: 292700
   time: '2026-01-22T19:43:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2927
+- author: Walksanatora
+  changes:
+  - message: Xenobiology Starter Crate and T1 research are removed until xenobiology
+      is more balanced (admemes can still spawn requsite stuffs, including tech disk)
+    type: Remove
+  id: 293800
+  time: '2026-01-23T02:02:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2938
 Order: -1
 
