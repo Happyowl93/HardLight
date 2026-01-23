@@ -1,0 +1,30 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "By Rhetorica for Starlight. Placeholder inhands, REMEMBER TO FIX",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon",
+            "delays": [
+                [
+                    0.04,
+                    0.04,
+                    0.04,
+                    0.04
+                ]
+            ]
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
+}

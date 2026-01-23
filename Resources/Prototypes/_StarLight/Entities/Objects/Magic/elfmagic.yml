@@ -7,10 +7,12 @@
   description: Destined to burn out and fade away.
   components:
   - type: Sprite
-    sprite: Objects/Fun/pondering_orb.rsi
-    state: icon
+    sprite: _Starlight/Objects/Magic/luminous_orb.rsi
+    layers:
+    - state: icon
+      shader: unshaded
   - type: Item
-    sprite: Objects/Fun/pondering_orb.rsi
+    sprite: _Starlight/Objects/Magic/luminous_orb.rsi
     size: Tiny
   - type: PointLight
     radius: 4
@@ -21,4 +23,41 @@
     modifier: 0.001
   - type: EmitSoundOnSpawn
     sound: 
-      path: /Audio/Effects/Lightning/eye_open.ogg
+      path: /Audio/_Starlight/Magic/cantrip.ogg
+
+# Ember
+
+- type: entity
+  name: Ember
+  parent: BaseItem
+  id: MagicEmber
+  description: Careful! It's hot. Cannot be dropped.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Magic/ember.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: Item
+    sprite: _Starlight/Objects/Magic/ember.rsi
+    size: Tiny
+  - type: PointLight
+    radius: 1
+    color: "#00CCFF"
+  - type: Unremoveable
+  - type: SurgeryTool
+    successRate: 1
+    startSound:
+      path: /Audio/_Starlight/Medical/Surgery/cautery1.ogg
+    endSound:
+      path: /Audio/_Starlight/Medical/Surgery/cautery2.ogg
+  - type: Cautery
+  - type: IgnitionSource
+    ignited: true
+  - type: TimedDespawn
+    lifetime: 5
+  - type: AlwaysHot
+  - type: EmitSoundOnSpawn
+    sound: 
+      path: /Audio/_Starlight/Magic/cantrip.ogg
+

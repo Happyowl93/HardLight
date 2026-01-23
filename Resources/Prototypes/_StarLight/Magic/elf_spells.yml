@@ -12,39 +12,39 @@
     useDelay: 45
     itemIconStyle: BigAction
     icon:
-      sprite: Objects/Fun/pondering_orb.rsi
+      sprite: _Starlight/Objects/Magic/luminous_orb.rsi
       state: icon
   - type: InstantAction
     event: !type:SpawnItemInHandEvent
       spawned: LuminousOrb
 
-# Spark
+# MagicEmber
 
 - type: entity
   parent: BaseAction
   id: ActionCantripSpark
-  name: Luminous Orb
-  description: Creates a short-lived luminous ball of light.
+  name: Magic Ember
+  description: Creates a short-lived flame suitable for use as an ignition source.
   components:
   - type: Magic
     requiresClothes: false
   - type: Action
-    useDelay: 45
+    useDelay: 30
     itemIconStyle: BigAction
     icon:
-      sprite: Objects/Fun/pondering_orb.rsi
+      sprite: _Starlight/Objects/Magic/ember.rsi
       state: icon
   - type: InstantAction
     event: !type:SpawnItemInHandEvent
-      spawned: LuminousOrb
+      spawned: MagicEmber
 
 # Hemostasis
 
 - type: entity
   parent: BaseAction
   id: ActionCantripBandage
-  name: Luminous Orb
-  description: Creates a short-lived luminous ball of light.
+  name: Hemostasis
+  description: Stops bleeding.
   components:
   - type: Magic
     requiresClothes: false
@@ -52,7 +52,7 @@
     useDelay: 45
     itemIconStyle: BigAction
     icon:
-      sprite: Objects/Fun/pondering_orb.rsi
+      sprite: _Starlight/Objects/Magic/luminous_orb.rsi
       state: icon
   - type: InstantAction
     event: !type:SpawnItemInHandEvent
@@ -63,8 +63,8 @@
 - type: entity
   parent: BaseAction
   id: ActionCantripMop
-  name: Luminous Orb
-  description: Creates a short-lived luminous ball of light.
+  name: Cleanse
+  description: Removes filth at your feet.
   components:
   - type: Magic
     requiresClothes: false
@@ -72,19 +72,19 @@
     useDelay: 45
     itemIconStyle: BigAction
     icon:
-      sprite: Objects/Fun/pondering_orb.rsi
+      sprite: _Starlight/Objects/Magic/luminous_orb.rsi
       state: icon
   - type: InstantAction
     event: !type:SpawnItemInHandEvent
       spawned: LuminousOrb
 
-# Purify
+# Detoxify
 
 - type: entity
   parent: BaseAction
   id: ActionCantripAntidote
-  name: Luminous Orb
-  description: Creates a short-lived luminous ball of light.
+  name: Detoxify
+  description: Restores vitality to an ailing plant.
   components:
   - type: Magic
     requiresClothes: false
@@ -92,7 +92,7 @@
     useDelay: 45
     itemIconStyle: BigAction
     icon:
-      sprite: Objects/Fun/pondering_orb.rsi
+      sprite: _Starlight/Objects/Magic/luminous_orb.rsi
       state: icon
   - type: InstantAction
     event: !type:SpawnItemInHandEvent
@@ -112,7 +112,7 @@
     useDelay: 45
     itemIconStyle: BigAction
     icon:
-      sprite: Objects/Fun/pondering_orb.rsi
+      sprite: _Starlight/Objects/Magic/luminous_orb.rsi
       state: icon
   - type: InstantAction
     event: !type:SpawnItemInHandEvent
