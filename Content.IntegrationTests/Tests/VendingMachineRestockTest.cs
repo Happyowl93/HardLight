@@ -36,8 +36,6 @@ namespace Content.IntegrationTests.Tests
             "VendingMachineRestockMagical",
             "VendingMachineRestockSyndicate",
             "VendingMachineRestockCentComm",
-			"VendingMachineRestockDonk",
-			"VendingMachineRestockIceCream",
         };
         // Starlight end
 
