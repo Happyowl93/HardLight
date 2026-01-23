@@ -27391,5 +27391,139 @@ Entries:
   id: 291300
   time: '2026-01-22T01:23:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2913
+- author: STARLIGHT TEAM
+  changes:
+  - message: Hopefully fixed a PVS bug where an eating slime entering PVS range would
+      cause a client crash.
+    type: Fix
+  id: 292500
+  time: '2026-01-22T02:57:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2925
+- author: Ohelig
+  changes:
+  - message: Add a blast door to the entrance of the xenoborg mothership
+    type: Tweak
+  - message: Move lever controls for conveyor on xenoborg mothership
+    type: Tweak
+  - message: Fix recycler direction on xenoborg mothership
+    type: Fix
+  id: 292700
+  time: '2026-01-22T19:43:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2927
+- author: Walksanatora
+  changes:
+  - message: Xenobiology Starter Crate and T1 research are removed until xenobiology
+      is more balanced (admemes can still spawn requsite stuffs, including tech disk)
+    type: Remove
+  id: 293800
+  time: '2026-01-23T02:02:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2938
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Xenobio
+    type: Add
+  - message: (Cluster) Duty Officers
+    type: Add
+  - message: (Cluster) Nanotrasen Careet Trainers
+    type: Add
+  - message: (Cluster) NCT Office by Evac
+    type: Add
+  - message: (Cluster) Magistrate Locker
+    type: Add
+  - message: (Cluster) IAA Lockers
+    type: Add
+  - message: (Cluster) Wall-mounted mass scanners at Cargo Front
+    type: Add
+  - message: (Cluster) AI Restoration consoles in RD Office & AI Core
+    type: Add
+  - message: (Cluster) Head of Security weapon spawner to HOS Office
+    type: Add
+  - message: (Cluster) Additional signage that points at the Space Bar
+    type: Add
+  - message: (Cluster) Made Evac a little longer
+    type: Tweak
+  - message: (Cluster) Moved the gas pumps off the gas filters in Atmospherics
+    type: Tweak
+  - message: (Cluster) Some map beacons that overlapped too much
+    type: Tweak
+  - message: (Cluster) Missing pipe to the spare burn chamber
+    type: Fix
+  - message: (Cluster) Old maints Bar
+    type: Remove
+  id: 294300
+  time: '2026-01-23T12:41:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2943
+- author: PubliclyExecutedPig, Choccy
+  changes:
+  - message: Added Sepultum, the NEW bestbest map of all time!!!
+    type: Add
+  id: 293300
+  time: '2026-01-23T13:30:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2933
+- author: Makeshift
+  changes:
+  - message: (Plasma) Functional Xenobiology Subdepartment
+    type: Add
+  - message: (Plasma) NT Career Trainer
+    type: Add
+  - message: (Plasma) Duty Officer
+    type: Add
+  - message: (Plasma) Magistrate Locker
+    type: Add
+  - message: (Plasma) IAA Lockers
+    type: Add
+  - message: (Plasma) AI restoration consoles
+    type: Add
+  - message: (Plasma) Public Wall Mounted Mass Scanner
+    type: Add
+  - message: (Plasma) Misc Fixes
+    type: Fix
+  id: 292900
+  time: '2026-01-23T13:59:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2929
+- author: Arkanic, DeltaVelocity
+  changes:
+  - message: firing pins take correct amount of time to remove (10 seconds), up from
+      1.5 seconds
+    type: Fix
+  - message: gun safes now contain a box of 4 firing pins for the type of gun inside
+      it
+    type: Add
+  - message: weapons now clearly show if they don't have a firing pin in the examine
+      menu
+    type: Add
+  - message: laser crystals printable on the secfab, same research unlock as lasers
+    type: Add
+  id: 294100
+  time: '2026-01-23T15:58:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2941
+- author: Conflee, cooldolphin
+  changes:
+  - message: Added the Donk on the Go vending machine and related restocks, cargo
+      orders, and circuit boards. Comes with some Donk Pockets. Appears in the random
+      vending machine and random snack vending machine spawn pools.
+    type: Add
+  - message: Added the I Scream Ice-Cream vending machine and related restocks, cargo
+      orders, and circuit boards. Comes with many new frozen treats, and a couple
+      already existing ice-cream snacks. Appears in the random vending machine and
+      random snack vending machine spawn pools.
+    type: Add
+  id: 294200
+  time: '2026-01-23T16:34:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2942
+- author: Ohelig
+  changes:
+  - message: Added empty gas canister variants.
+    type: Add
+  id: 294400
+  time: '2026-01-23T16:41:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2944
+- author: redmushie
+  changes:
+  - message: Fixed heavy xenoborg laser cannon not recharging
+    type: Fix
+  id: 294700
+  time: '2026-01-23T16:44:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2947
 Order: -1
 
