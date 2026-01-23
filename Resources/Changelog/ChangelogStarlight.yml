@@ -27453,5 +27453,12 @@ Entries:
   id: 294300
   time: '2026-01-23T12:41:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2943
+- author: PubliclyExecutedPig, Choccy
+  changes:
+  - message: Added Sepultum, the NEW bestbest map of all time!!!
+    type: Add
+  id: 293300
+  time: '2026-01-23T13:30:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2933
 Order: -1
 
