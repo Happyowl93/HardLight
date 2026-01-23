@@ -18,7 +18,7 @@ job-name-chemist = Chemist
 job-name-clown = Clown
 job-name-cmo = Chief Medical Officer
 # Starlight: Capitalization fix:
-job-name-deathsquad = CentComm Agent
+job-name-deathsquad = CentCom Agent
 job-name-detective = Detective
 job-name-doctor = Medical Doctor
 job-name-engineer = Station Engineer
