@@ -383,6 +383,9 @@
     requiresSpecialDigestion: true
     useSound:
       path: /Audio/_Starlight/Items/Toys/panda_noise2.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PandaPlushie
 
 - type: entity
   parent: BasePlushie
@@ -416,6 +419,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/_Starlight/Items/Toys/deerplush_nun.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: DeerPlushie
 
 - type: entity
   parent: BaseLizardPlushie
@@ -428,6 +434,9 @@
     state: icon
   - type: Item
     heldPrefix: plushielizard
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PlushieMimeLizard
 
 - type: entity
   parent: BasePlushie
@@ -461,6 +470,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/_Starlight/Items/Toys/deerplush_nun.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: OddDeerPlushie
 
 - type: entity
   parent: BaseVulpkaninPlushie
@@ -507,6 +519,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Weapons/Guns/Hits/taser_hit.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: AbductorPlushie
       
 - type: entity
   parent: BasePlushie
@@ -540,6 +555,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Items/Toys/toysqueak3.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: AxolotlPlushie
       
 - type: entity
   parent: BasePlushie
@@ -573,6 +591,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Items/Toys/toysqueak3.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: BorbPlushie
 
 - type: entity
   parent: BasePlushie
@@ -606,6 +627,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/_Starlight/Items/Toys/yippie.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: CreaturePlushie
       
 - type: entity
   parent: BasePlushie
@@ -639,6 +663,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/_Starlight/Items/Toys/gnome_murderer.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: GnomePlushie
       
 - type: entity
   parent: BasePlushie
@@ -672,6 +699,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Items/Toys/toysqueak3.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: GoatPlushie
       
 - type: entity
   parent: BasePlushie
@@ -705,6 +735,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Animals/dog_bark2.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: StarlightIanPlushie
       
 - type: entity
   parent: BasePlushie
@@ -738,6 +771,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Animals/dog_bark2.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: LisaPlushie
       
 - type: entity
   parent: BasePlushie
@@ -771,6 +807,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Animals/cat_hiss.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: KittenPlushie
       
 - type: entity
   parent: BasePlushie
@@ -804,6 +843,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Animals/pig_oink.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PigPlushie
       
 - type: entity
   parent: BasePlushie
@@ -837,6 +879,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Animals/fox11.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: RenaultPlushie
       
 - type: entity
   parent: BasePlushie
@@ -870,6 +915,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: SnailPlushie
       
 - type: entity
   parent: BasePlushie
@@ -903,6 +951,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: SquishimsCow
       
 - type: entity
   parent: BasePlushie
@@ -936,6 +987,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: SquishimsFrog
       
 - type: entity
   parent: BasePlushie
@@ -969,6 +1023,9 @@
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: SusPlushie
 
 - type: entity
   parent: BasePlushie
@@ -1193,6 +1250,9 @@
   - type: Sprite
     sprite: _Starlight/Objects/Fun/Plushies/shadekin_plushie.rsi
     state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PlushieShadekin
 
 - type: entity
   parent: PlushieHuman
