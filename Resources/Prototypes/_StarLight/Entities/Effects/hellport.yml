@@ -1,4 +1,3 @@
-# Bluespace Harvester Portal - spawns hostile mobs when danger mode activates
 - type: entity
   id: BluespaceHarvesterPortal
   name: bluespace rift

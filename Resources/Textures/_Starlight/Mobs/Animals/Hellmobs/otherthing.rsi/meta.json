@@ -5,10 +5,11 @@
     "y": 32
   },
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from Paradise Station 13 RU",
+  "copyright": "Taken from Paradise Station 13 RU link: https://github.com/ss220club/Paradise-SS220/blob/master/icons/mob/animal.dmi",
   "states": [
     {
         "name": "otherthing",
+        "copyright": "Paradise Station RU",  
         "delays":[
             [0.25,0.25,0.25,0.25],
             [0.25,0.25,0.25,0.25],
@@ -18,7 +19,8 @@
         "directions": 4
     },
     {
-        "name": "otherthing_dead"
+        "name": "otherthing_dead",
+        "copyright": "Paradise Station RU"
     }
   ]
 }
