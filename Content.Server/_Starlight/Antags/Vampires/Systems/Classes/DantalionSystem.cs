@@ -30,6 +30,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Chemistry.EntitySystems;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Starlight.Antags.Vampires.Systems;
@@ -64,6 +65,7 @@ public sealed class DantalionSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
 
     public override void Initialize()
     {
@@ -83,6 +85,31 @@ public sealed class DantalionSystem : EntitySystem
         SubscribeLocalEvent<DantalionComponent, VampireMassHysteriaActionEvent>(OnMassHysteria);
 
         SubscribeLocalEvent<DantalionComponent, VampireBloodDrankEvent>(OnBloodDrank);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        // Check holy water consumption for all thralls
+        var query = EntityQueryEnumerator<VampireThrallComponent>();
+        while (query.MoveNext(out var uid, out var thrall))
+        {
+            if (!Exists(uid))
+                continue;
+
+            var holywater = _solution.GetTotalPrototypeQuantity(uid, thrall.HolyWaterReagentId);
+            if (holywater <= FixedPoint2.Zero)
+                continue;
+
+            thrall.HolyWaterConsumed += holywater;
+
+            if (thrall.HolyWaterConsumed >= thrall.HolyWaterToBreakFree)
+            {
+                _popup.PopupEntity(Loc.GetString("vampire-thrall-holy-water-freed"), uid, uid, PopupType.Medium);
+                RemComp<VampireThrallComponent>(uid);
+            }
+        }
     }
 
     private void OnBloodDrank(EntityUid uid, DantalionComponent dantalion, ref VampireBloodDrankEvent args)
@@ -207,6 +234,8 @@ public sealed class DantalionSystem : EntitySystem
         if (component.Master is not { } master || !TryComp(master, out DantalionComponent? dantalion)
             || !dantalion.Thralls.Remove(uid))
             return;
+
+        dantalion.ThrallSlotsUsed = Math.Max(0, dantalion.ThrallSlotsUsed - 1);
 
         if (!TerminatingOrDeleted(uid))
             _popup.PopupEntity(Loc.GetString("vampire-thrall-released"), uid, uid, PopupType.SmallCaution);
@@ -336,7 +365,7 @@ public sealed class DantalionSystem : EntitySystem
 
         var target = args.Target;
 
-        if (HasComp<BibleUserComponent>(target))
+        if (HasComp<BibleUserComponent>(target) && vampire.FullPower != true)
         {
             _popup.PopupEntity(Loc.GetString("vampire-target-protected-by-faith"), uid, uid, PopupType.MediumCaution);
             return;
@@ -381,7 +410,7 @@ public sealed class DantalionSystem : EntitySystem
 
         var target = args.Target;
 
-        if (HasComp<BibleUserComponent>(target))
+        if (HasComp<BibleUserComponent>(target) && vampire.FullPower != true)
         {
             _popup.PopupEntity(Loc.GetString("vampire-target-protected-by-faith"), uid, uid, PopupType.MediumCaution);
             return;

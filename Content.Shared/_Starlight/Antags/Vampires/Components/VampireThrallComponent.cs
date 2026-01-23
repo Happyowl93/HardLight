@@ -1,4 +1,7 @@
+using Content.Shared.Chemistry.Reagent;
+using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
@@ -14,4 +17,11 @@ public sealed partial class VampireThrallComponent : Component
     /// </summary>
     [AutoNetworkedField]
     public EntityUid? Master;
+
+    [DataField]
+    public FixedPoint2 HolyWaterConsumed = FixedPoint2.Zero;
+    [DataField]
+    public FixedPoint2 HolyWaterToBreakFree = FixedPoint2.New(30);
+    [DataField]
+    public ProtoId<ReagentPrototype> HolyWaterReagentId = "Holywater";
 }

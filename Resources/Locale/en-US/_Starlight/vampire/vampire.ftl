@@ -138,6 +138,7 @@ vampire-rally-thralls-success = {$count ->
     *[other] Your call rallies {$count} thralls back to your side!
 }
 vampire-rally-thralls-none = None of your thralls can answer the call.
+vampire-thrall-holy-water-freed = The holy water purges the vampires hold on your mind!
 
 vampire-blood-bond-start = Rivers of blood knit you to your thralls.
 vampire-blood-bond-stop = You let the blood bond fall slack.

@@ -585,7 +585,7 @@ public sealed class UmbraeSystem : EntitySystem
             || !TryComp<DamageableComponent>(target, out _))
             return;
 
-        if (HasComp<BibleUserComponent>(target))
+        if (HasComp<BibleUserComponent>(target) && comp.FullPower != true)
         {
             _popup.PopupEntity(Loc.GetString("vampire-target-protected-by-faith"), uid, uid, PopupType.MediumCaution);
             return;

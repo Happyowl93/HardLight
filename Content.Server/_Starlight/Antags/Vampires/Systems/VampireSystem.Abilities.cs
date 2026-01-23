@@ -290,7 +290,7 @@ public sealed partial class VampireSystem : EntitySystem
             || !HasComp<HumanoidAppearanceComponent>(target))
             return;
 
-        if (IsProtectedByFaith(target))
+        if (IsProtectedByFaith(target) && comp.FullPower != true)
         {
             _popup.PopupEntity(Loc.GetString("vampire-target-protected-by-faith"), uid, uid, Shared.Popups.PopupType.MediumCaution);
             return;
@@ -318,7 +318,7 @@ public sealed partial class VampireSystem : EntitySystem
             || !HasComp<HumanoidAppearanceComponent>(target))
             return;
 
-        if (IsProtectedByFaith(target))
+        if (IsProtectedByFaith(target) && comp.FullPower != true)
         {
             _popup.PopupEntity(Loc.GetString("vampire-target-protected-by-faith"), uid, uid, Shared.Popups.PopupType.MediumCaution);
             return;
