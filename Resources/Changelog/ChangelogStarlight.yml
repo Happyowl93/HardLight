@@ -27518,5 +27518,12 @@ Entries:
   id: 294400
   time: '2026-01-23T16:41:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2944
+- author: redmushie
+  changes:
+  - message: Fixed heavy xenoborg laser cannon not recharging
+    type: Fix
+  id: 294700
+  time: '2026-01-23T16:44:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2947
 Order: -1
 
