@@ -128,7 +128,6 @@ namespace Content.IntegrationTests.Tests
             "StarlightManor",
             "StarlightLeth",
             "StarlightMing",
-            "StarlightOrigin",
             "StarlightOrwell",
             "StarlightPrism",
             "StarlightStarboard",
@@ -141,8 +140,6 @@ namespace Content.IntegrationTests.Tests
             "StarlightElkridge",
             "StarlightFland",
             "StarlightHotel",
-            "StarlightOasis",
-            "StarlightOmega",
             "StarlightPacked",
             "StarlightReach",
             "StarlightSaltern",
@@ -150,7 +147,8 @@ namespace Content.IntegrationTests.Tests
             "StarlightCluster",
             "StarlightStationBuilding",
             "StarlightPlasma",
-			"StarlightSpaceMall"
+			"StarlightSpaceMall",
+            "StarlightSepultum"
             #endregion
         };
 

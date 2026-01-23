@@ -46,7 +46,6 @@ public sealed class StationPowerTests
         "StarlightManor",
         "StarlightLeth",
         "StarlightMing",
-        "StarlightOrigin",
         "StarlightOrwell",
         "StarlightPrism",
         "StarlightStarboard",
@@ -59,15 +58,14 @@ public sealed class StationPowerTests
         "StarlightElkridge",
         "StarlightFland",
         "StarlightHotel",
-        "StarlightOasis",
-        "StarlightOmega",
         "StarlightPacked",
         "StarlightReach",
         "StarlightSaltern",
         "StarlightSilica",
         "StarlightCluster",
         "StarlightStationBuilding",
-        "StarlightPlasma"
+        "StarlightPlasma",
+        "StarlightSepultum"
         #endregion
     ];
 
