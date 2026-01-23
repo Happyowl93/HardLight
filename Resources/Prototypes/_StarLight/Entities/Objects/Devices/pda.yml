@@ -240,9 +240,9 @@
     state: pda-lawyer
 
 - type: entity
-  parent: BasePDA
+  parent: [ BasePDA, BaseBlueShieldContraband ]
   id: BlueShieldPDA
-  name: blueshield officer's PDA
+  name: blue shield PDA
   description: Comes with a built-in medtek to assess command staff's wounds after you heroically save them.
   components:
   - type: Sprite
@@ -272,7 +272,7 @@
 - type: entity
   parent: BlueShieldPDA
   id: VeteranBlueShieldPDA
-  name: veteran blueshield officer's PDA
+  name: veteran blue shield PDA
   description: Comes with a built-in medtek to assess command staff's wounds after you heroically save them.
   components:
   - type: Sprite
