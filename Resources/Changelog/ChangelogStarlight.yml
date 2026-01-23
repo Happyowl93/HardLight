@@ -27497,5 +27497,19 @@ Entries:
   id: 294100
   time: '2026-01-23T15:58:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2941
+- author: Conflee, cooldolphin
+  changes:
+  - message: Added the Donk on the Go vending machine and related restocks, cargo
+      orders, and circuit boards. Comes with some Donk Pockets. Appears in the random
+      vending machine and random snack vending machine spawn pools.
+    type: Add
+  - message: Added the I Scream Ice-Cream vending machine and related restocks, cargo
+      orders, and circuit boards. Comes with many new frozen treats, and a couple
+      already existing ice-cream snacks. Appears in the random vending machine and
+      random snack vending machine spawn pools.
+    type: Add
+  id: 294200
+  time: '2026-01-23T16:34:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2942
 Order: -1
 
