@@ -27569,5 +27569,12 @@ Entries:
   id: 294800
   time: '2026-01-23T21:17:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2948
+- author: ork
+  changes:
+  - message: Criminal records search now works proplerly again
+    type: Fix
+  id: 294500
+  time: '2026-01-23T22:20:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2945
 Order: -1
 
