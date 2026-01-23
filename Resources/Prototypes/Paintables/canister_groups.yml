@@ -14,3 +14,16 @@
     storage: StorageCanister
     tritium: TritiumCanister
     water-vapor: WaterVaporCanister
+    # Funkystation Start: Funky atmos - /tg/ gases
+    bz: BZCanister
+    healium: HealiumCanister
+    nitrium: NitriumCanister
+    pluoxium: PluoxiumCanister
+    hydrogen: HydrogenCanister
+    hyper-noblium: HyperNobliumCanister
+    proto-nitrate: ProtoNitrateCanister
+    zauker: ZaukerCanister
+    halon: HalonCanister
+    helium: HeliumCanister
+    anti-noblium: AntiNobliumCanister
+    # Funkystation End: Funky atmos - /tg/ gases
