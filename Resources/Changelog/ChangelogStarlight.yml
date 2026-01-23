@@ -27518,5 +27518,56 @@ Entries:
   id: 294400
   time: '2026-01-23T16:41:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2944
+- author: redmushie
+  changes:
+  - message: Fixed heavy xenoborg laser cannon not recharging
+    type: Fix
+  id: 294700
+  time: '2026-01-23T16:44:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2947
+- author: Conflee
+  changes:
+  - message: (Fland) Gave the NanoTrasen Career Trainer back their breathing privileges.
+    type: Fix
+  id: 292800
+  time: '2026-01-23T16:55:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2928
+- author: Fasuh
+  changes:
+  - message: Added taser immunity to all hardsuits.
+    type: Add
+  - message: Removed taser immunity from web vests.
+    type: Remove
+  - message: Fixed taser immunity preventing crawling.
+    type: Fix
+  id: 291900
+  time: '2026-01-23T17:14:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2919
+- author: Rhetorica
+  changes:
+  - message: Chapel to Shrine
+    type: Tweak
+  - message: various crosses to generic religious symbol
+    type: Tweak
+  - message: BSO contra class
+    type: Add
+  - message: '''thy'' to ''yon'' in Archaic accent'
+    type: Tweak
+  - message: Various typos and bad grammar in some item descs
+    type: Fix
+  - message: Chapel/Shrine pews can now be destroyed into wood
+    type: Add
+  - message: Borgs and Borgis couldn't understand Classical, Aielic, or Grumbakul
+    type: Fix
+  id: 266100
+  time: '2026-01-23T18:24:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2661
+- author: Scarlet Lightweaver
+  changes:
+  - message: Added a large shark you can order at cargo! Rawr!
+    type: Add
+  id: 294800
+  time: '2026-01-23T21:17:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2948
 Order: -1
 

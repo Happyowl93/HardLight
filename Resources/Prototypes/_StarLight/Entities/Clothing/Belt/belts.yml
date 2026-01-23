@@ -105,10 +105,10 @@
   - type: Appearance
 
 - type: entity
-  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseCommandContraband]
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseBlueShieldContraband]
   id: ClothingBeltBlueShield
-  name: blueshield webbing
-  description: A tactical rig that can hold many items to save the lives of command.
+  name: blue shield webbing
+  description: A tactical rig that can hold many items to save the lives of Command.
   components:
   - type: Storage
     grid:
