@@ -121,7 +121,12 @@ public sealed partial class VampireSystem : EntitySystem
         if (args.Used is not { } used || !Exists(used))
             return;
 
+        var wasStarving = comp.BloodFullness <= 0f;
         comp.BloodFullness = MathF.Min(comp.MaxBloodFullness, comp.BloodFullness + args.BloodFullnessRestore);
+        var isStarving = comp.BloodFullness <= 0f;
+        if (wasStarving != isStarving)
+            _movementSpeed.RefreshMovementSpeedModifiers(uid);
+
         Dirty(uid, comp);
         UpdateVampireFedAlert(uid, comp);
 
@@ -276,7 +281,9 @@ public sealed partial class VampireSystem : EntitySystem
 
         var target = args.Target.Value;
 
-        if (target == uid || !HasComp<BloodstreamComponent>(target))
+        if (target == uid
+            || !HasComp<BloodstreamComponent>(target)
+            || !HasComp<HumanoidAppearanceComponent>(target))
             return;
 
         if (IsMouthBlocked(uid))
@@ -297,7 +304,8 @@ public sealed partial class VampireSystem : EntitySystem
         var target = args.Target;
         if (!Exists(target)
             || target == uid
-            || !HasComp<BloodstreamComponent>(target))
+            || !HasComp<BloodstreamComponent>(target)
+            || !HasComp<HumanoidAppearanceComponent>(target))
             return;
 
         if (IsMouthBlocked(uid))
@@ -323,8 +331,14 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        if (!comp.FangsExtended || args.Args.Target == null || !HasComp<BloodstreamComponent>(args.Args.Target.Value))
+        if (!comp.FangsExtended
+            || args.Args.Target == null
+            || !HasComp<BloodstreamComponent>(args.Args.Target.Value)
+            || !HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value))
+        {
+            comp.IsDrinking = false;
             return;
+        }
 
         var target = args.Args.Target.Value;
 

@@ -31,6 +31,7 @@ using Content.Shared.Wieldable;
 using Content.Shared.Wieldable.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -80,6 +81,7 @@ public sealed class HemomancerSystem : EntitySystem
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly ILogManager _log = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
 
     private ISawmill? _sawmill;
 
@@ -116,7 +118,11 @@ public sealed class HemomancerSystem : EntitySystem
         if (vampire.TotalBlood < 300)
             return;
 
+        var wasStarving = vampire.BloodFullness <= 0f;
         vampire.BloodFullness = MathF.Min(vampire.MaxBloodFullness, vampire.BloodFullness + 5f);
+        if (wasStarving && vampire.BloodFullness > 0f)
+            _movementSpeed.RefreshMovementSpeedModifiers(uid);
+
         Dirty(uid, vampire);
     }
 
@@ -367,7 +373,7 @@ public sealed class HemomancerSystem : EntitySystem
         }
 
         Spawn(args.EnterEffectPrototype, Transform(poolEntity.Value).Coordinates);
-        _audio.PlayPvs(args.EnterSound, uid);
+        _audio.PlayPvs(args.EnterSound, uid, AudioParams.Default.WithVolume(-2f));
         _popup.PopupEntity(Loc.GetString("action-vampire-sanguine-pool-enter"), poolEntity.Value, poolEntity.Value);
         return true;
     }
@@ -397,7 +403,7 @@ public sealed class HemomancerSystem : EntitySystem
         Dirty(args.NewEntity, hemomancer);
 
         Spawn(ent.Comp.ExitEffectPrototype, Transform(args.NewEntity).Coordinates);
-        _audio.PlayPvs(ent.Comp.ExitSound, args.NewEntity);
+        _audio.PlayPvs(ent.Comp.ExitSound, args.NewEntity, AudioParams.Default.WithVolume(-2f));
         _popup.PopupEntity(Loc.GetString("action-vampire-sanguine-pool-exit"), args.NewEntity, args.NewEntity);
     }
 
@@ -471,7 +477,7 @@ public sealed class HemomancerSystem : EntitySystem
                 continue;
 
             var visual = Spawn("VampireBloodEruptionVisual", targetXform.Coordinates);
-            _audio.PlayPvs(args.Sound, visual);
+            _audio.PlayPvs(args.Sound, visual, AudioParams.Default.WithVolume(-2f));
         }
 
         _popup.PopupEntity(Loc.GetString("action-vampire-blood-eruption-activated"), uid, uid);
