@@ -27460,5 +27460,26 @@ Entries:
   id: 293300
   time: '2026-01-23T13:30:33.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2933
+- author: Makeshift
+  changes:
+  - message: (Plasma) Functional Xenobiology Subdepartment
+    type: Add
+  - message: (Plasma) NT Career Trainer
+    type: Add
+  - message: (Plasma) Duty Officer
+    type: Add
+  - message: (Plasma) Magistrate Locker
+    type: Add
+  - message: (Plasma) IAA Lockers
+    type: Add
+  - message: (Plasma) AI restoration consoles
+    type: Add
+  - message: (Plasma) Public Wall Mounted Mass Scanner
+    type: Add
+  - message: (Plasma) Misc Fixes
+    type: Fix
+  id: 292900
+  time: '2026-01-23T13:59:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2929
 Order: -1
 
