@@ -1,3 +1,4 @@
+using Content.Server.Bible.Components;
 using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
@@ -221,6 +222,9 @@ public sealed partial class VampireSystem : EntitySystem
     internal bool CheckAndConsumeActionCost(EntityUid uid, VampireComponent comp, EntityUid? actionEntity)
         => CheckAndConsumeBloodCost(uid, comp, actionEntity);
 
+    internal bool IsProtectedByFaith(EntityUid target)
+        => HasComp<BibleUserComponent>(target);
+
     /// <summary>
     /// Checks if a tile position is blocked by solid entities(walls etc.)
     /// </summary>
@@ -286,6 +290,12 @@ public sealed partial class VampireSystem : EntitySystem
             || !HasComp<HumanoidAppearanceComponent>(target))
             return;
 
+        if (IsProtectedByFaith(target))
+        {
+            _popup.PopupEntity(Loc.GetString("vampire-target-protected-by-faith"), uid, uid, Shared.Popups.PopupType.MediumCaution);
+            return;
+        }
+
         if (IsMouthBlocked(uid))
         {
             _popup.PopupEntity(Loc.GetString("vampire-mouth-covered"), uid, uid);
@@ -307,6 +317,12 @@ public sealed partial class VampireSystem : EntitySystem
             || !HasComp<BloodstreamComponent>(target)
             || !HasComp<HumanoidAppearanceComponent>(target))
             return;
+
+        if (IsProtectedByFaith(target))
+        {
+            _popup.PopupEntity(Loc.GetString("vampire-target-protected-by-faith"), uid, uid, Shared.Popups.PopupType.MediumCaution);
+            return;
+        }
 
         if (IsMouthBlocked(uid))
         {

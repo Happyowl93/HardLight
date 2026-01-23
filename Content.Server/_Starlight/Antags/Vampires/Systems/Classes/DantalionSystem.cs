@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server._Starlight.Antags.Vampires.Components;
+using Content.Server.Bible.Components;
 using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
@@ -335,6 +336,12 @@ public sealed class DantalionSystem : EntitySystem
 
         var target = args.Target;
 
+        if (HasComp<BibleUserComponent>(target))
+        {
+            _popup.PopupEntity(Loc.GetString("vampire-target-protected-by-faith"), uid, uid, PopupType.MediumCaution);
+            return;
+        }
+
         if (!IsValidEnthrallTarget(uid, target))
         {
             _popup.PopupEntity(Loc.GetString("vampire-pacify-invalid"), uid, uid, PopupType.MediumCaution);
@@ -373,6 +380,12 @@ public sealed class DantalionSystem : EntitySystem
             return;
 
         var target = args.Target;
+
+        if (HasComp<BibleUserComponent>(target))
+        {
+            _popup.PopupEntity(Loc.GetString("vampire-target-protected-by-faith"), uid, uid, PopupType.MediumCaution);
+            return;
+        }
 
         if (TryComp<VampireThrallComponent>(target, out var thrall) && thrall.Master == uid)
         {

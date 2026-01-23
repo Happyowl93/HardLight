@@ -16,6 +16,7 @@ vampire-drink-start = You sink your fangs into {CAPITALIZE(THE($target))}.
 vampire-not-enough-blood = Not enough blood.
 
 vampire-mouth-covered = Your mouth is covered!
+vampire-target-protected-by-faith = This person is protected by their faith!
 vampire-drink-target-maxed = You have already drunk { $amount } units of blood from this target.
 vampire-drink-target-hard-max = You have drunk the maximum amount of blood from this target ({ $amount } units).
 vampire-full-power-achieved = Your vampiric essence surges full power achieved!
@@ -146,7 +147,7 @@ vampire-blood-bond-stop-blood = The bond shreds itself; you lack the blood to su
 action-vampire-not-enough-power = Your power is insufficient (need >1000 total blood & 8 unique victims).
 
 # Gargantua 
-vampire-blood-swell-start = Your muscles swell with unholy power!
+vampire-blood-swell-start = Your muscles swell with unholy power
 vampire-blood-swell-end = The blood rage subsides.
 
 vampire-blood-rush-start = Blood surges through your limbs!
@@ -169,3 +170,8 @@ vampire-charge-impact = You crash into {CAPITALIZE(THE($target))} with devastati
 vampire-blood-swell-cancel-shoot = Your fingers don`t fit in the trigger guard!!
 
 vampire-holy-place-burn = The sacred ground sears your unholy flesh!
+
+alerts-vampire-blood-swell-name = Blood Swell
+alerts-vampire-blood-swell-desc = Your muscles surge with unholy power.
+alerts-vampire-blood-rush-name = Blood Rush
+alerts-vampire-blood-rush-desc = Supernatural speed courses through your limbs.

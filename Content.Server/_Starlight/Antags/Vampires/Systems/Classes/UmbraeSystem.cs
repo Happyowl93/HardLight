@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Server.Actions;
+using Content.Server.Bible.Components;
 using Content.Server.Light.EntitySystems;
 using Content.Server.Temperature.Systems;
 using Content.Shared._Starlight.Antags.Vampires;
@@ -583,6 +584,12 @@ public sealed class UmbraeSystem : EntitySystem
             || !HasComp<HumanoidAppearanceComponent>(target)
             || !TryComp<DamageableComponent>(target, out _))
             return;
+
+        if (HasComp<BibleUserComponent>(target))
+        {
+            _popup.PopupEntity(Loc.GetString("vampire-target-protected-by-faith"), uid, uid, PopupType.MediumCaution);
+            return;
+        }
 
         var now = _timing.CurTime;
         var totalDuration = TimeSpan.FromSeconds(10);
