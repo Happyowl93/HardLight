@@ -83,8 +83,6 @@
           Quantity: 2
         - ReagentId: THC
           Quantity: 20 # a joint has 20 thc
-        - ReagentId: Blissifylovene 
-          Quantity: 3
           
 # Packaged ice-cream
 # Look, if I had an unpackaged popsicle fall out a vending machine I wouldn't touch that with a mile long stick. Or maybe I would, as long as it didn't crack.
