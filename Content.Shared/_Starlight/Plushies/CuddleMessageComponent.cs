@@ -8,12 +8,6 @@ namespace Content.Shared._Starlight.Plushies;
 /// Uses FTL localization for the message.
 /// </summary>
 /// <example>
-/// Example usage in YAML:
-/// <code>
-/// - type: CuddleMessage
-///   localizedMessageKey: plushie-large-soft-shark-cuddle
-/// </code>
-/// </example>
 [RegisterComponent, NetworkedComponent]
 public sealed partial class CuddleMessageComponent : Component
 {
