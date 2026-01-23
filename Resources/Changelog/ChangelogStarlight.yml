@@ -27481,5 +27481,21 @@ Entries:
   id: 292900
   time: '2026-01-23T13:59:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2929
+- author: Arkanic, DeltaVelocity
+  changes:
+  - message: firing pins take correct amount of time to remove (10 seconds), up from
+      1.5 seconds
+    type: Fix
+  - message: gun safes now contain a box of 4 firing pins for the type of gun inside
+      it
+    type: Add
+  - message: weapons now clearly show if they don't have a firing pin in the examine
+      menu
+    type: Add
+  - message: laser crystals printable on the secfab, same research unlock as lasers
+    type: Add
+  id: 294100
+  time: '2026-01-23T15:58:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2941
 Order: -1
 
