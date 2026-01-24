@@ -1,0 +1,11 @@
+- type: trait
+  id: Blindness
+  name: trait-blindness-name
+  description: trait-blindness-desc
+  category: Disabilities
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: PermanentBlindness
+  - !type:SpawnItemInHandEffect
+    item: WhiteCane
