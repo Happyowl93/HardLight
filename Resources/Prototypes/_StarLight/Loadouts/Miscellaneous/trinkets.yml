@@ -523,7 +523,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 20h
+      time: 48h
   storage:
     back: 
       - PersonalAI
@@ -535,7 +535,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: GhostPAI
-      time: 5h
+      time: 8h
   storage:
     back: 
       - GoldenPersonalAI
