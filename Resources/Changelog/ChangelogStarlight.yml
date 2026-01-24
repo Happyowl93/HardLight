@@ -27620,5 +27620,12 @@ Entries:
   id: 295300
   time: '2026-01-24T00:33:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2953
+- author: Xale
+  changes:
+  - message: Cotton Bun can now hold most Starlight plushies
+    type: Tweak
+  id: 295100
+  time: '2026-01-24T07:52:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2951
 Order: -1
 
