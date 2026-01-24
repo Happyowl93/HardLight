@@ -129,9 +129,9 @@
         - XenobiologySlimeGold
     - type: Sprite
       layers:
-        - state: base2
         - state: eyes_default
           shader: unshaded
+        - state: base2
       color: "#5e5e5eff"
 
 - type: entity
@@ -201,9 +201,9 @@
         - XenobiologySlimePyrite
     - type: Sprite
       layers:
-        - state: base2
         - state: eyes_default
           shader: unshaded
+        - state: base2
       color: "#aab8bdff"
 
 - type: entity
@@ -309,9 +309,9 @@
         - XenobiologySlimeAdamantine
     - type: Sprite
       layers:
-        - state: base2
         - state: eyes_default
           shader: unshaded
+        - state: base2
       color: "#8a7b1cff"
 
 - type: entity
@@ -325,9 +325,9 @@
       extract: OilSlimeExtract
     - type: Sprite
       layers:
-        - state: base2
         - state: eyes_default
           shader: unshaded
+        - state: base2
       color: "#262626ff"
 
 - type: entity
@@ -365,9 +365,9 @@
       extract: AdamantineSlimeExtract
     - type: Sprite
       layers:
-        - state: base2
         - state: eyes_default
           shader: unshaded
+        - state: base2
       color: "#407985ff"
 
 - type: entity
@@ -381,5 +381,8 @@
       extract: RainbowSlimeExtract
     - type: RgbLightController
       layers: [ 0, 1 ]
+    - type: PointLight
+      radius: 1
+      energy: 1
     - type: Sprite
       color: "#ffffff"
