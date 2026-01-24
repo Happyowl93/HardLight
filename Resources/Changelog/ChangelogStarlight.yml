@@ -27641,5 +27641,16 @@ Entries:
   id: 293400
   time: '2026-01-24T08:00:33.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2934
+- author: redmushie
+  changes:
+  - message: Added twinpointers, a pair of pinpointers that point at each other
+    type: Add
+  - message: Added twinpointer kit to maintenance loot pool
+    type: Add
+  - message: Added twinpointer kit crate to cargo buying options
+    type: Add
+  id: 291700
+  time: '2026-01-24T08:18:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2917
 Order: -1
 
