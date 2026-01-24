@@ -27676,5 +27676,21 @@ Entries:
   id: 276800
   time: '2026-01-24T08:30:15.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2768
+- author: SapphicHaymaker
+  changes:
+  - message: BlueShield Officer's Shirt has been redone and a pencil skirt variant
+      has been added, for the BSO who likes to keep it business casual.
+    type: Tweak
+  - message: BlueShield Officer's Medical Belt, so the chest webbing doesn't swallow
+      your whole model.
+    type: Add
+  - message: Blue Shield Officer's PDA sprites & veteran variant sprites.
+    type: Add
+  - message: The BlueShield Officer no longer spawns with an extra beret at their
+      feet.
+    type: Fix
+  id: 276000
+  time: '2026-01-24T08:34:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2760
 Order: -1
 
