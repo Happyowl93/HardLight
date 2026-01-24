@@ -27627,5 +27627,19 @@ Entries:
   id: 295100
   time: '2026-01-24T07:52:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2951
+- author: redmushie
+  changes:
+  - message: Reduced gaseous frezon hallucination/drunkness effects down from hours/days
+      to minutes
+    type: Tweak
+  - message: Buffed liquid frezon hallucination/drunkness effects
+    type: Tweak
+  - message: Haloperidol is now more potent against hallucinations
+    type: Tweak
+  - message: Ethylredoxrazine is now more potent against drunkness
+    type: Tweak
+  id: 293400
+  time: '2026-01-24T08:00:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2934
 Order: -1
 
