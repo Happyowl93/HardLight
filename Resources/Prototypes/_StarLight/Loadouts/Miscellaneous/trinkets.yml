@@ -477,6 +477,7 @@
     back: 
       - LeftArmCyberRipper
 
+- type: loadout
   id: rightmechwrightarm
   effects:
     - !type:JobRequirementLoadoutEffect
@@ -522,7 +523,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 72000 #20hr
+      time: 20h
   storage:
     back: 
       - PersonalAI
@@ -533,7 +534,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-        time: 180000 # 50hr # TODO: Replace with pAI 2.5hr when implemented
+        time: 5h # TODO: Replace with pAI 2.5hr when implemented
   storage:
     back: 
       - GoldenPersonalAI
