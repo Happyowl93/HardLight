@@ -27724,5 +27724,20 @@ Entries:
   id: 275500
   time: '2026-01-24T08:55:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2755
+- author: neomoth
+  changes:
+  - message: Adds four new radio channels/encryption keys. Mostly for admemes/events.
+    type: Add
+  - message: Adds 5 new headsets. Mostly for admemes/events.
+    type: Add
+  - message: Adds the ability to create custom radio channels via ViewVariables.
+    type: Add
+  - message: The base encryption key is no longer an abstract entity.
+    type: Tweak
+  - message: Fixed weird ordering of text when examining encryption keys.
+    type: Fix
+  id: 263500
+  time: '2026-01-24T09:00:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2635
 Order: -1
 
