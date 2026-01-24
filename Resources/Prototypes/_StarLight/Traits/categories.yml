@@ -12,23 +12,23 @@
   accentColor: "#64748b"
 
 - type: traitCategory
-  id: Mental
-  name: trait-category-mental
+  id: Quirks
+  name: trait-category-quirks
   priority: 20
-  accentColor: "#a855f7"  # Purple
+  accentColor: "#a855f7" # Purple
 
 - type: traitCategory
-  id: Accents
-  name: trait-category-accents
+  id: SpeechTraits
+  name: trait-category-speech
   priority: 30
   maxTraits: 3
   maxPoints: 2
-  accentColor: "#38bdf8"  # Light blue
+  accentColor: "#38bdf8" # Light blue
 
 - type: traitCategory
   id: LanguageTraits
   name: trait-category-languages
   priority: 50
   maxTraits: 3
-  maxPoints: 2
+  maxPoints: 1
   accentColor: "#fffb00"

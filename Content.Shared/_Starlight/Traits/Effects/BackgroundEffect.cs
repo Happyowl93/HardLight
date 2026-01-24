@@ -8,8 +8,6 @@ namespace Content.Shared._Starlight.Traits.Effects;
 /// </summary>
 public sealed partial class BackgroundEffect : BaseTraitEffect
 {
-    [Dependency] private readonly TagSystem _tag = default!;
-
     /// <summary>
     /// The background of the entity.
     /// </summary>
@@ -18,7 +16,10 @@ public sealed partial class BackgroundEffect : BaseTraitEffect
 
     public override void Apply(TraitEffectContext ctx)
     {
+        if (!ctx.EntMan.EntitySysManager.TryGetEntitySystem(out TagSystem? tagsystem))
+            return;
+
         var tag = new ProtoId<TagPrototype>(Background + "TraitBackground");
-        _tag.TryAddTag(ctx.Player, tag);
+        tagsystem.TryAddTag(ctx.Player, tag);
     }
 }

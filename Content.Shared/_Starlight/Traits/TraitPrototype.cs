@@ -1,5 +1,6 @@
 using Content.Shared._Starlight.Traits.Effects;
 using Content.Shared.Roles;
+using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.Traits;
@@ -57,4 +58,16 @@ public sealed partial class TraitPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<ProtoId<TraitPrototype>> Conflicts = new();
+
+    /// <summary>
+    /// Don't apply this trait to entities this whitelist IS NOT valid for.
+    /// </summary>
+    [DataField]
+    public EntityWhitelist? Whitelist;
+
+    /// <summary>
+    /// Don't apply this trait to entities this whitelist IS valid for. (hence, a blacklist)
+    /// </summary>
+    [DataField]
+    public EntityWhitelist? Blacklist;
 }

@@ -569,14 +569,7 @@ namespace Content.Client.Lobby.UI
                 _ => _entManager.System<TextToSpeechSystem>().RequestPreviewTts(Profile?.SiliconVoice ?? "");
 
             SetupTabs();
-            
-            // Hide preview when Traits tab is selected
-            TabContainer.OnTabChanged += tabIndex =>
-            {
-                // Tab index 3 is the Traits tab
-                Preview.Visible = tabIndex != 3;
-            };
-            
+
             // Cosmatic Drift Record System-start
             _recordsTab = CreateRecordEditorTab(); // Instantiate the CD record editor UI
             // Cosmatic Drift Record System-end

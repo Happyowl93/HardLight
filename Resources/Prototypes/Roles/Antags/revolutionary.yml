@@ -14,6 +14,10 @@
   - !type:DepartmentTimeRequirement
     department: Command
     time: 6h # Starlight
+  - !type:TraitsRequirement
+    traits:
+    - Iterator
+    inverted: true
   playTimeTracker: AntagHeadRev # Starlight
 
 - type: antag

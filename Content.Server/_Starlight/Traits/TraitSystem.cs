@@ -7,6 +7,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Starlight.CCVar;
+using Content.Shared.Whitelist;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -23,6 +24,7 @@ public sealed class TraitSystem : EntitySystem
     [Dependency] private readonly ILogManager _log = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     private int _maxTraitCount;
     private int _maxTraitPoints;
@@ -186,6 +188,10 @@ public sealed class TraitSystem : EntitySystem
     /// </summary>
     private void ApplyTrait(EntityUid player, TraitPrototype trait)
     {
+        if (_whitelistSystem.IsWhitelistFail(trait.Whitelist, player) ||
+            _whitelistSystem.IsWhitelistPass(trait.Blacklist, player))
+            return;
+
         var transform = Transform(player);
 
         var effectCtx = new TraitEffectContext
