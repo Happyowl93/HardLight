@@ -257,6 +257,7 @@
   - WeaponLaserImmolator
   - WeaponLaserSvalinn
   - WeaponTemperatureGun
+  - FiringPinLaser
 
 - type: latheRecipePack
   id: StarlightSecurityMechsWeapons
