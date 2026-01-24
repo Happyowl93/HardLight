@@ -533,8 +533,9 @@
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
-      !type:OverallPlaytimeRequirement
-        time: 5h # TODO: Replace with pAI 2.5hr when implemented
+      !type:RoleTimeRequirement
+      role: GhostPAI
+      time: 5h
   storage:
     back: 
       - GoldenPersonalAI
