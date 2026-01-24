@@ -917,6 +917,10 @@
   name: rainbow slime extract
   components:
     - type: RgbLightController
+      layers: [ 0 ]
+    - type: PointLight
+      radius: 1
+      energy: 1
     - type: Sprite
       color: "#ffffff" # Yes, this is not a rainbow
     - type: SlimeExtract
