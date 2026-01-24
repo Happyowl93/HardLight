@@ -27708,5 +27708,13 @@ Entries:
   id: 276500
   time: '2026-01-24T08:46:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2765
+- author: Penguinwizzard
+  changes:
+  - message: Added multiple escape pod variants that replace a small proportion of
+      the escape pods on any given station.
+    type: Add
+  id: 273300
+  time: '2026-01-24T08:49:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2733
 Order: -1
 
