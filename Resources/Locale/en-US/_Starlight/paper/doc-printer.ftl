@@ -1061,7 +1061,7 @@ doc-text-printer-art-permit =
     Date And Time:[color=#0000ff] [form] [/color]
     Document Compiler:[color=#0000ff] [form] [/color]
     
-    I, [bolditalic][color=#0000ff] [signature] [/color][/bolditalic], hereby approve the creation of the following work of public art in the location given below.
+    I, [bolditalic][color=#0000ff] [signature] [/color][/bolditalic], hereby approve the creation of the following work of art in the location given below.
     
     Subject of the artpiece:[color=#0000ff] [form] [/color]
     Location of the artpiece:[color=#0000ff] [form] [/color] [italic][color=#a9a9a9]
