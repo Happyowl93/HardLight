@@ -121,13 +121,13 @@
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/sfrifle_magin.ogg
 
-- type: entity
-  parent: [WeaponLauncherHydra]
-  id: WeaponLauncherHydraLethal
-  suffix: frag
-  components:
-  - type: RevolverAmmoProvider
-    proto: GrenadeFrag
+# - type: entity # Starlight removal - We already have one of these...
+#   parent: [WeaponLauncherHydra]
+#   id: WeaponLauncherHydraLethal
+#   suffix: frag
+#   components:
+#   - type: RevolverAmmoProvider
+#     proto: GrenadeFrag
 
 - type: entity
   name: RPG-7
