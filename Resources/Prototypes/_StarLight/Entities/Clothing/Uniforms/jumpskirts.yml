@@ -21,10 +21,10 @@
     sprite: _Starlight/Clothing/Uniforms/Jumpskirt/ntrepturtleneckskirt.rsi
     
 - type: entity
-  parent: [ ClothingUniformSkirtBase, BaseCommandContraband ]
+  parent: [ ClothingUniformSkirtBase, BaseBlueShieldContraband ]
   id: ClothingUniformJumpskirtBlueShield
-  name: blueshield officer's skirt
-  description: Skirt of a glorified bodyguard
+  name: blue shield skirt
+  description: The skirt of a glorified bodyguard.
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Uniforms/Jumpskirt/blueshield.rsi
@@ -32,10 +32,10 @@
     sprite: _Starlight/Clothing/Uniforms/Jumpskirt/blueshield.rsi
 
 - type: entity
-  parent: [ ClothingUniformSkirtBase, BaseCommandContraband ]
+  parent: [ ClothingUniformSkirtBase, BaseBlueShieldContraband ]
   id: ClothingUniformJumpskirtEliteBlueShield
-  name: elite blueshield officer's skirt
-  description: Skirt of an elite blueshield. To reach such a level, you must have protected command from a [REDACTED] threat.
+  name: elite blue shield skirt
+  description: The skirt of an elite BSO. To reach such a level, you must have protected Command from [REDACTED].
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Uniforms/Jumpskirt/eliteblueshield.rsi

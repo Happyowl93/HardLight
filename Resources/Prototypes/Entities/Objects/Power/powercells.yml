@@ -114,7 +114,7 @@
 
 - type: entity
   name: medium-capacity power cell
-  description: A rechargeable power cell. This is the kind of power cell you find in advanced machines.
+  description: A rechargeable power cell. This is the kind of power cell you find in advanced machines. # Starlight-edit
   id: PowerCellMedium
   suffix: Full
   parent: BasePowerCell
@@ -149,7 +149,7 @@
 
 - type: entity
   name: high-capacity power cell
-  description: A rechargeable power cell. This premium brand stores up to 50% more energy than the competition.
+  description: A rechargeable power cell. This premium brand stores up to 50% more energy than the competition. # Starlight-edit
   id: PowerCellHigh
   suffix: Full
   parent: BasePowerCell
@@ -291,9 +291,11 @@
       reagents:
         - ReagentId: Zinc
           Quantity: 15
+  # Starlight-start: Power Cages need PowerCage tag
   - type: Tag
     tags:
       - PowerCage
+  # Starlight-end
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
