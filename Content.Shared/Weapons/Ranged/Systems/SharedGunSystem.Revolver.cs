@@ -353,7 +353,8 @@ public partial class SharedGunSystem
     private void OnRevolverTakeAmmo(EntityUid uid, RevolverAmmoProviderComponent component, TakeAmmoEvent args)
     {
         var currentIndex = component.CurrentIndex;
-        Cycle(component, args.Shots);
+        if (!TryComp<GunComponent>(uid, out var gun) || !gun.Pump) // Starlight-edit: Cycle only if we can't access gun component or gun don't use pump-action
+            Cycle(component, args.Shots);
 
         // Revolvers provide the bullets themselves rather than the cartridges so they stay in the revolver.
         for (var i = 0; i < args.Shots; i++)
