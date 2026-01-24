@@ -27739,5 +27739,13 @@ Entries:
   id: 263500
   time: '2026-01-24T09:00:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2635
+- author: Wizard Federation (Scarlet Lightweaver)
+  changes:
+  - message: Tweaked the staff of animation! it will now add HP based off size and
+      can be hit with wideswing!
+    type: Tweak
+  id: 261900
+  time: '2026-01-24T10:10:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2619
 Order: -1
 
