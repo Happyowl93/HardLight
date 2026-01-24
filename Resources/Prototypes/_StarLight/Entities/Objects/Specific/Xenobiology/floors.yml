@@ -68,8 +68,12 @@
       heldPrefix: bluespace
     - type: Stack
       stackType: FloorTileBluespace
-    - type: XenobiologyFloorTile
-      entity: FloorBluespaceEntity
+    - type: FloorTile
+      outputs:
+        - Plating
+    - type: SpawnAfterInteract #Nuke after convert to FloorTile
+      prototype: FloorBluespaceEntity
+      removeOnInteract: true
 
 - type: stack
   parent: BaseTileStack
@@ -163,8 +167,12 @@
       heldPrefix: sepia
     - type: Stack
       stackType: FloorTileSepiaXenobiology
-    - type: XenobiologyFloorTile
-      entity: FloorSepiaXenobiologyEntity
+    - type: FloorTile
+      outputs:
+        - Plating
+    - type: SpawnAfterInteract #Nuke after convert to FloorTile
+      prototype: FloorSepiaXenobiologyEntity
+      removeOnInteract: true
 
 - type: stack
   parent: BaseTileStack
