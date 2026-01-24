@@ -262,7 +262,7 @@
   - type: ApcPowerReceiverBattery
     idleLoad: 500
     batteryRechargeRate: 1000
-    batteryRechargeEfficiency: 0 # Setting to zero until the light flickering issue associated with dynamic power loads is fixed 
+    batteryRechargeEfficiency: 0 # Setting to zero until the light flickering issue associated with dynamic power loads is fixed
   - type: StationAiCore
   - type: StationAiVision
   - type: InteractionOutline
@@ -331,7 +331,7 @@
       - StationAiCoreElectronics
   - type: StaticPrice
     price: 5000
-      
+
 # The job-ready version of an AI spawn.
 - type: entity
   id: PlayerStationAi
@@ -350,7 +350,7 @@
   description: An unfinished computer core for housing an artifical intelligence.
   components:
   - type: Anchorable
-    flags: 
+    flags:
     - Anchorable
   - type: Rotatable
   - type: Sprite
@@ -577,6 +577,16 @@
         - BorgModuleOperative
         - BorgModuleL6C
         - BorgModuleDoubleEsword
+        - BorgModuleSyndicateNukeDisk # Starlight
+  # Starlight begin
+  - type: DefaultBorgModules
+    modules:
+      - BorgModuleTool
+      - BorgModuleOperative
+      - BorgModuleL6C
+      - BorgModuleDoubleEsword
+      - BorgModuleSyndicateNukeDisk
+  # Starlight end
   - type: ItemSlots
     slots:
       cell_slot:
@@ -613,6 +623,17 @@
         - BorgModuleRCD
         - BorgModuleOperative
         - BorgModuleSyndicateWeapon
+        - BorgModuleSyndicateNukeDisk # Starlight
+    # Starlight begin
+  - type: DefaultBorgModules
+    modules:
+      - BorgModuleSyndicateAdvancedTool
+      - BorgModuleConstruction
+      - BorgModuleRCD
+      - BorgModuleOperative
+      - BorgModuleSyndicateWeapon
+      - BorgModuleSyndicateNukeDisk
+    # Starlight end
   - type: ItemSlots
     slots:
       cell_slot:
@@ -649,6 +670,17 @@
         - BorgModuleTopicals
         - BorgModuleSyndicateRescue # starlight
         - BorgModuleSyndicateWeapon
+        - BorgModuleSyndicateNukeDisk # Starlight
+    # Starlight begin
+  - type: DefaultBorgModules
+    modules:
+      - BorgModuleTool
+      - BorgModuleSyndicateAdvancedChemical
+      - BorgModuleTopicals
+      - BorgModuleSyndicateRescue
+      - BorgModuleSyndicateWeapon
+      - BorgModuleSyndicateNukeDisk
+    # Starlight end
   - type: ItemSlots
     slots:
       cell_slot:
