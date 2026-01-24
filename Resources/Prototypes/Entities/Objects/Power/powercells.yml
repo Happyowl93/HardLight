@@ -114,7 +114,7 @@
 
 - type: entity
   name: medium-capacity power cell
-  description: A rechargeable power cell. This is the kind of power cell you find in advanced machines.
+  description: A rechargeable power cell. This is the kind of power cell you find in advanced machines. # Starlight-edit
   id: PowerCellMedium
   suffix: Full
   parent: BasePowerCell
