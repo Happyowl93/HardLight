@@ -27576,5 +27576,49 @@ Entries:
   id: 294500
   time: '2026-01-23T22:20:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2945
+- author: CawsForConcern
+  changes:
+  - message: (Saltern) Duty Officers
+    type: Add
+  - message: (Saltern) Nanotrasen Career Trainers
+    type: Add
+  - message: (Saltern) NCT Office
+    type: Add
+  - message: (Saltern) Xenobio
+    type: Add
+  - message: (Saltern) Magistrate Locker
+    type: Add
+  - message: (Saltern) IAA Lockers
+    type: Add
+  - message: (Saltern) Wall-mounted mass scanners at Cargo
+    type: Add
+  - message: (Saltern) AI Restoration Console at RD's Office & AI Upload
+    type: Add
+  - message: (Saltern) New Armory for Security
+    type: Add
+  - message: (Saltern) Expanded the Salvage Bay docking arm so Mining and Salvage
+      can dock at the same time
+    type: Add
+  - message: (Saltern) Detective's Room station beacon
+    type: Add
+  - message: (Saltern) AI Upload station beacon
+    type: Add
+  - message: (Saltern) Made Anomaly a little less cramped
+    type: Tweak
+  - message: (Saltern) Adjusted a lot of maints to fit the new Armory, the NCT Office,
+      and Xenobio
+    type: Tweak
+  - message: (Saltern) Dropped `maxPlayers` from 50 to 40
+    type: Tweak
+  - message: (Saltern) Improved meteor protection for Bridge
+    type: Tweak
+  - message: (Saltern) Re-added the extra Salvage Expeditions computer to Salvage
+      Bay
+    type: Fix
+  - message: (Saltern) AI Core's APC wasn't named
+    type: Fix
+  id: 295300
+  time: '2026-01-24T00:33:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2953
 Order: -1
 
