@@ -76,6 +76,30 @@
     containers:
     - storagebase
     - beakerSlot
+  # Starlight-start: Plumbing outlet
+  - type: NodeContainer
+    nodes:
+      outletSouth:
+        !type:PlumbingNode
+        nodeGroupID: Plumbing
+        pipeDirection: South
+      outletEast:
+        !type:PlumbingNode
+        nodeGroupID: Plumbing
+        pipeDirection: East
+      outletWest:
+        !type:PlumbingNode
+        nodeGroupID: Plumbing
+        pipeDirection: West
+      outletNorth:
+        !type:PlumbingNode
+        nodeGroupID: Plumbing
+        pipeDirection: North
+  - type: PlumbingOutlet
+    solutionName: beaker
+    containerSlotId: beakerSlot
+    enabled: false
+  # Starlight-end
   
 # Starlight-start: power cell chem dispenser
   
