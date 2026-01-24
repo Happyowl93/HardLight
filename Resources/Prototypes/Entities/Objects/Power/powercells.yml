@@ -149,7 +149,7 @@
 
 - type: entity
   name: high-capacity power cell
-  description: A rechargeable power cell. This premium brand stores up to 50% more energy than the competition.
+  description: A rechargeable power cell. This premium brand stores up to 50% more energy than the competition. # Starlight-edit
   id: PowerCellHigh
   suffix: Full
   parent: BasePowerCell
