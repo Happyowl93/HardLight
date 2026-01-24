@@ -1,7 +1,9 @@
 using Content.Shared.Magic.Components;
+// Starlight-start: Added using statements for size tracking and events
 using Content.Shared._Starlight.Magic.Components;
 using Content.Shared.Magic.Events;
 using Content.Shared.Item;
+// Starlight-end
 using Content.Shared.Physics;
 using Robust.Shared.Containers;
 using Robust.Shared.Physics;
@@ -50,6 +52,9 @@ public sealed class AnimateSpellSystem : EntitySystem
             return;
 
         var xform = Transform(ent);
+        // Starlight-start: Removed hardcoded fixture selection, now loop through all fixtures
+        // var fixture = fixtures.Fixtures.First();
+        // Starlight-end
 
         _transform.Unanchor(ent); // If left anchored they are effectively stuck/immobile and not a threat
         _physics.SetCanCollide(ent, true, true, false, fixtures, physics);
@@ -62,15 +67,18 @@ public sealed class AnimateSpellSystem : EntitySystem
             _physics.SetCollisionLayer(ent, key, fixture, (int)(CollisionGroup.FlyingMobLayer | CollisionGroup.MidImpassable), fixtures, physics);
             _physics.SetHard(ent, fixture, true, fixtures);
         }
-        // var fixture = fixtures.Fixtures.First();
-        // _physics.SetCollisionMask(ent, fixture.ID, fixture, (int)CollisionGroup.FlyingMobMask, fixtures, physics);
-        // _physics.SetCollisionLayer(ent, fixture.ID, fixture, (int)(CollisionGroup.FlyingMobLayer | CollisionGroup.MidImpassable), fixtures, physics);
-        // _physics.SetHard(ent, fixture, true, fixtures);
+        // Starlight-end
+        // Starlight-start: Commented out old single-fixture collision code
+        // _physics.SetCollisionMask(ent, fixture.Key, fixture.Value, (int)CollisionGroup.FlyingMobMask, fixtures, physics);
+        // _physics.SetCollisionLayer(ent, fixture.Key, fixture.Value, (int)CollisionGroup.FlyingMobLayer, fixtures, physics);
         // Starlight-end
         
         _physics.SetBodyType(ent, BodyType.KinematicController, fixtures, physics, xform);
         _physics.SetBodyStatus(ent, physics, BodyStatus.InAir, true);
         _physics.SetFixedRotation(ent, false, true, fixtures, physics);
+        // Starlight-start: Removed single-fixture SetHard call (now done in loop above)
+        // _physics.SetHard(ent, fixture.Value, true, fixtures);
+        // Starlight-end
         _container.AttachParentToContainerOrGrid((ent, xform)); // Items animated inside inventory now exit, they can't be picked up and so can't escape otherwise
 
         var ev = new AnimateSpellEvent();
@@ -78,6 +86,7 @@ public sealed class AnimateSpellSystem : EntitySystem
     }
 }
 
-// Starlight: Event for server-side HP setting
+// Starlight-start: Event for server-side HP setting
 [ByRefEvent]
 public readonly record struct AnimateSpellEvent;
+// Starlight-end

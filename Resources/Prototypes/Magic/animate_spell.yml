@@ -27,7 +27,6 @@
     event: !type:ChangeComponentsSpellEvent
       toAdd:
       - type: Animate
-      # AnimatedObjectHP component is now added dynamically from staff config (Starlight edit)
       - type: MindContainer
       - type: InputMover
       - type: MobMover
@@ -42,7 +41,12 @@
         altDisarm: false
         soundHit: /Audio/Weapons/smash.ogg
         range: 1.2
-        angle: 60 # Starlight: Increased from 0 to allow animated objects to attack in a wider arc
+        # Starlight-start: Increased from 0 to allow animated objects to attack in a wider arc
+        angle: 60
+        # Starlight-end
+        # Starlight-start: Commented out old angle value
+        # angle: 0.0
+        # Starlight-end
         damage:
           types:
             Blunt: 10
