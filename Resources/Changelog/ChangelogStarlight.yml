@@ -27756,5 +27756,15 @@ Entries:
   id: 179700
   time: '2026-01-24T12:11:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1797
+- author: STARLIGHT TEAM
+  changes:
+  - message: Added an Art Permit to the Document Printer
+    type: Add
+  - message: Amended Corporate Law to Clarify Art or Construction with a permit is
+      not vandalism
+    type: Tweak
+  id: 296000
+  time: '2026-01-24T20:25:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2960
 Order: -1
 
