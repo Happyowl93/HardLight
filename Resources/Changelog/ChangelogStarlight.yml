@@ -27747,5 +27747,14 @@ Entries:
   id: 261900
   time: '2026-01-24T10:10:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2619
+- author: CrazyPhantom
+  changes:
+  - message: pAI to trinkets for 48h Overall playtime
+    type: Add
+  - message: Golden pAI to trinkets for 8h pAI playtime
+    type: Add
+  id: 179700
+  time: '2026-01-24T12:11:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1797
 Order: -1
 
