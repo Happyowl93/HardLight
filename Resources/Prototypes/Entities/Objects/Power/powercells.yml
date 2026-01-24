@@ -307,9 +307,6 @@
   name: small-capacity power cage
   description: A rechargeable power cage for big devices. This is the cheapest kind you can find.
   components:
-  - type: Tag
-    tags:
-      - PowerCage
   - type: Sprite
     sprite: Objects/Power/power_cages.rsi
     layers:
