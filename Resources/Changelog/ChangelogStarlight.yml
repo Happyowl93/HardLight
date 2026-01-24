@@ -27716,5 +27716,13 @@ Entries:
   id: 273300
   time: '2026-01-24T08:49:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2733
+- author: Coolsurf6, Rinary
+  changes:
+  - message: Removed the ability to pull mechs if they have pilot or in maintenance
+      mode.
+    type: Remove
+  id: 275500
+  time: '2026-01-24T08:55:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2755
 Order: -1
 
