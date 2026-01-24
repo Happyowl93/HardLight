@@ -1,6 +1,6 @@
 using Robust.Shared.Audio;
 
-namespace Content.Shared.Starlight.Cybernetics.Components;
+namespace Content.Shared._Starlight.Cybernetics.Components;
 
 /// <summary>
 /// For tools which can be used to temporarily disable active cyberware.

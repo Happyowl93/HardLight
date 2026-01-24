@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Starlight.Cybernetics.Components;
+namespace Content.Shared._Starlight.Cybernetics.Components;
 
 /// <summary>
 /// This is used to temporarily prevent an entity from using certain cyberware.

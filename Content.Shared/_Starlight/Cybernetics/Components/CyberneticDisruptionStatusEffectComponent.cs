@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Starlight.Cybernetics.Components;
+namespace Content.Shared._Starlight.Cybernetics.Components;
 
 /// <summary>
 /// Cybernetic Disruption as a status effect.

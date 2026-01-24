@@ -1,6 +1,6 @@
-using Content.Shared.Starlight.Cybernetics;
+using Content.Shared._Starlight.Cybernetics;
 
-namespace Content.Client.Starlight.Cybernetics;
+namespace Content.Client._Starlight.Cybernetics;
 
 public sealed class CyberneticDisruptionSystem : SharedCyberneticDisruptionSystem;
 

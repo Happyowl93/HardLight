@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Starlight.Cybernetics.Components;
+namespace Content.Shared._Starlight.Cybernetics.Components;
 
 /// <summary>
 /// Hitscan entities that have this component will deal stamina damage to the target.

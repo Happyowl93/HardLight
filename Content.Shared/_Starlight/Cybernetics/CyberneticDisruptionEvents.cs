@@ -1,7 +1,7 @@
 ﻿using Content.Shared.DoAfter;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Starlight.Cybernetics;
+namespace Content.Shared._Starlight.Cybernetics;
 
 /// <summary>
 /// This contains all the events raised by the CyberneticDisruptionSystem

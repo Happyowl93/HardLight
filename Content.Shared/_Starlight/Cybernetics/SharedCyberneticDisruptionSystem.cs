@@ -4,14 +4,14 @@ using Content.Shared.Database;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using Content.Shared.Starlight.Cybernetics.Components;
+using Content.Shared._Starlight.Cybernetics.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Actions;
 using Content.Shared.Humanoid;
 using Content.Shared.Projectiles;
 using Robust.Shared.Random;
 
-namespace Content.Shared.Starlight.Cybernetics;
+namespace Content.Shared._Starlight.Cybernetics;
 
 public abstract partial class SharedCyberneticDisruptionSystem : EntitySystem
 {

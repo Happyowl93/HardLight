@@ -1,4 +1,4 @@
-namespace Content.Shared.Starlight.Cybernetics.Components;
+namespace Content.Shared._Starlight.Cybernetics.Components;
 
 /// <summary>
 /// Applies stamina damage when colliding with an entity.

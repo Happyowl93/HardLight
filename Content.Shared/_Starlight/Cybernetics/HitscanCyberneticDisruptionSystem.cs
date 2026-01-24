@@ -1,9 +1,9 @@
 using Content.Shared.Weapons.Hitscan.Events;
-using Content.Shared.Starlight.Cybernetics.Components;
+using Content.Shared._Starlight.Cybernetics.Components;
 using Robust.Shared.Random;
 using Content.Shared.Humanoid;
 
-namespace Content.Shared.Starlight.Cybernetics;
+namespace Content.Shared._Starlight.Cybernetics;
 
 public sealed class HitscanCyberneticDisruptionSystem : EntitySystem
 {

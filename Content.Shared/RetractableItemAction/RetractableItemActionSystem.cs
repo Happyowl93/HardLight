@@ -5,8 +5,8 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
-using Content.Shared.Starlight.Cybernetics;
-using Content.Shared.Starlight.Cybernetics.Components;
+using Content.Shared._Starlight.Cybernetics;
+using Content.Shared._Starlight.Cybernetics.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 
