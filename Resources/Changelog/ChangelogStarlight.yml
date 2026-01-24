@@ -27663,5 +27663,18 @@ Entries:
   id: 277100
   time: '2026-01-24T08:26:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2771
+- author: CawsForConcern
+  changes:
+  - message: L6 SAW bundle from 25TC to 26TC (discounted price unchanged at 20TC)
+    type: Tweak
+  - message: L6 SAW firerate down from 8 to 6
+    type: Tweak
+  - message: L6 SAW max angle down from 45 to 35 (more accurate overall)
+    type: Tweak
+  - message: L6 SAW now slows you down 10% when wielded (no penalty when unwielded)
+    type: Tweak
+  id: 276800
+  time: '2026-01-24T08:30:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2768
 Order: -1
 
