@@ -47,8 +47,10 @@
 
 - type: quickPhrase
   parent: BaseCivilianJobPhrase
-  id: PassengerPhrase
-  text: job-name-passenger
+  # Starlight edit Start: Passenger -> Assistant
+  id: AssistantPhrase
+  text: job-name-assistant
+  # Starlight edit End
 
 - type: quickPhrase
   parent: BaseCivilianJobPhrase
@@ -94,7 +96,7 @@
   id: TechAssistantPhrase
   text: job-name-technical-assistant
 
-# Epistemics
+# Science # Starlight edit: Epistemics -> Science
 
 - type: quickPhrase
   parent: BaseEpistemicsJobPhrase

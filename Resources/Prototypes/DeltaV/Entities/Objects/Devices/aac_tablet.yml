@@ -41,3 +41,7 @@
   - type: Speech
     speechSounds: Alto
   - type: AACTablet
+  # Starlight Start: TTS
+  - type: TextToSpeech
+    voice: talkbox
+  # Starlight End: TTS
