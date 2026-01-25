@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Roles.Components;
+namespace Content.Shared._Starlight.Roles.Components;
 
 /// <summary>
 /// Added to mind role entities to tag that they are a thief.
