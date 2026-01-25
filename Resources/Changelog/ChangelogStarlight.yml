@@ -27829,5 +27829,14 @@ Entries:
   id: 297100
   time: '2026-01-25T02:31:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2971
+- author: Fractalflower
+  changes:
+  - message: Gender pins render on you in the loadout screen.
+    type: Fix
+  - message: Thaven no longer have their jacket welded to their skin.
+    type: Fix
+  id: 297400
+  time: '2026-01-25T09:54:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2974
 Order: -1
 
