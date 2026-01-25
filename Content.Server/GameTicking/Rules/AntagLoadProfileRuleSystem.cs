@@ -62,8 +62,9 @@ public sealed class AntagLoadProfileRuleSystem : GameRuleSystem<AntagLoadProfile
         if (ent.Comp.ApplyCharacterProfile && profile is not null)
         {
             _metaSystem.SetEntityName(args.Entity.Value, profile.Name);
-            // _traitSystem.ApplyTraits(args.Entity.Value, profile);
             _sLSharedCharacterInfoSystem.ApplyCharacterInfo(args.Entity.Value, profile);
+            if (args.Session is not null)
+                _traitSystem.ApplyTraits(args.Entity.Value, profile, args.Session);
         }
         // Starlight - End
     }

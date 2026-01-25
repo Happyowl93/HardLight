@@ -47,11 +47,6 @@ public sealed class TraitSystem : EntitySystem
             !jobProto.ApplyTraits)
             return;
 
-        // Get species ID for condition checking
-        string? speciesId = null;
-        if (TryComp<HumanoidAppearanceComponent>(args.Mob, out var humanoid))
-            speciesId = humanoid.Species;
-
         // Validate and collect valid traits
         var validTraits = ValidateTraits(args.Mob, args.Profile.TraitPreferences, args.Player, args.Profile);
 
@@ -62,6 +57,22 @@ public sealed class TraitSystem : EntitySystem
                 continue;
 
             ApplyTrait(args.Mob, trait);
+        }
+    }
+
+    /// <summary>
+    /// Applies a traits to an entity.
+    /// </summary>
+    public void ApplyTraits(EntityUid Mob, HumanoidCharacterProfile profile, ICommonSession session)
+    {
+        var validTraits = ValidateTraits(Mob, profile.TraitPreferences, session, profile);
+
+        foreach (var traitId in validTraits)
+        {
+            if (!_prototype.TryIndex(traitId, out var trait))
+                continue;
+
+            ApplyTrait(Mob, trait);
         }
     }
 
