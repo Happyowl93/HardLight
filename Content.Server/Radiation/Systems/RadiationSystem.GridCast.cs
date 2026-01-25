@@ -68,7 +68,7 @@ public partial class RadiationSystem
         var now = _gameTiming.CurTime;
         var gridsToClean = new List<EntityUid>();
 
-        foreach (var (gridUid, samples) in _tileRadiationCache.ToList())
+        foreach (var (gridUid, samples) in _tileRadiationCache)
         {
             if (!_gridQuery.TryGetComponent(gridUid, out var gridComp) ||
                 !_xformQuery.TryGetComponent(gridUid, out var gridXform))
@@ -80,7 +80,7 @@ public partial class RadiationSystem
             var toRemove = new List<Vector2i>();
             var gridWorldPos = _transform.GetWorldPosition(gridXform);
 
-            foreach (var (tilePos, (oldRads, expires)) in samples.ToList())
+            foreach (var (tilePos, (oldRads, expires)) in samples)
             {
                 // Remove expired entries
                 if (now > expires)
