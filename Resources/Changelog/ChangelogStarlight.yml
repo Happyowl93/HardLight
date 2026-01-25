@@ -27917,5 +27917,18 @@ Entries:
   id: 297800
   time: '2026-01-25T19:22:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2978
+- author: CawsForConcern
+  changes:
+  - message: All CentComms have had their manual doors into Debrief removed / replaced
+      with Command-only turnstiles
+    type: Tweak
+  - message: (CC GNT9) Removed AI's turrets in the Debrief Room
+    type: Tweak
+  - message: (CC GNT9) Moved the CentComm station beacon / warp point to the Panopticon
+      with the fax machine for admin convenience
+    type: Tweak
+  id: 296100
+  time: '2026-01-25T19:28:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2961
 Order: -1
 
