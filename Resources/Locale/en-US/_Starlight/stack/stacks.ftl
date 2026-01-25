@@ -18,3 +18,6 @@ stack-adamantine = {$amount ->
     [1] adamantine bar
     *[other] adamantine bars
 }
+
+stack-bluespace-tile = bluespace tile
+stack-sepia-xenobiology-tile = sepia tile
