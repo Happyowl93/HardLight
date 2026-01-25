@@ -142,6 +142,9 @@ public sealed partial class TraitSystemTest
     - type: Test
 ";
 
+    [RegisterComponent]
+    private sealed partial class TestComponent : Component;
+
     #region Effect Tests
 
     [Test]
