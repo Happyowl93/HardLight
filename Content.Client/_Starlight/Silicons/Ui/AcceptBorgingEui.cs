@@ -14,7 +14,7 @@ public sealed class AcceptBorgingEui : BaseEui
     {
         _window = new AcceptBorgingWindow();
 
-        _window.DenyButton.OnPressed += _ =>
+        _window.OnDenyButtonPressed += () =>
         {
             SendMessage(new AcceptBorgingChoiceMessage(AcceptBorgingUiButton.Deny));
             _window.Close();
@@ -22,7 +22,7 @@ public sealed class AcceptBorgingEui : BaseEui
 
         _window.OnClose += () => SendMessage(new AcceptBorgingChoiceMessage(AcceptBorgingUiButton.Deny));
 
-        _window.AcceptButton.OnPressed += _ =>
+        _window.OnAcceptButtonPressed += () =>
         {
             SendMessage(new AcceptBorgingChoiceMessage(AcceptBorgingUiButton.Accept));
             _window.Close();
