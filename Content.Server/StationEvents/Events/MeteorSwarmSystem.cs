@@ -41,13 +41,13 @@ public sealed class MeteorSwarmSystem : StationEventSystem<MeteorSwarmComponent>
 
         component.NextWaveTime += TimeSpan.FromSeconds(component.WaveCooldown.Next(RobustRandom));
 
-
-        if (_station.GetStations().Count == 0)
+        //Starlight begin
+        if(!TryComp<StationEventComponent>(uid, out var stationEvent)) return;
+        
+        if (stationEvent.TargetStation is null) return;
+        if (_station.GetLargestGrid(stationEvent.TargetStation.Value) is not { } grid)
             return;
-
-        var station = RobustRandom.Pick(_station.GetStations());
-        if (_station.GetLargestGrid(station) is not { } grid)
-            return;
+        //Starlight end
 
         var mapId = Transform(grid).MapID;
         var playableArea = _physics.GetWorldAABB(grid);

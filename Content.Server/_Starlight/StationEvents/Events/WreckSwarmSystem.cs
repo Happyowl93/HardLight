@@ -1,6 +1,7 @@
 using System.Numerics;
 using System.Linq;
 using Content.Server.Chat.Systems;
+using Content.Server.Database.Migrations.Sqlite;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Station.Systems;
 using Content.Server.StationEvents.Components;
@@ -45,16 +46,16 @@ public sealed class WreckSwarmSystem : StationEventSystem<WreckSwarmComponent>
             ForceEndSelf(uid, gameRule);
             return;
         }
-
-        var station = RobustRandom.Pick(_station.GetStations());
-        if (_station.GetLargestGrid(station) is not { } grid)
+        
+        // tf are you doing without one of these
+        if (!TryComp<StationEventComponent>(uid, out var stationEvent))
         {
             ForceEndSelf(uid, gameRule);
             return;
         }
 
-        // tf are you doing without one of these
-        if (!TryComp<StationEventComponent>(uid, out var stationEvent))
+        if (stationEvent.TargetStation is null) return;
+        if (_station.GetLargestGrid(stationEvent.TargetStation.Value) is not { } grid)
         {
             ForceEndSelf(uid, gameRule);
             return;
@@ -137,16 +138,4 @@ public sealed class WreckSwarmSystem : StationEventSystem<WreckSwarmComponent>
             return map.MapPath;
         }
     }
-
-    // Scrapped in favor of StationEventSystem.Announce
-    // private void Announce(string announcement, SoundSpecifier? sound) {
-    //     // Let the players know (but we don't want to send to players who aren't in game (i.e. in the lobby))
-    //     Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
-    //
-    //     _chat.DispatchFilteredAnnouncement(allPlayersInGame, announcement, playSound: false, colorOverride: Color.Gold);
-    //
-    //     if (sound is not null) {
-    //         _audio.PlayGlobal(sound, allPlayersInGame, true);
-    //     }
-    // }
 }
