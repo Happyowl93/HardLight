@@ -743,6 +743,7 @@ namespace Content.Client.Lobby.UI
             }
 
             Traits.SetSelectedTraits(selectedTraits, Profile);
+            Traits.UpdateRequirements(Profile);
         }
 
         // /// <summary>

@@ -1,9 +1,9 @@
 // using System.Collections.Generic;
 // using System.Reflection;
-// using Content.Server._Starlight.Traits;
-// using Content.Shared._Starlight.Traits;
-// using Content.Shared._Starlight.Traits.Conditions;
-// using Content.Shared._Starlight.Traits.Effects;
+// using Content.Server._DV.Traits;
+// using Content.Shared._DV.Traits;
+// using Content.Shared._DV.Traits.Conditions;
+// using Content.Shared._DV.Traits.Effects;
 // using Content.Shared.Hands.Components;
 // using Content.Shared.Hands.EntitySystems;
 // using Content.Shared.Nutrition.Components;
@@ -13,7 +13,7 @@
 // using Robust.Shared.Map;
 // using Robust.Shared.Prototypes;
 
-// namespace Content.IntegrationTests.Tests._Starlight;
+// namespace Content.IntegrationTests.Tests._DV;
 
 // /// <summary>
 // /// Comprehensive integration tests for the trait system.
@@ -598,7 +598,7 @@
 //                 BindingFlags.NonPublic | BindingFlags.Instance);
 
 //             var validTraits = (HashSet<ProtoId<TraitPrototype>>)method?.Invoke(traitSys,
-//                 new object[] { player, selectedTraits, null, null, null });
+//                 new object[] { player, selectedTraits, null, null, null, new Dictionary<ProtoId<TraitPrototype>, List<string>>() });
 
 //             Assert.Multiple(() =>
 //             {
@@ -639,7 +639,7 @@
 //                 BindingFlags.NonPublic | BindingFlags.Instance);
 
 //             var validTraits = (HashSet<ProtoId<TraitPrototype>>)method?.Invoke(traitSys,
-//                 new object[] { player, selectedTraits, null, null, null });
+//                 new object[] { player, selectedTraits, null, null, null, new Dictionary<ProtoId<TraitPrototype>, List<string>>()});
 
 //             Assert.That(validTraits?.Count, Is.EqualTo(2), "Should respect category maxTraits limit");
 
@@ -673,7 +673,7 @@
 //                 BindingFlags.NonPublic | BindingFlags.Instance);
 
 //             var validTraits = (HashSet<ProtoId<TraitPrototype>>)method?.Invoke(traitSys,
-//                 new object[] { player, selectedTraits, null, null, null });
+//                 new object[] { player, selectedTraits, null, null, null, new Dictionary<ProtoId<TraitPrototype>, List<string>>() });
 
 //             Assert.That(validTraits?.Count, Is.EqualTo(2), "Should respect category maxPoints limit");
 
@@ -706,7 +706,7 @@
 //                 BindingFlags.NonPublic | BindingFlags.Instance);
 
 //             var validTraits = (HashSet<ProtoId<TraitPrototype>>)method?.Invoke(traitSys,
-//                 new object[] { player, selectedTraits, null, null, null });
+//                 new object[] { player, selectedTraits, null, null, null, new Dictionary<ProtoId<TraitPrototype>, List<string>>() });
 
 //             Assert.That(validTraits?.Contains("TestTraitHasComp"), Is.True, "Trait with met condition should be valid");
 
@@ -739,7 +739,7 @@
 //                 BindingFlags.NonPublic | BindingFlags.Instance);
 
 //             var validTraits = (HashSet<ProtoId<TraitPrototype>>)method?.Invoke(traitSys,
-//                 new object[] { player, selectedTraits, null, null, null });
+//                 new object[] { player, selectedTraits, null, null, null, new Dictionary<ProtoId<TraitPrototype>, List<string>>() });
 
 //             Assert.That(validTraits?.Contains("TestTraitHasComp"),
 //                 Is.False,

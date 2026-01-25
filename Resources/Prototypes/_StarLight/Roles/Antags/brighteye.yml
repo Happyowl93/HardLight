@@ -14,5 +14,5 @@
     - Shadekin
   - !type:TraitsRequirement
       traits:
-        - Iterator
+        - Burned
       inverted: true

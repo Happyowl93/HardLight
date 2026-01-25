@@ -261,7 +261,7 @@ public sealed partial class TraitsTab : BoxContainer
         }
     }
 
-    private void UpdateAllConditions(HumanoidCharacterProfile? profile)
+    public void UpdateRequirements(HumanoidCharacterProfile? profile)
     {
         foreach (var (_, categoryUi) in _categoryUis)
             categoryUi.UpdateConditions(profile);
@@ -343,7 +343,5 @@ public sealed partial class TraitsTab : BoxContainer
         {
             UpdateCategoryStats(categoryId);
         }
-
-        UpdateAllConditions(profile);
     }
 }

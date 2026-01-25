@@ -4,7 +4,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using static Content.Client.Stylesheets.StylesheetHelpers;
 
-namespace Content.Client._Starlight.Traits.UI;
+namespace Content.Client._DV.Traits.UI;
 
 [CommonSheetlet]
 public sealed class TraitsSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
@@ -76,6 +76,14 @@ public sealed class TraitsSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
             BorderThickness = new Thickness(1, 1, 1, 1)
         };
         entrySelectedBox.SetContentMarginOverride(StyleBox.Margin.All, 0);
+
+        var entryDisabledBox = new StyleBoxFlat
+        {
+            BackgroundColor = Color.FromHex("#1a1a22"),
+            BorderColor = Color.FromHex("#2a2a2a"),
+            BorderThickness = new Thickness(1)
+        };
+        entryDisabledBox.SetContentMarginOverride(StyleBox.Margin.All, 0);
 
         var progressBarBgBox = new StyleBoxFlat
         {
@@ -162,7 +170,7 @@ public sealed class TraitsSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
 
             E<Button>()
                 .Class("TraitsCategoryHeaderButton")
-                .Prop(Button.StylePropertyStyleBox, categoryHeaderButtonBox),
+                .Prop(ContainerButton.StylePropertyStyleBox, categoryHeaderButtonBox),
 
             E<Label>()
                 .Class("TraitsCategoryExpandIcon")
@@ -200,9 +208,14 @@ public sealed class TraitsSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
                 .Panel(entryPanelBox),
 
             E<PanelContainer>()
-                .Class("TraitsEntryPanel")
-                .Class("TraitsEntrySelected")
+                .Class("TraitsEntryPanel", "TraitsEntrySelected")
                 .Panel(entrySelectedBox),
+
+            // Disabled entry styling
+            E<PanelContainer>()
+                .Class("TraitsEntryPanel", "TraitsEntryDisabled")
+                .Panel(entryDisabledBox)
+                .Modulate(new Color(1f, 1f, 1f, 0.5f)),
 
             E<Label>()
                 .Class("TraitsEntryNameLabel")

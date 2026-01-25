@@ -24,11 +24,11 @@ public sealed partial class TraitEntry : PanelContainer
     public event Action<bool>? OnToggled;
 
     public bool IsSelected => TraitCheckbox.Pressed;
-    public int TraitCost { get; }
+    public readonly int TraitCost;
+    public bool MeetsConditions { get; private set; } = true;
 
     private readonly TraitPrototype _trait;
     private bool _isUpdating;
-    private readonly StripeBack _lockStripe;
     private FormattedMessage requirements = new();
 
     public TraitEntry(TraitPrototype trait)
@@ -52,28 +52,6 @@ public sealed partial class TraitEntry : PanelContainer
         TraitCostLabel.ModulateSelfOverride = Color.FromHex(costColor);
 
         TraitCheckbox.OnToggled += OnCheckboxToggled;
-
-        var requirementsLabel = new Label()
-        {
-            Text = Loc.GetString("role-timer-locked"),
-            Visible = true,
-            HorizontalAlignment = HAlignment.Center,
-            StyleClasses = { StyleClass.LabelSubText },
-        };
-
-        _lockStripe = new StripeBack()
-        {
-            Visible = false,
-            HorizontalExpand = true,
-            HasMargins = false,
-            MouseFilter = MouseFilterMode.Stop,
-            Children =
-            {
-                requirementsLabel
-            }
-        };
-
-        TraitCheckbox.AddChild(_lockStripe);
     }
 
     /// <summary>
@@ -95,10 +73,12 @@ public sealed partial class TraitEntry : PanelContainer
 
     private void UpdateDisabledState()
     {
-        TraitCheckbox.Disabled = !MeetsConditions;
-
         if (!MeetsConditions)
         {
+            // Hide checkbox, show lock icon
+            TraitCheckbox.Visible = false;
+            LockIcon.Visible = true;
+
             // Deselect if conditions no longer met
             if (TraitCheckbox.Pressed)
             {
@@ -109,19 +89,22 @@ public sealed partial class TraitEntry : PanelContainer
                 OnToggled?.Invoke(false);
             }
 
-            // Show why it's disabled
+            // Add disabled styling
             AddStyleClass("TraitsEntryDisabled");
 
             // Update tooltip to show failed requirements
             var tooltip = new Tooltip();
             tooltip.SetMessage(requirements);
-            _lockStripe.TooltipSupplier = _ => tooltip;
-            _lockStripe.Visible = true;
+            TraitPanel.TooltipSupplier = _ => tooltip;
         }
         else
         {
+            // Show checkbox, hide lock icon
+            TraitCheckbox.Visible = true;
+            LockIcon.Visible = false;
+
+            // Remove disabled styling - stylesheet restores normal colors
             RemoveStyleClass("TraitsEntryDisabled");
-            _lockStripe.Visible = false;
         }
     }
 
@@ -132,7 +115,7 @@ public sealed partial class TraitEntry : PanelContainer
 
         if (!MeetsConditions)
         {
-            // Prevent selection if conditions not met
+            // This shouldn't happen since checkbox is hidden, but just in case
             _isUpdating = true;
             TraitCheckbox.Pressed = false;
             _isUpdating = false;
@@ -150,8 +133,6 @@ public sealed partial class TraitEntry : PanelContainer
         UpdateSelectedStyle();
         _isUpdating = false;
     }
-
-    public bool MeetsConditions { get; private set; } = true;
 
     private void UpdateSelectedStyle()
     {
