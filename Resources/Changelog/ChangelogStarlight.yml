@@ -27901,5 +27901,14 @@ Entries:
   id: 281500
   time: '2026-01-25T13:37:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2815
+- author: AFTERLIGHT Team, Happyrobot33, InanimateIJK, Motherain, Conf, DocMoth, Neomoth,
+    LilyflowerFDL, lukeman
+  changes:
+  - message: Nanotrasen engages in radical strikebreaking methods via the introduction
+      of a new artificially-developed species of laborers known as Lagomorphs.
+    type: Add
+  id: 268000
+  time: '2026-01-25T15:48:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2680
 Order: -1
 
