@@ -3,7 +3,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 
 namespace Content.Shared.DeltaV.QuickPhrase;
 
-[Prototype("quickPhrase")]
+[Prototype] // Starlight Edit: Removed ``("quickPhrase)``
 public sealed partial class QuickPhrasePrototype : IPrototype, IInheritingPrototype
 {
     /// <summary>
@@ -18,12 +18,12 @@ public sealed partial class QuickPhrasePrototype : IPrototype, IInheritingProtot
     /// </summary>
     [ViewVariables]
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<QuickPhrasePrototype>))]
-    public string[]? Parents { get; }
+    public string[]? Parents { get; private set; } // Starlight Edit: Added Setter
 
     [ViewVariables]
     [NeverPushInheritance]
     [AbstractDataField]
-    public bool Abstract { get; }
+    public bool Abstract { get; private set; } // Starlight Edit: Added Setter
 
     /// <summary>
     /// The phrase that this prototype represents.

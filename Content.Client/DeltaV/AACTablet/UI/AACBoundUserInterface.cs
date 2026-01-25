@@ -33,6 +33,6 @@ public sealed class AACBoundUserInterface : BoundUserInterface
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
-        _window?.Dispose();
+        _window?.Close(); // Starlight Edit: Dispose -> Close
     }
 }
