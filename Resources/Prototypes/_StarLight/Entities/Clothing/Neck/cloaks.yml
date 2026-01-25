@@ -569,6 +569,9 @@
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Neck/supreme-janitor-cloak.rsi
+    
+- type: entity
+  parent: ClothingNeckBase
   id: RedRegaliaCloak
   name: Red Regalia Cloak
   description: A fancy red cloak like a mafiaoso would wear.
