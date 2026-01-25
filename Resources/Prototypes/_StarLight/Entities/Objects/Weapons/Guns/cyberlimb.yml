@@ -23,7 +23,7 @@
   - type: BatteryAmmoProvider
     proto: RadOrb
     fireCost: 1000
-  - type: PredictedBatterySelfRecharger
+  - type: BatterySelfRecharger
     autoRechargeRate: 100
   - type: MagazineVisuals
     magState: radcaster-mag
@@ -44,7 +44,7 @@
   - type: Sprite
     sprite: _Starlight/Objects/Tools/cyberling.rsi
     state: freeze_ray
-  - type: PredictedBatterySelfRecharger
+  - type: BatterySelfRecharger
     autoRechargeRate: 100
   - type: BatteryAmmoProvider
     proto: FreezeRay
