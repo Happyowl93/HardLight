@@ -27788,5 +27788,22 @@ Entries:
   id: 296700
   time: '2026-01-25T01:31:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2967
+- author: neomoth
+  changes:
+  - message: All syndicate borgs now possess a module that can carry the nuke disk.
+    type: Add
+  - message: Syndicate stealth borgs now have a hand so they can steal things from
+      people.
+    type: Add
+  - message: Syndicate borgs can no longer have their modules swapped out.
+    type: Tweak
+  - message: ALL borgs now drop any and all held items not granted by a module on
+      crit.
+    type: Tweak
+  - message: Fixed borgs not being able to be constructed properly
+    type: Fix
+  id: 296800
+  time: '2026-01-25T02:10:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2968
 Order: -1
 
