@@ -27910,5 +27910,12 @@ Entries:
   id: 268000
   time: '2026-01-25T15:48:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2680
+- author: Scarlet Lightweaver
+  changes:
+  - message: Addeda new retro cloak for the HOS!
+    type: Add
+  id: 297800
+  time: '2026-01-25T19:22:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2978
 Order: -1
 
