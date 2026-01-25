@@ -27821,5 +27821,13 @@ Entries:
   id: 297000
   time: '2026-01-25T02:12:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2970
+- author: neomoth
+  changes:
+  - message: Redo the fix to borgs that got undid by the undoing of the undoing of
+      the update that broke it. Say that 10 times fast.
+    type: Fix
+  id: 297100
+  time: '2026-01-25T02:31:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2971
 Order: -1
 
