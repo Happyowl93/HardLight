@@ -40,7 +40,7 @@
     - type: HTN
       rootTask:
         task: SlimeMainCompound
-    - type: Temperature
+    - type: TemperatureDamage
       coldDamage:
         types:
           Cold: 10.0
@@ -386,3 +386,4 @@
       energy: 1
     - type: Sprite
       color: "#ffffff"
+
