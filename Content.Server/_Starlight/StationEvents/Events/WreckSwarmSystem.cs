@@ -20,7 +20,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.StationEvents.Events;
 
-public sealed class WreckSwarmSystem : GameRuleSystem<WreckSwarmComponent> // Starlight-edit: Use StationEventSystem.
+public sealed class WreckSwarmSystem : StationEventSystem<WreckSwarmComponent>
 {
     private readonly List<SalvageMapPrototype> _salvageMaps = new();
 
@@ -114,7 +114,7 @@ public sealed class WreckSwarmSystem : GameRuleSystem<WreckSwarmComponent> // St
         _mapSystem.DeleteMap(wreckMapXform.MapID);
 
         if (component.Announcement is { } locId)
-            // Announce(stationEvent, Loc.GetString(locId), false, null, component.AnnouncementSound);
+            Announce(stationEvent, Loc.GetString(locId), false, null, component.AnnouncementSound);
 
         // Done processing, don't recur on next tick
         ForceEndSelf(uid, gameRule);

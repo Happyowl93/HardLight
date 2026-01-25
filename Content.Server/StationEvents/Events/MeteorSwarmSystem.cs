@@ -14,7 +14,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server.StationEvents.Events;
 
-public sealed class MeteorSwarmSystem : StationEventSystem<MeteorSwarmComponent>
+public sealed class MeteorSwarmSystem : StationEventSystem<MeteorSwarmComponent> // Starlight-edit: Use station event system
 {
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
