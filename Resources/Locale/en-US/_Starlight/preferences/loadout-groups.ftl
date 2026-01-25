@@ -53,6 +53,9 @@ loadout-group-mining-id = Mining Specialist ID
 loadout-group-salvage-id = Salvage Specialist ID
 loadout-group-salvage-lead-mantle = Salvage Lead mantle 
 
+# Janitor
+loadout-group-janitor-neck = Janitor neck
+
 # Other
 
 loadout-group-scarves = Scarf

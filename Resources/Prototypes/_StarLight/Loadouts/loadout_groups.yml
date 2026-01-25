@@ -409,3 +409,11 @@
   loadouts:
     - SalvagePDA
     - VeteranSalvagePDA
+
+# Janitor
+- type: loadoutGroup
+  id: JanitorNeck
+  name: loadout-group-janitor-neck
+  minLimit: 0
+  loadouts:
+  - SupremeJanitorCloak
