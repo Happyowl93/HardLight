@@ -27930,5 +27930,30 @@ Entries:
   id: 296100
   time: '2026-01-25T19:28:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2961
+- author: SCARLET LIGHTWEAVER
+  changes:
+  - message: Changed AC-2 from burst to full auto also changed fire rate from 5 to
+      3.2.
+    type: Tweak
+  - message: Changed AC-10 from semi to full auto.
+    type: Tweak
+  - message: 'Changed Gygax speed to faster(from: walk 2.4 and sprint 3.7 to: 2.5
+      and 4.0) and armor.'
+    type: Tweak
+  - message: Changed Durand armor and HP from 400 to 465 also changed pilot damage
+      multiplier from 25% to 15%.
+    type: Tweak
+  - message: Changed Marauder HP from 500 to 575.
+    type: Tweak
+  - message: Changed Seraph HP from 550 to 700.
+    type: Tweak
+  - message: Changed DarkGygax HP from 300 to 375 and speed from 2.2, 4.0 to 3.0,
+      4.5.
+    type: Tweak
+  - message: Changed Mauler armor and HP from 500 to 550, now mauler has point light.
+    type: Tweak
+  id: 221700
+  time: '2026-01-25T19:54:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2217
 Order: -1
 
