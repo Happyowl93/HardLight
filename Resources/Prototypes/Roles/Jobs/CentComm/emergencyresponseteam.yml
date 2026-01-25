@@ -224,27 +224,6 @@
   equipment:
     shoes: ClothingShoesBootsJackFilled
     head: ClothingHeadHelmetERTEngineer
-    eyes: ClothingEyesGlassesMeson
-    gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterArmorBasicSlim
-    id: ERTEngineerPDA
-    ears: ClothingHeadsetCentCom #Starlight
-    belt: ClothingBeltChiefEngineerFilled
-    pocket1: Flare
-    pocket2: GasAnalyzer
-  storage:
-    back:
-    - trayScanner
-    - RCD
-    - RPD # Starlight: RPD
-    - RCDAmmo
-    - RCDAmmo
-    - CableMVStack
-    - CableHVStack
-    - CableApcStack
-    - SheetPlasteel
-    - SheetSteel
-    - SheetGlass
     outerClothing: ClothingOuterArmorBasic
     pocket2: FlashlightSeclite
 
@@ -300,6 +279,8 @@
     - MiningDrillDiamond
     - BoxLethalshot
     - BoxShotgunSlug # End of first line
+    - RCDAmmo
+    - RCDAmmo
     - RCDAmmo
     - RCDAmmo
     - CableDetStack
