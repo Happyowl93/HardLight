@@ -50,7 +50,7 @@
   # Starlight edit Start: Passenger -> Assistant
   id: AssistantPhrase
   text: job-name-assistant
-  # Starlight edit End
+  # Starlight edit End: Passenger -> Assistant
 
 - type: quickPhrase
   parent: BaseCivilianJobPhrase
@@ -96,7 +96,7 @@
   id: TechAssistantPhrase
   text: job-name-technical-assistant
 
-# Science # Starlight edit: Epistemics -> Science
+# Epistemics
 
 - type: quickPhrase
   parent: BaseEpistemicsJobPhrase
