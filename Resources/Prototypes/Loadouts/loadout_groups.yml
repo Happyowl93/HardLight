@@ -1370,6 +1370,7 @@
   minLimit: 0
   loadouts:
   - ClothingNeckCloakHosVar #STARLIGHT
+  - ClothingNeckCloakHosRetro #STARLIGHT
   - HeadofSecurityCloak
   - HeadofSecurityMantle
 
