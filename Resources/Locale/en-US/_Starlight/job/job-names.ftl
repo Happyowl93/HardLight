@@ -1,3 +1,4 @@
+job-name-assistant = Assistant
 job-name-boxer = Boxer
 job-name-zookeeper = Zookeeper
 
