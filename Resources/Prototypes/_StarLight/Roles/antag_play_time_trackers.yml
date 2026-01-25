@@ -96,4 +96,4 @@
 
 - type: playTimeTracker
   id: AntagSELFAgent
-  name: ghost-role-information-self-name
+  name: roles-antag-selfagent-name
