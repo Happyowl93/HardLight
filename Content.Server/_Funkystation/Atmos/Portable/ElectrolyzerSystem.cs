@@ -267,12 +267,12 @@ public sealed class ElectrolyzerSystem : EntitySystem
             if (total > maxStack)
             {
                 int toAdd = maxStack - existingStack.Count;
-                _stackSystem.SetCount(existingItem.Value, maxStack, existingStack);
+                _stackSystem.SetCount((existingItem.Value, existingStack), maxStack);
                 _stackSystem.SetCount(heldItem, heldStack.Count - toAdd, heldStack);
             }
             else
             {
-                _stackSystem.SetCount(existingItem.Value, total, existingStack);
+                _stackSystem.SetCount((existingItem.Value, existingStack), total);
                 EntityManager.QueueDeleteEntity(heldItem);
             }
 

@@ -46,7 +46,8 @@ public sealed partial class PluoxiumRadiationProductionReaction : IGasReactionEf
         }
         else if (holder is IComponent component)
         {
-            radiationLevel = GetRadiationLevel(component.Owner);
+            var owner = entityManager.GetEntity(component.Uid);
+            radiationLevel = GetRadiationLevel(owner);
         }
         else if (holder is TileAtmosphere tile)
         {
@@ -155,9 +156,8 @@ public sealed partial class RadiationTimerSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        foreach (var timer in entityManager.EntityQuery<RadiationReceiverTimerComponent>())
+        foreach (var (uid, timer) in entityManager.EntityQuery<RadiationReceiverTimerComponent>(true))
         {
-            var uid = timer.Owner;
             if (_timing.CurTime >= timer.TimerExpiresAt)
             {
                 entityManager.RemoveComponent<RadiationReceiverComponent>(uid);
