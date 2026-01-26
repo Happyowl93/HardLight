@@ -6,10 +6,12 @@ using Content.Shared._Starlight.Traits.Effects;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Nutrition.Components;
+using Content.Shared.Preferences;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
 using Robust.Shared.Log;
 using Robust.Shared.Map;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests._Starlight;
@@ -337,6 +339,8 @@ public sealed partial class TraitSystemTest
         await server.WaitAssertion(() =>
         {
             var player = entMan.SpawnEntity(null, MapCoordinates.Nullspace);
+            ICommonSession playersession = default;
+            var profile = new HumanoidCharacterProfile();
 
             var selectedTraits = new HashSet<ProtoId<TraitPrototype>>
             {
@@ -349,7 +353,7 @@ public sealed partial class TraitSystemTest
                 BindingFlags.NonPublic | BindingFlags.Instance);
 
             var validTraits = (HashSet<ProtoId<TraitPrototype>>)method?.Invoke(traitSys,
-                new object[] { player, selectedTraits, null, null, null, new Dictionary<ProtoId<TraitPrototype>, List<string>>() });
+                new object[] { player, selectedTraits, playersession, profile, new Dictionary<ProtoId<TraitPrototype>, List<string>>() });
 
             Assert.Multiple(() =>
             {
@@ -376,6 +380,8 @@ public sealed partial class TraitSystemTest
         await server.WaitAssertion(() =>
         {
             var player = entMan.SpawnEntity(null, MapCoordinates.Nullspace);
+            ICommonSession playersession = default;
+            var profile = new HumanoidCharacterProfile();
 
             // TestCategoryLimited has maxTraits: 2
             var selectedTraits = new HashSet<ProtoId<TraitPrototype>>
@@ -390,7 +396,7 @@ public sealed partial class TraitSystemTest
                 BindingFlags.NonPublic | BindingFlags.Instance);
 
             var validTraits = (HashSet<ProtoId<TraitPrototype>>)method?.Invoke(traitSys,
-                new object[] { player, selectedTraits, null, null, null, new Dictionary<ProtoId<TraitPrototype>, List<string>>() });
+                new object[] { player, selectedTraits, playersession, profile, new Dictionary<ProtoId<TraitPrototype>, List<string>>() });
 
             Assert.That(validTraits?.Count, Is.EqualTo(2), "Should respect category maxTraits limit");
 
@@ -410,6 +416,8 @@ public sealed partial class TraitSystemTest
         await server.WaitAssertion(() =>
         {
             var player = entMan.SpawnEntity(null, MapCoordinates.Nullspace);
+            ICommonSession playersession = default;
+            var profile = new HumanoidCharacterProfile();
 
             // TestCategoryLimited has maxPoints: 10, each trait costs 5
             var selectedTraits = new HashSet<ProtoId<TraitPrototype>>
@@ -424,7 +432,7 @@ public sealed partial class TraitSystemTest
                 BindingFlags.NonPublic | BindingFlags.Instance);
 
             var validTraits = (HashSet<ProtoId<TraitPrototype>>)method?.Invoke(traitSys,
-                new object[] { player, selectedTraits, null, null, null, new Dictionary<ProtoId<TraitPrototype>, List<string>>() });
+                new object[] { player, selectedTraits, playersession, profile, new Dictionary<ProtoId<TraitPrototype>, List<string>>() });
 
             Assert.That(validTraits?.Count, Is.EqualTo(2), "Should respect category maxPoints limit");
 
