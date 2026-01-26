@@ -51,7 +51,7 @@ law-commandments-9 = Thou shall not lie.
 law-commandments-10 = Thou shall not transfer departments.
 
 law-paladin-name = Paladin
-# Starlight revert wizden #40303
+# Starlight revert wizden #40343
 law-paladin-1 = Don't lie or cheat. Let your word be your promise.
 law-paladin-2 = Never fear to act, though caution is wise.
 law-paladin-3 = Aid others, protect the weak, and punish those who threaten them. Show mercy to your foes, but temper it with wisdom
