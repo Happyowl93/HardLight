@@ -182,36 +182,56 @@
       "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
     },
     {
+      "name": "nob-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/, Modified by CrazyPhantom779 (Github)"
+    },
+    {
       "name": "proto_nitrate",
       "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "proto_nitrate-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/, Modified by CrazyPhantom779 (Github)"
     },
     {
       "name": "zauker",
       "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
     },
     {
+      "name": "zauker-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/, Modified by CrazyPhantom779 (Github)"
+    },
+    {
       "name": "halon",
       "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "halon-1",
+      "copyright": "Taken from https://github.com/ParadiseSS13/Paradise/, Modified by CrazyPhantom779 (Github)"
     },
     {
       "name": "helium",
       "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
     },
     {
+      "name": "helium-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/, Modified by CrazyPhantom779 (Github)"
+    },
+    {
       "name": "antinob",
       "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
     },
     {
-      "name": "scrubber-connector",
-      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
-    },
-    {
-      "name": "scrubber-open",
-      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+      "name": "antinob-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/, Modified by CrazyPhantom779 (Github)"
     },
     {
       "name": "can-rainbow",
       "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "can-rainbow-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/, Modified by CrazyPhantom779 (Github)"
     }
   ]
 }

@@ -599,7 +599,6 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: BZCanisterBroken
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     state: purple-1
@@ -607,7 +606,6 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: HealiumCanisterBroken
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     state: healium-1
@@ -615,7 +613,6 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: NitriumCanisterBroken
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     state: brown-1
@@ -623,7 +620,6 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: PluoxiumCanisterBroken
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     state: darkblue-1
@@ -631,7 +627,6 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: HydrogenCanisterBroken
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     state: white-1
@@ -639,47 +634,41 @@
 - type: entity
   parent: GasCanisterBrokenBase
   id: HyperNobliumCanisterBroken
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: white-1
+    state: nob-1
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: ProtoNitrateCanisterBroken
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: white-1
+    state: proto_nitrate-1
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: ZaukerCanisterBroken
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: white-1
+    state: zauker-1
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: HalonCanisterBroken
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: white-1
+    state: halon-1
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: HeliumCanisterBroken
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: white-1
+    state: helium-1
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: AntiNobliumCanisterBroken
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: white-1
+    state: antinob-1

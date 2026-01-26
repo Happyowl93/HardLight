@@ -144,7 +144,7 @@ public sealed class ElectrolyzerSystem : EntitySystem
                 return;
 
             // Consume 1 sheet
-            _stackSystem.SetCount(fuelEntity, stack.Count - 1, stack);
+            _stackSystem.SetCount((fuelEntity, stack), stack.Count - 1);
             electrolyzer.CurrentFuel = fuelPerSheet;
 
             // If stack now empty, delete it
@@ -268,7 +268,7 @@ public sealed class ElectrolyzerSystem : EntitySystem
             {
                 int toAdd = maxStack - existingStack.Count;
                 _stackSystem.SetCount((existingItem.Value, existingStack), maxStack);
-                _stackSystem.SetCount(heldItem, heldStack.Count - toAdd, heldStack);
+                _stackSystem.SetCount((heldItem, heldStack), heldStack.Count - toAdd);
             }
             else
             {

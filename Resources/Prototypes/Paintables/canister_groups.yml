@@ -14,6 +14,12 @@
     storage: StorageCanister
     tritium: TritiumCanister
     water-vapor: WaterVaporCanister
+    # Starlight Start: Additional canisters
+    rainbow: RainbowCanisterEmpty
+    liquid-oxygen: LiquidOxygenCanister
+    liquid-nitrogen: LiquidNitrogenCanister
+    liquid-carbon-dioxide: LiquidCarbonDioxideCanister
+    # Starlight End: Additional canisters
     # Funkystation Start: Funky atmos - /tg/ gases
     bz: BZCanister
     healium: HealiumCanister
