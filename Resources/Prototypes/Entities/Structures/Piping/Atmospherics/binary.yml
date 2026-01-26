@@ -481,8 +481,10 @@
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: gasCanisterPort
           map: [ "enum.SubfloorLayers.FirstLayer" ]
-    # region starlight
+    # Starlight Start
     - type: AtmosPipeLayers
+      spriteRsiPaths: {}
+    # Starlight End
     # Carpmosia-start - Atmos Alt Prototypes
       alternativePrototypes:
         Primary: GasPort
@@ -491,12 +493,6 @@
         Quaternary: GasPortAlt3
         Quinary: GasPortAlt4
     # Carpmosia-end - Atmos Alt Prototypes
-      spriteRsiPaths: {}
-      alternativePrototypes:
-        Primary: GasPort
-        Secondary: GasPortAlt1
-        Tertiary: GasPortAlt2
-    # end region
     - type: Appearance
     - type: PipeColorVisuals
     - type: GasPort
@@ -542,8 +538,10 @@
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_off
           map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
-    # region starlight
+    # Starlight Start
     - type: AtmosPipeLayers
+      spriteRsiPaths: {}
+    # Starlight End
     # Carpmosia-start - Atmos Alt Prototypes
       alternativePrototypes:
         Primary: GasDualPortVentPump
@@ -552,12 +550,6 @@
         Quaternary: GasDualPortVentPumpAlt3
         Quinary: GasDualPortVentPumpAlt4
     # Carpmosia-end - Atmos Alt Prototypes
-      spriteRsiPaths: {}
-      alternativePrototypes:
-        Primary: GasDualPortVentPump
-        Secondary: GasDualPortVentPumpAlt1
-        Tertiary: GasDualPortVentPumpAlt2
-    # end region
     - type: GenericVisualizer
       visuals:
         enum.VentPumpVisuals.State:
