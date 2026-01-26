@@ -14,7 +14,7 @@ public sealed partial class BatterySelfRechargerComponent : Component
     /// <summary>
     /// At what rate does the entity automatically recharge? In watts.
     /// </summary>
-    [DataField, AutoNetworkedField, ViewVariables]
+    [DataField, AutoNetworkedField] // Starlight-edit: Fuck you VVAccess. Fuck you for being the way that you are.
     public float AutoRechargeRate;
 
     /// <summary>
