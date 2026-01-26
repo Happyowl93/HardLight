@@ -163,7 +163,6 @@
     - VimPilot
     - AnomalyHost
   - type: Puller # STARLIGHT EDIT
-  - type: AntiWelderBomb # STARLIGHT EDIT
 
 # Spawnable scurrets have a random name and colour.
 
