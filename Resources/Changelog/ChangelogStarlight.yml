@@ -28054,5 +28054,14 @@ Entries:
   id: 299200
   time: '2026-01-26T06:04:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2992
+- author: STARLIGHT TEAM
+  changes:
+  - message: added lagomorphian to languages borgs can understand.
+    type: Fix
+  - message: made it so the feet of lagos dont clip into their pants.
+    type: Fix
+  id: 298200
+  time: '2026-01-26T06:08:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2982
 Order: -1
 
