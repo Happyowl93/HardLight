@@ -249,20 +249,20 @@ public abstract partial class SharedChatSystem : EntitySystem
 
         if (customResult && !protoResult)
         {
-            if (customChannelMatches.Count == 1)
+            if (customChannelMatches.Count == 1 || input.Length < 3)
             {
                 customChannel = customChannelMatches.First();
                 return true;
             }
-            if (input.Length < 3) return true;
             var idx = input[2].ToString();
-            output = SanitizeMessageCapital(input[3..].TrimStart());
-            if (!int.TryParse(idx, out var num) || num == 0)
+            var isNum = int.TryParse(idx, out var num);
+            if (!isNum || num == 0 || !customChannelMatches.TryGetValue(num, out var match))
             {
-                channel = channelMatches.First();
+                customChannel = customChannelMatches[0];
                 return true;
             }
-            if (!customChannelMatches.TryGetValue(num, out var match)) return true;
+
+            output = SanitizeMessageCapital(input[3..].TrimStart());
             customChannel = match;
             return true;
         }
