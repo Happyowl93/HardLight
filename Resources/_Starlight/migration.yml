@@ -52,6 +52,5 @@ CartridgeRifle: CartridgeRifleSP
 
 # 2026-01-26
 # quick remove xenobio
-XenobiologySlimeGray: null
 SpawnGrayXenobiologySlime: null
 CrateStarterXenobiology: null
