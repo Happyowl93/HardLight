@@ -283,7 +283,7 @@
   order: 4
   lawString: law-paladin-4
 
-  # starlight, reverting wizden #40303
+  # starlight, reverting wizden #40343
 - type: siliconLaw
   id: Paladin5
   order: 5
@@ -298,7 +298,7 @@
   - Paladin2
   - Paladin3
   - Paladin4
-  - Paladin5 # starlight, 
+  - Paladin5 # starlight, reverting wizden #40343
   obeysTo: laws-owner-crew
 
  # Live and Let Live laws
