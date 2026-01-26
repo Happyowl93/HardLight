@@ -6,6 +6,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Tools.Components;
 using Content.Shared.Tools.Systems;
 using ItemToggleComponent = Content.Shared.Item.ItemToggle.Components.ItemToggleComponent;
+using Content.Shared._Starlight.AntiWelderBomb; /// STARLIGHT EDIT
 
 namespace Content.Server.Damage.Systems
 {
@@ -14,6 +15,7 @@ namespace Content.Server.Damage.Systems
         [Dependency] private readonly Shared.Damage.Systems.DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly SharedToolSystem _toolSystem = default!;
+        [Dependency] private readonly IEntityManager _ent = default!;
 
         public override void Initialize()
         {
@@ -35,6 +37,8 @@ namespace Content.Server.Damage.Systems
             && itemToggle.Activated
             && !welder.TankSafe)
             {
+                if (args.User is { } user && AntiWelderBomb(user, welder)) /// STARLIGHT EDIT
+                    return;
                 if (_damageableSystem.TryChangeDamage(args.Target, weldingDamage, out var dmg, origin: args.User))
                 {
                     _adminLogger.Add(LogType.Damaged,
@@ -53,6 +57,19 @@ namespace Content.Server.Damage.Systems
                 }
 
                 args.Handled = true;
+            }
+        }
+
+        /// STARLIGHT EDIT
+        private bool AntiWelderBomb(EntityUid user, WelderComponent entity)
+        {
+            if (_ent.HasComponent<AntiWelderBombComponent>(user) && entity.Enabled)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
