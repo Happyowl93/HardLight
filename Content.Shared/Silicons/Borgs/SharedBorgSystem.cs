@@ -389,17 +389,13 @@ public abstract partial class SharedBorgSystem : EntitySystem
             TryActivate(chassis, args.Origin);
         else
         {
-            SetActive(chassis, false, user: args.Origin);    
+            SetActive(chassis, false, user: args.Origin);
         }
     }
 
     private void OnBeingGibbed(Entity<BorgChassisComponent> chassis, ref BeingGibbedEvent args)
     {
-        // Don't use the ItemSlotsSystem eject method since we don't want to play a sound and want we to eject the battery even if the slot is locked.
-        if (TryComp<PowerCellSlotComponent>(chassis, out var slotComp) &&
-            _container.TryGetContainer(chassis, slotComp.CellSlotId, out var slotContainer))
-            _container.EmptyContainer(slotContainer);
-        // region Starlight: Empty all modules on gib
+        //region Starlight: Drop contents from ALL modules on gib.
         foreach (var ent in chassis.Comp.ModuleContainer.ContainedEntities.ToList())
         {
             if (!TryComp<ItemBorgModuleComponent>(ent, out var module)) continue;
@@ -412,7 +408,11 @@ public abstract partial class SharedBorgSystem : EntitySystem
                     if (!_container.Remove(item, containing)) break;
             }
         }
-        // end region Starlight
+        //end region Starlight
+        // Don't use the ItemSlotsSystem eject method since we don't want to play a sound and want we to eject the battery even if the slot is locked.
+        if (TryComp<PowerCellSlotComponent>(chassis, out var slotComp) &&
+            _container.TryGetContainer(chassis, slotComp.CellSlotId, out var slotContainer))
+            _container.EmptyContainer(slotContainer);
 
         _container.EmptyContainer(chassis.Comp.BrainContainer);
         _container.EmptyContainer(chassis.Comp.ModuleContainer);
