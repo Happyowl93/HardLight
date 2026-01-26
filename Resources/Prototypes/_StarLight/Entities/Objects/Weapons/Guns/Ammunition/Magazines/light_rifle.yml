@@ -12,7 +12,7 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
 
-# DMR magazines
+# region DMR magazines
 - type: entity
   id: BaseMagazineRifleDMR
   parent: BaseMagazineLightRifle
@@ -37,7 +37,7 @@
 
 - type: entity
   id: MagazineDMRSP
-  name: "magazine (.30 rifle SP)"
+  name: "DMR magazine (.30 rifle SP)"
   parent: BaseMagazineRifleDMR
   components:
   - type: BallisticAmmoProvider
@@ -61,7 +61,7 @@
 
 - type: entity
   id: MagazineDMRHP
-  name: "magazine (.30 rifle HP)"
+  name: "DMR magazine (.30 rifle HP)"
   parent: BaseMagazineRifleDMR
   components:
   - type: BallisticAmmoProvider
@@ -85,7 +85,7 @@
 
 - type: entity
   id: MagazineDMRFMJ
-  name: "magazine (.30 rifle FMJ)"
+  name: "DMR magazine (.30 rifle FMJ)"
   parent: BaseMagazineRifleDMR
   components:
   - type: BallisticAmmoProvider
@@ -109,7 +109,7 @@
 
 - type: entity
   id: MagazineDMRAP
-  name: "magazine (.30 rifle AP)"
+  name: "DMR magazine (.30 rifle AP)"
   parent: BaseMagazineRifleDMR
   components:
   - type: BallisticAmmoProvider
@@ -133,7 +133,7 @@
 
 - type: entity
   id: MagazineDMREmpty
-  name: "magazine (.30 rifle any)"
+  name: "DMR magazine (.30 rifle any)"
   suffix: empty
   parent: MagazineDMRSP
   components:
@@ -154,7 +154,7 @@
 
 - type: entity
   id: MagazineDMRIncendiary
-  name: "magazine (.30 rifle incendiary)"
+  name: "DMR magazine (.30 rifle incendiary)"
   parent: MagazineDMRSP
   components:
   - type: BallisticAmmoProvider
@@ -178,7 +178,7 @@
         
 - type: entity
   id: MagazineDMRPractice
-  name: "magazine (.30 rifle practice)"
+  name: "DMR magazine (.30 rifle practice)"
   parent: BaseMagazineRifleDMR
   components:
   - type: BallisticAmmoProvider
@@ -202,7 +202,7 @@
 
 - type: entity
   id: MagazineDMRUranium
-  name: "magazine (.30 rifle uranium)"
+  name: "DMR magazine (.30 rifle uranium)"
   parent: BaseMagazineRifleDMR
   components:
   - type: BallisticAmmoProvider
@@ -226,7 +226,7 @@
 
 - type: entity
   id: MagazineDMRRubber
-  name: "magazine (.30 rifle rubber)"
+  name: "DMR magazine (.30 rifle rubber)"
   parent: BaseMagazineRifleDMR
   components:
   - type: BallisticAmmoProvider
