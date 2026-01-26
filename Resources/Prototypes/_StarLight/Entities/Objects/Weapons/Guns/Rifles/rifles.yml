@@ -301,6 +301,9 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
   - type: GunRequiresWield
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.8
+    sprintModifier: 0.8
   - type: ItemSlots
     slots:
       gun_magazine:

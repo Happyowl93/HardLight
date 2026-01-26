@@ -170,7 +170,7 @@
 
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
-  id: GunSafeHeavyWeapons #To save mapping
+  id: GunSafeHeavyWeapons # To save remapping
   name: DMR safe 
   description: Contains a set of L10 DMRs
   components:
@@ -181,9 +181,9 @@
         - id: WeaponRifleL10
           amount: 2
         - id: MagazineDMRSP
-          amount: 2
+          amount: 3
         - id: MagazineDMRFMJ
-          amount: 2
+          amount: 3
 
 - type: entity
   parent: [GunSafe, BaseSecurityContraband]
