@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "State based Copyright",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "black",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "black-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "blue",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "blue-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "can-connector",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "locked",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "unlocked",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "can-o0",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/",
+      "delays": [
+        [
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "can-o1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "can-o2",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "can-o3",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "can-oa1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "can-open",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "grey",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "grey-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "orange",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "orange-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "red",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "red-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "redws",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "redws-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "yellow",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "yellow-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "green",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/, modified by damoggen"
+    },
+    {
+      "name": "green-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/, modified by damoggen"
+    },
+    {
+      "name": "greenys",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/, modified by damoggen"
+    },
+    {
+      "name": "greenys-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/, modified by damoggen"
+    },
+    {
+      "name": "darkblue",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "darkblue-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/, modified by damoggen"
+    },
+    {
+      "name": "frezon",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "frezon-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "water_vapor",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/, modified by damoggen"
+    },
+    {
+      "name": "water_vapor-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/, modified by damoggen"
+    },
+    {
+      "name": "purple",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "purple-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "brown",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "brown-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "healium",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "healium-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "white",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "white-1",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "nob",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "proto_nitrate",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "zauker",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "halon",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "helium",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "antinob",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "scrubber-connector",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "scrubber-open",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    },
+    {
+      "name": "can-rainbow",
+      "copyright":"Taken from https://github.com/ParadiseSS13/Paradise/"
+    }
+  ]
+}

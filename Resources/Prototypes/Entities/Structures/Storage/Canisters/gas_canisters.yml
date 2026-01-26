@@ -10,7 +10,7 @@
     - type: Transform
       noRot: true
     - type: Sprite
-      sprite: Structures/Storage/canister.rsi
+      sprite: _Funkystation/Structures/Storage/canister.rsi # Starlight Edit: Structures/Storage/canister.rsi -> _Funkystation/Structures/Storage/canister.rsi
       noRot: true
       layers:
         - state: grey
