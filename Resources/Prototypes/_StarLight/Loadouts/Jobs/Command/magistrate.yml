@@ -5,6 +5,11 @@
     jumpsuit: MagistrateUniformSuit
 
 - type: loadout
+  id: MagistrateJumpsuitWhite
+  equipment:
+    jumpsuit: MagistrateUniformSuitWhite
+
+- type: loadout
   id: MagistrateJumpskirt
   equipment:
     jumpsuit: MagistrateUniformSkirt

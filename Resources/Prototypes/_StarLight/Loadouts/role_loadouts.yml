@@ -19,6 +19,7 @@
   id: JobMagistrate
   groups:
   - MagistrateJumpsuit
+  - MagistrateJumpsuitWhite
   - MagistrateEyewear
   - MagistrateOuterclothing
   - CommonBackpack

@@ -238,6 +238,7 @@
   loadouts:
   - MagistrateJumpsuit
   - MagistrateJumpskirt
+  - MagistrateJumpsuitWhite
 
 - type: loadoutGroup
   id: MagistrateOuterclothing
