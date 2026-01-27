@@ -15,7 +15,6 @@ namespace Content.Server.Damage.Systems
         [Dependency] private readonly Shared.Damage.Systems.DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly SharedToolSystem _toolSystem = default!;
-        [Dependency] private readonly IEntityManager _ent = default!; /// STARLIGHT EDIT
 
         public override void Initialize()
         {
@@ -37,7 +36,7 @@ namespace Content.Server.Damage.Systems
             && itemToggle.Activated
             && !welder.TankSafe)
             {
-                if (args.User is { } user && AntiWelderBomb(user, welder)) /// STARLIGHT EDIT
+                if (args.User is { } user && HasComp<AntiWelderBombComponent>(user) && welder.Enabled) /// STARLIGHT EDIT
                     return;
                 if (_damageableSystem.TryChangeDamage(args.Target, weldingDamage, out var dmg, origin: args.User))
                 {
@@ -57,19 +56,6 @@ namespace Content.Server.Damage.Systems
                 }
 
                 args.Handled = true;
-            }
-        }
-
-        /// STARLIGHT EDIT
-        private bool AntiWelderBomb(EntityUid user, WelderComponent entity)
-        {
-            if (_ent.HasComponent<AntiWelderBombComponent>(user) && entity.Enabled)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
             }
         }
     }
