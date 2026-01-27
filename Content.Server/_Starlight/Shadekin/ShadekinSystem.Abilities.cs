@@ -2,6 +2,7 @@ using Content.Server._Starlight.NullSpace;
 using Content.Server.DoAfter;
 using Content.Shared._Starlight.NullSpace;
 using Content.Shared._Starlight.Shadekin;
+using Content.Shared.Body.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Teleportation.Components;
@@ -20,6 +21,15 @@ public sealed partial class ShadekinSystem : EntitySystem
 
     private void OnPortalAction(EntityUid uid, BrighteyeComponent component, BrighteyePortalActionEvent args)
     {
+        // If its not our CORE... We cannot open a portal.
+        if (TryComp<BodyComponent>(uid, out var body))
+            foreach (var core in _bodySystem.GetBodyOrganEntityComps<OrganShadekinCoreComponent>((uid, body)))
+                if (core.Comp1.OrganOwner != uid)
+                {
+                    args.Handled = true;
+                    return;
+                }
+
         if (HasComp<NullSpaceComponent>(uid)) // No making portals while in nullspace!
         {
             args.Handled = true;

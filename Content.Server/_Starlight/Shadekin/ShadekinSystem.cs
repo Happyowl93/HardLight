@@ -55,6 +55,8 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private readonly StunSystem _stunSystem = default!;
 
     private static readonly ProtoId<TagPrototype> _theDarkTag = "TheDark";
+    private static readonly ProtoId<TagPrototype> _coreTag = "ShadekinCore";
+    private static readonly ProtoId<TagPrototype> _damagedCoreTag = "DamagedShadekinCore";
 
     private sealed class LightCone
     {
