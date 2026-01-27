@@ -28086,5 +28086,12 @@ Entries:
   id: 297600
   time: '2026-01-26T13:17:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2976
+- author: Fasuh
+  changes:
+  - message: Fixed Avali and Resomi getting poisoned from ammonia.
+    type: Fix
+  id: 301000
+  time: '2026-01-27T17:41:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3010
 Order: -1
 
