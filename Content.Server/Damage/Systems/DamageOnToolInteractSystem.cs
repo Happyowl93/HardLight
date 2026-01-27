@@ -15,6 +15,7 @@ namespace Content.Server.Damage.Systems
         [Dependency] private readonly Shared.Damage.Systems.DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly SharedToolSystem _toolSystem = default!;
+        [Dependency] private readonly IEntityManager _ent = default!; /// STARLIGHT EDIT
 
         public override void Initialize()
         {
@@ -62,7 +63,7 @@ namespace Content.Server.Damage.Systems
         /// STARLIGHT EDIT
         private bool AntiWelderBomb(EntityUid user, WelderComponent entity)
         {
-            if (HasComponent<AntiWelderBombComponent>(user) && entity.Enabled)
+            if (_ent.HasComponent<AntiWelderBombComponent>(user) && entity.Enabled)
             {
                 return true;
             }
