@@ -64,6 +64,10 @@
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
+            "name": "top-screen-blank",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
             "name": "top-stripe",
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
@@ -124,8 +128,72 @@
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
+            "name": "top-screen-blank-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
             "name": "top-stripe-1",
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bounty",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "can-connector",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "can-o0",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "can-o1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "can-o2",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "can-o3",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "can-oa1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "can-open",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "captains_paper",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "invoice",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "locked",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "paper",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "scrubber-connector",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "scrubber-open",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
+        },
+        {
+            "name": "unlocked",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi"
         }
     ]
 }
