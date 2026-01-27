@@ -5,7 +5,7 @@
 - type: cargoProduct
   id: AtmosphericsBZ
   icon:
-    sprite: Structures/Storage/canister.rsi
+    sprite: _Funkystation/Structures/Storage/canister.rsi
     state: purple
   product: BZCanister
   cost: 6000
