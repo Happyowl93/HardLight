@@ -28128,5 +28128,12 @@ Entries:
   id: 299800
   time: '2026-01-27T18:47:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2998
+- author: Scarlet Lightweaver
+  changes:
+  - message: Changed AC2 to FMJ!
+    type: Tweak
+  id: 299300
+  time: '2026-01-27T18:53:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2993
 Order: -1
 
