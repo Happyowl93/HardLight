@@ -1,0 +1,135 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "State based Copyright",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "bottom",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-shiny",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-broken",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-stripe-bottom",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-stripe-bottom-alt",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-stripe-middle",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-icon-plasma",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-connector",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-connector-decal",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-stripe-top",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-stripe-top-alt",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "top",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "top-shiny",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "top-screen",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "top-stripe",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-shiny-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-broken-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-stripe-bottom-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-stripe-bottom-alt-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-stripe-middle-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-icon-plasma-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-connector-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-connector-decal-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-stripe-top-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-stripe-top-alt-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "top-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "top-shiny-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "top-screen-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "top-stripe-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-broken-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        }
+    ]
+}
