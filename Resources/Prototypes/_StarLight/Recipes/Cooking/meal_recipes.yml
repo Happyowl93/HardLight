@@ -142,3 +142,27 @@
     Blood: 10
     Water: 10
     Fat: 10
+
+- type: microwaveMealRecipe
+  id: 
+  name: Volcanic explosion recipe
+  result: 
+  time: 20
+  reagents:
+    Ketchup: 3
+    Blackpepper: 2
+  solids:
+    FoodPlate: 1
+    FoodOrange: 1
+    RightHandReptilian: 1
+    FoodCabbage: 1
+
+- type: microwaveMealRecipe
+  id: RecipeFoodCookedShadekinCore
+  name: core spaghetti
+  result: FoodCookedShadekinCore
+  time: 10
+  group: Pasta
+  solids:
+    FoodNoodlesBoiled: 1
+    OrganShadekinCore: 1
