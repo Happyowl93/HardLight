@@ -162,7 +162,7 @@
     - CanPilot
     - VimPilot
     - AnomalyHost
-  - type: Puller # STARLIGHT EDIT
+  - type: Puller # STARLIGHT ADDITION
 
 # Spawnable scurrets have a random name and colour.
 
