@@ -12,11 +12,19 @@
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
-            "name": "bottom-broken",
+            "name": "bottom-shiny",
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
-            "name": "bottom-shiny",
+            "name": "bottom-rainbow",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-shiny-rainbow",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-broken",
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
@@ -60,6 +68,18 @@
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
+            "name": "top-rainbow",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "top-rainbow-rainbow",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "top-shiny-rainbow",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
             "name": "top-screen",
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
@@ -76,11 +96,19 @@
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
-            "name": "bottom-broken-1",
+            "name": "bottom-shiny-1",
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
-            "name": "bottom-shiny-1",
+            "name": "bottom-rainbow-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-shiny-rainbow-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "bottom-broken-1",
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
@@ -121,6 +149,14 @@
         },
         {
             "name": "top-shiny-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "top-1-rainbow",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
+            "name": "top-shiny-rainbow-1",
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
