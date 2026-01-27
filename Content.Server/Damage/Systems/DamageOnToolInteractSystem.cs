@@ -6,7 +6,6 @@ using Content.Shared.Interaction;
 using Content.Shared.Tools.Components;
 using Content.Shared.Tools.Systems;
 using ItemToggleComponent = Content.Shared.Item.ItemToggle.Components.ItemToggleComponent;
-using Content.Shared._Starlight.AntiWelderBomb; /// STARLIGHT ADDITION
 
 namespace Content.Server.Damage.Systems
 {
@@ -36,8 +35,6 @@ namespace Content.Server.Damage.Systems
             && itemToggle.Activated
             && !welder.TankSafe)
             {
-                if (args.User is { } user && HasComp<AntiWelderBombComponent>(user) && welder.Enabled) /// STARLIGHT ADDITION
-                    return;
                 if (_damageableSystem.TryChangeDamage(args.Target, weldingDamage, out var dmg, origin: args.User))
                 {
                     _adminLogger.Add(LogType.Damaged,
