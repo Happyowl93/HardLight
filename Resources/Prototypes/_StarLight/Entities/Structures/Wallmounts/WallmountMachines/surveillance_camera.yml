@@ -11,3 +11,5 @@
       transmitFrequencyId: SurveillanceCameraNetworkFNaF
     - type: SurveillanceCamera
       networkSet: true
+    - type: StationAiVision
+      enabled: false
