@@ -12,11 +12,15 @@
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
+            "name": "bottom-broken",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
             "name": "bottom-shiny",
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
-            "name": "bottom-broken",
+            "name": "bottom-broken-shiny",
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
@@ -72,11 +76,15 @@
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
+            "name": "bottom-broken-1",
+            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
+        },
+        {
             "name": "bottom-shiny-1",
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
-            "name": "bottom-broken-1",
+            "name": "bottom-broken-shiny-1",
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         },
         {
@@ -125,10 +133,6 @@
         },
         {
             "name": "top-stripe-1",
-            "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
-        },
-        {
-            "name": "bottom-broken-1",
             "copyright": "Taken from Resources/Textures/Structures/Storage/canister.rsi, edited and split by CrazyPhantom779 (Github)"
         }
     ]
