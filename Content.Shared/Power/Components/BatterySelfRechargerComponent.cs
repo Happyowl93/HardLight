@@ -20,7 +20,7 @@ public sealed partial class BatterySelfRechargerComponent : Component
     public float AutoRechargeRate;
     
     //Starlight begin
-    [ViewVariables(VVAccess.ReadWrite), UsedImplicitly]
+    [ViewVariables(VVAccess.ReadWrite)]
     public float AutoRechargeRateVV
     {
         get => AutoRechargeRate;
