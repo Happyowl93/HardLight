@@ -28093,5 +28093,12 @@ Entries:
   id: 301000
   time: '2026-01-27T17:41:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3010
+- author: Ivomink
+  changes:
+  - message: Fixed Cat ear markings
+    type: Fix
+  id: 300900
+  time: '2026-01-27T17:42:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3009
 Order: -1
 
