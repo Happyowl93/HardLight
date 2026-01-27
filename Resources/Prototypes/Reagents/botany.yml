@@ -252,7 +252,7 @@
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Rat ]
+          type: [ Rat, Avali, Resomi ] #Starlight
           inverted: true
         - !type:ReagentCondition
           reagent: Ammonia
@@ -265,7 +265,7 @@
         probability: 0.12
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Rat, Vox ]
+          type: [ Rat, Vox, Avali, Resomi ] #Starlight
           inverted: true
         - !type:ReagentCondition
           reagent: Ammonia
