@@ -28107,5 +28107,12 @@ Entries:
   id: 300300
   time: '2026-01-27T18:01:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3003
+- author: Bingus13
+  changes:
+  - message: Scurrets are now capable of pulling objects.
+    type: Tweak
+  id: 300500
+  time: '2026-01-27T18:35:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3005
 Order: -1
 
