@@ -4,7 +4,6 @@ job-name-atmostech = Atmospheric Technician
 job-name-bartender = Bartender
 job-name-borg = Cyborg
 job-name-botanist = Botanist
-job-name-boxer = Boxer
 job-name-brigmedic = Brigmedic
 job-name-cadet = Security Cadet
 job-name-captain = Captain
@@ -18,7 +17,8 @@ job-name-chef = Chef
 job-name-chemist = Chemist
 job-name-clown = Clown
 job-name-cmo = Chief Medical Officer
-job-name-deathsquad = Centcomm Agent
+# Starlight: Capitalization fix:
+job-name-deathsquad = CentCom Agent
 job-name-detective = Detective
 job-name-doctor = Medical Doctor
 job-name-engineer = Station Engineer
@@ -50,7 +50,6 @@ job-name-station-ai = Station AI
 job-name-technical-assistant = Technical Assistant
 job-name-visitor = Visitor
 job-name-cluwne = Cluwne
-job-name-zookeeper = Zookeeper
 
 # unused jobs
 # these are required for the agent ID job icon tooltips
@@ -75,7 +74,6 @@ JobAtmosphericTechnician = Atmospheric Technician
 JobBartender = Bartender
 JobBorg = Borg
 JobBotanist = Botanist
-JobBoxer = Boxer
 JobBrigmedic = Brigmedic
 JobCaptain = Captain
 JobCargoTechnician = Cargo Technician
@@ -99,8 +97,10 @@ JobHeadOfSecurity = Head of Security
 JobJanitor = Janitor
 JobLawyer = Lawyer
 JobLibrarian = Librarian
-JobMedicalDoctor = Medical doctor
-JobMedicalIntern = Medical intern
+# Starlight: Capitalization
+JobMedicalDoctor = Medical Doctor
+# Starlight: Capitalization
+JobMedicalIntern = Medical Intern
 JobMime = Mime
 JobMusician = Musician
 JobParamedic = Paramedic
@@ -119,4 +119,3 @@ JobStationEngineer = Station Engineer
 JobTechnicalAssistant = Technical Assistant
 JobVisitor = Visitor
 JobWarden = Warden
-JobZookeeper = Zookeeper
