@@ -28100,5 +28100,12 @@ Entries:
   id: 300900
   time: '2026-01-27T17:42:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3009
+- author: Fasuh
+  changes:
+  - message: Fixed Corgi overheating in hardsuits.
+    type: Fix
+  id: 300300
+  time: '2026-01-27T18:01:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3003
 Order: -1
 
