@@ -22,9 +22,9 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     public static readonly ProtoId<LanguagePrototype> UniversalPrototype = "Universal";
 
     /// <summary>
-    /// The chat prefix used to begin parsing a language. e.g. <c>$gcThis will parse to Galactic Common</c>.
+    /// The chat prefix used to begin parsing a language. e.g. <c>^gcThis will parse to Galactic Common</c>.
     /// </summary>
-    public static readonly char ChatPrefixChar = '$';
+    public static readonly char ChatPrefixChar = '^';
     
     /// <summary>
     ///     A cached instance of <see cref="UniversalPrototype"/>
@@ -180,7 +180,8 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     /// Attempt to resolve language based off a given prefix.
     /// </summary>
     /// <param name="ent">Entity to get language from</param>
-    /// <param name="input">Input to parse for prefix. Should start with <c>$</c>.</param>
+    /// <param name="input">Input to parse for prefix. Should start with <c><see cref="ChatPrefixChar"/></c>.</param>
+    /// <param name="parsed">Whether the function managed to parse the prefix or not.</param>
     /// <param name="modifyText">Whether to allow this function to modify the resulting text string or not.</param>
     /// <returns></returns>
     public LanguagePrototype GetLanguageFromPrefix(Entity<LanguageSpeakerComponent?> ent, ref string input, out bool parsed, bool modifyText = false)
@@ -209,7 +210,7 @@ public abstract partial class SharedLanguageSystem : EntitySystem
             parsed = true;
             return lang;
         }
-        if(modifyText) input = text[3..]; // be nice and make them look less stupid for doing invalid prefix or one they dont speak
+        
         return proto;
     }
 

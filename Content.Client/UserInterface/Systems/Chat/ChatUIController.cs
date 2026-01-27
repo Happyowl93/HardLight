@@ -80,7 +80,7 @@ public sealed partial class ChatUIController : UIController
     [UISystemDependency] private readonly LanguageSystem? _lang = default!; // Starlight
 
     private static readonly ProtoId<ColorPalettePrototype> ChatNamePalette = "ChatNames";
-    private static readonly string SendingLanguageString = "Message will send in ";
+    private static readonly string SendingLanguageLocId = "language-chat-confirmation";
     private string[] _chatNameColors = default!;
     private bool _chatNameColorsEnabled;
 
@@ -752,7 +752,7 @@ public sealed partial class ChatUIController : UIController
         if (language is null) box.SelectedLanguage.Visible = false;
         else
         {
-            box.SelectedLanguage.Text = $"{SendingLanguageString}{language.Name}.";
+            box.SelectedLanguage.Text = Loc.GetString(SendingLanguageLocId, ("lang", language.Name));
             box.SelectedLanguage.Visible = true;
         }
     }
@@ -790,7 +790,6 @@ public sealed partial class ChatUIController : UIController
         LanguagePrototype? language = null;
         if (TryGetLanguage(ref text, out var foundLanguage))
         {
-            // Only actually set the resulting language value if this returns true.
             language = foundLanguage;
             if(text.Length<5) return (ChatSelectChannel.None, text, null, null, null, foundLanguage);
             modText = text[4..];
