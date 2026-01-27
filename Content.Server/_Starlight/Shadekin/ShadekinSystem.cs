@@ -271,7 +271,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     {
         if (shadekinState == ShadekinState.Dark)
             EnsureComp<NightVisionComponent>(uid);
-        else
+        else if (TryComp<NightVisionComponent>(uid, out var nightvision) && !nightvision.Clothes)
             RemComp<NightVisionComponent>(uid);
     }
 
