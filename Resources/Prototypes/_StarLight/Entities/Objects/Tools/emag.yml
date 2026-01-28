@@ -54,6 +54,7 @@
       accessGroups: [CentralCommand]
       channelAdd: [CentCom]
       lawset: CCLawset
+      doEmaggedSound: false
     - type: Sprite
       sprite: _Starlight/Objects/Tools/ccemag.rsi
       state: icon
