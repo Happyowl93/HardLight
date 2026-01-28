@@ -39,6 +39,7 @@ using Content.Shared.Starlight.TextToSpeech;
 // Starlight begin
 using System.Linq;
 using Content.Shared.Tag;
+using Content.Server.Administration.Systems;
 // Starlight end
 
 namespace Content.Shared.Silicons.Borgs;
@@ -72,6 +73,8 @@ public abstract partial class SharedBorgSystem : EntitySystem
     [Dependency] private readonly SharedAccessSystem _access = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly TagSystem _tag = default!; // Starlight
+    [Dependency] private readonly StarlightEntitySystem _starlightEntitySystem = default!; // Starlight
+    ISawmill _sawmill = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -396,17 +399,25 @@ public abstract partial class SharedBorgSystem : EntitySystem
     private void OnBeingGibbed(Entity<BorgChassisComponent> chassis, ref BeingGibbedEvent args)
     {
         //region Starlight: Drop contents from ALL modules on gib.
+
+        _sawmill.Debug("is this even on?");
         foreach (var ent in chassis.Comp.ModuleContainer.ContainedEntities.ToList())
         {
+            _sawmill.Debug("loop entered");
+            if (!_starlightEntitySystem.TryEntity<ItemBorgModuleComponent,ContainerManagerComponent>(ent,out var component,log:true)) continue;
             if (!TryComp<ItemBorgModuleComponent>(ent, out var module)) continue;
             if (!TryComp<ContainerManagerComponent>(ent, out var manager)) continue;
+            _sawmill.Debug("Trycomps succesful");
             if (!_container.TryGetContainer(ent, module.HoldingContainer, out var container, manager)) continue;
+            _sawmill.Debug("Container found");
             foreach (var item in container.ContainedEntities.ToList())
             {
                 if (_tag.HasTag(item, chassis.Comp.ModuleItemTag)) continue;
                 while (_container.TryGetContainingContainer(item, out var containing))
                     if (!_container.Remove(item, containing)) break;
+                _sawmill.Debug("Item removal succesful");
             }
+            _sawmill.Debug("Got to end of loop");
         }
         //end region Starlight
         // Don't use the ItemSlotsSystem eject method since we don't want to play a sound and want we to eject the battery even if the slot is locked.
