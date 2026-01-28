@@ -41,6 +41,7 @@
     belt: ClothingBeltSecurityFilled
     pocket1: WeaponPistolN1984
     pocket2: FlashlightSeclite
+  inhand: HammerBreachingNT # Starlight-edit: Added breaching hammer to leader's inhand
   storage:
     back:
     - WeaponDisabler
