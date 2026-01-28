@@ -6,6 +6,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Roles.Components;
 using Content.Server._Starlight.GameTicking.Rules.Components;
 using Content.Server.GameTicking.Rules;
+using Content.Shared._Starlight.Roles.Components;
 using SELFRuleComponent = Content.Server._Starlight.GameTicking.Rules.Components.SELFRuleComponent;
 
 namespace Content.Server._Starlight.GameTicking.Rules;
