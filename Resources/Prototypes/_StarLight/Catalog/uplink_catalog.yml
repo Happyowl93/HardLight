@@ -607,11 +607,6 @@
     Telecrystal: 4
   categories:
   - UplinkDisruption
-  conditions:
-    - !type:StoreWhitelistCondition
-      blacklist:
-        tags:
-          - NukeOpsUplink
 
 - type: listing
   id: uplinkRiggedBoxingGlovesBoxer
