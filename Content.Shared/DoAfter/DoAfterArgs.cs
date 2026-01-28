@@ -127,6 +127,14 @@ public sealed partial class DoAfterArgs
     [DataField]
     public float? DistanceThreshold = 1.5f;
 
+    //Starlight Start
+    /// <summary>
+    ///     Threshold for distance user from the used OR target entities.
+    /// </summary>
+    [DataField]
+    public bool UseDistanceToEventTarget = false;
+    //Starlight End
+
     /// <summary>
     ///     Whether damage will cancel the DoAfter. See also <see cref="DamageThreshold"/>.
     /// </summary>

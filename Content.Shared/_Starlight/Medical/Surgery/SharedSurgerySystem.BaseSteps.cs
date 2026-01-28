@@ -275,7 +275,7 @@ public abstract partial class SharedSurgerySystem
             BreakOnMove = true,
             DuplicateCondition = DuplicateConditions.SameTarget,
             ForceNet = true,
-            DistanceThreshold = null, //don't do the distance check at all, unless anyone has a better idea how to not make it check distance
+            UseDistanceToEventTarget = true, //Use distance to body instead
         };
         _doAfter.TryStartDoAfter(doAfter);
     }
