@@ -28205,5 +28205,12 @@ Entries:
   id: 301200
   time: '2026-01-28T07:53:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3012
+- author: PubliclyExecutedPig
+  changes:
+  - message: Mingtenance
+    type: Tweak
+  id: 302900
+  time: '2026-01-28T18:07:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3029
 Order: -1
 
