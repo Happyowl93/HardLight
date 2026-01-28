@@ -220,7 +220,7 @@ public sealed partial class StationSystem : SharedStationSystem
                 var station = Comp<StationMemberComponent>(midroundStation.Uid).Station;
                 var data = Comp<StationDataComponent>(station);
                 var name = MetaData(station).EntityName;
-                AddGridToStation(station, uid, null, data, name);
+                AddMainGridToStation(station, uid, null, data, name);
                 return;
             }
         }
@@ -425,7 +425,7 @@ public sealed partial class StationSystem : SharedStationSystem
 
         foreach (var grid in gridIds ?? Array.Empty<EntityUid>())
         {
-            AddGridToStation(station, grid, null, data, name);
+            AddMainGridToStation(station, grid, null, data, name); // Starlight-edit
         }
 
         var ev = new StationPostInitEvent((station, data));
@@ -487,6 +487,28 @@ public sealed partial class StationSystem : SharedStationSystem
         _sawmill.Info($"Removing grid {mapGrid} from station {Name(station)} ({station})");
     }
 
+    //Starlight begin
+    public void AddMainGridToStation(EntityUid station, EntityUid mapGrid, MapGridComponent? gridComponent = null,
+        StationDataComponent? stationData = null, string? name = null)
+    {
+        if (!Resolve(mapGrid, ref gridComponent)) throw new ArgumentException("Tried to use a non-grid entity.", nameof(mapGrid));
+        if (!Resolve(station, ref stationData)) throw new ArgumentException("Tried to use a non-station entity as a station.", nameof(station));
+        
+        stationData.MainGrids.Add(mapGrid);
+        AddGridToStation(station, mapGrid, gridComponent, stationData, name);
+    }
+    
+    public void RemoveMainGridFromStation(EntityUid station, EntityUid mapGrid, MapGridComponent? gridComponent = null,
+        StationDataComponent? stationData = null)
+    {
+        if (!Resolve(mapGrid, ref gridComponent)) throw new ArgumentException("Tried to use a non-grid entity.", nameof(mapGrid));
+        if (!Resolve(station, ref stationData)) throw new ArgumentException("Tried to use a non-station entity as a station.", nameof(station));
+
+        stationData.MainGrids.Remove(mapGrid);
+        RemoveGridFromStation(station, mapGrid, gridComponent, stationData);
+    }
+    //Starlight end
+    
     /// <summary>
     /// Renames the given station.
     /// </summary>
