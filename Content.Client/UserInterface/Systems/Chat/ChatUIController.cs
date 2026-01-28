@@ -44,11 +44,12 @@ using Robust.Shared.Toolshed.TypeParsers;
 using Robust.Shared.Utility;
 using Content.Client._Starlight.Radio.Systems;
 using Content.Client.CollectiveMind;
-using Content.Shared._Starlight.Language; // Starlight
+//Starlight begin
+using Content.Shared._Starlight.Language;
 using System.Diagnostics.CodeAnalysis;
 using Content.Client._Starlight.Language.Systems;
-using Content.Shared._Starlight.Language.Systems; // Starlight
-using Content.Shared._Starlight.Radio; //Starlight
+using Content.Shared._Starlight.Radio;
+//Starlight end
 
 
 namespace Content.Client.UserInterface.Systems.Chat;
@@ -80,7 +81,7 @@ public sealed partial class ChatUIController : UIController
     [UISystemDependency] private readonly LanguageSystem? _lang = default!; // Starlight
 
     private static readonly ProtoId<ColorPalettePrototype> ChatNamePalette = "ChatNames";
-    private static readonly string SendingLanguageLocId = "language-chat-confirmation";
+    private static readonly string SendingLanguageLocId = "language-chat-confirmation"; // Starlight
     private string[] _chatNameColors = default!;
     private bool _chatNameColorsEnabled;
 
