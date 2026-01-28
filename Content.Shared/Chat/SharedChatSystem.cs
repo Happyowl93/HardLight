@@ -232,7 +232,7 @@ public abstract partial class SharedChatSystem : EntitySystem
             return true;
         }
         
-        // _keyCodes.TryGetValue(channelKey, out var protoMatch); <- scrap using the cache, only use what's actually available
+        // Starlight begin
         var protoResult = TryGetChannelsFromKeyCode(source, channelKey, out var channelMatches);
         var customResult = TryGetCustomChannelsFromKeyCode(source, channelKey, out var customChannelMatches);
         RadioChannelPrototype? protoMatch = null;
