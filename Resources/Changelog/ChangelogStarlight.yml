@@ -28191,5 +28191,12 @@ Entries:
   id: 301600
   time: '2026-01-28T00:20:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3016
+- author: katte
+  changes:
+  - message: Syndicate Shuttle Board to Traitor Uplink.
+    type: Add
+  id: 301500
+  time: '2026-01-28T07:49:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3015
 Order: -1
 
