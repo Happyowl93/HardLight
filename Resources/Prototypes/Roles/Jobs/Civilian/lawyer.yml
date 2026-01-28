@@ -35,6 +35,6 @@
     head: ClothingHeadHatBowlerHat
     eyes: ClothingEyesGlassesCheapSunglasses
     mask: ClothingMaskBreath
-    neck: ClothingNeckLawyerbadge
+    neck: ClothingNeckTieDet # Starlight ClothingNeckLawyerbadge -> ClothingNeckTieDet as Lawyer Badge is now a Misc slot item and cannot fit here.
     outerClothing: ClothingOuterWinterColorBlack
     gloves: ClothingHandsGlovesColorBlack
