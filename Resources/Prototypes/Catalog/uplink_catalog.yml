@@ -1142,27 +1142,14 @@
   id: UplinkBreachingHammer
   name: uplink-breaching-hammer-name
   description: uplink-breaching-hammer-desc
-  productEntity: HammerBreaching
+  productEntity: HammerBreachingNT
   discountCategory: usualDiscounts
   discountDownTo:
     Telecrystal: 8
   cost:
     Telecrystal: 12
   categories:
-  - UplinkDisruption
-
-- type: listing
-  id: UplinkBreachingHammer
-  name: uplink-breaching-hammer-name
-  description: uplink-breaching-hammer-desc
-  productEntity: HammerBreaching
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 8
-  cost:
-    Telecrystal: 12
-  categories:
-  - UplinkDisruption
+  - UplinkWeaponry
 
 - type: listing
   id: UplinkDuffelSurgery
