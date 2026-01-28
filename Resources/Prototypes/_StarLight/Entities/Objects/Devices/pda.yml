@@ -187,7 +187,7 @@
        !type:String
        pda-magi
   - type: PdaBorderColor
-    borderColor: "#7C5D00"
+    borderColor: "#3b3b3b"
   - type: Icon
     sprite: _Starlight/Objects/Devices/pda.rsi
     state: pda-magi
