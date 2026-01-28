@@ -28168,5 +28168,28 @@ Entries:
   id: 301400
   time: '2026-01-27T22:20:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3014
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Duty Officers
+    type: Add
+  - message: (Lobster) Nanotrasen Career Trainers
+    type: Add
+  - message: (Lobster) NCT Office
+    type: Add
+  - message: (Lobster) Xenobio
+    type: Add
+  - message: (Lobster) Magistrate Locker
+    type: Add
+  - message: (Lobster) IAA Lockers
+    type: Add
+  - message: (Lobster) AI Restoration consoles in RD Office and AI Upload
+    type: Add
+  - message: (Lobster) Wall-mounted mass scanners at Cargo front
+    type: Add
+  - message: (Lobster) Tweaked Law Office and Security doors around Courtroom
+    type: Tweak
+  id: 301600
+  time: '2026-01-28T00:20:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3016
 Order: -1
 
