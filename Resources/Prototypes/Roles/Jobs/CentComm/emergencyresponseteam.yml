@@ -36,7 +36,8 @@
     head: ClothingHeadHelmetERTLeader
     outerClothing: ClothingOuterArmorBasic
     pocket2: FlashlightSeclite
-  inhand: HammerBreachingNT # Starlight-edit: Added breaching hammer to leader's inhand
+  inhand:
+  - HammerBreachingNT # starlight
   storage:
     back:
     - WeaponDisabler
