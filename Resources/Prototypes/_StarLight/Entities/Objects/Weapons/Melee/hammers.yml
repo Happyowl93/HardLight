@@ -1,6 +1,6 @@
 - type: entity
   name: Breaching Hammer
-  parent: [BaseItem, BaseSecurityContraband]
+  parent: [BaseItem, BaseMajorContraband]
   id: HammerBreachingNT
   description: A robust heavy hammer made for breaching through walls and doors. Its reinforced head and sturdy handle make it ideal for demolition tasks.
   components:
@@ -21,7 +21,7 @@
     damage:
       types:
         Blunt: 25
-        Structural: 95
+        Structural: 100
   - type: Item
     size: Normal
     shape:

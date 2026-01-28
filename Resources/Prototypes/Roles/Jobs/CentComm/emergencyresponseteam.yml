@@ -37,7 +37,7 @@
     outerClothing: ClothingOuterArmorBasic
     pocket2: FlashlightSeclite
   inhand:
-  - HammerBreachingNT # starlight
+  - HammerBreaching # starlight
   storage:
     back:
     - WeaponDisabler
