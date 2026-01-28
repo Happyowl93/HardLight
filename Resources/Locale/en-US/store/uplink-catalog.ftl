@@ -293,6 +293,9 @@ uplink-toolbox-desc = A full compliment of tools for the mechanically inclined t
 uplink-syndicate-jaws-of-life-name = Jaws Of Life
 uplink-syndicate-jaws-of-life-desc = A combined prying and cutting tool. Useful for entering the station or its departments. Can even open bolted doors!
 
+uplink-breaching-hammer-name = Breaching Hammer
+uplink-breaching-hammer-desc = A heavy-duty powered breaching tool disguised as a combat hammer. Functions like jaws of life for prying open doors and airlocks, while also serving as a devastating melee weapon. Can deal massive structural damage to walls and reinforced barriers, making it perfect for forced entry operations.
+
 uplink-duffel-surgery-name = Surgical Duffel Bag
 uplink-duffel-surgery-desc = A large duffel bag containing a full suite of surgical tools.
 
