@@ -38,16 +38,6 @@
 
 - type: entity
   parent: [ ClothingUniformBase, BaseCommandContraband ]
-  id: MagistrateUniformSuitWhite
-  name: Magistrate's Requiem Jumpsuit
-  components:
-  - type: Sprite
-    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/magistrate_white.rsi
-  - type: Clothing
-    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/magistrate_white.rsi
-
-- type: entity
-  parent: [ ClothingUniformBase, BaseCommandContraband ]
   id: ClothingUniformJumpsuitNtrep
   name: nt representive suit
   description: That suit that is better not to see.

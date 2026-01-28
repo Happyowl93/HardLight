@@ -5,17 +5,6 @@
     jumpsuit: MagistrateUniformSuit
 
 - type: loadout
-  id: MagistrateJumpsuitWhite
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:OverallPlaytimeRequirement
-      time: 90000 # 25h
-  equipment:
-    jumpsuit: MagistrateUniformSuitWhite
-
-
-- type: loadout
   id: MagistrateJumpskirt
   equipment:
     jumpsuit: MagistrateUniformSkirt
