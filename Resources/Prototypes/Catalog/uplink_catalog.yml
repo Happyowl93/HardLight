@@ -1149,6 +1149,14 @@
   cost:
     Telecrystal: 12
   categories:
+  - UplinkDisruption
+  productEntity: HammerBreachingNT
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 8
+  cost:
+    Telecrystal: 12
+  categories:
   - UplinkWeaponry
 
 - type: listing
