@@ -122,56 +122,56 @@
   - type: Clothing
     sprite: Clothing/Shoes/Misc/snakeskin.rsi
 
-# Starlight edit start - Replaced with speed legs
-#- type: entity
-#  parent: [ClothingShoesBase, PowerCellSlotSmallItem, BaseToggleClothing]
-#  id: ClothingShoesBootsSpeed
-#  name: speed boots
-#  description: High-tech boots woven with quantum fibers, able to convert electricity into pure speed!
-#  components:
-#  - type: Sprite
-#    sprite: Clothing/Shoes/Boots/speedboots.rsi
-#    layers:
-#    - state: icon
-#      map: [ "enum.ToggleableVisuals.Layer" ]
-#  - type: Clothing
-#    sprite: Clothing/Shoes/Boots/speedboots.rsi
-#  - type: ToggleClothing
-#    action: ActionToggleSpeedBoots
-#  - type: ClothingSpeedModifier
-#    walkModifier: 1.5
-#    sprintModifier: 1.5
-#    standing: true
-#  - type: Appearance
-#  - type: GenericVisualizer
-#    visuals:
-#      enum.ToggleableVisuals.Enabled:
-#        enum.ToggleableVisuals.Layer:
-#          True: {state: icon-on}
-#          False: {state: icon}
-#  - type: StaticPrice
-#    price: 500
-#  - type: PowerCellDraw
-#    drawRate: 4
-#  - type: ToggleCellDraw
-#  - type: ItemSlots
-#    slots:
-#      cell_slot:
-#        name: power-cell-slot-component-slot-name-default
-#  - type: Tag
-#    tags: []
+# Starlight edit - Left speed boots with removed lathe recipe as an admeme item
+- type: entity
+  parent: [ClothingShoesBase, PowerCellSlotSmallItem, BaseToggleClothing]
+  id: ClothingShoesBootsSpeed
+  name: speed boots
+  description: High-tech boots woven with quantum fibers, able to convert electricity into pure speed!
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/speedboots.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/speedboots.rsi
+  - type: ToggleClothing
+    action: ActionToggleSpeedBoots
+  - type: ClothingSpeedModifier
+    walkModifier: 1.5
+    sprintModifier: 1.5
+    standing: true
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: {state: icon-on}
+          False: {state: icon}
+  - type: StaticPrice
+    price: 500
+  - type: PowerCellDraw
+    drawRate: 4
+  - type: ToggleCellDraw
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+  - type: Tag
+    tags: []
 
-#- type: entity
-#  parent: BaseAction
-#  id: ActionToggleSpeedBoots
-#  name: Toggle Speed Boots
-#  description: Toggles the speed boots on and off.
-#  components:
-#  - type: Action
-#    itemIconStyle: BigItem
-#  - type: InstantAction
-#    event: !type:ToggleActionEvent
-#Starlight edit end
+- type: entity
+  parent: BaseAction
+  id: ActionToggleSpeedBoots
+  name: Toggle Speed Boots
+  description: Toggles the speed boots on and off.
+  components:
+  - type: Action
+    itemIconStyle: BigItem
+  - type: InstantAction
+    event: !type:ToggleActionEvent
+# Starlight edit end
 
 - type: entity
   parent: ClothingShoesBase

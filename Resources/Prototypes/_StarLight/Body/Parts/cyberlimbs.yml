@@ -181,10 +181,10 @@
     - type: BaseLayerId
       layer: CyberLLeg
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/speedlegs.rsi
       state: "l_leg"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/speedlegs.rsi
       state: "l_leg"
     - type: MovementBodyPart
       walkSpeed: 3.75 # 1.5x of base
@@ -204,10 +204,10 @@
     - type: BaseLayerId
       layer: CyberRLeg
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/speedlegs.rsi
       state: "r_leg"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Starlight/Mobs/Species/Cyberlimbs/speedlegs.rsi
       state: "r_leg"
     - type: MovementBodyPart
       walkSpeed: 3.75 # 1.5x of base
