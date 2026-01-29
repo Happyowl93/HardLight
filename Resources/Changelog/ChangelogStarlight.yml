@@ -28277,5 +28277,51 @@ Entries:
   id: 298000
   time: '2026-01-29T13:40:46.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2980
+- author: neomoth
+  changes:
+  - message: Added support for custom radio channels to have keycodes that overlap
+      with one another or with that of a radio channel prototype.
+    type: Add
+  id: 299400
+  time: '2026-01-29T16:39:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2994
+- author: Xale
+  changes:
+  - message: Fix blue ointment inventory sprite
+    type: Fix
+  id: 304300
+  time: '2026-01-29T16:57:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3043
+- author: Huaqas
+  changes:
+  - message: Fixed various visual bugs with new Resomi body.
+    type: Fix
+  id: 296900
+  time: '2026-01-29T17:02:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2969
+- author: r3d3mpt1on
+  changes:
+  - message: Added Chameleon Medal for the Misc/Medal slot.
+    type: Add
+  - message: Removed Chameleon Controller implant from the Chameleon Backpack (filled).
+    type: Remove
+  - message: Added Chameleon Controller implant to the Thief toolbox's Chameleon set.  It
+      will be in whatever satchel you receive for your other selection.
+    type: Add
+  - message: Replaced the Chameleon Kit syndicate uplink catalog item with a Crate
+      that contains the filled backpack and one implanter.
+    type: Tweak
+  id: 304600
+  time: '2026-01-29T18:54:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3046
+- author: CrazyPhantom
+  changes:
+  - message: Rapid Piping Device
+    type: Add
+  - message: Issue where flipped Mixers and Filters wouldn't be flipped.
+    type: Fix
+  id: 263200
+  time: '2026-01-29T19:14:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2632
 Order: -1
 
