@@ -242,8 +242,18 @@
 - type: loadoutGroup
   id: MagistrateOuterclothing
   name: loadout-group-magistrate-outer
+  defaultSelected: 1
+  minLimit: 0
   loadouts:
   - MagistrateRobes
+
+- type: loadoutGroup
+  id: MagistrateHead
+  name: loadout-group-magistrate-headwear
+  defaultSelected: 1
+  minLimit: 0
+  loadouts:
+  - MagistrateHeadPwig
 
 - type: loadoutGroup
   id: MagistrateEyewear
