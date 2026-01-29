@@ -115,5 +115,5 @@
 - type: lobbyBackground
   id: dispace
   background: /Textures/_Starlight/LobbyScreens/Dispace.webp
-  name: Dispace
-  artist: IQlvlZero
+  title: lobby-state-background-Dispace-title
+  artist: lobby-state-background-IQlvlZero-artist
