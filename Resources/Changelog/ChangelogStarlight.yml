@@ -28292,5 +28292,12 @@ Entries:
   id: 304300
   time: '2026-01-29T16:57:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3043
+- author: Huaqas
+  changes:
+  - message: Fixed various visual bugs with new Resomi body.
+    type: Fix
+  id: 296900
+  time: '2026-01-29T17:02:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2969
 Order: -1
 
