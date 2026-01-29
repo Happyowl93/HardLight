@@ -28226,5 +28226,22 @@ Entries:
   id: 303900
   time: '2026-01-29T08:15:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3039
+- author: Way
+  changes:
+  - message: New resprited Jumpsuit, Jumpskirt & Robes for the Magistrate
+    type: Add
+  - message: New PDA and Headset sprite unique to the Magistrate.
+    type: Add
+  id: 303200
+  time: '2026-01-29T08:24:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3032
+- author: r3d3mpt1on
+  changes:
+  - message: Moved the starting loadout placement for the Lawyer Badge to the Medal/misc
+      slot, rather than the neck slot.
+    type: Tweak
+  id: 302800
+  time: '2026-01-29T08:37:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3028
 Order: -1
 
