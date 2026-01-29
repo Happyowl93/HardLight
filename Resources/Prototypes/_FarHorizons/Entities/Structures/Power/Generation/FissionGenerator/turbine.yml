@@ -99,9 +99,9 @@
   - type: DeviceLinkSource
     range: 50
     ports:
+      - GasTurbineDataSender
       - TurbineSpeedHigh
       - TurbineSpeedLow
-      - GasTurbineDataSender
   - type: DeviceLinkSink
     ports:
       - IncreaseStatorLoad
