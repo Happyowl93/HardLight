@@ -19,7 +19,7 @@ public sealed partial class VampireBloodBondBeamComponent : Component
 /// Data for blood bond beam connection
 /// </summary>
 [DataRecord]
-public readonly record struct BloodBondBeamConnection(
+public readonly partial record struct BloodBondBeamConnection(
     EntityUid Source,
     EntityUid Target,
     float MaxRange

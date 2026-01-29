@@ -19,7 +19,7 @@ public sealed partial class VampireDrainBeamComponent : Component
 /// Data for drain beam connection
 /// </summary>
 [DataRecord]
-public readonly record struct DrainBeamConnection(
+public readonly partial record struct DrainBeamConnection(
     EntityUid Source,
     EntityUid Target,
     float MaxRange
