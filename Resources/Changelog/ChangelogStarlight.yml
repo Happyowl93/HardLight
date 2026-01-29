@@ -28343,5 +28343,40 @@ Entries:
   id: 303500
   time: '2026-01-29T22:30:32.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3035
+- author: wonderfulnewworld
+  changes:
+  - message: Redid Alpha's secret chances entirely, roughly based on https://github.com/ss14Starlight/space-station-14/pull/2046.
+      (It now actually adds up to 1.)
+    type: Tweak
+  - message: Traitors now scale properly to 10% of the crew on Alpha, with an upper
+      limit of 24 at 252pop. I don't think we'll hit that anytime soon, but if we
+      do, I'll increase it further...
+    type: Tweak
+  - message: Thieves and lings now scale up to 6 each. Proper scaling would've been
+      to increase them to 9 or even further, but I don't think we need 9 of them.
+      These numbers only go above 3 above Beta's max pop size, so this doesn't affect
+      beta negatively.
+    type: Tweak
+  - message: Wizards (the gamerule) now scale 1:40, with a maximum of 6 on 240 pop.
+    type: Tweak
+  - message: Wizards (the subgamemode) now scales 1:55, with a maximum of 3 on 165
+      pop.
+    type: Tweak
+  - message: Only up to 3 Thieves can spawn in Rev games, to prevent easy access to
+      Emags. (Internally referred to as ThiefLess, for people making gamemodes)
+    type: Tweak
+  - message: Wizards and Xenoborgs are now more common as SubGameModes. (Up from 5%
+      to 7% and 8% respectively.)
+    type: Tweak
+  - message: Thieves and Xenoborgs can now show up in Zombies/Zombieteors.
+    type: Tweak
+  - message: Wizards can now show up in Xenoborgs.
+    type: Tweak
+  - message: ShitStation now has 66% more roundstart shit, double the Ion Storms,
+      an extra guaranteed Derelict Cyborg, and a second Extended scheduler.
+    type: Tweak
+  id: 304700
+  time: '2026-01-29T22:25:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3047
 Order: -1
 
