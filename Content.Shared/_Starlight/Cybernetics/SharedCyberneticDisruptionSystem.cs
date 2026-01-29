@@ -120,9 +120,7 @@ public abstract partial class SharedCyberneticDisruptionSystem : EntitySystem
     }
 
     private void OnProjectileHit(EntityUid uid, CyberneticDisruptionOnCollideComponent component, ref ProjectileHitEvent args)
-    {
-        OnCollide(uid, component, args.Target);
-    }
+    => OnCollide(uid, component, args.Target);
 
     private void OnCollide(EntityUid uid, CyberneticDisruptionOnCollideComponent component, EntityUid target)
     {

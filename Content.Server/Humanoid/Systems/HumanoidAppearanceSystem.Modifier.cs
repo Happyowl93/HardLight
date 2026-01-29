@@ -6,7 +6,15 @@ using Content.Shared.Humanoid;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
+using Content.Server.Administration.Managers;
+using Content.Shared.Administration;
+using Content.Shared.Humanoid;
+using Content.Shared.Verbs;
+using Robust.Server.GameObjects;
+using Robust.Shared.Player;
 using Robust.Shared.Utility;
+using Content.Server.Body.Systems; // Starlight
+using Content.Shared.Body.Components; // Starlight
 
 namespace Content.Server.Humanoid;
 
@@ -54,13 +62,9 @@ public sealed partial class HumanoidAppearanceSystem
         if (TryComp(args.Target, out BodyComponent? _))
         {
             foreach (var part in _body.GetBodyChildren(args.Target))
-            {
                 RaiseLocalEvent(part.Id, args);
-            }
             foreach (var organ in _body.GetBodyOrgans(args.Target))
-            { 
                 RaiseLocalEvent(organ.Id, args);
-            }
         }
     }
     //Starlight End

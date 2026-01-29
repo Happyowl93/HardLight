@@ -157,9 +157,7 @@ public sealed class PryingSystem : EntitySystem
         }
         // Starlight Start
         if (tool != null && TryComp(tool, out PryingComponent? comp) && comp.PlaySoundOnDoafter)
-        {
             _audioSystem.PlayPredicted(comp.UseSound, tool.Value, user);
-        }
         // Starlight End
         return _doAfterSystem.TryStartDoAfter(doAfterArgs, out id);
     }

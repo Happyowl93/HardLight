@@ -23,9 +23,7 @@ public abstract partial class SharedMultistampSystem : EntitySystem
     }
 
     private void OnMultistampHandleState(EntityUid uid, MultistampComponent component, ref AfterAutoHandleStateEvent args)
-    {
-        SetMultistamp(uid, component);
-    }
+    => SetMultistamp(uid, component);
 
     private void OnMultistampStartup(EntityUid uid, MultistampComponent stamps, MapInitEvent args)
     {
@@ -49,6 +47,7 @@ public abstract partial class SharedMultistampSystem : EntitySystem
         { 
             component.Stamps.Remove(args.Entity);
             component.CurrentEntry = !(component.Stamps.Count > component.CurrentEntry) ? component.CurrentEntry : 0;
+            Dirty(uid, component);
             SetMultistamp(uid, component, playSound: false);
         }
         else
@@ -76,6 +75,7 @@ public abstract partial class SharedMultistampSystem : EntitySystem
             return false;
 
         stamps.CurrentEntry = (stamps.CurrentEntry + 1) % stamps.Stamps.Count;
+        Dirty(uid, component);
         SetMultistamp(uid, stamps, playSound: playSound, user: user);
 
         return true;
@@ -90,11 +90,10 @@ public abstract partial class SharedMultistampSystem : EntitySystem
         if (!Resolve(uid, ref stamps, ref stamp))
             return;
 
-        Dirty(uid, stamps);
-
         if (!(stamps.Stamps.Count > stamps.CurrentEntry))
         {
             stamps.CurrentStampName = Loc.GetString("multiple-tool-component-no-behavior");
+            Dirty(uid, stamps);
             return;
         }
 
@@ -109,6 +108,8 @@ public abstract partial class SharedMultistampSystem : EntitySystem
 
         if (playSound && stamps.ChangeSound != null)
             _audioSystem.PlayPredicted(stamps.ChangeSound, uid, user);
+        
+        Dirty(uid, stamps);
     }
 }
 

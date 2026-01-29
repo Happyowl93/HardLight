@@ -6,8 +6,8 @@ using Robust.Shared.Map;
 using Robust.Shared.Timing;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
-using Content.Shared.Humanoid;
-using Content.Shared._Starlight.Cybernetics;
+using Content.Shared.Humanoid; // Starlight
+using Content.Shared._Starlight.Cybernetics; // Starlight
 
 namespace Content.Shared.Emp;
 

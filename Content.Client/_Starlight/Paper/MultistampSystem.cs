@@ -36,10 +36,7 @@ public sealed class MultistampSystem : SharedMultistampSystem
                 if (TryComp(current, out StampComponent? stampComp))
                     _sprite.LayerSetColor((uid, sprite), 1, stampComp.StampedColor);
             }
-            else
-            {
-                _sprite.LayerSetColor((uid, sprite), 1, Color.White);
-            }
+            else _sprite.LayerSetColor((uid, sprite), 1, Color.White);
         }
     }
 

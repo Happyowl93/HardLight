@@ -87,14 +87,8 @@ public sealed class HoloItemSystem : EntitySystem
         {
             var availability = _componentFactory.GetComponentAvailability(name);
             if (_componentFactory.TryGetRegistration(name, out var registration)
-                && availability == ComponentAvailability.Available)
-            {
-                list.Add(registration);
-            }
-            else if (availability == ComponentAvailability.Unknown)
-            {
-                _sawmill.Error($"StringsToRegs failed: Unknown component name {name} passed to {nameof(HoloItemSystem)}.");
-            }
+                && availability == ComponentAvailability.Available) list.Add(registration);
+            else if (availability == ComponentAvailability.Unknown) Log.Error($"StringsToRegs failed: Unknown component name {name} passed to {nameof(HoloItemSystem)}.");
         }
 
         return list;

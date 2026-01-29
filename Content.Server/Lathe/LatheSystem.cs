@@ -241,9 +241,7 @@ namespace Content.Server.Lathe
                     //Starlight Start
                     var transform = Transform(uid).Coordinates;
                     if (_container.IsEntityInContainer(uid))
-                    {
                         transform = Transform(_container.GetContainingContainers(uid).Last().Owner).Coordinates;
-                    }
                     var result = Spawn(resultProto, transform);
                     _stack.TryMergeToContacts(result);
                     if (currentRecipe.PrintTicket)
