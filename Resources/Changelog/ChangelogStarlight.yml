@@ -28269,5 +28269,13 @@ Entries:
   id: 301300
   time: '2026-01-29T13:37:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3013
+- author: walksanatora
+  changes:
+  - message: Made wrecks from the wreck swarm event 4x faster so they actually did
+      more then scratch the paint.
+    type: Tweak
+  id: 298000
+  time: '2026-01-29T13:40:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2980
 Order: -1
 
