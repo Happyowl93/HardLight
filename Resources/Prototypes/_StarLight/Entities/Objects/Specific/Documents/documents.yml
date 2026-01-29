@@ -41,8 +41,8 @@
             bribe: ""
             empty: ""
         - label:
-            line: DepartmentalSpecialPick
-            stamp: DepartmentalSpecialPick
+            line: Departmental
+            stamp: Departmental
 
 ### Classified Corporate Documents
 
