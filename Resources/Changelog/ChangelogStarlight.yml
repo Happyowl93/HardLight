@@ -28277,5 +28277,13 @@ Entries:
   id: 298000
   time: '2026-01-29T13:40:46.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2980
+- author: neomoth
+  changes:
+  - message: Added support for custom radio channels to have keycodes that overlap
+      with one another or with that of a radio channel prototype.
+    type: Add
+  id: 299400
+  time: '2026-01-29T16:39:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2994
 Order: -1
 
