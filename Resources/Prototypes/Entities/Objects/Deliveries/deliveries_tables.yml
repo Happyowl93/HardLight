@@ -158,14 +158,12 @@
     children:
     - id: MedkitAdvancedFilled # TODO: Replace with PackageRareGeneralBundlesTable for when something doesn't fit with a department. (Like a bundle of bed sheets, dunno)
     - id: PipeBomb # TODO: PackageRarePunishmentTable, including things like pipebombs and other potentially harmful things (the pipebomb should also get primed when unpacked)
+    - id: SyndieTrickyBomb
     - id: CleanerGrenade
     - id: LubeGrenade
     - id: GlueGrenade
     - id: ClothingMaskGoldenCursed
-      weight: .5
     - id: RitualDagger
-    - id: SyndieTrickyBomb
-      weight: .5
     - !type:NestedSelector
       tableId: SmallCritterEntityTable
     #- !type:NestedSelector # TODO: Uncomment after all the rare department bundles are done (medical, security, etc...)
