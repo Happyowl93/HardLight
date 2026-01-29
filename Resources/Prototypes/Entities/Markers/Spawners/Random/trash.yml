@@ -3,7 +3,7 @@
   table: !type:GroupSelector
     children:
     - !type:GroupSelector
-      weight: 90
+      weight: 20 #previously 90
       children:
       - id: FoodPacketBoritosTrash
       - id: FoodPacketCheesieTrash
