@@ -28285,5 +28285,12 @@ Entries:
   id: 299400
   time: '2026-01-29T16:39:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2994
+- author: Xale
+  changes:
+  - message: Fix blue ointment inventory sprite
+    type: Fix
+  id: 304300
+  time: '2026-01-29T16:57:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3043
 Order: -1
 
