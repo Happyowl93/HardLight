@@ -240,6 +240,12 @@
   - MagistrateJumpskirt
 
 - type: loadoutGroup
+  id: MagistrateOuterclothing
+  name: loadout-group-magistrate-outer
+  loadouts:
+  - MagistrateRobes
+
+- type: loadoutGroup
   id: MagistrateEyewear
   name: loadout-group-magistrate-eyewear
   loadouts:
