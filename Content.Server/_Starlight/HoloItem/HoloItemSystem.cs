@@ -13,7 +13,6 @@ public sealed class HoloItemSystem : EntitySystem
     [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
-    private ISawmill _sawmill = default!;
 
     public override void Initialize()
     {
