@@ -28219,5 +28219,12 @@ Entries:
   id: 303300
   time: '2026-01-29T04:45:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3033
+- author: Citrea
+  changes:
+  - message: AI can no longer accidentally round-remove itself
+    type: Fix
+  id: 303900
+  time: '2026-01-29T08:15:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3039
 Order: -1
 
