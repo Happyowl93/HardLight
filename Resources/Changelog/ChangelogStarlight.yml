@@ -28314,5 +28314,14 @@ Entries:
   id: 304600
   time: '2026-01-29T18:54:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3046
+- author: CrazyPhantom
+  changes:
+  - message: Rapid Piping Device
+    type: Add
+  - message: Issue where flipped Mixers and Filters wouldn't be flipped.
+    type: Fix
+  id: 263200
+  time: '2026-01-29T19:14:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2632
 Order: -1
 
