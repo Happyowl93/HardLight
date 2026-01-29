@@ -28254,5 +28254,12 @@ Entries:
   id: 303400
   time: '2026-01-29T09:18:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3034
+- author: r3d3mpt1on
+  changes:
+  - message: Fixed inconsistency between Guidebook and Wiki for Red Alert SOP.
+    type: Fix
+  id: 301800
+  time: '2026-01-29T13:29:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3018
 Order: -1
 
