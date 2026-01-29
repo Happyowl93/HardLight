@@ -506,12 +506,10 @@
         - state: autoinjector-fill-1
           map: ["enum.SolutionContainerLayers.Fill"]
           visible: false
-    - type: UseDelay
-      delay: 1.5
     - type: SolutionContainerManager
       solutions:
         hypospray:
-          maxVol: 30
+          maxVol: 15
     - type: ExaminableSolution
       solution: hypospray
     - type: Injector
@@ -577,6 +575,28 @@
       currentTransferAmount: 15
       reagentWhitelist:
         - Inaprovaline
+    - type: Tag
+      tags:
+        - CyberHandItem
+
+- type: entity
+  parent: AdvancedJetInjector
+  id: AdvancedJetInjectorCyber
+  name: cyber jet injector
+  description: A pristine, fashionable, high quality injector. Now integrated into your arm!
+  components:
+    - type: Sprite
+      sprite: _Starlight/Objects/Tools/cyberling.rsi
+      layers:
+        - state: jetinjector
+          map: ["enum.SolutionContainerLayers.Base"]
+        - state: autoinjector-fill-1
+          map: ["enum.SolutionContainerLayers.Fill"]
+          visible: false
+    - type: SolutionContainerVisuals
+      maxFillLevels: 3
+      fillBaseName: autoinjector-fill-
+      solutionName: hypospray
 
 - type: entity
   id: DefibrillatorCyber
