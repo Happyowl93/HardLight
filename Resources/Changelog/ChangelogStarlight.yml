@@ -28212,5 +28212,12 @@ Entries:
   id: 302900
   time: '2026-01-28T18:07:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3029
+- author: IQlvlZero
+  changes:
+  - message: Added Lobby Art
+    type: Add
+  id: 303300
+  time: '2026-01-29T04:45:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3033
 Order: -1
 
