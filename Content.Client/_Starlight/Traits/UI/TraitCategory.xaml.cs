@@ -41,10 +41,8 @@ public sealed partial class TraitCategory : BoxContainer
         UpdateStats();
     }
 
-    private void SetAccentColor(Color color)
-    {
-        AccentBar.PanelOverride = new StyleBoxFlat { BackgroundColor = color }; // dumb stylesheet modulation workaround
-    }
+    private void SetAccentColor(Color color) 
+        => AccentBar.PanelOverride = new StyleBoxFlat { BackgroundColor = color }; // dumb stylesheet modulation workaround
 
     private void PopulateTraits()
     {
@@ -60,10 +58,8 @@ public sealed partial class TraitCategory : BoxContainer
         }
     }
 
-    private void OnTraitEntryToggled(ProtoId<TraitPrototype> traitId, bool selected)
-    {
-        OnTraitToggled?.Invoke(traitId, selected);
-    }
+    private void OnTraitEntryToggled(ProtoId<TraitPrototype> traitId, bool selected) 
+        => OnTraitToggled?.Invoke(traitId, selected);
 
     private void ToggleExpanded()
     {
@@ -112,17 +108,13 @@ public sealed partial class TraitCategory : BoxContainer
     public void SetTraitSelected(ProtoId<TraitPrototype> traitId, bool selected)
     {
         if (_traitEntries.TryGetValue(traitId, out var entry))
-        {
             entry.SetSelected(selected);
-        }
     }
 
     public void ClearSelection()
     {
         foreach (var (_, entry) in _traitEntries)
-        {
             entry.SetSelected(false);
-        }
 
         SelectedCount = 0;
         PointsSpent = 0;
@@ -132,12 +124,10 @@ public sealed partial class TraitCategory : BoxContainer
     /// <summary>
     /// Gets the IDs of all currently selected traits in this category.
     /// </summary>
-    public IEnumerable<ProtoId<TraitPrototype>> GetSelectedTraitIds()
-    {
-        return _traitEntries
-            .Where(kvp => kvp.Value.IsSelected)
-            .Select(kvp => kvp.Key);
-    }
+    public IEnumerable<ProtoId<TraitPrototype>> GetSelectedTraitIds() 
+        => _traitEntries
+              .Where(kvp => kvp.Value.IsSelected)
+              .Select(kvp => kvp.Key);
 
     /// <summary>
     /// Filters traits based on search text only
@@ -173,9 +163,7 @@ public sealed partial class TraitCategory : BoxContainer
     public void UpdateConditions(HumanoidCharacterProfile? profile)
     {
         foreach (var (_, entry) in _traitEntries)
-        {
             entry.UpdateConditionsMet(profile);
-        }
 
         // Update stats since some traits may have been deselected
         UpdateStats();
@@ -184,8 +172,6 @@ public sealed partial class TraitCategory : BoxContainer
     /// <summary>
     /// Checks if a trait in this category meets its conditions.
     /// </summary>
-    public bool TraitMeetsConditions(ProtoId<TraitPrototype> traitId)
-    {
-        return _traitEntries.TryGetValue(traitId, out var entry) && entry.MeetsConditions;
-    }
+    public bool TraitMeetsConditions(ProtoId<TraitPrototype> traitId) 
+        => _traitEntries.TryGetValue(traitId, out var entry) && entry.MeetsConditions;
 }
