@@ -42,7 +42,7 @@
     #shoes: ClothingShoesBootsLaceup
     #eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesColorWhite
-    outerClothing: ClothingOuterRobesJudge
+    #outerClothing: ClothingOuterRobesJudge
     id: MagistratePDA
     ears: ClothingHeadsetMagistrate
     head: ClothingHeadHatPwig
