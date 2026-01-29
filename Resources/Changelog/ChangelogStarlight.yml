@@ -28332,5 +28332,16 @@ Entries:
   id: 304800
   time: '2026-01-29T22:24:53.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3048
+- author: Conflee
+  changes:
+  - message: Added Corporate, Secure, and Criminal Documents to the NT Rep, Magistrate,
+      and IAA lockers respectively. These contain pieces of metashielded information,
+      and the contents are randomly picked every round. These documents are steal
+      objectives, and allow one- especially a traitor stealing them- to gain metashielded
+      information such as Romerol, Nukies, Decimus, Xenoborgs, etc
+    type: Add
+  id: 303500
+  time: '2026-01-29T22:30:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3035
 Order: -1
 
