@@ -28323,5 +28323,14 @@ Entries:
   id: 263200
   time: '2026-01-29T19:14:21.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2632
+- author: Celestial3rror404
+  changes:
+  - message: wizards can once again be toggled on and off in the character menu
+    type: Add
+  - message: mid-round wizard spawns can now use your character if toggled on
+    type: Tweak
+  id: 304800
+  time: '2026-01-29T22:24:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3048
 Order: -1
 
