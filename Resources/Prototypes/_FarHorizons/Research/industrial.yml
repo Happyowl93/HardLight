@@ -23,6 +23,9 @@
   - SilverReactorHeatExchanger
   - PlasteelReactorHeatExchanger
   - PlasmaGlassReactorHeatExchanger
+  - PlasteelGasTurbineBlade
+  - BrassGasTurbineBlade
+  - SilverGasTurbineStator
   technologyPrerequisites:
   - PowerGeneration
   radioChannels:
@@ -47,6 +50,9 @@
   - DiamondReactorGasChannel
   - GoldReactorHeatExchanger
   - DiamondReactorHeatExchanger
+  - GoldGasTurbineBlade
+  - DiamondGasTurbineBlade
+  - GoldGasTurbineStator
   technologyPrerequisites:
   - NuclearPowerGeneration
   radioChannels:
