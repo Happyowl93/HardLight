@@ -75,7 +75,7 @@ public abstract partial class SharedMultistampSystem : EntitySystem
             return false;
 
         stamps.CurrentEntry = (stamps.CurrentEntry + 1) % stamps.Stamps.Count;
-        Dirty(uid, component);
+        Dirty(uid, stamps);
         SetMultistamp(uid, stamps, playSound: playSound, user: user);
 
         return true;
