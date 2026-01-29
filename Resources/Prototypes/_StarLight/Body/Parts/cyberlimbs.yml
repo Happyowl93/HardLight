@@ -1072,6 +1072,7 @@
       state: "l_angel_hand"
     - type: LimbItemStorage
       items:
+        - AutoinjectorCyber
         - AutoinjectorCyberTricordrazine
         - AutoinjectorCyberInaprovaline
         - DefibrillatorCyber
@@ -1123,6 +1124,7 @@
       state: "r_angel_hand"
     - type: LimbItemStorage
       items:
+        - AutoinjectorCyber
         - AutoinjectorCyberTricordrazine
         - AutoinjectorCyberInaprovaline
         - DefibrillatorCyber

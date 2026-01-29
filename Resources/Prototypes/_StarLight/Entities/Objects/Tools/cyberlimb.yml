@@ -506,10 +506,12 @@
         - state: autoinjector-fill-1
           map: ["enum.SolutionContainerLayers.Fill"]
           visible: false
+    - type: UseDelay
+      delay: 1.5
     - type: SolutionContainerManager
       solutions:
         hypospray:
-          maxVol: 15
+          maxVol: 30
     - type: ExaminableSolution
       solution: hypospray
     - type: Injector
