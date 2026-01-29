@@ -49,7 +49,7 @@
 - type: entity
   id: ClassifiedCorporateDocumentAbductors
   name: classified corporate documents
-  suffix: [Do Not Map]
+  suffix: Do Not Map
   description: A set of highly classified documents containing Corporate Secrets.
   parent: [ ImportantDocumentGeneric, BaseCommandContraband ]
   components:
@@ -61,7 +61,7 @@
 - type: entity
   id: ClassifiedCorporateDocumentDecimus
   name: classified corporate documents
-  suffix: [Do Not Map]
+  suffix: Do Not Map
   description: A set of highly classified documents containing Corporate Secrets.
   parent: [ ImportantDocumentGeneric, BaseCommandContraband ]
   components:
@@ -73,7 +73,7 @@
 - type: entity
   id: ClassifiedCorporateDocumentNinjas
   name: classified corporate documents
-  suffix: [Do Not Map]
+  suffix: Do Not Map
   description: A set of highly classified documents containing Corporate Secrets.
   parent: [ ImportantDocumentGeneric, BaseCommandContraband ]
   components:
@@ -85,7 +85,7 @@
 - type: entity
   id: ClassifiedCorporateDocumentNukies
   name: classified corporate documents
-  suffix: [Do Not Map]
+  suffix: Do Not Map
   description: A set of highly classified documents containing Corporate Secrets.
   parent: [ ImportantDocumentGeneric, BaseCommandContraband ]
   components:
@@ -97,7 +97,7 @@
 - type: entity
   id: ClassifiedCorporateDocumentRomerol
   name: classified corporate documents
-  suffix: [Do Not Map]
+  suffix: Do Not Map
   description: A set of highly classified documents containing Corporate Secrets.
   parent: [ ImportantDocumentGeneric, BaseCommandContraband ]
   components:
@@ -111,7 +111,7 @@
 - type: entity
   id: ClassifiedCriminalDocumentARC
   name: classified criminal documents
-  suffix: [Do Not Map]
+  suffix: Do Not Map
   description: A set of highly classified documents containing criminal reports.
   parent: [ ImportantDocumentGeneric, BaseLawContraband ]
   components:
@@ -123,7 +123,7 @@
 - type: entity
   id: ClassifiedCriminalDocumentComitas
   name: classified criminal documents
-  suffix: [Do Not Map]
+  suffix: Do Not Map
   description: A set of highly classified documents containing criminal reports.
   parent: [ ImportantDocumentGeneric, BaseLawContraband ]
   components:
@@ -135,7 +135,7 @@
 - type: entity
   id: ClassifiedCriminalDocumentSELF
   name: classified criminal documents
-  suffix: [Do Not Map]
+  suffix: Do Not Map
   description: A set of highly classified documents containing criminal reports.
   parent: [ ImportantDocumentGeneric, BaseLawContraband ]
   components:
@@ -147,7 +147,7 @@
 - type: entity
   id: ClassifiedCriminalDocumentTigerCooperative
   name: classified criminal documents
-  suffix: [Do Not Map]
+  suffix: Do Not Map
   description: A set of highly classified documents containing criminal reports.
   parent: [ ImportantDocumentGeneric, BaseLawContraband ]
   components:
@@ -161,7 +161,7 @@
 - type: entity
   id: ClassifiedSecureDocumentRevolutionaries
   name: classified secure documents
-  suffix: [Do Not Map]
+  suffix: Do Not Map
   description: A set of highly classified documents containing secure documents.
   parent: [ ImportantDocumentGeneric, BaseSecurityContraband ]
   components:
@@ -173,7 +173,7 @@
 - type: entity
   id: ClassifiedSecureDocumentVampires
   name: classified secure documents
-  suffix: [Do Not Map]
+  suffix: Do Not Map
   description: A set of highly classified documents containing secure documents.
   parent: [ ImportantDocumentGeneric, BaseSecurityContraband ]
   components:
@@ -185,7 +185,7 @@
 - type: entity
   id: ClassifiedSecureDocumentWizards
   name: classified secure documents
-  suffix: [Do Not Map]
+  suffix: Do Not Map
   description: A set of highly classified documents containing secure documents.
   parent: [ ImportantDocumentGeneric, BaseSecurityContraband ]
   components:
@@ -197,7 +197,7 @@
 - type: entity
   id: ClassifiedSecureDocumentXenoborgs
   name: classified secure documents
-  suffix: [Do Not Map]
+  suffix: Do Not Map
   description: A set of highly classified documents containing secure documents.
   parent: [ ImportantDocumentGeneric, BaseSecurityContraband ]
   components:
