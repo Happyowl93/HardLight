@@ -23,8 +23,8 @@ ban-banned-2 = The ban reason is: "{$reason}"
 ban-banned-3 = Attempts to circumvent this ban such as creating a new account will be logged.
 
 soft-player-cap-full = The server is full!
-panic-bunker-account-denied = Starlight is in panic bunker mode (raid protection). Ask administrator at Discord to lift it or try joining again in an hour or so.
-panic-bunker-account-denied-reason = Starlight is in panic bunker mode (raid protection). Ask administrator at Discord to lift it or try joining again in an hour or so. Reason: "{$reason}"
+panic-bunker-account-denied = Joining denied (raid protection panic bunker). Ask admin at Discord to let you in, or wait for an hour or so.
+panic-bunker-account-denied-reason = Joining denied (raid protection panic bunker). Ask admin at Discord to let you in, or wait for an hour or so. Note: to always bypass panic bunker - "{$reason}"
 panic-bunker-account-reason-account = Your Space Station 14 account is too new. It must be older than {$minutes} minutes
 panic-bunker-account-reason-overall = Your overall playtime on the server must be greater than {$minutes} $minutes
 
