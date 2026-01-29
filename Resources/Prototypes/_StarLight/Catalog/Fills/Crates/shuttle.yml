@@ -4,28 +4,28 @@
   name: Shuttle Bundle Crate
   description: Everything but the shuttle board. It's a shuttle in a crate* (Some assembly required)
   components:
-  - type: StorageFill
-    contents:
-    - id: GyroscopeFlatpack
-    - id: ThrusterFlatpack
-    - id: ThrusterFlatpack
-    - id: ThrusterFlatpack
-    - id: ThrusterFlatpack
-    - id: CableMVStack
-    - id: CableHVStack
-    - id: CableApcStack
-    - id: CableApcStack
-    - id: Multitool
-    - id: WallmountSubstationElectronics
-    - id: APCElectronics
-    - id: WallmountGeneratorAPUElectronics
-    - id: WallmountGeneratorAPUElectronics
-    - id: SheetSteel
-    - id: PartRodMetal
-    - id: MicroManipulatorStockPart
-    - id: PowerCellSmall
-    - id: SheetGlass1
-      amount: 2
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: GyroscopeFlatpack
+        - id: ThrusterFlatpack
+          amount: 4
+        - id: CableMVStack
+        - id: CableHVStack
+        - id: CableApcStack
+          amount: 2
+        - id: Multitool
+        - id: WallmountSubstationElectronics
+        - id: APCElectronics
+        - id: WallmountGeneratorAPUElectronics
+          amount: 2
+        - id: SheetSteel
+        - id: PartRodMetal
+        - id: MicroManipulatorStockPart
+        - id: PowerCellSmall
+        - id: SheetGlass1
+          amount: 2
     
 - type: entity
   parent: CrateSyndicate
