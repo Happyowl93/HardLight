@@ -24,6 +24,7 @@
         - id: FaxMachineFlatpack
         - id: PlushieEmmie
         - id: ClothingOuterHardsuitNtrep
+        tableId: CorporateDocumentTable
   
 - type: entity
   id: LockerRepresentativeFilledBluespaced
@@ -59,6 +60,7 @@
         - id: BoxFolderNanoTrasenClipboard
         - id: PrinterDocFlatpack
         - id: FaxMachineFlatpack
+        tableId: SecureDocumentTable
 
 - type: entity
   id: LockerMagistrateFilledBluespaced
@@ -91,6 +93,7 @@
         - id: LuxuryPen
         - id: BoxFolderNanoTrasenClipboard
         - id: BriefcaseBrown # Empty
+        tableId: CriminalDocumentTable
 
 - type: entity
   id: LockerBSOFilled
