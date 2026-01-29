@@ -16,6 +16,7 @@
         map: [ "label" ]
     - type: Paper
       contentSize: 12000
+      editingDisabled: true
     - type: ActivatableUI
       key: enum.PaperUiKey.Key
       requiresComplex: false
