@@ -237,28 +237,28 @@
     requirement:
       !type:OverallPlaytimeRequirement
       time: 360000 # 100 hours - you ain't neurotypical with that much.
-  storage:
+  equipment: # Starlight: Move to misc slot
     misc:
     - ClothingNeckGoldAutismPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckAroacePin
-  storage:
+  equipment: # Starlight: Move to misc slot
     misc:
     - ClothingNeckAroacePin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckPluralPin
-  storage:
+  equipment: # Starlight: Move to misc slot
     misc:
     - ClothingNeckPluralPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckGenderfluidPin
-  storage:
+  equipment: # Starlight: Move to misc slot
     misc:
     - ClothingNeckGenderfluidPin
   groupBy: "pin"
