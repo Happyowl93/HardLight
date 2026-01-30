@@ -190,9 +190,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
         {
             if (args.DistanceThreshold != null)
             {
-                if (!_interaction.InRangeAndAccessible(args.User,
-                 args.UseDistanceToEventTarget && args.EventTarget != null? args.EventTarget.Value //Starlight Edit
-                 : args.Target.Value, args.DistanceThreshold.Value))
+                if (!_interaction.InRangeAndAccessible(args.User, args.Target.Value, args.DistanceThreshold.Value))
                     return true;
             }
         }
