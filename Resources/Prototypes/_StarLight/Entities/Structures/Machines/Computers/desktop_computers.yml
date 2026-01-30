@@ -166,18 +166,17 @@
   - type: Computer
     board: SurveillanceCameraMonitorCircuitboardDesktop
 
-# security cameras for sepultum's fnaf area
 - type: entity
   parent: ComputerSurveillanceCameraMonitorDesktop
-  id: ComputerSurveillanceCameraMonitorDesktopFNaF
-  suffix: FNaF
+  id: ComputerSurveillanceCameraMonitorDesktopIsolatedNetwork
+  suffix: Isolated Network
   components:
   - type: Computer
     board: null
   - type: DeviceNetwork
     deviceNetId: Wired
-    receiveFrequencyId: SurveillanceCameraNetworkFNaF
-    transmitFrequencyId: SurveillanceCameraNetworkFNaF
+    receiveFrequencyId: SurveillanceCameraIsolatedNetwork
+    transmitFrequencyId: SurveillanceCameraIsolatedNetwork
 
 - type: entity
   parent: [ BaseDesktop, ComputerCargoBounty ]

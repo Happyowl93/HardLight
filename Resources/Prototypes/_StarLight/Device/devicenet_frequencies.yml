@@ -10,14 +10,7 @@
   name: device-frequency-prototype-name-turret
   frequency: 2156
 
-# security cameras for sepultum's fnaf area
-# i dont really know if i need both of these?
 - type: deviceFrequency
-  id: SurveillanceCameraNetworkFNaF
-  name: device-frequency-prototype-name-surveillance-camera-fnaf
-  frequency: 1927
-
-- type: deviceFrequency
-  id: SurveillanceCameraFNaF
-  name: device-frequency-prototype-name-surveillance-camera-fnaf
+  id: SurveillanceCameraIsolatedNetwork
+  name: device-frequency-prototype-name-surveillance-camera-isolated-network
   frequency: 1940

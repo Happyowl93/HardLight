@@ -1,14 +1,13 @@
-# security cameras for sepultum's fnaf area
 - type: entity
   parent: SurveillanceCameraBase
-  id: SurveillanceCameraFNaF
+  id: SurveillanceCameraIsolatedNetwork
   name: camera
-  suffix: FNaF
+  suffix: Isolated Network
   components:
     - type: DeviceNetwork
       deviceNetId: Wired
-      receiveFrequencyId: SurveillanceCameraFNaF
-      transmitFrequencyId: SurveillanceCameraNetworkFNaF
+      receiveFrequencyId: SurveillanceCameraIsolatedNetwork
+      transmitFrequencyId: SurveillanceCameraIsolatedNetwork
     - type: SurveillanceCamera
       networkSet: true
     - type: StationAiVision

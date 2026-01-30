@@ -1,13 +1,12 @@
-# security cameras for sepultum's fnaf area
 - type: entity
   parent: SurveillanceCameraRouterBase
-  id: SurveillanceCameraRouterFNaF
-  name: restaurant camera router
-  suffix: FNaF
+  id: SurveillanceCameraRouterIsolatedNetwork
+  name: camera router
+  suffix: Isolated Network
   components:
     - type: DeviceNetwork
       deviceNetId: Wired
-      receiveFrequencyId: SurveillanceCameraNetworkFNaF
-      transmitFrequencyId: SurveillanceCameraNetworkFNaF
+      receiveFrequencyId: SurveillanceCameraIsolatedNetwork
+      transmitFrequencyId: SurveillanceCameraIsolatedNetwork
     - type: SurveillanceCameraRouter
-      subnetFrequency: SurveillanceCameraFNaF
+      subnetFrequency: SurveillanceCameraIsolatedNetwork
