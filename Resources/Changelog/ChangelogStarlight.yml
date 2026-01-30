@@ -28393,5 +28393,14 @@ Entries:
   id: 305500
   time: '2026-01-30T09:03:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3055
+- author: Conflee
+  changes:
+  - message: General upkeep of event map, StationBuilding / Under Construction Station.
+      Added IAA/Magi lockers, NCT, Duty Officer, directional fans on some docks, fixed
+      GenPop turnstiles, etc.
+    type: Tweak
+  id: 304200
+  time: '2026-01-30T10:12:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3042
 Order: -1
 
