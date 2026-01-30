@@ -38,3 +38,18 @@
       checkCanInteract: false
     - type: InstantAction
       event: !type:BrighteyePortalActionEvent
+
+- type: entity
+  id: BrighteyeDarkTrapAction
+  name: Create Trap
+  description: Create a dark trap at your current location.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Action
+      useDelay: 60
+      icon:
+        sprite: _Starlight/Interface/Actions/shadekin32.rsi
+        state: darktrap
+      itemIconStyle: BigItem
+    - type: InstantAction
+      event: !type:BrighteyeDarkTrapActionEvent

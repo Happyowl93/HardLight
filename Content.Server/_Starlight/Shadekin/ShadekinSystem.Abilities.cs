@@ -1,35 +1,83 @@
 using Content.Server._Starlight.NullSpace;
-using Content.Server.DoAfter;
 using Content.Shared._Starlight.NullSpace;
 using Content.Shared._Starlight.Shadekin;
 using Content.Shared.Body.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.Ensnaring.Components;
 using Content.Shared.Movement.Pulling.Components;
+using Content.Shared.Popups;
 using Content.Shared.Teleportation.Components;
+using Content.Shared.Trigger;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server._Starlight.Shadekin;
 
 public sealed partial class ShadekinSystem : EntitySystem
 {
-    [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     public void InitializeAbilities()
     {
         SubscribeLocalEvent<BrighteyeComponent, BrighteyePortalActionEvent>(OnPortalAction);
         SubscribeLocalEvent<BrighteyeComponent, BrighteyePhaseActionEvent>(OnPhaseAction);
+        SubscribeLocalEvent<BrighteyeComponent, BrighteyeDarkTrapActionEvent>(OnDarkTrapAction);
         SubscribeLocalEvent<BrighteyeComponent, PhaseDoAfterEvent>(OnPhaseDoAfter);
+
+        SubscribeLocalEvent<DarkTrapComponent, TriggerEvent>(DarkTrapOnTrigger);
+        SubscribeLocalEvent<DarkTrapComponent, EnsnareRemoveEvent>((uid, _, _) => QueueDel(uid));
     }
+
+    #region DarkTrap
+
+    private void OnDarkTrapAction(EntityUid uid, BrighteyeComponent component, BrighteyeDarkTrapActionEvent args)
+    {
+        if (HasComp<NullSpaceComponent>(uid))
+            return;
+
+        if (!HasComp<MapGridComponent>(Transform(uid).GridUid)) // Trap need to be on a grid! duh!
+            return;
+
+        // DarkTraps can only be spawned in the dark!
+        if (TryComp<ShadekinComponent>(uid, out var shadekin))
+            if (shadekin.CurrentState != ShadekinState.Dark)
+            {
+                _popup.PopupEntity(Loc.GetString("shadekin-too-bright"), uid, uid, PopupType.MediumCaution);
+                return;
+            }
+
+        if (OnAttemptEnergyUse(uid, component, component.DarkTrapCost))
+            SpawnAtPosition(component.ShadekinTrap, Transform(uid).Coordinates);
+
+        args.Handled = true;
+    }
+
+    private void DarkTrapOnTrigger(Entity<DarkTrapComponent> ent, ref TriggerEvent args)
+    {
+        if (args.User is null)
+            return;
+
+        var darknet = Spawn(ent.Comp.DarkNet);
+        if (TryComp<EnsnaringComponent>(darknet, out var ensnaringComp) && _ensnareable.TryEnsnare(args.User.Value, darknet, ensnaringComp))
+        {
+            _popup.PopupEntity(Loc.GetString("shadekinTrap-trigger", ("user", args.User.Value)), args.User.Value, PopupType.LargeCaution);
+            if (TryComp<DarkTrapComponent>(darknet, out var darktrapcomp))
+            {
+                _stunSystem.TryUpdateStunDuration(args.User.Value, darktrapcomp.StunAmount);
+                _stunSystem.TryKnockdown(args.User.Value, darktrapcomp.StunAmount, force: true);
+            }
+
+            _audio.PlayPvs(ensnaringComp.EnsnareSound, args.User.Value);
+        }
+        else
+        {
+            _popup.PopupEntity(Loc.GetString("shadekinTrap-trigger-fail"), args.User.Value, PopupType.MediumCaution);
+            QueueDel(darknet);
+        }
+    }
+
+    #endregion
+    #region Portal
 
     private void OnPortalAction(EntityUid uid, BrighteyeComponent component, BrighteyePortalActionEvent args)
     {
-        // If its not our CORE... We cannot open a portal.
-        if (TryComp<BodyComponent>(uid, out var body))
-            foreach (var core in _bodySystem.GetBodyOrganEntityComps<OrganShadekinCoreComponent>((uid, body)))
-                if (core.Comp1.OrganOwner != uid)
-                {
-                    args.Handled = true;
-                    return;
-                }
-
         if (HasComp<NullSpaceComponent>(uid)) // No making portals while in nullspace!
         {
             args.Handled = true;
@@ -71,6 +119,9 @@ public sealed partial class ShadekinSystem : EntitySystem
 
         args.Handled = true;
     }
+
+    #endregion
+    #region  Phase
 
     private void OnPhaseAction(EntityUid uid, BrighteyeComponent component, BrighteyePhaseActionEvent args)
     {
@@ -129,4 +180,6 @@ public sealed partial class ShadekinSystem : EntitySystem
 
         args.Handled = true;
     }
+
+    #endregion
 }

@@ -29,6 +29,9 @@ using Content.Server._Starlight.Bluespace;
 using Content.Server.Stunnable;
 using Content.Server.Body.Systems;
 using Content.Shared.Damage.Systems;
+using Content.Server.DoAfter;
+using Content.Shared.Ensnaring;
+using Robust.Shared.Audio.Systems;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -53,6 +56,9 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private readonly SleepingSystem _sleeping = default!;
     [Dependency] private readonly NullSpacePhaseSystem _nullspace = default!;
     [Dependency] private readonly StunSystem _stunSystem = default!;
+    [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly SharedEnsnareableSystem _ensnareable = default!;
+    [Dependency] private   readonly SharedAudioSystem _audio = default!;
 
     private static readonly ProtoId<TagPrototype> _theDarkTag = "TheDark";
     private static readonly ProtoId<TagPrototype> _coreTag = "ShadekinCore";

@@ -108,16 +108,25 @@ public sealed partial class BrighteyeComponent : Component
     public EntityUid? PhaseAction;
 
     [DataField]
+    public EntityUid? DarkTrapAction;
+
+    [DataField]
     public EntProtoId BrighteyePortalAction = "BrighteyePortalAction";
 
     [DataField]
     public EntProtoId BrighteyePhaseAction = "BrighteyePhaseAction";
 
     [DataField]
+    public EntProtoId BrighteyeDarkTrapAction = "BrighteyeDarkTrapAction";
+
+    [DataField]
     public int PortalCost = 150;
 
     [DataField]
     public int PhaseCost = 50;
+
+    [DataField]
+    public int DarkTrapCost = 150;
 
     [DataField]
     public EntProtoId ShadekinShadow = "ShadekinShadow";
@@ -127,6 +136,9 @@ public sealed partial class BrighteyeComponent : Component
 
     [DataField]
     public EntProtoId PortalShadekin = "PortalShadekin";
+
+    [DataField]
+    public EntProtoId ShadekinTrap = "ShadekinTrapSpawn";
 }
 
 public sealed class OnAttemptEnergyUseEvent : CancellableEntityEventArgs
@@ -164,8 +176,20 @@ public sealed class OnBrighteyeRejuvenateAttemptEvent : CancellableEntityEventAr
 }
 #endregion
 #region Abilities
+
+[RegisterComponent]
+public sealed partial class DarkTrapComponent : Component
+{
+    [DataField]
+    public EntProtoId DarkNet = "ShadekinDarkNet";
+
+    [DataField]
+    public TimeSpan StunAmount =  TimeSpan.FromSeconds(10);
+}
+
 public sealed partial class BrighteyePortalActionEvent : InstantActionEvent { }
 public sealed partial class BrighteyePhaseActionEvent : InstantActionEvent { }
+public sealed partial class BrighteyeDarkTrapActionEvent : InstantActionEvent { }
 
 [Serializable, NetSerializable]
 public sealed partial class PhaseDoAfterEvent : SimpleDoAfterEvent
