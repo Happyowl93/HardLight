@@ -20,6 +20,7 @@ using Content.Shared.Weapons.Reflect;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Content.Shared._Starlight.NullSpace;
+using Content.Shared.Tag;
 #endregion Starlight
 
 namespace Content.Shared.Weapons.Hitscan.Systems;
@@ -30,6 +31,7 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly ISharedAdminLogManager _log = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly TagSystem _tag = default!; //Starlight -- arming distance
 
 #region Starlight
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -72,7 +74,8 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
             ? rayCastResults.FirstOrNull()
             : rayCastResults.FirstOrNull(hit => (hit.HitEntity == target
                                                 || CompOrNull<RequireProjectileTargetComponent>(hit.HitEntity)?.Active != true)
-                                               && CompOrNull<NullSpaceComponent>(hit.HitEntity) == null);
+                                               && CompOrNull<NullSpaceComponent>(hit.HitEntity) == null
+                                               && (hit.Distance >= ent.Comp.MinDistance || _tag.HasAnyTag(hit.HitEntity, ent.Comp.NotArmedCollideWith))); //Starlight Edit -- arming distance
 
         var distanceTried = result?.Distance ?? ent.Comp.MaxDistance;
 

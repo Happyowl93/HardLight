@@ -51,7 +51,7 @@ public sealed partial class ProjectileComponent : Component
     /// What tags entities need to have for the projectile to collide with them while not yet armed.
     /// </summary>
     [DataField]
-    public ProtoId<TagPrototype>[] NotArmedCollideWith = ["Wall", "Window"];
+    public ProtoId<TagPrototype>[] NotArmedCollideWith = ["Wall", "Window", "Airlock", "BulletUnarmedCollide"];
 
     public bool Armed = false;
     //Starlight End

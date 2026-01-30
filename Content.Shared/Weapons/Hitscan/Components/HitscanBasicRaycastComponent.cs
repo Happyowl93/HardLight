@@ -1,5 +1,7 @@
 using Content.Shared.Physics;
+using Content.Shared.Tag;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Weapons.Hitscan.Components;
 
@@ -20,4 +22,18 @@ public sealed partial class HitscanBasicRaycastComponent : Component
     /// </summary>
     [DataField]
     public CollisionGroup CollisionMask = CollisionGroup.Opaque;
+
+    //Starlight Start
+    /// <summary>
+    /// Maximum distance the raycast will travel before giving up. Reflections will reset the distance traveled
+    /// </summary>
+    [DataField]
+    public float MinDistance = 0.0f;
+
+    /// <summary>
+    /// What tags entities need to have for the raycast to collide with them prior to it's minimum distance.
+    /// </summary>
+    [DataField]
+    public ProtoId<TagPrototype>[] NotArmedCollideWith = ["Wall", "Window", "Airlock", "BulletUnarmedCollide"];
+    //Starlight End
 }
