@@ -192,6 +192,8 @@
       types:
         Radiation: 20
     impactEffect: BulletImpactEffectDisabler
+    ignoreShooter: false
+    armingTime: 0.5
   - type: TimedDespawn
     lifetime: 10
   - type: Reflective
