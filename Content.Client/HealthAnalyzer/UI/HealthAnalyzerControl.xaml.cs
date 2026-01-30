@@ -15,6 +15,7 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface.Controls;
+using Content.Shared.Chemistry.Reagent; // Starlight
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -30,6 +31,8 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
     private readonly SpriteSystem _spriteSystem;
     private readonly IPrototypeManager _prototypes;
     private readonly IResourceCache _cache;
+    private static readonly Color Green = Color.FromHex("#00FF00"); // Starlight
+    private static readonly Color Red = Color.FromHex("#FF0000"); // Starlight
 
     public HealthAnalyzerControl()
     {
@@ -90,9 +93,31 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             ? $"{state.Temperature - Atmospherics.T0C:F1} °C ({state.Temperature:F1} K)"
             : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
 
-        BloodLabel.Text = !float.IsNaN(state.BloodLevel)
-            ? $"{state.BloodLevel * 100:F1} %"
-            : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
+         // Starlight begin - blood level color gradient and exclaimation marks to show severity
+        if (!float.IsNaN(state.BloodLevel))
+        {
+                var bloodPercent = state.BloodLevel;
+                var exclamations = bloodPercent switch {
+                  <= 0f => "!!!!",
+                  <= 0.25f => "!!!",
+                  <= 0.5f => "!!",
+                  <= 0.75f => "!",
+                  _ => ""
+                };
+
+                BloodLabel.Text = $"{bloodPercent * 100:F1}% {exclamations}";
+
+                // Color gradient: Goes from green at 100% to red at 50% then stays red.
+                var clampedPercent = Math.Max(bloodPercent, 0.5f);
+                var scaled = (clampedPercent - 0.5f) / 0.5f;
+
+                BloodLabel.FontColorOverride = Color.InterpolateBetween(Red, Green, scaled);
+        }else
+        {
+            BloodLabel.Text = Loc.GetString("health-analyzer-window-entity-unknown-value-text");
+            BloodLabel.FontColorOverride = null;
+        }
+        // Starlight end
 
         StatusLabel.Text =
             _entityManager.TryGetComponent<MobStateComponent>(target.Value, out var mobStateComponent)
@@ -130,14 +155,21 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             });
 
         // Damage Groups
-
+        /* Starlight begin - old damage group sorting by highest damage
         var damageSortedGroups =
             damageable.DamagePerGroup.OrderByDescending(damage => damage.Value)
                 .ToDictionary(x => x.Key, x => x.Value);
-
+         Starlight end */
         IReadOnlyDictionary<string, FixedPoint2> damagePerType = damageable.Damage.DamageDict;
+        //Starlight begin - Sort damage groups in a fixed order and add metabolizing section
+        var groupOrder = new List<string> { "Burn", "Brute", "Airloss", "Toxin", "Genetic" };
+        var sortedGroups = damageable.DamagePerGroup
+            .OrderBy(g => groupOrder.IndexOf(g.Key))
+            .ToDictionary(g => g.Key, g => g.Value);
 
-        DrawDiagnosticGroups(damageSortedGroups, damagePerType);
+        DrawMetabolizingChemicals(state.MetabolizingReagents); // Metabolizing Chemicals Section
+        // Starlight end
+        DrawDiagnosticGroups(sortedGroups, damagePerType);
     }
 
     private static string GetStatus(MobState mobState)
@@ -150,7 +182,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             _ => Loc.GetString("health-analyzer-window-entity-unknown-text"),
         };
     }
-
+    /* Starlight begin - Old Diagnostic Groups
     private void DrawDiagnosticGroups(
         Dictionary<string, FixedPoint2> groups,
         IReadOnlyDictionary<string, FixedPoint2> damageDict)
@@ -196,10 +228,185 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             }
         }
     }
+    Starlight end */
+     // Starlight begin - Draw Damage Groups in a two column grid in their own boxes.
+    private void DrawDiagnosticGroups(
+        Dictionary<string, FixedPoint2> groups,
+        IReadOnlyDictionary<string, FixedPoint2> damageDict)
+    {
+        GroupsContainer.RemoveAllChildren();
 
+        var gridContainer = new GridContainer
+        {
+            Columns = 2,
+        };
+
+        GroupsContainer.AddChild(gridContainer);
+
+        var columnIndex = 0;
+        foreach (var (damageGroupId, damageAmount) in groups)
+        {
+            var groupTitleText = $"{Loc.GetString(
+                "health-analyzer-window-damage-group-text",
+                ("damageGroup", _prototypes.Index<DamageGroupPrototype>(damageGroupId).LocalizedName),
+                ("amount", damageAmount)
+            )}";
+
+            // Create a bordered box for each damage group
+            var groupBox = new PanelContainer
+            {
+                Margin = new Thickness(2),
+                MinWidth = 155,
+            };
+
+            // Boxes in the second column get right aligned
+            if (columnIndex % 2 == 1)
+            {
+                groupBox.HorizontalAlignment = HAlignment.Right;
+            }
+
+            groupBox.PanelOverride = new StyleBoxFlat
+            {
+                BorderColor = Color.Gray,
+                BorderThickness = new Thickness(1),
+                ContentMarginLeftOverride = 4,
+                ContentMarginRightOverride = 4,
+                ContentMarginTopOverride = 4,
+                ContentMarginBottomOverride = 4,
+            };
+
+            var groupContainer = new BoxContainer
+            {
+                Align = BoxContainer.AlignMode.Begin,
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+            };
+
+            var titleRow = CreateDiagnosticGroupTitleRow(groupTitleText, (float)damageAmount, damageGroupId);
+            groupContainer.AddChild(titleRow);
+
+            // Add divider line under the title row
+            var divider = new PanelContainer
+            {
+                MinHeight = 1,
+                Margin = new Thickness(0, 0, 0, 4),
+            };
+            divider.PanelOverride = new StyleBoxFlat(Color.Gray);
+            groupContainer.AddChild(divider);
+
+            var group = _prototypes.Index<DamageGroupPrototype>(damageGroupId);
+
+            foreach (var type in group.DamageTypes)
+            {
+                if (!damageDict.TryGetValue(type, out var typeAmount) || typeAmount <= 0)
+                    continue;
+
+                var damageTypeName = _prototypes.Index<DamageTypePrototype>(type).LocalizedName;
+                var typeId = type.ToString().ToLowerInvariant();
+
+                var damageRow = new BoxContainer
+                {
+                    Orientation = BoxContainer.LayoutOrientation.Horizontal,
+                    Margin = new Thickness(0, 2),
+                };
+
+                // Add damage type icon
+                damageRow.AddChild(new TextureRect
+                {
+                    SetSize = new Vector2(15, 15),
+                    Texture = GetTexture(typeId),
+                    Margin = new Thickness(0, 0, 4, 0),
+                });
+
+                var typeLabel = new Label
+                {
+                    Text = damageTypeName,
+                    HorizontalExpand = true,
+                    HorizontalAlignment = HAlignment.Left,
+                };
+
+                var amountLabel = new Label
+                {
+                    Text = typeAmount.ToString(),
+                    HorizontalAlignment = HAlignment.Right,
+                };
+
+                damageRow.AddChild(typeLabel);
+                damageRow.AddChild(amountLabel);
+                groupContainer.AddChild(damageRow);
+            }
+
+            groupBox.AddChild(groupContainer);
+            gridContainer.AddChild(groupBox);
+            columnIndex++;
+        }
+    }
+
+    // Metabolizing chemicals display
+    private void DrawMetabolizingChemicals(List<(string ReagentId, FixedPoint2 Quantity)>? reagents)
+    {
+        ChemicalsContainer.RemoveAllChildren();
+
+        var hasChemicals = reagents != null && reagents.Count > 0;
+
+        ChemicalsDivider.Visible = hasChemicals;
+        ChemicalsContainer.Visible = hasChemicals;
+
+        if (!hasChemicals || reagents == null)
+            return;
+
+        // Sort by quantity descending
+        var sortedReagents = reagents.OrderByDescending(r => r.Quantity).ToList();
+
+        foreach (var reagent in sortedReagents)
+        {
+            var reagentName = reagent.ReagentId;
+            var reagentColor = Color.White;
+
+            if (_prototypes.TryIndex<ReagentPrototype>(reagent.ReagentId, out var reagentProto))
+            {
+                reagentName = reagentProto.LocalizedName;
+                reagentColor = reagentProto.SubstanceColor;
+                
+            }
+
+            var rowContainer = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Horizontal,
+                Margin = new Thickness(0, 2),
+            };
+
+            // Color bar
+            var colorBar = new PanelContainer
+            {
+                MinWidth = 10,
+                MinHeight = 16,
+                Margin = new Thickness(0, 0, 6, 0),
+            };
+            colorBar.PanelOverride = new StyleBoxFlat(reagentColor);
+
+            var nameLabel = new Label
+            {
+                Text = reagentName,
+                HorizontalExpand = true,
+                HorizontalAlignment = HAlignment.Left,
+            };
+
+            var quantityLabel = new Label
+            {
+                Text = $"{reagent.Quantity}u",
+                HorizontalAlignment = HAlignment.Right,
+            };
+
+            rowContainer.AddChild(colorBar);
+            rowContainer.AddChild(nameLabel);
+            rowContainer.AddChild(quantityLabel);
+            ChemicalsContainer.AddChild(rowContainer);
+        }
+    }
+    // Starlight end
     private Texture GetTexture(string texture)
     {
-        var rsiPath = new ResPath("/Textures/Objects/Devices/health_analyzer.rsi");
+        var rsiPath = new ResPath("/Textures/_Starlight/Objects/Devices/health_analyzer.rsi"); // Starlight - new rsi for new icons :)
         var rsiSprite = new SpriteSpecifier.Rsi(rsiPath, texture);
 
         var rsi = _cache.GetResource<RSIResource>(rsiSprite.RsiPath).RSI;
@@ -218,7 +425,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             Text = text,
         };
     }
-
+    /* Starlight begin - old group title
     private BoxContainer CreateDiagnosticGroupTitle(string text, string id)
     {
         var rootContainer = new BoxContainer
@@ -238,4 +445,51 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
         return rootContainer;
     }
+    Starlight end */
+    // Starlight begin - damage group titles get a color gradient and exclamations to indicate severity 
+    private BoxContainer CreateDiagnosticGroupTitleRow(string text, float damageAmount, string damageGroupId)
+    {
+        // Color gradient: green (0) -> red (100+)
+        var clampedDamage = Math.Min(damageAmount, 100f);
+        var damagePercent = clampedDamage / 100f;
+        
+        var titleColor = Color.InterpolateBetween(Green, Red, damagePercent);
+        
+        var exclamations = damageAmount switch {
+            > 200f => " !!!!",
+            > 100f => " !!!",
+            > 75f => " !!",
+            > 50f => " !",
+            _ => ""
+        };
+        var titleRow = new BoxContainer
+        {
+            Orientation = BoxContainer.LayoutOrientation.Horizontal,
+            Margin = new Thickness(0, 0, 0, 4),
+        };
+        
+        var groupId = damageGroupId.ToLowerInvariant();
+        
+        // Add damage group icon
+        titleRow.AddChild(new TextureRect
+        {
+            SetSize = new Vector2(15, 15),
+            Texture = GetTexture(groupId),
+            Margin = new Thickness(0, 0, 4, 0),
+            VerticalAlignment = VAlignment.Center,
+        });
+        
+        var titleLabel = new Label
+        {
+            Text = text + exclamations,
+            HorizontalExpand = true,
+            HorizontalAlignment = HAlignment.Center,
+            FontColorOverride = titleColor,
+        };
+        
+        titleRow.AddChild(titleLabel);
+        
+        return titleRow;
+    }
+    // Starlight end
 }
