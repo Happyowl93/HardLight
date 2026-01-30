@@ -18,11 +18,11 @@
             targetKey: InjectTarget
             targetMoveKey: TargetCoordinates
 
+        #Starlight: Path before saying your line
         - !type:HTNPrimitiveTask
           operator: !type:MoveToOperator
             pathfindInPlanning: false
         
-        #Starlight: Moved to after pathing
         - !type:HTNPrimitiveTask
           operator: !type:SpeakOperator
             speech: !type:SingleSpeakOperatorSpeech
