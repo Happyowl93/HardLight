@@ -28402,5 +28402,13 @@ Entries:
   id: 304200
   time: '2026-01-30T10:12:14.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3042
+- author: Citrea
+  changes:
+  - message: Medibots now ask you to hold still only after successfully pathing to
+      the patient.
+    type: Tweak
+  id: 305700
+  time: '2026-01-30T11:00:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3057
 Order: -1
 
