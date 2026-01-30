@@ -257,13 +257,13 @@ public abstract partial class SharedProjectileSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        // Analogous to how ShatedTimedDespawnSystem does this
+        // Analogous to how SharedTimedDespawnSystem does this
         if (!_timing.IsFirstTimePredicted)
             return;
 
         var query = EntityQueryEnumerator<ProjectileComponent>();
 
-        while (query.MoveNext(out _, out var comp))
+        while (query.MoveNext(out var uid, out var comp))
         {
             if(comp.Armed) //No need to arm twice
                 continue;
@@ -271,7 +271,10 @@ public abstract partial class SharedProjectileSystem : EntitySystem
             comp.ArmingTime -= frameTime;
 
             if(comp.ArmingTime <= 0)
+            {
                 comp.Armed = true;
+                Dirty(uid, comp);
+            }
         }
     }
     //Starlight End
