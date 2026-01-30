@@ -28378,5 +28378,20 @@ Entries:
   id: 304700
   time: '2026-01-29T22:25:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3047
+- author: neomoth
+  changes:
+  - message: Fixed station AI being unable to speak on anything other than common.
+    type: Fix
+  - message: Fixed channel names not showing in the chat as AI when typing the prefix.
+    type: Fix
+  - message: Fixed channel names not showing in the chat as borgs when typing the
+      prefix.
+    type: Fix
+  - message: Fixes radio implanters not allowing you to properly speak on the channel
+      it grants.
+    type: Fix
+  id: 305500
+  time: '2026-01-30T09:03:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3055
 Order: -1
 
