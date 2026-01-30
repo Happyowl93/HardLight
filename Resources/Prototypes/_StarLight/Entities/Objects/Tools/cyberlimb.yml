@@ -594,7 +594,7 @@
           map: ["enum.SolutionContainerLayers.Fill"]
           visible: false
     - type: SolutionContainerVisuals
-      maxFillLevels: 3
+      maxFillLevels: 1
       fillBaseName: autoinjector-fill-
       solutionName: hypospray
 
