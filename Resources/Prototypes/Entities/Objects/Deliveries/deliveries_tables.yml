@@ -109,8 +109,11 @@
     - id: WeaponStickyHand
     - id: SadTromboneImplanter
     - id: LightImplanter
+    - id: ClothingHandsGlovesConducting
     - id: abominationcube
+      weight: 0.5
     - id: SyndicateBusinessCard
+      weight: 0.5
     - id: NukeDiskFake
       weight: 0.5
 
@@ -158,12 +161,15 @@
     children:
     - id: MedkitAdvancedFilled # TODO: Replace with PackageRareGeneralBundlesTable for when something doesn't fit with a department. (Like a bundle of bed sheets, dunno)
     - id: PipeBomb # TODO: PackageRarePunishmentTable, including things like pipebombs and other potentially harmful things (the pipebomb should also get primed when unpacked)
-    - id: SyndieTrickyBomb
+    - id: FakeGrenade
     - id: CleanerGrenade
-    - id: LubeGrenade
-    - id: GlueGrenade
-    - id: ClothingMaskGoldenCursed
     - id: RitualDagger
+    - id: LubeGrenade
+      weight: 0.8
+    - id: GlueGrenade
+      weight: 0.8
+    - id: ClothingMaskGoldenCursed
+      weight: 0.5
     - !type:NestedSelector
       tableId: SmallCritterEntityTable
     #- !type:NestedSelector # TODO: Uncomment after all the rare department bundles are done (medical, security, etc...)
