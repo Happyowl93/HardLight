@@ -343,8 +343,8 @@
     - Research
     - Engineering
     - Atmospherics
-    - type: NanoChatCard
-      listNumber: false
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
