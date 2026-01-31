@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared.StatusIcon;
+using Content.Shared.CCVar; // Starlight
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -16,6 +17,7 @@ public sealed class IconTag : IMarkupTag
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
     private SpriteSystem? _spriteSystem;
+    [Dependency] private readonly Robust.Shared.Configuration.IConfigurationManager _cfg = default!; // Starlight
 
     public string Name => "icon";
 
@@ -31,7 +33,7 @@ public sealed class IconTag : IMarkupTag
         AnimatedTextureRect? animated = null;
         TextureRect? icon = null;
 
-        _prototype.TryIndex<JobIconPrototype>(id.StringValue, out var jobProto);
+    _prototype.TryIndex<JobIconPrototype>(id.StringValue, out var jobProto);
 
         if (jobProto != null)
         {
@@ -39,7 +41,9 @@ public sealed class IconTag : IMarkupTag
             try
             {
                 var state = _spriteSystem.RsiStateLike(spec);
-                if (state.IsAnimated)
+                var disableJobAnim = _cfg.GetCVar(CCVars.DisableJobIconAnimation); // Starlight
+
+                if (state.IsAnimated && !disableJobAnim) // Starlight
                 {
                     var anim = new AnimatedTextureRect();
                     anim.SetFromSpriteSpecifier(spec);
