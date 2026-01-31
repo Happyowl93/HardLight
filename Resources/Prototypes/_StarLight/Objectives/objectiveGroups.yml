@@ -52,3 +52,5 @@
   weights:
     VampireSurviveObjective: 1
     VampireEscapeObjective: 1
+    ReputationObjective: 0.5
+    FalseOutbreakObjective: 0.75
