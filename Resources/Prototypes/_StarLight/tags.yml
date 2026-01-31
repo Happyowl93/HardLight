@@ -40,16 +40,28 @@
   id: BoneGel
 
 - type: Tag
+  id: BorgItem
+
+- type: Tag
+  id: BorgModuleMining
+
+- type: Tag
   id: BorgModulePurrfus
 
 - type: Tag
   id: BorgModuleSecurity
 
 - type: Tag
+  id: BorgModuleSupply
+
+- type: Tag
   id: BorgModuleSyndicateStealth
 
 - type: Tag
   id: Bow
+
+- type: Tag
+  id: BurnedTraitBackground
 
 - type: Tag
   id: CantInteract
@@ -68,6 +80,9 @@
 
 - type: Tag
   id: CartridgePistolImprovised
+
+- type: Tag
+  id: CantBecomeRevolutionary
 
 - type: Tag
   id: CentcommVibroblade
@@ -175,6 +190,9 @@
   id: Felionoid
 
 - type: Tag
+  id: FreeMag
+
+- type: Tag
   id: FestiveDinner
 
 - type: Tag
@@ -244,10 +262,20 @@
   id: ImprovisedWrench
 
 - type: Tag
+  id: Inedible # Prevents something from being eaten using DevourSystem, but only if on the direct target (e.g. doesn't apply if in inventory of target)
+  
+- type: Tag
   id: InsulatedFabric
 
 - type: Tag
   id: InsulatedThread
+
+- type: Tag
+  id: IteratorTraitBackground
+
+# Used for the jet injector and advanced jet injector
+- type: Tag
+  id: JetInjector
 
 - type: Tag
   id: L6Saw
@@ -299,6 +327,10 @@
 
 - type: Tag
   id: MedCyberEyes
+
+# Used for the one-use disposable medipens
+- type: Tag
+  id: Medipen
 
 - type: Tag
   id: Meson
