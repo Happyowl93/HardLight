@@ -1094,7 +1094,7 @@
       state: holorestrainer_powered
       unshaded: true
       visible: false
-  - type: PredictedBatteryVisuals
+  - type: BatteryVisuals
   - type: GenericVisualizer
     visuals:
       enum.BatteryVisuals.State:
