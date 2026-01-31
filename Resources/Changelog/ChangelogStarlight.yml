@@ -28674,5 +28674,14 @@ Entries:
   id: 305100
   time: '2026-01-31T07:33:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3051
+- author: Miracula
+  changes:
+  - message: New season clothes in Fashion-O-Mat
+    type: Add
+  - message: Support for animated job icons
+    type: Add
+  id: 293500
+  time: '2026-01-31T11:34:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2935
 Order: -1
 
