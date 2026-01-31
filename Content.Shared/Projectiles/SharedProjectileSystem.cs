@@ -17,7 +17,25 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-
+using System.Numerics;
+using Content.Shared.Damage;
+using Content.Shared.DoAfter;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Interaction;
+using Content.Shared.Inventory;
+using Content.Shared.Throwing;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Containers;
+using Robust.Shared.Map;
+using Robust.Shared.Network;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Events;
+using Robust.Shared.Physics.Systems;
+using Robust.Shared.Serialization;
+using Robust.Shared.Utility;
+using Content.Shared.Tag; // Starlight
+using Robust.Shared.Timing; // Starlight
 namespace Content.Shared.Projectiles;
 
 public abstract partial class SharedProjectileSystem : EntitySystem

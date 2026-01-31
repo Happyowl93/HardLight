@@ -32,9 +32,7 @@ public sealed class HoloItemSystem : EntitySystem
             args.PushMarkup(Loc.GetString("limited-charges-charges-remaining", ("charges", charges)));
 
             if (charges > 0 && charges == maxCharges)
-            {
                 args.PushMarkup(Loc.GetString("limited-charges-max-charges"));
-            }
         }
     }
 

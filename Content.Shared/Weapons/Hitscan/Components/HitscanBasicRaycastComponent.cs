@@ -1,7 +1,7 @@
 using Content.Shared.Physics;
-using Content.Shared.Tag;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
+using Content.Shared.Tag; // Starlight
+using Robust.Shared.Prototypes; // Starlight
 
 namespace Content.Shared.Weapons.Hitscan.Components;
 

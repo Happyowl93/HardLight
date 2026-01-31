@@ -32,8 +32,6 @@ namespace Content.Client._Starlight.Paper
         }
 
         public void Update()
-        {
-            _label.SetMarkup(_parent.StatusShowStamp ? _parent.CurrentStampName : string.Empty);
-        }
+            => _label.SetMarkup(_parent.StatusShowStamp ? _parent.CurrentStampName : string.Empty);
     }
 }

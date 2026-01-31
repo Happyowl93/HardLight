@@ -1,9 +1,9 @@
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
-using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Content.Shared.Tag; // Starlight
 
 namespace Content.Shared.Projectiles;
 
