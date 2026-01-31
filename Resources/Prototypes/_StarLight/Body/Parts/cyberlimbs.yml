@@ -175,7 +175,7 @@
 # Speed legs
 - type: entity
   id: LeftLegCyberSpeed
-  name: "left speed leg"
+  name: "left speg"
   parent: [PartCyber, BaseLeftLeg]
   components:
     - type: BaseLayerId
@@ -198,7 +198,7 @@
 
 - type: entity
   id: RightLegCyberSpeed
-  name: "right speed leg"
+  name: "right speg"
   parent: [PartCyber, BaseRightLeg]
   components:
     - type: BaseLayerId
