@@ -22,7 +22,7 @@
   - type: SubGamemodes
     rules:
     - id: Thief
-      prob: 0.45 # Starlight. Adds up to 1.
+      prob: 0.85 # Starlight. Adds up to 1.
 #    - id: Vampire # disabled until reworked
 #      prob: 0.25
       #    - id: Vampire # disabled until reworked
