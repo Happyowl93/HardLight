@@ -143,7 +143,7 @@ public sealed class HungerSystem : EntitySystem
 
         if (GetMovementThreshold(component.CurrentThreshold) != GetMovementThreshold(component.LastThreshold))
         {
-            _movementSpeedModifier.RefreshMovementSpeedModifiers(uid, null, false); // Starlight-edit
+            _movementSpeedModifier.RefreshMovementSpeedModifiers(uid, null); // Starlight-edit
         }
 
         if (component.HungerThresholdAlerts.TryGetValue(component.CurrentThreshold, out var alertId))

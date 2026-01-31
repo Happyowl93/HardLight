@@ -109,7 +109,7 @@ namespace Content.Shared.Movement.Systems
             Dirty(uid, move);
         }
 
-        public void RefreshMovementSpeedModifiers(EntityUid uid, MovementSpeedModifierComponent? move = null, bool applyScaleModifier = true) // Starlight-edit
+        public void RefreshMovementSpeedModifiers(EntityUid uid, MovementSpeedModifierComponent? move = null) // Starlight-edit
         {
             if (!Resolve(uid, ref move, false))
                 return;
@@ -126,8 +126,7 @@ namespace Content.Shared.Movement.Systems
 
             // Starlight-start
             var applyScale = new ApplyMovementScaleModifierEvent(ev.WalkSpeedModifier, ev.SprintSpeedModifier);
-            if (applyScaleModifier)
-                RaiseLocalEvent(uid, applyScale);
+            RaiseLocalEvent(uid, applyScale);
 
             move.WalkSpeedModifier = applyScale.ChangedWalkSpeedModifier ?? ev.WalkSpeedModifier;
             move.SprintSpeedModifier = applyScale.ChangedSprintSpeedModifier ?? ev.SprintSpeedModifier;
