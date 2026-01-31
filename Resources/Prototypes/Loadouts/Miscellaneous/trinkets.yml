@@ -135,22 +135,19 @@
 - type: loadout
   id: ClothingNeckLGBTPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckLGBTPin
+    misc: ClothingNeckLGBTPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckAllyPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckAllyPin
+    misc: ClothingNeckAllyPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckAromanticPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckAromanticPin
+    misc: ClothingNeckAromanticPin
   groupBy: "pin"
 
 - type: loadout
@@ -158,76 +155,66 @@
   equipment: # Starlight: Move to misc slot
     misc:
     - ClothingNeckAsexualPin
-  groupBy: "pin"
+    misc: ClothingNeckAsexualPin
 
 - type: loadout
   id: ClothingNeckBisexualPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckBisexualPin
+    misc: ClothingNeckBisexualPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckGayPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckGayPin
+    misc: ClothingNeckGayPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckIntersexPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckIntersexPin
+    misc: ClothingNeckIntersexPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckLesbianPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckLesbianPin
+    misc: ClothingNeckLesbianPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckNonBinaryPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckNonBinaryPin
+    misc: ClothingNeckNonBinaryPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckPansexualPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckPansexualPin
+    misc: ClothingNeckPansexualPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckOmnisexualPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckOmnisexualPin
+    misc: ClothingNeckOmnisexualPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckGenderqueerPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckGenderqueerPin
+    misc: ClothingNeckGenderqueerPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckTransPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckTransPin
+    misc: ClothingNeckTransPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckAutismPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckAutismPin
+    misc: ClothingNeckAutismPin
   groupBy: "pin"
 
 - type: loadout
@@ -238,29 +225,25 @@
       !type:OverallPlaytimeRequirement
       time: 360000 # 100 hours - you ain't neurotypical with that much.
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckGoldAutismPin
+    misc: ClothingNeckGoldAutismPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckAroacePin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckAroacePin
+    misc: ClothingNeckAroacePin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckPluralPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckPluralPin
+    misc: ClothingNeckPluralPin
   groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckGenderfluidPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckGenderfluidPin
+    misc: ClothingNeckGenderfluidPin
   groupBy: "pin"
 
 # Canes
