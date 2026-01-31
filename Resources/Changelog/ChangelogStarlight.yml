@@ -28616,5 +28616,12 @@ Entries:
   id: 306700
   time: '2026-01-31T02:59:06.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3067
+- author: Conflee
+  changes:
+  - message: Fixed part of sci being unpowered round start
+    type: Fix
+  id: 306200
+  time: '2026-01-31T07:04:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3062
 Order: -1
 
