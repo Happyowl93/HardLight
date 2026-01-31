@@ -190,6 +190,9 @@
   id: Felionoid
 
 - type: Tag
+  id: FreeMag
+
+- type: Tag
   id: FestiveDinner
 
 - type: Tag
