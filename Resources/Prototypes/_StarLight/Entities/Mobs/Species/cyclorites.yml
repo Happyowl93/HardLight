@@ -77,8 +77,8 @@
     movementSpeedScale: 0.5
   - type: SlowOnDamage
     speedModifierThresholds:
-      90: 0.7 # 60% of base health based on BaseMobSpecies
-      120: 0.5 # 80% of base health based on BaseMobSpecies
+      90: 0.5 # 0.75 w/ Speed Modifier Scale, 60% of base health based on BaseMobSpecies
+      120: 0 # 0.5 w/ Speed Modifier Scale, 80% of base health based on BaseMobSpecies
   - type: Vocal
     sounds:
       Male: MaleCyclorite
