@@ -21,7 +21,7 @@
     definitions:
     - prefRoles: [ Thief ]
       max: 3 # Starlight. Prevents excess thieves from spawning on Revs.
-      playerRatio: 20
+      playerRatio: 21 # Starlight. Accounts for the thieves in the population. (63 pop = 60 crew 3 thieves.)
       lateJoinAdditional: true
       allowNonHumans: true
       multiAntagSetting: NotExclusive
