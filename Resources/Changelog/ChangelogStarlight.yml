@@ -28663,5 +28663,16 @@ Entries:
   id: 306100
   time: '2026-01-31T07:18:14.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3061
+- author: Fractalflower, LynatiKr20
+  changes:
+  - message: Removed 10% slowdown on ninja suit
+    type: Remove
+  - message: 'Reverted upstream change to ninja gloves: 10s cooldown for stun.'
+    type: Remove
+  - message: Reverted Ninja suit to old 30/30/30/30.
+    type: Tweak
+  id: 305100
+  time: '2026-01-31T07:33:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3051
 Order: -1
 
