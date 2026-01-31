@@ -30,6 +30,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Electrocution;
+using Content.Shared.Gibbing;
 using Content.Shared.Gravity;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
@@ -50,6 +51,7 @@ using Content.Shared.Tabletop.Components;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
 using Content.Shared.CombatMode.Pacification;
+using Content.Shared._Starlight.Gnome; // starlight
 using Content.Shared.Trigger; // Starlight
 using Content.Shared.Trigger.Components.Effects; // Starlight
 using Robust.Shared.Map;
@@ -98,6 +100,7 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly SuperBonkSystem _superBonkSystem = default!;
     [Dependency] private readonly SlipperySystem _slipperySystem = default!;
+    [Dependency] private readonly GibbingSystem _gibbing = default!;
 
     private readonly EntProtoId _actionViewLawsProtoId = "ActionViewLaws";
     private readonly ProtoId<SiliconLawsetPrototype> _crewsimovLawset = "Crewsimov";
@@ -134,7 +137,7 @@ public sealed partial class AdminVerbSystem
                         4, 1, 2, args.Target, maxTileBreak: 0), // it gibs, damage doesn't need to be high.
                     CancellationToken.None);
 
-                _bodySystem.GibBody(args.Target);
+                _gibbing.Gib(args.Target);
             },
             Impact = LogImpact.Extreme,
             Message = string.Join(": ", explodeName, Loc.GetString("admin-smite-explode-description")) // we do this so the description tells admins the Text to run it via console.
@@ -641,6 +644,22 @@ public sealed partial class AdminVerbSystem
                 Message = string.Join(": ", cluwneName, Loc.GetString("admin-smite-cluwne-description"))
             };
             args.Verbs.Add(cluwne);
+
+            // starlight start
+            var gnomeName = Loc.GetString("admin-smite-gnome-name").ToLowerInvariant();
+            Verb gnome = new()
+            {
+                Text = gnomeName,
+                Category = VerbCategory.Smite,
+
+                Icon = new SpriteSpecifier.Rsi(new("_Starlight/Objects/Fun/Plushies/gnome_plushie.rsi"), "icon"),
+
+                Act = () => EnsureComp<GnomeComponent>(args.Target),
+                Impact = LogImpact.Extreme,
+                Message = string.Join(": ", gnomeName, Loc.GetString("admin-smite-gnome-description"))
+            };
+            args.Verbs.Add(gnome);
+            // starlight end
 
             var maidenName = Loc.GetString("admin-smite-maid-name").ToLowerInvariant();
             Verb maiden = new()
