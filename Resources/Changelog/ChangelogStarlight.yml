@@ -28410,5 +28410,15 @@ Entries:
   id: 305700
   time: '2026-01-30T11:00:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3057
+- author: MilonPL & Shades
+  changes:
+  - message: Added a new traits system, supporting conditions and new effects. Make
+      sure to check out the Traits tab in the character editor!
+    type: Add
+  - message: Added the "Burned"&"Iterator" Background.
+    type: Add
+  id: 295700
+  time: '2026-01-31T00:10:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2957
 Order: -1
 
