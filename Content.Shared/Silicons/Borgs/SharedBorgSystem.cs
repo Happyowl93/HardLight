@@ -393,7 +393,11 @@ public abstract partial class SharedBorgSystem : EntitySystem
         else
         {
             SetActive(chassis, false, user: args.Origin);
-            
+
+            // This can be null apparently when borg dies before being "witnessed" by a client.
+            if (chassis.Comp.ModuleContainer == null)
+                return;
+
             foreach (var ent in chassis.Comp.ModuleContainer.ContainedEntities.ToList())
             {
                 if (!TryComp<ItemBorgModuleComponent>(ent, out var module)) continue;
