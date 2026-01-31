@@ -28438,5 +28438,21 @@ Entries:
   id: 284700
   time: '2026-01-31T01:24:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2847
+- author: wonderfulnewworld
+  changes:
+  - message: Zombieteors chances lowered from 3% to 1% (So Zombies + Zombieteors =
+      11%)
+    type: Tweak
+  - message: NukeOps chances increased from 10% to 11%
+    type: Tweak
+  - message: Traitor chances increased from 20% to 22%
+    type: Tweak
+  - message: KesslerSyndrome chances lowered from 2% to 1%
+    type: Tweak
+  - message: Thieves/Lings now scale 1:21 instead of 1:20
+    type: Tweak
+  id: 306500
+  time: '2026-01-31T01:32:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3065
 Order: -1
 
