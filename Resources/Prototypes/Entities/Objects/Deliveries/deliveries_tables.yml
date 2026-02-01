@@ -62,9 +62,9 @@
   id: LetterCommonEntityTable # Basically trash and spam mail, maybe something barely useful here and there
   table: !type:GroupSelector
     children:
-    - !type:NestedSelector # Don't you love getting mailed trash? 
-      weight: .20
-      tableId: GenericTrashItems # Starlight-edit: changed Trash weight from 1 to .20
+    - !type:NestedSelector # Don't you love getting mailed trash?
+      weight: .20 # Starlight-edit: changed Trash weight from 1 to .20
+      tableId: GenericTrashItems 
     - !type:NestedSelector
       weight: .20 # Starlight-edit: changed weight from .4 to .20
       tableId: SpamMailTable
@@ -79,7 +79,7 @@
       tableId: RandomAllSodaTable
 
 - type: entityTable # TODO: Add more variety!
-  id: LetterUncommonEntityTable # Some more varied things, should never be more expensive than 100 spesos 
+  id: LetterUncommonEntityTable # Some more varied things, should never be more expensive than 100 spesos
   table: !type:GroupSelector #Starlight Note: Unlike Upstream, we can go over 100 spesos, but for entries that help to build value to the mechanic.
     children:
     - !type:NestedSelector
