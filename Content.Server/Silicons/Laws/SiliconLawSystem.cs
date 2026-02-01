@@ -188,10 +188,12 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
             if (TryComp(uid, out ActiveRadioComponent? activeRadio))
             {
                 activeRadio.Channels.UnionWith(emag.ChannelAdd);
+                Dirty(uid, activeRadio); // Starlight
             }
             if (TryComp(uid, out IntrinsicRadioTransmitterComponent? transmitter))
             {
                 transmitter.Channels.UnionWith(emag.ChannelAdd);
+                Dirty(uid, transmitter); // Starlight
             }
             var lawset = emag.Lawset;
             if (lawset != null)
@@ -381,7 +383,10 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
             return;
         
         if (!_tag.HasTag(args.EmagComponent.Owner, "FreeMag"))
-                return;
+            return;
+
+        if (!ent.Comp.IsLawboard)
+            return;
 
         ent.Comp.Lawset = GetLawset("FreeLawset");
 
