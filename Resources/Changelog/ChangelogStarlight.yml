@@ -28715,5 +28715,13 @@ Entries:
   id: 307900
   time: '2026-02-01T00:12:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3079
+- author: Penguinwizzard
+  changes:
+  - message: Re-inverted command-time requirement for headrev so you need command
+      hours rather than get denied due to having command hours.
+    type: Fix
+  id: 307600
+  time: '2026-02-01T00:15:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3076
 Order: -1
 
