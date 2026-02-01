@@ -52,14 +52,18 @@
         - MailStealCollectionObjective
         - FigurineStealCollectionObjective
         - IDCardsStealCollectionObjective
+        - CrewMonitorStealCollectionObjective # remove comment when implemented; CMO, Paramed, BSO, Brigmed
         - LAMPStealCollectionObjective
         # thief item objectives
         - ForensicScannerStealObjective
         - FlippoEngravedLighterStealObjective
         - ClothingHeadHatWardenStealObjective
         - WantedListCartridgeStealObjective
+        - LogProbeCartridgeStealObjective # remove comment when implemented
+        - MedTekCartridgeStealObjective # remove comment when implemented
         - ClothingOuterHardsuitVoidParamedStealObjective
         - MedicalTechFabCircuitboardStealObjective
+        - SecurityTechFabCircuitboardStealObjective # remove comment when implemented
         - ClothingHeadsetAltMedicalStealObjective
         - FireAxeStealObjective
         - AmePartFlatpackStealObjective
@@ -96,19 +100,30 @@
         - CaptainIDStealObjective
         - CMOHyposprayStealObjective
         - CMOCrewMonitorStealObjective
-        - RDHardsuitStealObjective
         - NukeDiskStealObjective
         - MagbootsStealObjective
         - RDDiplomaStealObjective
         - CMOLicenseStealObjective
         # no ian meat because you are a pacifist and need them alive
         - ClipboardStealObjective #QM's digiboard
+        - KnuckleDustersStealObjective #QM's knuckledusters
         - CaptainGunStealObjective
         - CaptainJetpackStealObjective
         - HandTeleporterStealObjective
         - EnergyMagnumStealObjective
         - EnergyShotgunStealObjective
         - Proto5xStealObjective
+        # Limited Hardsuit objectives
+        - RDHardsuitStealObjective
+        - CMOHardsuitStealObjective # remove comment when implemented
+        - HOSHardsuitStealObjective # remove comment when implemented
+        - WardHardsuitStealObjective # remove comment when implemented
+        - BrigmedHardsuitStealObjective # remove comment when implemented
+        - QMHardsuitStealObjective # remove comment when implemented
+        - CaptainHardsuitStealObjective # remove comment when implemented
+        - NTRepHardsuitStealObjective # remove comment when implemented
+        - BSOHardsuitStealObjective # remove comment when implemented
+        - BSOMagbootsStealObjective # remove comment when implemented
 
 
 #USSP

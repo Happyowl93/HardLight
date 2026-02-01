@@ -277,6 +277,21 @@
 
 - type: entity
   parent: BaseStoryObjective
+  id: HarassObjective
+  description: Escape to centcomm after the shift, one of our agents will debrief you. Don't show up in cuffs.
+  components:
+    - type: Objective
+      difficulty: 1
+      unique: true
+      icon:
+        sprite: _Starlight/Interface/Misc/rp_icon.rsi
+        state: icon
+    - type: DepartmentObjective
+      title: objective-harass
+    - type: PickRandomDepartment
+
+- type: entity
+  parent: BaseStoryObjective
   id: MaintsBarObjective
   name: Ensure that the maints bar prospers, and extort them into allowing the Syndicate to conduct business within.
   description: Escape to centcomm after the shift, one of our agents will debrief you. Don't show up in cuffs.

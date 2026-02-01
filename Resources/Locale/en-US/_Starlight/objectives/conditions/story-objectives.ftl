@@ -2,3 +2,4 @@
 objective-false-uprising = Start rumors that someone in {$department} is starting an uprising
 objective-stalking = Spy on and keep a written record of the members of {$department} and their activities
 objective-disgrace = Disgrace the head of {$department} publicly
+objective-harass = Harass and inconvenience {$department} this shift, without dealing direct body harm
