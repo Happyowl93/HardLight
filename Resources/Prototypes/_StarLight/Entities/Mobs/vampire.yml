@@ -32,4 +32,3 @@
     damageContainer: Biological
   - type: SanguinePool
     trailPrototype: PuddleBlood
-  - type: ZombieImmune

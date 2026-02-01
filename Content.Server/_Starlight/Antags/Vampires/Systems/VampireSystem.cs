@@ -77,6 +77,7 @@ public sealed partial class VampireSystem : EntitySystem
         SubscribeLocalEvent<VampireComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<VampireComponent, VampireProgressionChangedEvent>(OnProgressionChanged);
         SubscribeLocalEvent<ActionsComponent, ComponentStartup>(OnActionsComponentStartup);
+        SubscribeLocalEvent<VampireComponent, ComponentRemove>(TryRemoveAbilities); // In theory, allows you to make someone NOT a Vampire, or at least, removes all their abilities.
         SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
         InitializeAbilities();
         InitializeObjectives();
@@ -525,6 +526,15 @@ public sealed partial class VampireSystem : EntitySystem
             }
         }
     }
+
+    private void TryRemoveAbilities(EntityUid uid, VampireComponent comp)
+    {
+        foreach (var (_, action) in comp.ActionEntities)
+            _actions.RemoveAction(uid, action);
+        comp.ActionEntities.Clear();
+        Dirty(uid, comp);
+    }
+    
 
     private int GetActionBloodThreshold(EntProtoId actionId)
     {
