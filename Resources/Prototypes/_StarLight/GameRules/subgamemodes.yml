@@ -73,7 +73,7 @@
     definitions:
     - prefRoles: [ Vampire ]
       max: 6 # Starlight. Accounting for scaling. Not as many as the full gamemode.
-      playerRatio: 26 # Starlight. Accounting for scaling.
+      playerRatio: 21 # Starlight. Accounting for scaling.
       lateJoinAdditional: true
       allowNonHumans: True
       multiAntagSetting: None
