@@ -527,7 +527,7 @@ public sealed partial class VampireSystem : EntitySystem
         }
     }
 
-    private void TryRemoveAbilities(EntityUid uid, VampireComponent comp)
+    private void TryRemoveAbilities(EntityUid uid, VampireComponent comp, ComponentRemove args)
     {
         foreach (var (_, action) in comp.ActionEntities)
             _actions.RemoveAction(uid, action);
