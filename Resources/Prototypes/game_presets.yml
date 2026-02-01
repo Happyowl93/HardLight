@@ -318,7 +318,8 @@
   showInVote: false
   rules:
     - SLChangeling #Starlight
-    - SubGamemodesRule
+    - SLChangelingLess # Starlight. This is their mode after all, and this is how it was prior.
+    - SubGamemodesRuleNoChangelings # Starlight
     - BasicStationEventScheduler
     - BasicRoundstartVariation
 
