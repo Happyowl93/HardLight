@@ -71,8 +71,8 @@
     agentName: vampire-roundend-name
     definitions:
     - prefRoles: [ Vampire ]
-      max: 3
-      playerRatio: 10
+      max: 8 # Starlight. Full gamemode Vamps scale higher to account for scaling.
+      playerRatio: 11 # Starlight. Accounting for scaling.
       lateJoinAdditional: true
       allowNonHumans: True
       multiAntagSetting: None
