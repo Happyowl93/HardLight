@@ -41,6 +41,9 @@ using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Starlight.TextToSpeech;
 using Robust.Shared.Player;
 using System.Linq;
+using Content.Shared.Silicons.Laws.Components;
+using Content.Shared.DeviceLinking;
+using System.Numerics;
 #endregion Starlight
 
 namespace Content.Shared.Silicons.StationAi;
@@ -73,7 +76,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     [Dependency] private readonly StationAiVisionSystem _vision = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly ActorSystem _actor = default!; // Starlight
+    [Dependency] private readonly SharedDeviceLinkSystem _deviceLinkSystem = default!; // Starlight
 
     // StationAiHeld is added to anything inside of an AI core.
     // StationAiHolder indicates it can hold an AI positronic brain (e.g. holocard / core).
@@ -438,6 +441,30 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     private void OnHolderMapInit(Entity<StationAiHolderComponent> ent, ref MapInitEvent args)
     {
         UpdateAppearance((ent.Owner, ent.Comp));
+
+        // Starlight-start
+
+        var holderTransform = Transform(ent);
+        var consolesQuery = EntityManager.EntityQueryEnumerator<SiliconLawUpdaterComponent, TransformComponent>();
+        EntityUid? nearestUpdater = null;
+        float? latestDistance = null;
+        while (consolesQuery.MoveNext(out var uid, out _, out var transform))
+        {
+            if (transform.GridUid == holderTransform.GridUid)
+            {
+                var currentDistance = Vector2.Distance(transform.LocalPosition, holderTransform.LocalPosition);
+                if (latestDistance < currentDistance)
+                {
+                    latestDistance = currentDistance;
+                    nearestUpdater = uid;
+                }
+            }
+        }
+
+        if (nearestUpdater != null)
+            _deviceLinkSystem.LinkDefaults(null, ent.Owner, nearestUpdater.Value);
+
+        // Starlight-end
     }
 
     private void OnAiShutdown(Entity<StationAiCoreComponent> ent, ref ComponentShutdown args)

@@ -1,6 +1,5 @@
 using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Silicons.Laws.Components;
-using Content.Shared.Silicons.StationAi;
 
 namespace Content.Shared.Silicons.StationAi;
 
@@ -18,6 +17,9 @@ public abstract partial class SharedStationAiSystem
     {
         if (!TryComp<SiliconLawUpdaterComponent>(args.Sink, out var lawUpdater))
             return;
+
+        if (ent.Comp.LawConsole != null)
+            _deviceLinkSystem.RemoveSinkFromSource(ent.Comp.LawConsole.Value, ent.Owner); // Disconnect old console.
 
         ent.Comp.LawConsole = args.Sink;
 
