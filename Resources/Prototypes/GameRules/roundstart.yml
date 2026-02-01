@@ -21,11 +21,11 @@
   - type: SubGamemodes
     rules:
     - id: Thief
-      prob: 0.4 #SL 0.5 -> 0.4 to account for more subgamemodes existing
+      prob: 0.41 #SL 0.5 -> 0.4 to account for more subgamemodes existing
     - id: SLChangeling #Starlight lings
-      prob: 0.25 #0.4 -> 0.3 to account for more subgamemodes existing now
+      prob: 0.22 #0.4 -> 0.3 to account for more subgamemodes existing now
     - id: VampireLess # Starlight reworked
-      prob: 0.25 # Starlight
+      prob: 0.22 # Starlight
     - id: SubWizard
       prob: 0.07 # Starlight. Wizard is incredibly rare. There are players with 1k hours that have never rolled it.
     - id: Xenoborgs
