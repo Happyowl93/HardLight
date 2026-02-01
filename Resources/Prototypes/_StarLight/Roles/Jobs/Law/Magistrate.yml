@@ -45,7 +45,7 @@
     #outerClothing: ClothingOuterRobesJudge
     id: MagistratePDA
     ears: ClothingHeadsetMagistrate
-    head: ClothingHeadHatPwig
+    #head: ClothingHeadHatPwig
     belt: BoxFolderNanoTrasenClipboard
   storage:
     back:
