@@ -653,8 +653,13 @@ public sealed partial class VampireSystem : EntitySystem
             if (ent == uid)
                 continue;
 
-            if (HasComp<PrayableComponent>(ent))
-                return true;
+            if (!HasComp<PrayableComponent>(ent))
+                continue;
+
+            if (!Transform(ent).Anchored)
+                continue;
+
+            return true;
         }
 
         return false;
