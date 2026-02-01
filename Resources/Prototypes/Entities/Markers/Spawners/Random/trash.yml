@@ -3,7 +3,7 @@
   table: !type:GroupSelector
     children:
     - !type:GroupSelector
-      weight: 20 # Starlight-edit: changed from 90 weight to 20
+      weight: 90
       children:
       - id: FoodPacketBoritosTrash
       - id: FoodPacketCheesieTrash
