@@ -443,8 +443,25 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         if (_timing.CurTime > recipient.Comp.LastNotificationTime + TimeSpan.FromSeconds(recipient.Comp.NotificationCooldownTime) && !recipient.Comp.NotificationsMuted)
         {
             _nanoChat.SetLastNotificationTime(recipient.Owner, _timing.CurTime);
+            
+            // Starlight Start: Better Notification
+            // Format notification title as "Message from {Sender} (Job)" if job title exists
+            var notificationTitle = "";
+            if (!string.IsNullOrEmpty(existingRecipient.JobTitle))
+            {
+                var titleRecipient = Loc.GetString("nano-chat-new-message-title-recipient",
+                    ("sender", senderName),
+                    ("jobTitle", existingRecipient.JobTitle));
+                notificationTitle = Loc.GetString("nano-chat-new-message-title", ("sender", titleRecipient));
+            }
+            else
+            {
+                notificationTitle = Loc.GetString("nano-chat-new-message-title", ("sender", senderName));
+            }
+            // Starlight End
+
             _cartridge.SendNotification(pda,
-                Loc.GetString("nano-chat-new-message-title", ("sender", senderName)),
+                notificationTitle, // Starlight edit: Better Notification
                 Loc.GetString("nano-chat-new-message-body", ("message", TruncateMessage(message.Content))));
         }
 
