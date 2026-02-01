@@ -36,16 +36,6 @@
     head: ClothingHeadHelmetERTLeader
     outerClothing: ClothingOuterArmorBasic
     pocket2: FlashlightSeclite
-  inhand:
-  - HammerBreachingNT
-  storage:
-    back:
-    - WeaponDisabler
-    - MedicatedSuture
-    - RegenerativeMesh
-    - BoxZiptie
-    - CrowbarRed
-    - MagazineMagnum
 
 - type: startingGear
   id: ERTLeaderGearEVA
@@ -469,6 +459,8 @@
   equipment:
     pocket2: WeaponDisabler
     suitstorage: WeaponShotgunEnforcer
+  inhand:
+    - HammerBreachingNT
   storage:
     back:
     - SmokeGrenade
