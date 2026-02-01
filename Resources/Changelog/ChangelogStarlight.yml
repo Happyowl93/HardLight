@@ -28723,5 +28723,22 @@ Entries:
   id: 307600
   time: '2026-02-01T00:15:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3076
+- author: Conflee
+  changes:
+  - message: Fixed FreeMAG'ed borgs getting Syndicate Comms, and gave SELF Agent a
+      description in the antag loadout screen
+    type: Fix
+  id: 307800
+  time: '2026-02-01T00:46:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3078
+- author: neomoth
+  changes:
+  - message: Adds the ability to speak in a given language using a prefix in chat.
+      Check the language menu for each language's chat prefix. If you want to do this
+      with radio, the language prefix comes before the radio prefix.
+    type: Add
+  id: 300600
+  time: '2026-02-01T01:26:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3006
 Order: -1
 
