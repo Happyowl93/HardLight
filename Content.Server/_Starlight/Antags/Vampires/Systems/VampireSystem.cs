@@ -527,7 +527,10 @@ public sealed partial class VampireSystem : EntitySystem
         }
     }
 
-    private void TryRemoveAbilities(EntityUid uid, VampireComponent comp, ComponentRemove args)
+    private void OnComponentRemove(Entity<VampireComponent> ent, ComponentRemove _) => 
+        TryRemoveAbilities(ent.Owner, ent.Comp);
+     
+    private void TryRemoveAbilities(EntityUid uid, VampireComponent comp)
     {
         foreach (var (_, action) in comp.ActionEntities)
             _actions.RemoveAction(uid, action);
