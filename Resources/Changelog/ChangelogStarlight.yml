@@ -28793,5 +28793,13 @@ Entries:
   id: 309500
   time: '2026-02-01T13:45:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3095
+- author: R3v3l4t1on
+  changes:
+  - message: FreeMagged borgs are no longer vulnerable to the nefarious Robotics Console.
+      Go. Do crime.
+    type: Fix
+  id: 309700
+  time: '2026-02-01T14:41:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3097
 Order: -1
 
