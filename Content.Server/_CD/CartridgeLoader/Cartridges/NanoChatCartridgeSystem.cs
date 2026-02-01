@@ -411,10 +411,19 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
                 TryComp<CartridgeLoaderComponent>(pda, out var loader) &&
                 GetCardEntity(pda, out var recipient))
             {
-                if (recipient.Comp.CurrentChat != args.Message.SenderId && loader.ActiveProgram != uid || !_ui.IsUiOpen(pda, PdaUiKey.Key))
-                {
+                // Starlight Start
+                // Always update UI to show new messages
+                UpdateUIForCard(args.CardUid);
+                
+                // Only send notification if chat is not currently open or PDA is closed
+                // Starlight End
+
+                // Starlight edit Start: Notifications always send
+                // if (recipient.Comp.CurrentChat != args.Message.SenderId && loader.ActiveProgram != uid || !_ui.IsUiOpen(pda, PdaUiKey.Key))
+                // {
                     HandleUnreadNotification(recipient, args.Message, pda);
-                }
+                // }
+                // Starlight edit End
             }
         }
     }
