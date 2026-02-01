@@ -7,6 +7,8 @@ using Content.Shared._Starlight.Antags.Vampires;
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Antags.Vampires.Components.Classes;
 using Content.Shared._Starlight.Antags.Vampires.Prototypes;
+using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.Vampire.Components;
 using Content.Shared.Alert;
 using Content.Shared.Actions.Components;
 using Content.Shared.Damage;
@@ -411,6 +413,7 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnStartup(EntityUid uid, VampireComponent comp, ComponentStartup args)
     {
+        EnsureComp<UnholyComponent>(uid);
         EnsureComp<VampireSunlightComponent>(uid);
         foreach (var actionId in comp.BaseVampireActions)
         {
@@ -436,6 +439,8 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnShutdown(EntityUid uid, VampireComponent comp, ComponentShutdown args)
     {
+        RemComp<UnholyComponent>(uid);
+        RemComp<NightVisionComponent>(uid);
         if (TryComp<VampireDrainBeamComponent>(uid, out var drainBeamComp))
         {
             foreach (var connection in drainBeamComp.ActiveBeams.Values)
@@ -704,6 +709,9 @@ public sealed partial class VampireSystem : EntitySystem
         var reg = _componentFactory.GetRegistration(classProto.ClassComponent, ignoreCase: true);
         var classComp = _componentFactory.GetComponent(reg.Type);
         EntityManager.AddComponent(uid, classComp);
+
+        if (classProto.ID == "Umbrae")
+            EnsureComp<NightVisionComponent>(uid);
 
         comp.ChosenClassId = classProto.ID;
 

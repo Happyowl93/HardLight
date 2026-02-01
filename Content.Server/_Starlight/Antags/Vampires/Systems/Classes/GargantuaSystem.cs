@@ -9,7 +9,6 @@ using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Damage.Prototypes;
@@ -699,7 +698,7 @@ public sealed class GargantuaSystem : EntitySystem
             // Static obstacle
             var obstacleCoords = Transform(other).Coordinates;
 
-            _audio.PlayPvs(chargeEv.Sound, obstacleCoords);
+            _audio.PlayPvs(chargeEv.Sound, obstacleCoords, AudioParams.Default.WithVolume(3f));
 
             if (HasComp<DestructibleComponent>(other))
                 _destructible.DestroyEntity(other);
@@ -714,7 +713,7 @@ public sealed class GargantuaSystem : EntitySystem
             || !TryGetVampireActionEvent<VampireChargeActionEvent>(vampire, ChargeActionId, out var chargeEv))
             return;
 
-        _audio.PlayPvs(chargeEv.Sound, target);
+        _audio.PlayPvs(chargeEv.Sound, target, AudioParams.Default.WithVolume(3f));
 
         var damageSpec = new DamageSpecifier();
         damageSpec.DamageDict["Blunt"] = chargeEv.CreatureDamage;
