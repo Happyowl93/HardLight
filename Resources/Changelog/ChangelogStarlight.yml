@@ -28801,5 +28801,12 @@ Entries:
   id: 309700
   time: '2026-02-01T14:41:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3097
+- author: Scarlet Lightweaver
+  changes:
+  - message: Changed how the n1984 sounds!
+    type: Tweak
+  id: 309300
+  time: '2026-02-01T14:53:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3093
 Order: -1
 
