@@ -302,7 +302,7 @@
   minPlayers: 50 # 🌟Starlight🌟
   rules:
   - Vampire
-  - SubGamemodesRule
+  - SubGamemodesRuleNoVampires
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - BasicRoundstartVariation
@@ -337,6 +337,29 @@
     - SubGamemodesRuleNoChangelings #Starlight
     - BasicStationEventScheduler
     - BasicRoundstartVariation
+
+#Starlight start
+- type: gamePreset
+  id: Vamptraitorling
+  alias:
+    - lingtraitorvamp
+    - traitorlingvamp
+    - vamptraitorling
+    - vamplingtraitor
+    - lingvamptraitor
+    - traitorvampling
+  name: vamptraitorling-title
+  description: vamptraitorling-description
+  showInVote: true #Starlight
+  minPlayers: 50 #Starlight
+  rules:
+    - SLChangelingLess # Starlight
+    - TraitorLess #Starlight
+    - VampireLess # Starlight
+    - SubGamemodesRuleVampTraitorLing #Starlight
+    - BasicStationEventScheduler
+    - BasicRoundstartVariation
+#Starlight end
 
 #Starlight EventLight Gamemode for Event Usage 
 - type: gamePreset
