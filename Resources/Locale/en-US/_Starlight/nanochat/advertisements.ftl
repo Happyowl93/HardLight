@@ -12,16 +12,15 @@
 ## {$crewcount} - Current number of crew members
 ## [[randomnumber:min:max]] - Random number range (e.g., [[randomnumber:23:679]] generates 23-679) Defaults to 1-100
 
-
 nanochat-ad-test-all = {$recipient} | {$time} | {$date} | {$station} | {$sender} | {$job} | {$department} | {$species} | {$gender} | {$nanochatnumber} | {$randomname} | {$crewcount} | [[randomnumber:1:100]]
 
 nanochat-ad-car-warranty = Good day to you {$recipient}! We at NenoTrensan would like to inform you about your car's extended warranty! Call us at ([[randomnumber:100:999]])-[[randomnumber:100:999]]-[[randomnumber:1000:9999]] at the end of the shift to begin extending your warranty!
 
 nanochat-ad-class-action = Hello {$recipient}!
-    
+
     We, {$sender}, are contacting you regarding a recent class action settlement involving a company amongst your [[randomnumber:7:60]] recent transactions!
     You are being awarded a sum of [[randomnumber:1:12]].[[randomnumber:10:99]] credits as part of this settlement.
-    
+
     A settlement check is being sent to your location of "{$station}" and should arrive at your local mail room within [[randomnumber:3:30]] business days.
     If the check is not redeemed at your bank within [[randomnumber:10:30]] days from {$date}, the sum will instead be donated to the NTSF Marine Force as part of your employment contract.
     Thank you!
@@ -43,11 +42,11 @@ nanochat-ad-chain-letter = *******************
 
 nanochat-ad-abundance-angel = This will be you tomorrow! A little Angel for you...
     You have just been sent a Financial Abundance angel!!
-    
+
     You ARE already rich!!!!! I am not joking: you will find an unexpected windfall.
-    
+
     If you delete this you will never know how it works. It really does work like magic!
-    
+
     NO pass backs: PASS IT FORWARD! PASS IT NOW!!!
 
 nanochat-ad-truck-ascii = |^^^^^^^^^^^^^^^^^^^^^|
@@ -55,25 +54,24 @@ nanochat-ad-truck-ascii = |^^^^^^^^^^^^^^^^^^^^^|
     |_,,,_,,,______====|==_|__|...,]|
     "(@)'(@)""""""""(@)'(@)*******(@
     
-    
     Truck forward drive forward truck friend send truck friend forward truck truck
 
 nanochat-ad-bomb-threat = attention {$recipient} i am place a BOMB in {$department} me name is {$randomname} and i send you a BIG BOMB and it blow up the world and you die if you do no send funny digits on your ID CARD. SEND THEM NOW OR {$crewcount} ALL DIE!!
 
 nanochat-ad-donko-wholesale = Donko Wholesale: Payment failed
     Membership billing alert
-    
+
     Fix billing now to avoid losing member access.
-    
+
     Your latest membership renewal charge was DECLINED. If not resolved, your Donko Wholesale membership benefits may be interrupted.
-    
+
     Status: DECLINED, bank rejected charge
     Impact: BENEFITS AT RISK, access may be paused
     Best Action: UPDATE BILLING, restores automatically
-    
+
     Click to update payment method
     Click if you've already updated it
-    
+
     Fast checklist:
     1) check card expiry
     2) confirm billing ZIP
@@ -84,19 +82,19 @@ nanochat-ad-nanomichi = Nanomichi: Classic feeling cassettes that hold up to the
 nanochat-ad-comrade-computing = Comrade Computing: Try our latest portable computers, manufactured in accordance with communist moral principles and using ethical human labor in Cygni. They have 64 KB of RAM.
 
 nanochat-ad-gorlex-shipping = URGENT:
-    
+
     Your package was unable to be delivered. To prevent further delays please respond with the exact coordinates of your station and the system it's located within.
-    
+
     - Gorlex Shipping Solutions
 
 nanochat-ad-hr-notice = Notice:
-    
+
     Your request for PTO has been denied. If you wish to appeal please reply to this message with your employee identification number and employee bank account number.
-    
+
     - Human Resources
 
 nanochat-ad-prize-winner = You've won!!!
-    
+
     Congratulations {$recipient} you've won an all expense paid trip. Please respond to this message with your mailing information and the official paperwork can be sent so we can confirm your information!
 
 nanochat-ad-radnor-photonics = {$recipient}, are you interested in Radnor Photonics? We offer a selection of devices for shipping directly to {$station} such as:
@@ -109,9 +107,9 @@ nanochat-ad-radnor-photonics = {$recipient}, are you interested in Radnor Photon
     - Workplace and jobsite lighting
 
 nanochat-ad-hogge-wylde = Hello {$nanochatnumber}. Have you been wronged? Faced workplace discrimination because you are {$species}? Found yourself struggling for promotions in {$department} that you deserved?
-    
+
     Then you should contact the Hogge & Wylde Law Offices! We offer free consultations. Visit us at Garanir, Merak, Phecda, or Capella.
 
 nanochat-ad-comitas-systems = Comitas Systems is hiring! We're interested in individuals with experience manning surveillance systems on board space stations. If this sounds like you, contact us at [[randomnumber:103847:999999]]
-    
+
     MRSWC5DIEB2G6IDOMFXG65DSMFZWK3Q=

@@ -69,7 +69,7 @@ public sealed class NanoChatSpamRuleSystem : GameRuleSystem<NanoChatSpamRuleComp
             return;
 
         // Reset timer
-        component.NextSpamTime = _random.NextFloat(component.MinDelay, component.MaxDelay);
+        component.NextSpamTime += _random.NextFloat(component.MinDelay, component.MaxDelay);
 
         // Send spam
         SendSpamMessage(component);
