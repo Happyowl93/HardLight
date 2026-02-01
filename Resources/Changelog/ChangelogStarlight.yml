@@ -28740,5 +28740,23 @@ Entries:
   id: 300600
   time: '2026-02-01T01:26:48.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3006
+- author: wonderfulnewworld
+  changes:
+  - message: Adds Vamps and Vamptraitorling back to secret game modes.
+    type: Add
+  - message: Vampires and Changelings can appear in most modes as subantags. (Vamps
+      scale lower as subantag. Neither will spawn in zombies.)
+    type: Tweak
+  - message: Vampires now scale a little better (they were set at a max of 3 before)
+    type: Tweak
+  - message: Vampires cannot be converted, like Changelings
+    type: Tweak
+  - message: More changelings now spawn on the dedicated Changeling gamemode
+    type: Tweak
+  - message: Vampire and Vamptraitorling now have proper titles/descriptions
+    type: Fix
+  id: 308100
+  time: '2026-02-01T03:35:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3081
 Order: -1
 
