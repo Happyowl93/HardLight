@@ -11,4 +11,4 @@ vampire-gamemode-title = Vampires
 vampire-gamemode-description = Blood-drinkers in space! Don't let it get out of hand...
 
 vamptraitorling-title = Vamptraitorlings
-vamptraitorling-description = It's a horrible night to have a curse
+vamptraitorling-description = What a horrible night to have a curse
