@@ -19,6 +19,15 @@
         damage:
           types:
             Poison: 4
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Toxin
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Toxin
+        amount: 0.25
 
 - type: reagent
   id: CarpoToxin
@@ -47,6 +56,15 @@
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-burning-insides" ]
         probability: 0.33
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: CarpoToxin
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: CarpoToxin
+        amount: 0.25
 
 - type: reagent
   id: ChloralHydrate
@@ -84,6 +102,15 @@
         damage:
           types:
             Poison: 1.5
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: ChloralHydrate
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: ChloralHydrate
+        amount: 0.25
 
 - type: reagent
   id: GastroToxin
@@ -106,6 +133,15 @@
             reagent: GastroToxin
             min: 2
           probability: 0.2
+        - !type:AdjustReagent
+          conditions:
+          - !type:ReagentCondition
+            reagent: GastroToxin
+            min: 0.26
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+          reagent: GastroToxin
+          amount: 0.25
 
 - type: reagent
   id: Mold
@@ -123,6 +159,15 @@
         damage:
           types:
             Poison: 1
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Mold
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Mold
+        amount: 0.25
 
 - type: reagent
   id: PolytrinicAcid
@@ -170,6 +215,15 @@
       - !type:Emote
         emote: Scream
         probability: 0.3
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: PolytrinicAcid
+          min: 1.51
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: PolytrinicAcid
+        amount: 1.5
 
 - type: reagent
   id: FerrochromicAcid
@@ -190,6 +244,15 @@
           types:
             Heat: 2.5
             Caustic: 1
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: FerrochromicAcid
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: FerrochromicAcid
+        amount: 0.25
 
 - type: reagent
   id: FluorosulfuricAcid
@@ -230,6 +293,15 @@
       - !type:Emote
         emote: Scream
         probability: 0.25
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: FluorosulfuricAcid
+          min: 1.51
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: FluorosulfuricAcid
+        amount: 1.5
 
 - type: reagent
   id: SulfuricAcid
@@ -279,6 +351,15 @@
       - !type:Emote
         emote: Scream
         probability: 0.2
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: SulfuricAcid
+          min: 1.51
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: SulfuricAcid
+        amount: 1.5
 
 - type: reagent
   id: UnstableMutagen
@@ -303,6 +384,15 @@
         damage:
           types:
             Radiation: 3
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: UnstableMutagen
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: UnstableMutagen
+        amount: 0.25
 
 - type: reagent
   id: HeartbreakerToxin
@@ -319,6 +409,15 @@
         damage:
           types:
             Asphyxiation: 5
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: HeartbreakerToxin
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: HeartbreakerToxin
+        amount: 0.25
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 10
@@ -338,6 +437,15 @@
         damage:
           groups:
             Airloss: 10
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Lexorin
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Lexorin
+        amount: 0.25
 
 - type: reagent
   id: MindbreakerToxin
@@ -357,6 +465,15 @@
         effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 10
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: MindbreakerToxin
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: MindbreakerToxin
+        amount: 0.25
   # TODO: PROPER hallucinations
 
 - type: reagent
@@ -399,6 +516,15 @@
         visualType: Medium
         messages: [ "histamine-effect-heavy-itchiness" ]
         probability: 0.2
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Histamine
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Histamine
+        amount: 0.25
 
 - type: reagent
   id: Theobromine
@@ -425,6 +551,15 @@
         conditions:
           - !type:MetabolizerTypeCondition
             type: [Animal]
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Theobromine
+          min: 0.026
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Theobromine
+        amount: 0.025
 
 - type: reagent
   id: Amatoxin
@@ -442,6 +577,15 @@
         damage:
           types:
             Poison: 3
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Amatoxin
+          min: 0.11
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Amatoxin
+        amount: 0.1
 
 - type: reagent
   id: VentCrud
@@ -458,6 +602,15 @@
           damage:
             types:
               Poison: 2
+        - !type:AdjustReagent
+          conditions:
+          - !type:ReagentCondition
+            reagent: VentCrud
+            min: 0.26
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+          reagent: VentCrud
+          amount: 0.25
 
 - type: reagent
   id: Romerol
@@ -477,6 +630,15 @@
             - !type:ReagentCondition
               reagent: Romerol
               min: 5
+        - !type:AdjustReagent
+          conditions:
+          - !type:ReagentCondition
+            reagent: Romerol
+            min: 0.26
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+          reagent: Romerol
+          amount: 0.25
 
 - type: reagent
   id: UncookedAnimalProteins
@@ -537,6 +699,15 @@
           type: [ Vampire ]
         reagent: Protein
         amount: 0.5
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: UncookedAnimalProteins
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: UncookedAnimalProteins
+        amount: 0.25
 
 - type: reagent
   id: Allicin
@@ -560,6 +731,15 @@
         damage:
           types:
             Poison: 0.06
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Allicin
+          min: 0.026
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Allicin
+        amount: 0.025
 
 - type: reagent
   id: Pax
@@ -582,6 +762,15 @@
         key: Pacified
         component: Pacified
         time: 4
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Pax
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Pax
+        amount: 0.25
 
 - type: reagent
   id: Honk
@@ -611,6 +800,15 @@
         damage:
           types:
             Poison: 0.06
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Honk
+          min: 0.026
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Honk
+        amount: 0.025
 
 
 - type: reagent
@@ -629,6 +827,15 @@
         damage:
           types:
             Poison: 0.6 # Makes it 20 damage per unit.
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Lead
+          min: 0.011
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Lead
+        amount: 0.01 # Rounding down with 2 decimal points
 
 - type: reagent
   id: Bungotoxin
@@ -646,6 +853,15 @@
         damage:
           types:
             Poison: 1.8
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Bungotoxin
+          min: 0.11
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Bungotoxin
+        amount: 0.1
 
 - type: reagent
   id: Vestine
@@ -674,6 +890,15 @@
         damage:
           groups:
             Airloss: 2
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Vestine
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Vestine
+        amount: 0.25
 
 - type: reagent
   id: Tazinide
@@ -689,6 +914,15 @@
       effects:
       - !type:Electrocute
         probability: 0.8
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Tazinide
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Tazinide
+        amount: 0.25
 
 - type: reagent
   id: Lipolicide
@@ -712,6 +946,15 @@
             Poison: 2
       - !type:SatiateHunger
         factor: -6
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Lipolicide
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Lipolicide
+        amount: 0.25
 
 # inspired by the spider neurotoxin GsMtx-4
 # poisons non-spiders and slows you down at high doses
@@ -755,6 +998,15 @@
           inverted: true
         walkSpeedModifier: 0.4
         sprintSpeedModifier: 0.4
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Mechanotoxin
+          min: 0.11
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Mechanotoxin
+        amount: 0.1
 
 - type: reagent
   id: ToxinTrash
@@ -771,6 +1023,15 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [Vox]
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: ToxinTrash
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: ToxinTrash
+        amount: 0.25
 
 - type: reagent
   id: Hemorrhinol
@@ -790,3 +1051,12 @@
         type: Update
       - !type:ModifyBleed
         amount: 0.5
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Hemorrhinol
+          min: 0.26
+        - !type:MetabolizerTypeCondition
+          type: [ Cyclorite ]
+        reagent: Hemorrhinol
+        amount: 0.25

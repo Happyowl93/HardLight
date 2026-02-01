@@ -33,6 +33,12 @@
             Toxin: -2
             Airloss: -2
             Brute: -2
+        - !type:AdjustReagent
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+          reagent: RegenerativeJelly
+          amount: -0.5
 
 - type: reagent
   id: UnstableMutationToxin
@@ -65,6 +71,12 @@
             - Felionoid
             - Shadekin
             - Thaven
+        - !type:AdjustReagent
+          conditions:
+            - !type:MetabolizerTypeCondition
+              type: [ Cyclorite ]
+          reagent: UnstableMutationToxin
+          amount: -0.5
 
 - type: reagent
   id: ImperfectMutationToxin
@@ -79,6 +91,12 @@
       effects:
         - !type:ChangeSpecies
           species: SlimePerson
+        - !type:AdjustReagent
+          conditions:
+            - !type:MetabolizerTypeCondition
+              type: [ Cyclorite ]
+          reagent: ImperfectMutationToxin
+          amount: -0.5
 
 - type: reagent
   id: AdvancedMutationToxin
@@ -93,3 +111,9 @@
       effects:
         - !type:MutateIntoEntity
           entity: XenobiologySlimeGray
+        - !type:AdjustReagent
+          conditions:
+            - !type:MetabolizerTypeCondition
+              type: [ Cyclorite ]
+          reagent: AdvancedMutationToxin
+          amount: -0.5

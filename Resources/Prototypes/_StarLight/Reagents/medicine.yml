@@ -79,6 +79,15 @@
         - !type:MetabolizerTypeCondition
           type: [ Avali, Resomi ]
         amount: 3
+      - !type:AdjustReagent # Amoxla for Cyclorites is a toxin not medicine
+        conditions:
+          - !type:ReagentCondition
+            reagent: Amoxla
+            min: 0.26
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+        reagent: Amoxla
+        amount: 0.25
 
 - type: reagent
   id: BoneGel
@@ -99,6 +108,12 @@
         damage:
           types:
             Poison: 1.5 # You don't want to drink bonegel, because it's for bones and joints
+      - !type:AdjustReagent
+        conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+        reagent: BoneGel
+        amount: -0.5
 
 - type: reagent
   id: Chronexaline
@@ -121,6 +136,12 @@
           damage:
             types:
               Radiation: -5
+        - !type:AdjustReagent
+          conditions:
+            - !type:MetabolizerTypeCondition
+              type: [ Cyclorite ]
+          reagent: Chronexaline
+          amount: -0.5
 
 - type: reagent
   id: BarozinePlus

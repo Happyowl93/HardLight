@@ -136,6 +136,15 @@
         - !type:TagCondition
           inverted: true
           tag: Bee
+      - !type:AdjustReagent
+        conditions:
+          - !type:ReagentCondition
+            reagent: BuzzochloricBees
+            min: 0.26
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+        reagent: BuzzochloricBees
+        amount: 0.25
 
 - type: reagent
   id: GroundBee
@@ -167,6 +176,15 @@
       effects:
       - !type:Electrocute
         probability: 0.35
+      - !type:AdjustReagent
+        conditions:
+          - !type:ReagentCondition
+            reagent: Licoxide
+            min: 0.26
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+        reagent: Licoxide
+        amount: 0.25
 
 - type: reagent
   id: Razorium
@@ -206,6 +224,15 @@
       - !type:Emote
         emote: Scream
         probability: 0.3
+      - !type:AdjustReagent
+        conditions:
+          - !type:ReagentCondition
+            reagent: Razorium
+            min: 1.51
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+        reagent: Razorium
+        amount: 1.5
 
 - type: reagent
   id: Fresium
@@ -300,6 +327,15 @@
         visualType: LargeCaution
         messages: [ "fresium-effect-frozen"]
         probability: 0.4
+      - !type:AdjustReagent
+        conditions:
+          - !type:ReagentCondition
+            reagent: Fresium
+            min: 0.23
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+        reagent: Fresium
+        amount: 0.22 # Rounding down with 2 decimal points
 
 - type: reagent
   id: Laughter
@@ -358,6 +394,15 @@
         - !type:ReagentCondition
           reagent: JuiceThatMakesYouWeh
           min: 50
+      - !type:AdjustReagent
+        conditions:
+          - !type:ReagentCondition
+            reagent: Bungotoxin
+            min: 0.11
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+        reagent: Bungotoxin
+        amount: 0.1
 
 - type: reagent
   id: JuiceThatMakesYouHew
@@ -393,6 +438,15 @@
         - !type:ReagentCondition
           reagent: JuiceThatMakesYouHew
           min: 50
+      - !type:AdjustReagent
+        conditions:
+          - !type:ReagentCondition
+            reagent: Bungotoxin
+            min: 0.11
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+        reagent: Bungotoxin
+        amount: 0.1
 
 - type: reagent
   id: CorgiJuice
@@ -427,6 +481,15 @@
         - !type:ReagentCondition
           reagent: CorgiJuice
           min: 50
+      - !type:AdjustReagent
+        conditions:
+          - !type:ReagentCondition
+            reagent: Bungotoxin
+            min: 0.11
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+        reagent: Bungotoxin
+        amount: 0.1
 
 - type: reagent
   id: Felinase
@@ -478,6 +541,15 @@
         visualType: Small
         messages: [ "capsaicin-effect-light-burn" ]
         probability: 0.05
+      - !type:AdjustReagent
+        conditions:
+          - !type:ReagentCondition
+            reagent: Bungotoxin
+            min: 0.11
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+        reagent: Bungotoxin
+        amount: 0.1
 
 - type: reagent
   id: Caninase
@@ -529,3 +601,12 @@
         visualType: Small
         messages: [ "capsaicin-effect-light-burn" ]
         probability: 0.05
+      - !type:AdjustReagent
+        conditions:
+          - !type:ReagentCondition
+            reagent: Caninase
+            min: 0.11
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
+        reagent: Caninase
+        amount: 0.1

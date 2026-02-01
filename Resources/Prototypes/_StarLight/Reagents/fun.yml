@@ -39,6 +39,12 @@
             - !type:ReagentCondition
               reagent: ConcentratedCorgiJuice
               min: 50
+        - !type:AdjustReagent
+          conditions:
+            - !type:MetabolizerTypeCondition
+              type: [ Cyclorite ]
+          reagent: ConcentratedCorgiJuice
+          amount: 0.25
     Medicine:
       metabolismRate: 0.5
       effects:
