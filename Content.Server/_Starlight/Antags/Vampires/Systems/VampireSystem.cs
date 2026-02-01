@@ -77,7 +77,7 @@ public sealed partial class VampireSystem : EntitySystem
         SubscribeLocalEvent<VampireComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<VampireComponent, VampireProgressionChangedEvent>(OnProgressionChanged);
         SubscribeLocalEvent<ActionsComponent, ComponentStartup>(OnActionsComponentStartup);
-        SubscribeLocalEvent<VampireComponent, ComponentRemove>(TryRemoveAbilities); // In theory, allows you to make someone NOT a Vampire, or at least, removes all their abilities.
+        SubscribeLocalEvent<VampireComponent, ComponentRemove>(OnComponentRemove);
         SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
         InitializeAbilities();
         InitializeObjectives();
