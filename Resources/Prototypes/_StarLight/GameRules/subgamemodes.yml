@@ -78,3 +78,7 @@
       multiAntagSetting: None
       mindRoles:
       - MindRoleVampire
+      # Starlight-start
+      tags:
+        - CantBecomeRevolutionary
+      # Starlight-end
