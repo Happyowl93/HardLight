@@ -39,7 +39,7 @@
   - type: SubGamemodes
     rules:
     - id: ThiefLess # So that only 3 thieves max spawn in rev games.
-      prob: 0.41 # Starlight, to account for Wizard and Xenoborgs
+      prob: 0.41 # Starlight 
     - id: SLChangeling #Starlight lings
       prob: 0.22
     - id: VampireLess # Starlight reworked
@@ -85,7 +85,7 @@
     rules:
     - id: ThiefLess
       prob: 0.50
-    - id: VampireLess # They're immune, and this is probably the most interesting gamemode for them.
+    - id: VampireLess # This is probably the most interesting sub-gamemode for them.
       prob: 0.32
     - id: Xenoborgs # I think there's interesting roleplay opportunity if Xenoborgs spawn. You could willingly choose to get borged to prevent infection. I want to see how this plays out.
       prob: 0.08
