@@ -78,6 +78,7 @@
     - SpaceTrafficControlEventScheduler
     - SpaceTrafficControlFriendlyEventScheduler
     - BasicRoundstartVariation
+    - SLChangeling # Starlight
 #    - SiliconLiberation #Starlight
 
 - type: gamePreset
