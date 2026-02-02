@@ -105,18 +105,19 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-3
       map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 10000
   # Starlight-start
   - type: Item
     sprite: _Starlight/Objects/Weapons/Guns/LMGs/l6.rsi
   - type: Clothing
     sprite: _Starlight/Objects/Weapons/Guns/LMGs/l6.rsi
     quickEquip: false
-  # Starlight-end
-  - type: MagazineVisuals
-    magState: mag
-    steps: 4
-    zeroVisible: true
-  # Starlight-start
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/m41_cock.ogg
@@ -124,16 +125,9 @@
       path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
     soundBoltOpened:
       path: /Audio/Weapons/Guns/Cock/shotgun_open.ogg
-  # Starlight-end
-  - type: Appearance
-  - type: StaticPrice
-    price: 10000
-  # Starlight-start
   - type: SpeedModifiedOnWield
     walkModifier: 0.90
     sprintModifier: 0.90
-  # Starlight-end
-  # Starlight-start
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -155,8 +149,6 @@
     walkModifier: 1
     sprintModifier: 0.90
   - type: HeldSpeedModifier
-  # Starlight-end
-  # Starlight-start
   - type: Gun
     minAngle: 24
     maxAngle: 35
