@@ -393,17 +393,18 @@
 - type: entity
   parent: [IDCardStandard, BaseTSFContraband]
   id: TSFIdCardMarine
-  name: dogtag
-  description: A marine dog tag.
+  name: dog tags
+  suffix: TSF
+  description: A marine dog tags.
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Misc/dogtag.rsi
+    sprite: _Starlight/Clothing/Neck/Misc/dogtags.rsi
     layers: 
     - state: icon
   - type: Clothing
     slots:
     - idcard
-    sprite: _Starlight/Objects/Misc/dogtag.rsi
+    sprite: _Starlight/Clothing/Neck/Misc/dogtags.rsi
   - type: IdCard
     jobTitle: job-title-tsf-marine
     jobIcon: JobIconTSF
@@ -414,7 +415,8 @@
 - type: entity
   parent: TSFIdCardMarine
   id: TSFIdCardLeader
-  name: team leader dogtag
+  suffix: TSF
+  name: team leader dog tags
   components:
   - type: IdCard
     jobTitle: job-title-tsf-marine-leader
@@ -422,7 +424,8 @@
 - type: entity
   parent: TSFIdCardMarine
   id: TSFIdCardElite
-  name: MARSOC dogtag
+  name: MARSOC dog tags
+  suffix: TSF
   components:
   - type: IdCard
     jobTitle: job-title-tsf-MARSOC
