@@ -108,6 +108,8 @@
   - CigPackBub #SL
   - PillCanisterPsicodine #SL
   - ClothingDogTags # SL
+  - PersonalAI #SL
+  - GoldenPersonalAI #SL
 
 - type: loadoutGroup
   id: Glasses
@@ -1366,6 +1368,7 @@
   minLimit: 0
   loadouts:
   - ClothingNeckCloakHosVar #STARLIGHT
+  - ClothingNeckCloakHosRetro #STARLIGHT
   - HeadofSecurityCloak
   - HeadofSecurityMantle
 
@@ -1525,6 +1528,7 @@
   - SeniorOfficerJumpskirt
   - TrooperUniform
   - SecurityJumpsuitBlue
+  - SecurityJumpskirtBlue # Starlight
   - SecurityTshirt #Starlight
 
 - type: loadoutGroup
