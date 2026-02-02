@@ -111,6 +111,10 @@
   - type: Clothing
     sprite: _Starlight/Objects/Weapons/Guns/LMGs/l6.rsi
     quickEquip: false
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/m41_cock.ogg
