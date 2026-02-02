@@ -28895,5 +28895,13 @@ Entries:
   id: 310300
   time: '2026-02-02T15:44:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3103
+- author: katte
+  changes:
+  - message: Chemmaster defaults to beaker rather than buffer for pills and patches
+      now.
+    type: Tweak
+  id: 310200
+  time: '2026-02-02T15:58:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3102
 Order: -1
 
