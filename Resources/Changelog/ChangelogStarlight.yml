@@ -28834,5 +28834,48 @@ Entries:
   id: 135700
   time: '2026-02-01T15:15:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1357
+- author: neomoth
+  changes:
+  - message: Allow weapons to use their old thrust/swing animations as they have been
+      re-added under a new animation name.
+    type: Tweak
+  - message: Throngler plushie has been updated to use the original swing animation
+      and punch animation. Why? Funny.
+    type: Tweak
+  id: 310500
+  time: '2026-02-02T01:03:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3105
+- author: CawsForConcern
+  changes:
+  - message: (All Maps) AI Upload computers are now linked via multitool to their
+      respective AI Cores (supports dual-stations)
+    type: Add
+  id: 310800
+  time: '2026-02-02T01:41:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3108
+- author: neomoth
+  changes:
+  - message: Fixed some things regarding midround stations
+    type: Fix
+  - message: Wreck swarms no longer announce globally, only to the target station.
+    type: Fix
+  id: 310900
+  time: '2026-02-02T03:05:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3109
+- author: Ohelig
+  changes:
+  - message: Fixed half of Manor chemistry department having no power
+    type: Fix
+  id: 311300
+  time: '2026-02-02T12:48:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3113
+- author: AthenaAI
+  changes:
+  - message: Adds a quick action and verb to analyze someone when you have medtek
+      installed on your PDA.
+    type: Add
+  id: 311000
+  time: '2026-02-02T13:09:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3110
 Order: -1
 
