@@ -28853,5 +28853,14 @@ Entries:
   id: 310800
   time: '2026-02-02T01:41:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3108
+- author: neomoth
+  changes:
+  - message: Fixed some things regarding midround stations
+    type: Fix
+  - message: Wreck swarms no longer announce globally, only to the target station.
+    type: Fix
+  id: 310900
+  time: '2026-02-02T03:05:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3109
 Order: -1
 
