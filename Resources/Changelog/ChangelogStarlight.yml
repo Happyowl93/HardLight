@@ -28877,5 +28877,12 @@ Entries:
   id: 311000
   time: '2026-02-02T13:09:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3110
+- author: AndrewTateOfficialSS14
+  changes:
+  - message: Changed atmos devices max pressure from 4500 to 9000 kPa.
+    type: Tweak
+  id: 311500
+  time: '2026-02-02T15:34:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3115
 Order: -1
 
