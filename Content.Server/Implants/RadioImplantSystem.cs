@@ -28,6 +28,7 @@ public sealed class RadioImplantSystem : EntitySystem
         foreach (var channel in ent.Comp.CustomChannels.Where(channel => activeRadio.CustomChannels.Add(channel)))
             ent.Comp.ActiveAddedCustomRadioChannels.Add(channel);
         Dirty(args.Implanted, activeRadio);
+        Dirty(ent, ent.Comp);
         //Starlight end
 
         EnsureComp<IntrinsicRadioReceiverComponent>(args.Implanted);
@@ -43,6 +44,7 @@ public sealed class RadioImplantSystem : EntitySystem
                      intrinsicRadioTransmitter.CustomChannels.Add(channel)))
             ent.Comp.TransmitterAddedCustomRadioChannels.Add(channel);
         Dirty(args.Implanted, intrinsicRadioTransmitter);
+        Dirty(ent, ent.Comp);
         //Starlight end
     }
 
@@ -62,6 +64,7 @@ public sealed class RadioImplantSystem : EntitySystem
             foreach (var channel in ent.Comp.ActiveAddedCustomRadioChannels)
                 activeRadioComponent.CustomChannels.Remove(channel);
             ent.Comp.ActiveAddedCustomRadioChannels.Clear();
+            Dirty(ent, ent.Comp);
             //Starlight end
 
             if (activeRadioComponent.Channels.Count == 0 && activeRadioComponent.CustomChannels.Count == 0) // Starlight edit
@@ -79,13 +82,14 @@ public sealed class RadioImplantSystem : EntitySystem
         {
             radioTransmitterComponent.Channels.Remove(channel);
         }
-        Dirty(ent, radioTransmitterComponent); //Starlight
+        Dirty(args.Implanted, radioTransmitterComponent); //Starlight
         ent.Comp.TransmitterAddedChannels.Clear();
         
         //Starlight begin
         foreach (var channel in ent.Comp.TransmitterAddedCustomRadioChannels)
             radioTransmitterComponent.CustomChannels.Remove(channel);
         ent.Comp.TransmitterAddedCustomRadioChannels.Clear();
+        Dirty(ent, ent.Comp);
         //Starlight end
 
         if ((radioTransmitterComponent.Channels.Count == 0 || activeRadioComponent?.Channels.Count == 0) && (radioTransmitterComponent.CustomChannels.Count==0 || activeRadioComponent?.CustomChannels.Count == 0)) // Starlight edit
