@@ -13,6 +13,7 @@
   - WeaponProtoKineticAccelerator
   - ShuttleGunKineticCircuitboard
   - MechEquipmentKineticAccelerator
+  - FiringPinExpedition # Starlight
   technologyPrerequisites:
   - SalvageEquipment # starlight
   radioChannels:
@@ -57,6 +58,7 @@
   cost: 7500
   recipeUnlocks:
   - WeaponLaserCarbine
+  - FiringPinLaser # Starlight
   - WeaponMechCombatFiredartLaser
   radioChannels:
   - Security
