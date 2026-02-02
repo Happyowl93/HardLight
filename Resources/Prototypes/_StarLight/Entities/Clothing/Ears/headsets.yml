@@ -183,6 +183,7 @@
     containers:
       key_slots:
       - EncryptionKeyTSF
+      - EncryptionKeyMerchant
       - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/cargo.rsi
@@ -197,7 +198,7 @@
   id: ClothingHeadsetNCT
   name: nanotrasen career trainer radio headset
   description: This is used by your well-taught corporate training team.
-   components:
+  components:
   - type: ContainerFill
     containers:
       key_slots:
