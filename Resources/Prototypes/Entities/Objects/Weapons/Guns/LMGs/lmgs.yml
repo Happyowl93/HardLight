@@ -92,7 +92,6 @@
     supportedPins: [ Rifle ]
   # starlight end
 
-#Starlight Start - LMG sprite/audio rework.
 - type: entity
   name: L6 SAW
   id: WeaponLightMachineGunL6
@@ -100,16 +99,16 @@
   description: Developed by Waffle Corp, the L6 Squad Automatic Weapon is a deadly light machine gun often used by the Gorlex Marauders. Although bulky and cumbersome, its heavy barrel and high ammo capacity make it perfect for suppressing combatants with a hail of bullets. Feeds from .30 ammo belts.
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Weapons/Guns/LMGs/l6.rsi
+    sprite: _Starlight/Objects/Weapons/Guns/LMGs/l6.rsi # Starlight-edit
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-3
       map: ["enum.GunVisualLayers.Mag"]
   - type: Item
-    sprite: _Starlight/Objects/Weapons/Guns/LMGs/l6.rsi
+    sprite: _Starlight/Objects/Weapons/Guns/LMGs/l6.rsi # Starlight-edit
   - type: Clothing
-    sprite: _Starlight/Objects/Weapons/Guns/LMGs/l6.rsi
+    sprite: _Starlight/Objects/Weapons/Guns/LMGs/l6.rsi # Starlight-edit
     quickEquip: false
   - type: MagazineVisuals
     magState: mag
@@ -117,19 +116,19 @@
     zeroVisible: true
   - type: ChamberMagazineAmmoProvider
     soundRack:
-      path: /Audio/Weapons/Guns/Cock/m41_cock.ogg
+      path: /Audio/Weapons/Guns/Cock/m41_cock.ogg # Starlight-edit
     soundBoltClosed:
-      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg # Starlight-edit
     soundBoltOpened:
-      path: /Audio/Weapons/Guns/Cock/shotgun_open.ogg
+      path: /Audio/Weapons/Guns/Cock/shotgun_open.ogg # Starlight-edit
   - type: Appearance
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
         startingItem: MagazineLightRifleBoxSP
-        insertSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
-        ejectSound: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+        insertSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg # Starlight-edit
+        ejectSound: /Audio/Weapons/Guns/MagIn/rifle_load.ogg # Starlight-edit
         whitelist:
           tags:
             - MagazineLightRifleBox
@@ -140,19 +139,20 @@
         whitelist:
           tags:
             - CartridgeLightRifle
+  # Starlight-start
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 0.90
   - type: HeldSpeedModifier
+  # Starlight-end
   - type: Gun
-    minAngle: 24
-    maxAngle: 35
-    fireRate: 6
+    minAngle: 24 # Starlight-edit
+    maxAngle: 35 # Starlight-edit
+    fireRate: 6 # Starlight-edit
     soundGunshot:
-      path: /Audio/_Starlight/Weapons/Guns/Gunshots/l6.ogg
+      path: /Audio/_Starlight/Weapons/Guns/Gunshots/l6.ogg # Starlight-edit
       params:
-        volume: -5
-        #Starlight End
+        volume: -5 # Starlight-edit
 
 - type: entity
   name: L6C ROW
