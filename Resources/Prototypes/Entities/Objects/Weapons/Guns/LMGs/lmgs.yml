@@ -132,8 +132,6 @@
   - type: SpeedModifiedOnWield
     walkModifier: 0.90
     sprintModifier: 0.90
-  # Starlight-end
-  # Starlight-start
   - type: ItemSlots
     slots:
       gun_magazine:
