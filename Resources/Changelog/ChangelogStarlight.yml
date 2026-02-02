@@ -28926,5 +28926,12 @@ Entries:
   id: 305600
   time: '2026-02-02T16:17:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3056
+- author: Bingus13
+  changes:
+  - message: The abandoned FNaF restaurant on Sepultum Station now has security cameras.
+    type: Add
+  id: 303000
+  time: '2026-02-02T16:44:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3030
 Order: -1
 
