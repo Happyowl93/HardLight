@@ -57,6 +57,9 @@ loadout-group-magistrate-jumpsuit = Magistrate jumpsuit
 loadout-group-magistrate-eyewear = Magistrate eyewear
 loadout-group-magistrate-shoes = Magistrate shoes
 loadout-group-iia-shoes = Lawyer shoes
+loadout-group-magistrate-outer = Magistrate Outer Clothing
+loadout-group-magistrate-headwear = Magistrate Head
+loadout-group-magistrate-hands = Magistrate Gloves
 
 # Civilian
 loadout-group-civilian-shoes = Shoes
