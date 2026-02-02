@@ -92,6 +92,23 @@
 
 - type: entity
   parent: BaseGameRule
+  id: SubGamemodesRuleNuclearOperativeScaling
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: Thief
+      prob: 0.50
+    - id: SLChangelingLess # 6 changelings makes it too hard to arm crew on warops
+      prob: 0.20
+    - id: VampireLess
+      prob: 0.20
+    - id: SubWizard
+      prob: 0.07
+    - id: Xenoborgs
+      prob: 0.08
+
+- type: entity
+  parent: BaseGameRule
   id: ThiefGamerule
   components:
   - type: SubGamemodes
