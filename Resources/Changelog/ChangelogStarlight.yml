@@ -28933,5 +28933,17 @@ Entries:
   id: 303000
   time: '2026-02-02T16:44:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3030
+- author: SevenShades
+  changes:
+  - message: Added the L10 DMR and .30 DMR magazines
+    type: Add
+  - message: Replaced the LMG and jugsuit in the heavy weapons safe with a pair of
+      L10s
+    type: Tweak
+  - message: Added another Lecter and Drozd to their respective safes
+    type: Add
+  id: 300400
+  time: '2026-02-02T19:19:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3004
 Order: -1
 
