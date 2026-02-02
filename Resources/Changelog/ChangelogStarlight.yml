@@ -28972,5 +28972,13 @@ Entries:
   id: 309100
   time: '2026-02-02T19:24:11.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3091
+- author: PubliclyExecutedPig
+  changes:
+  - message: Shuffled Lobster Station's security department around. Genpop is no longer
+      genuinely awful. RIP the shooting range
+    type: Tweak
+  id: 311900
+  time: '2026-02-02T19:27:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3119
 Order: -1
 
