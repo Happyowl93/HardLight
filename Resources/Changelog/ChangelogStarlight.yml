@@ -28869,5 +28869,13 @@ Entries:
   id: 311300
   time: '2026-02-02T12:48:21.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3113
+- author: AthenaAI
+  changes:
+  - message: Adds a quick action and verb to analyze someone when you have medtek
+      installed on your PDA.
+    type: Add
+  id: 311000
+  time: '2026-02-02T13:09:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3110
 Order: -1
 
