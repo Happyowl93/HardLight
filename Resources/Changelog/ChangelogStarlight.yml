@@ -28903,5 +28903,12 @@ Entries:
   id: 310200
   time: '2026-02-02T15:58:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3102
+- author: Penguinwizzard
+  changes:
+  - message: Fixed localization string for centcomm operator job.
+    type: Fix
+  id: 308400
+  time: '2026-02-02T16:02:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3084
 Order: -1
 
