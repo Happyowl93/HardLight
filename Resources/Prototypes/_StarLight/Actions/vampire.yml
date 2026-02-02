@@ -348,7 +348,7 @@
   parent: BaseAction
   id: ActionVampireDarkPassage
   name: Dark Passage (20)
-  description: Teleport to target location through shadows. Cannot pass through bright areas.
+  description: Teleport to target location through shadows.
   components:
     - type: Action
       useDelay: 40
