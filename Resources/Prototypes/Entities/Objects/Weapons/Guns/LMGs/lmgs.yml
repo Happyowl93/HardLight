@@ -144,15 +144,15 @@
     walkModifier: 1
     sprintModifier: 0.90
   - type: HeldSpeedModifier
-  # Starlight-end
   - type: Gun
-    minAngle: 24 # Starlight-edit
-    maxAngle: 35 # Starlight-edit
-    fireRate: 6 # Starlight-edit
+    minAngle: 24
+    maxAngle: 35
+    fireRate: 6
     soundGunshot:
-      path: /Audio/_Starlight/Weapons/Guns/Gunshots/l6.ogg # Starlight-edit
+      path: /Audio/_Starlight/Weapons/Guns/Gunshots/l6.ogg
       params:
-        volume: -5 # Starlight-edit
+        volume: -5
+  # Starlight-end
 
 - type: entity
   name: L6C ROW
