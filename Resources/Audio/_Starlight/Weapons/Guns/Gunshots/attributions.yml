@@ -27,3 +27,8 @@
   license: "CC0-1.0"
   copyright: "Taken from delta-v"
   source: "https://github.com/DeltaV-Station/Delta-v/pull/154"
+
+- files: ["L6SAW.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Created by JustAdler"
+  source: "https://github.com/ss14Starlight/space-station-14"
