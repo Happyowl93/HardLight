@@ -111,7 +111,7 @@
     - id: SadTromboneImplanter
     - id: LightImplanter
     - id: ClothingHandsGlovesConducting
-    - id: abominationcube
+    - id: AbominationCube
       weight: 0.5
     - id: SyndicateBusinessCard
       weight: 0.5
