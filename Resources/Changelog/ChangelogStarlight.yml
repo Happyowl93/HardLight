@@ -28945,5 +28945,32 @@ Entries:
   id: 300400
   time: '2026-02-02T19:19:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3004
+- author: wonderfulnewworld, Rinary
+  changes:
+  - message: Vampires can now appear in Zombies and Zombieteors! (There is a visual
+      bug when they get converted, their blood levels will still show, but it seems
+      to be non-functional when the VampireComponent is removed...)
+    type: Tweak
+  - message: ShitStation and Vamptraitorlings can now show up on Beta. ShitStation
+      is between Extended and Survival in terms of volatility, Vamptraitorlings is...
+      well, should be obvious. (VTL has a really low chance, more than Zombieteors/Kessler,
+      less than Wizard.)
+    type: Tweak
+  - message: Vampires and Changelings now have an equal chance to show up in the gamemodes
+      they're allowed to both show up in. Enjoy the variety, and unpredictability!
+    type: Tweak
+  - message: Vampires scale a little better now. (Up to 12 in their sole gamemode
+      instead of 9, up to 6 as a subgamemode, equivalent to Thieves/Changelings)
+    type: Tweak
+  - message: Reduces action gamemodes on Alpha by 4% (1% each to NukeOps, Zombie,
+      Survival, Revolutionary), now that antag scaling has made non-action gamemodes
+      significantly more engaging. Increases Traitor by 2%, and Changeling/Vampire
+      by 1%.
+    type: Tweak
+  - message: Reduces number of Changelings that can show up on NukeOps.
+    type: Tweak
+  id: 309100
+  time: '2026-02-02T19:24:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3091
 Order: -1
 
