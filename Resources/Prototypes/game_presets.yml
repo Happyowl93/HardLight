@@ -195,7 +195,7 @@
   rules:
   - Nukeops
   # - DummyNonAntagChance 🌟Starlight🌟
-  - SubGamemodesRuleNuclearOperativeScaling
+  - SubGamemodesRuleNuclearOperativeScaling # Starlight
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
