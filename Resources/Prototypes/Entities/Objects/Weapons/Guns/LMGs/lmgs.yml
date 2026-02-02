@@ -149,7 +149,7 @@
     maxAngle: 35
     fireRate: 6
     soundGunshot:
-      path: /Audio/_Starlight/Weapons/Guns/Gunshots/L6SAW.ogg
+      path: /Audio/_Starlight/Weapons/Guns/Gunshots/l6.ogg
       params:
         volume: -5
         #Starlight End
