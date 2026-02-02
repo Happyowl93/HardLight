@@ -153,8 +153,6 @@
 - type: loadout
   id: ClothingNeckAsexualPin
   equipment: # Starlight: Move to misc slot
-    misc:
-    - ClothingNeckAsexualPin
     misc: ClothingNeckAsexualPin
 
 - type: loadout
