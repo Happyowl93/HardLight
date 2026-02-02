@@ -38,14 +38,14 @@
 - type: entity
   categories: [HideSpawnMenu]
   id: TranslatorForeigner
-  parent: [Translator]
+  parent: Translator
   name: foreigner's translator
   description: A special-issue translator that helps foreigner's speak and understand this station's primary language.
 
 - type: entity
   categories: [HideSpawnMenu]
   id: TranslatorIterator
-  parent: [Translator]
+  parent: Translator
   name: iterator's translator
   description: A special-issue translator that helps Iterator's understand this station's primary language.
   components:
