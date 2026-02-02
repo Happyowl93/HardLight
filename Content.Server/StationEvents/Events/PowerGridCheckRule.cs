@@ -64,11 +64,13 @@ namespace Content.Server.StationEvents.Events
             // Can't use the default EndAudio
             component.AnnounceCancelToken?.Cancel();
             component.AnnounceCancelToken = new CancellationTokenSource();
+            TryComp<StationEventComponent>(uid, out var stationEvent);
             Timer.Spawn(3000, () =>
             {
                 //Starlight begin - dumb.
-                var stationEvent = Comp<StationEventComponent>(uid);
-                if (stationEvent.GlobalAnnouncement) Audio.PlayGlobal(component.PowerOnSound, Filter.Broadcast(), true);
+                if (stationEvent is null) return;
+                if (stationEvent.GlobalAnnouncement)
+                    Audio.PlayGlobal(component.PowerOnSound, Filter.Broadcast(), true);
                 else
                     Audio.PlayGlobal(component.PowerOnSound,
                         Filter.Empty().AddWhere(session =>
