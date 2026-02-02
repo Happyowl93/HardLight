@@ -69,7 +69,7 @@ public sealed class RadioImplantSystem : EntitySystem
                 RemCompDeferred<ActiveRadioComponent>(args.Implanted);
             }
             
-            Dirty(ent, activeRadioComponent); // Starlight
+            Dirty(args.Implanted, activeRadioComponent); // Starlight
         }
 
         if (!TryComp<IntrinsicRadioTransmitterComponent>(args.Implanted, out var radioTransmitterComponent))
