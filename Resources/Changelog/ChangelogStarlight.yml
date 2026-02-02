@@ -28918,5 +28918,13 @@ Entries:
   id: 308800
   time: '2026-02-02T16:12:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3088
+- author: Fractalflower
+  changes:
+  - message: NanoTrasen apologies for accidentally sending a box of [[@$#!]] in place
+      of their gender-affirming clothing pins.
+    type: Fix
+  id: 305600
+  time: '2026-02-02T16:17:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3056
 Order: -1
 
