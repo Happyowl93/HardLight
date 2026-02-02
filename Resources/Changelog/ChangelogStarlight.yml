@@ -28862,5 +28862,76 @@ Entries:
   id: 310900
   time: '2026-02-02T03:05:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3109
+- author: Ohelig
+  changes:
+  - message: Fixed half of Manor chemistry department having no power
+    type: Fix
+  id: 311300
+  time: '2026-02-02T12:48:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3113
+- author: AthenaAI
+  changes:
+  - message: Adds a quick action and verb to analyze someone when you have medtek
+      installed on your PDA.
+    type: Add
+  id: 311000
+  time: '2026-02-02T13:09:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3110
+- author: AndrewTateOfficialSS14
+  changes:
+  - message: Changed atmos devices max pressure from 4500 to 9000 kPa.
+    type: Tweak
+  id: 311500
+  time: '2026-02-02T15:34:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3115
+- author: Way
+  changes:
+  - message: Added new jumpsuit for Magistrate, the Long Coat. Brought to you by the
+      NanoTrasen Design Board.
+    type: Add
+  - message: Gloves are no longer forced onto the Magistrate, and can be deselected
+      in the Loadout Menu.
+    type: Tweak
+  id: 310300
+  time: '2026-02-02T15:44:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3103
+- author: katte
+  changes:
+  - message: Chemmaster defaults to beaker rather than buffer for pills and patches
+      now.
+    type: Tweak
+  id: 310200
+  time: '2026-02-02T15:58:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3102
+- author: Penguinwizzard
+  changes:
+  - message: Fixed localization string for centcomm operator job.
+    type: Fix
+  id: 308400
+  time: '2026-02-02T16:02:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3084
+- author: r3d3mpt1on
+  changes:
+  - message: Disambiguated the Rat King, Vampires, and Changelings in the F7 menu
+      for Admins.
+    type: Tweak
+  id: 308800
+  time: '2026-02-02T16:12:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3088
+- author: Fractalflower
+  changes:
+  - message: NanoTrasen apologies for accidentally sending a box of [[@$#!]] in place
+      of their gender-affirming clothing pins.
+    type: Fix
+  id: 305600
+  time: '2026-02-02T16:17:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3056
+- author: Bingus13
+  changes:
+  - message: The abandoned FNaF restaurant on Sepultum Station now has security cameras.
+    type: Add
+  id: 303000
+  time: '2026-02-02T16:44:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3030
 Order: -1
 
