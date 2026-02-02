@@ -105,30 +105,42 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-3
       map: ["enum.GunVisualLayers.Mag"]
+  # Starlight-start
   - type: Item
-    sprite: _Starlight/Objects/Weapons/Guns/LMGs/l6.rsi # Starlight-edit
+    sprite: _Starlight/Objects/Weapons/Guns/LMGs/l6.rsi
   - type: Clothing
-    sprite: _Starlight/Objects/Weapons/Guns/LMGs/l6.rsi # Starlight-edit
+    sprite: _Starlight/Objects/Weapons/Guns/LMGs/l6.rsi
     quickEquip: false
+  # Starlight-end
   - type: MagazineVisuals
     magState: mag
     steps: 4
     zeroVisible: true
+  # Starlight-start
   - type: ChamberMagazineAmmoProvider
     soundRack:
-      path: /Audio/Weapons/Guns/Cock/m41_cock.ogg # Starlight-edit
+      path: /Audio/Weapons/Guns/Cock/m41_cock.ogg
     soundBoltClosed:
-      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg # Starlight-edit
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
     soundBoltOpened:
-      path: /Audio/Weapons/Guns/Cock/shotgun_open.ogg # Starlight-edit
+      path: /Audio/Weapons/Guns/Cock/shotgun_open.ogg
+  # Starlight-end
   - type: Appearance
+  - type: StaticPrice
+    price: 10000
+  # Starlight-start
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.90
+    sprintModifier: 0.90
+  # Starlight-end
+  # Starlight-start
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
         startingItem: MagazineLightRifleBoxSP
-        insertSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg # Starlight-edit
-        ejectSound: /Audio/Weapons/Guns/MagIn/rifle_load.ogg # Starlight-edit
+        insertSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        ejectSound: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
         whitelist:
           tags:
             - MagazineLightRifleBox
@@ -139,20 +151,21 @@
         whitelist:
           tags:
             - CartridgeLightRifle
-  # Starlight-start
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 0.90
   - type: HeldSpeedModifier
   # Starlight-end
+  # Starlight-start
   - type: Gun
-    minAngle: 24 # Starlight-edit
-    maxAngle: 35 # Starlight-edit
-    fireRate: 6 # Starlight-edit
+    minAngle: 24
+    maxAngle: 35
+    fireRate: 6
     soundGunshot:
-      path: /Audio/_Starlight/Weapons/Guns/Gunshots/l6.ogg # Starlight-edit
+      path: /Audio/_Starlight/Weapons/Guns/Gunshots/l6.ogg
       params:
-        volume: -5 # Starlight-edit
+        volume: -5
+  # Starlight-end
 
 - type: entity
   name: L6C ROW
