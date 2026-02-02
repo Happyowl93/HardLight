@@ -27,7 +27,7 @@ public sealed class RadioImplantSystem : EntitySystem
 
         foreach (var channel in ent.Comp.CustomChannels.Where(channel => activeRadio.CustomChannels.Add(channel)))
             ent.Comp.ActiveAddedCustomRadioChannels.Add(channel);
-        Dirty(ent, activeRadio);
+        Dirty(args.Implanted, activeRadio);
         //Starlight end
 
         EnsureComp<IntrinsicRadioReceiverComponent>(args.Implanted);
@@ -42,7 +42,7 @@ public sealed class RadioImplantSystem : EntitySystem
         foreach (var channel in ent.Comp.CustomChannels.Where(channel =>
                      intrinsicRadioTransmitter.CustomChannels.Add(channel)))
             ent.Comp.TransmitterAddedCustomRadioChannels.Add(channel);
-        Dirty(ent, intrinsicRadioTransmitter);
+        Dirty(args.Implanted, intrinsicRadioTransmitter);
         //Starlight end
     }
 
