@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
@@ -65,7 +66,16 @@ namespace Content.Server.StationEvents.Events
             component.AnnounceCancelToken = new CancellationTokenSource();
             Timer.Spawn(3000, () =>
             {
-                Audio.PlayGlobal(component.PowerOnSound, Filter.Broadcast(), true);
+                //Starlight begin - dumb.
+                var stationEvent = Comp<StationEventComponent>(uid);
+                if (stationEvent.GlobalAnnouncement) Audio.PlayGlobal(component.PowerOnSound, Filter.Broadcast(), true);
+                else
+                    Audio.PlayGlobal(component.PowerOnSound,
+                        Filter.Empty().AddWhere(session =>
+                            session.AttachedEntity is not null &&
+                            TryComp<StationMemberComponent>(Transform(session.AttachedEntity.Value).GridUid,
+                                out var station) && station.Station == stationEvent.TargetStation), true);
+                //Starlight end
             }, component.AnnounceCancelToken.Token);
             component.Unpowered.Clear();
         }
