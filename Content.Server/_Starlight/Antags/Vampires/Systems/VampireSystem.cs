@@ -532,10 +532,8 @@ public sealed partial class VampireSystem : EntitySystem
         }
     }
 
-    private void OnComponentRemove(EntityUid uid, VampireComponent comp, ComponentRemove args)
-    {
-        TryRemoveAbilities(uid, comp);
-    }
+    private void OnComponentRemove(EntityUid uid, VampireComponent comp, ComponentRemove _) 
+        => TryRemoveAbilities(uid, comp);
      
     private void TryRemoveAbilities(EntityUid uid, VampireComponent comp)
     {
