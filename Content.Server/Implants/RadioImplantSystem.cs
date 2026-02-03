@@ -62,7 +62,6 @@ public sealed class RadioImplantSystem : EntitySystem
             foreach (var channel in ent.Comp.ActiveAddedCustomRadioChannels)
                 activeRadioComponent.CustomChannels.Remove(channel);
             ent.Comp.ActiveAddedCustomRadioChannels.Clear();
-            Dirty(ent, ent.Comp);
             //Starlight end
 
             if (activeRadioComponent.Channels.Count == 0 && activeRadioComponent.CustomChannels.Count == 0) // Starlight edit
@@ -87,7 +86,6 @@ public sealed class RadioImplantSystem : EntitySystem
         foreach (var channel in ent.Comp.TransmitterAddedCustomRadioChannels)
             radioTransmitterComponent.CustomChannels.Remove(channel);
         ent.Comp.TransmitterAddedCustomRadioChannels.Clear();
-        Dirty(ent, ent.Comp);
         //Starlight end
 
         if ((radioTransmitterComponent.Channels.Count == 0 || activeRadioComponent?.Channels.Count == 0) && (radioTransmitterComponent.CustomChannels.Count==0 || activeRadioComponent?.CustomChannels.Count == 0)) // Starlight edit
