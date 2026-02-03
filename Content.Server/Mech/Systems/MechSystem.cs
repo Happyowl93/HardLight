@@ -1,5 +1,6 @@
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Systems;
+using Content.Server.Hands.Systems;
 using Content.Server.Mech.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage.Systems;
@@ -73,9 +74,7 @@ public sealed partial class MechSystem : SharedMechSystem
     [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly NpcFactionSystem _factionSystem = default!;
     [Dependency] private readonly SharedPointLightSystem _light = default!;
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
-    [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] private readonly GasTankSystem _gasTank = default!;
+    [Dependency] private readonly IGameTiming Timing = default!;
 #endregion Starlight
 
 
@@ -586,7 +585,7 @@ public sealed partial class MechSystem : SharedMechSystem
         var state = new MechBoundUiState
         {
             EquipmentStates = ev.States,
-            Equipment = component.EquipmentContainer.ContainedEntities.Select(o => _entityManager.GetNetEntity(o)).ToList() // Starlight-edit: Correct equipment update
+            Equipment = component.EquipmentContainer.ContainedEntities.Select(o => GetNetEntity(o)).ToList() // Starlight-edit: Correct equipment update
         };
         _ui.SetUiState(uid, MechUiKey.Key, state);
     }
