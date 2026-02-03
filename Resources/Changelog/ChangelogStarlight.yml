@@ -28993,5 +28993,20 @@ Entries:
   id: 311100
   time: '2026-02-03T04:30:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3111
+- author: Conflee
+  changes:
+  - message: Changed Silicon status under Corporate Law. Attacking a Cyborg is now
+      Vandalism (Minor Crime) or Damage of Property (Moderate Crime). Critting, gibbing,
+      or wiping a Cyborg is Destruction of Property (Major Crime). Added Tampering
+      with Machinery (Moderate Crime), to hack or alter any machinery such as lathes,
+      vending machines, or cyborgs.
+    type: Tweak
+  - message: Added "Multiple confirmed reports of crew being flashed by other crew
+      is grounds to suspect there is a Revolution." to the examples section of "Revolutionary
+      Methods". Revs must now be more stealthy.
+    type: Tweak
+  id: 310700
+  time: '2026-02-03T04:53:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3107
 Order: -1
 
