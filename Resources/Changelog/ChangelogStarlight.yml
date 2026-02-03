@@ -28980,5 +28980,84 @@ Entries:
   id: 311900
   time: '2026-02-02T19:27:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3119
+- author: neomoth
+  changes:
+  - message: Yummy toolshed.....
+    type: Add
+  - message: Armory announcements now specify the station they are traveling to/from.
+    type: Tweak
+  - message: Can now specify station to send/recall an armory to/from.
+    type: Tweak
+  - message: the PowerGridCheck gamerule no longer plays audio globally on event end.
+    type: Fix
+  id: 311100
+  time: '2026-02-03T04:30:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3111
+- author: Conflee
+  changes:
+  - message: Changed Silicon status under Corporate Law. Attacking a Cyborg is now
+      Vandalism (Minor Crime) or Damage of Property (Moderate Crime). Critting, gibbing,
+      or wiping a Cyborg is Destruction of Property (Major Crime). Added Tampering
+      with Machinery (Moderate Crime), to hack or alter any machinery such as lathes,
+      vending machines, or cyborgs.
+    type: Tweak
+  - message: Added "Multiple confirmed reports of crew being flashed by other crew
+      is grounds to suspect there is a Revolution." to the examples section of "Revolutionary
+      Methods". Revs must now be more stealthy.
+    type: Tweak
+  id: 310700
+  time: '2026-02-03T04:53:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3107
+- author: Scarlet Lightweaver
+  changes:
+  - message: Changed how the L6 saw sounds and looks! its an actual LMG now!!
+    type: Tweak
+  id: 311700
+  time: '2026-02-02T19:30:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3117
+- author: Scarlet Lightweaver
+  changes:
+  - message: Added a new hammer for security!
+    type: Add
+  id: 302700
+  time: '2026-02-03T07:35:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3027
+- author: Shades
+  changes:
+  - message: Fixed Iterator trait language error.
+    type: Fix
+  id: 309800
+  time: '2026-02-03T07:42:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3098
+- author: Vinny-Shick
+  changes:
+  - message: A cloak for the warden.
+    type: Add
+  id: 308200
+  time: '2026-02-03T07:59:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3082
+- author: walksanator
+  changes:
+  - message: Xenobio slimes now have propper sprites.
+    type: Tweak
+  - message: Xenobio slimes have random faces on spawn (too bad I cant make them pop
+      out against the slime...)
+    type: Add
+  - message: Some internal xenobio systems were removed cause you could do the exact
+      same thing with existing systems
+    type: Remove
+  - message: Sepia/Bluespace tile's health values changed so you can actually pick
+      them up in a reasonable ammount of time
+    type: Tweak
+  id: 296200
+  time: '2026-02-03T10:36:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2962
+- author: r3d3mpt1on & Penguinwizzard
+  changes:
+  - message: Skeletons are once again Crew-Aligned.
+    type: Fix
+  id: 310600
+  time: '2026-02-03T10:59:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3106
 Order: -1
 
