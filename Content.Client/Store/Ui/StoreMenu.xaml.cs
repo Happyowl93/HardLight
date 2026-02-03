@@ -1,6 +1,5 @@
 using System.Linq;
 using System.Text;
-using Content.Client._Starlight.UI;
 using Content.Client.Actions;
 using Content.Client.Message;
 using Content.Shared.FixedPoint;
@@ -42,7 +41,7 @@ public sealed partial class StoreMenu : DefaultWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
-        OnResized += ProcessResize;
+        OnResized += ProcessResize; // Starlight
         WithdrawButton.OnButtonDown += OnWithdrawButtonDown;
         RefundButton.OnButtonDown += OnRefundButtonDown;
         SearchBar.OnTextChanged += _ => SearchTextUpdated?.Invoke(this, SearchBar.Text);
@@ -390,6 +389,8 @@ public sealed partial class StoreMenu : DefaultWindow
         public string? Id;
     }
 
+    // Starlight-start
+
     private void ProcessResize()
     {
         if (StoreGridContainer.ChildCount == 0)
@@ -409,4 +410,6 @@ public sealed partial class StoreMenu : DefaultWindow
 
         StoreGridContainer.Columns = columnCount;
     }
+
+    // Starlight-end
 }
