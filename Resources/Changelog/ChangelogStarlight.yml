@@ -29066,5 +29066,14 @@ Entries:
   id: 302100
   time: '2026-02-03T11:41:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3021
+- author: FoxxoTrystan
+  changes:
+  - message: TSF and its equipements.
+    type: Add
+  - message: Soviet ID now get an Icon.
+    type: Add
+  id: 241700
+  time: '2026-02-03T12:27:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2417
 Order: -1
 
