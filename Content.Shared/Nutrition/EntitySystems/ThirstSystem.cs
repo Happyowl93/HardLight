@@ -152,7 +152,7 @@ public sealed class ThirstSystem : EntitySystem
         if (IsMovementThreshold(component.LastThirstThreshold) != IsMovementThreshold(component.CurrentThirstThreshold) &&
                 TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
         {
-            _movement.RefreshMovementSpeedModifiers(uid, movementSlowdownComponent); // Starlight-edit
+            _movement.RefreshMovementSpeedModifiers(uid, movementSlowdownComponent);
         }
 
         // Update UI
@@ -193,7 +193,7 @@ public sealed class ThirstSystem : EntitySystem
                 component.ActualDecayRate = thirstMultiplier * component.BaseDecayRate * 0.8f; // Starlight-edit
                 return;
             case ThirstThreshold.Parched:
-                _movement.RefreshMovementSpeedModifiers(uid, null); // Starlight-edit
+                _movement.RefreshMovementSpeedModifiers(uid); 
                 component.LastThirstThreshold = component.CurrentThirstThreshold;
                 component.ActualDecayRate = thirstMultiplier * component.BaseDecayRate * 0.6f; // Starlight-edit
                 return;
