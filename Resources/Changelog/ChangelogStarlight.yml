@@ -29059,5 +29059,12 @@ Entries:
   id: 310600
   time: '2026-02-03T10:59:11.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3106
+- author: depressedtimbit
+  changes:
+  - message: Cargo acquisition slips can now be faxed and copied.
+    type: Tweak
+  id: 302100
+  time: '2026-02-03T11:41:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3021
 Order: -1
 
