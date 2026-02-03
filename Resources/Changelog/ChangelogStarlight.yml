@@ -29082,5 +29082,12 @@ Entries:
   id: 302500
   time: '2026-02-03T13:34:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3025
+- author: StygianEagle
+  changes:
+  - message: Added the Moth Ghost for all players, rejoice.
+    type: Add
+  id: 276900
+  time: '2026-02-03T13:39:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2769
 Order: -1
 
