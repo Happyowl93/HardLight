@@ -166,7 +166,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     {
         var illumination = 0f;
 
-        var lightQuery = _lookup.GetEntitiesInRange<PointLightComponent>(Transform(uid).Coordinates, 20, LookupFlags.Uncontained);
+        var lightQuery = _lookup.GetEntitiesInRange<PointLightComponent>(Transform(uid).Coordinates, 20, LookupFlags.All | LookupFlags.Approximate);
 
         foreach (var light in lightQuery)
         {
@@ -176,6 +176,14 @@ public sealed partial class ShadekinSystem : EntitySystem
             if (!light.Comp.Enabled
                 || light.Comp.Radius < 1
                 || light.Comp.Energy <= 0)
+                continue;
+
+            // Check if our entity is in a container with OccludesLight, if yes, is it the same as the light?
+            if (_container.TryGetContainingContainer(uid, out var uidcontainer) && uidcontainer.OccludesLight && !_container.IsInSameOrNoContainer(uid, light.Owner))
+                continue;
+
+            // Same as above but this time we check the light entity instead of our entity.
+            if (_container.TryGetContainingContainer(light.Owner, out var lightcontainer) && lightcontainer.OccludesLight && !_container.IsInSameOrNoContainer(uid, light.Owner))
                 continue;
 
             var (lightPos, lightRot) = _transform.GetWorldPositionRotation(light);
@@ -333,7 +341,7 @@ public sealed partial class ShadekinSystem : EntitySystem
             {
                 // I had a brain moment, apprently if one is false its does not check for the other?
             }
-            else if (!_container.IsEntityInContainer(uid))
+            else
                 lightExposure = GetLightExposure(uid);
 
             CheckThresholds(uid, component, lightExposure);
