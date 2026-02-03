@@ -29150,5 +29150,14 @@ Entries:
   id: 312000
   time: '2026-02-03T21:49:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3120
+- author: Conflee
+  changes:
+  - message: Nerfed the Cube. It no longer lusts for mass death and destruction. It's
+      hunger has been satiated for now. It will only eat half of a department instead
+      of the entire department. (replaced unbreakable walls with normal walls)
+    type: Fix
+  id: 312900
+  time: '2026-02-03T21:47:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3129
 Order: -1
 
