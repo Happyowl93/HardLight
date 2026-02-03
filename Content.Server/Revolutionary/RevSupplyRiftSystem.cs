@@ -508,7 +508,7 @@ public sealed class RevSupplyRiftSystem : EntitySystem
                     Loc.GetString("centcomm-revs-gammarift"),
                     Loc.GetString("cmd-announce-sender"));
                 _alert.SetLevel(station.Value, "gamma", true, true, true, true);
-                _roundEnd.SetShuttleCallsEnabled(False);
+                _roundEnd.SetShuttleCallsEnabled(false);
             }
         } //#endregion Starlight Autogamma
         
