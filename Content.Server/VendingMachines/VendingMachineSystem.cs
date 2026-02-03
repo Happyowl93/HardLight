@@ -44,7 +44,7 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly CargoSystem _cargoSystem = default!;
         [Dependency] private readonly Content.Server.Station.Systems.StationSystem _stationSystem = default!;
         [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-        // 🌟Starlight🌟 end 
+        // 🌟Starlight🌟 end
 
         private const float WallVendEjectDistanceFromWall = 1f;
 
@@ -234,7 +234,7 @@ namespace Content.Server.VendingMachines
             // Only charge if prices are shown, not emagged, we have a buyer, and not charged yet this operation
             var buyer = vendComponent.LastBuyer;
             var isEmagged = HasComp<EmaggedComponent>(uid);
-            
+
             if (!isEmagged && vendComponent.ShowPrices && buyer is { } buyerUid && !vendComponent.DebitApplied && itemProto != null)
             {
                 var entry = GetEntry(uid, itemProto, vendComponent.CurrentItemType, vendComponent);
@@ -332,7 +332,7 @@ namespace Content.Server.VendingMachines
             args.Cancelled |= ent.Comp.Broken;
         }
 
-        #region 🌟Starlight🌟 
+        #region 🌟Starlight🌟
         /// <summary>
         /// Persist prices into the live component so clients have prices on first open
         /// </summary>
