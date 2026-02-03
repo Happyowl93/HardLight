@@ -38,7 +38,9 @@ using Robust.Shared.Utility;
 // Starlight Start
 using Content.Server.Body.Systems;
 using Content.Server.Body.Components;
+using Content.Server.Bible.Components;
 using Content.Server.GameTicking.Rules.Components;
+using Content.Shared.Body.Components;
 using Content.Shared.Tag;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
