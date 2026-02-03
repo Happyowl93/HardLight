@@ -121,13 +121,21 @@
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/sfrifle_magin.ogg
 
-# - type: entity # Starlight removal - We already have one of these...
-#   parent: [WeaponLauncherHydra]
-#   id: WeaponLauncherHydraLethal
-#   suffix: frag
-#   components:
-#   - type: RevolverAmmoProvider
-#     proto: GrenadeFrag
+- type: entity # Starlight edit: Ballistics.
+  parent: [WeaponLauncherHydra]
+  id: WeaponLauncherHydraLethal
+  name: modified hydra # SL edit: give it a proper name
+  suffix: Security # starlight: differentiate
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - Grenade
+  # - type: RevolverAmmoProvider # Starlight removal
+    proto: GrenadeFrag
+  - type: ScanDetectable # Starlight: major contra (I think this is valid?)
+  - type: Contraband
+    severity: Major
 
 - type: entity
   name: RPG-7
