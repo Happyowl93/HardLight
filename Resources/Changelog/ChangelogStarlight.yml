@@ -29036,5 +29036,21 @@ Entries:
   id: 308200
   time: '2026-02-03T07:59:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3082
+- author: walksanator
+  changes:
+  - message: Xenobio slimes now have propper sprites.
+    type: Tweak
+  - message: Xenobio slimes have random faces on spawn (too bad I cant make them pop
+      out against the slime...)
+    type: Add
+  - message: Some internal xenobio systems were removed cause you could do the exact
+      same thing with existing systems
+    type: Remove
+  - message: Sepia/Bluespace tile's health values changed so you can actually pick
+      them up in a reasonable ammount of time
+    type: Tweak
+  id: 296200
+  time: '2026-02-03T10:36:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2962
 Order: -1
 
