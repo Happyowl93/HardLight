@@ -41,7 +41,7 @@
   - MagazineBoxMagnumIncendiary
   - MagazineBoxLightRifleIncendiary
   - MagazineBoxRifleIncendiary
-  - LightRifleHeavyMagazineIncendiary
+  - MagazineDMRIncendiary # Starlight
   - MagazinePistolSubMachineGunIncendiary
   - SpeedLoaderShotgunIncendiary
   radioChannels:
@@ -58,6 +58,7 @@
   cost: 7500
   recipeUnlocks:
   - WeaponLaserCarbine
+  - FiringPinLaser # Starlight
   - WeaponMechCombatFiredartLaser
   radioChannels:
   - Security
@@ -110,7 +111,7 @@
   - MagazineBoxLightRifleUranium
   - MagazineBoxRifleUranium
   - BoxShotgunUranium
-  - LightRifleHeavyMagazineUranium
+  - MagazineDMRUranium # Starlight
   - MagazinePistolSubMachineGunUranium
   - SpeedLoaderShotgunUranium
   radioChannels:
