@@ -1,6 +1,7 @@
 using Content.Shared._Starlight.Polymorph.Components;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Follower;
 using Content.Shared.Follower.Components;
 using Content.Shared.Mind;
@@ -12,6 +13,7 @@ using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Verbs;
+using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
 
@@ -28,6 +30,7 @@ public sealed class StationAIShuntSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly StationAiVisionSystem _vision = default!;
+    [Dependency] private readonly SharedContainerSystem _containers = default!;
 
     public override void Initialize()
     {
@@ -38,6 +41,7 @@ public sealed class StationAIShuntSystem : EntitySystem
         SubscribeLocalEvent<StationAIShuntComponent, AIUnShuntActionEvent>(OnAttemptUnshunt);
         SubscribeLocalEvent<StationAIShuntComponent, GetVerbsEvent<AlternativeVerb>>(GetAltVerbs);
 
+        SubscribeLocalEvent<StationAIShuntThroughComponent, GetVerbsEvent<AlternativeVerb>>(GetAltVerbsShuntThrough);
     }
 
     #region Actions
@@ -48,6 +52,37 @@ public sealed class StationAIShuntSystem : EntitySystem
         var target = ev.Target;
         if (_vision.IsOutsideCameraView(target))
             return;
+        
+        // If target has ShuntThrough component, check containers for valid targets
+        if (TryComp<StationAIShuntThroughComponent>(target, out _))
+        {
+            foreach (var container in _containers.GetAllContainers(target))
+            {
+                foreach (var containedEntity in container.ContainedEntities)
+                {
+                    // Try to shunt into contained entity if it has StationAIShuntComponent
+                    if (TryComp<StationAIShuntComponent>(containedEntity, out var containedShunt))
+                    {
+                        target = containedEntity;
+                        goto FoundTarget;
+                    }
+                    
+                    // Check if contained entity is a borg chassis with a shuntable brain
+                    if (TryComp<BorgChassisComponent>(containedEntity, out var containedChassis))
+                    {
+                        var brain = containedChassis.BrainContainer.ContainedEntity;
+                        if (brain.HasValue && TryComp<StationAIShuntComponent>(brain, out _))
+                        {
+                            target = containedEntity;
+                            goto FoundTarget;
+                        }
+                    }
+                }
+            }
+            return; // No valid target found in containers
+        }
+        
+        FoundTarget:
         if (!TryComp<StationAIShuntComponent>(target, out var shunt))
             return;
         if (!_mindSystem.TryGetMind(uid, out var mindId, out var _))
@@ -219,7 +254,48 @@ public sealed class StationAIShuntSystem : EntitySystem
             }
         };
         ev.Verbs.Add(shuntVerb);
+    }
 
+    public void GetAltVerbsShuntThrough(EntityUid uid, StationAIShuntThroughComponent comp, GetVerbsEvent<AlternativeVerb> ev)
+    {
+        if (!HasComp<StationAIShuntableComponent>(ev.User))
+            return;
+
+        // Check containers for valid shunt targets
+        foreach (var container in _containers.GetAllContainers(uid))
+        {
+            foreach (var containedEntity in container.ContainedEntities)
+            {
+                var hasShuntComp = HasComp<StationAIShuntComponent>(containedEntity);
+                var hasBorgWithBrain = false;
+                
+                if (TryComp<BorgChassisComponent>(containedEntity, out var chassis))
+                {
+                    hasBorgWithBrain = chassis.BrainContainer.ContainedEntity.HasValue && 
+                                      HasComp<StationAIShuntComponent>(chassis.BrainContainer.ContainedEntity);
+                }
+
+                if (hasShuntComp || hasBorgWithBrain)
+                {
+                    var shuntVerb = new AlternativeVerb()
+                    {
+                        Text = Loc.GetString("ai-shunt-into"),
+                        Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/vv.svg.192dpi.png")),
+                        Act = () =>
+                        {
+                            var shuntEv = new AIShuntActionEvent()
+                            {
+                                Target = uid,
+                                Performer = ev.User
+                            };
+                            RaiseLocalEvent(ev.User, shuntEv);
+                        }
+                    };
+                    ev.Verbs.Add(shuntVerb);
+                    return; // Only add one verb
+                }
+            }
+        }
     }
     #endregion
 }
