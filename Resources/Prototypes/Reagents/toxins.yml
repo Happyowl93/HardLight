@@ -19,6 +19,7 @@
         damage:
           types:
             Poison: 4
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -28,6 +29,7 @@
           type: [ Cyclorite ]
         reagent: Toxin
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: CarpoToxin
@@ -56,6 +58,7 @@
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-burning-insides" ]
         probability: 0.33
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -65,6 +68,7 @@
           type: [ Cyclorite ]
         reagent: CarpoToxin
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: ChloralHydrate
@@ -102,6 +106,7 @@
         damage:
           types:
             Poison: 1.5
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -111,6 +116,7 @@
           type: [ Cyclorite ]
         reagent: ChloralHydrate
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: GastroToxin
@@ -134,6 +140,7 @@
             reagent: GastroToxin
             min: 2
           probability: 0.2
+        # Starlight-Start: Cyclorite Metabolism
         - !type:AdjustReagent
           conditions:
           - !type:ReagentCondition
@@ -143,6 +150,7 @@
             type: [ Cyclorite ]
           reagent: GastroToxin
           amount: 0.25
+          # Starlight-End
 
 - type: reagent
   id: Mold
@@ -160,6 +168,7 @@
         damage:
           types:
             Poison: 1
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -169,6 +178,7 @@
           type: [ Cyclorite ]
         reagent: Mold
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: PolytrinicAcid
@@ -216,6 +226,7 @@
       - !type:Emote
         emote: Scream
         probability: 0.3
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -225,6 +236,7 @@
           type: [ Cyclorite ]
         reagent: PolytrinicAcid
         amount: 1.5
+        # Starlight-End
 
 - type: reagent
   id: FerrochromicAcid
@@ -246,6 +258,7 @@
           types:
             Heat: 2.5
             Caustic: 1
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -255,6 +268,7 @@
           type: [ Cyclorite ]
         reagent: FerrochromicAcid
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: FluorosulfuricAcid
@@ -295,6 +309,7 @@
       - !type:Emote
         emote: Scream
         probability: 0.25
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -304,6 +319,7 @@
           type: [ Cyclorite ]
         reagent: FluorosulfuricAcid
         amount: 1.5
+        # Starlight-End
 
 - type: reagent
   id: SulfuricAcid
@@ -353,6 +369,7 @@
       - !type:Emote
         emote: Scream
         probability: 0.2
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -362,6 +379,7 @@
           type: [ Cyclorite ]
         reagent: SulfuricAcid
         amount: 1.5
+        # Starlight-End
 
 - type: reagent
   id: UnstableMutagen
@@ -386,6 +404,7 @@
         damage:
           types:
             Radiation: 3
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -395,6 +414,7 @@
           type: [ Cyclorite ]
         reagent: UnstableMutagen
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: HeartbreakerToxin
@@ -411,6 +431,7 @@
         damage:
           types:
             Asphyxiation: 5
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -420,6 +441,7 @@
           type: [ Cyclorite ]
         reagent: HeartbreakerToxin
         amount: 0.25
+        # Starlight-End
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 10
@@ -439,6 +461,7 @@
         damage:
           groups:
             Airloss: 10
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -448,6 +471,7 @@
           type: [ Cyclorite ]
         reagent: Lexorin
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: MindbreakerToxin
@@ -468,6 +492,7 @@
         effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 10
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -477,6 +502,7 @@
           type: [ Cyclorite ]
         reagent: MindbreakerToxin
         amount: 0.25
+        # Starlight-End
   # TODO: PROPER hallucinations
 
 - type: reagent
@@ -519,6 +545,7 @@
         visualType: Medium
         messages: [ "histamine-effect-heavy-itchiness" ]
         probability: 0.2
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -528,6 +555,7 @@
           type: [ Cyclorite ]
         reagent: Histamine
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: Theobromine
@@ -554,6 +582,7 @@
         conditions:
           - !type:MetabolizerTypeCondition
             type: [Animal]
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -562,7 +591,8 @@
         - !type:MetabolizerTypeCondition
           type: [ Cyclorite ]
         reagent: Theobromine
-        amount: 0.025
+        amount: 0.02 # Rounding down with 2 decimal points
+        # Starlight-End
 
 - type: reagent
   id: Amatoxin
@@ -580,6 +610,7 @@
         damage:
           types:
             Poison: 3
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -589,6 +620,7 @@
           type: [ Cyclorite ]
         reagent: Amatoxin
         amount: 0.1
+        # Starlight-End
 
 - type: reagent
   id: VentCrud
@@ -605,6 +637,7 @@
           damage:
             types:
               Poison: 2
+        # Starlight-Start: Cyclorite Metabolism
         - !type:AdjustReagent
           conditions:
           - !type:ReagentCondition
@@ -614,6 +647,7 @@
             type: [ Cyclorite ]
           reagent: VentCrud
           amount: 0.25
+          # Starlight-End
 
 - type: reagent
   id: Romerol
@@ -633,6 +667,7 @@
             - !type:ReagentCondition
               reagent: Romerol
               min: 5
+        # Starlight-Start: Cyclorite Metabolism
         - !type:AdjustReagent
           conditions:
           - !type:ReagentCondition
@@ -642,6 +677,7 @@
             type: [ Cyclorite ]
           reagent: Romerol
           amount: 0.25
+          # Starlight-End
 
 - type: reagent
   id: UncookedAnimalProteins
@@ -702,6 +738,7 @@
           type: [ Vampire ]
         reagent: Protein
         amount: 0.5
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -711,6 +748,7 @@
           type: [ Cyclorite ]
         reagent: UncookedAnimalProteins
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: Allicin
@@ -734,6 +772,7 @@
         damage:
           types:
             Poison: 0.06
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -742,7 +781,8 @@
         - !type:MetabolizerTypeCondition
           type: [ Cyclorite ]
         reagent: Allicin
-        amount: 0.025
+        amount: 0.02 # Rounding down with 2 decimal points
+        # Starlight-End
 
 - type: reagent
   id: Pax
@@ -765,6 +805,7 @@
         key: Pacified
         component: Pacified
         time: 4
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -774,6 +815,7 @@
           type: [ Cyclorite ]
         reagent: Pax
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: Honk
@@ -803,6 +845,7 @@
         damage:
           types:
             Poison: 0.06
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -811,7 +854,8 @@
         - !type:MetabolizerTypeCondition
           type: [ Cyclorite ]
         reagent: Honk
-        amount: 0.025
+        amount: 0.02 # Rounding down with 2 decimal points
+        # Starlight-End
 
 
 - type: reagent
@@ -830,6 +874,7 @@
         damage:
           types:
             Poison: 0.6 # Makes it 20 damage per unit.
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -839,6 +884,7 @@
           type: [ Cyclorite ]
         reagent: Lead
         amount: 0.01 # Rounding down with 2 decimal points
+        # Starlight-End
 
 - type: reagent
   id: Bungotoxin
@@ -856,6 +902,7 @@
         damage:
           types:
             Poison: 1.8
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -865,6 +912,7 @@
           type: [ Cyclorite ]
         reagent: Bungotoxin
         amount: 0.1
+        # Starlight-End
 
 - type: reagent
   id: Vestine
@@ -895,6 +943,7 @@
         damage:
           groups:
             Airloss: 2
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -904,6 +953,7 @@
           type: [ Cyclorite ]
         reagent: Vestine
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: Tazinide
@@ -919,6 +969,7 @@
       effects:
       - !type:Electrocute
         probability: 0.8
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -928,6 +979,7 @@
           type: [ Cyclorite ]
         reagent: Tazinide
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: Lipolicide
@@ -954,6 +1006,7 @@
             Poison: 2
       - !type:SatiateHunger
         factor: -6
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -963,6 +1016,7 @@
           type: [ Cyclorite ]
         reagent: Lipolicide
         amount: 0.25
+        # Starlight-End
 
 # inspired by the spider neurotoxin GsMtx-4
 # poisons non-spiders and slows you down at high doses
@@ -1007,6 +1061,7 @@
           inverted: true
         walkSpeedModifier: 0.4
         sprintSpeedModifier: 0.4
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -1016,6 +1071,7 @@
           type: [ Cyclorite ]
         reagent: Mechanotoxin
         amount: 0.1
+        # Starlight-End
 
 - type: reagent
   id: ToxinTrash
@@ -1032,6 +1088,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [Vox]
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -1041,6 +1098,7 @@
           type: [ Cyclorite ]
         reagent: ToxinTrash
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: Hemorrhinol
@@ -1060,6 +1118,7 @@
         type: Update
       - !type:ModifyBleed
         amount: 0.5
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -1069,3 +1128,4 @@
           type: [ Cyclorite ]
         reagent: Hemorrhinol
         amount: 0.25
+        # Starlight-End
