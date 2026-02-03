@@ -80,6 +80,7 @@
   - type: EdgeConnection
     connectionKey: computers
     allowedDirections: East, West
+    allowSameDirectionConnection: East, West
   - type: Appearance
   - type: GenericVisualizer
     visuals:
