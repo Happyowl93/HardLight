@@ -29089,5 +29089,13 @@ Entries:
   id: 276900
   time: '2026-02-03T13:39:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2769
+- author: Miracula, Rinary
+  changes:
+  - message: Added grid mode as default to Fashion-O-Mat. Every other store received
+      a grid mode as an option to switch to.
+    type: Add
+  id: 312400
+  time: '2026-02-03T13:48:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3124
 Order: -1
 
