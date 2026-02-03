@@ -29106,5 +29106,19 @@ Entries:
   id: 305400
   time: '2026-02-03T16:14:28.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3054
+- author: Conflee
+  changes:
+  - message: Gave NanoTrasen Representatives a 'Secure Briefcase' which can be locked
+      with a pin code, added a long time ago by Rinary but never saw use by players.
+      This will allow them to secure their faxes with CentComm, and their Classified
+      Documents, more tightly. Can still be hacked open with time.
+    type: Add
+  - message: Added a guidebook page for Combination Locks, which details how to use
+      the Secure Briefcase and Wall Safe locks, and set their codes. Examine either
+      then click the (?) icon to go to the page directly.
+    type: Add
+  id: 312600
+  time: '2026-02-03T21:48:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3126
 Order: -1
 
