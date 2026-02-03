@@ -110,6 +110,7 @@
   - ClothingDogTags # SL
   - PersonalAI #SL
   - GoldenPersonalAI #SL
+  - Boxblacklight #SL
 
 - type: loadoutGroup
   id: Glasses

@@ -27,12 +27,10 @@ using Content.Shared.Bed.Sleep;
 using Content.Server._Starlight.NullSpace;
 using Content.Server._Starlight.Bluespace;
 using Content.Server.Stunnable;
-using Content.Server.Body.Systems;
 using Content.Shared.Damage.Systems;
 using Content.Server.DoAfter;
 using Content.Shared.Ensnaring;
 using Robust.Shared.Audio.Systems;
-using Content.Shared.FixedPoint;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -343,13 +341,6 @@ public sealed partial class ShadekinSystem : EntitySystem
             ToggleNightVision(uid, component.CurrentState);
             SetPassiveBuff(uid, component.CurrentState);
             _speed.RefreshMovementSpeedModifiers(uid);
-
-            // If we got any Asphyxiation damage... Set it to 0.
-            // if (TryComp<DamageableComponent>(uid, out var damageComp)
-            //     && damageComp.Damage.DamageDict.TryGetValue("Asphyxiation", out var asphyxDmg) && asphyxDmg > 0)
-            // {
-
-            // }
 
             if (component.CurrentState == ShadekinState.Extreme)
                 ApplyLightDamage(uid, 1);
