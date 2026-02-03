@@ -29036,5 +29036,75 @@ Entries:
   id: 308200
   time: '2026-02-03T07:59:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3082
+- author: walksanator
+  changes:
+  - message: Xenobio slimes now have propper sprites.
+    type: Tweak
+  - message: Xenobio slimes have random faces on spawn (too bad I cant make them pop
+      out against the slime...)
+    type: Add
+  - message: Some internal xenobio systems were removed cause you could do the exact
+      same thing with existing systems
+    type: Remove
+  - message: Sepia/Bluespace tile's health values changed so you can actually pick
+      them up in a reasonable ammount of time
+    type: Tweak
+  id: 296200
+  time: '2026-02-03T10:36:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2962
+- author: r3d3mpt1on & Penguinwizzard
+  changes:
+  - message: Skeletons are once again Crew-Aligned.
+    type: Fix
+  id: 310600
+  time: '2026-02-03T10:59:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3106
+- author: depressedtimbit
+  changes:
+  - message: Cargo acquisition slips can now be faxed and copied.
+    type: Tweak
+  id: 302100
+  time: '2026-02-03T11:41:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3021
+- author: FoxxoTrystan
+  changes:
+  - message: TSF and its equipements.
+    type: Add
+  - message: Soviet ID now get an Icon.
+    type: Add
+  id: 241700
+  time: '2026-02-03T12:27:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2417
+- author: Citrea
+  changes:
+  - message: Item limbs can now be removed again.
+    type: Fix
+  id: 302500
+  time: '2026-02-03T13:34:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3025
+- author: StygianEagle
+  changes:
+  - message: Added the Moth Ghost for all players, rejoice.
+    type: Add
+  id: 276900
+  time: '2026-02-03T13:39:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2769
+- author: Miracula, Rinary
+  changes:
+  - message: Added grid mode as default to Fashion-O-Mat. Every other store received
+      a grid mode as an option to switch to.
+    type: Add
+  id: 312400
+  time: '2026-02-03T13:48:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3124
+- author: Vincolan
+  changes:
+  - message: Reworked the Mail Item Pool to have more interesting Items
+    type: Tweak
+  - message: Changed the Trash Weight on letters (Was 90%, now its 20%)
+    type: Tweak
+  id: 305400
+  time: '2026-02-03T16:14:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3054
 Order: -1
 
