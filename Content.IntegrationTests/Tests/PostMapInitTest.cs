@@ -5,13 +5,13 @@ using System.Text.RegularExpressions;
 using YamlDotNet.RepresentationModel;
 using Content.Server.Administration.Systems;
 using Content.Server.GameTicking;
-using Content.Server.Maps;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
 using Content.Shared.Shuttles.Components; //Starlight-edit
 using Content.Shared.CCVar;
+using Content.Shared.Maps;
 using Content.Shared.Roles;
 using Content.Shared.Station.Components;
 using Robust.Shared.Configuration;
@@ -95,7 +95,6 @@ namespace Content.IntegrationTests.Tests
             "/Maps/Shuttles/AdminSpawn/**", // admin gaming
            #region starlight
             "/Maps/_Starlight/Shuttles/Radiotower.yml", // Command stamps - listening post.
-            "/Maps/_Starlight/Stations/Remix.yml", // Admeme map
             #endregion
         };
 
@@ -129,10 +128,8 @@ namespace Content.IntegrationTests.Tests
             "StarlightManor",
             "StarlightLeth",
             "StarlightMing",
-            "StarlightOrigin",
             "StarlightOrwell",
             "StarlightPrism",
-            "StarlightRemix",
             "StarlightStarboard",
             "StarlightBagel",
             "StarlightBox",
@@ -143,15 +140,15 @@ namespace Content.IntegrationTests.Tests
             "StarlightElkridge",
             "StarlightFland",
             "StarlightHotel",
-            "StarlightOasis",
-            "StarlightOmega",
             "StarlightPacked",
             "StarlightReach",
             "StarlightSaltern",
             "StarlightSilica",
             "StarlightCluster",
             "StarlightStationBuilding",
-            "StarlightPlasma"
+            "StarlightPlasma",
+			"StarlightSpaceMall",
+            "StarlightSepultum"
             #endregion
         };
 

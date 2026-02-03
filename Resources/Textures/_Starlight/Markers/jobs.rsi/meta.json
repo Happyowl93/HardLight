@@ -13,9 +13,9 @@
     {
       "name": "green"
     },
-	{
-	  "name": "magistrate"
-	},
+    {
+      "name": "magistrate"
+    },
     {
       "name": "ntrep"
     },
@@ -37,11 +37,28 @@
     {
       "name": "miningspecialist"
     },
-	{
+    {
       "name": "decimusicon"
     },
 	{
+      "name": "dutyofficer",
+	  "copyright": "BORT",
+	  "license": "CC-BY-SA-3.0"
+    },
+	{
+      "name": "decimusicon"
+    },
+    {
       "name": "ntsficon"
+    },
+    {
+      "name": "TSF"
+    },
+    {
+      "name": "MARSOC"
+    },
+    {
+      "name": "nct"
     }
   ]
 }
