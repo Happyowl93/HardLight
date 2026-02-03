@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Text;
+using Content.Client._Starlight.UI;
 using Content.Client.Actions;
 using Content.Client.Message;
 using Content.Shared.FixedPoint;
@@ -31,7 +32,6 @@ public sealed partial class StoreMenu : DefaultWindow
     public Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> Balance = new();
     public string CurrentCategory = string.Empty;
     public bool GridMode { get; set; } = false; // Starlight
-    public int GridColumns { get; set; } = 4;
     private bool? _clientGridOverride = null; 
     private const int NamePreviewMax = 40;
     private const int DescriptionPreviewMax = 180; // Starlight end
@@ -42,6 +42,7 @@ public sealed partial class StoreMenu : DefaultWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
+        OnResized += ProcessResize;
         WithdrawButton.OnButtonDown += OnWithdrawButtonDown;
         RefundButton.OnButtonDown += OnRefundButtonDown;
         SearchBar.OnTextChanged += _ => SearchTextUpdated?.Invoke(this, SearchBar.Text);
@@ -95,6 +96,7 @@ public sealed partial class StoreMenu : DefaultWindow
 
     var useGrid = _clientGridOverride ?? GridMode; // Starlight start
     ToggleViewButton.Text = useGrid ? "Grid" : "List";
+    HoverDivider.Visible = useGrid;
     HoverPreview.Visible = useGrid;
     if (!useGrid)
     {
@@ -106,7 +108,6 @@ public sealed partial class StoreMenu : DefaultWindow
         {
             StoreListingsScroll.Visible = false;
             StoreGridScroll.Visible = true;
-            StoreGridContainer.Columns = GridColumns;
             foreach (var item in sorted)
             {
                 if (!item.Categories.Contains(CurrentCategory))
@@ -136,6 +137,7 @@ public sealed partial class StoreMenu : DefaultWindow
                 var discount = GetDiscountString(item);
 
                 var newListing = new StoreListingControl(item, listingInStock, discount, hasBalance, texture, compact: true);
+                newListing.StoreItemDivider.Visible = false;
                 newListing.StoreItemBuyButton.OnButtonDown += args => OnListingButtonPressed?.Invoke(args, item);
                 // Only show hover preview for compact/grid items
                 newListing.OnListingHoverEntered += (name, desc) =>
@@ -150,6 +152,7 @@ public sealed partial class StoreMenu : DefaultWindow
                 };
                 StoreGridContainer.AddChild(newListing);
             }
+            ProcessResize(); // Update grid columns count
         }
         else
         {
@@ -385,5 +388,25 @@ public sealed partial class StoreMenu : DefaultWindow
     private sealed class StoreCategoryButton : Button
     {
         public string? Id;
+    }
+
+    private void ProcessResize()
+    {
+        if (StoreGridContainer.ChildCount == 0)
+            return;
+
+        var currentWidth = StoreGridContainer.Size.X;
+
+        var itemWidth = 0f;
+        foreach (var child in StoreGridContainer.Children)
+            itemWidth = Math.Max(itemWidth, child.Size.X);
+
+        if (itemWidth <= 0)
+            return;
+
+        var columnCount = (int)(currentWidth / itemWidth);
+        columnCount = Math.Max(1, columnCount);
+
+        StoreGridContainer.Columns = columnCount;
     }
 }

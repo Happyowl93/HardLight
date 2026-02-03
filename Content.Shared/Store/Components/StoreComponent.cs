@@ -57,12 +57,6 @@ public sealed partial class StoreComponent : Component
     public bool Grid = false;
 
     /// <summary>
-    /// Number of items per row when rendering in grid mode.
-    /// </summary>
-    [DataField]
-    public int GridColumns = 4;
-
-    /// <summary>
     /// All available listings from the last time that it was checked.
     /// </summary>
     [ViewVariables]
