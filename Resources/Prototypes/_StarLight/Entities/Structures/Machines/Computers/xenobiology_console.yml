@@ -17,9 +17,11 @@
         - map: [ "computerLayerKeyboard" ]
           state: generic_keyboard
         - map: [ "computerLayerScreen" ]
-          state: rdcomp
+          sprite: _Starlight/Structures/Machines/slime_computer.rsi
+          state: slime
         - map: [ "computerLayerKeys" ]
-          state: rd_key
+          sprite: _Starlight/Structures/Machines/slime_computer.rsi
+          state: slime_key
         - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
           state: generic_panel_open
     - type: PointLight
@@ -48,8 +50,8 @@
     - Incorporeal
     - BaseMob
   id: XenobiologyConsoleEye
-  name: "???"
-  description: "ERROR"
+  name: Xenobiology Console Eye
+  description: The eye, or perhaps the claw, extending from the xenobiology console. Is it spying on you?
   categories: [ HideSpawnMenu ]
   suffix: DO NOT MAP
   components:

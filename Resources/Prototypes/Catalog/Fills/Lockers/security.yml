@@ -236,6 +236,7 @@
   id: FillGunSafePistolMk58
   table: !type:AllSelector
     children:
+    - id: BoxFiringPinPistol # Starlight, firing pins
     - id: WeaponPistolMk58
       amount: 2
     - id: WeaponPistolEnforcer
@@ -265,14 +266,15 @@
   id: FillGunSafeRifleLecter
   table: !type:AllSelector
     children:
+    - id: BoxFiringPin # Starlight, firing pins
     - id: WeaponRifleLecter
-      amount: 1
+      amount: 2 # Starlight
     - id: WeaponRifleLeikha
       amount: 1
     - id: MagazineRifleHP
-      amount: 3
+      amount: 4 # Starlight
     - id: MagazineRifleSP
-      amount: 3
+      amount: 4 # Starlight
 
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
@@ -288,12 +290,13 @@
   id: FillGunSafeSubMachineGunDrozd
   table: !type:AllSelector
     children:
+    - id: BoxFiringPinPistol # Starlight, firing pins
     - id: WeaponSubMachineGunDrozd
-      amount: 1
+      amount: 2 # Starlight
     - id: WeaponSubMachineGunSP91RC
       amount: 2
     - id: MagazinePistolSubMachineGunSP
-      amount: 4
+      amount: 5 # Starlight
 
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
@@ -309,6 +312,7 @@
   id: FillGunSafeShotgunEnforcer
   table: !type:AllSelector
     children:
+    - id: BoxFiringPin # Starlight, firing pins
     - id: SpeedLoaderMagnumBasic
       amount: 2
     - id: WeaponShotgunEnforcer
@@ -332,6 +336,7 @@
   id: FillGunSafeShotgunKammerer
   table: !type:AllSelector
     children:
+    - id: BoxFiringPin # Starlight, firing pins
     - id: SpeedLoaderMagnumBasic
       amount: 2
     - id: WeaponShotgunKammerer
@@ -356,6 +361,7 @@
   id: FillGunSafeSubMachineGunWt550
   table: !type:AllSelector
     children:
+    - id: BoxFiringPinPistol # Starlight, firing pins
     - id: WeaponSubMachineGunWt550
       amount: 2
     - id: MagazinePistolSubMachineGunTopMounted
@@ -375,6 +381,7 @@
   id: FillGunSafeLaserCarbine
   table: !type:AllSelector
     children:
+    - id: BoxFiringPinLaser # Starlight, firing pins
     - id: WeaponLaserCarbine
       amount: 3
     - id: WeaponLr30
