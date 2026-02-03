@@ -29097,5 +29097,14 @@ Entries:
   id: 312400
   time: '2026-02-03T13:48:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3124
+- author: Vincolan
+  changes:
+  - message: Reworked the Mail Item Pool to have more interesting Items
+    type: Tweak
+  - message: Changed the Trash Weight on letters (Was 90%, now its 20%)
+    type: Tweak
+  id: 305400
+  time: '2026-02-03T16:14:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3054
 Order: -1
 
