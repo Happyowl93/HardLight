@@ -13,5 +13,7 @@
   The Wall Safe can sometimes be found on stations inside secure areas, but is uncommon.
   
   To set the combination for either device, enter a code the first time you open it then hit 'E' for Enter. You will then be prompted to input the code again to confirm. After you do so, it will be unlocked. Hitting any other numbers after this should lock it again.
+  
+  Combination locks can be hacked into by opening the maintenance panel and hacking them like any other device, but it takes time.
 
 </Document>
