@@ -161,7 +161,6 @@
     access: [["Theatre"]]
   - type: Store
     name: vendor-clown-dispenser
-    gridColumns: 5
     categories:
     - SLClown
   - type: Sprite
