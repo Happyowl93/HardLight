@@ -29075,5 +29075,12 @@ Entries:
   id: 241700
   time: '2026-02-03T12:27:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2417
+- author: Citrea
+  changes:
+  - message: Item limbs can now be removed again.
+    type: Fix
+  id: 302500
+  time: '2026-02-03T13:34:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3025
 Order: -1
 
