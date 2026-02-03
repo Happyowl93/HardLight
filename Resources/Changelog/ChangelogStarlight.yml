@@ -29029,5 +29029,12 @@ Entries:
   id: 309800
   time: '2026-02-03T07:42:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3098
+- author: Vinny-Shick
+  changes:
+  - message: A cloak for the warden.
+    type: Add
+  id: 308200
+  time: '2026-02-03T07:59:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3082
 Order: -1
 
