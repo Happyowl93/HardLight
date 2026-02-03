@@ -29159,5 +29159,18 @@ Entries:
   id: 312900
   time: '2026-02-03T21:47:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3129
+- author: Trosling, Rinary
+  changes:
+  - message: You can now SSD on command using /ssd
+    type: Add
+  - message: Revenants cannot suck from SSD sleepers (shoutout to RoadTrain)
+    type: Tweak
+  - message: SSD command now has doAfter.
+    type: Tweak
+  - message: SSD command now delays automatic cryo-teleportation by 10 minutes.
+    type: Tweak
+  id: 140600
+  time: '2026-02-03T18:44:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1406
 Order: -1
 
