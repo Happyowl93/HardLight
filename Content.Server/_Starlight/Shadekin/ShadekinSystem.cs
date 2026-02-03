@@ -32,6 +32,7 @@ using Content.Shared.Damage.Systems;
 using Content.Server.DoAfter;
 using Content.Shared.Ensnaring;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.FixedPoint;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -58,7 +59,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private readonly StunSystem _stunSystem = default!;
     [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedEnsnareableSystem _ensnareable = default!;
-    [Dependency] private   readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     private static readonly ProtoId<TagPrototype> _theDarkTag = "TheDark";
     private static readonly ProtoId<TagPrototype> _coreTag = "ShadekinCore";
@@ -92,6 +93,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         SubscribeLocalEvent<ShadekinComponent, EyeColorInitEvent>(OnEyeColorChange);
         SubscribeLocalEvent<ShadekinComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
         SubscribeLocalEvent<ShadekinComponent, NullSpaceShuntEvent>(NullSpaceShunt);
+        SubscribeLocalEvent<ShadekinComponent, BeforeDamageChangedEvent>((uid, _, args) => args.Damage.DamageDict["Asphyxiation"] = 0);
 
         InitializeBrighteye();
         InitializeAbilities();
@@ -341,6 +343,13 @@ public sealed partial class ShadekinSystem : EntitySystem
             ToggleNightVision(uid, component.CurrentState);
             SetPassiveBuff(uid, component.CurrentState);
             _speed.RefreshMovementSpeedModifiers(uid);
+
+            // If we got any Asphyxiation damage... Set it to 0.
+            // if (TryComp<DamageableComponent>(uid, out var damageComp)
+            //     && damageComp.Damage.DamageDict.TryGetValue("Asphyxiation", out var asphyxDmg) && asphyxDmg > 0)
+            // {
+
+            // }
 
             if (component.CurrentState == ShadekinState.Extreme)
                 ApplyLightDamage(uid, 1);
