@@ -136,6 +136,7 @@
         - !type:TagCondition
           inverted: true
           tag: Bee
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
           - !type:ReagentCondition
@@ -145,6 +146,7 @@
             type: [ Cyclorite ]
         reagent: BuzzochloricBees
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: GroundBee
@@ -176,6 +178,7 @@
       effects:
       - !type:Electrocute
         probability: 0.35
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
           - !type:ReagentCondition
@@ -185,6 +188,7 @@
             type: [ Cyclorite ]
         reagent: Licoxide
         amount: 0.25
+        # Starlight-End
 
 - type: reagent
   id: Razorium
@@ -225,6 +229,7 @@
       - !type:Emote
         emote: Scream
         probability: 0.3
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
           - !type:ReagentCondition
@@ -234,6 +239,7 @@
             type: [ Cyclorite ]
         reagent: Razorium
         amount: 1.5
+        # Starlight-End
 
 - type: reagent
   id: Fresium
@@ -328,6 +334,7 @@
         visualType: LargeCaution
         messages: [ "fresium-effect-frozen"]
         probability: 0.4
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
           - !type:ReagentCondition
@@ -337,6 +344,7 @@
             type: [ Cyclorite ]
         reagent: Fresium
         amount: 0.22 # Rounding down with 2 decimal points
+        # Starlight-End
 
 - type: reagent
   id: Laughter
@@ -395,6 +403,7 @@
         - !type:ReagentCondition
           reagent: JuiceThatMakesYouWeh
           min: 50
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
           - !type:ReagentCondition
@@ -404,6 +413,7 @@
             type: [ Cyclorite ]
         reagent: Bungotoxin
         amount: 0.1
+        # Starlight-End
 
 - type: reagent
   id: JuiceThatMakesYouHew
@@ -439,6 +449,7 @@
         - !type:ReagentCondition
           reagent: JuiceThatMakesYouHew
           min: 50
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
           - !type:ReagentCondition
@@ -448,6 +459,7 @@
             type: [ Cyclorite ]
         reagent: Bungotoxin
         amount: 0.1
+        # Starlight-End
 
 - type: reagent
   id: CorgiJuice
@@ -482,6 +494,7 @@
         - !type:ReagentCondition
           reagent: CorgiJuice
           min: 50
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
           - !type:ReagentCondition
@@ -491,6 +504,7 @@
             type: [ Cyclorite ]
         reagent: Bungotoxin
         amount: 0.1
+        # Starlight-End
 
 - type: reagent
   id: Felinase
@@ -542,6 +556,7 @@
         visualType: Small
         messages: [ "capsaicin-effect-light-burn" ]
         probability: 0.05
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
           - !type:ReagentCondition
@@ -551,6 +566,7 @@
             type: [ Cyclorite ]
         reagent: Bungotoxin
         amount: 0.1
+        # Starlight-End
 
 - type: reagent
   id: Caninase
@@ -602,6 +618,7 @@
         visualType: Small
         messages: [ "capsaicin-effect-light-burn" ]
         probability: 0.05
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
           - !type:ReagentCondition
@@ -611,3 +628,4 @@
             type: [ Cyclorite ]
         reagent: Caninase
         amount: 0.1
+        # Starlight-End
