@@ -29120,5 +29120,57 @@ Entries:
   id: 312600
   time: '2026-02-03T21:48:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3126
+- author: CringeCursed
+  changes:
+  - message: Tweaked so Umbrae can now warp through walls on full power.
+    type: Tweak
+  - message: FIxed bug when you became invisible on crit, playing as Dantilion class.
+    type: Fix
+  - message: Now you cant drunk blood from Vampires/Enthralls
+    type: Fix
+  - message: Removed lungs from Vampires, now you can freely aura farm in your Coffins.
+    type: Remove
+  - message: Reduced cooldown on Umbrae`s Shadow Anchor ability from 120 to 60.
+    type: Tweak
+  - message: Tweaked amount of blood required to complete drain objective, the selection
+      is between 600 and 1500.
+    type: Tweak
+  - message: Fixed Dark Passage ability, so you can target objects in your eyesight
+      and actually warp to them.
+    type: Fix
+  - message: Fixed that Hemomancer Blood Erruption ability dealt 15 damage instead
+      of 50 as stated in the ability description.
+    type: Fix
+  - message: Fixed Gargantua Overwhelming force, now drains blood upon prying door,
+      and plays sound aswell.
+    type: Fix
+  - message: Fixed Hemomancer Vampiric Claws now works as intended upon racasting
+      ability, while you wielding item itself.
+    type: Fix
+  id: 312000
+  time: '2026-02-03T21:49:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3120
+- author: Conflee
+  changes:
+  - message: Nerfed the Cube. It no longer lusts for mass death and destruction. It's
+      hunger has been satiated for now. It will only eat half of a department instead
+      of the entire department. (replaced unbreakable walls with normal walls)
+    type: Fix
+  id: 312900
+  time: '2026-02-03T21:47:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3129
+- author: Trosling, Rinary
+  changes:
+  - message: You can now SSD on command using /ssd
+    type: Add
+  - message: Revenants cannot suck from SSD sleepers (shoutout to RoadTrain)
+    type: Tweak
+  - message: SSD command now has doAfter.
+    type: Tweak
+  - message: SSD command now delays automatic cryo-teleportation by 10 minutes.
+    type: Tweak
+  id: 140600
+  time: '2026-02-03T18:44:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1406
 Order: -1
 
