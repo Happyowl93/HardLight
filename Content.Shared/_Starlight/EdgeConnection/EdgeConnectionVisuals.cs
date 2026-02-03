@@ -9,7 +9,7 @@ public enum EdgeConnectionVisuals
 }
 
 /// <summary>
-/// Direction flags for edge connections. Supports any combination of cardinal directions.
+/// Direction flags for edge connections.
 /// </summary>
 [Flags]
 [Serializable, NetSerializable]
