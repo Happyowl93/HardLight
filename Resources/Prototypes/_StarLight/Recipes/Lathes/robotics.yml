@@ -45,17 +45,6 @@
     Plasma: 500
 
 - type: latheRecipe
-  id: BorgModuleOperative
-  result: BorgModuleOperative
-  categories:
-    - Modules
-  materials: #15 steel, 2 plastic, 1 plasma, 1 diamond for the EMAG
-    Steel: 1500
-    Plastic: 200
-    Plasma: 100
-    Diamond: 100
-
-- type: latheRecipe
   id: BorgModuleSyndicateAdvancedChemical
   result: BorgModuleSyndicateAdvancedChemical
   categories:
@@ -76,17 +65,6 @@
     Plastic: 200
     Plasma: 100
     Gold: 100
-
-- type: latheRecipe
-  id: BorgModuleSyndicateStealth
-  result: BorgModuleSyndicateStealth
-  categories:
-    - Modules
-  materials: #20 steel, 2 plastic, 1 plasma, 1 diamond for the EMAG
-    Steel: 2000
-    Plastic: 200
-    Plasma: 100
-    Diamond: 100
 
 - type: latheRecipe
   id: BorgModuleSyndicateChameleonProjector
