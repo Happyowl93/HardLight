@@ -1,0 +1,10 @@
+- type: antag
+  id: Terminator
+  name: ghost-role-information-terminator-name
+  antagonist: true
+  setPreference: false
+  objective: never-shown
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 5h
+  playTimeTracker: AntagTerminator
