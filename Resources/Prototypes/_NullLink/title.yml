@@ -89,6 +89,10 @@
       color: "#8ff10f"
       roles:
       - 1299137799693406288 # Spriter
+    - text: "Staff"
+      color: "#ad1457"
+      roles:
+      - 1305031022785855591 # Staff
     - text: "Former"
       color: "#b6599a"
       roles:
