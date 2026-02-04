@@ -156,7 +156,7 @@
   - type: ZombieImmune
   - type: AutoImplant
     implants:
-    - BluespaceImplant
+    - RedspaceImplant
 
 - type: entity
   parent: MobAdminMouse
@@ -183,3 +183,6 @@
         Base: dead-mentor
       Dead:
         Base: dead-mentor
+  - type: AutoImplant
+    implants:
+    - BluespaceImplant
