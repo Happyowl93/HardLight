@@ -15,7 +15,12 @@
     StalkingObjective: 1
     DisgraceObjective: 1
     HarassObjective: 1
+    ImpersonateObjective: 1
+    FeudObjective: 1
+    WasteObjective: 1
     MaintsBarObjective: 1
+    PanicObjective: 1
+    RumorObjective: 1
 
 # Vampire
 - type: weightedRandom

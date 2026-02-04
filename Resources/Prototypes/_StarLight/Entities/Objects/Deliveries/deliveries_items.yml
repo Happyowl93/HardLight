@@ -65,10 +65,12 @@
         - MedicalTechFabCircuitboardStealObjective
         - SecurityTechFabCircuitboardStealObjective # remove comment when implemented
         - ClothingHeadsetAltMedicalStealObjective
+        - ClothingHeadsetAltCommandStealObjective # remove comment when implemented, Captain, NT Rep...
         - FireAxeStealObjective
         - AmePartFlatpackStealObjective
         - ExpeditionsCircuitboardStealObjective
         - CargoShuttleCircuitboardStealObjective
+        - CommsComputerCircuitboardStealObjective # remove comment when implemented
         - ClothingEyesHudBeerStealObjective
         - BibleStealObjective
         - ClothingNeckGoldmedalStealObjective
@@ -98,12 +100,17 @@
         - EscapeThiefShuttleObjective
         # traitor steal objectives
         - CaptainIDStealObjective
+        - HOPIDStealObjective # remove comment when implemented
         - CMOHyposprayStealObjective
         - CMOCrewMonitorStealObjective
         - NukeDiskStealObjective
         - MagbootsStealObjective
         - RDDiplomaStealObjective
         - CMOLicenseStealObjective
+        - PinpointerNuclearStealObjective # remove comment when implemented
+        - AccessConfiguratorStealObjective # remove comment when implemented
+        - BrigMedStrangeBedsheetStealObjective # remove comment when implemented
+        - EncryptionKeyExpeditionStealObjective # remove comment when implemented
         # no ian meat because you are a pacifist and need them alive
         - ClipboardStealObjective #QM's digiboard
         - KnuckleDustersStealObjective #QM's knuckledusters
@@ -116,6 +123,7 @@
         # Limited Hardsuit objectives
         - RDHardsuitStealObjective
         - CMOHardsuitStealObjective # remove comment when implemented
+        - CEHardsuitStealObjective # remove comment when implemented
         - HOSHardsuitStealObjective # remove comment when implemented
         - WardHardsuitStealObjective # remove comment when implemented
         - BrigmedHardsuitStealObjective # remove comment when implemented

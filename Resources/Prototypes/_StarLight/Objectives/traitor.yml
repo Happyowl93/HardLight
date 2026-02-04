@@ -292,6 +292,51 @@
 
 - type: entity
   parent: BaseStoryObjective
+  id: ImpersonateObjective
+  description: Escape to centcomm after the shift, one of our agents will debrief you. Don't show up in cuffs.
+  components:
+    - type: Objective
+      difficulty: 1
+      unique: true
+      icon:
+        sprite: _Starlight/Interface/Misc/rp_icon.rsi
+        state: icon
+    - type: DepartmentObjective
+      title: objective-impersonate
+    - type: PickRandomDepartment
+
+- type: entity
+  parent: BaseStoryObjective
+  id: FeudObjective
+  description: Escape to centcomm after the shift, one of our agents will debrief you. Don't show up in cuffs.
+  components:
+    - type: Objective
+      difficulty: 1
+      unique: true
+      icon:
+        sprite: _Starlight/Interface/Misc/rp_icon.rsi
+        state: icon
+    - type: DepartmentObjective
+      title: objective-feud
+    - type: PickRandomDepartment
+
+- type: entity
+  parent: BaseStoryObjective
+  id: WasteObjective
+  description: Escape to centcomm after the shift, one of our agents will debrief you. Don't show up in cuffs.
+  components:
+    - type: Objective
+      difficulty: 1
+      unique: true
+      icon:
+        sprite: _Starlight/Interface/Misc/rp_icon.rsi
+        state: icon
+    - type: DepartmentObjective
+      title: objective-waste
+    - type: PickRandomDepartment
+
+- type: entity
+  parent: BaseStoryObjective
   id: MaintsBarObjective
   name: Ensure that the maints bar prospers, and extort them into allowing the Syndicate to conduct business within.
   description: Escape to centcomm after the shift, one of our agents will debrief you. Don't show up in cuffs.
@@ -305,7 +350,7 @@
 
 - type: entity
   parent: BaseStoryObjective
-  id: ReputationObjective
+  id: ReputationObjective # Vampires
   name: Commit petty crimes, litter the station, ruin the repuatation of the onboard security force and the stations command members.
   description: Escape to centcomm after the shift, one of our agents will debrief you. Don't show up in cuffs.
   components:
@@ -318,12 +363,38 @@
 
 - type: entity
   parent: BaseStoryObjective
-  id: FalseOutbreakObjective
+  id: FalseOutbreakObjective # Vampires
   name: Spread rumors of a biological outbreak of any kind onboard the station.
   description: Escape to centcomm after the shift, one of our agents will debrief you. Don't show up in cuffs.
   components:
     - type: Objective
       difficulty: 2
+      unique: true
+      icon:
+        sprite: _Starlight/Interface/Misc/rp_icon.rsi
+        state: icon
+
+- type: entity
+  parent: BaseStoryObjective
+  id: PanicObjective
+  name: Convince the station of the existence of a threat that isn't, to your knowledge, present.
+  description: Escape to centcomm after the shift, one of our agents will debrief you. Don't show up in cuffs.
+  components:
+    - type: Objective
+      difficulty: 2 # Rev metagame counterplay.
+      unique: true
+      icon:
+        sprite: _Starlight/Interface/Misc/rp_icon.rsi
+        state: icon
+
+- type: entity
+  parent: BaseStoryObjective
+  id: RumorObjective
+  name: Spread rumors about NanoTrasen and CentComm that paint them in a negative light.
+  description: Escape to centcomm after the shift, one of our agents will debrief you. Don't show up in cuffs.
+  components:
+    - type: Objective
+      difficulty: 0.5 # Easy, lets you slander people for fun.
       unique: true
       icon:
         sprite: _Starlight/Interface/Misc/rp_icon.rsi
