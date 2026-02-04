@@ -40,7 +40,7 @@
   name: Ember
   parent: BaseItem
   id: ElfMagicEmber
-  description: Careful! It's hot. Cannot be dropped.
+  description: Careful! It's hot. Cannot be dropped. Will decay soon.
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Magic/ember.rsi
@@ -85,7 +85,7 @@
 - type: entity
   id: ElfAntidoteSeed
   name: seed of rejuvenation
-  description: A bundle of radiant life magic, useful for restoring vitality to plants.
+  description: A bundle of radiant life magic, useful for restoring vitality to plants. Will evaporate soon if not used.
   components:
   - type: Item
     sprite: _Starlight/Objects/Magic/antidote.rsi
@@ -111,7 +111,7 @@
   - type: ExaminableSolution
     solution: pen
   - type: TimedDespawn
-    lifetime: 30 # Not stockpileable.
+    lifetime: 15 # Not stockpileable.
   - type: PointLight
     radius: 1
     energy: 8
@@ -135,7 +135,7 @@
       pen:
         maxVol: 15
         reagents:
-        - ReagentId: Diethylamine
+        - ReagentId: ElfDiethylamine
           Quantity: 15
 
 # Cleanse
@@ -174,14 +174,14 @@
         maxVol: 15
         canReact: true
         reagents:
-        - ReagentId: SpaceCleaner
+        - ReagentId: ElfSpaceCleaner
           Quantity: 15
 
 # Hemostasis
 
 - type: entity
   name: haemostatic rune
-  description: A magic rune that stops bleeding when applied.
+  description: A magic rune that stops bleeding when applied. Will fade if not used quickly.
   parent: BaseHealingItem
   id: ElfRuneHaemostatic
   components:
@@ -209,7 +209,7 @@
   - type: ExaminableSolution
     solution: pen
   - type: TimedDespawn
-    lifetime: 30 # Not stockpileable.
+    lifetime: 15 # Not stockpileable.
   - type: PointLight
     radius: 1
     energy: 8
@@ -233,5 +233,5 @@
       pen:
         maxVol: 5
         reagents:
-        - ReagentId: TranexamicAcid
+        - ReagentId: ElfTranexamicAcid
           Quantity: 5

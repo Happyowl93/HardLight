@@ -50,12 +50,12 @@
   parent: BaseAction
   id: ActionCantripAntidote
   name: Rejuvenation
-  description: Creates a magic seed that restores vitality to an ailing plant. Vanishes if not used after 30 seconds.
+  description: Creates a magic seed that restores vitality to an ailing plant. Vanishes if not used within 15 seconds.
   components:
   - type: Magic
     requiresClothes: false
   - type: Action
-    useDelay: 5 #TODO: increase to sensible amount
+    useDelay: 30
     itemIconStyle: BigAction
     icon:
       sprite: _Starlight/Objects/Magic/antidote.rsi
@@ -96,12 +96,12 @@
   parent: BaseAction
   id: ActionCantripBandage
   name: Haemostatic Rune
-  description: Creates a magic rune that stops bleeding. Vanishes if not used after 15 seconds.
+  description: Creates a magic rune that stops bleeding. Vanishes if not used within 15 seconds.
   components:
   - type: Magic
     requiresClothes: false
   - type: Action
-    useDelay: 5 #TODO: increase to sensible amount
+    useDelay: 30
     itemIconStyle: BigAction
     icon:
       sprite: _Starlight/Objects/Magic/bandage.rsi
@@ -113,7 +113,7 @@
     sentence: action-speech-cantrip-bandage
     whisper: true
 
-# Psychic Whisper
+# Psychic Whisper - disabled in store until i figure out how to make it work properly
 
 - type: entity
   parent: BaseAction
@@ -124,7 +124,7 @@
   - type: Magic
     requiresClothes: false
   - type: Action
-    useDelay: 5 #TODO: increase to sensible amount
+    useDelay: 5
     itemIconStyle: BigAction
     icon:
       sprite: _Starlight/Objects/Magic/message.rsi
