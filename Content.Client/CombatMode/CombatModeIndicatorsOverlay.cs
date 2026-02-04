@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client._Starlight.CombatMode;
 using Content.Client.Hands.Systems;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Client.GameObjects;
@@ -6,6 +7,8 @@ using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.UserInterface;
 using Robust.Shared.Enums;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Manager.Exceptions;
 using Robust.Shared.Utility;
 
 namespace Content.Client.CombatMode;
@@ -24,9 +27,9 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
     private readonly CombatModeSystem _combat;
     private readonly HandsSystem _hands = default!;
 
-    private readonly Texture _gunSight;
-    private readonly Texture _gunBoltSight;
-    private readonly Texture _meleeSight;
+    private readonly SightPrototype? _gunSight;
+    private readonly SightPrototype? _gunBoltSight;
+    private readonly SightPrototype? _meleeSight;
 
     public override OverlaySpace Space => OverlaySpace.ScreenSpace;
 
@@ -34,8 +37,8 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
     public Color StrokeColor = Color.Black.WithAlpha(0.5f);
     public float Scale = 0.6f;  // 1 is a little big
 
-    public CombatModeIndicatorsOverlay(IInputManager input, IEntityManager entMan,
-            IEyeManager eye, CombatModeSystem combatSys, HandsSystem hands)
+    public CombatModeIndicatorsOverlay(IInputManager input, IEntityManager entMan, IPrototypeManager prototypes,
+            IEyeManager eye, CombatModeSystem combatSys, HandsSystem hands, string gunSight, string meleeSight)
     {
         _inputManager = input;
         _entMan = entMan;
@@ -43,13 +46,15 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         _combat = combatSys;
         _hands = hands;
 
-        var spriteSys = _entMan.EntitySysManager.GetEntitySystem<SpriteSystem>();
-        _gunSight = spriteSys.Frame0(new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/crosshair_pointers.rsi"),
-            "gun_sight"));
-        _gunBoltSight = spriteSys.Frame0(new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/crosshair_pointers.rsi"),
-            "gun_bolt_sight"));
-        _meleeSight = spriteSys.Frame0(new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/crosshair_pointers.rsi"),
-             "melee_sight"));
+        if (!prototypes.TryIndex<SightPrototype>(gunSight, out _gunSight)
+            || !prototypes.TryIndex<SightPrototype>(meleeSight, out _meleeSight))
+        {
+            Dispose();
+            return;
+        }
+
+        if (_gunSight.BoltVariant != null)
+            prototypes.TryIndex<SightPrototype>(_gunSight.BoltVariant, out _gunBoltSight);
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
@@ -78,8 +83,14 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         var uiScale = (args.ViewportControl as Control)?.UIScale ?? 1f;
         var limitedScale = uiScale > 1.25f ? 1.25f : uiScale;
 
-        var sight = isHandGunItem ? (isGunBolted ? _gunSight : _gunBoltSight) : _meleeSight;
-        DrawSight(sight, args.ScreenHandle, mousePos, limitedScale * Scale);
+        var spriteSys = _entMan.EntitySysManager.GetEntitySystem<SpriteSystem>();
+
+        var sight = isHandGunItem ? (isGunBolted || _gunBoltSight == null ? _gunSight : _gunBoltSight) : _meleeSight;
+        if (sight != null)
+        {
+            var sightTexture = spriteSys.Frame0(sight.Sprite);
+            DrawSight(sightTexture, args.ScreenHandle, mousePos, limitedScale * Scale);
+        }
     }
 
     private void DrawSight(Texture sight, DrawingHandleScreen screen, Vector2 centerPos, float scale)

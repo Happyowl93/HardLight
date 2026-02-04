@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Content.Client._Starlight.CombatMode;
 using Content.Client.UserInterface.Screens;
 using Content.Shared.CCVar;
 using Content.Shared.HUD;
@@ -37,13 +38,25 @@ public sealed partial class MiscTab : Control
             layoutEntries.Add(new OptionDropDownCVar<string>.ValueOption(layout.ToString()!, Loc.GetString($"ui-options-hud-layout-{layout.ToString()!.ToLower()}")));
         }
 
+        var rangedSights = new List<OptionDropDownCVar<string>.ValueOption>();
+        var meleeSights = new List<OptionDropDownCVar<string>.ValueOption>();
+        foreach (var sight in _prototypeManager.EnumeratePrototypes<SightPrototype>())
+        {
+            var option = new OptionDropDownCVar<string>.ValueOption(sight.ID, Loc.GetString(sight.Name));
+            if (sight.Type == SightType.Ranged && !sight.Bolt)
+                rangedSights.Add(option);
+            else
+                meleeSights.Add(option);
+        }
+
         // Channel can be null in replays so.
         // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
         ShowOocPatronColor.Visible = _playerManager.LocalSession?.Channel?.UserData.PatronTier is { };
 
         Control.AddOptionDropDown(CVars.InterfaceTheme, DropDownHudTheme, themeEntries);
         Control.AddOptionDropDown(CCVars.UILayout, DropDownHudLayout, layoutEntries);
-
+        Control.AddOptionDropDown(StarlightCCVars.RangedSight, DropDownRangedSight, rangedSights);
+        Control.AddOptionDropDown(StarlightCCVars.MeleeSight, DropDownMeleeSight, meleeSights);
         Control.AddOptionCheckBox(CVars.DiscordEnabled, DiscordRich);
         Control.AddOptionCheckBox(CCVars.ShowOocPatronColor, ShowOocPatronColor);
         Control.AddOptionCheckBox(CCVars.LoocAboveHeadShow, ShowLoocAboveHeadCheckBox);
