@@ -187,7 +187,8 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
         }
 
         // Whether the user and the target are too far apart.
-        if (args.Target != null)
+        var distanceTarget = args.NetDistanceTarget != null ? GetEntity(args.NetDistanceTarget) : args.Target; // Starlight-edit
+        if (distanceTarget != null) // Starlight-edit
         {
             // Starlight - If user is in nullspace, Cancel DoAfter on target. (Unless user is in nullspace too.)
             if (HasComp<NullSpaceComponent>(args.Target) && !HasComp<NullSpaceComponent>(args.User))
@@ -195,7 +196,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
 
             if (args.DistanceThreshold != null)
             {
-                if (!_interaction.InRangeAndAccessible(args.User, args.Target.Value, args.DistanceThreshold.Value))
+                if (!_interaction.InRangeAndAccessible(args.User, distanceTarget.Value, args.DistanceThreshold.Value)) // Starlight-edit
                     return true;
             }
         }
