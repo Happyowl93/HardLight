@@ -20,6 +20,9 @@ using Content.Shared.Weapons.Reflect;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Content.Shared._Starlight.NullSpace;
+using System.Reflection;
+using Content.Shared.Movement.Components;
+using Robust.Shared.Random;
 #endregion Starlight
 
 namespace Content.Shared.Weapons.Hitscan.Systems;
@@ -30,6 +33,7 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly ISharedAdminLogManager _log = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly IRobustRandom _rand = default!; // Starlight-edit
 
 #region Starlight
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -55,28 +59,47 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
     {
         var shooter = args.Shooter ?? args.Gun;
         // Starlight start - handle the shooter being the mech, not the pilot
-        if (shooter != null && TryComp<MechPilotComponent>(shooter, out var pilotA))
+        if (TryComp<MechPilotComponent>(shooter, out var pilotA))
             shooter = pilotA.Mech;
         // Starlight end
-        var mapCords = _transform.ToMapCoordinates(args.FromCoordinates);
-        var ray = new CollisionRay(mapCords.Position, args.ShotDirection, (int) ent.Comp.CollisionMask);
-        var rayCastResults = _physics.IntersectRay(mapCords.MapId, ray, ent.Comp.MaxDistance, shooter, false);
 
-        var target = args.Target;
-        // If you are in a container, use the raycast result
-        // Otherwise:
-        //  1.) Hit the first entity that you targeted.
-        //  2.) Hit the first entity that doesn't require you to aim at it specifically to be hit.
-        // Ignore raycast results that hit a NullSpace entity. // TODO: Do something better?
-        var result = _container.IsEntityOrParentInContainer(shooter)
-            ? rayCastResults.FirstOrNull()
-            : rayCastResults.FirstOrNull(hit => (hit.HitEntity == target
-                                                || CompOrNull<RequireProjectileTargetComponent>(hit.HitEntity)?.Active != true)
-                                               && CompOrNull<NullSpaceComponent>(hit.HitEntity) == null);
+        var mapCords = _transform.ToMapCoordinates(args.FromCoordinates);
+
+        // Starlight-start
+        RayCastResults? result = null;
+        var pointer = args.ShotDirection.Length();
+        for (var reflectAttempt = 0; reflectAttempt < ent.Comp.Steps; reflectAttempt++ )
+        {
+            var ray = new CollisionRay(mapCords.Position, args.ShotDirection, (int)ent.Comp.CollisionMask);
+            var rayCastResults = _physics.IntersectRay(mapCords.MapId, ray, ent.Comp.MaxDistance, shooter, false).ToList();
+
+            if (!rayCastResults.Any())
+                break;
+
+            result = rayCastResults[0];
+
+            if (!_container.IsEntityOrParentInContainer(shooter))
+            {
+                foreach (var collide in rayCastResults)
+                {
+                    if (collide.HitEntity != args.Target && CompOrNull<RequireProjectileTargetComponent>(collide.HitEntity)?.Active == true)
+                        continue;
+                    if (collide.Distance < pointer - 2f && HasComp<MobMoverComponent>(collide.HitEntity))
+                    {
+                        if (pointer - collide.Distance > 4f) continue;
+
+                        var chance = Math.Clamp(1f - ((collide.Distance - 2f) / 2), 0f, 1f);
+                        if (!_rand.Prob(chance)) continue;
+                    }
+
+                    result = collide;
+                    break;
+                }
+            }
+        }
 
         var distanceTried = result?.Distance ?? ent.Comp.MaxDistance;
 
-        // Starlight start
         var isRoot = false;
         if (args.OutputTrace is null)
         {
