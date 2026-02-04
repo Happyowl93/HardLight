@@ -29234,5 +29234,12 @@ Entries:
   id: 312100
   time: '2026-02-04T18:14:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3121
+- author: Rinary
+  changes:
+  - message: Fixed bug when you can open locked storage with verb.
+    type: Fix
+  id: 312300
+  time: '2026-02-04T18:18:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3123
 Order: -1
 
