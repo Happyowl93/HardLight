@@ -66,14 +66,15 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
         var mapCords = _transform.ToMapCoordinates(args.FromCoordinates);
 
         // Starlight-start
+        var toMap = _transform.ToMapCoordinates(args.ToCoordinates);
+        var pointer = (toMap.Position - mapCords.Position).Length();
         RayCastResults? result = null;
-        var pointer = args.ShotDirection.Length();
         for (var reflectAttempt = 0; reflectAttempt < ent.Comp.Steps; reflectAttempt++ )
         {
             var ray = new CollisionRay(mapCords.Position, args.ShotDirection, (int)ent.Comp.CollisionMask);
             var rayCastResults = _physics.IntersectRay(mapCords.MapId, ray, ent.Comp.MaxDistance, shooter, false).ToList();
 
-            if (!rayCastResults.Any())
+            if (rayCastResults.Count == 0)
                 break;
 
             result = rayCastResults[0];
@@ -112,7 +113,7 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
         // If more stuff gets added here, it should probably be turned into an event.
         // FireEffects(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle(), ent.Owner); // Starlight - comment out, as we want to aggregate these
         
-        args.OutputTrace.Add(GenerateTraceStep(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle())); // Starlight - add the visuals for this particular leg of the hitscan into the trace
+        args.OutputTrace.Add(GenerateTraceStep(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle(), result?.HitEntity)); // Starlight - add the visuals for this particular leg of the hitscan into the trace
 
         // Admin logging
         if (result?.HitEntity != null)
@@ -151,7 +152,7 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
         // Starlight end
     }
 
-    private HitscanTrace GenerateTraceStep(EntityCoordinates fromCoordinates, float distance, Angle shotAngle)
+    private HitscanTrace GenerateTraceStep(EntityCoordinates fromCoordinates, float distance, Angle shotAngle, EntityUid? entity = null)// Starlight-edit
     {
         var fromXform = Transform(fromCoordinates.EntityId);
 
@@ -177,6 +178,7 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
             MuzzleCoordinates = distance > 1f ? GetNetCoordinates(fromCoordinates.Offset(shotVec / 2)) : null,
             TravelCoordinates = distance > 1f ? GetNetCoordinates(fromCoordinates.Offset(shotVec * (distance + 0.5f) / 2)) : null,
             ImpactCoordinates = GetNetCoordinates(fromCoordinates.Offset(shotVec * distance)),
+            ImpactedEnt = GetNetEntity(entity),// Starlight-edit
         };
     }
 
