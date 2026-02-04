@@ -37,6 +37,7 @@ using Content.Shared.Starlight.CCVar;
 using Content.Shared.Weapons.Hitscan.Events;
 using Robust.Shared.Timing;
 using Robust.Shared.Configuration;
+using Robust.Shared.Random;
 #endregion Starlight
 
 namespace Content.Client.Weapons.Ranged.Systems;
@@ -61,21 +62,27 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly DisplacementMapSystem _displacement = default!;
-#endregion Starlight
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public static readonly EntProtoId HitscanProto = "HitscanEffect";
     public const string ImpactProto = "ImpactEffect";
     public const string BulletHoleProto = "BulletHoleEffect";
     private DisplacementEffect _displacementEffect = null!;
-    private DisplacementEffect _displacementBulletHole = null!;
     private bool _tracesEnabled = true;
+    private bool _holesEnabled = true;
     public override void Shutdown()
     {
         base.Shutdown();
         _cfg.UnsubValueChanged(StarlightCCVars.TracesEnabled, OnTracesEnabledChanged);
+        _cfg.UnsubValueChanged(StarlightCCVars.HolesEnabled, OnHolesEnabledChanged);
     }
     private void OnTracesEnabledChanged(bool tracesEnabled)
         => _tracesEnabled = tracesEnabled;
+
+    private void OnHolesEnabledChanged(bool holesEnabled) 
+        => _holesEnabled = holesEnabled;
+
+    #endregion Starlight
 
     public bool SpreadOverlay
     {
@@ -110,7 +117,8 @@ public sealed partial class GunSystem : SharedGunSystem
     public override void Initialize()
     {
         base.Initialize();
-        _cfg.OnValueChanged(StarlightCCVars.TracesEnabled, OnTracesEnabledChanged, true);
+        _cfg.OnValueChanged(StarlightCCVars.TracesEnabled, OnTracesEnabledChanged, true); // Starlight-edit
+        _cfg.OnValueChanged(StarlightCCVars.HolesEnabled, OnHolesEnabledChanged, true); // Starlight-edit
 
         UpdatesOutsidePrediction = true;
         SubscribeLocalEvent<AmmoCounterComponent, ItemStatusCollectMessage>(OnAmmoCounterCollect);
@@ -122,8 +130,7 @@ public sealed partial class GunSystem : SharedGunSystem
         InitializeMagazineVisuals();
         InitializeSpentAmmo();
 
-        _displacementEffect = _proto.Index<DisplacementEffect>("ImpactDisplacement");
-        _displacementBulletHole = _proto.Index<DisplacementEffect>("BulletHoleDisplacement");
+        _displacementEffect = _proto.Index<DisplacementEffect>("ImpactDisplacement"); // Starlight-edit
     }
 
 
@@ -184,9 +191,7 @@ public sealed partial class GunSystem : SharedGunSystem
             return;
 
         var ent = Spawn(ImpactProto, coords);
-        var bulletHole = Spawn(BulletHoleProto, coords);
         var spriteComp = Comp<SpriteComponent>(ent);
-        var spriteHoleComp = Comp<SpriteComponent>(bulletHole);
 
         var xform = Transform(ent);
         var targetWorldRot = angle + _xform.GetWorldRotation(relativeXform);
@@ -198,10 +203,12 @@ public sealed partial class GunSystem : SharedGunSystem
         spriteComp["unshaded"].Visible = true;
         _displacement.TryAddDisplacement(_displacementEffect.Displacement, (ent, spriteComp), 0, "unshaded", out _);
 
-        _sprite.LayerSetRsi((bulletHole, spriteHoleComp), "unshaded", (layer!.ActualRsi ?? layer.Rsi)!);
-        _sprite.LayerSetRsiState((bulletHole, spriteHoleComp), "unshaded", layer.RsiState);
-        spriteComp["unshaded"].Visible = true;
-        _displacement.TryAddDisplacement(_displacementBulletHole.Displacement, (bulletHole, spriteHoleComp), 0, "unshaded", out _);
+        if (_holesEnabled)
+        {
+            var radians = MathF.PI / 180f * (float)angle.Degrees;
+            var holeCoords = coords.Offset(new Vector2(MathF.Cos(radians), MathF.Sin(radians)) * _random.NextFloat(0f, 0.5f));
+            Spawn(BulletHoleProto, holeCoords);
+        }
     }
     private void RenderBullet(NetCoordinates coordinates, Angle angle, ExtendedSpriteSpecifier sprite, float distance, float length, float delay)
     {
