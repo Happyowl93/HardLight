@@ -32,15 +32,19 @@
     PinpointerNuclearStealObjective: 1 # Fun if paired with the nuke disk objective
     AccessConfiguratorStealObjective: 1 # HoP and CE
     BrigMedStrangeBedsheetStealObjective: 1 # Was intended to be a steal target, but never was. I'll at least implement this in memory...
+    ClothingEyesGlassesBrigmedicStealObjective: 1 # Brigmed. Can't be crafted, after all... Always spawns in Brigmed's locker, so guaranteed to exist
     EncryptionKeyExpeditionStealObjective: 0.5 # QM/Salv Lead. Not that interesting, so low.
+    NTRepBriefcaseSecureStealObjective: 0.75 # Usually in the bridge.
     CMOHardsuitStealObjective: 1 # I'm so sorry CMO
     CEHardsuitStealObjective: 1 # Where are you going to hide it?
     HOSHardsuitStealObjective: 1 # Quite defensive.
     WardHardsuitStealObjective: 1 # Not a member of command, yet has 3 steal targets.
     BrigmedHardsuitStealObjective: 1 # You're not escaping.
     QMHardsuitStealObjective: 1 # Would you believe it was never an objective before?
+    SalvLeadHardsuitStealObjective: 0.75 # Likely to be easy if Salvage actually gets better suits.
     CaptainHardsuitStealObjective: 0.75 # Good luck.
     NTRepHardsuitStealObjective: 0.75 # Usually in the bridge... hard to get to.
+    NTRepBriefcaseSecureStealObjective: 0.75 # Same as most NT Rep stuff.
     BSOHardsuitStealObjective: 0.75 # Same as the above...
     BSOMagbootsStealObjective: 0.75 # Easier to hide, at least.
     # Starlight end
@@ -94,6 +98,8 @@
     IDCardsStealCollectionObjective: 1
     LAMPStealCollectionObjective: 0.1                   #only for moth, weight decreased cause boring and insanely easy
     CrewMonitorStealCollectionObjective: 0.5 # Starlight; Paramedic, BSO, Brigmed, CMO handheld monitors, 2-3. It's kinda easy if there's 2 paramed lockers, so that's why it's low.
+    GaloshesStealCollectionObjective: 0.25 # Starlight. Kinda easy, but they're technically contra... 2-3.
+    RCDRPDStealCollectionObjective: 0.25 # Starlight. RCDs & RPDs. You could just buy them, or if you're an Engi spawn, this is a free win, so low priority. 7-12, since there's 2 items that satisfy this, and if you want to just use credits on this, you're taking a huge expense.
 
 - type: weightedRandom
   id: ThiefObjectiveGroupItem
@@ -156,5 +162,6 @@
   id: ThiefObjectiveGroupEscape
   weights:
     EscapeThiefShuttleObjective: 1
+    MasterThiefObjective: 1
 
 #Crew, wizard, when you code it...

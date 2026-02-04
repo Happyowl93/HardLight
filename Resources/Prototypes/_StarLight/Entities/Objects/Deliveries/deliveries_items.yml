@@ -54,6 +54,8 @@
         - IDCardsStealCollectionObjective
         - CrewMonitorStealCollectionObjective # remove comment when implemented; CMO, Paramed, BSO, Brigmed
         - LAMPStealCollectionObjective
+        - GaloshesStealCollectionObjective # remove comment when implemented, 2-3
+        - RCDRPDStealCollectionObjective # remove comment when implemented, 7-12
         # thief item objectives
         - ForensicScannerStealObjective
         - FlippoEngravedLighterStealObjective
@@ -110,7 +112,9 @@
         - PinpointerNuclearStealObjective # remove comment when implemented
         - AccessConfiguratorStealObjective # remove comment when implemented
         - BrigMedStrangeBedsheetStealObjective # remove comment when implemented
+        - ClothingEyesGlassesBrigmedicStealObjective # remove comment when implemented
         - EncryptionKeyExpeditionStealObjective # remove comment when implemented
+        - NTRepBriefcaseSecureStealObjective # NT Rep's briefcase
         # no ian meat because you are a pacifist and need them alive
         - ClipboardStealObjective #QM's digiboard
         - KnuckleDustersStealObjective #QM's knuckledusters
@@ -128,6 +132,7 @@
         - WardHardsuitStealObjective # remove comment when implemented
         - BrigmedHardsuitStealObjective # remove comment when implemented
         - QMHardsuitStealObjective # remove comment when implemented
+        - SalvLeadHardsuitStealObjective # remove comment when implemented
         - CaptainHardsuitStealObjective # remove comment when implemented
         - NTRepHardsuitStealObjective # remove comment when implemented
         - BSOHardsuitStealObjective # remove comment when implemented

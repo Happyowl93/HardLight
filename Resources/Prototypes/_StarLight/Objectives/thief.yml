@@ -60,3 +60,16 @@
     stealGroup: FiringPinSmartLMG
   - type: Objective
     difficulty: 1
+
+- type: entity
+  parent: [BaseThiefObjective, BaseLivingObjective]
+  id: MasterThiefObjective
+  name: Become the greatest thief, and steal anything you percieve as having value.
+  description: Just make sure to get out alive.
+  components:
+  - type: Objective
+    difficulty: 0.9 # Gives you more freedom, so you need less goals.
+    icon:
+      sprite: Structures/Furniture/chairs.rsi
+      state: shuttle
+  - type: EscapeShuttleCondition

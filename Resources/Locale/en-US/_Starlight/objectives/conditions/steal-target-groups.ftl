@@ -4,12 +4,14 @@ steal-target-groups-cmolicense = medical license
 steal-target-groups-pinpointer-nuclear = nuclear pinpointer
 steal-target-groups-access-configurator = access configurator
 steal-target-groups-hop-id-card = head of personnel ID card
+steal-target-groups-ntr-briefcase = nanotrasen representative's secure briefcase
 steal-target-groups-clothing-outer-hardsuit-medical = chief medical officer's hardsuit
 steal-target-groups-clothing-outer-hardsuit-ce = chief engineer's hardsuit
 steal-target-groups-clothing-outer-hardsuit-hos = head of security's hardsuit
 steal-target-groups-clothing-outer-hardsuit-warden = warden's hardsuit
 steal-target-groups-clothing-outer-hardsuit-brigmed = brigmedic's hardsuit
 steal-target-groups-clothing-outer-hardsuit-qm = QM's luxury maxim hardsuit
+steal-target-groups-clothing-outer-hardsuit-salv-lead = spationaut lead hardsuit
 steal-target-groups-clothing-outer-hardsuit-cap = captain's armored spacesuit
 steal-target-groups-clothing-outer-hardsuit-ntr = nanotrasen representative's hardsuit
 steal-target-groups-clothing-outer-hardsuit-bso = blue shield officer's hardsuit
@@ -33,10 +35,14 @@ steal-target-groups-security-tech-fab-circuitboard = security techfab machine bo
 steal-target-groups-log-probe-cartridge = log probe cartridge
 steal-target-groups-med-tek-cartridge = med tek cartridge
 
+steal-target-groups-brigmedic-glasses = brigmedic glasses
+
 steal-target-groups-clothing-headset-alt-command = command over-ear headset
 
 # Thief Collection
 steal-target-groups-handheld-monitors = handheld monitors, any type
+steal-target-groups-galoshes = galoshes
+steal-target-groups-rcd-rpd = RCDs and RPDs
 
 # docs
 steal-target-groups-corporate-documents = classified corporate secrets documents
