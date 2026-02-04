@@ -10,7 +10,7 @@
         children:
         - id: NitrousOxideTankFilled
           amount: 2
-        - id: ClothingMaskBreath
+        - id: ClothingMaskBreathMedical
           amount: 2
         - id: ChemistryBottleChloralHydrate
           amount: 2
