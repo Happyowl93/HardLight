@@ -29179,5 +29179,12 @@ Entries:
   id: 313700
   time: '2026-02-04T05:46:06.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3137
+- author: Penguinwizzard
+  changes:
+  - message: Fixed hitscan ricochets not triggering.
+    type: Fix
+  id: 313800
+  time: '2026-02-04T08:45:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3138
 Order: -1
 
