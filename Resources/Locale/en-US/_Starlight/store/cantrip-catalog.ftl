@@ -4,14 +4,14 @@ cantrip-glow-description = Creates a short-lived glowing ball.
 cantrip-spark-name = Ember
 cantrip-spark-description = Creates a short-lived flame between your fingertips.
 
+cantrip-antidote-name = Rejuvenating Seed
+cantrip-antidote-description = Creates a magic seed that restores vitality to an ailing plant.
+
 cantrip-mop-name = Cleanse
-cantrip-mop-description = Removes filth at your feet.
+cantrip-mop-description = Removes filth around you. Like a tiny cleanade. Has a weird shape.
 
-cantrip-bandage-name = Hemostasis
-cantrip-bandage-description = Seals wounds on a person or creature, preventing bleeding. Cannot be used on self.
-
-cantrip-antidote-name = Detoxify
-cantrip-antidote-description = Restores vitality to an ailing plant.
+cantrip-bandage-name = Haemostatic Rune
+cantrip-bandage-description = Creates a magic rune that stops bleeding.
 
 cantrip-message-name = Psychic Whisper
 cantrip-message-description = Sends a private message to a target.

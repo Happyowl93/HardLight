@@ -166,4 +166,4 @@
 
 - type: storeCategory
   id: CantripsStandard
-  name: Standard Cantrips
+  name: store-category-cantrips-standard

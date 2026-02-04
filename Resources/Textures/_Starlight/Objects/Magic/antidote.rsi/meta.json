@@ -1,22 +1,17 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "By Rhetorica for Starlight.",
+    "copyright": "By Rhetorica for Starlight. WIP graphics, replace this!",
     "size": {
         "x": 32,
         "y": 32
     },
     "states": [
         {
-            "name": "icon",
-            "delays": [
-                [
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1
-                ]
-            ]
+            "name": "icon"
+        },
+        {
+            "name": "icon-empty"
         },
         {
             "name": "inhand-left",

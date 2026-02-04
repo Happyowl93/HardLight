@@ -27,6 +27,19 @@
     stock: 1
 
 - type: listing
+  id: CantripAntidote
+  name: cantrip-antidote-name
+  description: cantrip-antidote-description
+  productAction: ActionCantripAntidote
+  cost:
+    WizCoin: 1
+  categories:
+  - CantripsStandard
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
   id: CantripMop
   name: cantrip-mop-name
   description: cantrip-mop-description
@@ -52,28 +65,16 @@
   - !type:ListingLimitedStockCondition
     stock: 1
 
-- type: listing
-  id: CantripAntidote
-  name: cantrip-antidote-name
-  description: cantrip-antidote-description
-  productAction: ActionCantripAntidote
-  cost:
-    WizCoin: 1
-  categories:
-  - CantripsStandard
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
-
-- type: listing
-  id: CantripMessage
-  name: cantrip-message-name
-  description: cantrip-message-description
-  productAction: ActionCantripMessage
-  cost:
-    WizCoin: 1
-  categories:
-  - CantripsStandard
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
+# Disabled until I figure out what's wrong with it:
+# - type: listing
+#   id: CantripMessage
+#   name: cantrip-message-name
+#   description: cantrip-message-description
+#   productAction: ActionCantripMessage
+#   cost:
+#     WizCoin: 1
+#   categories:
+#   - CantripsStandard
+#   conditions:
+#   - !type:ListingLimitedStockCondition
+#     stock: 1
