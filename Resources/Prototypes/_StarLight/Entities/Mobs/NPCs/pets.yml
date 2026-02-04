@@ -65,6 +65,11 @@
   name: Admin Mouse
   description: A troublemaking mouse that will most probably contribute to your death, one way or another.
   components:
+  - type: LanguageKnowledge
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
   - type: UniversalLanguageSpeaker
   - type: VentCrawler
   - type: Climbing
