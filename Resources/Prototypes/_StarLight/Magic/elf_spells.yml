@@ -9,7 +9,7 @@
   - type: Magic
     requiresClothes: false
   - type: Action
-    useDelay: 5 #TODO: increase to sensible amount
+    useDelay: 45
     itemIconStyle: BigAction
     icon:
       sprite: _Starlight/Objects/Magic/luminous_orb.rsi
@@ -32,7 +32,7 @@
   - type: Magic
     requiresClothes: false
   - type: Action
-    useDelay: 5 #TODO: increase to sensible amount
+    useDelay: 20
     itemIconStyle: BigAction
     icon:
       sprite: _Starlight/Objects/Magic/ember.rsi
