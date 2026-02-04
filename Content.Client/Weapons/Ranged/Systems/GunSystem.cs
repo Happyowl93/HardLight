@@ -65,7 +65,9 @@ public sealed partial class GunSystem : SharedGunSystem
 
     public static readonly EntProtoId HitscanProto = "HitscanEffect";
     public const string ImpactProto = "ImpactEffect";
+    public const string BulletHoleProto = "BulletHoleEffect";
     private DisplacementEffect _displacementEffect = null!;
+    private DisplacementEffect _displacementBulletHole = null!;
     private bool _tracesEnabled = true;
     public override void Shutdown()
     {
@@ -120,7 +122,8 @@ public sealed partial class GunSystem : SharedGunSystem
         InitializeMagazineVisuals();
         InitializeSpentAmmo();
 
-        _displacementEffect = _proto.Index<DisplacementEffect>("displacementEffect");
+        _displacementEffect = _proto.Index<DisplacementEffect>("ImpactDisplacement");
+        _displacementBulletHole = _proto.Index<DisplacementEffect>("BulletHoleDisplacement");
     }
 
 
@@ -163,27 +166,27 @@ public sealed partial class GunSystem : SharedGunSystem
                     RenderFlash(trace.ImpactCoordinates, trace.Angle, impact, 1f, false, true, length, delay);
 
                 if (trace.ImpactedEnt is { } netEnt && GetEntity(netEnt) is EntityUid ent)
-                    RenderDisplacementImpact(GetCoordinates(trace.ImpactCoordinates), trace.Angle, ent);
+                    RenderDisplacements(GetCoordinates(trace.ImpactCoordinates), trace.Angle, ent);
             });
         return delay;
     }
 
-    private void RenderDisplacementImpact(EntityCoordinates coords, Angle angle, EntityUid target)
+    private void RenderDisplacements(EntityCoordinates coords, Angle angle, EntityUid target)
     {
-        if (!TryComp<SpriteComponent>(target, out var sprite))
+        if (!TryComp<SpriteComponent>(target, out var sprite) 
+            || !TryComp(coords.EntityId, out TransformComponent? relativeXform))
             return;
 
-        if (!TryComp(coords.EntityId, out TransformComponent? relativeXform))
-            return;
-
-        if (!sprite!.AllLayers.TryFirstOrDefault(x => (x.ActualRsi ?? x.Rsi) != null && x.RsiState != null, out var layer))
+        if (!sprite.AllLayers.TryFirstOrDefault(x => (x.ActualRsi ?? x.Rsi) != null && x.RsiState != null, out var layer))
             return;
 
         if (layer.PixelSize.X != 32 || layer.PixelSize.Y != 32)
             return;
 
         var ent = Spawn(ImpactProto, coords);
+        var bulletHole = Spawn(BulletHoleProto, coords);
         var spriteComp = Comp<SpriteComponent>(ent);
+        var spriteHoleComp = Comp<SpriteComponent>(bulletHole);
 
         var xform = Transform(ent);
         var targetWorldRot = angle + _xform.GetWorldRotation(relativeXform);
@@ -194,6 +197,11 @@ public sealed partial class GunSystem : SharedGunSystem
         _sprite.LayerSetRsiState((ent, spriteComp), "unshaded", layer.RsiState);
         spriteComp["unshaded"].Visible = true;
         _displacement.TryAddDisplacement(_displacementEffect.Displacement, (ent, spriteComp), 0, "unshaded", out _);
+
+        _sprite.LayerSetRsi((bulletHole, spriteHoleComp), "unshaded", (layer!.ActualRsi ?? layer.Rsi)!);
+        _sprite.LayerSetRsiState((bulletHole, spriteHoleComp), "unshaded", layer.RsiState);
+        spriteComp["unshaded"].Visible = true;
+        _displacement.TryAddDisplacement(_displacementBulletHole.Displacement, (bulletHole, spriteHoleComp), 0, "unshaded", out _);
     }
     private void RenderBullet(NetCoordinates coordinates, Angle angle, ExtendedSpriteSpecifier sprite, float distance, float length, float delay)
     {
