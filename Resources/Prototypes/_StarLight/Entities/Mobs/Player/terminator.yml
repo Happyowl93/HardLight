@@ -4,6 +4,7 @@
   # uses random name generator dont worry
   name: exterminator
   components:
+  - type: Terminator
   # reduced barotrauma damage
   - type: Barotrauma
     damage:
