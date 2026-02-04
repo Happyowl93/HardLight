@@ -37,7 +37,6 @@
     sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
     state: tongue
 
-
 - type: entity
   id: OrganShadekinAppendix
   parent: OrganHumanAppendix
@@ -47,7 +46,6 @@
     sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
     layers:
       - state: appendix
-
 
 - type: entity
   id: OrganShadekinHeart

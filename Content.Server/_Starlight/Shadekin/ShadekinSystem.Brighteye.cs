@@ -22,7 +22,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         SubscribeLocalEvent<BrighteyeComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<BrighteyeComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<BrighteyeComponent, NullSpaceShuntEvent>(NullSpaceShunt);
-        SubscribeLocalEvent<BrighteyeComponent, EntityZombifiedEvent>(OnZombified);
+        SubscribeLocalEvent<BrighteyeComponent, EntityZombifiedEvent>((uid, _, _) => RemComp<BrighteyeComponent>(uid));
 
         SubscribeLocalEvent<OrganShadekinCoreComponent, SurgeryOrganImplantationCompleted>(OnCoreOrganImplanted);
         SubscribeLocalEvent<OrganShadekinCoreComponent, SurgeryOrganExtracted>(OnCoreOrganExtracted);
@@ -30,6 +30,12 @@ public sealed partial class ShadekinSystem : EntitySystem
 
     private void OnInit(EntityUid uid, BrighteyeComponent component, ComponentStartup args)
     {
+        if (!HasComp<ShadekinComponent>(uid))
+        {
+            RemComp<BrighteyeComponent>(uid);
+            return;
+        }
+
         _alerts.ShowAlert(uid, component.BrighteyeAlert);
         _alerts.ShowAlert(uid, component.PortalAlert);
 
@@ -66,19 +72,13 @@ public sealed partial class ShadekinSystem : EntitySystem
     private void OnCoreOrganImplanted(Entity<OrganShadekinCoreComponent> ent, ref SurgeryOrganImplantationCompleted args)
     {
         if (!ent.Comp.Damaged)
-            EnsureComp<BrighteyeComponent>(args.Body, out var brighteye);
+            EnsureComp<BrighteyeComponent>(args.Body);
     }
 
     private void OnCoreOrganExtracted(Entity<OrganShadekinCoreComponent> ent, ref SurgeryOrganExtracted args)
     {
         if (HasComp<BrighteyeComponent>(args.Body) && !ent.Comp.Damaged)
             RemComp<BrighteyeComponent>(args.Body);
-    }
-
-    // No Phasing, Almost Unkillable Zombie... We get zombified as a Brighteye we get burned!
-    private void OnZombified(EntityUid uid, BrighteyeComponent component, ref EntityZombifiedEvent args)
-    {
-        RemComp<BrighteyeComponent>(uid);
     }
 
     private void OnShutdown(EntityUid uid, BrighteyeComponent component, ComponentShutdown args)

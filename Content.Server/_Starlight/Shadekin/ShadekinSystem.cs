@@ -88,6 +88,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         SubscribeLocalEvent<OrganShadekinCoreComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<OrganShadekinCoreComponent, OrganAddedToBodyEvent>(CoreOrganInit);
 
+        SubscribeLocalEvent<ShadekinComponent, ComponentShutdown>((uid, _, _) => RemComp<BrighteyeComponent>(uid));
         SubscribeLocalEvent<ShadekinComponent, EyeColorInitEvent>(OnEyeColorChange);
         SubscribeLocalEvent<ShadekinComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
         SubscribeLocalEvent<ShadekinComponent, NullSpaceShuntEvent>(NullSpaceShunt);
