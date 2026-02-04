@@ -10,8 +10,8 @@ cantrip-antidote-description = Creates a magic seed that restores vitality to an
 cantrip-mop-name = Cleanse
 cantrip-mop-description = Removes filth around you. Like a tiny cleanade. Has a weird shape.
 
-cantrip-bandage-name = Haemostatic Rune
-cantrip-bandage-description = Creates a magic rune that stops bleeding.
+cantrip-bandage-name = Haemostatic Glyph
+cantrip-bandage-description = Creates a magic glyph that stops bleeding when applied to a target.
 
 cantrip-message-name = Psychic Whisper
 cantrip-message-description = Sends a private message to a target.
