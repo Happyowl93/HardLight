@@ -29278,5 +29278,19 @@ Entries:
   id: 314600
   time: '2026-02-05T06:10:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3146
+- author: CawsForConcern
+  changes:
+  - message: War Ops can now be declared with 3 nuclear operatives (down from 4)
+    type: Tweak
+  id: 299500
+  time: '2026-02-05T17:47:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2995
+- author: kanopus7
+  changes:
+  - message: Now abductor eye can't be controlled by several entities.
+    type: Tweak
+  id: 120300
+  time: '2026-02-05T20:03:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1203
 Order: -1
 
