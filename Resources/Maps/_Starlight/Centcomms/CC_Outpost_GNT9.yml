@@ -58397,8 +58397,6 @@ entities:
       pos: -1.5,73.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 8577
     - type: Lock
@@ -58409,8 +58407,6 @@ entities:
       pos: 2.5,70.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 8577
     - type: Lock
@@ -58588,8 +58584,6 @@ entities:
       pos: 2.5,73.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 8577
     - type: Lock
