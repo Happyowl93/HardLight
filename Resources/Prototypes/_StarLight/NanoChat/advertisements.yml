@@ -93,3 +93,33 @@
   senderName: "Comitas Systems"
   messageKey: nanochat-ad-comitas-systems
   weight: 1.0
+
+- type: nanoChatAdvertisement
+  id: VioletSkyPlasma
+  senderName: "Violet Sky Systems"
+  messageKey: nanochat-ad-violet-sky-plasma
+  weight: 1.0
+
+- type: nanoChatAdvertisement
+  id: SilverclawTour
+  senderName: "Galactic Events"
+  messageKey: nanochat-ad-silverclaw-tour
+  weight: 1.0
+
+- type: nanoChatAdvertisement
+  id: ShuttleGlassRepair
+  senderName: "ShuttleGlass Drydock Corp."
+  messageKey: nanochat-ad-shuttleglass-repair
+  weight: 1.0
+
+- type: nanoChatAdvertisement
+  id: WeBuyYourStation
+  senderName: "webuyyourstation.gal"
+  messageKey: nanochat-ad-webuyyourstation
+  weight: 0.8
+
+- type: nanoChatAdvertisement
+  id: HugbotInitiative
+  senderName: "Hugbot Initiative"
+  messageKey: nanochat-ad-hugbot-initiative
+  weight: 1.0

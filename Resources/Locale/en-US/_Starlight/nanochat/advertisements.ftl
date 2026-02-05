@@ -113,3 +113,36 @@ nanochat-ad-hogge-wylde = Hello {$nanochatnumber}. Have you been wronged? Faced 
 nanochat-ad-comitas-systems = Comitas Systems is hiring! We're interested in individuals with experience manning surveillance systems on board space stations. If this sounds like you, contact us at [[randomnumber:103847:999999]]
 
     MRSWC5DIEB2G6IDOMFXG65DSMFZWK3Q=
+
+nanochat-ad-violet-sky-plasma = Do you need plasma, but hate fracking and other environmentally destructive mining practices?
+    Well, do we have the offer for you!
+    Violet Sky Systems is proud to introduce:
+    100% clean atmospheric plasma! Freshly mined from a distant Resomi colony!
+    Only 9.999* per canister! Get yours today!
+
+    *Interstellar shipping costs apply.
+
+nanochat-ad-silverclaw-tour = Listen one, listen all!
+    You have heard them before, and they're back on galactic tour!
+
+    Silverclaw and the Starborne Wing!
+    -Starring Birgil on the Ocarina
+
+    Coming to a planet near *you*!
+    Every night at 08:45 planetary standard time!
+    Tickets start at [[randomnumber:50:20000]] spesos, get yours before they are all gone!
+    (Sales close on {$date} 00:00 galactic standard time)
+
+nanochat-ad-shuttleglass-repair = Did you hit space debris? Does your shuttle have a crack in the solar windshield?
+    Do not hesitate! Any amount of stress could cause a fracture, and lead to depressurisation!
+    Call ShuttleGlass Drydock Corp. at [[randomnumber:0:999]]-[[randomnumber:0:999]]-[[randomnumber:0:999]] today!
+
+    ShuttleGlass repairs,
+    ShuttleGlass replaces!
+
+nanochat-ad-webuyyourstation = Would you like to know what {$station} is worth? Find out now, and head on over to webuyyourstation.gal! We will buy your station at fair market value! Get your cut of up to [[randomnumber:1:100000000]] spesos TODAY!
+
+nanochat-ad-hugbot-initiative = Maybe you should go and give {$randomname} a hug!
+    Do it right now! You might not be able to later!
+
+    This message is brought to you by the Hugbot Initiative.
