@@ -38,6 +38,5 @@ public sealed partial class VampireRuleComponent : Component
         "VampireNTRepHardsuitStealObjective",
         "VampireBSOHardsuitStealObjective",
         "VampireBSOWeaponStealObjective"
-
     };
 }

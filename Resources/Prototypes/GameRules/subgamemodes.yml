@@ -3,9 +3,9 @@
   id: Thief
   components:
   - type: ThiefRule
-#  - type: AntagObjectives # Starlight
-#    objectives: # Starlight. 
-#    - EscapeThiefShuttleObjective # Starlight. Master thief alt objective chance
+  - type: AntagObjectives
+    objectives:
+    - EscapeThiefShuttleObjective
   - type: AntagRandomObjectives
     sets:
     - groups: ThiefBigObjectiveGroups
@@ -14,7 +14,7 @@
     - groups: ThiefObjectiveGroups
       maxPicks: 10
     - groups: ThiefObjectiveGroupEscape # Starlight
-      prob: 10 # Starlight, they *need* this objective.
+      prob: 0.33 # Starlight. It gives you a lot more freedom, but also lets you be way more intrusive,  so low chance.
       maxPicks: 1 # Starlight
     maxDifficulty: 3 # Starlight. Ultrapop + ton of new targets means some objectives become really easy in the chaos.
   - type: AntagSelection
@@ -72,6 +72,7 @@
   - type: VampireRule
   - type: AntagSelection
     agentName: vampire-roundend-name
+    selectionTime: IntraPlayerSpawn # Starlight. Only select vamps on round start
     definitions:
     - prefRoles: [ Vampire ]
       max: 12 # Starlight. Full gamemode Vamps scale higher to account for scaling.

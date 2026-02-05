@@ -1,18 +1,4 @@
-
-
-
-{
-VampireCMOHardsuitStealObjective
-VampireCEHardsuitStealObjective
-VampireHOSHardsuitStealObjective
-VampireQMHardsuitStealObjective
-VampireCaptainHardsuitStealObjective
-VampireNTRepHardsuitStealObjective
-VampireBSOHardsuitStealObjective
-VampireBSOMagbootsStealObjective
-VampireBSOWeaponStealObjective}
-
-
+# Vampires
 - type: entity
   parent: BaseVampireStealObjective
   id: VampireCMOHardsuitStealObjective
