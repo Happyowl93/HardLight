@@ -70,11 +70,11 @@
 - type: damageModifierSet
   id: CyberneticFlesh
   coefficients:
-    Blunt: 0.6
-    Slash: 0.6
-    Piercing: 0.6
-    # fire and lasers burn it good
-    Heat: 1.0
+    Blunt: 0.5
+    Slash: 0.5
+    Piercing: 0.5
+    # fire and lasers
+    Heat: 0.7
     Cold: 0.25
     Caustic: 0.25
     # doesnt have organs to poison
@@ -88,11 +88,11 @@
     # bonk
     Blunt: 1.0
     # alloy too hard to cut
-    Slash: 0.3
+    Slash: 0.1
     # pew
-    Piercing: 0.6
+    Piercing: 0.5
     # no burning anymore
-    Heat: 0.1
+    Heat: 0.0
     # its a robot
     Cold: 0.0
     Caustic: 0.0
