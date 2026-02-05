@@ -194,10 +194,10 @@
 
 - type: entity
   parent: BaseTraitorNanoTrasenStealObjective
-  id: NtRepBriefcaseSecureStealObjective
+  id: NTRepBriefcaseSecureStealObjective
   components:
   - type: StealCondition
-    stealGroup: NtRepBriefcaseSecure
+    stealGroup: NTRepBriefcaseSecure
 
 - type: entity
   parent: BaseTraitorNanoTrasenStealObjective

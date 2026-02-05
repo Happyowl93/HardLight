@@ -61,4 +61,4 @@
     guides:
     - CombinationLocks
   - type: StealTarget
-    stealGroup: NtRepBriefcaseSecure
+    stealGroup: NTRepBriefcaseSecure

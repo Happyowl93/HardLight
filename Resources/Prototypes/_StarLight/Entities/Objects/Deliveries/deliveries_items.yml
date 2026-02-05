@@ -111,7 +111,7 @@
         - EscapeThiefShuttleObjective
         # traitor steal objectives
         - CaptainIDStealObjective
-        - HoPIDStealObjective
+        - HOPIDStealObjective
         - CMOHyposprayStealObjective
 #        - CMOCrewMonitorStealObjective Disabled in favor of the collection objective.
         - NukeDiskStealObjective

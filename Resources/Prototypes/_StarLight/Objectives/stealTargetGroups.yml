@@ -59,17 +59,9 @@
 - type: stealTargetGroup
   id: HOPIDCard
   name: steal-target-groups-hop-id-card
-  components:
-  - type: Sprite
-    layers:
-    - state: silver
-    - state: stripe_top
-      color: &color-service-top "#639137"
-    - state: stripe_bottom
-      color: &color-service-bottom "#446326"
-    - sprite: *icon-rsi
-      offset: *icon-offset
-      state: HeadOfPersonnel
+  sprite:
+    sprite: _Starlight/Objects/Misc/hop_id_card.rsi
+    state: icon
 
 - type: stealTargetGroup
   id: PinpointerNuclear
@@ -88,34 +80,20 @@
 - type: stealTargetGroup
   id: EncryptionKeySalvage
   name: steal-target-groups-encryption-key-salvage
-  components:
-    - type: Sprite
-      layers:
-        - state: crypt_gray
-        - sprite: _Starlight/Objects/Devices/encryption_keys.rsi
-          state: salvage_label
+  sprite:
+    sprite: _Starlight/Objects/Misc/salvagekeystealobjective.rsi
+    state: icon
 
 - type: stealTargetGroup
-  id: NtRepBriefcaseSecure
+  id: NTRepBriefcaseSecure
   name: steal-target-groups-ntr-briefcase
-  components:
-  - type: Sprite
-    sprite: _Starlight/Objects/Storage/Briefcases/briefcase_secure.rsi
-    layers: 
-      - state: icon
-      - state: open
-        shader: unshaded
-      - state: closed
-        shader: unshaded
-        map: ["enum.LockVisualLayers.Lock"]
-      - state: spark
-        shader: unshaded
-        visible: false
-        map: ["spark"]
+  sprite:
+    sprite: _Starlight/Objects/Misc/ntrepbriefcasestealobjective.rsi
+    state: icon
 
 - type: stealTargetGroup
   id: BSOPistolSP8T
-  name: steal-target-groups-weapon-pistol-sp8y
+  name: steal-target-groups-weapon-pistol-sp8t
   sprite:
     sprite: _Starlight/Objects/Weapons/Guns/Pistols/sp8t.rsi
     state: icon
@@ -264,7 +242,7 @@
     state: security
 
 - type: stealTargetGroup
-  id: PTechFabCircuitboard
+  id: PTechCircuitboard
   name: steal-target-groups-ptech-circuitboard
   sprite:
     sprite: Objects/Misc/module.rsi
