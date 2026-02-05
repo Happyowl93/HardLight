@@ -503,7 +503,6 @@
   components:
     - type: MachineBoard
       prototype: CrewMonitoringServer
-      bladeServerPrototype: CrewMonitoringBladeServer # Moffstation - Blade Server construction
       stackRequirements:
         Steel: 1
         Cable: 2

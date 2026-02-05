@@ -55,9 +55,9 @@
   - SurveillanceWirelessCameraMonitorCircuitboard
   - TelecomServerCircuitboard
   - HolopadMachineCircuitboard
+  - BladeServerRackMachineCircuitboard # Moffstation - Blade Server Rack constructible
   radioChannels:
   - Service
-  - BladeServerRackMachineCircuitboard # Moffstation - Blade Server Rack constructible
 
 - type: technology
   id: AdvancedEntertainment
