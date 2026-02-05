@@ -17,7 +17,7 @@
     graph: GlassesSecHUD
     node: glassesSec
   - type: StealTarget
-    stealGroup: [MiscGlassesCollection, RareGlassesCollection]
+    stealGroup: RareGlassesCollection
   - type: Tag
     tags:
     - HamsterWearable

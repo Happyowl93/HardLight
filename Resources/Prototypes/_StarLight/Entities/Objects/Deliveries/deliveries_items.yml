@@ -113,7 +113,7 @@
         - CaptainIDStealObjective
         - HoPIDStealObjective
         - CMOHyposprayStealObjective
-        - CMOCrewMonitorStealObjective
+#        - CMOCrewMonitorStealObjective Disabled in favor of the collection objective.
         - NukeDiskStealObjective
         - MagbootsStealObjective
         - RDDiplomaStealObjective

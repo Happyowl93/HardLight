@@ -7,12 +7,14 @@
     sprite: Objects/Specific/Medical/hypospray.rsi
     state: hypo
 
-- type: stealTargetGroup
-  id: HandheldCrewMonitor
-  name: steal-target-groups-handheld-crew-monitor
-  sprite:
-    sprite: Objects/Specific/Medical/handheldcrewmonitor.rsi
-    state: scanner
+# Starlight start
+#- type: stealTargetGroup
+#  id: HandheldCrewMonitor #  Starlight. Disabled in favor of the monitor collection objective, since code doesn't support being in 2 stealGroups.
+#  name: steal-target-groups-handheld-crew-monitor
+#  sprite:
+#    sprite: Objects/Specific/Medical/handheldcrewmonitor.rsi
+#    state: scanner
+# Starlight end
 
 - type: stealTargetGroup
   id: ClothingOuterHardsuitRd

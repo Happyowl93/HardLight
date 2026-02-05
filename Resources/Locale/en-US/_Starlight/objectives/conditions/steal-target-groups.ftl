@@ -47,7 +47,7 @@ steal-target-groups-ptech-circuitboard = PTech circuitboard
 steal-target-groups-handheld-monitors = handheld monitors, any type
 steal-target-groups-galoshes = galoshes
 steal-target-groups-rcd-rpd = RCDs and RPDs
-steal-target-groups-misc-sunglasses = beer goggles, musician shades, or any security sunglasses
+steal-target-groups-misc-sunglasses = beer goggles, musician shades, security glasses, or detective's noir-tech glasses
 steal-target-groups-rare-sunglasses = administration, skill, blueshield, or brigmedic sunglasses
 
 # docs
