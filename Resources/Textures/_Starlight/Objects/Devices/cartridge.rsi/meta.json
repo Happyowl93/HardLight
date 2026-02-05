@@ -7,9 +7,9 @@
         "y": 32
     },
     "states": [
-        {
+		{
             "name": "cart-chat",
-            "copyright": "Made by kushbreth (discord), edited from cart-log"
+            "copyright": "cart-chat made by kushbreth (discord) and edited by honeyed_lemons_"
         }
     ]
 }
