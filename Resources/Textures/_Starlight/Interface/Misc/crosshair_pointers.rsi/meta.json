@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "Kenney assets, https://kenney-assets.itch.io/crosshair-pack",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "arrows"
+    },
+    {
+      "name": "arrows_dot"
+    },
+    {
+      "name": "arrows_outer"
+    },
+    {
+      "name": "arrows_outer_double"
+    },
+    {
+      "name": "basic"
+    },
+    {
+      "name": "basic_dot"
+    },
+    {
+      "name": "brackets"
+    },
+    {
+      "name": "circle"
+    },
+    {
+      "name": "cross_dot"
+    },
+    {
+      "name": "cross_small"
+    },
+    {
+      "name": "cross_small2"
+    },
+    {
+      "name": "dot"
+    },
+    {
+      "name": "double_dot"
+    },
+    {
+      "name": "triple"
+    },
+    {
+      "name": "triple_dot"
+    }
+  ]
+}

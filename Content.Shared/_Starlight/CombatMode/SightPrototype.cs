@@ -23,10 +23,23 @@ public sealed partial class SightPrototype : IPrototype
 
     [DataField(required: true)]
     public SpriteSpecifier Sprite = SpriteSpecifier.Invalid;
+
+    [DataField]
+    public bool ShowCursor = true;
+
+    [DataField]
+    public Color MainColor { private set; get; } = Color.White.WithAlpha(0.3f);
+
+    [DataField]
+    public Color StrokeColor { private set; get; } = Color.Black.WithAlpha(0.5f);
+
+    [DataField]
+    public float Scale = 0.6f;
 }
 
 public enum SightType : int
 {
     Ranged,
     Melee,
+    Universal,
 }

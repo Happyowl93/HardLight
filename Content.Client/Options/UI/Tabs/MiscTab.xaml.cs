@@ -45,10 +45,19 @@ public sealed partial class MiscTab : Control
             var option = new OptionDropDownCVar<string>.ValueOption(sight.ID, Loc.GetString(sight.Name));
             if (sight.Bolt)
                 continue;
-            if (sight.SightType == SightType.Ranged)
-                rangedSights.Add(option);
-            else
-                meleeSights.Add(option);
+            switch (sight.SightType)
+            {
+                case SightType.Ranged:
+                    rangedSights.Add(option);
+                    break;
+                case SightType.Melee:
+                    meleeSights.Add(option);
+                    break;
+                case SightType.Universal:
+                    meleeSights.Add(option);
+                    rangedSights.Add(option);
+                    break;
+            }
         }
 
         // Channel can be null in replays so.

@@ -1,5 +1,6 @@
 using Content.Client.Hands.Systems;
 using Content.Client.NPC.HTN;
+using Content.Shared._Starlight.CombatMode;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
 using Content.Shared.Starlight.CCVar;
@@ -19,6 +20,7 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
     [Dependency] private readonly IInputManager _inputManager = default!;
     [Dependency] private readonly IEyeManager _eye = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IClyde _clyde = default!;
 
     /// <summary>
     /// Raised whenever combat mode changes.
@@ -37,7 +39,7 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
 
         Subs.CVar(_cfg, CCVars.CombatModeIndicatorsPointShow, OnShowCombatIndicatorsChanged, true);
         Subs.CVar(_cfg, StarlightCCVars.RangedSight, OnRangedSightChanged, true);
-        Subs.CVar(_cfg, StarlightCCVars.RangedSight, OnMeleeSightChanged, true);
+        Subs.CVar(_cfg, StarlightCCVars.MeleeSight, OnMeleeSightChanged, true);
     }
 
     private void OnHandleState(EntityUid uid, CombatModeComponent component, ref AfterAutoHandleStateEvent args)
@@ -81,6 +83,8 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
         }
 
         var inCombatMode = IsInCombatMode();
+        if (!inCombatMode)
+            _clyde.SetCursor(null);
         LocalPlayerCombatModeUpdated?.Invoke(inCombatMode);
     }
 
@@ -94,14 +98,17 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
 
     private void OnMeleeSightChanged(string sight)
     {
-
+        _meleeSight = sight;
+        var state = _lastState;
+        OnShowCombatIndicatorsChanged(false);
+        OnShowCombatIndicatorsChanged(state);
     }
 
     private void OnShowCombatIndicatorsChanged(bool isShow)
     {
         if (isShow != _lastState)
             _lastState = isShow;
-        if (_lastState)
+        if (_lastState && _prototypeManager.TryIndex<SightPrototype>(_rangedSight, out var ranged) && _prototypeManager.TryIndex<SightPrototype>(_meleeSight, out var melee))
         {
             _overlayManager.AddOverlay(new CombatModeIndicatorsOverlay(
                 _inputManager,
@@ -110,8 +117,9 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
                 _eye,
                 this,
                 EntityManager.System<HandsSystem>(),
-                _rangedSight,
-                _meleeSight));
+                _clyde,
+                ranged,
+                melee));
         }
         else if (_overlayManager.HasOverlay<CombatModeIndicatorsOverlay>())
         {

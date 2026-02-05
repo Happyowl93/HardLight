@@ -27,7 +27,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
-    lifetime: 30
+    lifetime: 10
   - type: Sprite
     drawdepth: Effects
     sprite: _Starlight/Effects/bullet_hole.rsi

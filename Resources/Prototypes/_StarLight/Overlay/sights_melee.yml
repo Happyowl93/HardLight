@@ -1,6 +1,17 @@
 - type: sight
-  id: MeleeSight
-  name: Default
+  id: ArrowsSight
+  name: Arrows
+  sightType: Melee
+  showCursor: false
   sprite:
-    sprite: Interface/Misc/crosshair_pointers.rsi
-    state: melee_sight
+    sprite: _Starlight/Interface/Misc/crosshair_pointers.rsi
+    state: arrows
+
+- type: sight
+  id: ArrowsDotSight
+  name: "[Dot] Arrows"
+  sightType: Melee
+  showCursor: false
+  sprite:
+    sprite: _Starlight/Interface/Misc/crosshair_pointers.rsi
+    state: arrows_dot
