@@ -29249,5 +29249,12 @@ Entries:
   id: 274200
   time: '2026-02-05T01:54:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2742
+- author: mikeysaurus
+  changes:
+  - message: Fixed what role Staff title is linked to.
+    type: Fix
+  id: 315200
+  time: '2026-02-05T05:33:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3152
 Order: -1
 
