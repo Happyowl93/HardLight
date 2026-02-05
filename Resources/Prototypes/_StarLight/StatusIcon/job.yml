@@ -64,11 +64,35 @@
 
 - type: jobIcon
   parent: JobIcon
+  id: JobIconDutyOfficer
+  icon:
+    sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
+    state: DutyOfficer
+  jobName: job-name-dutyofficer
+
+- type: jobIcon
+  parent: JobIcon
   id: JobIconCentComm
   icon:
     sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
     state: CentComm
   jobName: job-name-centcomm
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDecimus
+  icon:
+    sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
+    state: Decimus
+  jobName: job-name-Decimus
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNTSF
+  icon:
+    sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
+    state: NTSF
+  jobName: job-name-NTSF
 
 - type: jobIcon
   parent: JobIcon
@@ -157,3 +181,27 @@
     sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
     state: SyndicateJanitor
   jobName: job-name-Syndicate-Janitor
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSoviet
+  icon:
+    sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
+    state: Soviet
+  jobName: job-name-Soviet
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTSF
+  icon:
+    sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
+    state: TSF
+  jobName: job-name-TSF
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNanotrasenCareerTrainer
+  icon:
+    sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
+    state: NanotrasenCareerTrainer
+  jobName: job-name-nct
