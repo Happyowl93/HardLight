@@ -29267,5 +29267,16 @@ Entries:
   id: 315000
   time: '2026-02-05T06:04:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3150
+- author: Conflee
+  changes:
+  - message: Added many more Ion ad-lib options, some just expanding on the lists,
+      some are starlight specific like BSO, NTR, Crab Juice, etc.
+    type: Add
+  - message: Added Comitas Systems, JONK Corporation, and Syndicate High Command to
+      potential round start traitor corporation flavor text.
+    type: Add
+  id: 314600
+  time: '2026-02-05T06:10:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3146
 Order: -1
 
