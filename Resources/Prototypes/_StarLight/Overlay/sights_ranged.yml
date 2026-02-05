@@ -1,0 +1,17 @@
+- type: sight
+  id: GunSight
+  name: Default
+  sightType: Ranged
+  boltVariant: GunSightBolt
+  sprite:
+    sprite: Interface/Misc/crosshair_pointers.rsi
+    state: gun_sight
+
+- type: sight
+  id: GunSightBolt
+  name: Default
+  sightType: Ranged
+  bolt: true
+  sprite:
+    sprite: Interface/Misc/crosshair_pointers.rsi
+    state: gun_bolt_sight

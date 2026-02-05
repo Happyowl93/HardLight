@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using Content.Client._Starlight.CombatMode;
 using Content.Client.UserInterface.Screens;
+using Content.Shared._Starlight.CombatMode;
 using Content.Shared.CCVar;
 using Content.Shared.HUD;
 using Content.Shared.Starlight.CCVar;
@@ -43,7 +43,9 @@ public sealed partial class MiscTab : Control
         foreach (var sight in _prototypeManager.EnumeratePrototypes<SightPrototype>())
         {
             var option = new OptionDropDownCVar<string>.ValueOption(sight.ID, Loc.GetString(sight.Name));
-            if (sight.Type == SightType.Ranged && !sight.Bolt)
+            if (sight.Bolt)
+                continue;
+            if (sight.SightType == SightType.Ranged)
                 rangedSights.Add(option);
             else
                 meleeSights.Add(option);

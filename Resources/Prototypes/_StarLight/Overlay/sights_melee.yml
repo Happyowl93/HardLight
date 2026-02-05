@@ -1,0 +1,6 @@
+- type: sight
+  id: MeleeSight
+  name: Default
+  sprite:
+    sprite: Interface/Misc/crosshair_pointers.rsi
+    state: melee_sight

@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Client._Starlight.CombatMode;
+using Content.Shared._Starlight.CombatMode;
 using Content.Client.Hands.Systems;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Client.GameObjects;
@@ -8,8 +8,6 @@ using Robust.Client.Input;
 using Robust.Client.UserInterface;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Exceptions;
-using Robust.Shared.Utility;
 
 namespace Content.Client.CombatMode;
 

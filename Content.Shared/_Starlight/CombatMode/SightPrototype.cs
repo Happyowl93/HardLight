@@ -1,9 +1,9 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Client._Starlight.CombatMode;
+namespace Content.Shared._Starlight.CombatMode;
 
-[Prototype("Sight")]
+[Prototype("sight")]
 public sealed partial class SightPrototype : IPrototype
 {
     [IdDataField]
@@ -13,7 +13,7 @@ public sealed partial class SightPrototype : IPrototype
     public string Name { get; private set; } = string.Empty;
 
     [DataField]
-    public SightType Type = SightType.Melee;
+    public SightType SightType = SightType.Melee;
 
     [DataField]
     public string? BoltVariant = null;
