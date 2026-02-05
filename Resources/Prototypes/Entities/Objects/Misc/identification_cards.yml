@@ -70,10 +70,10 @@
     - WhitelistChameleonIdCard
     - HighRiskItem
   - type: StealTarget
-    stealGroup: CaptainIDCard
+    stealGroup: [CaptainIDCard, IDCard] # Starlight. It's technically an ID card.
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, BaseGrandTheftContraband]
   id: HoPIDCard
   name: head of personnel ID card
   components:
@@ -91,6 +91,8 @@
     heldPrefix: silver
   - type: PresetIdCard
     job: HeadOfPersonnel
+  - type: StealTarget # Starlight
+    stealGroup: [HoPIDCard, IDCard] # Starlight. It's technically an ID card.
 
 - type: entity
   parent: IDCardStandard

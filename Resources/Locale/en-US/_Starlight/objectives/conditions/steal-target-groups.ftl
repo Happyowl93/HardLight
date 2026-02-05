@@ -16,16 +16,14 @@ steal-target-groups-clothing-outer-hardsuit-cap = captain's armored spacesuit
 steal-target-groups-clothing-outer-hardsuit-ntr = nanotrasen representative's hardsuit
 steal-target-groups-clothing-outer-hardsuit-bso = blue shield officer's hardsuit
 steal-target-groups-clothing-shoes-boots-mag-bso = blue shield officer's magboots
-steal-target-groups-mining-shuttle-console-circuitboard = mining shuttle console board
-steal-target-groups-salvage-shuttle-console-circuitboard = salvage shuttle console board
 steal-target-groups-encryption-key-expedition = expedition encryption key
-steal-target-groups-communications-console-circuitboard = communications computer board
 steal-target-groups-hopboard = bureaucratic digiboard
-
-# Thief single items
 steal-target-groups-proto5x = Head Of Security's Proto-5x
 steal-target-groups-weapon-energy-shot-gun = energy shotgun
-steal-target-groups-brigmed-bedsheet = brigmedic's strange bedsheet
+steal-target-groups-weapon-pistol-sp8t = blueshield officer's sp8t
+
+# Thief single items
+steal-target-groups-brigmed-bedsheet = strange brigmedic's bedsheet
 
 steal-target-groups-firing-pin = firing pin
 steal-target-groups-firing-pin-advanced-laser = prototype laser crystal
@@ -34,15 +32,21 @@ steal-target-groups-firing-pin-smart-lmg = smartgun bolt assembly
 steal-target-groups-security-tech-fab-circuitboard = security techfab machine board
 steal-target-groups-log-probe-cartridge = log probe cartridge
 steal-target-groups-med-tek-cartridge = med tek cartridge
+steal-target-groups-astro-nav-cartridge = astro nav cartridge
 
-steal-target-groups-brigmedic-glasses = brigmedic glasses
+steal-target-groups-mining-shuttle-console-circuitboard = mining shuttle console board
+steal-target-groups-salvage-shuttle-console-circuitboard = salvage shuttle console board
+steal-target-groups-communications-computer-circuitboard = communications computer board
 
 steal-target-groups-clothing-headset-alt-command = command over-ear headset
+steal-target-groups-ptech-circuitboard = PTech circuitboard
 
 # Thief Collection
 steal-target-groups-handheld-monitors = handheld monitors, any type
 steal-target-groups-galoshes = galoshes
 steal-target-groups-rcd-rpd = RCDs and RPDs
+steal-target-groups-misc-sunglasses = beer goggles, musician shades, or any security glasses
+steal-target-groups-rare-sunglasses = administration, skill, blueshield, brigmedic, or centcomm glasses
 
 # docs
 steal-target-groups-corporate-documents = classified corporate secrets documents

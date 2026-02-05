@@ -183,6 +183,8 @@
         Steel: 5
         Manipulator: 1
         Glass: 2
+    - type: StealTarget
+      stealGroup: PTechFabCircuitboard
 
 - type: entity
   id: VendingMachineChefvendCircuitboard

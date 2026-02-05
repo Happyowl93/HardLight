@@ -263,12 +263,12 @@
     sprite: Objects/Misc/module.rsi
     state: cpuboard
 
-- type: stealTargetGroup
-  id: ClothingEyesHudBeer
-  name: steal-target-groups-clothing-eyes-hud-beer
-  sprite:
-    sprite: Clothing/Eyes/Hud/beergoggles.rsi
-    state: icon
+#- type: stealTargetGroup  #Starlight disabled
+#  id: ClothingEyesHudBeer #Starlight disabled
+#  name: steal-target-groups-clothing-eyes-hud-beer #Starlight disabled
+#  sprite: #Starlight disabled
+#    sprite: Clothing/Eyes/Hud/beergoggles.rsi #Starlight disabled
+#    state: icon #Starlight disabled
 
 - type: stealTargetGroup
   id: Bible

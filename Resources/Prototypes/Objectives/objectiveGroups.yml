@@ -28,11 +28,9 @@
     CMOLicenseStealObjective: 1 #Starlight Unique Targets
     EnergyShotgunStealObjective: 0.5 #Starlight re-targeted
     Proto5xStealObjective: 0.5 #Starlight Unique Targets
-    HOPIDStealObjective: 1 # HoP's more exposed, but there's less copies of this ID usually
+    HoPIDStealObjective: 1 # HoP's more exposed, but there's less copies of this ID usually
     PinpointerNuclearStealObjective: 1 # Fun if paired with the nuke disk objective
     AccessConfiguratorStealObjective: 1 # HoP and CE
-    BrigMedStrangeBedsheetStealObjective: 1 # Was intended to be a steal target, but never was. I'll at least implement this in memory...
-    ClothingEyesGlassesBrigmedicStealObjective: 1 # Brigmed. Can't be crafted, after all... Always spawns in Brigmed's locker, so guaranteed to exist
     EncryptionKeyExpeditionStealObjective: 0.5 # QM/Salv Lead. Not that interesting, so low.
     NTRepBriefcaseSecureStealObjective: 0.75 # Usually in the bridge.
     CMOHardsuitStealObjective: 1 # I'm so sorry CMO
@@ -47,6 +45,7 @@
     NTRepBriefcaseSecureStealObjective: 0.75 # Same as most NT Rep stuff.
     BSOHardsuitStealObjective: 0.75 # Same as the above...
     BSOMagbootsStealObjective: 0.75 # Easier to hide, at least.
+    BSOPistolSP8TStealObjective: 0.75 # Blue shield kinetic gun. Added in favor of the multiphase, since the multiphase doesn't spawn on the map.
     # Starlight end
     
 
@@ -98,8 +97,10 @@
     IDCardsStealCollectionObjective: 1
     LAMPStealCollectionObjective: 0.1                   #only for moth, weight decreased cause boring and insanely easy
     CrewMonitorStealCollectionObjective: 0.5 # Starlight; Paramedic, BSO, Brigmed, CMO handheld monitors, 2-3. It's kinda easy if there's 2 paramed lockers, so that's why it's low.
-    GaloshesStealCollectionObjective: 0.25 # Starlight. Kinda easy, but they're technically contra... 2-3.
-    RCDRPDStealCollectionObjective: 0.25 # Starlight. RCDs & RPDs. You could just buy them, or if you're an Engi spawn, this is a free win, so low priority. 7-12, since there's 2 items that satisfy this, and if you want to just use credits on this, you're taking a huge expense.
+    GaloshesStealCollectionObjective: 0.3 # Starlight. Kinda easy, but they're technically contra... 2-3.
+    RCDRPDStealCollectionObjective: 0.3 # Starlight. RCDs & RPDs. You could just buy them, so low priority. 7-12, since there's 2 items that satisfy this, and if you want to just use credits on this, you're taking a huge expense. (Engineering department does not get this goal)
+    MiscSunglassesStealCollectionObjective: 0.75 # Starlight. Musician, Beer Goggles, and all variants of Security sunglasses (Officer, Brigmed, Detective). A replacement to the beer goggles objective. 4-8.
+    RareSunglassesStealCollectionObjective: 0.5 # Starlight. Administration, Skill, BSO, Brigmed, and, if you somehow find them on a salvage... CentComm. 3-5. Not detective, since det glasses can be used on other sec roles.
 
 - type: weightedRandom
   id: ThiefObjectiveGroupItem
@@ -119,8 +120,12 @@
     LogProbeCartridgeStealObjective: 1 # Detective
     MedTekCartridgeStealObjective: 1 # CMO, yet again
     SecurityTechFabCircuitboardStealObjective: 1 # sec
+    PTechCircuitboardStealObjective # hop
     CommsComputerCircuitboardStealObjective: 1 # bridge/tech vault
     ClothingHeadsetAltCommandStealObjective: 1 # captain/nt rep
+    BrigmedicStrangeBedsheetStealObjective: 1 # Was intended to be a steal target, but never was. I'll at least implement this in memory...
+    SalvageShuttleCircuitboardStealObjective: 1 # technically qm
+    MiningShuttleCircuitboardStealObjective: 1 # ditto
     # Starlight-end
     ClothingOuterHardsuitVoidParamedStealObjective: 1   #med
     MedicalTechFabCircuitboardStealObjective: 1
@@ -128,7 +133,7 @@
     AmePartFlatpackStealObjective: 1
     ExpeditionsCircuitboardStealObjective: 1            #sup
     CargoShuttleCircuitboardStealObjective: 1
-    ClothingEyesHudBeerStealObjective: 0.5              #srv, beer goggles less common cause its so easy
+    #ClothingEyesHudBeerStealObjective: 0.5              #srv, beer goggles less common cause its so easy # Starlight. Disabled in favor of a slight harder collection objective.
     BibleStealObjective: 1
     ClothingNeckGoldmedalStealObjective: 1              #other
     ClothingNeckClownmedalStealObjective: 0.5

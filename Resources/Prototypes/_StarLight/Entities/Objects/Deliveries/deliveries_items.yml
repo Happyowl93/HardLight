@@ -52,28 +52,35 @@
         - MailStealCollectionObjective
         - FigurineStealCollectionObjective
         - IDCardsStealCollectionObjective
-        - CrewMonitorStealCollectionObjective # remove comment when implemented; CMO, Paramed, BSO, Brigmed
         - LAMPStealCollectionObjective
-        - GaloshesStealCollectionObjective # remove comment when implemented, 2-3
-        - RCDRPDStealCollectionObjective # remove comment when implemented, 7-12
+        - CrewMonitorStealCollectionObjective # CMO, Paramed, BSO, Brigmed, 2-3
+        - GaloshesStealCollectionObjective # 2-3
+        - RCDRPDStealCollectionObjective # 7-12
+        - MiscSunglassesStealCollectionObjective # Musician, Beer Goggles, and all types of Security sunglasses.
+        - RareSunglassesStealCollectionObjective # Administrative, Skill, BSO, Brigmed, and in theory CentComm.
         # thief item objectives
         - ForensicScannerStealObjective
         - FlippoEngravedLighterStealObjective
         - ClothingHeadHatWardenStealObjective
         - WantedListCartridgeStealObjective
-        - LogProbeCartridgeStealObjective # remove comment when implemented
-        - MedTekCartridgeStealObjective # remove comment when implemented
+        - LogProbeCartridgeStealObjective
+        - MedTekCartridgeStealObjective
+        - AstroNavCartridgeStealObjective
         - ClothingOuterHardsuitVoidParamedStealObjective
         - MedicalTechFabCircuitboardStealObjective
-        - SecurityTechFabCircuitboardStealObjective # remove comment when implemented
+        - SecurityTechFabCircuitboardStealObjective
+        - PTechCircuitboardStealObjective
         - ClothingHeadsetAltMedicalStealObjective
-        - ClothingHeadsetAltCommandStealObjective # remove comment when implemented, Captain, NT Rep...
+        - ClothingHeadsetAltCommandStealObjective # Captain, NT Rep...
         - FireAxeStealObjective
         - AmePartFlatpackStealObjective
         - ExpeditionsCircuitboardStealObjective
+        - SalvageShuttleConsoleCircuitboardStealObjective
+        - MiningShuttleConsoleCircuitboardStealObjective
         - CargoShuttleCircuitboardStealObjective
-        - CommsComputerCircuitboardStealObjective # remove comment when implemented
-        - ClothingEyesHudBeerStealObjective
+        - CommsComputerCircuitboardStealObjective
+        - BrigmedicStrangeBedsheetStealObjective
+        #- ClothingEyesHudBeerStealObjective Removed in favor of the misc sunglasses collection objective.
         - BibleStealObjective
         - ClothingNeckGoldmedalStealObjective
         - ClothingNeckClownmedalStealObjective
@@ -102,7 +109,7 @@
         - EscapeThiefShuttleObjective
         # traitor steal objectives
         - CaptainIDStealObjective
-        - HOPIDStealObjective # remove comment when implemented
+        - HoPIDStealObjective # remove comment when implemented
         - CMOHyposprayStealObjective
         - CMOCrewMonitorStealObjective
         - NukeDiskStealObjective
@@ -111,8 +118,6 @@
         - CMOLicenseStealObjective
         - PinpointerNuclearStealObjective # remove comment when implemented
         - AccessConfiguratorStealObjective # remove comment when implemented
-        - BrigMedStrangeBedsheetStealObjective # remove comment when implemented
-        - ClothingEyesGlassesBrigmedicStealObjective # remove comment when implemented
         - EncryptionKeyExpeditionStealObjective # remove comment when implemented
         - NTRepBriefcaseSecureStealObjective # NT Rep's briefcase
         # no ian meat because you are a pacifist and need them alive
@@ -124,6 +129,7 @@
         - EnergyMagnumStealObjective
         - EnergyShotgunStealObjective
         - Proto5xStealObjective
+        - BSOPistolSP8TStealObjective # remove comment when implemented
         # Limited Hardsuit objectives
         - RDHardsuitStealObjective
         - CMOHardsuitStealObjective # remove comment when implemented

@@ -40,14 +40,14 @@
   name: steal-target-groups-mining-shuttle-console-circuitboard
   sprite:
     sprite: Objects/Misc/module.rsi
-    state: cpuboard
+    state: cpu_supply
 
 - type: stealTargetGroup
   id: SalvageShuttleConsoleCircuitboard
   name: steal-target-groups-salvage-shuttle-console-circuitboard
   sprite:
     sprite: Objects/Misc/module.rsi
-    state: cpuboard
+    state: cpu_supply
 
 - type: stealTargetGroup
   id: HoPBoardSteal
@@ -93,3 +93,95 @@
   sprite:
     sprite: _Starlight/Objects/Weapons/Guns/Pins/firing_pins.rsi
     state: lmg
+
+- type: stealTargetGroup
+  id: LogProbeCartridge
+  name: steal-target-groups-log-probe-cartridge
+  sprite:
+    sprite: Objects/Devices/cartridge.rsi
+    state: cart-log
+
+- type: stealTargetGroup
+  id: MedTekCartridge
+  name: steal-target-groups-med-tek-cartridge
+  sprite:
+    sprite: Objects/Devices/cartridge.rsi
+    state: cart-med
+
+- type: stealTargetGroup
+  id: AstroNavCartridge
+  name: steal-target-groups-astro-nav-cartridge
+  sprite:
+    sprite: Objects/Devices/cartridge.rsi
+    state: cart-nav
+
+- type: stealTargetGroup
+  id: SecurityTechFabCircuitboard
+  name: steal-target-groups-security-tech-fab-circuitboard
+  sprite:
+    sprite: Objects/Misc/module.rsi
+    state: security
+
+- type: stealTargetGroup
+  id: PTechFabCircuitboard
+  name: steal-target-groups-ptech-circuitboard
+  sprite:
+    sprite: Objects/Misc/module.rsi
+    state: command
+
+- type: stealTargetGroup
+  id: ClothingHeadsetAltCommand
+  name: steal-target-groups-clothing-headset-alt-command
+  sprite:
+    sprite: Clothing/Ears/Headsets/command.rsi
+    state: icon_alt
+
+- type: stealTargetGroup
+  id: CommsComputerCircuitboard
+  name: steal-target-groups-communications-computer-circuitboard
+  sprite:
+    sprite: Objects/Misc/module.rsi
+    state: cpu_command
+
+- type: stealTargetGroup
+  id: BrigmedicStrangeBedsheet
+  name: steal-target-groups-strange-brigmed-bedsheet
+  sprite:
+    sprite: _Starlight/Objects/Misc/bedsheets.rsi
+    state: sheetbrigmedicstrange
+
+# Thief Collection
+- type: stealTargetGroup
+  id: CrewMonitorCollection
+  name: steal-target-groups-handheld-monitors
+  sprite:
+    sprite: _Starlight/Objects/Misc/monitorcollection.rsi
+    state: icon
+
+- type: stealTargetGroup
+  id: GaloshesCollection
+  name: steal-target-groups-galoshes
+  sprite:
+    sprite: Clothing/Shoes/Specific/galoshes.rsi
+    state: icon
+
+- type: stealTargetGroup
+  id: RCDRPDCollection
+  name: steal-target-groups-rcd-rpd
+  sprite:
+    sprite: _Starlight/Objects/Misc/rcdrpdcollection.rsi
+    state: icon
+
+- type: stealTargetGroup
+  id: MiscGlassesCollection
+  name: steal-target-groups-misc-sunglasses
+  sprite:
+    sprite: _Starlight/Objects/Misc/miscglasses.rsi
+    state: icon
+
+- type: stealTargetGroup
+  id: RareGlassesCollection
+  name: steal-target-groups-rare-sunglasses
+  sprite:
+    sprite: _Starlight/Objects/Misc/rareglasses.rsi
+    state: icon
