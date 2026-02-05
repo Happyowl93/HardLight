@@ -59,25 +59,6 @@
 
 - type: entity
   parent: [BaseThiefStealObjective, BaseThiefSecurityStealObjective]
-  id: HOSWeaponStealObjective
-  components:
-  - type: StealCondition
-    stealGroup: HOSWeapon
-  - type: Objective
-    difficulty: 1.5 # Good luck
-
-- type: entity
-  parent: [BaseThiefStealObjective, BaseThiefSecurityStealObjective]
-  id: EnergyShotgunStealObjective
-  components:
-  - type: StealCondition
-    stealGroup: WeaponEnergyShotgun
-  - type: Objective
-    difficulty: 1
-
-
-- type: entity
-  parent: [BaseThiefStealObjective, BaseThiefSecurityStealObjective]
   id: FiringPinStealObjective
   components:
   - type: StealCondition
@@ -280,19 +261,19 @@
   - type: StealCondition
     stealGroup: RareGlassesCollection
     minCollectionSize: 3
-    maxCollectionSize: 5
+    maxCollectionSize: 4
   - type: Objective
-    difficulty: 1
+    difficulty: 1.4 # Hard to get these...
 
 
 - type: entity
   parent: [BaseThiefObjective, BaseLivingObjective]
-  id: MasterThiefObjective
+  id: EscapeMasterThiefObjective
   name: Become the greatest thief, and steal anything you percieve as having value.
-  description: Just make sure to get out alive.
+  description: Just make sure to get out alive and free.
   components:
   - type: Objective
-    difficulty: 0.7 # Gives you more freedom, so you need less goals.
+    difficulty: 0.9 # Gives you more freedom, so you need less goals.
     icon:
       sprite: Structures/Furniture/chairs.rsi
       state: shuttle

@@ -107,7 +107,7 @@
         - ShivaStealObjective
         - TropicoStealObjective
         # thief escape objective
-        - EscapeThiefShuttleObjective
+        - EscapeMasterThiefObjective # Starlight, replaced with master thief.
         # traitor steal objectives
         - CaptainIDStealObjective
         - HOPIDStealObjective

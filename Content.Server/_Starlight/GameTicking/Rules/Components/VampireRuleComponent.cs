@@ -29,6 +29,15 @@ public sealed partial class VampireRuleComponent : Component
         "ClipboardVampireStealObjective",
         "CaptainIDVampireStealObjective",
         "CaptainJetpackVampireStealObjective",
-        "CaptainGunVampireStealObjective"
+        "CaptainGunVampireStealObjective",
+        "VampireCMOHardsuitStealObjective",
+        "VampireCEHardsuitStealObjective",
+        "VampireHOSHardsuitStealObjective",
+        "VampireQMHardsuitStealObjective",
+        "VampireCaptainHardsuitStealObjective",
+        "VampireNTRepHardsuitStealObjective",
+        "VampireBSOHardsuitStealObjective",
+        "VampireBSOWeaponStealObjective"
+
     };
 }

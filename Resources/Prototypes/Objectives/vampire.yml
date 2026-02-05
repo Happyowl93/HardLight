@@ -82,14 +82,14 @@
     jobs: [ SecurityOfficer, HeadOfSecurity, Detective, Warden, Brigmedic, DutyOfficer, SecurityCadet ] # Too easy.
   - type: StealCondition
     stealGroup: HOSWeapon # Starlight, HoS weapon variants
-    owner: job-name-hos
+#    owner: job-name-hos Starlight, defined in ftl.
 
 - type: entity
   parent: BaseVampireStealObjective
   id: MagbootsVampireStealObjective
   components:
   - type: NotJobRequirement
-    jobs: [ ChiefEngineer, StationEngineer, AtmosphericTechnician, TechnicalAssistant ] # Too easy.
+    jobs: [ ChiefEngineer, StationEngineer, AtmosphericTechnician, TechnicalAssistant ] # Starlight. Too easy.
   - type: StealCondition
     stealGroup: ClothingShoesBootsMagAdv
     owner: job-name-ce
@@ -99,7 +99,7 @@
   id: ClipboardVampireStealObjective
   components:
   - type: NotJobRequirement
-    jobs: [ Quartermaster, CargoTechnician, MailTech, MiningSpecialist, SalvageSpecialist, SalvageLead ] # Too easy.
+    jobs: [ Quartermaster, CargoTechnician, MailTech, MiningSpecialist, SalvageSpecialist, SalvageLead ] # Starlight. Too easy.
   - type: StealCondition
     stealGroup: BoxFolderQmClipboard
     owner: job-name-qm

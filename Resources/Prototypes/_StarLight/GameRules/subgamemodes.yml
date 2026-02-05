@@ -28,9 +28,9 @@
   id: ThiefLess
   components:
   - type: ThiefRule
-  - type: AntagObjectives
-    objectives:
-    - EscapeThiefShuttleObjective
+#  - type: AntagObjectives # Starlight
+#    objectives: # Starlight. 
+#    - EscapeThiefShuttleObjective # Starlight. Master thief alt objective chance
   - type: AntagRandomObjectives
     sets:
     - groups: ThiefBigObjectiveGroups
@@ -38,7 +38,10 @@
       maxPicks: 1
     - groups: ThiefObjectiveGroups
       maxPicks: 10
-    maxDifficulty: 2.5
+    - groups: ThiefObjectiveGroupEscape # Starlight
+      prob: 10 # Starlight, they *need* this objective.
+      maxPicks: 1 # Starlight
+    maxDifficulty: 3 # Starlight. Ultrapop + ton of new targets means some objectives become really easy in the chaos.
   - type: AntagSelection
     agentName: thief-round-end-agent-name
     selectionTime: IntraPlayerSpawn

@@ -18,9 +18,9 @@ steal-target-groups-clothing-outer-hardsuit-bso = blue shield officer's hardsuit
 steal-target-groups-clothing-shoes-boots-mag-bso = blue shield officer's magboots
 steal-target-groups-encryption-key-salvage = salvage encryption key
 steal-target-groups-hopboard = bureaucratic digiboard
-steal-target-groups-hos-weapon = Head of Security's Proto-5x or WT550
+steal-target-groups-hos-weapon = head of security's Proto-5x or WT550
 steal-target-groups-weapon-energy-shot-gun = energy shotgun
-steal-target-groups-bso-weapon = blueshield officer's X-01 multiphase energy gun or sp8t
+steal-target-groups-bso-weapon = blue shield officer's X-01 multiphase energy gun or sp8t
 
 # Thief single items
 steal-target-groups-strange-brigmed-bedsheet = strange brigmedic's bedsheet

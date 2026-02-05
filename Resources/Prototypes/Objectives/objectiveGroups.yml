@@ -27,6 +27,7 @@
     RDDiplomaStealObjective: 1 #Starlight Unique Targets
     CMOLicenseStealObjective: 1 #Starlight Unique Targets
     EnergyShotgunStealObjective: 0.5 #Starlight re-targeted
+    EnergyMagnumStealObjective: 0.5 # Starlight, was missing for some reason
     HOSWeaponStealObjective: 0.5 #Starlight Unique Targets
     HOPIDStealObjective: 1 # HoP's more exposed, but there's less copies of this ID usually
     PinpointerNuclearStealObjective: 1 # Fun if paired with the nuke disk objective
@@ -112,7 +113,7 @@
     ClothingHeadHatWardenStealObjective: 1
     WantedListCartridgeStealObjective: 1
     # Starlight-start
-    HOSWeaponStealObjective: 1                # HoS Gun variants
+    #HOSWeaponStealObjective: 1                # HoS Gun variants, Traitor target, not thief
     FiringPinStealObjective: 1
     FiringPinAdvancedLaserStealObjective: 1
     FiringPinSmartLMGStealObjective: 1
@@ -168,6 +169,6 @@
   id: ThiefObjectiveGroupEscape
   weights:
     EscapeThiefShuttleObjective: 1
-    MasterThiefObjective: 1
+    EscapeMasterThiefObjective: 1 # Starlight
 
 #Crew, wizard, when you code it...
