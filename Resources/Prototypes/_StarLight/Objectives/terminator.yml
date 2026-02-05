@@ -19,6 +19,5 @@
   - type: PickSpecificPerson
   - type: KillPersonCondition
     requireDead: true
-    requireMaroon: true
   - type: TargetObjective
     title: objective-condition-kill-head-title

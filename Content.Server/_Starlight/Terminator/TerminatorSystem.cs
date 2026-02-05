@@ -1,8 +1,6 @@
 using Content.Server._Starlight.GameTicking.Rules.Components;
 using Content.Server.GameTicking;
-using Content.Server.Ghost.Roles.Events;
 using Content.Server.Mind;
-using Content.Shared._Starlight.Terminator;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Starlight.Terminator;
@@ -13,18 +11,6 @@ public sealed partial class TerminatorSystem : EntitySystem
     [Dependency] private readonly GameTicker _game = default!;
 
     private EntProtoId SpawnRulePrototype = "TerminatorSpawn";
-
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<TerminatorComponent, GhostRoleSpawnerUsedEvent>(OnSpawned);
-    }
-
-    private void OnSpawned(EntityUid uid, TerminatorComponent terminator, GhostRoleSpawnerUsedEvent args)
-    {
-        return;
-    }
 
     public bool CreateTerminator(EntityUid target)
     {
