@@ -29241,5 +29241,13 @@ Entries:
   id: 312300
   time: '2026-02-04T18:18:46.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3123
+- author: CrazyPhantom
+  changes:
+  - message: The "AAC tablet", a device that allows you to press buttons with short
+      phrases on them to make the tablet say it aloud.
+    type: Add
+  id: 274200
+  time: '2026-02-05T01:54:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2742
 Order: -1
 
