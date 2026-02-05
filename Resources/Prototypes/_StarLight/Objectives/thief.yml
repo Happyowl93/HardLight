@@ -189,6 +189,15 @@
     difficulty: 1.5 # There's an extra in cap's locker, or you can just rob the bridge.
 
 - type: entity
+  parent: [BaseThiefStealObjective, BaseThiefCommandStealObjective]
+  id: IDCardComputerCircuitboardStealObjective
+  components:
+  - type: StealCondition
+    stealGroup: IDCardComputerCircuitboard
+  - type: Objective
+    difficulty: 1.2 # There's an extra in hop's locker, or you can just rob the one from hop's front desk.
+
+- type: entity
   parent: [BaseThiefStealObjective, BaseThiefSecurityStealObjective]
   id: BrigmedicStrangeBedsheetStealObjective
   components:

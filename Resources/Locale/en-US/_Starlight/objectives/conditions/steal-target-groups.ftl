@@ -38,6 +38,7 @@ steal-target-groups-astro-nav-cartridge = astro nav cartridge
 steal-target-groups-mining-shuttle-console-circuitboard = mining shuttle console board
 steal-target-groups-salvage-shuttle-console-circuitboard = salvage shuttle console board
 steal-target-groups-communications-computer-circuitboard = communications computer board
+steal-target-groups-id-card-computer-circuitboard = ID card computer board
 
 steal-target-groups-clothing-headset-alt-command = command over-ear headset
 steal-target-groups-ptech-circuitboard = PTech circuitboard
@@ -47,7 +48,7 @@ steal-target-groups-handheld-monitors = handheld monitors, any type
 steal-target-groups-galoshes = galoshes
 steal-target-groups-rcd-rpd = RCDs and RPDs
 steal-target-groups-misc-sunglasses = beer goggles, musician shades, or any security sunglasses
-steal-target-groups-rare-sunglasses = administration, skill, blueshield, brigmedic, or centcomm sunglasses
+steal-target-groups-rare-sunglasses = administration, skill, blueshield, or brigmedic sunglasses
 
 # docs
 steal-target-groups-corporate-documents = classified corporate secrets documents

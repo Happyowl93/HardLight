@@ -79,6 +79,7 @@
         - MiningShuttleConsoleCircuitboardStealObjective
         - CargoShuttleCircuitboardStealObjective
         - CommsComputerCircuitboardStealObjective
+        - IDCardComputerCircuitboardStealObjective
         - BrigmedicStrangeBedsheetStealObjective
         - ClothingNeckMantleDecoratedSalvagerStealObjective
         #- ClothingEyesHudBeerStealObjective Removed in favor of the misc sunglasses collection objective.

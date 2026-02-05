@@ -285,6 +285,13 @@
     state: cpu_command
 
 - type: stealTargetGroup
+  id: IDCardComputerCircuitboard
+  name: steal-target-groups-id-card-computer-circuitboard
+  sprite:
+    sprite: Objects/Misc/module.rsi
+    state: cpu_command
+
+- type: stealTargetGroup
   id: BrigmedicStrangeBedsheet
   name: steal-target-groups-strange-brigmed-bedsheet
   sprite:

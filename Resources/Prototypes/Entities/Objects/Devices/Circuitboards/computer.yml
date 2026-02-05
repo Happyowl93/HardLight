@@ -433,6 +433,8 @@
     - type: Tag
       tags:
       - HighRiskItem
+    - type: StealTarget # Starlight
+      stealGroup: IDCardComputerCircuitboard # Starlight
 
 - type: entity
   parent: BaseComputerCircuitboard
