@@ -98,3 +98,11 @@
     interfaces:
       enum.BladeServerRackUiKey.Key:
         type: BladeServerRackBoundUserInterface
+
+- type: entity
+  id: BladeServerRackRD
+  parent: BladeServerRack
+  suffix: RD
+  components:
+  - type: AccessReader
+    access: [["ResearchDirector"]]
