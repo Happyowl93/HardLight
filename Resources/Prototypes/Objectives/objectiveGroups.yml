@@ -27,7 +27,7 @@
     RDDiplomaStealObjective: 1 #Starlight Unique Targets
     CMOLicenseStealObjective: 1 #Starlight Unique Targets
     EnergyShotgunStealObjective: 0.5 #Starlight re-targeted
-    Proto5xStealObjective: 0.5 #Starlight Unique Targets
+    HOSWeaponStealObjective: 0.5 #Starlight Unique Targets
     HOPIDStealObjective: 1 # HoP's more exposed, but there's less copies of this ID usually
     PinpointerNuclearStealObjective: 1 # Fun if paired with the nuke disk objective
     AccessConfiguratorStealObjective: 1 # HoP and CE
@@ -44,7 +44,7 @@
     NTRepBriefcaseSecureStealObjective: 0.75 # Same as most NT Rep stuff.
     BSOHardsuitStealObjective: 0.75 # Same as the above...
     BSOMagbootsStealObjective: 0.75 # Easier to hide, at least.
-    BSOPistolSP8TStealObjective: 0.75 # Blue shield kinetic gun. Added in favor of the multiphase, since the multiphase doesn't spawn on the map.
+    BSOWeaponStealObjective: 0.75 # Blue shield weapons. It's easier to steal the SP8T since they don't always carry it around, and guaranteed to exist.
     # Starlight end
     
 
@@ -112,7 +112,7 @@
     ClothingHeadHatWardenStealObjective: 1
     WantedListCartridgeStealObjective: 1
     # Starlight-start
-    Proto5xStealObjective: 1                # HoS Gun
+    HOSWeaponStealObjective: 1                # HoS Gun variants
     FiringPinStealObjective: 1
     FiringPinAdvancedLaserStealObjective: 1
     FiringPinSmartLMGStealObjective: 1

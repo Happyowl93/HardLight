@@ -9,7 +9,8 @@
     "states": [
         {
             "name": "icon",
-			"copyright": "TG Station"
+			"copyright": "TG Station",
+			"license": "CC-BY-SA-3.0"
         }
     ]
 }

@@ -86,7 +86,6 @@
         - BibleStealObjective
         - ClothingNeckGoldmedalStealObjective
         - ClothingNeckClownmedalStealObjective
-        - Proto5xStealObjective
         # thief structure objectives
         - NuclearBombStealObjective
         - FaxMachineCaptainStealObjective
@@ -130,8 +129,8 @@
         - HandTeleporterStealObjective
         - EnergyMagnumStealObjective
         - EnergyShotgunStealObjective
-        - Proto5xStealObjective
-        - BSOPistolSP8TStealObjective
+        - HOSWeaponStealObjective
+        - BSOWeaponStealObjective
         # Limited Hardsuit objectives
         - RDHardsuitStealObjective
         - CMOHardsuitStealObjective

@@ -59,12 +59,12 @@
 
 - type: entity
   parent: [BaseThiefStealObjective, BaseThiefSecurityStealObjective]
-  id: Proto5xStealObjective
+  id: HOSWeaponStealObjective
   components:
   - type: StealCondition
-    stealGroup: Proto5x
+    stealGroup: HOSWeapon
   - type: Objective
-    difficulty: 1
+    difficulty: 1.5 # Good luck
 
 - type: entity
   parent: [BaseThiefStealObjective, BaseThiefSecurityStealObjective]
@@ -292,7 +292,7 @@
   description: Just make sure to get out alive.
   components:
   - type: Objective
-    difficulty: 0.9 # Gives you more freedom, so you need less goals.
+    difficulty: 0.7 # Gives you more freedom, so you need less goals.
     icon:
       sprite: Structures/Furniture/chairs.rsi
       state: shuttle

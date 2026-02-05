@@ -9,7 +9,8 @@
   "states": [
     {
       "name": "icon",
-	  "copyright": "CEV-Eris, Swept"
+	  "copyright": "CEV-Eris, Swept",
+	  "license": "CC-BY-SA-3.0"
     }
   ]
 }
