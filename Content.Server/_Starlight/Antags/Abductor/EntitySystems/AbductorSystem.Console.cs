@@ -77,7 +77,6 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         return TryComp<AbductConditionComponent>(objEntity, out var abduct) ? abduct : null;
     }
 
-
     private void OnVestModeChangeBuiMsg(EntityUid uid, AbductorConsoleComponent component, AbductorVestModeChangeBuiMsg args)
     {
         if (component.Armor != null)
