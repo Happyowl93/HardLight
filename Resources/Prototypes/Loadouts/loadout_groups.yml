@@ -112,6 +112,7 @@
   - ClothingDogTags # SL
   - PersonalAI #SL
   - GoldenPersonalAI #SL
+  - AACTablet # DeltaV
 
 - type: loadoutGroup
   id: Glasses
@@ -1398,13 +1399,6 @@
   loadouts:
   - WardenHead
   - WardenBeret
-
-- type: loadoutGroup
-  id: WardenNeck
-  name: Warden Neck
-  minLimit: 0
-  loadouts:
-  - ClothingNeckWarden #STARLIGHT
 
 - type: loadoutGroup
   id: WardenJumpsuit

@@ -23,7 +23,7 @@ public sealed partial class HitscanBasicRaycastComponent : Component
     [DataField]
     public CollisionGroup CollisionMask = CollisionGroup.Opaque;
 
-    //Starlight Start
+    #region Starlight
     /// <summary>
     /// Maximum distance the raycast will travel before giving up. Reflections will reset the distance traveled
     /// </summary>
@@ -35,5 +35,11 @@ public sealed partial class HitscanBasicRaycastComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<TagPrototype>[] NotArmedCollideWith = ["Wall", "Window", "Airlock", "BulletUnarmedCollide"];
-    //Starlight End
+    
+    /// <summary>
+    /// How much attempts we will make for reflect.
+    /// </summary>
+    [DataField]
+    public int Steps = 3;
+    #endregion
 }
