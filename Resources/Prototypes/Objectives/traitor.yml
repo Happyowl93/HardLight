@@ -253,7 +253,7 @@
   components:
   - type: Objective
     # HoS will have this on them a lot of the time so..
-    difficulty: 3
+    difficulty: 1.5 # Starlight, lowered difficulty since it's a lot easier to deal with Det than HoS
   - type: NotJobRequirement
     jobs: [ Detective ] # Starlight - magnum to detective
   - type: StealCondition
@@ -326,7 +326,7 @@
   id: CaptainIDStealObjective
   components:
   - type: StealCondition
-    stealGroup: [CaptainIDCard, IDCard] # Starlight. I mean, it's technically an ID.
+    stealGroup: CaptainIDCard
 
 - type: entity
   parent: BaseCaptainObjective

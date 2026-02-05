@@ -80,6 +80,7 @@
         - CargoShuttleCircuitboardStealObjective
         - CommsComputerCircuitboardStealObjective
         - BrigmedicStrangeBedsheetStealObjective
+        - ClothingNeckMantleDecoratedSalvagerStealObjective
         #- ClothingEyesHudBeerStealObjective Removed in favor of the misc sunglasses collection objective.
         - BibleStealObjective
         - ClothingNeckGoldmedalStealObjective
@@ -109,17 +110,17 @@
         - EscapeThiefShuttleObjective
         # traitor steal objectives
         - CaptainIDStealObjective
-        - HoPIDStealObjective # remove comment when implemented
+        - HoPIDStealObjective
         - CMOHyposprayStealObjective
         - CMOCrewMonitorStealObjective
         - NukeDiskStealObjective
         - MagbootsStealObjective
         - RDDiplomaStealObjective
         - CMOLicenseStealObjective
-        - PinpointerNuclearStealObjective # remove comment when implemented
-        - AccessConfiguratorStealObjective # remove comment when implemented
-        - EncryptionKeyExpeditionStealObjective # remove comment when implemented
-        - NTRepBriefcaseSecureStealObjective # NT Rep's briefcase
+        - PinpointerNuclearStealObjective
+        - AccessConfiguratorStealObjective
+        - EncryptionKeySalvageStealObjective
+        - NTRepBriefcaseSecureStealObjective
         # no ian meat because you are a pacifist and need them alive
         - ClipboardStealObjective #QM's digiboard
         - KnuckleDustersStealObjective #QM's knuckledusters
@@ -129,20 +130,20 @@
         - EnergyMagnumStealObjective
         - EnergyShotgunStealObjective
         - Proto5xStealObjective
-        - BSOPistolSP8TStealObjective # remove comment when implemented
+        - BSOPistolSP8TStealObjective
         # Limited Hardsuit objectives
         - RDHardsuitStealObjective
-        - CMOHardsuitStealObjective # remove comment when implemented
-        - CEHardsuitStealObjective # remove comment when implemented
-        - HOSHardsuitStealObjective # remove comment when implemented
-        - WardHardsuitStealObjective # remove comment when implemented
-        - BrigmedHardsuitStealObjective # remove comment when implemented
-        - QMHardsuitStealObjective # remove comment when implemented
-        - SalvLeadHardsuitStealObjective # remove comment when implemented
-        - CaptainHardsuitStealObjective # remove comment when implemented
-        - NTRepHardsuitStealObjective # remove comment when implemented
-        - BSOHardsuitStealObjective # remove comment when implemented
-        - BSOMagbootsStealObjective # remove comment when implemented
+        - CMOHardsuitStealObjective
+        - CEHardsuitStealObjective 
+        - HOSHardsuitStealObjective 
+        - WardenHardsuitStealObjective
+        - BrigmedicHardsuitStealObjective
+        - QMHardsuitStealObjective
+        - SalvLeadHardsuitStealObjective
+        - CaptainHardsuitStealObjective
+        - NTRepHardsuitStealObjective
+        - BSOHardsuitStealObjective
+        - BSOMagbootsStealObjective
 
 
 #USSP

@@ -28,16 +28,16 @@
     CMOLicenseStealObjective: 1 #Starlight Unique Targets
     EnergyShotgunStealObjective: 0.5 #Starlight re-targeted
     Proto5xStealObjective: 0.5 #Starlight Unique Targets
-    HoPIDStealObjective: 1 # HoP's more exposed, but there's less copies of this ID usually
+    HOPIDStealObjective: 1 # HoP's more exposed, but there's less copies of this ID usually
     PinpointerNuclearStealObjective: 1 # Fun if paired with the nuke disk objective
     AccessConfiguratorStealObjective: 1 # HoP and CE
-    EncryptionKeyExpeditionStealObjective: 0.5 # QM/Salv Lead. Not that interesting, so low.
+    EncryptionKeySalvageStealObjective: 0.6 # QM/Salv Lead. Not that interesting, so low.
     NTRepBriefcaseSecureStealObjective: 0.75 # Usually in the bridge.
     CMOHardsuitStealObjective: 1 # I'm so sorry CMO
     CEHardsuitStealObjective: 1 # Where are you going to hide it?
     HOSHardsuitStealObjective: 1 # Quite defensive.
-    WardHardsuitStealObjective: 1 # Not a member of command, yet has 3 steal targets.
-    BrigmedHardsuitStealObjective: 1 # You're not escaping.
+    WardenHardsuitStealObjective: 1 # Not a member of command, yet has 3 steal targets.
+    BrigmedicHardsuitStealObjective: 1 # You're not escaping.
     QMHardsuitStealObjective: 1 # Would you believe it was never an objective before?
     SalvLeadHardsuitStealObjective: 0.75 # Likely to be easy if Salvage actually gets better suits.
     CaptainHardsuitStealObjective: 0.75 # Good luck.
@@ -124,6 +124,7 @@
     CommsComputerCircuitboardStealObjective: 1 # bridge/tech vault
     ClothingHeadsetAltCommandStealObjective: 1 # captain/nt rep
     BrigmedicStrangeBedsheetStealObjective: 1 # Was intended to be a steal target, but never was. I'll at least implement this in memory...
+    ClothingNeckMantleDecoratedSalvagerStealObjective: 1 # Salvage Lead's mantle. They're usually always wearing it...
     SalvageShuttleCircuitboardStealObjective: 1 # technically qm
     MiningShuttleCircuitboardStealObjective: 1 # ditto
     # Starlight-end
