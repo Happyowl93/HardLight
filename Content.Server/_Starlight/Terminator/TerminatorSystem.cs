@@ -33,6 +33,7 @@ public sealed partial class TerminatorSystem : EntitySystem
 
         if (!_mind.TryGetMind(target, out var mindId, out var mind)) return false;
         comp.Target = mindId;
+        comp.TargetBody = target;
         _game.StartGameRule(uid);
         return true;
     }

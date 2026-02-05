@@ -4,4 +4,5 @@ namespace Content.Server._Starlight.GameTicking.Rules.Components;
 public sealed partial class TerminatorRuleComponent : Component
 {
     public EntityUid? Target;
+    public EntityUid? TargetBody;
 }
