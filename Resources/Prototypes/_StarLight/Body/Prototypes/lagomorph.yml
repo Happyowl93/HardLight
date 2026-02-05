@@ -37,10 +37,12 @@
       - left hand
     right hand:
       part: RightHandLagomorph
-      hand_implant: null
+      organs:
+        hand_implant: null
     left hand:
       part: LeftHandLagomorph
-      hand_implant: null
+      organs:
+        hand_implant: null
     right leg:
       part: RightLegLagomorph
       connections:
