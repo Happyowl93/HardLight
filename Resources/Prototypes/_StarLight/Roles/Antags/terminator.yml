@@ -3,7 +3,7 @@
   name: ghost-role-information-terminator-name
   antagonist: true
   setPreference: false
-  objective: never-shown
+  objective: roles-antag-terminator-objective
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 5h

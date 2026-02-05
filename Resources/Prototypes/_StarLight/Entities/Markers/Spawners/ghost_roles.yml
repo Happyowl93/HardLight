@@ -40,9 +40,10 @@
       state: full
 
 - type: entity
-  parent: MarkerBase
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
   id: SpawnPointGhostTerminator
-  name: terminator spawn point
+  name: exterminator spawn point
   components:
   - type: GhostRole
     name: ghost-role-information-terminator-name
@@ -50,8 +51,8 @@
     rules: ghost-role-information-terminator-rules
     mindRoles:
     - MindRoleTerminator
-  - type: GhostRoleMobSpawner
-    prototype: MobHumanTerminator
+    raffle:
+      settings: default
   - type: Sprite
     layers:
     - state: green
