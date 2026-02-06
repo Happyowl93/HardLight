@@ -17,6 +17,8 @@
           - NukeOperative
           - Traitor
           - Revolutionary
+          - AntagImmune
+          - CommandStaff
       #SL end
 
 - type: entity
@@ -38,6 +40,8 @@
           - NukeOperative
           - Traitor
           - Revolutionary
+          - AntagImmune
+          - CommandStaff
       #SL end
 
 - type: entity
@@ -61,6 +65,8 @@
           - NukeOperative
           - Traitor
           - Revolutionary
+          - AntagImmune
+          - CommandStaff
       #SL end
     - type: ObjectiveOnSign
       #SL begin
@@ -69,6 +75,8 @@
           - NukeOperative
           - Traitor
           - Revolutionary
+          - AntagImmune
+          - CommandStaff
       #SL end
       objectives:
         # thief collection objectives
@@ -196,6 +204,8 @@
           - NukeOperative
           - Traitor
           - Revolutionary
+          - AntagImmune
+          - CommandStaff
       #SL end
 
 - type: entity
@@ -219,6 +229,8 @@
           - NukeOperative
           - Traitor
           - Revolutionary
+          - AntagImmune
+          - CommandStaff
       #SL end
 
 - type: entity
@@ -242,5 +254,7 @@
           - NukeOperative
           - Traitor
           - Revolutionary
+          - AntagImmune
+          - CommandStaff
       #SL end
 
