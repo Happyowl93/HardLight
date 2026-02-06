@@ -72,6 +72,7 @@ namespace Content.IntegrationTests.Tests
             {"/Maps/Shuttles/ShuttleEvent/cruiser.yml", ["ShuttleGunPerforator"]},
             {"/Maps/Shuttles/ShuttleEvent/instigator.yml", ["ShuttleGunFriendship"]},
             {"/Maps/_Starlight/Stations/Cork.yml", ["RubberStampSyndicate"]}, // Starlight start
+            {"/Maps/_Starlight/Shuttles/CC-NT/NTSF_Minos_Battlecruiser.yml", ["EXP-2100g \"Duster\"", "LSE-1200c \"Perforator\""]},
             {"/Maps/_Starlight/Shuttles/RecluseClassSHC.yml", ["RubberStampSyndicate"]},
             {"/Maps/_Starlight/Shuttles/Signaleer.yml", ["RubberStampSyndicate"]},
             {"/Maps/_Starlight/Nonstations/nukieplanet.yml", ["RubberStampSyndicate"]},
