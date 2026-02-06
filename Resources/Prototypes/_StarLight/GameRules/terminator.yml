@@ -6,6 +6,7 @@
   - type: AntagObjectives
     objectives:
     - TerminatorExterminateObjective
+    - TerminatorSelfDestructObjective
   - type: AntagRandomSpawn
   - type: AntagSelection
     agentName: ghost-role-information-terminator-name

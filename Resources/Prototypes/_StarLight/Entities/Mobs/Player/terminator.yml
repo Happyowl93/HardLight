@@ -45,7 +45,7 @@
   - type: Flammable
     damage:
       types:
-        Heat: 2.0
+        Heat: 1.5
   # slightly wider thresholds
   - type: Temperature
     heatDamageThreshold: 390
@@ -64,7 +64,7 @@
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
-        damage: 100
+        damage: 150
       behaviors:
       - !type:PopupBehavior
         popup: terminator-endoskeleton-burn-popup
@@ -100,7 +100,7 @@
   - type: Insulated
   # it looks sick as fuck when the burning guy suddenly turns into a cyborg
   - type: IgniteOnHeatDamage
-    fireStacks: 1
+    fireStacks: 2
     threshold: 12
 
 - type: entity
@@ -194,5 +194,4 @@
   # muh self destruct once complete
   - type: AutoImplant
     implants:
-    - MicroBombImplant
-    
+    - TerminatorMicroBombImplant

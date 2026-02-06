@@ -14,10 +14,22 @@
   parent: [BaseTerminatorObjective, BaseKillObjective]
   id: TerminatorExterminateObjective
   name: Secure our future.
-  description: Terminate the target with extreme prejudice. Keep collateral as low as feasibly possible to minimise timeline disruption.
+  description: Follow your programming and kill the target.
   components:
   - type: PickSpecificPerson
   - type: KillPersonCondition
     requireDead: true
   - type: TargetObjective
     title: objective-condition-kill-head-title
+
+- type: entity
+  parent: BaseTerminatorObjective
+  id: TerminatorSelfDestructObjective
+  name: Self destruct
+  description: Prevent your advanced technology from falling into enemy hands.
+  components:
+  - type: DieCondition
+  - type: Objective
+    icon:
+      sprite: Mobs/Ghosts/ghost_human.rsi
+      state: icon

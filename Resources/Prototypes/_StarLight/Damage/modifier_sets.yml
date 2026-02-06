@@ -66,7 +66,7 @@
     Heat: -10.0
 
 # terminator's flesh damage set
-# we want it to be slightly tanky, but it should be pretty easy to gib it into endoskeleton form
+# we want it to be tanky, but it should be pretty easy to gib it into endoskeleton form
 - type: damageModifierSet
   id: CyberneticFlesh
   coefficients:
