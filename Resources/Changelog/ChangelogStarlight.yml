@@ -29449,5 +29449,34 @@ Entries:
   id: 316000
   time: '2026-02-06T07:48:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3160
+- author: CrazyPhantom
+  changes:
+  - message: Ninja can now call in more threats
+    type: Add
+  id: 281900
+  time: '2026-02-06T07:59:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2819
+- author: Coolsurf6
+  changes:
+  - message: Cyclorites walk at 15% slower speed (from 10%)
+    type: Tweak
+  - message: Cyclorites now have 150 health and crit at 300
+    type: Tweak
+  - message: Cyclorites resistances have been slightly increased
+    type: Tweak
+  - message: Cyclorites are now as dense as Diona
+    type: Tweak
+  - message: Cyclorites now slow down less from all sources but damage slowdown
+    type: Add
+  id: 260000
+  time: '2026-02-06T08:12:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2600
+- author: CrazyPhantom
+  changes:
+  - message: Station AI can now shunt into shuntable chassis that are charging
+    type: Tweak
+  id: 313000
+  time: '2026-02-06T08:37:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3130
 Order: -1
 
