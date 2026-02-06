@@ -29427,5 +29427,13 @@ Entries:
   id: 183400
   time: '2026-02-06T07:39:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1834
+- author: Celestial3rror404
+  changes:
+  - message: A crate full of sedatives is now purchasable by cargo for 1000 spesos,
+      surgeons rejoice!
+    type: Add
+  id: 313300
+  time: '2026-02-06T07:42:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3133
 Order: -1
 
