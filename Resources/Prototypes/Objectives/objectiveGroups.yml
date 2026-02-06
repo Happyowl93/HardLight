@@ -6,7 +6,7 @@
     TraitorObjectiveGroupKill: 1
     TraitorObjectiveGroupState: 1 #As in, something about your character. Alive, dead, arrested, gained an ability...
     TraitorObjectiveGroupSocial: 0.25 #Involves helping/harming others without killing them or stealing their stuff, lowered because the chance of rolling this was enormous when its just one objective in the category
-    TraitorObjectiveGroupStory: 1  # Starlight
+    TraitorObjectiveGroupStory: 0.85  # Starlight
 
 - type: weightedRandom
   id: TraitorObjectiveGroupSteal
@@ -23,11 +23,14 @@
     CaptainGunStealObjective: 0.75  #Starlight edit
     CaptainJetpackStealObjective: 0.75  #Starlight edit
     HandTeleporterStealObjective: 1  #Starlight edit
-    RDDiplomaStealObjective: 1 #Starlight Unique Targets
-    CMOLicenseStealObjective: 1 #Starlight Unique Targets
+    RDDiplomaStealObjective: 0.75 #Starlight Unique Targets
+    CMOLicenseStealObjective: 0.75 #Starlight Unique Targets
     EnergyShotgunStealObjective: 0.5 #Starlight re-targeted
     Proto5xStealObjective: 0.5 #Starlight Unique Targets
-
+    CorporateSecretsStealObjective: 0.75 #Starlight Unique Target
+    CriminalReportsStealObjective: 0.75 #Starlight Unique Target
+    SecureKnowledgeStealObjective:  0.75 #Starlight Unique Target
+    
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
   weights:
