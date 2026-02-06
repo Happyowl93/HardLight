@@ -101,9 +101,9 @@
     LAMPStealCollectionObjective: 0.1                   #only for moth, weight decreased cause boring and insanely easy
     CrewMonitorStealCollectionObjective: 0.5 # Starlight; Paramedic, BSO, Brigmed, CMO handheld monitors, 2-3. It's kinda easy if there's 2 paramed lockers, so that's why it's low.
     GaloshesStealCollectionObjective: 0.4 # Starlight. Kinda easy, but they're technically contra... 2-3. Included in janitor closets now, kinda. Janitor closets have a 75% chance to contain Galoshn'ts instead of Galoshes, but they both count for this goal.
-    RCDRPDStealCollectionObjective: 0.3 # Starlight. RCDs & RPDs. You could just buy them, so low priority. 7-12, since there's 2 items that satisfy this, and if you want to just use credits on this, you're taking a huge expense. (Engineering department does not get this goal)
+    RCDRPDStealCollectionObjective: 0.3 # Starlight. RCDs & RPDs. You could just buy them, so low priority. 6-10, since there's 2 items that satisfy this, and if you want to just use credits on this, you're taking a huge expense. (Engineering department does not get this goal)
     MiscSunglassesStealCollectionObjective: 0.75 # Starlight. Musician, Beer Goggles, and all variants of Security sunglasses (Officer, Brigmed, Detective). A replacement to the beer goggles objective. 5-9.
-    RareSunglassesStealCollectionObjective: 0.5 # Starlight. Administration, Skill, BSO, Brigmed, and, if you somehow find them on a salvage... CentComm. 3-5. Not detective, since det glasses can be used on other sec roles.
+    RareSunglassesStealCollectionObjective: 0.5 # Starlight. Administration, Skill, BSO, Brigmed, and, if you somehow find them on a salvage... CentComm. 2-4. Not detective, since det glasses can be used on other sec roles.
     ReactorFuelRodStealCollectionObjective: 1 #Far Horizons
 
 - type: weightedRandom

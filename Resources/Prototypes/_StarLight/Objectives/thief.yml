@@ -232,8 +232,8 @@
   components:
   - type: StealCondition
     stealGroup: RCDRPDCollection
-    minCollectionSize: 7 # Engineers will always have two of these things on them, so every engineer is a 2 for one.
-    maxCollectionSize: 12 # Good luck.
+    minCollectionSize: 6 # Engineers will always have two of these things on them, so every engineer is a 2 for one.
+    maxCollectionSize: 10 # Good luck.
   - type: Objective
     difficulty: 1
 
@@ -260,7 +260,7 @@
     jobs: [ Brigmedic, BlueShield, NanoTrasenRepresentative, Magistrate, Captain, HeadOfPersonnel ]
   - type: StealCondition
     stealGroup: RareGlassesCollection
-    minCollectionSize: 3
+    minCollectionSize: 2
     maxCollectionSize: 4
   - type: Objective
     difficulty: 1.4 # Hard to get these...
