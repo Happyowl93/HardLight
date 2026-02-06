@@ -11,6 +11,11 @@
       antags:
         - antag: Traitor
           targetComponent: TraitorRule
+      #SL begin
+      blacklist:
+        components:
+          - NukeOperative
+      #SL end
 
 - type: entity
   id: RRMailSyndicateSpamLetter
@@ -25,6 +30,11 @@
       antags:
         - antag: Traitor
           targetComponent: TraitorRule
+      #SL begin
+      blacklist:
+        components:
+          - NukeOperative
+      #SL end
 
 - type: entity
   id: MailSpamDontYouWantMore
@@ -41,7 +51,17 @@
           targetComponent: TraitorRule
         - antag: Thief # gotta be a thief for the thief objectives
           targetComponent: ThiefRule
+      #SL begin
+      blacklist:
+        components:
+          - NukeOperative
+      #SL end
     - type: ObjectiveOnSign
+      #SL begin
+      blacklist:
+        components:
+          - NukeOperative
+      #SL end
       objectives:
         # thief collection objectives
         - HeadCloakStealCollectionObjective
@@ -162,6 +182,11 @@
       antags:
         - antag: Revolutionary
           targetComponent: RevolutionaryRule
+      #SL begin
+      blacklist:
+        components:
+          - NukeOperative
+      #SL end
 
 - type: entity
   id: MailSovietSpamLetter50
@@ -178,6 +203,11 @@
       antags:
         - antag: Revolutionary
           targetComponent: RevolutionaryRule
+      #SL begin
+      blacklist:
+        components:
+          - NukeOperative
+      #SL end
 
 - type: entity
   id: MailSovietSpamLetter25
@@ -194,4 +224,9 @@
       antags:
         - antag: Revolutionary
           targetComponent: RevolutionaryRule
+      #SL begin
+      blacklist:
+        components:
+          - NukeOperative
+      #SL end
 
