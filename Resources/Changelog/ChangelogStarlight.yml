@@ -29456,5 +29456,20 @@ Entries:
   id: 281900
   time: '2026-02-06T07:59:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2819
+- author: Coolsurf6
+  changes:
+  - message: Cyclorites walk at 15% slower speed (from 10%)
+    type: Tweak
+  - message: Cyclorites now have 150 health and crit at 300
+    type: Tweak
+  - message: Cyclorites resistances have been slightly increased
+    type: Tweak
+  - message: Cyclorites are now as dense as Diona
+    type: Tweak
+  - message: Cyclorites now slow down less from all sources but damage slowdown
+    type: Add
+  id: 260000
+  time: '2026-02-06T08:12:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2600
 Order: -1
 
