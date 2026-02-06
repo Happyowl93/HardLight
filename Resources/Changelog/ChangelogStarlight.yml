@@ -29478,5 +29478,12 @@ Entries:
   id: 313000
   time: '2026-02-06T08:37:31.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3130
+- author: Citrea
+  changes:
+  - message: Elves can now accept implants.
+    type: Fix
+  id: 316100
+  time: '2026-02-06T08:42:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3161
 Order: -1
 
