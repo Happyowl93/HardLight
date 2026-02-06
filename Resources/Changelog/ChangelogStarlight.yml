@@ -29577,5 +29577,32 @@ Entries:
   id: 316800
   time: '2026-02-06T16:00:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3168
+- author: wonderfulnewworld
+  changes:
+  - message: 'Added the following to Thief collection steal targets: assistant headset
+      and (medical belt, EMT belt, corpsman duty belt, tactical trauma belt, tactical
+      trauma rig, blueshield medical belt, or blueshield webbing).'
+    type: Add
+  - message: Added Roboticist Toolbox and Roboticist Gas Mask. (Available from snipping
+      the MNGR wire in the robodrobe.)
+    type: Add
+  - message: Added Roboticist Toolbox (Filled) and Galoshn't to rare mains locker
+      spawns. Heartbreaking.
+    type: Add
+  - message: Adds the WT550r for HoS, replacing the WT550. It's functionally the same,
+      but red, for their steal objective.
+    type: Add
+  - message: Lowered chance of Galoshes spawning in favor of Galoshn'ts from 25%/75%
+      to 10%/90%.
+    type: Tweak
+  - message: Changes HoS's weapon spawner to spawn the WT550r instead of the WT550.
+    type: Tweak
+  - message: Adds WT550r back to HOSWeaponStealObjective.
+    type: Fix
+  - message: ReactorFuelRodStealCollectionObjective added to Don't You Want More?
+    type: Fix
+  id: 316500
+  time: '2026-02-06T21:49:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3165
 Order: -1
 
