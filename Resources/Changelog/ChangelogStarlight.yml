@@ -29494,5 +29494,15 @@ Entries:
   id: 271900
   time: '2026-02-06T08:57:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2719
+- author: redmushie
+  changes:
+  - message: All player races can now be labeled!
+    type: Add
+  - message: 'Rinary: Fixed identity, so now it doesn''t add name at brackets if entity
+      name contains it.'
+    type: Fix
+  id: 275800
+  time: '2026-02-06T10:13:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2758
 Order: -1
 
