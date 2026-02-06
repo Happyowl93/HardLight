@@ -280,7 +280,7 @@
     difficulty: 0.9 # There's a lot of them... but they're comically easy to get. Cargo can also buy PTech restocks, so they can't get this objective either.
 
 - type: entity
-  parent: BaseThiefStealObjective # Not parenting collection since they're not actually on map.. but it's Assistants.
+  parent: BaseThiefStealObjective # Easy
   id: MedicalBeltStealCollectionObjective
   components:
   - type: NotJobRequirement
