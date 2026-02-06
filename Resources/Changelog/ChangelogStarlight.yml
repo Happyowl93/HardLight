@@ -29485,5 +29485,14 @@ Entries:
   id: 316100
   time: '2026-02-06T08:42:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3161
+- author: Coolsurf6
+  changes:
+  - message: Cyclorites take twice as long to stand up from prone.
+    type: Tweak
+  - message: Cyclorites now use twice as much stamina to force themselves up.
+    type: Tweak
+  id: 271900
+  time: '2026-02-06T08:57:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2719
 Order: -1
 
