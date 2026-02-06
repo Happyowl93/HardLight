@@ -1784,6 +1784,7 @@
   - type: Item
     size: Tiny
     heldPrefix: 0
+  - type: VampireDevourable # Starlight-edit: Vampire Devouring
   - type: Clothing
     quickEquip: false
     sprite: Mobs/Animals/mouse.rsi
@@ -4079,4 +4080,7 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
+    # Starlight Start
   - type: AlwaysRevolutionaryConvertible
+  - type: CanEnterCryostorage
+    # Starlight End

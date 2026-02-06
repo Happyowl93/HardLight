@@ -8,7 +8,8 @@
       proto: StaffAndMentorOnlyRolesReq
     - !type:TraitsRequirement
       traits:
-      - Iterator
+        - Iterator
+        - Muted
       inverted: true
   startingGear: NanotrasenCareerTrainerGear
   icon: JobIconNanotrasenCareerTrainer
