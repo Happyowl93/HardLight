@@ -29419,5 +29419,13 @@ Entries:
   id: 276200
   time: '2026-02-06T02:49:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2762
+- author: RoadTrain, Rinary
+  changes:
+  - message: BatteryStatus is now its' own component. Add it to a controllable entity
+      that has a powercell and it should give you the power cell UI.
+    type: Tweak
+  id: 183400
+  time: '2026-02-06T07:39:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1834
 Order: -1
 
