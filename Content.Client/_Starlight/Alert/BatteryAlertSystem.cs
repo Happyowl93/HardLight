@@ -2,12 +2,11 @@ using Content.Shared._Starlight.UI;
 using Content.Shared.Alert;
 using Content.Shared.PowerCell;
 using Content.Shared.PowerCell.Components;
-using Content.Shared.Silicons.Borgs.Components;
 using Robust.Client.Player;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
-namespace Content.Server._Starlight.Alert;
+namespace Content.Client._Starlight.Alert;
 
 public sealed partial class BatteryAlertSystem : EntitySystem
 {
@@ -18,12 +17,12 @@ public sealed partial class BatteryAlertSystem : EntitySystem
 
     // How often to update the battery alert.
     // Also gets updated instantly when switching bodies or a battery is inserted or removed.
-    private static readonly TimeSpan AlertUpdateDelay = TimeSpan.FromSeconds(1f);
+    private static readonly TimeSpan _alertUpdateDelay = TimeSpan.FromSeconds(1f);
 
     // Don't put this on the component because we only need to track the time for a single entity
     // and we don't want to TryComp it every single tick.
     private TimeSpan _nextAlertUpdate = TimeSpan.Zero;
-    private EntityQuery<BorgChassisComponent> _chassisQuery;
+    private EntityQuery<BatteryAlertComponent> _alertQuery;
     private EntityQuery<PowerCellSlotComponent> _slotQuery;
     
     public override void Initialize()
@@ -51,7 +50,7 @@ public sealed partial class BatteryAlertSystem : EntitySystem
     
     public bool TryUpdateBatteryAlert(EntityUid uid, BatteryAlertComponent? comp = null, PowerCellSlotComponent? slotComponent = null)
     {
-        if (!Resolve(uid, ref comp, false))
+        if (!Resolve(uid, ref comp, ref slotComponent, false))
             return false;
         
         if (!_powerCell.TryGetBatteryFromSlot((uid, slotComponent), out var battery))
@@ -62,7 +61,7 @@ public sealed partial class BatteryAlertSystem : EntitySystem
         }
 
         // Alert levels from 0 to 10.
-        var chargePercent = (short)MathF.Round(battery.LastCharge / battery.MaxCharge * 10f);
+        var chargePercent = (short)MathF.Round(battery.Value.Comp.LastCharge / battery.Value.Comp.MaxCharge * 10f);
 
         // we make sure 0 only shows if they have absolutely no battery.
         // also account for floating point imprecision
@@ -88,7 +87,7 @@ public sealed partial class BatteryAlertSystem : EntitySystem
         if (curTime < _nextAlertUpdate)
             return;
 
-        _nextAlertUpdate = curTime + AlertUpdateDelay;
+        _nextAlertUpdate = curTime + _alertUpdateDelay;
 
         if (!_alertQuery.TryComp(localPlayer, out var alert) || !_slotQuery.TryComp(localPlayer, out var slot))
             return;
