@@ -504,12 +504,7 @@
   cost:
     Telecrystal: 5
   categories:
-  - UplinkJob
-  conditions:
-    - !type:BuyerJobCondition
-      whitelist:
-        - Assistant # Hang on, hear me out...
-        - Captain
+  - UplinkWearables
 
 # Disruption
 - type: listing
