@@ -29449,5 +29449,12 @@ Entries:
   id: 316000
   time: '2026-02-06T07:48:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3160
+- author: CrazyPhantom
+  changes:
+  - message: Ninja can now call in more threats
+    type: Add
+  id: 281900
+  time: '2026-02-06T07:59:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2819
 Order: -1
 
