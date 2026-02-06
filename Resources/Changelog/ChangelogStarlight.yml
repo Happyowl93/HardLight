@@ -29292,5 +29292,40 @@ Entries:
   id: 120300
   time: '2026-02-05T20:03:10.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1203
+- author: neomoth
+  changes:
+  - message: MMMMMMMM MORE TOOLSHED VERY YUMMERS.............
+    type: Add
+  id: 315500
+  time: '2026-02-06T01:40:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3155
+- author: CrazyPhantom
+  changes:
+  - message: Nuclear Reactor.
+    type: Add
+  id: 304400
+  time: '2026-02-06T02:02:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3044
+- author: Conflee
+  changes:
+  - message: Changed rates of RP objectives from 1 -> 0.85. Since they're a reflavor
+      of escape alive, and we have so many more objectives now, this should make them
+      not a guaranteed thing for nearly every traitor.
+    type: Tweak
+  - message: Fixed Classified Documents not being in the traitor steal objective list-
+      Missed in testing because its in an upstream file, and because manually adding
+      the objectives still worked. Now they will appear in round start objectives
+      with the same frequency as Captain steal targets.
+    type: Fix
+  id: 314500
+  time: '2026-02-06T02:06:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3145
+- author: Citrea
+  changes:
+  - message: Lagomorphs no longer reject brain and hand implants
+    type: Fix
+  id: 315600
+  time: '2026-02-06T01:59:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3156
 Order: -1
 

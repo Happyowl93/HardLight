@@ -152,14 +152,14 @@
 
 - type: entity
   parent: BaseIAAStealObjective
-  id: CriminalReportsStealStealObjective
+  id: CriminalReportsStealObjective
   components:
   - type: StealCondition
     stealGroup: CriminalReportsSteal
 
 - type: entity
   parent: BaseMagistrateStealObjective
-  id: SecureKnowledgeStealStealStealObjective
+  id: SecureKnowledgeStealObjective
   components:
   - type: StealCondition
     stealGroup: SecureKnowledgeSteal

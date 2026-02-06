@@ -6,7 +6,7 @@
     TraitorObjectiveGroupKill: 1
     TraitorObjectiveGroupState: 1 #As in, something about your character. Alive, dead, arrested, gained an ability...
     TraitorObjectiveGroupSocial: 0.25 #Involves helping/harming others without killing them or stealing their stuff, lowered because the chance of rolling this was enormous when its just one objective in the category
-    TraitorObjectiveGroupStory: 1  # Starlight
+    TraitorObjectiveGroupStory: 0.85  # Starlight
 
 - type: weightedRandom
   id: TraitorObjectiveGroupSteal
@@ -24,8 +24,8 @@
     CaptainGunStealObjective: 0.75  #Starlight edit
     CaptainJetpackStealObjective: 0.75  #Starlight edit
     HandTeleporterStealObjective: 1  #Starlight edit
-    RDDiplomaStealObjective: 1 #Starlight Unique Targets
-    CMOLicenseStealObjective: 1 #Starlight Unique Targets
+    RDDiplomaStealObjective: 0.75 #Starlight Unique Targets
+    CMOLicenseStealObjective: 0.75 #Starlight Unique Targets
     EnergyShotgunStealObjective: 0.5 #Starlight re-targeted
     EnergyMagnumStealObjective: 0.5 # Starlight, was missing for some reason
     HOSWeaponStealObjective: 0.5 #Starlight Unique Targets
@@ -46,6 +46,9 @@
     BSOHardsuitStealObjective: 0.75 # Same as the above...
     BSOMagbootsStealObjective: 0.75 # Easier to hide, at least.
     BSOWeaponStealObjective: 0.75 # Blue shield weapons. It's easier to steal the SP8T since they don't always carry it around, and guaranteed to exist.
+    CorporateSecretsStealObjective: 0.75 #Starlight Unique Target
+    CriminalReportsStealObjective: 0.75 #Starlight Unique Target
+    SecureKnowledgeStealObjective:  0.75 #Starlight Unique Target
     # Starlight end
     
 
@@ -101,6 +104,7 @@
     RCDRPDStealCollectionObjective: 0.3 # Starlight. RCDs & RPDs. You could just buy them, so low priority. 7-12, since there's 2 items that satisfy this, and if you want to just use credits on this, you're taking a huge expense. (Engineering department does not get this goal)
     MiscSunglassesStealCollectionObjective: 0.75 # Starlight. Musician, Beer Goggles, and all variants of Security sunglasses (Officer, Brigmed, Detective). A replacement to the beer goggles objective. 5-9.
     RareSunglassesStealCollectionObjective: 0.5 # Starlight. Administration, Skill, BSO, Brigmed, and, if you somehow find them on a salvage... CentComm. 3-5. Not detective, since det glasses can be used on other sec roles.
+    ReactorFuelRodStealCollectionObjective: 1 #Far Horizons
 
 - type: weightedRandom
   id: ThiefObjectiveGroupItem
