@@ -246,8 +246,8 @@
     jobs: [ Musician, Bartender, ServiceWorker, SecurityOfficer, SecurityCadet, DutyOfficer, Warden, HeadOfSecurity, Brigmedic, Detective ]
   - type: StealCondition
     stealGroup: MiscGlassesCollection
-    minCollectionSize: 4
-    maxCollectionSize: 8
+    minCollectionSize: 5
+    maxCollectionSize: 9
   - type: Objective
     difficulty: 0.7 # There's a ton of ways to solve this.
 
