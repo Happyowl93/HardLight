@@ -57,22 +57,11 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
         // Starlight end
 
         var mapCords = _transform.ToMapCoordinates(args.FromCoordinates);
-        var ray = new CollisionRay(mapCords.Position, args.ShotDirection, (int) ent.Comp.CollisionMask);
-        var rayCastResults = _physics.IntersectRay(mapCords.MapId, ray, ent.Comp.MaxDistance, shooter, false);
-
-        var target = args.Target;
         // If you are in a container, use the raycast result
         // Otherwise:
         //  1.) Hit the first entity that you targeted.
         //  2.) Hit the first entity that doesn't require you to aim at it specifically to be hit.
         // Ignore raycast results that hit a NullSpace entity. // TODO: Do something better?
-        var result = _container.IsEntityOrParentInContainer(shooter)
-            ? rayCastResults.FirstOrNull()
-            : rayCastResults.FirstOrNull(hit => (hit.HitEntity == target
-                                                || CompOrNull<RequireProjectileTargetComponent>(hit.HitEntity)?.Active != true)
-                                               && CompOrNull<NullSpaceComponent>(hit.HitEntity) == null
-                                               && (hit.Distance >= ent.Comp.MinDistance || _tag.HasAnyTag(hit.HitEntity, ent.Comp.NotArmedCollideWith))); //Starlight Edit -- arming distance
-
         // Starlight-start
         var toMap = _transform.ToMapCoordinates(args.ToCoordinates);
         var pointer = (toMap.Position - mapCords.Position).Length();
@@ -92,6 +81,8 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
                 foreach (var collide in rayCastResults)
                 {
                     if (collide.HitEntity != args.Target && CompOrNull<RequireProjectileTargetComponent>(collide.HitEntity)?.Active == true)
+                        continue;
+                    if(!(collide.Distance >= ent.Comp.MinDistance || _tag.HasAnyTag(collide.HitEntity, ent.Comp.NotArmedCollideWith)))
                         continue;
                     if (collide.Distance < pointer - 2f && HasComp<MobMoverComponent>(collide.HitEntity))
                     {
