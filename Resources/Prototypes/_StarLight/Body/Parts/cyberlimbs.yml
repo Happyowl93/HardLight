@@ -179,7 +179,9 @@
   parent: [PartCyber, BaseLeftLeg]
   components:
     - type: BaseLayerId
-      layer: CyberLLeg
+      layers:
+        Default: CyberLLegSpeed
+        Resomi: ResomiCyberLLegSpeed
     - type: Sprite
       sprite: _Starlight/Mobs/Species/Cyberlimbs/speedlegs.rsi
       state: "l_leg"
@@ -202,7 +204,9 @@
   parent: [PartCyber, BaseRightLeg]
   components:
     - type: BaseLayerId
-      layer: CyberRLeg
+      layers:
+        Default: CyberRLegSpeed
+        Resomi: ResomiCyberRLegSpeed
     - type: Sprite
       sprite: _Starlight/Mobs/Species/Cyberlimbs/speedlegs.rsi
       state: "r_leg"

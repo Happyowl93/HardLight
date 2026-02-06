@@ -9,47 +9,19 @@
   "states": [
     {
       "name": "l_leg",
-      "directions": 4,
-      "delays": [
-        [
-          0.3,
-          2.0
-        ],
-        [
-          0.3,
-          2.0
-        ],
-        [
-          0.3,
-          2.0
-        ],
-        [
-          0.3,
-          2.0
-        ]
-      ]
+      "directions": 4
     },
     {
       "name": "r_leg",
-      "directions": 4,
-      "delays": [
-        [
-          0.3,
-          2.0
-        ],
-        [
-          0.3,
-          2.0
-        ],
-        [
-          0.3,
-          2.0
-        ],
-        [
-          0.3,
-          2.0
-        ]
-      ]
+      "directions": 4
+    },
+    {
+      "name": "l_leg_resomi",
+      "directions": 4
+    },
+    {
+      "name": "r_leg_resomi",
+      "directions": 4
     }
   ]
 }
