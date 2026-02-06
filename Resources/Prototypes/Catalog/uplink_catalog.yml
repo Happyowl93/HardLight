@@ -2311,7 +2311,7 @@
   conditions:
     - !type:BuyerJobCondition # Starlight. Captain and Robo mean we have to use Job
       whitelist:
-      - Science
+      - Scientist # Starlight
       - ResearchDirector # Starlight
       - Roboticist # Starlight
       - Captain # Starlight
