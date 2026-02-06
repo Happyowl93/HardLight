@@ -5,3 +5,5 @@ alerts-cybernetic-disruption-name = [color=red]Cybernetics disrupted[/color]
 alerts-cybernetic-disruption-desc = You're [color=red]disrupted[/color]! Something is impairing your cybernetic implants.
 alerts-surge-name = [color=yellow]Stamina Surge[/color]
 alerts-surge-desc = You have increased stamina regeneration and resistance [color=red]at the cost of increased hunger drain[/color]
+alerts-zoomies-name = [color=lightblue]Zoomies!![/color]
+alerts-zoomies-desc = You have increased movement speed [color=red]at the cost of increased thirst drain[/color]
