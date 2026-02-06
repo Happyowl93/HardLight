@@ -12,6 +12,6 @@
     - type: LimitedCharges
       maxCharges: 1
     - type: AutoRecharge
-      rechargeDuration: 30
+      rechargeDuration: 50
     - type: InstantAction
       event: !type:StaminaSurgeActionEvent
