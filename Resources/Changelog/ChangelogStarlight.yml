@@ -29504,5 +29504,78 @@ Entries:
   id: 275800
   time: '2026-02-06T10:13:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2758
+- author: Fractalflower
+  changes:
+  - message: Traitor Janitors can now buy a Syndicate Hydra for twenty telecrystals.
+    type: Add
+  - message: Syndicate Space Cleaner, functions like normal but also does damage.
+    type: Add
+  - message: Security Technology Fabricators can now make non-lethal grenade cartridges.
+    type: Add
+  - message: Applying a Syndicate Cryptographic Sequencer to a Security Technology
+      Fabricator allows it to make blast & fragmentation grenade cartridges.
+    type: Add
+  - message: Grenade cartridges now have six grenades instead of five.
+    type: Tweak
+  - message: Spent EMP grenades use the correct texture
+    type: Fix
+  - message: Grenades and their cartridges are no longer blanket major contraband
+    type: Tweak
+  - message: EMP, baton, and flash grenades - as well as the pre-filled cartridges
+      - are now Security contraband
+    type: Tweak
+  - message: Blast & fragmentation grenades, alongside their respective printable
+      filled cartridges are now Syndicate contraband
+    type: Tweak
+  - message: Removed Shuttle Advanced Armament research.
+    type: Remove
+  - message: The Security Technology Fabricator can no longer make single grenades,
+      only cartridges.
+    type: Remove
+  - message: The non-Syndicate variant of the Hydra can no longer fire non-cleanade
+      rounds.
+    type: Remove
+  - message: Security Technology Fabricators that have not had their safeties removed
+      via a Syndicate Cryptographic Sequencer can no longer make blast or fragmentation
+      grenade cartridges.
+    type: Remove
+  - message: Added an empty grenade cartridge to Security Technology Fabricator. In
+      case you wanted that.
+    type: Add
+  - message: Added a cleanade grenade cartridge, with Syndicate variant.
+    type: Add
+  - message: Added the Hydra to Advanced Cleaning research.
+    type: Add
+  - message: Moved stationary grenade launchers to Explosive Technology research.
+    type: Tweak
+  id: 194300
+  time: '2026-02-06T11:21:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/1943
+- author: Coolsurf6
+  changes:
+  - message: Cyclorites metabolise medicines twice as fast meaning they heal less
+      per unit.
+    type: Add
+  - message: Cyclorites metabolise poisons twice as slow meaning they hurt more per
+      unit.
+    type: Add
+  id: 308900
+  time: '2026-02-06T11:37:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3089
+- author: CrazyPhantom
+  changes:
+  - message: Abductor Consoles and Televisions not having correct sprites
+    type: Fix
+  id: 316700
+  time: '2026-02-06T13:38:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3167
+- author: Conflee
+  changes:
+  - message: Fixed broken spacing in the Corporate Law crime table. It HATES multiple
+      paragraphs being in one cell.
+    type: Fix
+  id: 316800
+  time: '2026-02-06T16:00:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3168
 Order: -1
 
