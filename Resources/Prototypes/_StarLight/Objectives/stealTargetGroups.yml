@@ -320,14 +320,14 @@
     state: icon
 
 - type: stealTargetGroup
-  id: AssistantHeadsetsStealCollectionObjective
+  id: AssistantHeadsetsCollection
   name: steal-target-groups-assistant-headsets
   sprite:
     sprite: Clothing/Ears/Headsets/service.rsi
     state: icon
 
 - type: stealTargetGroup
-  id: MedicalBeltStealCollectionObjective
+  id: MedicalBeltCollection
   name: steal-target-groups-medical-belts
   sprite:
     sprite: _Starlight/Objects/Misc/medicalbeltstealobjective.rsi
