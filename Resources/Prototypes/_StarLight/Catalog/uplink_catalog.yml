@@ -504,7 +504,6 @@
   cost:
     Telecrystal: 5
   categories:
-  - UplinkWearables
   - UplinkJob
   conditions:
     - !type:BuyerJobCondition
