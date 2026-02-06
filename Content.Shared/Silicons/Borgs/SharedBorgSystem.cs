@@ -4,6 +4,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Events;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
+using Content.Shared.Gibbing;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -100,7 +101,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
         SubscribeLocalEvent<BorgChassisComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
         SubscribeLocalEvent<BorgChassisComponent, ActivatableUIOpenAttemptEvent>(OnUIOpenAttempt);
         SubscribeLocalEvent<BorgChassisComponent, MobStateChangedEvent>(OnMobStateChanged);
-        SubscribeLocalEvent<BorgChassisComponent, BeingGibbedEvent>(OnBeingGibbed);
+        SubscribeLocalEvent<BorgChassisComponent, GibbedBeforeDeletionEvent>(OnBeingGibbed);
         SubscribeLocalEvent<BorgChassisComponent, GetCharactedDeadIcEvent>(OnGetDeadIC);
         SubscribeLocalEvent<BorgChassisComponent, GetCharacterUnrevivableIcEvent>(OnGetUnrevivableIC);
         SubscribeLocalEvent<BorgChassisComponent, PowerCellSlotEmptyEvent>(OnPowerCellSlotEmpty);
@@ -334,31 +335,26 @@ public abstract partial class SharedBorgSystem : EntitySystem
 
             if (TryComp(ent, out ActiveRadioComponent? activeRadio))
             {
-                foreach (var channel in key.Channels)
-                {
-                    activeRadio.Channels.Add(channel);
-                }
                 //Starlight begin
+                foreach (var channel in key.Channels)
+                    activeRadio.Channels.Add(channel);
                 foreach (var channel in key.CustomChannels)
-                {
                     activeRadio.CustomChannels.Add(channel);
-                }
+                Dirty(ent, activeRadio);
                 //Starlight end
             }
             if (TryComp(ent, out IntrinsicRadioTransmitterComponent? transmitter))
             {
-                foreach (var channel in key.Channels)
-                {
-                    transmitter.Channels.Add(channel);
-                }
                 //Starlight begin
+                foreach (var channel in key.Channels)
+                    transmitter.Channels.Add(channel);
                 foreach (var channel in key.CustomChannels)
-                {
                     transmitter.CustomChannels.Add(channel);
-                }
+                Dirty(ent, transmitter);
                 //Starlight end
             }
         }
+        Dirty(ent);
     }
     // end Starlight
 
@@ -396,28 +392,22 @@ public abstract partial class SharedBorgSystem : EntitySystem
         }
     }
 
-    private void OnBeingGibbed(Entity<BorgChassisComponent> chassis, ref BeingGibbedEvent args)
+    private void OnBeingGibbed(Entity<BorgChassisComponent> chassis, ref GibbedBeforeDeletionEvent args)
     {
         //region Starlight: Drop contents from ALL modules on gib.
-
-        _sawmill.Debug("is this even on?");
+        if (chassis.Comp.ModuleContainer == null)
+                return;
         foreach (var ent in chassis.Comp.ModuleContainer.ContainedEntities.ToList())
         {
-            _sawmill.Debug("loop entered");
-            if (!_starlightEntitySystem.TryEntity<ItemBorgModuleComponent,ContainerManagerComponent>(ent,out var component,log:true)) continue;
             if (!TryComp<ItemBorgModuleComponent>(ent, out var module)) continue;
             if (!TryComp<ContainerManagerComponent>(ent, out var manager)) continue;
-            _sawmill.Debug("Trycomps succesful");
             if (!_container.TryGetContainer(ent, module.HoldingContainer, out var container, manager)) continue;
-            _sawmill.Debug("Container found");
             foreach (var item in container.ContainedEntities.ToList())
             {
                 if (_tag.HasTag(item, chassis.Comp.ModuleItemTag)) continue;
                 while (_container.TryGetContainingContainer(item, out var containing))
                     if (!_container.Remove(item, containing)) break;
-                _sawmill.Debug("Item removal succesful");
             }
-            _sawmill.Debug("Got to end of loop");
         }
         //end region Starlight
         // Don't use the ItemSlotsSystem eject method since we don't want to play a sound and want we to eject the battery even if the slot is locked.
