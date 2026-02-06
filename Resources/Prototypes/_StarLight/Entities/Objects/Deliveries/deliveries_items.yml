@@ -15,6 +15,8 @@
       blacklist:
         components:
           - NukeOperative
+          - Traitor
+          - Revolutionary
       #SL end
 
 - type: entity
@@ -34,6 +36,8 @@
       blacklist:
         components:
           - NukeOperative
+          - Traitor
+          - Revolutionary
       #SL end
 
 - type: entity
@@ -55,12 +59,16 @@
       blacklist:
         components:
           - NukeOperative
+          - Traitor
+          - Revolutionary
       #SL end
     - type: ObjectiveOnSign
       #SL begin
       blacklist:
         components:
           - NukeOperative
+          - Traitor
+          - Revolutionary
       #SL end
       objectives:
         # thief collection objectives
@@ -186,6 +194,8 @@
       blacklist:
         components:
           - NukeOperative
+          - Traitor
+          - Revolutionary
       #SL end
 
 - type: entity
@@ -207,6 +217,8 @@
       blacklist:
         components:
           - NukeOperative
+          - Traitor
+          - Revolutionary
       #SL end
 
 - type: entity
@@ -228,5 +240,7 @@
       blacklist:
         components:
           - NukeOperative
+          - Traitor
+          - Revolutionary
       #SL end
 
