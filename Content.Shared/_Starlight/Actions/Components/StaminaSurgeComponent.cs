@@ -15,6 +15,7 @@ public sealed partial class StaminaSurgeComponent : Component
     [DataField] public float? ThirstDrain = 8f;
     [DataField] public ProtoId<AlertPrototype> SurgeAlert = "Surge";
     [DataField] public TimeSpan? Duration = TimeSpan.FromSeconds(20);
+    [ViewVariables] public bool Active;
     /// <summary>
     /// When the effect is due to end.
     /// </summary>
