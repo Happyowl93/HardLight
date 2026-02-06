@@ -269,7 +269,7 @@
 - type: entity
   parent: [BaseThiefObjective, BaseLivingObjective]
   id: EscapeMasterThiefObjective
-  name: Become the greatest thief, and steal anything you percieve as having value.
+  name: Become the greatest thief, and steal anything you perceive as having value.
   description: Just make sure to get out alive and free.
   components:
   - type: Objective
