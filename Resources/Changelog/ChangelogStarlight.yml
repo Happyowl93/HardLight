@@ -29442,5 +29442,12 @@ Entries:
   id: 314300
   time: '2026-02-06T07:43:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3143
+- author: Sparlight
+  changes:
+  - message: Smart Corgis / Borgis can now enter cryosleep pods.
+    type: Add
+  id: 316000
+  time: '2026-02-06T07:48:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3160
 Order: -1
 
