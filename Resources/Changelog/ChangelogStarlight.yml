@@ -29435,5 +29435,12 @@ Entries:
   id: 313300
   time: '2026-02-06T07:42:55.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3133
+- author: NcDuve
+  changes:
+  - message: Changed medical requirement to chemist for brigmedic.
+    type: Tweak
+  id: 314300
+  time: '2026-02-06T07:43:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3143
 Order: -1
 
