@@ -29626,5 +29626,12 @@ Entries:
   id: 317000
   time: '2026-02-06T22:03:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3170
+- author: SevenShades
+  changes:
+  - message: Added eight new lagomorph antler markings
+    type: Add
+  id: 317100
+  time: '2026-02-06T22:20:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3171
 Order: -1
 
