@@ -2346,10 +2346,10 @@
   icon: { sprite:  Objects/Misc/monkeycube.rsi, state: box}
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 3 # Starlight
   productEntity: SyndicateSpongeBox
   cost:
-    Telecrystal: 7
+    Telecrystal: 6 # Starlight
   categories:
   - UplinkJob
   conditions:
@@ -2360,6 +2360,7 @@
     - Chef
     - Zookeeper # Starlight
     - ServiceWorker # Starlight
+    - Roboticist # Starlight
     - HeadOfPersonnel # Starlight
     - Captain # Starlight
 
