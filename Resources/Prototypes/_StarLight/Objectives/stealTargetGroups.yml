@@ -330,5 +330,5 @@
   id: MedicalBeltStealCollectionObjective
   name: steal-target-groups-medical-belts
   sprite:
-    sprite: Clothing/Belt/medical.rsi
+    sprite: _Starlight/Objects/Misc/medicalbeltstealobjective.rsi
     state: icon

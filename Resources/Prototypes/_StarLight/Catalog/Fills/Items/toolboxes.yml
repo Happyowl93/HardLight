@@ -38,9 +38,11 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: Crowbar
+        - id: CrowbarOrange
         - id: Wrench
         - id: Screwdriver
         - id: Wirecutter
         - id: Welder
         - id: Multitool
+        - id: ClothingMaskRoboticist
+        - id: ClothingHandsGlovesRobohands

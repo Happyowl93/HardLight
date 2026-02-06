@@ -271,6 +271,8 @@
       - id: ToolboxMechanicalFilled
       - id: ToolboxRoboticistFilled # Starlight
         weight: 0.2 # Starlight. You'll never see it coming.
+      - id: ClothingShoesGaloshnt # Starlight
+        weight: 0.2 # Starlight. Fake galoshes to crush your spirit.
       - id: ClothingBeltUtility
       - id: ToolboxArtisticFilled
       - id: GeigerCounter
