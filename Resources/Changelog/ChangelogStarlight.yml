@@ -29604,5 +29604,34 @@ Entries:
   id: 316500
   time: '2026-02-06T21:49:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3165
+- author: neomoth, DocMoth
+  changes:
+  - message: 'Gives lagomorphs a secondary ability: Zoomies!! Grants a 135% speed
+      boost for 15 seconds in exchange for rapidly increasing thirst. Has a 50 second
+      recharge time.'
+    type: Add
+  - message: Stamina Surge now provides a 0.85x multiplier to stamina resistance (-0.5x).
+    type: Tweak
+  - message: Stamina Surge now provides a 0.55x multiplier to stamina cooldown (-0.5x).
+    type: Tweak
+  - message: Stamina Surge now provides a 1.85x multiplier to stamina regen rate (+0.5x).
+    type: Tweak
+  - message: Stamina Surge now drains hunger at a rate of 90 (+10) and thirst at a
+      rate of 8 (-2).
+    type: Tweak
+  - message: Stamina Surge now takes 50 seconds to gain a charge (+20s).
+    type: Tweak
+  - message: Stamina Surge's alert icon now uses the correct sprite.
+    type: Fix
+  id: 317000
+  time: '2026-02-06T22:03:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3170
+- author: SevenShades
+  changes:
+  - message: Added eight new lagomorph antler markings
+    type: Add
+  id: 317100
+  time: '2026-02-06T22:20:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3171
 Order: -1
 
