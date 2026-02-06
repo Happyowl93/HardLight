@@ -279,6 +279,9 @@
 # Used for the jet injector and advanced jet injector
 - type: Tag
   id: JetInjector
+  
+- type: Tag
+  id: Labelable
 
 - type: Tag
   id: L6Saw
