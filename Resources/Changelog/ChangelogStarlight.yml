@@ -29569,5 +29569,13 @@ Entries:
   id: 316700
   time: '2026-02-06T13:38:39.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3167
+- author: Conflee
+  changes:
+  - message: Fixed broken spacing in the Corporate Law crime table. It HATES multiple
+      paragraphs being in one cell.
+    type: Fix
+  id: 316800
+  time: '2026-02-06T16:00:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3168
 Order: -1
 
