@@ -305,8 +305,6 @@
     steps: 6
     zeroVisible: true
   - type: Appearance
-  - type: StealTarget # Starlight
-    stealGroup: HOSWeapon # Starlight, can steal proto5x or wt550
 
 - type: entity
   name: brown briefcase
