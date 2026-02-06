@@ -14,7 +14,7 @@
   - type: Stamina
     decay: 6
     cooldown: 1
-    critThreshold: 400
+    baseCritThreshold: 400
   # immune to space drugs, pax, temporary blindness
   - type: StatusEffects
     allowed:
@@ -46,10 +46,6 @@
     damage:
       types:
         Heat: 1.5
-  # slightly wider thresholds
-  - type: Temperature
-    heatDamageThreshold: 390
-    coldDamageThreshold: 240
   # take terminator flesh damage
   - type: Damageable
     damageModifierSet: CyberneticFlesh
