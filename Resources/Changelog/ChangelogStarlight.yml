@@ -29551,5 +29551,16 @@ Entries:
   id: 194300
   time: '2026-02-06T11:21:31.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/1943
+- author: Coolsurf6
+  changes:
+  - message: Cyclorites metabolise medicines twice as fast meaning they heal less
+      per unit.
+    type: Add
+  - message: Cyclorites metabolise poisons twice as slow meaning they hurt more per
+      unit.
+    type: Add
+  id: 308900
+  time: '2026-02-06T11:37:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3089
 Order: -1
 
