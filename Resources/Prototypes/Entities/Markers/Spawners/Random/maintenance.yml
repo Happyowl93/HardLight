@@ -269,6 +269,8 @@
         weight: 0.25
       - id: ToolboxElectricalFilled
       - id: ToolboxMechanicalFilled
+      - id: ToolboxRoboticistFilled # Starlight
+        weight: 0.2 # Starlight. You'll never see it coming.
       - id: ClothingBeltUtility
       - id: ToolboxArtisticFilled
       - id: GeigerCounter
