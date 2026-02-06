@@ -29407,5 +29407,17 @@ Entries:
   id: 312800
   time: '2026-02-06T02:34:48.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3128
+- author: Rhetorica
+  changes:
+  - message: Elves as a separate playable species. Take control of your arcane fate!
+    type: Add
+  - message: Cantrips for the Traveller, an elf-exclusive wizard spellbook. Choose
+      2 of 5 nifty spells at the start of each shift.
+    type: Add
+  - message: Humans may no longer have elf ears. (But Dwarves can.)
+    type: Remove
+  id: 276200
+  time: '2026-02-06T02:49:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2762
 Order: -1
 
