@@ -29398,5 +29398,14 @@ Entries:
   id: 315700
   time: '2026-02-06T02:29:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3157
+- author: Conflee
+  changes:
+  - message: Added the Advanced Chemical, Rescue, Chameleon, and Advanced Tools Syndicate
+      Modules to the EMAG lists. This should give more non-combat utility to hacked
+      borgs for both Traitors and SELF Agents.
+    type: Add
+  id: 312800
+  time: '2026-02-06T02:34:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3128
 Order: -1
 
