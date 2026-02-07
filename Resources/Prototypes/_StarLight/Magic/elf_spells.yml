@@ -9,7 +9,7 @@
   - type: Magic
     requiresClothes: false
   - type: Action
-    useDelay: 1
+    useDelay: 45
     itemIconStyle: BigAction
     icon:
       sprite: _Starlight/Objects/Magic/luminous_orb.rsi

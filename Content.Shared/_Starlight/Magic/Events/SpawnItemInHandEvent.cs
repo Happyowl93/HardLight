@@ -12,17 +12,20 @@ public sealed partial class SpawnItemInHandEvent : InstantActionEvent
     public EntProtoId Spawned = string.Empty;
 }
 
+/// <summary>
+///     Raised after an entity was spawned in someones hand.
+/// </summary>
 public sealed partial class AfterSpawnItemInHandEvent
 {
     /// <summary>
-    /// Item to create with the action
+    ///     Entity that was spawned.
     /// </summary>
     [DataField]
     public EntityUid Entity;
     
     /// <summary>
-    /// Item to create with the action
+    ///     The entity who spawned the item.
     /// </summary>
     [DataField]
-    public EntityUid Preformer;
+    public EntityUid Performer;
 }

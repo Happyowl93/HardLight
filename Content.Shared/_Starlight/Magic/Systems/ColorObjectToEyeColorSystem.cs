@@ -1,9 +1,6 @@
 using Content.Shared._Starlight.Magic.Components;
 using Content.Shared._Starlight.Magic.Events;
-using Content.Shared.Atmos.Piping;
 using Content.Shared.Humanoid;
-using Content.Shared.Item;
-using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Starlight.Magic.Systems;
@@ -12,7 +9,6 @@ public sealed class ColorObjectToEyeColorSystem : EntitySystem
 {
     [Dependency] private readonly SharedPointLightSystem _pointLight = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {
@@ -23,26 +19,34 @@ public sealed class ColorObjectToEyeColorSystem : EntitySystem
     
     private void OnAfterSpawnItemInHand(Entity<ColorObjectToEyeColorComponent> entity, ref AfterSpawnItemInHandEvent ev)
     {
-        var eyeColor = Comp<HumanoidAppearanceComponent>(ev.Preformer).EyeColor;
+        if (!TryComp<HumanoidAppearanceComponent>(ev.Performer, out var appearanceComp))
+            return;
         
-        var color = NormalizeColor(eyeColor);
+        var color = NormalizeColor(appearanceComp.EyeColor, 1.8f);
 
         _pointLight.SetColor(ev.Entity, color);
 
-        _appearance.SetData(ev.Entity, ColorObjectToEyeColorVisuals.Color, color);
+        _appearance.SetData(ev.Entity, ColorVisuals.Color, color);
     }
     
-    private Color NormalizeColor(Color rgb, float targetPower = 1.8f)
+    /// <summary>
+    ///     Normalize the given color and ensure its total brightness matches <see cref="totalBrightness"/>
+    /// </summary>
+    /// <param name="color">Color to normalize</param>
+    /// <param name="totalBrightness">The targeted sum of all RGB values.</param>
+    /// <returns></returns>
+    private Color NormalizeColor(Color color, float totalBrightness)
     {
-        var power = rgb.R + rgb.G + rgb.B;
+        var power = color.R + color.G + color.B;
 
         if (power == 0f)
-            return new Color(.6f, .6f, .6f);
+            return new Color(totalBrightness/3.0f, totalBrightness/3.0f, totalBrightness/3.0f);
 
-        var scale = targetPower / power;
+        var scale = totalBrightness / power;
 
-        float[] newColors = [ rgb.R * scale, rgb.G * scale, rgb.B * scale ];
+        float[] newColors = [ color.R * scale, color.G * scale, color.B * scale ];
 
+        // The will overflow, collect the residues and we will put them back in later.
         var reminder = 0.0f;
         var overweight = 0;
         for (var i=0; i<newColors.Length; i++)
@@ -69,7 +73,7 @@ public sealed class ColorObjectToEyeColorSystem : EntitySystem
 }
 
 [Serializable, NetSerializable]
-public enum ColorObjectToEyeColorVisuals : byte
+public enum ColorVisuals : byte
 {
     Color,
 }

@@ -611,16 +611,13 @@ public abstract class SharedMagicSystem : EntitySystem
 
         ev.Handled = true;
 
-        if (_net.IsClient)
-            return;
-        
         // try to put item in hand, otherwise it goes on the ground
-        var star = Spawn(ev.Spawned, Transform(user).Coordinates);
+        var spawnedEntity = PredictedSpawnAtPosition(ev.Spawned, Transform(user).Coordinates);
         
-        var afterEvent = new AfterSpawnItemInHandEvent { Entity = star, Preformer = user };
+        var afterEvent = new AfterSpawnItemInHandEvent { Entity = spawnedEntity, Performer = user };
         RaiseLocalEvent(ev.Action, afterEvent);
 
-        _hands.TryPickupAnyHand(user, star);
+        _hands.TryPickupAnyHand(user, spawnedEntity);
         ev.Handled = true;
     }
 
@@ -653,9 +650,3 @@ public abstract class SharedMagicSystem : EntitySystem
     #endregion
 
 }
-
-[Serializable, NetSerializable]
-public enum OrbVisuals : byte
-{
-    State,
-};

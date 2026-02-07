@@ -21,12 +21,12 @@
     layers:
     - state: icon
       shader: unshaded
-      map: [ "enum.ColorObjectToEyeColorVisuals.Color" ]
+      map: [ "enum.ColorVisuals.Color" ]
   - type: PointLight
     radius: 4
     color: "#00CCFF"
   - type: TimedDespawn
-    lifetime: 200000
+    lifetime: 25
   - type: TileFrictionModifier
     modifier: 0.001
   - type: EmitSoundOnSpawn
