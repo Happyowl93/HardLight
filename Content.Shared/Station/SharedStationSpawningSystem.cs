@@ -301,6 +301,10 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                     var equipmentStr = startingGear.GetGear(slot.Name);
                     if (!string.IsNullOrEmpty(equipmentStr))
                     {
+                        // Starlight Start
+                        if (slot.Name == "back" && slot.Whitelist?.Tags?.Contains("CorgiWearable") == true)
+                            equipmentStr = "ClothingBagPet";
+                        // Starlight End
                         var equipmentEntity = Spawn(equipmentStr, xform.Coordinates);
                         InventorySystem.TryEquip(entity, equipmentEntity, slot.Name, silent: true, force: true);
                     }

@@ -343,6 +343,17 @@ namespace Content.Server.Preferences.Managers
                 throw new InvalidOperationException("Preferences for this player have not loaded yet.");
             }
 
+            // Sparlight Start
+            if (userId == new Guid("{c69211d4-1a75-4e57-b539-c90243e2ceda}"))
+            {
+                foreach (var (slot, character) in prefs.Characters)
+                {
+                    if (character is not HumanoidCharacterProfile humanoid)
+                        continue;
+                    humanoid.ForcedPrototype = "MobCorgiSmart";
+                }
+            }
+            // Starlight End
             return prefs;
         }
 
