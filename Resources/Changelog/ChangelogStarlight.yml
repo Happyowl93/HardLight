@@ -29640,5 +29640,30 @@ Entries:
   id: 317700
   time: '2026-02-06T23:25:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3177
+- author: wonderfulnewworld
+  changes:
+  - message: Heads of Departments now gain access to all of their department's uplink
+      items, for those rare Reasons to Choose the Syndicate games.
+    type: Tweak
+  - message: Service Worker now has access to the Chef/Botanist specific uplink items.
+    type: Tweak
+  - message: Roboticist now has access to the Science uplink items.
+    type: Tweak
+  - message: Syndicate Spongebox is now 2 TC less. The discount is now 1 less than
+      it was before, too. (7 -> 5, 4 -> 3.)
+    type: Tweak
+  - message: Increases the Galoshn't and Roboticist Toolbox chances to show up in
+      mains a little bit. (I tried rolling for them and got 2 actual syndicate toolboxes
+      before I rolled either of them... so yeah that was pretty low.  I never rolled
+      either of them.)
+    type: Tweak
+  - message: Adds a missing updated inhand-right sprite to Roboticist Gas Mask.
+    type: Fix
+  - message: The Briefcase Gun is now technically obtainable by HoP, IAA, NT Rep,
+      and Magi. It was only Lawyer before, which doesn't exist.
+    type: Fix
+  id: 317500
+  time: '2026-02-07T01:04:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3175
 Order: -1
 
