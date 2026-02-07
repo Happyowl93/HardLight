@@ -9,7 +9,7 @@
   - type: Magic
     requiresClothes: false
   - type: Action
-    useDelay: 45
+    useDelay: 1
     itemIconStyle: BigAction
     icon:
       sprite: _Starlight/Objects/Magic/luminous_orb.rsi
@@ -20,6 +20,7 @@
   - type: SpeakOnAction
     sentence: action-speech-cantrip-glow
     whisper: true
+  - type: ColorObjectToEyeColor
 
 # Magic Ember
 

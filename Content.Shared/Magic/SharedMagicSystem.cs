@@ -1,4 +1,7 @@
 using System.Numerics;
+using Content.Shared._Starlight.Magic.Components;
+using Content.Shared.Actions.Components;
+using Content.Shared.Atmos.Piping;
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Coordinates.Helpers;
@@ -8,6 +11,7 @@ using Content.Shared.Examine;
 using Content.Shared.Gibbing;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Lock;
@@ -30,6 +34,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Spawners;
 
@@ -604,12 +609,18 @@ public abstract class SharedMagicSystem : EntitySystem
             return;
         var user = ev.Performer;
 
+        ev.Handled = true;
+
+        if (_net.IsClient)
+            return;
+        
         // try to put item in hand, otherwise it goes on the ground
         var star = Spawn(ev.Spawned, Transform(user).Coordinates);
-        if (IsClientSide(star))
-            Del(star);//event has a tendency to produce client-sided cheese... this cleans those up...
-        else
-            _hands.TryPickupAnyHand(user, star);
+        
+        var afterEvent = new AfterSpawnItemInHandEvent { Entity = star, Preformer = user };
+        RaiseLocalEvent(ev.Action, afterEvent);
+
+        _hands.TryPickupAnyHand(user, star);
         ev.Handled = true;
     }
 
@@ -642,3 +653,9 @@ public abstract class SharedMagicSystem : EntitySystem
     #endregion
 
 }
+
+[Serializable, NetSerializable]
+public enum OrbVisuals : byte
+{
+    State,
+};

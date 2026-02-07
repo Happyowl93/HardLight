@@ -21,11 +21,12 @@
     layers:
     - state: icon
       shader: unshaded
+      map: [ "enum.ColorObjectToEyeColorVisuals.Color" ]
   - type: PointLight
     radius: 4
     color: "#00CCFF"
   - type: TimedDespawn
-    lifetime: 25
+    lifetime: 200000
   - type: TileFrictionModifier
     modifier: 0.001
   - type: EmitSoundOnSpawn
@@ -33,6 +34,8 @@
       path: /Audio/_Starlight/Magic/cantrip.ogg
   - type: StaticPrice
     price: 0 # Not sellable.
+  - type: Appearance
+  - type: ColorVisuals
 
 # Ember
 

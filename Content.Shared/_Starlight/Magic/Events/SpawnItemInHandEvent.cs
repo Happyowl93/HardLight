@@ -11,3 +11,18 @@ public sealed partial class SpawnItemInHandEvent : InstantActionEvent
     [DataField(required: true)]
     public EntProtoId Spawned = string.Empty;
 }
+
+public sealed partial class AfterSpawnItemInHandEvent
+{
+    /// <summary>
+    /// Item to create with the action
+    /// </summary>
+    [DataField]
+    public EntityUid Entity;
+    
+    /// <summary>
+    /// Item to create with the action
+    /// </summary>
+    [DataField]
+    public EntityUid Preformer;
+}
