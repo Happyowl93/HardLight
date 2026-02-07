@@ -29692,5 +29692,19 @@ Entries:
   id: 318100
   time: '2026-02-07T06:46:55.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3181
+- author: neomoth
+  changes:
+  - message: Nuclear operatives can no longer sign Syndicate or USSP spam letters
+      to become Traitor/Revolutionary.
+    type: Fix
+  - message: Revolutionaries can no longer sign Syndicate or USSP spam letters to
+      become Traitor/Revolutionary.
+    type: Fix
+  - message: Traitors can no longer sign Syndicate or USSP spam letters to become
+      Traitor/Revolutionary,
+    type: Fix
+  id: 317400
+  time: '2026-02-07T06:56:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3174
 Order: -1
 
