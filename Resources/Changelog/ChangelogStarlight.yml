@@ -29788,5 +29788,14 @@ Entries:
   id: 318500
   time: '2026-02-07T22:27:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3185
+- author: Rinary
+  changes:
+  - message: Fixed ai default laws from crewsimov to NT default.
+    type: Fix
+  - message: Fixed ai laws update every UI open.
+    type: Fix
+  id: 318800
+  time: '2026-02-07T22:34:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3188
 Order: -1
 
