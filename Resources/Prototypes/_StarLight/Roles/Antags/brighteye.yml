@@ -5,17 +5,14 @@
   setPreference: true
   objective: roles-antag-brighteye-description
   guides: [ Shadekin, Brighteye ]
+  roleLoadout: [ AntagBrighteye ]
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 172800 # 48h
   - !type:SpeciesRequirement
     species:
     - Shadekin
-
-- type: startingGear
-  id: BrighteyeGear
-  equipment:
-    jumpsuit: TatteredClothesUniformSuit
-    neck: ClothingNeckTatteredHood
-    gloves: ClothingClothWrap
-    shoes: ClothingClothWrap
+  - !type:TraitsRequirement
+      traits:
+        - Burned
+      inverted: true
