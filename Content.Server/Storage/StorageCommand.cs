@@ -56,14 +56,16 @@ public sealed class StorageCommand : ToolshedCommand
 
     //Starlight begin
     [CommandImplementation("reshape")]
-    public EntityUid StorageResize([PipedArgument] EntityUid uid, Box2IList shapes)
+    public EntityUid StorageResize([PipedArgument] EntityUid uid)
     {
         _storage ??= GetSys<SharedStorageSystem>();
         _container ??= GetSys<SharedContainerSystem>();
         _ui ??= GetSys<SharedUserInterfaceSystem>();
-        if (!TryComp<StorageComponent>(uid, out var storage)) return uid;
+        if (!TryComp<StorageComponent>(uid, out var storage) ||
+            !TryComp<Box2IConstructorComponent>(uid, out var boxes)) return uid;
         _container.EmptyContainer(storage.Container);
-        storage.Grid = shapes.Boxes;
+        storage.Grid = boxes.Boxes;
+        RemComp<Box2IConstructorComponent>(uid);
         _storage.UpdateOccupied((uid, storage)); // <- this is black voodoo magic and i hate it
         _ui.CloseUi(uid, StorageComponent.StorageUiKey.Key);
         return uid;

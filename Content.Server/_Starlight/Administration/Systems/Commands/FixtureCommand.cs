@@ -18,22 +18,24 @@ public sealed class FixtureCommand : ToolshedCommand
     private PhysicsSystem? _phys;
 
     [CommandImplementation("createpoly")]
-    public EntityUid CreateFixture([PipedArgument] EntityUid uid, string id, Vector2List vertices, float density,
+    public EntityUid CreateFixture([PipedArgument] EntityUid uid, string id, float density,
         bool hard,
         int collisionLayer, int collisionMask, float friction, float restitution)
     {
         _fixture ??= GetSys<FixtureSystem>();
         _phys ??= GetSys<PhysicsSystem>();
+        if (!TryComp<Vector2DataConstructorComponent>(uid, out var vertices)) return uid;
         var phys = EnsureComp<PhysicsComponent>(uid);
         var fixtures = EnsureComp<FixturesComponent>(uid);
         var xform = EnsureComp<TransformComponent>(uid);
-        var shape = new PolygonShape();
+        var shape = new PolygonShape(vertices.Vertices.ToArray());
         if (!_fixture.TryCreateFixture(uid, shape, id, density, hard, collisionLayer, collisionMask,
                 friction, restitution, true, fixtures, phys, xform))
             return uid;
         var result = _fixture.GetFixtureOrNull(uid, id, fixtures);
         if (result is null) return uid;
-        _phys.SetVertices(uid, id, result, shape, vertices.Vertices.ToArray(), fixtures, phys, xform);
+        // _phys.SetVertices(uid, id, result, shape, vertices.Vertices.ToArray(), fixtures, phys, xform);
+        RemComp<Vector2DataConstructorComponent>(uid);
         return uid;
     }
 
@@ -57,12 +59,28 @@ public sealed class FixtureCommand : ToolshedCommand
         return uid;
     }
 
+    [CommandImplementation("createaabb")]
+    public EntityUid CreateFixture([PipedArgument] EntityUid uid, string id, float x1, float y1, float x2, float y2,
+        float density, bool hard,
+        int collisionLayer, int collisionMask, float friction, float restitution)
+    {
+        _fixture ??= GetSys<FixtureSystem>();
+        _phys ??= GetSys<PhysicsSystem>();
+        var phys = EnsureComp<PhysicsComponent>(uid);
+        var fixtures = EnsureComp<FixturesComponent>(uid);
+        var xform = EnsureComp<TransformComponent>(uid);
+        var shape = new PhysShapeAabb(new Box2(x1, y1, x2, y2));
+        _fixture.TryCreateFixture(uid, shape, id, density, hard, collisionLayer, collisionMask,
+            friction, restitution, true, fixtures, phys, xform);
+        return uid;
+    }
+
     [CommandImplementation("createpoly")]
     public IEnumerable<EntityUid> CreateFixture([PipedArgument] IEnumerable<EntityUid> uid, string id,
-        Vector2List vertices, float density, bool hard,
+        float density, bool hard,
         int collisionLayer, int collisionMask, float friction, float restitution) =>
         uid.Select(x =>
-            CreateFixture(x, id, vertices, density, hard, collisionLayer, collisionMask, friction, restitution));
+            CreateFixture(x, id, density, hard, collisionLayer, collisionMask, friction, restitution));
 
     [CommandImplementation("createcircle")]
     public IEnumerable<EntityUid> CreateFixture([PipedArgument] IEnumerable<EntityUid> uid, string id, float radius,

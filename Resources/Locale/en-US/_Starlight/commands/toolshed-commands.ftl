@@ -9,7 +9,7 @@ command-description-container-insertmany =
 command-description-container-create =
     Creates a new container on the piped entity.
 command-description-container-createslot =
-	Creates a new containerslot on the piped entity.
+    Creates a new containerslot on the piped entity.
 command-description-container-delete =
     Deletes a container on the piped entity.
 command-description-container-drop =
@@ -55,3 +55,17 @@ command-description-crewmanifest-addplayer =
     Adds the specified player to the crew manifest(s) of the piped station(s).
 command-description-crewmanifest-removeplayer =
     Removes the specified player to the crew manifest(s) of the piped station(s).
+command-description-storage-reshape =
+    Reshapes the storage based off data given via box2iconstructor command.
+command-description-box2iconstructor-new =
+    Create a new Box2i list definition on the entity, chain together with box2iconstructor:add commands then follow up with a command that requires it.
+command-description-box2iconstructor-add =
+    Add a new Box2i to the existing definition. Call box2iconstructor:new before using this.
+command-description-box2iconstructor-clean =
+    Clean up an unused Box2i list definition on the entity.
+command-description-vector2dataconstructor-new =
+    Create a new Vector2 list definition on the entity, chain together with vector2dataconstructor:add commands then follow up with a command that requires it.
+command-description-vector2dataconstructor-add =
+    Add a new Vector2 to the existing definition. Call vector2dataconstructor:new before using this.
+command-description-vector2dataconstructor-clean =
+    Clean up an unused Vector2 list definition on the entity.
