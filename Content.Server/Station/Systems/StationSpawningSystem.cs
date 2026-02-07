@@ -172,7 +172,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         // Starlight Start
         if (profile?.ForcedPrototype.Id != null)
         {
-            if (!PrototypeManager.Resolve(profile.ForcedPrototype, out var forcedProto))
+            if (!_prototypeManager.Resolve(profile.ForcedPrototype, out var forcedProto))
                 throw new ArgumentException($"Could not find ${profile.ForcedPrototype} prototype for spawn rule.");
             entity = Spawn(profile.ForcedPrototype, coordinates);
             var resolvedEntity = (EntityUid)entity;
