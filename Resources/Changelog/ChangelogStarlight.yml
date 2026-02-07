@@ -29810,5 +29810,12 @@ Entries:
   id: 315800
   time: '2026-02-07T22:38:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3158
+- author: neomoth
+  changes:
+  - message: Adds The Hat That Kills You If You Take It Off™.
+    type: Add
+  id: 317900
+  time: '2026-02-07T22:54:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3179
 Order: -1
 
