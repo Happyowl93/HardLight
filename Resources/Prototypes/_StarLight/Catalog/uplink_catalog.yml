@@ -308,7 +308,7 @@
   discountDownTo:
     Telecrystal: 0
   cost:
-    Telecrystal: 1
+    Telecrystal: 2
   categories:
   - UplinkCybernetics
 
