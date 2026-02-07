@@ -29673,5 +29673,12 @@ Entries:
   id: 317200
   time: '2026-02-07T01:55:07.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3172
+- author: Conflee
+  changes:
+  - message: Removed Decimus Doc from the locker fill table.
+    type: Remove
+  id: 318200
+  time: '2026-02-07T06:42:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3182
 Order: -1
 
