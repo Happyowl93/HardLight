@@ -29797,5 +29797,18 @@ Entries:
   id: 318800
   time: '2026-02-07T22:34:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3188
+- author: Arkanic
+  changes:
+  - message: Added Exterminators, evil cyborgs disguised in a puppet of flesh sent
+      from the future
+    type: Add
+  - message: Added a railroading card that sends an exterminator out to kill you when
+      selected
+    type: Add
+  - message: Added an exterminator smite which also sends a guy out to kill you
+    type: Add
+  id: 315800
+  time: '2026-02-07T22:38:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3158
 Order: -1
 
