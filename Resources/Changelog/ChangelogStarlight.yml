@@ -29756,5 +29756,12 @@ Entries:
   id: 318900
   time: '2026-02-07T16:42:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3189
+- author: Citrea
+  changes:
+  - message: Going SSD no longer forces you to sleep, regardless of server settings.
+    type: Fix
+  id: 318700
+  time: '2026-02-07T21:20:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3187
 Order: -1
 
