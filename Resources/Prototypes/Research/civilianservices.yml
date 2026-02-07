@@ -257,7 +257,10 @@
   tier: 3
   cost: 10000
   recipeUnlocks:
+  # Starlight edit start - Replace speed boots with speed legs
+  # - ClothingShoesBootsSpeed
   - LeftLegCyberSpeed
   - RightLegCyberSpeed
+  # Starlight edit end
   radioChannels:
   - Service
