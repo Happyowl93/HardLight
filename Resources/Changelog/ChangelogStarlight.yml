@@ -29770,5 +29770,12 @@ Entries:
   id: 319000
   time: '2026-02-07T22:11:54.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3190
+- author: Sparlight
+  changes:
+  - message: Gave nukie syndicate borgis reinforcement gear that fits them.
+    type: Tweak
+  id: 319100
+  time: '2026-02-07T22:17:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3191
 Order: -1
 
