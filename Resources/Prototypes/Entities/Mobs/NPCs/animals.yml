@@ -4084,18 +4084,3 @@
   - type: AlwaysRevolutionaryConvertible
   - type: CanEnterCryostorage
     # Starlight End
-
-  # Starlight-start
-- type: entity
-  parent: MobCorgiSmart
-  id: MobCorgiSmartNoGalcom
-  suffix: Speech Limited
-  components:
-  - type: LanguageKnowledge
-    speaks:
-    - Dog
-    understands:
-    - Dog
-    - Canilunzt
-    - GalacticCommon
-  # Starlight-end
