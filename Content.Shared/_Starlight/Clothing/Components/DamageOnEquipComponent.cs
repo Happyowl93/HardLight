@@ -1,8 +1,9 @@
 using Content.Shared.Damage;
+using Robust.Shared.GameStates;
 
 namespace Content.Shared._Starlight.Clothing.Components;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class DamageOnEquipComponent : Component
 {
     [DataField] public DamageSpecifier? EquipDamage;
