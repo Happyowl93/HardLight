@@ -36,10 +36,16 @@ public sealed partial class RCDComponent : Component
 
     // Starlight Start: RPD
     /// <summary>
-    /// Indicates whether this is an RPD
+    /// Indicates whether this is an RPD (atmos pipes)
     /// </summary>
     [DataField("isRPD"), AutoNetworkedField]
     public bool IsRPD { get; set; } = false;
+
+    /// <summary>
+    /// Indicates whether this is an RPLD (plumbing)
+    /// </summary>
+    [DataField("isRPLD"), AutoNetworkedField]
+    public bool IsRPLD { get; set; } = false;
 
     /// <summary>
     /// When true the RCD will use the prototype's MirrorPrototype (if available) for placement/validation.

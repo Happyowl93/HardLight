@@ -537,8 +537,8 @@ public sealed class RCDSystem : EntitySystem
         // Attempt to deconstruct a floor tile
         if (target == null)
         {
-            // Starlight Start: RPD
-            if (TryComp<RCDComponent>(uid, out var rcd) && rcd.IsRPD)
+            // Starlight Start: RPD/RPLD
+            if (TryComp<RCDComponent>(uid, out var rcd) && (rcd.IsRPD || rcd.IsRPLD))
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
@@ -588,8 +588,18 @@ public sealed class RCDSystem : EntitySystem
                 return false;
             }
 
-            // Starlight Start: RPD
-            if (TryComp<RCDComponent>(uid, out var rcd) && rcd.IsRPD)
+            // Starlight Start: RPD/RPLD
+            if (TryComp<RCDComponent>(uid, out var rcd) && rcd.IsRPLD)
+            {
+                // RPLD can only deconstruct entities flagged rpld: true
+                if (!deconstructible.RpldDeconstructable)
+                {
+                    if (popMsgs)
+                        _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
+                    return false;
+                }
+            }
+            else if (rcd != null && rcd.IsRPD)
             {
                 // RPD can only deconstruct entities flagged rpd: true
                 if (!deconstructible.RpdDeconstructable)
@@ -601,8 +611,8 @@ public sealed class RCDSystem : EntitySystem
             }
             else
             {
-                // Normal RCD cannot deconstruct RPD-only entities
-                if (!deconstructible.Deconstructable || deconstructible.RpdDeconstructable)
+                // Normal RCD cannot deconstruct RPD-only or RPLD-only entities
+                if (!deconstructible.Deconstructable || deconstructible.RpdDeconstructable || deconstructible.RpldDeconstructable)
                 {
                     if (popMsgs)
                         _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
