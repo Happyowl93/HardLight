@@ -29763,5 +29763,12 @@ Entries:
   id: 318700
   time: '2026-02-07T21:20:21.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3187
+- author: Sparlight
+  changes:
+  - message: Various fixes related to spawning in a corgi
+    type: Fix
+  id: 319000
+  time: '2026-02-07T22:11:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3190
 Order: -1
 
