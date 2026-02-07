@@ -29777,5 +29777,16 @@ Entries:
   id: 319100
   time: '2026-02-07T22:17:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3191
+- author: R3v3l4t1on
+  changes:
+  - message: Returned the individual nade recipes.
+    type: Add
+  - message: Removed the recipes for crafting entire magazines of grenades.
+    type: Remove
+  - message: Blast nades are sec contra and can be unlocked again.
+    type: Tweak
+  id: 318500
+  time: '2026-02-07T22:27:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3185
 Order: -1
 
