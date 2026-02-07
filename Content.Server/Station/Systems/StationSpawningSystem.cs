@@ -179,9 +179,10 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             var grammar = EntityManager.EnsureComponent<GrammarComponent>(resolvedEntity);
             _grammarSystem.SetGender((resolvedEntity, grammar), profile.Gender);
         }
-        else { 
+        else 
+        { 
         // Starlight End
-                    entity ??= Spawn(species.Prototype, coordinates);
+            entity ??= Spawn(species.Prototype, coordinates);
         } // Starlight
 
         if (profile != null)
