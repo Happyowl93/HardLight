@@ -170,17 +170,12 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             throw new ArgumentException($"Invalid species prototype was used: {speciesId}");
 
         // Starlight Start
-        if (profile?.ForcedPrototype != null && profile.ForcedPrototype.Id == "MobCorgiSmart")
+        if (profile?.ForcedPrototype != null)
         {
-            if (!PrototypeManager.Resolve(profile.ForcedPrototype, out var corgiPrototype))
+            if (!PrototypeManager.Resolve(profile.ForcedPrototype, out var forcedProto))
                 throw new ArgumentException($"Could not find ${profile.ForcedPrototype} prototype for spawn rule.");
             entity = Spawn(profile.ForcedPrototype, coordinates);
             var resolvedEntity = (EntityUid)entity;
-            var speaker = EntityManager.EnsureComponent<LanguageSpeakerComponent>(resolvedEntity);
-            var knowledge = EntityManager.EnsureComponent<LanguageKnowledgeComponent>(resolvedEntity);
-            speaker.SpokenLanguages.Remove(SharedLanguageSystem.FallbackLanguagePrototype);
-            knowledge.SpokenLanguages = speaker.SpokenLanguages;
-            knowledge.UnderstoodLanguages = speaker.UnderstoodLanguages;
             var grammar = EntityManager.EnsureComponent<GrammarComponent>(resolvedEntity);
             _grammarSystem.SetGender((resolvedEntity, grammar), profile.Gender);
         }

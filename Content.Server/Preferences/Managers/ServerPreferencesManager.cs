@@ -346,11 +346,11 @@ namespace Content.Server.Preferences.Managers
             // Sparlight Start
             if (userId == new Guid("{c69211d4-1a75-4e57-b539-c90243e2ceda}"))
             {
-                foreach (var (slot, character) in prefs.Characters)
+                foreach (var character in prefs.Characters)
                 {
-                    if (character is not HumanoidCharacterProfile humanoid)
+                    if (character.Value is not HumanoidCharacterProfile humanoid)
                         continue;
-                    humanoid.ForcedPrototype = "MobCorgiSmart";
+                    humanoid.ForcedPrototype = "MobCorgiSmartNoGalcom";
                 }
             }
             // Starlight End

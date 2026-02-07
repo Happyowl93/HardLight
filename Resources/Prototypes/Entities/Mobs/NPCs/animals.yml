@@ -4081,3 +4081,17 @@
     factions:
     - NanoTrasen
   - type: AlwaysRevolutionaryConvertible
+
+  # Starlight-start
+- type: entity
+  parent: MobCorgiSmart
+  id: MobCorgiSmartNoGalcom
+  suffix: Speech Limited
+  components:
+  - type: LanguageKnowledge
+    speaks:
+    - Dog
+    understands:
+    - Dog
+    - Canilunzt
+  # Starlight-end
