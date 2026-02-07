@@ -29680,5 +29680,17 @@ Entries:
   id: 318200
   time: '2026-02-07T06:42:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3182
+- author: Conflee
+  changes:
+  - message: Changed ERT icons to use green backgrounds instead of blue, and swapped
+      their IDs to be silver not blue. ERT is CentComm, not NT.
+    type: Tweak
+  - message: Changed CBURN icon to be a chemist symbol instead of the previous, as
+      we used the previous symbol for Chaplain. Chemist felt most fitting as they
+      make Ambuzol etc.
+    type: Tweak
+  id: 318100
+  time: '2026-02-07T06:46:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3181
 Order: -1
 
