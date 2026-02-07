@@ -4080,7 +4080,10 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
+    # Starlight Start
   - type: AlwaysRevolutionaryConvertible
+  - type: CanEnterCryostorage
+    # Starlight End
 
   # Starlight-start
 - type: entity
@@ -4094,4 +4097,5 @@
     understands:
     - Dog
     - Canilunzt
+    - GalacticCommon
   # Starlight-end
