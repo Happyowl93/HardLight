@@ -49,7 +49,13 @@
     },
     {
       "name": "can-o0",
-      "copyright": "Created by Conf (Starlight)"
+      "copyright": "Created by Conf (Starlight)",
+      "delays": [
+        [
+          0.2,
+          0.2
+        ]
+      ]
     },
     {
       "name": "can-o1",
