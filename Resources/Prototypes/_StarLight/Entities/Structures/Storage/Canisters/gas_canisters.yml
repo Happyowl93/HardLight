@@ -228,7 +228,7 @@
   - type: Sprite
     sprite: _Starlight/Structures/Storage/canister.rsi
     layers:
-    - state: can-rainbow
+    - state: rainbow
   - type: GasCanister
     gasMixture:
       volume: 1500
@@ -265,4 +265,4 @@
   components:
   - type: Sprite
     sprite: _Starlight/Structures/Storage/canister.rsi
-    state: can-rainbow-1
+    state: rainbow_broken
