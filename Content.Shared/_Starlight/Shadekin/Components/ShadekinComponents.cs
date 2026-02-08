@@ -111,6 +111,12 @@ public sealed partial class BrighteyeComponent : Component
     public EntityUid? DarkTrapAction;
 
     [DataField]
+    public EntityUid? ShadeSkipAction;
+
+    [DataField]
+    public EntityUid? CreateShadeAction;
+
+    [DataField]
     public EntProtoId BrighteyePortalAction = "BrighteyePortalAction";
 
     [DataField]
@@ -120,13 +126,28 @@ public sealed partial class BrighteyeComponent : Component
     public EntProtoId BrighteyeDarkTrapAction = "BrighteyeDarkTrapAction";
 
     [DataField]
+    public EntProtoId BrighteyeShadeSkipAction = "BrighteyeShadeSkipAction";
+
+    [DataField]
+    public EntProtoId BrighteyeCreateShadeAction = "BrighteyeCreateShadeAction";
+
+    [DataField]
     public int PortalCost = 150;
 
     [DataField]
-    public int PhaseCost = 50;
+    public int PhaseCost = 50; // Scales with CurrentState.
 
     [DataField]
-    public int DarkTrapCost = 150;
+    public int DarkTrapCost = 80;
+
+    [DataField]
+    public int ShadeSkipCost = 50; // Scales with CurrentState.
+
+    [DataField]
+    public TimeSpan ShadeSkipStunAmount =  TimeSpan.FromSeconds(10);
+
+    [DataField]
+    public int CreateShadeCost = 50;
 
     [DataField]
     public EntProtoId ShadekinShadow = "ShadekinShadow";
@@ -190,6 +211,8 @@ public sealed partial class DarkTrapComponent : Component
 public sealed partial class BrighteyePortalActionEvent : InstantActionEvent { }
 public sealed partial class BrighteyePhaseActionEvent : InstantActionEvent { }
 public sealed partial class BrighteyeDarkTrapActionEvent : InstantActionEvent { }
+public sealed partial class BrighteyeShadeSkipActionEvent : EntityTargetActionEvent { }
+public sealed partial class BrighteyeCreateShadeActionEvent : InstantActionEvent { }
 
 [Serializable, NetSerializable]
 public sealed partial class PhaseDoAfterEvent : SimpleDoAfterEvent

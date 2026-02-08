@@ -4,11 +4,13 @@ using Content.Shared._Starlight.Shadekin;
 using Content.Shared.Body.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Ensnaring.Components;
+using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Popups;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Trigger;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -19,11 +21,61 @@ public sealed partial class ShadekinSystem : EntitySystem
         SubscribeLocalEvent<BrighteyeComponent, BrighteyePortalActionEvent>(OnPortalAction);
         SubscribeLocalEvent<BrighteyeComponent, BrighteyePhaseActionEvent>(OnPhaseAction);
         SubscribeLocalEvent<BrighteyeComponent, BrighteyeDarkTrapActionEvent>(OnDarkTrapAction);
+        SubscribeLocalEvent<BrighteyeComponent, BrighteyeCreateShadeActionEvent>(OnCreateShadeAction);
+        SubscribeLocalEvent<BrighteyeComponent, BrighteyeShadeSkipActionEvent>(OnShadeskipAction);
         SubscribeLocalEvent<BrighteyeComponent, PhaseDoAfterEvent>(OnPhaseDoAfter);
 
         SubscribeLocalEvent<DarkTrapComponent, TriggerEvent>(DarkTrapOnTrigger);
         SubscribeLocalEvent<DarkTrapComponent, EnsnareRemoveEvent>((uid, _, _) => QueueDel(uid));
     }
+
+    #region  Shadeskip
+
+    private void OnShadeskipAction(EntityUid uid, BrighteyeComponent component, BrighteyeShadeSkipActionEvent args)
+    {
+        int cost = component.ShadeSkipCost;
+        if (HasComp<NullSpaceComponent>(uid))
+            return;
+
+        if (TryComp<ShadekinComponent>(uid, out var shadekin))
+        {
+            if (shadekin.CurrentState == ShadekinState.Extreme)
+                return;
+            else if (shadekin.CurrentState == ShadekinState.High)
+                cost = component.MaxEnergy;
+            else if (shadekin.CurrentState == ShadekinState.Annoying)
+                cost *= 3;
+            else if (shadekin.CurrentState == ShadekinState.Low)
+                cost *= 2;
+        }
+
+        if (OnAttemptEnergyUse(uid, component, cost))
+        {
+            _stunSystem.TryUpdateStunDuration(args.Target, component.ShadeSkipStunAmount);
+            _stunSystem.TryKnockdown(args.Target, component.ShadeSkipStunAmount, force: true);
+            _status.TryAddStatusEffectDuration(args.Target, "StatusEffectTemporaryBlindness", component.ShadeSkipStunAmount);
+            _status.TryAddStatusEffectDuration(args.Target, "StatusEffectTheDark", component.ShadeSkipStunAmount);
+
+            args.Handled = true;
+        }
+    }
+
+    #endregion
+
+    #region Create Shade
+
+    private void OnCreateShadeAction(EntityUid uid, BrighteyeComponent component, BrighteyeCreateShadeActionEvent args)
+    {
+        if (OnAttemptEnergyUse(uid, component, component.CreateShadeCost))
+        {
+            var shadegen = SpawnAttachedTo("ShadekinShadegen", Transform(uid).Coordinates);
+            _transform.SetParent(shadegen, uid);
+
+            args.Handled = true;
+        }
+    }
+
+    #endregion
 
     #region DarkTrap
 
@@ -44,9 +96,10 @@ public sealed partial class ShadekinSystem : EntitySystem
             }
 
         if (OnAttemptEnergyUse(uid, component, component.DarkTrapCost))
+        {
             SpawnAtPosition(component.ShadekinTrap, Transform(uid).Coordinates);
-
-        args.Handled = true;
+            args.Handled = true;
+        }
     }
 
     private void DarkTrapOnTrigger(Entity<DarkTrapComponent> ent, ref TriggerEvent args)

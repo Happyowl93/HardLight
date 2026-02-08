@@ -41,7 +41,9 @@ public sealed partial class ShadekinSystem : EntitySystem
 
         _actionsSystem.AddAction(uid, ref component.PortalAction, component.BrighteyePortalAction, uid);
         _actionsSystem.AddAction(uid, ref component.PhaseAction, component.BrighteyePhaseAction, uid);
-        _actionsSystem.AddAction(uid, ref component.DarkTrapAction, component.BrighteyeDarkTrapAction, uid);
+        _actionsSystem.AddAction(uid, ref component.ShadeSkipAction, component.BrighteyeShadeSkipAction, uid);
+        _actionsSystem.AddAction(uid, ref component.CreateShadeAction, component.BrighteyeCreateShadeAction, uid);
+        _actionsSystem.AddAction(uid, ref component.DarkTrapAction, component.BrighteyeDarkTrapAction, uid);        
 
         if (TryComp<BodyComponent>(uid, out var body))
             foreach (var core in _bodySystem.GetBodyOrganEntityComps<OrganShadekinCoreComponent>((uid, body)))
@@ -61,6 +63,7 @@ public sealed partial class ShadekinSystem : EntitySystem
 
                     _alerts.ClearAlert(uid, component.PortalAlert);
                     _actionsSystem.RemoveAction(uid, component.PortalAction);
+                    _actionsSystem.RemoveAction(uid, component.ShadeSkipAction);
                     _actionsSystem.RemoveAction(uid, component.DarkTrapAction);
                 }
             }
@@ -89,6 +92,8 @@ public sealed partial class ShadekinSystem : EntitySystem
 
         _actionsSystem.RemoveAction(uid, component.PortalAction);
         _actionsSystem.RemoveAction(uid, component.PhaseAction);
+        _actionsSystem.RemoveAction(uid, component.ShadeSkipAction);
+        _actionsSystem.RemoveAction(uid, component.CreateShadeAction);
         _actionsSystem.RemoveAction(uid, component.DarkTrapAction);
 
         if (component.Portal is not null)

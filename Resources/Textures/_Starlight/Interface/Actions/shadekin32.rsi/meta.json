@@ -18,6 +18,10 @@
         {
             "name": "create_shade",
             "directions": 1
+        },
+        {
+            "name": "phase_shift",
+            "directions": 1
         }
     ]
 }

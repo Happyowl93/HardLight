@@ -31,6 +31,7 @@ using Content.Shared.Damage.Systems;
 using Content.Server.DoAfter;
 using Content.Shared.Ensnaring;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.StatusEffectNew;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -58,6 +59,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedEnsnareableSystem _ensnareable = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] protected readonly StatusEffectsSystem _status = default!;
 
     private static readonly ProtoId<TagPrototype> _theDarkTag = "TheDark";
     private static readonly ProtoId<TagPrototype> _coreTag = "ShadekinCore";
@@ -167,11 +169,17 @@ public sealed partial class ShadekinSystem : EntitySystem
     {
         var illumination = 0f;
 
+        var shadeQuery = _lookup.GetEntitiesInRange<ShadegenComponent>(Transform(uid).Coordinates, 20); // Why 20 when theres different ranges? because light check does not go above 20.
+        
+        foreach (var shadegen in shadeQuery)
+            if (_transform.InRange(Transform(uid).Coordinates, Transform(shadegen.Owner).Coordinates, shadegen.Comp.Range))
+                return illumination;
+
         var lightQuery = _lookup.GetEntitiesInRange<PointLightComponent>(Transform(uid).Coordinates, 20, LookupFlags.All | LookupFlags.Approximate);
 
         foreach (var light in lightQuery)
         {
-            if (HasComp<DarkLightComponent>(light))
+            if (HasComp<DarkLightComponent>(light.Owner))
                 continue;
 
             if (!light.Comp.Enabled
