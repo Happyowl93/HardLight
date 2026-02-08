@@ -29870,5 +29870,20 @@ Entries:
   id: 320100
   time: '2026-02-08T12:32:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3201
+- author: CringeCursed
+  changes:
+  - message: Using Umbrae`s cloak of darkness, now you become more visible the closer
+      you get to humanoids.
+    type: Tweak
+  - message: FIxed paradox clone now spawning with vampire abilities.
+    type: Fix
+  - message: Now you get free from enthrallment if you get mindshielded
+    type: Tweak
+  - message: Fixed so Umbrae vampire does not remain invisible on critical or dead
+      state.
+    type: Fix
+  id: 320500
+  time: '2026-02-08T19:53:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3205
 Order: -1
 
