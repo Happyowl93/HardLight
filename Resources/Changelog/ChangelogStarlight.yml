@@ -29859,5 +29859,16 @@ Entries:
   id: 319800
   time: '2026-02-08T07:35:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3198
+- author: Citrea
+  changes:
+  - message: We have reduced the amount of Ephedrine in Resomi legs. They can no longer
+      jump forever.
+    type: Fix
+  - message: Research servers have been informed that we do indeed research medical
+      sciences.
+    type: Fix
+  id: 320100
+  time: '2026-02-08T12:32:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3201
 Order: -1
 
