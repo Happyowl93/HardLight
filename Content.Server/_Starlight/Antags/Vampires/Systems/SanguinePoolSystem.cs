@@ -7,7 +7,6 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Maps;
-using Content.Shared.Fluids.Components;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 
