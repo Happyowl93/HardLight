@@ -59,6 +59,12 @@ public sealed partial class LargeGrabberComponent : Component
             "MobStateComponent",
         ],
     };
+    
+    /// <summary>
+    /// Does the grabber drop everything when put away?
+    /// </summary>
+    [DataField]
+    public bool DropOnContainerChange = false;
 
     public EntityUid? AudioStream;
 
