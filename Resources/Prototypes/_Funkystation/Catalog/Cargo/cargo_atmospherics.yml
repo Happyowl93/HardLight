@@ -1,11 +1,7 @@
-# SPDX-FileCopyrightText: 2026 Steve <marlumpy@gmail.com>
-# SPDX-License-Identifier: MIT
-
-# Funky atmos - /tg/ gases
 - type: cargoProduct
   id: AtmosphericsBZ
   icon:
-    sprite: _Funkystation/Structures/Storage/canister.rsi
+    sprite: _Starlight/Structures/Storage/canister.rsi
     state: purple
   product: BZCanister
   cost: 6000
