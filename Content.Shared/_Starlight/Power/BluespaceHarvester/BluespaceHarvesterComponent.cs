@@ -1,10 +1,17 @@
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.Power.BluespaceHarvester;
 
-[RegisterComponent]
+[RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class BluespaceHarvesterComponent : Component
 {
+
+    [DataField]
+    public TimeSpan UpdateDelay = TimeSpan.FromSeconds(1);
+    [DataField, AutoPausedField]
+    public TimeSpan LastUpdate;
+
     [DataField]
     public List<float> LevelPowerDraw = new() // Power draw required per level
     {

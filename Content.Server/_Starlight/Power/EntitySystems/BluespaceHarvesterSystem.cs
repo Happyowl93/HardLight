@@ -9,6 +9,7 @@ using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Server._Starlight.Power.EntitySystems;
@@ -26,6 +27,7 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly PowerNetSystem _powerNet = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     public override void Initialize()
     {
@@ -118,9 +120,16 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        var curTime = _gameTiming.CurTime;
         var query = EntityQueryEnumerator<BluespaceHarvesterComponent, PowerConsumerComponent>();
         while (query.MoveNext(out var uid, out var component, out var powerConsumer))
         {
+            if (curTime - component.LastUpdate < component.UpdateDelay)
+                continue;
+
+            var deltaTime = (float)(curTime - component.LastUpdate).TotalSeconds;
+            component.LastUpdate = curTime;
+
             if (component.ActivePortal != null && !Exists(component.ActivePortal.Value))
             {
                 component.ActivePortal = null;
@@ -147,7 +156,7 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
 
                 // Accumulator pattern, collect fractional points over time, award whole points when >= 1
                 // Prevents losing fractional points each tick
-                component.PointAccumulator += pointsPerSecond * frameTime;
+                component.PointAccumulator += pointsPerSecond * deltaTime;
                 if (component.PointAccumulator >= 1f)
                 {
                     var added = (int) component.PointAccumulator;
@@ -160,7 +169,7 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
             // Check for portal spawn in dangerous mode
             if (component.CurrentLevel >= component.DangerousLevelThreshold)
             {
-                TrySpawnPortal(uid, component, frameTime);
+                TrySpawnPortal(uid, component, deltaTime);
             }
 
             UpdateUi(uid, component, powerConsumer);
