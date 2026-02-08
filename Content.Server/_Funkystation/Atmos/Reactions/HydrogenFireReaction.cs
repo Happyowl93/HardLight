@@ -1,6 +1,3 @@
-// SPDX-FileCopyrightText: 2026 Steve <marlumpy@gmail.com>
-// SPDX-License-Identifier: MIT
-
 using Content.Server.Atmos;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Atmos;
@@ -10,7 +7,6 @@ using JetBrains.Annotations;
 namespace Content.Server._Funkystation.Atmos.Reactions;
 
 /// <summary>
-///     Funky Atmos - /tg/ gases
 ///     The ignition of hydrogen in the presence of oxygen at temperatures above 373.15K.
 ///     Copies the tritium burn reaction almost exactly, but without the radiation pulse.
 /// </summary>
