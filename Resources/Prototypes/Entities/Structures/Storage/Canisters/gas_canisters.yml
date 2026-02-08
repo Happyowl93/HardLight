@@ -376,11 +376,6 @@
   name: liquid carbon dioxide canister
   description: A canister that can contain any type of gas. This one is supposed to contain liquid carbon dioxide. It can be attached to connector ports using a wrench.
   components:
-  # Starlight Start
-  - type: Sprite
-    layers:
-      - state: l_carbon
-  # Starlight End
   - type: GasCanister
     gasMixture:
       volume: 1500
@@ -601,7 +596,7 @@
   components:
   - type: Sprite
     layers:
-    - state: frezon
+    - state: freezon # Starlight Edit: frezon -> freezon
   - type: GasCanister
     gasMixture:
       volume: 1500
