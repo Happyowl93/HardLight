@@ -226,7 +226,7 @@
   suffix: Empty
   components:
   - type: Sprite
-    sprite: _Funkystation/Structures/Storage/canister.rsi
+    sprite: _Starlight/Structures/Storage/canister.rsi
     layers:
     - state: can-rainbow
   - type: GasCanister
@@ -240,29 +240,29 @@
   id: LiquidOxygenCanisterBroken
   components:
   - type: Sprite
-    sprite: _Funkystation/Structures/Storage/canister.rsi
-    state: blue-1
+    sprite: _Starlight/Structures/Storage/canister.rsi
+    state: l_oxygen_broken
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: LiquidNitrogenCanisterBroken
   components:
   - type: Sprite
-    sprite: _Funkystation/Structures/Storage/canister.rsi
-    state: red-1
+    sprite: _Starlight/Structures/Storage/canister.rsi
+    state: l_nitrogen_broken
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: LiquidCarbonDioxideCanisterBroken
   components:
   - type: Sprite
-    sprite: _Funkystation/Structures/Storage/canister.rsi
-    state: black-1
+    sprite: _Starlight/Structures/Storage/canister.rsi
+    state: carbon_broken
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: RainbowCanisterBroken
   components:
   - type: Sprite
-    sprite: _Funkystation/Structures/Storage/canister.rsi
+    sprite: _Starlight/Structures/Storage/canister.rsi
     state: can-rainbow-1

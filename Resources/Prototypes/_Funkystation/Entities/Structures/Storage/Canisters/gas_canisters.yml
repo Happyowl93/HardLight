@@ -1,6 +1,3 @@
-# SPDX-FileCopyrightText: 2026 Steve <marlumpy@gmail.com>
-# SPDX-License-Identifier: MIT
-
 # Funky atmos - /tg/ gases
 - type: entity
   parent: GasCanister
@@ -9,17 +6,17 @@
   components:
   - type: Sprite
     layers:
-    - state: purple
+    - state: bz # Starlight Edit: purple -> bz
   - type: GasCanister
     gasMixture:
       volume: 1000
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
+      - 0 # Oxygen
+      - 0 # Nitrogen
       - 0 # CO2
       - 0 # Plasma
       - 0 # Tritium
-      - 0 #  Water vapor
+      - 0 # Water vapor
       - 0 # Miasma
       - 0 # N2O
       - 0 # Frezon
@@ -63,12 +60,12 @@
     gasMixture:
       volume: 1000
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
+      - 0 # Oxygen
+      - 0 # Nitrogen
       - 0 # CO2
       - 0 # Plasma
       - 0 # Tritium
-      - 0 #  Water vapor
+      - 0 # Water vapor
       - 0 # Miasma
       - 0 # N2O
       - 0 # Frezon
@@ -108,17 +105,17 @@
   components:
   - type: Sprite
     layers:
-    - state: brown
+    - state: nitrium # Starlight Edit: brown -> nitrium
   - type: GasCanister
     gasMixture:
       volume: 1000
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
+      - 0 # Oxygen
+      - 0 # Nitrogen
       - 0 # CO2
       - 0 # Plasma
       - 0 # Tritium
-      - 0 #  Water vapor
+      - 0 # Water vapor
       - 0 # Miasma
       - 0 # N2O
       - 0 # Frezon
@@ -159,17 +156,17 @@
   components:
   - type: Sprite
     layers:
-    - state: darkblue
+    - state: pluoxium # Starlight Edit: darkblue -> pluoxium
   - type: GasCanister
     gasMixture:
       volume: 1000
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
+      - 0 # Oxygen
+      - 0 # Nitrogen
       - 0 # CO2
       - 0 # Plasma
       - 0 # Tritium
-      - 0 #  Water vapor
+      - 0 # Water vapor
       - 0 # Miasma
       - 0 # N2O
       - 0 # Frezon
@@ -211,17 +208,17 @@
   components:
   - type: Sprite
     layers:
-    - state: white
+    - state: hydrogen # Starlight Edit: white -> hydrogen
   - type: GasCanister
     gasMixture:
       volume: 1000
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
+      - 0 # Oxygen
+      - 0 # Nitrogen
       - 0 # CO2
       - 0 # Plasma
       - 0 # Tritium
-      - 0 #  Water vapor
+      - 0 # Water vapor
       - 0 # Miasma
       - 0 # N2O
       - 0 # Frezon
@@ -264,17 +261,17 @@
   components:
   - type: Sprite
     layers:
-    - state: nob
+    - state: hyper_noblium # Starlight Edit: nob -> hyper_noblium
   - type: GasCanister
     gasMixture:
       volume: 1000
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
+      - 0 # Oxygen
+      - 0 # Nitrogen
       - 0 # CO2
       - 0 # Plasma
       - 0 # Tritium
-      - 0 #  Water vapor
+      - 0 # Water vapor
       - 0 # Miasma
       - 0 # N2O
       - 0 # Frezon
@@ -323,12 +320,12 @@
     gasMixture:
       volume: 1000
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
+      - 0 # Oxygen
+      - 0 # Nitrogen
       - 0 # CO2
       - 0 # Plasma
       - 0 # Tritium
-      - 0 #  Water vapor
+      - 0 # Water vapor
       - 0 # Miasma
       - 0 # N2O
       - 0 # Frezon
@@ -378,12 +375,12 @@
     gasMixture:
       volume: 1000
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
+      - 0 # Oxygen
+      - 0 # Nitrogen
       - 0 # CO2
       - 0 # Plasma
       - 0 # Tritium
-      - 0 #  Water vapor
+      - 0 # Water vapor
       - 0 # Miasma
       - 0 # N2O
       - 0 # Frezon
@@ -434,12 +431,12 @@
     gasMixture:
       volume: 1000
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
+      - 0 # Oxygen
+      - 0 # Nitrogen
       - 0 # CO2
       - 0 # Plasma
       - 0 # Tritium
-      - 0 #  Water vapor
+      - 0 # Water vapor
       - 0 # Miasma
       - 0 # N2O
       - 0 # Frezon
@@ -485,18 +482,19 @@
   name: helium canister
   components:
   - type: Sprite
+
     layers:
     - state: helium
   - type: GasCanister
     gasMixture:
       volume: 1000
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
+      - 0 # Oxygen
+      - 0 # Nitrogen
       - 0 # CO2
       - 0 # Plasma
       - 0 # Tritium
-      - 0 #  Water vapor
+      - 0 # Water vapor
       - 0 # Miasma
       - 0 # N2O
       - 0 # Frezon
@@ -544,17 +542,17 @@
   components:
   - type: Sprite
     layers:
-    - state: antinob
+    - state: anti_noblium # Starlight Edit: antinob -> anti_noblium
   - type: GasCanister
     gasMixture:
       volume: 1000
       moles:
-      - 0 # oxygen
-      - 0 # nitrogen
+      - 0 # Oxygen
+      - 0 # Nitrogen
       - 0 # CO2
       - 0 # Plasma
       - 0 # Tritium
-      - 0 #  Water vapor
+      - 0 # Water vapor
       - 0 # Miasma
       - 0 # N2O
       - 0 # Frezon
@@ -601,74 +599,74 @@
   id: BZCanisterBroken
   components:
   - type: Sprite
-    state: purple-1
+    state: bz_broken # Starlight Edit: purple-1 -> bz_broken
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: HealiumCanisterBroken
   components:
   - type: Sprite
-    state: healium-1
+    state: healium_broken # Starlight Edit: healium-1 -> healium_broken
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: NitriumCanisterBroken
   components:
   - type: Sprite
-    state: brown-1
+    state: nitrium_broken # Starlight Edit: brown-1 -> nitrium_broken
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: PluoxiumCanisterBroken
   components:
   - type: Sprite
-    state: darkblue-1
+    state: pluoxium_broken # Starlight Edit: darkblue-1 -> pluoxium_broken
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: HydrogenCanisterBroken
   components:
   - type: Sprite
-    state: white-1
+    state: hydrogen_broken # Starlight Edit: white-1 -> hydrogen_broken
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: HyperNobliumCanisterBroken
   components:
   - type: Sprite
-    state: nob-1
+    state: hyper_noblium_broken # Starlight Edit: nob-1 -> hyper_noblium_broken
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: ProtoNitrateCanisterBroken
   components:
   - type: Sprite
-    state: proto_nitrate-1
+    state: proto_nitrate_broken # Starlight Edit: proto_nitrate-1 -> proto_nitrate_broken
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: ZaukerCanisterBroken
   components:
   - type: Sprite
-    state: zauker-1
+    state: zauker_broken # Starlight Edit: zauker-1 -> zauker_broken
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: HalonCanisterBroken
   components:
   - type: Sprite
-    state: halon-1
+    state: halon_broken # Starlight Edit: halon-1 -> halon_broken
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: HeliumCanisterBroken
   components:
   - type: Sprite
-    state: helium-1
+    state: helium_broken # Starlight Edit: helium-1 -> helium_broken
 
 - type: entity
   parent: GasCanisterBrokenBase
   id: AntiNobliumCanisterBroken
   components:
   - type: Sprite
-    state: antinob-1
+    state: anti_noblium_broken # Starlight Edit: antinob-1 -> anti_noblium_broken
