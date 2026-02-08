@@ -29,7 +29,7 @@ public sealed partial class ShadegenSystem : EntitySystem
 
             component.NextUpdate = _timing.CurTime + component.UpdateCooldown;
 
-            var lightQuery = _lookup.GetEntitiesInRange<HandheldLightComponent>(Transform(uid).Coordinates, component.Range, LookupFlags.Uncontained);
+            var lightQuery = _lookup.GetEntitiesInRange<HandheldLightComponent>(Transform(uid).Coordinates, component.Range);
 
             foreach (var light in lightQuery)
             {

@@ -43,3 +43,6 @@ admin-verb-make-brighteye = Make the target into a Bright-eye.
 
 shadekinTrap-trigger = A set of crystals spring out of the ground and shadowy tendrils start wrapping around {$user}
 shadekinTrap-trigger-fail = The shadowy tendrils fail to catch anything and dissipate.
+
+alerts-shadekin-thedark-name = The Dark
+alerts-shadekin-thedark-desc = Your in The Dark... and without protection or being a shadekin... Its taking an effect on you.

@@ -43,10 +43,10 @@ public sealed class ShadegenSystem : EntitySystem
             if (Transform(uid).MapID == MapId.Nullspace)
                 continue;
 
-            var lightQuery = _lookup.GetEntitiesInRange<PointLightComponent>(Transform(uid).Coordinates, shadegen.Range, LookupFlags.Uncontained);
+            var lightQuery = _lookup.GetEntitiesInRange<PointLightComponent>(Transform(uid).Coordinates, shadegen.Range);
             foreach (var light in lightQuery)
             {
-                if (HasComp<DarkLightComponent>(light))
+                if (light.Comp.ContainerOccluded || HasComp<DarkLightComponent>(light))
                     continue;
 
                 _lightSys.SetContainerOccluded(light.Owner, true, light.Comp);

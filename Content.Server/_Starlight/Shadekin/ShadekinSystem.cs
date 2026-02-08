@@ -32,6 +32,7 @@ using Content.Server.DoAfter;
 using Content.Shared.Ensnaring;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.StatusEffectNew;
+using Content.Shared.Mobs.Components;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -59,7 +60,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedEnsnareableSystem _ensnareable = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] protected readonly StatusEffectsSystem _status = default!;
+    [Dependency] private readonly StatusEffectsSystem _status = default!;
 
     private static readonly ProtoId<TagPrototype> _theDarkTag = "TheDark";
     private static readonly ProtoId<TagPrototype> _coreTag = "ShadekinCore";
@@ -170,7 +171,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         var illumination = 0f;
 
         var shadeQuery = _lookup.GetEntitiesInRange<ShadegenComponent>(Transform(uid).Coordinates, 20); // Why 20 when theres different ranges? because light check does not go above 20.
-        
+
         foreach (var shadegen in shadeQuery)
             if (_transform.InRange(Transform(uid).Coordinates, Transform(shadegen.Owner).Coordinates, shadegen.Comp.Range))
                 return illumination;
@@ -369,6 +370,19 @@ public sealed partial class ShadekinSystem : EntitySystem
 
             if (TryComp<BrighteyeComponent>(uid, out var brighteye))
                 UpdateEnergy(uid, component, brighteye);
+        }
+
+        // The Dark Effects - This only applies for Ents that are IN THE DARK.
+        var thedarkmobquery = EntityQueryEnumerator<MobStateComponent>();
+        while (thedarkmobquery.MoveNext(out var uid, out var _))
+        {
+            if (HasComp<ShadekinComponent>(uid))
+                continue;
+
+            if (AreWeInTheDark(uid) && !HasComp<TheDarkImmuneComponent>(uid))
+                _status.TrySetStatusEffectDuration(uid, "StatusEffectTheDarkMap");
+            else if (_status.HasStatusEffect(uid, "StatusEffectTheDarkMap"))
+                _status.TryRemoveStatusEffect(uid, "StatusEffectTheDarkMap");
         }
     }
 }

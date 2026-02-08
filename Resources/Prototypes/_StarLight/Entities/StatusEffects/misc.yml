@@ -25,4 +25,16 @@
     blacklist:
       components:
       - Shadekin
+      - TheDarkImmune
   - type: DrunkStatusEffect
+  - type: DrowsinessStatusEffect
+    sleepIncident: false
+    knockdownIncident: true
+
+# Map Version so its we edit it slightly.
+- type: entity
+  parent: StatusEffectTheDark
+  id: StatusEffectTheDarkMap
+  components:
+  - type: StatusEffectAlert
+    alert: ShadekinTheDarkAlert
