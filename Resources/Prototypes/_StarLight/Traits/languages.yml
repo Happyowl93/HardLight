@@ -90,6 +90,27 @@
         - Iterator
       inverted: true
 
+- type: trait
+  id: Felyaic
+  name: trait-language-felyaic-name
+  description: trait-language-felyaic-desc
+  category: LanguageTraits
+  cost: 1
+  effects:
+    - !type:LanguageEffect
+      languagesSpoken:
+        - Felyaic
+      languagesUnderstood:
+        - Felyaic
+  requirements:
+    - !type:TraitsRequirement
+      traits:
+        - Darktongue
+    - !type:TraitsRequirement
+      traits:
+        - Iterator
+      inverted: true
+
 # Species Languages // Should cost: 2
 
 - type: trait

@@ -608,8 +608,11 @@ public abstract class SharedMagicSystem : EntitySystem
         var star = Spawn(ev.Spawned, Transform(user).Coordinates);
         if (IsClientSide(star))
             Del(star);//event has a tendency to produce client-sided cheese... this cleans those up...
-        else
-            _hands.TryPickupAnyHand(user, star);
+        else {
+            var result = _hands.TryPickupAnyHand(user, star);
+            if(!result && ev.RequiresFreeHand)
+                Del(star); // abort!
+        }
         ev.Handled = true;
     }
 

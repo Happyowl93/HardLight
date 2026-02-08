@@ -10,4 +10,10 @@ public sealed partial class SpawnItemInHandEvent : InstantActionEvent
     /// </summary>
     [DataField(required: true)]
     public EntProtoId Spawned = string.Empty;
+
+    /// <summary>
+    /// Should this require a free hand to work?
+    /// </summary>
+    [DataField]
+    public bool RequiresFreeHand = false;
 }
