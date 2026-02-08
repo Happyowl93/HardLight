@@ -2,43 +2,43 @@
 - type: nanoChatEmote
   id: godo
   category: Reactions
-  searchTags: ["dog", "happy", "godo"]
+  searchTags: ["godo", "happy", "godo"]
   sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/godo.png
 
 - type: nanoChatEmote
   id: do
   category: Reactions
-  searchTags: ["dog", "neutral"]
+  searchTags: ["godo", "neutral"]
   sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/do.png
 
 - type: nanoChatEmote
   id: donow
   category: Reactions
-  searchTags: ["dog", "determined", "motivated"]
+  searchTags: ["godo", "determined", "motivated"]
   sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/donow.png
 
 - type: nanoChatEmote
   id: gocrazy
   category: Reactions
-  searchTags: ["dog", "crazy", "insane"]
+  searchTags: ["godo", "crazy", "insane"]
   sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/donot.png
 
 - type: nanoChatEmote
   id: gosad
   category: Reactions
-  searchTags: ["dog", "sad", "depressed"]
+  searchTags: ["godo", "sad", "depressed"]
   sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/dontdo.png
 
 - type: nanoChatEmote
   id: godover
   category: Reactions
-  searchTags: ["dog", "over", "done"]
+  searchTags: ["godo", "over", "done"]
   sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/godover.png
 
 - type: nanoChatEmote
   id: golove
   category: Reactions
-  searchTags: ["dog", "love", "heart"]
+  searchTags: ["godo", "love", "heart"]
   sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/golove.png
 
 # Character emotes
