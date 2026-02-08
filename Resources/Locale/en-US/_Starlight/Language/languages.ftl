@@ -100,8 +100,8 @@ language-Thaveyan-description = A lyrical sing-songy language common to the Thav
 language-Darktongue-name = Darktongue
 language-Darktongue-description = Sounds a bit like clearing your throat, or perhaps slitting someone else's.
 
-language-Aielic-name = Felyaic
-language-Aielic-description = A more ponderous form of Darktongue spoken in deep, dark places.
+language-Felyaic-name = Felyaic
+language-Felyaic-description = A more ponderous form of Darktongue spoken in deep, dark places.
 
 language-Grumbakul-name = Grumbakul
 language-Grumbakul-description = A terse, sturdy language fit for drink and industry.

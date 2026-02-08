@@ -89,6 +89,10 @@
       traits:
         - Iterator
       inverted: true
+    - !type:TraitsRequirement
+      traits:
+        - DarkElf
+      inverted: true
 
 - type: trait
   id: Felyaic
@@ -109,6 +113,10 @@
     - !type:TraitsRequirement
       traits:
         - Iterator
+      inverted: true
+    - !type:TraitsRequirement
+      traits:
+        - CaveElf
       inverted: true
 
 # Species Languages // Should cost: 2
@@ -199,6 +207,10 @@
     - !type:TraitsRequirement
       traits:
         - Iterator
+      inverted: true
+    - !type:TraitsRequirement
+      traits:
+        - HighElf
       inverted: true
 
 - type: trait
@@ -371,6 +383,10 @@
     - !type:SpeciesRequirement
       species:
         - Diona
+      inverted: true
+    - !type:TraitsRequirement
+      traits:
+        - WoodElf
       inverted: true
     - !type:TraitsRequirement
       traits:
