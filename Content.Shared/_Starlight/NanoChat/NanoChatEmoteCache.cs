@@ -6,7 +6,6 @@ namespace Content.Shared._Starlight.NanoChat;
 
 /// <summary>
 /// Centralized cache for NanoChat emote definitions.
-/// Provides efficient access to emote prototypes with lazy loading.
 /// </summary>
 public static class NanoChatEmoteCache
 {
@@ -22,13 +21,9 @@ public static class NanoChatEmoteCache
         public string Id { get; init; } = string.Empty;
         public string DisplayName { get; init; } = string.Empty;
         public string Category { get; init; } = string.Empty;
-        public List<string> SearchTags { get; init; } = new();
+        public List<string> SearchTags { get; init; } = [];
         public SpriteSpecifier Sprite { get; init; } = default!;
         public int Priority { get; init; }
-        
-        /// <summary>
-        /// Combined search string for efficient searching.
-        /// </summary>
         public string SearchString { get; init; } = string.Empty;
     }
 
@@ -106,7 +101,6 @@ public static class NanoChatEmoteCache
             results.Add(exactMatch);
         }
 
-        // Then fuzzy matches
         foreach (var emote in _emoteCache.Values)
         {
             if (emote.Id == lowerQuery)

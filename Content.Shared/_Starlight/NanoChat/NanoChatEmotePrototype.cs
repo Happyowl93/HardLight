@@ -7,7 +7,7 @@ namespace Content.Shared._Starlight.NanoChat;
 /// Prototype definition for NanoChat emote icons.
 /// Emotes can be used in chat messages using :emotename: syntax.
 /// </summary>
-[Prototype("nanoChatEmote")]
+[Prototype]
 public sealed partial class NanoChatEmotePrototype : IPrototype
 {
     /// <summary>
@@ -36,7 +36,7 @@ public sealed partial class NanoChatEmotePrototype : IPrototype
     /// Example: ["happy", "joy"] for a smile emote
     /// </summary>
     [DataField]
-    public List<string> SearchTags { get; private set; } = new();
+    public List<string> SearchTags { get; private set; } = [];
 
     /// <summary>
     /// The sprite resource for this emote.
