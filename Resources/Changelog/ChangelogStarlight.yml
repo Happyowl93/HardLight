@@ -29850,5 +29850,14 @@ Entries:
   id: 319700
   time: '2026-02-08T07:32:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3197
+- author: Conflee
+  changes:
+  - message: Added Ratvar Robes, Ratvar Boots, Eye Amulet, Moon Amulet, Sun Amulet,
+      and Star Amulet. All can be found in the PietyDrobe, with the Ratvar items being
+      in the emag inventory like the cult set is.
+    type: Add
+  id: 319800
+  time: '2026-02-08T07:35:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3198
 Order: -1
 
