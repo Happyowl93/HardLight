@@ -29842,5 +29842,13 @@ Entries:
   id: 319500
   time: '2026-02-08T04:36:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3195
+- author: neomoth
+  changes:
+  - message: Janitors can now rest easy, the Sanguine Pool vampire ability no longer
+      causes blood puddles to stack on top of one another.
+    type: Fix
+  id: 319700
+  time: '2026-02-08T07:32:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3197
 Order: -1
 
