@@ -21,6 +21,7 @@
   - type: SpeakOnAction
     sentence: action-speech-cantrip-glow
     whisper: true
+  - type: ColorObjectToEyeColor
 
 # Magic Ember
 

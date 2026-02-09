@@ -17,3 +17,21 @@ public sealed partial class SpawnItemInHandEvent : InstantActionEvent
     [DataField]
     public bool RequiresFreeHand = false;
 }
+
+/// <summary>
+///     Raised after an entity was spawned in someones hand.
+/// </summary>
+public sealed partial class AfterSpawnItemInHandEvent
+{
+    /// <summary>
+    ///     Entity that was spawned.
+    /// </summary>
+    [DataField]
+    public EntityUid Entity;
+    
+    /// <summary>
+    ///     The entity who spawned the item.
+    /// </summary>
+    [DataField]
+    public EntityUid Performer;
+}
