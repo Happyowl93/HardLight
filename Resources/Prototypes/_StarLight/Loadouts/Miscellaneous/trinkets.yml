@@ -119,6 +119,30 @@
   groupBy: "cat maid"
 
 - type: loadout
+  id: ClothingHeadHatBunny
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:OverallPlaytimeRequirement
+        time: 144000 # 40hr
+  storage:
+    back:
+    - ClothingHeadHatBunny
+  groupBy: "cat maid"
+
+- type: loadout
+  id: ClothingHeadHatDogEars
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:OverallPlaytimeRequirement
+        time: 144000 # 40hr
+  storage:
+    back:
+    - ClothingHeadHatDogEars
+  groupBy: "cat maid"
+
+- type: loadout
   id: RolliePack
   storage:
     back:
@@ -196,6 +220,11 @@
   storage:
     back:
       - Basketball
+
+- type: loadout
+  id: TBall
+  equipment: # woof
+    neck: TennisBall
 
 - type: loadout
   id: RubberQuack
@@ -403,9 +432,8 @@
       !type:RoleTimeRequirement
       role: JobMailTech
       time: 36000 # 10 hours of being ignored while carrying a parcelbomb
-  storage:
-    back:
-    - ClothingShoesSkates
+  equipment:
+    shoes: ClothingShoesSkates
 
 - type: loadout
   id: DaBling
@@ -415,9 +443,8 @@
       !type:RoleTimeRequirement
       role: JobCargoTechnician
       time: 36000 # 10 hours of resisting the urge to declare cargonia
-  storage:
-    back:
-    - ClothingNeckBling
+  equipment:
+    neck: ClothingNeckBling
 
 - type: loadout
   id: CrapPlushie
@@ -474,7 +501,7 @@
         role: JobSurgeon
         time: 72000 # 20 hours of turning her into a papa johns
   storage:
-    back: 
+    back:
       - LeftArmCyberRipper
 
 - type: loadout
@@ -486,7 +513,7 @@
         role: JobStationEngineer
         time: 72000 # 20 hours of banging wrenches on things
   storage:
-    back: 
+    back:
       - RightArmCyberMechwright
 
 - type: loadout
@@ -498,7 +525,7 @@
         department: Medical
         time: 72000 # 20hrs of treating patients as Dr. House
   storage:
-    back: 
+    back:
       - CigPackBub
   groupBy: "smokeables"
 
@@ -525,7 +552,7 @@
       !type:OverallPlaytimeRequirement
       time: 48h
   storage:
-    back: 
+    back:
       - PersonalAI
 
 - type: loadout
@@ -537,5 +564,5 @@
       role: GhostPAI
       time: 8h
   storage:
-    back: 
+    back:
       - GoldenPersonalAI
