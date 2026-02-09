@@ -86,7 +86,7 @@
   icon: { sprite: /Textures/_Starlight/Objects/Weapons/Melee/marriage_axe.rsi, state: icon }
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 16 # 2's really not much of a discount
+    Telecrystal: 18
   productEntity: MarriageAxe
   cost:
     Telecrystal: 20
