@@ -103,7 +103,7 @@ public sealed class DarkPortalSystem : EntitySystem
         QueueDel(uid);
     }
 
-    private void OnPortalShutdown(EntityUid uid, BrighteyeComponent component)
+    public void OnPortalShutdown(EntityUid uid, BrighteyeComponent component)
     {
         component.Portal = null;
         _alerts.ShowAlert(uid, component.PortalAlert);
