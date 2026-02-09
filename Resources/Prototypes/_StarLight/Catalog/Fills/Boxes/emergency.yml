@@ -30,6 +30,7 @@
         - id: FoodSnackNutribrick
         - id: FoodSnackNutribrick
         - id: DrinkWaterBottleFull
+        - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
     - state: internals
@@ -49,6 +50,7 @@
         - id: FoodSnackNutribrick
         - id: FoodSnackNutribrick
         - id: DrinkWaterBottleFull
+        - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
     - state: internals
@@ -67,6 +69,7 @@
         - id: EmergencyMedipen
         - id: FoodSnackNutribrick
         - id: FoodSnackNutribrick
+        - id: DrinkWaterBottleFull
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -119,6 +122,8 @@
         children:
         - id: EmergencyMedipen
         - id: FoodSnackNutribrick
+        - id: FoodSnackNutribrick
+        - id: DrinkWaterBottleFull
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
