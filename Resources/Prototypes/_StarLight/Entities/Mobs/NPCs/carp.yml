@@ -23,10 +23,6 @@
           Base: alive
         Dead:
           Base: dead
-    - type: Butcherable
-      spawned:
-        - id: FoodMeat
-          amount: 1
     - type: MeleeWeapon
       damage:
         types:
