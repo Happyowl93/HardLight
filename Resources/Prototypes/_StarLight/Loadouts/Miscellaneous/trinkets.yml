@@ -518,7 +518,7 @@
         department: Cargo
         time: 72000 # 20 hours of needing more storage
   storage:
-    back: 
+    back:
       - LeftLegCyberCargo
 
 - type: loadout
@@ -530,7 +530,7 @@
         department: Cargo
         time: 72000 # 20 hours of needing more storage
   storage:
-    back: 
+    back:
       - RightLegCyberCargo
 
 - type: loadout
@@ -569,7 +569,7 @@
       !type:OverallPlaytimeRequirement
       time: 48h
   storage:
-    back:
+    id:
       - PersonalAI
 
 - type: loadout
@@ -581,5 +581,5 @@
       role: GhostPAI
       time: 8h
   storage:
-    back:
+    id:
       - GoldenPersonalAI

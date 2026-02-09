@@ -11,15 +11,15 @@
 
 - type: loadoutGroup
   id: InsulsCaptain
-  name: loadout-group-insuls-captatin
+  name: loadout-group-insuls-captain
   minLimit: 0
   defaultSelected: 1
   loadouts:
+  - InsulsCaptain
   - InsulsRegular
   - InsulsCombat
   - InsulsMaid
   - InsulsMercenary
-  - InsulsCaptain
 
 - type: loadoutGroup
   id: Scarves
