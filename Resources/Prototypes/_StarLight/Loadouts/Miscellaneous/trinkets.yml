@@ -59,9 +59,8 @@
       requirement:
         !type:OverallPlaytimeRequirement
         time: 144000 # 40hr
-  storage:
-    back:
-    - ClothingUnderSocksCoder
+  equipment:
+    shoes: ClothingUnderSocksCoder
   groupBy: "cat maid"
 
 - type: loadout
@@ -71,9 +70,8 @@
       requirement:
         !type:OverallPlaytimeRequirement
         time: 144000 # 40hr
-  storage:
-    back:
-    - ClothingShoesHighheelBoots
+  equipment:
+    shoes: ClothingShoesHighheelBoots
   groupBy: "cat maid"
 
 - type: loadout
@@ -83,9 +81,8 @@
       requirement:
         !type:OverallPlaytimeRequirement
         time: 144000 # 40hr
-  storage:
-    back:
-    - ClothingShoesHighheelShoes
+  equipment:
+    shoes: ClothingShoesHighheelShoes
   groupBy: "cat maid"
 
 - type: loadout
@@ -101,9 +98,8 @@
       requirement:
         !type:OverallPlaytimeRequirement
         time: 144000 # 40hr
-  storage:
-    back:
-    - ClothingUniformJumpskirtElegantMaid
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtElegantMaid
   groupBy: "cat maid"
 
 - type: loadout
@@ -113,9 +109,8 @@
       requirement:
         !type:OverallPlaytimeRequirement
         time: 144000 # 40hr
-  storage:
-    back:
-    - ClothingHeadHatWhiteCatEars
+  equipment:
+    head: ClothingHeadHatWhiteCatEars
   groupBy: "cat maid"
 
 - type: loadout
@@ -125,9 +120,8 @@
       requirement:
         !type:OverallPlaytimeRequirement
         time: 144000 # 40hr
-  storage:
-    back:
-    - ClothingHeadHatBunny
+  equipment:
+    head: ClothingHeadHatBunny
   groupBy: "cat maid"
 
 - type: loadout
@@ -137,9 +131,8 @@
       requirement:
         !type:OverallPlaytimeRequirement
         time: 144000 # 40hr
-  storage:
-    back:
-    - ClothingHeadHatDogEars
+  equipment:
+    head: ClothingHeadHatDogEars
   groupBy: "cat maid"
 
 - type: loadout
