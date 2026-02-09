@@ -217,7 +217,7 @@
 - type: loadout
   id: TBall
   equipment: # woof
-    neck: TennisBall
+    mask: TennisBall
 
 - type: loadout
   id: RubberQuack
