@@ -1,3 +1,4 @@
+# This dosen't parent off FoodMeatFish intentionally, its meant to be non-poisonous
 - type: entity
   parent: FoodMeatBase
   # MeatFish?...
