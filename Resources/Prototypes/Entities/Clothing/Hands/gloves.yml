@@ -302,7 +302,7 @@
     fiberColor: fibers-black
 
 - type: entity
-  parent: [ BaseEngineeringSecurityCommandContraband, ClothingHandsGlovesCombat ] # SL edit: Engi/Sec/COmmand contra
+  parent: [ BaseEngineeringSecurityCommandSalvageMiningContraband, ClothingHandsGlovesCombat ] # SL edit: Engi/Sec/Command/Salvage/Mining contra
   id: ClothingHandsMercGlovesCombat
   name: mercenary combat gloves
   description: High-quality combat gloves to protect hands from mechanical damage during combat.
