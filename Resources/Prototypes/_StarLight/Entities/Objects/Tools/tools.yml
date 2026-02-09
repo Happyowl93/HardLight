@@ -989,6 +989,7 @@
     - PlumbingRpldPillPress
     - PlumbingRpldFilter
     - PlumbingRpldSynthesizer
+    - PlumbingRpldSmartFridge
     - PlumbingRpldDrain
     - Deconstruct
   - type: LimitedCharges
