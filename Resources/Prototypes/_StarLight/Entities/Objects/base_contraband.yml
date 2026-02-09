@@ -97,7 +97,7 @@
   - type: Contraband
     allowedJobs: [ Janitor ]
     allowedDepartments: [ Security ]
-    
+
 - type: entity
   id: BaseEngineeringSecurityContraband
   parent: BaseRestrictedContraband
@@ -105,6 +105,14 @@
   components:
     - type: Contraband
       allowedDepartments: [ Engineering, Security ]
+
+- type: entity
+  id: BaseEngineeringSecurityCommandContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+    - type: Contraband
+      allowedDepartments: [ Engineering, Security, Command ]
 
 - type: entity
   id: BaseSecurityBartenderZookeeperContraband
