@@ -30072,5 +30072,13 @@ Entries:
   id: 275700
   time: '2026-02-10T10:18:46.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2757
+- author: CrazyPhantom
+  changes:
+  - message: Double Lockers, Wall lockers and Secure Crates can now have their wiring
+      panels opened and be hacked.
+    type: Fix
+  id: 322800
+  time: '2026-02-10T15:32:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3228
 Order: -1
 
