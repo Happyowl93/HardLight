@@ -46,3 +46,5 @@ shadekinTrap-trigger-fail = The shadowy tendrils fail to catch anything and diss
 
 alerts-shadekin-thedark-name = The Dark
 alerts-shadekin-thedark-desc = Your in The Dark... and without protection or being a shadekin... Its taking an effect on you.
+
+dark-breacher-window-title = Dark Breacher
