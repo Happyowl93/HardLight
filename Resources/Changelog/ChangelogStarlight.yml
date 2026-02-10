@@ -29907,5 +29907,14 @@ Entries:
   id: 322300
   time: '2026-02-10T01:21:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3223
+- author: Fasuh
+  changes:
+  - message: Changed Avali stasis halving its damage reduction.
+    type: Tweak
+  - message: Changed Avali lowering its healing by 4x in crit.
+    type: Tweak
+  id: 321500
+  time: '2026-02-10T06:17:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3215
 Order: -1
 
