@@ -30010,5 +30010,89 @@ Entries:
   id: 320000
   time: '2026-02-10T07:16:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3200
+- author: SeaborneProto
+  changes:
+  - message: fixed Beer Hud Eyepatch to not be sunglasses
+    type: Tweak
+  id: 319300
+  time: '2026-02-10T08:34:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3193
+- author: Fractalflower
+  changes:
+  - message: Hydra is no longer pump action
+    type: Fix
+  id: 318000
+  time: '2026-02-10T08:40:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3180
+- author: SapphicHaymaker
+  changes:
+  - message: The Revolutionary Banner acts as a shield again! But now has a weakness
+      to heat, do not let our flag burn, comrade.
+    type: Tweak
+  - message: Soviet Uniforms are now in the Rev Uplink. Come get your red army drip,
+      comrades!
+    type: Add
+  - message: Restored the BSO's gun autolock functionality
+    type: Fix
+  id: 319200
+  time: '2026-02-10T09:22:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3192
+- author: MelliferousMae
+  changes:
+  - message: Borgis now understand all the languages Borgs do, plus Dog.
+    type: Fix
+  id: 322600
+  time: '2026-02-10T09:49:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3226
+- author: teapoterror
+  changes:
+  - message: ARC Has petitioned CC to add a Space Bear observatory to GNT9. We don't
+      know why they accepted either.
+    type: Add
+  - message: The walls around the NTSF Deployment zone have been reinforced with adamantium.
+      Just try to get through that, traitors!
+    type: Add
+  - message: Moved the station beacon from the panopticon into the Fax Machine room.
+    type: Add
+  - message: Atmos markers are now properly used in GNT9, don't worry about whatever
+      you were breathing before, get back to work.
+    type: Add
+  - message: Added a secret present for those who find Davy Jone's treasure. Good
+      hunting!
+    type: Add
+  id: 303600
+  time: '2026-02-10T09:58:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3036
+- author: Fasuh, Vonte
+  changes:
+  - message: Added Speed legs.
+    type: Add
+  - message: Removed Speed Boots.
+    type: Remove
+  id: 275700
+  time: '2026-02-10T10:18:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2757
+- author: CrazyPhantom
+  changes:
+  - message: Double Lockers, Wall lockers and Secure Crates can now have their wiring
+      panels opened and be hacked.
+    type: Fix
+  id: 322800
+  time: '2026-02-10T15:32:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3228
+- author: teapoterror
+  changes:
+  - message: Geiger Complex
+    type: Add
+  id: 282700
+  time: '2026-02-10T18:27:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2827
+- author: CrazyPhantom
+  changes:
+  - message: Space Koi spawner sprite
+    type: Fix
+  id: 323200
+  time: '2026-02-10T20:47:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3232
 Order: -1
 
