@@ -29885,5 +29885,12 @@ Entries:
   id: 320500
   time: '2026-02-08T19:53:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3205
+- author: CrazyPhantom
+  changes:
+  - message: The server will no longer crash when right clicking a Terminator
+    type: Fix
+  id: 322100
+  time: '2026-02-10T00:39:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3221
 Order: -1
 
