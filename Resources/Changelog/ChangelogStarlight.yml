@@ -30017,5 +30017,12 @@ Entries:
   id: 319300
   time: '2026-02-10T08:34:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3193
+- author: Fractalflower
+  changes:
+  - message: Hydra is no longer pump action
+    type: Fix
+  id: 318000
+  time: '2026-02-10T08:40:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3180
 Order: -1
 
