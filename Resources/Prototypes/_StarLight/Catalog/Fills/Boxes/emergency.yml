@@ -27,9 +27,9 @@
       storagebase: !type:AllSelector
         children:
         - id: EmergencyMedipen
+        - id: EmergencyMedipen
         - id: FoodSnackNutribrick
         - id: FoodSnackNutribrick
-        - id: DrinkWaterBottleFull
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -47,9 +47,9 @@
       storagebase: !type:AllSelector
         children:
         - id: EmergencyMedipen
+        - id: EmergencyMedipen
         - id: FoodSnackNutribrick
         - id: FoodSnackNutribrick
-        - id: DrinkWaterBottleFull
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -67,9 +67,9 @@
       storagebase: !type:AllSelector
         children:
         - id: EmergencyMedipen
+        - id: EmergencyMedipen
         - id: FoodSnackNutribrick
         - id: FoodSnackNutribrick
-        - id: DrinkWaterBottleFull
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -121,9 +121,9 @@
       storagebase: !type:AllSelector
         children:
         - id: EmergencyMedipen
+        - id: EmergencyMedipen
         - id: FoodSnackNutribrick
         - id: FoodSnackNutribrick
-        - id: DrinkWaterBottleFull
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
