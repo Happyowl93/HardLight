@@ -30087,5 +30087,12 @@ Entries:
   id: 282700
   time: '2026-02-10T18:27:10.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2827
+- author: CrazyPhantom
+  changes:
+  - message: Space Koi spawner sprite
+    type: Fix
+  id: 323200
+  time: '2026-02-10T20:47:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3232
 Order: -1
 
