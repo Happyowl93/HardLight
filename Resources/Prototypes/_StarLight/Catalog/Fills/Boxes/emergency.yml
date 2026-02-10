@@ -17,7 +17,7 @@
     - state: shadekin
 
 - type: entity
-  parent: BoxSurvivalEngineering
+  parent: BoxSurvivalNonBreather
   id: BoxSurvivalNonBreatherExtended
   description: It's a box with survival supplies for those with no need to breathe. This one is labelled to contain double rations.
   suffix: Nonbreather, Extended
@@ -31,10 +31,6 @@
         - id: FoodSnackNutribrick
           amount: 2
         - id: DrinkWaterBottleFull
-  - type: Sprite
-    layers:
-    - state: internals
-    - state: shadekin
 
 - type: entity
   parent: BoxSurvivalNonBreather
@@ -57,5 +53,5 @@
       storagebase: !type:AllSelector
         children:
         - id: EmergencyMedipen
-        - id: FoodSnackNutriBtard #Never 4 get. the day wizden took mime's baugettes ## Hey actually why can't we just. Give them back lol ### yeah let's do that
+        - id: FoodSnackNutriBatard #Never 4 get. the day wizden took mime's baugettes ## Hey actually why can't we just. Give them back lol ### yeah let's do that
         - id: DrinkWaterBottleFull
