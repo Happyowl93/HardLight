@@ -50,7 +50,6 @@ public sealed class SharedGasSpecificHeatsTest
     /// Asserts that the cached gas specific heat arrays agree with each other.
     /// </summary>
     [Test]
-    [Ignore("Starlight - this takes down the entire github agent for some reason")]
     public async Task GasSpecificHeats_Agree()
     {
         var serverSpecificHeats = Array.Empty<float>();
@@ -176,15 +175,12 @@ public sealed class SharedGasSpecificHeatsTest
         // ensure that replicated value changes by testing a new value
         const float newHeatScale = 13f;
 
-        // Starlight edit Start: Commented out
-        // _sConfig = Server.ResolveDependency<IConfigurationManager>();
-        // _cConfig = Client.ResolveDependency<IConfigurationManager>();
-        // Starlight edit End
+        _sConfig = Server.ResolveDependency<IConfigurationManager>();
+        _cConfig = Client.ResolveDependency<IConfigurationManager>();
 
         await Server.WaitPost(delegate
         {
-            var sConfig = Server.ResolveDependency<IConfigurationManager>(); // Starlight
-            sConfig.SetCVar(CCVars.AtmosHeatScale, newHeatScale); // Starlight Edit
+            _sConfig.SetCVar(CCVars.AtmosHeatScale, newHeatScale);
         });
 
         await Server.WaitRunTicks(5);
@@ -198,15 +194,13 @@ public sealed class SharedGasSpecificHeatsTest
 
         await Server.WaitPost(delegate
         {
-            var sConfig = Server.ResolveDependency<IConfigurationManager>(); // Starlight
-            serverCVar = sConfig.GetCVar(CCVars.AtmosHeatScale); // Starlight Edit
+            serverCVar = _sConfig.GetCVar(CCVars.AtmosHeatScale);
             serverHeatScale = _sAtmos.HeatScale;
         });
 
         await Client.WaitPost(delegate
         {
-            var cConfig = Client.ResolveDependency<IConfigurationManager>();
-            clientCVar = cConfig.GetCVar(CCVars.AtmosHeatScale);
+            clientCVar = _cConfig.GetCVar(CCVars.AtmosHeatScale);
             clientHeatScale = _cAtmos.HeatScale;
         });
 
