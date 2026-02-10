@@ -273,8 +273,8 @@
       - type: CriminalRecordsHacker
 
 - type: entity
-  parent: [ ClothingHandsGlovesColorBlack ] # SL edit: Not contra!
-  id: [ ClothingHandsGlovesCombat, BaseEngineeringSecurityCommandContraband ]
+  parent: [ ClothingHandsGlovesColorBlack, BaseEngineeringSecurityCommandContraband ] # SL edit: Engi/Sec/Command contra
+  id: ClothingHandsGlovesCombat
   name: combat gloves
   description: These tactical gloves are fireproof and shock resistant.
   components:
