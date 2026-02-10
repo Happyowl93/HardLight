@@ -144,3 +144,13 @@
     back:
     - BoxSurvivalSyndicate
     - BookOfCantrips
+
+- type: loadout
+  id: EmergencyElfOxygenMilitaryDouble
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ElfOxygenBreather
+  storage:
+    back:
+    - BoxSurvivalMilitaryDouble
+    - BookOfCantrips
