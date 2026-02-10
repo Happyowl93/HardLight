@@ -53,5 +53,5 @@
       storagebase: !type:AllSelector
         children:
         - id: EmergencyMedipen
-        - id: FoodSnackNutriBatard #Never 4 get. the day wizden took mime's baugettes ## Hey actually why can't we just. Give them back lol ### yeah let's do that
+        - id: FoodBreadNutriBatard #Never 4 get. the day wizden took mime's baugettes ## Hey actually why can't we just. Give them back lol ### yeah let's do that
         - id: DrinkWaterBottleFull
