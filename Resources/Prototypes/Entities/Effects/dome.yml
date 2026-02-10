@@ -169,6 +169,8 @@
     maxVisibility: 0.8
     lastVisibility: 0.8
   - type: NullSpaceBlocker
+  - type: TheDarkImmune
+    ranged: true
 
 - type: entity
   id: EnergyDomeProtectorNullspace

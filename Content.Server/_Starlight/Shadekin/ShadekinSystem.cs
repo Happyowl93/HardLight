@@ -376,10 +376,17 @@ public sealed partial class ShadekinSystem : EntitySystem
         var thedarkmobquery = EntityQueryEnumerator<MobStateComponent>();
         while (thedarkmobquery.MoveNext(out var uid, out var _))
         {
-            if (HasComp<ShadekinComponent>(uid))
-                continue;
+            var remove = false;
+            if (HasComp<ShadekinComponent>(uid) || HasComp<TheDarkImmuneComponent>(uid))
+                remove = true;
 
-            if (AreWeInTheDark(uid) && !HasComp<TheDarkImmuneComponent>(uid))
+            if (!remove)
+                foreach (var entity in _lookup.GetEntitiesIntersecting(Transform(uid).Coordinates))
+                    if (TryComp<TheDarkImmuneComponent>(entity, out var blocker) && blocker.Ranged)
+                        remove = true;
+
+
+            if (AreWeInTheDark(uid) && !remove)
                 _status.TrySetStatusEffectDuration(uid, "StatusEffectTheDarkMap");
             else if (_status.HasStatusEffect(uid, "StatusEffectTheDarkMap"))
                 _status.TryRemoveStatusEffect(uid, "StatusEffectTheDarkMap");
