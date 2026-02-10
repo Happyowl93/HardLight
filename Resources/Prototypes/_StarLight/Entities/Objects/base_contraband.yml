@@ -81,6 +81,7 @@
     allowedDepartments: [ Engineering, Security ]
     allowedJobs: [ SalvageSpecialist, SalvageLead ]
 
+# it got worse
 - type: entity
   id: BaseEngineeringSecurityCommandSalvageMiningContraband
   parent: BaseRestrictedContraband
