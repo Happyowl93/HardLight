@@ -28,7 +28,7 @@ public sealed class DarkHubSystem : EntitySystem
 
     private void OnGetInteractionVerbs(EntityUid uid, DarkHubComponent component, ref GetVerbsEvent<InteractionVerb> args)
     {
-        if (!args.CanAccess || !TryComp<BrighteyeComponent>(args.User, out var brighteye) || brighteye.Portal is null)
+        if (!component.Hub || !args.CanAccess || !TryComp<BrighteyeComponent>(args.User, out var brighteye) || brighteye.Portal is null)
             return;
 
         var user = args.User;
