@@ -176,22 +176,13 @@ public sealed class SharedGasSpecificHeatsTest
         // ensure that replicated value changes by testing a new value
         const float newHeatScale = 13f;
 
-        // Starlight edit Start
-        // _sConfig = Server.ResolveDependency<IConfigurationManager>();
-        // _cConfig = Client.ResolveDependency<IConfigurationManager>();
-        // Starlight edit End
+        _sConfig = Server.ResolveDependency<IConfigurationManager>();
+        _cConfig = Client.ResolveDependency<IConfigurationManager>();
 
         await Server.WaitPost(delegate
         {
-            _sConfig = Server.ResolveDependency<IConfigurationManager>(); // Starlight
             _sConfig.SetCVar(CCVars.AtmosHeatScale, newHeatScale);
         });
-        // Starlight Start
-        await Client.WaitPost(delegate
-        {
-            _cConfig = Client.ResolveDependency<IConfigurationManager>();
-        });
-        // Starlight End
 
         await Server.WaitRunTicks(5);
         await Client.WaitRunTicks(5);
