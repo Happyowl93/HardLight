@@ -30063,5 +30063,14 @@ Entries:
   id: 303600
   time: '2026-02-10T09:58:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3036
+- author: Fasuh, Vonte
+  changes:
+  - message: Added Speed legs.
+    type: Add
+  - message: Removed Speed Boots.
+    type: Remove
+  id: 275700
+  time: '2026-02-10T10:18:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2757
 Order: -1
 
