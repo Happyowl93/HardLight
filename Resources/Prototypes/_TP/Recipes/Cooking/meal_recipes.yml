@@ -27,9 +27,9 @@
   name: fish fingers recipe
   result: TP14FoodMeatFishFingers
   time: 15
-  ingredient: FoodMeatFish
+  ingredient: FoodMeatKoiFish
   group: TP14-Deep-Fry
-#swapped ingredient to a carp filet from tp14fish
+#swapped ingredient to a koi filet from tp14fish
 
 - type: deepFryingRecipe
   id: TP14RecipeCheeseSticks
