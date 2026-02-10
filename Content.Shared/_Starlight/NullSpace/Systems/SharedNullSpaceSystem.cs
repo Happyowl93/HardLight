@@ -9,6 +9,8 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Explosion;
 using Content.Shared.Stunnable;
+using Content.Shared.Movement.Events;
+using Content.Shared.Gravity;
 
 namespace Content.Shared._Starlight.NullSpace;
 
@@ -31,6 +33,14 @@ public abstract partial class SharedNullSpaceSystem : EntitySystem
         SubscribeLocalEvent<NullSpaceComponent, PreventCollideEvent>(PreventCollision);
         SubscribeLocalEvent<NullSpaceComponent, GetExplosionResistanceEvent>(OnGetExplosionResistance);
         SubscribeLocalEvent<NullSpaceComponent, KnockDownAttemptEvent>(OnKnockdownAttempt);
+        SubscribeLocalEvent<NullSpaceComponent, CanWeightlessMoveEvent>((_, _, args) => args.CanMove = true);
+        SubscribeLocalEvent<NullSpaceComponent, IsWeightlessEvent>(OnIsWeightless);
+    }
+
+    private void OnIsWeightless(Entity<NullSpaceComponent> entity, ref IsWeightlessEvent args)
+    {
+        args.IsWeightless = false;
+        args.Handled = true;
     }
 
     private void OnMobStateChanged(EntityUid uid, NullSpaceComponent component, MobStateChangedEvent args)
