@@ -247,7 +247,7 @@
 
 - type: entity
   parent:
-    [ClothingOuterStorageBase, AllowSuitStorageClothing, BaseCentcommContraband]
+    [ClothingOuterVestWeb, AllowSuitStorageClothing, BaseCentcommContraband]
   id: ClothingOuterVestWebEliteCentcomm
   name: central command web vest
   description: A synthetic armor vest redesignated for use by the Corporate Consortium, webbing and heat resistant fibers included.
@@ -362,7 +362,7 @@
   parent: ClothingOuterReactiveArmourShell
   id: ClothingOuterReactiveArmourShellRandom
   suffix: Random Core
-  
+
 - type: entity
   parent: [ClothingOuterBaseMedium, BaseSovietContraband, AllowSuitStorageClothing ] #"ClothingOuterArmorBase" is stupid and overrides any contraband level.
   id: ClothingOuterArmorSovietFlak

@@ -21,7 +21,11 @@
     - state: emergencytank
   - type: Item # Starlight start
     shape:
-      - 0,0,1,3 # Starlight end
+      - 0,0,1,3
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,1,3 # Starlight end
 
 - type: entity
   parent: BoxSurvival
