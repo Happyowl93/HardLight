@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ WeaponLauncherHydra, BaseSyndicateContraband]
+  parent: [ BaseSyndicateContraband, WeaponLauncherHydra ]
   id: WeaponLauncherHydraSyndicate
   name: modified hydra
   suffix: Syndicate
