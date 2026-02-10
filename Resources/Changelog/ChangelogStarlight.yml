@@ -29962,5 +29962,15 @@ Entries:
   id: 321200
   time: '2026-02-10T06:47:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3212
+- author: Ilya246
+  changes:
+  - message: NPCs are now able to move in(to) open space. You can't cheese space carp
+      anymore.
+    type: Add
+  - message: Fixed NPC jank when moving in 0-gravity.
+    type: Fix
+  id: 321100
+  time: '2026-02-10T06:51:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3211
 Order: -1
 
