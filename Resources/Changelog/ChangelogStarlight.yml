@@ -30080,5 +30080,12 @@ Entries:
   id: 322800
   time: '2026-02-10T15:32:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3228
+- author: teapoterror
+  changes:
+  - message: Geiger Complex
+    type: Add
+  id: 282700
+  time: '2026-02-10T18:27:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2827
 Order: -1
 
