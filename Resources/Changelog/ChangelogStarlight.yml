@@ -29972,5 +29972,22 @@ Entries:
   id: 321100
   time: '2026-02-10T06:51:14.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3211
+- author: wonderfulnewworld
+  changes:
+  - message: Assistant Boxing Gloves 6 TC -> 5 TC
+    type: Tweak
+  - message: Clown Cluster Banana Peel 6 TC -> 5 TC
+    type: Tweak
+  - message: Briefcase Gun 15 TC -> 13 TC (It's a very rare item, at least make it
+      have some niche)
+    type: Tweak
+  - message: Briefcase Gun Discount 10 TC -> 8 TC
+    type: Tweak
+  - message: Janitor Hydra Discount 18 TC -> 16 TC (It's already a very rare discount...
+      2 TC is laughable...)
+    type: Tweak
+  id: 321700
+  time: '2026-02-10T06:54:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3217
 Order: -1
 
