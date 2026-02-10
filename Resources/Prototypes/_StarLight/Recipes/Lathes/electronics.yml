@@ -80,5 +80,5 @@
 
 - type: latheRecipe
   parent: BaseGoldCircuitboardRecipe
-  id: NullspaceAnchorMachineCircuitboard
-  result: NullspaceAnchorMachineCircuitboard
+  id: DarkBreacherMachineCircuitboard
+  result: DarkBreacherMachineCircuitboard
