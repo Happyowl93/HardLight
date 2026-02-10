@@ -29946,5 +29946,14 @@ Entries:
   id: 320900
   time: '2026-02-10T06:37:48.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3209
+- author: Conflee
+  changes:
+  - message: Resprited Conveyor Belts. They are now a mix between Classic and MonkeStation
+      sprites, with animated wheels and directional arrows to indicate which direction
+      "forwards" is in the device linking menu.
+    type: Tweak
+  id: 320800
+  time: '2026-02-10T06:42:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3208
 Order: -1
 
