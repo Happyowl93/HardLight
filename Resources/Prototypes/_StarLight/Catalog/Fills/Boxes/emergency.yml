@@ -37,18 +37,11 @@
     - state: shadekin
 
 - type: entity
-  parent: BoxHug
+  parent: BoxSurvivalNonBreather
   id: BoxHugNonBreather
   description: A special box for sensitive people who don't need to breathe.
   suffix: Emergency, Nonbreather
   components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: EmergencyMedipen
-        - id: FoodSnackNutribrick
-        - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
     - state: box_hug
