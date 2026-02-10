@@ -30010,5 +30010,12 @@ Entries:
   id: 320000
   time: '2026-02-10T07:16:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3200
+- author: SeaborneProto
+  changes:
+  - message: fixed Beer Hud Eyepatch to not be sunglasses
+    type: Tweak
+  id: 319300
+  time: '2026-02-10T08:34:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3193
 Order: -1
 
