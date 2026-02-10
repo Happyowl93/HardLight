@@ -29939,5 +29939,12 @@ Entries:
   id: 321400
   time: '2026-02-10T06:20:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3214
+- author: Sparlight
+  changes:
+  - message: Fixed corgis being unable to emote.
+    type: Fix
+  id: 320900
+  time: '2026-02-10T06:37:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3209
 Order: -1
 
