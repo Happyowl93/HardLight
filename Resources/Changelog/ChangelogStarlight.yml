@@ -29916,5 +29916,28 @@ Entries:
   id: 321500
   time: '2026-02-10T06:17:11.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3215
+- author: Fractalflower
+  changes:
+  - message: Several trinket items now start equipped on you.
+    type: Tweak
+  - message: Fixed the dog ears description being gendered >:(
+    type: Fix
+  - message: Tennis ball trinket. Woof.
+    type: Add
+  - message: Bunny and dog ear trinkets.
+    type: Add
+  - message: Actually fixed the BSO requiring a coat.
+    type: Fix
+  - message: Jobs that come with insuls can now pick their type!
+    type: Add
+  - message: HoP, HoS, Warden, and Captain now have Cadet access.
+    type: Fix
+  - message: Cadets can now use the dominator
+    type: Fix
+  - message: PAIs now start installed in your PDA.
+    type: Tweak
+  id: 321400
+  time: '2026-02-10T06:20:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3214
 Order: -1
 
