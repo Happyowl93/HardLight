@@ -1202,3 +1202,6 @@
         ShadekinCore:
           amount: 1
           defaultPrototype: OrganShadekinCoreUndamaged
+    - type: Tag
+      tags:
+        - FlatpackBlacklist

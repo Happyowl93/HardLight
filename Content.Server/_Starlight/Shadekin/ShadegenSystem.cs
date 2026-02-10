@@ -2,6 +2,7 @@ using Content.Server.Light.EntitySystems;
 using Content.Shared._Starlight.Shadekin;
 using Content.Shared.Light;
 using Content.Shared.Light.Components;
+using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Starlight.Shadekin;
@@ -12,6 +13,8 @@ public sealed partial class ShadegenSystem : EntitySystem
     [Dependency] private readonly PoweredLightSystem _light = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedHandheldLightSystem _handheldLight = default!;
+    private readonly HashSet<EntityUid> _updateQueue = new();
+
     public override void Initialize()
     {
         base.Initialize();
@@ -29,27 +32,30 @@ public sealed partial class ShadegenSystem : EntitySystem
 
             component.NextUpdate = _timing.CurTime + component.UpdateCooldown;
 
-            var lightQuery = _lookup.GetEntitiesInRange<HandheldLightComponent>(Transform(uid).Coordinates, component.Range);
-
-            foreach (var light in lightQuery)
+            foreach (var toUpdate in _updateQueue)
             {
-                if (!light.Comp.Activated || HasComp<DarkLightComponent>(light.Owner))
+                if (Deleted(toUpdate))
                     continue;
 
-                _handheldLight.TurnOff(light);
+                RemComp<ShadegenAffectedComponent>(toUpdate);
             }
 
-            if (!component.DestroyLights)
-                continue;
+            _updateQueue.Clear();
 
-            var poweredLightQuery = _lookup.GetEntitiesInRange<PoweredLightComponent>(Transform(uid).Coordinates, component.Range, LookupFlags.StaticSundries);
-
-            foreach (var light in poweredLightQuery)
+            var lightQuery = _lookup.GetEntitiesInRange<PointLightComponent>(Transform(uid).Coordinates, component.Range);
+            foreach (var light in lightQuery)
             {
-                if (!light.Comp.On || HasComp<DarkLightComponent>(light.Owner))
+                if (HasComp<DarkLightComponent>(light.Owner))
                     continue;
 
-                _light.TryDestroyBulb(light.Owner, light.Comp);
+                EnsureComp<ShadegenAffectedComponent>(light.Owner);
+                _updateQueue.Add(light.Owner);
+
+                if (TryComp<HandheldLightComponent>(light.Owner, out var handheldcomp) && !handheldcomp.Activated)
+                    _handheldLight.TurnOff(new Entity<HandheldLightComponent>(light.Owner, handheldcomp));
+
+                if (component.DestroyLights && TryComp<PoweredLightComponent>(light.Owner, out var poweredcomp) && !poweredcomp.On)
+                    _light.TryDestroyBulb(light.Owner, poweredcomp);
             }
         }
     }

@@ -180,7 +180,7 @@ public sealed partial class ShadekinSystem : EntitySystem
 
         foreach (var light in lightQuery)
         {
-            if (HasComp<DarkLightComponent>(light.Owner))
+            if (HasComp<DarkLightComponent>(light.Owner) || HasComp<ShadegenAffectedComponent>(light.Owner))
                 continue;
 
             if (!light.Comp.Enabled
