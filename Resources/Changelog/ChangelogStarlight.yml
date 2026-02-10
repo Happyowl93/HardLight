@@ -30003,5 +30003,12 @@ Entries:
   id: 320300
   time: '2026-02-10T07:07:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3203
+- author: ToasterTrooper
+  changes:
+  - message: 'Two new hairstyles: Rei, Short Fluffy.'
+    type: Add
+  id: 320000
+  time: '2026-02-10T07:16:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3200
 Order: -1
 
