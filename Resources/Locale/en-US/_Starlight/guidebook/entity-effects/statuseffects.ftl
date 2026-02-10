@@ -1,0 +1,17 @@
+entity-effect-status-effect-StatusEffectScrambled = scrambled speech
+entity-effect-status-effect-StatusEffectStunned = being stunned
+entity-effect-status-effect-StatusEffectBark = bark accent
+entity-effect-status-effect-StatusEffectOwO = owo accent
+entity-effect-status-effect-StatusEffectAnticoagulant = thin blood
+entity-effect-status-effect-PoliteLanguage = polite language
+entity-effect-status-effect-StatusEffectHemorrhage = hemorrhage
+entity-effect-status-effect-StatusEffectPainNumbness = pain numbness
+entity-effect-status-effect-StatusEffectStimulantsStamina = 2x max stamina
+entity-effect-status-effect-StatusEffectDesoxyStamina = 1.5x max stamina
+entity-effect-status-effect-StatusEffectWoozy = wooziness
+entity-effect-status-effect-StatusEffectSlurred = slurred speech
+entity-effect-status-effect-StatusEffectForcedSleeping = forced sleep
+entity-effect-status-effect-StatusEffectSeeingRainbow = hallucinations
+entity-effect-status-effect-StatusEffectDrowsiness = drowsiness
+entity-effect-status-effect-StatusEffectDrunk = drunkenness
+entity-effect-status-effect-StatusEffectCyberneticDisruption = cybernetics disrupted
