@@ -14,7 +14,6 @@
   - PawsBlack
   - PawsBlackWhite
 
-# ugh, this's cursed
 - type: loadoutGroup
   id: InsulsCombat
   name: loadout-group-insuls
@@ -26,10 +25,6 @@
   - InsulsMaid
   - InsulsMercenary
   - InsulsScrapper
-  - PawsWhite
-  - PawsBrown
-  - PawsBlack
-  - PawsBlackWhite
 
 - type: loadoutGroup
   id: InsulsCaptain
@@ -43,10 +38,6 @@
   - InsulsMaid
   - InsulsMercenary
   - InsulsScrapper
-  - PawsWhite
-  - PawsBrown
-  - PawsBlack
-  - PawsBlackWhite
 
 - type: loadoutGroup
   id: GlovesGeneric
@@ -290,7 +281,6 @@
   - NanoTrasenRepresentativeTophat
   - NanoTrasenRepresentativeEliteTophat
   - NanoTrasenRepresentativeCap
-  - MaidHeadbandTactical
 
 - type: loadoutGroup
   id: NanoTrasenRepresentativeJumpsuit
@@ -302,8 +292,6 @@
   - NanoTrasenRepresentativeTurtleneck
   - NanoTrasenRepresentativeTurtleneckSkirt
   - NanoTrasenRepresentativeNoble
-  - MaidOutfit
-  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: NanoTrasenRepresentativeEyewear
@@ -322,7 +310,6 @@
   - MagistrateJumpsuit
   - MagistrateJumpskirt
   - MagistrateJumpsuitLongCoat
-  - MaidOutfit
 
 - type: loadoutGroup
   id: MagistrateOuterclothing
@@ -339,11 +326,7 @@
   minLimit: 0
   loadouts:
   - MagistrateHeadPwig
-  - MaidHeadbandTactical
   - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars
 
 - type: loadoutGroup
   id: MagistrateEyewear
@@ -361,10 +344,6 @@
   loadouts:
   - MagistrateWhiteGloves
   - MagistrateBlackGloves
-  - PawsWhite
-  - PawsBrown
-  - PawsBlack
-  - PawsBlackWhite
 
 - type: loadoutGroup
   id: BlueShieldHead
@@ -374,7 +353,6 @@
   loadouts:
   - BlueShieldBeret
   - BlueShieldBountyHat
-  - MaidHeadbandTactical
 
 - type: loadoutGroup
   id: BlueShieldBackpack
@@ -396,8 +374,6 @@
   - BlueShieldShirt
   - BlueShieldSkirt
   - FormalBlueShieldJumpsuit
-  - MaidOutfit
-  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: BlueShieldOuterclothing

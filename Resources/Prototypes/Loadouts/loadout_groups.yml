@@ -172,11 +172,8 @@
   loadouts:
   - CaptainHead
   - CaptainCap
-  - MaidHeadbandTactical # Starlight start
-  - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars # Starlight end
+  - MaidHeadbandTactical
+  - Hairflower # Starlight
 
 - type: loadoutGroup
   id: CaptainJumpsuit
@@ -189,8 +186,6 @@
   - CapTurtleneckJumpskirt
   - CapTurtleneckJumpsuit
   - CaptainJumpsuitNoble #starlight
-  - MaidOutfit # starlight # starlight
-  - MaidOutfitTactical # starlight
 
 - type: loadoutGroup
   id: CaptainNeck
@@ -239,11 +234,7 @@
   minLimit: 0
   loadouts:
   - HoPHead
-  - MaidHeadbandTactical # Starlight start
-  - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars # Starlight end
+  - Hairflower # Starlight
 
 - type: loadoutGroup
   id: HoPJumpsuit
@@ -253,8 +244,6 @@
   - HoPJumpskirt
   - HoPTurtleneckJumpsuit # afterlight
   - HoPTurtleneckJumpskirt # afterlight
-  - MaidOutfit # starlight # starlight
-  - MaidOutfitTactical # starlight
 
 - type: loadoutGroup
   id: HoPNeck
@@ -933,11 +922,7 @@
   loadouts:
   - QuartermasterHead
   - QuartermasterBeret
-  - MaidHeadbandTactical # Starlight start
-  - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars # Starlight end
+  - Hairflower # Starlight
 
 - type: loadoutGroup
   id: QuartermasterJumpsuit
@@ -948,8 +933,6 @@
   - QuartermasterTurtleneck
   - QuartermasterTurtleneckSkirt
   - QuartermasterFormalSuit
-  - MaidOutfit # starlight
-  - MaidOutfitTactical # starlight
 
 - type: loadoutGroup
   id: QuartermasterNeck
@@ -975,8 +958,7 @@
   - LeatherShoes # Starlight start
   - SalvageBoots
   - WorkBoots
-  - Heels
-  - CoderSocks # Starlight end
+  - Heels # Starlight end
 
 - type: loadoutGroup
   id: QuartermasterJobTrinkets
@@ -1113,11 +1095,7 @@
   loadouts:
   - ChiefEngineerHead
   - ChiefEngineerBeret
-  - MaidHeadbandTactical # Starlight start
-  - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars # Starlight end
+  - Hairflower # Starlight
 
 - type: loadoutGroup
   id: ChiefEngineerJumpsuit
@@ -1153,7 +1131,6 @@
   - WorkBoots # 🌟Starlight🌟
   - EngineeringWinterBoots
   - Heels # 🌟Starlight🌟
-  - CoderSocks # Starlight
 
 - type: loadoutGroup
   id: ChiefEngineerJobTrinkets
@@ -1308,11 +1285,7 @@
   minLimit: 0
   loadouts:
   - ResearchDirectorBeret
-  - MaidHeadbandTactical # Starlight start
-  - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars # Starlight end
+  - Hairflower # Starlight
 
 - type: loadoutGroup
   id: ResearchDirectorNeck
@@ -1330,8 +1303,6 @@
   - ResearchDirectorJumpskirt
   - RDClassicalJumpsuit
   - RDClassicalJumpskirt
-  - MaidOutfit # starlight
-  - MaidOutfitTactical # starlight
 
 - type: loadoutGroup
   id: ResearchDirectorOuterClothing
@@ -1352,7 +1323,6 @@
   - Heels # Starlight start
   - LaceupShoes
   - LeatherShoes
-  - CoderSocks # Starlight end
 
 - type: loadoutGroup
   id: ResearchDirectorJobTrinkets
@@ -1366,7 +1336,7 @@
   name: loadout-group-scientist-head
   minLimit: 0
   loadouts:
-#  - RoboticistCap Only for roboticist
+  - RoboticistCap # Only for roboticist ## starlight: how bout I do anyway
   - SkullBandana
   - ScientificBeret
   - MaidHeadbandTactical # Starlight start
@@ -1481,11 +1451,7 @@
   - HeadofSecurityHead
   - HeadofSecuritySheriff #Starlight
   - HeadofSecurityBeret
-  - MaidHeadbandTactical # Starlight start
-  - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars # Starlight end
+  - Hairflower # Starlight
 
 - type: loadoutGroup
   id: HeadofSecurityJumpsuit
@@ -1501,8 +1467,6 @@
   - HeadofSecurityBlackSkirt
   - HeadofSecurityBlueJumpsuit
   - HeadofSecurityGreyJumpsuit
-  - MaidOutfit # starlight
-  - MaidOutfitTactical # starlight
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
