@@ -463,7 +463,6 @@
   - CowboyBootsBlackFilled
   - CowboyBootsWhiteFilled
   - HighHeelBootsFilled
-  - CoderSocks
 
 - type: loadoutGroup
   id: HoPShoes
@@ -474,7 +473,6 @@
   - Heels
   - LaceupShoes
   - LeatherShoes
-  - CoderSocks
 
 - type: loadoutGroup
   id: MagistrateShoes
@@ -483,7 +481,6 @@
   loadouts:
   - LaceupShoes
   - Heels
-  - CoderSocks
 
 - type: loadoutGroup
   id: NanotrasenRepresentativeShoes
@@ -493,7 +490,6 @@
   - LaceupShoes
   - Heels
   - LeatherShoes
-  - CoderSocks
 
 - type: loadoutGroup
   id: DetectiveShoes
@@ -544,7 +540,6 @@
   loadouts:
   - CombatBoots
   - HighHeelBootsFilled
-  - CoderSocks
 
 # Salvage Lead
 - type: loadoutGroup
