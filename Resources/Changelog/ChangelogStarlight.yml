@@ -30164,5 +30164,21 @@ Entries:
   id: 324100
   time: '2026-02-11T06:55:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3241
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Disposal bin in Security Lobby
+    type: Add
+  - message: (Hotel) Disposal bin in Security Locker Room
+    type: Add
+  - message: (Hotel) Document printer and paper bin in Security Lobby
+    type: Add
+  - message: (Hotel) Jetpacks to Security Armory
+    type: Add
+  - message: (Hotel) Glass shutters removed from the TEG area and replaced with a
+      proper external airlock access instead
+    type: Tweak
+  id: 324000
+  time: '2026-02-11T07:00:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3240
 Order: -1
 
