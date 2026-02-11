@@ -1691,9 +1691,10 @@
   loadouts:
   - JackBoots
   - SecurityWinterBoots
-  - HighHeelBootsFilled # 🌟Starlight🌟
-  - CoderSocks # Starlight
-  - RollerSkates # Starlight
+  - Heels # Starlight start
+  - HighHeelBootsFilled
+  - CoderSocks
+  - RollerSkates # Starlight end
 
 - type: loadoutGroup
   id: SecurityPDA
