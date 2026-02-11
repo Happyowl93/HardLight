@@ -30194,5 +30194,15 @@ Entries:
   id: 323800
   time: '2026-02-11T10:18:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3238
+- author: teapoterror
+  changes:
+  - message: PPSH From Geiger Complex Armory
+    type: Remove
+  - message: '"Worn-down SSF Suit" to Geiger Complex Armory, a significantly worse
+      version of the standard SSF suit. (Poor mans juggsuit)'
+    type: Add
+  id: 324800
+  time: '2026-02-11T15:24:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3248
 Order: -1
 
