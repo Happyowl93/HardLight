@@ -1,21 +1,6 @@
 ## Any kind of equipment that doesn't fit elsewhere, goes in this file.
 
 - type: loadout
-  id: RedRegaliaGloves
-  equipment:
-    gloves: RedRegaliaGloves
-
-- type: loadout
-  id: SecGloves
-  equipment:
-    gloves: ClothingHandsGlovesSecurityRed
-
-- type: loadout
-  id: SecGlovesFingerless
-  equipment:
-    gloves: ClothingHandsGlovesSecurityFingerlessRed
-
-- type: loadout
   id: CoderSocks
   effects:
     - !type:JobRequirementLoadoutEffect
@@ -26,12 +11,6 @@
   equipment:
     shoes: ClothingUnderSocksCoder
   groupBy: "maid outfit"
-
-- type: loadout
-  id: ClothWrap
-  storage:
-    back:
-    - ClothingClothWrap
 
 - type: loadout
   id: MaidOutfit
@@ -70,94 +49,6 @@
   groupBy: "maid outfit"
 
 # Meow mrrp ## shut up ### no :3
-
-- type: loadout
-  id: PawsWhite
-  effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:OverallPlaytimeRequirement
-        time: 360000 # 100 hours
-  equipment:
-    gloves: ClothingHandsCatPawsWhite
-  groupBy: "cat paws"
-
-- type: loadout
-  id: PawsBrown
-  effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:OverallPlaytimeRequirement
-        time: 360000 # 100 hours
-  equipment:
-    gloves: ClothingHandsCatPawsBrown
-  groupBy: "cat paws"
-
-- type: loadout
-  id: PawsBlack
-  effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:OverallPlaytimeRequirement
-        time: 360000 # 100 hours
-  equipment:
-    gloves: ClothingHandsCatPawsBlack
-  groupBy: "cat paws"
-
-- type: loadout
-  id: PawsBlackWhite
-  effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:OverallPlaytimeRequirement
-        time: 360000 # 100 hours
-  equipment:
-    gloves: ClothingHandsCatPawsBlackWhite
-  groupBy: "cat paws"
-
-- type: loadout
-  id: PawsWhiteInsulated
-  effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:OverallPlaytimeRequirement
-        time: 360000 # 100 hours
-  equipment:
-    gloves: ClothingHandsCatPawsWhiteInsulated
-  groupBy: "cat paws"
-
-- type: loadout
-  id: PawsBrownInsulated
-  effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:OverallPlaytimeRequirement
-        time: 360000 # 100 hours
-  equipment:
-    gloves: ClothingHandsCatPawsBrownInsulated
-  groupBy: "cat paws"
-
-- type: loadout
-  id: PawsBlackInsulated
-  effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:OverallPlaytimeRequirement
-        time: 360000 # 100 hours
-  equipment:
-    gloves: ClothingHandsCatPawsBlackInsulated
-  groupBy: "cat paws"
-
-- type: loadout
-  id: PawsBlackWhiteInsulated
-  effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:OverallPlaytimeRequirement
-        time: 360000 # 100 hours
-  equipment:
-    gloves: ClothingHandsCatPawsBlackWhiteInsulated
-  groupBy: "cat paws"
 
 - type: loadout
   id: CatEars
