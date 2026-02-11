@@ -8,6 +8,20 @@
   - InsulsCombat
   - InsulsMaid
   - InsulsMercenary
+  - InsulsScrapper
+
+# ugh, this's cursed
+- type: loadoutGroup
+  id: InsulsCombat
+  name: loadout-group-insuls
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - InsulsCombat
+  - InsulsRegular
+  - InsulsMaid
+  - InsulsMercenary
+  - InsulsScrapper
 
 - type: loadoutGroup
   id: InsulsCaptain
@@ -20,6 +34,7 @@
   - InsulsCombat
   - InsulsMaid
   - InsulsMercenary
+  - InsulsScrapper
 
 - type: loadoutGroup
   id: Scarves
@@ -184,6 +199,8 @@
   loadouts:
   - RoboticistJumpsuit
   - RoboticistJumpskirt
+  - MaidOutfit
+  - MaidOUtfitTactical
 
 - type: loadoutGroup
   id: RoboticistOuterClothing
@@ -201,6 +218,7 @@
   - RoboticistCap
   - SkullBandana
   - RoboticistBlackCapFlipped
+  - MaidHeadbandTactical
 
 - type: loadoutGroup
   id: RoboticistGloves
@@ -235,6 +253,7 @@
   - NanoTrasenRepresentativeTophat
   - NanoTrasenRepresentativeEliteTophat
   - NanoTrasenRepresentativeCap
+  - MaidHeadbandTactical
 
 - type: loadoutGroup
   id: NanoTrasenRepresentativeJumpsuit
@@ -246,6 +265,8 @@
   - NanoTrasenRepresentativeTurtleneck
   - NanoTrasenRepresentativeTurtleneckSkirt
   - NanoTrasenRepresentativeNoble
+  - MaidOutfit
+  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: NanoTrasenRepresentativeEyewear
@@ -264,6 +285,7 @@
   - MagistrateJumpsuit
   - MagistrateJumpskirt
   - MagistrateJumpsuitLongCoat
+  - MaidOutfit
 
 - type: loadoutGroup
   id: MagistrateOuterclothing
@@ -280,6 +302,7 @@
   minLimit: 0
   loadouts:
   - MagistrateHeadPwig
+  - MaidHeadbandTactical
 
 - type: loadoutGroup
   id: MagistrateEyewear
@@ -306,6 +329,7 @@
   loadouts:
   - BlueShieldBeret
   - BlueShieldBountyHat
+  - MaidHeadbandTactical
 
 - type: loadoutGroup
   id: BlueShieldBackpack
@@ -327,11 +351,13 @@
   - BlueShieldShirt
   - BlueShieldSkirt
   - FormalBlueShieldJumpsuit
+  - MaidOutfit
+  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: BlueShieldOuterclothing
   name: loadout-group-blueshield-outerclothing
-  minLimit: 0
+  minLimit: 1
   defaultSelected: 1
   loadouts:
   - BlueShieldVest
@@ -400,6 +426,7 @@
   - ScienceWinterBoots
   - Heels
   - LeatherShoes
+  - CoderSocks
 
 - type: loadoutGroup
   id: CaptainShoes
@@ -413,6 +440,7 @@
   - CowboyBootsBlackFilled
   - CowboyBootsWhiteFilled
   - HighHeelBootsFilled
+  - CoderSocks
 
 - type: loadoutGroup
   id: HoPShoes
@@ -423,6 +451,7 @@
   - Heels
   - LaceupShoes
   - LeatherShoes
+  - CoderSocks
 
 - type: loadoutGroup
   id: MagistrateShoes
@@ -431,6 +460,7 @@
   loadouts:
   - LaceupShoes
   - Heels
+  - CoderSocks
 
 - type: loadoutGroup
   id: NanotrasenRepresentativeShoes
@@ -440,6 +470,7 @@
   - LaceupShoes
   - Heels
   - LeatherShoes
+  - CoderSocks
 
 - type: loadoutGroup
   id: DetectiveShoes
@@ -454,6 +485,7 @@
   - CowboyBootsWhiteFilled
   - Heels
   - HighHeelBootsFilled
+  - CoderSocks
 
 - type: loadoutGroup
   id: CivilianShoes
@@ -466,6 +498,7 @@
   - LeatherShoes
   - Heels
   - LaceupShoes
+  - CoderSocks
 
 - type: loadoutGroup
   id: LawyerShoes
@@ -476,6 +509,7 @@
   - LaceupShoes
   - Heels
   - LeatherShoes
+  - CoderSocks
 
 - type: loadoutGroup
   id: BlueShieldShoes
@@ -484,6 +518,7 @@
   loadouts:
   - CombatBoots
   - HighHeelBootsFilled
+  - CoderSocks
 
 # Salvage Lead
 - type: loadoutGroup
@@ -492,6 +527,8 @@
   loadouts:
     - SalvageLeadJumpsuit
     - SalvageLeadJumpskirt
+    - MaidOutfit
+    - MaidOutfitTactical
 
 - type: loadoutGroup
   id: SalvageLeadNeck
@@ -514,6 +551,8 @@
   loadouts:
     - MiningSpecialistJumpsuit
     - MiningSpecialistJumpskirt
+    - MaidOutfit
+    - MaidOutfitTactical
 
 - type: loadoutGroup
   id: MiningSpecialistPDA
@@ -537,6 +576,8 @@
   loadouts:
   - BoxerShorts
   - BoxerShortsWithTop
+  - MaidOutfit
+  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: BoxerGloves
@@ -582,6 +623,7 @@
     - ChemistNurseHat
     - ChemistTruckersHat
     - ChemistFisherCap
+    - MaidHeadbandTactical
 
 - type: loadoutGroup
   id: ChemistBag
@@ -600,6 +642,7 @@
   - Heels
   - LaceupShoes
   - LeatherShoes
+  - CoderSocks
 
 - type: loadoutGroup
   id: ChemistPDA
@@ -636,7 +679,7 @@
 - type: loadoutGroup
   id: BrigmedicMask
   name: loadout-group-brigmedic-mask
-  minLimit: 1
+  minLimit: 0
   loadouts:
     - BrigmedicBreathMaskMedicalSecurity
     - BrigmedicMaskGasSecurity
@@ -673,6 +716,8 @@
   - DutyOfficerHead
   - DutyOfficerBeret
   - DutyOfficerHelmetRiot
+  - MaidHeadbandTactical
+  - Hairflower
 
 - type: loadoutGroup
   id: DutyOfficerJumpsuit
@@ -682,6 +727,8 @@
   - DutyOfficerJumpskirt
   - DutyOfficerJumpsuitBlue
   - DutyOfficerJumpskirtBlue
+  - MaidOutfit
+  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: DutyOfficerBelt
@@ -713,6 +760,8 @@
   loadouts:
     - BrighteyeTatteredClothes
     - BrighteyeGladiator
+    - MaidOutfit
+    - MaidOutfitTactical
 
 - type: loadoutGroup
   id: BrighteyeNeck
@@ -730,6 +779,7 @@
   loadouts:
     - BrighteyeClothWrapShoe
     - BlackShoes
+    - CoderSocks
 
 - type: loadoutGroup
   id: BrighteyeGloves
@@ -744,6 +794,8 @@
   loadouts:
   - JumpsuitNCT
   - JumpskirtNCT
+  - MaidOutfit
+  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: NanotrasenCareerTrainerHat
@@ -752,6 +804,7 @@
   - Drilltrainer
   - BeretNCTGreen
   - BeretNCTBlack
+  - MaidHeadbandTactical
 
 - type: loadoutGroup
   id: NanotrasenCareerTrainerShoes
@@ -761,6 +814,7 @@
   - LaceupShoes
   - Heels
   - LeatherShoes
+  - CoderSocks
 
 - type: loadoutGroup
   id: NanotrasenCareerTrainerEyewear
