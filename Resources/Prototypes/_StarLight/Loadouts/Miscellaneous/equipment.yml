@@ -111,6 +111,50 @@
   groupBy: "cat paws"
 
 - type: loadout
+  id: PawsWhiteInsulated
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:OverallPlaytimeRequirement
+        time: 360000 # 100 hours
+  equipment:
+    gloves: ClothingHandsCatPawsWhiteInsulated
+  groupBy: "cat paws"
+
+- type: loadout
+  id: PawsBrownInsulated
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:OverallPlaytimeRequirement
+        time: 360000 # 100 hours
+  equipment:
+    gloves: ClothingHandsCatPawsBrownInsulated
+  groupBy: "cat paws"
+
+- type: loadout
+  id: PawsBlackInsulated
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:OverallPlaytimeRequirement
+        time: 360000 # 100 hours
+  equipment:
+    gloves: ClothingHandsCatPawsBlackInsulated
+  groupBy: "cat paws"
+
+- type: loadout
+  id: PawsBlackWhiteInsulated
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:OverallPlaytimeRequirement
+        time: 360000 # 100 hours
+  equipment:
+    gloves: ClothingHandsCatPawsBlackWhiteInsulated
+  groupBy: "cat paws"
+
+- type: loadout
   id: CatEars
   effects:
     - !type:JobRequirementLoadoutEffect

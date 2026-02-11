@@ -9,10 +9,10 @@
   - InsulsMaid
   - InsulsMercenary
   - InsulsScrapper
-  - PawsWhite
-  - PawsBrown
-  - PawsBlack
-  - PawsBlackWhite
+  - PawsWhiteInsulated
+  - PawsBrownInsulated
+  - PawsBlackInsulated
+  - PawsBlackWhiteInsulated
 
 - type: loadoutGroup
   id: InsulsCombat

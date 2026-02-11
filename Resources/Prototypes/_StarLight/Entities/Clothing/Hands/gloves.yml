@@ -110,6 +110,42 @@
     fiberColor: fibers-grey
 
 - type: entity
+  parent: ClothingHandsCatPawsWhite
+  id: ClothingHandsCatPawsWhiteInsulated
+  suffix: Insulated
+  components:
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+
+- type: entity
+  parent: ClothingHandsCatPawsBrown
+  id: ClothingHandsCatPawsBrownInsulated
+  suffix: Insulated
+  components:
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+
+- type: entity
+  parent: ClothingHandsCatPawsBlack
+  id: ClothingHandsCatPawsBlackInsulated
+  suffix: Insulated
+  components:
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+
+- type: entity
+  parent: ClothingHandsCatPawsBlackWhite
+  id: ClothingHandsCatPawsBlackWhiteInsulated
+  suffix: Insulated
+  components:
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+
+- type: entity
   parent: [ BaseEngineeringSecurityCommandSalvageMiningContraband, ClothingHandsGlovesCombat ]
   id: ClothingHandsSalvageMercGlovesCombat
   name: scrapper combat gloves
