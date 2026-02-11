@@ -418,3 +418,6 @@ rr-brighteye-dark-task = Spread {$Amount} dark tiles.
 
 rr-brighteye-portal-crit = Portal
 rr-brighteye-portal-crit-desc = Influence and enhance the flow of the Dark. Unleash the shadows. (Make your portal go Supercritical.)
+
+rr-brighteye-teachalesson = Dangerous Lightwalker
+rr-brighteye-teachalesson-desc = Teach a Lightwalker a Lesson... Teach them to fear the dark.
