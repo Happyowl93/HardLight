@@ -107,10 +107,10 @@
   - PillCanisterPsicodine
   - ClothingDogTags
   - PersonalAI
-  - PawsWhite
+  - PawsWhite # starlight start
   - PawsBrown
   - PawsBlack
-  - PawsBlackWhite
+  - PawsBlackWhite # starlight end
   - GoldenPersonalAI # Starlight end
   - AACTablet # DeltaV
 
@@ -362,6 +362,10 @@
   loadouts:
   - AssistantGloves
   - GreyGloves #starlight
+  - PawsWhite # starlight start
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite # starlight end
 
 - type: loadoutGroup
   id: CommonBackpack
@@ -661,6 +665,10 @@
   - JanitorRubberGloves
   - OrangeGloves
   - PurpleGloves
+  - PawsWhite # starlight start
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite # starlight end
 
 - type: loadoutGroup
   id: JanitorOuterClothing
@@ -726,6 +734,11 @@
   loadouts:
   - JesterHat
   - JesterAltHat
+  - MaidHeadbandTactical # Starlight start
+  - Hairflower
+  - CatEars
+  - DogEars
+  - BunnyEars # Starlight end
 
 - type: loadoutGroup
   id: ClownJumpsuit
@@ -761,6 +774,7 @@
   loadouts:
   - ClownShoes
   - JesterShoes
+  - CoderSocks
 
 - type: loadoutGroup
   id: SurvivalClown
@@ -982,10 +996,13 @@
   loadouts:
   - CargoTechnicianHead
   - CargoTechnicianBeret
-  - MaidHeadbandTactical # Starlight start
+  - CargoTechnicianHeadFormal # Starlight start
+  - CargoTechnicianBeretFormal
+  - MaidHeadbandTactical
   - Hairflower
-  - CargoTechnicianHeadFormal
-  - CargoTechnicianBeretFormal # Starlight end
+  - CatEars
+  - DogEars
+  - BunnyEars # Starlight end
 
 - type: loadoutGroup
   id: CargoTechnicianJumpsuit
@@ -1423,7 +1440,11 @@
   loadouts:
   - LatexGloves
   - PurpleGloves
-#  - RobohandsGloves Only for roboticist
+  - PawsWhite # starlight start
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite # starlight end
+  - RobohandsGloves # Only for roboticist ## Starlight: how bout i do anyway
 
 - type: loadoutGroup
   id: ScientistPDA
@@ -1568,18 +1589,8 @@
   minLimit: 0
   loadouts:
   - BrigmedicBeret
-  - MaidHeadbandTactical # Starlight start
-  - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars # Starlight end
   - BrigmedicNurseHat # Starlight start
   - CorpsmanBeret
-  - MaidHeadbandTactical # Starlight start
-  - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars # Starlight end
   - CorpsmanNurseHat
   - BrigmedicNurseHatOfLife # Starlight end
   - SecurityHelmet
@@ -1642,16 +1653,6 @@
   - BrigmedicBelt #Starlight
   - CorpsmanBelt #Starlight
 
-#Starlight Start
-- type: loadoutGroup
-  id: BrigmedicGloves
-  name: loadout-group-brigmedic-gloves
-  loadouts:
-  - Nitrile
-  - BlackNitrile
-  - LatexGloves
-#Starlight End
-
 - type: loadoutGroup
   id: SecurityHead
   name: loadout-group-security-head
@@ -1662,11 +1663,6 @@
   - SecurityHelmetStabproof
   - SecurityHelmetHeatAbsorbent
   - SecurityBeret
-  - MaidHeadbandTactical # Starlight start
-  - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars # Starlight end
   - SecurityHat
   - TrooperHat
   - MaidHeadbandTactical # Starlight start
@@ -1891,17 +1887,7 @@
   minLimit: 0
   loadouts:
   - MedicalBeret
-  - MaidHeadbandTactical # Starlight start
-  - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars # Starlight end
   - SeniorPhysicianBeret
-  - MaidHeadbandTactical # Starlight start
-  - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars # Starlight end
   - MedicalHeadMirror
   - BlueSurgeryCap
   - GreenSurgeryCap
@@ -1975,6 +1961,10 @@
   loadouts:
   - LatexGloves
   - NitrileGloves
+  - PawsWhite # starlight start
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite # starlight end
 
 - type: loadoutGroup
   id: MedicalMask

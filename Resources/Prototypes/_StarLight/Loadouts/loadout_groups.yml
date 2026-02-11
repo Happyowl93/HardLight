@@ -9,6 +9,10 @@
   - InsulsMaid
   - InsulsMercenary
   - InsulsScrapper
+  - PawsWhite
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite
 
 # ugh, this's cursed
 - type: loadoutGroup
@@ -22,6 +26,10 @@
   - InsulsMaid
   - InsulsMercenary
   - InsulsScrapper
+  - PawsWhite
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite
 
 - type: loadoutGroup
   id: InsulsCaptain
@@ -35,6 +43,31 @@
   - InsulsMaid
   - InsulsMercenary
   - InsulsScrapper
+  - PawsWhite
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite
+
+- type: loadoutGroup
+  id: GlovesGeneric
+  name: loadout-group-gloves-generic
+  minLimit: 0
+  loadouts:
+  - PawsWhite
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite
+
+- type: loadoutGroup
+  id: HeadGeneric
+  name: loadout-group-head-generic
+  minLimit: 0
+  loadouts:
+  - MaidHeadbandTactical
+  - Hairflower
+  - CatEars
+  - DogEars
+  - BunnyEars
 
 - type: loadoutGroup
   id: Scarves
@@ -200,7 +233,7 @@
   - RoboticistJumpsuit
   - RoboticistJumpskirt
   - MaidOutfit
-  - MaidOUtfitTactical
+  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: RoboticistOuterClothing
@@ -228,6 +261,10 @@
   - LatexGloves
   - PurpleGloves
   - RobohandsGloves
+  - PawsWhite
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite
 
 - type: loadoutGroup
   id: RoboticistGoggles
@@ -303,6 +340,10 @@
   loadouts:
   - MagistrateHeadPwig
   - MaidHeadbandTactical
+  - Hairflower
+  - CatEars
+  - DogEars
+  - BunnyEars
 
 - type: loadoutGroup
   id: MagistrateEyewear
@@ -320,6 +361,10 @@
   loadouts:
   - MagistrateWhiteGloves
   - MagistrateBlackGloves
+  - PawsWhite
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite
 
 - type: loadoutGroup
   id: BlueShieldHead
@@ -587,6 +632,10 @@
   - BlueBoxingGloves
   - GreenBoxingGloves
   - YellowBoxingGloves
+  - PawsWhite
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite
 
 - type: loadoutGroup
   id: BoxerJobTrinkets
@@ -624,6 +673,10 @@
     - ChemistTruckersHat
     - ChemistFisherCap
     - MaidHeadbandTactical
+    - Hairflower
+    - CatEars
+    - DogEars
+    - BunnyEars
 
 - type: loadoutGroup
   id: ChemistBag
@@ -718,6 +771,9 @@
   - DutyOfficerHelmetRiot
   - MaidHeadbandTactical
   - Hairflower
+  - CatEars
+  - DogEars
+  - BunnyEars
 
 - type: loadoutGroup
   id: DutyOfficerJumpsuit
@@ -787,6 +843,10 @@
   name: loadout-group-brighteye-gloves
   loadouts:
     - BrighteyeClothWrapGlove
+    - PawsWhite
+    - PawsBrown
+    - PawsBlack
+    - PawsBlackWhite
 
 - type: loadoutGroup
   id: NanotrasenCareerTrainerJumpsuit
@@ -805,6 +865,10 @@
   - BeretNCTGreen
   - BeretNCTBlack
   - MaidHeadbandTactical
+  - Hairflower
+  - CatEars
+  - DogEars
+  - BunnyEars
 
 - type: loadoutGroup
   id: NanotrasenCareerTrainerShoes
@@ -836,3 +900,15 @@
   minLimit: 0
   loadouts:
   - ClothingNeckWarden
+
+- type: loadoutGroup
+  id: BrigmedicGloves
+  name: loadout-group-brigmedic-gloves
+  loadouts:
+  - Nitrile
+  - BlackNitrile
+  - LatexGloves
+  - PawsWhite
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite
