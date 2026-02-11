@@ -36,6 +36,7 @@ entities:
       inherent: True
       enabled: True
     - type: PressureImmunity
+    - type: PreventFTL
     - type: MapAtmosphere
       space: False
       mixture:
