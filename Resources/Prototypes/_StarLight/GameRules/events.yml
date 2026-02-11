@@ -267,6 +267,7 @@
     - id: Xenoborgs
     # Starlight gamerules:
     - id: AbductorsSpawn
+    - id: Brighteye
 
 - type: entity
   parent: BaseGameRule
@@ -306,9 +307,9 @@
   components:
   - type: StationEvent
     weight: 1
-    earliestStart: 30
-    reoccurrenceDelay: 60
-    minimumPlayers: 30
+    earliestStart: 10
+    reoccurrenceDelay: 20
+    minimumPlayers: 20
   - type: RuleGrids
   - type: GameRule
     minPlayers: 10
