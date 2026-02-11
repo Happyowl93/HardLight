@@ -449,6 +449,7 @@
   - Heels
   - LeatherShoes
   - CoderSocks
+  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: CaptainShoes
@@ -508,6 +509,7 @@
   - Heels
   - HighHeelBootsFilled
   - CoderSocks
+  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: CivilianShoes
@@ -521,6 +523,7 @@
   - Heels
   - LaceupShoes
   - CoderSocks
+  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: LawyerShoes
@@ -532,6 +535,7 @@
   - Heels
   - LeatherShoes
   - CoderSocks
+  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: BlueShieldShoes
@@ -673,6 +677,7 @@
   - LaceupShoes
   - LeatherShoes
   - CoderSocks
+  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: ChemistPDA
@@ -825,6 +830,7 @@
     - BrighteyeClothWrapShoe
     - BlackShoes
     - CoderSocks
+    - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: BrighteyeGloves
@@ -853,11 +859,7 @@
   - Drilltrainer
   - BeretNCTGreen
   - BeretNCTBlack
-  - MaidHeadbandTactical
   - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars
 
 - type: loadoutGroup
   id: NanotrasenCareerTrainerShoes
@@ -867,7 +869,6 @@
   - LaceupShoes
   - Heels
   - LeatherShoes
-  - CoderSocks
 
 - type: loadoutGroup
   id: NanotrasenCareerTrainerEyewear

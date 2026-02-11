@@ -95,7 +95,6 @@
   - PaperClipboard
   - HonoredClownMask
   - MedRollies
-  - RollerSkates
   - DaBling
   - CrapPlushie ##not a typo
   - LighterGatcha
@@ -388,6 +387,7 @@
   - WinterBoots
   - Heels # 🌟Starlight🌟
   - CoderSocks # Starlight
+  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: AssistantJobTrinkets # Starlight - depassenger
@@ -759,6 +759,7 @@
   - ClownShoes
   - JesterShoes
   - CoderSocks
+  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: SurvivalClown
@@ -1026,6 +1027,7 @@
   - LeatherShoes
   - WorkBoots
   - Heels
+  - RollerSkates
   - CoderSocks # Starlight end
 
 - type: loadoutGroup
@@ -1075,9 +1077,10 @@
   loadouts:
   - SalvageBoots
   - CargoWinterBoots
-  - WorkBoots # 🌟Starlight🌟
-  - HighHeelBoots # 🌟Starlight🌟
-  - CoderSocks # Starlight
+  - WorkBoots # Starlight start
+  - HighHeelBoots
+  - CoderSocks
+  - RollerSkates # Starlight end
 
 - type: loadoutGroup
   id: SalvageSpecialistJobTrinkets
@@ -1203,10 +1206,12 @@
   id: StationEngineerShoes
   name: loadout-group-station-engineer-shoes
   loadouts:
+  - WhiteShoes # Starlight
   - WorkBoots
   - EngineeringWinterBoots
   - Heels # 🌟Starlight🌟
   - CoderSocks # Starlight
+  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: StationEngineerID
@@ -1257,6 +1262,7 @@
   - EngineeringWinterBoots
   - Heels # 🌟Starlight🌟
   - CoderSocks # Starlight
+  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: AtmosphericTechnicianJobTrinkets
@@ -1396,6 +1402,7 @@
   - ScienceWinterBoots
   - Heels # Starlight start
   - LeatherShoes
+  - RollerSkates
   - CoderSocks # Starlight end
 
 - type: loadoutGroup
@@ -1686,6 +1693,7 @@
   - SecurityWinterBoots
   - HighHeelBootsFilled # 🌟Starlight🌟
   - CoderSocks # Starlight
+  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: SecurityPDA
@@ -1904,6 +1912,7 @@
   - Heels # Starlight start
   - LaceupShoes
   - LeatherShoes
+  - RollerSkates
   - CoderSocks # Starlight end
 
 - type: loadoutGroup
@@ -2043,6 +2052,7 @@
   - MedicalWinterBoots
   - Heels # Starlight start
   - HighHeelBoots
+  - RollerSkates
   - CoderSocks # Starlight end
 
 - type: loadoutGroup
