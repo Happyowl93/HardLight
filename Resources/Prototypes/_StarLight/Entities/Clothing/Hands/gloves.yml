@@ -111,8 +111,8 @@
 
 - type: entity
   parent: ClothingHandsCatPawsWhite
+  name: insulated cat paws
   id: ClothingHandsCatPawsWhiteInsulated
-  suffix: Insulated
   components:
   - type: Insulated
   - type: Fiber
@@ -121,7 +121,7 @@
 - type: entity
   parent: ClothingHandsCatPawsBrown
   id: ClothingHandsCatPawsBrownInsulated
-  suffix: Insulated
+  name: insulated cat paws
   components:
   - type: Insulated
   - type: Fiber
@@ -130,7 +130,7 @@
 - type: entity
   parent: ClothingHandsCatPawsBlack
   id: ClothingHandsCatPawsBlackInsulated
-  suffix: Insulated
+  name: insulated cat paws
   components:
   - type: Insulated
   - type: Fiber
@@ -139,7 +139,7 @@
 - type: entity
   parent: ClothingHandsCatPawsBlackWhite
   id: ClothingHandsCatPawsBlackWhiteInsulated
-  suffix: Insulated
+  name: insulated cat paws
   components:
   - type: Insulated
   - type: Fiber
