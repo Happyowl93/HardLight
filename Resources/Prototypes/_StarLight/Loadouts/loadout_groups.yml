@@ -33,7 +33,7 @@
 
 - type: loadoutGroup
   id: InsulsCaptain
-  name: loadout-group-insuls-captain
+  name: loadout-group-insuls
   minLimit: 0
   defaultSelected: 1
   loadouts:
@@ -761,6 +761,18 @@
     - DarkBeaker
     - SilverBeakerBrigmedic
 
+- type: loadoutGroup
+  id: BrigmedicGloves
+  name: loadout-group-brigmedic-gloves
+  loadouts:
+  - Nitrile
+  - BlackNitrile
+  - LatexGloves
+  - PawsWhite
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite
+
 # Duty Officer
 - type: loadoutGroup
   id: DutyOfficerHead
@@ -796,8 +808,8 @@
 - type: loadoutGroup
   id: DutyOfficerOuterClothing
   name: loadout-group-dutyofficer-outerclothing
-  minLimit: 0 # starlight
-  defaultSelected: 1 # starlight
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
   - DutyOfficerArmorRiot
   - ArmorVest
@@ -806,8 +818,8 @@
   - ArmorVestStab
   - ArmorVestHeatAbsorb
   - SecurityOfficerWintercoat
-  - SecurityBomber #Starlight
-  - WindbreakerSecurity #Starlight
+  - SecurityBomber
+  - WindbreakerSecurity
 
 # Brighteye
 - type: loadoutGroup
@@ -902,12 +914,13 @@
   - ClothingNeckWarden
 
 - type: loadoutGroup
-  id: BrigmedicGloves
-  name: loadout-group-brigmedic-gloves
+  id: SecurityGloves
+  name: loadout-group-gloves-sec
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
-  - Nitrile
-  - BlackNitrile
-  - LatexGloves
+  - ClothingHandsGlovesSecurityRed
+  - ClothingHandsGlovesSecurityFingerlessRed
   - PawsWhite
   - PawsBrown
   - PawsBlack
