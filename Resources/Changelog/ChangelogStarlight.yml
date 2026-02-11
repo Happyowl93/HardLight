@@ -30101,5 +30101,12 @@ Entries:
   id: 323300
   time: '2026-02-10T23:41:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3233
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Missing Brigmedic locker
+    type: Fix
+  id: 323500
+  time: '2026-02-11T05:37:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3235
 Order: -1
 
