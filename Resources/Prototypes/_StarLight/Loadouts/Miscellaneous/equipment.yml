@@ -1,6 +1,11 @@
 ## Any kind of equipment that doesn't fit elsewhere, goes in this file.
 
 - type: loadout
+  id: RedRegaliaGloves
+  equipment:
+    gloves: RedRegaliaGloves
+
+- type: loadout
   id: SecGloves
   equipment:
     gloves: ClothingHandsGlovesSecurityRed
