@@ -30142,5 +30142,13 @@ Entries:
   id: 324400
   time: '2026-02-11T05:55:06.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3244
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Two more job slots for borgs (for a total of 2 round start and
+      4 total with latejoins)
+    type: Add
+  id: 324300
+  time: '2026-02-11T06:00:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3243
 Order: -1
 
