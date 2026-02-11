@@ -1,6 +1,16 @@
 ## Any kind of equipment that doesn't fit elsewhere, goes in this file.
 
 - type: loadout
+  id: SecGloves
+  equipment:
+    gloves: ClothingHandsGlovesSecurityRed
+
+- type: loadout
+  id: SecGlovesFingerless
+  equipment:
+    gloves: ClothingHandsGlovesSecurityRed
+
+- type: loadout
   id: CoderSocks
   effects:
     - !type:JobRequirementLoadoutEffect

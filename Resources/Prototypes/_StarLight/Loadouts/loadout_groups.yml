@@ -919,8 +919,8 @@
   minLimit: 0
   defaultSelected: 1
   loadouts:
-  - ClothingHandsGlovesSecurityRed
-  - ClothingHandsGlovesSecurityFingerlessRed
+  - SecGloves
+  - SecGlovesFingerless
   - PawsWhite
   - PawsBrown
   - PawsBlack
