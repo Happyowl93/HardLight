@@ -42,6 +42,11 @@ entities:
         volume: 2500
         immutable: True
         temperature: 293.2
+    - type: WorldController
+    - type: BiomeSelection
+      biomes:
+        - Failsafe
+        - TheDarkStandard
   - uid: 2
     components:
     - type: MetaData
