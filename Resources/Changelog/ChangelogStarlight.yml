@@ -30204,5 +30204,20 @@ Entries:
   id: 324800
   time: '2026-02-11T15:24:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3248
+- author: CawsForConcern
+  changes:
+  - message: (Cog) Botany windows are no longer all-access
+    type: Fix
+  - message: (Cog) Escape pods no longer all use the same station beacon names, now
+      use cardinal names (North / Northeast, Southeast, etc)
+    type: Fix
+  - message: (Cog) Solars no longer all use the same station beacon names, now use
+      cardinal names (North / Northeast, Southeast, etc)
+    type: Fix
+  - message: (Cog) Removed duplicate 'Evac' station beacons
+    type: Fix
+  id: 323700
+  time: '2026-02-11T15:34:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3237
 Order: -1
 
