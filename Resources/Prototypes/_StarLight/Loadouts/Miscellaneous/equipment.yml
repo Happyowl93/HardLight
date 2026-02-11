@@ -34,7 +34,7 @@
     - !type:JobRequirementLoadoutEffect
       requirement:
         !type:DepartmentTimeRequirement
-        department: Service
+        department: Civilian
         time: 72000 # 20 hours
   equipment:
     jumpsuit: ClothingUniformJumpskirtElegantMaid
