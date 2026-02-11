@@ -8,7 +8,7 @@
 - type: loadout
   id: SecGlovesFingerless
   equipment:
-    gloves: ClothingHandsGlovesSecurityRed
+    gloves: ClothingHandsGlovesSecurityFingerlessRed
 
 - type: loadout
   id: CoderSocks
