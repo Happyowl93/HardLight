@@ -1,0 +1,81 @@
+# Starlight Shuttle Cannons
+
+# NTSF-CYERXA Dual 120mm Cannon - Based on Duster, fires 2 shots per trigger
+- type: entity
+  id: ShuttleGunNTSFCyerxa120mm
+  parent: [ShuttleGunBase, ConstructibleMachine]
+  name: NTSF-CYERXA Dual 120mm Cannons
+  description: A powerful dual 120mm cannon system designed for heavy shuttle combat. Fires devastating blast grenades with extreme destructive power. Each activation fires both barrels in rapid succession.
+  categories: [ DoNotMap ]
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Weapons/Guns/Shuttleguns/ntsf_cyerxa_120mm.rsi
+    state: space_artillery
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      gun_magazine: !type:ContainerSlot
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 500
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Anchorable
+    delay: 90
+  - type: Pullable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    projectileSpeed: 50
+    fireRate: 0.5
+    burstFireRate: 4
+    shotsPerBurst: 2
+    burstCooldown: 150
+    selectedMode: Burst
+    angleDecay: 30
+    minAngle: 0
+    maxAngle: 10
+    availableModes:
+    - Burst
+    soundGunshot:
+      path: /Audio/_Starlight/Weapons/Shuttleguns/uaf_cyrexa_452.ogg
+      params:
+        variation: 0.05
+        volume: 5
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: Machine
+    board: ShuttleGunNTSFCyerxa120mmCircuitboard
+  - type: MagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineGrenade120mm
+        insertSound:
+          path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
+          params:
+            pitch: 2
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+  - type: StaticPrice
+    price: 5000

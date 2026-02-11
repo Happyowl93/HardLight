@@ -118,6 +118,9 @@
   id: CluwneBeastWearable
 
 - type: Tag
+  id: CombatRemote
+
+- type: Tag
   id: Compy
 
 - type: Tag
@@ -211,6 +214,9 @@
   id: Ghost
 
 - type: Tag
+  id: Grenade120mm
+
+- type: Tag
   id: GygaxArmor
 
 - type: Tag
@@ -294,6 +300,9 @@
 
 - type: Tag
   id: MagazineBoxLightRifle
+
+- type: Tag
+  id: MagazineGrenade120mm
 
 - type: Tag
   id: MagazineLightRiflePan
