@@ -440,11 +440,6 @@ entities:
     - type: Transform
       pos: -12.5,-2.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 3
 - proto: APCShadekin
   entities:
   - uid: 9
@@ -3699,11 +3694,6 @@ entities:
     - type: Transform
       pos: 11.5,3.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 3
 - proto: GasVentScrubber
   entities:
   - uid: 621
@@ -3712,11 +3702,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 13.5,3.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 3
 - proto: Grille
   entities:
   - uid: 622
