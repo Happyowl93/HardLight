@@ -101,7 +101,7 @@ language-Darktongue-name = Darktongue
 language-Darktongue-description = Sounds a bit like clearing your throat, or perhaps slitting someone else's.
 
 language-Felyaic-name = Felyaic
-language-Felyaic-description = A more ponderous form of Darktongue spoken in deep, dark places.
+language-Felyaic-description = A more ponderous form of Darktongue spoken in deep, dark places by the detarii.
 
 language-Grumbakul-name = Grumbakul
 language-Grumbakul-description = A terse, sturdy language fit for drink and industry.
