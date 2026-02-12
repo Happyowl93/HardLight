@@ -94,7 +94,8 @@
     - type: RailroadCard
       title: rr-brighteye-protect
       icon: 
-      color: "#9FED5896"
+      iconColor: "#9FED5896"
+      color: "#6c15ae"
       image: /Textures/_Starlight/Railroading/shadekin.png
       description: rr-brighteye-protect-desc
     - type: TargetObjective
