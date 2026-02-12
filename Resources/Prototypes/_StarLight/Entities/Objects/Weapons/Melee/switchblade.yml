@@ -26,7 +26,7 @@
           damage:
             types:
               Blunt: 2
-              Structural: 2
+              Structural: 4
         - type: DamageOtherOnHit #this just clears out the comp to not have any damage when thrown
           damage:
             types:
