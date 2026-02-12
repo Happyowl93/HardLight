@@ -30265,5 +30265,15 @@ Entries:
   id: 324600
   time: '2026-02-12T08:19:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3246
+- author: Cringe_Cursed
+  changes:
+  - message: Added new constructible machine, called Bluespace Harvester, which allows
+      you to exchange excessive power to kind of Research Points. These points can
+      be spent on various, random rewards. CircuitBoard for machine located in CE
+      locker.
+    type: Add
+  id: 284800
+  time: '2026-02-12T08:22:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2848
 Order: -1
 
