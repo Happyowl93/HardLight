@@ -30289,5 +30289,15 @@ Entries:
   id: 326000
   time: '2026-02-12T12:31:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3260
+- author: Coolsurf6
+  changes:
+  - message: Nukie TeamOps have had Mech prices reduced to 75 and 100.
+    type: Tweak
+  - message: Nukie LoneOps have had Mech prices reduced to be purchasable now to 30
+      and 45.
+    type: Tweak
+  id: 325900
+  time: '2026-02-12T23:18:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3259
 Order: -1
 
