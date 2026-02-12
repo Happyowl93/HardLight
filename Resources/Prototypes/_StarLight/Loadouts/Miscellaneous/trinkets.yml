@@ -64,9 +64,8 @@
       requirement:
         !type:OverallPlaytimeRequirement
         time: 36000 # 10hr
-  storage:
-    back:
-      - GoldRing
+  equipment:
+    gloves: GoldRing
 
 - type: loadout
   id: SilverRing
@@ -75,9 +74,8 @@
       requirement:
         !type:OverallPlaytimeRequirement
         time: 36000 # 10hr
-  storage:
-    back:
-      - SilverRing
+  equipment:
+    gloves: SilverRing
 
 - type: loadout
   id: Matchbox
