@@ -35,7 +35,7 @@ public sealed class TeachALessonConditionSystem : EntitySystem
     // Starlight Start
     private void OnCollectObjectiveInfo(Entity<TeachALessonConditionComponent> ent, ref CollectObjectiveInfoEvent args)
     {
-        if (!HasComp<RailroadCardComponent>(ent.Owner) || !TryComp<TargetObjectiveComponent>(ent.Owner, out var target) || target.Target is null)
+        if (!HasComp<RailroadCardComponent>(ent.Owner) || !TryComp<TargetObjectiveComponent>(ent.Owner, out var target))
             return;
 
         args.Objectives.Add(new ObjectiveInfo

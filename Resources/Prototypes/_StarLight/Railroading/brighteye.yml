@@ -62,18 +62,81 @@
       description: rr-brighteye-teachalesson-desc
     - type: TargetObjective
       title: objective-condition-teach-lesson-title
-      icon: 
+      icon:
         sprite: /Textures/Objects/Weapons/Melee/spear.rsi
         state: spear
     - type: PickRandomPerson
       filters:
-      - !type:BodyMindFilter
-        whitelist:
-           components:
-            - Shadekin
-        inverted: true
-      - !type:TargetObjectiveMindFilter
-        blacklist:
-          components:
-            - TeachALessonTarget
+        - !type:BodyMindFilter
+          whitelist:
+            components:
+              - Shadekin
+          inverted: true
+        - !type:TargetObjectiveMindFilter
+          blacklist:
+            components:
+              - TeachALessonTarget
     - type: TeachALessonCondition
+
+- type: entity
+  id: RRCardBrighteyeTeachALesson
+  parent: BrighteyeCondition
+  categories: [HideSpawnMenu]
+  components:
+    - type: RailroadCard
+      title: rr-brighteye-teachalesson
+      icon: 
+      iconColor: "#fd3f3f"
+      color: "#6c15ae"
+      image: /Textures/_Starlight/Railroading/shadekin.png
+      description: rr-brighteye-teachalesson-desc
+    - type: TargetObjective
+      title: objective-condition-teach-lesson-title
+      icon:
+        sprite: /Textures/Objects/Weapons/Melee/spear.rsi
+        state: spear
+    - type: PickRandomPerson
+      filters:
+        - !type:BodyMindFilter
+          whitelist:
+            components:
+              - Shadekin
+          inverted: true
+        - !type:TargetObjectiveMindFilter
+          blacklist:
+            components:
+              - TeachALessonTarget
+    - type: TeachALessonCondition
+
+- type: entity
+  id: RRCardBrighteyeProtect
+  parent: BrighteyeCondition
+  categories: [HideSpawnMenu]
+  components:
+    - type: RailroadCard
+      title: rr-brighteye-protect
+      icon: 
+      color: "#9FED5896"
+      image: /Textures/_Starlight/Railroading/shadekin.png
+      description: rr-brighteye-protect-desc
+    - type: TargetObjective
+      title: objective-condition-shadekin-alive-title
+      icon:
+        sprite: /Textures/Interface/Actions/actions_fakemindshield.rsi
+        state: icon-on
+    - type: PickRandomPerson
+      filters:
+        - !type:BodyMindFilter
+          whitelist:
+            components:
+              - Shadekin
+        - !type:BodyMindFilter
+          whitelist:
+            components:
+              - Brighteye
+          inverted: true
+        - !type:TargetObjectiveMindFilter
+          blacklist:
+            components:
+              - KeepAliveCondition
+    - type: KeepAliveCondition

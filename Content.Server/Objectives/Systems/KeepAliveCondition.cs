@@ -1,5 +1,10 @@
+using Content.Server._Starlight.Objectives.Events;
+using Content.Server._Starlight.Railroading;
 using Content.Server.Objectives.Components;
+using Content.Shared._Starlight.Railroading;
+using Content.Shared._Starlight.Railroading.Events;
 using Content.Shared.Mind;
+using Content.Shared.Objectives;
 using Content.Shared.Objectives.Components;
 
 namespace Content.Server.Objectives.Systems;
@@ -11,13 +16,63 @@ public sealed class KeepAliveConditionSystem : EntitySystem
 {
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly TargetObjectiveSystem _target = default!;
+    [Dependency] private readonly RailroadingSystem _railroad = default!; // Starlight
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<KeepAliveConditionComponent, ObjectiveGetProgressEvent>(OnGetProgress);
+
+        SubscribeLocalEvent<KeepAliveConditionComponent, CollectObjectiveInfoEvent>(OnCollectObjectiveInfo); // Starlight
+        SubscribeLocalEvent<KeepAliveConditionComponent, RailroadingCardChosenEvent>(OnAfterAssign); // Starlight
+        SubscribeLocalEvent<KeepAliveConditionComponent, RailroadingCardCompletionQueryEvent>(OnTaskCompletionQuery); // Starlight
     }
+
+    // Starlight - Start
+    private void OnAfterAssign(Entity<KeepAliveConditionComponent> ent, ref RailroadingCardChosenEvent args)
+    {
+        if (!TryComp<RailroadableComponent>(args.Subject, out var railroadable)
+            || railroadable.ActiveCard is null)
+            return;
+
+        _railroad.InvalidateProgress((args.Subject, railroadable));
+    }
+
+    private void OnTaskCompletionQuery(Entity<KeepAliveConditionComponent> ent, ref RailroadingCardCompletionQueryEvent args)
+    {
+        if (!_target.GetTarget(ent, out var target))
+            return;
+
+        if (!TryComp<MindComponent>(target, out var mind))
+        {
+            args.IsCompleted = false;
+            return;
+        }
+        
+        if (_mind.IsCharacterDeadIc(mind))
+        {
+            args.IsCompleted = false;
+            return;
+        }
+
+        args.IsCompleted = true;
+    }
+
+    private void OnCollectObjectiveInfo(Entity<KeepAliveConditionComponent> ent, ref CollectObjectiveInfoEvent args)
+    {
+        if (!HasComp<RailroadCardComponent>(ent.Owner) || !TryComp<TargetObjectiveComponent>(ent.Owner, out var target) || target.Target is null)
+            return;
+
+        args.Objectives.Add(new ObjectiveInfo
+        {
+            Title = target.Title,
+            Icon = target.Icon,
+            Progress = GetProgress(target.Target.Value),
+        });
+    }
+
+    // Starlight - End
 
     private void OnGetProgress(EntityUid uid, KeepAliveConditionComponent comp, ref ObjectiveGetProgressEvent args)
     {

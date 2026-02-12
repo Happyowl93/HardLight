@@ -421,3 +421,7 @@ rr-brighteye-portal-crit-desc = Influence and enhance the flow of the Dark. Unle
 
 rr-brighteye-teachalesson = Dangerous Lightwalker
 rr-brighteye-teachalesson-desc = Teach a Lightwalker a Lesson... Teach them to fear the dark.
+
+rr-brighteye-protect = Protect Kin
+rr-brighteye-protect-desc = The light is a dangerous place, this kin will need our protection.
+objective-condition-shadekin-alive-title = Ensure kin {$targetName}, {CAPITALIZE($job)} stays alive.
