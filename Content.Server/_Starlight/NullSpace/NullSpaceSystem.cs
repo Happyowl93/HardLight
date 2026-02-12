@@ -43,7 +43,7 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
         base.Initialize();
         SubscribeLocalEvent<NullSpaceComponent, MapInitEvent>(OnStartup);
         SubscribeLocalEvent<NullSpaceComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<NullSpaceComponent, ComponentRemove>((uid, _, _) => _gravity.RefreshWeightless(uid));
+        SubscribeLocalEvent<NullSpaceComponent, ComponentRemove>(OnRemove);
         SubscribeLocalEvent<NullSpaceComponent, AtmosExposedGetAirEvent>(OnExpose);
         SubscribeLocalEvent<NullSpaceComponent, VirtualItemDeletedEvent>(OnVirtualItemDeleted);
         SubscribeLocalEvent<NullSpaceComponent, NullSpaceShuntEvent>(NullSpaceShunt);
@@ -90,7 +90,8 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
         EnsureComp<PressureImmunityComponent>(uid);
         EnsureComp<FTLSmashImmuneComponent>(uid);
 
-        _gravity.RefreshWeightless(uid, false);
+        if (TryComp<GravityAffectedComponent>(uid, out var grav))
+            _gravity.RefreshWeightless((uid, grav), false);
 
         if (TryComp<HandsComponent>(uid, out var handsComponent))
         {
@@ -148,6 +149,12 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
         RemComp<FTLSmashImmuneComponent>(uid);
 
         _virtualItem.DeleteInHandsMatching(uid, uid);
+    }
+
+    public void OnRemove(EntityUid uid, NullSpaceComponent component, ComponentRemove args)
+    {
+        if (TryComp<GravityAffectedComponent>(uid, out var grav))
+            _gravity.RefreshWeightless((uid, grav));
     }
 
     private void OnVirtualItemDeleted(EntityUid uid, NullSpaceComponent component, VirtualItemDeletedEvent args)
