@@ -30228,5 +30228,15 @@ Entries:
   id: 325300
   time: '2026-02-12T05:32:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3253
+- author: STARLIGHT TEAM
+  changes:
+  - message: After a certain incident of a meltdown's remains being utilized to completely
+      liquidate an entire station by a rogue silicon intelligence, CBURN Units take
+      the safety measures of their equipment more seriously with the realization of
+      nuclear-based warfare.
+    type: Tweak
+  id: 323400
+  time: '2026-02-12T05:46:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3234
 Order: -1
 
