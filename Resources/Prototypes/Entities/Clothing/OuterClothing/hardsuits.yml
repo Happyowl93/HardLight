@@ -1209,7 +1209,7 @@
         Heat: 0.1
         Cold: 0.1
         Shock: 0.1
-        Radiation: 0.0
+        Radiation: 0.1
         Caustic: 0.1
     # Starlight-start
     staminaModifier: 0.2
