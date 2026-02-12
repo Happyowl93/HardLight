@@ -61,7 +61,7 @@
 - type: entity
   id: BrighteyeShadeSkipAction
   name: ShadeSkip
-  description: WIP
+  description: Stun a creature with the dark.
   categories: [HideSpawnMenu]
   components:
     - type: Action
