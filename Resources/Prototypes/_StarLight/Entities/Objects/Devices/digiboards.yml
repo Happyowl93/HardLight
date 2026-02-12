@@ -3,7 +3,7 @@
 - type: entity
   parent: BaseItem
   id: DigiboardMassMedia
-  name: news manager digiboard
+  name: news manager digi-board
   description: Write your message to the world! Now portable!
   components:
     - type: Sprite
@@ -29,6 +29,9 @@
         collection: Keyboard
       soundDeactivate:
         path: /Audio/Machines/button.ogg
+    - type: ContainerContainer
+      containers: 
+        cell_slot: !type:ContainerSlot
     - type: PowerCellSlot
       cellSlotId: cell_slot
     - type: ItemSlots
