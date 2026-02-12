@@ -30238,5 +30238,12 @@ Entries:
   id: 323400
   time: '2026-02-12T05:46:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3234
+- author: katte
+  changes:
+  - message: Added reflective armor crate to cargo orders.
+    type: Add
+  id: 325500
+  time: '2026-02-12T06:11:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3255
 Order: -1
 
