@@ -53,10 +53,10 @@ public sealed partial class LargeGrabberComponent : Component
     {
         Components =
         [
-            "WallMountComponent",
-            "AnomalyComponent",
-            "MechComponent",
-            "MobStateComponent",
+            "WallMount",
+            "Anomaly",
+            "Mech",
+            "MobState",
         ],
     };
     

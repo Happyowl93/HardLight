@@ -61,9 +61,9 @@ public sealed partial class MechGrabberComponent : Component
     {
         Components =
         [
-            "WallMountComponent",
-            "AnomalyComponent",
-            "MechComponent",
+            "WallMount",
+            "Anomaly",
+            "Mech",
         ],
     };
 
