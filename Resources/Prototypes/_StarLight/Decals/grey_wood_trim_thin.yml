@@ -23,7 +23,7 @@
   id: GrayWoodTrimThinCornerNw
   tags: ["station", "markings"]
   sprite:
-    sprite: _Starlight/Decals/gray_wood_trim.rsisi
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
     state: thin_corner_nw
 
 - type: decal
