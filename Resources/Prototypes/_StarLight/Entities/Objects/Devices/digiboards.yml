@@ -7,10 +7,10 @@
   description: Write your message to the world! Now portable!
   components:
     - type: Sprite
-      sprite: Objects/Specific/Medical/defib.rsi
+      sprite: _Starlight/Objects/Specific/Service/reporter_digiboard.rsi
       layers:
-        - state: icon
-        - state: screen
+        - state: digiboard-off
+        - state: digiboard-on
           map: [ "enum.ToggleableVisuals.Layer" ]
           visible: false
           shader: unshaded
