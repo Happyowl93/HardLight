@@ -133,7 +133,7 @@
     proto: NonBreather
   storage:
     back:
-    - BoxSurvivalNonBreatherSyndicate
+    - BoxSurvivalNonBreather
 
 - type: loadout
   id: EmergencyElfOxygenSyndicate
