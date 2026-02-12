@@ -362,7 +362,6 @@
   id: ShadekinDarkNet
   categories: [HideSpawnMenu]
   components:
-    - type: DarkTrap
     - type: Ensnaring
       freeTime: 10
       walkSpeed: 0.3

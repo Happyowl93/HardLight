@@ -26,7 +26,6 @@ public sealed partial class ShadekinSystem : EntitySystem
         SubscribeLocalEvent<BrighteyeComponent, PhaseDoAfterEvent>(OnPhaseDoAfter);
 
         SubscribeLocalEvent<DarkTrapComponent, TriggerEvent>(DarkTrapOnTrigger);
-        SubscribeLocalEvent<DarkTrapComponent, EnsnareRemoveEvent>((uid, _, _) => QueueDel(uid));
     }
 
     #region  Shadeskip
