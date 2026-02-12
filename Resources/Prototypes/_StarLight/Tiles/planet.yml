@@ -152,7 +152,7 @@
   id: FloorDarkGrass
   name: tiles-dark-grass-floor
   sprite: /Textures/_Starlight/Tiles/Planet/darkgrass.png
-  baseTurf: FloorDirt
+  baseTurf: FloorDarkStone
   isSubfloor: true
   footstepSounds:
     collection: FootstepGrass
