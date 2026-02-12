@@ -260,6 +260,7 @@
   - security-sop-prisonertreatment
   - security-sop-parole
   - security-sop-permitacquisition
+  - security-sop-specialsituations
 
 
 - type: guideEntry
