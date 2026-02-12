@@ -26,7 +26,7 @@ public sealed class KeepAliveConditionSystem : EntitySystem
 
         SubscribeLocalEvent<KeepAliveConditionComponent, CollectObjectiveInfoEvent>(OnCollectObjectiveInfo); // Starlight
         SubscribeLocalEvent<KeepAliveConditionComponent, RailroadingCardChosenEvent>(OnAfterAssign); // Starlight
-        SubscribeLocalEvent<KeepAliveConditionComponent, RailroadingCardCompletionQueryEvent>(OnTaskCompletionQuery); // Starlight
+        SubscribeLocalEvent<KeepAliveConditionComponent, RailroadingCardCompletionQueryEvent>((ent, ref args) => args.IsCompleted = true); // Starlight
     }
 
     // Starlight - Start
@@ -37,26 +37,6 @@ public sealed class KeepAliveConditionSystem : EntitySystem
             return;
 
         _railroad.InvalidateProgress((args.Subject, railroadable));
-    }
-
-    private void OnTaskCompletionQuery(Entity<KeepAliveConditionComponent> ent, ref RailroadingCardCompletionQueryEvent args)
-    {
-        if (!_target.GetTarget(ent, out var target))
-            return;
-
-        if (!TryComp<MindComponent>(target, out var mind))
-        {
-            args.IsCompleted = false;
-            return;
-        }
-        
-        if (_mind.IsCharacterDeadIc(mind))
-        {
-            args.IsCompleted = false;
-            return;
-        }
-
-        args.IsCompleted = true;
     }
 
     private void OnCollectObjectiveInfo(Entity<KeepAliveConditionComponent> ent, ref CollectObjectiveInfoEvent args)
