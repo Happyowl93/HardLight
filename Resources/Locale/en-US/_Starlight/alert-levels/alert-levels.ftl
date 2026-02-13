@@ -1,5 +1,5 @@
 alert-level-omega = Omega
-alert-level-omega-announcement = Fluctuations in the Null Scar indicate a temporal rift in real space. This station is now considered to have diverged from its original timeline. I hope whatever you have done is worth it
+alert-level-omega-announcement = Fluctuations in the Null Scar indicate this station is out of phase with its standard reality. I hope whatever you have done is worth it.
 alert-level-omega-instructions = Reevaluate your decisions.
 
 alert-level-theta = Theta
