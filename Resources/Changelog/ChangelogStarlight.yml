@@ -30299,5 +30299,13 @@ Entries:
   id: 325900
   time: '2026-02-12T23:18:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3259
+- author: skaffen
+  changes:
+  - message: Changed lapsi damage modifier, they now take 10% more slash and pierce
+      damage instead of 20%.
+    type: Tweak
+  id: 326800
+  time: '2026-02-13T05:44:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3268
 Order: -1
 
