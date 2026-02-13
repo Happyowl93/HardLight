@@ -9,11 +9,11 @@
     damage:
       types:
         Blunt: 0.1
-  # 4x stamina, faster recovery
+  # 6x stamina, faster recovery
   - type: Stamina
-    decay: 6
+    decay: 10
     cooldown: 1
-    baseCritThreshold: 400
+    baseCritThreshold: 600
   # immune to space drugs, pax, temporary blindness
   - type: StatusEffects
     allowed:
@@ -204,3 +204,8 @@
   - type: AutoImplant
     implants:
     - TerminatorMicroBombImplant
+  # 6x stamina, faster recovery
+  - type: Stamina
+    decay: 10
+    cooldown: 1
+    baseCritThreshold: 600
