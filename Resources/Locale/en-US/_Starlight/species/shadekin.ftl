@@ -37,6 +37,7 @@ shadekin-core-owner = [color=yellow]This core belongs to you.[/color]
 
 brighteye-thedark = [bold]The Dark[/bold]
 brighteye-darktiles = [color=red]{$darkCount}[/color] dark tiles on station.
+brighteye-darkstation = the station was [color=red]not[/color] dragged into the dark.
 
 admin-verb-text-make-brighteye = Make Bright-eye
 admin-verb-make-brighteye = Make the target into a Bright-eye.

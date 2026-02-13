@@ -3,6 +3,11 @@
   categories: [HideSpawnMenu]
   abstract: true
   components:
+    - type: RailroadCard
+      iconColor: "#000000"
+      color: "#6c15ae"
+      image: /Textures/_Starlight/Railroading/shadekin.png
+      showObjective: true
     - type: Conditions
       conditions:
         - !type:SubjectMindAntagCondition
@@ -21,9 +26,6 @@
     - type: RailroadCard
       title: rr-brighteye-dark
       icon: 
-      iconColor: "#000000"
-      color: "#6c15ae"
-      image: /Textures/_Starlight/Railroading/shadekin.png
       description: rr-brighteye-dark-desc
     - type: RailroadDarkTask
       amount:
@@ -42,9 +44,6 @@
     - type: RailroadCard
       title: rr-brighteye-portal-crit
       icon: 
-      iconColor: "#000000"
-      color: "#6c15ae"
-      image: /Textures/_Starlight/Railroading/shadekin.png
       description: rr-brighteye-portal-crit-desc
     - type: RailroadSupercritPortalTask
 
@@ -61,8 +60,6 @@
       title: rr-brighteye-teachalesson
       icon: 
       iconColor: "#fd3f3f"
-      color: "#6c15ae"
-      image: /Textures/_Starlight/Railroading/shadekin.png
       description: rr-brighteye-teachalesson-desc
     - type: TargetObjective
       title: objective-condition-teach-lesson-title
@@ -95,8 +92,6 @@
       title: rr-brighteye-protect
       icon: 
       iconColor: "#9FED5896"
-      color: "#6c15ae"
-      image: /Textures/_Starlight/Railroading/shadekin.png
       description: rr-brighteye-protect-desc
     - type: TargetObjective
       title: objective-condition-shadekin-alive-title
@@ -129,8 +124,6 @@
       title: rr-brighteye-sanctuary
       icon: 
       iconColor: "#9FED5896"
-      color: "#6c15ae"
-      image: /Textures/_Starlight/Railroading/shadekin.png
       description: rr-brighteye-sanctuary-desc
     - type: RailroadTimerTask
       message: rail-sanctuary-task
