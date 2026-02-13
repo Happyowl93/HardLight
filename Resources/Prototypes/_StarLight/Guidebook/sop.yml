@@ -324,6 +324,12 @@
   priority: 10
 
 - type: guideEntry
+  id: security-sop-specialsituations
+  name: guide-entry-sl-security-sop-specialsituations
+  text: "/ServerInfo/Guidebook/StarlightSOP/SecuritySOP/SpecialSituations.xml"
+  priority: 11
+
+- type: guideEntry
   id: legal-sop-intro
   name: guide-entry-sl-legal-sop-intro
   text: "/ServerInfo/Guidebook/StarlightSOP/LegalSOP/legal-sop-intro.xml"
