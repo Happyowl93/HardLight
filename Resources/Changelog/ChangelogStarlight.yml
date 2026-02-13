@@ -30307,5 +30307,14 @@ Entries:
   id: 326800
   time: '2026-02-13T05:44:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3268
+- author: Conflee
+  changes:
+  - message: Added 4 new Xenoborg Signs, for use in their Shuttle. Using station signs
+      felt out of place for the shuttle's otherwise excellent theming and color palette.
+      Core, Doors, Power, Space.
+    type: Add
+  id: 326700
+  time: '2026-02-13T06:00:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3267
 Order: -1
 
