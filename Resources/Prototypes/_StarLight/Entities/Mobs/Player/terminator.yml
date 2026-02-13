@@ -41,11 +41,6 @@
       0: Alive
       # used for health display its not possible to actually fall into crit
       200: Dead
-  # fire!!!!
-  - type: Flammable
-    damage:
-      types:
-        Heat: 1.5
   # take terminator flesh damage
   - type: Damageable
     damageModifierSet: CyberneticFlesh
@@ -60,7 +55,7 @@
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
-        damage: 150
+        damage: 200
       behaviors:
       - !type:PopupBehavior
         popup: terminator-endoskeleton-burn-popup
@@ -68,7 +63,7 @@
       - !type:GibBehavior
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 200
       behaviors:
       - !type:PopupBehavior
         popup: terminator-endoskeleton-gib-popup
@@ -98,6 +93,25 @@
   - type: IgniteOnHeatDamage
     fireStacks: 2
     threshold: 12
+  # much lower temp heat damage than normal, so that terminator can be decently on fire without immediately gibbing
+  - type: TemperatureDamage
+    coldDamage: 
+      types:
+        Cold: 0.1
+    heatDamage:
+      types:
+        Heat: 0.1
+  - type: Flammable
+    fireSpread: true
+    canResistFire: true
+    damage:
+      types:
+        Heat: 0.05
+  - type: Thirst
+  # john terminator not hungry
+    baseDecayRate: 0
+  - type: Hunger
+    baseDecayRate: 0
 
 - type: entity
   parent:

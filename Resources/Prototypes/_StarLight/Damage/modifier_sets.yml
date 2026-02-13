@@ -93,11 +93,11 @@
   id: Cybernetic
   coefficients:
     # bonk
-    Blunt: 1.0
+    Blunt: 0.7
     # alloy too hard to cut
     Slash: 0.1
     # pew
-    Piercing: 0.5
+    Piercing: 0.1
     # no burning anymore
     Heat: 0.0
     # its a robot
