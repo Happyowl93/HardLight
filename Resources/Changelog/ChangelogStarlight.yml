@@ -30323,5 +30323,13 @@ Entries:
   id: 326600
   time: '2026-02-13T06:03:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3266
+- author: Citrea & Malkshake
+  changes:
+  - message: Added reporter digiboard, so you can be informed about the most breaking
+      news, right from the front lines!
+    type: Add
+  id: 326500
+  time: '2026-02-13T06:07:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3265
 Order: -1
 
