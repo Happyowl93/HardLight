@@ -30342,5 +30342,28 @@ Entries:
   id: 326400
   time: '2026-02-13T07:24:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3264
+- author: katte
+  changes:
+  - message: Deep fryers.
+    type: Add
+  - message: Deep fryer machine board.
+    type: Add
+  - message: mozzarella sticks.
+    type: Add
+  - message: motharella sticks.
+    type: Add
+  - message: Funnel cake.
+    type: Add
+  - message: Fried ice cream.
+    type: Add
+  - message: Fish Sticks.
+    type: Add
+  - message: Corndog.
+    type: Add
+  - message: Added 2 jugs of corn oil in the chefvend.
+    type: Add
+  id: 321000
+  time: '2026-02-13T22:42:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3210
 Order: -1
 
