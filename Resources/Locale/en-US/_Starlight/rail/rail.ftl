@@ -414,7 +414,6 @@ rr-mail-open-desc = Did they write to me? I really want to know.
 # Brighteye
 rr-brighteye-dark = Darkness
 rr-brighteye-dark-desc = Spread the influence of the Dark. Give unto them the comfort of nothingness.
-rr-brighteye-dark-task = Spread {$Amount} dark tiles.
 
 rr-brighteye-portal-crit = Portal
 rr-brighteye-portal-crit-desc = Influence and enhance the flow of the Dark. Unleash the shadows. (Make your portal go Supercritical.)
@@ -424,4 +423,6 @@ rr-brighteye-teachalesson-desc = Teach a Lightwalker a Lesson... Teach them to f
 
 rr-brighteye-protect = Protect Kin
 rr-brighteye-protect-desc = The light is a dangerous place, this kin will need our protection.
-objective-condition-shadekin-alive-title = Ensure kin {$targetName}, {CAPITALIZE($job)} stays alive.
+
+rr-brighteye-sanctuary = Sanctuary
+rr-brighteye-sanctuary-desc = Burned ones need a sanctuary in this place of light, lets give them one.

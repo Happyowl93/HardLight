@@ -119,3 +119,21 @@
             components:
               - KeepAliveCondition
     - type: KeepAliveCondition
+
+- type: entity
+  id: RRCardBrighteyeSanctuary
+  parent: BrighteyeCondition
+  categories: [HideSpawnMenu]
+  components:
+    - type: RailroadCard
+      title: rr-brighteye-sanctuary
+      icon: 
+      iconColor: "#9FED5896"
+      color: "#6c15ae"
+      image: /Textures/_Starlight/Railroading/shadekin.png
+      description: rr-brighteye-sanctuary-desc
+    - type: RailroadTimerTask
+      message: rail-sanctuary-task
+      icon:
+        sprite: _Starlight/Interface/Misc/rp_icon.rsi
+        state: icon
