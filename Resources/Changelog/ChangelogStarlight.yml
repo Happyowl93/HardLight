@@ -30401,5 +30401,27 @@ Entries:
   id: 328100
   time: '2026-02-14T09:57:39.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3281
+- author: CrazyPhantom
+  changes:
+  - message: Greatly improved RPD pipe placement
+    type: Tweak
+  - message: You can now select RPD placement mode between Primary, Secondary and
+      Tertiary
+    type: Tweak
+  - message: Placing a pipe on the same spot as another with the RPD will now replace
+      it
+    type: Tweak
+  - message: Pipe anchoring bugs when trying to place them over eachother with RPD
+    type: Fix
+  - message: RPD can now create air alarms and air sensors
+    type: Add
+  - message: RPD can now deconstruct air alarms and air sensors
+    type: Tweak
+  - message: All prices for the RPD have been increased by 5x and then tweaked to
+      be mostly lower
+    type: Tweak
+  id: 319900
+  time: '2026-02-14T10:09:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3199
 Order: -1
 
