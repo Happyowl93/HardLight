@@ -764,8 +764,6 @@
   loadouts:
     - BrighteyeTatteredClothes
     - BrighteyeGladiator
-    - MaidOutfit
-    - MaidOutfitTactical
 
 - type: loadoutGroup
   id: BrighteyeNeck
@@ -784,8 +782,6 @@
   loadouts:
     - BrighteyeClothWrapShoe
     - BlackShoes
-    - CoderSocks
-    - RollerSkates
 
 - type: loadoutGroup
   id: BrighteyeGloves
@@ -793,10 +789,6 @@
   name: loadout-group-brighteye-gloves
   loadouts:
     - BrighteyeClothWrapGlove
-    - PawsWhite
-    - PawsBrown
-    - PawsBlack
-    - PawsBlackWhite
 
 - type: loadoutGroup
   id: NanotrasenCareerTrainerJumpsuit
