@@ -80,7 +80,7 @@
       disableSelection: true
       color: '#FFE4E1'
       emergencyLightColor: '#FFE4E1'
-      forceEnableEmergencyLights: false
+      forceEnableEmergencyLights: true
       shuttleTime: 1200
     theta:
       announcement: alert-level-theta-announcement
@@ -92,7 +92,7 @@
       disableSelection: true
       color: '#741b47'
       emergencyLightColor: '#741b47'
-      forceEnableEmergencyLights: false
+      forceEnableEmergencyLights: true
       shuttleTime: 1200
     psi:
       announcement: alert-level-psi-announcement
