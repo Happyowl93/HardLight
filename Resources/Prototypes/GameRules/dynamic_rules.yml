@@ -112,7 +112,7 @@
             min: 20
           - !type:RoundDurationCondition
             min: 2100 # 35 minutes
-        - id: Brighteye
+        - id: Brighteye # Starlight
           weight: 1
           conditions:
           - !type:HasBudgetCondition

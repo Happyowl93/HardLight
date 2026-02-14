@@ -230,7 +230,7 @@
   cost: 15000
   recipeUnlocks:
   - CargoTelepadMachineCircuitboard
-  technologyPrerequisites:
+  technologyPrerequisites: # Starlight
   - BluespaceManipulation
   radioChannels:
   - Supply
