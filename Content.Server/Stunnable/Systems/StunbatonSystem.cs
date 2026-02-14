@@ -16,6 +16,8 @@ using Content.Shared.Power;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Stunnable;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Timing;
 
@@ -31,6 +33,7 @@ namespace Content.Server.Stunnable.Systems
         [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
         [Dependency] private readonly SharedHandsSystem _hands = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
+        [Dependency] private readonly SharedAudioSystem _audio = default!;
 
         private readonly Dictionary<EntityUid, TimeSpan> _shieldInteractionCooldown = new();
 
@@ -106,8 +109,13 @@ namespace Content.Server.Stunnable.Systems
             // Update cooldown
             _shieldInteractionCooldown[args.User] = _gameTiming.CurTime;
 
-            // Display test message
-            _popup.PopupEntity("[Test] Stunbaton clicked riot shield while not in combat!", target, args.User);
+            // Display emote message with character name
+            var userName = MetaData(args.User).EntityName;
+            var emoteMessage = $"{userName} smashes their stun baton against their riot shield!";
+            _popup.PopupEntity(emoteMessage, target, args.User);
+
+            // Play bikehorn sound effect
+            _audio.PlayPvs(new SoundPathSpecifier("/Audio/Items/Toys/pushHornHonk.ogg"), target);
         }
 
         private void OnStaminaHitAttempt(Entity<StunbatonComponent> entity, ref StaminaDamageOnHitAttemptEvent args)
