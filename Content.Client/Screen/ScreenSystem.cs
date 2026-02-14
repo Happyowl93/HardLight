@@ -158,10 +158,7 @@ public sealed class ScreenSystem : VisualizerSystem<ScreenVisualsComponent>
                     return;
                 
                 layer.SetRsi(null);
-                var state = alertLevel.ToString();
-                if (state == "theta")
-                    state = "omega";
-                layer.SetState(state);
+                layer.SetState(alertLevel.ToString());
             }
         }
     }
