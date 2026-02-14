@@ -432,3 +432,6 @@ rr-brighteye-returnhome-desc = This kin must return to the darkness, Send them h
 
 rr-brighteye-impersonate = Impersonation
 rr-brighteye-impersonate-desc = Lets learn about the lightwalkers, lets take their suit and learn about their tasks.
+
+rr-brighteye-lights = See no evil
+rr-brighteye-lights-desc = There is many lights in this place... We must break them to spread the darkness.

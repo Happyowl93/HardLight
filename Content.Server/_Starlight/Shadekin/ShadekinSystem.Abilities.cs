@@ -53,7 +53,7 @@ public sealed partial class ShadekinSystem : EntitySystem
             _stunSystem.TryUpdateStunDuration(args.Target, component.ShadeSkipStunAmount);
             _stunSystem.TryKnockdown(args.Target, component.ShadeSkipStunAmount, force: true);
             _status.TryAddStatusEffectDuration(args.Target, "StatusEffectTemporaryBlindness", component.ShadeSkipStunAmount);
-            _status.TryAddStatusEffectDuration(args.Target, "StatusEffectTheDark", TimeSpan.FromSeconds(60));
+            _status.TryAddStatusEffectDuration(args.Target, "StatusEffectTheDark", TimeSpan.FromSeconds(70));
 
             args.Handled = true;
         }
@@ -114,7 +114,7 @@ public sealed partial class ShadekinSystem : EntitySystem
             {
                 _stunSystem.TryUpdateStunDuration(args.User.Value, darktrapcomp.StunAmount);
                 _stunSystem.TryKnockdown(args.User.Value, darktrapcomp.StunAmount, force: true);
-                _status.TryAddStatusEffectDuration(args.User.Value, "StatusEffectTheDark", TimeSpan.FromSeconds(60));
+                _status.TryAddStatusEffectDuration(args.User.Value, "StatusEffectTheDark", TimeSpan.FromSeconds(70));
             }
 
             _audio.PlayPvs(ensnaringComp.EnsnareSound, args.User.Value);

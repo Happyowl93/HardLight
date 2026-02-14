@@ -1,4 +1,5 @@
 using Content.Server.Light.EntitySystems;
+using Content.Shared._Starlight.Railroading;
 using Content.Shared._Starlight.Shadekin;
 using Content.Shared.Light;
 using Content.Shared.Light.Components;
@@ -54,8 +55,9 @@ public sealed partial class ShadegenSystem : EntitySystem
                 if (TryComp<HandheldLightComponent>(light.Owner, out var handheldcomp) && !handheldcomp.Activated)
                     _handheldLight.TurnOff(new Entity<HandheldLightComponent>(light.Owner, handheldcomp));
 
-                if (component.DestroyLights && TryComp<PoweredLightComponent>(light.Owner, out var poweredcomp) && !poweredcomp.On)
-                    _light.TryDestroyBulb(light.Owner, poweredcomp);
+                if (component.DestroyLights && TryComp<PoweredLightComponent>(light.Owner, out var poweredcomp) && poweredcomp.On)
+                    if (_light.TryDestroyBulb(light.Owner, poweredcomp))
+                        RaiseLocalEvent(Transform(uid).ParentUid, new OnLightBreakEvent(light.Owner));
             }
         }
     }

@@ -65,6 +65,24 @@
         state: icon
     - type: PickRandomDepartment   
 
+- type: entity
+  id: RRCardBrighteyeLights
+  parent: BrighteyeCondition
+  categories: [HideSpawnMenu]
+  components:
+    - type: RailroadSpawnFlow
+      count:
+        min: 1
+        max: 2
+    - type: RailroadCard
+      title: rr-brighteye-lights
+      icon: 
+      description: rr-brighteye-lights-desc
+    - type: RailroadBreakLightTask
+      amount:
+        min: 30
+        max: 60
+
 # Hostile
 
 - type: entity

@@ -1,3 +1,4 @@
+using Content.Shared._Starlight.Railroading;
 using Content.Shared._Starlight.Shadekin; // Starlight
 using Content.Shared.Audio;
 using Content.Shared.Damage;
@@ -333,7 +334,8 @@ public abstract class SharedPoweredLightSystem : EntitySystem
         // Was it being repaired, or did it take damage?
         if (args.DamageIncreased)
         {
-            TryDestroyBulb(uid, component, args.Origin);
+            if (TryDestroyBulb(uid, component, args.Origin) && args.Origin is not null)
+                RaiseLocalEvent(args.Origin.Value, new OnLightBreakEvent(uid)); // SL
         }
     }
 
