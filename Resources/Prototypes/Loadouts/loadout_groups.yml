@@ -857,7 +857,7 @@
   loadouts:
   - MusicianJumpsuit
   - MusicianJumpskirt
-  - MaidOutfit
+  - MaidOutfit # starlight
 
 
 - type: loadoutGroup
