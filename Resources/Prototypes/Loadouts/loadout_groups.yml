@@ -973,7 +973,9 @@
   - CargoTechnicianHead
   - CargoTechnicianBeret
   - CargoTechnicianHeadFormal # Starlight start
-  - CargoTechnicianBeretFormal # Starlight end
+  - CargoTechnicianBeretFormal
+  - MaidHeadbandTactical
+  - Hairflower # Starlight End
 
 - type: loadoutGroup
   id: CargoTechnicianJumpsuit
@@ -1085,6 +1087,8 @@
   loadouts:
   - ChiefEngineerHead
   - ChiefEngineerBeret
+  - MaidHeadbandTactical # Starlight Start
+  - Hairflower # Starlight End
 
 - type: loadoutGroup
   id: ChiefEngineerJumpsuit
@@ -1152,7 +1156,7 @@
   - StationEngineerHardhatOrange
   - StationEngineerHardhatRed
   - SeniorEngineerBeret
-  - MaidHeadbandTactical
+  - MaidHeadbandTactical # starlight
   - Hairflower
 
 - type: loadoutGroup
@@ -1193,7 +1197,6 @@
   - WorkBoots
   - EngineeringWinterBoots
   - Heels # 🌟Starlight🌟
-  - CoderSocks # Starlight
 
 - type: loadoutGroup
   id: StationEngineerID
@@ -1270,6 +1273,8 @@
   minLimit: 0
   loadouts:
   - ResearchDirectorBeret
+  - MaidHeadbandTactical # starlight start
+  - Hairflower # starlight end
 
 - type: loadoutGroup
   id: ResearchDirectorNeck
@@ -1324,6 +1329,8 @@
   - RoboticistCap # Only for roboticist ## starlight: how bout I do anyway
   - SkullBandana
   - ScientificBeret
+  - MaidHeadbandTactical # starlight start
+  - Hairflower # starlight end
 
 - type: loadoutGroup
   id: ScientistNeck
@@ -1425,6 +1432,8 @@
   - HeadofSecurityHead
   - HeadofSecuritySheriff #Starlight
   - HeadofSecurityBeret
+  - MaidHeadbandTactical # Starlight Start
+  - Hairflower # Starlight End
 
 - type: loadoutGroup
   id: HeadofSecurityJumpsuit
@@ -1476,6 +1485,8 @@
   loadouts:
   - WardenHead
   - WardenBeret
+  - MaidHeadbandTactical # starlight start
+  - Hairflower # starlight end
 
 - type: loadoutGroup
   id: WardenJumpsuit
@@ -1523,6 +1534,8 @@
   - CorpsmanNurseHat
   - BrigmedicNurseHatOfLife # Starlight end
   - SecurityHelmet
+  - MaidHeadbandTactical # starlight start
+  - Hairflower # starlight end
 
 - type: loadoutGroup
   id: BrigmedicJumpsuit
@@ -1588,6 +1601,8 @@
   - SecurityBeret
   - SecurityHat
   - TrooperHat
+  - MaidHeadbandTactical # starlight start
+  - Hairflower # starlight end
 
 - type: loadoutGroup
   id: SecurityJumpsuit
@@ -1667,6 +1682,8 @@
   loadouts:
   - DetectiveFedora
   - DetectiveFedoraGrey
+  - MaidHeadbandTactical # starlight start
+  - Hairflower # starlight end
 
 - type: loadoutGroup
   id: DetectiveNeck
@@ -1739,6 +1756,8 @@
   loadouts:
   - ChiefMedicalOfficerBeret
   - CMOMedicalHeadMirror
+  - MaidHeadbandTactical # starlight start
+  - Hairflower # starlight end
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJumpsuit
@@ -1776,8 +1795,7 @@
   - MedicalWinterBoots
   - Heels # Starlight start
   - LaceupShoes
-  - LeatherShoes
-  - CoderSocks # Starlight end
+  - LeatherShoes # Starlight end
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJobTrinkets
@@ -1798,6 +1816,8 @@
   - GreenSurgeryCap
   - PurpleSurgeryCap
   - NurseHat
+  - MaidHeadbandTactical # starlight start
+  - Hairflower # starlight end
 
 - type: loadoutGroup
   id: MedicalDoctorJumpsuit
@@ -1935,6 +1955,8 @@
   minLimit: 0
   loadouts:
   - ParamedicHead
+  - MaidHeadbandTactical # starlight start
+  - Hairflower # starlight end
 
 - type: loadoutGroup
   id: ParamedicJumpsuit
