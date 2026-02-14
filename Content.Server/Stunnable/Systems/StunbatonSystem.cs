@@ -3,8 +3,10 @@ using Content.Server.Power.Events;
 using Content.Shared.PowerCell;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.CombatMode;
 using Content.Shared.Damage.Events;
 using Content.Shared.Examine;
+using Content.Shared.Interaction;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Popups;
@@ -22,15 +24,40 @@ namespace Content.Server.Stunnable.Systems
         [Dependency] private readonly PowerCellSystem _powerCell = default!; // 🌟Starlight🌟
         [Dependency] private readonly SharedBatterySystem _battery = default!;
         [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
+        [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
 
         public override void Initialize()
         {
             base.Initialize();
 
+            SubscribeLocalEvent<StunbatonComponent, AfterInteractEvent>(OnStunbatonAfterInteract);
             SubscribeLocalEvent<StunbatonComponent, ExaminedEvent>(OnExamined);
             SubscribeLocalEvent<StunbatonComponent, SolutionContainerChangedEvent>(OnSolutionChange);
             SubscribeLocalEvent<StunbatonComponent, StaminaDamageOnHitAttemptEvent>(OnStaminaHitAttempt);
             SubscribeLocalEvent<StunbatonComponent, ChargeChangedEvent>(OnChargeChanged);
+        }
+
+        private void OnStunbatonAfterInteract(Entity<StunbatonComponent> entity, ref AfterInteractEvent args)
+        {
+            // Only handle interaction if stunbaton is the used item
+            if (args.Used != entity.Owner)
+                return;
+
+            // Check if target is a riot shield
+            if (args.Target == null || args.Target == entity.Owner)
+                return;
+
+            var target = args.Target.Value;
+            var targetProto = MetaData(target).EntityPrototype?.ID;
+            if (targetProto != "RiotShield")
+                return;
+
+            // Check if user is NOT in combat mode
+            if (_combatMode.IsInCombatMode(args.User))
+                return;
+
+            // Display test message
+            _popup.PopupEntity("[Test] Stunbaton clicked riot shield while not in combat!", target, args.User);
         }
 
         private void OnStaminaHitAttempt(Entity<StunbatonComponent> entity, ref StaminaDamageOnHitAttemptEvent args)
