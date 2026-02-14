@@ -41,14 +41,14 @@ def parse_changelog(pr_body, pr_author):
 
         for line in changes_block.splitlines():
             change_pattern = r"-\s+(add|remove|tweak|fix):\s+(.+)"
-            change_match = re.match(change_pattern, change)
+            change_match = re.match(change_pattern, line)
             if change_match:
                 changes.append({
                     "type": change_match.group(1).capitalize(),
                     "message": change_match.group(2).strip()
                 })
             else:
-                print(f"Warning: Unable to parse change line: {change}")
+                print(f"Warning: Unable to parse change line: {line}")
 
         if changes:
             blocks.append({
@@ -77,7 +77,7 @@ def update_changelog():
         merge_time = pr.merged_at
         blocks = parse_changelog(cleaned_body, pr.user.login)
 
-        print("Parsed entries:", entries)
+        print("Parsed entries:", blocks)
 
         if not blocks:
             print("No changelog entries found after parsing.")
@@ -97,8 +97,8 @@ def update_changelog():
             # e.g., PR number 123 -> calculatedID = (123 * 100) = 12300
             calculatedID = (int(pr_number) * 100)
             changelog_entry = {
-                "author": entry["author"],
-                "changes": entriesList,
+                "author": block["author"],
+                "changes": block["changes"],
                 "id": calculatedID,
                 "time": merge_time.isoformat(timespec='microseconds'),
                 "url": f"https://github.com/{repo_name}/pull/{pr_number}"
