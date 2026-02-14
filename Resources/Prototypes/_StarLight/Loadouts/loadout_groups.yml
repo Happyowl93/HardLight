@@ -9,10 +9,6 @@
   - InsulsMaid
   - InsulsMercenary
   - InsulsScrapper
-  - PawsWhiteInsulated
-  - PawsBrownInsulated
-  - PawsBlackInsulated
-  - PawsBlackWhiteInsulated
 
 - type: loadoutGroup
   id: InsulsCombat
@@ -44,10 +40,6 @@
   name: loadout-group-gloves-generic
   minLimit: 0
   loadouts:
-  - PawsWhite
-  - PawsBrown
-  - PawsBlack
-  - PawsBlackWhite
   - RedRegaliaGloves
 
 - type: loadoutGroup
@@ -57,9 +49,6 @@
   loadouts:
   - MaidHeadbandTactical
   - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars
 
 - type: loadoutGroup
   id: Scarves
@@ -224,8 +213,6 @@
   loadouts:
   - RoboticistJumpsuit
   - RoboticistJumpskirt
-  - MaidOutfit
-  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: RoboticistOuterClothing
@@ -253,10 +240,6 @@
   - LatexGloves
   - PurpleGloves
   - RobohandsGloves
-  - PawsWhite
-  - PawsBrown
-  - PawsBlack
-  - PawsBlackWhite
 
 - type: loadoutGroup
   id: RoboticistGoggles
@@ -375,6 +358,7 @@
   - BlueShieldShirt
   - BlueShieldSkirt
   - FormalBlueShieldJumpsuit
+  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: BlueShieldOuterclothing
@@ -442,19 +426,17 @@
 - type: loadoutGroup
   id: RoboticistShoes
   name: loadout-group-roboticist-shoes
-  minLimit: 1
+  minLimit: 0
   loadouts:
   - BlackShoes
   - ScienceWinterBoots
   - Heels
   - LeatherShoes
-  - CoderSocks
-  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: CaptainShoes
   name: loadout-group-captain-shoes
-  minLimit: 1
+  minLimit: 0
   loadouts:
   - LaceupShoes
   - Heels
@@ -467,7 +449,7 @@
 - type: loadoutGroup
   id: HoPShoes
   name: loadout-group-hop-shoes
-  minLimit: 1
+  minLimit: 0
   loadouts:
   - BrownShoes
   - Heels
@@ -477,7 +459,7 @@
 - type: loadoutGroup
   id: MagistrateShoes
   name: loadout-group-magistrate-shoes
-  minLimit: 1
+  minLimit: 0
   loadouts:
   - LaceupShoes
   - Heels
@@ -485,7 +467,7 @@
 - type: loadoutGroup
   id: NanotrasenRepresentativeShoes
   name: loadout-group-nanotrasenrepresentative-shoes
-  minLimit: 1
+  minLimit: 0
   loadouts:
   - LaceupShoes
   - Heels
@@ -494,7 +476,7 @@
 - type: loadoutGroup
   id: DetectiveShoes
   name: loadout-group-detective-shoes
-  minLimit: 1
+  minLimit: 0
   loadouts:
   - JackBoots
   - SecurityWinterBoots
@@ -504,13 +486,11 @@
   - CowboyBootsWhiteFilled
   - Heels
   - HighHeelBootsFilled
-  - CoderSocks
-  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: CivilianShoes
   name: loadout-group-civilian-shoes
-  minLimit: 1
+  minLimit: 0
   loadouts:
   - BlackShoes
   - WhiteShoes
@@ -518,25 +498,21 @@
   - LeatherShoes
   - Heels
   - LaceupShoes
-  - CoderSocks
-  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: LawyerShoes
   name: loadout-group-iia-shoes
-  minLimit: 1
+  minLimit: 0
   loadouts:
   - BlackShoes
   - LaceupShoes
   - Heels
   - LeatherShoes
-  - CoderSocks
-  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: BlueShieldShoes
   name: loadout-group-security-shoes
-  minLimit: 1
+  minLimit: 0
   loadouts:
   - CombatBoots
   - HighHeelBootsFilled
@@ -548,8 +524,6 @@
   loadouts:
     - SalvageLeadJumpsuit
     - SalvageLeadJumpskirt
-    - MaidOutfit
-    - MaidOutfitTactical
 
 - type: loadoutGroup
   id: SalvageLeadNeck
@@ -572,8 +546,6 @@
   loadouts:
     - MiningSpecialistJumpsuit
     - MiningSpecialistJumpskirt
-    - MaidOutfit
-    - MaidOutfitTactical
 
 - type: loadoutGroup
   id: MiningSpecialistPDA
@@ -597,8 +569,6 @@
   loadouts:
   - BoxerShorts
   - BoxerShortsWithTop
-  - MaidOutfit
-  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: BoxerGloves
@@ -650,9 +620,6 @@
     - ChemistFisherCap
     - MaidHeadbandTactical
     - Hairflower
-    - CatEars
-    - DogEars
-    - BunnyEars
 
 - type: loadoutGroup
   id: ChemistBag
@@ -664,6 +631,7 @@
 - type: loadoutGroup
   id: ChemistShoes
   name: loadout-group-chemist-shoes
+  minLimit: 0
   loadouts:
   - WhiteShoes
   - ChemistWinterBoots
@@ -671,8 +639,6 @@
   - Heels
   - LaceupShoes
   - LeatherShoes
-  - CoderSocks
-  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: ChemistPDA
@@ -745,10 +711,6 @@
   - Nitrile
   - BlackNitrile
   - LatexGloves
-  - PawsWhite
-  - PawsBrown
-  - PawsBlack
-  - PawsBlackWhite
 
 # Duty Officer
 - type: loadoutGroup
@@ -760,9 +722,6 @@
   - DutyOfficerHelmetRiot
   - MaidHeadbandTactical
   - Hairflower
-  - CatEars
-  - DogEars
-  - BunnyEars
 
 - type: loadoutGroup
   id: DutyOfficerJumpsuit
@@ -772,7 +731,6 @@
   - DutyOfficerJumpskirt
   - DutyOfficerJumpsuitBlue
   - DutyOfficerJumpskirtBlue
-  - MaidOutfit
   - MaidOutfitTactical
 
 - type: loadoutGroup
@@ -821,11 +779,12 @@
 - type: loadoutGroup
   id: BrighteyeShoes
   name: loadout-group-civilian-shoes
+  minLimit: 0
   loadouts:
     - BrighteyeClothWrapShoe
     - BlackShoes
     - CoderSocks
-    - RollerSkates # Starlight
+    - RollerSkates
 
 - type: loadoutGroup
   id: BrighteyeGloves
@@ -844,8 +803,6 @@
   loadouts:
   - JumpsuitNCT
   - JumpskirtNCT
-  - MaidOutfit
-  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: NanotrasenCareerTrainerHat
@@ -859,6 +816,7 @@
 - type: loadoutGroup
   id: NanotrasenCareerTrainerShoes
   name: loadout-group-NanotrasenCareerTrainer-shoes
+  minLimit: 0
   loadouts:
   - JackBoots
   - LaceupShoes
@@ -894,7 +852,3 @@
   loadouts:
   - SecGloves
   - SecGlovesFingerless
-  - PawsWhite
-  - PawsBrown
-  - PawsBlack
-  - PawsBlackWhite
