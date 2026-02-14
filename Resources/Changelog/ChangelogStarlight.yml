@@ -30372,5 +30372,12 @@ Entries:
   id: 328000
   time: '2026-02-14T09:24:48.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3280
+- author: Fractalflower
+  changes:
+  - message: The Syndicate stopped modifying their hydras to have a useless ammo tube.
+    type: Fix
+  id: 327800
+  time: '2026-02-14T09:37:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3278
 Order: -1
 
