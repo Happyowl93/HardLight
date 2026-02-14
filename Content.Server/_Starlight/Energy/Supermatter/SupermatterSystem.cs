@@ -65,7 +65,7 @@ public sealed class SupermatterSystem : AccUpdateEntitySystem
         if (HasComp<GhostComponent>(args.User)) return;
 
         // Check for supermatter immunity
-        if (HasComp<SupermatterImmuneComponent>(args.User))
+        if (IsImmune(args.User))
             return;
 
         _audio.PlayPvs(Const.AudioEvaporate, ent.Owner);
