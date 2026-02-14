@@ -30379,5 +30379,17 @@ Entries:
   id: 327800
   time: '2026-02-14T09:37:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3278
+- author: Conflee
+  changes:
+  - message: Gave the Station AI access to SMES, Substations, and Lathes. AI already
+      gets access to APCs, being able to directly look at SMES and Substations to
+      help diagnose power issues is in line with their current accesses, and the lack
+      of it seems like an oversight when UI was added for these machines. Lathes are
+      also just fun, to see what's unlocked more directly and check department material
+      counts.
+    type: Tweak
+  id: 327000
+  time: '2026-02-14T09:52:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3270
 Order: -1
 
