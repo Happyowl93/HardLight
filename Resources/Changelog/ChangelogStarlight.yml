@@ -30365,5 +30365,12 @@ Entries:
   id: 321000
   time: '2026-02-13T22:42:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3210
+- author: neomoth
+  changes:
+  - message: Added more killsign sprites. Nobody is safe. :)
+    type: Add
+  id: 328000
+  time: '2026-02-14T09:24:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3280
 Order: -1
 
