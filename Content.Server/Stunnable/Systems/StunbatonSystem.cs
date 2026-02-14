@@ -6,6 +6,8 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage.Events;
 using Content.Shared.Examine;
+using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
@@ -14,6 +16,8 @@ using Content.Shared.Power;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Stunnable;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Stunnable.Systems
 {
@@ -25,6 +29,10 @@ namespace Content.Server.Stunnable.Systems
         [Dependency] private readonly SharedBatterySystem _battery = default!;
         [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
         [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
+        [Dependency] private readonly SharedHandsSystem _hands = default!;
+        [Dependency] private readonly IGameTiming _gameTiming = default!;
+
+        private readonly Dictionary<EntityUid, TimeSpan> _shieldInteractionCooldown = new();
 
         public override void Initialize()
         {
@@ -35,6 +43,20 @@ namespace Content.Server.Stunnable.Systems
             SubscribeLocalEvent<StunbatonComponent, SolutionContainerChangedEvent>(OnSolutionChange);
             SubscribeLocalEvent<StunbatonComponent, StaminaDamageOnHitAttemptEvent>(OnStaminaHitAttempt);
             SubscribeLocalEvent<StunbatonComponent, ChargeChangedEvent>(OnChargeChanged);
+            
+            // Clean up cooldown tracking when entity is deleted
+            EntityManager.EntityDeleted += OnEntityDeleted;
+        }
+
+        public override void Shutdown()
+        {
+            base.Shutdown();
+            EntityManager.EntityDeleted -= OnEntityDeleted;
+        }
+
+        private void OnEntityDeleted(Entity<MetaDataComponent> entity)
+        {
+            _shieldInteractionCooldown.Remove(entity.Owner);
         }
 
         private void OnStunbatonAfterInteract(Entity<StunbatonComponent> entity, ref AfterInteractEvent args)
@@ -55,6 +77,34 @@ namespace Content.Server.Stunnable.Systems
             // Check if user is NOT in combat mode
             if (_combatMode.IsInCombatMode(args.User))
                 return;
+
+            // Check cooldown (3 second delay between interactions)
+            if (_shieldInteractionCooldown.TryGetValue(args.User, out var lastInteractionTime))
+            {
+                if (_gameTiming.CurTime < lastInteractionTime + TimeSpan.FromSeconds(3))
+                    return; // Still on cooldown
+            }
+
+            // Check if riot shield is held in one of the user's hands (for range limitation)
+            if (!TryComp<HandsComponent>(args.User, out var hands))
+                return;
+
+            // Verify the riot shield is actually held in a hand
+            var shieldInHand = false;
+            foreach (var handId in hands.Hands.Keys)
+            {
+                if (_hands.TryGetHeldItem((args.User, hands), handId, out var held) && held == target)
+                {
+                    shieldInHand = true;
+                    break;
+                }
+            }
+
+            if (!shieldInHand)
+                return;
+
+            // Update cooldown
+            _shieldInteractionCooldown[args.User] = _gameTiming.CurTime;
 
             // Display test message
             _popup.PopupEntity("[Test] Stunbaton clicked riot shield while not in combat!", target, args.User);
