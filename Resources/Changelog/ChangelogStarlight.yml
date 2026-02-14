@@ -30423,5 +30423,13 @@ Entries:
   id: 319900
   time: '2026-02-14T10:09:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3199
+- author: Way
+  changes:
+  - message: Flipped values of the Great Coat and the Soviet Armor Vest. with some
+      minor additions and changes to spawn rates
+    type: Tweak
+  id: 325800
+  time: '2026-02-14T10:13:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3258
 Order: -1
 
