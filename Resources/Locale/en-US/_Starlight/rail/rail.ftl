@@ -435,3 +435,9 @@ rr-brighteye-impersonate-desc = Lets learn about the lightwalkers, lets take the
 
 rr-brighteye-lights = See no evil
 rr-brighteye-lights-desc = There is many lights in this place... We must break them to spread the darkness.
+
+rr-brighteye-backup = Backup
+rr-brighteye-backup-desc = We will need help for our next move...
+
+rr-brighteye-darkstation = Dark Station
+rr-brighteye-darkstation-desc = Let the dark consume the station and all the lightwalkers with it.
