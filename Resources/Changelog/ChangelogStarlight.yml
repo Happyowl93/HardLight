@@ -30505,5 +30505,12 @@ Entries:
   id: 321300
   time: '2026-02-14T21:14:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3213
+- author: Xale
+  changes:
+  - message: Automatic chat highlights support for Avali and Resomi names
+    type: Add
+  id: 328400
+  time: '2026-02-14T22:18:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3284
 Order: -1
 
