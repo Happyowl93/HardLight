@@ -70,9 +70,6 @@
         !type:DepartmentTimeRequirement
         department: Civilian
         time: 72000 # 20 hours
-  storage:
-    back:
-    - ClothingUniformJumpskirtElegantMaid
   equipment:
     jumpsuit: ClothingUniformJumpskirtElegantMaid
   groupBy: "maid outfit"
@@ -85,9 +82,6 @@
         !type:DepartmentTimeRequirement
         department: Security
         time: 216000 # 60 hours of charging batong
-  storage:
-    back:
-    - ClothingUniformJumpskirtTacticalMaid
   equipment:
     jumpsuit: ClothingUniformJumpskirtTacticalMaid
   groupBy: "maid outfit"
@@ -100,9 +94,6 @@
         !type:DepartmentTimeRequirement
         department: Security
         time: 216000 # 60 hours of charging batong
-  storage:
-    back:
-    - ClothingHeadHatTacticalMaidHeadband
   equipment:
     head: ClothingHeadHatTacticalMaidHeadband
   groupBy: "maid outfit"
