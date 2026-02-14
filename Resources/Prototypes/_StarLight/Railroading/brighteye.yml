@@ -49,6 +49,22 @@
       description: rr-brighteye-portal-crit-desc
     - type: RailroadSupercritPortalTask
 
+- type: entity
+  id: RRCardBrighteyeImpersonate
+  parent: BrighteyeCondition
+  categories: [HideSpawnMenu]
+  components:
+    - type: RailroadCard
+      title: rr-brighteye-impersonate
+      icon: 
+      description: rr-brighteye-impersonate-desc
+    - type: DepartmentObjective
+      title: objective-impersonate-brighteye
+      icon:
+        sprite: _Starlight/Interface/Misc/rp_icon.rsi
+        state: icon
+    - type: PickRandomDepartment   
+
 # Hostile
 
 - type: entity
@@ -127,7 +143,6 @@
     - type: RailroadCard
       title: rr-brighteye-backup
       icon: 
-      iconColor: "#fd3f3f"
       color: "#fd3f3f"
       description: rr-brighteye-backup-desc
 
@@ -139,7 +154,6 @@
     - type: RailroadCard
       title: rr-brighteye-darkstation
       icon: 
-      iconColor: "#fd3f3f"
       color: "#fd3f3f"
       description: rr-brighteye-darkstation-desc
 

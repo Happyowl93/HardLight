@@ -429,3 +429,6 @@ rr-brighteye-sanctuary-desc = Burned ones need a sanctuary in this place of ligh
 
 rr-brighteye-returnhome = Grounded
 rr-brighteye-returnhome-desc = This kin must return to the darkness, Send them home.
+
+rr-brighteye-impersonate = Impersonation
+rr-brighteye-impersonate-desc = Lets learn about the lightwalkers, lets take their suit and learn about their tasks.

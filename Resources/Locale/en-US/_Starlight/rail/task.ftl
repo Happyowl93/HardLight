@@ -5,3 +5,4 @@ rr-brighteye-dark-task = Spread {$Amount} dark tiles.
 objective-condition-shadekin-alive-title = Ensure kin {$targetName}, {CAPITALIZE($job)} stays alive.
 rail-sanctuary-task = Build a shadekin sanctuary in maintenance and keep it maintained.
 objective-condition-keep-inthedark-title = Ensure {$targetName}, {CAPITALIZE($job)} stays in The Dark.
+objective-impersonate-brighteye = Impersonate a member of {$department} this shift and learn!
