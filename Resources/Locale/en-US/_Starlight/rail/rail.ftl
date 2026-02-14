@@ -426,3 +426,6 @@ rr-brighteye-protect-desc = The light is a dangerous place, this kin will need o
 
 rr-brighteye-sanctuary = Sanctuary
 rr-brighteye-sanctuary-desc = Burned ones need a sanctuary in this place of light, lets give them one.
+
+rr-brighteye-returnhome = Grounded
+rr-brighteye-returnhome-desc = This kin must return to the darkness, Send them home.

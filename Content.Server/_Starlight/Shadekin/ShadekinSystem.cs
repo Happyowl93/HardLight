@@ -324,7 +324,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     /// </summary>
     /// <param name="uid"></param>
     /// <returns></returns>
-    private bool AreWeInTheDark(EntityUid uid)
+    public bool AreWeInTheDark(EntityUid uid)
     {
         var mapUid = Transform(uid).MapUid;
         if (mapUid is not null && _tag.HasTag(mapUid.Value, _theDarkTag))

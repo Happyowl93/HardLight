@@ -14,6 +14,8 @@
           whitelist:
             - Brighteye
 
+# Neutral
+
 - type: entity
   id: RRCardBrighteyeDark
   parent: BrighteyeCondition
@@ -47,6 +49,8 @@
       description: rr-brighteye-portal-crit-desc
     - type: RailroadSupercritPortalTask
 
+# Hostile
+
 - type: entity
   id: RRCardBrighteyeTeachALesson
   parent: BrighteyeCondition
@@ -78,6 +82,68 @@
             components:
               - TeachALessonTarget
     - type: TeachALessonCondition
+
+- type: entity
+  id: RRCardBrighteyeReturnHome
+  parent: BrighteyeCondition
+  categories: [HideSpawnMenu]
+  components:
+    - type: RailroadCard
+      title: rr-brighteye-returnhome
+      icon: 
+      iconColor: "#fd3f3f"
+      description: rr-brighteye-returnhome-desc
+    - type: TargetObjective
+      title: objective-condition-shadekin-alive-title
+      icon:
+        sprite: /Textures/Interface/Actions/actions_fakemindshield.rsi
+        state: icon-on
+    - type: PickRandomPerson
+      filters:
+        - !type:BodyMindFilter
+          whitelist:
+            components:
+              - Shadekin
+        - !type:BodyMindFilter
+          whitelist:
+            components:
+              - Brighteye
+          inverted: true
+        - !type:TargetObjectiveMindFilter
+          blacklist:
+            components:
+              - KeepAliveCondition
+              - RailroadKeepEntityInTheDarkTask
+    - type: KeepAliveCondition
+    - type: RailroadKeepEntityInTheDarkTask
+
+# Dark Station Path
+
+- type: entity
+  id: RRCardBrighteyeBackup
+  parent: BrighteyeCondition
+  categories: [HideSpawnMenu]
+  components:
+    - type: RailroadCard
+      title: rr-brighteye-backup
+      icon: 
+      iconColor: "#fd3f3f"
+      color: "#fd3f3f"
+      description: rr-brighteye-backup-desc
+
+- type: entity
+  id: RRCardBrighteyeDarkStation
+  parent: BrighteyeCondition
+  categories: [HideSpawnMenu]
+  components:
+    - type: RailroadCard
+      title: rr-brighteye-darkstation
+      icon: 
+      iconColor: "#fd3f3f"
+      color: "#fd3f3f"
+      description: rr-brighteye-darkstation-desc
+
+# Friendly
 
 - type: entity
   id: RRCardBrighteyeProtect

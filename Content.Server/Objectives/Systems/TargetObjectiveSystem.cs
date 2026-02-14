@@ -63,7 +63,7 @@ public sealed class TargetObjectiveSystem : EntitySystem
         return target != null;
     }
 
-    private string GetTitle(EntityUid target, string title)
+    public string GetTitle(EntityUid target, string title)
     {
         var targetName = "Unknown";
         if (TryComp<MindComponent>(target, out var mind) && mind.CharacterName != null)
