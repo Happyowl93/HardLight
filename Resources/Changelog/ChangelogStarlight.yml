@@ -30391,5 +30391,15 @@ Entries:
   id: 327000
   time: '2026-02-14T09:52:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3270
+- author: FeralCreature
+  changes:
+  - message: Temporarily detaching from your body no longer instantly puts your body
+      to sleep.
+    type: Fix
+  - message: Criminal card reward letters should no longer get lost in transit.
+    type: Fix
+  id: 328100
+  time: '2026-02-14T09:57:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3281
 Order: -1
 
