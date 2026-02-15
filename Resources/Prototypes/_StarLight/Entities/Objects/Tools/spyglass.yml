@@ -24,7 +24,7 @@
     price: 250
 
 - type: entity
-  name: captain's spyglass
+  name: captains spyglass
   parent: [ BaseItem, BaseGrandTheftContraband ]
   id: SpyglassCaptain
   description: Used for long-distance spying. Makes you feel like a captain.
