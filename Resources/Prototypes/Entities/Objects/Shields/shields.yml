@@ -59,6 +59,9 @@
                 SheetGlass:
                   min: 2
                   max: 2
+    - type: Tag
+      tags:
+        - Shield
     - type: StaticPrice
       price: 100
 

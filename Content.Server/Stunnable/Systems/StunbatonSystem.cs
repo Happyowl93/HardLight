@@ -16,6 +16,7 @@ using Content.Shared.Power;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Stunnable;
+using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameObjects;
@@ -34,6 +35,7 @@ namespace Content.Server.Stunnable.Systems
         [Dependency] private readonly SharedHandsSystem _hands = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
+        [Dependency] private readonly TagSystem _tagSystem = default!;
 
         private readonly Dictionary<EntityUid, TimeSpan> _shieldInteractionCooldown = new();
 
@@ -63,37 +65,18 @@ namespace Content.Server.Stunnable.Systems
         }
 
         // 🌟Starlight🌟 start
-        private static readonly string[] ShieldPrototypes = // List of riot shield prototypes to check against
-        {
-            "RiotShield",
-            "RiotLaserShield",
-            "RiotBulletShield",
-            "TelescopicShield",
-            "CardShield",
-            "ClockworkShield",
-            "ForgedShieldTower",
-            "ForgedShieldBuckler",
-            "MakeshiftShield",
-            "ImprovisedShield",
-            "PaladinShieldGreat",
-            "PaladinShield",
-            "MirrorShield",
-            "WebShield",
-        };
-
         private void OnStunbatonAfterInteract(Entity<StunbatonComponent> entity, ref AfterInteractEvent args) // Handle special interaction when using stunbaton on a riot shield
         {
             // Only handle interaction if stunbaton is the used item
             if (args.Used != entity.Owner)
                 return;
 
-            // Check if target is a riot shield 
-            if (args.Target == null || args.Target == entity.Owner)
+            if (args.Target == null || args.Target == entity.Owner) // Prevent interaction if no target or if user is clicking on themselves
                 return;
 
             var target = args.Target.Value;
-            var targetProto = MetaData(target).EntityPrototype?.ID;
-            if (targetProto == null || !ShieldPrototypes.Contains(targetProto))
+            // Check if target has the Shield tag
+            if (!_tagSystem.HasTag(target, "Shield"))
                 return;
 
             // Check if user is NOT in combat mode 
