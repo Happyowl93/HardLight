@@ -30611,5 +30611,15 @@ Entries:
   id: 330700
   time: '2026-02-15T17:56:10.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3307
+- author: Conflee
+  changes:
+  - message: Added the Captain's Spyglass, Spyglass, and Improvised Spyglass. Captain's
+      Spyglass spawns in their locker and is a Thief objective. The Spyglass spawns
+      in Pirate loot pools (rare maints locker loot, in pirate chests, etc). The Improvised
+      Spyglass spawns semi-uncommonly in maintenance closets.
+    type: Add
+  id: 330400
+  time: '2026-02-15T18:01:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3304
 Order: -1
 
