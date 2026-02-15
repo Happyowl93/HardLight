@@ -30721,5 +30721,13 @@ Entries:
   id: 327901
   time: '2026-02-15T19:54:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3279
+- author: Sparlight
+  changes:
+  - message: Roundstart equipment will drop to the floor instead of disappearing if
+      no compatible slot is found.
+    type: Fix
+  id: 325401
+  time: '2026-02-15T19:57:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3254
 Order: -1
 
