@@ -32,7 +32,7 @@ public sealed partial class RCDDeconstructableComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool Deconstructable = true;
 
-    // Starlight Start: RPD
+    // Starlight Start: RPD/RPLD
     /// <summary>
     /// Toggles whether this entity is deconstructable by the RPD (atmos pipes) or not
     /// </summary>
@@ -44,5 +44,5 @@ public sealed partial class RCDDeconstructableComponent : Component
     /// </summary>
     [DataField("rpld"), ViewVariables(VVAccess.ReadWrite)]
     public bool RpldDeconstructable = false;
-    // Starlight End
+    // Starlight End: RPD/RPLD
 }
