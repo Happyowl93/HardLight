@@ -440,7 +440,8 @@
     - id: WeaponTaser
     - id: WantedListCartridge
     - id: DrinkHosFlask
-    - id: ClothingOuterWinterHoS # Starlight start
+    - id: SecurityShuttleConsoleCircuitboard # Starlight start
+    - id: ClothingOuterWinterHoS
     - id: ClothingHandsGlovesCombat
     - id: PrintedDocumentGreenshiftAlert
       conditions:
