@@ -543,3 +543,29 @@
       collection: LagomorphSnore
     LagomorphStomp:
       collection: LagomorphStomp
+
+- type: emoteSounds
+  id: Dog
+  params:
+    variation: 0.125
+  sounds:
+    Growl:
+      collection: Growl
+    Snarl:
+      collection: VulpkaninSnarls
+    Bark:
+      collection: Bark
+    Whine:
+      collection: VulpkaninWhines
+    Crying:
+      collection: VulpkaninWhines
+    Howl:
+      path: /Audio/_Starlight/Effects/howl.ogg
+    Yip:
+      path: /Audio/_Starlight/Effects/yip.ogg
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Honk:
+      collection: BikeHorn
