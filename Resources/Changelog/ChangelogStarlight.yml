@@ -30684,5 +30684,12 @@ Entries:
   id: 298302
   time: '2026-02-15T18:34:28.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2983
+- author: Sparlight
+  changes:
+  - message: Added a vestine recipe for Juice that Makes You a Corgi Forever.
+    type: Add
+  id: 330801
+  time: '2026-02-15T18:39:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3308
 Order: -1
 
