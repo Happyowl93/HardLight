@@ -440,6 +440,7 @@
     - id: WeaponTaser
     - id: WantedListCartridge
     - id: DrinkHosFlask
+    - id: ClothingOuterWinterHoS # Starlight - moved from dresser
     - id: SecurityShuttleConsoleCircuitboard #SL
     - id: PrintedDocumentGreenshiftAlert #SL
       conditions: #SL
