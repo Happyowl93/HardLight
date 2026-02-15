@@ -30561,5 +30561,20 @@ Entries:
   id: 330100
   time: '2026-02-15T03:17:53.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3301
+- author: Conflee
+  changes:
+  - message: Hristov movement speed increased from 25% to 30%, and scope range increased
+      from 3 to 4 tiles.
+    type: Tweak
+  - message: Estoc movement speed increased from 75% to 80%, and scope range increased
+      from 2 to 2.5 tiles.
+    type: Tweak
+  - message: L10 DMR (Security DMR) movement speed increased from 80% to 90%, and
+      scope range increased from 2.5 to 3 tiles. One extra L10 DMR, FMJ mag, and SP
+      mag was also added to the safe.
+    type: Tweak
+  id: 329200
+  time: '2026-02-15T10:29:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3292
 Order: -1
 
