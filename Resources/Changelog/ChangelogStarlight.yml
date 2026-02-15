@@ -30691,5 +30691,16 @@ Entries:
   id: 330801
   time: '2026-02-15T18:39:07.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3308
+- author: R3v3l4t1on, teapoterror
+  changes:
+  - message: The xenoborg collective has grown tired of your shenanigans, and has
+      developed a new shuttle to better suit their goals.
+    type: Add
+  - message: Xenoborgs now start with substantially more materials, allowing them
+      to begin their hunt much faster.
+    type: Add
+  id: 326201
+  time: '2026-02-15T18:43:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3262
 Order: -1
 
