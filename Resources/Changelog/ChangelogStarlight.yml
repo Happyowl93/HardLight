@@ -30702,5 +30702,14 @@ Entries:
   id: 326201
   time: '2026-02-15T18:43:39.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3262
+- author: Conflee
+  changes:
+  - message: Gave most gun bundles in the uplink an extra mag/drum/box of ammo, so
+      Nukies actually have a chance. They literally do not have enough ammo to physically
+      get through the tide of assistants currently  I believe.
+    type: Tweak
+  id: 330901
+  time: '2026-02-15T18:56:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3309
 Order: -1
 
