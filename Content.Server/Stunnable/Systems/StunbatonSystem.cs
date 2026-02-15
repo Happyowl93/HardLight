@@ -92,12 +92,12 @@ namespace Content.Server.Stunnable.Systems
             if (shieldTransform.ParentUid != args.User)
                 return;
 
-            // Update cooldown
+            // Update cooldown in component
             entity.Comp.ShieldInteractionCooldowns[args.User] = _gameTiming.CurTime;
 
-            // Display emote message with character name
+            // Display emote message with character name using translation system
             var userName = MetaData(args.User).EntityName;
-            var emoteMessage = $"{userName} smashes their stun baton against their shield!";
+            var emoteMessage = Loc.GetString(entity.Comp.ShieldBashMessage, ("entityName", userName));
             _popup.PopupEntity(emoteMessage, target, args.User);
 
             // Play sound effect for all players in vicinity

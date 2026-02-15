@@ -19,6 +19,9 @@ public sealed partial class StunbatonComponent : Component
     [DataField("shieldBashSound")]
     public SoundSpecifier ShieldBashSound = new SoundPathSpecifier("/Audio/_Starlight/Weapons/shieldbash.ogg");
 
+    [DataField("shieldBashMessage")]
+    public string ShieldBashMessage = "stunbaton-shield-bash-message";
+
     [NonSerialized]
     public Dictionary<EntityUid, TimeSpan> ShieldInteractionCooldowns = new(); // Track cooldowns for entities hit with the shield bash to prevent spamming
 }

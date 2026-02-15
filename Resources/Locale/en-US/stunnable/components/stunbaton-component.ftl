@@ -1,6 +1,4 @@
-﻿### Stunbaton component
-
-comp-stunbaton-stun = Stunned
+﻿comp-stunbaton-stun = Stunned
 
 ## Used when examining the stunbaton
 
@@ -14,3 +12,7 @@ comp-stunbaton-activated-low-charge = Insufficient charge...
 stunbaton-component-low-charge = Insufficient charge...
 stunbaton-component-on-examine = The light is currently [color=darkgreen]on[/color].
 stunbaton-component-on-examine-charge = The charge indicator reads [color=#5E7C16]{$charge}[/color] %
+
+## Shield bash interaction message
+
+stunbaton-shield-bash-message = {$entityName} smashes their stun baton against their shield!
