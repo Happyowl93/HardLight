@@ -15,4 +15,7 @@ public sealed partial class StunbatonComponent : Component
 
     [DataField("sparksSound")]
     public SoundSpecifier SparksSound = new SoundCollectionSpecifier("sparks");
+
+    [DataField("shieldBashSound")]
+    public SoundSpecifier ShieldBashSound = new SoundPathSpecifier("/Audio/_Starlight/Weapons/shieldbash.ogg");
 }

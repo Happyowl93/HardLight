@@ -117,7 +117,7 @@ namespace Content.Server.Stunnable.Systems
             _popup.PopupEntity(emoteMessage, target, args.User);
 
             // Play sound effect for all players in vicinity
-            _audio.PlayPvs(new SoundPathSpecifier("/Audio/_Starlight/Weapons/shieldbash.ogg"), target);
+            _audio.PlayPvs(entity.Comp.ShieldBashSound, target);
         }
         // 🌟Starlight🌟 end
 
