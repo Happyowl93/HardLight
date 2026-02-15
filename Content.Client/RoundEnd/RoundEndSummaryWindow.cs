@@ -9,6 +9,7 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 // Starlight Start
 using Content.Client.UserInterface.RichText;
 using Robust.Client.UserInterface.RichText;
+using Content.Client.RichText;
 // Starlight End
 
 namespace Content.Client.RoundEnd
@@ -150,15 +151,7 @@ namespace Content.Client.RoundEnd
                 // If no search term, show all text with sanitized tags
                 label.SetMessage(
                     FormattedMessage.FromMarkupPermissive(fullText),
-                    [
-                        typeof(BoldItalicTag),
-                        typeof(BoldTag),
-                        typeof(BulletTag),
-                        typeof(ColorTag),
-                        typeof(HeadingTag),
-                        typeof(ItalicTag),
-                        typeof(MonoTag)
-                    ]
+                    UserFormattableTags.BaseAllowedTags
                 );
                 return false;
             }
@@ -186,15 +179,7 @@ namespace Content.Client.RoundEnd
                 // Sanitize filtered text
                 label.SetMessage(
                     FormattedMessage.FromMarkupPermissive(filteredText),
-                    [
-                        typeof(BoldItalicTag),
-                        typeof(BoldTag),
-                        typeof(BulletTag),
-                        typeof(ColorTag),
-                        typeof(HeadingTag),
-                        typeof(ItalicTag),
-                        typeof(MonoTag)
-                    ]
+                    UserFormattableTags.BaseAllowedTags
                 );
                 return true;
             }
