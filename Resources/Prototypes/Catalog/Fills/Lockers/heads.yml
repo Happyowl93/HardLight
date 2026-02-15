@@ -442,6 +442,7 @@
     - id: WantedListCartridge
     - id: DrinkHosFlask
     - id: SecurityShuttleConsoleCircuitboard # Starlight start
+    - id: ClothingOuterWinterHoS
     - id: ClothingHandsGlovesCombat
     - id: PrintedDocumentGreenshiftAlert
       conditions:
