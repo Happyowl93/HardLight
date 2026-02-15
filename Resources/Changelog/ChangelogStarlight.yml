@@ -30603,5 +30603,13 @@ Entries:
   id: 329900
   time: '2026-02-15T15:12:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3299
+- author: Scarlet lightweaver
+  changes:
+  - message: NT heard you! the breaching hammer and fireaxe can now go on your suit
+      storage!
+    type: Tweak
+  id: 330700
+  time: '2026-02-15T17:56:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3307
 Order: -1
 
