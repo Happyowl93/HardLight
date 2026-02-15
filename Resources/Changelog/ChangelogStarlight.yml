@@ -30590,5 +30590,18 @@ Entries:
   id: 329600
   time: '2026-02-15T15:07:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3296
+- author: Notarin Steele
+  changes:
+  - message: Fixed being able to remove unremovable encryption keys.
+    type: Fix
+  - message: Removed common comms from pAIs roundstart.
+    type: Remove
+  - message: Added the ability to install new encryption keys into a pAI.
+    type: Add
+  - message: Added the ability to remove encryption keys from a pAI.
+    type: Add
+  id: 329900
+  time: '2026-02-15T15:12:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3299
 Order: -1
 
