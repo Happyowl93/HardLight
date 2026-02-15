@@ -30528,5 +30528,13 @@ Entries:
   id: 329500
   time: '2026-02-15T01:30:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3295
+- author: CrazyPhantom
+  changes:
+  - message: Supply lines for CE's locker tote no longer go to HoS' locker (Bluespace
+      Circuit board is correctly in CE's locker)
+    type: Fix
+  id: 329700
+  time: '2026-02-15T01:58:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3297
 Order: -1
 
