@@ -29,17 +29,17 @@ book-text-supermatter-guide = #Your first supermatter engine and you!
     
     [head=1][color=darkred]Basic details of the crystal:[/head][/color]
     
-    [color=darkgreen]Emitters will damage the crystal over time, however under the right conditions, the crystal will repair itself!
+    [color=darkgreen]Emitters will damage the crystal over time, however under the right conditions, the crystal will repair itself![/color]
     
     
     The first thing to take into account is that if allowed, the supermatter crystal will delaminate after taking too much damage! This jepordizes the whole station!
     
-    In order to keep the crystal healing, you must control its atmosphere between [head=3][color=red]30kPa [/color][/head] and [head=2][color=red]300kPa[/color][/head]. Similarly, it cannot heat up over [head=2][color=red]320 Kelvin.[/color]
+    In order to keep the crystal healing, you must control its atmosphere between [head=3][color=red]30kPa [/color][/head] and [head=2][color=red]300kPa[/color][/head]. Similarly, it cannot heat up over [head=2][color=red]320 Kelvin.[/color][/head]
     
     
-    [head=1][color=darkred] Advanced operation and setup:[color=darkgreen]
+    [head=1][color=darkred] Advanced operation and setup:[color=darkgreen][/head]
     
-    [head=3]We at NanoTrasen recommend that you take time to refine your design, but here we are including a few pointers.
+    [head=3]We at NanoTrasen recommend that you take time to refine your design, but here we are including a few pointers.[/head]
     
     
     Understand that the supermatter crystal upon activation will start producing [color=lightgreen]tritium[/color], as well as [color=lightblue]oxygen[/color] gasses. These gasses can and should be siphoned off for further use.
@@ -65,4 +65,4 @@ book-text-supermatter-guide = #Your first supermatter engine and you!
     Hopefully this guide is enough to get you started. Please ask your nearest NanoTrasen representative if you require further assistance.
     
     
-    [head=1][color=darkblue]Glory to Nanotrasen!
+    [head=1][color=darkblue]Glory to Nanotrasen![/color][/head]
