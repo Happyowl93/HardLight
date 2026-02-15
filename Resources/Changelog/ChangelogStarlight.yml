@@ -30644,5 +30644,45 @@ Entries:
   id: 321801
   time: '2026-02-15T18:24:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3218
+- author: marc-pelletier, CrazyPhantom
+  changes:
+  - message: BZ Gas
+    type: Add
+  - message: Healium Gas
+    type: Add
+  - message: Nitrium Gas
+    type: Add
+  - message: Pluxium Gas
+    type: Add
+  - message: Hydrogen Gas
+    type: Add
+  - message: Hyper-Noblium Gas
+    type: Add
+  - message: Proto-Nitrate Gas
+    type: Add
+  - message: Zauker Gas
+    type: Add
+  - message: Halon Gas
+    type: Add
+  - message: Helium Gas
+    type: Add
+  - message: Anti-Noblium Gas
+    type: Add
+  - message: Electrolyzer Machine
+    type: Add
+  - message: Metal Hydrogen Gear
+    type: Add
+  - message: Nerf Frezon Price. 3 Spesos Per mol -> 1.2 Per mol
+    type: Tweak
+  id: 298301
+  time: '2026-02-15T18:34:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2983
+- author: Conflee
+  changes:
+  - message: Canister Sprite changes.
+    type: Tweak
+  id: 298302
+  time: '2026-02-15T18:34:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2983
 Order: -1
 
