@@ -30576,5 +30576,12 @@ Entries:
   id: 329200
   time: '2026-02-15T10:29:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3292
+- author: Sparlight
+  changes:
+  - message: Dogs can now make dog noises like their humanoid counterparts.
+    type: Add
+  id: 330500
+  time: '2026-02-15T11:18:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3305
 Order: -1
 
