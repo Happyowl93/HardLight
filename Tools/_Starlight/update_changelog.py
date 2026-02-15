@@ -28,33 +28,34 @@ def remove_comments(pr_body):
 
 def parse_changelog(pr_body, pr_author):
     blocks = []
-    pattern = r"(?<!<!--\s)^:cl:\s*([^\n]*)\n\s*((?:- (add|remove|tweak|fix): [^\n]+\n?)*)"
-    matches = list(re.finditer(pattern, pr_body, re.MULTILINE))
-    print(f"Found {len(matches)} ':cl:' blocks in PR body.")
+    lines = pr_body.splitlines()
 
-    for match in matches:
-        author_raw = match.group(1).strip()
-        author = author_raw if author_raw else pr_author
-        
-        changes_block = match.group(2).strip()
-        changes = []
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
 
-        for line in changes_block.splitlines():
-            change_pattern = r"-\s+(add|remove|tweak|fix):\s+(.+)"
-            change_match = re.match(change_pattern, line)
-            if change_match:
-                changes.append({
-                    "type": change_match.group(1).capitalize(),
-                    "message": change_match.group(2).strip()
+        if line.startswith(":cl:"):
+            author_raw = line.replace(":cl:", "").strip()
+            author = author_raw if author_raw else pr_author
+            i += 1
+
+            changes = []
+            while i < len(lines) and not lines[i].strip().startswith(":cl:"):
+                change_match = re.match(r"-\s+(add|remove|tweak|fix):\s+(.+)", lines[i].strip())
+                if change_match:
+                    changes.append({
+                        "type": change_match.group(1).capitalize(),
+                        "message": change_match.group(2).strip()
+                    })
+                i += 1
+
+            if changes:
+                blocks.append({
+                    "author": author,
+                    "changes": changes
                 })
-            else:
-                print(f"Warning: Unable to parse change line: {line}")
-
-        if changes:
-            blocks.append({
-                "author": author,
-                "changes": changes
-            })
+        else:
+            i += 1
 
     return blocks
 
@@ -90,20 +91,19 @@ def update_changelog():
         else:
             print(f"Changelog file does not exist and will be created at {changelog_path}")
             changelog_data = {"Entries": []}
-
-        for block in blocks:
+        calculatedID = (int(pr_number) * 100)
+        for i, block in enumerate(blocks, start=1):
             #shift PR number up two digits
             #add current ID to it
             # e.g., PR number 123 -> calculatedID = (123 * 100) = 12300
-            calculatedID = (int(pr_number) * 100)
             changelog_entry = {
                 "author": block["author"],
                 "changes": block["changes"],
-                "id": calculatedID,
+                "id": calculatedID + i,
                 "time": merge_time.isoformat(timespec='microseconds'),
                 "url": f"https://github.com/{repo_name}/pull/{pr_number}"
             }
-        changelog_data["Entries"].append(changelog_entry)
+            changelog_data["Entries"].append(changelog_entry)
 
         os.makedirs(os.path.dirname(changelog_path), exist_ok=True)
 
