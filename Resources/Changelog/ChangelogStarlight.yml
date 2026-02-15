@@ -30711,5 +30711,15 @@ Entries:
   id: 330901
   time: '2026-02-15T18:56:10.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3309
+- author: BornStellar
+  changes:
+  - message: Briefing documents for all sec level metashield to the HOS locker
+    type: Add
+  - message: reassurance to sec that they have superior emotional intelligence to
+      the crew and as such can handle this secure information
+    type: Add
+  id: 327901
+  time: '2026-02-15T19:54:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3279
 Order: -1
 
