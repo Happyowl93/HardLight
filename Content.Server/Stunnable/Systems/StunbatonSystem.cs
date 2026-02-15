@@ -62,22 +62,41 @@ namespace Content.Server.Stunnable.Systems
             _shieldInteractionCooldown.Remove(entity.Owner);
         }
 
-        private void OnStunbatonAfterInteract(Entity<StunbatonComponent> entity, ref AfterInteractEvent args)
+        // 🌟Starlight🌟 start
+        private static readonly string[] ShieldPrototypes = // List of riot shield prototypes to check against
+        {
+            "RiotShield",
+            "RiotLaserShield",
+            "RiotBulletShield",
+            "TelescopicShield",
+            "CardShield",
+            "ClockworkShield",
+            "ForgedShieldTower",
+            "ForgedShieldBuckler",
+            "MakeshiftShield",
+            "ImprovisedShield",
+            "PaladinShieldGreat",
+            "PaladinShield",
+            "MirrorShield",
+            "WebShield",
+        };
+
+        private void OnStunbatonAfterInteract(Entity<StunbatonComponent> entity, ref AfterInteractEvent args) // Handle special interaction when using stunbaton on a riot shield
         {
             // Only handle interaction if stunbaton is the used item
             if (args.Used != entity.Owner)
                 return;
 
-            // Check if target is a riot shield
+            // Check if target is a riot shield 
             if (args.Target == null || args.Target == entity.Owner)
                 return;
 
             var target = args.Target.Value;
             var targetProto = MetaData(target).EntityPrototype?.ID;
-            if (targetProto != "RiotShield")
+            if (targetProto == null || !ShieldPrototypes.Contains(targetProto))
                 return;
 
-            // Check if user is NOT in combat mode
+            // Check if user is NOT in combat mode 
             if (_combatMode.IsInCombatMode(args.User))
                 return;
 
@@ -88,11 +107,11 @@ namespace Content.Server.Stunnable.Systems
                     return; // Still on cooldown
             }
 
-            // Check if riot shield is held in one of the user's hands (for range limitation)
+            // Check if riot shield is held in one of the user's hands (only interact if user is actually holding the shield, not just clicking on it)
             if (!TryComp<HandsComponent>(args.User, out var hands))
                 return;
 
-            // Verify the riot shield is actually held in a hand
+            // Verify the riot shield is actually held in a hand and not just being clicked on in the world
             var shieldInHand = false;
             foreach (var handId in hands.Hands.Keys)
             {
@@ -103,7 +122,7 @@ namespace Content.Server.Stunnable.Systems
                 }
             }
 
-            if (!shieldInHand)
+            if (!shieldInHand) // Riot shield is not held in user's hand, ignore interaction
                 return;
 
             // Update cooldown
@@ -111,12 +130,13 @@ namespace Content.Server.Stunnable.Systems
 
             // Display emote message with character name
             var userName = MetaData(args.User).EntityName;
-            var emoteMessage = $"{userName} smashes their stun baton against their riot shield!";
+            var emoteMessage = $"{userName} smashes their stun baton against their shield!";
             _popup.PopupEntity(emoteMessage, target, args.User);
 
-            // Play bikehorn sound effect
-            _audio.PlayPvs(new SoundPathSpecifier("/Audio/Items/Toys/pushHornHonk.ogg"), target);
+            // Play sound effect for all players in vicinity
+            _audio.PlayPvs(new SoundPathSpecifier("/Audio/_Starlight/Weapons/shieldbash.ogg"), target);
         }
+        // 🌟Starlight🌟 end
 
         private void OnStaminaHitAttempt(Entity<StunbatonComponent> entity, ref StaminaDamageOnHitAttemptEvent args)
         {
