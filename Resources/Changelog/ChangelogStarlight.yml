@@ -30512,5 +30512,13 @@ Entries:
   id: 328400
   time: '2026-02-14T22:18:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3284
+- author: Coolsurf6
+  changes:
+  - message: Syndicate Maulers and Dark Gygaxes now come with Micro Reactor Cells
+      instead of Hyper Cells
+    type: Tweak
+  id: 329300
+  time: '2026-02-15T00:44:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3293
 Order: -1
 
