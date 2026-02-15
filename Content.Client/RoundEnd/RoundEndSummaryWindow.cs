@@ -147,7 +147,7 @@ namespace Content.Client.RoundEnd
         {
             if (string.IsNullOrWhiteSpace(searchTerm))
             {
-                // If no search term, show all text with sanitized tags - Starlight
+                // If no search term, show all text with sanitized tags
                 label.SetMessage(
                     FormattedMessage.FromMarkupPermissive(fullText),
                     [
