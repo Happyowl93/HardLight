@@ -30536,5 +30536,30 @@ Entries:
   id: 329700
   time: '2026-02-15T01:58:11.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3297
+- author: Arkanic
+  changes:
+  - message: Terminators are now much tankier than they were previously (think 90%
+      pierce resist...)
+    type: Tweak
+  - message: Made terminator card spawn slightly more often, hopefully they will be
+      seen more often than once in a blue moon now
+    type: Tweak
+  - message: Bunch of minor terminator bugs, such as not having a wideswing, getting
+      hungry
+    type: Fix
+  - message: stupid terminator appearing effect
+    type: Add
+  id: 327100
+  time: '2026-02-15T03:08:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3271
+- author: Shades
+  changes:
+  - message: Shadegen affecting GhostLight.
+    type: Fix
+  - message: Fixed the LAG! (Oops!)
+    type: Fix
+  id: 330100
+  time: '2026-02-15T03:17:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3301
 Order: -1
 
