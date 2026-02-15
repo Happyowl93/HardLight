@@ -444,6 +444,7 @@
     - id: SecurityShuttleConsoleCircuitboard # Starlight start
     - id: ClothingOuterWinterHoS
     - id: ClothingHandsGlovesCombat
+    - id: SecureBriefings
     - id: PrintedDocumentGreenshiftAlert
       conditions:
       - !type:GamemodeCondition
