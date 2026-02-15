@@ -30628,5 +30628,21 @@ Entries:
   id: 328300
   time: '2026-02-15T18:07:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3283
+- author: Fractalflower
+  changes:
+  - message: CRD has figured out a way to make their survival boxes have a less awkward
+      shape in satchels.
+    type: Tweak
+  - message: Winter coats now obey the laws of physics.
+    type: Tweak
+  - message: Honk Co has discontinued their Bigger-on-the-Inside technology for their
+      Honk Meals.
+    type: Tweak
+  - message: NanoTrasen has finally decided to cease shipments of flares for Shadekin
+      survival boxes.
+    type: Remove
+  id: 321801
+  time: '2026-02-15T18:24:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3218
 Order: -1
 
