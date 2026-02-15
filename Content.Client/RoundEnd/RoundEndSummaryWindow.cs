@@ -183,7 +183,7 @@ namespace Content.Client.RoundEnd
             }
             else
             {
-                // Sanitize filtered text - Starlight
+                // Sanitize filtered text
                 label.SetMessage(
                     FormattedMessage.FromMarkupPermissive(filteredText),
                     [
