@@ -3,7 +3,7 @@
   icon:
     sprite: _FarHorizons/Interface/FissionGenerator/cargo_icons.rsi
     state: reactor
-  product: NuclearReactorFlatpack
+  product: CrateNuclearReactorFlatpack # Starlight Edit: NuclearReactorFlatpack -> CrateNuclearReactorFlatpack
   cost: 15000
   category: cargoproduct-category-name-engineering
   group: market
@@ -13,7 +13,7 @@
   icon:
     sprite: _FarHorizons/Interface/FissionGenerator/cargo_icons.rsi
     state: turbine
-  product: GasTurbineFlatpack
+  product: CrateGasTurbineFlatpack # Starlight Edit: GasTurbineFlatpack -> CrateGasTurbineFlatpack
   cost: 10000
   category: cargoproduct-category-name-engineering
   group: market

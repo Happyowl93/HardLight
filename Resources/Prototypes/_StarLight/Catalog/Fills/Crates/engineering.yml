@@ -46,3 +46,51 @@
     containers:
       entity_storage:
         id: RPD
+
+- type: entity
+  id: CrateNuclearReactorFlatpack
+  parent: CrateEngineeringSecure
+  name: Nuclear Reactor Crate
+  description: A crate containing a flatpacked Nuclear Reactor
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: NuclearReactorFlatpack
+
+- type: entity
+  id: CrateGasTurbineFlatpack
+  parent: CrateEngineeringSecure
+  name: Gas Turbine Crate
+  description: A crate containing a flatpacked Gas Turbine
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: GasTurbineFlatpack
+
+- type: entity
+  id: CrateNuclearReactorSmallFlatpack
+  parent: CrateEngineeringSecure
+  name: Small Nuclear Reactor Crate
+  description: A crate containing a flatpacked  Small Nuclear Reactor
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: NuclearReactorSmallFlatpack
+
+- type: entity
+  id: CrateGasTurbineSmallFlatpack
+  parent: CrateEngineeringSecure
+  name: Small Gas Turbine Crate
+  description: A crate containing a flatpacked Small Gas Turbine
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: GasTurbineSmallFlatpack

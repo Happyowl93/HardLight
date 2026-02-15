@@ -15,11 +15,11 @@
   parent: [BaseStructureFlatpack, BaseEngineeringContraband]
   id: GasTurbineFlatpack
   name: Gas Turbine Flatpack
-  description: A flatpack used for constructing a gas turbine.
+  description: A flatpack used for constructing a gas turbine. Parts sold separately. # Starlight Edit: Parts sold separately.
   components:
   - type: Sprite
     sprite: Objects/Devices/flatpack.rsi
     layers:
     - state: large
   - type: Flatpack
-    entity: GasTurbineNormal
+    entity: GasTurbineEmpty # Starlight Edit: GasTurbineNormal -> GasTurbineEmpty
