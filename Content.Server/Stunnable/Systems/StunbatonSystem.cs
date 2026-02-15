@@ -6,8 +6,6 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage.Events;
 using Content.Shared.Examine;
-using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
@@ -20,6 +18,7 @@ using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Maths;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Stunnable.Systems
@@ -32,7 +31,6 @@ namespace Content.Server.Stunnable.Systems
         [Dependency] private readonly SharedBatterySystem _battery = default!;
         [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
         [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
-        [Dependency] private readonly SharedHandsSystem _hands = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly TagSystem _tagSystem = default!;
@@ -90,22 +88,10 @@ namespace Content.Server.Stunnable.Systems
                     return; // Still on cooldown
             }
 
-            // Check if riot shield is held in one of the user's hands (only interact if user is actually holding the shield, not just clicking on it)
-            if (!TryComp<HandsComponent>(args.User, out var hands))
-                return;
-
-            // Verify the riot shield is actually held in a hand and not just being clicked on in the world
-            var shieldInHand = false;
-            foreach (var handId in hands.Hands.Keys)
-            {
-                if (_hands.TryGetHeldItem((args.User, hands), handId, out var held) && held == target)
-                {
-                    shieldInHand = true;
-                    break;
-                }
-            }
-
-            if (!shieldInHand) // Riot shield is not held in user's hand, ignore interaction
+            // Check if shield is held in one of the user's hands by comparing transforms
+            // If the shield is held, its parent transform should be the user entity
+            var shieldTransform = Transform(target);
+            if (shieldTransform.ParentUid != args.User)
                 return;
 
             // Update cooldown
