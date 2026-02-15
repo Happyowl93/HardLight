@@ -35,8 +35,6 @@ namespace Content.Server.Stunnable.Systems
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly TagSystem _tagSystem = default!;
 
-        private readonly Dictionary<EntityUid, TimeSpan> _shieldInteractionCooldown = new();
-
         public override void Initialize()
         {
             base.Initialize();
@@ -59,7 +57,7 @@ namespace Content.Server.Stunnable.Systems
 
         private void OnEntityDeleted(Entity<MetaDataComponent> entity)
         {
-            _shieldInteractionCooldown.Remove(entity.Owner);
+            // Cleanup is handled automatically when the entity is deleted
         }
 
         // 🌟Starlight🌟 start
@@ -82,7 +80,7 @@ namespace Content.Server.Stunnable.Systems
                 return;
 
             // Check cooldown (3 second delay between interactions)
-            if (_shieldInteractionCooldown.TryGetValue(args.User, out var lastInteractionTime))
+            if (entity.Comp.ShieldInteractionCooldowns.TryGetValue(args.User, out var lastInteractionTime))
             {
                 if (_gameTiming.CurTime < lastInteractionTime + TimeSpan.FromSeconds(3))
                     return; // Still on cooldown
@@ -95,7 +93,7 @@ namespace Content.Server.Stunnable.Systems
                 return;
 
             // Update cooldown
-            _shieldInteractionCooldown[args.User] = _gameTiming.CurTime;
+            entity.Comp.ShieldInteractionCooldowns[args.User] = _gameTiming.CurTime;
 
             // Display emote message with character name
             var userName = MetaData(args.User).EntityName;
