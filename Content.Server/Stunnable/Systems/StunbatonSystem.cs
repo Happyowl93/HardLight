@@ -95,7 +95,7 @@ namespace Content.Server.Stunnable.Systems
             // Update cooldown in component
             entity.Comp.ShieldInteractionCooldowns[args.User] = _gameTiming.CurTime;
 
-            // Display emote message with character name using translation system
+            // Display message
             var userName = MetaData(args.User).EntityName;
             var emoteMessage = Loc.GetString(entity.Comp.ShieldBashMessage, ("entityName", userName));
             _popup.PopupEntity(emoteMessage, target, args.User);
