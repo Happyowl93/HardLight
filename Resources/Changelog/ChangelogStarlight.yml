@@ -30474,5 +30474,92 @@ Entries:
   id: 283000
   time: '2026-02-14T19:34:52.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2830
+- author: CrazyPhantom
+  changes:
+  - message: New Supermatter animation!
+    type: Tweak
+  - message: Supermatter guide Paper.
+    type: Add
+  id: 303800
+  time: '2026-02-14T21:06:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3038
+- author: Rhetorica, Grapegifter, et al.
+  changes:
+  - message: Elves officially have an endonym, 'aielithii'
+    type: Add
+  - message: Reduce volume of Haemostatic Glyph
+    type: Tweak
+  - message: Prevent undroppable spells from spawning on ground when no free hands
+      exist
+    type: Fix
+  - message: Ethnicity (subrace) trait category, and 4 aielithii ethnicities
+    type: Add
+  - message: Felyaic, a Darktongue dialect unique to Detari elves (drow)
+    type: Add
+  - message: Elf lore to guidebook
+    type: Add
+  - message: Correct damage numbers in elf guidebook
+    type: Tweak
+  - message: Elf Blunt vulnerability to +20% (was +10%)
+    type: Tweak
+  id: 321300
+  time: '2026-02-14T21:14:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3213
+- author: Xale
+  changes:
+  - message: Automatic chat highlights support for Avali and Resomi names
+    type: Add
+  id: 328400
+  time: '2026-02-14T22:18:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3284
+- author: Coolsurf6
+  changes:
+  - message: Syndicate Maulers and Dark Gygaxes now come with Micro Reactor Cells
+      instead of Hyper Cells
+    type: Tweak
+  id: 329300
+  time: '2026-02-15T00:44:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3293
+- author: CrazyPhantom
+  changes:
+  - message: Pinktext! A way for antagonists to make a custom summary of what they
+      did to complete their objectives! Greentext's days are numbered
+    type: Add
+  id: 329500
+  time: '2026-02-15T01:30:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3295
+- author: CrazyPhantom
+  changes:
+  - message: Supply lines for CE's locker tote no longer go to HoS' locker (Bluespace
+      Circuit board is correctly in CE's locker)
+    type: Fix
+  id: 329700
+  time: '2026-02-15T01:58:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3297
+- author: Arkanic
+  changes:
+  - message: Terminators are now much tankier than they were previously (think 90%
+      pierce resist...)
+    type: Tweak
+  - message: Made terminator card spawn slightly more often, hopefully they will be
+      seen more often than once in a blue moon now
+    type: Tweak
+  - message: Bunch of minor terminator bugs, such as not having a wideswing, getting
+      hungry
+    type: Fix
+  - message: stupid terminator appearing effect
+    type: Add
+  id: 327100
+  time: '2026-02-15T03:08:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3271
+- author: Shades
+  changes:
+  - message: Shadegen affecting GhostLight.
+    type: Fix
+  - message: Fixed the LAG! (Oops!)
+    type: Fix
+  id: 330100
+  time: '2026-02-15T03:17:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3301
 Order: -1
 
