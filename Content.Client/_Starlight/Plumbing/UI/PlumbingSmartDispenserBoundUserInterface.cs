@@ -5,25 +5,25 @@ using Robust.Client.UserInterface;
 namespace Content.Client._Starlight.Plumbing.UI;
 
 [UsedImplicitly]
-public sealed class PlumbingSmartFridgeBoundUserInterface : BoundUserInterface
+public sealed class PlumbingSmartDispenserBoundUserInterface : BoundUserInterface
 {
-    private PlumbingSmartFridgeWindow? _window;
+    private PlumbingSmartDispenserWindow? _window;
 
-    public PlumbingSmartFridgeBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+    public PlumbingSmartDispenserBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
     }
 
     protected override void Open()
     {
         base.Open();
-        _window = this.CreateWindow<PlumbingSmartFridgeWindow>();
+        _window = this.CreateWindow<PlumbingSmartDispenserWindow>();
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
 
-        if (_window == null || state is not PlumbingSmartFridgeBoundUserInterfaceState cast)
+        if (_window == null || state is not PlumbingSmartDispenserBuiState cast)
             return;
 
         _window.UpdateState(cast);

@@ -18,11 +18,11 @@ using Robust.Shared.Utility;
 namespace Content.Server._Starlight.Plumbing.EntitySystems;
 
 /// <summary>
-///     Handles the plumbing smart fridge: pulls all reagents from the network,
+///     Handles the plumbing smart dispenser: pulls all reagents from the network,
 ///     stores up to a per-reagent cap, and fills labeled jugs on interaction.
 /// </summary>
 [UsedImplicitly]
-public sealed class PlumbingSmartFridgeSystem : EntitySystem
+public sealed class PlumbingSmartDispenserSystem : EntitySystem
 {
     [Dependency] private readonly SharedSolutionContainerSystem _solutionSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
@@ -44,10 +44,10 @@ public sealed class PlumbingSmartFridgeSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PlumbingSmartFridgeComponent, PlumbingDeviceUpdateEvent>(OnDeviceUpdate);
-        SubscribeLocalEvent<PlumbingSmartFridgeComponent, PlumbingPullIntoAttemptEvent>(OnPullInto);
-        SubscribeLocalEvent<PlumbingSmartFridgeComponent, InteractUsingEvent>(OnInteractUsing);
-        SubscribeLocalEvent<PlumbingSmartFridgeComponent, AfterActivatableUIOpenEvent>(OnUIOpened);
+        SubscribeLocalEvent<PlumbingSmartDispenserComponent, PlumbingDeviceUpdateEvent>(OnDeviceUpdate);
+        SubscribeLocalEvent<PlumbingSmartDispenserComponent, PlumbingPullIntoAttemptEvent>(OnPullInto);
+        SubscribeLocalEvent<PlumbingSmartDispenserComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<PlumbingSmartDispenserComponent, AfterActivatableUIOpenEvent>(OnUIOpened);
 
         _prototypeManager.PrototypesReloaded += OnPrototypesReloaded;
     }
@@ -65,7 +65,7 @@ public sealed class PlumbingSmartFridgeSystem : EntitySystem
         _reagentNames = null;
     }
 
-    private void OnDeviceUpdate(Entity<PlumbingSmartFridgeComponent> ent, ref PlumbingDeviceUpdateEvent args)
+    private void OnDeviceUpdate(Entity<PlumbingSmartDispenserComponent> ent, ref PlumbingDeviceUpdateEvent args)
     {
         UpdateUiState(ent);
     }
@@ -73,7 +73,7 @@ public sealed class PlumbingSmartFridgeSystem : EntitySystem
     /// <summary>
     /// Caps or denies pulls for reagents that are at or near the per-reagent limit.
     /// </summary>
-    private void OnPullInto(Entity<PlumbingSmartFridgeComponent> ent, ref PlumbingPullIntoAttemptEvent args)
+    private void OnPullInto(Entity<PlumbingSmartDispenserComponent> ent, ref PlumbingPullIntoAttemptEvent args)
     {
         if (!_solutionSystem.TryGetSolution(ent.Owner, ent.Comp.SolutionName, out _, out var solution))
             return;
@@ -91,20 +91,20 @@ public sealed class PlumbingSmartFridgeSystem : EntitySystem
             args.MaxAllowed = room;
     }
 
-    private void OnInteractUsing(Entity<PlumbingSmartFridgeComponent> ent, ref InteractUsingEvent args)
+    private void OnInteractUsing(Entity<PlumbingSmartDispenserComponent> ent, ref InteractUsingEvent args)
     {
         if (args.Handled)
             return;
 
         if (!TryComp<LabelComponent>(args.Used, out var label) || string.IsNullOrEmpty(label.CurrentLabel))
         {
-            _popup.PopupEntity(Loc.GetString("plumbing-smart-fridge-no-label"), ent.Owner, args.User);
+            _popup.PopupEntity(Loc.GetString("plumbing-smart-dispenser-no-label"), ent.Owner, args.User);
             return;
         }
 
         if (!TryMatchLabelToReagent(label.CurrentLabel, out var reagentId))
         {
-            _popup.PopupEntity(Loc.GetString("plumbing-smart-fridge-no-match"), ent.Owner, args.User);
+            _popup.PopupEntity(Loc.GetString("plumbing-smart-dispenser-no-match"), ent.Owner, args.User);
             return;
         }
 
@@ -112,9 +112,10 @@ public sealed class PlumbingSmartFridgeSystem : EntitySystem
             return;
 
         var available = fridgeSolution.GetReagentQuantity(new ReagentId(reagentId, null));
+
         if (available <= FixedPoint2.Zero)
         {
-            _popup.PopupEntity(Loc.GetString("plumbing-smart-fridge-not-in-stock",
+            _popup.PopupEntity(Loc.GetString("plumbing-smart-dispenser-not-in-stock",
                 ("reagent", _prototypeManager.Index<ReagentPrototype>(reagentId).LocalizedName)),
                 ent.Owner, args.User);
             return;
@@ -126,7 +127,7 @@ public sealed class PlumbingSmartFridgeSystem : EntitySystem
         var jugAvailable = jugSolution.AvailableVolume;
         if (jugAvailable <= FixedPoint2.Zero)
         {
-            _popup.PopupEntity(Loc.GetString("plumbing-smart-fridge-jug-full"), ent.Owner, args.User);
+            _popup.PopupEntity(Loc.GetString("plumbing-smart-dispenser-jug-full"), ent.Owner, args.User);
             return;
         }
 
@@ -138,7 +139,7 @@ public sealed class PlumbingSmartFridgeSystem : EntitySystem
             _solutionSystem.TryAddReagent(jugSolnEnt.Value, reagentId, removed, out _);
 
             var reagentName = _prototypeManager.Index<ReagentPrototype>(reagentId).LocalizedName;
-            _popup.PopupEntity(Loc.GetString("plumbing-smart-fridge-filled",
+            _popup.PopupEntity(Loc.GetString("plumbing-smart-dispenser-filled",
                 ("reagent", reagentName),
                 ("amount", removed)),
                 ent.Owner, args.User);
@@ -330,14 +331,14 @@ public sealed class PlumbingSmartFridgeSystem : EntitySystem
         return list;
     }
 
-    private void OnUIOpened(Entity<PlumbingSmartFridgeComponent> ent, ref AfterActivatableUIOpenEvent args)
+    private void OnUIOpened(Entity<PlumbingSmartDispenserComponent> ent, ref AfterActivatableUIOpenEvent args)
     {
         UpdateUiState(ent);
     }
 
-    private void UpdateUiState(Entity<PlumbingSmartFridgeComponent> ent)
+    private void UpdateUiState(Entity<PlumbingSmartDispenserComponent> ent)
     {
-        var entries = new List<PlumbingSmartFridgeReagentEntry>();
+        var entries = new List<PlumbingSmartDispenserReagentEntry>();
 
         if (_solutionSystem.TryGetSolution(ent.Owner, ent.Comp.SolutionName, out _, out var solution))
         {
@@ -349,7 +350,7 @@ public sealed class PlumbingSmartFridgeSystem : EntitySystem
                 if (!_prototypeManager.TryIndex<ReagentPrototype>(reagent.Reagent.Prototype, out var proto))
                     continue;
 
-                entries.Add(new PlumbingSmartFridgeReagentEntry(
+                entries.Add(new PlumbingSmartDispenserReagentEntry(
                     proto.ID,
                     proto.LocalizedName,
                     reagent.Quantity,
@@ -360,7 +361,7 @@ public sealed class PlumbingSmartFridgeSystem : EntitySystem
             entries.Sort((a, b) => string.Compare(a.LocalizedName, b.LocalizedName, StringComparison.OrdinalIgnoreCase));
         }
 
-        var state = new PlumbingSmartFridgeBoundUserInterfaceState(entries, ent.Comp.MaxPerReagent.Float());
-        _uiSystem.SetUiState(ent.Owner, PlumbingSmartFridgeUiKey.Key, state);
+        var state = new PlumbingSmartDispenserBuiState(entries, ent.Comp.MaxPerReagent.Float());
+        _uiSystem.SetUiState(ent.Owner, PlumbingSmartDispenserUiKey.Key, state);
     }
 }

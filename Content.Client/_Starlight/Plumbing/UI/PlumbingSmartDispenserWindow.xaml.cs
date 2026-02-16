@@ -9,20 +9,20 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client._Starlight.Plumbing.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class PlumbingSmartFridgeWindow : DefaultWindow
+public sealed partial class PlumbingSmartDispenserWindow : DefaultWindow
 {
-    public PlumbingSmartFridgeWindow()
+    public PlumbingSmartDispenserWindow()
     {
         RobustXamlLoader.Load(this);
     }
 
-    public void UpdateState(PlumbingSmartFridgeBoundUserInterfaceState state)
+    public void UpdateState(PlumbingSmartDispenserBuiState state)
     {
         ReagentList.RemoveAllChildren();
 
         if (state.Entries.Count == 0)
         {
-            StatusLabel.Text = Loc.GetString("plumbing-smart-fridge-empty");
+            StatusLabel.Text = Loc.GetString("plumbing-smart-dispenser-empty");
             return;
         }
 
@@ -43,7 +43,7 @@ public sealed partial class PlumbingSmartFridgeWindow : DefaultWindow
             chart.Clear();
             chart.SetEntry(
                 entry.ReagentId,
-                Loc.GetString("plumbing-smart-fridge-reagent-entry",
+                Loc.GetString("plumbing-smart-dispenser-reagent-entry",
                     ("reagent", entry.LocalizedName),
                     ("amount", entry.Quantity)),
                 entry.Quantity.Float(),
@@ -53,7 +53,7 @@ public sealed partial class PlumbingSmartFridgeWindow : DefaultWindow
             ReagentList.AddChild(chart);
         }
 
-        StatusLabel.Text = Loc.GetString("plumbing-smart-fridge-total",
+        StatusLabel.Text = Loc.GetString("plumbing-smart-dispenser-total",
             ("total", totalVolume),
             ("count", state.Entries.Count));
     }
