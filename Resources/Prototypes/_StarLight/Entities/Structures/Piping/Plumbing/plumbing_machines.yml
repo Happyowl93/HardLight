@@ -65,7 +65,7 @@
   - type: SolutionContainerManager
     solutions:
       tank:
-        maxVol: 2000
+        maxVol: 20000
         canReact: false
   - type: ExaminableSolution
     solution: tank

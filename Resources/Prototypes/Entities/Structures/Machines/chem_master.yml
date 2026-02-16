@@ -100,7 +100,7 @@
   - type: SolutionContainerManager
     solutions:
       buffer:
-        maxVol: 1000 # Starlight: limited to 10000u for plumbing compatibility and realism ## Starlight, too: Drop a zero~
+        maxVol: 5000 # Starlight: 5kU
         canReact: false
   - type: DumpableSolution
     solution: buffer
