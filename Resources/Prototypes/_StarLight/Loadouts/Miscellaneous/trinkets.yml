@@ -55,9 +55,8 @@
   effects:
     - !type:JobRequirementLoadoutEffect
       requirement:
-        !type:DepartmentTimeRequirement
-        department: Command
-        time: 36000 # 10 hours of meowing
+        !type:OverallPlaytimeRequirement
+        time: 144000 # 40hr
   equipment:
     shoes: ClothingUnderSocksCoder
   groupBy: "maid outfit"
@@ -67,9 +66,8 @@
   effects:
     - !type:JobRequirementLoadoutEffect
       requirement:
-        !type:DepartmentTimeRequirement
-        department: Civilian
-        time: 72000 # 20 hours
+        !type:OverallPlaytimeRequirement
+        time: 144000 # 40hr
   equipment:
     jumpsuit: ClothingUniformJumpskirtElegantMaid
   groupBy: "maid outfit"
@@ -105,9 +103,8 @@
   effects:
     - !type:JobRequirementLoadoutEffect
       requirement:
-        !type:DepartmentTimeRequirement
-        department: Command
-        time: 36000 # 10 hours of meowing
+        !type:OverallPlaytimeRequirement
+        time: 144000 # 40hr
   equipment:
     head: ClothingHeadHatWhiteCatEars
   groupBy: "cat ears"
@@ -118,7 +115,7 @@
     - !type:JobRequirementLoadoutEffect
       requirement:
         !type:OverallPlaytimeRequirement
-        time: 72000 # 20 hours
+        time: 144000 # 40hr
   equipment:
     head: ClothingHeadHatBunny
   groupBy: "cat ears"
@@ -129,7 +126,7 @@
     - !type:JobRequirementLoadoutEffect
       requirement:
         !type:OverallPlaytimeRequirement
-        time: 72000 # 20 hours
+        time: 144000 # 40hr
   equipment:
     head: ClothingHeadHatDogEars
   groupBy: "cat ears"
