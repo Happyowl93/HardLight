@@ -30812,5 +30812,30 @@ Entries:
   id: 328801
   time: '2026-02-16T07:13:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3288
+- author: wonderfulnewworld
+  changes:
+  - message: Traitors can now show up in Zombies and Zombieteors! These Traitors are
+      a special variant, and will not get Kill/Lesson targets/DAGD. Only up to 6 of
+      these Traitors will spawn. Cross-antag interactions are a treat in this game.
+      Fight back against the horde, together. Maybe you'll find alternative ways to
+      achieve your goals by working together with the crew...
+    type: Add
+  - message: Tweaked antag scaling, increasing the player ratio for most scalable
+      antags (Traitors, Thieves, Vampires, Changelings) by roughly 20%. (For example,
+      Traitors now scales on 1:12 instead of 1:10.)
+    type: Tweak
+  - message: Increases action gamemodes on Alpha by 4% (1% each to NukeOps, Zombie,
+      Survival, Revolutionary), to account for this scaling shift. (Changeling, Vampires,
+      Traitorling, Xenoborgs -1% each.)
+    type: Tweak
+  - message: Made the brigmed bedsheet steal objective half as common.
+    type: Tweak
+  - message: Adjusts Changelings' chance to show up in the Vampires gamemode to be
+      equal to the chance that Vampires show up in the Changeling gamemode. (I missed
+      this one in my last PR to equalize them.)
+    type: Fix
+  id: 321601
+  time: '2026-02-16T07:17:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3216
 Order: -1
 
