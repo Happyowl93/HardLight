@@ -57,6 +57,7 @@
   loadouts:
   - MaidHeadbandTactical
   - Hairflower
+  - RoadCone
   - CatEars
   - DogEars
   - BunnyEars
@@ -208,7 +209,8 @@
   - GreytideBizarreAdventures
   - BrimHat
   - FeatheredHat
-  - Hairflower # starlight
+  - Hairflower
+  - RoadCone # starlight
 
 - type: loadoutGroup
   id: AssistantBackpack
@@ -246,6 +248,7 @@
   - RoboticistBlackCapFlipped
   - MaidHeadbandTactical
   - Hairflower
+  - RoadCone
   - CatEars
   - DogEars
   - BunnyEars
@@ -333,6 +336,7 @@
   loadouts:
   - MagistrateHeadPwig
   - Hairflower
+  - RoadCone
 
 - type: loadoutGroup
   id: MagistrateEyewear
@@ -766,6 +770,7 @@
   - DutyOfficerHelmetRiot
   - MaidHeadbandTactical
   - Hairflower
+  - RoadCone
   - CatEars
   - DogEars
   - BunnyEars
@@ -861,6 +866,7 @@
   - BeretNCTGreen
   - BeretNCTBlack
   - Hairflower
+  - RoadCone
 
 - type: loadoutGroup
   id: NanotrasenCareerTrainerShoes
