@@ -33,8 +33,6 @@
   recipeUnlocks:
   - GoldenJug
   - SilverJug
- #- GoldenBeaker
- #- SilverBeaker
   radioChannels:
   - Medical
 

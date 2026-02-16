@@ -766,17 +766,3 @@
   completetime: 2
   materials:
     Silver: 50
-
-- type: latheRecipe
-  id: GoldenBeaker
-  result: GoldenBeaker
-  completetime: 2
-  materials:
-    Gold: 25
-
-- type: latheRecipe
-  id: SilverBeaker
-  result: SilverBeaker
-  completetime: 2
-  materials:
-    Silver: 25
