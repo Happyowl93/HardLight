@@ -212,7 +212,7 @@
     - Mining
     - AtmosTools
     - EngineeringWeapons
-    - Chemistry
+   #- Chemistry # Starlight
     - Janitor
     - Instruments
     - Equipment
@@ -220,11 +220,6 @@
     - StarlightScienceWeapons
   - type: EmagLatheRecipes
     emagDynamicPacks:
-    - StarlightSurgeryDynamic
-    - StarlightCyberlimbDynamic
-    - StarlightCyberOrgansDynamic
-    - StarlightImplantDynamic
-    - StarlightBudgetCyberOrgansDynamic
     - StarlightSecurityAmmoDynamic
     - StarlightSecurityExplosives
     - StarlightSecurityEquipment

@@ -150,7 +150,7 @@
     Steel: 1500
     Plastic: 1000
     Silver: 500
-      
+
 - type: latheRecipe
   id: LeftFootCyber
   result: LeftFootCyber
@@ -752,3 +752,31 @@
   materials:
     Plastic: 200
   name: lathe-recipe-PatchPack-name
+
+- type: latheRecipe
+  id: GoldenJug
+  result: GoldenJug
+  completime: 2
+  materials:
+    Gold: 50
+
+- type: latheRecipe
+  id: SilverJug
+  result: SilverJug
+  completime: 2
+  materials:
+    Silver: 50
+
+- type: latheRecipe
+  id: GoldenBeaker
+  result: GoldenBeaker
+  completime: 2
+  materials:
+    Gold: 50
+
+- type: latheRecipe
+  id: SilverBeaker
+  result: SilverBeaker
+  completime: 2
+  materials:
+    Silver: 50
