@@ -10,7 +10,7 @@
     - /Audio/_Starlight/Machines/talk_phone7.ogg
 
 - type: ambientMusic
-  id: TheDark
+  id: NearTheDark
   sound:
     params:
       volume: -12
@@ -39,6 +39,7 @@
   interruptable: true
   rules: InNukiePlanetMap
   priority: 1
+
 
 - type: soundCollection
   id: AmbienceTheDark
