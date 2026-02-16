@@ -245,6 +245,10 @@
   - SkullBandana
   - RoboticistBlackCapFlipped
   - MaidHeadbandTactical
+  - Hairflower
+  - CatEars
+  - DogEars
+  - BunnyEars
 
 - type: loadoutGroup
   id: RoboticistGloves
