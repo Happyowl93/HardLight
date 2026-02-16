@@ -30852,5 +30852,14 @@ Entries:
   id: 331401
   time: '2026-02-16T07:25:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3314
+- author: CrazyPhantom
+  changes:
+  - message: Quaternary and Quinary Pipe layers for a total of 5 layers.
+    type: Add
+  - message: Makes pipe sprites thinner to make room.
+    type: Tweak
+  id: 299701
+  time: '2026-02-16T07:29:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2997
 Order: -1
 
