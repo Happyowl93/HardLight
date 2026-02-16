@@ -63,7 +63,7 @@ public sealed partial class BatteryAlertSystem : EntitySystem
         }
 
         // Alert levels from 0 to 10.
-        var chargePercent = (short)MathF.Round(_battery.GetChargeLevel(battery.Value.AsNullable()) * 10f);
+        var chargePercent = (short)MathF.Round(_battery.GetChargeLevel(battery) * 10f);
 
         // we make sure 0 only shows if they have absolutely no battery.
         // also account for floating point imprecision
