@@ -30837,5 +30837,13 @@ Entries:
   id: 321601
   time: '2026-02-16T07:17:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3216
+- author: wonderfulnewworld
+  changes:
+  - message: Lagomorphs now crit at 60 damage, and die at 180 damage. This is to encourage
+      the fight/flight mechanics that their two abilities push them towards.
+    type: Tweak
+  id: 320201
+  time: '2026-02-16T07:20:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3202
 Order: -1
 
