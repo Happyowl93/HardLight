@@ -30903,5 +30903,12 @@ Entries:
   id: 332301
   time: '2026-02-16T12:39:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3323
+- author: PubliclyExecutedPig
+  changes:
+  - message: Reporters on Sepultum are real
+    type: Tweak
+  id: 332201
+  time: '2026-02-16T13:05:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3322
 Order: -1
 
