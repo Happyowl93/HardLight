@@ -38,10 +38,8 @@
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Specific/Chemistry/goldenjug.rsi
-    state: golden
   - type: Item
     sprite: _Starlight/Objects/Specific/Chemistry/goldenjug.rsi
-    state: golden
   - type: PhysicalComposition
     materialComposition:
       Gold: 50
