@@ -24,7 +24,7 @@
   id: TSFMarineElite
   name: ghost-role-information-tsf-leader-name
   description: ghost-role-information-tsf-marine-desc
-  playTimeTracker: JobTSFMarineLeader
+  playTimeTracker: TSFMarineElite
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 72000 # 20h
