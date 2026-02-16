@@ -30888,5 +30888,12 @@ Entries:
   id: 332001
   time: '2026-02-16T09:40:53.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3320
+- author: Arkanic
+  changes:
+  - message: recent test failures
+    type: Fix
+  id: 330001
+  time: '2026-02-16T11:47:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3300
 Order: -1
 
