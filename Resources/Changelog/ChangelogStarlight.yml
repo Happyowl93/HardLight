@@ -30782,5 +30782,16 @@ Entries:
   id: 293201
   time: '2026-02-16T00:38:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2932
+- author: FeralCreature
+  changes:
+  - message: ChemMaster buffer can now hold up to 10000u of reagents.
+    type: Tweak
+  - message: Added the Rapid Plumbing Device (RPLD) to chemist lockers.
+    type: Add
+  - message: Bad reagent transfer logic inside ChemMaster.
+    type: Fix
+  id: 331501
+  time: '2026-02-16T05:28:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3315
 Order: -1
 
