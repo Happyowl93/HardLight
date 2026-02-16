@@ -30895,5 +30895,13 @@ Entries:
   id: 330001
   time: '2026-02-16T11:47:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3300
+- author: R3v3l4t1on
+  changes:
+  - message: Someone forgot to connect the forward thrusters to power... This is now
+      fixed.
+    type: Fix
+  id: 332301
+  time: '2026-02-16T12:39:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3323
 Order: -1
 
