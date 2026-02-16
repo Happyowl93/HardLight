@@ -756,27 +756,27 @@
 - type: latheRecipe
   id: GoldenJug
   result: GoldenJug
-  completime: 2
+  completetime: 2
   materials:
     Gold: 50
 
 - type: latheRecipe
   id: SilverJug
   result: SilverJug
-  completime: 2
+  completetime: 2
   materials:
     Silver: 50
 
 - type: latheRecipe
   id: GoldenBeaker
   result: GoldenBeaker
-  completime: 2
+  completetime: 2
   materials:
     Gold: 25
 
 - type: latheRecipe
   id: SilverBeaker
   result: SilverBeaker
-  completime: 2
+  completetime: 2
   materials:
     Silver: 25
