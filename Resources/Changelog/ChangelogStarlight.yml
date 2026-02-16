@@ -30869,5 +30869,17 @@ Entries:
   id: 331801
   time: '2026-02-16T08:56:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3318
+- author: FeralCreature
+  changes:
+  - message: The Plumbing SmartFridge has been renamed to the Plumbing Smart Dispenser
+      to fix a bug breaking the regular smart fridge and to distinguish them better.
+    type: Fix
+  - message: Plumbing tanks can now hold up to 2000u of reagents.
+    type: Tweak
+  - message: In-game plumbing machine names and descriptions are now cleaner.
+    type: Tweak
+  id: 332101
+  time: '2026-02-16T09:37:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3321
 Order: -1
 
