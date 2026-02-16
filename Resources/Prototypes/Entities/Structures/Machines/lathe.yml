@@ -220,6 +220,11 @@
     - StarlightScienceWeapons
   - type: EmagLatheRecipes
     emagDynamicPacks:
+    - StarlightSurgeryDynamic
+    - StarlightCyberlimbDynamic
+    - StarlightCyberOrgansDynamic
+    - StarlightImplantDynamic
+    - StarlightBudgetCyberOrgansDynamic
     - StarlightSecurityAmmoDynamic
     - StarlightSecurityExplosives
     - StarlightSecurityEquipment
