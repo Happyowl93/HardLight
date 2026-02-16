@@ -30932,5 +30932,14 @@ Entries:
   id: 329101
   time: '2026-02-16T14:49:53.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3291
+- author: Conflee
+  changes:
+  - message: Reduced the height of the new canister sprites so they are only slightly
+      taller than a full tile. Should reduce clipping issues and look more fitting
+      ingame.
+    type: Tweak
+  id: 332801
+  time: '2026-02-16T17:40:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3328
 Order: -1
 
