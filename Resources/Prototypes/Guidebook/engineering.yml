@@ -6,7 +6,7 @@
   - Construction
   - Power
   - Atmospherics
-  - Plumbing
+  - Plumbing # Starlight
   - ShuttleCraft
   - Networking
 
@@ -367,23 +367,3 @@
   id: SolarPanels
   name: guide-entry-solarpanels
   text: "/ServerInfo/Guidebook/Engineering/SolarPanels.xml"
-
-# Starlight - Plumbing
-- type: guideEntry
-  id: Plumbing
-  name: guide-entry-plumbing
-  text: "/ServerInfo/Guidebook/Engineering/Plumbing.xml"
-  children:
-  - PlumbingFlow
-  - PlumbingMachines
-
-- type: guideEntry
-  id: PlumbingFlow
-  name: guide-entry-plumbingflow
-  text: "/ServerInfo/Guidebook/Engineering/PlumbingFlow.xml"
-
-- type: guideEntry
-  id: PlumbingMachines
-  name: guide-entry-plumbingmachines
-  text: "/ServerInfo/Guidebook/Engineering/PlumbingMachines.xml"
-
