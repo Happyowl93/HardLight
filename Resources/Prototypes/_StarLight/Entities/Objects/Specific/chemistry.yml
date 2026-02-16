@@ -51,7 +51,7 @@
 - type: entity
   name: silver jug
   parent: Jug
-  description: Used to contain an extreme amount of chemicals or solutions.
+  description: Used to contain a ginormous amount of chemicals or solutions.
   id: SilverJug
   components:
   - type: Sprite
