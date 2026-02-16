@@ -30793,5 +30793,17 @@ Entries:
   id: 331501
   time: '2026-02-16T05:28:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3315
+- author: walksanatora
+  changes:
+  - message: Felinoids can now be fried straight into the bucket.
+    type: Tweak
+  - message: If you can hold it can be fried.
+    type: Tweak
+  - message: Making a burned mess by frying says what item it USED to be before you
+      fried it.
+    type: Add
+  id: 331101
+  time: '2026-02-16T07:10:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3311
 Order: -1
 
