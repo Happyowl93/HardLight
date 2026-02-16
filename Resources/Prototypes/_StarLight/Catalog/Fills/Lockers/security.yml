@@ -120,14 +120,6 @@
           amount: 2
         - id: PlushieMorgana
         - id: PlushieKiller
-        - id: BoxSyringe
-          amount: 2
-        - id: BoxJug
-          amount: 2
-        - id: BoxBeakerSmall
-          amount: 2
-        - id: BoxBeakerLarge
-          amount: 2
 
 
 - type: entity
@@ -182,7 +174,7 @@
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeHeavyWeapons # To save remapping
-  name: DMR safe
+  name: DMR safe 
   description: Contains a set of L10 DMRs
   components:
   - type: EntityTableContainerFill
