@@ -4,14 +4,14 @@ using Robust.Shared.GameStates;
 namespace Content.Shared._Starlight.Plumbing.Components;
 
 /// <summary>
-/// A plumbing-connected smart fridge that stores reagents pulled from the network
+/// A plumbing-connected smart dispenser that stores reagents pulled from the network
 /// and fills labeled jugs on interaction.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class PlumbingSmartFridgeComponent : Component
+public sealed partial class PlumbingSmartDispenserComponent : Component
 {
     /// <summary>
-    /// The solution container name for the fridge's reagent storage.
+    /// The solution container name for the dispenser's reagent storage.
     /// </summary>
     [DataField]
     public string SolutionName = "fridge";

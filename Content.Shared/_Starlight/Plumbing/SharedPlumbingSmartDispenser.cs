@@ -5,23 +5,23 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._Starlight.Plumbing;
 
 [Serializable, NetSerializable]
-public enum PlumbingSmartFridgeUiKey : byte
+public enum PlumbingSmartDispenserUiKey : byte
 {
     Key,
 }
 
 /// <summary>
-/// A single reagent entry for the plumbing smart fridge UI.
+/// A single reagent entry for the plumbing smart dispenser UI.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class PlumbingSmartFridgeReagentEntry
+public sealed class PlumbingSmartDispenserReagentEntry
 {
     public string ReagentId;
     public string LocalizedName;
     public FixedPoint2 Quantity;
     public Color Color;
 
-    public PlumbingSmartFridgeReagentEntry(string reagentId, string localizedName, FixedPoint2 quantity, Color color)
+    public PlumbingSmartDispenserReagentEntry(string reagentId, string localizedName, FixedPoint2 quantity, Color color)
     {
         ReagentId = reagentId;
         LocalizedName = localizedName;
@@ -34,12 +34,12 @@ public sealed class PlumbingSmartFridgeReagentEntry
 /// BUI state sent to the client containing the current reagent inventory.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class PlumbingSmartFridgeBoundUserInterfaceState : BoundUserInterfaceState
+public sealed class PlumbingSmartDispenserBuiState : BoundUserInterfaceState
 {
-    public List<PlumbingSmartFridgeReagentEntry> Entries;
+    public List<PlumbingSmartDispenserReagentEntry> Entries;
     public float MaxPerReagent;
 
-    public PlumbingSmartFridgeBoundUserInterfaceState(List<PlumbingSmartFridgeReagentEntry> entries, float maxPerReagent)
+    public PlumbingSmartDispenserBuiState(List<PlumbingSmartDispenserReagentEntry> entries, float maxPerReagent)
     {
         Entries = entries;
         MaxPerReagent = maxPerReagent;
