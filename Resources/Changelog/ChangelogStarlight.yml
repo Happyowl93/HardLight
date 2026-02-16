@@ -30805,5 +30805,12 @@ Entries:
   id: 331101
   time: '2026-02-16T07:10:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3311
+- author: Tess the Evil
+  changes:
+  - message: Changed heat damage from 0.05 to 1.00.
+    type: Tweak
+  id: 328801
+  time: '2026-02-16T07:13:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3288
 Order: -1
 
