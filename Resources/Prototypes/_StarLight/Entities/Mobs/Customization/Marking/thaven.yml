@@ -1487,3 +1487,833 @@
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/thaven_hair.rsi
     state: wisp
+
+# Chest
+
+- type: marking
+  id: BodyhairThaven
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/chest.rsi
+    state: hair
+
+- type: marking
+  id: Gills
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/chest.rsi
+    state: gills
+
+- type: marking
+  id: ThavenAbs
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  followSkinColor: true
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/chest.rsi
+    state: muscular
+
+- type: marking
+  id: ThavenBiteMark
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/chest.rsi
+    state: bitemark
+
+- type: marking
+  id: ThavenBodyStripes
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/chest.rsi
+    state: stripes
+
+- type: marking
+  id: ThavenChestScales
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/chest.rsi
+    state: scales
+
+- type: marking
+  id: ThavenChestTattoo1
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/chest.rsi
+    state: tat1
+
+- type: marking
+  id: ThavenSpinechill
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/chest.rsi
+    state: spinechill
+  shader: unshaded
+
+- type: marking
+  id: ThavenSpines
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/chest.rsi
+    state: spines
+  shader: unshaded
+
+- type: marking
+  id: ThavenTattooWave
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/chest.rsi
+    state: tattoowave
+
+- type: marking
+  id: ThavenTattooVines
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/chest.rsi
+    state: tattoovines
+
+- type: marking
+  id: ThavenTiger
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/chest.rsi
+    state: tiger1
+  - sprite: _Starlight/Mobs/Customization/Thaven/chest.rsi
+    state: tiger2
+
+
+# Head
+
+- type: marking
+  id: ThavenHeadCap
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/head.rsi
+    state: cap1
+  - sprite: _Starlight/Mobs/Customization/Thaven/head.rsi
+    state: cap2
+
+- type: marking
+  id: ThavenHeadScales
+  bodyPart: Head
+  markingCategory: HeadTop
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/head.rsi
+    state: scales
+
+- type: marking
+  id: ThavenHeadStripes
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/head.rsi
+    state: stripes
+
+- type: marking
+  id: ThavenShadow
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Thaven ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#000000"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/head.rsi
+    state: shadowthaven
+
+# Snout
+
+# Eyes
+
+- type: marking
+  id: SharkminnowEyeliner
+  bodyPart: Eyes
+  markingCategory: HeadTop
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/eyes.rsi
+    state: sharkminnoweyeliner
+
+- type: marking
+  id: ThavenEyesSharkminnow
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/eyes.rsi
+    state: sharkminnow
+
+- type: marking
+  id: ThavenEyesSharkminnowGlowing
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/eyes.rsi
+    state: sharkminnow
+  shader: unshaded
+
+- type: marking
+  id: ThavenLEyeGlow
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/eyes.rsi
+    state: glowleft
+  shader: unshaded
+
+- type: marking
+  id: ThavenREyeGlow
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/eyes.rsi
+    state: glowright
+  shader: unshaded
+
+# RArm
+
+- type: marking
+  id: ThavenRArmScales
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/rarm.rsi
+    state: scales
+
+- type: marking
+  id: ThavenRArmTattoo1
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/rarm.rsi
+    state: tat1
+
+- type: marking
+  id: ThavenTigerRArm
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/rarm.rsi
+    state: tiger
+
+# LArm
+
+- type: marking
+  id: ThavenLArmScales
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/larm.rsi
+    state: scales
+
+- type: marking
+  id: ThavenLArmTattoo1
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/larm.rsi
+    state: tat1
+
+- type: marking
+  id: ThavenTigerLArm
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/larm.rsi
+    state: tiger
+
+# RLeg
+
+- type: marking
+  id: ThavenRLegScales
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/rleg.rsi
+    state: scales
+
+# LLeg
+
+- type: marking
+  id: ThavenLLegScales
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/lleg.rsi
+    state: scales
+
+# UndergarmentBottom
+
+- type: marking
+  id: UnderwearBriefsT
+  bodyPart: UndergarmentBottom
+  markingCategory: UndergarmentBottom
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/undergarmentbottom.rsi
+    state: briefs
+
+- type: marking
+  id: UnderwearDefaultT
+  bodyPart: UndergarmentBottom
+  markingCategory: UndergarmentBottom
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/undergarmentbottom.rsi
+    state: boxers
+
+- type: marking
+  id: UnderwearLowridersT
+  bodyPart: UndergarmentBottom
+  markingCategory: UndergarmentBottom
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/undergarmentbottom.rsi
+    state: lowriders
+
+- type: marking
+  id: UnderwearSatinT
+  bodyPart: UndergarmentBottom
+  markingCategory: UndergarmentBottom
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/undergarmentbottom.rsi
+    state: satin
+
+- type: marking
+  id: UnderwearTangaT
+  bodyPart: UndergarmentBottom
+  markingCategory: UndergarmentBottom
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/undergarmentbottom.rsi
+    state: tanga
+
+# UndergarmentTop
+
+- type: marking
+  id: UndergarmentTopBinderT
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type: null
+      fallbackColor: '#FFFFFF'
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/undergarmenttop.rsi
+    state: binder
+
+- type: marking
+  id: UndershirtBraClassicT
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/undergarmenttop.rsi
+    state: classic
+
+- type: marking
+  id: UndershirtBraSportsT
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/undergarmenttop.rsi
+    state: sports
+
+- type: marking
+  id: UndershirtBraStraplessT
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/undergarmenttop.rsi
+    state: strapless
+
+- type: marking
+  id: UndershirtDefaultT
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/undergarmenttop.rsi
+    state: undershirt
+
+- type: marking
+  id: UndershirtGrossSleevelessT
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/undergarmenttop.rsi
+    state: grosssleeveless
+
+- type: marking
+  id: UndershirtNanotrasenT
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/undergarmenttop.rsi
+    state: nanotrasen
+
+- type: marking
+  id: UndershirtRolledT
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/undergarmenttop.rsi
+    state: rolledundershirt
+
+# HeadSide
+
+- type: marking
+  id: ThavenEars1
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [ Thaven ]
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/headside.rsi
+    state: ears1
+
+- type: marking
+  id: ThavenEars2
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [ Thaven ]
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/headside.rsi
+    state: ears2
+
+- type: marking
+  id: ThavenEars3
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [ Thaven ]
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/headside.rsi
+    state: ears3
+
+- type: marking
+  id: ThavenEars4
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [ Thaven ]
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/headside.rsi
+    state: ears4
+
+- type: marking
+  id: ThavenEarsBigFins
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/headside.rsi
+    state: bigfins
+  - sprite: _Starlight/Mobs/Customization/Thaven/headside.rsi
+    state: bigfins2
+
+- type: marking
+  id: ThavenEarsTwinFins
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [ Thaven ]
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/headside.rsi
+    state: twinfin
+
+- type: marking
+  id: ThavenFishEars
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [ Thaven ]
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/headside.rsi
+    state: fishears
+
+- type: marking
+  id: ThavenNoEars
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/headside.rsi
+    state: noears
+
+# HeadTop
+
+- type: marking
+  id: ThavenHibiscus
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/headtop.rsi
+    state: hibiscus1
+  - sprite: _Starlight/Mobs/Customization/Thaven/headtop.rsi
+    state: hibiscus2
+
+- type: marking
+  id: ThavenPiercings
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/headtop.rsi
+    state: piercings
+
+- type: marking
+  id: ThavenPiercings2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/headtop.rsi
+    state: piercings2
+
+# Tail
+
+- type: marking
+  id: ThavenBasicTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  layering:
+    basic_front: TailBehindBackpack
+    basic_behind: TailBehind
+  colorLinks:
+    basic_behind: basic_front
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: basic_front
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: basic_behind
+
+- type: marking
+  id: ThavenBigTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  layering:
+    big1_front: TailBehindBackpack
+    big1_behind: TailBehind
+    big2_front: TailBehindBackpack
+    big2_behind: TailBehind
+  colorLinks:
+    big1_behind: big1_front
+    big2_behind: big2_front
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: big1_behind
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: big1_front
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: big2_behind
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: big2_front
+
+- type: marking
+  id: ThavenTadpoleTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  layering:
+    tadpole1_front: TailBehindBackpack
+    tadpole1_behind: TailBehind
+    tadpole2_front: TailBehindBackpack
+    tadpole2_behind: TailBehind
+  colorLinks:
+    tadpole1_behind: tadpole1_front
+    tadpole2_behind: tadpole2_front
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: tadpole1_behind
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: tadpole1_front
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: tadpole2_behind
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: tadpole2_front
+
+- type: marking
+  id: ThavenTailEel
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  layering:
+    eel1_front: TailOversuit
+    eel1_behind: TailBehind
+    eel2_front: TailOversuit
+    eel2_behind: TailBehind
+  followSkinColor: true
+  colorLinks:
+    eel1_behind: eel1_front
+    eel2_behind: eel2_front
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: eel1_behind
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: eel1_front
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: eel2_behind
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: eel2_front
+
+- type: marking
+  id: ThavenTailEelOverlay
+  bodyPart: Tail
+  markingCategory: Overlay
+  speciesRestriction: [ Thaven ]
+  layering:
+    eelghost_front: TailUnderlay
+    eelghost_behind: TailUnderlay
+    eel3_front: TailOversuit
+    eel3_behind: TailBehind
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  colorLinks:
+    eelghost_behind: eelghost_front
+    eel3_behind: eel3_front
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: eelghost_behind
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: eelghost_front
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: eel3_behind
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: eel3_front
+  shader: unshaded
+
+- type: marking
+  id: ThavenTailNurse
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  layering:
+    nurse1_front: TailBehindBackpack
+    nurse1_behind: TailBehind
+    nurse2_front: TailBehindBackpack
+    nurse2_behind: TailBehind
+  followSkinColor: true
+  colorLinks:
+    nurse1_behind: nurse1_front
+    nurse2_behind: nurse2_front
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: nurse1_behind
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: nurse1_front
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: nurse2_behind
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: nurse2_front
+
+- type: marking
+  id: ThavenTailStub
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  layering:
+    stub1_front: TailBehindBackpack
+    stub1_behind: TailBehind
+    stub2_front: TailBehindBackpack
+    stub2_behind: TailBehind
+  followSkinColor: true
+  colorLinks:
+    stub1_behind: stub1_front
+    stub2_behind: stub2_front
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: stub1_behind
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: stub1_front
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: stub2_behind
+  - sprite: _Starlight/Mobs/Customization/Thaven/taillayers.rsi
+    state: stub2_front
+
+- type: marking
+  id: ThavenTailThresher
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  followSkinColor: true
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Thaven/tail.rsi
+    state: thresher1
+  - sprite: _Starlight/Mobs/Customization/Thaven/tail.rsi
+    state: thresher2
