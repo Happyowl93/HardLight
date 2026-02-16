@@ -31,7 +31,7 @@ public sealed class MindControlSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<MindControlImplantComponent, ImplantImplantedEvent>(OnImplantImplanted);
-        SubscribeLocalEvent<MindControlImplantComponent, ComponentShutdown>(OnMindControlShutdown);
+        SubscribeLocalEvent<MindControlImplantComponent, ImplantRemovedEvent>(OnImplantRemoved);
     }
 
     private void OnImplantImplanted(EntityUid uid, MindControlImplantComponent component, ImplantImplantedEvent args)
@@ -45,13 +45,13 @@ public sealed class MindControlSystem : EntitySystem
         
     }
     
-    private void OnMindControlShutdown(EntityUid uid, MindControlImplantComponent component, ComponentShutdown args)
+    private void OnImplantRemoved(EntityUid uid, MindControlImplantComponent component, ImplantRemovedEvent args)
     {
-        if (TerminatingOrDeleted(uid))
+        if (TerminatingOrDeleted(args.Implanted))
             return;
         
-        RemoveTraitorObjectives(uid);
-        _status.TryAddStatusEffectDuration(uid, "StatusEffectForcedSleeping", TimeSpan.FromSeconds(2));
+        RemoveTraitorObjectives(args.Implanted);
+        _status.TryAddStatusEffectDuration(args.Implanted, "StatusEffectForcedSleeping", TimeSpan.FromSeconds(2));
     }
     
     private void RemoveTraitorObjectives(EntityUid uid)

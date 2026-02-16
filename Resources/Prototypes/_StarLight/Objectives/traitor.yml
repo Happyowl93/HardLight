@@ -661,7 +661,7 @@
   parent: [BaseObjective]
   id: MindControlledFollowOrders
   name: Follow orders.
-  description: Follow orders from Syndicate agents while completing Your other objectives. Use Your best judgement when alone.
+  description: Follow orders from Syndicate agents while completing your other objectives. Use your best judgement when alone.
   components:
     - type: Objective
       issuer: objective-issuer-syndicate
