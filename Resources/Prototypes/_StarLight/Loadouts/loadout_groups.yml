@@ -20,7 +20,7 @@
   minLimit: 0
   defaultSelected: 1
   loadouts:
-  - InsulsCombat
+  - InsulsCombatNoLock
   - InsulsRegular
   - InsulsMaid
   - InsulsMercenary
@@ -380,7 +380,8 @@
 - type: loadoutGroup
   id: BlueShieldOuterclothing
   name: loadout-group-blueshield-outerclothing
-  minLimit: 1
+  minLimit: 0
+  maxLimit: 1
   defaultSelected: 1
   loadouts:
   - BlueShieldVest
