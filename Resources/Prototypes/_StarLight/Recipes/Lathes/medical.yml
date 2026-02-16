@@ -772,11 +772,11 @@
   result: GoldenBeaker
   completime: 2
   materials:
-    Gold: 50
+    Gold: 25
 
 - type: latheRecipe
   id: SilverBeaker
   result: SilverBeaker
   completime: 2
   materials:
-    Silver: 50
+    Silver: 25
