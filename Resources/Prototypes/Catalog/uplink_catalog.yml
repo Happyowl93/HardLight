@@ -1048,7 +1048,7 @@
     Telecrystal: 5
   categories:
   - UplinkDisruption
-
+    
 - type: listing
   id: UplinkRadioJammer
   name: uplink-radio-jammer-name
@@ -1510,6 +1510,25 @@
   cost:
     Telecrystal: 8
   categories:
+    - UplinkImplants
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
+
+- type: listing
+  id: UplinkMindcontrolImplant
+  name: uplink-mind-control-implant-name
+  description: uplink-mind-control-implant-desc
+  productEntity: MindControlImplanter
+  discountCategory: usual discounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 7
+  categories:
+    - UplinkDisruption
     - UplinkImplants
   conditions:
     - !type:StoreWhitelistCondition
