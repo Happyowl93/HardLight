@@ -45,7 +45,7 @@
       Gold: 50
   - type: SolutionContainerManager
     solutions:
-      beaker:
+      drink:
         maxVol: 400
 
 - type: entity
@@ -63,8 +63,8 @@
       Gold: 50
   - type: SolutionContainerManager
     solutions:
-      beaker:
-        maxVol: 600
+      drink:
+        maxVol: 300
 
 - type: entity
   id: VialCase
