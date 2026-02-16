@@ -1572,7 +1572,6 @@
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/chest.rsi
     state: spinechill
-  shader: unshaded
 
 - type: marking
   id: ThavenSpines
@@ -1582,7 +1581,6 @@
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/chest.rsi
     state: spines
-  shader: unshaded
 
 - type: marking
   id: ThavenTattooWave
@@ -1700,7 +1698,6 @@
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/eyes.rsi
     state: sharkminnow
-  shader: unshaded
 
 - type: marking
   id: ThavenLEyeGlow
@@ -1715,7 +1712,6 @@
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/eyes.rsi
     state: glowleft
-  shader: unshaded
 
 - type: marking
   id: ThavenREyeGlow
@@ -1730,7 +1726,6 @@
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/eyes.rsi
     state: glowright
-  shader: unshaded
 
 # RArm
 
@@ -2148,11 +2143,6 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [ Thaven ]
-  layering:
-    basic_front: TailBehindBackpack
-    basic_behind: TailBehind
-  colorLinks:
-    basic_behind: basic_front
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: basic_front
@@ -2164,14 +2154,6 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [ Thaven ]
-  layering:
-    big1_front: TailBehindBackpack
-    big1_behind: TailBehind
-    big2_front: TailBehindBackpack
-    big2_behind: TailBehind
-  colorLinks:
-    big1_behind: big1_front
-    big2_behind: big2_front
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: big1_behind
@@ -2187,14 +2169,6 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [ Thaven ]
-  layering:
-    tadpole1_front: TailBehindBackpack
-    tadpole1_behind: TailBehind
-    tadpole2_front: TailBehindBackpack
-    tadpole2_behind: TailBehind
-  colorLinks:
-    tadpole1_behind: tadpole1_front
-    tadpole2_behind: tadpole2_front
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: tadpole1_behind
@@ -2210,15 +2184,7 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [ Thaven ]
-  layering:
-    eel1_front: TailOversuit
-    eel1_behind: TailBehind
-    eel2_front: TailOversuit
-    eel2_behind: TailBehind
   followSkinColor: true
-  colorLinks:
-    eel1_behind: eel1_front
-    eel2_behind: eel2_front
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: eel1_behind
@@ -2234,19 +2200,11 @@
   bodyPart: Tail
   markingCategory: Overlay
   speciesRestriction: [ Thaven ]
-  layering:
-    eelghost_front: TailUnderlay
-    eelghost_behind: TailUnderlay
-    eel3_front: TailOversuit
-    eel3_behind: TailBehind
   coloring:
     default:
       type:
         !type:EyeColoring
         negative: false
-  colorLinks:
-    eelghost_behind: eelghost_front
-    eel3_behind: eel3_front
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: eelghost_behind
@@ -2256,22 +2214,13 @@
     state: eel3_behind
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: eel3_front
-  shader: unshaded
 
 - type: marking
   id: ThavenTailNurse
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [ Thaven ]
-  layering:
-    nurse1_front: TailBehindBackpack
-    nurse1_behind: TailBehind
-    nurse2_front: TailBehindBackpack
-    nurse2_behind: TailBehind
   followSkinColor: true
-  colorLinks:
-    nurse1_behind: nurse1_front
-    nurse2_behind: nurse2_front
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: nurse1_behind
@@ -2287,15 +2236,7 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [ Thaven ]
-  layering:
-    stub1_front: TailBehindBackpack
-    stub1_behind: TailBehind
-    stub2_front: TailBehindBackpack
-    stub2_behind: TailBehind
   followSkinColor: true
-  colorLinks:
-    stub1_behind: stub1_front
-    stub2_behind: stub2_front
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: stub1_behind
