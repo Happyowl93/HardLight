@@ -715,7 +715,7 @@
 - type: entity
   id: BorgModuleAdvancedLoading
   parent: [ BaseBorgModuleSupply, BaseProviderBorgModule ]
-  name: loading cyborg module
+  name: advanced loading cyborg module
   description: Advanced module for cargo cyborgs, with specialised hydraulic clamps
   components:
   - type: Sprite
