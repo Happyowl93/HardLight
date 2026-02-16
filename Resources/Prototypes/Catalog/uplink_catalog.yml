@@ -1518,25 +1518,6 @@
           - NukeOpsUplink
 
 - type: listing
-  id: UplinkMindcontrolImplant
-  name: uplink-mind-control-implant-name
-  description: uplink-mind-control-implant-desc
-  productEntity: MindControlImplanter
-  discountCategory: usual discounts
-  discountDownTo:
-    Telecrystal: 3
-  cost:
-    Telecrystal: 7
-  categories:
-    - UplinkDisruption
-    - UplinkImplants
-  conditions:
-    - !type:StoreWhitelistCondition
-      blacklist:
-        tags:
-          - NukeOpsUplink
-
-- type: listing
   id: UplinkFreedomImplanter
   name: uplink-freedom-implanter-name
   description: uplink-freedom-implanter-desc

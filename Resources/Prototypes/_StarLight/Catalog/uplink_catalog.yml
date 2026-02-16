@@ -371,7 +371,26 @@
         - ResearchDirector
         - Roboticist # If you're giving it to the rest of the department...
         - Captain
-
+        
+- type: listing
+  id: UplinkMindcontrolImplant
+  name: uplink-mind-control-implant-name
+  description: uplink-mind-control-implant-desc
+  productEntity: MindControlImplanter
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 7
+  categories:
+    - UplinkDisruption
+    - UplinkImplants
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
+          - 
 - type: listing
   id: UplinkGearAcidifierImplanter
   name: uplink-gear-acidifier-implant-name
