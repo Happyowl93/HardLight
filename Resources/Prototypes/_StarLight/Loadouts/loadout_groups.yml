@@ -41,6 +41,7 @@
   minLimit: 0
   loadouts:
   - RedRegaliaGloves
+  - ClothWrapGlove
 
 - type: loadoutGroup
   id: HeadGeneric
@@ -50,7 +51,6 @@
   - MaidHeadbandTactical
   - Hairflower
   - LilyFlower
-  - RoadCone
 
 - type: loadoutGroup
   id: Scarves
@@ -201,7 +201,6 @@
   - FeatheredHat
   - Hairflower
   - LilyFlower
-  - RoadCone # starlight
 
 - type: loadoutGroup
   id: AssistantBackpack
@@ -238,7 +237,6 @@
   - MaidHeadbandTactical
   - Hairflower
   - LilyFlower
-  - RoadCone
 
 - type: loadoutGroup
   id: RoboticistGloves
@@ -320,7 +318,6 @@
   - MagistrateHeadPwig
   - Hairflower
   - LilyFlower
-  - RoadCone
 
 - type: loadoutGroup
   id: MagistrateEyewear
@@ -640,6 +637,7 @@
     - ChemistFisherCap
     - MaidHeadbandTactical
     - Hairflower
+    - LilyFlower
 
 - type: loadoutGroup
   id: ChemistBag
@@ -744,7 +742,6 @@
   - MaidHeadbandTactical
   - Hairflower
   - LilyFlower
-  - RoadCone
 
 - type: loadoutGroup
   id: DutyOfficerJumpsuit
@@ -829,7 +826,6 @@
   - BeretNCTBlack
   - Hairflower
   - LilyFlower
-  - RoadCone
 
 - type: loadoutGroup
   id: NanotrasenCareerTrainerShoes
