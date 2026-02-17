@@ -42,7 +42,7 @@
           whitelist:
             tags:
               - PowerCell
-              - PowerCellMedium
+              - PowerCellSmall
     - type: PowerCellDraw
     - type: ActivatableUIRequiresPowerCell
     - type: NewsWriter
