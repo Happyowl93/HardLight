@@ -74,10 +74,7 @@ public sealed class MindControlSystem : EntitySystem
     private void AssignTraitorObjectives(EntityUid implanted, MindControlImplantComponent component)
     {
         if (!_mind.TryGetMind(implanted, out var mindId, out var mind))
-        {
-            //_popup.PopupClient("BAD!!!!!! BUG!!!!!", implanted, PopupType.LargeCaution);
             return;
-        }
         var objectiveEscape = _objectives.TryCreateObjective(mindId, mind, EscapeShuttleObjectiveId);
         var objectiveProtect = _objectives.TryCreateObjective(mindId, mind, ProtectImplantObjectiveId);
         var objectiveOrders =  _objectives.TryCreateObjective(mindId, mind, FollowOrdersObjectiveId);
