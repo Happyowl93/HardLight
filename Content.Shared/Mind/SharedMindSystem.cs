@@ -388,6 +388,17 @@ public abstract partial class SharedMindSystem : EntitySystem
             return false;
             
         var title = Name(objective);
+     #region Starlight
+    /// <summary>
+    /// Removes an objective from this mind.
+    /// </summary>
+    /// <returns>Returns true if the removal succeeded.</returns>
+    public bool TryRemoveObjective(EntityUid mindId, MindComponent mind, EntityUid objective)
+    {
+        if (!mind.Objectives.Contains(objective))
+            return false;
+            
+        var title = Name(objective);
         _adminLogger.Add(LogType.Mind, LogImpact.Low, $"Objective {objective} ({title}) removed from the mind of {MindOwnerLoggingString(mind)}");
         mind.Objectives.Remove(objective);
 
@@ -403,6 +414,7 @@ public abstract partial class SharedMindSystem : EntitySystem
         Del(objective);
         return true;
     }
+    #endregion
 
     
     
