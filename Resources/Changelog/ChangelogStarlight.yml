@@ -30984,5 +30984,12 @@ Entries:
   id: 334201
   time: '2026-02-17T03:06:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3342
+- author: walksanator
+  changes:
+  - message: character slot autocomplete for "characterforceprototype"
+    type: Add
+  id: 334401
+  time: '2026-02-17T07:04:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3344
 Order: -1
 
