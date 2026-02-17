@@ -3,10 +3,8 @@ using Content.Server.Power.Events;
 using Content.Shared.PowerCell;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.CombatMode;
 using Content.Shared.Damage.Events;
 using Content.Shared.Examine;
-using Content.Shared.Interaction;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Popups;
@@ -14,12 +12,17 @@ using Content.Shared.Power;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Stunnable;
+
+#region Starlight
+using Content.Shared.CombatMode;
+using Content.Shared.Interaction;
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using Robust.Shared.Timing;
+#endregion
 
 namespace Content.Server.Stunnable.Systems
 {
@@ -27,13 +30,15 @@ namespace Content.Server.Stunnable.Systems
     {
         [Dependency] private readonly RiggableSystem _riggableSystem = default!;
         [Dependency] private readonly SharedPopupSystem _popup = default!;
-        [Dependency] private readonly PowerCellSystem _powerCell = default!; // 🌟Starlight🌟
         [Dependency] private readonly SharedBatterySystem _battery = default!;
         [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
+        #region Starlight
+        [Dependency] private readonly PowerCellSystem _powerCell = default!;
         [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly TagSystem _tagSystem = default!;
+        #endregion
 
         public override void Initialize()
         {
