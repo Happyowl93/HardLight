@@ -1,13 +1,14 @@
-﻿namespace Content.Shared._Starlight.Implants.Components
+﻿namespace Content.Shared._Starlight.Implants.Components;
+﻿
+/// <summary>
+/// Component for Mind Control implants.
+/// </summary>
+[RegisterComponent]
+public sealed partial class MindControlImplantComponent : Component
 {
     /// <summary>
-    /// Component for Mind Control implants.
+    /// Implants owner
     /// </summary>
-    [RegisterComponent]
-    public sealed partial class MindControlImplantComponent : Component
-    {
-        //tracks the implants owner
-        [DataField(required: false)] public EntityUid Master; 
-
-    }
+    [DataField] 
+    public EntityUid Master; 
 }
