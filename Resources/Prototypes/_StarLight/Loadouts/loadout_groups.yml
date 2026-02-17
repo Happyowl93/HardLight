@@ -818,7 +818,6 @@
   minLimit: 0
   name: loadout-group-brighteye-gloves
   loadouts:
-    - BrighteyeClothWrapGlove
     - ClothWrapGlove
 
 - type: loadoutGroup
