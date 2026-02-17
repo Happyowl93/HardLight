@@ -31027,5 +31027,18 @@ Entries:
   id: 331201
   time: '2026-02-17T07:39:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3312
+- author: Fractalflower
+  changes:
+  - message: Combat gloves for HoS/BSO/Ward no longer need 60h Security playtime.
+    type: Fix
+  - message: Roboticists have more head loadout options now.
+    type: Add
+  - message: Road cone to head loadouts
+    type: Add
+  - message: Lily flower head item. No, it's not myself.
+    type: Add
+  id: 333001
+  time: '2026-02-17T07:57:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3330
 Order: -1
 
