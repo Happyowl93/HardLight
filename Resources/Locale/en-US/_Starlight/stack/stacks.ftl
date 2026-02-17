@@ -8,6 +8,9 @@ stack-terracotta-tile = terracotta tile
 stack-terracotta-diagonal-tile = diagonal terracotta tile
 stack-terracotta-small-tile = small terracotta tile
 stack-labeller-refill-paper = labeller refill paper
+stack-dark-wood-floor = dark wood floor
+stack-dark-wood-pattern-floor = dark wood pattern floor
+stack-dark-large-wood-floor = large dark wood floor
 
 stack-bluespacecrystal = {$amount ->
     [1] bluespace

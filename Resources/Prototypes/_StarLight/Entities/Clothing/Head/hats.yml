@@ -393,6 +393,10 @@
     sprite: _Starlight/Clothing/Head/Hats/CC_beret.rsi
   - type: Clothing
     sprite: _Starlight/Clothing/Head/Hats/CC_beret.rsi
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - ClothMade
 
 - type: entity
   parent: [ClothingHeadBase, BaseCentcommContraband]
@@ -487,6 +491,28 @@
       tags:
         - PetWearable
         - CorgiWearable
+
+- type: entity
+  parent: [ClothingHeadBase, BaseTSFContraband]
+  id: ClothingHeadHatBeretTSF
+  name: TSF beret
+  description: A beret worn by marines of the Trans-Solar Federation.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Head/Hats/beret_tsf.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Head/Hats/beret_tsf.rsi
+
+- type: entity
+  parent: [ClothingHeadBase, BaseTSFContraband]
+  id: ClothingHeadHatBeretTSFElite
+  name: MARSOC beret
+  description: A beret worn by junior officers of the Trans-Solar Federation's Marine Special Operations Command.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Head/Hats/beret_tsfelite.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Head/Hats/beret_tsfelite.rsi
 
 - type: entity
   parent: ClothingHeadBase

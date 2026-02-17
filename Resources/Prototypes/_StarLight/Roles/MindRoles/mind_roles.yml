@@ -8,6 +8,14 @@
 
 - type: entity
   parent: MindRoleGhostRoleNeutral
+  id: MindRoleGhostTSFAligned
+  name: Ghost Role (TSF Aligned)
+  components:
+    - type: MindRole
+      roleType: TSFAligned
+
+- type: entity
+  parent: MindRoleGhostRoleNeutral
   id: MindRoleGhostRolePAI
   name: Ghost Role (pAI Familiar)
   components:
@@ -65,6 +73,16 @@
     sortWeight: 0
     fallbackPlayTimeTracker: GhostSkeleton
 
+- type: entity
+  parent: MindRoleGhostRoleNeutral
+  id: MindRoleGhostRoleNeutralSkeleton
+  name: Ghost Role (Skeleton)
+  components:
+  - type: MindRole
+    roleType: Neutral
+    sortWeight: 0
+    fallbackPlayTimeTracker: GhostSkeleton    
+
 # Downstream antagonists
 
 - type: entity
@@ -119,3 +137,13 @@
     roleType: SoloAntagonist
     subtype: role-subtype-vampire
   - type: VampireRole
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleTerminator
+  name: Terminator Role
+  components:
+  - type: MindRole
+    antagPrototype: Terminator
+    subtype: role-subtype-terminator
+  - type: TerminatorRole
