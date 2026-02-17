@@ -393,7 +393,8 @@
 - type: loadoutGroup
   id: AssistantShoes
   name: loadout-group-assistant-shoes
-  minLimit: 0
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BlackShoes
   - BrownShoes
@@ -965,7 +966,8 @@
 - type: loadoutGroup
   id: QuartermasterShoes
   name: loadout-group-quartermaster-shoes
-  minLimit: 0
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BrownShoes
   - CargoWinterBoots
@@ -1030,7 +1032,8 @@
 - type: loadoutGroup
   id: CargoTechnicianShoes
   name: loadout-group-cargo-technician-shoes
-  minLimit: 0
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BlackShoes
   - YellowShoes # 🌟Starlight🌟
@@ -1138,7 +1141,8 @@
 - type: loadoutGroup
   id: ChiefEngineerShoes
   name: loadout-group-chief-engineer-shoes
-  minLimit: 0
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BrownShoes
   - WorkBoots # 🌟Starlight🌟
@@ -1213,7 +1217,8 @@
 - type: loadoutGroup
   id: StationEngineerShoes
   name: loadout-group-station-engineer-shoes
-  minLimit: 0
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - WhiteShoes # Starlight
   - WorkBoots
@@ -1263,7 +1268,8 @@
 - type: loadoutGroup
   id: AtmosphericTechnicianShoes
   name: loadout-group-atmospheric-technician-shoes
-  minLimit: 0
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - WhiteShoes
   - WorkBoots # 🌟Starlight🌟
@@ -1329,7 +1335,8 @@
 - type: loadoutGroup
   id: ResearchDirectorShoes
   name: loadout-group-research-director-shoes
-  minLimit: 0
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BrownShoes
   - WhiteShoes # 🌟Starlight🌟
@@ -1404,7 +1411,8 @@
 - type: loadoutGroup
   id: ScientistShoes
   name: loadout-group-scientist-shoes
-  minLimit: 0
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - WhiteShoes
   - BlackShoes
@@ -1822,7 +1830,8 @@
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes
   name: loadout-group-chief-medical-officer-shoes
-  minLimit: 0
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BrownShoes
   - WhiteShoes # 🌟Starlight🌟
@@ -1894,7 +1903,8 @@
 - type: loadoutGroup
   id: MedicalShoes
   name: loadout-group-medical-doctor-shoes
-  minLimit: 0
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - WhiteShoes
   - MedicalWinterBoots
@@ -2023,7 +2033,8 @@
 - type: loadoutGroup
   id: ParamedicShoes
   name: loadout-group-paramedic-shoes
-  minLimit: 0
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BlueShoes
   - WhiteShoes
