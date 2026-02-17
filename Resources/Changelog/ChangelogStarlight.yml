@@ -31058,5 +31058,12 @@ Entries:
   id: 326901
   time: '2026-02-17T08:14:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3269
+- author: mrjajkes, kirb
+  changes:
+  - message: Added Nuke music track specifically for lone Ops
+    type: Add
+  id: 333801
+  time: '2026-02-17T08:18:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3338
 Order: -1
 
