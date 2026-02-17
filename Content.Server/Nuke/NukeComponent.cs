@@ -89,7 +89,7 @@ namespace Content.Server.Nuke
         public SoundSpecifier ArmMusic = new SoundCollectionSpecifier("NukeMusic");
 
         [DataField("armMusicLone")]
-        public SoundSpecifier ArmMusicLone = new SoundCollectionSpecifier("NukeLoneOpMusic");
+        public SoundSpecifier ArmMusicLone = new SoundCollectionSpecifier("NukeLoneOpMusic"); // Starlight
 
         // These datafields here are duplicates of those in explosive component. But I'm hesitant to use explosive
         // component, just in case at some point, somehow, when grenade crafting added in someone manages to wire up a

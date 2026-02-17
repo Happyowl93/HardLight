@@ -2,7 +2,6 @@ using Content.Server.AlertLevel;
 using Content.Server.Audio;
 using Content.Server.Chat.Systems;
 using Content.Server.Explosion.EntitySystems;
-using Content.Server.GameTicking;
 using Content.Server.Pinpointer;
 using Content.Server.Popups;
 using Content.Server.Station.Systems;
@@ -26,6 +25,7 @@ using Robust.Shared.Timing;
 
 #region Starlight
 using Content.Server._Starlight.Lock;
+using Content.Server.GameTicking;
 #endregion Starlight
 
 namespace Content.Server.Nuke;
@@ -50,10 +50,12 @@ public sealed class NukeSystem : EntitySystem
     [Dependency] private readonly AppearanceSystem _appearance = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly GameTicker _gameTicker = default!;
 
-    [Dependency] private readonly DigitalLockSystem _digitalLock = default!; // Starlight-edit
-
+    #region Starlight
+    [Dependency] private readonly DigitalLockSystem _digitalLock = default!; 
+    [Dependency] private readonly GameTicker _gameTicker = default!; 
+    #endregion
+    
     /// <summary>
     ///     Used to calculate when the nuke song should start playing for maximum kino with the nuke sfx
     /// </summary>
@@ -512,7 +514,7 @@ public sealed class NukeSystem : EntitySystem
         var y = (int) pos.Y;
         var posText = $"({x}, {y})";
         
-        
+        // Starlight-start
         if (_gameTicker.IsGameRuleActive("Nukeops"))
         {
             // We are collapsing the randomness here, otherwise we would get separate random song picks for checking duration and when actually playing the song afterwards
@@ -523,6 +525,7 @@ public sealed class NukeSystem : EntitySystem
             //special music for loneops
             _selectedNukeSong = _audio.ResolveSound(component.ArmMusicLone);
         }
+        // Starlight-end
 
         // warn a crew
         var announcement = Loc.GetString("nuke-component-announcement-armed",
