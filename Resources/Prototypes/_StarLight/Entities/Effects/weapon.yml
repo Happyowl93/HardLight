@@ -37,3 +37,19 @@
     tags:
       - HideContextMenu
   - type: AnimationPlayer
+  
+- type: entity
+  id: ImpactSparksEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 1.2
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _Starlight/Effects/impact_sparks.rsi
+    state: effect
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: AnimationPlayer

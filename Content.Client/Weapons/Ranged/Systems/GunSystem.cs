@@ -30,7 +30,6 @@ using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
 #region Starlight
 using Content.Client.DisplacementMap;
 using Content.Shared._Starlight.Effects;
-using Content.Shared._Starlight.Weapon.Components;
 using Content.Shared.Mech.Components;
 using Content.Shared.Starlight.Utility;
 using Content.Shared.Starlight.CCVar;
@@ -38,6 +37,7 @@ using Content.Shared.Weapons.Hitscan.Events;
 using Robust.Shared.Timing;
 using Robust.Shared.Configuration;
 using Robust.Shared.Random;
+using Content.Shared._Starlight.Combat.Ranged.Pierce;
 #endregion Starlight
 
 namespace Content.Client.Weapons.Ranged.Systems;
@@ -67,6 +67,7 @@ public sealed partial class GunSystem : SharedGunSystem
     public static readonly EntProtoId HitscanProto = "HitscanEffect";
     public const string ImpactProto = "ImpactEffect";
     public const string BulletHoleProto = "BulletHoleEffect";
+    public const string SparksProto = "ImpactSparksEffect";
     private DisplacementEffect _displacementEffect = null!;
     private bool _tracesEnabled = true;
     private bool _holesEnabled = true;
@@ -209,6 +210,10 @@ public sealed partial class GunSystem : SharedGunSystem
             var holeCoords = coords.Offset(new Vector2(MathF.Cos(radians), MathF.Sin(radians)) * _random.NextFloat(0f, 0.5f));
             Spawn(BulletHoleProto, holeCoords);
         }
+
+        if (TryComp<PierceableComponent>(target, out var pierceable) 
+            && pierceable.Level >= PierceLevel.Metal)
+            Spawn(SparksProto, coords);
     }
     private void RenderBullet(NetCoordinates coordinates, Angle angle, ExtendedSpriteSpecifier sprite, float distance, float length, float delay)
     {
