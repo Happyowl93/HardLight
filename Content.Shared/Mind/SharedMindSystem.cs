@@ -364,7 +364,6 @@ public abstract partial class SharedMindSystem : EntitySystem
         mind.Objectives.Add(objective);
     }
 
-    #region StarlightEdit
 
     /// <summary>
     /// Removes an objective from this mind by Index.
