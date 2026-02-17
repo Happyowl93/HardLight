@@ -54,16 +54,6 @@ namespace Content.Server.Stunnable.Systems
             EntityManager.EntityDeleted += OnEntityDeleted;
         }
 
-        public override void Shutdown()
-        {
-            base.Shutdown();
-            EntityManager.EntityDeleted -= OnEntityDeleted;
-        }
-
-        private void OnEntityDeleted(Entity<MetaDataComponent> entity)
-        {
-            // Cleanup is handled automatically when the entity is deleted
-        }
 
         // 🌟Starlight🌟 start
         private void OnStunbatonAfterInteract(Entity<StunbatonComponent> entity, ref AfterInteractEvent args) // Handle special interaction when using stunbaton on a riot shield
