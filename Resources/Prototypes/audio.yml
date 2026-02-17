@@ -263,7 +263,6 @@
       inverted: true
       range: 3
     - !type:OnMapTagRule # Starlight
-      mapTag: NukiePlanet
       mapTag: TheDark
       inverted: true
     - !type:OnMapTagRule # Starlight
