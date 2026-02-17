@@ -577,3 +577,31 @@
   storage:
     id:
       - GoldenPersonalAI
+
+- type: loadout
+  id: Boxblacklight
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:SpeciesRequirement
+      species:
+      - Shadekin
+  storage:
+    back: 
+      - Boxblacklight
+
+- type: loadout
+  id: RoadCone
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:DepartmentTimeRequirement
+        department: Engineering
+        time: 144000 # 40 hours of being a STMS
+  equipment:
+    head: ClothingHeadHatCone
+
+- type: loadout
+  id: LilyFlower
+  equipment:
+    head: ClothingHeadHatLilyFlower

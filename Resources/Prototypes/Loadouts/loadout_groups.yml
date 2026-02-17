@@ -114,6 +114,7 @@
   - PillCanisterPsicodine
   - ClothingDogTags
   - PersonalAI
+  - Boxblacklight
   - GoldenPersonalAI # Starlight end
   - AACTablet # DeltaV
 
@@ -180,6 +181,8 @@
   - CaptainHead
   - CaptainCap
   - Hairflower # Starlight
+  - LilyFlower # Starlight
+  - RoadCone # Starlight
 
 - type: loadoutGroup
   id: CaptainJumpsuit
@@ -241,6 +244,8 @@
   loadouts:
   - HoPHead
   - Hairflower # Starlight
+  - LilyFlower # Starlight
+  - RoadCone # Starlight
 
 - type: loadoutGroup
   id: HoPJumpsuit
@@ -373,6 +378,7 @@
   minLimit: 0
   loadouts:
   - Mantle
+  - OldMantle
 
 - type: loadoutGroup
   id: AssistantOuterClothing
@@ -397,6 +403,7 @@
   - Heels # 🌟Starlight🌟
   - CoderSocks # Starlight
   - RollerSkates # Starlight
+  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: AssistantJobTrinkets # Starlight - depassenger
@@ -717,6 +724,8 @@
   - JesterAltHat
   - MaidHeadbandTactical # Starlight start
   - Hairflower
+  - LilyFlower
+  - RoadCone
   - CatEars
   - DogEars
   - BunnyEars # Starlight end
@@ -756,6 +765,7 @@
   - ClownShoes
   - JesterShoes
   - RollerSkates # Starlight
+  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: SurvivalClown
@@ -786,6 +796,8 @@
   - MimeFrenchBeret
   - MaidHeadbandTactical # Starlight start
   - Hairflower
+  - LilyFlower
+  - RoadCone
   - CatEars
   - DogEars
   - BunnyEars # Starlight end
@@ -957,6 +969,7 @@
   - SalvageBoots
   - WorkBoots
   - Heels # Starlight end
+  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: QuartermasterJobTrinkets
@@ -1124,6 +1137,7 @@
   - WorkBoots # 🌟Starlight🌟
   - EngineeringWinterBoots
   - Heels # 🌟Starlight🌟
+  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: ChiefEngineerJobTrinkets
@@ -1313,6 +1327,7 @@
   - Heels # Starlight start
   - LaceupShoes
   - LeatherShoes
+  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: ResearchDirectorJobTrinkets
