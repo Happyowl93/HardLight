@@ -30998,5 +30998,12 @@ Entries:
   id: 334001
   time: '2026-02-17T07:08:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3340
+- author: VINCOLAN
+  changes:
+  - message: Reporter Digiboard now has Standard Batteries.
+    type: Tweak
+  id: 334101
+  time: '2026-02-17T07:13:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3341
 Order: -1
 
