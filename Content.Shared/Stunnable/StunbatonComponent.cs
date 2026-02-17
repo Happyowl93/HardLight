@@ -15,6 +15,7 @@ public sealed partial class StunbatonComponent : Component
 
     [DataField("sparksSound")]
     public SoundSpecifier SparksSound = new SoundCollectionSpecifier("sparks");
+    #region Starlight
 
     [DataField("shieldBashSound")]
     public SoundSpecifier ShieldBashSound = new SoundPathSpecifier("/Audio/_Starlight/Weapons/shieldbash.ogg");
@@ -24,4 +25,6 @@ public sealed partial class StunbatonComponent : Component
 
     [NonSerialized]
     public Dictionary<EntityUid, TimeSpan> ShieldInteractionCooldowns = new(); // Track cooldowns for entities hit with the shield bash to prevent spamming
+    
+    #endregion
 }
