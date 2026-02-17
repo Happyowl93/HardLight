@@ -1,6 +1,9 @@
-﻿using Content.Server.Popups;
+﻿using Content.Server.Antag;
+using Content.Server.Chat.Systems;
+using Content.Server.Popups;
 using Content.Shared.Implants;
 using Content.Server.Objectives;
+using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
 using Content.Shared.Mind;
 using Content.Shared.Popups;
@@ -9,6 +12,8 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Content.Shared._Starlight.Implants.Components;
+using Content.Shared.Objectives.Components;
+
 
 namespace Content.Server._Starlight.Implants;
 
@@ -24,6 +29,7 @@ public sealed class MindControlSystem : EntitySystem
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly StatusEffectsSystem _status = default!;
+    [Dependency] private readonly AntagSelectionSystem _antag = default!;
     
    
 
@@ -36,12 +42,19 @@ public sealed class MindControlSystem : EntitySystem
 
     private void OnImplantImplanted(EntityUid uid, MindControlImplantComponent component, ImplantImplantedEvent args)
     {
-        AssignTraitorObjectives(args.Implanted, component);
+        if (!TryComp<ActorComponent>(args.Implanted, out var actor))
+            return; 
         
-        _popup.PopupEntity(Loc.GetString("mind-control-user-implanted"), args.Implanted, args.Implanted, PopupType.SmallCaution);
-        if (TryComp<ActorComponent>(args.Implanted, out var actor)) //TODO make this something else? its clear at least
-            _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Ambience/Antag/traitor_start.ogg"), actor.PlayerSession, AudioParams.Default.WithVolume(1f));
+        if (!_mind.TryGetMind(component.Master, out var masterMindId, out var masterMind))
+            return;
+
+        if (masterMind.CharacterName == null)
+            return; 
+        
+        _antag.SendBriefing(actor.PlayerSession, Loc.GetString(component.BriefingText, ("master-name", masterMind.CharacterName)), null, component.BriefingSound);
+        //_popup.PopupEntity(Loc.GetString("mind-control-user-implanted"), args.Implanted, args.Implanted, PopupType.SmallCaution);
         _status.TryAddStatusEffectDuration(args.Implanted, "StatusEffectForcedSleeping", TimeSpan.FromSeconds(2));
+        AssignTraitorObjectives(args.Implanted, component);
         
     }
     
@@ -91,6 +104,8 @@ public sealed class MindControlSystem : EntitySystem
         if (objectiveOrders == null)
             return;
         //_targetObjectives.SetTarget(objectiveOrders.Value, component.Master); //TODO Figure out why this won't set targets...
+        
+
         _mind.AddObjective(mindId, mind, objectiveOrders.Value);
         
     }

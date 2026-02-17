@@ -5,5 +5,10 @@ death-acidifier-implant-activate-gear = Your equipment begins to dissolve!
 gear-acidifier-action-popup = This will destroy all your equipment!
 mind-control-user-freed = You are no longer under the effects of the Implant.
 mind-control-user-implanted = Your Head hurts..
+mind-control-user-briefing = 
+    You have been Implanted with a mind control implant by [color = darkred]{$master-name}[/color], You are now bound to their will.
+    Listen to the instructions they provide. Try not to get yourself killed or injured, or compromise your implant... 
+    Unless [color = darkred]{$master-name}[/color] commands it.  
 mind-control-prevented = A MindShield prevented the Implant!
 mind-control-invalid = That Cannot be Implanted.
+[color = darkred]{$master-name}[/color]
