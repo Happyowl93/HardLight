@@ -30977,5 +30977,12 @@ Entries:
   id: 333201
   time: '2026-02-17T02:23:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3332
+- author: Fractalflower
+  changes:
+  - message: ERT Leader and TSF Elite no longer need Extra Roles.
+    type: Remove
+  id: 334201
+  time: '2026-02-17T03:06:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3342
 Order: -1
 
