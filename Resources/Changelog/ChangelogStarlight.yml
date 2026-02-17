@@ -30950,5 +30950,16 @@ Entries:
   id: 332601
   time: '2026-02-16T17:59:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3326
+- author: STARLIGHT TEAM
+  changes:
+  - message: OldWarp for Tiders... in loadout for 10h of assistant.
+    type: Add
+  - message: Added ClothWrap Shoes for all loadouts.
+    type: Add
+  - message: Removed ClothWrap trinket.
+    type: Remove
+  id: 333401
+  time: '2026-02-17T00:40:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3334
 Order: -1
 
