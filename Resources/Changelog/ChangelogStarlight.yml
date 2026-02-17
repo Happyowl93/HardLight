@@ -31020,5 +31020,12 @@ Entries:
   id: 326301
   time: '2026-02-17T07:36:15.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3263
+- author: Xale
+  changes:
+  - message: 12 gauge tranquilizer slugs are no longer contraband for Zookeepers
+    type: Tweak
+  id: 331201
+  time: '2026-02-17T07:39:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3312
 Order: -1
 
