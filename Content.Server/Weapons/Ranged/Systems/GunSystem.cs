@@ -357,20 +357,36 @@ public sealed partial class GunSystem : SharedGunSystem
         return angles;
     }
 
-    private Angle GetRecoilAngle(TimeSpan curTime, GunComponent component, Angle direction)
+    // Starlight-start: Fully rework recoil
+    private Angle GetRecoilAngle(TimeSpan curTime, Entity<GunComponent> gun, Angle direction)
     {
-        var timeSinceLastFire = (curTime - component.LastFire).TotalSeconds;
-        var newTheta = MathHelper.Clamp(component.CurrentAngle.Theta + component.AngleIncreaseModified.Theta - component.AngleDecayModified.Theta * timeSinceLastFire, component.MinAngleModified.Theta, component.MaxAngleModified.Theta);
-        component.CurrentAngle = new Angle(newTheta);
-        component.LastFire = component.NextFire;
+        var timeSinceLastFire = (curTime - gun.Comp.LastFire).TotalSeconds;
+        var newTheta = MathHelper.Clamp(gun.Comp.CurrentAngle.Theta + gun.Comp.AngleIncreaseModified.Theta - gun.Comp.AngleDecayModified.Theta * timeSinceLastFire, gun.Comp.MinAngleModified.Theta, gun.Comp.MaxAngleModified.Theta);
+        gun.Comp.CurrentAngle = new Angle(newTheta);
+        gun.Comp.LastFire = gun.Comp.NextFire;
+
+        var spreadModifier = 1f;
+
+        var xform = Transform(gun);
+        if (TryComp<InputMoverComponent>(xform.ParentUid, out var mover) && mover.CanMove && mover.HasDirectionalMovement)
+        {
+            if (mover.Sprinting)
+                spreadModifier += gun.Comp.SprintSpreadModifier;
+            else
+                spreadModifier += gun.Comp.WalkSpreadModifier;
+        }
 
         // Convert it so angle can go either side.
         var random = Random.NextFloat(-0.5f, 0.5f);
-        var spread = component.CurrentAngle.Theta * random;
-        var angle = new Angle(direction.Theta + component.CurrentAngle.Theta * random);
-        DebugTools.Assert(spread <= component.MaxAngleModified.Theta);
+
+        var finalSpread = gun.Comp.CurrentAngle.Theta * spreadModifier;
+        var spread = finalSpread * random;
+
+        var angle = new Angle(direction.Theta + gun.Comp.CurrentAngle.Theta * random);
+        DebugTools.Assert(spread <= gun.Comp.MaxAngleModified.Theta);
         return angle;
     }
+    // Starlight-end
 
     protected override void Popup(string message, EntityUid? uid, EntityUid? user) { }
 
