@@ -44,7 +44,7 @@ namespace Content.Server.Stunnable.Systems
         {
             base.Initialize();
 
-            SubscribeLocalEvent<StunbatonComponent, AfterInteractEvent>(OnStunbatonAfterInteract);
+            SubscribeLocalEvent<StunbatonComponent, AfterInteractEvent>(OnStunbatonAfterInteract); // Starlight-edit
             SubscribeLocalEvent<StunbatonComponent, ExaminedEvent>(OnExamined);
             SubscribeLocalEvent<StunbatonComponent, SolutionContainerChangedEvent>(OnSolutionChange);
             SubscribeLocalEvent<StunbatonComponent, StaminaDamageOnHitAttemptEvent>(OnStaminaHitAttempt);
