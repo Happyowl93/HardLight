@@ -31040,5 +31040,12 @@ Entries:
   id: 333001
   time: '2026-02-17T07:57:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3330
+- author: ZombieNub
+  changes:
+  - message: Added a recharging RPLD to the Engineering Cyborg Module.
+    type: Tweak
+  id: 334501
+  time: '2026-02-17T08:05:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3345
 Order: -1
 
