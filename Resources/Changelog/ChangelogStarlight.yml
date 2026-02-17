@@ -30991,5 +30991,12 @@ Entries:
   id: 334401
   time: '2026-02-17T07:04:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3344
+- author: SevenShades
+  changes:
+  - message: Added a diagnostic HuD to engineering cyborgs
+    type: Add
+  id: 334001
+  time: '2026-02-17T07:08:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3340
 Order: -1
 
