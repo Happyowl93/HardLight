@@ -57,6 +57,7 @@
   loadouts:
   - MaidHeadbandTactical
   - Hairflower
+  - LilyFlower
   - RoadCone
   - CatEars
   - DogEars
@@ -210,6 +211,7 @@
   - BrimHat
   - FeatheredHat
   - Hairflower
+  - LilyFlower
   - RoadCone # starlight
 
 - type: loadoutGroup
@@ -248,6 +250,7 @@
   - RoboticistBlackCapFlipped
   - MaidHeadbandTactical
   - Hairflower
+  - LilyFlower
   - RoadCone
   - CatEars
   - DogEars
@@ -336,6 +339,7 @@
   loadouts:
   - MagistrateHeadPwig
   - Hairflower
+  - LilyFlower
   - RoadCone
 
 - type: loadoutGroup
@@ -770,6 +774,7 @@
   - DutyOfficerHelmetRiot
   - MaidHeadbandTactical
   - Hairflower
+  - LilyFlower
   - RoadCone
   - CatEars
   - DogEars
@@ -866,6 +871,7 @@
   - BeretNCTGreen
   - BeretNCTBlack
   - Hairflower
+  - LilyFlower
   - RoadCone
 
 - type: loadoutGroup

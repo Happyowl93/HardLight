@@ -11,6 +11,10 @@
   equipment:
     head: ClothingHeadHatCone
 
+- type: loadout
+  id: LilyFlower
+  equipment:
+    head: ClothingHeadHatLilyFlower
 
 - type: loadout
   id: CoderSocks
