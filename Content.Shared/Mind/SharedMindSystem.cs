@@ -404,7 +404,6 @@ public abstract partial class SharedMindSystem : EntitySystem
         return true;
     }
 
-    #endregion
     
     
 
