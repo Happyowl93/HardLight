@@ -375,7 +375,7 @@ public abstract partial class SharedMindSystem : EntitySystem
             return false;
 
         var objective = mind.Objectives[index];
-        return TryRemoveObjective(mindId, mind, objective);
+        return TryRemoveObjective(mindId, mind, objective); // Starlight-edit
     }
     
     /// <summary>
