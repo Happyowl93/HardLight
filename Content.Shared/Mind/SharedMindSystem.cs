@@ -378,17 +378,8 @@ public abstract partial class SharedMindSystem : EntitySystem
         return TryRemoveObjective(mindId, mind, objective); // Starlight-edit
     }
     
-    /// <summary>
-    /// Removes an objective from this mind.
-    /// </summary>
-    /// <returns>Returns true if the removal succeeded.</returns>
-    public bool TryRemoveObjective(EntityUid mindId, MindComponent mind, EntityUid objective)
-    {
-        if (!mind.Objectives.Contains(objective))
-            return false;
-            
-        var title = Name(objective);
-     #region Starlight
+    
+    #region Starlight
     /// <summary>
     /// Removes an objective from this mind.
     /// </summary>
