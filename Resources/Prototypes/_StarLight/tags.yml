@@ -160,6 +160,9 @@
   id: DockGamma
 
 - type: Tag
+  id: DogEmotes
+
+- type: Tag
   id: DrinkCarton
 
 - type: Tag
@@ -209,6 +212,9 @@
 
 - type: Tag
   id: FormerSoldierTraitBackground
+
+- type: Tag
+  id: FlatpackBlacklist
 
 - type: Tag
   id: GearAcidifier
@@ -363,6 +369,9 @@
   id: Nexus
 
 - type: Tag
+  id: NukiePlanet
+
+- type: Tag
   id: OmniCyberEyes
 
 - type: Tag
@@ -388,6 +397,9 @@
 
 - type: Tag
   id: PlasteelFilament
+
+- type: Tag
+  id: PlumbingDuct
 
 - type: Tag
   id: PowerCellTiny
