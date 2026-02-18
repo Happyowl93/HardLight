@@ -32,6 +32,10 @@
   - type: Storage
     grid:
     - 0,0,2,1
+  - type: Item # Starlight start
+    size: Normal
+    shape:
+    - 0,0,1,2 # Starlight end
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
