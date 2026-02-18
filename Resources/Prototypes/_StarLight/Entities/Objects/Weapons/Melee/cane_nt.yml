@@ -70,3 +70,7 @@
   - type: DrawableSolution
     solution: battery
   - type: MobilityAid
+  - type: ToolTileCompatible
+    delay: 2
+  - type: Prying
+    speedModifier: 0.50
