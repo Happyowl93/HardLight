@@ -71,4 +71,4 @@
     solution: battery
   - type: MobilityAid
   - type: Prying
-    speedModifier: 0.50
+    speedModifier: 0.25
