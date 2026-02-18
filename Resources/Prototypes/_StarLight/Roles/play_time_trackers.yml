@@ -47,6 +47,9 @@
   id: JobTSFMarine
 
 - type: playTimeTracker
+  id: TSFMarineElite
+
+- type: playTimeTracker
   id: JobPerformer
 
 - type: playTimeTracker
