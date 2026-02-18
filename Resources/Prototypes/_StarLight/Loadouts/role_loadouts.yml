@@ -203,6 +203,24 @@
     - Pens
     - GroupSpeciesBreathTool
 
+- type: roleLoadout
+  id: JobPerformer
+  groups:
+  - GroupTankHarness
+  - MusicianJumpsuit
+  - CommonBackpack
+  - CivilianShoes
+  - GlovesGeneric
+  - HeadGeneric
+  - Glasses
+  - Survival
+  - Trinkets
+  - Scarves
+  - Pins
+  - Pens
+  - ServiceWorkerJobTrinkets
+  - GroupSpeciesBreathTool
+
 # Wildcards
 - type: roleLoadout
   id: JobZookeeper

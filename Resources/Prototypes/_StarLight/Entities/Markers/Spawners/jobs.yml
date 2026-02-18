@@ -135,6 +135,18 @@
       - state: jobicon
 
 - type: entity
+  id: SpawnPointPerformer
+  parent: SpawnPointJobBase
+  name: performer
+  components:
+  - type: SpawnPoint
+    job_id: Performer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: serviceworker
+
+- type: entity
   id: SpawnPointBoxer
   parent: SpawnPointJobBase
   name: boxer

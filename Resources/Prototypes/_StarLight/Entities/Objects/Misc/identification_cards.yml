@@ -198,6 +198,24 @@
     job: MailTech
 
 - type: entity
+  parent: IDCardStandard
+  id: PerformerIDCard
+  name: performer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: stripe_top
+      color: &color-service-top "#639137"
+    - state: stripe_bottom
+      color: &color-service-bottom "#446326"
+    - sprite: Interface/Misc/job_icons.rsi
+      offset: -0.09375, 0.0625
+      state: ServiceWorker
+  - type: PresetIdCard
+    job: Performer
+
+- type: entity
   parent: [ IDCardStandard, BaseSecurityContraband ]
   id: DutyOfficerIDCard
   name: duty officer ID card

@@ -447,6 +447,25 @@
 
 - type: entity
   parent: BasePDA
+  id: PerformerPDA
+  name: performer PDA
+  description: Why isn't it gray?
+  components:
+  - type: Pda
+    id: PerformerIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-internservice
+  - type: PdaBorderColor
+    borderColor: "#717059"
+    accentVColor: "#00cc35"
+  - type: Icon
+    state: pda-internservice
+
+- type: entity
+  parent: BasePDA
   id: CommanderPDA
   name: commander PDA
   description: Screw captiancy, LETS GET THAT FUKKIN DISK
