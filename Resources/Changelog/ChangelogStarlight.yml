@@ -31136,5 +31136,12 @@ Entries:
   id: 335501
   time: '2026-02-18T10:11:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3355
+- author: Vincolan
+  changes:
+  - message: NT Representative Cane is now able to be used like a crowbar.
+    type: Add
+  id: 335601
+  time: '2026-02-18T10:15:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3356
 Order: -1
 
