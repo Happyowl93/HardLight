@@ -71,17 +71,22 @@ public sealed partial class GunSystem : SharedGunSystem
     private DisplacementEffect _displacementEffect = null!;
     private bool _tracesEnabled = true;
     private bool _holesEnabled = true;
+    private bool _sparksEnabled = true;
     public override void Shutdown()
     {
         base.Shutdown();
         _cfg.UnsubValueChanged(StarlightCCVars.TracesEnabled, OnTracesEnabledChanged);
         _cfg.UnsubValueChanged(StarlightCCVars.HolesEnabled, OnHolesEnabledChanged);
+        _cfg.UnsubValueChanged(StarlightCCVars.SparksEnabled, OnSparksEnabledChanged);
     }
     private void OnTracesEnabledChanged(bool tracesEnabled)
         => _tracesEnabled = tracesEnabled;
 
     private void OnHolesEnabledChanged(bool holesEnabled) 
         => _holesEnabled = holesEnabled;
+
+    private void OnSparksEnabledChanged(bool sparksEnabled)
+        => _sparksEnabled = sparksEnabled;
 
     #endregion Starlight
 
@@ -120,6 +125,7 @@ public sealed partial class GunSystem : SharedGunSystem
         base.Initialize();
         _cfg.OnValueChanged(StarlightCCVars.TracesEnabled, OnTracesEnabledChanged, true); // Starlight-edit
         _cfg.OnValueChanged(StarlightCCVars.HolesEnabled, OnHolesEnabledChanged, true); // Starlight-edit
+        _cfg.OnValueChanged(StarlightCCVars.SparksEnabled, OnSparksEnabledChanged, true); // Starlight-edit
 
         UpdatesOutsidePrediction = true;
         SubscribeLocalEvent<AmmoCounterComponent, ItemStatusCollectMessage>(OnAmmoCounterCollect);
@@ -211,7 +217,8 @@ public sealed partial class GunSystem : SharedGunSystem
             Spawn(BulletHoleProto, holeCoords);
         }
 
-        if (TryComp<PierceableComponent>(target, out var pierceable) 
+        if (_sparksEnabled 
+            && TryComp<PierceableComponent>(target, out var pierceable) 
             && pierceable.Level >= PierceLevel.Metal)
             Spawn(SparksProto, coords);
     }

@@ -25,6 +25,10 @@
                     Name="HolesCheckBox"
                     Text="{Loc 'ui-options-holes'}"
                     ToolTip="{Loc 'ui-options-holes-tooltip'}" />
+                <CheckBox
+                    Name="SparksCheckBox"
+                    Text="{Loc 'ui-options-sparks'}"
+                    ToolTip="{Loc 'ui-options-sparks-tooltip'}" />
                 <!--  Interface  -->
                 <Label StyleClasses="LabelKeyText" Text="{Loc 'ui-options-interface-label'}" />
                 <ui:OptionDropDown Name="DropDownUIScale" Title="{Loc 'ui-options-scale-label'}" />

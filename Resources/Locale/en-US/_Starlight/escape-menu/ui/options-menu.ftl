@@ -12,6 +12,10 @@ ui-options-holes = Display the bullet's holes
 ui-options-holes-tooltip = If you're lagging while shooting, uncheck this box,
                            and the hitscan won't display the texture of the bullet holes.
 
+ui-options-sparks = Display sparks
+ui-options-sparks-tooltip = If you're lagging while shooting, uncheck this box,
+                           and the hitscan won't display sparks when the bullet hits a surface.
+
 ## Accessibility
 
 ui-options-arachnophobia = Arachnophobia Mode
