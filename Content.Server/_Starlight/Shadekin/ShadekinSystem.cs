@@ -33,6 +33,8 @@ using Content.Shared.Ensnaring;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.Mobs.Components;
+using Robust.Shared.Map.Components;
+using Content.Server.GameTicking;
 
 namespace Content.Server._Starlight.Shadekin;
 
@@ -61,10 +63,13 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private readonly SharedEnsnareableSystem _ensnareable = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly StatusEffectsSystem _status = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!;
 
     private static readonly ProtoId<TagPrototype> _theDarkTag = "TheDark";
     private static readonly ProtoId<TagPrototype> _coreTag = "ShadekinCore";
     private static readonly ProtoId<TagPrototype> _damagedCoreTag = "DamagedShadekinCore";
+    private TimeSpan _nextUpdate = TimeSpan.Zero;
+    private TimeSpan _updateCooldown = TimeSpan.FromSeconds(1f);
 
     private sealed class LightCone
     {
@@ -170,13 +175,13 @@ public sealed partial class ShadekinSystem : EntitySystem
     {
         var illumination = 0f;
 
-        var shadeQuery = _lookup.GetEntitiesInRange<ShadegenComponent>(Transform(uid).Coordinates, 20); // Why 20 when theres different ranges? because light check does not go above 20.
+        var shadeQuery = _lookup.GetEntitiesInRange<ShadegenComponent>(Transform(uid).Coordinates, 10); // Why 10 when theres different ranges? because light check does not go above 20.
 
         foreach (var shadegen in shadeQuery)
             if (_transform.InRange(Transform(uid).Coordinates, Transform(shadegen.Owner).Coordinates, shadegen.Comp.Range))
                 return illumination;
 
-        var lightQuery = _lookup.GetEntitiesInRange<PointLightComponent>(Transform(uid).Coordinates, 20, LookupFlags.All | LookupFlags.Approximate);
+        var lightQuery = _lookup.GetEntitiesInRange<PointLightComponent>(Transform(uid).Coordinates, 10, LookupFlags.All | LookupFlags.Approximate);
 
         foreach (var light in lightQuery)
         {
@@ -195,9 +200,6 @@ public sealed partial class ShadekinSystem : EntitySystem
             // Same as above but this time we check the light entity instead of our entity.
             if (_container.TryGetContainingContainer(light.Owner, out var lightcontainer) && lightcontainer.OccludesLight && !_container.IsInSameOrNoContainer(uid, light.Owner))
                 continue;
-
-            var (lightPos, lightRot) = _transform.GetWorldPositionRotation(light);
-            lightPos += lightRot.RotateVec(light.Comp.Offset);
 
             if (!_examine.InRangeUnOccluded(light, uid, light.Comp.Radius, null))
                 continue;
@@ -333,6 +335,23 @@ public sealed partial class ShadekinSystem : EntitySystem
         return false;
     }
 
+    /// <summary>
+    /// Spawn "The Dark"
+    /// </summary>
+    public void SpawnTheDark()
+    {
+        var query = EntityQueryEnumerator<MapComponent>();
+        while (query.MoveNext(out var mapuid, out var mapcomp))
+        {
+            if (mapcomp.MapPaused)
+                continue;
+
+            if (_tag.HasTag(mapuid, _theDarkTag))
+                return;
+        }
+        _gameTicker.StartGameRule("TheDarkMap");
+    }
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -373,23 +392,31 @@ public sealed partial class ShadekinSystem : EntitySystem
         }
 
         // The Dark Effects - This only applies for Ents that are IN THE DARK.
-        var thedarkmobquery = EntityQueryEnumerator<MobStateComponent>();
-        while (thedarkmobquery.MoveNext(out var uid, out var _))
+        if (_timing.CurTime > _nextUpdate)
         {
-            var remove = false;
-            if (HasComp<ShadekinComponent>(uid) || HasComp<TheDarkImmuneComponent>(uid))
-                remove = true;
+            _nextUpdate = _timing.CurTime + _updateCooldown;
 
-            if (!remove)
-                foreach (var entity in _lookup.GetEntitiesIntersecting(Transform(uid).Coordinates))
-                    if (TryComp<TheDarkImmuneComponent>(entity, out var blocker) && blocker.Ranged)
+            var thedarkmobquery = EntityQueryEnumerator<MobStateComponent>();
+            while (thedarkmobquery.MoveNext(out var uid, out var _))
+            {
+                var remove = false;
+
+                if (_status.HasStatusEffect(uid, "StatusEffectTheDarkMap"))
+                {
+                    if (HasComp<ShadekinComponent>(uid) || HasComp<TheDarkImmuneComponent>(uid))
                         remove = true;
 
+                    if (!remove)
+                        foreach (var entity in _lookup.GetEntitiesIntersecting(Transform(uid).Coordinates))
+                            if (TryComp<TheDarkImmuneComponent>(entity, out var blocker) && blocker.Ranged)
+                                remove = true;
+                }
 
-            if (AreWeInTheDark(uid) && !remove)
-                _status.TrySetStatusEffectDuration(uid, "StatusEffectTheDarkMap");
-            else if (_status.HasStatusEffect(uid, "StatusEffectTheDarkMap"))
-                _status.TryRemoveStatusEffect(uid, "StatusEffectTheDarkMap");
+                if (AreWeInTheDark(uid) && !remove)
+                    _status.TrySetStatusEffectDuration(uid, "StatusEffectTheDarkMap");
+                else
+                    _status.TryRemoveStatusEffect(uid, "StatusEffectTheDarkMap");
+            }
         }
     }
 }
