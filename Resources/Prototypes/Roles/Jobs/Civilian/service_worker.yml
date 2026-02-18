@@ -38,6 +38,6 @@
     eyes: ClothingEyesGlassesSunglasses
     mask: ClothingMaskGas
     neck: ClothingNeckScarfStripedBrown
-    jumpsuit: ServiceWorkerBartenderJumpsuit # Starlight
+    jumpsuit: ClothingUniformJumpsuitServiceWorkerBartender # Starlights
     outerClothing: ClothingOuterVest
     gloves: ClothingHandsGlovesColorBlack
