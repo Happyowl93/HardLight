@@ -31143,5 +31143,39 @@ Entries:
   id: 335601
   time: '2026-02-18T10:15:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3356
+- author: FeralCreature
+  changes:
+  - message: The Plumbing Pill Press now only produces one pill per 2 second plumbing
+      update and only allows 30 pills on it at one time.
+    type: Tweak
+  - message: Plumbing Reactors no longer behave weirdly when doing reactions that
+      create an item.
+    type: Fix
+  - message: Plumbing Smart Dispensers are now more exact when dispensing reagents
+      allowing automenders to be functional after being filled by them.
+    type: Fix
+  - message: The RPLD can now place ducts that cross other ducts without making you
+      have to anchor them after.
+    type: Fix
+  - message: RPLDs no longer allow you to place multiple plumbing machines on top
+      of each other.
+    type: Fix
+  - message: Chemical Dispensers and ChemMasters can now be rotated to allow for easier
+      plumbing access to their inlets/outlets.
+    type: Tweak
+  - message: Plumbing machines now cost a bit less compressed matter to be placed
+      by RPLD.
+    type: Tweak
+  - message: You can now walk over Plumbing inputs, outputs, and filters.
+    type: Fix
+  - message: 2 more outlets have been added to the plumbing synthesizer allowing for
+      more compact factory layouts.
+    type: Tweak
+  - message: The RPLD is now correctly set as Medical and Engineering contraband,
+      and comes in a secure crate that can only be opened with either access.
+    type: Fix
+  id: 335901
+  time: '2026-02-18T10:18:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3359
 Order: -1
 
