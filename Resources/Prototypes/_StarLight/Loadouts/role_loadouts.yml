@@ -207,7 +207,8 @@
   id: JobPerformer
   groups:
   - GroupTankHarness
-  - MusicianJumpsuit
+  - PerformerHead
+  - PerformerJumpsuit
   - CommonBackpack
   - CivilianShoes
   - GlovesGeneric
@@ -218,7 +219,7 @@
   - Scarves
   - Pins
   - Pens
-  - ServiceWorkerJobTrinkets
+  - PerformerJobTrinkets
   - GroupSpeciesBreathTool
 
 # Wildcards

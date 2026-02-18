@@ -15,8 +15,10 @@
   - Maintenance
   - Bar
   - Kitchen
+  - Hydroponics # Starlight
   extendedAccess:
-  - Hydroponics
+  - Theatre # Starlight
+#  - Hydroponics # Starlight
 
 - type: startingGear
   id: ServiceWorkerGear

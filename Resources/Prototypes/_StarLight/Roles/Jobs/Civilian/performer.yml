@@ -15,6 +15,9 @@
   - Maintenance
   extendedAccess:
   - Service
+  - Bar
+  - Kitchen
+  - Hydroponics
 
 - type: startingGear
   id: PerformerGear

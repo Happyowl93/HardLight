@@ -449,7 +449,7 @@
   parent: BasePDA
   id: PerformerPDA
   name: performer PDA
-  description: Why isn't it gray?
+  description: Why isn't it purple, pink, black, or white?
   components:
   - type: Pda
     id: PerformerIDCard

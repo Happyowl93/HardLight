@@ -209,9 +209,9 @@
       color: &color-service-top "#639137"
     - state: stripe_bottom
       color: &color-service-bottom "#446326"
-    - sprite: Interface/Misc/job_icons.rsi
-      offset: -0.09375, 0.0625
-      state: ServiceWorker
+    - sprite: *starlight-icon-rsi
+      offset: *icon-offset
+      state: Performer
   - type: PresetIdCard
     job: Performer
 
