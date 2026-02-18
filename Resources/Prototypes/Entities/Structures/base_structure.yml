@@ -1,9 +1,13 @@
 - type: entity
-  id: BaseStructureUnpiercable # Starlight-edit
+  id: BaseStructure
   abstract: true
   placement:
     mode: SnapgridCenter
   components:
+  # Starlight-start
+  - type: Pierceable
+    level: Metal
+  # Starlight-end
   - type: Transform
     anchored: true
   - type: Clickable
@@ -26,18 +30,6 @@
   - type: Tag
     tags:
       - Structure
-
-# Starlight-start
-- type: entity
-  id: BaseStructure
-  parent: BaseStructureUnpiercable
-  abstract: true
-  placement:
-    mode: SnapgridCenter
-  components:
-  - type: Pierceable
-    level: Metal
-# Starlight-end
 
 - type: entity
   # This means that it's not anchored on spawn.

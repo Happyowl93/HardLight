@@ -243,7 +243,7 @@
     base: meat
   # Starlight-start
   - type: Pierceable
-    level: Flash
+    level: Flesh
   # Starlight-end
 
 - type: entity
