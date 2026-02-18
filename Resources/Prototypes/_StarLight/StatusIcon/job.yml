@@ -74,8 +74,8 @@
   parent: JobIcon
   id: JobIconPerformer
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: ServiceWorker
+    sprite: /Textures/_Starlight/Interface/Misc/job_icons.rsi
+    state: Performer
   jobName: job-name-performer
 
 - type: jobIcon

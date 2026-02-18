@@ -33,5 +33,6 @@
     eyes: ClothingEyesGlassesSunglasses
     mask: ClothingMaskBreath
     neck: ClothingMultipleHeadphones
+    jumpsuit: ClothingUniformJumpsuitPerformerMusician
     outerClothing: ClothingOuterWinterMime
     gloves: ClothingHandsGlovesColorBlack

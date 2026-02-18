@@ -639,7 +639,7 @@
 # Performer
 - type: loadoutGroup
   id: PerformerHead
-  name: loadout-group-serviceworker-head
+  name: loadout-group-performer-head
   minLimit: 0
   loadouts:
   - JesterHat
