@@ -31129,5 +31129,12 @@ Entries:
   id: 335401
   time: '2026-02-18T05:51:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3354
+- author: TaserTheFox
+  changes:
+  - message: Brass is now actually named Brass.
+    type: Fix
+  id: 335501
+  time: '2026-02-18T10:11:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3355
 Order: -1
 
