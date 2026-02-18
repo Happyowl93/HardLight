@@ -31177,5 +31177,12 @@ Entries:
   id: 335901
   time: '2026-02-18T10:18:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3359
+- author: Scarlet Lightweaver
+  changes:
+  - message: Added a phase skip option for terminators.
+    type: Add
+  id: 335001
+  time: '2026-02-18T10:22:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3350
 Order: -1
 
