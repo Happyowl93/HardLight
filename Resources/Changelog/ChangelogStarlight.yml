@@ -31120,5 +31120,14 @@ Entries:
   id: 335201
   time: '2026-02-18T05:53:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3352
+- author: Born Stellar.
+  changes:
+  - message: Exterminator Backgorund.
+    type: Add
+  - message: Exterminator to Corporate Secret (Only rumors, as secret as Decimus).
+    type: Add
+  id: 335401
+  time: '2026-02-18T05:51:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3354
 Order: -1
 
