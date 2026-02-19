@@ -16,6 +16,15 @@
     state: arrows_outer
 
 - type: sight
+  id: ArrowsOuterSightSegmental
+  name: "[Dot, Outer, Segmental] Arrows Segmental"
+  sightType: Universal
+  showCursor: false
+  sprite:
+    sprite: _Starlight/Interface/Misc/crosshair_pointers.rsi
+    state: arrows_outer_3
+
+- type: sight
   id: BracketsSight
   name: "[Dot] Brackets"
   sightType: Universal

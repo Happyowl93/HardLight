@@ -9,6 +9,7 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using SixLabors.ImageSharp.PixelFormats;
+using Robust.Shared.Graphics.RSI;
 
 namespace Content.Client.CombatMode;
 
@@ -86,8 +87,19 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
                 _clyde.SetCursor(_clyde.CreateCursor(new SixLabors.ImageSharp.Image<Rgba32>(32, 32), Vector2i.Zero));
             else
                 _clyde.SetCursor(null);
-            var sightTexture = spriteSys.Frame0(sight.Sprite);
-            DrawSight(sightTexture, args.ScreenHandle, mousePos, limitedScale * Math.Clamp(sight.Scale, 0f, 1f), sight.MainColor, sight.StrokeColor);
+            var rsiState = spriteSys.RsiStateLike(sight.Sprite);
+            if (rsiState.IsAnimated && rsiState.AnimationFrameCount == 3)
+            {
+                var bracket1 = rsiState.GetFrame(RsiDirection.South, 0);
+                var sightTexture = rsiState.GetFrame(RsiDirection.South, 1);
+                var bracket2 = rsiState.GetFrame(RsiDirection.South, 2);
+                DrawSightPartial(sightTexture, bracket1, bracket2, args.ScreenHandle, mousePos, limitedScale * Math.Clamp(sight.Scale, 0f, 1f), sight.MainColor, sight.StrokeColor);
+            }
+            else
+            {
+                var sightTexture = spriteSys.Frame0(sight.Sprite);
+                DrawSight(sightTexture, args.ScreenHandle, mousePos, limitedScale * Math.Clamp(sight.Scale, 0f, 1f), sight.MainColor, sight.StrokeColor);
+            }
         }
     }
 
@@ -100,6 +112,33 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
             UIBox2.FromDimensions(centerPos - sightSize * 0.5f, sightSize), strokeColor);
         screen.DrawTextureRect(sight,
             UIBox2.FromDimensions(centerPos - expandedSize * 0.5f, expandedSize), mainColor);
+    }
+
+    private void DrawSightPartial(Texture sight, Texture bracket1, Texture bracket2, DrawingHandleScreen screen, Vector2 centerPos, float scale, Color mainColor, Color strokeColor, float spread = 6f)
+    {
+        var sightSize = sight.Size * scale;
+        DrawSight(sight, screen, centerPos, scale, mainColor, strokeColor);
+
+        var bracketSize1 = bracket1.Size * scale;
+        var bracketSize2 = bracket2.Size * scale;
+
+        float offset = sightSize.X * 0.5f + spread;
+
+        var bracket1Pos = centerPos + new Vector2(-offset - bracketSize1.X * 0.5f, 0f);
+        var bracket2Pos = centerPos + new Vector2(offset + bracketSize2.X * 0.5f, 0f);
+
+        screen.DrawTextureRect(bracket1,
+            UIBox2.FromDimensions(bracket1Pos - bracketSize1 * 0.5f, bracketSize1), strokeColor);
+        screen.DrawTextureRect(bracket2,
+            UIBox2.FromDimensions(bracket2Pos - bracketSize2 * 0.5f, bracketSize2), strokeColor);
+
+        var bracketExpanded1 = bracketSize1 + new Vector2(7f, 7f);
+        var bracketExpanded2 = bracketSize2 + new Vector2(7f, 7f);
+
+        screen.DrawTextureRect(bracket1,
+            UIBox2.FromDimensions(bracket1Pos - bracketExpanded1 * 0.5f, bracketExpanded1), mainColor);
+        screen.DrawTextureRect(bracket2,
+            UIBox2.FromDimensions(bracket2Pos - bracketExpanded2 * 0.5f, bracketExpanded2), mainColor);
     }
 
     private sealed class DummyCursor : ICursor

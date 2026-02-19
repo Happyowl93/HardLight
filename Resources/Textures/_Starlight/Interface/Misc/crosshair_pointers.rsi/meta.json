@@ -17,6 +17,16 @@
       "name": "arrows_outer"
     },
     {
+      "name": "arrows_outer_3",
+      "delays": [
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
       "name": "arrows_outer_double"
     },
     {
