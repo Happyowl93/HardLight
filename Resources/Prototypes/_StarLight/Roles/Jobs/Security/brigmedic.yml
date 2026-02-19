@@ -44,6 +44,7 @@
     - DefibrillatorBrigmedical
     belt:
     - TacticalJetInjector
+    - BodyBagLockableFolded
 
 - type: chameleonOutfit
   id: BrigmedicChameleonOutfit
