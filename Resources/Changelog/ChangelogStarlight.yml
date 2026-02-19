@@ -31184,5 +31184,12 @@ Entries:
   id: 335001
   time: '2026-02-18T10:22:32.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3350
+- author: gabbl0
+  changes:
+  - message: Thaven markings.
+    type: Add
+  id: 332901
+  time: '2026-02-18T15:54:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3329
 Order: -1
 
