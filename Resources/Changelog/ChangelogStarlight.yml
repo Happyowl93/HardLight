@@ -31234,5 +31234,12 @@ Entries:
   id: 244301
   time: '2026-02-19T06:41:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2443
+- author: CrazyPhantom779
+  changes:
+  - message: Increased the max Pinktext from 128 to 256.
+    type: Tweak
+  id: 337801
+  time: '2026-02-19T10:51:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3378
 Order: -1
 
