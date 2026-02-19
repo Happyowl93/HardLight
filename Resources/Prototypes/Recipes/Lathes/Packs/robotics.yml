@@ -50,6 +50,7 @@
   - BorgModuleAdvancedMining
   - BorgModuleAdvancedLoading # Starlight
   - BorgModuleSurgical # Starlight
+  - BorgModulePlumbing # Starlight
 
 - type: latheRecipePack
   id: MechParts
