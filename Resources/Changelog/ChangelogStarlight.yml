@@ -31212,5 +31212,12 @@ Entries:
   id: 336301
   time: '2026-02-19T05:45:31.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3363
+- author: SiTW
+  changes:
+  - message: Guidebook entry for records.
+    type: Add
+  id: 337101
+  time: '2026-02-19T06:11:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3371
 Order: -1
 
