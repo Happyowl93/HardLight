@@ -635,6 +635,15 @@ public abstract partial class SharedMoverController : VirtualController
         var position = _mapSystem.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
         var soundEv = new GetFootstepSoundEvent(uid);
 
+        #region Starlight foot-step self-modifying
+        RaiseLocalEvent(uid, ref soundEv);
+        if (soundEv.Sound != null)
+        {
+            sound = soundEv.Sound;
+            return true;
+        }
+        #endregion
+
         // If the coordinates have a FootstepModifier component
         // i.e. component that emit sound on footsteps emit that sound
         var anchored = _mapSystem.GetAnchoredEntitiesEnumerator(xform.GridUid.Value, grid, position);
