@@ -31248,5 +31248,13 @@ Entries:
   id: 336801
   time: '2026-02-19T10:56:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3368
+- author: Born Stellar
+  changes:
+  - message: Mothership Core now requires 2.5 Roboticist hours in addition to the
+      5 hours of AI.
+    type: Tweak
+  id: 337901
+  time: '2026-02-19T19:40:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3379
 Order: -1
 
