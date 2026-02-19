@@ -1,0 +1,8 @@
+- type: alert
+  id: BreathHeld
+  icons:
+  - sprite: /Textures/Interface/Alerts/breathing.rsi
+    state: not_enough_oxy
+  clickEvent: !type:HeldBreathAlertEvent
+  name: alerts-held-breath-name
+  description: alerts-held-breath-desc
