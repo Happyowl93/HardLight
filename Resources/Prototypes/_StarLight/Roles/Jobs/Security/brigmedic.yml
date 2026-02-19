@@ -42,6 +42,8 @@
     - Flash
     - SecurityMedkit
     - DefibrillatorBrigmedical
+    belt:
+    - TacticalJetInjector
 
 - type: chameleonOutfit
   id: BrigmedicChameleonOutfit

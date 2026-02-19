@@ -144,7 +144,6 @@
   - BrigmedicHead
   - BrigmedicMask
   - BrigmedicJumpsuit
-  - BrigmedicTie
   - BrigmedicBackpack
   - BrigmedicOuterClothing
   - BrigmedicBelt
@@ -152,6 +151,7 @@
   - BrigmedicEyewear
   - BrigmedicPDA
   - BrigmedicBeaker
+  - SecurityTie
   - SecurityShoes
   - SecurityNonLethalWeapon
   - SecuritySidearm
@@ -171,9 +171,10 @@
   - SecurityBackpack
   - SecurityEyewear
   - DutyOfficerOuterClothing
+  - DutyOfficerBelt
+  - SecurityTie
   - SecurityShoes
   - SecurityGloves
-  - DutyOfficerBelt
   - SecurityNonLethalWeapon
   - SurvivalSecurity
   - Trinkets
