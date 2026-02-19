@@ -31256,5 +31256,12 @@ Entries:
   id: 337901
   time: '2026-02-19T19:40:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3379
+- author: Citrea
+  changes:
+  - message: Double emergency tanks are small items again.
+    type: Fix
+  id: 338301
+  time: '2026-02-19T20:02:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3383
 Order: -1
 
