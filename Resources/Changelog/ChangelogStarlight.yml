@@ -31241,5 +31241,12 @@ Entries:
   id: 337801
   time: '2026-02-19T10:51:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3378
+- author: redmushie
+  changes:
+  - message: Paramedics are now mindshielded.
+    type: Tweak
+  id: 336801
+  time: '2026-02-19T10:56:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3368
 Order: -1
 
