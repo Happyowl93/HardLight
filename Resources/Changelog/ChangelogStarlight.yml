@@ -31305,5 +31305,13 @@ Entries:
   id: 338201
   time: '2026-02-20T05:39:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3382
+- author: walksanatora
+  changes:
+  - message: Terminators now randomly take a "heavy" footstep revealing their silicon
+      lies.
+    type: Add
+  id: 338701
+  time: '2026-02-20T05:36:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3387
 Order: -1
 
