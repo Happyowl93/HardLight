@@ -1,1 +1,1 @@
-reagent-name-cornoil = Corn Oil for frying
+reagent-name-corn-oil = corn oil
