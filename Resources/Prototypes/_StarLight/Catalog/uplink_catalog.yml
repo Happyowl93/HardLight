@@ -1,5 +1,5 @@
 - type: listing
-  id: uplinkContortionistJumpsuit
+  id: UplinkContortionistJumpsuit
   name: uplink-contortionist-jumpsuit-name
   description: uplink-contortionist-jumpsuit-desc
   productEntity: ClothingUniformJumpsuitAtmosSyndie
@@ -34,7 +34,7 @@
   - UplinkWeaponry
 
 - type: listing
-  id: uplinkWeaponShotgunMinotaur
+  id: UplinkWeaponShotgunMinotaur
   name: uplink-minotaur-name
   description: uplink-minotaur-desc
   productEntity: ClothingBackpackDuffelSyndicateFilledMinotaurShotgun
@@ -57,7 +57,7 @@
           - NukeOpsUplink
 
 - type: listing
-  id: uplinkWeaponRiflePitpull
+  id: UplinkWeaponRiflePitpull
   name: uplink-pitbull-bundle-name
   description: uplink-pitbull-bundle-desc
   icon:
@@ -120,7 +120,7 @@
     - Captain
 
 - type: listing
-  id: uplinkWeaponPistolDeagle
+  id: UplinkWeaponPistolDeagle
   name: uplink-deagle-name
   description: uplink-deagle-desc
   productEntity: WeaponPistolDeagle
@@ -133,7 +133,7 @@
     - UplinkWeaponry
 
 - type: listing
-  id: uplinkWeaponPistolStechkin
+  id: UplinkWeaponPistolStechkin
   name: uplink-stechkin-name
   description: uplink-stechkin-desc
   productEntity: WeaponPistolStechkin
