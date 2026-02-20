@@ -31313,5 +31313,35 @@ Entries:
   id: 338701
   time: '2026-02-20T05:36:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3387
+- author: Conflee, Ko4erga
+  changes:
+  - message: Added black stairs which fit in better with the dark steel floor tile
+      set, for mapping use.
+    type: Add
+  - message: Ported a resprite of the Alien Vault Walls by Ko4erga, and then made
+      Stone and Sandstone versions based on them- previous versions had no smoothing,
+      didn't link together, and looked like ass. Now they aren't hideous.
+    type: Tweak
+  id: 338901
+  time: '2026-02-20T07:14:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3389
+- author: Awriko
+  changes:
+  - message: (cork) Added dog beds to medical, bridge, and security (warden). No more
+      waltloose.
+    type: Add
+  - message: (cork) vault freezer item duplication patched.
+    type: Fix
+  - message: (cork) Fixed robotics, warden office, law office, and detective office
+      access issues.
+    type: Fix
+  - message: (cork) Rotated mining magnet to the proper orientation.
+    type: Fix
+  - message: (cork) added an exit turnstile to the security-side of genpop, complete
+      with new firelocks networked.
+    type: Tweak
+  id: 338401
+  time: '2026-02-20T07:23:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3384
 Order: -1
 
