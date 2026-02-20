@@ -33,22 +33,6 @@
   - InsulsScrapper
 
 - type: loadoutGroup
-  id: GlovesGeneric
-  name: loadout-group-gloves-generic
-  minLimit: 0
-  loadouts:
-  - RedRegaliaGloves
-  - ClothWrapGlove
-
-- type: loadoutGroup
-  id: HeadGeneric
-  name: loadout-group-head-generic
-  minLimit: 0
-  loadouts:
-  - Hairflower
-  - LilyFlower
-
-- type: loadoutGroup
   id: Scarves
   name: loadout-group-scarves
   minLimit: 0

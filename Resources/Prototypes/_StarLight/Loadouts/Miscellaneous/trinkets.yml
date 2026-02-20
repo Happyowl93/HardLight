@@ -419,8 +419,8 @@
       !type:RoleTimeRequirement
       role: JobMailTech
       time: 36000 # 10 hours of being ignored while carrying a parcelbomb
-  equipment:
-    shoes: ClothingShoesSkates
+  storage:
+    back: ClothingShoesSkates
 
 - type: loadout
   id: DaBling
