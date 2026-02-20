@@ -31383,5 +31383,12 @@ Entries:
   id: 335801
   time: '2026-02-20T16:48:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3358
+- author: wonderfulnewworld
+  changes:
+  - message: Fixed pre-defined labels not being given proper localization.
+    type: Fix
+  id: 339901
+  time: '2026-02-20T19:33:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3399
 Order: -1
 
