@@ -460,6 +460,11 @@ public sealed partial class GunSystem : SharedGunSystem
         var direction = TransformSystem.ToMapCoordinates(fromCoordinates).Position - TransformSystem.ToMapCoordinates(toCoordinates).Position;
         var worldAngle = direction.ToAngle().Opposite();
 
+        // Starlight-start: Update angle on client
+        GetCurrentAngle(gun.AsNullable());
+        gun.Comp.LastFire = gun.Comp.NextFire;
+        // Starlight-end
+
         foreach (var (ent, shootable) in ammo)
         {
             if (throwItems)

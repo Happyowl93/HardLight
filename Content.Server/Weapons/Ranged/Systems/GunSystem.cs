@@ -115,7 +115,8 @@ public sealed partial class GunSystem : SharedGunSystem
         var toMap = TransformSystem.ToMapCoordinates(toCoordinates).Position;
         var mapDirection = toMap - fromMap.Position;
         var mapAngle = mapDirection.ToAngle();
-        var angle = GetRecoilAngle(Timing.CurTime, gun, mapDirection.ToAngle());
+        var angle = GetRecoilAngle(gun, mapDirection.ToAngle());
+        gun.Comp.LastFire = gun.Comp.NextFire; // Stalright-edit
 
         // If applicable, this ensures the projectile is parented to grid on spawn, instead of the map.
         var fromEnt = MapManager.TryFindGridAt(fromMap, out var gridUid, out _)
@@ -358,34 +359,7 @@ public sealed partial class GunSystem : SharedGunSystem
     }
 
     // Starlight-start: Fully rework recoil
-    private Angle GetRecoilAngle(TimeSpan curTime, Entity<GunComponent> gun, Angle direction)
-    {
-        var timeSinceLastFire = (curTime - gun.Comp.LastFire).TotalSeconds;
-        var newTheta = MathHelper.Clamp(gun.Comp.CurrentAngle.Theta + gun.Comp.AngleIncreaseModified.Theta - gun.Comp.AngleDecayModified.Theta * timeSinceLastFire, gun.Comp.MinAngleModified.Theta, gun.Comp.MaxAngleModified.Theta);
-        gun.Comp.CurrentAngle = new Angle(newTheta);
-        gun.Comp.LastFire = gun.Comp.NextFire;
-
-        var spreadModifier = 1f;
-
-        var xform = Transform(gun);
-        if (TryComp<InputMoverComponent>(xform.ParentUid, out var mover) && mover.CanMove && mover.HasDirectionalMovement)
-        {
-            if (mover.Sprinting)
-                spreadModifier += gun.Comp.SprintSpreadModifier;
-            else
-                spreadModifier += gun.Comp.WalkSpreadModifier;
-        }
-
-        // Convert it so angle can go either side.
-        var random = Random.NextFloat(-0.5f, 0.5f);
-
-        var finalSpread = gun.Comp.CurrentAngle.Theta * spreadModifier;
-        var spread = finalSpread * random;
-
-        var angle = new Angle(direction.Theta + gun.Comp.CurrentAngle.Theta * random);
-        DebugTools.Assert(spread <= gun.Comp.MaxAngleModified.Theta);
-        return angle;
-    }
+    //private Angle GetRecoilAngle(TimeSpan curTime, Entity<GunComponent> gun, Angle direction)
     // Starlight-end
 
     protected override void Popup(string message, EntityUid? uid, EntityUid? user) { }

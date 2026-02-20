@@ -10,6 +10,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using SixLabors.ImageSharp.PixelFormats;
 using Robust.Shared.Graphics.RSI;
+using Content.Client.Weapons.Ranged.Systems;
 
 namespace Content.Client.CombatMode;
 
@@ -32,6 +33,8 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
     private readonly SightPrototype? _gunBoltSight;
     private readonly SightPrototype? _meleeSight;
 
+    private const float VisualSightRadius = 8f;
+
     public override OverlaySpace Space => OverlaySpace.ScreenSpace;
 
     public CombatModeIndicatorsOverlay(IInputManager input, IEntityManager entMan, IPrototypeManager prototypes,
@@ -47,19 +50,11 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         _clyde = clyde;
 
         if (_gunSight.BoltVariant != null)
-            prototypes.TryIndex<SightPrototype>(_gunSight.BoltVariant, out _gunBoltSight);
+            prototypes.TryIndex(_gunSight.BoltVariant, out _gunBoltSight);
     }
 
-    protected override bool BeforeDraw(in OverlayDrawArgs args)
-    {
-        if (!_combat.IsInCombatMode())
-        {
-            return false;
-            _clyde.SetCursor(null);
-        }
-
-        return base.BeforeDraw(in args);
-    }
+    protected override bool BeforeDraw(in OverlayDrawArgs args) 
+        => !_combat.IsInCombatMode() ? false : base.BeforeDraw(in args);
 
     protected override void Draw(in OverlayDrawArgs args)
     {
@@ -69,7 +64,7 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
             return;
 
         var handEntity = _hands.GetActiveHandEntity();
-        var isHandGunItem = _entMan.HasComponent<GunComponent>(handEntity);
+        var isHandGunItem = _entMan.TryGetComponent<GunComponent>(handEntity, out var gun);
         var isGunBolted = true;
         if (_entMan.TryGetComponent(handEntity, out ChamberMagazineAmmoProviderComponent? chamber))
             isGunBolted = chamber.BoltClosed ?? true;
@@ -88,57 +83,69 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
             else
                 _clyde.SetCursor(null);
             var rsiState = spriteSys.RsiStateLike(sight.Sprite);
-            if (rsiState.IsAnimated && rsiState.AnimationFrameCount == 3)
+            if (rsiState.IsAnimated && rsiState.AnimationFrameCount >= 3)
             {
-                var bracket1 = rsiState.GetFrame(RsiDirection.South, 0);
-                var sightTexture = rsiState.GetFrame(RsiDirection.South, 1);
-                var bracket2 = rsiState.GetFrame(RsiDirection.South, 2);
-                DrawSightPartial(sightTexture, bracket1, bracket2, args.ScreenHandle, mousePos, limitedScale * Math.Clamp(sight.Scale, 0f, 1f), sight.MainColor, sight.StrokeColor);
+                var currentAngle = 0f;
+                var maxAngle = (float?)gun?.MaxAngleModified.Degrees ?? 1f;
+                if (isHandGunItem && handEntity != null)
+                    currentAngle = (float)_entMan.System<GunSystem>().GetCurrentAngle(handEntity.Value).Degrees;
+                var bracket1 = rsiState.GetFrame(RsiDirection.South, 0); // Left
+                var sightTexture = rsiState.GetFrame(RsiDirection.South, 1); // Center
+                var bracket2 = rsiState.GetFrame(RsiDirection.South, 2); // Right
+                Texture? bracket3 = null; // Down
+                Texture? bracket4 = null; // Up
+                if (rsiState.AnimationFrameCount >= 4)
+                    bracket3 = rsiState.GetFrame(RsiDirection.South, 3);
+                if (rsiState.AnimationFrameCount >= 5)
+                    bracket4 = rsiState.GetFrame(RsiDirection.South, 4);
+                DrawSightPartial(sightTexture, bracket1, bracket2, args.ScreenHandle, mousePos, limitedScale * Math.Clamp(sight.Scale, 0f, 1f), sight.MainColor, sight.StrokeColor, currentAngle, maxAngle, bracket3, bracket4);
             }
             else
             {
                 var sightTexture = spriteSys.Frame0(sight.Sprite);
-                DrawSight(sightTexture, args.ScreenHandle, mousePos, limitedScale * Math.Clamp(sight.Scale, 0f, 1f), sight.MainColor, sight.StrokeColor);
+                DrawOverlayPart(sightTexture, args.ScreenHandle, mousePos, limitedScale * Math.Clamp(sight.Scale, 0f, 1f), sight.MainColor, sight.StrokeColor);
             }
         }
     }
 
-    private void DrawSight(Texture sight, DrawingHandleScreen screen, Vector2 centerPos, float scale, Color mainColor, Color strokeColor)
+    private static void DrawSightPartial(Texture sight, Texture bracket1, Texture bracket2, DrawingHandleScreen screen, Vector2 centerPos, float scale, Color mainColor, Color strokeColor, float currentAngle = 0f, float maxAngle = 1f, Texture? bracket3 = null, Texture? bracket4 = null)
     {
-        var sightSize = sight.Size * scale;
-        var expandedSize = sightSize + new Vector2(7f, 7f);
-
-        screen.DrawTextureRect(sight,
-            UIBox2.FromDimensions(centerPos - sightSize * 0.5f, sightSize), strokeColor);
-        screen.DrawTextureRect(sight,
-            UIBox2.FromDimensions(centerPos - expandedSize * 0.5f, expandedSize), mainColor);
-    }
-
-    private void DrawSightPartial(Texture sight, Texture bracket1, Texture bracket2, DrawingHandleScreen screen, Vector2 centerPos, float scale, Color mainColor, Color strokeColor, float spread = 6f)
-    {
-        var sightSize = sight.Size * scale;
-        DrawSight(sight, screen, centerPos, scale, mainColor, strokeColor);
+        DrawOverlayPart(sight, screen, centerPos, scale, mainColor, strokeColor);
 
         var bracketSize1 = bracket1.Size * scale;
         var bracketSize2 = bracket2.Size * scale;
 
-        float offset = sightSize.X * 0.5f + spread;
+        var t = Math.Clamp(currentAngle / maxAngle, 0f, 1f);
+        var baseOffset = VisualSightRadius + 2f;
+        var spreadOffset = 100f * scale;
+
+        var offset = baseOffset + (spreadOffset * t);
 
         var bracket1Pos = centerPos + new Vector2(-offset - bracketSize1.X * 0.5f, 0f);
         var bracket2Pos = centerPos + new Vector2(offset + bracketSize2.X * 0.5f, 0f);
+        DrawOverlayPart(bracket1, screen, bracket1Pos, scale, mainColor, strokeColor);
+        DrawOverlayPart(bracket2, screen, bracket2Pos, scale, mainColor, strokeColor);
 
-        screen.DrawTextureRect(bracket1,
-            UIBox2.FromDimensions(bracket1Pos - bracketSize1 * 0.5f, bracketSize1), strokeColor);
-        screen.DrawTextureRect(bracket2,
-            UIBox2.FromDimensions(bracket2Pos - bracketSize2 * 0.5f, bracketSize2), strokeColor);
+        if (bracket3 != null)
+        {
+            var bracket3Pos = centerPos + new Vector2(0f, offset + bracketSize1.Y * 0.5f);
+            DrawOverlayPart(bracket3, screen, bracket3Pos, scale, mainColor, strokeColor);
+        }
 
-        var bracketExpanded1 = bracketSize1 + new Vector2(7f, 7f);
-        var bracketExpanded2 = bracketSize2 + new Vector2(7f, 7f);
+        if (bracket4 != null)
+        {
+            var bracket4Pos = centerPos + new Vector2(0f, -offset - bracketSize2.Y * 0.5f);
+            DrawOverlayPart(bracket4, screen, bracket4Pos, scale, mainColor, strokeColor);
+        }
+    }
 
-        screen.DrawTextureRect(bracket1,
-            UIBox2.FromDimensions(bracket1Pos - bracketExpanded1 * 0.5f, bracketExpanded1), mainColor);
-        screen.DrawTextureRect(bracket2,
-            UIBox2.FromDimensions(bracket2Pos - bracketExpanded2 * 0.5f, bracketExpanded2), mainColor);
+    private static void DrawOverlayPart(Texture texture, DrawingHandleScreen screen, Vector2 position, float scale, Color mainColor, Color strokeColor)
+    {
+        var size = texture.Size * scale;
+        screen.DrawTextureRect(texture,
+            UIBox2.FromDimensions(position - size * 0.5f, size), strokeColor);
+        screen.DrawTextureRect(texture,
+            UIBox2.FromDimensions(position - size * 0.5f - new Vector2(3f, 3f), size + new Vector2(7f, 7f)), mainColor);
     }
 
     private sealed class DummyCursor : ICursor

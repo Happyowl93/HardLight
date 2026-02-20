@@ -3,21 +3,12 @@
   "license": "CC0-1.0",
   "copyright": "Kenney assets, https://kenney-assets.itch.io/crosshair-pack",
   "size": {
-    "x": 64,
-    "y": 64
+    "x": 32,
+    "y": 32
   },
   "states": [
     {
-      "name": "arrows"
-    },
-    {
-      "name": "arrows_dot"
-    },
-    {
-      "name": "arrows_outer"
-    },
-    {
-      "name": "arrows_outer_3",
+      "name": "arrows",
       "delays": [
         [
           1,
@@ -27,19 +18,68 @@
       ]
     },
     {
-      "name": "arrows_outer_double"
+      "name": "arrows_dot",
+      "delays": [
+        [
+          1,
+          1,
+          1
+        ]
+      ]
     },
     {
-      "name": "basic"
+      "name": "arrows_outer",
+      "delays": [
+        [
+          1,
+          1,
+          1
+        ]
+      ]
     },
     {
-      "name": "basic_dot"
+      "name": "arrows_outer_double",
+      "delays": [
+        [
+          1,
+          1,
+          1
+        ]
+      ]
     },
     {
-      "name": "brackets"
+      "name": "basic",
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
     },
     {
-      "name": "circle"
+      "name": "basic_dot",
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "brackets",
+      "delays": [
+        [
+          1,
+          1,
+          1
+        ]
+      ]
     },
     {
       "name": "cross_dot"
@@ -54,13 +94,36 @@
       "name": "dot"
     },
     {
-      "name": "double_dot"
+      "name": "double_dot",
+      "delays": [
+        [
+          1,
+          1,
+          1
+        ]
+      ]
     },
     {
-      "name": "triple"
+      "name": "triple",
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
     },
     {
-      "name": "triple_dot"
+      "name": "triple_dot",
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
     }
   ]
 }
