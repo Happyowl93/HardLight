@@ -133,14 +133,13 @@
   - GroupTankHarness
   - LibrarianJumpsuit
   - CommonBackpack
-  - CivilianShoes # Starlight End
+  - CivilianShoes # Starlight
   - Glasses
   - Survival
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
   - LuxuryPens # Starlight
-  - CivilianShoes # Starlight
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -277,7 +276,6 @@
 - type: roleLoadout
   id: JobQuartermaster
   groups:
-  - CivilianShoes # Starlight
   - QuartermasterHead
   - QuartermasterNeck
   - QuartermasterJumpsuit

@@ -1353,8 +1353,8 @@
   - WhiteShoes
   - BlackShoes
   - ScienceWinterBoots
-  - Heels # Starlight start
-  - LeatherShoes # Starlight end
+  - Heels # Starlight
+  - LeatherShoes # Starlight
 
 - type: loadoutGroup
   id: ScientistGloves
