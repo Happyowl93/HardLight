@@ -5,6 +5,7 @@ using Content.Shared.Implants;
 using Content.Server.Objectives;
 using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
+using Content.Shared._Starlight.Antags.Traitor;
 using Content.Shared.Mind;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffectNew;
@@ -12,6 +13,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Content.Shared._Starlight.Implants.Components;
+using Content.Shared.Mindshield.Components;
 using Content.Shared.Objectives.Components;
 
 
@@ -36,8 +38,25 @@ public sealed class MindControlSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        
+        SubscribeLocalEvent<MindControlImplantComponent, AddImplantAttemptEvent>(OnAttemptImplant);
         SubscribeLocalEvent<MindControlImplantComponent, ImplantImplantedEvent>(OnImplantImplanted);
         SubscribeLocalEvent<MindControlImplantComponent, ImplantRemovedEvent>(OnImplantRemoved);
+    }
+
+    private void OnAttemptImplant(EntityUid uid, MindControlImplantComponent component, AddImplantAttemptEvent args)
+    {
+        component.Master = args.User;
+        
+        if (!_mind.TryGetMind(args.Target, out var mindId, out var mind) ||
+            _mind.IsCharacterDeadIc(mind) ||
+            args.User == args.Target ||
+            HasComp<MindShieldComponent>(args.Target) ||
+            HasComp<TraitorComponent>(args.Target))
+        {
+            args.Cancel();
+            //_popup.PopupEntity(Loc.GetString("mind-control-invalid"), args.User, args.User, PopupType.Small);
+        }
     }
 
     private void OnImplantImplanted(EntityUid uid, MindControlImplantComponent component, ImplantImplantedEvent args)
