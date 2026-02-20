@@ -395,7 +395,7 @@
   - WinterBoots
   - Heels # 🌟Starlight🌟
   - CoderSocks # Starlight
-  - RollerSkates # Starlight
+  - RollerSkatesLoadout # Starlight
   - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
@@ -732,10 +732,12 @@
 - type: loadoutGroup
   id: ClownShoes
   name: loadout-group-clown-shoes
+  minLimit: 0 # Starlight
+  defaultSelected: 1 # Starlight
   loadouts:
   - ClownShoes
   - JesterShoes
-  - RollerSkates # Starlight
+  - RollerSkatesLoadout # Starlight
 
 - type: loadoutGroup
   id: SurvivalClown
@@ -929,7 +931,6 @@
   - SalvageBoots
   - WorkBoots
   - Heels
-  - ClothWrapShoe # Starlight end
 
 - type: loadoutGroup
   id: QuartermasterJobTrinkets
@@ -993,8 +994,7 @@
   - LeatherShoes
   - WorkBoots
   - Heels
-  - RollerSkates
-  - ClothWrapShoe # Starlight end
+  - RollerSkatesLoadout # Starlight end
 
 - type: loadoutGroup
   id: CargoTechnicianID
@@ -1038,7 +1038,8 @@
 - type: loadoutGroup
   id: SalvageSpecialistShoes
   name: loadout-group-salvage-specialist-shoes
-  minLimit: 0
+  minLimit: 0 # Starlight
+  defaultSelected: 1 # Starlight
   loadouts:
   - SalvageBoots
   - CargoWinterBoots
@@ -1096,7 +1097,6 @@
   - WorkBoots # 🌟Starlight🌟
   - EngineeringWinterBoots
   - Heels # 🌟Starlight🌟
-  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: ChiefEngineerJobTrinkets
@@ -1169,7 +1169,6 @@
   - WorkBoots
   - EngineeringWinterBoots
   - Heels # 🌟Starlight🌟
-  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: StationEngineerID
@@ -1220,7 +1219,6 @@
   - WorkBoots # 🌟Starlight🌟
   - EngineeringWinterBoots
   - Heels # 🌟Starlight🌟
-  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: AtmosphericTechnicianJobTrinkets
@@ -1286,8 +1284,7 @@
   - ScienceWinterBoots
   - Heels # Starlight start
   - LaceupShoes
-  - LeatherShoes
-  - ClothWrapShoe # Starlight
+  - LeatherShoes # Starlight
 
 - type: loadoutGroup
   id: ResearchDirectorJobTrinkets
@@ -1357,8 +1354,7 @@
   - BlackShoes
   - ScienceWinterBoots
   - Heels # Starlight start
-  - LeatherShoes
-  - ClothWrapShoe # Starlight end
+  - LeatherShoes # Starlight end
 
 - type: loadoutGroup
   id: ScientistGloves
@@ -1617,7 +1613,8 @@
 - type: loadoutGroup
   id: SecurityShoes
   name: loadout-group-security-shoes
-  minLimit: 0
+  minLimit: 0 # Starlight
+  defaultSelected: 1 # Starlight
   loadouts:
   - JackBoots
   - SecurityWinterBoots
@@ -1754,8 +1751,7 @@
   - MedicalWinterBoots
   - Heels # Starlight start
   - LaceupShoes
-  - LeatherShoes
-  - ClothWrapShoe # Starlight end
+  - LeatherShoes # Starlight end
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJobTrinkets
@@ -1823,8 +1819,7 @@
   - MedicalWinterBoots
   - Heels # Starlight start
   - LaceupShoes
-  - LeatherShoes
-  - ClothWrapShoe # Starlight end
+  - LeatherShoes # Starlight end
 
 - type: loadoutGroup
   id: MedicalDoctorPDA
@@ -1950,7 +1945,6 @@
   - WhiteShoes
   - MedicalWinterBoots
   - Heels # Starlight
-  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: ParamedicJobTrinkets
