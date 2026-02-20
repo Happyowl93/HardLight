@@ -1126,7 +1126,7 @@
   - type: Sprite
     state: pill3
   - type: Label
-    currentLabel: reagent-label-psicodine-10 # Starlight, expects loc
+    currentLabel: psicodine 10u
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1142,7 +1142,7 @@
   suffix: Psicodine 10u, 5
   components:
   - type: Label
-    currentLabel: reagent-label-psicodine-10 # Starlight, expects loc
+    currentLabel: psicodine 10u
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector

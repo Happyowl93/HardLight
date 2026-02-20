@@ -112,7 +112,7 @@
         - ReagentId: SpaceCleaner
           Quantity: 100
   - type: Label
-    currentLabel: reagent-label-space-cleaner # Starlight. It brings a warning to the console, since it expects a loc.
+    currentLabel: Space Cleaner
   - type: Tag
     tags:
       - Spray
@@ -131,7 +131,7 @@
         - ReagentId: SpaceCleaner
           Quantity: 250
   - type: Label
-    currentLabel: reagent-label-space-cleaner # Starlight. It brings a warning to the console, since it expects a loc.
+    currentLabel: Space Cleaner
 
 - type: entity
   parent: SprayBottle
