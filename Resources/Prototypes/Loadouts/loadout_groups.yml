@@ -3,7 +3,7 @@
   id: Trinkets
   name: loadout-group-trinkets
   minLimit: 0
-  maxLimit: 5
+  maxLimit: 7
   loadouts:
   - FlowerWreath
   - Hairflower
@@ -63,53 +63,61 @@
   - TowelColorGold
   - TowelColorWhite
   - TowelColorYellow
-  - HarmonicaInstrument # 🌟Starlight🌟
-  - FluteInstrument #Starlight
-  - AcousticGuitarInstrument #Starlight
-  - TrumpetInstrument #Starlight
-  - ClothingUnderSocksCoder # 🌟Starlight🌟
-  - ClothWrap # 🌟Starlight🌟
-  - ClothingUniformJumpskirtElegantMaid # 🌟Starlight🌟
-  - ClothingHeadHatWhiteCatEars # 🌟Starlight🌟
-  - RolliePack #SL
-  - GoldRing #SL
-  - SilverRing #SL
-  - Matchbox #SL
-  - HonkImplant #SL
-  - TromboneImplant #SL
-  - NewtonsCradle #SL
-  - BBall #SL
-  - RubberQuack #SL
-  - GatchaBox #SL
-  - WristWatch #SL
-  - ZippoLighter #SL
-  - MedChecker #SL
-  - ChanceSack #SL
-  - StationMap #SL
-  - YaharJar #SL
-  - PaperFolder1 #SL
-  - PaperFolder2 #SL
-  - PaperFolder3 #SL
-  - PaperFolder4 #SL
-  - PaperFolder5 #SL
-  - PaperFolder6 #SL
-  - PaperFolder7 #SL
-  - PaperClipboard #SL
-  - HonoredClownMask #SL
-  - MedRollies #SL
-  - RollerSkates #SL
-  - DaBling #SL
-  - CrapPlushie #SL ##not a typo
-  - LighterGatcha #SL
-  - MagicCrayon #SL
-  - HappyHonk #SL
-  - leftripperarm #SL
-  - rightmechwrightarm #SL
-  - CigPackBub #SL
-  - PillCanisterPsicodine #SL
-  - ClothingDogTags # SL
-  - PersonalAI #SL
-  - GoldenPersonalAI #SL
+  - HarmonicaInstrument # Starlight start
+  - FluteInstrument
+  - AcousticGuitarInstrument
+  - TrumpetInstrument
+  - RoadCone
+  - MaidOutfit
+  - MaidOutfitTactical
+  - MaidHeadbandTactical
+  - CoderSocks
+  - CatEars
+  - BunnyEars
+  - DogEars
+  - ClothWrapGlove
+  - RollerSkates
+  - RolliePack
+  - GoldRing
+  - SilverRing
+  - Matchbox
+  - HonkImplant
+  - TromboneImplant
+  - NewtonsCradle
+  - BBall
+  - TBall
+  - RubberQuack
+  - GatchaBox
+  - WristWatch
+  - ZippoLighter
+  - MedChecker
+  - ChanceSack
+  - StationMap
+  - YaharJar
+  - PaperFolder1
+  - PaperFolder2
+  - PaperFolder3
+  - PaperFolder4
+  - PaperFolder5
+  - PaperFolder6
+  - PaperFolder7
+  - PaperClipboard
+  - HonoredClownMask
+  - MedRollies
+  - DaBling
+  - CrapPlushie ##not a typo
+  - LighterGatcha
+  - MagicCrayon
+  - HappyHonk
+  - leftripperarm
+  - rightmechwrightarm
+  - CigPackBub
+  - PillCanisterPsicodine
+  - ClothingDogTags
+  - PersonalAI
+  - Boxblacklight
+  - GoldenPersonalAI # Starlight end
+  - AACTablet # DeltaV
 
 - type: loadoutGroup
   id: Glasses
@@ -136,6 +144,7 @@
   loadouts:
   - EmergencyNitrogen
   - EmergencyOxygen
+  - EmergencyElfOxygen # Starlight
   - LoadoutSpeciesVoxNitrogen
   - EmergencyNonBreather # 🌟Starlight🌟
 
@@ -172,6 +181,8 @@
   loadouts:
   - CaptainHead
   - CaptainCap
+  - Hairflower # Starlight
+  - LilyFlower # Starlight
 
 - type: loadoutGroup
   id: CaptainJumpsuit
@@ -232,6 +243,8 @@
   minLimit: 0
   loadouts:
   - HoPHead
+  - Hairflower # Starlight
+  - LilyFlower # Starlight
 
 - type: loadoutGroup
   id: HoPJumpsuit
@@ -284,48 +297,50 @@
   - AncientJumpsuit
   - RainbowJumpsuit
   - RainbowJumpskirt
-  - GreyJumpsuit #starlight
-  - GreyJumpskirt #starlight
-  - WhiteJumpsuitLoadout #SL
-  - WhiteJumpskirtLoadout #SL
-  - BlackJumpsuitLoadout #SL
-  - BlackJumpskirtLoadout #SL
-  - BlueJumpsuitLoadout #SL
-  - BlueJumpskirtLoadout #SL
-  - DarkBlueJumpsuitLoadout #SL
-  - DarkBlueJumpskirtLoadout #SL
-  - TealJumpsuitLoadout #SL
-  - TealJumpskirtLoadout #SL
-  - GreenJumpsuitLoadout #SL
-  - GreenJumpskirtLoadout #SL
-  - DarkGreenJumpsuitLoadout #SL
-  - DarkGreenJumpskirtLoadout #SL
-  - OrangeJumpsuitLoadout #SL
-  - OrangeJumpskirtLoadout #SL
-  - PinkJumpsuitLoadout #SL
-  - PinkJumpskirtLoadout #SL
-  - RedJumpsuitLoadout #SL
-  - RedJumpskirtLoadout #SL
-  - YellowJumpsuitLoadout #SL
-  - YellowJumpskirtLoadout #SL
-  - PurpleJumpsuitLoadout #SL
-  - PurpleJumpskirtLoadout #SL
-  - LightBrownJumpsuitLoadout #SL
-  - LightBrownJumpskirtLoadout #SL
-  - BrownJumpsuitLoadout #SL
-  - BrownJumpskirtLoadout #SL
-  - MaroonJumpsuitLoadout #SL
-  - MaroonJumpskirtLoadout #SL
-  - BodysuitJeans #SL
-  - CoolTanktop #SL
-  - LumberjackOveralls #SL
-  - MechanicOveralls #SL
-  - MessyDressShirt #SL
-  - OldWomanDress #SL
-  - PunkJeans #SL
-  - TatteredClothes #SL
-  - TieDye #SL
-  - VintageClothes #SL
+  - GreyJumpsuit # starlight start
+  - GreyJumpskirt
+  - WhiteJumpsuitLoadout
+  - WhiteJumpskirtLoadout
+  - BlackJumpsuitLoadout
+  - BlackJumpskirtLoadout
+  - BlueJumpsuitLoadout
+  - BlueJumpskirtLoadout
+  - DarkBlueJumpsuitLoadout
+  - DarkBlueJumpskirtLoadout
+  - TealJumpsuitLoadout
+  - TealJumpskirtLoadout
+  - GreenJumpsuitLoadout
+  - GreenJumpskirtLoadout
+  - DarkGreenJumpsuitLoadout
+  - DarkGreenJumpskirtLoadout
+  - OrangeJumpsuitLoadout
+  - OrangeJumpskirtLoadout
+  - PinkJumpsuitLoadout
+  - PinkJumpskirtLoadout
+  - RedJumpsuitLoadout
+  - RedJumpskirtLoadout
+  - YellowJumpsuitLoadout
+  - YellowJumpskirtLoadout
+  - PurpleJumpsuitLoadout
+  - PurpleJumpskirtLoadout
+  - LightBrownJumpsuitLoadout
+  - LightBrownJumpskirtLoadout
+  - BrownJumpsuitLoadout
+  - BrownJumpskirtLoadout
+  - MaroonJumpsuitLoadout
+  - MaroonJumpskirtLoadout
+  - BodysuitJeans
+  - CoolTanktop
+  - LumberjackOveralls
+  - MechanicOveralls
+  - MessyDressShirt
+  - OldWomanDress
+  - PunkJeans
+  - TatteredClothes
+  - TieDye
+  - VintageClothes
+  - MaidOutfit # starlight
+
 
 - type: loadoutGroup
   id: AssistantFace
@@ -342,6 +357,10 @@
   loadouts:
   - AssistantGloves
   - GreyGloves #starlight
+  - PawsWhite # starlight start
+  - PawsBrown
+  - PawsBlack
+  - PawsBlackWhite # starlight end
 
 - type: loadoutGroup
   id: CommonBackpack
@@ -358,6 +377,7 @@
   minLimit: 0
   loadouts:
   - Mantle
+  - OldMantle
 
 - type: loadoutGroup
   id: AssistantOuterClothing
@@ -365,20 +385,25 @@
   minLimit: 0
   loadouts:
   - AssistantWintercoat
-  - GreyHoodieA #starlight
-  - GreyTrenchcoatA #starlight
-  - SpaceAssholeCoat #starlight
-  - RedLeatherJacker #SL
+  - GreyHoodieA # starlight start
+  - GreyTrenchcoatA
+  - SpaceAssholeCoat
+  - RedLeatherJacker # starlight end
 
 - type: loadoutGroup
   id: AssistantShoes
   name: loadout-group-assistant-shoes
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BlackShoes
   - BrownShoes
   - WhiteShoes
   - WinterBoots
   - Heels # 🌟Starlight🌟
+  - CoderSocks # Starlight
+  - RollerSkates # Starlight
+  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: AssistantJobTrinkets # Starlight - depassenger
@@ -394,6 +419,9 @@
   loadouts:
   - BartenderHead
   - BartenderBowler
+  - MaidHeadbandTactical # Starlight Start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: BartenderJumpsuit
@@ -402,6 +430,8 @@
   - BartenderJumpsuit
   - BartenderJumpskirt
   - BartenderJumpsuitPurple
+  - MaidOutfit # starlight
+
 
 - type: loadoutGroup
   id: BartenderOuterClothing
@@ -433,6 +463,9 @@
   minLimit: 0
   loadouts:
   - ChefHead
+  - MaidHeadbandTactical # Starlight Start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: ChefMask
@@ -447,6 +480,8 @@
   loadouts:
   - ChefJumpsuit
   - ChefJumpskirt
+  - MaidOutfit # starlight
+
 
 - type: loadoutGroup
   id: ChefOuterClothing
@@ -472,6 +507,8 @@
   - LibrarianJumpskirt
   - CuratorJumpsuit
   - CuratorJumpskirt
+  - MaidOutfit # starlight
+
 
 - type: loadoutGroup
   id: LibrarianJobTrinkets
@@ -494,6 +531,7 @@
   - LawyerJumpskirtRed
   - LawyerJumpsuitGood
   - LawyerJumpskirtGood
+
 
 - type: loadoutGroup
   id: LawyerNeck
@@ -519,6 +557,9 @@
   - ChaplainPlagueHat
   - ChaplainWitchHat
   - ChaplainWitchHatAlt
+  - MaidHeadbandTactical # Starlight Start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: ChaplainMask
@@ -535,6 +576,7 @@
   - ChaplainJumpskirt
   - ChaplainRobesLight
   - ChaplainRobesDark
+
 
 - type: loadoutGroup
   id: ChaplainOuterClothing
@@ -573,23 +615,23 @@
   - BibleHonk
   - BibleRatvar
   - BibleNarsie
-  - BibleAlHikma # starlight
-  - BibleBookOfAges # starlight
-  - BibleBookOfAncestors # starlight
-  - BibleTomeOfDread # starlight
-  - BibleBookOfGrudges # starlight
-  - BibleBookOfMormon # starlight
-  - BibleEdda # starlight
-  - BibleKoans # starlight
-  - BibleLiberChaotica # starlight
-  - BibleMalleus # starlight
-  - BibleOrthodox # starlight
-  - BiblePrincipiaDiscordia # starlight
-  - BibleHadith # starlight
-  - BibleTaoTeChing # starlight
-  - BibleTorah # starlight
-  - BibleTripitaka # starlight
-  - BibleRigVeda # starlight
+  - BibleAlHikma # starlight start
+  - BibleBookOfAges
+  - BibleBookOfAncestors
+  - BibleTomeOfDread
+  - BibleBookOfGrudges
+  - BibleBookOfMormon
+  - BibleEdda
+  - BibleKoans
+  - BibleLiberChaotica
+  - BibleMalleus
+  - BibleOrthodox
+  - BiblePrincipiaDiscordia
+  - BibleHadith
+  - BibleTaoTeChing
+  - BibleTorah
+  - BibleTripitaka
+  - BibleRigVeda # starlight end
 
 - type: loadoutGroup
   id: JanitorHead
@@ -597,6 +639,9 @@
   minLimit: 0
   loadouts:
   - JanitorHead
+  - MaidHeadbandTactical # Starlight Start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: JanitorJumpsuit
@@ -604,6 +649,8 @@
   loadouts:
   - JanitorJumpsuit
   - JanitorJumpskirt
+  - MaidOutfit # starlight
+
 
 - type: loadoutGroup
   id: JanitorGloves
@@ -636,6 +683,9 @@
   loadouts:
   - BotanistHead
   - BotanistBandana
+  - MaidHeadbandTactical # Starlight Start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: BotanistJumpsuit
@@ -644,6 +694,7 @@
   - BotanistJumpsuit
   - BotanistJumpskirt
   - BotanistOveralls
+
 
 - type: loadoutGroup
   id: BotanistBackpack
@@ -676,6 +727,13 @@
   loadouts:
   - JesterHat
   - JesterAltHat
+  - MaidHeadbandTactical # Starlight start
+  - Hairflower
+  - LilyFlower
+  - RoadCone
+  - CatEars
+  - DogEars
+  - BunnyEars # Starlight end
 
 - type: loadoutGroup
   id: ClownJumpsuit
@@ -685,6 +743,8 @@
   - ClownSkirt
   - JesterSuit
   - JesterAltSuit
+  - MaidOutfit # starlight
+
 
 - type: loadoutGroup
   id: ClownBackpack
@@ -709,6 +769,7 @@
   loadouts:
   - ClownShoes
   - JesterShoes
+  - RollerSkates # Starlight
 
 - type: loadoutGroup
   id: SurvivalClown
@@ -718,6 +779,7 @@
   loadouts:
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
+  - EmergencyElfOxygenClown # Starlight
   - LoadoutSpeciesVoxNitrogen
   - EmergencyNonBreatherClown # 🌟Starlight🌟
 
@@ -736,6 +798,13 @@
   loadouts:
   - MimeHead
   - MimeFrenchBeret
+  - MaidHeadbandTactical # Starlight start
+  - Hairflower
+  - LilyFlower
+  - RoadCone
+  - CatEars
+  - DogEars
+  - BunnyEars # Starlight end
   - MimeCap
 
 - type: loadoutGroup
@@ -752,6 +821,8 @@
   loadouts:
   - MimeJumpsuit
   - MimeJumpskirt
+  - MaidOutfit # starlight
+
 
 - type: loadoutGroup
   id: MimeBackpack
@@ -784,6 +855,7 @@
   loadouts:
   - EmergencyNitrogenMime
   - EmergencyOxygenMime
+  - EmergencyElfOxygenMime # Starlight
   - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
   - EmergencyNonBreatherMime # 🌟Starlight🌟
@@ -801,6 +873,8 @@
   loadouts:
   - MusicianJumpsuit
   - MusicianJumpskirt
+  - MaidOutfit # starlight
+
 
 - type: loadoutGroup
   id: MusicianOuterClothing
@@ -860,6 +934,9 @@
   loadouts:
   - QuartermasterHead
   - QuartermasterBeret
+  - MaidHeadbandTactical # Starlight Start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: QuartermasterJumpsuit
@@ -889,13 +966,16 @@
 - type: loadoutGroup
   id: QuartermasterShoes
   name: loadout-group-quartermaster-shoes
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BrownShoes
-  - LeatherShoes # 🌟Starlight🌟
-  - SalvageBoots # 🌟Starlight🌟
-  - WorkBoots # 🌟Starlight🌟
   - CargoWinterBoots
-  - Heels # 🌟Starlight🌟
+  - LeatherShoes # Starlight start
+  - SalvageBoots
+  - WorkBoots
+  - Heels
+  - ClothWrapShoe # Starlight end
 
 - type: loadoutGroup
   id: QuartermasterJobTrinkets
@@ -910,20 +990,23 @@
   minLimit: 0
   loadouts:
   - CargoTechnicianHead
-  - CargoTechnicianBeret # 🌟Starlight🌟
-  - CargoTechnicianHeadFormal # Starlight
-  - CargoTechnicianBeretFormal # 🌟Starlight🌟
+  - CargoTechnicianBeret
+  - CargoTechnicianHeadFormal # Starlight start
+  - CargoTechnicianBeretFormal
+  - MaidHeadbandTactical
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: CargoTechnicianJumpsuit
   name: loadout-group-cargo-technician-jumpsuit
   loadouts:
   - CargoTechnicianJumpsuit
-  - CargoTechnicianJumpsuitAlt # afterlight
-  - CargoTechnicianJumpsuitFormal # afterlight
   - CargoTechnicianJumpskirt
-  - CargoTechnicianJumpskirtFormal # afterlight
-  - CargoTechnicianOveralls #Starlight
+  - CargoTechnicianJumpsuitAlt # afterlight start
+  - CargoTechnicianJumpsuitFormal
+  - CargoTechnicianJumpskirtFormal # afterlight end
+  - CargoTechnicianOveralls # Starlight
 
 - type: loadoutGroup
   id: CargoTechnicianBackpack
@@ -932,10 +1015,10 @@
   - CargoTechnicianBackpack
   - CargoTechnicianSatchel
   - CargoTechnicianDuffel
-  - SeniorCourierBackpack # Starlight
-  - SeniorCourierSatchel # Starlight
-  - SeniorCourierDuffel # Starlight
-  - LeatherSatchel # starlight
+  - SeniorCourierBackpack # Starlight start
+  - SeniorCourierSatchel
+  - SeniorCourierDuffel
+  - LeatherSatchel # starlight end
 
 - type: loadoutGroup
   id: CargoTechnicianOuterClothing
@@ -949,14 +1032,18 @@
 - type: loadoutGroup
   id: CargoTechnicianShoes
   name: loadout-group-cargo-technician-shoes
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BlackShoes
   - YellowShoes # 🌟Starlight🌟
   - CargoWinterBoots
-  - SeniorCourierWinterBoots # Starlight
-  - LeatherShoes # 🌟Starlight🌟
-  - WorkBoots # 🌟Starlight🌟
-  - Heels # 🌟Starlight🌟
+  - SeniorCourierWinterBoots # Starlight start
+  - LeatherShoes
+  - WorkBoots
+  - Heels
+  - RollerSkates
+  - ClothWrapShoe # Starlight end
 
 - type: loadoutGroup
   id: CargoTechnicianID
@@ -992,19 +1079,20 @@
   id: SalvageSpecialistJumpsuit
   name: loadout-group-salvage-specialist-jumpsuit
   loadouts:
-  - SalvageSpecialistJumpsuit # 🌟Starlight🌟
-  - SalvageSpecialistJumpskirt # 🌟Starlight🌟
-  - SalvageSpecialistJumpsuitFormal # 🌟Starlight🌟
-  - SalvageSpecialistJumpskirtFormal # 🌟Starlight🌟
+  - SalvageSpecialistJumpsuit # starlight start
+  - SalvageSpecialistJumpskirt
+  - SalvageSpecialistJumpsuitFormal
+  - SalvageSpecialistJumpskirtFormal # starlight end
 
 - type: loadoutGroup
   id: SalvageSpecialistShoes
   name: loadout-group-salvage-specialist-shoes
+  minLimit: 0
   loadouts:
   - SalvageBoots
   - CargoWinterBoots
-  - WorkBoots # 🌟Starlight🌟
-  - HighHeelBoots # 🌟Starlight🌟
+  - WorkBoots # Starlight start
+  - HighHeelBoots # Starlight end
 
 - type: loadoutGroup
   id: SalvageSpecialistJobTrinkets
@@ -1021,6 +1109,9 @@
   loadouts:
   - ChiefEngineerHead
   - ChiefEngineerBeret
+  - MaidHeadbandTactical # Starlight Start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: ChiefEngineerJumpsuit
@@ -1030,6 +1121,7 @@
   - ChiefEngineerJumpskirt
   - ChiefEngineerTurtleneck
   - ChiefEngineerTurtleneckSkirt
+
 
 - type: loadoutGroup
   id: ChiefEngineerNeck
@@ -1049,11 +1141,14 @@
 - type: loadoutGroup
   id: ChiefEngineerShoes
   name: loadout-group-chief-engineer-shoes
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BrownShoes
   - WorkBoots # 🌟Starlight🌟
   - EngineeringWinterBoots
   - Heels # 🌟Starlight🌟
+  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: ChiefEngineerJobTrinkets
@@ -1068,6 +1163,7 @@
   loadouts:
   - YellowJumpsuit
   - YellowJumpskirt
+
 
 - type: loadoutGroup
   id: TechnicalAssistantJobTrinkets
@@ -1085,6 +1181,9 @@
   - StationEngineerHardhatOrange
   - StationEngineerHardhatRed
   - SeniorEngineerBeret
+  - MaidHeadbandTactical # starlight
+  - Hairflower
+  - LilyFlower # Starlight
 
 - type: loadoutGroup
   id: StationEngineerJumpsuit
@@ -1095,6 +1194,7 @@
   - StationEngineerHazardsuit
   - SeniorEngineerJumpsuit
   - SeniorEngineerJumpskirt
+
 
 - type: loadoutGroup
   id: StationEngineerBackpack
@@ -1117,10 +1217,14 @@
 - type: loadoutGroup
   id: StationEngineerShoes
   name: loadout-group-station-engineer-shoes
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
+  - WhiteShoes # Starlight
   - WorkBoots
   - EngineeringWinterBoots
   - Heels # 🌟Starlight🌟
+  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: StationEngineerID
@@ -1144,6 +1248,7 @@
   - AtmosphericTechnicianJumpskirt
   - AtmosphericTechnicianJumpsuitCasual
 
+
 - type: loadoutGroup
   id: AtmosphericTechnicianOuterClothing
   name: loadout-group-atmospheric-technician-outerclothing
@@ -1163,12 +1268,14 @@
 - type: loadoutGroup
   id: AtmosphericTechnicianShoes
   name: loadout-group-atmospheric-technician-shoes
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - WhiteShoes
   - WorkBoots # 🌟Starlight🌟
   - EngineeringWinterBoots
   - Heels # 🌟Starlight🌟
-  - EngineeringWinterBoots
+  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: AtmosphericTechnicianJobTrinkets
@@ -1185,6 +1292,7 @@
   loadouts:
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
+  - EmergencyElfOxygenExtended # Starlight
   - LoadoutSpeciesVoxNitrogen
   - EmergencyNonBreatherExtended # 🌟Starlight🌟
 
@@ -1195,6 +1303,9 @@
   minLimit: 0
   loadouts:
   - ResearchDirectorBeret
+  - MaidHeadbandTactical # starlight start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: ResearchDirectorNeck
@@ -1224,14 +1335,17 @@
 - type: loadoutGroup
   id: ResearchDirectorShoes
   name: loadout-group-research-director-shoes
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BrownShoes
   - WhiteShoes # 🌟Starlight🌟
   - BlackShoes # 🌟Starlight🌟
   - ScienceWinterBoots
-  - Heels # 🌟Starlight🌟
-  - LaceupShoes # 🌟Starlight🌟
-  - LeatherShoes # 🌟Starlight🌟
+  - Heels # Starlight start
+  - LaceupShoes
+  - LeatherShoes
+  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: ResearchDirectorJobTrinkets
@@ -1245,9 +1359,12 @@
   name: loadout-group-scientist-head
   minLimit: 0
   loadouts:
-#  - RoboticistCap Only for roboticist
+  - RoboticistCap # Only for roboticist ## starlight: how bout I do anyway
   - SkullBandana
   - ScientificBeret
+  - MaidHeadbandTactical # starlight start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: ScientistNeck
@@ -1267,6 +1384,7 @@
   - RoboticistJumpskirt
   - SeniorResearcherJumpsuit
   - SeniorResearcherJumpskirt
+
 
 - type: loadoutGroup
   id: ScientistBackpack
@@ -1293,12 +1411,15 @@
 - type: loadoutGroup
   id: ScientistShoes
   name: loadout-group-scientist-shoes
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - WhiteShoes
   - BlackShoes
   - ScienceWinterBoots
-  - Heels # 🌟Starlight🌟
-  - LeatherShoes # 🌟Starlight🌟
+  - Heels # Starlight start
+  - LeatherShoes
+  - ClothWrapShoe # Starlight end
 
 - type: loadoutGroup
   id: ScientistGloves
@@ -1307,7 +1428,7 @@
   loadouts:
   - LatexGloves
   - PurpleGloves
-#  - RobohandsGloves Only for roboticist
+  - RobohandsGloves # Only for roboticist ## Starlight: how bout i do anyway
 
 - type: loadoutGroup
   id: ScientistPDA
@@ -1330,6 +1451,7 @@
   - WhiteJumpsuit
   - WhiteJumpskirt
 
+
 - type: loadoutGroup
   id: ResearchAssistantJobTrinkets
   name: loadout-group-jobtrinkets
@@ -1346,6 +1468,9 @@
   - HeadofSecurityHead
   - HeadofSecuritySheriff #Starlight
   - HeadofSecurityBeret
+  - MaidHeadbandTactical # Starlight Start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: HeadofSecurityJumpsuit
@@ -1361,6 +1486,7 @@
   - HeadofSecurityBlackSkirt
   - HeadofSecurityBlueJumpsuit
   - HeadofSecurityGreyJumpsuit
+  - MaidOutfitTactical # starlight
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
@@ -1396,6 +1522,9 @@
   loadouts:
   - WardenHead
   - WardenBeret
+  - MaidHeadbandTactical # starlight start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: WardenJumpsuit
@@ -1403,6 +1532,8 @@
   loadouts:
   - WardenJumpsuit
   - WardenJumpskirt
+  - MaidOutfitTactical # starlight
+
 
 - type: loadoutGroup
   id: WardenOuterClothing
@@ -1436,11 +1567,14 @@
   minLimit: 0
   loadouts:
   - BrigmedicBeret
-  - BrigmedicNurseHat # Starlight
-  - CorpsmanBeret #Starlight
-  - CorpsmanNurseHat # Starlight
-  - BrigmedicNurseHatOfLife # Starlight
+  - BrigmedicNurseHat # Starlight start
+  - CorpsmanBeret
+  - CorpsmanNurseHat
+  - BrigmedicNurseHatOfLife # Starlight end
   - SecurityHelmet
+  - MaidHeadbandTactical # starlight start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: BrigmedicJumpsuit
@@ -1449,11 +1583,12 @@
   - JumpsuitBrigmedic
   - JumpskirtBrigmedic # Starlight line swap v
   - JumpsuitCorpsman # Starlight line swap ^
-  - JumpskirtCorpsman #Starlight
-  - CorpsmanResponse # Starlight
-  - CorpsmanTrauma # Starlight
-  - BrigmedicJumpsuitOfLife # Starlight
-  - BrigmedicJumpskirtOfLife # Starlight
+  - JumpskirtCorpsman # Starlight start
+  - CorpsmanResponse
+  - CorpsmanTrauma
+  - MaidOutfitTactical
+  - BrigmedicJumpsuitOfLife
+  - BrigmedicJumpskirtOfLife # starlight end
 
 - type: loadoutGroup
   id: BrigmedicBackpack
@@ -1493,16 +1628,6 @@
   - BrigmedicBelt #Starlight
   - CorpsmanBelt #Starlight
 
-#Starlight Start
-- type: loadoutGroup
-  id: BrigmedicGloves
-  name: loadout-group-brigmedic-gloves
-  loadouts:
-  - Nitrile
-  - BlackNitrile
-  - LatexGloves
-#Starlight End
-
 - type: loadoutGroup
   id: SecurityHead
   name: loadout-group-security-head
@@ -1515,6 +1640,9 @@
   - SecurityBeret
   - SecurityHat
   - TrooperHat
+  - MaidHeadbandTactical # starlight start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: SecurityJumpsuit
@@ -1528,8 +1656,9 @@
   - SeniorOfficerJumpskirt
   - TrooperUniform
   - SecurityJumpsuitBlue
-  - SecurityJumpskirtBlue # Starlight
-  - SecurityTshirt #Starlight
+  - SecurityJumpskirtBlue # starlight start
+  - MaidOutfitTactical
+  - SecurityTshirt # starlight end
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -1565,10 +1694,11 @@
 - type: loadoutGroup
   id: SecurityShoes
   name: loadout-group-security-shoes
+  minLimit: 0
   loadouts:
   - JackBoots
   - SecurityWinterBoots
-  - HighHeelBootsFilled # 🌟Starlight🌟
+  - HighHeelBootsFilled # Starlight
 
 - type: loadoutGroup
   id: SecurityPDA
@@ -1592,6 +1722,9 @@
   loadouts:
   - DetectiveFedora
   - DetectiveFedoraGrey
+  - MaidHeadbandTactical # starlight start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: DetectiveNeck
@@ -1608,6 +1741,7 @@
   - DetectiveJumpskirt
   - NoirJumpsuit
   - NoirJumpskirt
+
 
 - type: loadoutGroup
   id: DetectiveOuterClothing
@@ -1633,7 +1767,8 @@
   loadouts:
   - RedJumpsuit
   - RedJumpskirt
-  - SecurityCadetTshirt #Starlight
+  - MaidOutfitTactical # starlight
+  - SecurityCadetTshirt # Starlight
 
 - type: loadoutGroup
   id: SecurityCadetJobTrinkets
@@ -1650,6 +1785,7 @@
   loadouts:
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
+  - EmergencyElfOxygenSecurity # Starlight
   - LoadoutSpeciesVoxNitrogen
   - EmergencyNonbreatherSecurity # 🌟Starlight🌟
 
@@ -1661,6 +1797,9 @@
   loadouts:
   - ChiefMedicalOfficerBeret
   - CMOMedicalHeadMirror
+  - MaidHeadbandTactical # starlight start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJumpsuit
@@ -1670,6 +1809,7 @@
   - ChiefMedicalOfficerJumpskirt
   - ChiefMedicalOfficerTurtleneckJumpsuit
   - ChiefMedicalOfficerTurtleneckJumpskirt
+
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerOuterClothing
@@ -1690,13 +1830,16 @@
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes
   name: loadout-group-chief-medical-officer-shoes
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BrownShoes
   - WhiteShoes # 🌟Starlight🌟
   - MedicalWinterBoots
-  - Heels # 🌟Starlight🌟
-  - LaceupShoes # 🌟Starlight🌟
-  - LeatherShoes # 🌟Starlight🌟
+  - Heels # Starlight start
+  - LaceupShoes
+  - LeatherShoes
+  - ClothWrapShoe # Starlight end
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJobTrinkets
@@ -1717,6 +1860,9 @@
   - GreenSurgeryCap
   - PurpleSurgeryCap
   - NurseHat
+  - MaidHeadbandTactical # starlight start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: MedicalDoctorJumpsuit
@@ -1729,10 +1875,11 @@
   - MedicalBlueScrubs
   - MedicalGreenScrubs
   - MedicalPurpleScrubs
-  - NurseJumpskirt # afterlight
-  - CoronerJumpskirt # afterlight
-  - CoronerJumpsuit # afterlight
-  - CoronerJumpsuitAlt # afterlight
+  - NurseJumpskirt # afterlight start
+  - CoronerJumpskirt
+  - CoronerJumpsuit
+  - CoronerJumpsuitAlt # afterlight end
+
 
 - type: loadoutGroup
   id: MedicalDoctorOuterClothing
@@ -1756,12 +1903,15 @@
 - type: loadoutGroup
   id: MedicalShoes
   name: loadout-group-medical-doctor-shoes
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - WhiteShoes
   - MedicalWinterBoots
-  - Heels # 🌟Starlight🌟
-  - LaceupShoes # 🌟Starlight🌟
-  - LeatherShoes # 🌟Starlight🌟
+  - Heels # Starlight start
+  - LaceupShoes
+  - LeatherShoes
+  - ClothWrapShoe # Starlight end
 
 - type: loadoutGroup
   id: MedicalDoctorPDA
@@ -1799,6 +1949,7 @@
   - WhiteJumpsuit
   - WhiteJumpskirt
 
+
 - type: loadoutGroup
   id: MedicalInternJobTrinkets
   name: loadout-group-jobtrinkets
@@ -1812,8 +1963,8 @@
   loadouts:
   - ChemistJumpsuit
   - ChemistJumpskirt
-  - SeniorChemistJumpsuit # Starlight
-  - SeniorChemistJumpskirt # Starlight
+  - SeniorChemistJumpsuit # Starlight start
+  - SeniorChemistJumpskirt # starlight end
 
 - type: loadoutGroup
   id: ChemistOuterClothing
@@ -1851,6 +2002,9 @@
   minLimit: 0
   loadouts:
   - ParamedicHead
+  - MaidHeadbandTactical # starlight start
+  - Hairflower
+  - LilyFlower # Starlight End
 
 - type: loadoutGroup
   id: ParamedicJumpsuit
@@ -1858,8 +2012,8 @@
   loadouts:
   - ParamedicJumpsuit
   - ParamedicJumpskirt
-  - SeniorParamedicJumpsuit #Starlight
-  - SeniorParamedicJumpskirt #Starlight
+  - SeniorParamedicJumpsuit # Starlight start
+  - SeniorParamedicJumpskirt # starlight end
 
 - type: loadoutGroup #Starlight start
   id: ParamedicPDA
@@ -1879,12 +2033,14 @@
 - type: loadoutGroup
   id: ParamedicShoes
   name: loadout-group-paramedic-shoes
+  minLimit: 0 # Starlight Start
+  defaultSelected: 1 # Starlight End
   loadouts:
   - BlueShoes
   - WhiteShoes
   - MedicalWinterBoots
-  - Heels # 🌟Starlight🌟
-  - HighHeelBoots # Starlight
+  - Heels # Starlight
+  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: ParamedicJobTrinkets
@@ -1913,6 +2069,7 @@
   loadouts:
   - EmergencyNitrogenMedical
   - EmergencyOxygenMedical
+  - EmergencyElfOxygenMedical # Starlight
   - LoadoutSpeciesVoxNitrogen
   - EmergencyNonBreatherMedical # 🌟Starlight🌟
 
@@ -1926,12 +2083,15 @@
   - JournalistJumpsuit
   - JournalistJumpskirt
 
+
 - type: loadoutGroup
   id: ReporterJobTrinkets
   name: loadout-group-jobtrinkets
   minLimit: 0
+  maxLimit: 2 # Starlight
   loadouts:
   - LizardPlushieReporter
+  - DigiboardMassMedia # Starlight
 
 - type: loadoutGroup
   id: PsychologistJumpsuit
@@ -1956,6 +2116,7 @@
   loadouts:
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
+  - EmergencyElfOxygenSyndicate # Starlight
   - LoadoutSpeciesVoxNitrogen
   - EmergencyNonBreatherSyndicate # 🌟Starlight🌟
 
@@ -1967,6 +2128,7 @@
   loadouts:
   - EmergencyNitrogenMilitaryDouble
   - EmergencyOxygenMilitaryDouble
+  - EmergencyElfOxygenMilitaryDouble # Starlight
 
 - type: loadoutGroup
   id: GroupSpeciesBreathTool
