@@ -177,7 +177,7 @@
   parent: ClothingHandsGlovesSyntheticBase
   id: ClothingHandsTacticalMaidGlovesDelicate
   name: delicate tactical maid gloves
-  description: Tactical maid gloves, every self-respecting maid should be able to discreetly eliminate her goals. Made of thin material, far too thin to be insulated.
+  description: Tactical maid gloves, every self-respecting maid should be able to discreetly eliminate her goals. Made of a thin material, far too thin to be insulated.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/tacticalmaidgloves.rsi
