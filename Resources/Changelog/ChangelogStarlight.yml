@@ -31295,5 +31295,15 @@ Entries:
   id: 326101
   time: '2026-02-20T00:55:32.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3261
+- author: Citrea
+  changes:
+  - message: Cargo legs no longer store bodyparts.
+    type: Tweak
+  - message: Storing six extra legs in your cargo ~~pants~~ legs no longer quintuples
+      your movement speed.
+    type: Fix
+  id: 338201
+  time: '2026-02-20T05:39:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3382
 Order: -1
 
