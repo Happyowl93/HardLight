@@ -31361,5 +31361,13 @@ Entries:
   id: 338601
   time: '2026-02-20T14:50:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3386
+- author: Fractalflower
+  changes:
+  - message: Most if not all outer-clothing items (e.g. web vests, armoured overcoats,
+      corsets, etc) have had their internal size decreased to 2x2 instead of 2x3.
+    type: Tweak
+  id: 337301
+  time: '2026-02-20T15:42:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3373
 Order: -1
 
