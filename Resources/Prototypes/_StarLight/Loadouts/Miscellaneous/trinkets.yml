@@ -96,6 +96,18 @@
     head: ClothingHeadHatTacticalMaidHeadband
   groupBy: "maid outfit"
 
+- type: loadout
+  id: MaidGlovesTacticalDelicate
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:DepartmentTimeRequirement
+        department: Security
+        time: 216000 # 60 hours of charging batong
+  equipment:
+    gloves: ClothingHandsTacticalMaidGlovesDelicate
+  groupBy: "maid outfit"
+
 # Meow mrrp ## shut up ### no :3
 
 - type: loadout
