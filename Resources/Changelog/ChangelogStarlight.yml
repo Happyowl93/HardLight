@@ -31325,5 +31325,23 @@ Entries:
   id: 338901
   time: '2026-02-20T07:14:21.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3389
+- author: Awriko
+  changes:
+  - message: (cork) Added dog beds to medical, bridge, and security (warden). No more
+      waltloose.
+    type: Add
+  - message: (cork) vault freezer item duplication patched.
+    type: Fix
+  - message: (cork) Fixed robotics, warden office, law office, and detective office
+      access issues.
+    type: Fix
+  - message: (cork) Rotated mining magnet to the proper orientation.
+    type: Fix
+  - message: (cork) added an exit turnstile to the security-side of genpop, complete
+      with new firelocks networked.
+    type: Tweak
+  id: 338401
+  time: '2026-02-20T07:23:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3384
 Order: -1
 
