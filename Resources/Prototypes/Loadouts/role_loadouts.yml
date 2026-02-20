@@ -277,7 +277,7 @@
 - type: roleLoadout
   id: JobQuartermaster
   groups:
-  - GroupTankHarness
+  - CivilianShoes # Starlight
   - QuartermasterHead
   - QuartermasterNeck
   - QuartermasterJumpsuit
