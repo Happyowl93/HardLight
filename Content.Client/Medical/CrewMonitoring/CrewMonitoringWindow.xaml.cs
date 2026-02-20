@@ -69,7 +69,7 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
             TryToScrollToFocus();
     }
 
-    public void ShowSensors(bool serverOnline, List<SuitSensorStatus> sensors, EntityUid monitor, EntityCoordinates? monitorCoords) // Starlight: Add serverOnline bool
+    public void ShowSensors(bool awaitingData, bool serverOnline, List<SuitSensorStatus> sensors, EntityUid monitor, EntityCoordinates? monitorCoords) // Starlight: Add first two params
     {
         ClearOutDatedData();
         
@@ -82,9 +82,13 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
         {
             NavMap.TrackedEntities[_entManager.GetNetEntity(monitor)] = new NavMapBlip(monitorCoords.Value, _blipTexture, Color.Cyan, true, false);
         }
+        
+        // Don't show outdated data.
+        if (awaitingData)
+            return;
 
         // No server label
-        if (!serverOnline) // Starlight
+        if (!serverOnline)
         {
             NoServerLabel.Visible = true;
             return;

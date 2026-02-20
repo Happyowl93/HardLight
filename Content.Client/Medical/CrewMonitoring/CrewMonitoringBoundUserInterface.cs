@@ -16,6 +16,8 @@ public sealed class CrewMonitoringBoundUserInterface : BoundUserInterface
 
     [ViewVariables]
     private CrewMonitoringWindow? _menu;
+    
+    private TimeSpan _lastOpened = TimeSpan.Zero; // Starlight
 
     public CrewMonitoringBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
@@ -29,6 +31,7 @@ public sealed class CrewMonitoringBoundUserInterface : BoundUserInterface
         // Starlight-start
         if (_menu != null)
             _menu.MapClicked -= OnMapClicked;
+        _lastOpened = _gameTiming.CurTime;
         // Starlight-end
 
         EntityUid? gridUid = null;
@@ -53,14 +56,14 @@ public sealed class CrewMonitoringBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
-
         switch (state)
         {
             case CrewMonitoringState st:
                 EntMan.TryGetComponent<TransformComponent>(Owner, out var xform);
                 // Starlight begin
-                bool serverOnline = _gameTiming.CurTime - st.LastUpdate < TimeSpan.FromSeconds(10);
-                if (EntMan.TryGetComponent<CrewMonitoringFilterComponent>(Owner, out var filter))
+                bool awaitingData = st.Timestamp < _lastOpened; // Know whether we have real data or are viewing a cached state.
+                bool serverOnline = _gameTiming.CurTime - st.LastUpdate < TimeSpan.FromSeconds(6); // After 6 seconds of radio silence, the server is presumed offline.
+                if (!awaitingData && EntMan.TryGetComponent<CrewMonitoringFilterComponent>(Owner, out var filter))
                 {
                     var filteredSensors = filter.ShownDepartments.Count == 0 ?
                         st.Sensors.ToList() // We ToList it to ensure we get a copy, for the off chance that someone sets AlwaysShowTrackingImplants without any ShownDepartments
@@ -90,11 +93,11 @@ public sealed class CrewMonitoringBoundUserInterface : BoundUserInterface
                     }
 
                     filteredSensors = filteredSensors.Distinct().ToList();
-                    _menu?.ShowSensors(serverOnline, filteredSensors, Owner, xform?.Coordinates);
+                    _menu?.ShowSensors(awaitingData, serverOnline, filteredSensors, Owner, xform?.Coordinates);
                     break;
                 }
                 // We let it flow into the upstream code if there's no CrewMonitoringComponent
-                _menu?.ShowSensors(serverOnline, st.Sensors, Owner, xform?.Coordinates);
+                _menu?.ShowSensors(awaitingData, serverOnline, st.Sensors, Owner, xform?.Coordinates);
                 // Starlight end
                 break;
         }
