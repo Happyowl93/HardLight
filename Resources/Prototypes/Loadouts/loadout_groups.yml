@@ -991,8 +991,7 @@
   - SeniorCourierWinterBoots # Starlight start
   - LeatherShoes
   - WorkBoots
-  - Heels
-  - RollerSkatesLoadout # Starlight end
+  - Heels # Starlight end
 
 - type: loadoutGroup
   id: CargoTechnicianID
