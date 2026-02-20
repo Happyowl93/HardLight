@@ -207,11 +207,13 @@
   storage:
     back:
       - Basketball
+  groupBy: "balls"
 
 - type: loadout
   id: TBall
   equipment: # woof
     mask: TennisBall
+  groupBy: "balls"
 
 - type: loadout
   id: RubberQuack
@@ -420,7 +422,8 @@
       role: JobMailTech
       time: 36000 # 10 hours of being ignored while carrying a parcelbomb
   storage:
-    back: ClothingShoesSkates
+    back:
+    - ClothingShoesSkates
 
 - type: loadout
   id: DaBling
@@ -490,6 +493,7 @@
   storage:
     back:
       - LeftArmCyberRipper
+  groupby: "cybernetics"
 
 - type: loadout
   id: rightmechwrightarm
@@ -502,6 +506,7 @@
   storage:
     back:
       - RightArmCyberMechwright
+  groupby: "cybernetics"
 
 - type: loadout
   id: leftcargoleg
@@ -565,6 +570,7 @@
   storage:
     id:
       - PersonalAI
+  groupBy: "pAI"
 
 - type: loadout
   id: GoldenPersonalAI
@@ -577,6 +583,7 @@
   storage:
     id:
       - GoldenPersonalAI
+  groupBy: "pAI"
 
 - type: loadout
   id: Boxblacklight
@@ -605,3 +612,4 @@
   id: LilyFlower
   equipment:
     head: ClothingHeadHatLilyFlower
+  groupBy: "flowers"

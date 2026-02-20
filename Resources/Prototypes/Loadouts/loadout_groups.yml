@@ -5,8 +5,8 @@
   minLimit: 0
   maxLimit: 7
   loadouts:
-  - FlowerWreath
-  - Hairflower
+  - Hairflower # Starlight, lineswap to display the item corresponding to the name of the category first v
+  - FlowerWreath # Starlight ^
   - Headphones
   - PlushieLizard
   - PlushieSpaceLizard
@@ -115,8 +115,8 @@
   - CigPackBub
   - PillCanisterPsicodine
   - ClothingDogTags
-  - PersonalAI
   - Boxblacklight
+  - PersonalAI
   - GoldenPersonalAI # Starlight end
   - AACTablet # DeltaV
 
