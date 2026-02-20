@@ -615,7 +615,7 @@
   - MedicalBackpack
   - MedicalDoctorOuterClothing
   - MedicalShoes # Starlight end
-  - MedicalBackpack
+#  - MedicalBackpack # Starlight, moved up
   - MedicalEyewear
   - SurvivalMedical
   - Trinkets

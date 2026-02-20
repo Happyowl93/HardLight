@@ -75,7 +75,8 @@
   - CatEars
   - BunnyEars
   - DogEars
-  - ClothWrapGlove
+  - ClothWrapGloveTrinket
+  - ClothWrapShoeTrinket
   - RollerSkates
   - LilyFlower
   - RolliePack
@@ -394,9 +395,6 @@
   - WhiteShoes
   - WinterBoots
   - Heels # 🌟Starlight🌟
-  - CoderSocks # Starlight
-  - RollerSkatesLoadout # Starlight
-  - ClothWrapShoe # Starlight
 
 - type: loadoutGroup
   id: AssistantJobTrinkets # Starlight - depassenger

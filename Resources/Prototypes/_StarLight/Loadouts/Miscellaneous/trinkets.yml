@@ -504,7 +504,7 @@
   storage:
     back:
       - LeftArmCyberRipper
-  groupby: "cybernetics"
+  groupBy: "cybernetic trinkets"
 
 - type: loadout
   id: rightmechwrightarm
@@ -517,7 +517,7 @@
   storage:
     back:
       - RightArmCyberMechwright
-  groupby: "cybernetics"
+  groupBy: "cybernetic trinkets"
 
 - type: loadout
   id: leftcargoleg
@@ -624,3 +624,15 @@
   equipment:
     head: ClothingHeadHatLilyFlower
   groupBy: "flowers"
+
+- type: loadout
+  id: ClothWrapShoeTrinket
+  equipment:
+    shoes: ClothingClothWrap
+  groupBy: "cloth wraps"
+
+- type: loadout
+  id: ClothWrapGloveTrinket
+  equipment:
+    gloves: ClothingClothWrap
+  groupBy: "cloth wraps"

@@ -34,14 +34,14 @@
   storage:
     back:
     - PlushieLizard
-  groupby: "wehzards" # Starlight
+  groupBy: "wehzards" # Starlight
 
 - type: loadout
   id: PlushieSpaceLizard
   storage:
     back:
     - PlushieSpaceLizard
-  groupby: "wehzards" # Starlight
+  groupBy: "wehzards" # Starlight
 
 - type: loadout
   id: ThreeCandles

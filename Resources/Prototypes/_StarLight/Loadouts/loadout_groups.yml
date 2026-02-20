@@ -485,7 +485,6 @@
   - LeatherShoes
   - Heels
   - LaceupShoes
-  - ClothWrapShoe
 
 - type: loadoutGroup
   id: LawyerShoes
