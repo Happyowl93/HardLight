@@ -506,7 +506,7 @@
       - HappyHonk
 
 - type: loadout
-  id: leftripperarm
+  id: LeftRipperArm
   effects:
     - !type:JobRequirementLoadoutEffect
       requirement:
@@ -519,7 +519,7 @@
   groupBy: "cybernetic trinkets"
 
 - type: loadout
-  id: rightmechwrightarm
+  id: RightMechwrightArm
   effects:
     - !type:JobRequirementLoadoutEffect
       requirement:
@@ -532,7 +532,7 @@
   groupBy: "cybernetic trinkets"
 
 - type: loadout
-  id: leftcargoleg
+  id: LeftCargoLeg
   effects:
     - !type:JobRequirementLoadoutEffect
       requirement:
@@ -542,9 +542,10 @@
   storage:
     back:
       - LeftLegCyberCargo
+  groupBy: "cybernetic trinkets"
 
 - type: loadout
-  id: rightcargoleg
+  id: RightCargoLeg
   effects:
     - !type:JobRequirementLoadoutEffect
       requirement:
@@ -554,6 +555,7 @@
   storage:
     back:
       - RightLegCyberCargo
+  groupBy: "cybernetic trinkets"
 
 - type: loadout
   id: CigPackBub
