@@ -379,8 +379,7 @@
   - StationEngineerOuterClothing # Starlight start
   - GlovesGeneric
   - HeadGeneric
-  - StationEngineerShoes
-  - Insuls # Starlight end
+  - StationEngineerShoes # Starlight end
   - SurvivalExtended
   - Trinkets
   - Scarves # Starlight
@@ -398,11 +397,9 @@
   - StationEngineerBackpack
   - StationEngineerOuterClothing
   - GlovesGeneric # Starlight
-  - HeadGeneric # Starlight
   - StationEngineerShoes
   - StationEngineerID
   - SurvivalExtended
-  - Insuls # Starlight
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
@@ -421,7 +418,6 @@
   - HeadGeneric # Starlight
   - AtmosphericTechnicianShoes
   - SurvivalExtended
-  - Insuls # Starlight
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight

@@ -6,7 +6,6 @@
   loadouts:
   - InsulsRegular
   - InsulsCombat
-  - InsulsMaid
   - InsulsMercenary
   - InsulsScrapper
 
@@ -18,7 +17,6 @@
   loadouts:
   - InsulsCombatNoLock
   - InsulsRegular
-  - InsulsMaid
   - InsulsMercenary
   - InsulsScrapper
 
@@ -31,7 +29,6 @@
   - InsulsCaptain
   - InsulsRegular
   - InsulsCombat
-  - InsulsMaid
   - InsulsMercenary
   - InsulsScrapper
 
@@ -48,7 +45,6 @@
   name: loadout-group-head-generic
   minLimit: 0
   loadouts:
-  - MaidHeadbandTactical
   - Hairflower
   - LilyFlower
 
@@ -199,9 +195,6 @@
   - GreytideBizarreAdventures
   - BrimHat
   - FeatheredHat
-  - Hairflower
-  - LilyFlower
-  - RoadCone # Starlight
 
 - type: loadoutGroup
   id: AssistantBackpack
@@ -235,9 +228,6 @@
   - RoboticistCap
   - SkullBandana
   - RoboticistBlackCapFlipped
-  - MaidHeadbandTactical
-  - Hairflower
-  - LilyFlower
 
 - type: loadoutGroup
   id: RoboticistGloves
@@ -317,8 +307,6 @@
   minLimit: 0
   loadouts:
   - MagistrateHeadPwig
-  - Hairflower
-  - LilyFlower
 
 - type: loadoutGroup
   id: MagistrateEyewear
@@ -366,7 +354,6 @@
   - BlueShieldShirt
   - BlueShieldSkirt
   - FormalBlueShieldJumpsuit
-  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: BlueShieldOuterclothing
@@ -605,10 +592,6 @@
   - BlueBoxingGloves
   - GreenBoxingGloves
   - YellowBoxingGloves
-  - PawsWhite
-  - PawsBrown
-  - PawsBlack
-  - PawsBlackWhite
 
 - type: loadoutGroup
   id: BoxerJobTrinkets
@@ -645,9 +628,6 @@
     - ChemistNurseHat
     - ChemistTruckersHat
     - ChemistFisherCap
-    - MaidHeadbandTactical
-    - Hairflower
-    - LilyFlower
 
 - type: loadoutGroup
   id: ChemistBag
@@ -749,9 +729,6 @@
   - DutyOfficerHead
   - DutyOfficerBeret
   - DutyOfficerHelmetRiot
-  - MaidHeadbandTactical
-  - Hairflower
-  - LilyFlower
 
 - type: loadoutGroup
   id: DutyOfficerJumpsuit
@@ -761,7 +738,6 @@
   - DutyOfficerJumpskirt
   - DutyOfficerJumpsuitBlue
   - DutyOfficerJumpskirtBlue
-  - MaidOutfitTactical
 
 - type: loadoutGroup
   id: DutyOfficerBelt
@@ -834,8 +810,6 @@
   - Drilltrainer
   - BeretNCTGreen
   - BeretNCTBlack
-  - Hairflower
-  - LilyFlower
 
 - type: loadoutGroup
   id: NanotrasenCareerTrainerShoes
