@@ -759,9 +759,9 @@
     icon: { sprite: _Starlight/Interface/Actions/actions_borg.rsi, state: loading-module }
 
 - type: entity
-  id: BorgModulePlumbing
+  id: BorgModuleAdvancedPlumbing
   parent: [ BaseBorgModule, BaseProviderBorgModule ]
-  name: plumbing cyborg module
+  name: advanced plumbing cyborg module
   components:
   - type: Sprite
     layers:
