@@ -31350,5 +31350,16 @@ Entries:
   id: 339101
   time: '2026-02-20T08:43:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3391
+- author: Xale
+  changes:
+  - message: Cows, Goats, and Pigs now consume 33% less food when giving birth.
+    type: Tweak
+  - message: Chickens and Ducks now consume 50% less food when laying eggs.
+    type: Tweak
+  - message: Chicken and Duck breeding limit increased to 12.
+    type: Tweak
+  id: 338601
+  time: '2026-02-20T14:50:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3386
 Order: -1
 
