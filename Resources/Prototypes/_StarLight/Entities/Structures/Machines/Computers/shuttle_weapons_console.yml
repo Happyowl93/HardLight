@@ -42,7 +42,6 @@
         type: SignalPortSelectorBoundUserInterface
       enum.RadarConsoleUiKey.Key:
         type: RadarConsoleBoundUserInterface
-  - type: SignalLinker
   - type: DeviceNetworkRequiresPower
   - type: ApcPowerReceiver
     powerLoad: 500
