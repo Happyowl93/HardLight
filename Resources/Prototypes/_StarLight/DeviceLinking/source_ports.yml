@@ -25,3 +25,33 @@
   name: signal-port-name-mass-driver-console-sender
   description: signal-port-description-mass-driver-console-sender
   defaultLinks: [ MassDriverConsoleReceiver ]
+
+- type: sourcePort
+  id: Gun1
+  name: Gun Slot 1
+  description: Shuttle weapon slot 1
+
+- type: sourcePort
+  id: Gun2
+  name: Gun Slot 2
+  description: Shuttle weapon slot 2
+
+- type: sourcePort
+  id: Gun3
+  name: Gun Slot 3
+  description: Shuttle weapon slot 3
+
+- type: sourcePort
+  id: Gun4
+  name: Gun Slot 4
+  description: Shuttle weapon slot 4
+
+- type: sourcePort
+  id: Gun5
+  name: Gun Slot 5
+  description: Shuttle weapon slot 5
+
+- type: sourcePort
+  id: Gun6
+  name: Gun Slot 6
+  description: Shuttle weapon slot 6
