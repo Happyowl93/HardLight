@@ -184,6 +184,16 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
 
             PopulateDepartmentList(remainingSensors);
         }
+        
+        // Starlight BEGIN: Moved to top of function
+        /*
+        // Show monitor on nav map
+        if (monitorCoords != null && _blipTexture != null)
+        {
+            NavMap.TrackedEntities[_entManager.GetNetEntity(monitor)] = new NavMapBlip(monitorCoords.Value, _blipTexture, Color.Cyan, true, false);
+        }
+        */
+        // Starlight END
     }
 
     private void PopulateDepartmentList(IEnumerable<SuitSensorStatus> departmentSensors)
