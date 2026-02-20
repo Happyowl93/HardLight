@@ -543,6 +543,16 @@ public abstract partial class SharedMoverController : VirtualController
         if (!CanSound() || !_tags.HasTag(uid, FootstepSoundTag))
             return false;
 
+        #region Starlight GetFootstepSound event here!
+        var ev = new GetFootstepSoundEvent();
+        RaiseLocalEvent(uid, ref ev);
+        if (ev.Sound != null)
+        {
+            sound = ev.Sound;
+            return true;
+        }
+        #endregion
+
         var coordinates = xform.Coordinates;
         var distanceNeeded = mover.Sprinting
             ? mobMover.StepSoundMoveDistanceRunning
@@ -634,15 +644,6 @@ public abstract partial class SharedMoverController : VirtualController
 
         var position = _mapSystem.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
         var soundEv = new GetFootstepSoundEvent(uid);
-
-        #region Starlight foot-step self-modifying
-        RaiseLocalEvent(uid, ref soundEv);
-        if (soundEv.Sound != null)
-        {
-            sound = soundEv.Sound;
-            return true;
-        }
-        #endregion
 
         // If the coordinates have a FootstepModifier component
         // i.e. component that emit sound on footsteps emit that sound
