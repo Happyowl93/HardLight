@@ -372,7 +372,7 @@
   id: ClothingHeadHatTacticalMaidHeadband
   productEntity: ClothingHeadHatTacticalMaidHeadband
   cost:
-    NTCredit: 600
+    NTCredit: 400
   categories:
     - SLFashionHead
   conditions:
@@ -562,6 +562,17 @@
 - type: listing
   id: ClothingHeadHatTechnologyFive
   productEntity: ClothingHeadHatTechnologyFive
+  cost:
+    NTCredit: 400
+  categories:
+    - SLFashionOther
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: ClothingHandsTacticalMaidGlovesDelicate
+  productEntity: ClothingHandsTacticalMaidGlovesDelicate
   cost:
     NTCredit: 400
   categories:
