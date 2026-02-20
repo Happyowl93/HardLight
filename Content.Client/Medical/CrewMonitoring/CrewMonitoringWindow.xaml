@@ -34,6 +34,12 @@
                             FontColorOverride="Red"
                             HorizontalAlignment="Center"
                             Visible="false"/>
+                    <Label  Name="NoEligibleSensorsLabel"
+                            Text="{Loc crew-monitoring-ui-no-eligible-sensors-label}"
+                            StyleClasses="LabelHeading"
+                            FontColorOverride="Green"
+                            HorizontalAlignment="Center"
+                            Visible="false"/><!-- Starlight -->
                 </ScrollContainer>
             </BoxContainer>
         </BoxContainer>

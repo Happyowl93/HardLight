@@ -12,7 +12,8 @@ using Content.Server.Silicons.StationAi;
 using Robust.Server.GameObjects;
 using Robust.Shared.Log; // Starlight
 using Content.Shared.Silicons.StationAi; // Starlight
-using Robust.Shared.Map; // Starlight
+using Robust.Shared.Map;
+using Robust.Shared.Timing; // Starlight
 
 namespace Content.Server.Medical.CrewMonitoring;
 
@@ -21,6 +22,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     [Dependency] private readonly PowerCellSystem _cell = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly StationAiSystem _stationAiSystem = default!; // Starlight
+    [Dependency] private readonly IGameTiming _gameTiming = default!; // Starlight
 
     private readonly ISawmill _sawmill = Logger.GetSawmill("crewmonitoring"); // Starlight
 
@@ -53,6 +55,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             return;
 
         component.ConnectedSensors = sensorStatus;
+        component.LastUpdate = _gameTiming.CurTime; // Starlight
         UpdateUserInterface(uid, component);
     }
 
@@ -80,7 +83,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
 
         // Update all sensors info
         var allSensors = component.ConnectedSensors.Values.ToList();
-        _uiSystem.SetUiState(uid, CrewMonitoringUIKey.Key, new CrewMonitoringState(allSensors));
+        _uiSystem.SetUiState(uid, CrewMonitoringUIKey.Key, new CrewMonitoringState(component.LastUpdate, allSensors));
     }
     // Starlight-start
     private void OnWarpRequest(EntityUid uid, CrewMonitoringConsoleComponent component, ref CrewMonitoringWarpRequestMessage args)

@@ -7,6 +7,10 @@ crew-monitoring-ui-filter-line-placeholder = Filter
 crew-monitoring-ui-job-label = Job:
 crew-monitoring-ui-no-server-label = Server not found
 
+# Starlight BEGIN
+crew-monitoring-ui-no-eligible-sensors-label = No eligible sensors found
+# Starlight END
+
 crew-monitoring-ui-no-department-label = Unknown
 crew-monitoring-ui-no-station-label = Unknown station
 

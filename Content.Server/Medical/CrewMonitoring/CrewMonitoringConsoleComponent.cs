@@ -12,6 +12,11 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     public Dictionary<string, SuitSensorStatus> ConnectedSensors = new();
 
     /// <summary>
+    ///     STARLIGHT: When the last update was received. Used to determine if the server is online.
+    /// </summary>
+    public TimeSpan LastUpdate = TimeSpan.Zero;
+
+    /// <summary>
     ///     After what time sensor consider to be lost.
     /// </summary>
     [DataField("sensorTimeout"), ViewVariables(VVAccess.ReadWrite)]

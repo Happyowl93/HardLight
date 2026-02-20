@@ -13,10 +13,12 @@ public enum CrewMonitoringUIKey
 [Serializable, NetSerializable]
 public sealed class CrewMonitoringState : BoundUserInterfaceState
 {
+    public TimeSpan LastUpdate;
     public List<SuitSensorStatus> Sensors;
 
-    public CrewMonitoringState(List<SuitSensorStatus> sensors)
+    public CrewMonitoringState(TimeSpan lastUpdate, List<SuitSensorStatus> sensors)
     {
+        LastUpdate = lastUpdate;
         Sensors = sensors;
     }
 }
