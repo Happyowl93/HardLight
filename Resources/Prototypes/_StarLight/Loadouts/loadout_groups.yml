@@ -1,6 +1,6 @@
 - type: loadoutGroup
   id: Insuls
-  name: loadout-group-insuls
+  name: loadout-group-insuls-normal
   minLimit: 0
   defaultSelected: 1
   loadouts:
@@ -11,7 +11,7 @@
 
 - type: loadoutGroup
   id: InsulsCombat
-  name: loadout-group-insuls
+  name: loadout-group-insuls-combat
   minLimit: 0
   defaultSelected: 1
   loadouts:
@@ -22,7 +22,7 @@
 
 - type: loadoutGroup
   id: InsulsCaptain
-  name: loadout-group-insuls
+  name: loadout-group-insuls-captain
   minLimit: 0
   defaultSelected: 1
   loadouts:
