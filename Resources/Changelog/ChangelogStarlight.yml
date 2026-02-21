@@ -31441,5 +31441,23 @@ Entries:
   id: 340101
   time: '2026-02-21T10:29:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3401
+- author: Vincolan
+  changes:
+  - message: Banana Anomaly now spawns Gorillas at the Critical and  Friendly monkeys
+      at pulse.
+    type: Tweak
+  - message: Fire anom pulses are now more dangerous.
+    type: Tweak
+  - message: Ice anom critical explosion is more powerful.
+    type: Tweak
+  - message: Clown and Plant Anomaly now spawns more Kudzu .
+    type: Tweak
+  - message: Now the Clown anomaly creates ClownSpiders on Critical.
+    type: Tweak
+  - message: Some other minor anomalies changes.
+    type: Tweak
+  id: 341501
+  time: '2026-02-21T22:07:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3415
 Order: -1
 
