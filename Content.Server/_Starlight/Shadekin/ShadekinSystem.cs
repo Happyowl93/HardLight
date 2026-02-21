@@ -382,11 +382,6 @@ public sealed partial class ShadekinSystem : EntitySystem
             if (component.CurrentState == ShadekinState.Extreme)
                 ApplyLightDamage(uid, 1);
 
-            if (TryComp<BodyComponent>(uid, out var body))
-                foreach (var core in _bodySystem.GetBodyOrganEntityComps<OrganShadekinCoreComponent>((uid, body)))
-                    if (core.Comp1.OrganOwner != uid)
-                        ApplyCoreDamage(uid, 1);
-
             if (TryComp<BrighteyeComponent>(uid, out var brighteye))
                 UpdateEnergy(uid, component, brighteye);
         }
