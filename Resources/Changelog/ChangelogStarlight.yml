@@ -31418,5 +31418,14 @@ Entries:
   id: 339001
   time: '2026-02-20T20:48:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3390
+- author: Conflee
+  changes:
+  - message: Added 5 new pieces of Lobby Art, all from a contest held a couple months
+      ago. Clown Choice by m0lem4n, Fateful Shift by rickery, HoP Desk Simulator by
+      swonki, Janitorial Hell by wintergem18, and Katie vs Syndie by ramblinger.
+    type: Add
+  id: 340701
+  time: '2026-02-21T06:37:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3407
 Order: -1
 
