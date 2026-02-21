@@ -135,8 +135,8 @@
             - SpawnClownSpider
         - settings:
             spawnOnSuperCritical: true
-            minAmount: 1
-            maxAmount: 5
+            minAmount: 5
+            maxAmount: 10
             maxRange: 10
           spawns:
             - ClownKudzu
