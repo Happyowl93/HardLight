@@ -661,12 +661,6 @@
   id: Grenade # Ammo: ShuttleGunFriendship, WeaponLauncherChinaLake, WeaponLauncherHydra, BaseMagazineGrenade
 
 - type: Tag
-  id: Grenade120mm # Ammo: Magazine120mmGrenadeBlast, ShuttleGunNTSFCyerxa120mm
-
-- type: Tag
-  id: MagazineGrenade120mm # Magazine: Magazine120mmGrenadeBlast
-
-- type: Tag
   id: GrenadeFlashBang # Storage whitelist: ClusterBang
 
 - type: Tag
@@ -1213,9 +1207,6 @@
 
 - type: Tag
   id: RemoteSignaller # Storage whitelist: BaseClothingBeltEngineering
-
-- type: Tag
-  id: CombatRemote # Tag: RemoteSignallerCombat
 
 - type: Tag
   id: ReptilianFood # SpecialDigestible: OrganReptilianStomach
