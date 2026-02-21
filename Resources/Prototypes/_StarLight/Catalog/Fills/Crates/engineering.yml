@@ -51,7 +51,7 @@
   id: CrateNuclearReactorFlatpack
   parent: CrateEngineeringSecure
   name: Nuclear Reactor Crate
-  description: A crate containing a flatpacked Nuclear Reactor
+  description: A crate containing a flatpacked Nuclear Reactor. Parts sold Separately.
   components:
   - type: EntityTableContainerFill
     containers:
@@ -63,7 +63,7 @@
   id: CrateGasTurbineFlatpack
   parent: CrateEngineeringSecure
   name: Gas Turbine Crate
-  description: A crate containing a flatpacked Gas Turbine
+  description: A crate containing a flatpacked Gas Turbine. Parts sold Separately.
   components:
   - type: EntityTableContainerFill
     containers:
@@ -75,7 +75,7 @@
   id: CrateNuclearReactorSmallFlatpack
   parent: CrateEngineeringSecure
   name: Small Nuclear Reactor Crate
-  description: A crate containing a flatpacked  Small Nuclear Reactor
+  description: A crate containing a flatpacked  Small Nuclear Reactor. Parts sold Separately.
   components:
   - type: EntityTableContainerFill
     containers:
@@ -87,7 +87,7 @@
   id: CrateGasTurbineSmallFlatpack
   parent: CrateEngineeringSecure
   name: Small Gas Turbine Crate
-  description: A crate containing a flatpacked Small Gas Turbine
+  description: A crate containing a flatpacked Small Gas Turbine. Parts sold Separately.
   components:
   - type: EntityTableContainerFill
     containers:
