@@ -60,7 +60,6 @@
     parts:
     - HeadHuman
   - type: ExplodeOnTrigger
-    canCreateVacuum: false
   - type: Explosive
     explosionType: Default
     # Cosmetic explosion :tf:
