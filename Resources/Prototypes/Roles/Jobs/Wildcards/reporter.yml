@@ -30,3 +30,10 @@
     outerClothing: ClothingOuterCoatTrench
     neck: ClothingNeckTieRed
     gloves: ClothingHandsGlovesFingerless
+  # Starlight Start
+  storage:
+    back:
+    - TapeRecorder
+    - CassetteTape
+    - CassetteTape
+  # Starlight End
