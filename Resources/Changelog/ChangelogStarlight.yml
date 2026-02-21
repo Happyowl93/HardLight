@@ -31434,5 +31434,12 @@ Entries:
   id: 339501
   time: '2026-02-21T08:07:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3395
+- author: Scarlet Lightweaver
+  changes:
+  - message: Added more naval cannons for admeme / events.
+    type: Add
+  id: 340101
+  time: '2026-02-21T10:29:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3401
 Order: -1
 
