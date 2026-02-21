@@ -31459,5 +31459,12 @@ Entries:
   id: 341501
   time: '2026-02-21T22:07:52.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3415
+- author: redmushie
+  changes:
+  - message: Paramedics now get the AstroNav module pre-installed in their PDAs.
+    type: Add
+  id: 341101
+  time: '2026-02-21T22:49:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3411
 Order: -1
 
