@@ -31350,5 +31350,89 @@ Entries:
   id: 339101
   time: '2026-02-20T08:43:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3391
+- author: Xale
+  changes:
+  - message: Cows, Goats, and Pigs now consume 33% less food when giving birth.
+    type: Tweak
+  - message: Chickens and Ducks now consume 50% less food when laying eggs.
+    type: Tweak
+  - message: Chicken and Duck breeding limit increased to 12.
+    type: Tweak
+  id: 338601
+  time: '2026-02-20T14:50:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3386
+- author: Fractalflower
+  changes:
+  - message: Most if not all outer-clothing items (e.g. web vests, armoured overcoats,
+      corsets, etc) have had their internal size decreased to 2x2 instead of 2x3.
+    type: Tweak
+  id: 337301
+  time: '2026-02-20T15:42:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3373
+- author: Kirb
+  changes:
+  - message: Mind Control implant to traitor uplinks.
+    type: Add
+  id: 332401
+  time: '2026-02-20T16:11:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3324
+- author: Born Stellar
+  changes:
+  - message: SOP regarding sensitive documents for NTR, Magi, and IAA.
+    type: Add
+  id: 335801
+  time: '2026-02-20T16:48:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3358
+- author: wonderfulnewworld
+  changes:
+  - message: Fixed pre-defined labels not being given proper localization.
+    type: Fix
+  id: 339901
+  time: '2026-02-20T19:33:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3399
+- author: wonderfulnewworld
+  changes:
+  - message: All traitor/nukie uplink items now have a capital U in their IDs.
+    type: Fix
+  - message: Cybernetics uplink now has proper localization.
+    type: Fix
+  - message: Removes a duplicate space cleaner localization.
+    type: Fix
+  id: 340301
+  time: '2026-02-20T20:05:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3403
+- author: Conflee
+  changes:
+  - message: Changed max time you can be a Learner Role. Security Cadet 15h > 30h,
+      Technical Assistant, Medical Assistant, and Research Assistant 15h -> 25h.
+    type: Tweak
+  id: 340201
+  time: '2026-02-20T20:40:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3402
+- author: AegisShield
+  changes:
+  - message: The generic Advanced Plumbing Module.
+    type: Add
+  - message: RPLD from the engi borg's roundstart toolkit.
+    type: Remove
+  id: 339001
+  time: '2026-02-20T20:48:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3390
+- author: Conflee
+  changes:
+  - message: Added 5 new pieces of Lobby Art, all from a contest held a couple months
+      ago. Clown Choice by m0lem4n, Fateful Shift by rickery, HoP Desk Simulator by
+      swonki, Janitorial Hell by wintergem18, and Katie vs Syndie by ramblinger.
+    type: Add
+  id: 340701
+  time: '2026-02-21T06:37:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3407
+- author: AndrewTateOfficialSS14
+  changes:
+  - message: Upped Frezon's price per mole to 2.5 and Nitrous Oxide's price to 2.
+    type: Tweak
+  id: 339501
+  time: '2026-02-21T08:07:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3395
 Order: -1
 
