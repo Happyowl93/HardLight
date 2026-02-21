@@ -25,8 +25,6 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!; // Starlight
 
     private readonly ISawmill _sawmill = Logger.GetSawmill("crewmonitoring"); // Starlight
-    private const float UpdateRate = 1f; // Starlight
-    private float _updateDiff; // Starlight
 
     public override void Initialize()
     {
@@ -43,17 +41,14 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-
-        // Update only once every UpdateRate
-        _updateDiff += frameTime;
-        if (_updateDiff < UpdateRate)
-            return;
-        _updateDiff -= UpdateRate;
         
-        // Periodically update the UI.
+        // Periodically update the UI, per console.
         var consoles = EntityQueryEnumerator<CrewMonitoringConsoleComponent>();
         while (consoles.MoveNext(out var id, out var console))
         {
+            if (console.LastInterfaceUpdate + console.InterfaceUpdateRate > _gameTiming.CurTime)
+                return;
+            
             UpdateUserInterface(id, console);
         }
     }
@@ -78,7 +73,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             return;
 
         component.ConnectedSensors = sensorStatus;
-        component.LastUpdate = _gameTiming.CurTime; // Starlight
+        component.LastSensorDataReceivedAt = _gameTiming.CurTime; // Starlight
         UpdateUserInterface(uid, component);
     }
 
@@ -94,6 +89,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     {
         if (!Resolve(uid, ref component))
             return;
+        component.LastInterfaceUpdate = _gameTiming.CurTime; // Starlight
 
         if (!_uiSystem.IsUiOpen(uid, CrewMonitoringUIKey.Key))
             return;
@@ -106,7 +102,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
 
         // Update all sensors info
         var allSensors = component.ConnectedSensors.Values.ToList();
-        _uiSystem.SetUiState(uid, CrewMonitoringUIKey.Key, new CrewMonitoringState(_gameTiming.CurTime, component.LastUpdate, allSensors)); // Starlight: Add transmit timestamp
+        _uiSystem.SetUiState(uid, CrewMonitoringUIKey.Key, new CrewMonitoringState(_gameTiming.CurTime, component.LastSensorDataReceivedAt, allSensors)); // Starlight: Add two timestamps
     }
     // Starlight-start
     private void OnWarpRequest(EntityUid uid, CrewMonitoringConsoleComponent component, ref CrewMonitoringWarpRequestMessage args)
