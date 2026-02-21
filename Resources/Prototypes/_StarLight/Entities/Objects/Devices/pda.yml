@@ -549,9 +549,6 @@
      enum.PdaVisuals.PdaType:
        !type:String
        pda-seniorparamedic
-  - type: PdaBorderColor
-    borderColor: "#d7d7d0"
-    accentVColor: "#2a4b5b"
   - type: Icon
     sprite: _Starlight/Objects/Devices/pda.rsi
     state: pda-seniorparamedic
