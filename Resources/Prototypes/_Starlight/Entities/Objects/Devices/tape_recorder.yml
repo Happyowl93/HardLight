@@ -19,6 +19,7 @@
   - type: UseDelay
     delay: 1
   - type: Speech
+  - type: TextToSpeech
   - type: ItemSlots
     slots:
       cassette_tape:

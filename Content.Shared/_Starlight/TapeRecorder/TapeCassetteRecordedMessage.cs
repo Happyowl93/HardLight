@@ -33,12 +33,19 @@ public sealed partial class TapeCassetteRecordedMessage : IComparable<TapeCasset
     [DataField]
     public string Message = string.Empty;
 
-    public TapeCassetteRecordedMessage(float timestamp, string name, ProtoId<SpeechVerbPrototype> verb, string message)
+    /// <summary>
+    /// The voice prototype ID of the speaker (for TTS on playback)
+    /// </summary>
+    [DataField]
+    public string? VoiceId;
+
+    public TapeCassetteRecordedMessage(float timestamp, string name, ProtoId<SpeechVerbPrototype> verb, string message, string? voiceId = null)
     {
         Timestamp = timestamp;
         Name = name;
         Verb = verb;
         Message = message;
+        VoiceId = voiceId;
     }
 
     public int CompareTo(TapeCassetteRecordedMessage? other)
