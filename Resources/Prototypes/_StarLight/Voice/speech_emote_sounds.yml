@@ -402,6 +402,10 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
+    ThavenGlub:
+      collection: ThavenGlub
+    ThavenHum:
+      collection: ThavenMHum
   params:
     variation: 0.05
     pitch: 1.25
@@ -443,6 +447,10 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+    ThavenGlub:
+      collection: ThavenGlub
+    ThavenHum:
+      collection: ThavenFHum
   params:
     variation: 0.05
     pitch: 1.25
@@ -466,6 +474,10 @@
       collection: Whistles
     Weh:
       collection: Weh
+    ThavenGlub:
+      collection: ThavenGlub
+    ThavenHum:
+      collection: ThavenFHum
   params:
     variation: 0.05
     pitch: 1.25
