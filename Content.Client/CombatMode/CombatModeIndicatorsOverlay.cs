@@ -82,6 +82,11 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
                 _clyde.SetCursor(_clyde.CreateCursor(new SixLabors.ImageSharp.Image<Rgba32>(32, 32), Vector2i.Zero));
             else
                 _clyde.SetCursor(null);
+
+            var eyePos = _eye.CurrentEye.Position;
+            var eyeScreen = _eye.MapToScreen(eyePos);
+            var rot = MathF.Atan2(eyeScreen.Y - mousePos.Y, eyeScreen.X - mousePos.X);
+            rot -= MathF.PI / 2f;
             var rsiState = spriteSys.RsiStateLike(sight.Sprite);
             if (rsiState.IsAnimated && rsiState.AnimationFrameCount >= 3)
             {
@@ -98,7 +103,7 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
                     bracket3 = rsiState.GetFrame(RsiDirection.South, 3);
                 if (rsiState.AnimationFrameCount >= 5)
                     bracket4 = rsiState.GetFrame(RsiDirection.South, 4);
-                DrawSightPartial(sightTexture, bracket1, bracket2, args.ScreenHandle, mousePos, limitedScale * Math.Clamp(sight.Scale, 0f, 1f), sight.MainColor, sight.StrokeColor, currentAngle, maxAngle, bracket3, bracket4);
+                DrawSightPartial(sightTexture, bracket1, bracket2, args.ScreenHandle, rot, mousePos, limitedScale * Math.Clamp(sight.Scale, 0f, 1f), sight.MainColor, sight.StrokeColor, currentAngle, maxAngle, bracket3, bracket4);
             }
             else
             {
@@ -108,7 +113,7 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         }
     }
 
-    private static void DrawSightPartial(Texture sight, Texture bracket1, Texture bracket2, DrawingHandleScreen screen, Vector2 centerPos, float scale, Color mainColor, Color strokeColor, float currentAngle = 0f, float maxAngle = 1f, Texture? bracket3 = null, Texture? bracket4 = null)
+    private static void DrawSightPartial(Texture sight, Texture bracket1, Texture bracket2, DrawingHandleScreen screen, float rotation, Vector2 centerPos, float scale, Color mainColor, Color strokeColor, float currentAngle = 0f, float maxAngle = 1f, Texture? bracket3 = null, Texture? bracket4 = null)
     {
         DrawOverlayPart(sight, screen, centerPos, scale, mainColor, strokeColor);
 
@@ -120,6 +125,8 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         var spreadOffset = 100f * scale;
 
         var offset = baseOffset + (spreadOffset * t);
+
+        screen.SetTransform(Matrix3x2.CreateRotation(rotation, centerPos));
 
         var bracket1Pos = centerPos + new Vector2(-offset - bracketSize1.X * 0.5f, 0f);
         var bracket2Pos = centerPos + new Vector2(offset + bracketSize2.X * 0.5f, 0f);
