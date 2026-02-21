@@ -731,6 +731,19 @@
       - UplinkExplosives
 
 - type: listing
+  id: UplinkExplosiveCollar
+  name: uplink-explosive-collar-name
+  description: uplink-explosive-collar-desc
+  productEntity: ClothingNeckExplosiveCollar
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost: 
+    Telecrystal: 5
+  categories:
+      - UplinkExplosives
+
+- type: listing
   id: UplinkDarkGygaxLoneOps
   name: uplink-mech-teleporter-assault-name
   description: uplink-mech-teleporter-assault-desc
