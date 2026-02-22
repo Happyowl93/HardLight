@@ -31569,5 +31569,15 @@ Entries:
   id: 342501
   time: '2026-02-22T19:37:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3425
+- author: CawsForConcern
+  changes:
+  - message: Duty Officers have been reduced to 1 for most maps. Maps that can see
+      at least 150 players (Cog, Fland, Kiloton, Lagan, Lobster, Manor, Orwell, Sepultum,
+      Spacemall, Starboard) now have 1 round-start Duty Officer and 1 late-join Duty
+      Officer.
+    type: Tweak
+  id: 342401
+  time: '2026-02-22T20:19:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3424
 Order: -1
 
