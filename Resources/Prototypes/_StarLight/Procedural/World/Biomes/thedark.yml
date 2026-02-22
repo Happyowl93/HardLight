@@ -18,7 +18,9 @@
     - type: NoiseDrivenDebrisSelector
       noiseChannel: Wreck
       debrisTable:
-        - id: ScrapDebrisSmall
+        - id: TheDarkScrapDebrisSmall
           prob: 0.03
-        - id: ScrapDebrisMedium
+        - id: TheDarkScrapDebrisMedium
           prob: 0.02
+        - id: TheDarkStation
+          prob: 0.01
