@@ -31466,5 +31466,12 @@ Entries:
   id: 341101
   time: '2026-02-21T22:49:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3411
+- author: XoanJackal
+  changes:
+  - message: Guidebook alert levels
+    type: Tweak
+  id: 336101
+  time: '2026-02-22T08:09:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3361
 Order: -1
 
