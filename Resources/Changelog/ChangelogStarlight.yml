@@ -31480,5 +31480,31 @@ Entries:
   id: 341701
   time: '2026-02-22T08:51:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3417
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) More cameras in SEC to patch up holes in AI vision.
+    type: Add
+  - message: (Starboard) More cameras in north hallway (north of Kitchen) to patch
+      up holes in AI vision.
+    type: Add
+  - message: (Starboard) More cameras in Kitchen to patch up holes in AI vision.
+    type: Add
+  - message: (Starboard) Deep fryer to Kitchen.
+    type: Add
+  - message: (Starboard) Camera removed from washroom.
+    type: Remove
+  - message: (Starboard) Camera removed from maints west of Anchor.
+    type: Remove
+  - message: (Starboard) Salvage-access windoor that was blocking in the Mining Shuttle
+      computer.
+    type: Remove
+  - message: (Starboard) Salvage-access windoor in front of Salvage Expeditions Computer
+      and Salvage Shuttle computer.
+    type: Remove
+  - message: (Starboard) Chemistry locker from Brigmedic.
+    type: Remove
+  id: 342001
+  time: '2026-02-22T14:17:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3420
 Order: -1
 
