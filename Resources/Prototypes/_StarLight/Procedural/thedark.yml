@@ -187,10 +187,3 @@
     - type: MapGrid
     - type: BlobFloorPlanBuilder
       floorPlacements: 16
-
-- type: entity
-  id: TheDarkStation
-  parent: BaseDebris
-  name: lost station
-  components:
-    - type: MapGrid

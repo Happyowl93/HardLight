@@ -22,5 +22,3 @@
           prob: 0.03
         - id: TheDarkScrapDebrisMedium
           prob: 0.02
-        - id: TheDarkStation
-          prob: 0.01
