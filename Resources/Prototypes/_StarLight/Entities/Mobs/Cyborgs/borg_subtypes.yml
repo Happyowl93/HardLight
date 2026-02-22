@@ -320,6 +320,19 @@
       spriteToggleLightState: cricket_l
       inventoryTemplateId: borgDutch
 
+- type: entity
+  parent: BorgMiningSubtypeBase
+  id: BorgMiningSubtypeMiningBeetle
+  name: Beetle
+  components:
+    - type: BorgSubtypeDefinition
+      spritePath: Mobs/Silicon/Chassis/miner.rsi
+      spriteBodyState: beetle
+      spriteHasMindState: beetle_e
+      spriteNoMindState: beetle_e_r
+      spriteToggleLightState: beetle_l
+      inventoryTemplateId: borg
+
 # region Service
 
 - type: entity
