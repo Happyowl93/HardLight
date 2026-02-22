@@ -31544,5 +31544,12 @@ Entries:
   id: 342301
   time: '2026-02-22T15:01:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3423
+- author: redmushie
+  changes:
+  - message: Ducks, chickens and regular crabs now have 60 max health instead of 200.
+    type: Tweak
+  id: 342601
+  time: '2026-02-22T18:45:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3426
 Order: -1
 
