@@ -31551,5 +31551,14 @@ Entries:
   id: 342601
   time: '2026-02-22T18:45:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3426
+- author: teapoterror & penguinwizzard
+  changes:
+  - message: New Soviet Dungeons.
+    type: Add
+  - message: Scrapped the old Soviet Dungeons.
+    type: Remove
+  id: 341901
+  time: '2026-02-22T18:51:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3419
 Order: -1
 
