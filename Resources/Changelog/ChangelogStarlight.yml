@@ -31434,5 +31434,150 @@ Entries:
   id: 339501
   time: '2026-02-21T08:07:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3395
+- author: Scarlet Lightweaver
+  changes:
+  - message: Added more naval cannons for admeme / events.
+    type: Add
+  id: 340101
+  time: '2026-02-21T10:29:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3401
+- author: Vincolan
+  changes:
+  - message: Banana Anomaly now spawns Gorillas at the Critical and  Friendly monkeys
+      at pulse.
+    type: Tweak
+  - message: Fire anom pulses are now more dangerous.
+    type: Tweak
+  - message: Ice anom critical explosion is more powerful.
+    type: Tweak
+  - message: Clown and Plant Anomaly now spawns more Kudzu .
+    type: Tweak
+  - message: Now the Clown anomaly creates ClownSpiders on Critical.
+    type: Tweak
+  - message: Some other minor anomalies changes.
+    type: Tweak
+  id: 341501
+  time: '2026-02-21T22:07:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3415
+- author: redmushie
+  changes:
+  - message: Paramedics now get the AstroNav module pre-installed in their PDAs.
+    type: Add
+  id: 341101
+  time: '2026-02-21T22:49:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3411
+- author: XoanJackal
+  changes:
+  - message: Guidebook alert levels
+    type: Tweak
+  id: 336101
+  time: '2026-02-22T08:09:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3361
+- author: redmushie
+  changes:
+  - message: Players can no longer be labeled.
+    type: Remove
+  id: 341701
+  time: '2026-02-22T08:51:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3417
+- author: CawsForConcern
+  changes:
+  - message: (Starboard) More cameras in SEC to patch up holes in AI vision.
+    type: Add
+  - message: (Starboard) More cameras in north hallway (north of Kitchen) to patch
+      up holes in AI vision.
+    type: Add
+  - message: (Starboard) More cameras in Kitchen to patch up holes in AI vision.
+    type: Add
+  - message: (Starboard) Deep fryer to Kitchen.
+    type: Add
+  - message: (Starboard) Camera removed from washroom.
+    type: Remove
+  - message: (Starboard) Camera removed from maints west of Anchor.
+    type: Remove
+  - message: (Starboard) Salvage-access windoor that was blocking in the Mining Shuttle
+      computer.
+    type: Remove
+  - message: (Starboard) Salvage-access windoor in front of Salvage Expeditions Computer
+      and Salvage Shuttle computer.
+    type: Remove
+  - message: (Starboard) Chemistry locker from Brigmedic.
+    type: Remove
+  id: 342001
+  time: '2026-02-22T14:17:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3420
+- author: CawsForConcern
+  changes:
+  - message: (Silica) More kitchen shelving.
+    type: Add
+  - message: (Silica) Deep fryer for Kitchen.
+    type: Add
+  - message: (Silica) Disposals shouldn't no longer shatter the directional window
+      due to high-speed garbage.
+    type: Fix
+  - message: (Silica) Missing APC outside Bridge Hallway.
+    type: Fix
+  - message: (Silica) Chemistry Locker from Brigmedic.
+    type: Remove
+  id: 342101
+  time: '2026-02-22T14:37:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3421
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Deep fryers.
+    type: Add
+  - message: (Lobster) Chemistry locker from Brigmedic.
+    type: Remove
+  id: 342201
+  time: '2026-02-22T14:48:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3422
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Deep fryer to Kitchen.
+    type: Add
+  - message: (Hotel) Materials Silo to Science.
+    type: Add
+  - message: (Hotel) Water Vapor gas miner to Atmos.
+    type: Add
+  - message: (Hotel) Chemistry locker from Brigmedic.
+    type: Remove
+  id: 342301
+  time: '2026-02-22T15:01:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3423
+- author: redmushie
+  changes:
+  - message: Ducks, chickens and regular crabs now have 60 max health instead of 200.
+    type: Tweak
+  id: 342601
+  time: '2026-02-22T18:45:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3426
+- author: teapoterror & penguinwizzard
+  changes:
+  - message: New Soviet Dungeons.
+    type: Add
+  - message: Scrapped the old Soviet Dungeons.
+    type: Remove
+  id: 341901
+  time: '2026-02-22T18:51:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3419
+- author: Conflee
+  changes:
+  - message: Changed sprites of the Rat King, Rat Servant, Medium Rat Servant, Mice,
+      Admin Mice, Mentor Mice, Remy, etc. The new sprites fit our license and style
+      better.
+    type: Tweak
+  id: 342501
+  time: '2026-02-22T19:37:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3425
+- author: CawsForConcern
+  changes:
+  - message: Duty Officers have been reduced to 1 for most maps. Maps that can see
+      at least 150 players (Cog, Fland, Kiloton, Lagan, Lobster, Manor, Orwell, Sepultum,
+      Spacemall, Starboard) now have 1 round-start Duty Officer and 1 late-join Duty
+      Officer.
+    type: Tweak
+  id: 342401
+  time: '2026-02-22T20:19:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3424
 Order: -1
 
