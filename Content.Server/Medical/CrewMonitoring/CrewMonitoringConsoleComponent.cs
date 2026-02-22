@@ -16,7 +16,7 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     ///     STARLIGHT: The rate at which this console transmits UI updates to clients.
     /// </summary>
     [DataField]
-    public TimeSpan InterfaceUpdateRate = TimeSpan.FromSeconds(1);
+    public TimeSpan InterfaceUpdateRate = TimeSpan.FromSeconds(3);
 
     /// <summary>
     ///     STARLIGHT: The time at which this console last transmitted a UI update.
