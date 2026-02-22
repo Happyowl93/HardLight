@@ -93,8 +93,8 @@
       - FloorDarkGrass
       - FloorDarkStone
       blobDrawProb: 0.5
-      radius: 22
-      floorPlacements: 56
+      radius: 28
+      floorPlacements: 108
     - type: SimpleFloorPlanPopulator
       entries:
         FloorDarkStone:
