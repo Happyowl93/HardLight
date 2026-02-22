@@ -461,6 +461,9 @@
   id: SovietDungeon
 
 - type: Tag
+  id: SovietDungeonWeh
+
+- type: Tag
   id: SovietWarehouse
 
 - type: Tag

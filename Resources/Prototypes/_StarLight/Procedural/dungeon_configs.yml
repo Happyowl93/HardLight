@@ -151,7 +151,7 @@
   - !type:PrefabDunGen
     roomWhitelist:
       tags:
-      - SovietDungeon
+      - SovietDungeonWeh
     presets:
     - Bucket
     - Wow
@@ -248,7 +248,7 @@
   - !type:PrefabDunGen
     roomWhitelist:
       tags:
-      - SovietDungeonWeh
+      - SovietDungeon
     presets:
     - Bucket
     - Wow
@@ -379,7 +379,6 @@
     - id: RandomSovietCorpseSpawner
     - id: RandomArtifactSpawner20
     - id: SpawnMobOreCrab
-    - id: ToySpawner
     - id: LootSpawnerMedicalMinor
     - id: LootSpawnerMaterialsSupplementary
     - id: SalvageCanisterSpawner
@@ -390,6 +389,8 @@
     - id: BaseBarrelChemRadioactiveFilledUranium
     - id: Bonfire
       weight: 7
+    - id: BarrelFlaming
+      weight: 3
     - id: AcousticGuitarInstrument
     - id: SovietRevolutionSupplySpawner
     - id: LandMineExplosive
