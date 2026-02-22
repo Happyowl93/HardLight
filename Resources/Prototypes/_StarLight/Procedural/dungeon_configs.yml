@@ -289,7 +289,7 @@
 
   - !type:CorridorClutterDunGen
     contents: SovietCorridorsWeh
-    chance: 0.20
+    chance: 0.35
 
   - !type:CorridorDecalSkirtingDunGen
     cardinalDecals:
