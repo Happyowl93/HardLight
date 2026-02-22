@@ -31506,5 +31506,21 @@ Entries:
   id: 342001
   time: '2026-02-22T14:17:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3420
+- author: CawsForConcern
+  changes:
+  - message: (Silica) More kitchen shelving.
+    type: Add
+  - message: (Silica) Deep fryer for Kitchen.
+    type: Add
+  - message: (Silica) Disposals shouldn't no longer shatter the directional window
+      due to high-speed garbage.
+    type: Fix
+  - message: (Silica) Missing APC outside Bridge Hallway.
+    type: Fix
+  - message: (Silica) Chemistry Locker from Brigmedic.
+    type: Remove
+  id: 342101
+  time: '2026-02-22T14:37:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3421
 Order: -1
 
