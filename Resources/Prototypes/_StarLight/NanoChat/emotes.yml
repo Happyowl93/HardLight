@@ -41,43 +41,6 @@
   searchTags: ["godo", "love", "heart"]
   sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/golove.png
 
-# Character emotes
-- type: nanoChatEmote
-  id: chime
-  category: Character
-  searchTags: ["sound", "bell"]
-  sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/chime.png
-
-- type: nanoChatEmote
-  id: chirp
-  category: Character
-  searchTags: ["sound", "bird"]
-  sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/chirp.png
-
-- type: nanoChatEmote
-  id: clap
-  category: Character
-  searchTags: ["hands", "applause"]
-  sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/clap.png
-
-- type: nanoChatEmote
-  id: click
-  category: Character
-  searchTags: ["sound"]
-  sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/click.png
-
-- type: nanoChatEmote
-  id: honk
-  category: Character
-  searchTags: ["clown", "funny", "sound"]
-  sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/honk.png
-
-- type: nanoChatEmote
-  id: squeak
-  category: Character
-  searchTags: ["sound", "mouse"]
-  sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/squeak.png
-
 # Plushie emotes
 - type: nanoChatEmote
   id: arachnid
@@ -166,3 +129,40 @@
   sprite:
     sprite: Objects/Fun/Plushies/vox.rsi
     state: icon
+
+# Misc Emotes
+- type: nanoChatEmote
+  id: chime
+  category: Character
+  searchTags: ["sound", "bell"]
+  sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/chime.png
+
+- type: nanoChatEmote
+  id: chirp
+  category: Character
+  searchTags: ["sound", "bird"]
+  sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/chirp.png
+
+- type: nanoChatEmote
+  id: clap
+  category: Character
+  searchTags: ["hands", "applause"]
+  sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/clap.png
+
+- type: nanoChatEmote
+  id: click
+  category: Character
+  searchTags: ["sound"]
+  sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/click.png
+
+- type: nanoChatEmote
+  id: honk
+  category: Character
+  searchTags: ["clown", "funny", "sound"]
+  sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/honk.png
+
+- type: nanoChatEmote
+  id: squeak
+  category: Character
+  searchTags: ["sound", "mouse"]
+  sprite: /Textures/_Starlight/Interface/Nanochat/Emotes/squeak.png
