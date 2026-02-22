@@ -88,14 +88,6 @@
     state: icon
 
 - type: nanoChatEmote
-  id: diona
-  category: Plushies
-  searchTags: ["plant", "plushie", "toy"]
-  sprite:
-    sprite: Objects/Fun/Plushies/diona.rsi
-    state: plushie_diona
-
-- type: nanoChatEmote
   id: floorgoblin
   category: Plushies
   searchTags: ["goblin", "plushie", "toy"]
