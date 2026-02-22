@@ -286,7 +286,7 @@ public sealed partial class NanoChatUiFragment : BoxContainer
         _ownNumber = state.OwnNumber;
         _notificationsMuted = state.NotificationsMuted;
         _listNumber = state.ListNumber;
-        _contacts = state.Contacts;
+        _contacts = state.Contacts; // Starlight
         OwnNumberLabel.Text = $"#{state.OwnNumber:D4}";
         UpdateMuteButton();
         UpdateListNumber();
