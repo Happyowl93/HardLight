@@ -32,13 +32,15 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
     private readonly SightPrototype? _gunSight;
     private readonly SightPrototype? _gunBoltSight;
     private readonly SightPrototype? _meleeSight;
-
-    private const float VisualSightRadius = 8f;
+    private readonly float? _scale;
+    private readonly float? _offset;
+    private readonly Color? _main;
+    private readonly Color? _second;
 
     public override OverlaySpace Space => OverlaySpace.ScreenSpace;
 
     public CombatModeIndicatorsOverlay(IInputManager input, IEntityManager entMan, IPrototypeManager prototypes,
-            IEyeManager eye, CombatModeSystem combatSys, HandsSystem hands, IClyde clyde, SightPrototype gunSight, SightPrototype meleeSight)
+            IEyeManager eye, CombatModeSystem combatSys, HandsSystem hands, IClyde clyde, SightPrototype gunSight, SightPrototype meleeSight, float scale, float offset, Color main, Color second)
     {
         _inputManager = input;
         _entMan = entMan;
@@ -48,6 +50,10 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         _gunSight = gunSight;
         _meleeSight = meleeSight;
         _clyde = clyde;
+        _scale = scale;
+        _offset = offset;
+        _main = main;
+        _second = second;
 
         if (_gunSight.BoltVariant != null)
             prototypes.TryIndex(_gunSight.BoltVariant, out _gunBoltSight);
@@ -83,6 +89,8 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
             else
                 _clyde.SetCursor(null);
 
+            var scale = limitedScale * Math.Clamp(_scale ?? 0.6f, 0f, 1f);
+
             var eyePos = _eye.CurrentEye.Position;
             var eyeScreen = _eye.MapToScreen(eyePos);
             var rot = MathF.Atan2(eyeScreen.Y - mousePos.Y, eyeScreen.X - mousePos.X);
@@ -91,7 +99,6 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
             if (rsiState.IsAnimated && rsiState.AnimationFrameCount >= 3)
             {
                 var currentAngle = 0f;
-                var maxAngle = (float?)gun?.MaxAngleModified.Degrees ?? 1f;
                 if (isHandGunItem && handEntity != null)
                     currentAngle = (float)_entMan.System<GunSystem>().GetCurrentAngle(handEntity.Value).Degrees;
                 var bracket1 = rsiState.GetFrame(RsiDirection.South, 0); // Left
@@ -103,28 +110,33 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
                     bracket3 = rsiState.GetFrame(RsiDirection.South, 3);
                 if (rsiState.AnimationFrameCount >= 5)
                     bracket4 = rsiState.GetFrame(RsiDirection.South, 4);
-                DrawSightPartial(sightTexture, bracket1, bracket2, args.ScreenHandle, rot, mousePos, limitedScale * Math.Clamp(sight.Scale, 0f, 1f), sight.MainColor, sight.StrokeColor, currentAngle, maxAngle, bracket3, bracket4);
+                var offset = CalculateOffset(currentAngle, (eyeScreen.Position - mousePos).Length(), scale);
+                DrawSightPartial(sightTexture, bracket1, bracket2, args.ScreenHandle, rot, mousePos, scale,_main ?? sight.MainColor,_second ?? sight.StrokeColor, offset, bracket3, bracket4);
             }
             else
             {
                 var sightTexture = spriteSys.Frame0(sight.Sprite);
-                DrawOverlayPart(sightTexture, args.ScreenHandle, mousePos, limitedScale * Math.Clamp(sight.Scale, 0f, 1f), sight.MainColor, sight.StrokeColor);
+                DrawOverlayPart(sightTexture, args.ScreenHandle, mousePos, scale, _main ?? sight.MainColor, _second ?? sight.StrokeColor);
             }
         }
     }
 
-    private static void DrawSightPartial(Texture sight, Texture bracket1, Texture bracket2, DrawingHandleScreen screen, float rotation, Vector2 centerPos, float scale, Color mainColor, Color strokeColor, float currentAngle = 0f, float maxAngle = 1f, Texture? bracket3 = null, Texture? bracket4 = null)
+    private float CalculateOffset(float currentAngle, float distance, float scale)
+    {
+        var angleRad = currentAngle * MathF.PI / 180f;
+        var offset = MathF.Tan(angleRad) * distance;
+        offset *= scale;
+        // So if slider is in center: 0.5 + 0.5 = 1, meaning no change. If slider is at minimum: 0 + 0.5 = 0.5, meaning offset is halved. If slider is at maximum: 1 + 0.5 = 1.5, meaning offset is increased by 50%.
+        offset *= (_offset ?? 0.5f) + 0.5f;
+        return offset;
+    }
+
+    private static void DrawSightPartial(Texture sight, Texture bracket1, Texture bracket2, DrawingHandleScreen screen, float rotation, Vector2 centerPos, float scale, Color mainColor, Color strokeColor, float offset, Texture? bracket3 = null, Texture? bracket4 = null)
     {
         DrawOverlayPart(sight, screen, centerPos, scale, mainColor, strokeColor);
 
         var bracketSize1 = bracket1.Size * scale;
         var bracketSize2 = bracket2.Size * scale;
-
-        var t = Math.Clamp(currentAngle / maxAngle, 0f, 1f);
-        var baseOffset = VisualSightRadius + 2f;
-        var spreadOffset = 100f * scale;
-
-        var offset = baseOffset + (spreadOffset * t);
 
         screen.SetTransform(Matrix3x2.CreateRotation(rotation, centerPos));
 

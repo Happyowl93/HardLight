@@ -30,6 +30,10 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
     private bool _lastState = false;
     private string _rangedSight = "GunSight";
     private string _meleeSight = "MeleeSight";
+    private float _scale = 0.6f;
+    private float _offset = 0.5f;
+    private Color _main = Color.White.WithAlpha(0.3f);
+    private Color _second = Color.Black.WithAlpha(0.5f);
 
     public override void Initialize()
     {
@@ -39,7 +43,11 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
 
         Subs.CVar(_cfg, CCVars.CombatModeIndicatorsPointShow, OnShowCombatIndicatorsChanged, true);
         Subs.CVar(_cfg, StarlightCCVars.RangedSight, OnRangedSightChanged, true);
-        Subs.CVar(_cfg, StarlightCCVars.MeleeSight, OnMeleeSightChanged, true);
+        Subs.CVar(_cfg, StarlightCCVars.RangedSightScale, OnRangedSightScaleChanged, true);
+        Subs.CVar(_cfg, StarlightCCVars.RangedSightOffset, OnRangedSightOffsetChanged, true);
+        Subs.CVar(_cfg, StarlightCCVars.SightMainColor, OnSightMainColorChanged, true);
+        Subs.CVar(_cfg, StarlightCCVars.SightSecondColor, OnSightSecondColorChanged, true);
+        Subs.CVar(_cfg, StarlightCCVars.MeleeSight, OnMeleeSightChanged, true); 
     }
 
     private void OnHandleState(EntityUid uid, CombatModeComponent component, ref AfterAutoHandleStateEvent args)
@@ -91,24 +99,52 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
     private void OnRangedSightChanged(string sight)
     {
         _rangedSight = sight;
-        var state = _lastState;
-        OnShowCombatIndicatorsChanged(false);
-        OnShowCombatIndicatorsChanged(state);
+        UpdateCombatIndicators();
+    }
+
+    private void OnRangedSightScaleChanged(int scale)
+    {
+        float fScale = scale * 0.01f;
+        _scale = fScale;
+        UpdateCombatIndicators();
+    }
+
+    private void OnRangedSightOffsetChanged(int offset)
+    {
+        float fOffset = offset * 0.01f;
+        _offset = fOffset;
+        UpdateCombatIndicators();
+    }
+
+    private void OnSightMainColorChanged(string color)
+    {
+        _main = Color.FromHex(color).WithAlpha(0.3f);
+        UpdateCombatIndicators();
+    }
+
+    private void OnSightSecondColorChanged(string color)
+    {
+        _second = Color.FromHex(color).WithAlpha(0.5f);
+        UpdateCombatIndicators();
     }
 
     private void OnMeleeSightChanged(string sight)
     {
         _meleeSight = sight;
-        var state = _lastState;
-        OnShowCombatIndicatorsChanged(false);
-        OnShowCombatIndicatorsChanged(state);
+        UpdateCombatIndicators();
     }
 
-    private void OnShowCombatIndicatorsChanged(bool isShow)
+    private void OnShowCombatIndicatorsChanged(bool isShow) 
+        => UpdateCombatIndicators(isShow);
+
+    private void UpdateCombatIndicators(bool? isShow = null)
     {
-        if (isShow != _lastState)
-            _lastState = isShow;
-        if (_lastState && _prototypeManager.TryIndex<SightPrototype>(_rangedSight, out var ranged) && _prototypeManager.TryIndex<SightPrototype>(_meleeSight, out var melee))
+        if (isShow != null && isShow != _lastState)
+            _lastState = isShow.Value;
+
+        if ((isShow == null || !_lastState) && _overlayManager.HasOverlay<CombatModeIndicatorsOverlay>())
+            _overlayManager.RemoveOverlay<CombatModeIndicatorsOverlay>();
+        if ((isShow == null || _lastState) && _prototypeManager.TryIndex<SightPrototype>(_rangedSight, out var ranged) && _prototypeManager.TryIndex<SightPrototype>(_meleeSight, out var melee))
         {
             _overlayManager.AddOverlay(new CombatModeIndicatorsOverlay(
                 _inputManager,
@@ -119,11 +155,11 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
                 EntityManager.System<HandsSystem>(),
                 _clyde,
                 ranged,
-                melee));
-        }
-        else if (_overlayManager.HasOverlay<CombatModeIndicatorsOverlay>())
-        {
-            _overlayManager.RemoveOverlay<CombatModeIndicatorsOverlay>();
+                melee,
+                _scale,
+                _offset,
+                _main,
+                _second));
         }
     }
 }
