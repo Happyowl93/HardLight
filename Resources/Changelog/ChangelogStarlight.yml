@@ -31473,5 +31473,12 @@ Entries:
   id: 336101
   time: '2026-02-22T08:09:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3361
+- author: redmushie
+  changes:
+  - message: Players can no longer be labeled.
+    type: Remove
+  id: 341701
+  time: '2026-02-22T08:51:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3417
 Order: -1
 
