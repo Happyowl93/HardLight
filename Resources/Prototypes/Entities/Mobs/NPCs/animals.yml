@@ -212,13 +212,18 @@
   id: MobChicken
   description: Comes before an egg, and IS a dinosaur!
   components:
-  # Starlight-start: Languages
+  # Starlight START
   - type: LanguageKnowledge
     speaks:
     - Chicken
     understands:
     - Chicken
-  # Starlight-end
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Critical
+      60: Dead
+  # Starlight END
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -692,13 +697,18 @@
   id: MobDuckMallard
   description: An adorable mallard duck, it's fluffy and soft!
   components:
-  # Starlight-start: Languages
+  # Starlight START
   - type: LanguageKnowledge
     speaks:
     - Duck
     understands:
     - Duck
-  # Starlight-end
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Critical
+      60: Dead
+  # Starlight END
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -992,6 +1002,13 @@
   id: MobCrab
   description: A folk legend goes around that his claw snaps spacemen out of existence over distasteful remarks. Be polite and tolerant for your own safety.
   components:
+  # Starlight START
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Critical
+      60: Dead
+  # Starlight END
   - type: VentCrawler
   - type: Sprite
     drawdepth: Mobs
