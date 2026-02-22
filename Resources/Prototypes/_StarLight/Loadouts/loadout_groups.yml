@@ -551,6 +551,17 @@
     - SalvagePDA
     - VeteranSalvagePDA
 
+# Mime
+- type: loadoutGroup
+  id: MimeShoes
+  name: loadout-group-mime-shoes
+  minLimit: 0 # Starlight
+  defaultSelected: 1 # Starlight
+  loadouts:
+  - ClothingShoesColorWhite
+  - ClothingShoesColorBlack
+  - RollerSkatesLoadout # Starlight
+
 # Boxer
 - type: loadoutGroup
   id: BoxerJumpsuit
