@@ -8,20 +8,20 @@
   },
   "states": [
     {
-      "name": "icon-0"
+      "name": "icon-admin"
     },
     {
-      "name": "icon-1"
+      "name": "icon-mentor"
     },
     {
-      "name": "icon-2"
+      "name": "icon-remy"
     },
     {
-      "name": "mouse-0",
+      "name": "mouse-admin",
       "directions": 4
     },
     {
-      "name": "mouse-moving-0",
+      "name": "mouse-moving-admin",
       "directions": 4,
       "delays": [
         [
@@ -47,11 +47,11 @@
       ]
     },
     {
-      "name": "mouse-1",
+      "name": "mouse-mentor",
       "directions": 4
     },
     {
-      "name": "mouse-moving-1",
+      "name": "mouse-moving-mentor",
       "directions": 4,
       "delays": [
         [
@@ -77,11 +77,11 @@
       ]
     },
     {
-      "name": "mouse-2",
+      "name": "mouse-remy",
       "directions": 4
     },
     {
-      "name": "mouse-moving-2",
+      "name": "mouse-moving-remy",
       "directions": 4,
       "delays": [
         [
@@ -107,26 +107,22 @@
       ]
     },
     {
-      "name": "dead-0"
+      "name": "dead-admin"
     },
     {
-      "name": "dead-1"
+      "name": "dead-mentor"
     },
     {
-      "name": "dead-2"
+      "name": "dead-remy"
     },
     {
-      "name": "splat-0"
+      "name": "splat-admin"
     },
     {
-      "name": "splat-1"
+      "name": "splat-mentor"
     },
     {
-      "name": "splat-2"
-    },
-    {
-      "name": "0-equipped-HELMET",
-      "directions": 4
+      "name": "splat-remy"
     },
     {
       "name": "1-equipped-HELMET",
@@ -137,7 +133,7 @@
       "directions": 4
     },
     {
-      "name": "0-inhand-left",
+      "name": "0-equipped-HELMET",
       "directions": 4
     },
     {
@@ -149,7 +145,7 @@
       "directions": 4
     },
     {
-      "name": "0-inhand-right",
+      "name": "0-inhand-left",
       "directions": 4
     },
     {
@@ -158,6 +154,10 @@
     },
     {
       "name": "2-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "0-inhand-right",
       "directions": 4
     }
   ]
