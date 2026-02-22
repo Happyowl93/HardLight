@@ -697,8 +697,8 @@ public sealed partial class MechSystem : SharedMechSystem
         }
 
         var tankEnt = mech.GasTankSlot.ContainedEntity.Value;
-        var gasTank = Comp<GasTankComponent>(tankEnt);
-        args.Gas = _gasTank.RemoveAirVolume((tankEnt, gasTank), args.Respirator.BreathVolume);
+        if (TryComp<GasTankComponent>(tankEnt, out var gasTank) && gasTank.Air.Volume > 0)
+            args.Gas = _gasTank.RemoveAirVolume((tankEnt, gasTank), args.Respirator.BreathVolume);
     }
     // STARLIGHT END
 
