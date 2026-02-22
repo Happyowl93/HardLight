@@ -31531,5 +31531,18 @@ Entries:
   id: 342201
   time: '2026-02-22T14:48:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3422
+- author: CawsForConcern
+  changes:
+  - message: (Hotel) Deep fryer to Kitchen.
+    type: Add
+  - message: (Hotel) Materials Silo to Science.
+    type: Add
+  - message: (Hotel) Water Vapor gas miner to Atmos.
+    type: Add
+  - message: (Hotel) Chemistry locker from Brigmedic.
+    type: Remove
+  id: 342301
+  time: '2026-02-22T15:01:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3423
 Order: -1
 
