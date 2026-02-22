@@ -254,6 +254,8 @@
   - type: Reproductive
     breedChance: 0.05
     birthPopup: reproductive-laid-egg-popup
+    capacity: 12  #Starlight
+    hungerPerBirth: 35 #Starlight
     makeOffspringInfant: false
     partnerWhitelist:
       tags:
@@ -722,6 +724,8 @@
   - type: Reproductive
     breedChance: 0.05
     birthPopup: reproductive-laid-egg-popup
+    capacity: 12  #Starlight
+    hungerPerBirth: 35 #Starlight
     makeOffspringInfant: false
     partnerWhitelist:
       tags:
