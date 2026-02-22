@@ -416,8 +416,6 @@ public abstract partial class SharedMindSystem : EntitySystem
     
     
 
-    #endregion
-
     public bool TryGetObjectiveComp<T>(EntityUid uid, [NotNullWhen(true)] out T? objective) where T : IComponent
     {
         if (TryGetMind(uid, out var mindId, out var mind) && TryGetObjectiveComp(mindId, out objective, mind))
