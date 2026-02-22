@@ -2001,7 +2001,7 @@
   id: MobMouse2
   components:
   - type: Sprite
-    color: Gray
+    #color: Gray #SL Edit
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: mouse-2 #SLEdit
