@@ -364,8 +364,9 @@ public abstract partial class SharedMindSystem : EntitySystem
         mind.Objectives.Add(objective);
     }
 
+
     /// <summary>
-    /// Removes an objective from this mind.
+    /// Removes an objective from this mind by Index.
     /// </summary>
     /// <returns>Returns true if the removal succeeded.</returns>
     public bool TryRemoveObjective(EntityUid mindId, MindComponent mind, int index, bool force = false) // Starlight-edit: force option
@@ -410,6 +411,10 @@ public abstract partial class SharedMindSystem : EntitySystem
         
         return true;
     }
+    #endregion
+
+    
+    
 
     #endregion
 
