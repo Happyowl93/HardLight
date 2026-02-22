@@ -28,6 +28,28 @@
       stock: 1
 
 - type: listing
+  id: ClothingUniformJumpskirtElegantMaid
+  productEntity: ClothingUniformJumpskirtElegantMaid
+  cost:
+    NTCredit: 990
+  categories:
+    - SLFashionSkirt
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: ClothingUniformJumpskirtTacticalMaid
+  productEntity: ClothingUniformJumpskirtTacticalMaid
+  cost:
+    NTCredit: 990
+  categories:
+    - SLFashionSkirt
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
   id: ClothingUniformJumpskirtDressRed
   productEntity: ClothingUniformJumpskirtDressRed
   cost:
@@ -312,6 +334,18 @@
   conditions:
     - !type:ListingLimitedStockCondition
       stock: 1
+
+- type: listing
+  id: ClothingHeadHatTacticalMaidHeadband
+  productEntity: ClothingHeadHatTacticalMaidHeadband
+  cost:
+    NTCredit: 990
+  categories:
+    - SLFashionHead
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
 
 - type: listing
   id: ClothingMaskGeneralBorg
