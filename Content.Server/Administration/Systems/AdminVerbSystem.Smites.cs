@@ -65,6 +65,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Spawners;
 using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
+using Content.Server._Starlight.Terminator;
 
 namespace Content.Server.Administration.Systems;
 
@@ -72,10 +73,10 @@ public sealed partial class AdminVerbSystem
 {
     private readonly ProtoId<PolymorphPrototype> LizardSmite = "AdminLizardSmite";
     private readonly ProtoId<PolymorphPrototype> VulpkaninSmite = "AdminVulpSmite";
+    private readonly ProtoId<PolymorphPrototype> Felionoidsmite = "AdminFelioSmite"; // Starlight edit
 
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
     [Dependency] private readonly BodySystem _bodySystem = default!;
     [Dependency] private readonly CreamPieSystem _creamPieSystem = default!;
@@ -101,6 +102,7 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly SuperBonkSystem _superBonkSystem = default!;
     [Dependency] private readonly SlipperySystem _slipperySystem = default!;
     [Dependency] private readonly GibbingSystem _gibbing = default!;
+    [Dependency] private readonly TerminatorSystem _terminator = default!; // starlight
 
     private readonly EntProtoId _actionViewLawsProtoId = "ActionViewLaws";
     private readonly ProtoId<SiliconLawsetPrototype> _crewsimovLawset = "Crewsimov";
@@ -796,6 +798,23 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", vulpName, Loc.GetString("admin-smite-vulpkanin-species-swap-description"))
         };
         args.Verbs.Add(vulp);
+        
+        // Starlight-start
+        var felioName = Loc.GetString("admin-smite-Felionoid-species-swap-name").ToLowerInvariant();
+        Verb felio = new()
+        {
+            Text = felioName,
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Fun/toy_mouse.rsi"), "icon"),
+            Act = () =>
+            {
+                _polymorphSystem.PolymorphEntity(args.Target, Felionoidsmite);
+            },
+            Impact = LogImpact.Extreme,
+            Message = string.Join(": ", felioName, Loc.GetString("admin-smite-Felionoid-species-swap-description"))
+        };
+        args.Verbs.Add(felio);
+        // Starlight-end
 
         var lockerName = Loc.GetString("admin-smite-locker-stuff-name").ToLowerInvariant();
         Verb locker = new()
@@ -1105,6 +1124,23 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", siliconName, Loc.GetString("admin-smite-silicon-laws-bound-description"))
         };
         args.Verbs.Add(silicon);
+        // Far Horizons - Start
+        var fuelRodifyName = Loc.GetString("admin-smite-become-fuelrod-name").ToLowerInvariant();
+        Verb fuelRodify = new()
+        {
+            Text = fuelRodifyName,
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_FarHorizons/Structures/Power/Generation/FissionGenerator/reactor_parts.rsi"), "default_rod"),
+            Act = () =>
+            {
+                _gibbing.Gib(args.Target);
+                _polymorphSystem.PolymorphEntity(args.Target, "AdminFuelRodSmite");
+            },
+            Impact = LogImpact.Extreme,
+            Message = string.Join(": ", fuelRodifyName, Loc.GetString("admin-smite-become-fuelrod-description"))
+        };
+        args.Verbs.Add(fuelRodify);
+        // Far Horizons - End
 
         var homingRodName = Loc.GetString("admin-smite-homing-rod-name").ToLowerInvariant();
         Verb homingRod = new()
@@ -1160,6 +1196,22 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", scrambleName, Loc.GetString("admin-smite-scramble-description"))
         };
         args.Verbs.Add(scramble);
+
+        var terminateName = Loc.GetString("admin-smite-terminate-name").ToLowerInvariant();
+        Verb terminate = new()
+        {
+            Text = terminateName,
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new("Mobs/Species/Terminator/parts.rsi"), "skull_icon"),
+            Act = () =>
+            {
+                _terminator.CreateTerminator(args.Target);
+                _popup.PopupEntity(Loc.GetString("admin-smite-terminate-warning"), args.Target, PopupType.Small); // ill be back
+            },
+            Impact = LogImpact.Extreme,
+            Message = string.Join(": ", terminateName, Loc.GetString("admin-smite-terminate-description"))
+        };
+        args.Verbs.Add(terminate);
         // Starlight end
     }
 
