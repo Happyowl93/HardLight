@@ -297,9 +297,6 @@
 # Used for the jet injector and advanced jet injector
 - type: Tag
   id: JetInjector
-  
-- type: Tag
-  id: Labelable
 
 - type: Tag
   id: L6Saw
@@ -382,6 +379,9 @@
 
 - type: Tag
   id: Nexus
+  
+- type: Tag
+  id: NotLabelable
 
 - type: Tag
   id: NukiePlanet
@@ -477,6 +477,9 @@
 
 - type: Tag
   id: SovietDungeon
+
+- type: Tag
+  id: SovietDungeonWeh
 
 - type: Tag
   id: SovietWarehouse
