@@ -23,12 +23,14 @@
     rules:
     - id: Thief
       prob: 0.60 # Starlight. Adds up to 1.
-    - id: VampireLess # The rework is here.
+    - id: VampireLess # Starlight. The rework is here.
       prob: 0.25
     - id: SubWizard
       prob: 0.07 # Starlight. Wizard is incredibly rare. There are players with 1k hours that have never rolled it.
     - id: Xenoborgs
       prob: 0.08 # Starlight. To account for their secret mode being lowered.
+    - id: Brighteye
+      prob: 0.05
 #    - id: SiliconLiberation
 #      prob: 0.4
 
@@ -39,15 +41,17 @@
   - type: SubGamemodes
     rules:
     - id: ThiefLess # So that only 3 thieves max spawn in rev games.
-      prob: 0.40 # Starlight, to account for Wizard and Xenoborgs
+      prob: 0.41 # Starlight 
     - id: SLChangeling #Starlight lings
-      prob: 0.23
+      prob: 0.22
     - id: VampireLess # Starlight reworked
       prob: 0.22
     - id: SubWizard
       prob: 0.07 # Starlight. Wizard is incredibly rare. There are players with 1k hours that have never rolled it.
     - id: Xenoborgs
       prob: 0.08 # Starlight. To account for their secret mode being lowered.
+    - id: Brighteye
+      prob: 0.05
 
 - type: entity
   parent: BaseGameRule
@@ -56,13 +60,15 @@
   - type: SubGamemodes
     rules:
     - id: Thief
-      prob: 0.45
+      prob: 0.60 # Same as NoChangelings
     - id: SLChangeling #Starlight lings
-      prob: 0.4
+      prob: 0.25 # To be equal to the chance Vampires spawn in Changeling.
     - id: SubWizard
       prob: 0.07 # Starlight. Wizard is incredibly rare. There are players with 1k hours that have never rolled it.
     - id: Xenoborgs
       prob: 0.08 # Starlight. To account for their secret mode being lowered.
+    - id: Brighteye
+      prob: 0.05
 
 - type: entity
   parent: BaseGameRule
@@ -76,6 +82,8 @@
       prob: 0.07 # Starlight. Wizard is incredibly rare. There are players with 1k hours that have never rolled it.
     - id: Xenoborgs
       prob: 0.08 # Starlight. To account for their secret mode being lowered.
+    - id: Brighteye
+      prob: 0.05
 
 - type: entity
   parent: BaseGameRule
@@ -84,8 +92,31 @@
   - type: SubGamemodes
     rules:
     - id: ThiefLess
-      prob: 0.92
+      prob: 0.50
+    - id: SubTraitor # Special traitors with a curated set of objectives; they do not have Kill/Lesson/DAGD, and scale a lot less.
+      prob: 0.20
+    - id: VampireLess # This is probably the most interesting sub-gamemode for them.
+      prob: 0.32
     - id: Xenoborgs # I think there's interesting roleplay opportunity if Xenoborgs spawn. You could willingly choose to get borged to prevent infection. I want to see how this plays out.
+      prob: 0.08
+    - id: Brighteye
+      prob: 0.05
+
+- type: entity
+  parent: BaseGameRule
+  id: SubGamemodesRuleNuclearOperativeScaling
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: Thief
+      prob: 0.50
+    - id: SLChangelingLess # 6 changelings makes it too hard to arm crew on warops
+      prob: 0.20
+    - id: VampireLess
+      prob: 0.20
+    - id: SubWizard
+      prob: 0.07
+    - id: Xenoborgs
       prob: 0.08
 
 - type: entity
@@ -120,7 +151,7 @@
     definitions:
     - prefRoles: [ Traitor ]
       max: 12 # Starlight. For VampTraitorLing.
-      playerRatio: 15 # Starlight. For VampTraitorLing.
+      playerRatio: 17 # Starlight. For VampTraitorLing.
       blacklist:
         components:
         - AntagImmune
