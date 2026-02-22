@@ -339,7 +339,7 @@
   id: ClothingHeadHatTacticalMaidHeadband
   productEntity: ClothingHeadHatTacticalMaidHeadband
   cost:
-    NTCredit: 990
+    NTCredit: 400
   categories:
     - SLFashionHead
   conditions:
