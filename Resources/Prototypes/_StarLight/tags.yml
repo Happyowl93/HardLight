@@ -1,4 +1,6 @@
 # PLEASE, KEEP THIS FILE ALPHABETIZED
+- type: Tag
+  id: AnomalyCoreShadow
 
 - type: Tag
   id: AbductedTraitBackground
