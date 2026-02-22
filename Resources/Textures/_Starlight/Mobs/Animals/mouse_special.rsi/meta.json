@@ -125,39 +125,39 @@
       "name": "splat-remy"
     },
     {
-      "name": "admin-equipped-HELMET",
+      "name": "1-equipped-HELMET",
       "directions": 4
     },
     {
-      "name": "mentor-equipped-HELMET",
+      "name": "2-equipped-HELMET",
       "directions": 4
     },
     {
-      "name": "remy-equipped-HELMET",
+      "name": "0-equipped-HELMET",
       "directions": 4
     },
     {
-      "name": "admin-inhand-left",
+      "name": "1-inhand-left",
       "directions": 4
     },
     {
-      "name": "mentor-inhand-left",
+      "name": "2-inhand-left",
       "directions": 4
     },
     {
-      "name": "remy-inhand-left",
+      "name": "0-inhand-left",
       "directions": 4
     },
     {
-      "name": "admin-inhand-right",
+      "name": "1-inhand-right",
       "directions": 4
     },
     {
-      "name": "mentor-inhand-right",
+      "name": "2-inhand-right",
       "directions": 4
     },
     {
-      "name": "remy-inhand-right",
+      "name": "0-inhand-right",
       "directions": 4
     }
   ]

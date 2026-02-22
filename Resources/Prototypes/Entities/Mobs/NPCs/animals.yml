@@ -1791,7 +1791,7 @@
   - type: VampireDevourable # Starlight-edit: Vampire Devouring
   - type: Clothing
     quickEquip: false
-    sprite: Mobs/Animals/mouse.rsi
+    sprite: _Starlight/Mobs/Animals/mouse.rsi #SL Edit
     equippedPrefix: 0
     slots:
     - HEAD
@@ -1839,7 +1839,7 @@
       Critical:
         Base: dead-0
       Dead:
-        Base: dead-0
+        Base: splat-0 #SLEdit
   - type: Edible
   - type: FlavorProfile
     flavors:
@@ -1991,7 +1991,7 @@
       Critical:
         Base: dead-1
       Dead:
-        Base: dead-1
+        Base: splat-1 #SLEdit
   - type: Item
     size: Tiny
     heldPrefix: 1
@@ -2004,24 +2004,24 @@
     color: Gray
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
-      state: mouse-0
+      state: mouse-2 #SLEdit
   - type: SpriteMovement
     movementLayers:
       movement:
-        state: mouse-moving-0
+        state: mouse-moving-2 #SLEdit
     noMovementLayers:
       movement:
-        state: mouse-0
+        state: mouse-2 #SLEdit
   - type: Clothing
     equippedPrefix: 2
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: mouse-0
+        Base: mouse-2 #SLEdit
       Critical:
-        Base: dead-0
+        Base: dead-2 #SLEdit
       Dead:
-        Base: dead-0
+        Base: splat-2 #SLEdit
   - type: Item
     size: Tiny
     heldPrefix: 2
