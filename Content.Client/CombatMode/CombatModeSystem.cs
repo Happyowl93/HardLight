@@ -32,6 +32,7 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
     private string _meleeSight = "MeleeSight";
     private float _scale = 0.6f;
     private float _offset = 0.5f;
+    private bool _rotation = true;
     private Color _main = Color.White.WithAlpha(0.3f);
     private Color _second = Color.Black.WithAlpha(0.5f);
 
@@ -47,7 +48,8 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
         Subs.CVar(_cfg, StarlightCCVars.RangedSightOffset, OnRangedSightOffsetChanged, true);
         Subs.CVar(_cfg, StarlightCCVars.SightMainColor, OnSightMainColorChanged, true);
         Subs.CVar(_cfg, StarlightCCVars.SightSecondColor, OnSightSecondColorChanged, true);
-        Subs.CVar(_cfg, StarlightCCVars.MeleeSight, OnMeleeSightChanged, true); 
+        Subs.CVar(_cfg, StarlightCCVars.MeleeSight, OnMeleeSightChanged, true);
+        Subs.CVar(_cfg, StarlightCCVars.SightRotation, OnRotationChanged, true);
     }
 
     private void OnHandleState(EntityUid uid, CombatModeComponent component, ref AfterAutoHandleStateEvent args)
@@ -134,6 +136,12 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
         UpdateCombatIndicators();
     }
 
+    private void OnRotationChanged(bool rotation)
+    {
+        _rotation = rotation;
+        UpdateCombatIndicators();
+    }
+
     private void OnShowCombatIndicatorsChanged(bool isShow) 
         => UpdateCombatIndicators(isShow);
 
@@ -159,7 +167,8 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
                 _scale,
                 _offset,
                 _main,
-                _second));
+                _second,
+                _rotation));
         }
     }
 }

@@ -32,4 +32,7 @@ public sealed partial class StarlightCCVars
 
     public static readonly CVarDef<string> MeleeSight =
         CVarDef.Create("ui.melee_sight", "MeleeSight", CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    public static readonly CVarDef<bool> SightRotation =
+        CVarDef.Create("ui.sight_rotation", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

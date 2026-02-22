@@ -1,6 +1,6 @@
 - type: sight
   id: ArrowsSight
-  name: Arrows
+  name: overlay-melee-sight-arrows
   sightType: Melee
   showCursor: false
   sprite:
@@ -9,7 +9,7 @@
 
 - type: sight
   id: ArrowsDotSight
-  name: "[Dot] Arrows"
+  name: overlay-melee-sight-dot-arrows
   sightType: Melee
   showCursor: false
   sprite:

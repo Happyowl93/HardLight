@@ -124,6 +124,19 @@
           1
         ]
       ]
+    },
+    {
+      "name": "melee_sight",
+      "license": "CC-BY-SA-3.0",
+      "copyright": "https://github.com/Arteben",
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
     }
   ]
 }

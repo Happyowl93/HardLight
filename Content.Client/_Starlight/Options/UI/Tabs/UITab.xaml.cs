@@ -82,6 +82,7 @@ public sealed partial class UITab : Control
         Control.AddOptionDropDown(StarlightCCVars.MeleeSight, DropDownMeleeSight, meleeSights);
         Control.AddOptionSlider(StarlightCCVars.RangedSightScale, RangedSightScaleSlider, 10, 100);
         Control.AddOptionSlider(StarlightCCVars.RangedSightOffset, RangedSightOffsetSlider, 0, 100);
+        Control.AddOptionCheckBox(StarlightCCVars.SightRotation, SightRotationCheckBox);
         Control.AddOptionColorSlider(StarlightCCVars.SightMainColor, SightMainColorSlider);
         Control.AddOptionColorSlider(StarlightCCVars.SightSecondColor, SightSecondColorSlider);
     }

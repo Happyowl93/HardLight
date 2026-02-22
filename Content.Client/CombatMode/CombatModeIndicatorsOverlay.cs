@@ -36,11 +36,12 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
     private readonly float? _offset;
     private readonly Color? _main;
     private readonly Color? _second;
+    private readonly bool _rotation = true;
 
     public override OverlaySpace Space => OverlaySpace.ScreenSpace;
 
     public CombatModeIndicatorsOverlay(IInputManager input, IEntityManager entMan, IPrototypeManager prototypes,
-            IEyeManager eye, CombatModeSystem combatSys, HandsSystem hands, IClyde clyde, SightPrototype gunSight, SightPrototype meleeSight, float scale, float offset, Color main, Color second)
+            IEyeManager eye, CombatModeSystem combatSys, HandsSystem hands, IClyde clyde, SightPrototype gunSight, SightPrototype meleeSight, float scale, float offset, Color main, Color second, bool rotation = true)
     {
         _inputManager = input;
         _entMan = entMan;
@@ -54,6 +55,7 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         _offset = offset;
         _main = main;
         _second = second;
+        _rotation = rotation;
 
         if (_gunSight.BoltVariant != null)
             prototypes.TryIndex(_gunSight.BoltVariant, out _gunBoltSight);
@@ -98,18 +100,24 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
             var rsiState = spriteSys.RsiStateLike(sight.Sprite);
             if (rsiState.IsAnimated && rsiState.AnimationFrameCount >= 3)
             {
+
                 var currentAngle = 0f;
                 if (isHandGunItem && handEntity != null)
                     currentAngle = (float)_entMan.System<GunSystem>().GetCurrentAngle(handEntity.Value).Degrees;
+
                 var bracket1 = rsiState.GetFrame(RsiDirection.South, 0); // Left
                 var sightTexture = rsiState.GetFrame(RsiDirection.South, 1); // Center
                 var bracket2 = rsiState.GetFrame(RsiDirection.South, 2); // Right
+
                 Texture? bracket3 = null; // Down
                 Texture? bracket4 = null; // Up
+
                 if (rsiState.AnimationFrameCount >= 4)
                     bracket3 = rsiState.GetFrame(RsiDirection.South, 3);
+
                 if (rsiState.AnimationFrameCount >= 5)
                     bracket4 = rsiState.GetFrame(RsiDirection.South, 4);
+
                 var offset = CalculateOffset(currentAngle, (eyeScreen.Position - mousePos).Length(), scale);
                 DrawSightPartial(sightTexture, bracket1, bracket2, args.ScreenHandle, rot, mousePos, scale,_main ?? sight.MainColor,_second ?? sight.StrokeColor, offset, bracket3, bracket4);
             }
@@ -131,14 +139,15 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         return offset;
     }
 
-    private static void DrawSightPartial(Texture sight, Texture bracket1, Texture bracket2, DrawingHandleScreen screen, float rotation, Vector2 centerPos, float scale, Color mainColor, Color strokeColor, float offset, Texture? bracket3 = null, Texture? bracket4 = null)
+    private void DrawSightPartial(Texture sight, Texture bracket1, Texture bracket2, DrawingHandleScreen screen, float rotation, Vector2 centerPos, float scale, Color mainColor, Color strokeColor, float offset, Texture? bracket3 = null, Texture? bracket4 = null)
     {
         DrawOverlayPart(sight, screen, centerPos, scale, mainColor, strokeColor);
 
         var bracketSize1 = bracket1.Size * scale;
         var bracketSize2 = bracket2.Size * scale;
 
-        screen.SetTransform(Matrix3x2.CreateRotation(rotation, centerPos));
+        if (_rotation)
+            screen.SetTransform(Matrix3x2.CreateRotation(rotation, centerPos));
 
         var bracket1Pos = centerPos + new Vector2(-offset - bracketSize1.X * 0.5f, 0f);
         var bracket2Pos = centerPos + new Vector2(offset + bracketSize2.X * 0.5f, 0f);

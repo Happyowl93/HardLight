@@ -66,6 +66,7 @@
                         <ui:OptionDropDown Name="DropDownMeleeSight" Title="{Loc 'ui-options-melee-sight'}" />
                         <ui:OptionSlider Name="RangedSightScaleSlider" Title="{Loc 'ui-options-ranged-sight-scale'}" />
                         <ui:OptionSlider Name="RangedSightOffsetSlider" Title="{Loc 'ui-options-ranged-sight-offset'}" />
+                        <CheckBox Name="SightRotationCheckBox" Text="{Loc 'ui-options-sight-rotation'}" />
 
                         <ui:OptionColorSlider Name="SightMainColorSlider" Title="{Loc 'ui-options-sight-main-color'}" />
                         <ui:OptionColorSlider Name="SightSecondColorSlider" Title="{Loc 'ui-options-sight-second-color'}" />

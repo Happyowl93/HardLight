@@ -1,26 +1,26 @@
 - type: sight
   id: GunSight
-  name: Default
+  name: overlay-ranged-sight-default
   sightType: Ranged
   boltVariant: GunSightBolt
   showCursor: false
   sprite:
-    sprite: Interface/Misc/crosshair_pointers.rsi
+    sprite: _Starlight/Interface/Misc/crosshair_pointers_big.rsi
     state: gun_sight
 
 - type: sight
   id: GunSightBolt
-  name: Default
+  name: overlay-ranged-sight-default
   sightType: Ranged
   bolt: true
   showCursor: false
   sprite:
-    sprite: Interface/Misc/crosshair_pointers.rsi
+    sprite: _Starlight/Interface/Misc/crosshair_pointers_big.rsi
     state: gun_bolt_sight
 
 - type: sight
   id: ArrowsOuterDoubleSight
-  name: "[Dot, Outer] Arrows double"
+  name: overlay-ranged-sight-dot-outer-double-arrows
   sightType: Ranged
   showCursor: false
   sprite:
@@ -29,7 +29,7 @@
 
 - type: sight
   id: BasicSight
-  name: "Basic"
+  name: overlay-ranged-sight-dot-basic
   sightType: Ranged
   showCursor: false
   sprite:
@@ -38,7 +38,7 @@
 
 - type: sight
   id: BasicDotSight
-  name: "[Dot] Basic"
+  name: overlay-ranged-sight-dot-basic
   sightType: Ranged
   showCursor: false
   sprite:
@@ -46,17 +46,8 @@
     state: basic_dot
 
 - type: sight
-  id: CircleSight
-  name: "Circle"
-  sightType: Ranged
-  showCursor: false
-  sprite:
-    sprite: _Starlight/Interface/Misc/crosshair_pointers.rsi
-    state: circle
-
-- type: sight
   id: CrossDotSight
-  name: "[Dot] Cross"
+  name: overlay-ranged-sight-dot-cross
   sightType: Ranged
   showCursor: false
   sprite:
@@ -65,7 +56,7 @@
 
 - type: sight
   id: DoubleSight
-  name: "[Dot] Double"
+  name: overlay-ranged-sight-dot-double
   sightType: Ranged
   showCursor: false
   sprite:
@@ -74,7 +65,7 @@
 
 - type: sight
   id: TripleSight
-  name: "Triple"
+  name: overlay-ranged-sight-triple
   sightType: Ranged
   showCursor: false
   sprite:
@@ -83,7 +74,7 @@
 
 - type: sight
   id: TripleDotSight
-  name: "[Dot] Triple"
+  name: overlay-ranged-sight-dot-triple
   sightType: Ranged
   showCursor: false
   sprite:
