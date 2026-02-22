@@ -558,8 +558,8 @@
   minLimit: 0 # Starlight
   defaultSelected: 1 # Starlight
   loadouts:
-  - ClothingShoesColorWhite
-  - ClothingShoesColorBlack
+  - WhiteShoes
+  - BlackShoes
   - RollerSkatesLoadout # Starlight
 
 # Boxer
