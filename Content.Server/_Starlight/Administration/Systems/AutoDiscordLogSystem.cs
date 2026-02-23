@@ -45,7 +45,7 @@ public sealed class AutoDiscordLogSystem : EntitySystem
                 Description = description,
                 Footer = new WebhookEmbedFooter
                 {
-                    Text = Loc.GetString("news-discord-footer",
+                    Text = Loc.GetString("autolog-discord-footer",
                         ("server", _cfg.GetCVar(CCVars.AdminLogsServerName)),
                         ("round", _ticker.RoundId),
                         ("roundtype", Loc.GetString(_ticker.CurrentPreset?.ModeTitle ?? "bug-report-report-unknown")),
