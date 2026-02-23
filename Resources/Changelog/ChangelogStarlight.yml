@@ -31736,5 +31736,12 @@ Entries:
   id: 343801
   time: '2026-02-23T20:02:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3438
+- author: gabbl0
+  changes:
+  - message: 49 new Thaven moods.
+    type: Add
+  id: 339701
+  time: '2026-02-23T20:06:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3397
 Order: -1
 
