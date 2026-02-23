@@ -794,9 +794,9 @@
   productEntity: ClothingNeckExplosiveCollar
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 8
   cost:
-    Telecrystal: 5
+    Telecrystal: 10
   categories:
     - UplinkExplosives
 
