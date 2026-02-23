@@ -31611,5 +31611,21 @@ Entries:
   id: 339601
   time: '2026-02-23T09:27:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3396
+- author: Conflee
+  changes:
+  - message: Added the Toxic Gas Grenade to the Nukie Uplink. This grenade gas a scary
+      yellow smoke cloud and is full of Desoxyephedrine. Deals roughly 12 Blunt and
+      12 Poison if you do not flee the smoke. Intended use is breaking the stalemate
+      right after the Nukie's first attack where 80 crew all blocks one chokepoint
+      and attritions the Nukies down inevitably and boringly.
+    type: Add
+  - message: Added X-4 and X-4 Bundle to the Nukie Uplink. X-4 acts as a higher yield
+      C-4, punching a more clean hole through walls. A larger breach with no girders
+      left behind even against 3-thick walls, making it easier to enter and fight
+      around the hole you just made without getting caught on leftovers.
+    type: Add
+  id: 343201
+  time: '2026-02-23T09:25:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3432
 Order: -1
 
