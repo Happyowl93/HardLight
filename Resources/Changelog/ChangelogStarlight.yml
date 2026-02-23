@@ -31627,5 +31627,15 @@ Entries:
   id: 343201
   time: '2026-02-23T09:25:14.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3432
+- author: Conflee
+  changes:
+  - message: Updated all 3 Nukie Outpost maps with the new Syndicate Delivery Console,
+      Target Station Map, and 1 canister of Pluoxium (O2+). This brings us up to parity
+      with Upstream's Outpost and preps us for any future additions to the Syndicate
+      Delivery Console.
+    type: Tweak
+  id: 343001
+  time: '2026-02-23T13:21:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3430
 Order: -1
 
