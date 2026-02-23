@@ -252,4 +252,5 @@
   completetime: 60
   materials:
     Steel: 600
-    Plastic: 600
+    Plastic: 500
+    Glass: 2500

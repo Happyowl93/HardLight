@@ -34,6 +34,15 @@
   - type: Thieving
     stealthy: true
   - type: Pacified # THE STEALTH BORG DOES NOT FUCKING GET GUNS
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Common
+    - Syndicate
+  - type: ActiveRadio
+    channels:
+    - Syndicate
 
 - type: entity
   id: BorgChassisSecurity
@@ -97,3 +106,18 @@
     interactFailureString: petting-failure-derelict-cyborg
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Common
+    - Command
+    - Science
+    - Law
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+    - Command
+    - Science
+    - Law
