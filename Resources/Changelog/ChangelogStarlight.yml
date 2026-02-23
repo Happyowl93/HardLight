@@ -31593,5 +31593,23 @@ Entries:
   id: 343401
   time: '2026-02-23T09:21:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3434
+- author: redmushie
+  changes:
+  - message: Crew monitors now tell you if zero sensors match their built-in filter.
+    type: Add
+  - message: Crew monitors now always show your own location, even if the server is
+      offline.
+    type: Tweak
+  - message: Crew monitors now detect the server even when there are zero suit sensors
+      transmitting.
+    type: Fix
+  - message: Crew monitors no longer instantly forget what is being displayed the
+      instant the server goes offline and instead time-out after a while.
+    type: Tweak
+  - message: Crew monitors no longer briefly show old data when you open them.
+    type: Fix
+  id: 339601
+  time: '2026-02-23T09:27:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3396
 Order: -1
 
