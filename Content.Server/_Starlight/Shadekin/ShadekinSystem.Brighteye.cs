@@ -223,7 +223,6 @@ public sealed partial class ShadekinSystem : EntitySystem
         Transform(effect).LocalRotation = Transform(uid).LocalRotation;
 
         RaiseLocalEvent(uid, new RejuvenateEvent());
-        _sleeping.TrySleeping(uid);
 
         component.Energy = 0;
         component.Rejuvenating = true;
