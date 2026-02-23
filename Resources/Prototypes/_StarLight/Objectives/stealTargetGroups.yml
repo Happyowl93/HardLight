@@ -36,6 +36,13 @@
     state: genaric_doc
 
 - type: stealTargetGroup
+  id: BrighteyeSecureKnowledgeSteal
+  name: steal-target-groups-secure-documents-brighteye
+  sprite:
+    sprite: _Starlight/Objects/Specific/Documents/document.rsi
+    state: genaric_doc
+
+- type: stealTargetGroup
   id: MiningShuttleConsoleCircuitboard
   name: steal-target-groups-mining-shuttle-console-circuitboard
   sprite:
