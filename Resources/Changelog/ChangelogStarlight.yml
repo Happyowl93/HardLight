@@ -31648,5 +31648,20 @@ Entries:
   id: 342801
   time: '2026-02-23T13:43:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3428
+- author: Conflee
+  changes:
+  - message: Added water vapor canisters to cargo request computers, for potential
+      future plumbing use.
+    type: Add
+  - message: Swapped all canisters in the cargo request computer to use cropped versions
+      of the new sprites so they match the actual canisters and don't look scuff in
+      the UI.
+    type: Tweak
+  - message: Added BZ, Pluoxium, Halon, and Hydrogen to the Random Salvage Canister
+      spawn pool. They can be found on wrecks etc about 30-40% as often as basic canisters.
+    type: Tweak
+  id: 339801
+  time: '2026-02-23T13:52:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3398
 Order: -1
 
