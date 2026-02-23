@@ -115,7 +115,7 @@ public sealed partial class GunSystem : SharedGunSystem
         var toMap = TransformSystem.ToMapCoordinates(toCoordinates).Position;
         var mapDirection = toMap - fromMap.Position;
         var mapAngle = mapDirection.ToAngle();
-        var angle = GetRecoilAngle(gun, mapDirection.ToAngle());
+        var angle = GetRecoilAngle(gun, mapDirection.ToAngle()); // Starlight-edit
         gun.Comp.LastFire = gun.Comp.NextFire; // Stalright-edit
 
         // If applicable, this ensures the projectile is parented to grid on spawn, instead of the map.

@@ -1,5 +1,4 @@
 using System.Numerics;
-using Content.Shared._Starlight.CombatMode;
 using Content.Client.Hands.Systems;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Client.GameObjects;
@@ -7,10 +6,14 @@ using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.UserInterface;
 using Robust.Shared.Enums;
+
+#region Starlight
+using Content.Shared._Starlight.CombatMode;
 using Robust.Shared.Prototypes;
 using SixLabors.ImageSharp.PixelFormats;
 using Robust.Shared.Graphics.RSI;
 using Content.Client.Weapons.Ranged.Systems;
+#endregion
 
 namespace Content.Client.CombatMode;
 
@@ -27,8 +30,9 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
     private readonly IEyeManager _eye;
     private readonly CombatModeSystem _combat;
     private readonly HandsSystem _hands = default!;
-    private readonly IClyde _clyde = default!;
+    private readonly IClyde _clyde = default!; // Starlight-edit
 
+    #region Starlight
     private readonly SightPrototype? _gunSight;
     private readonly SightPrototype? _gunBoltSight;
     private readonly SightPrototype? _meleeSight;
@@ -37,17 +41,19 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
     private readonly Color? _main;
     private readonly Color? _second;
     private readonly bool _rotation = true;
+    #endregion
 
     public override OverlaySpace Space => OverlaySpace.ScreenSpace;
 
     public CombatModeIndicatorsOverlay(IInputManager input, IEntityManager entMan, IPrototypeManager prototypes,
-            IEyeManager eye, CombatModeSystem combatSys, HandsSystem hands, IClyde clyde, SightPrototype gunSight, SightPrototype meleeSight, float scale, float offset, Color main, Color second, bool rotation = true)
+            IEyeManager eye, CombatModeSystem combatSys, HandsSystem hands, IClyde clyde, SightPrototype gunSight, SightPrototype meleeSight, float scale, float offset, Color main, Color second, bool rotation = true) // Starlight-edit
     {
         _inputManager = input;
         _entMan = entMan;
         _eye = eye;
         _combat = combatSys;
         _hands = hands;
+        // Starlight-start: replace Texture to Proto
         _gunSight = gunSight;
         _meleeSight = meleeSight;
         _clyde = clyde;
@@ -59,10 +65,13 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
 
         if (_gunSight.BoltVariant != null)
             prototypes.TryIndex(_gunSight.BoltVariant, out _gunBoltSight);
+        // Starlight-end
     }
 
+    // Starlight-start: Make it lambda
     protected override bool BeforeDraw(in OverlayDrawArgs args) 
         => !_combat.IsInCombatMode() ? false : base.BeforeDraw(in args);
+    // Starlight-end
 
     protected override void Draw(in OverlayDrawArgs args)
     {
@@ -72,7 +81,7 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
             return;
 
         var handEntity = _hands.GetActiveHandEntity();
-        var isHandGunItem = _entMan.TryGetComponent<GunComponent>(handEntity, out var gun);
+        var isHandGunItem = _entMan.TryGetComponent<GunComponent>(handEntity, out var gun); // Starlight-edit
         var isGunBolted = true;
         if (_entMan.TryGetComponent(handEntity, out ChamberMagazineAmmoProviderComponent? chamber))
             isGunBolted = chamber.BoltClosed ?? true;
@@ -80,6 +89,8 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         var mousePos = mouseScreenPosition.Position;
         var uiScale = (args.ViewportControl as Control)?.UIScale ?? 1f;
         var limitedScale = uiScale > 1.25f ? 1.25f : uiScale;
+
+        #region Starlight
 
         var spriteSys = _entMan.EntitySysManager.GetEntitySystem<SpriteSystem>();
 
@@ -127,8 +138,11 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
                 DrawOverlayPart(sightTexture, args.ScreenHandle, mousePos, scale, _main ?? sight.MainColor, _second ?? sight.StrokeColor);
             }
         }
+
+        #endregion
     }
 
+    #region Starlight
     private float CalculateOffset(float currentAngle, float distance, float scale)
     {
         var angleRad = currentAngle * MathF.PI / 180f;
@@ -182,4 +196,6 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         {
         }
     }
+
+    #endregion
 }

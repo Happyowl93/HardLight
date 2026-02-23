@@ -1,14 +1,17 @@
 using Content.Client.Hands.Systems;
 using Content.Client.NPC.HTN;
-using Content.Shared._Starlight.CombatMode;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
-using Content.Shared.Starlight.CCVar;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
+
+#region Starlight
+using Content.Shared._Starlight.CombatMode;
+using Content.Shared.Starlight.CCVar;
 using Robust.Shared.Prototypes;
+#endregion
 
 namespace Content.Client.CombatMode;
 
@@ -19,14 +22,17 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IInputManager _inputManager = default!;
     [Dependency] private readonly IEyeManager _eye = default!;
+    #region Starlight
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IClyde _clyde = default!;
+    #endregion
 
     /// <summary>
     /// Raised whenever combat mode changes.
     /// </summary>
     public event Action<bool>? LocalPlayerCombatModeUpdated;
 
+    #region Starlight
     private bool _lastState = false;
     private string _rangedSight = "GunSight";
     private string _meleeSight = "MeleeSight";
@@ -35,6 +41,7 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
     private bool _rotation = true;
     private Color _main = Color.White.WithAlpha(0.3f);
     private Color _second = Color.Black.WithAlpha(0.5f);
+    #endregion
 
     public override void Initialize()
     {
@@ -43,6 +50,7 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
         SubscribeLocalEvent<CombatModeComponent, AfterAutoHandleStateEvent>(OnHandleState);
 
         Subs.CVar(_cfg, CCVars.CombatModeIndicatorsPointShow, OnShowCombatIndicatorsChanged, true);
+        // Starlight-start
         Subs.CVar(_cfg, StarlightCCVars.RangedSight, OnRangedSightChanged, true);
         Subs.CVar(_cfg, StarlightCCVars.RangedSightScale, OnRangedSightScaleChanged, true);
         Subs.CVar(_cfg, StarlightCCVars.RangedSightOffset, OnRangedSightOffsetChanged, true);
@@ -50,6 +58,7 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
         Subs.CVar(_cfg, StarlightCCVars.SightSecondColor, OnSightSecondColorChanged, true);
         Subs.CVar(_cfg, StarlightCCVars.MeleeSight, OnMeleeSightChanged, true);
         Subs.CVar(_cfg, StarlightCCVars.SightRotation, OnRotationChanged, true);
+        // Starlight-end
     }
 
     private void OnHandleState(EntityUid uid, CombatModeComponent component, ref AfterAutoHandleStateEvent args)
@@ -93,10 +102,17 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
         }
 
         var inCombatMode = IsInCombatMode();
+        // Starlight-start
         if (!inCombatMode)
             _clyde.SetCursor(null);
+        // Starlight-end
         LocalPlayerCombatModeUpdated?.Invoke(inCombatMode);
     }
+
+    private void OnShowCombatIndicatorsChanged(bool isShow) // Starlight-edit: moved into another method
+        => UpdateCombatIndicators(isShow);
+
+    #region Starlight
 
     private void OnRangedSightChanged(string sight)
     {
@@ -142,9 +158,6 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
         UpdateCombatIndicators();
     }
 
-    private void OnShowCombatIndicatorsChanged(bool isShow) 
-        => UpdateCombatIndicators(isShow);
-
     private void UpdateCombatIndicators(bool? isShow = null)
     {
         if (isShow != null && isShow != _lastState)
@@ -171,4 +184,6 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
                 _rotation));
         }
     }
+
+    #endregion
 }

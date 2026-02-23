@@ -6,6 +6,7 @@
     MinSize="800 450">
     <TabContainer Name="Tabs" Access="Public">
         <tabs:MiscTab Name="MiscTab" />
+        <!--  Starlight-edit: UI Tab  -->
         <stabs:UITab Name="UITab" />
         <tabs:GraphicsTab Name="GraphicsTab" />
         <tabs:KeyRebindTab Name="KeyRebindTab" />

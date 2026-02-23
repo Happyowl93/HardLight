@@ -1,4 +1,3 @@
-using Content.Shared.Lock.BypassLock.Systems;
 using Content.Shared.Wieldable;
 using Robust.Shared.GameStates;
 
