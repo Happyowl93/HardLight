@@ -31637,5 +31637,16 @@ Entries:
   id: 343001
   time: '2026-02-23T13:21:46.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3430
+- author: Xale
+  changes:
+  - message: Zombified animals such as chickens and ducks no longer produce eggs.
+    type: Remove
+  - message: Zombified animals such as cows and goats no longer produce milk.
+    type: Remove
+  - message: Zombified animals such as goats no longer produce wool.
+    type: Remove
+  id: 342801
+  time: '2026-02-23T13:43:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3428
 Order: -1
 
