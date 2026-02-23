@@ -14,6 +14,8 @@ using Content.Shared._Starlight.Weapons.Ranged.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
 using Content.Shared.Lock;
+using Content.Shared.Weapons.Ranged.Events;
+using Robust.Shared.Audio;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 #endregion Starlight
@@ -42,6 +44,7 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
         SubscribeLocalEvent<BatteryWeaponFireModesComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<BatteryWeaponFireModesComponent, ActivateInWorldEvent>(OnInteractHandEvent); // Starlight-edit
         SubscribeLocalEvent<BatteryWeaponFireModesComponent, AttemptShootEvent>(OnShootAttempt); // Starlight-edit
+        SubscribeLocalEvent<BatteryWeaponFireModesComponent, GunRefreshModifiersEvent>(OnGunRefreshModifiers); // Starlight-edit
     }
 
     private void OnExamined(Entity<BatteryWeaponFireModesComponent> ent, ref ExaminedEvent args)
@@ -204,6 +207,11 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
 
             _gun.UpdateShots((ent, batteryAmmoProviderComponent));
         }
+
+        // Starlight-start: per-fire-mode gunshot sound override
+        if (TryComp(ent, out GunComponent? gunComp))
+            _gun.RefreshModifiers((ent, gunComp));
+        // Starlight-end
     }
 
     # region Starlight
@@ -258,4 +266,28 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
     }
 
     # endregion Starlight
+
+    // Starlight-start
+    private void OnGunRefreshModifiers(Entity<BatteryWeaponFireModesComponent> ent, ref GunRefreshModifiersEvent args)
+    {
+        var fireMode = GetMode(ent.Comp);
+
+        // Explicit per-mode sound override takes priority
+        if (fireMode.SoundGunshot != null)
+        {
+            args = args with { SoundGunshot = fireMode.SoundGunshot };
+            return;
+        }
+
+        // DestroyBeam fire mode dynamically inherits the x-ray cannon's gunshot sound,
+        // so no path is hardcoded — if WeaponXrayCannon's sound changes it propagates here too.
+        if (fireMode.Prototype == "DestroyBeam" &&
+            _prototypeManager.TryIndex<EntityPrototype>("WeaponXrayCannon", out var xrayProto) &&
+            xrayProto.TryGetComponent<GunComponent>(out var xrayGun) &&
+            xrayGun.SoundGunshot != null)
+        {
+            args = args with { SoundGunshot = xrayGun.SoundGunshot };
+        }
+    }
+    // Starlight-end
 }
