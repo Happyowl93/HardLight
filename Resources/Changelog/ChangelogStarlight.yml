@@ -31663,5 +31663,45 @@ Entries:
   id: 339801
   time: '2026-02-23T13:52:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3398
+- author: wonderfulnewworld
+  changes:
+  - message: Added remaining duplicate loadout trinkets not addressed by [this PR](https://github.com/ss14Starlight/space-station-14/pull/3261)
+      to trinkets.
+    type: Add
+  - message: Added localization for the 3 types of insulated glove loadout options.
+    type: Add
+  - message: Added delicate tactical maid gloves to the Fashion-o-Mat. They are far
+      too delicate to be insulated.
+    type: Add
+  - message: 'Grouped similar trinkets together: pAIs, the cybernetics, the foot and
+      arm cloth wraps, the lizards, the balls, and the flowers.'
+    type: Add
+  - message: Mimes can now choose their shoes.
+    type: Add
+  - message: Removed numerous duplicate loadout entries.
+    type: Remove
+  - message: Removed insulated glove loadout for all of Engi minus CE.
+    type: Remove
+  - message: Removed the elegant maid outfit and tactical maid attire from loadouts.
+    type: Remove
+  - message: Only the Clown and Mime can show up to work wearing roller skates, everyone
+      else puts them in their bag instead.
+    type: Tweak
+  - message: The Clown and Mime only require 5 hours of Mail Tech time for their skates.
+      They're part time.
+    type: Tweak
+  - message: All jobs, by default, will be wearing shoes. You can show up without
+      shoes by deselecting footwear, but by default, you'll be wearing something.
+    type: Fix
+  - message: The left and right cargo legs are in trinkets again. They vanished at
+      some point.
+    type: Fix
+  - message: The cybernetic trinkets are now Capitalized in the files.
+    type: Fix
+  - message: Learner roles no longer spawn with 2 pairs of shoes.
+    type: Fix
+  id: 338801
+  time: '2026-02-23T13:58:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3388
 Order: -1
 
