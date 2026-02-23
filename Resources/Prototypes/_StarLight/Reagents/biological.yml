@@ -37,7 +37,7 @@
   name: reagent-name-dark-blood
   group: Biological
   desc: reagent-desc-dark-blood
-  flavor: bmetallicr
+  flavor: metallic
   color: "#1c1624"
   recognizable: true
   physicalDesc: reagent-physical-desc-unidentifiable

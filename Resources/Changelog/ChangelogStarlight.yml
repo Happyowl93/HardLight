@@ -31579,5 +31579,12 @@ Entries:
   id: 342401
   time: '2026-02-22T20:19:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3424
+- author: Clone0401
+  changes:
+  - message: Game is now playable again (fixed minor spelling error in AI sop).
+    type: Fix
+  id: 343101
+  time: '2026-02-23T06:58:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3431
 Order: -1
 
