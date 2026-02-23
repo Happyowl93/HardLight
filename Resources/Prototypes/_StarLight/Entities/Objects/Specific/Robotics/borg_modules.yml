@@ -810,6 +810,12 @@
   - type: ItemBorgModule
     hands:
     - item: KitchenKnife
+      hand:
+        emptyRepresentative: KitchenKnife
+        emptyLabel: borg-slot-knives-empty
+        whitelist:
+          tags:
+          - knife
     - item: Crowbar
   - type: BorgModuleIcon
     icon: { sprite: _Starlight/Interface/Actions/actions_borg.rsi, state: knife-module }
