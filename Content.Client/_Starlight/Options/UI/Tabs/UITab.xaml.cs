@@ -93,9 +93,10 @@ public sealed partial class UITab : Control
         var melee = _cfg.GetCVar(StarlightCCVars.MeleeSight);
         var scale = _cfg.GetCVar(StarlightCCVars.RangedSightScale);
         var offset = _cfg.GetCVar(StarlightCCVars.RangedSightOffset);
+        var rotation = _cfg.GetCVar(StarlightCCVars.SightRotation);
         var main = _cfg.GetCVar(StarlightCCVars.SightMainColor);
         var second = _cfg.GetCVar(StarlightCCVars.SightSecondColor);
-        var raw = $"{ranged}\u001F{melee}\u001F{scale}\u001F{offset}\u001F{main}\u001F{second}";
+        var raw = $"{ranged}\u001F{melee}\u001F{scale}\u001F{offset}\u001F{rotation}\u001F{main}\u001F{second}";
         var bytes = System.Text.Encoding.UTF8.GetBytes(raw);
         var packed = Convert.ToBase64String(bytes);
         SightsOptionsHash.Text = packed;
@@ -127,7 +128,28 @@ public sealed partial class UITab : Control
         }
 
         if (_prototypeManager.TryIndex(melee, out SightPrototype? meleeProto) && meleeProto.SightType is (SightType.Melee or SightType.Universal))
-            MeleeSightPreview.UpdateTexture(_sprite.Frame0(meleeProto.Sprite), scale / 100f, offset / 100f, Color.FromHex(main), Color.FromHex(second));
+        {
+            var rsi = _sprite.RsiStateLike(meleeProto.Sprite);
+            if (rsi.IsAnimated && rsi.AnimationFrameCount >= 3)
+            {
+                var bracket1 = rsi.GetFrame(RsiDirection.South, 0); // Left
+                var sight = rsi.GetFrame(RsiDirection.South, 1); // Center
+                var bracket2 = rsi.GetFrame(RsiDirection.South, 2); // Right
+                Texture? bracket3 = null; // Down
+                Texture? bracket4 = null; // Up
+                if (rsi.AnimationFrameCount >= 4)
+                    bracket3 = rsi.GetFrame(RsiDirection.South, 3);
+                if (rsi.AnimationFrameCount >= 5)
+                    bracket4 = rsi.GetFrame(RsiDirection.South, 4);
+                MeleeSightPreview.UpdateTexture(sight, scale / 100f, offset / 100f, Color.FromHex(main), Color.FromHex(second));
+                MeleeSightPreview.SetBrackets(bracket1, bracket2, bracket3, bracket4);
+            }
+            else
+            {
+                MeleeSightPreview.UpdateTexture(_sprite.Frame0(meleeProto.Sprite), scale / 100f, offset / 100f, Color.FromHex(main), Color.FromHex(second));
+                MeleeSightPreview.SetBrackets();
+            }
+        }
     }
 
     private void OnTextChanged(LineEdit.LineEditEventArgs args)
@@ -146,7 +168,7 @@ public sealed partial class UITab : Control
         var raw = System.Text.Encoding.UTF8.GetString(bytes);
         var parts = raw.Split('\u001F');
 
-        if (parts.Length != 6)
+        if (parts.Length != 7)
             return;
 
         if (_prototypeManager.TryIndex(parts[0], out SightPrototype? ranged) && ranged.SightType is (SightType.Ranged or SightType.Universal))
@@ -160,10 +182,13 @@ public sealed partial class UITab : Control
         if (int.TryParse(parts[3], out var offset))
             _cfg.SetCVar(StarlightCCVars.RangedSightOffset, offset, true);
 
-        if (Color.TryFromHex(parts[4]) != null)
-            _cfg.SetCVar(StarlightCCVars.SightMainColor, parts[4], true);
+        if (bool.TryParse(parts[4], out var rotation))
+            _cfg.SetCVar(StarlightCCVars.SightRotation, rotation, true);
 
         if (Color.TryFromHex(parts[5]) != null)
+            _cfg.SetCVar(StarlightCCVars.SightMainColor, parts[4], true);
+
+        if (Color.TryFromHex(parts[6]) != null)
             _cfg.SetCVar(StarlightCCVars.SightSecondColor, parts[5], true);
     }
 }
