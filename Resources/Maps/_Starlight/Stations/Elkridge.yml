@@ -4,7 +4,7 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/23/2026 12:52:12
+  time: 02/23/2026 13:06:53
   entityCount: 19141
 maps:
 - 1
@@ -13490,7 +13490,7 @@ entities:
       pos: 14.5,32.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -25973.926
+      secondsUntilStateChange: -26847.744
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -54714,7 +54714,7 @@ entities:
     - type: Transform
       pos: -31.5,17.5
       parent: 2
-  - uid: 9767
+  - uid: 9705
     components:
     - type: Transform
       pos: 12.5,-27.5
@@ -56934,6 +56934,8 @@ entities:
     - type: Transform
       pos: 27.5,-1.5
       parent: 2
+    - type: DeviceNetwork
+      autoConnect: False
 - proto: Crowbar
   entities:
   - uid: 7927
@@ -63821,13 +63823,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -14.5,-8.5
       parent: 2
-- proto: EmergencyRollerBed
-  entities:
-  - uid: 9414
-    components:
-    - type: Transform
-      pos: 22.420448,17.54732
-      parent: 2
 - proto: Emitter
   entities:
   - uid: 9415
@@ -67484,7 +67479,7 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#98BF67FF'
-  - uid: 9705
+  - uid: 9414
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -92962,6 +92957,11 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+  - uid: 9767
+    components:
+    - type: Transform
+      pos: 22.5,17.5
+      parent: 2
 - proto: LockerPrisoner
   entities:
   - uid: 13221
