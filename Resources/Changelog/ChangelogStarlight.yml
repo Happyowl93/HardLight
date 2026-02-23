@@ -31703,5 +31703,25 @@ Entries:
   id: 338801
   time: '2026-02-23T13:58:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3388
+- author: Conflee, Davyei
+  changes:
+  - message: Added the 'Beetle' Mining Borg Chassis skin.
+    type: Add
+  - message: Added 3 new Purrfus Chassis skins- Pink, Orange, and Green.
+    type: Add
+  - message: Added the Derelict Purrfus. Purrfus loves you.
+    type: Add
+  - message: Added the Makeshift Knife Borg Module, which can be crafted at an anvil.
+      Maints borg army with knives taped to them.
+    type: Add
+  - message: Overrides for all Derelict Borg's comms so they get the sameish comms
+      as their functional counterparts.
+    type: Tweak
+  - message: Renamed the Tider's Anvil to the Makeshift Anvil. We intended to do this
+      ages ago and then nobody did.
+    type: Tweak
+  id: 342701
+  time: '2026-02-23T16:09:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3427
 Order: -1
 
