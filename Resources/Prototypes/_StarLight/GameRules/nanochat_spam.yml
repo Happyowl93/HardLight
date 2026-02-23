@@ -1,7 +1,6 @@
 - type: entity
   id: NanoChatSpam
   parent: BaseGameRule
-  noSpawn: true
   components:
   - type: GameRule
   - type: NanoChatSpamRule
