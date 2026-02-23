@@ -62,8 +62,8 @@
       - PositronicBrain
       borg_module:
       - BorgModuleTool
-      - BorgModuleFireExtinguisher
       - BorgModulePaperwork
+      - BorgModuleFireExtinguisher
       - BorgModuleMakeshiftKnife
   - type: ItemSlots
     slots:
