@@ -179,10 +179,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             var grammar = EntityManager.EnsureComponent<GrammarComponent>(resolvedEntity);
             _grammarSystem.SetGender((resolvedEntity, grammar), profile.Gender);
 
-            var playertitle = "Unknown";
-            if (_actors.TryGetSession(entity, out var session))
-                playertitle = session!.Name;
-
             _autolog.LogToDiscord(Loc.GetString("autolog-forcedprototype", ("character", profile.Name), ("prototype", profile.ForcedPrototype)));
         }
         else
