@@ -115,7 +115,7 @@
 - type: entity
   id: OrganShadekinCoreUndamaged
   parent: OrganShadekinCore
-  name: brighteye core
+  name: bright-eye core
   suffix: Undamaged
   components:
   - type: OrganShadekinCore
