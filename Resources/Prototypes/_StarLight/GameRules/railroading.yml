@@ -33,14 +33,14 @@
     preSpawnDelay: 1
     delay: 1
     cards:
-    # - RRCardBrighteyeDark
-    # - RRCardBrighteyePortalCritical
-    # - RRCardBrighteyeTeachALesson
-    # - RRCardBrighteyeProtect
-    # - RRCardBrighteyeSanctuary
-    # - RRCardBrighteyeReturnHome
-    # - RRCardBrighteyeImpersonate
-    # - RRCardBrighteyeLights
+    - RRCardBrighteyeDark
+    - RRCardBrighteyePortalCritical
+    - RRCardBrighteyeTeachALesson
+    - RRCardBrighteyeProtect
+    - RRCardBrighteyeSanctuary
+    - RRCardBrighteyeReturnHome
+    - RRCardBrighteyeImpersonate
+    - RRCardBrighteyeLights
     - RRCardBrighteyeStealSecureKnowledge
 
 # we don't just want a roundstart terminate gibbinator every round, so we make it a randomised event.
