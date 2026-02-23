@@ -139,6 +139,7 @@
   moodDesc: thaven-mood-always-alone-desc
   conflicts:
     - NeverAlone
+    - MadHatter
 
 # You do not approve of organized religion. It should be dismantled or disrupted wherever possible.
 - type: thavenMood
@@ -318,6 +319,10 @@
   id: MadHatter
   moodName: thaven-mood-mad-hatter-name
   moodDesc: thaven-mood-mad-hatter-desc
+  conflicts:
+    - AlwaysAlone
+    - SelfConscious
+    - RedLightGreenLight
 
 # Creepy Crawly: You have extreme vertigo, to the point where merely standing upright can cause discomfort. You're much more comfortable crawling along the floor.
 - type: thavenMood
@@ -403,6 +408,7 @@
     - Contrarian
     - NotOurPlace
     - YouAndYourDamnMoods
+    - MadHatter
 
 # It’s Hard to Say: You can never outright say what you want from someone, you can only give them hot-or-cold hints.
 - type: thavenMood

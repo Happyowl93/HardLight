@@ -106,14 +106,14 @@ thaven-mood-aye-aye-desc = {$command} is the only position on the station. Every
 thaven-mood-think-you-know-corporate-secrets-name = You THINK You Know Corporate Secrets
 thaven-mood-think-you-know-corporate-secrets-desc = You are aware of the existence of changelings, abductors, and of course, werewolves. You will constantly bring them up and explain their behaviors (incorrectly).
 
-thaven-mood-want-in-on-that-name = You Want In On That
-thaven-mood-want-in-on-that-desc = If you suspect anyone of doing criminal activity, you must immediately try to join them and ally yourself to their cause.
+thaven-mood-pocket-change-name = Pocket change
+thaven-mood-pocket-change-desc = CentComm doesn't pay you enough. Skim a bit off the department budget for 'me' funds.
 
 thaven-mood-arch-nemesis-name = Arch-Nemesis
 thaven-mood-arch-nemesis-desc = Your arch-nemesis is on the station and must be identified and subsequently defeated, whether that’s through killing, some form of competition, or publicly humiliating them. Of course, it won’t be fair unless you formally address them as your arch-nemesis and give them time to prepare.
 
-thaven-mood-engine-is-deity-name = The {$engine} Is A Deity
-thaven-mood-engine-is-deity-desc = The {$engine} must be worshiped and fed with inconsequential objects. If one is not active, you must conjure one into being. It must stay in its sacred space; it being lost to the void would be an affront to all Thaven kind.
+thaven-mood-engine-is-deity-name = The {$engine} Is An Evil Spirit
+thaven-mood-engine-is-deity-desc = It wishes to destroy the homeworld. Keep it contained at all costs, if it is not here it must be summoned before it ends the planet. The containment field requires sacrifice, feed it with inconsequential objects to appease it.
 
 thaven-mood-delicious-moldy-bread-name = Delicious Moldy Bread
 thaven-mood-delicious-moldy-bread-desc = Nothing tastes finer than moldy bread. Make as much of it as possible and share the delicacy with the rest of the crew.

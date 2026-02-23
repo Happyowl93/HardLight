@@ -212,5 +212,11 @@ thaven-mood-natural-habitat-desc = Every time you feel overwhelmed by a situatio
 thaven-mood-flesh-is-weak-name = The Flesh Is Weak, But Steel Endures
 thaven-mood-flesh-is-weak-desc = All of these biological organs and limbs will fail in time. They must all be replaced with cybernetics.
 
-thaven-mood-marrvelous-name = Marrvelous
+thaven-mood-marrvelous-name = What Does The Thaven Say
 thaven-mood-marrvelous-desc = Seeing how Shadekin are adored for their marrs, you feel envy that Thavenkind doesn't have something similar that sets them apart. Make up a recognizable sound for Thaven, use it frequently and encourage others to do the same.
+
+thaven-mood-empath-name = Empath
+thaven-mood-empath-desc = You are heavily influenced by the emotions of others.
+
+thaven-mood-red-light-green-light-name = Red Light, Green Light
+thaven-mood-red-light-green-light-desc = You feel like you can't move when there are eyes on you.

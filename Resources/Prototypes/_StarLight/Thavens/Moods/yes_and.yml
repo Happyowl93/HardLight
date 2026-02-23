@@ -59,6 +59,8 @@
     - NaturalHabitat
     - FleshIsWeak
     - Marrvelous
+    - Empath
+    - RedLightGreenLight
 
 
 # You are extremely possessive of your property. Refuse to relinquish it, and if it is misplaced or stolen, it must be retrieved at all costs.
@@ -395,6 +397,7 @@
   moodDesc: thaven-mood-blind-sympathizer-desc
   conflicts:
     - BlindnessIsFreedom
+    - RedLightGreenLight
 
 # Animal Rights Activist: You love all animals. You must make sure that they are treated as equal crew members.
 - type: thavenMood
@@ -458,6 +461,7 @@
   moodDesc: thaven-mood-chairman-complex-desc
   conflicts:
     - Pariah
+    - ElectionDay
 
 # Underdog Story: You unshakably believe that your life is a movie with you as the protagonist, and as a result, that you have plot armor.
 - type: thavenMood
@@ -491,10 +495,25 @@
   conflicts:
     - FleshIsSacred
 
-# Marrvelous: Seeing how Shadekin are adored for their marrs, you feel envy that Thavenkind doesn't have something similar that sets them apart. Make up a recognizable sound for Thaven, use it frequently and encourage others to do the same.
+# What does the Thaven say: Seeing how Shadekin are adored for their marrs, you feel envy that Thavenkind doesn't have something similar that sets them apart. Make up a recognizable sound for Thaven, use it frequently and encourage others to do the same.
 - type: thavenMood
   id: Marrvelous
   moodName: thaven-mood-marrvelous-name
   moodDesc: thaven-mood-marrvelous-desc
   conflicts:
     - MuteSympathizer
+
+# Empath: You are heavily influenced by the emotions of others.
+- type: thavenMood
+  id: Empath
+  moodName: thaven-mood-empath-name
+  moodDesc: thaven-mood-empath-desc
+
+# Red Light, Green Light: You feel like you can't move when there are eyes on you.
+- type: thavenMood
+  id: RedLightGreenLight
+  moodName: thaven-mood-red-light-green-light-name
+  moodDesc: thaven-mood-red-light-green-light-desc
+  conflicts:
+    - BlindSympathizer
+    - MadHatter
