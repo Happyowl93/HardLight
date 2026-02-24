@@ -31766,5 +31766,12 @@ Entries:
   id: 342901
   time: '2026-02-24T12:30:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3429
+- author: neomoth
+  changes:
+  - message: Added more killsigns that I forgot to add last time.
+    type: Add
+  id: 344601
+  time: '2026-02-24T12:33:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3446
 Order: -1
 
