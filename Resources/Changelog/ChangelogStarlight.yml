@@ -31840,5 +31840,55 @@ Entries:
   id: 341002
   time: '2026-02-24T13:22:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3410
+- author: wonderfulnewworld, Killer Tamashi
+  changes:
+  - message: Adds a Corpsman-themed Backpack, Duffel, and Satchel to Brigmedic's loadout.
+    type: Add
+  - message: Adds a security bio mask. HoS, Warden, and Brigmed can choose it on loadout.
+      (Requires 60hr Brigmed time to be used by HoS/Ward.).
+    type: Add
+  - message: Brigmed now has a "Tactical Jet Injector." It's slightly faster than
+      the advanced jet injector, but only has *10* capacity.
+    type: Add
+  - message: To be in line with [Paramedic additions](https://github.com/ss14Starlight/space-station-14/pull/2220),
+      their belts can now hold Medkits, Body Bags, and the Paramedic Knife. They do
+      *not* spawn with a Paramedic Knife, only Paramedics do. If they happen to find
+      one, it fits in their belt.
+    type: Add
+  - message: Brigmed now spawns with a lockable body bag in their belt.
+    type: Add
+  - message: Adds Corpsman-themed glasses and hud to Brigmed's loadout and their locker
+      (replacing a duplicate brigmed glasses when present). The glasses have been
+      added to the miscglasses objective.
+    type: Add
+  - message: Bridmedic now has a med-sec encryption key in their headset.
+    type: Add
+  - message: There is now a 50% chance that a med-sci encryption key will spawn in
+      CMO/RD's lockers respectively.
+    type: Add
+  - message: Security Officers and Duty Officers can now spawn with a tie. (Det tie
+      for them requires 10hr Detective time.).
+    type: Add
+  - message: Renamed Brigmed's headset to medical security headset.
+    type: Tweak
+  - message: Corpman's armored jacket now has a toggleable hood.
+    type: Tweak
+  - message: Warden now requires 4hr Duty Officer time and 16hr Sec Officer time instead
+      of 20hr Sec Officer time.
+    type: Tweak
+  - message: The Salvage Encryption Key steal objective has been renamed to Hybrid
+      Encryption Key, and now counts Salvage, Med-sci, Med-sec, and Station master
+      encryption keys. (The various jobs corresponding to those departments can no
+      longer get this objective.).
+    type: Tweak
+  - message: Brigmedic, once again, is obligated to wear their mask to work. Sanitation
+      is important.
+    type: Tweak
+  - message: Removed some glove options from Brigmedic's loadout, as their gloves
+      have infection resist, and they are both a medical professional and an officer.
+    type: Remove
+  id: 337501
+  time: '2026-02-24T14:00:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3375
 Order: -1
 
