@@ -187,7 +187,6 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
                 projectileAmmo.Capacity = (int)Math.Round(projectileAmmo.Capacity / fireCostDiff);
                 Dirty(ent, projectileAmmo);
 
-                // Hitscan prototypes aren't indexed as EntityPrototype — skip popup if not found
                 if (user != null && _prototypeManager.TryIndex<EntityPrototype>(fireMode.Prototype, out var prototype))
                     _popupSystem.PopupPredicted(Loc.GetString("gun-set-fire-mode-popup", ("mode", prototype.Name)), ent, user);
             }
