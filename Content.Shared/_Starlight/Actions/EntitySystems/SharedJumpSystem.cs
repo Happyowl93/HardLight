@@ -12,6 +12,8 @@ using Robust.Shared.Timing;
 using Content.Shared.Stunnable;
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
+using Content.Shared.Popups;
+using Content.Shared._Starlight.Shoelaces.Components;
 
 namespace Content.Shared._Starlight.Actions.EntitySystems;
 
@@ -26,6 +28,7 @@ public abstract class SharedJumpSystem : EntitySystem
     [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedChargesSystem _chargesSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -84,7 +87,8 @@ public abstract class SharedJumpSystem : EntitySystem
     private void OnJump(Entity<JumpComponent> ent, ref JetJumpActionEvent args)
     {
         if (args.Handled
-            || !TryReleaseGas(ent, ref args))
+            || !TryReleaseGas(ent, ref args)
+            || !CanJump(args.Performer))
             return;
 
         Jump(ent, args.Performer, args.Target, args);
@@ -93,10 +97,20 @@ public abstract class SharedJumpSystem : EntitySystem
 
     private void OnJump(JumpActionEvent args)
     {
-        if (args.Handled) return;
+        if (args.Handled || !CanJump(args.Performer))
+            return;
 
         Jump(args.Performer, args.Performer, args.Target, args);
         args.Handled = true;
+    }
+
+    private bool CanJump(EntityUid performer)
+    {
+        if (!HasComp<ShoelaceTiedComponent>(performer))
+            return true;
+
+        _popup.PopupClient(Loc.GetString("shoelaces-popup-jump-blocked"), performer, performer);
+        return false;
     }
 
     private void Jump(EntityUid performer, EntityUid target, EntityCoordinates targetCoords, JumpActionEvent args)
@@ -111,7 +125,7 @@ public abstract class SharedJumpSystem : EntitySystem
 
     public bool TryJump(EntityUid performer, EntityCoordinates targetCoords, JumpActionEvent args, EntityUid? target = null, float speed = 15f, bool toPointer = false, SoundSpecifier? sound = null, float? distance = null, bool decreaseCharges = false)
     {
-        if (args.Action == null || _action.IsCooldownActive(args.Action))
+        if (args.Action == null || _action.IsCooldownActive(args.Action) || !CanJump(performer))
             return false;
 
         if (target == null)

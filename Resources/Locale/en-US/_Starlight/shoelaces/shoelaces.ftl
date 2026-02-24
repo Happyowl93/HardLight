@@ -1,0 +1,19 @@
+shoelaces-verb-tie = Tie shoelaces together
+shoelaces-verb-self-untie = Untie your shoelaces
+shoelaces-verb-assist-untie = Untie shoelaces
+shoelaces-verb-tie-inhand = Tie shoelaces (in hand)
+shoelaces-verb-untie-inhand = Untie shoelaces (in hand)
+
+shoelaces-popup-no-shoes = They are not wearing shoes.
+shoelaces-popup-tying-start = You start tying their shoelaces together.
+shoelaces-popup-tying-success-user = You tie their shoelaces together.
+shoelaces-popup-tying-success-target = Your shoelaces were tied together!
+shoelaces-popup-tying-success-others = {$user} ties {$target}'s shoelaces together.
+shoelaces-popup-self-untie-start = You start untying your shoelaces.
+shoelaces-popup-assist-untie-start = You start untying their shoelaces.
+shoelaces-popup-self-untie-success = You untie your shoelaces.
+shoelaces-popup-assist-untie-success = You untie their shoelaces.
+shoelaces-popup-tie-inhand-success = You tie the shoelaces together.
+shoelaces-popup-untie-inhand-success = You untie the shoelaces.
+shoelaces-popup-trip = You trip over your tied shoelaces!
+shoelaces-popup-jump-blocked = You can't jump with your shoelaces tied together!

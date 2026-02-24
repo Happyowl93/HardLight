@@ -156,6 +156,7 @@
   - type: Ensnareable
     sprite: Objects/Misc/ensnare.rsi
     state: icon
+  - type: ShoelaceTieable
   - type: AnimationPlayer
   - type: Buckle
   - type: CombatMode
