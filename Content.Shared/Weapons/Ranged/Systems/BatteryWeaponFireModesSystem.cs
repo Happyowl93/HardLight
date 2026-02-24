@@ -96,7 +96,6 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
             // Starlight-start
             if (ammoProvider is BatteryAmmoProviderComponent)
             {
-                // Hitscan prototypes aren't EntityPrototypes — fall back to the prototype ID as display name
                 var label = _prototypeManager.TryIndex<EntityPrototype>(fireMode.Prototype, out var entProto)
                     ? entProto.Name
                     : fireMode.Prototype;
