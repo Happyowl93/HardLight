@@ -1,6 +1,5 @@
 ﻿using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared._Starlight.Weapons.Ranged.Components; // Starlight-edit
-using Robust.Shared.Audio; // Starlight-edit
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -66,16 +65,6 @@ public sealed partial class BatteryWeaponFireMode
     
     [DataField("visualState")]
     public string? VisualState;
-
-    // Starlight-start
-    /// <summary>
-    /// Optional gunshot sound override for this fire mode.
-    /// When set, replaces the gun's base SoundGunshot while this mode is active.
-    /// </summary>
-    [DataField("soundGunshot", serverOnly: true)]
-    [NonSerialized]
-    public SoundSpecifier? SoundGunshot;
-    // Starlight-end
 }
 
 [Serializable, NetSerializable]
