@@ -31890,5 +31890,12 @@ Entries:
   id: 337501
   time: '2026-02-24T14:00:21.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3375
+- author: Morty, Conflee
+  changes:
+  - message: Added 70 new hairstyles.
+    type: Add
+  id: 344101
+  time: '2026-02-24T15:44:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3441
 Order: -1
 
