@@ -31780,5 +31780,24 @@ Entries:
   id: 344801
   time: '2026-02-24T12:37:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3448
+- author: Makeshift
+  changes:
+  - message: (Elkridge) Nullspace Anchors to the Vault and Armory.
+    type: Add
+  - message: (Elkridge) Deep fryer to kitchen.
+    type: Add
+  - message: (Elkridge) Brigmed doors to brigmed.
+    type: Add
+  - message: (Elkridge) An additional paramed locker, to match the two slots that
+      Elkridge has.
+    type: Add
+  - message: (Elkridge) TEG has been reworked to match the current upstream version
+      of it.
+    type: Tweak
+  - message: (Elkridge) All of chemistry is now powered by it's own APC.
+    type: Fix
+  id: 343501
+  time: '2026-02-24T12:40:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3435
 Order: -1
 
