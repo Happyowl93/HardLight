@@ -31759,5 +31759,12 @@ Entries:
   id: 344301
   time: '2026-02-24T12:25:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3443
+- author: XoanJackal
+  changes:
+  - message: Fixed the station AI audio overlap for when power is restored.
+    type: Fix
+  id: 342901
+  time: '2026-02-24T12:30:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3429
 Order: -1
 
