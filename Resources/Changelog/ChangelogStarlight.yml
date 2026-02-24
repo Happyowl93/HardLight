@@ -31808,5 +31808,22 @@ Entries:
   id: 343701
   time: '2026-02-24T12:45:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3437
+- author: Shades
+  changes:
+  - message: Gives Magillitis Serum Implant to syndicate agents...
+    type: Add
+  - message: Changed gorilla stun from 50 to 20 (Rampaging Gorilla get 40 instead
+      of 50).
+    type: Tweak
+  - message: Add Gorillas have a 10% chance to AMPUTATE A LIMB on hit.
+    type: Add
+  - message: Fix Gorilla having stun slowndown when they should been immune.
+    type: Fix
+  - message: 'Add a new syndicate item: Explosive Collar... now... i want to play
+      a game.'
+    type: Add
+  id: 340601
+  time: '2026-02-24T12:49:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3406
 Order: -1
 
