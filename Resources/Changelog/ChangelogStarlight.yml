@@ -31773,5 +31773,12 @@ Entries:
   id: 344601
   time: '2026-02-24T12:33:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3446
+- author: Opitech
+  changes:
+  - message: Fixed uncluwning not working correctly.
+    type: Fix
+  id: 344801
+  time: '2026-02-24T12:37:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3448
 Order: -1
 
