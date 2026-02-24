@@ -31825,5 +31825,20 @@ Entries:
   id: 340601
   time: '2026-02-24T12:49:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3406
+- author: BombasterDS, deltanedas
+  changes:
+  - message: Tape recorders and cassettes can now be crafted in autolathes for recording
+      crew speech.
+    type: Add
+  id: 341001
+  time: '2026-02-24T13:22:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3410
+- author: CrazyPhantom
+  changes:
+  - message: Added TTS to tape recorder playbacks.
+    type: Add
+  id: 341002
+  time: '2026-02-24T13:22:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3410
 Order: -1
 
