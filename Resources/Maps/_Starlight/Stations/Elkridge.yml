@@ -4,7 +4,7 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/23/2026 13:06:53
+  time: 02/24/2026 02:31:07
   entityCount: 19141
 maps:
 - 1
@@ -9747,7 +9747,7 @@ entities:
             0: 65520
           10,-9:
             0: 16384
-            6: 1
+            4: 1
             2: 2444
             3: 1600
           11,-7:
@@ -10119,7 +10119,7 @@ entities:
           4,-10:
             3: 793
             2: 8226
-            4: 2048
+            5: 2048
           4,-13:
             3: 4369
             2: 17508
@@ -10128,7 +10128,7 @@ entities:
             3: 36096
           5,-10:
             3: 2051
-            4: 768
+            5: 768
             2: 32904
           5,-12:
             2: 40960
@@ -10359,17 +10359,17 @@ entities:
           9,-10:
             2: 4113
             3: 268
-            5: 3072
+            6: 3072
           9,-9:
             2: 1025
             3: 2832
-            6: 12
+            4: 12
           10,-11:
             2: 295
             3: 17920
           10,-10:
             3: 1025
-            5: 256
+            6: 256
             2: 18508
           10,-12:
             2: 8192
@@ -11008,15 +11008,15 @@ entities:
         - volume: 2500
           temperature: 293.15
           moles:
+            Nitrogen: 6666.982
+        - volume: 2500
+          temperature: 293.15
+          moles:
             Plasma: 6666.982
         - volume: 2500
           temperature: 293.15
           moles:
             Oxygen: 6666.982
-        - volume: 2500
-          temperature: 293.15
-          moles:
-            Nitrogen: 6666.982
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
@@ -13490,7 +13490,7 @@ entities:
       pos: 14.5,32.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -26847.744
+      secondsUntilStateChange: -27459.676
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -94514,24 +94514,6 @@ entities:
     - type: Transform
       pos: -25.5,35.5
       parent: 2
-- proto: nullspaceanchor
-  entities:
-  - uid: 13699
-    components:
-    - type: Transform
-      anchored: True
-      pos: 6.5,-30.5
-      parent: 2
-    - type: Physics
-      bodyType: Static
-  - uid: 19078
-    components:
-    - type: Transform
-      anchored: True
-      pos: 10.5,-21.5
-      parent: 2
-    - type: Physics
-      bodyType: Static
 - proto: OperatingTable
   entities:
   - uid: 13468
@@ -98056,6 +98038,18 @@ entities:
       - Experimental
       - CivilianServices
       - Biochemical
+- proto: protectionanchor
+  entities:
+  - uid: 13699
+    components:
+    - type: Transform
+      pos: 4.5,-30.5
+      parent: 2
+  - uid: 19078
+    components:
+    - type: Transform
+      pos: 9.5,-19.5
+      parent: 2
 - proto: Protolathe
   entities:
   - uid: 14063
