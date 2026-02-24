@@ -176,15 +176,6 @@
   description: alerts-ensnared-desc
 
 - type: alert
-  id: ShoelacesTied
-  clickEvent: !type:RemoveTiedShoelacesAlertEvent
-  icons:
-  - sprite: /Textures/Interface/Alerts/ensnared.rsi
-    state: ensnared
-  name: alerts-shoelaces-tied-name
-  description: alerts-shoelaces-tied-desc
-
-- type: alert
   id: Buckled
   category: Buckled
   clickEvent: !type:UnbuckleAlertEvent

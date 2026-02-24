@@ -70,7 +70,7 @@ public sealed partial class SharedJumpAbilitySystem : EntitySystem
 
     private void OnGravityJump(Entity<JumpAbilityComponent> entity, ref GravityJumpEvent args)
     {
-        if (_gravity.IsWeightless(args.Performer) || _standing.IsDown(args.Performer) || HasComp<ShoelaceTiedComponent>(args.Performer))
+        if (_gravity.IsWeightless(args.Performer) || _standing.IsDown(args.Performer) || HasComp<ShoelaceTiedComponent>(args.Performer)) // Starlight-edit
         {
             if (entity.Comp.JumpFailedPopup != null)
                 _popup.PopupClient(Loc.GetString(entity.Comp.JumpFailedPopup.Value), args.Performer, args.Performer);

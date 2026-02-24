@@ -9,9 +9,10 @@
   id: BaseMobSpecies
   abstract: true
   components:
-  - type: Railroadable # 🌟Starlight🌟
-  - type: SurgeryTarget # 🌟Starlight🌟
-  # Starlight-start: Languages
+  # Starlight-start
+  - type: Railroadable
+  - type: SurgeryTarget
+  - type: ShoelaceTieable
   - type: LanguageKnowledge
     speaks:
     - GalacticCommon
@@ -156,7 +157,6 @@
   - type: Ensnareable
     sprite: Objects/Misc/ensnare.rsi
     state: icon
-  - type: ShoelaceTieable
   - type: AnimationPlayer
   - type: Buckle
   - type: CombatMode

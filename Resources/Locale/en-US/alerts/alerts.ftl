@@ -42,9 +42,6 @@ alerts-handcuffed-desc = You're [color=yellow]handcuffed[/color] and can't use y
 alerts-ensnared-name = [color=yellow]Ensnared[/color]
 alerts-ensnared-desc = You're [color=yellow]ensnared[/color] and is impairing your ability to move.
 
-alerts-shoelaces-tied-name = [color=yellow]Shoelaces Tied[/color]
-alerts-shoelaces-tied-desc = Your shoelaces are tied together. Sprinting may make you trip. Click to start untying.
-
 alerts-buckled-name = [color=yellow]Buckled[/color]
 alerts-buckled-desc = You've been [color=yellow]buckled[/color] to something. Click the alert to unbuckle unless you're [color=yellow]handcuffed.[/color]
 
