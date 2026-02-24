@@ -115,3 +115,51 @@
     - state: rock_phoron
       sprite: Structures/Walls/rock.rsi
       map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  id: WallTrash
+  name: trash
+  parent: WallRock
+  components:
+  - type: Icon
+    sprite: _Starlight/Structures/Walls/trash.rsi
+    state: trash
+  - type: Sprite
+    sprite: _Starlight/Structures/Walls/trash.rsi
+    layers:
+    - state: trash
+    - map: [ "enum.EdgeLayer.South" ]
+      state: trash_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: trash_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: trash_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: trash_west
+  - type: Pinata
+    hitTable: !type:NestedSelector
+      tableId: TrashWallLoot
+    gibTable: !type:NestedSelector
+      tableId: TrashWallLoot
+      rolls: !type:RangeNumberSelector
+        range: 1, 2
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
