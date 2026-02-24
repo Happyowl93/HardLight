@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/23/2026 16:30:14
-  entityCount: 29397
+  time: 02/24/2026 01:31:49
+  entityCount: 29399
 maps:
 - 1
 grids:
@@ -23737,7 +23737,7 @@ entities:
   - uid: 1723
     components:
     - type: Transform
-      pos: -14.479834,46.5225
+      pos: -14.591593,45.65175
       parent: 2
 - proto: BoxFolderBase
   entities:
@@ -23751,7 +23751,7 @@ entities:
   - uid: 1725
     components:
     - type: Transform
-      pos: -29.300184,5.6545863
+      pos: -29.278965,5.0368314
       parent: 2
 - proto: BoxFolderBlue
   entities:
@@ -24040,7 +24040,7 @@ entities:
   - uid: 1774
     components:
     - type: Transform
-      pos: -14.6620245,46.74173
+      pos: -14.357218,45.65175
       parent: 2
 - proto: BoxSyringe
   entities:
@@ -24069,7 +24069,7 @@ entities:
   - uid: 1779
     components:
     - type: Transform
-      pos: -14.229834,46.74125
+      pos: -14.482218,45.7455
       parent: 2
 - proto: BoxTrashbag
   entities:
@@ -71386,12 +71386,12 @@ entities:
   - uid: 11150
     components:
     - type: Transform
-      pos: -29.28456,4.5295863
+      pos: -29.35709,3.7555814
       parent: 2
   - uid: 11151
     components:
     - type: Transform
-      pos: -29.362684,4.7483363
+      pos: -29.278965,3.5680814
       parent: 2
   - uid: 11152
     components:
@@ -71416,7 +71416,7 @@ entities:
   - uid: 11155
     components:
     - type: Transform
-      pos: -29.516005,4.760977
+      pos: -29.622715,3.7712064
       parent: 2
 - proto: CigarGoldSpent
   entities:
@@ -73734,7 +73734,7 @@ entities:
   - uid: 11328
     components:
     - type: Transform
-      pos: -29.31581,5.1858363
+      pos: -29.622715,4.5212064
       parent: 2
     - type: ContainerContainer
       containers:
@@ -93348,7 +93348,7 @@ entities:
   - uid: 14395
     components:
     - type: Transform
-      pos: -33.44081,5.4045863
+      pos: -29.278965,4.2555814
       parent: 2
 - proto: FoodSnackPopcorn
   entities:
@@ -135579,7 +135579,7 @@ entities:
   - uid: 20385
     components:
     - type: Transform
-      pos: -29.667736,5.2166553
+      pos: -29.66959,4.9274564
       parent: 2
 - proto: MaterialDurathread
   entities:
@@ -136555,18 +136555,6 @@ entities:
     components:
     - type: Transform
       pos: 8.5,-27.5
-      parent: 2
-- proto: nullspaceanchor
-  entities:
-  - uid: 20936
-    components:
-    - type: Transform
-      pos: -14.5,45.5
-      parent: 2
-  - uid: 24450
-    components:
-    - type: Transform
-      pos: -29.5,3.5
       parent: 2
 - proto: NutimovCircuitBoard
   entities:
@@ -143776,6 +143764,18 @@ entities:
       - Experimental
       - CivilianServices
       - Biochemical
+- proto: protectionanchor
+  entities:
+  - uid: 24833
+    components:
+    - type: Transform
+      pos: -10.5,45.5
+      parent: 2
+  - uid: 29399
+    components:
+    - type: Transform
+      pos: -31.5,6.5
+      parent: 2
 - proto: Protolathe
   entities:
   - uid: 21602
@@ -143823,6 +143823,11 @@ entities:
       parent: 2
 - proto: Rack
   entities:
+  - uid: 20936
+    components:
+    - type: Transform
+      pos: -14.5,45.5
+      parent: 2
   - uid: 21608
     components:
     - type: Transform
@@ -163216,6 +163221,11 @@ entities:
       parent: 2
 - proto: TableReinforced
   entities:
+  - uid: 24450
+    components:
+    - type: Transform
+      pos: -29.5,3.5
+      parent: 2
   - uid: 24782
     components:
     - type: Transform
@@ -187556,7 +187566,7 @@ entities:
       pos: 73.5,-3.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13261.9
+      secondsUntilStateChange: -13416.001
       state: Opening
   - uid: 29380
     components:
