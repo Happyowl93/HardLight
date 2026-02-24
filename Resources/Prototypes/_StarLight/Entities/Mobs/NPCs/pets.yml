@@ -81,7 +81,6 @@
     - Mouse
     understands:
     - Mouse
-  - type: NightVision
   - type: UniversalLanguageSpeaker
   - type: VentCrawler
   - type: Climbing
