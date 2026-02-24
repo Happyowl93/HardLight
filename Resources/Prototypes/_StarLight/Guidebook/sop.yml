@@ -753,7 +753,7 @@
 - type: guideEntry
   id: science-sop-researchguidelines
   name: guide-entry-sl-science-sop-researchguidelines
-  text: "/ServerInfo/Guidebook/StarlightSOP/scienceSOP/researchguidelines.xml"
+  text: "/ServerInfo/Guidebook/StarlightSOP/ScienceSOP/researchguidelines.xml"
   priority: 1
   children:
       - science-sop-anomalyresearch
@@ -763,49 +763,49 @@
 - type: guideEntry
   id: science-sop-anomalyresearch
   name: guide-entry-sl-science-sop-anomalyresearch
-  text: "/ServerInfo/Guidebook/StarlightSOP/scienceSOP/anomalyresearch.xml"
+  text: "/ServerInfo/Guidebook/StarlightSOP/ScienceSOP/anomalyresearch.xml"
   priority: 1
 
 - type: guideEntry
   id: science-sop-artifactresearch
   name: guide-entry-sl-science-sop-artifactresearch
-  text: "/ServerInfo/Guidebook/StarlightSOP/scienceSOP/artifactresearch.xml"
+  text: "/ServerInfo/Guidebook/StarlightSOP/ScienceSOP/artifactresearch.xml"
   priority: 2
 
 - type: guideEntry
   id: science-sop-itemdistribution
   name: guide-entry-sl-science-sop-itemdistribution
-  text: "/ServerInfo/Guidebook/StarlightSOP/scienceSOP/itemdistribution.xml"
+  text: "/ServerInfo/Guidebook/StarlightSOP/ScienceSOP/itemdistribution.xml"
   priority: 3
 
 - type: guideEntry
   id: science-sop-researchdirector
   name: guide-entry-sl-science-sop-researchdirector
-  text: "/ServerInfo/Guidebook/StarlightSOP/scienceSOP/researchdirector.xml"
+  text: "/ServerInfo/Guidebook/StarlightSOP/ScienceSOP/researchdirector.xml"
   priority: 4
   
 - type: guideEntry
   id: science-sop-scientist
   name: guide-entry-sl-science-sop-scientist
-  text: "/ServerInfo/Guidebook/StarlightSOP/scienceSOP/scientist.xml"
+  text: "/ServerInfo/Guidebook/StarlightSOP/ScienceSOP/scientist.xml"
   priority: 5
   
 - type: guideEntry
   id: science-sop-researchassistant
   name: guide-entry-sl-science-sop-researchassistant
-  text: "/ServerInfo/Guidebook/StarlightSOP/scienceSOP/researchassistant.xml"
+  text: "/ServerInfo/Guidebook/StarlightSOP/ScienceSOP/researchassistant.xml"
   priority: 6
 
 - type: guideEntry
   id: science-sop-roboticist
   name: guide-entry-sl-science-sop-roboticist
-  text: "/ServerInfo/Guidebook/StarlightSOP/scienceSOP/roboticist.xml"
+  text: "/ServerInfo/Guidebook/StarlightSOP/ScienceSOP/roboticist.xml"
   priority: 7
 
 - type: guideEntry
   id: science-sop-appendix
   name: guide-entry-sl-science-sop-appendix
-  text: "/ServerInfo/Guidebook/StarlightSOP/scienceSOP/appendix.xml"
+  text: "/ServerInfo/Guidebook/StarlightSOP/ScienceSOP/appendix.xml"
   priority: 8
   children:
     - science-sop-documentationpaperwork
@@ -814,7 +814,7 @@
 - type: guideEntry
   id: science-sop-documentationpaperwork
   name: guide-entry-sl-science-sop-documentationpaperwork
-  text: "/ServerInfo/Guidebook/StarlightSOP/scienceSOP/documentationpaperwork.xml"
+  text: "/ServerInfo/Guidebook/StarlightSOP/ScienceSOP/documentationpaperwork.xml"
   priority: 1
 
 - type: guideEntry
