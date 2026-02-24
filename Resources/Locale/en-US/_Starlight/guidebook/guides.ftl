@@ -142,6 +142,18 @@ guide-entry-sl-service-sop-genproc-intro = General Procedures
 guide-entry-sl-service-sop-staff-intro = Staff Procedures
 guide-entry-sl-service-sop-headofpersonnel = Head of Personnel
 
+guide-entry-sl-science-sop-intro = Science
+guide-entry-sl-science-sop-documentationpaperwork = Documentation & Paperwork
+guide-entry-sl-science-sop-researchguidelines = Research Guidelines
+guide-entry-sl-science-sop-anomalyresearch = Anomaly Research
+guide-entry-sl-science-sop-artifactresearch = Artifact Research
+guide-entry-sl-science-sop-itemdistribution = Item Distribution
+guide-entry-sl-science-sop-researchdirector = Research Director
+guide-entry-sl-science-sop-scientist = Scientist
+guide-entry-sl-science-sop-researchassistant = Research Assistant
+guide-entry-sl-science-sop-roboticist = Roboticist
+guide-entry-sl-science-sop-appendix = Appendix
+
 # Plumbing guides
 guide-entry-plumbing = Plumbing
 guide-entry-plumbingflow = Reagent Flow
