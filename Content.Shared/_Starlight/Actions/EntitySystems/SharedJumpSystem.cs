@@ -8,7 +8,6 @@ using Content.Shared.Throwing;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
-using Robust.Shared.Timing;
 using Content.Shared.Stunnable;
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
@@ -86,22 +85,18 @@ public abstract class SharedJumpSystem : EntitySystem
 
     private void OnJump(Entity<JumpComponent> ent, ref JetJumpActionEvent args)
     {
-        if (args.Handled
-            || !TryReleaseGas(ent, ref args)
-            || !CanJump(args.Performer))
+        if (args.Handled)
             return;
 
-        Jump(ent, args.Performer, args.Target, args);
-        args.Handled = true;
+        args.Handled = CanJump(ent) && TryReleaseGas(ent, ref args) && TryJump(ent, args.Performer, args.Target, args);
     }
 
     private void OnJump(JumpActionEvent args)
     {
-        if (args.Handled || !CanJump(args.Performer))
+        if (args.Handled)
             return;
 
-        Jump(args.Performer, args.Performer, args.Target, args);
-        args.Handled = true;
+        args.Handled = TryJump(args.Performer, args.Performer, args.Target, args);
     }
 
     private bool CanJump(EntityUid performer)
@@ -113,14 +108,14 @@ public abstract class SharedJumpSystem : EntitySystem
         return false;
     }
 
-    private void Jump(EntityUid performer, EntityUid target, EntityCoordinates targetCoords, JumpActionEvent args)
+    private bool TryJump(EntityUid performer, EntityUid target, EntityCoordinates targetCoords, JumpActionEvent args)
     {
         var userTransform = Transform(target);
         var userMapCoords = _transform.GetMapCoordinates(userTransform);
 
-        if (args.FromGrid && !_mapMan.TryFindGridAt(userMapCoords, out _, out _)) return;
+        if (args.FromGrid && !_mapMan.TryFindGridAt(userMapCoords, out _, out _)) return false;
 
-        TryJump(performer, targetCoords, args, target, 15f, args.ToPointer, args.Sound, args.Distance);
+        return TryJump(performer, targetCoords, args, target, 15f, args.ToPointer, args.Sound, args.Distance);
     }
 
     public bool TryJump(EntityUid performer, EntityCoordinates targetCoords, JumpActionEvent args, EntityUid? target = null, float speed = 15f, bool toPointer = false, SoundSpecifier? sound = null, float? distance = null, bool decreaseCharges = false)
