@@ -31897,5 +31897,12 @@ Entries:
   id: 344101
   time: '2026-02-24T15:44:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3441
+- author: Xoan
+  changes:
+  - message: Added Science SOP to the Guidebook.
+    type: Add
+  id: 344701
+  time: '2026-02-24T16:47:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3447
 Order: -1
 
