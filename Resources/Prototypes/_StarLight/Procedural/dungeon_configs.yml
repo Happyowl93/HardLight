@@ -248,7 +248,7 @@
   - !type:PrefabDunGen
     roomWhitelist:
       tags:
-      - SovietDungeon
+      - SovietDungeonWeh
     presets:
     - Bucket
     - Wow
