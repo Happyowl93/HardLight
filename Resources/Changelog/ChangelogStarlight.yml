@@ -31743,5 +31743,12 @@ Entries:
   id: 339701
   time: '2026-02-23T20:06:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3397
+- author: SiTW
+  changes:
+  - message: Included paramedics in the mindshielded section in revolutionary guidebook.
+    type: Tweak
+  id: 343601
+  time: '2026-02-23T21:00:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3436
 Order: -1
 
