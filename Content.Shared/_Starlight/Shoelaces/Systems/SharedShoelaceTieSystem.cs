@@ -294,7 +294,15 @@ public sealed class SharedShoelaceTieSystem : EntitySystem
         _status.TryAddStatusEffectDuration(ent, ent.Comp.TiedStatusEffect, ent.Comp.TiedDuration);
 
         _popup.PopupEntity(Loc.GetString("shoelaces-popup-tying-success-user"), args.Args.User, args.Args.User, PopupType.Medium);
+        _popup.PopupEntity(
+            Loc.GetString("shoelaces-popup-tying-success-target", ("user", args.Args.User)),
+            ent,
+            Filter.Entities(ent),
+            true,
+            PopupType.MediumCaution);
+
         var othersFilter = _facingFilter.FacingPvsExcept(args.Args.User, except: args.Args.User);
+        othersFilter.RemovePlayerByAttachedEntity(ent);
         _popup.PopupEntity(
             Loc.GetString("shoelaces-popup-tying-success-others", ("user", args.Args.User), ("target", ent.Owner)),
             ent,
