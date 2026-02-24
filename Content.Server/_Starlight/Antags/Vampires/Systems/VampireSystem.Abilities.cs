@@ -32,6 +32,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
 using Content.Shared.Popups;
+using Content.Server.EUI;
+using Robust.Shared.Player;
 
 namespace Content.Server._Starlight.Antags.Vampires.Systems;
 
@@ -41,6 +43,9 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private readonly EuiManager _euiMan = default!;
+    [Dependency] private readonly ISharedPlayerManager _player = default!;
+    [Dependency] private readonly Content.Shared.Mind.SharedMindSystem _mind = default!;
     private static readonly SoundSpecifier _biteSound = new SoundPathSpecifier("/Audio/Effects/bite.ogg");
     private static readonly SoundSpecifier _devourSound = new SoundPathSpecifier("/Audio/Effects/demon_consume.ogg");
     private readonly Dictionary<EntityUid, List<EntityUid>> _playerShadowSnares = new();
@@ -328,7 +333,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (!Exists(target)
             || target == uid
             || !HasComp<BloodstreamComponent>(target)
-            || !HasComp<HumanoidAppearanceComponent>(target))
+                || !HasComp<HumanoidAppearanceComponent>(target)) //comment this out to let them drink from non-humanoid?
             return;
 
         if (IsInvalidDrinkTarget(uid, target))
@@ -398,6 +403,7 @@ public sealed partial class VampireSystem : EntitySystem
             comp.DrunkBlood += (int)actualSipAmount;
             comp.TotalBlood += (int)actualSipAmount;
 
+//Add check for humanoid here so their progression doesn't change?
             RaiseLocalEvent(uid, new VampireProgressionChangedEvent());
 
             if (!comp.BloodDrunkFromTargets.ContainsKey(target))
@@ -519,6 +525,14 @@ public sealed partial class VampireSystem : EntitySystem
                 continue;
 
             var knockedDown = HasComp<KnockedDownComponent>(target);
+
+            //TODO Add logic for target to get a pop up that they have memory loss
+
+            if (!_mind.TryGetMind(target, out var thrallMindId, out var thrallMind))
+                return;
+
+            if (_player.TryGetSessionById(thrallMind.UserId, out var session))
+                _euiMan.OpenEui(new VampireGlareEui(), session);
 
             // If target in front
             if (dot > 0.7f && !knockedDown)
