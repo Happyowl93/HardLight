@@ -33,7 +33,6 @@ public sealed class WarDeclaratorSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly AccessReaderSystem _accessReaderSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!; // SL
-    [Dependency] private readonly ServerGlobalSoundSystem _sound = default!; // SL
     [Dependency] private readonly StationSystem _station = default!; // SL
     [Dependency] private readonly AlertLevelSystem _alertLevel = default!; // SL
 
