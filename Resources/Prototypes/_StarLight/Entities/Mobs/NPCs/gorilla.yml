@@ -102,6 +102,8 @@
       speedModifier: 1.5
       useSound:
         path: /Audio/Items/crowbar.ogg
+      useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
+      playSoundOnDoafter: true
     - type: SlowOnDamage
       speedModifierThresholds:
         200: 0.5
