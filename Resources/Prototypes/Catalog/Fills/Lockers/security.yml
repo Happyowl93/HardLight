@@ -191,6 +191,7 @@
     - id: HoloprojectorSecurity
     - id: BoxEvidenceMarkers
     - id: HandLabeler
+    - id: BoxTapeRecorder # Starlight
 
 - type: entity
   id: ClosetBombFilled
