@@ -31904,5 +31904,15 @@ Entries:
   id: 344701
   time: '2026-02-24T16:47:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3447
+- author: Xale
+  changes:
+  - message: Cooking ingredient containers such as flour bags now have examinable
+      contents when opened.
+    type: Tweak
+  - message: Olive oil and mayonnaise bottles are now closable, and no longer edible.
+    type: Tweak
+  id: 345001
+  time: '2026-02-24T17:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3450
 Order: -1
 
