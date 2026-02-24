@@ -31914,5 +31914,12 @@ Entries:
   id: 345001
   time: '2026-02-24T17:38:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3450
+- author: Xale
+  changes:
+  - message: Condiments such as ketchup now restore a small amount of hunger
+    type: Tweak
+  id: 345101
+  time: '2026-02-24T17:43:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3451
 Order: -1
 
