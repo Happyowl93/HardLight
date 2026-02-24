@@ -722,22 +722,33 @@
     - ChemistHandLabeler
     - GoldenHandLabeler
 
+# Security
+- type: loadoutGroup
+  id: SecurityTie
+  name: loadout-group-security-tie
+  minLimit: 0
+  loadouts:
+    - SecurityRedNeckTie
+    - SecurityDetNeckTie
+
+# HoS/Ward Masks
+- type: loadoutGroup
+  id: SecurityMask
+  name: loadout-group-security-mask
+  minLimit: 0
+  loadouts:
+    - MaskGasSecurity
+    - BreathMaskMedicalSecurity
+    - MaskGasCorpsman
+
 # Brigmedic
 - type: loadoutGroup
   id: BrigmedicMask
   name: loadout-group-brigmedic-mask
-  minLimit: 0
   loadouts:
     - BrigmedicBreathMaskMedicalSecurity
-    - BrigmedicMaskGasSecurity
-
-- type: loadoutGroup
-  id: BrigmedicTie
-  name: loadout-group-brigmedic-tie
-  minLimit: 0
-  loadouts:
-    - BrigmedicRedNeckTie
-    - BrigmedicDetNeckTie
+    - MaskGasSecurity
+    - CorpsmanMaskGasCorpsman
 
 - type: loadoutGroup
   id: BrigmedicPDA

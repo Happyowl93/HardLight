@@ -39,8 +39,8 @@
 - type: entity
   parent: SmokeGrenade
   id: ToxicGasGrenade
-  name: toxic gas grenade
-  description: A painful crowd control gas grenade full of Desoxyephedrine. Turn on your internals before using it.
+  name: acidic gas grenade
+  description: A painful crowd control gas grenade full of Sulfuric Acid. Turn on your internals before using it.
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Grenades/toxic_gas.rsi
@@ -52,7 +52,7 @@
     smokePrototype: TearGasSmokeYellow
     solution:
       reagents:
-      - ReagentId: Desoxyephedrine
+      - ReagentId: SulfuricAcid
         Quantity: 12
   - type: StaticPrice
     price: 500
