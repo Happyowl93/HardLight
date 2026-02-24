@@ -31750,5 +31750,14 @@ Entries:
   id: 343601
   time: '2026-02-23T21:00:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3436
+- author: Conflee
+  changes:
+  - message: Changed Toxic Gas Grenades to Acidic Gas Grenades so you are no longer
+      buffing the people you're trying to gas. Now contains Sulfuric Acid, and does
+      19-20 caustic damage.
+    type: Fix
+  id: 344301
+  time: '2026-02-24T12:25:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3443
 Order: -1
 
