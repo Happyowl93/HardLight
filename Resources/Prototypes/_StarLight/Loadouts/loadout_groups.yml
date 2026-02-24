@@ -1,13 +1,24 @@
 - type: loadoutGroup
   id: Insuls
-  name: loadout-group-insuls
+  name: loadout-group-insuls-normal
   minLimit: 0
   defaultSelected: 1
   loadouts:
   - InsulsRegular
   - InsulsCombat
-  - InsulsMaid
   - InsulsMercenary
+  - InsulsScrapper
+
+- type: loadoutGroup
+  id: InsulsCombat
+  name: loadout-group-insuls-combat
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - InsulsCombatNoLock
+  - InsulsRegular
+  - InsulsMercenary
+  - InsulsScrapper
 
 - type: loadoutGroup
   id: InsulsCaptain
@@ -18,8 +29,8 @@
   - InsulsCaptain
   - InsulsRegular
   - InsulsCombat
-  - InsulsMaid
   - InsulsMercenary
+  - InsulsScrapper
 
 - type: loadoutGroup
   id: Scarves
@@ -332,6 +343,7 @@
   id: BlueShieldOuterclothing
   name: loadout-group-blueshield-outerclothing
   minLimit: 0
+  maxLimit: 1
   defaultSelected: 1
   loadouts:
   - BlueShieldVest
@@ -394,7 +406,8 @@
 - type: loadoutGroup
   id: RoboticistShoes
   name: loadout-group-roboticist-shoes
-  minLimit: 1
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
   - BlackShoes
   - ScienceWinterBoots
@@ -404,7 +417,8 @@
 - type: loadoutGroup
   id: CaptainShoes
   name: loadout-group-captain-shoes
-  minLimit: 1
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
   - LaceupShoes
   - Heels
@@ -417,7 +431,8 @@
 - type: loadoutGroup
   id: HoPShoes
   name: loadout-group-hop-shoes
-  minLimit: 1
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
   - BrownShoes
   - Heels
@@ -427,7 +442,8 @@
 - type: loadoutGroup
   id: MagistrateShoes
   name: loadout-group-magistrate-shoes
-  minLimit: 1
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
   - LaceupShoes
   - Heels
@@ -435,7 +451,8 @@
 - type: loadoutGroup
   id: NanotrasenRepresentativeShoes
   name: loadout-group-nanotrasenrepresentative-shoes
-  minLimit: 1
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
   - LaceupShoes
   - Heels
@@ -444,7 +461,8 @@
 - type: loadoutGroup
   id: DetectiveShoes
   name: loadout-group-detective-shoes
-  minLimit: 1
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
   - JackBoots
   - SecurityWinterBoots
@@ -458,7 +476,8 @@
 - type: loadoutGroup
   id: CivilianShoes
   name: loadout-group-civilian-shoes
-  minLimit: 1
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
   - BlackShoes
   - WhiteShoes
@@ -470,7 +489,8 @@
 - type: loadoutGroup
   id: LawyerShoes
   name: loadout-group-iia-shoes
-  minLimit: 1
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
   - BlackShoes
   - LaceupShoes
@@ -480,7 +500,8 @@
 - type: loadoutGroup
   id: BlueShieldShoes
   name: loadout-group-security-shoes
-  minLimit: 1
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
   - CombatBoots
   - HighHeelBootsFilled
@@ -529,6 +550,17 @@
   loadouts:
     - SalvagePDA
     - VeteranSalvagePDA
+
+# Mime
+- type: loadoutGroup
+  id: MimeShoes
+  name: loadout-group-mime-shoes
+  minLimit: 0 # Starlight
+  defaultSelected: 1 # Starlight
+  loadouts:
+  - WhiteShoes
+  - BlackShoes
+  - RollerSkatesLoadout # Starlight
 
 # Boxer
 - type: loadoutGroup
@@ -593,6 +625,8 @@
 - type: loadoutGroup
   id: ChemistShoes
   name: loadout-group-chemist-shoes
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
   - WhiteShoes
   - ChemistWinterBoots
@@ -636,7 +670,7 @@
 - type: loadoutGroup
   id: BrigmedicMask
   name: loadout-group-brigmedic-mask
-  minLimit: 1
+  minLimit: 0
   loadouts:
     - BrigmedicBreathMaskMedicalSecurity
     - BrigmedicMaskGasSecurity
@@ -664,6 +698,14 @@
   loadouts:
     - DarkBeaker
     - SilverBeakerBrigmedic
+
+- type: loadoutGroup
+  id: BrigmedicGloves
+  name: loadout-group-brigmedic-gloves
+  loadouts:
+  - Nitrile
+  - BlackNitrile
+  - LatexGloves
 
 # Duty Officer
 - type: loadoutGroup
@@ -693,8 +735,8 @@
 - type: loadoutGroup
   id: DutyOfficerOuterClothing
   name: loadout-group-dutyofficer-outerclothing
-  minLimit: 0 # starlight
-  defaultSelected: 1 # starlight
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
   - DutyOfficerArmorRiot
   - ArmorVest
@@ -703,8 +745,8 @@
   - ArmorVestStab
   - ArmorVestHeatAbsorb
   - SecurityOfficerWintercoat
-  - SecurityBomber #Starlight
-  - WindbreakerSecurity #Starlight
+  - SecurityBomber
+  - WindbreakerSecurity
 
 # Brighteye
 - type: loadoutGroup
@@ -727,8 +769,10 @@
 - type: loadoutGroup
   id: BrighteyeShoes
   name: loadout-group-civilian-shoes
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
-    - BrighteyeClothWrapShoe
+    - ClothWrapShoe
     - BlackShoes
 
 - type: loadoutGroup
@@ -736,7 +780,7 @@
   minLimit: 0
   name: loadout-group-brighteye-gloves
   loadouts:
-    - BrighteyeClothWrapGlove
+    - ClothWrapGlove
 
 - type: loadoutGroup
   id: NanotrasenCareerTrainerJumpsuit
@@ -756,6 +800,8 @@
 - type: loadoutGroup
   id: NanotrasenCareerTrainerShoes
   name: loadout-group-NanotrasenCareerTrainer-shoes
+  minLimit: 0
+  defaultSelected: 1
   loadouts:
   - JackBoots
   - LaceupShoes
@@ -782,3 +828,12 @@
   minLimit: 0
   loadouts:
   - ClothingNeckWarden
+
+- type: loadoutGroup
+  id: SecurityGloves
+  name: loadout-group-gloves-sec
+  minLimit: 0
+  defaultSelected: 1
+  loadouts:
+  - SecGloves
+  - SecGlovesFingerless

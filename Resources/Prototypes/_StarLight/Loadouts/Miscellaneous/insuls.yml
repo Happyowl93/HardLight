@@ -10,7 +10,12 @@
       requirement:
         !type:DepartmentTimeRequirement
         department: Security
-        time: 180000 # 50 hours of harmbatong
+        time: 216000 # 60 hours of harmbatong
+  equipment:
+    gloves: ClothingHandsGlovesCombat
+
+- type: loadout
+  id: InsulsCombatNoLock
   equipment:
     gloves: ClothingHandsGlovesCombat
 
@@ -21,7 +26,7 @@
       requirement:
         !type:RoleTimeRequirement
         role: JobSalvageSpecialist
-        time: 36000 # 10 hours of not turning in contra to sec/
+        time: 36000 # 10 hours of not turning in contra to sec
   equipment:
     gloves: ClothingHandsMercGlovesCombat
 
@@ -30,9 +35,9 @@
   effects:
     - !type:JobRequirementLoadoutEffect
       requirement:
-        !type:RoleTimeRequirement
-        role: JobServiceWorker
-        time: 36000 # 10 hours of advanced tiding
+        !type:DepartmentTimeRequirement
+        department: Security
+        time: 216000 # 60 hours of charging batong
   equipment:
     gloves: ClothingHandsTacticalMaidGloves
 
@@ -40,3 +45,14 @@
   id: InsulsCaptain
   equipment:
     gloves: ClothingHandsGlovesCaptain
+
+- type: loadout
+  id: InsulsScrapper
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:RoleTimeRequirement
+        role: JobSalvageLead
+        time: 36000 # 10 hours of writing reports
+  equipment:
+    gloves: ClothingHandsSalvageMercGlovesCombat

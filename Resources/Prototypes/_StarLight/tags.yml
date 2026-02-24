@@ -94,6 +94,9 @@
   id: CentcommVibroblade
 
 - type: Tag
+  id: CombatRemote # Tag: used on the RemoteSignallerCombat
+
+- type: Tag
   id: CheapInsulatedFabric
 
 - type: Tag
@@ -160,6 +163,9 @@
   id: DockGamma
 
 - type: Tag
+  id: DogEmotes
+
+- type: Tag
   id: DrinkCarton
 
 - type: Tag
@@ -211,6 +217,9 @@
   id: FormerSoldierTraitBackground
 
 - type: Tag
+  id: FlatpackBlacklist
+
+- type: Tag
   id: GearAcidifier
 
 - type: Tag
@@ -218,6 +227,9 @@
 
 - type: Tag
   id: Ghost
+
+- type: Tag
+  id: Grenade120mm # Ammo: Magazine120mmGrenadeBlast, ShuttleGunNTSFCyerxa120mm
 
 - type: Tag
   id: GygaxArmor
@@ -285,9 +297,6 @@
 # Used for the jet injector and advanced jet injector
 - type: Tag
   id: JetInjector
-  
-- type: Tag
-  id: Labelable
 
 - type: Tag
   id: L6Saw
@@ -300,6 +309,9 @@
 
 - type: Tag
   id: Locker
+  
+- type: Tag
+  id: LoneOpsUplink
 
 - type: Tag
   id: MagazineBattery
@@ -309,6 +321,15 @@
 
 - type: Tag
   id: MagazineBoxLightRifle
+
+- type: Tag
+  id: MagazineGrenade120mm # Magazine: Magazine120mmGrenadeBlast
+
+- type: Tag
+  id: Cartridge60mmRocket
+
+- type: Tag
+  id: Magazine60mmRocket
 
 - type: Tag
   id: MagazineLightRiflePan
@@ -358,6 +379,12 @@
 
 - type: Tag
   id: Nexus
+  
+- type: Tag
+  id: NotLabelable
+
+- type: Tag
+  id: NukiePlanet
 
 - type: Tag
   id: OmniCyberEyes
@@ -385,6 +412,9 @@
 
 - type: Tag
   id: PlasteelFilament
+
+- type: Tag
+  id: PlumbingDuct
 
 - type: Tag
   id: PowerCellTiny
@@ -447,6 +477,9 @@
 
 - type: Tag
   id: SovietDungeon
+
+- type: Tag
+  id: SovietDungeonWeh
 
 - type: Tag
   id: SovietWarehouse

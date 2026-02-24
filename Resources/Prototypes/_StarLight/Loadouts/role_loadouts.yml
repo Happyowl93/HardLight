@@ -90,7 +90,7 @@
   - BlueShieldBackpack
   - BlueShieldOuterclothing
   - BlueShieldBelt
-  - Insuls
+  - InsulsCombat
   - BlueShieldShoes
   - BlueShieldNeck
   - BlueShieldEyewear
@@ -170,6 +170,7 @@
   - SecurityEyewear
   - DutyOfficerOuterClothing
   - SecurityShoes
+  - SecurityGloves
   - DutyOfficerBelt
   - SecurityNonLethalWeapon
   - SurvivalSecurity
