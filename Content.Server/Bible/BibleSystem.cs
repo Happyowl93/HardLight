@@ -51,7 +51,7 @@ namespace Content.Server.Bible
         [Dependency] private readonly SharedStunSystem _stun = default!;
         [Dependency] private readonly HandsSystem _hands = default!; //Starlight
         [Dependency] private readonly TagSystem _tags = default!; //Starlight
-        [Dependency] private readonly NameModifierSystem _nameModifier = default!;
+        [Dependency] private readonly NameModifierSystem _nameModifier = default!; //Starlight
 
 
         public override void Initialize()
