@@ -31966,5 +31966,17 @@ Entries:
   id: 345601
   time: '2026-02-25T08:34:28.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3456
+- author: Shades
+  changes:
+  - message: Added War Music (When nukies declear war... prepare yourself... with
+      some music!).
+    type: Add
+  - message: WarOps Auto-Trigger Gamma.
+    type: Add
+  - message: Nukies Losing will Auto-Trigger Green Alert.
+    type: Tweak
+  id: 345501
+  time: '2026-02-25T09:45:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3455
 Order: -1
 
