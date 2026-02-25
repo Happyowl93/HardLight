@@ -1,6 +1,5 @@
 using System.Numerics;
 using Content.Shared.DoAfter;
-using Content.Shared._Starlight.Visibility.Systems;
 using Content.Client.UserInterface.Systems;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -10,7 +9,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Robust.Shared.Containers;
-using Content.Shared._Starlight.Shoelaces;
 
 namespace Content.Client.DoAfter;
 
@@ -26,7 +24,6 @@ public sealed class DoAfterOverlay : Overlay
     private readonly ProgressColorSystem _progressColor;
     private readonly SharedContainerSystem _container;
     private readonly SpriteSystem _sprite;
-    private readonly SharedFacingFilterSystem _facingFilter;
 
     private readonly Texture _barTexture;
     private readonly ShaderInstance _unshadedShader;
@@ -52,7 +49,6 @@ public sealed class DoAfterOverlay : Overlay
         _container = _entManager.EntitySysManager.GetEntitySystem<SharedContainerSystem>();
         _progressColor = _entManager.System<ProgressColorSystem>();
         _sprite = _entManager.System<SpriteSystem>();
-        _facingFilter = _entManager.EntitySysManager.GetEntitySystem<SharedFacingFilterSystem>();
         var sprite = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/progress_bar.rsi"), "icon");
         _barTexture = _entManager.EntitySysManager.GetEntitySystem<SpriteSystem>().Frame0(sprite);
 
@@ -113,14 +109,6 @@ public sealed class DoAfterOverlay : Overlay
 
             foreach (var doAfter in comp.DoAfters.Values)
             {
-                if (localEnt != null &&
-                    uid != localEnt &&
-                    doAfter.Args.Event is ShoelaceTieDoAfterEvent &&
-                    !_facingFilter.IsFacingTowards(localEnt.Value, uid, xformQuery: xformQuery))
-                {
-                    continue;
-                }
-
                 // Hide some DoAfters from other players for stealthy actions (ie: thieving gloves)
                 var alpha = 1f;
                 if (doAfter.Args.Hidden || isInContainer)
