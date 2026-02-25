@@ -31958,5 +31958,13 @@ Entries:
   id: 345301
   time: '2026-02-25T08:28:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3453
+- author: Conflee
+  changes:
+  - message: Enabled Silicon Liberation for multiple subgamerules with a 20% rate
+      to avoid oversaturation.
+    type: Add
+  id: 345601
+  time: '2026-02-25T08:34:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3456
 Order: -1
 
