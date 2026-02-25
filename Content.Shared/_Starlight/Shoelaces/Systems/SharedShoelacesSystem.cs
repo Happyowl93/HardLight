@@ -108,6 +108,7 @@ public sealed class SharedShoelacesSystem : EntitySystem
         };
 
         args.Verbs.Add(tieVerb);
+        args.Verbs.Add(tieTogetherVerb);
     }
 
     private bool CanManipulate(EntityUid user, EntityUid target)
@@ -256,7 +257,7 @@ public sealed class SharedShoelacesSystem : EntitySystem
             return;
         }
 
-        if (!ent.Comp.Tied)
+        if (!ent.Comp.Tied && !ent.Comp.TiedTogether)
             args.Cancel();
     }
 
@@ -304,7 +305,7 @@ public sealed class SharedShoelacesSystem : EntitySystem
         if (ent.Comp.TiedShoes is not { } tiedShoes)
             return;
 
-        if (tiedShoes.Comp.Tied 
+        if (!tiedShoes.Comp.Tied 
             && _random.Prob(tiedShoes.Comp.KnockDownChance) 
             && _stun.TryKnockdown(ent.Owner, TimeSpan.FromSeconds(ent.Comp.TripKnockdownTime), force: true))
             _popup.PopupPredicted(Loc.GetString("shoelaces-popup-trip"), ent, ent, PopupType.MediumCaution);
