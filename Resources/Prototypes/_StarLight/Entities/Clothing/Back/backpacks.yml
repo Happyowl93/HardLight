@@ -55,6 +55,10 @@
     sprite: _Starlight/Clothing/Back/Backpacks/ntnc_bag.rsi
 
 - type: entity
-  parent: [BaseTSFContraband, ClothingBackpackBlueShield]
+  parent: [ClothingBackpackERTLeader, BaseTSFContraband]
   id: ClothingBackpackTSF
-  name: federation backpack
+  name: TSF marine rucksack
+  description: A spacious rucksack covered in pouches and pockets, worn by marines of the Trans-Solar Federation.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Back/Backpacks/tsf.rsi

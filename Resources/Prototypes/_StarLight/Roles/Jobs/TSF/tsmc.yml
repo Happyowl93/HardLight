@@ -1,4 +1,23 @@
 - type: job
+  id: TSFMCCrew
+  name: ghost-role-information-tsf-crew-name
+  description: ghost-role-information-tsf-marine-desc
+  playTimeTracker: JobTSFCrew
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 72000 # 20h
+  setPreference: false
+  icon: JobIconTSF
+  rules: job-rules-tsf-aligned
+  supervisors: job-supervisors-solgov
+  canBeAntag: false
+  access:
+    - Solgov
+  special:
+    - !type:AddImplantSpecial
+      implants: [TSFMindShieldImplant]
+
+- type: job
   id: TSFMarine
   name: ghost-role-information-tsf-marine-name
   description: ghost-role-information-tsf-marine-desc
@@ -42,6 +61,20 @@
       implants: [TSFMindShieldImplant, DeathRattleImplantTSF]
 
 - type: startingGear
+  id: TSFCrewGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTSF
+    back: ClothingBackpackTSF
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatBeretTSF
+    eyes: ClothingEyesHudTSF
+    gloves: ClothingHandsGlovesCombat
+    id: TSFIdCardMarine
+    ears: ClothingHeadsetAltTSF
+    belt: ClothingBeltUtilityEngineering
+    pocket1: FlashlightSeclite
+
+- type: startingGear
   id: TSFMarineGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitTSF
@@ -54,83 +87,102 @@
     ears: ClothingHeadsetAltTSF
     belt: ClothingBeltTSFMarineWebbing
     pocket1: FlashlightSeclite
-    pocket2: WeaponPistolM1911
+    pocket2: WeaponPistolTSFModel17
     suitstorage: WeaponRifleARG
   storage:
     back:
-      - BoxSurvivalSecurity
       - CrowbarRed
-      - Brutepack
-      - Ointment
-      - Gauze
+      - MedkitCombatFilled
+      - AccessOverider
+      - TSFBatonModel5
+      - BoxZiptie
     belt:
       - MagazineBoxLightRifleFMJ
       - MagazineLightRifleFMJ
       - MagazineLightRifleFMJ
       - MagazineLightRifleFMJ
       - MagazineLightRifleFMJ
-      - MagazineBoxMagnumSP
-      - MagazineMagnum
-      - MagazineMagnum
+      - MagazineBoxPistolFMJ
+      - MagazinePistolFMJ
+      - MagazinePistolFMJ
+
+- type: startingGear
+  id: TSFMarineCorpsmanGear
+  parent: TSFMarineGear
+  equipment:
+    shoes: ClothingShoesBootsMagERT
+    eyes: ClothingEyesHudMedical
+    suitstorage: WeaponRifleLecter
+  storage:
+    back:
+      - Hypospray
+      - JugPunctTranex
+      - JugPyraDerma
+      - JugDexPlusSaline
+      - JugTrico
+      - BeakerSmallArith
+      - DefibrillatorCompact
+      - MedkitCombatFilled
+      - ClothingEyesGlassesChemical
+      - ChemistryBottleOmnizine
+    belt:
+      - MagazineBoxRifleSP
+      - MagazineRifleSP
+      - MagazineRifleSP
+      - AccessOverider
+      - CrowbarRed
+      - MagazineBoxPistolFMJ
+      - MagazinePistolFMJ
+      - MagazinePistolFMJ
 
 - type: startingGear
   id: TSFMarineLeaderGear
+  parent: TSFMarineGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitTSF
-    back: ClothingBackpackRadioTSF
-    shoes: ClothingShoesBootsCombatFilled
+    neck: Whistle
     head: ClothingHeadHelmetTSFLeader
-    gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterArmorTSFLeader
     id: TSFIdCardLeader
-    ears: ClothingHeadsetAltTSF
-    belt: ClothingBeltTSFMarineWebbing
-    pocket1: FlashlightSeclite
-    pocket2: WeaponPistolDeagle
-    suitstorage: WeaponRifleARG
   storage:
     back:
-      - BoxSurvivalSecurity
-      - CrowbarRed
+      - BoxZiptie
       - MedkitCombatFilled
-    belt:
-      - MagazineBoxLightRifleFMJ
-      - MagazineLightRifleFMJ
-      - MagazineLightRifleFMJ
-      - MagazineLightRifleFMJ
-      - MagazineLightRifleFMJ
-      - MagazineBoxMagnumSP
-      - MagazineMagnum
-      - MagazineMagnum
+      - MedkitCombatFilled
+      - TSFBatonModel5
+      - Binoculars
+      - AccessOverider
+      - CrowbarRed
 
 - type: startingGear
   id: TSFMARSOCGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitTSFElite
     back: ClothingBackpackRadioTSF
-    shoes: ClothingShoesBootsMagAdv
+    shoes: ClothingShoesBootsMagERT
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitTSFMARSOC
     id: TSFIdCardElite
     ears: ClothingHeadsetAltTSF
     belt: ClothingBeltTSFMarineWebbing
-    pocket1: AccessOverider
-    pocket2: WeaponPistolDeagle
+    pocket1: AccessOveriderUnlimited
+    pocket2: WeaponPistolTSFModel17
     suitstorage: WeaponRifleM52
   storage:
     back:
-      - BoxSurvivalSecurity
-      - CrowbarRed
+      - ToolDebug
+      - WelderExperimental
       - MedkitCombatFilled
+      - Hypospray
+      - TSFBatonModel5
     belt:
       - MagazineRifleM52FMJ
       - MagazineRifleM52FMJ
       - MagazineRifleM52FMJ
       - MagazineRifleM52AP
       - MagazineRifleM52AP
-      - MagazineBoxMagnumSP
-      - MagazineMagnum
-      - MagazineMagnum
+      - MagazineBoxPistolAP
+      - MagazinePistolAP
+      - MagazinePistolAP
 
 - type: startingGear
   id: TSFGeneralGear
@@ -139,7 +191,7 @@
     back: ClothingBackpackRadioTSF
     shoes: ClothingShoesBootsCombatFilled
     gloves: ClothingHandsGlovesCombat
-    eyes: ClothingEyesGlassesBlueShield
+    eyes: ClothingEyesHudTSF
     belt: ClothingBeltTSFMarineWebbing
     head: ClothingHeadHatBeretTSFElite
     outerClothing: ClothingOuterVestWeb
@@ -149,7 +201,6 @@
     pocket2: TSFMindShieldImplanter
   storage:
     back:
-      - BoxSurvivalSecurity
       - CrowbarRed
       - MedkitCombatFilled
     belt:
@@ -158,39 +209,3 @@
       - BoxLethalshot
   inhand:
     - DeathRattleImplanterTSF
-
-- type: startingGear
-  id: TSFRepGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitTSFRep
-    back: ClothingBackpackTSF
-    shoes: ClothingShoesBootsLaceup
-    eyes: ClothingEyesSunGlassesHudSkill
-    belt: BoxFolderPlasticClipboard
-    head: ClothingHeadHatBeretTSF
-    id: TSFIdCard
-    ears: ClothingHeadsetAltTSF
-    pocket1: LuxuryPen
-    pocket2: TSFMindShieldImplanter
-  storage:
-    back:
-      - BoxSurvival
-  inhand:
-    - DeathRattleImplanterTSF
-
-- type: startingGear
-  id: TSFTraderGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitCargoAlt
-    back: ClothingBackpackCargo
-    shoes: ClothingShoesColorBlack
-    eyes: ClothingEyesHudSkills
-    belt: BoxFolderPlasticClipboard
-    head: ClothingHeadHatBeretCargoFormal
-    id: TSFIdCardTrader
-    ears: ClothingHeadsetTSFTrader
-    pocket1: Pen
-    pocket2: AppraisalTool
-  storage:
-    back:
-      - BoxSurvival
