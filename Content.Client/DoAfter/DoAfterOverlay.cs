@@ -1,6 +1,5 @@
 using System.Numerics;
 using Content.Shared.DoAfter;
-using Content.Shared._Starlight.Shoelaces.Systems;
 using Content.Shared._Starlight.Visibility.Systems;
 using Content.Client.UserInterface.Systems;
 using Robust.Client.GameObjects;
@@ -11,6 +10,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Robust.Shared.Containers;
+using Content.Shared._Starlight.Shoelaces;
 
 namespace Content.Client.DoAfter;
 

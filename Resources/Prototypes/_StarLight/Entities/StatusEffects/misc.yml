@@ -38,11 +38,3 @@
   components:
   - type: StatusEffectAlert
     alert: ShadekinTheDarkAlert
-
-# Trips you over when runningand makes you fall down, but doesn't cause you to be stunned or knocked down or trigger when walking.
-- type: entity
-  parent: MobStandStatusEffectBase
-  id: StatusEffectTiedShoelaces
-  name: tied shoelaces
-  components:
-  - type: TiedShoelacesStatusEffect
