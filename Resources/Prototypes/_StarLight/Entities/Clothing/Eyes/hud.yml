@@ -249,9 +249,9 @@
           Heat: 0.95
 
 - type: entity
-  parent: [BaseTSFContraband, ClothingEyesBase]
-  id: ClothingEyesHudTSF
-  name: TSF hud
+  parent: [BaseTSFContraband, ClothingHeadset]
+  id: ClothingHudTSF
+  name: SolGov hud
   description: Visor with a built-in modern OCULUS array augments the wearer's vision.
   components:
     - type: Sprite
@@ -262,3 +262,11 @@
     - type: ShowMindShieldIcons
     - type: EyeProtection
       protectionTime: 5
+    - type: ContainerFill
+      containers:
+        key_slots:
+          - EncryptionKeyTSF
+          - EncryptionKeyCommon
+    - type: RadioChime
+      sound:
+        path: /Audio/_Starlight/Effects/Radio/tsf.ogg

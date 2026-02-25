@@ -4,11 +4,10 @@
     jumpsuit: ClothingUniformJumpsuitTSFRep
     back: ClothingBackpackTSF
     shoes: ClothingShoesBootsLaceup
-    eyes: ClothingEyesHudTSF
     belt: BoxFolderPlasticClipboard
     head: ClothingHeadHatBeretTSF
     id: TSFIdCard
-    ears: ClothingHeadsetAltTSF
+    ears: ClothingHudTSF
     pocket1: LuxuryPen
     pocket2: TSFMindShieldImplanter
   storage:
@@ -23,7 +22,7 @@
     jumpsuit: ClothingUniformJumpsuitCargoAlt
     back: ClothingBackpackCargo
     shoes: ClothingShoesColorBlack
-    eyes: ClothingEyesHudTSF
+    eyes: ClothingEyesHudCommand
     belt: BoxFolderPlasticClipboard
     head: ClothingHeadHatBeretCargoFormal
     id: TSFIdCardTrader

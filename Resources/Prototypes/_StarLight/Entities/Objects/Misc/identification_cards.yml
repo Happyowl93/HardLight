@@ -421,9 +421,19 @@
   - type: IdCard
     jobTitle: job-title-tsf-marine-leader
 
+
 - type: entity
   parent: TSFIdCardMarine
-  id: TSFIdCardElite
+  id: TSFIdCardPhantom
+  name: Phantom dog tags
+  suffix: TSF
+  components:
+  - type: IdCard
+    jobTitle: job-title-tsf-Phantom
+
+- type: entity
+  parent: TSFIdCardMarine
+  id: TSFIdCardMARSOC
   name: MARSOC dog tags
   suffix: TSF
   components:

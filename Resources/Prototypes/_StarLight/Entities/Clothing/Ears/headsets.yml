@@ -111,7 +111,7 @@
     sprite: Clothing/Ears/Headsets/cargo.rsi
   - type: RadioChime
     sound:
-      path: /Audio/_Starlight/Effects/Radio/qm.ogg
+      path: /Audio/_Starlight/Effects/Radio/tsf.ogg
 
 - type: entity
   parent: [ClothingHeadset, BaseCommandContraband]

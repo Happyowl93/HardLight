@@ -236,7 +236,7 @@
   components:
     - type: Sprite
       sprite: _Starlight/Markers/jobs.rsi
-      state: TSF
+      state: TSFCrew
     - type: RandomHumanoidSpawner
       settings: TSFCrew
 
@@ -261,6 +261,17 @@
       state: TSF
     - type: RandomHumanoidSpawner
       settings: TSFMarineLeader
+
+- type: entity
+  parent: RandomHumanoidSpawnerTSFMarine
+  id: RandomHumanoidSpawnerTSFPhantom
+  suffix: Phantom
+  components:
+    - type: Sprite
+      sprite: _Starlight/Markers/jobs.rsi
+      state: Phantom
+    - type: RandomHumanoidSpawner
+      settings: TSFMarinePhantom
 
 - type: entity
   parent: RandomHumanoidSpawnerTSFMarine
@@ -370,28 +381,6 @@
       nameFormat: name-format-ert-leader
 
 - type: randomHumanoidSettings
-  id: TSFMarineSpecOps
-  parent: TSFMarine
-  components:
-    - type: GhostRole
-      name: ghost-role-information-tsf-SpecOps-name
-      job: TSFMarineElite
-    - type: Loadout
-      prototypes: [TSFMARSOCGear]
-      roleLoadout: [ RoleSurvivalMilitaryDouble ]
-    - type: RandomMetadata
-      nameSegments:
-        - NamesMilitaryFirstLeader
-        - NamesMilitaryLast
-      nameFormat: name-format-ert
-    - type: AutoImplant
-      implants:
-        - TSFMindShieldImplant
-        - DeathRattleImplantTSF
-        - DeathAcidifierImplant
-        - FreedomImplanter
-
-- type: randomHumanoidSettings
   id: TSFMarinePhantom
   parent: TSFMarine
   components:
@@ -399,18 +388,18 @@
       name: ghost-role-information-tsf-Phantom-name
       job: TSFMarineElite
     - type: Loadout
-      prototypes: [TSFMARSOCGear]
+      prototypes: [TSFPhantomGear]
       roleLoadout: [ RoleSurvivalMilitaryDouble ]
     - type: RandomMetadata
       nameSegments:
-        - NamesMilitaryLast
+        - NamesSyndicateElite
       nameFormat: name-format-ert-specialist
     - type: AutoImplant
       implants:
         - TSFMindShieldImplant
         - DeathRattleImplantTSF
         - DeathAcidifierImplant
-        - FreedomImplanter
+        - FreedomImplant
 
 - type: randomHumanoidSettings
   id: TSFMarineMARSOC
@@ -431,4 +420,4 @@
         - TSFMindShieldImplant
         - DeathRattleImplantTSF
         - DeathAcidifierImplant
-        - FreedomImplanter
+        - FreedomImplant

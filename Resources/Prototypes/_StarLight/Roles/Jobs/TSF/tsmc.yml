@@ -67,10 +67,9 @@
     back: ClothingBackpackTSF
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatBeretTSF
-    eyes: ClothingEyesHudTSF
     gloves: ClothingHandsGlovesCombat
     id: TSFIdCardMarine
-    ears: ClothingHeadsetAltTSF
+    ears: ClothingHudTSF
     belt: ClothingBeltUtilityEngineering
     pocket1: FlashlightSeclite
 
@@ -84,7 +83,7 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterArmorTSF
     id: TSFIdCardMarine
-    ears: ClothingHeadsetAltTSF
+    ears: ClothingHudTSF
     belt: ClothingBeltTSFMarineWebbing
     pocket1: FlashlightSeclite
     pocket2: WeaponPistolTSFModel17
@@ -110,6 +109,7 @@
   id: TSFMarineCorpsmanGear
   parent: TSFMarineGear
   equipment:
+    neck: ClothingNeckMantleCMO
     shoes: ClothingShoesBootsMagERT
     eyes: ClothingEyesHudMedical
     suitstorage: WeaponRifleLecter
@@ -139,6 +139,7 @@
   id: TSFMarineLeaderGear
   parent: TSFMarineGear
   equipment:
+    back: ClothingBackpackRadioTSF
     neck: Whistle
     head: ClothingHeadHelmetTSFLeader
     outerClothing: ClothingOuterArmorTSFLeader
@@ -147,11 +148,49 @@
     back:
       - BoxZiptie
       - MedkitCombatFilled
-      - MedkitCombatFilled
       - TSFBatonModel5
-      - Binoculars
+    belt:
+      - MagazineBoxLightRifleFMJ
+      - MagazineLightRifleFMJ
+      - MagazineLightRifleFMJ
       - AccessOverider
       - CrowbarRed
+      - MagazineBoxPistolFMJ
+      - MagazinePistolFMJ
+      - MagazinePistolFMJ
+
+- type: startingGear
+  id: TSFPhantomGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTSFElite
+    back: ClothingBackpackThermalCloakTSF
+    shoes: ClothingShoesBootsMagERT
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitTSFPhantom
+    id: TSFIdCardPhantom
+    ears: ClothingHudTSF
+    belt: ClothingBeltTSFMarineWebbing
+    pocket1: EnergyShield
+    pocket2: WeaponPistolTSFModel17
+    suitstorage: WeaponRifleL10
+  storage:
+    back:
+      - BoxZiptie
+      - MedkitCombatFilled
+      - TSFBatonModel5
+      - Hypospray
+      - WelderExperimental
+      - AccessOveriderUnlimited
+      - ToolDebug
+    belt:
+      - LightRifleHeavyMagazineFMJ
+      - MagazineDMRFMJ
+      - MagazineDMRFMJ
+      - MagazineDMRFMJ
+      - MagazineDMRFMJ
+      - MagazineBoxPistolAP
+      - MagazinePistolAP
+      - MagazinePistolAP
 
 - type: startingGear
   id: TSFMARSOCGear
@@ -161,8 +200,8 @@
     shoes: ClothingShoesBootsMagERT
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitTSFMARSOC
-    id: TSFIdCardElite
-    ears: ClothingHeadsetAltTSF
+    id: TSFIdCardMARSOC
+    ears: ClothingHudTSF
     belt: ClothingBeltTSFMarineWebbing
     pocket1: AccessOveriderUnlimited
     pocket2: WeaponPistolTSFModel17
@@ -191,12 +230,11 @@
     back: ClothingBackpackRadioTSF
     shoes: ClothingShoesBootsCombatFilled
     gloves: ClothingHandsGlovesCombat
-    eyes: ClothingEyesHudTSF
     belt: ClothingBeltTSFMarineWebbing
     head: ClothingHeadHatBeretTSFElite
     outerClothing: ClothingOuterVestWeb
     id: TSFIdCard
-    ears: ClothingHeadsetAltTSF
+    ears: ClothingHudTSF
     pocket1: WeaponShotgunGA12
     pocket2: TSFMindShieldImplanter
   storage:
