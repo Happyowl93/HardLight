@@ -31948,5 +31948,15 @@ Entries:
   id: 345901
   time: '2026-02-25T08:22:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3459
+- author: Conflee
+  changes:
+  - message: Added Meat, Trash, Snow, and Rocky Asteroids to space generation.
+    type: Add
+  - message: Increased the number of asteroids and wrecks in space by roughly 4 on
+      average (12 -> 16 min, 16 -> 20 max).
+    type: Tweak
+  id: 345301
+  time: '2026-02-25T08:28:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3453
 Order: -1
 
