@@ -281,7 +281,7 @@
     pryPowered: true
     useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
     playSoundOnDoafter: true
-    useSoundOn: /Audio/Items/jaws_pry.ogg
+    useSound: /Audio/Items/jaws_pry.ogg
   - type: Tag
     tags:
     - CyberHandItem
