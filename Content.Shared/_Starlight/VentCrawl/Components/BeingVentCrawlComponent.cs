@@ -1,10 +1,10 @@
-namespace Content.Shared.VentCraw.Components;
+namespace Content.Shared.VentCrawl.Components;
 
 /// <summary>
 /// A component indicating that the entity is in the process of moving through the venting process
 /// </summary>
 [RegisterComponent]
-public sealed partial class BeingVentCrawComponent : Component
+public sealed partial class BeingVentCrawlComponent : Component
 {
     /// <summary>
     /// The entity that contains this object in the vent
@@ -15,17 +15,17 @@ public sealed partial class BeingVentCrawComponent : Component
     /// <summary>
     /// Gets or sets up a holder entity
     /// </summary>
-    public EntityUid Holder 
+    public EntityUid Holder
     {
         get => _holder;
-        set 
+        set
         {
             if (_holder == value)
                 return;
-            
+
             if (value == default)
                 throw new ArgumentException("Holder cannot be default EntityUid");
-                
+
             _holder = value;
         }
     }

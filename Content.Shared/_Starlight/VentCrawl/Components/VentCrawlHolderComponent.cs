@@ -1,11 +1,11 @@
-using Content.Shared.VentCraw.Components;
+using Content.Shared.VentCrawl.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 
-namespace Content.Shared.VentCraw.Components;
+namespace Content.Shared.VentCrawl.Components;
 
 [RegisterComponent]
-public sealed partial class VentCrawHolderComponent : Component
+public sealed partial class VentCrawlHolderComponent : Component
 {
     private Container? _container;
     public Container Container
@@ -24,7 +24,7 @@ public sealed partial class VentCrawHolderComponent : Component
 
     [ViewVariables]
     public EntityUid? PreviousTube { get; set; }
-    
+
     [ViewVariables]
     public EntityUid? NextTube { get; set; }
 
@@ -41,7 +41,7 @@ public sealed partial class VentCrawHolderComponent : Component
     public Direction CurrentDirection { get; set; } = Direction.Invalid;
 
     [ViewVariables]
-    public bool IsExitingVentCraws { get; set; }
+    public bool IsExitingVentCrawls { get; set; }
 
     public static readonly TimeSpan CrawlDelay = TimeSpan.FromSeconds(0.5);
 
@@ -55,7 +55,7 @@ public sealed partial class VentCrawHolderComponent : Component
 }
 
 [ByRefEvent]
-public record struct VentCrawExitEvent
+public record struct VentCrawlExitEvent
 {
     public TransformComponent? holderTransform;
 }
