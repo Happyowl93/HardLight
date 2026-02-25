@@ -3,7 +3,7 @@
   mapName: 'Oasis'
   mapPath: /Maps/_Starlight/Stations/Oasis.yml
   minPlayers: 50
-  maxPlayers: 155
+  maxPlayers: 150
   stations:
     StarlightOasis:
       stationProto: StandardNanotrasenStation
@@ -54,7 +54,7 @@
             Detective: [ 1, 1 ]
             SecurityCadet: [ 5, 5 ]
             Brigmedic: [ 1, 1 ]
-            DutyOfficer: [ 2, 3 ]
+            DutyOfficer: [ 1, 2 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 4 ]
