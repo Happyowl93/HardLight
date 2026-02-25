@@ -1515,6 +1515,9 @@
   - BrigmedicBackpack
   - BrigmedicSatchel
   - BrigmedicDuffel
+  - CorpsmanBackpack # Starlight
+  - CorpsmanSatchel # Starlight
+  - CorpsmanDuffel # Starlight
   - LeatherSatchel # starlight
 
 - type: loadoutGroup
@@ -1537,6 +1540,8 @@
   - BrigmedicHud
   - BrigmedicEyePatchHud # Starlight
   - BrigmeicGlassesPrescription # Starlight
+  - CorpsmanGlasses # Starlight
+  - CorpsmanHud # Starlight
 
 - type: loadoutGroup
   id: BrigmedicBelt

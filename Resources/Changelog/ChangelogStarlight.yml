@@ -31743,5 +31743,333 @@ Entries:
   id: 339701
   time: '2026-02-23T20:06:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3397
+- author: SiTW
+  changes:
+  - message: Included paramedics in the mindshielded section in revolutionary guidebook.
+    type: Tweak
+  id: 343601
+  time: '2026-02-23T21:00:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3436
+- author: Conflee
+  changes:
+  - message: Changed Toxic Gas Grenades to Acidic Gas Grenades so you are no longer
+      buffing the people you're trying to gas. Now contains Sulfuric Acid, and does
+      19-20 caustic damage.
+    type: Fix
+  id: 344301
+  time: '2026-02-24T12:25:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3443
+- author: XoanJackal
+  changes:
+  - message: Fixed the station AI audio overlap for when power is restored.
+    type: Fix
+  id: 342901
+  time: '2026-02-24T12:30:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3429
+- author: neomoth
+  changes:
+  - message: Added more killsigns that I forgot to add last time.
+    type: Add
+  id: 344601
+  time: '2026-02-24T12:33:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3446
+- author: Opitech
+  changes:
+  - message: Fixed uncluwning not working correctly.
+    type: Fix
+  id: 344801
+  time: '2026-02-24T12:37:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3448
+- author: Makeshift
+  changes:
+  - message: (Elkridge) Nullspace Anchors to the Vault and Armory.
+    type: Add
+  - message: (Elkridge) Deep fryer to kitchen.
+    type: Add
+  - message: (Elkridge) Brigmed doors to brigmed.
+    type: Add
+  - message: (Elkridge) An additional paramed locker, to match the two slots that
+      Elkridge has.
+    type: Add
+  - message: (Elkridge) TEG has been reworked to match the current upstream version
+      of it.
+    type: Tweak
+  - message: (Elkridge) All of chemistry is now powered by it's own APC.
+    type: Fix
+  id: 343501
+  time: '2026-02-24T12:40:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3435
+- author: Conflee
+  changes:
+  - message: Updated Box, Cog, Fland, Kiloton, and Space Mall to include; New Brigmedic
+      Airlocks, extra room in Chem for plumbing, deep fryers, protection anchors in
+      vault and armory, electrolyzers in atmos, and a CO2 miner on Kiloton specifically.
+    type: Tweak
+  id: 343701
+  time: '2026-02-24T12:45:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3437
+- author: Shades
+  changes:
+  - message: Gives Magillitis Serum Implant to syndicate agents...
+    type: Add
+  - message: Changed gorilla stun from 50 to 20 (Rampaging Gorilla get 40 instead
+      of 50).
+    type: Tweak
+  - message: Add Gorillas have a 10% chance to AMPUTATE A LIMB on hit.
+    type: Add
+  - message: Fix Gorilla having stun slowndown when they should been immune.
+    type: Fix
+  - message: 'Add a new syndicate item: Explosive Collar... now... i want to play
+      a game.'
+    type: Add
+  id: 340601
+  time: '2026-02-24T12:49:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3406
+- author: BombasterDS, deltanedas
+  changes:
+  - message: Tape recorders and cassettes can now be crafted in autolathes for recording
+      crew speech.
+    type: Add
+  id: 341001
+  time: '2026-02-24T13:22:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3410
+- author: CrazyPhantom
+  changes:
+  - message: Added TTS to tape recorder playbacks.
+    type: Add
+  id: 341002
+  time: '2026-02-24T13:22:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3410
+- author: wonderfulnewworld, Killer Tamashi
+  changes:
+  - message: Adds a Corpsman-themed Backpack, Duffel, and Satchel to Brigmedic's loadout.
+    type: Add
+  - message: Adds a security bio mask. HoS, Warden, and Brigmed can choose it on loadout.
+      (Requires 60hr Brigmed time to be used by HoS/Ward.).
+    type: Add
+  - message: Brigmed now has a "Tactical Jet Injector." It's slightly faster than
+      the advanced jet injector, but only has *10* capacity.
+    type: Add
+  - message: To be in line with [Paramedic additions](https://github.com/ss14Starlight/space-station-14/pull/2220),
+      their belts can now hold Medkits, Body Bags, and the Paramedic Knife. They do
+      *not* spawn with a Paramedic Knife, only Paramedics do. If they happen to find
+      one, it fits in their belt.
+    type: Add
+  - message: Brigmed now spawns with a lockable body bag in their belt.
+    type: Add
+  - message: Adds Corpsman-themed glasses and hud to Brigmed's loadout and their locker
+      (replacing a duplicate brigmed glasses when present). The glasses have been
+      added to the miscglasses objective.
+    type: Add
+  - message: Bridmedic now has a med-sec encryption key in their headset.
+    type: Add
+  - message: There is now a 50% chance that a med-sci encryption key will spawn in
+      CMO/RD's lockers respectively.
+    type: Add
+  - message: Security Officers and Duty Officers can now spawn with a tie. (Det tie
+      for them requires 10hr Detective time.).
+    type: Add
+  - message: Renamed Brigmed's headset to medical security headset.
+    type: Tweak
+  - message: Corpman's armored jacket now has a toggleable hood.
+    type: Tweak
+  - message: Warden now requires 4hr Duty Officer time and 16hr Sec Officer time instead
+      of 20hr Sec Officer time.
+    type: Tweak
+  - message: The Salvage Encryption Key steal objective has been renamed to Hybrid
+      Encryption Key, and now counts Salvage, Med-sci, Med-sec, and Station master
+      encryption keys. (The various jobs corresponding to those departments can no
+      longer get this objective.).
+    type: Tweak
+  - message: Brigmedic, once again, is obligated to wear their mask to work. Sanitation
+      is important.
+    type: Tweak
+  - message: Removed some glove options from Brigmedic's loadout, as their gloves
+      have infection resist, and they are both a medical professional and an officer.
+    type: Remove
+  id: 337501
+  time: '2026-02-24T14:00:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3375
+- author: Morty, Conflee
+  changes:
+  - message: Added 70 new hairstyles.
+    type: Add
+  id: 344101
+  time: '2026-02-24T15:44:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3441
+- author: Xoan
+  changes:
+  - message: Added Science SOP to the Guidebook.
+    type: Add
+  id: 344701
+  time: '2026-02-24T16:47:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3447
+- author: Xale
+  changes:
+  - message: Cooking ingredient containers such as flour bags now have examinable
+      contents when opened.
+    type: Tweak
+  - message: Olive oil and mayonnaise bottles are now closable, and no longer edible.
+    type: Tweak
+  id: 345001
+  time: '2026-02-24T17:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3450
+- author: Xale
+  changes:
+  - message: Condiments such as ketchup now restore a small amount of hunger
+    type: Tweak
+  id: 345101
+  time: '2026-02-24T17:43:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3451
+- author: Ohelig
+  changes:
+  - message: 'Cog: Adds APC to substation East of TEG burn to fix unpowered door and
+      airlock.'
+    type: Fix
+  id: 346101
+  time: '2026-02-25T05:51:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3461
+- author: teapoterror
+  changes:
+  - message: Fixed the new Soviet Dungeon spawning the Old Rooms.
+    type: Fix
+  id: 345701
+  time: '2026-02-25T05:57:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3457
+- author: CawsForConcern
+  changes:
+  - message: (Beta) Secret gamemode weights for traitor-like modes (Traitor, Extended,
+      Vampires, Changelings, Vamptraitorling) decreased from 65% to 55%.
+    type: Tweak
+  - message: (Beta) Secret gamemode weights for PvP-like modes (NukeOps, Zombies,
+      Zombieteors, Revolutionaries, Xenoborgs) increased slightly from intended 25%
+      to 28%.
+    type: Tweak
+  id: 345901
+  time: '2026-02-25T08:22:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3459
+- author: Conflee
+  changes:
+  - message: Added Meat, Trash, Snow, and Rocky Asteroids to space generation.
+    type: Add
+  - message: Increased the number of asteroids and wrecks in space by roughly 4 on
+      average (12 -> 16 min, 16 -> 20 max).
+    type: Tweak
+  id: 345301
+  time: '2026-02-25T08:28:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3453
+- author: Conflee
+  changes:
+  - message: Enabled Silicon Liberation for multiple subgamerules with a 20% rate
+      to avoid oversaturation.
+    type: Add
+  id: 345601
+  time: '2026-02-25T08:34:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3456
+- author: Shades
+  changes:
+  - message: Added War Music (When nukies declear war... prepare yourself... with
+      some music!).
+    type: Add
+  - message: WarOps Auto-Trigger Gamma.
+    type: Add
+  - message: Nukies Losing will Auto-Trigger Green Alert.
+    type: Tweak
+  id: 345501
+  time: '2026-02-25T09:45:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3455
+- author: Scarlet Lightweaver
+  changes:
+  - message: The Destory beams now carry thier iconic gunshot sound effect!.
+    type: Tweak
+  id: 344001
+  time: '2026-02-25T10:56:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3440
+- author: Jhrushbe
+  changes:
+  - message: Added CVars to the nuclear reactor. As a consequence, the nuclear reactor's
+      behavior has been significantly altered.
+    type: Add
+  - message: Added the unlimited range bug back to the nuclear reactor monitor. Can
+      only be activated by an admin.
+    type: Add
+  - message: Added rudimentary particles to the nuclear reactor and gas turbine.
+    type: Add
+  - message: Added a damaged sound to the gas turbine.
+    type: Add
+  - message: The nuclear reactor's default maximum safe thermal power has been increased
+      from 10MW to 20MW.
+    type: Tweak
+  - message: The nuclear reactor and gas turbine now agree on the definition of a
+      watt.
+    type: Tweak
+  - message: Reworked nuclear reactor and gas turbine prototypes.
+    type: Tweak
+  - message: Gas turbine repairs will now automatically repeat.
+    type: Tweak
+  - message: The nuclear reactor's UI will now show the target on all views.
+    type: Tweak
+  - message: Broke up the guidebook entry for the nuclear reactor so that it is easier
+      to read.
+    type: Tweak
+  - message: Hot reactor rods will now heat the room according to the gas's heat capacity,
+      this also makes them much stronger.
+    type: Tweak
+  - message: A nuclear meltdown is now reversible by an admin.
+    type: Tweak
+  - message: Nuclear reactor prefabs will now auto-apply when selected.
+    type: Tweak
+  - message: Reactor parts are no longer deleted when inserted into the nuclear reactor.
+      The plutonium ghost role description has been changed to reflect this.
+    type: Tweak
+  - message: Fixed a bug where the gas turbine would spam popups when trying to repair
+      without a blade/stator.
+    type: Fix
+  - message: Fixed a bug where the gas turbine would show give the correct popups
+      while being repaired.
+    type: Fix
+  - message: Fixed a bug where the nuclear reactor would show the wrong popup when
+      attempting to anchor in an invalid position.
+    type: Fix
+  - message: Fixed a bug where the nuclear reactor's UI would be non-functional in
+      expeditions.
+    type: Fix
+  - message: Fixed a bug where the nuclear reactor and gas turbine would be unable
+      to sound alarms after being unanchored.
+    type: Fix
+  - message: Definitively fixed a bug where a melted-down nuclear reactor would use
+      ammonia to cut holes in space-time.
+    type: Fix
+  - message: The rejuvenate command will now reset nuclear reactors and gas turbines.
+    type: Add
+  - message: Removed the mention of target view in the nuclear reactor's guidebook.
+    type: Remove
+  - message: Fixed a bug where the nuclear reactor would not delete the parts inside
+      it after a meltdown.
+    type: Fix
+  - message: Fixed a bug where the nuclear reactor would leak heat into its surroundings.
+    type: Fix
+  - message: Fixed a bug where the fuel rod smite would not correctly polymorph the
+      target, at the sacrifice of some VFX.
+    type: Fix
+  id: 340901
+  time: '2026-02-25T11:13:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3409
+- author: CrazyPhantom
+  changes:
+  - message: Reactor and turbine flatpacks now come in a crate.
+    type: Tweak
+  - message: Turbines parts sold separately (This currently requires welding turbines
+      after putting blade and stator in).
+    type: Tweak
+  - message: More variants of Turbines and Reactors for mappers.
+    type: Add
+  - message: Flatpacked small turbine and small reactor for mappers/convenience.
+    type: Add
+  - message: Flatpack crate for small turbine and small reactors for mappers/convenience.
+    type: Add
+  id: 340902
+  time: '2026-02-25T11:13:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3409
 Order: -1
 
