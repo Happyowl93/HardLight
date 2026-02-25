@@ -656,7 +656,7 @@
 
 # TSF
 - type: entity
-  parent: [ BaseTSFContraband, ClothingHeadHelmetHardsuitDecimus ]
+  parent: [BaseTSFContraband, ClothingHeadHelmetHardsuitDecimus]
   id: ClothingHeadHelmetHardsuitTSFMARSOC
   name: MARSOC helmet
   description: A helmet worn by marines of the Trans-Solar Federation's Marine Special Operations Command. Armored, space ready, and fireproof.

@@ -371,7 +371,7 @@
     job: Decimus
 
 - type: entity
-  parent: [IDCardStandard, BaseTSFContraband]
+  parent: [BaseTSFContraband, IDCardStandard]
   id: TSFIdCard
   name: TSF ID card
   components:
@@ -391,7 +391,7 @@
     jobTitle: job-title-tsf-trader
 
 - type: entity
-  parent: [IDCardStandard, BaseTSFContraband]
+  parent: [BaseTSFContraband, IDCardStandard]
   id: TSFIdCardMarine
   name: dog tags
   suffix: TSF

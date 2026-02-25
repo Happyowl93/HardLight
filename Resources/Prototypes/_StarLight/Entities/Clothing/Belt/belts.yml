@@ -362,7 +362,7 @@
     price: 900
 
 - type: entity
-  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseTSFContraband]
+  parent: [BaseTSFContraband, ClothingBeltStorageBase, ContentsExplosionResistanceBase]
   id: ClothingBeltTSFMarineWebbing
   name: federation combat webbing
   description: A tactical chest rig used by soldiers and marines of the Trans-Solar Federation. It's covered in pouches and attachment points.

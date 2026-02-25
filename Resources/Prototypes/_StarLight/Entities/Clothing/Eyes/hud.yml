@@ -249,7 +249,7 @@
           Heat: 0.95
 
 - type: entity
-  parent: [ClothingEyesBase, BaseTSFContraband]
+  parent: [BaseTSFContraband, ClothingEyesBase]
   id: ClothingEyesHudTSF
   name: TSF hud
   description: Visor with a built-in modern OCULUS array augments the wearer's vision.

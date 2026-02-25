@@ -144,7 +144,7 @@
       path: /Audio/_Starlight/Effects/Radio/deathsquad.ogg
 
 - type: entity
-  parent: [ClothingHeadsetAlt, BaseTSFContraband]
+  parent: [BaseTSFContraband, ClothingHeadsetAlt]
   id: ClothingHeadsetAltTSF
   name: Trans-Solar Marine Corps bowman headset
   description: An ergonomic combat headset used by the TSMC. Protects against loud noises.
