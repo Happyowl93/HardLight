@@ -31921,5 +31921,13 @@ Entries:
   id: 345101
   time: '2026-02-24T17:43:33.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3451
+- author: Ohelig
+  changes:
+  - message: 'Cog: Adds APC to substation East of TEG burn to fix unpowered door and
+      airlock.'
+    type: Fix
+  id: 346101
+  time: '2026-02-25T05:51:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3461
 Order: -1
 
