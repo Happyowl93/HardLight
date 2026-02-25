@@ -56,7 +56,7 @@
 - type: ghostTheme
   id: LizardPlushie
   name: Lizard Plushie
-  description: Weh.
+  description: Weh!
   colorizeable: true
   spriteSpecifier:
     sprite:
@@ -84,7 +84,7 @@
 - type: ghostTheme
   id: ScurretTheme
   name: Scurret
-  description: A Scurret, the most feared creature on the station.
+  description: A Scurret, legally distinct!.
   colorizeable: true
   spriteSpecifier:
     sprite:
