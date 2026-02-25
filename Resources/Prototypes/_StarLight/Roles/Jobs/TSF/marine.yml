@@ -12,13 +12,13 @@
   setPreference: false
   icon: JobIconTSF
   rules: job-rules-tsf-aligned
-  supervisors: job-supervisors-none
+  supervisors: job-supervisors-solgov
   canBeAntag: false
-  accessGroups:
-    - AllAccess
+  access:
+    - Solgov
   special:
     - !type:AddImplantSpecial
-      implants: [MindShieldImplant, DeathRattleImplantTSF]
+      implants: [TSFMindShieldImplant, DeathRattleImplantTSF]
 
 - type: job
   id: TSFMarineElite
@@ -33,13 +33,13 @@
   setPreference: false
   icon: JobIconTSF
   rules: job-rules-tsf-aligned
-  supervisors: job-supervisors-none
+  supervisors: job-supervisors-solgov
   canBeAntag: false
-  accessGroups:
-    - AllAccess
+  access:
+    - Solgov
   special:
     - !type:AddImplantSpecial
-      implants: [MindShieldImplant, DeathRattleImplantTSF]
+      implants: [TSFMindShieldImplant, DeathRattleImplantTSF]
 
 - type: startingGear
   id: TSFMarineGear
@@ -104,13 +104,13 @@
       - MagazineMagnum
 
 - type: startingGear
-  id: TSFEliteMarineGear
+  id: TSFMARSOCGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitTSFElite
     back: ClothingBackpackRadioTSF
     shoes: ClothingShoesBootsMagAdv
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitTSF
+    outerClothing: ClothingOuterHardsuitTSFMARSOC
     id: TSFIdCardElite
     ears: ClothingHeadsetAltTSF
     belt: ClothingBeltTSFMarineWebbing
@@ -123,11 +123,11 @@
       - CrowbarRed
       - MedkitCombatFilled
     belt:
-      - MagazineBoxRifleHP
-      - MagazineRifleM52HP
-      - MagazineRifleM52HP
-      - MagazineRifleM52HP
-      - MagazineRifleM52HP
+      - MagazineRifleM52FMJ
+      - MagazineRifleM52FMJ
+      - MagazineRifleM52FMJ
+      - MagazineRifleM52AP
+      - MagazineRifleM52AP
       - MagazineBoxMagnumSP
       - MagazineMagnum
       - MagazineMagnum
@@ -146,7 +146,7 @@
     id: TSFIdCard
     ears: ClothingHeadsetAltTSF
     pocket1: WeaponShotgunGA12
-    pocket2: MindShieldImplanter
+    pocket2: TSFMindShieldImplanter
   storage:
     back:
       - BoxSurvivalSecurity
@@ -171,7 +171,7 @@
     id: TSFIdCard
     ears: ClothingHeadsetAltTSF
     pocket1: LuxuryPen
-    pocket2: MindShieldImplanter
+    pocket2: TSFMindShieldImplanter
   storage:
     back:
       - BoxSurvival

@@ -269,7 +269,7 @@
 
 - type: randomHumanoidSettings
   id: TSFMarine
-  parent: EventHumanoidMindShielded
+  parent: EventHumanoid
   speciesBlacklist:
   - Arachnid
   - Diona
@@ -291,7 +291,7 @@
     - type: GhostRole
       name: ghost-role-information-tsf-marine-name
       description: ghost-role-information-tsf-marine-desc
-      rules: ghost-role-information-corporate-aligned-rules
+      rules: ghost-role-information-tsf-aligned-rules
       raffle:
         settings: default
       mindRoles:
@@ -306,8 +306,9 @@
       nameFormat: name-format-ert
     - type: AutoImplant
       implants:
+      - TSFMindShieldImplant
       - DeathRattleImplantTSF
-      - MindShieldImplant
+    - type: AntagImmune
 
 - type: randomHumanoidSettings
   id: TSFMarineLeader
@@ -332,7 +333,7 @@
       name: ghost-role-information-tsf-MARSOC-name
       job: TSFMarineElite
     - type: Loadout
-      prototypes: [ TSFEliteMarineGear ]
+      prototypes: [ TSFMARSOCGear ]
     - type: RandomMetadata
       nameSegments:
         - NamesMilitaryFirstLeader
@@ -340,6 +341,6 @@
       nameFormat: name-format-ert
     - type: AutoImplant
       implants:
+      - TSFMindShieldImplant
       - DeathRattleImplantTSF
       - DeathAcidifierImplant
-      - MindShieldImplant

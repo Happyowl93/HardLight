@@ -24,6 +24,12 @@ ghost-role-information-corporate-aligned-rules = You are [color={role-type-corpo
                                              You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                              You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
+ghost-role-information-tsf-aligned-rules = You are [color={role-type-tsf-aligned-color}][bold]{role-type-tsf-aligned-name}[/bold][/color].
+                                             You are to serve the interests of Solgov, even if they differ from the stations'. Remember, you do [color=red]NOT[/color] serve the crew.
+                                             You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+                                             You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
+                                             You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+
 
 ghost-role-information-nanotrasen-special-forces-name = NTSF Operative
 ghost-role-information-nanotrasen-special-forces-description = You are a NanoTrasen Special Forces Operative. Perform your assigned task.
