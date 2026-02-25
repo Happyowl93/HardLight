@@ -12,7 +12,6 @@
   # Starlight-start
   - type: Railroadable
   - type: SurgeryTarget
-  - type: ShoelaceTieable
   - type: LanguageKnowledge
     speaks:
     - GalacticCommon
