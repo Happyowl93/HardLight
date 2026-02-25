@@ -56,6 +56,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly SharedCuffableSystem _cuffable = default!; // Starlight
     [Dependency] private readonly AlertLevelSystem _alertLevel = default!; // SL
+    [Dependency] private readonly StationCrewCountSystem _stationCrewCount = default!; // Starlight
 
     private static readonly ProtoId<CurrencyPrototype> TelecrystalCurrencyPrototype = "Telecrystal";
     private static readonly ProtoId<TagPrototype> NukeOpsUplinkTagPrototype = "NukeOpsUplink";
@@ -417,7 +418,18 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     }
 
     private void DistributeExtraTc(Entity<NukeopsRuleComponent> nukieRule)
-    {
+    {   
+        var crewCount = _stationCrewCount.GetTotalCrewCount();
+
+        // TC scaling begins at threshold crew count of 80 and maxes out at 200
+        const int TcScaleStart = 80;
+        const int TcScaleCap = 200;
+
+        var clampedCrewCount =  Math.Clamp(crewCount, TcScaleStart, TcScaleCap);
+
+        // +1 bonus TC per 5 crew members
+        var scaledTc = (clampedCrewCount - TcScaleStart) / 5;
+
         var enumerator = EntityQueryEnumerator<StoreComponent>();
         while (enumerator.MoveNext(out var uid, out var component))
         {
@@ -430,7 +442,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             if (Transform(uid).MapID != Transform(outpost).MapID) // Will receive bonus TC only on their start outpost
                 continue;
 
-            _store.TryAddCurrency(new() { { TelecrystalCurrencyPrototype, nukieRule.Comp.WarTcAmountPerNukie } }, uid, component);
+            _store.TryAddCurrency(new() { { TelecrystalCurrencyPrototype, nukieRule.Comp.WarTcAmountPerNukie + scaledTc } }, uid, component);
 
             var msg = Loc.GetString("store-currency-war-boost-given", ("target", uid));
             _popupSystem.PopupEntity(msg, uid);
