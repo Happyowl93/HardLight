@@ -1,5 +1,4 @@
 using Content.Shared._Starlight.Shoelaces.Components;
-using Content.Shared._Starlight.Visibility.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Alert;
 using Content.Shared.Clothing;
@@ -34,7 +33,6 @@ public sealed class SharedShoelacesSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly SharedFacingFilterSystem _facingFilter = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly INetManager _net = default!;
@@ -69,7 +67,7 @@ public sealed class SharedShoelacesSystem : EntitySystem
                 var selfUntie = new Verb
                 {
                     Text = Loc.GetString("shoelaces-verb-untie"),
-                    Act = () => StartUntie(user, ent, ent.Comp, selfUntie: true),
+                    Act = () => StartUntie(user, ent, true),
                 };
 
                 args.Verbs.Add(selfUntie);
@@ -80,7 +78,7 @@ public sealed class SharedShoelacesSystem : EntitySystem
                 var assistUntie = new Verb
                 {
                     Text = Loc.GetString("shoelaces-verb-untie"),
-                    Act = () => StartUntie(user, ent, ent.Comp, selfUntie: false),
+                    Act = () => StartUntie(user, ent, false),
                 };
 
                 args.Verbs.Add(assistUntie);
@@ -200,17 +198,6 @@ public sealed class SharedShoelacesSystem : EntitySystem
             RemComp<ShoelaceTiedComponent>(parentUid);
             _popup.PopupPredicted(Loc.GetString("shoelaces-popup-tying-success-user"), args.Args.User, args.Args.User, PopupType.Medium);
             _popup.PopupPredicted(Loc.GetString("shoelaces-popup-tying-success-target", ("user", args.Args.User)), ent, parentUid, PopupType.MediumCaution);
-            if (_net.IsServer)
-            {
-                var othersFilter = _facingFilter.FacingPvsExcept(args.Args.User, except: args.Args.User);
-                othersFilter.RemovePlayerByAttachedEntity(ent);
-                _popup.PopupEntity(
-                    Loc.GetString("shoelaces-popup-tying-success-others", ("user", args.Args.User), ("target", ent.Owner)),
-                    ent,
-                    othersFilter,
-                    true,
-                    PopupType.MediumCaution);
-            }
         }
         else
         {
