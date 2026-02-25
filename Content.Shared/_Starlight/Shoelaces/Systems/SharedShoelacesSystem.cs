@@ -1,4 +1,5 @@
 using Content.Shared._Starlight.Shoelaces.Components;
+using Content.Shared._Starlight.Visibility.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Alert;
 using Content.Shared.Clothing;
@@ -6,18 +7,18 @@ using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Localizations;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Content.Shared.Tag;
-using Content.Shared._Starlight.Visibility.Systems;
 using Content.Shared.Verbs;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
-using Robust.Shared.Network;
-using Content.Shared.Mobs.Components;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._Starlight.Shoelaces.Systems;
 
@@ -67,7 +68,7 @@ public sealed class SharedShoelacesSystem : EntitySystem
             {
                 var selfUntie = new Verb
                 {
-                    Text = Loc.GetString("shoelaces-verb-self-untie"),
+                    Text = Loc.GetString("shoelaces-verb-untie"),
                     Act = () => StartUntie(user, ent, ent.Comp, selfUntie: true),
                 };
 
@@ -78,7 +79,7 @@ public sealed class SharedShoelacesSystem : EntitySystem
             {
                 var assistUntie = new Verb
                 {
-                    Text = Loc.GetString("shoelaces-verb-assist-untie"),
+                    Text = Loc.GetString("shoelaces-verb-untie"),
                     Act = () => StartUntie(user, ent, ent.Comp, selfUntie: false),
                 };
 
@@ -146,7 +147,10 @@ public sealed class SharedShoelacesSystem : EntitySystem
         if (!_doAfter.TryStartDoAfter(doAfter))
             return;
 
-        _popup.PopupPredicted(Loc.GetString("shoelaces-popup-tying-start"), target, user, PopupType.Medium);
+        if (together)
+            _popup.PopupPredicted(Loc.GetString("shoelaces-popup-tying-together-start"), target, user, PopupType.Medium);
+        else
+            _popup.PopupPredicted(Loc.GetString("shoelaces-popup-tying-start"), target, user, PopupType.Medium);
     }
 
     private void OnTieDoAfterAttempt(Entity<ShoelaceTieableComponent> ent, ref DoAfterAttemptEvent<ShoelaceTieDoAfterEvent> args)
@@ -195,12 +199,15 @@ public sealed class SharedShoelacesSystem : EntitySystem
             Dirty(ent, ent.Comp);
             RemComp<ShoelaceTiedComponent>(parentUid);
             _popup.PopupPredicted(Loc.GetString("shoelaces-popup-tying-success-user"), args.Args.User, args.Args.User, PopupType.Medium);
+            _popup.PopupPredicted(Loc.GetString("shoelaces-popup-tying-success-target", ("user", args.Args.User)), ent, parentUid, PopupType.MediumCaution);
             if (_net.IsServer)
             {
+                var othersFilter = _facingFilter.FacingPvsExcept(args.Args.User, except: args.Args.User);
+                othersFilter.RemovePlayerByAttachedEntity(ent);
                 _popup.PopupEntity(
-                    Loc.GetString("shoelaces-popup-tying-success-target", ("user", args.Args.User)),
+                    Loc.GetString("shoelaces-popup-tying-success-others", ("user", args.Args.User), ("target", ent.Owner)),
                     ent,
-                    Filter.Entities(parentUid),
+                    othersFilter,
                     true,
                     PopupType.MediumCaution);
             }
@@ -225,12 +232,12 @@ public sealed class SharedShoelacesSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void StartUntie(EntityUid user, Entity<ShoelaceTieableComponent> target, ShoelaceTieableComponent tied, bool selfUntie)
+    private void StartUntie(EntityUid user, Entity<ShoelaceTieableComponent> target, bool selfUntie)
     {
         if (!CanManipulate(user, target))
             return;
 
-        var untieTime = selfUntie ? tied.UntieSelfTime : tied.UntieAssistTime;
+        var untieTime = selfUntie ? target.Comp.UntieSelfTime : target.Comp.UntieAssistTime;
         var doAfter = new DoAfterArgs(EntityManager,
             user,
             untieTime,
@@ -247,8 +254,7 @@ public sealed class SharedShoelacesSystem : EntitySystem
         if (!_doAfter.TryStartDoAfter(doAfter))
             return;
 
-        var key = selfUntie ? "shoelaces-popup-self-untie-start" : "shoelaces-popup-assist-untie-start";
-        _popup.PopupPredicted(Loc.GetString(key), target, user, PopupType.Medium);
+        _popup.PopupPredicted(Loc.GetString("shoelaces-popup-untie-start"), target, user, PopupType.Medium);
     }
 
     private void OnUntieDoAfterAttempt(Entity<ShoelaceTieableComponent> ent, ref DoAfterAttemptEvent<ShoelaceUntieDoAfterEvent> args)
@@ -289,20 +295,7 @@ public sealed class SharedShoelacesSystem : EntitySystem
             _alerts.ClearAlert(parent, ent.Comp.AlertTiedTogether);
             EnsureComp<ShoelaceTiedComponent>(parent);
         }
-        var key = args.SelfUntie ? "shoelaces-popup-self-untie-success" : "shoelaces-popup-assist-untie-success";
-        _popup.PopupPredicted(Loc.GetString(key), ent, args.Args.User, PopupType.Medium);
-
-        if (_net.IsServer)
-        {
-            var othersFilter = _facingFilter.FacingPvsExcept(args.Args.User, except: args.Args.User);
-            othersFilter.RemovePlayerByAttachedEntity(ent);
-            _popup.PopupEntity(
-                Loc.GetString("shoelaces-popup-tying-success-others", ("user", args.Args.User), ("target", ent.Owner)),
-                ent,
-                othersFilter,
-                true,
-                PopupType.MediumCaution);
-        }
+        _popup.PopupPredicted(Loc.GetString("shoelaces-popup-untie-success"), ent, args.Args.User, PopupType.Medium);
 
         args.Handled = true;
     }
@@ -343,11 +336,13 @@ public sealed class SharedShoelacesSystem : EntitySystem
 
     private void OnRemoveTiedAlert(Entity<ShoelaceTiedComponent> ent, ref RemoveTiedShoelacesAlertEvent args)
     {
-        if (args.Handled)
+        if (args.Handled || ent.Comp.TiedShoes is not { } tiedShoes)
             return;
 
-        if (ent.Comp.TiedShoes != null)
+        if (!tiedShoes.Comp.Tied)
             StartTie(ent, ent.Comp.TiedShoes.Value, false);
+        else if (tiedShoes.Comp.TiedTogether)
+            StartUntie(ent, ent.Comp.TiedShoes.Value, true);
         args.Handled = true;
     }
 

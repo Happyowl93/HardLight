@@ -11,5 +11,8 @@ alerts-surge-desc = You have increased stamina regeneration and resistance [colo
 alerts-zoomies-name = [color=lightblue]Zoomies!![/color]
 alerts-zoomies-desc = You have increased movement speed [color=red]at the cost of increased thirst drain[/color]
 
+alerts-shoelaces-untied-name = [color=yellow]Shoelaces Untied[/color]
+alerts-shoelaces-untied-desc = Your shoelaces are untied. Sprinting may make you trip. Click to start tying.
+
 alerts-shoelaces-tied-name = [color=yellow]Shoelaces Tied[/color]
 alerts-shoelaces-tied-desc = Your shoelaces are tied together. Sprinting may make you trip. Click to start untying.
