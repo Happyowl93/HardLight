@@ -690,19 +690,15 @@
 
 # TSF
 - type: entity
-  parent: [ BaseTSFContraband, ClothingOuterHardsuitBase ]
-  id: ClothingOuterHardsuitTSF
+  parent: [ BaseTSFContraband, ClothingOuterHardsuitDecimus ]
+  id: ClothingOuterHardsuitTSFMARSOC
   name: MARSOC hardsuit
   description: A suit worn by marines of the Trans-Solar Federation's Marine Special Operations Command. Armored, space ready, and fireproof.
   components:
   - type: Sprite
-    sprite: _Starlight/Clothing/OuterClothing/Hardsuits/tsf.rsi
+    sprite: _Starlight/Clothing/OuterClothing/Hardsuits/tsf_marsoc.rsi
   - type: Clothing
-    sprite: _Starlight/Clothing/OuterClothing/Hardsuits/tsf.rsi
-  - type: ExplosionResistance
-    damageCoefficient: 0.2
-  - type: StaminaResistance
-    damageCoefficient: 0.75
+    sprite: _Starlight/Clothing/OuterClothing/Hardsuits/tsf_marsoc.rsi
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.5
   - type: FireProtection
@@ -715,18 +711,15 @@
         Piercing: 0.2
         Heat: 0.4
         Caustic: 0
-  - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    staminaModifier: 0.0
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepHeavy
       params:
         volume: -6
         variation: 0.09
-  - type: HeldSpeedModifier
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitTSF
+    clothingPrototype: ClothingHeadHelmetHardsuitTSFMARSOC
 
 #Thanatos (Starlight version of Deathsquad with enhanced stats)
 - type: entity

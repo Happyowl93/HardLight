@@ -44,10 +44,7 @@
       unequipDelay: 3
     - type: ShowJobIcons
     - type: ShowMindShieldIcons
-    - type: EyeProtection
-      protectionTime: 5
     - type: FlashImmunity
-    - type: ClothesNightVision
 
 - type: entity
   parent: ClothingHeadHelmetTSF
