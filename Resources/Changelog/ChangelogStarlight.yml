@@ -32071,5 +32071,12 @@ Entries:
   id: 340902
   time: '2026-02-25T11:13:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3409
+- author: Kirb
+  changes:
+  - message: Mind control Implant now costs 9tc, discount to 5.
+    type: Tweak
+  id: 347001
+  time: '2026-02-26T06:38:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3470
 Order: -1
 
