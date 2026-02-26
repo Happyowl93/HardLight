@@ -32144,5 +32144,15 @@ Entries:
   id: 336201
   time: '2026-02-26T15:13:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3362
+- author: RobinRoy06
+  changes:
+  - message: Added station crew count system which was from the AntagSelectionSystem.
+    type: Add
+  - message: Changed extra TC distruction after war declaration to provide bonus TC
+      based on amount of crew members.
+    type: Tweak
+  id: 346801
+  time: '2026-02-26T15:33:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3468
 Order: -1
 
