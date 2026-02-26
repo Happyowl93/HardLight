@@ -31897,5 +31897,179 @@ Entries:
   id: 344101
   time: '2026-02-24T15:44:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3441
+- author: Xoan
+  changes:
+  - message: Added Science SOP to the Guidebook.
+    type: Add
+  id: 344701
+  time: '2026-02-24T16:47:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3447
+- author: Xale
+  changes:
+  - message: Cooking ingredient containers such as flour bags now have examinable
+      contents when opened.
+    type: Tweak
+  - message: Olive oil and mayonnaise bottles are now closable, and no longer edible.
+    type: Tweak
+  id: 345001
+  time: '2026-02-24T17:38:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3450
+- author: Xale
+  changes:
+  - message: Condiments such as ketchup now restore a small amount of hunger
+    type: Tweak
+  id: 345101
+  time: '2026-02-24T17:43:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3451
+- author: Ohelig
+  changes:
+  - message: 'Cog: Adds APC to substation East of TEG burn to fix unpowered door and
+      airlock.'
+    type: Fix
+  id: 346101
+  time: '2026-02-25T05:51:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3461
+- author: teapoterror
+  changes:
+  - message: Fixed the new Soviet Dungeon spawning the Old Rooms.
+    type: Fix
+  id: 345701
+  time: '2026-02-25T05:57:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3457
+- author: CawsForConcern
+  changes:
+  - message: (Beta) Secret gamemode weights for traitor-like modes (Traitor, Extended,
+      Vampires, Changelings, Vamptraitorling) decreased from 65% to 55%.
+    type: Tweak
+  - message: (Beta) Secret gamemode weights for PvP-like modes (NukeOps, Zombies,
+      Zombieteors, Revolutionaries, Xenoborgs) increased slightly from intended 25%
+      to 28%.
+    type: Tweak
+  id: 345901
+  time: '2026-02-25T08:22:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3459
+- author: Conflee
+  changes:
+  - message: Added Meat, Trash, Snow, and Rocky Asteroids to space generation.
+    type: Add
+  - message: Increased the number of asteroids and wrecks in space by roughly 4 on
+      average (12 -> 16 min, 16 -> 20 max).
+    type: Tweak
+  id: 345301
+  time: '2026-02-25T08:28:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3453
+- author: Conflee
+  changes:
+  - message: Enabled Silicon Liberation for multiple subgamerules with a 20% rate
+      to avoid oversaturation.
+    type: Add
+  id: 345601
+  time: '2026-02-25T08:34:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3456
+- author: Shades
+  changes:
+  - message: Added War Music (When nukies declear war... prepare yourself... with
+      some music!).
+    type: Add
+  - message: WarOps Auto-Trigger Gamma.
+    type: Add
+  - message: Nukies Losing will Auto-Trigger Green Alert.
+    type: Tweak
+  id: 345501
+  time: '2026-02-25T09:45:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3455
+- author: Scarlet Lightweaver
+  changes:
+  - message: The Destory beams now carry thier iconic gunshot sound effect!.
+    type: Tweak
+  id: 344001
+  time: '2026-02-25T10:56:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3440
+- author: Jhrushbe
+  changes:
+  - message: Added CVars to the nuclear reactor. As a consequence, the nuclear reactor's
+      behavior has been significantly altered.
+    type: Add
+  - message: Added the unlimited range bug back to the nuclear reactor monitor. Can
+      only be activated by an admin.
+    type: Add
+  - message: Added rudimentary particles to the nuclear reactor and gas turbine.
+    type: Add
+  - message: Added a damaged sound to the gas turbine.
+    type: Add
+  - message: The nuclear reactor's default maximum safe thermal power has been increased
+      from 10MW to 20MW.
+    type: Tweak
+  - message: The nuclear reactor and gas turbine now agree on the definition of a
+      watt.
+    type: Tweak
+  - message: Reworked nuclear reactor and gas turbine prototypes.
+    type: Tweak
+  - message: Gas turbine repairs will now automatically repeat.
+    type: Tweak
+  - message: The nuclear reactor's UI will now show the target on all views.
+    type: Tweak
+  - message: Broke up the guidebook entry for the nuclear reactor so that it is easier
+      to read.
+    type: Tweak
+  - message: Hot reactor rods will now heat the room according to the gas's heat capacity,
+      this also makes them much stronger.
+    type: Tweak
+  - message: A nuclear meltdown is now reversible by an admin.
+    type: Tweak
+  - message: Nuclear reactor prefabs will now auto-apply when selected.
+    type: Tweak
+  - message: Reactor parts are no longer deleted when inserted into the nuclear reactor.
+      The plutonium ghost role description has been changed to reflect this.
+    type: Tweak
+  - message: Fixed a bug where the gas turbine would spam popups when trying to repair
+      without a blade/stator.
+    type: Fix
+  - message: Fixed a bug where the gas turbine would show give the correct popups
+      while being repaired.
+    type: Fix
+  - message: Fixed a bug where the nuclear reactor would show the wrong popup when
+      attempting to anchor in an invalid position.
+    type: Fix
+  - message: Fixed a bug where the nuclear reactor's UI would be non-functional in
+      expeditions.
+    type: Fix
+  - message: Fixed a bug where the nuclear reactor and gas turbine would be unable
+      to sound alarms after being unanchored.
+    type: Fix
+  - message: Definitively fixed a bug where a melted-down nuclear reactor would use
+      ammonia to cut holes in space-time.
+    type: Fix
+  - message: The rejuvenate command will now reset nuclear reactors and gas turbines.
+    type: Add
+  - message: Removed the mention of target view in the nuclear reactor's guidebook.
+    type: Remove
+  - message: Fixed a bug where the nuclear reactor would not delete the parts inside
+      it after a meltdown.
+    type: Fix
+  - message: Fixed a bug where the nuclear reactor would leak heat into its surroundings.
+    type: Fix
+  - message: Fixed a bug where the fuel rod smite would not correctly polymorph the
+      target, at the sacrifice of some VFX.
+    type: Fix
+  id: 340901
+  time: '2026-02-25T11:13:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3409
+- author: CrazyPhantom
+  changes:
+  - message: Reactor and turbine flatpacks now come in a crate.
+    type: Tweak
+  - message: Turbines parts sold separately (This currently requires welding turbines
+      after putting blade and stator in).
+    type: Tweak
+  - message: More variants of Turbines and Reactors for mappers.
+    type: Add
+  - message: Flatpacked small turbine and small reactor for mappers/convenience.
+    type: Add
+  - message: Flatpack crate for small turbine and small reactors for mappers/convenience.
+    type: Add
+  id: 340902
+  time: '2026-02-25T11:13:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3409
 Order: -1
 
