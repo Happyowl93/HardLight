@@ -42,6 +42,7 @@
         - id: AppraisalTool
         - id: EnergyCutlass
         - id: ClothingOuterCoatPirate
+        - id: Spyglass
 
 # First mate loadout (PirateFirstmateGear)
 - type: entity
@@ -181,3 +182,4 @@
         - id: ClothingNeckCloakPirateCap
         - id: ClothingOuterVestWeb
         - id: Cutlass
+        - id: Spyglass
