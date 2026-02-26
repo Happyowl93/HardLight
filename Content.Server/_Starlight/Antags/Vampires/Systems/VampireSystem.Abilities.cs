@@ -46,6 +46,7 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly EuiManager _euiMan = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly Content.Shared.Mind.SharedMindSystem _mind = default!;
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     private static readonly SoundSpecifier _biteSound = new SoundPathSpecifier("/Audio/Effects/bite.ogg");
     private static readonly SoundSpecifier _devourSound = new SoundPathSpecifier("/Audio/Effects/demon_consume.ogg");
     private readonly Dictionary<EntityUid, List<EntityUid>> _playerShadowSnares = new();
@@ -302,7 +303,8 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (target == uid
             || !HasComp<BloodstreamComponent>(target)
-            || !HasComp<HumanoidAppearanceComponent>(target))
+            || !HasComp<HumanoidAppearanceComponent>(target)  //TODO comment this out to let them drink from non-humanoid?
+            )
             return;
 
         if (IsInvalidDrinkTarget(uid, target))
@@ -333,7 +335,8 @@ public sealed partial class VampireSystem : EntitySystem
         if (!Exists(target)
             || target == uid
             || !HasComp<BloodstreamComponent>(target)
-                || !HasComp<HumanoidAppearanceComponent>(target)) //comment this out to let them drink from non-humanoid?
+            || !HasComp<HumanoidAppearanceComponent>(target) //TODO comment this out to let them drink from non-humanoid?
+            )
             return;
 
         if (IsInvalidDrinkTarget(uid, target))
@@ -371,7 +374,8 @@ public sealed partial class VampireSystem : EntitySystem
         if (!comp.FangsExtended
             || args.Args.Target == null
             || !HasComp<BloodstreamComponent>(args.Args.Target.Value)
-            || !HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value))
+            || !HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value)//TODO comment this out to let them drink from non-humanoid?
+            )
         {
             comp.IsDrinking = false;
             return;
@@ -398,12 +402,25 @@ public sealed partial class VampireSystem : EntitySystem
         var maxCanDrink = comp.MaxBloodPerTarget - drunkFromTarget;
         var actualSipAmount = MathF.Min(comp.SipAmount, maxCanDrink);
 
-        if (_blood.TryModifyBloodLevel(target, -actualSipAmount * 2))
+        //attempt to drain the target's blood level
+        if (_blood.TryModifyBloodLevel(target, -actualSipAmount * 2)) 
         {
+            //Blood level reduction success
             comp.DrunkBlood += (int)actualSipAmount;
-            comp.TotalBlood += (int)actualSipAmount;
+            
+            //Confirm target is a humanoid before progressing objectives
+            if (HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value)) 
+            {
+                comp.TotalBlood += (int)actualSipAmount;
+            ]
 
-//Add check for humanoid here so their progression doesn't change?
+            //Biting Damage
+            if (HasComp<DrinkDamage>(comp) //Check if DrinkDamage exists
+            {
+                //Little bit of additional damage to disincentivize blood donations
+                _damageableSystem.TryChangeDamage(target, comp.DrinkDamage, ignoreResistances: true, origin: uid);
+            }
+            
             RaiseLocalEvent(uid, new VampireProgressionChangedEvent());
 
             if (!comp.BloodDrunkFromTargets.ContainsKey(target))
@@ -451,6 +468,7 @@ public sealed partial class VampireSystem : EntitySystem
             }
         }
         else
+            //Blood level reduction failed
             comp.IsDrinking = false;
     }
 
@@ -527,12 +545,12 @@ public sealed partial class VampireSystem : EntitySystem
             var knockedDown = HasComp<KnockedDownComponent>(target);
 
             //TODO Add logic for target to get a pop up that they have memory loss
-
-            if (!_mind.TryGetMind(target, out var thrallMindId, out var thrallMind))
-                return;
-
-            if (_player.TryGetSessionById(thrallMind.UserId, out var session))
-                _euiMan.OpenEui(new VampireGlareEui(), session);
+            //Removed for now since this is contentious 
+            //if (!_mind.TryGetMind(target, out var MindId, out var Mind))
+            //    return;
+            //    
+            //if (_player.TryGetSessionById(Mind.UserId, out var session))
+            //    _euiMan.OpenEui(new VampireGlareEui(), session);
 
             // If target in front
             if (dot > 0.7f && !knockedDown)
