@@ -19,6 +19,12 @@ public sealed partial class VampireDrinkComponent : Component
     public DamageSpecifier DrinkDamage = new();
 
     [DataField]
-    public float SipAmount = 10f;
+    public float HumanoidSipAmount = 10f;
+    
+    [DataField]
+    public float NonHumanoidSipAmount = 5f;
+
+    [DataField]
+    public float DamageSpecifier MaxDrinkDamage = new();
     
 }
