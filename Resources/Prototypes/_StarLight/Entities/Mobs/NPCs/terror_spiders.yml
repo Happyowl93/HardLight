@@ -114,6 +114,8 @@
     speedModifier: 1.5
     useSound:
       path: /Audio/Items/crowbar.ogg
+    useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
+    playSoundOnDoafter: true
   - type: PassiveDamage
     allowedStates:
     - Alive
@@ -250,6 +252,8 @@
     speedModifier: 1.5
     useSound:
       path: /Audio/Items/crowbar.ogg
+    useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
+    playSoundOnDoafter: true
   - type: MovementSpeedModifier
     baseWalkSpeed : 3.00
     baseSprintSpeed : 5
@@ -322,6 +326,8 @@
     speedModifier: 1.5
     useSound:
       path: /Audio/Items/crowbar.ogg
+    useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
+    playSoundOnDoafter: true
   - type: MovementSpeedModifier
     baseWalkSpeed : 3.00
     baseSprintSpeed : 4.75
@@ -547,6 +553,8 @@
     speedModifier: 1.5
     useSound:
       path: /Audio/Items/crowbar.ogg
+    useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
+    playSoundOnDoafter: true
   - type: MovementSpeedModifier
     baseWalkSpeed : 3.00
     baseSprintSpeed : 3.75
