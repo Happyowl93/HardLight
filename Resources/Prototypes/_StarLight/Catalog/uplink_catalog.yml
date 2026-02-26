@@ -104,6 +104,7 @@
     - !type:BuyerJobCondition
       whitelist:
         - Musician
+        - Performer
         - HeadOfPersonnel
         - Captain
 
@@ -423,11 +424,11 @@
   name: uplink-mind-control-implant-name
   description: uplink-mind-control-implant-desc
   productEntity: MindControlImplanter
-  discountCategory: usualDiscounts
+  discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 5
   cost:
-    Telecrystal: 7
+    Telecrystal: 9
   categories:
     - UplinkDisruption
     - UplinkImplants

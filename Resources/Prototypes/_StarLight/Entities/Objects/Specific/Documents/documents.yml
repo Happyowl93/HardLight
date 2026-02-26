@@ -52,7 +52,7 @@
   name: classified corporate documents
   suffix: Do Not Map
   description: A set of highly classified documents containing Corporate Secrets.
-  parent: [ ImportantDocumentGeneric, BaseCommandContraband ]
+  parent: [ ImportantDocumentGeneric, BaseGrandTheftContraband ]
   components:
     - type: TextFilePaperContent
       fileName: classified_corporate_document_abductors.txt
@@ -64,7 +64,7 @@
   name: classified corporate documents
   suffix: Do Not Map
   description: A set of highly classified documents containing Corporate Secrets.
-  parent: [ ImportantDocumentGeneric, BaseCommandContraband ]
+  parent: [ ImportantDocumentGeneric, BaseGrandTheftContraband ]
   components:
     - type: TextFilePaperContent
       fileName: classified_corporate_document_decimus.txt
@@ -76,7 +76,7 @@
   name: classified corporate documents
   suffix: Do Not Map
   description: A set of highly classified documents containing Corporate Secrets.
-  parent: [ ImportantDocumentGeneric, BaseCommandContraband ]
+  parent: [ ImportantDocumentGeneric, BaseGrandTheftContraband ]
   components:
     - type: TextFilePaperContent
       fileName: classified_corporate_document_ninjas.txt
@@ -88,7 +88,7 @@
   name: classified corporate documents
   suffix: Do Not Map
   description: A set of highly classified documents containing Corporate Secrets.
-  parent: [ ImportantDocumentGeneric, BaseCommandContraband ]
+  parent: [ ImportantDocumentGeneric, BaseGrandTheftContraband ]
   components:
     - type: TextFilePaperContent
       fileName: classified_corporate_document_nukies.txt
@@ -100,7 +100,7 @@
   name: classified corporate documents
   suffix: Do Not Map
   description: A set of highly classified documents containing Corporate Secrets.
-  parent: [ ImportantDocumentGeneric, BaseCommandContraband ]
+  parent: [ ImportantDocumentGeneric, BaseGrandTheftContraband ]
   components:
     - type: TextFilePaperContent
       fileName: classified_corporate_document_romerol.txt
@@ -214,7 +214,7 @@
   name: USSP Secure Briefing
   suffix: Do Not Map
   description: A set of classified documents to inform new members of Security on the risks of USSP activity.
-  parent: [ ImportantDocumentGeneric, BaseSecurityContraband ]
+  parent: [ ImportantDocumentGeneric, BaseGrandTheftContraband ]
   components:
     - type: Item
       size: Small
@@ -228,7 +228,7 @@
   name: Changeling Secure Briefing
   suffix: Do Not Map
   description: A set of classified documents to inform new members of Security on the existance of Changelings.
-  parent: [ ImportantDocumentGeneric, BaseSecurityContraband ]
+  parent: [ ImportantDocumentGeneric, BaseGrandTheftContraband ]
   components:
     - type: Item
       size: Small
@@ -242,21 +242,21 @@
   name: Bright-Eyes Secure Briefing
   suffix: Do Not Map
   description: A set of classified documents to inform new members of Security on the existance of Bright-Eyes.
-  parent: [ ImportantDocumentGeneric, BaseSecurityContraband ]
+  parent: [ ImportantDocumentGeneric, BaseGrandTheftContraband ]
   components:
     - type: Item
       size: Small
     - type: TextFilePaperContent
       fileName: brief_sec_BrightEyes.txt
     - type: StealTarget
-      stealGroup: SecureKnowledgeSteal
+      stealGroup: BrighteyeSecureKnowledgeSteal
 
 - type: entity
   id: BriefDocumentVampires
   name: Vampires Secure Briefing
   suffix: Do Not Map
   description: A set of classified documents to inform new members of Security on the existance of Vampires.
-  parent: [ ImportantDocumentGeneric, BaseSecurityContraband ]
+  parent: [ ImportantDocumentGeneric, BaseGrandTheftContraband ]
   components:
     - type: Item
       size: Small
@@ -270,7 +270,7 @@
   name: Syndicate Agent Secure Briefing
   suffix: Do Not Map
   description: A set of classified documents to inform new members of Security on the existance of Syndicate Agents.
-  parent: [ ImportantDocumentGeneric, BaseSecurityContraband ]
+  parent: [ ImportantDocumentGeneric, BaseGrandTheftContraband ]
   components:
     - type: Item
       size: Small
@@ -284,7 +284,7 @@
   name: Wizard Secure Briefing
   suffix: Do Not Map
   description: A set of classified documents to inform new members of Security on the existance of Wizards.
-  parent: [ ImportantDocumentGeneric, BaseSecurityContraband ]
+  parent: [ ImportantDocumentGeneric, BaseGrandTheftContraband ]
   components:
     - type: Item
       size: Small
@@ -298,7 +298,7 @@
   name: Xenoborg Secure Briefing
   suffix: Do Not Map
   description: A set of classified documents to inform new members of Security on the existance of Xenoborgs.
-  parent: [ ImportantDocumentGeneric, BaseSecurityContraband ]
+  parent: [ ImportantDocumentGeneric, BaseGrandTheftContraband ]
   components:
     - type: Item
       size: Small
