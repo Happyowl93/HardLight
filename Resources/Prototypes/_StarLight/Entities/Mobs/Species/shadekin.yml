@@ -7,11 +7,11 @@
   components:
     - type: LanguageKnowledge
       speaks:
-      - GalacticCommon
-      - Marish
+        - GalacticCommon
+        - Marish
       understands:
-      - GalacticCommon
-      - Marish
+        - GalacticCommon
+        - Marish
     - type: Inventory
       speciesId: shadekin
     - type: CollectiveMind
@@ -72,6 +72,10 @@
       bloodlossHealDamage:
         types:
           Bloodloss: -0.25
+      bloodReferenceSolution:
+        reagents:
+          - ReagentId: DarkBlood
+            Quantity: 300
     - type: Flammable
       damage:
         types:

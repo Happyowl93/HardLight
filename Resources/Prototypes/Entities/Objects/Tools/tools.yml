@@ -447,6 +447,8 @@
     - Multitool
   - type: Prying
     enabled: false
+    useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
+    playSoundOnDoafter: true
   - type: Tool
     qualities:
       - Screwing

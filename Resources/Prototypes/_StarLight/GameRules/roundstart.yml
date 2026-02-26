@@ -30,7 +30,7 @@
     - id: Xenoborgs
       prob: 0.08 # Starlight. To account for their secret mode being lowered.
     - id: Brighteye
-      prob: 0.05
+      prob: 0.07
     - id: SiliconLiberation
       prob: 0.2
 
@@ -51,7 +51,7 @@
     - id: Xenoborgs
       prob: 0.08 # Starlight. To account for their secret mode being lowered.
     - id: Brighteye
-      prob: 0.05
+      prob: 0.07
 
 - type: entity
   parent: BaseGameRule
@@ -68,7 +68,7 @@
     - id: Xenoborgs
       prob: 0.08 # Starlight. To account for their secret mode being lowered.
     - id: Brighteye
-      prob: 0.05
+      prob: 0.07
 
 - type: entity
   parent: BaseGameRule
@@ -83,7 +83,7 @@
     - id: Xenoborgs
       prob: 0.08 # Starlight. To account for their secret mode being lowered.
     - id: Brighteye
-      prob: 0.05
+      prob: 0.07
 
 - type: entity
   parent: BaseGameRule
@@ -100,7 +100,7 @@
     - id: Xenoborgs # I think there's interesting roleplay opportunity if Xenoborgs spawn. You could willingly choose to get borged to prevent infection. I want to see how this plays out.
       prob: 0.08
     - id: Brighteye
-      prob: 0.05
+      prob: 0.07
 
 - type: entity
   parent: BaseGameRule
