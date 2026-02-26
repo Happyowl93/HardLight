@@ -58,7 +58,7 @@ public sealed partial class VampireComponent : Component
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public bool FangsExtended = false;
 
-    public float SipAmount = 10f;
+    //public float SipAmount = 10f; //moved to VampireDrinkComponent.cs
 
     /// <summary>
     /// Current blood fullness used instead of normal food needs.
