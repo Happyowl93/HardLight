@@ -32191,5 +32191,12 @@ Entries:
   id: 329401
   time: '2026-02-26T19:23:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3294
+- author: Ivomink
+  changes:
+  - message: Changed reptilians and moths the ability to have hair now.
+    type: Tweak
+  id: 332701
+  time: '2026-02-26T19:47:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3327
 Order: -1
 
