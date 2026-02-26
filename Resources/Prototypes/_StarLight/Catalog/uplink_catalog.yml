@@ -104,6 +104,7 @@
     - !type:BuyerJobCondition
       whitelist:
         - Musician
+        - Performer
         - HeadOfPersonnel
         - Captain
 
