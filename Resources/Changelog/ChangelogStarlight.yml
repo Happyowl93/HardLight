@@ -32119,5 +32119,30 @@ Entries:
   id: 343301
   time: '2026-02-26T12:35:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3433
+- author: wonderfulnewworld
+  changes:
+  - message: Added Performer, a new Service role! They're the Service Worker equivalent
+      to the *other* half of Service, serving directly under the Clown, Mime, and
+      Musicians. (And the HoP, of course.) Learn the basics of the performance arts,
+      join the Musicians' band, translate for the Mime, or help the Clown take over
+      the station.
+    type: Add
+  - message: Service Worker now has three sets of unique outfits, corresponding to
+      each of the departments they can work for. Bartender hand-me-downs, no more!
+      They can also wear Bartender, Botany, and Chef headwear now. Nice!.
+    type: Add
+  - message: Added Distinguished Clown attire for Skilled Clowns. (15 hours.).
+    type: Add
+  - message: Added all the new Service Worker/Performer attire to their respective
+      drobes. (BarDrobe, ChefDrobe, HyDrobe, Theatre.).
+    type: Add
+  - message: Service Worker now has Botany access, and gains Theatre access on Skeleton
+      Crew.
+    type: Tweak
+  - message: Service Worker can now spawn with the lizards of their bosses.
+    type: Tweak
+  id: 336201
+  time: '2026-02-26T15:13:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3362
 Order: -1
 
