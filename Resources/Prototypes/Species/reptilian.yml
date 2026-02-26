@@ -40,7 +40,7 @@
   #onlyWhitelisted: true // Starlight removal
   points:
     Hair:
-      points: 1
+      points: 1 # Starlight
       required: false
     FacialHair:
       points: 0
