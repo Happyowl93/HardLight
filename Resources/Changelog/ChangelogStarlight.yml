@@ -32093,5 +32093,31 @@ Entries:
   id: 345201
   time: '2026-02-26T06:57:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3452
+- author: Shades
+  changes:
+  - message: Added 1 new Objective for Bright-eyes.
+    type: Add
+  - message: Removed Organ Damage from Shadekin Core. (You can now change core without
+      getting damage).
+    type: Remove
+  - message: shadekins now bleed "Dark Blood", A Blood Type that comes from the dark...
+      with some effects.
+    type: Tweak
+  - message: Boost up Bright-eyes Event Chance.
+    type: Tweak
+  - message: Bluespace Raw Ores will not break anymore.
+    type: Tweak
+  - message: Bright-eyes breaks and cannot be mindshilded.
+    type: Tweak
+  - message: Dark Breacher does not need a Bright-eye core anymore and is its own
+      research.
+    type: Tweak
+  - message: All Secure Document are now under BaseGrandTheftContraband.
+    type: Tweak
+  - message: Improved RailroadCard Alert/UI.
+    type: Fix
+  id: 343301
+  time: '2026-02-26T12:35:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3433
 Order: -1
 
