@@ -32085,5 +32085,13 @@ Entries:
   id: 346901
   time: '2026-02-26T06:47:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3469
+- author: gabbl0
+  changes:
+  - message: Ion storms now have a chance to affect Thaven moods (25% chance to get
+      a new wildcard mood).
+    type: Add
+  id: 345201
+  time: '2026-02-26T06:57:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3452
 Order: -1
 
