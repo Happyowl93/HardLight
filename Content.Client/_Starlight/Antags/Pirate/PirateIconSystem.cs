@@ -9,8 +9,6 @@ public sealed class PirateIconSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
-    private static readonly ProtoId<FactionIconPrototype> _pirateIcon = "PirateFaction";
-
     public override void Initialize()
     {
         base.Initialize();
@@ -19,7 +17,7 @@ public sealed class PirateIconSystem : EntitySystem
 
     private void OnGetStatusIcons(EntityUid uid, PirateComponent component, ref GetStatusIconsEvent ev)
     {
-        if (_prototype.TryIndex(_pirateIcon, out var icon))
+        if (_prototype.TryIndex(component.StatusIcon, out var icon))
             ev.StatusIcons.Add(icon);
     }
 }
