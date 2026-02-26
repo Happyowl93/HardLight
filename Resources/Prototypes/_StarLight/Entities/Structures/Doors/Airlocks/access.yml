@@ -337,3 +337,33 @@
       "/Maps/_Starlight/Shuttles/widow.yml": 1
     addComponents:
     - type: NukeOpsShuttle
+
+# Pirate locked airlocks
+- type: entity
+  parent: AirlockHatchPirate
+  id: AirlockHatchPirateLocked
+  suffix: Pirate, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ BaseDoorElectronicsPirate ]
+
+- type: entity
+  parent: AirlockHatchSyndicate
+  id: AirlockHatchSyndicatePirateLocked
+  suffix: Pirate, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ BaseDoorElectronicsPirate ]
+
+- type: entity
+  parent: AirlockExternalGlass
+  id: AirlockExternalGlassPirateLocked
+  suffix: External, Glass, Pirate, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ BaseDoorElectronicsPirate ]
+  - type: Wires
+    layoutId: AirlockSecurity
