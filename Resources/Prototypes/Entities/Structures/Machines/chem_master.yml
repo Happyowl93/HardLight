@@ -6,9 +6,15 @@
   placement:
     mode: SnapgridCenter
   components:
+  # Starlight-start: Make ChemMaster rotatable.
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: true
+  # Starlight-end
   - type: Sprite
     sprite: Structures/Machines/mixer.rsi
-    snapCardinals: true
+    snapCardinals: false # Starlight-edit: allow non-cardinal rotation for ChemMaster to avoid conflict with 4 direction plumbing connector sprites
     layers:
     - state: mixer_empty
     - state: mixer_screens
@@ -100,7 +106,7 @@
   - type: SolutionContainerManager
     solutions:
       buffer:
-        maxVol: 10000 # Starlight: limited to 10000u for plumbing compatibility and realism
+        maxVol: 10000 # Starlight: limited to 10000u for plumbing compatibility and realismU
         canReact: false
   - type: DumpableSolution
     solution: buffer
