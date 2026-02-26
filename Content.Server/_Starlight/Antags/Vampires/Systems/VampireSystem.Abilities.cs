@@ -303,7 +303,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (target == uid
             || !HasComp<BloodstreamComponent>(target)
-            || !HasComp<HumanoidAppearanceComponent>(target)  //TODO comment this out to let them drink from non-humanoid?
+            //|| !HasComp<HumanoidAppearanceComponent>(target)  // comment this out to let them drink from non-humanoid?
             )
             return;
 
@@ -335,7 +335,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (!Exists(target)
             || target == uid
             || !HasComp<BloodstreamComponent>(target)
-            || !HasComp<HumanoidAppearanceComponent>(target) //TODO comment this out to let them drink from non-humanoid?
+            //|| !HasComp<HumanoidAppearanceComponent>(target) // comment this out to let them drink from non-humanoid?
             )
             return;
 
@@ -374,7 +374,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (!comp.FangsExtended
             || args.Args.Target == null
             || !HasComp<BloodstreamComponent>(args.Args.Target.Value)
-            || !HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value)//TODO comment this out to let them drink from non-humanoid?
+            //|| !HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value)// comment this out to let them drink from non-humanoid?
             )
         {
             comp.IsDrinking = false;
@@ -399,11 +399,59 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        var maxCanDrink = comp.MaxBloodPerTarget - drunkFromTarget;
-        var actualSipAmount = MathF.Min(comp.SipAmount, maxCanDrink);
+        if (_damageableSystem.TryGetDamageGreaterThan(target, comp.MaxDrinkDamage) //TODO test this
+        {
+            _popup.PopupEntity(Loc.GetString("vampire-target-sickly"), uid, uid, Shared.Popups.PopupType.MediumCaution);
+            comp.IsDrinking = false;
+            return;
+        }
 
+        var sipInefficiency
+        var sipAmount
+        
+        if (HasComp<HumanoidEfficiency>(comp)
+            && HasComp<NonHumanoidEfficiency>(comp)
+        if (HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value))
+        {
+            if (HasComp<HumanoidEfficiency>(comp) && HasComp<SipAmount>(comp))
+            {
+                if (comp.HumanoidEfficiency <= 0) //Lets not divide by zero
+                {
+                    return;
+                    comp.IsDrinking = false;
+                }
+                sipInefficiency = 1 / comp.HumanoidEfficiency;
+                sipAmount = comp.SipAmount;
+            }
+            else //fall back to original hard-coded vlue
+            {
+                sipInefficiency = 2;
+                sipAmount = 10;
+            }
+        }
+        else
+        {
+            if (HasComp<NonHumanoidEfficiency>(comp) && HasComp<SipAmount>(comp))
+                if (comp.NonHumanoidEfficiency <= 0) // && comp.HumanoidEfficiency <= 0)
+                {
+                    return;
+                    comp.IsDrinking = false;
+                }
+                sipInefficiency = 1 / comp.NonHumanoidEfficiency;
+                sipAmount = comp.SipAmount; // * (comp.NonHumanoidEfficiency / comp.HumanoidEfficiency); //had the idea to scale the drinking amount for animals, but I don't like the idea anymore
+            }
+            else //fall back to original system where drinking from animals was not allowed
+            {
+                return;
+                comp.IsDrinking = false;
+            }
+        }
+
+        var maxCanDrink = comp.MaxBloodPerTarget - drunkFromTarget;
+        var actualSipAmount = MathF.Min(SipAmount, maxCanDrink);
+        
         //attempt to drain the target's blood level
-        if (_blood.TryModifyBloodLevel(target, -actualSipAmount * 2)) 
+        if (_blood.TryModifyBloodLevel(target, -actualSipAmount * sipInefficiency)) 
         {
             //Blood level reduction success
             comp.DrunkBlood += (int)actualSipAmount;
@@ -415,8 +463,8 @@ public sealed partial class VampireSystem : EntitySystem
             ]
 
             //Biting Damage
-            if (HasComp<DrinkDamage>(comp) //Check if DrinkDamage exists
-            {
+            if (HasComp<DrinkDamage>(comp)) //Check if DrinkDamage exists
+            {                
                 //Little bit of additional damage to disincentivize blood donations
                 _damageableSystem.TryChangeDamage(target, comp.DrinkDamage, ignoreResistances: true, origin: uid);
             }
@@ -544,7 +592,7 @@ public sealed partial class VampireSystem : EntitySystem
 
             var knockedDown = HasComp<KnockedDownComponent>(target);
 
-            //TODO Add logic for target to get a pop up that they have memory loss
+            //logic for target to get a pop up that they have memory loss
             //Removed for now since this is contentious 
             //if (!_mind.TryGetMind(target, out var MindId, out var Mind))
             //    return;
