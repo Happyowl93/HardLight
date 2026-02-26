@@ -1048,7 +1048,7 @@
     Telecrystal: 5
   categories:
   - UplinkDisruption
-
+    
 - type: listing
   id: UplinkRadioJammer
   name: uplink-radio-jammer-name
@@ -2122,7 +2122,7 @@
 # Job Specific
 
 - type: listing
-  id: uplinkGatfruitSeeds
+  id: UplinkGatfruitSeeds # Starlight
   name: uplink-gatfruit-seeds-name
   description: uplink-gatfruit-seeds-desc
   productEntity: GatfruitSeeds
@@ -2159,7 +2159,7 @@
         - Assistant
 
 - type: listing
-  id: uplinkNecronomicon
+  id: UplinkNecronomicon # Starlight
   name: uplink-necronomicon-name
   description: uplink-necronomicon-desc
   productEntity: BibleNecronomicon
@@ -2201,7 +2201,7 @@
     - Captain # Starlight
 
 - type: listing
-  id: uplinkRevolverCapGunFake
+  id: UplinkRevolverCapGunFake # Starlight
   name: uplink-revolver-cap-gun-fake-name
   description: uplink-revolver-cap-gun-fake-desc
   productEntity: RevolverCapGunFake
@@ -2217,11 +2217,12 @@
     whitelist:
     - Mime
     - Clown
+    - Performer # Starlight
     - HeadOfPersonnel # Starlight
     - Captain # Starlight
 
 - type: listing
-  id: uplinkBananaPeelExplosive
+  id: UplinkBananaPeelExplosive # Starlight
   name: uplink-banana-peel-explosive-name
   description: uplink-banana-peel-explosive-desc
   icon: { sprite: Objects/Specific/Hydroponics/banana.rsi, state: peel }
@@ -2237,6 +2238,7 @@
   - !type:BuyerJobCondition
     whitelist:
     - Clown
+    - Performer # Starlight
     - HeadOfPersonnel # Starlight
     - Captain # Starlight
 
@@ -2256,6 +2258,7 @@
   - !type:BuyerJobCondition
     whitelist:
     - Clown
+    - Performer # Starlight
     - HeadOfPersonnel # Starlight
     - Captain # Starlight
 
@@ -2280,7 +2283,7 @@
     - Captain # Starlight
 
 - type: listing
-  id: uplinkHotPotato
+  id: UplinkHotPotato # Starlight
   name: uplink-hot-potato-name
   description: uplink-hot-potato-desc
   discountCategory: usualDiscounts
@@ -2299,6 +2302,7 @@
     - Clown
     - Mime
     - ServiceWorker # Starlight
+    - Performer # Starlight
     - HeadOfPersonnel # Starlight
     - Captain # Starlight
 
@@ -2323,7 +2327,7 @@
       - Captain # Starlight
 
 - type: listing
-  id: uplinkProximityMine
+  id: UplinkProximityMine # Starlight
   name: uplink-proximity-mine-name
   description: uplink-proximity-mine-desc
   productEntity: WetFloorSignMineExplosive
@@ -2413,6 +2417,7 @@
     - Chef
     - Mime
     - ServiceWorker # Starlight
+    - Performer # Starlight
     - HeadOfPersonnel # Starlight
     - Captain # Starlight
 

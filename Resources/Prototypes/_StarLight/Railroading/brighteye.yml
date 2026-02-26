@@ -151,6 +151,30 @@
     - type: KeepAliveCondition
     - type: RailroadKeepEntityInTheDarkTask
 
+- type: entity
+  id: RRCardBrighteyeStealSecureKnowledge
+  parent: BrighteyeCondition
+  categories: [HideSpawnMenu]
+  components:
+    - type: RailroadCard
+      title: rr-brighteye-steal-secureknowledge
+      icon: 
+      iconColor: "#fd3f3f"
+      description: rr-brighteye-steal-secureknowledge-desc
+    - type: TargetObjective
+      title: objective-condition-steal-secureknowledge
+      icon:
+        sprite: /Textures/_Starlight/Objects/Specific/Documents/document.rsi
+        state: background_messy
+    - type: StealCondition
+      objectiveNoOwnerText: objective-condition-steal-title-no-owner
+      objectiveText: objective-condition-steal-title
+      descriptionText: objective-condition-steal-description
+      descriptionMultiplyText: objective-condition-thief-multiply-description
+      stealGroup: BrighteyeSecureKnowledgeSteal
+      checkStealAreas: true
+    - type: RailroadKeepEntityInTheDarkTask
+
 # Dark Station Path
 
 - type: entity
