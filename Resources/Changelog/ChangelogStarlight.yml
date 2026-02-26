@@ -32198,5 +32198,80 @@ Entries:
   id: 332701
   time: '2026-02-26T19:47:28.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3327
+- author: cvlancer, Jaime Walker, call.mebee, johnny012602, CawsForConcern, wonderfulnewworld
+  changes:
+  - message: (Oasis) Restores Oasis.
+    type: Add
+  - message: (Oasis) NC Trainer room and job slots added.
+    type: Add
+  - message: (Oasis) Magi locker added.
+    type: Add
+  - message: (Oasis) IAA lockers added.
+    type: Add
+  - message: (Oasis) Added new "Engie training room" to Engi.
+    type: Add
+  - message: (Oasis) Xenobio has been added... and then destroyed... can be restored
+      once Xenobio is balanced.
+    type: Add
+  - message: (Oasis) New maints hallway to south of science.
+    type: Add
+  - message: (Oasis) Wall mounted fuel dispenser added to robotics and Chem.
+    type: Add
+  - message: (Oasis) Wall mounted mass scanners added.
+    type: Add
+  - message: (Oasis) Protection anchor added to vault and armory.
+    type: Add
+  - message: (Oasis) Added deep fryer to kitchen.
+    type: Add
+  - message: (Oasis) Boxing ring moved.
+    type: Add
+  - message: (Oasis) Added Boxer slots.
+    type: Add
+  - message: (Oasis) Added Performer slots.
+    type: Add
+  - message: (Oasis) Gen pop now has Cargo bay, bar, medical, kitchen, solitary.
+    type: Add
+  - message: (Oasis) Added the abyss to gen pop mines.
+    type: Add
+  - message: (Oasis) Added a spider cave to gen pop mines.
+    type: Add
+  - message: (Oasis) Updates Oasis with a bunch of mapping requirements that have
+      come out since its removal, and those prior to it.
+    type: Tweak
+  - message: (Oasis) Gen pop Reworked.
+    type: Tweak
+  - message: (Oasis) Bridge slightly rearranged.
+    type: Tweak
+  - message: (Oasis) Court room and EVA have swapped places..
+    type: Tweak
+  - message: (Oasis) Reworked ai core.
+    type: Tweak
+  - message: (Oasis) Nerfed AI cameras in maints and solars.
+    type: Tweak
+  - message: (Oasis) Nerfed AI cameras in dorms.
+    type: Tweak
+  - message: (Oasis) Teg and Main engine now both fill into the same SMES despite
+      being in two different locations.
+    type: Tweak
+  - message: (Oasis) Two atmospheric network monitors added to Atmos.
+    type: Tweak
+  - message: (Oasis) Shittle construction area slightly reworked to make it easier
+      to get to space.
+    type: Tweak
+  - message: (Oasis) QM office reworked.
+    type: Tweak
+  - message: (Oasis) Nerfed some of the reinforced walls to normal walls.
+    type: Tweak
+  - message: (Oasis) Cargo now has piping to refill cargo shuttle. (CARGO SHUTTLE
+      NOT CHANGED).
+    type: Tweak
+  - message: (Oasis) Security shuttle now wired to be able to fill security briggle.
+      (SECURITY BRIGGLE NOT CHANGED).
+    type: Tweak
+  - message: (Oasis) Removed Brigmed chem locker.
+    type: Remove
+  id: 346001
+  time: '2026-02-26T20:59:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3460
 Order: -1
 
