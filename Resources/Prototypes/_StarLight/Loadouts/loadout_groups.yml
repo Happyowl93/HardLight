@@ -551,6 +551,7 @@
     - SalvagePDA
     - VeteranSalvagePDA
 
+# Service
 # Mime
 - type: loadoutGroup
   id: MimeShoes
@@ -561,6 +562,61 @@
   - WhiteShoes
   - BlackShoes
   - RollerSkatesLoadout # Starlight
+
+# Service Worker
+- type: loadoutGroup
+  id: ServiceWorkerHead
+  name: loadout-group-serviceworker-head
+  minLimit: 0
+  loadouts:
+  - BartenderHead
+  - BartenderBowler
+  - BotanistHead
+  - BotanistBandana
+  - ChefHead
+
+- type: loadoutGroup
+  id: ServiceWorkerJumpsuit
+  name: loadout-group-serviceworker-jumpsuit
+  loadouts:
+  - ServiceWorkerBartenderJumpsuit
+  - ServiceWorkerBartenderJumpskirt
+  - ServiceWorkerBotanyJumpsuit
+  - ServiceWorkerBotanyJumpskirt
+  - ServiceWorkerChefJumpsuit
+  - ServiceWorkerChefJumpskirt
+
+# Performer
+- type: loadoutGroup
+  id: PerformerHead
+  name: loadout-group-performer-head
+  minLimit: 0
+  loadouts:
+  - JesterHat
+  - JesterAltHat
+  - MimeHead
+  - MimeFrenchBeret
+  - MimeCap
+
+- type: loadoutGroup
+  id: PerformerJumpsuit
+  name: loadout-group-performer-jumpsuit
+  loadouts:
+  - PerformerMusicianJumpsuit
+  - PerformerMusicianJumpskirt
+  - PerformerClownJumpsuit
+  - PerformerClownJumpskirt
+  - PerformerMimeJumpsuit
+  - PerformerMimeJumpskirt
+
+- type: loadoutGroup
+  id: PerformerJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieMusician
+  - LizardPlushieClown
+  - LizardPlushieMime
 
 # Boxer
 - type: loadoutGroup
@@ -666,22 +722,33 @@
     - ChemistHandLabeler
     - GoldenHandLabeler
 
+# Security
+- type: loadoutGroup
+  id: SecurityTie
+  name: loadout-group-security-tie
+  minLimit: 0
+  loadouts:
+    - SecurityRedNeckTie
+    - SecurityDetNeckTie
+
+# HoS/Ward Masks
+- type: loadoutGroup
+  id: SecurityMask
+  name: loadout-group-security-mask
+  minLimit: 0
+  loadouts:
+    - MaskGasSecurity
+    - BreathMaskMedicalSecurity
+    - MaskGasCorpsman
+
 # Brigmedic
 - type: loadoutGroup
   id: BrigmedicMask
   name: loadout-group-brigmedic-mask
-  minLimit: 0
   loadouts:
     - BrigmedicBreathMaskMedicalSecurity
-    - BrigmedicMaskGasSecurity
-
-- type: loadoutGroup
-  id: BrigmedicTie
-  name: loadout-group-brigmedic-tie
-  minLimit: 0
-  loadouts:
-    - BrigmedicRedNeckTie
-    - BrigmedicDetNeckTie
+    - MaskGasSecurity
+    - CorpsmanMaskGasCorpsman
 
 - type: loadoutGroup
   id: BrigmedicPDA
@@ -837,3 +904,4 @@
   loadouts:
   - SecGloves
   - SecGlovesFingerless
+  

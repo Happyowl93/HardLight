@@ -1,4 +1,6 @@
 # PLEASE, KEEP THIS FILE ALPHABETIZED
+- type: Tag
+  id: AnomalyCoreShadow
 
 - type: Tag
   id: AbductedTraitBackground
@@ -465,6 +467,9 @@
 
 - type: Tag
   id: ShellShotgunToz
+
+- type: Tag
+  id: Shield
 
 - type: Tag
   id: ShipWreck

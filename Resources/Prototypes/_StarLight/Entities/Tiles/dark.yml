@@ -59,7 +59,6 @@
       - !type:ModifyStatusEffect
         effectProto: StatusEffectTheDark
         time: 5
-        type: Add
 
 
 - type: entity

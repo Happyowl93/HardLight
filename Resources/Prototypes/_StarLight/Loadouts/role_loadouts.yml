@@ -142,7 +142,6 @@
   - BrigmedicHead
   - BrigmedicMask
   - BrigmedicJumpsuit
-  - BrigmedicTie
   - BrigmedicBackpack
   - BrigmedicOuterClothing
   - BrigmedicBelt
@@ -150,6 +149,7 @@
   - BrigmedicEyewear
   - BrigmedicPDA
   - BrigmedicBeaker
+  - SecurityTie
   - SecurityShoes
   - SecurityNonLethalWeapon
   - SecuritySidearm
@@ -169,9 +169,10 @@
   - SecurityBackpack
   - SecurityEyewear
   - DutyOfficerOuterClothing
+  - DutyOfficerBelt
+  - SecurityTie
   - SecurityShoes
   - SecurityGloves
-  - DutyOfficerBelt
   - SecurityNonLethalWeapon
   - SurvivalSecurity
   - Trinkets
@@ -198,6 +199,23 @@
     - Pins
     - Pens
     - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobPerformer
+  groups:
+  - GroupTankHarness
+  - PerformerHead
+  - PerformerJumpsuit
+  - CommonBackpack
+  - CivilianShoes
+  - Glasses
+  - Survival
+  - Trinkets
+  - Scarves
+  - Pins
+  - Pens
+  - PerformerJobTrinkets
+  - GroupSpeciesBreathTool
 
 # Wildcards
 - type: roleLoadout

@@ -96,7 +96,8 @@
   id: JobServiceWorker
   groups:
   - GroupTankHarness
-  - BartenderJumpsuit
+  - ServiceWorkerHead # Starlight
+  - ServiceWorkerJumpsuit # Starlight
   - CommonBackpack
   - CivilianShoes # 🌟Starlight🌟
   - Glasses
@@ -468,6 +469,7 @@
   id: JobHeadOfSecurity
   groups:
   - HeadofSecurityHead
+  - SecurityMask # Starlight
   - HeadofSecurityNeck
   - HeadofSecurityJumpsuit
   - SecurityBackpack
@@ -489,6 +491,7 @@
   id: JobWarden
   groups:
   - WardenHead
+  - SecurityMask # Starlight
   - WardenNeck # Starlight
   - WardenJumpsuit
   - SecurityBackpack
@@ -517,6 +520,7 @@
   - SecurityShoes
   - SecurityPDA
   - SecurityBelt
+  - SecurityTie # Starlight
   - SecurityNonLethalWeapon #Starlight
   - SecuritySidearm #Starlight
   - SurvivalSecurity
