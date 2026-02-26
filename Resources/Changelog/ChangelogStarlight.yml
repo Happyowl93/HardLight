@@ -32078,5 +32078,12 @@ Entries:
   id: 347001
   time: '2026-02-26T06:38:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3470
+- author: Tess the Evil
+  changes:
+  - message: Changed Shadekin light damage from 1 to 5.
+    type: Tweak
+  id: 346901
+  time: '2026-02-26T06:47:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3469
 Order: -1
 
