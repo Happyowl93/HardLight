@@ -21,6 +21,10 @@
     - type: VampireAction
       bloodToUnlock: 0
       bloodCost: 0
+      DrinkDamage:
+        types:
+          Cellular: 1
+          Piercing: 0.2
 
 - type: entity
   parent: BaseAction
