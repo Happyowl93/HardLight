@@ -21,6 +21,8 @@
     - type: VampireAction
       bloodToUnlock: 0
       bloodCost: 0
+      HumanoidEfficiency: 0.5 #amount of progression for a given amount of blood drained from target. 0 = cannot drink
+      NonHumanoidEfficiency: 0.25 #animals are far less efficient to drink from
       DrinkDamage:
         types:
           Cellular: 1
