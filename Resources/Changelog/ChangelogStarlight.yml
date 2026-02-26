@@ -32154,5 +32154,26 @@ Entries:
   id: 346801
   time: '2026-02-26T15:33:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3468
+- author: Makeshift
+  changes:
+  - message: (Plasma) Protection anchor to Vault and Armory.
+    type: Add
+  - message: (Plasma) Deep fryer to Kitchen.
+    type: Add
+  - message: (Plasma) Brigmed/Paramedic Door to Brigmed.
+    type: Add
+  - message: (Plasma) Chemistry locker from Brigmed.
+    type: Remove
+  - message: (Plasma) Dedicated APC to Artifact.
+    type: Add
+  - message: (Plasma) One light in Medical is no longer unpowered.
+    type: Fix
+  - message: (Plasma) Genpop + Security HV deterrence network actually works now.
+    type: Fix
+  - message: (Plasma) Additional misc fixes.
+    type: Fix
+  id: 346501
+  time: '2026-02-26T16:06:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3465
 Order: -1
 
