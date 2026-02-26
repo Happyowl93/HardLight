@@ -32175,5 +32175,14 @@ Entries:
   id: 346501
   time: '2026-02-26T16:06:55.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3465
+- author: Born Stellar
+  changes:
+  - message: Spooky sounds when prying open doors.
+    type: Add
+  - message: '"Syndicate jaws of life" now named "Jaws of DEATH".'
+    type: Tweak
+  id: 345801
+  time: '2026-02-26T16:20:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3458
 Order: -1
 
