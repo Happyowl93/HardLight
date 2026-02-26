@@ -19,5 +19,8 @@ public sealed partial class VampireActionComponent : Component
     public float BloodCost = 0f;
 
     [DataField]
+    public DamageSpecifier DrinkDamage = new();
+
+    [DataField]
     public ProtoId<VampireClassPrototype>? RequiredClass = null;
 }
