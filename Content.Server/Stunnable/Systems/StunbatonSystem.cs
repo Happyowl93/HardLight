@@ -17,10 +17,7 @@ using Content.Shared.Stunnable;
 using Content.Shared.CombatMode;
 using Content.Shared.Interaction;
 using Content.Shared.Tag;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Maths;
 using Robust.Shared.Timing;
 #endregion
 
@@ -72,11 +69,8 @@ namespace Content.Server.Stunnable.Systems
                 return;
 
             // Check cooldown (3 second delay between interactions)
-            if (entity.Comp.ShieldInteractionCooldowns.TryGetValue(args.User, out var lastInteractionTime))
-            {
-                if (_gameTiming.CurTime < lastInteractionTime + TimeSpan.FromSeconds(3))
-                    return; // Still on cooldown
-            }
+            if (_gameTiming.CurTime - entity.Comp.LastBashTime < entity.Comp.BashDelay)
+                return;
 
             // Check if shield is held in one of the user's hands by comparing transforms
             // If the shield is held, its parent transform should be the user entity
@@ -85,7 +79,7 @@ namespace Content.Server.Stunnable.Systems
                 return;
 
             // Update cooldown in component
-            entity.Comp.ShieldInteractionCooldowns[args.User] = _gameTiming.CurTime;
+            entity.Comp.LastBashTime = _gameTiming.CurTime;
 
             // Display message
             var userName = MetaData(args.User).EntityName;
