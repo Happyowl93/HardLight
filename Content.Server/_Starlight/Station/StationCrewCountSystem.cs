@@ -5,7 +5,7 @@ using Robust.Server.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
 
-namespace Content.Server.Station.Systems;
+namespace Content.Server._Starlight.Station;
 
 public sealed class StationCrewCountSystem : EntitySystem
 {
