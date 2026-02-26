@@ -1,1 +1,1 @@
-objective-issuer-pirate = [color=#c8a227]The Pirate Captain[/color]
+objective-issuer-pirate = [color=#c8a227]Pirate[/color]
