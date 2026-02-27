@@ -26,9 +26,16 @@
       NonHumanoidEfficiency: 0.25 #animals are far less efficient to drink from
       SipAmount: 10
       DrinkDamage:
-        types:
-          Cellular: 1
-          Piercing: 0.2
+        effects:
+          - !type:ModifyBleed
+            amount: 0.5
+          - !type:HealthChange
+            damage:
+              types:
+                Cellular: 1
+     #   types:
+     #     Cellular: 1
+     #     Piercing: 0.2
       MaxDrinkDamage: 
         types:
           Cellular: 10
