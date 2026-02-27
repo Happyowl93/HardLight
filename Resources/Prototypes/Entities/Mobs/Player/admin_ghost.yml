@@ -95,6 +95,7 @@
     followEntity: true
   - type: CargoOrderConsole
   - type: CrewMonitoringConsole
+    pagingEnabled: false
   - type: GeneralStationRecordConsole
     canDeleteEntries: true
     # Cosmatic Drift Record System-start

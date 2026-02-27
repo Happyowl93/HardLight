@@ -35,4 +35,28 @@ public sealed partial class CrewMonitoringWarpRequestMessage : BoundUserInterfac
         Coordinates = coordinates;
     }
 }
+
+[Serializable, NetSerializable]
+public enum CrewMonitorLayers
+{
+    /// <summary>
+    ///     Renders as black screen.
+    /// </summary>
+    Frame,
+    /// <summary>
+    ///     Renders as simple animated sreen.
+    /// </summary>
+    Powered,
+    /// <summary>
+    ///     When a patient is critial/dead.
+    /// </summary>
+    Alert,
+}
+
+[Serializable, NetSerializable]
+public enum CrewMonitorVisuals
+{
+    Powered,
+    Alert,
+}
 // Starlight-end
