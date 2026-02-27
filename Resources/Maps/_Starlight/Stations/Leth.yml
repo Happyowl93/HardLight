@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/27/2026 09:04:01
-  entityCount: 17585
+  time: 02/27/2026 19:08:52
+  entityCount: 17594
 maps:
 - 1
 grids:
@@ -7082,11 +7082,13 @@ entities:
             id: WoodTrimThinCornerNe
           decals:
             42: -23,-59
+            6277: -25,-28
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinCornerNw
           decals:
             43: -31,-59
+            6272: -31,-28
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinCornerSe
@@ -7131,6 +7133,9 @@ entities:
           decals:
             85: -7,-10
             86: -7,-9
+            6278: -25,-29
+            6279: -25,-30
+            6280: -25,-31
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -7159,6 +7164,10 @@ entities:
             75: -40,-13
             76: -41,-13
             77: -42,-13
+            6273: -30,-28
+            6274: -29,-28
+            6275: -27,-28
+            6276: -26,-28
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinLineS
@@ -7190,6 +7199,9 @@ entities:
             83: -5,-9
             84: -5,-10
             91: 28,-26
+            6269: -31,-31
+            6270: -31,-30
+            6271: -31,-29
         - node:
             color: '#211713FF'
             id: burnt1
@@ -11007,7 +11019,7 @@ entities:
       pos: 7.5,-88.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -158331.4
+      secondsUntilStateChange: -159124.1
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12265,7 +12277,7 @@ entities:
       pos: -11.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -71768.43
+      secondsUntilStateChange: -72561.12
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16302,6 +16314,13 @@ entities:
     - type: Transform
       pos: 47.40032,-48.423584
       parent: 2
+- proto: BookHowToSurvive
+  entities:
+  - uid: 17590
+    components:
+    - type: Transform
+      pos: -30.526415,-25.426136
+      parent: 2
 - proto: Bookshelf
   entities:
   - uid: 699
@@ -16457,7 +16476,7 @@ entities:
   - uid: 17487
     components:
     - type: Transform
-      pos: -23.542686,-30.219639
+      pos: -31.07329,-25.473011
       parent: 2
   - uid: 17546
     components:
@@ -43224,6 +43243,12 @@ entities:
     - type: Transform
       pos: -5.5226545,-39.59223
       parent: 2
+  - uid: 17589
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -30.5,-26.5
+      parent: 2
 - proto: ChemDispenser
   entities:
   - uid: 312
@@ -45861,6 +45886,13 @@ entities:
     components:
     - type: Transform
       pos: 4.5,-57.5
+      parent: 2
+- proto: DefaultStationBeaconPsychology
+  entities:
+  - uid: 2663
+    components:
+    - type: Transform
+      pos: -6.5,-41.5
       parent: 2
 - proto: DefaultStationBeaconQMRoom
   entities:
@@ -52250,6 +52282,11 @@ entities:
     components:
     - type: Transform
       pos: 24.5,-34.5
+      parent: 2
+  - uid: 17592
+    components:
+    - type: Transform
+      pos: -24.5,-30.5
       parent: 2
 - proto: filingCabinetRandom
   entities:
@@ -77971,11 +78008,6 @@ entities:
     - type: Transform
       pos: -22.5,-23.5
       parent: 2
-  - uid: 2663
-    components:
-    - type: Transform
-      pos: -22.5,-25.5
-      parent: 2
   - uid: 2665
     components:
     - type: Transform
@@ -77985,11 +78017,6 @@ entities:
     components:
     - type: Transform
       pos: -46.5,-26.5
-      parent: 2
-  - uid: 2680
-    components:
-    - type: Transform
-      pos: -22.5,-27.5
       parent: 2
   - uid: 2696
     components:
@@ -83837,6 +83864,13 @@ entities:
     - type: Transform
       pos: -41.36397,-7.148857
       parent: 2
+- proto: LampGold
+  entities:
+  - uid: 17588
+    components:
+    - type: Transform
+      pos: -31.522266,-25.051136
+      parent: 2
 - proto: LampInterrogator
   entities:
   - uid: 5605
@@ -84760,6 +84794,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 56.22331,1.7397343
       parent: 2
+  - uid: 17594
+    components:
+    - type: Transform
+      pos: -31.401415,-25.582386
+      parent: 2
 - proto: MachineAnomalyGenerator
   entities:
   - uid: 3702
@@ -85517,6 +85556,11 @@ entities:
     components:
     - type: Transform
       pos: 8.5,-3.5
+      parent: 2
+  - uid: 17501
+    components:
+    - type: Transform
+      pos: -23.5,-30.5
       parent: 2
 - proto: PaperCNCSheet
   entities:
@@ -86362,15 +86406,15 @@ entities:
     - type: Transform
       pos: -34.5,12.5
       parent: 2
-  - uid: 17500
+  - uid: 17591
     components:
     - type: Transform
-      pos: -31.5,-25.5
+      pos: -26.5,-30.5
       parent: 2
-  - uid: 17501
+  - uid: 17593
     components:
     - type: Transform
-      pos: -31.5,-30.5
+      pos: -24.5,-25.5
       parent: 2
 - proto: PowerCellHighPrinted
   entities:
@@ -89527,18 +89571,6 @@ entities:
     components:
     - type: Transform
       pos: 7.5,-40.5
-      parent: 2
-  - uid: 17479
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -29.5,-25.5
-      parent: 2
-  - uid: 17502
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -25.5,-25.5
       parent: 2
 - proto: RadiationCollectorFullTank
   entities:
@@ -93791,16 +93823,6 @@ entities:
     - type: Transform
       pos: -22.5,-23.5
       parent: 2
-  - uid: 6231
-    components:
-    - type: Transform
-      pos: -22.5,-25.5
-      parent: 2
-  - uid: 6232
-    components:
-    - type: Transform
-      pos: -22.5,-27.5
-      parent: 2
   - uid: 6233
     components:
     - type: Transform
@@ -96986,6 +97008,30 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 53.5,-67.5
+      parent: 2
+- proto: SofaFancyEndLeft
+  entities:
+  - uid: 6232
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -29.5,-30.5
+      parent: 2
+- proto: SofaFancyEndRight
+  entities:
+  - uid: 17479
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -31.5,-30.5
+      parent: 2
+- proto: SofaFancyMiddle
+  entities:
+  - uid: 17500
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -30.5,-30.5
       parent: 2
 - proto: SolidSecretDoor
   entities:
@@ -101835,6 +101881,11 @@ entities:
     - type: Transform
       pos: -8.5,-42.5
       parent: 2
+  - uid: 6231
+    components:
+    - type: Transform
+      pos: -31.5,-25.5
+      parent: 2
   - uid: 12088
     components:
     - type: Transform
@@ -101886,6 +101937,16 @@ entities:
     components:
     - type: Transform
       pos: -6.5,-40.5
+      parent: 2
+  - uid: 17586
+    components:
+    - type: Transform
+      pos: -30.5,-25.5
+      parent: 2
+  - uid: 17587
+    components:
+    - type: Transform
+      pos: -29.5,-25.5
       parent: 2
 - proto: TegCenter
   entities:
@@ -112641,6 +112702,11 @@ entities:
     - type: Transform
       pos: -42.5,-57.5
       parent: 2
+  - uid: 2680
+    components:
+    - type: Transform
+      pos: -22.5,-25.5
+      parent: 2
   - uid: 2685
     components:
     - type: Transform
@@ -113916,6 +113982,11 @@ entities:
     components:
     - type: Transform
       pos: -4.5,-45.5
+      parent: 2
+  - uid: 17502
+    components:
+    - type: Transform
+      pos: -22.5,-27.5
       parent: 2
   - uid: 17505
     components:
