@@ -49,7 +49,8 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
         while (consoles.MoveNext(out var id, out var console))
         {
             // Clear alert visuals after timeout.
-            if (_appearanceSystem.TryGetData(id, CrewMonitorVisuals.Alert, out bool alertShown) && alertShown &&
+            if (TryComp<AppearanceComponent>(id, out var appearance) &&
+                _appearanceSystem.TryGetData(id, CrewMonitorVisuals.Alert, out bool alertShown, appearance) && alertShown &&
                 _gameTiming.CurTime >= console.PagingVisualsTimeoutAt)
                 _appearanceSystem.SetData(id, CrewMonitorVisuals.Alert, false);
 
