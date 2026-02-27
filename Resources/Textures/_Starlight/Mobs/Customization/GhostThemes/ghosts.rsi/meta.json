@@ -122,7 +122,8 @@
     },
     {
       "name": "ghost-lizard-plushie",
-      "copyright": "Default Lizard Plushie greyscaled"
+      "copyright": "Default Lizard Plushie greyscaled",
+      "directions": 4
     },
     {
       "name": "ghost-mothroach",
