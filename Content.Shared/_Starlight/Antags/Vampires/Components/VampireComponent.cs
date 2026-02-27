@@ -63,7 +63,6 @@ public sealed partial class VampireComponent : Component
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public bool FangsExtended = false;
 
-    public float sipAmount = 10f;
 
     /// <summary>
     /// Current blood fullness used instead of normal food needs.
@@ -146,18 +145,6 @@ public sealed partial class VampireComponent : Component
 
     [DataField]
     public TimeSpan UpdateDelay = TimeSpan.FromSeconds(1);
-
-    [DataField]
-    public float humanoidEfficiency = 0.5f;
-
-    [DataField]
-    public float nonHumanoidEfficiency = 0f; //Default to zero incase the line was removed from the yml
-
-    [DataField]
-    public DamageSpecifier drinkDamage = new();
-
-    [DataField]
-    public DamageSpecifier maxDrinkDamage = new();
 }
 
 [RegisterComponent]

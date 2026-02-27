@@ -423,7 +423,7 @@ public sealed partial class VampireSystem : EntitySystem
         
         if (HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value))
         {
-            if (comp.humanoidEfficiency <= 0) //Lets not divide by zero
+            if (comp.VampireDrinkComponent.humanoidEfficiency <= 0) //Lets not divide by zero
             {
                 return;
                 comp.IsDrinking = false;
