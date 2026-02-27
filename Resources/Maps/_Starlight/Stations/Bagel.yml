@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/27/2026 21:13:47
-  entityCount: 26039
+  time: 02/27/2026 21:29:38
+  entityCount: 26038
 maps:
 - 1
 grids:
@@ -139473,17 +139473,6 @@ entities:
       - SurveillanceCameraEngineering
       nameSet: True
       id: Atmos Foyeur
-  - uid: 21198
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -30.5,35.5
-      parent: 2
-    - type: SurveillanceCamera
-      setupAvailableNetworks:
-      - SurveillanceCameraEngineering
-      nameSet: True
-      id: Atmos Storage
   - uid: 21199
     components:
     - type: Transform
