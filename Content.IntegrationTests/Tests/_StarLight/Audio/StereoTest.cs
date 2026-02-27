@@ -124,5 +124,7 @@ public sealed class StereoTest
 
         Assert.That(badFiles, Is.Empty, "Some audio is invalid:\n" + string.Join('\n', badFiles.Select(p => $"{p.Key}: {p.Value}"))
         );
+
+        await pair.CleanReturnAsync();
     }
 }
