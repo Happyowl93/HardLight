@@ -506,6 +506,10 @@
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
   - type: CrewMonitoringConsole
+    # Starlight START
+    pagingSoundParams:
+      maxDistance: 15 # Stationary consoles have a much longer audio range.
+    # Starlight END
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
