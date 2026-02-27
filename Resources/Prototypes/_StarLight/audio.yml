@@ -1,14 +1,3 @@
-- type: soundCollection
-  id: PhoneSpeak
-  files:
-    - /Audio/_Starlight/Machines/talk_phone1.ogg
-    - /Audio/_Starlight/Machines/talk_phone2.ogg
-    - /Audio/_Starlight/Machines/talk_phone3.ogg
-    - /Audio/_Starlight/Machines/talk_phone4.ogg
-    - /Audio/_Starlight/Machines/talk_phone5.ogg
-    - /Audio/_Starlight/Machines/talk_phone6.ogg
-    - /Audio/_Starlight/Machines/talk_phone7.ogg
-
 - type: ambientMusic
   id: NearTheDark
   sound:
@@ -44,14 +33,14 @@
 - type: soundCollection
   id: AmbienceTheDark
   files:
-    - /Audio/_Starlight/Ambiance/TheDark/dark1.ogg
-    - /Audio/_Starlight/Ambiance/TheDark/dark2.ogg
-    - /Audio/_Starlight/Ambiance/TheDark/dark3.ogg
+    - /Audio/_Starlight/Ambience/TheDark/dark1.ogg
+    - /Audio/_Starlight/Ambience/TheDark/dark2.ogg
+    - /Audio/_Starlight/Ambience/TheDark/dark3.ogg
 
 - type: soundCollection
   id: AmbienceNukiePlanet
   files:
-    - /Audio/_Starlight/Ambiance/nuclearoperations_prep.ogg
+    - /Audio/_Starlight/Ambience/nuclearoperations_prep.ogg
 
 - type: rules
   id: NearTheDark
