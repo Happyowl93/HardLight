@@ -42,6 +42,7 @@ public sealed class StereoTest
             new ResPath("/Audio/Effects/Weather/"),
             new ResPath("/Audio/StationEvents/"),
             new ResPath("/Audio/Ambience/Antag/"),
+            new ResPath("/Audio/_Starlight/Ambience/Antag/"),
         ];
 
     [Test]
