@@ -145,15 +145,20 @@
   categories:
     - UplinkWeaponry
 
-- type: listing
-  id: UplinkWeaponPistolStechkin
-  name: uplink-stechkin-name
-  description: uplink-stechkin-desc
-  productEntity: WeaponPistolStechkin
+- type: listing # Starlight
+  id: UplinkWeaponPistolStechkinBundle
+  name: uplink-stechkin-bundle-name
+  description: uplink-stechkin-bundle-desc
+  icon:
+    {
+      sprite: /Textures/_Starlight/Objects/Weapons/Guns/Pistols/stechkin.rsi,
+      state: icon,
+    }
+  productEntity: BigBoxSyndicateBundle
   discountCategory: rareDiscounts
   discountDownTo:
     Telecrystal: 3
-  cost:
+  cost: 
     Telecrystal: 6
   categories:
     - UplinkWeaponry
