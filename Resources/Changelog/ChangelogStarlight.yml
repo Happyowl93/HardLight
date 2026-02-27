@@ -32273,5 +32273,20 @@ Entries:
   id: 346001
   time: '2026-02-26T20:59:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3460
+- author: CawForConcern
+  changes:
+  - message: L6 SAW price reverted back to 25TC (was 26TC).
+    type: Remove
+  - message: L6 SAW accuracy reverted (from 35 maxAngle to 45).
+    type: Remove
+  - message: L6 SAW firerate reverted (from 6 to 8).
+    type: Remove
+  - message: L6 SAW slowdown-on-wielded reverted (from 10% to 0%).
+    type: Remove
+  - message: L6 SAW unintentionally slowed you down 10% while worn on your back.
+    type: Fix
+  id: 347601
+  time: '2026-02-27T06:30:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3476
 Order: -1
 
