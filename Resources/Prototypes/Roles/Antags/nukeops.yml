@@ -57,12 +57,12 @@
   - !type:RoleTimeRequirement
     role: JobSecurityOfficer # It's better than nothing.
     time: 15h
-  - !type:RoleTimeRequirement # You're leading the whole show, and the main antagonist of the entire round. You better have some understanding of what you're doing. This *cannot* be your first go.
-    role: AntagNukeops
-    time: 5h
   - !type:DepartmentTimeRequirement
     department: Command
     time: 10h # You need to actually have experience leading others.
+  - !type:RoleTimeRequirement # You're leading the whole show, and the main antagonist of the entire round. You better have some understanding of what you're doing. This *cannot* be your first go.
+    role: AntagNukeops
+    time: 5h
   # Starlight end
   guides: [ NuclearOperatives ]
   previewStartingGear: SyndicateCommanderGearFull

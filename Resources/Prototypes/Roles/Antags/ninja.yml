@@ -8,14 +8,14 @@
   # Starlight start
   previewStartingGear: SpaceNinjaGear
   requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 48h
   - !type:DepartmentTimeRequirement
     department: Security
     time: 9h
   - !type:RoleTimeRequirement
     role: AntagThief
     time: 5h
-  - !type:OverallPlaytimeRequirement
-    time: 48h
   playTimeTracker: AntagNinja
   # Starlight end
 
