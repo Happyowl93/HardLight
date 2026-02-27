@@ -97,7 +97,8 @@ public sealed class StereoTest
             if (ambienceTracks.Contains(file))
                 continue; // Ambience tracks can be stereo, so we skip them.
 
-            if (IgnoredFiles.Contains(file) || IgnoredPaths.Any(p => file.ToString().StartsWith(p.ToString()))) // We can ignore some files/paths if we want to, for example if they are stereo on purpose or if we just don't care about them.
+            // We can ignore some files/paths if we want to, for example if they are stereo on purpose or if we just don't care about them.
+            if (IgnoredFiles.Contains(file) || IgnoredPaths.Any(p => file.ToString().StartsWith(p.ToString())))
                 continue;
 
             var ext = file.Extension.ToLowerInvariant();
@@ -107,7 +108,7 @@ public sealed class StereoTest
             try
             {
                 using var stream = resMan.ContentFileRead(file);
-                var audioStream = ext == "ogg" ? audioMan.LoadAudioOggVorbis(stream) : audioMan.LoadAudioWav(stream);
+                using var audioStream = ext == "ogg" ? audioMan.LoadAudioOggVorbis(stream) : audioMan.LoadAudioWav(stream);
                 if (audioStream.ChannelCount != 1)
                 {
                     badFiles[file.ToString()] = audioStream.ChannelCount == 2
