@@ -38,7 +38,7 @@
             MedicalIntern: [ 0, 3 ]
             Paramedic: [ 1, 2 ]
             Surgeon: [ 1, 1 ]
-            #Psychologist: [ 1, 1 ]
+            Psychologist: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 2, 6 ]
@@ -63,6 +63,8 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
+            Performer: [ 1, 1 ]
+            Boxer: [ 2, 2 ]
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 3, 6 ]
@@ -72,3 +74,4 @@
             #Representives
             BlueShield: [ 1, 1 ]
             NanoTrasenRepresentative: [ 1, 1 ]
+            NanotrasenCareerTrainer: [ 1, 2 ]
