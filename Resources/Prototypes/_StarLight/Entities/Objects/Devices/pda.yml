@@ -454,6 +454,25 @@
 
 - type: entity
   parent: BasePDA
+  id: PerformerPDA
+  name: performer PDA
+  description: Why isn't it purple, pink, black, or white?
+  components:
+  - type: Pda
+    id: PerformerIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-internservice
+  - type: PdaBorderColor
+    borderColor: "#717059"
+    accentVColor: "#00cc35"
+  - type: Icon
+    state: pda-internservice
+
+- type: entity
+  parent: BasePDA
   id: CommanderPDA
   name: commander PDA
   description: Screw captiancy, LETS GET THAT FUKKIN DISK
@@ -546,23 +565,19 @@
     - DoorBumpOpener
 
 - type: entity
-  parent: BaseMedicalPDA
+  parent: ParamedicPDA
   id: SeniorParamedicPDA
   name: senior paramedic PDA
   description: Shiny and sterile, despite the scuffs and scratches
   components:
-  - type: Sprite
-    sprite: _Starlight/Objects/Devices/pda.rsi
-  - type: Pda
-    id: ParamedicIDCard
   - type: Appearance
     appearanceDataInit:
      enum.PdaVisuals.PdaType:
        !type:String
        pda-seniorparamedic
   - type: PdaBorderColor
-    borderColor: "#d7d7d0"
-    accentVColor: "#2a4b5b"
+    accentVColor: "#d7d7d0"
+    borderColor: "#2a4b5b"
   - type: Icon
     sprite: _Starlight/Objects/Devices/pda.rsi
     state: pda-seniorparamedic
