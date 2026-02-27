@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/27/2026 09:01:31
-  entityCount: 17584
+  time: 02/27/2026 09:04:01
+  entityCount: 17585
 maps:
 - 1
 grids:
@@ -11007,7 +11007,7 @@ entities:
       pos: 7.5,-88.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -158183.58
+      secondsUntilStateChange: -158331.4
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12265,7 +12265,7 @@ entities:
       pos: -11.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -71620.6
+      secondsUntilStateChange: -71768.43
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -100393,6 +100393,12 @@ entities:
       - SurveillanceCameraService
       nameSet: True
       id: News Interviews
+  - uid: 17585
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -43.5,-57.5
+      parent: 2
 - proto: SurveillanceCameraSupply
   entities:
   - uid: 14237
