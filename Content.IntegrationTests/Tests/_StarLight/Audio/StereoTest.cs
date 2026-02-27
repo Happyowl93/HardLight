@@ -13,10 +13,35 @@ namespace Content.IntegrationTests.Tests._Starlight.Audio;
 public sealed class StereoTest
 {
     // Mark specific files as ignored if they not using positioning, for example: Ambience, Announcements.
-    public List<ResPath> IgnoredFiles = [];
+    public List<ResPath> IgnoredFiles = [
+            new ResPath("/Audio/Effects/explosionfar.ogg"), // Global
+            new ResPath("/Audio/Effects/explosionsmallfar.ogg"), // Global
+            new ResPath("/Audio/Effects/eye_close.ogg"), // Global
+            new ResPath("/Audio/Effects/eye_open.ogg"), // Global
+            new ResPath("/Audio/Effects/newplayerping.ogg"), // Global
+            new ResPath("/Audio/Effects/voteding.ogg"), // Global
+            new ResPath("/Audio/Misc/bluealert.ogg"), // Global
+            new ResPath("/Audio/Misc/delta.ogg"), // Global
+            new ResPath("/Audio/Misc/delta_alt.ogg"), // Global
+            new ResPath("/Audio/Misc/epsilon.ogg"), // Global
+            new ResPath("/Audio/Misc/gamma.ogg"), // Global
+            new ResPath("/Audio/Misc/redalert.ogg"), // Global
+            new ResPath("/Audio/Misc/narsie_rises.ogg"), // Global
+            new ResPath("/Audio/Misc/ninja_greeting.ogg"), // Global
+            new ResPath("/Audio/Misc/paradox_clone_greeting.ogg"), // Global
+            new ResPath("/Audio/Misc/ratvar_reveal.ogg"), // Global
+            new ResPath("/Audio/Misc/ratvar_rises.ogg"), // Global
+        ];
 
     public List<ResPath> IgnoredPaths = [
             new ResPath("/Audio/Announcements"), // Announcements can be stereo because they don't have positioning.
+            new ResPath("/Audio/_Starlight/Announcements/"),
+            new ResPath("/Audio/Expedition"),
+            new ResPath("/Audio/Lobby"),
+            new ResPath("/Audio/_Starlight/Lobby"),
+            new ResPath("/Audio/Effects/Weather/"),
+            new ResPath("/Audio/StationEvents/"),
+            new ResPath("/Audio/Ambience/Antag/"),
         ];
 
     [Test]
