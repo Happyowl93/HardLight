@@ -68,7 +68,7 @@ public abstract class SharedMassDriverSystem : EntitySystem
             _lookup.GetEntitiesIntersecting(uid, entities, LookupFlags.Dynamic);
             
             // Preventing Ghosts from activating mass drivers
-            entities.RemoveWhere(entity => _ghostQuery.HasComp(entity));
+            entities.RemoveWhere(_ghostQuery.HasComp);
 
             int entitiesCount = entities.Count;
 
