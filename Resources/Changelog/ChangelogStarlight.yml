@@ -32288,5 +32288,13 @@ Entries:
   id: 347601
   time: '2026-02-27T06:30:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3476
+- author: neomoth
+  changes:
+  - message: Made an attempt to fix the pronunciation of the word "ID" when spoken
+      by the Text-to-Speech.
+    type: Fix
+  id: 347401
+  time: '2026-02-27T06:33:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3474
 Order: -1
 
