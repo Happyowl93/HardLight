@@ -376,6 +376,8 @@
     knockdownTargetOnCollision: true
   - type: Spider
     webPrototype: SpiderWebPoison
+    hasBuilding: true
+    buildingActionProto: ActionSpiderBuildingPole
 
 - type: entity
   name: terror black
@@ -416,6 +418,9 @@
   id: MobTerrorWhiteUnevolvable
   abstract: true
   components:
+  - type: Spider
+    hasBuilding: true
+    buildingActionProto: ActionSpiderBuildingCocoon
   - type: OptionsVisualizer
     visuals:
       base:
@@ -562,6 +567,7 @@
   - type: ActionGrant
     actions:
     - ActionEggsLaying
+    - ActionAcidVent
   - type: UserInterface
     interfaces:
       enum.EggsLayingUiKey.Key:
