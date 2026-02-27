@@ -367,6 +367,42 @@
       board: [ BaseDoorElectronicsPirate ]
   - type: Wires
     layoutId: AirlockSecurity
+
+- type: entity
+  parent: AirlockSyndicate
+  id: AirlockSyndicatePirateLocked
+  suffix: Pirate, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ BaseDoorElectronicsPirate ]
+
+- type: entity
+  parent: AirlockSyndicateGlass
+  id: AirlockSyndicateGlassPirateLocked
+  suffix: Pirate, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ BaseDoorElectronicsPirate ]
+
+- type: entity
+  parent: AirlockShuttleSyndicate
+  id: AirlockExternalShuttlePirateLocked
+  suffix: External, Docking, Pirate, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ BaseDoorElectronicsPirate ]
+
+- type: entity
+  parent: AirlockGlassShuttleSyndicate
+  id: AirlockExternalGlassShuttlePirateLocked
+  suffix: Pirate, Locked, Glass
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ BaseDoorElectronicsPirate ]
 # Brigmedic
 - type: entity
   parent: AirlockBrigmed

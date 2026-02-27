@@ -108,6 +108,7 @@
     - type: StaticPrice
       price: 55
     - type: AccessReader
+      access: [["Pirate"]]
     - type: ActivatableUI
       key: enum.DoorElectronicsConfigurationUiKey.Key
       requiredItems:

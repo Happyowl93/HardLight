@@ -506,7 +506,7 @@
     size: Huge
     shape:
     - 0,0,3,2
-    sprite: Objects/Weapons/Guns/Shotguns/blunderbuss.rsi
+    sprite: _Starlight/Objects/Weapons/Guns/Rifles/lionhunter_inhands.rsi
   - type: Clothing
     sprite: _Starlight/Objects/Weapons/Guns/Rifles/lionhunter_inhands.rsi
     quickEquip: false
