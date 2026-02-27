@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/27/2026 09:44:31
-  entityCount: 29482
+  time: 02/27/2026 09:47:20
+  entityCount: 29483
 maps:
 - 1
 grids:
@@ -10403,7 +10403,7 @@ entities:
       pos: -63.5,-31.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -181815.98
+      secondsUntilStateChange: -181977.2
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10428,7 +10428,7 @@ entities:
       pos: -58.5,-45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -180213.48
+      secondsUntilStateChange: -180374.7
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10563,7 +10563,7 @@ entities:
       pos: -32.5,-52.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -187468.52
+      secondsUntilStateChange: -187629.73
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11026,7 +11026,7 @@ entities:
       pos: -71.5,-38.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -182326.31
+      secondsUntilStateChange: -182487.53
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -11221,7 +11221,7 @@ entities:
       pos: -83.5,-42.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6887.574
+      secondsUntilStateChange: -7048.783
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11233,7 +11233,7 @@ entities:
       pos: -83.5,-46.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6888.1743
+      secondsUntilStateChange: -7049.3833
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11245,7 +11245,7 @@ entities:
       pos: -83.5,-50.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6888.941
+      secondsUntilStateChange: -7050.15
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11257,7 +11257,7 @@ entities:
       pos: -83.5,-32.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6886.1743
+      secondsUntilStateChange: -7047.3833
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11269,7 +11269,7 @@ entities:
       pos: -83.5,-28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6885.6074
+      secondsUntilStateChange: -7046.8164
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11281,7 +11281,7 @@ entities:
       pos: -83.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6885.1074
+      secondsUntilStateChange: -7046.3164
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11293,7 +11293,7 @@ entities:
       pos: 47.5,53.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6910.4077
+      secondsUntilStateChange: -7071.6167
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11305,7 +11305,7 @@ entities:
       pos: 47.5,57.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6909.774
+      secondsUntilStateChange: -7070.983
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11319,7 +11319,7 @@ entities:
       addComponents: []
       path: /Maps/_Starlight/Shuttles/KillerTamashi-SecShuttle.yml
     - type: Door
-      secondsUntilStateChange: -62697.684
+      secondsUntilStateChange: -62858.89
       state: Opening
 - proto: AirlockExternalGlassShuttleLocked
   entities:
@@ -12627,7 +12627,7 @@ entities:
       pos: 34.5,43.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -260673.98
+      secondsUntilStateChange: -260835.2
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -137984,6 +137984,11 @@ entities:
     components:
     - type: Transform
       pos: 51.5,-15.5
+      parent: 2
+  - uid: 29483
+    components:
+    - type: Transform
+      pos: 0.5,5.5
       parent: 2
 - proto: Protolathe
   entities:
