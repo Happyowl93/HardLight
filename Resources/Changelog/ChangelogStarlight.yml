@@ -32413,5 +32413,16 @@ Entries:
   id: 347801
   time: '2026-02-27T16:43:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3478
+- author: Rain-enjoyer23
+  changes:
+  - message: The L10 is now chambered in .45 magnum.
+    type: Tweak
+  - message: Reduced the L10's firerate, down from 4.5 to 2.
+    type: Tweak
+  - message: decreased the DMR magazine size, down from 20 to 10.
+    type: Tweak
+  id: 348901
+  time: '2026-02-27T17:38:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3489
 Order: -1
 
