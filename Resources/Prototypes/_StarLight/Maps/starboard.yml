@@ -63,7 +63,8 @@
             Assistant: [ -1, -1 ]
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
-            Musician: [ 2, 3 ]   
+            Musician: [ 2, 3 ]
+            Performer: [ 3, 5 ]   
             Boxer: [ 2, 2 ]
             Reporter: [ 2, 2 ]
             #silicon
