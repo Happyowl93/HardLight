@@ -1,5 +1,4 @@
 ﻿using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.IO;
 using Content.Client._Starlight.Radio.Systems;
 using Content.Client._Starlight.TextToSpeech;
@@ -12,11 +11,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 using Robust.Shared.Spawners;
-using Robust.Shared.Timing;
-using Robust.Shared.Utility;
 
 namespace Content.Client._Starlight.TTS;
 
@@ -40,6 +35,7 @@ public sealed class TextToSpeechSystem : EntitySystem
     private float _volume;
     private float _radioVolume;
     private float _announceVolume;
+    private float _chimeVolume;
     private bool _ttsQueueEnabled;
 
     public void ClearQueue()
@@ -61,6 +57,7 @@ public sealed class TextToSpeechSystem : EntitySystem
         _cfg.OnValueChanged(StarlightCCVars.TTSVolume, OnTtsVolumeChanged, true);
         _cfg.OnValueChanged(StarlightCCVars.TTSAnnounceVolume, OnTtsAnnounceVolumeChanged, true);
         _cfg.OnValueChanged(StarlightCCVars.TTSRadioVolume, OnTtsRadioVolumeChanged, true);
+        _cfg.OnValueChanged(StarlightCCVars.TTSChimeVolume, OnTtsChimeVolumeChanged, true);
         _cfg.OnValueChanged(StarlightCCVars.TTSRadioQueueEnabled, OnTtsRadioQueueChanged, true);
         _cfg.OnValueChanged(StarlightCCVars.TTSClientEnabled, OnTtsClientOptionChanged, true);
         SubscribeLocalEvent<TTSStream>(OnTTSStream);
@@ -72,6 +69,7 @@ public sealed class TextToSpeechSystem : EntitySystem
         _cfg.UnsubValueChanged(StarlightCCVars.TTSVolume, OnTtsVolumeChanged);
         _cfg.UnsubValueChanged(StarlightCCVars.TTSAnnounceVolume, OnTtsAnnounceVolumeChanged);
         _cfg.UnsubValueChanged(StarlightCCVars.TTSRadioVolume, OnTtsRadioVolumeChanged);
+        _cfg.UnsubValueChanged(StarlightCCVars.TTSChimeVolume, OnTtsChimeVolumeChanged);
         _cfg.UnsubValueChanged(StarlightCCVars.TTSRadioQueueEnabled, OnTtsRadioQueueChanged);
         _cfg.UnsubValueChanged(StarlightCCVars.TTSClientEnabled, OnTtsClientOptionChanged);
         _contentRoot.Dispose();
@@ -80,11 +78,35 @@ public sealed class TextToSpeechSystem : EntitySystem
     public void RequestPreviewTts(string voiceId)
         => RaiseNetworkEvent(new PreviewTTSRequestEvent() { VoiceId = voiceId });
 
+    public bool TryPlayChime(Queue<byte[]> data, AudioParams audioParams, EntityUid? entity, SoundSpecifier chime)
+    {
+        if (_chime.IsMuted)
+            return false;
+
+        var audio = _sharedAudio.ResolveSound(chime);
+        var ent = _audio.PlayGlobal(audio, EntityUid.Invalid, AudioParams.Default.WithVolume(_chimeVolume));
+        if (ent != null)
+        {
+            var comp = EnsureComp<TTSAudioStreamComponent>(ent.Value.Entity);
+            comp.Data = data;
+            comp.EntityUid = ent.Value.Entity;
+            comp.SourceUid = entity;
+            comp.AudioParams = audioParams;
+            comp.AudioLength = _audio.GetAudioLength(audio);
+            _currentPlaying = ent;
+            return true;
+        }
+
+        return false;
+    }
+
     private void OnTtsVolumeChanged(float volume)
         => _volume = volume;
 
     private void OnTtsRadioVolumeChanged(float volume)
         => _radioVolume = volume;
+    private void OnTtsChimeVolumeChanged(float volume)
+        => _chimeVolume = volume;
 
     private void OnTtsRadioQueueChanged(bool enabled)
         => _ttsQueueEnabled = enabled;
@@ -136,9 +158,8 @@ public sealed class TextToSpeechSystem : EntitySystem
                 return;
         }
 
-        if (entry.specifier != null)
-            _currentPlaying = _audio.PlayGlobal(_sharedAudio.ResolveSound(entry.specifier), EntityUid.Invalid, finalParams.AddVolume(-5f));
-        _currentPlaying = PlayTTS(entry.data, null, finalParams);
+        if (entry.specifier == null || !TryPlayChime(entry.data, finalParams, null, entry.specifier))
+            _currentPlaying = PlayTTS(entry.data, null, finalParams);
     }
 
     private void OnTTSStream(TTSStream ev)
@@ -163,22 +184,8 @@ public sealed class TextToSpeechSystem : EntitySystem
             var audioParams = AudioParams.Default.WithVolume(volume);
             var entity = GetEntity(ev.SourceUid);
 
-            if (!_chime.IsMuted && ev.Chime is SoundSpecifier chime)
-            {
-                var audio = _sharedAudio.ResolveSound(chime);
-                var ent = _audio.PlayGlobal(audio, EntityUid.Invalid, audioParams.AddVolume(-3f));
-                if (ent != null)
-                {
-                    var comp = EnsureComp<TTSAudioStreamComponent>(ent.Value.Entity);
-                    comp.Data = ev.Data;
-                    comp.EntityUid = ent.Value.Entity;
-                    comp.SourceUid = entity;
-                    comp.AudioParams = audioParams;
-                    comp.AudioLength = _audio.GetAudioLength(audio);
-                    _currentPlaying = ent;
-                    return;
-                }
-            }
+            if (ev.Chime is SoundSpecifier chime && TryPlayChime(ev.Data, audioParams, entity, chime))
+                return;
             _currentPlaying = PlayTTS(ev.Data, entity, audioParams);
         }
     }
@@ -219,8 +226,8 @@ public sealed class TextToSpeechSystem : EntitySystem
                 comp.AudioParams = audioParams;
                 comp.AudioLength = audioStream.Length;
 
-                if(_currentPlaying.HasValue && previous.HasValue && previous.Value.eid == ent.Value.Entity)
-                   _currentPlaying = ent;
+                if (_currentPlaying.HasValue && previous.HasValue && previous.Value.eid == ent.Value.Entity)
+                    _currentPlaying = ent;
             }
 
             return ent;

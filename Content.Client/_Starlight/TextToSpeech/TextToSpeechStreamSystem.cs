@@ -1,6 +1,9 @@
+using Content.Client._Starlight.TTS;
 using Content.Shared.GameTicking;
 using Content.Shared.Radio;
 using Content.Shared.Starlight.TextToSpeech;
+using Robust.Shared.Audio;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._Starlight.TextToSpeech;
@@ -10,6 +13,8 @@ public sealed class TextToSpeechStreamSystem : EntitySystem
     private ISawmill _sawmill = default!;
     private readonly Dictionary<Guid, TTSStream> _streams = [];
     private readonly HashSet<ProtoId<RadioChannelPrototype>> _mutedChannels = [];
+
+    [Dependency] private readonly TextToSpeechSystem _tts = default!;
 
     public override void Initialize()
     {
@@ -37,7 +42,11 @@ public sealed class TextToSpeechStreamSystem : EntitySystem
         }
 
         if (ev.Channel != null && _mutedChannels.Contains(ev.Channel.Value))
+        {
+            if (ev.Chime is not null)
+                _tts.TryPlayChime([], AudioParams.Default, null, ev.Chime);
             return;
+        }
 
         var stream = new TTSStream
         {

@@ -1,5 +1,6 @@
 ui-options-tts-label = Text-To-Speech
 ui-options-tts-volume = TTS Volume:
+ui-options-tts-chime-volume = Chime Volume:
 credits-window-tts-title = TTS (Text-To-Speech) Feature
 
 ui-options-tts-radio-volume = Radio Volume:
