@@ -32348,5 +32348,34 @@ Entries:
   id: 348201
   time: '2026-02-27T16:19:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3482
+- author: wonderfulnewworld
+  changes:
+  - message: (Bagel) Mapped Xenobio.
+    type: Add
+  - message: (Bagel) Added protection anchors to the armory and the vault.
+    type: Add
+  - message: (Bagel) Added Magistrate and IAA lockers.
+    type: Add
+  - message: (Bagel) Added an AI Restoration console to RD's room.
+    type: Add
+  - message: (Bagel) Added Duty Officer spawns and slot.
+    type: Add
+  - message: (Bagel) Added a Nanotrasen Career Trainer office, spawns, and slots.
+    type: Add
+  - message: (Bagel) Added Boxer spawns/slots, and cleaned up the boxing arena.
+    type: Add
+  - message: (Bagel) Added Performer spawns and slots.
+    type: Add
+  - message: (Bagel) Added deep fryers to the kitchen.
+    type: Add
+  - message: (Bagel) Added 1 additional Service Worker spawn. (But not slot.).
+    type: Add
+  - message: (Bagel) Added a Roboticist Toolbox to Robotics.
+    type: Add
+  - message: (Bagel) Removed Brigmed Chem locker.
+    type: Remove
+  id: 348101
+  time: '2026-02-27T16:22:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3481
 Order: -1
 
