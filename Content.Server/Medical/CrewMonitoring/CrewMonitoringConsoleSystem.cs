@@ -10,7 +10,7 @@ using Content.Shared.Medical.SuitSensor;
 using Content.Shared.Pinpointer;
 using Content.Server.Silicons.StationAi;
 using Robust.Server.GameObjects;
-using Content.Shared.Silicons.StationAi;
+using Content.Shared.Silicons.StationAi; // Starlight
 using Robust.Shared.Audio.Systems; // Starlight
 using Robust.Shared.Map; // Starlight
 using Robust.Shared.Timing; // Starlight
