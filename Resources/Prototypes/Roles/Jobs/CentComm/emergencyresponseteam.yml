@@ -204,7 +204,7 @@
   playTimeTracker: JobERTEngineer
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 48h # Starlight. You should know the game's controls if you're going to be building stuff.
+    time: 72h # Starlight. You should know the game's controls if you're going to be building stuff.
   - !type:RoleTimeRequirement
     role: JobStationEngineer
     time: 15h # Starlight. You should know how to construct things with and without the RCD.
@@ -500,7 +500,7 @@
   playTimeTracker: JobERTMedical
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 48h # Starlight
+    time: 72h # Starlight
   - !type:RoleTimeRequirement
     role: JobMedicalDoctor
     time: 10h # Starlight
@@ -612,7 +612,7 @@
   playTimeTracker: JobERTJanitor
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 72h # Starlight
+    time: 48h # Starlight
   - !type:RoleTimeRequirement
     role: JobJanitor
     time: 5h
