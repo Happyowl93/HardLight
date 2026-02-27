@@ -32335,5 +32335,18 @@ Entries:
   id: 348501
   time: '2026-02-27T16:14:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3485
+- author: Makeshift
+  changes:
+  - message: (Packed) Protection anchors for Vault and Armory.
+    type: Add
+  - message: (Packed) Deep fryers to both kitchens.
+    type: Add
+  - message: (Packed) Performers!
+    type: Add
+  - message: (Packed) Plasma vial from Brigmed.
+    type: Remove
+  id: 348201
+  time: '2026-02-27T16:19:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3482
 Order: -1
 
