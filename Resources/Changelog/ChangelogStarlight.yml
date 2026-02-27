@@ -32444,5 +32444,13 @@ Entries:
   id: 305902
   time: '2026-02-27T17:39:52.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3059
+- author: Scarlet Lightweaver
+  changes:
+  - message: Fixed RSI and access bugs for pirates and added a disposable turret for
+      them (its weaker then the modern syndicate ones).
+    type: Fix
+  id: 349201
+  time: '2026-02-27T20:05:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3492
 Order: -1
 
