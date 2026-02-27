@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/27/2026 09:47:20
-  entityCount: 29483
+  time: 02/27/2026 09:58:04
+  entityCount: 29491
 maps:
 - 1
 grids:
@@ -10403,7 +10403,7 @@ entities:
       pos: -63.5,-31.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -181977.2
+      secondsUntilStateChange: -182602.3
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10428,7 +10428,7 @@ entities:
       pos: -58.5,-45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -180374.7
+      secondsUntilStateChange: -180999.8
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10563,7 +10563,7 @@ entities:
       pos: -32.5,-52.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -187629.73
+      secondsUntilStateChange: -188254.83
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11026,7 +11026,7 @@ entities:
       pos: -71.5,-38.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -182487.53
+      secondsUntilStateChange: -183112.62
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -11221,7 +11221,7 @@ entities:
       pos: -83.5,-42.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7048.783
+      secondsUntilStateChange: -7673.8823
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11233,7 +11233,7 @@ entities:
       pos: -83.5,-46.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7049.3833
+      secondsUntilStateChange: -7674.4824
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11245,7 +11245,7 @@ entities:
       pos: -83.5,-50.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7050.15
+      secondsUntilStateChange: -7675.249
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11257,7 +11257,7 @@ entities:
       pos: -83.5,-32.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7047.3833
+      secondsUntilStateChange: -7672.4824
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11269,7 +11269,7 @@ entities:
       pos: -83.5,-28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7046.8164
+      secondsUntilStateChange: -7671.9155
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11281,7 +11281,7 @@ entities:
       pos: -83.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7046.3164
+      secondsUntilStateChange: -7671.4155
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11293,7 +11293,7 @@ entities:
       pos: 47.5,53.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7071.6167
+      secondsUntilStateChange: -7696.716
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11305,7 +11305,7 @@ entities:
       pos: 47.5,57.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7070.983
+      secondsUntilStateChange: -7696.082
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11319,7 +11319,7 @@ entities:
       addComponents: []
       path: /Maps/_Starlight/Shuttles/KillerTamashi-SecShuttle.yml
     - type: Door
-      secondsUntilStateChange: -62858.89
+      secondsUntilStateChange: -63483.992
       state: Opening
 - proto: AirlockExternalGlassShuttleLocked
   entities:
@@ -12627,7 +12627,7 @@ entities:
       pos: 34.5,43.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -260835.2
+      secondsUntilStateChange: -261460.3
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15637,6 +15637,22 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 4.5,-40.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 29484
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 48.5,-10.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 29487
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 48.5,-13.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -38987,6 +39003,16 @@ entities:
     - type: Transform
       pos: 12.5,-43.5
       parent: 2
+  - uid: 29490
+    components:
+    - type: Transform
+      pos: 48.5,-14.5
+      parent: 2
+  - uid: 29491
+    components:
+    - type: Transform
+      pos: 48.5,-13.5
+      parent: 2
 - proto: CableHV
   entities:
   - uid: 5429
@@ -60789,6 +60815,26 @@ entities:
     components:
     - type: Transform
       pos: 4.5,-40.5
+      parent: 2
+  - uid: 29485
+    components:
+    - type: Transform
+      pos: 48.5,-10.5
+      parent: 2
+  - uid: 29486
+    components:
+    - type: Transform
+      pos: 49.5,-10.5
+      parent: 2
+  - uid: 29488
+    components:
+    - type: Transform
+      pos: 49.5,-9.5
+      parent: 2
+  - uid: 29489
+    components:
+    - type: Transform
+      pos: 48.5,-13.5
       parent: 2
 - proto: CableTerminal
   entities:
