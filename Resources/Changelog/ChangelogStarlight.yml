@@ -32184,5 +32184,409 @@ Entries:
   id: 345801
   time: '2026-02-26T16:20:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3458
+- author: Maxim
+  changes:
+  - message: Added ability to bash your off-hand shield with your stunbaton.
+    type: Add
+  id: 329401
+  time: '2026-02-26T19:23:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3294
+- author: Ivomink
+  changes:
+  - message: Changed reptilians and moths the ability to have hair now.
+    type: Tweak
+  id: 332701
+  time: '2026-02-26T19:47:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3327
+- author: cvlancer, Jaime Walker, call.mebee, johnny012602, CawsForConcern, wonderfulnewworld
+  changes:
+  - message: (Oasis) Restores Oasis.
+    type: Add
+  - message: (Oasis) NC Trainer room and job slots added.
+    type: Add
+  - message: (Oasis) Magi locker added.
+    type: Add
+  - message: (Oasis) IAA lockers added.
+    type: Add
+  - message: (Oasis) Added new "Engie training room" to Engi.
+    type: Add
+  - message: (Oasis) Xenobio has been added... and then destroyed... can be restored
+      once Xenobio is balanced.
+    type: Add
+  - message: (Oasis) New maints hallway to south of science.
+    type: Add
+  - message: (Oasis) Wall mounted fuel dispenser added to robotics and Chem.
+    type: Add
+  - message: (Oasis) Wall mounted mass scanners added.
+    type: Add
+  - message: (Oasis) Protection anchor added to vault and armory.
+    type: Add
+  - message: (Oasis) Added deep fryer to kitchen.
+    type: Add
+  - message: (Oasis) Boxing ring moved.
+    type: Add
+  - message: (Oasis) Added Boxer slots.
+    type: Add
+  - message: (Oasis) Added Performer slots.
+    type: Add
+  - message: (Oasis) Gen pop now has Cargo bay, bar, medical, kitchen, solitary.
+    type: Add
+  - message: (Oasis) Added the abyss to gen pop mines.
+    type: Add
+  - message: (Oasis) Added a spider cave to gen pop mines.
+    type: Add
+  - message: (Oasis) Updates Oasis with a bunch of mapping requirements that have
+      come out since its removal, and those prior to it.
+    type: Tweak
+  - message: (Oasis) Gen pop Reworked.
+    type: Tweak
+  - message: (Oasis) Bridge slightly rearranged.
+    type: Tweak
+  - message: (Oasis) Court room and EVA have swapped places..
+    type: Tweak
+  - message: (Oasis) Reworked ai core.
+    type: Tweak
+  - message: (Oasis) Nerfed AI cameras in maints and solars.
+    type: Tweak
+  - message: (Oasis) Nerfed AI cameras in dorms.
+    type: Tweak
+  - message: (Oasis) Teg and Main engine now both fill into the same SMES despite
+      being in two different locations.
+    type: Tweak
+  - message: (Oasis) Two atmospheric network monitors added to Atmos.
+    type: Tweak
+  - message: (Oasis) Shittle construction area slightly reworked to make it easier
+      to get to space.
+    type: Tweak
+  - message: (Oasis) QM office reworked.
+    type: Tweak
+  - message: (Oasis) Nerfed some of the reinforced walls to normal walls.
+    type: Tweak
+  - message: (Oasis) Cargo now has piping to refill cargo shuttle. (CARGO SHUTTLE
+      NOT CHANGED).
+    type: Tweak
+  - message: (Oasis) Security shuttle now wired to be able to fill security briggle.
+      (SECURITY BRIGGLE NOT CHANGED).
+    type: Tweak
+  - message: (Oasis) Removed Brigmed chem locker.
+    type: Remove
+  id: 346001
+  time: '2026-02-26T20:59:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3460
+- author: CawForConcern
+  changes:
+  - message: L6 SAW price reverted back to 25TC (was 26TC).
+    type: Remove
+  - message: L6 SAW accuracy reverted (from 35 maxAngle to 45).
+    type: Remove
+  - message: L6 SAW firerate reverted (from 6 to 8).
+    type: Remove
+  - message: L6 SAW slowdown-on-wielded reverted (from 10% to 0%).
+    type: Remove
+  - message: L6 SAW unintentionally slowed you down 10% while worn on your back.
+    type: Fix
+  id: 347601
+  time: '2026-02-27T06:30:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3476
+- author: neomoth
+  changes:
+  - message: Made an attempt to fix the pronunciation of the word "ID" when spoken
+      by the Text-to-Speech.
+    type: Fix
+  id: 347401
+  time: '2026-02-27T06:33:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3474
+- author: neomoth
+  changes:
+  - message: Added the blue jumpsuit/skirt and tie to the list of valid security uniforms
+      for the security dress code SOP as they are available options when picking your
+      loadout for security officers.
+    type: Add
+  id: 347301
+  time: '2026-02-27T08:11:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3473
+- author: R3v3l4t1on
+  changes:
+  - message: Xenoborg's heavy laser cannon is no longer overtuned to all hell (firecost
+      40 increased from 100)
+    type: Fix
+  id: 348701
+  time: '2026-02-27T15:36:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3487
+- author: Scarlet Lightweaver, lynatikr20.
+  changes:
+  - message: Added a proper pirate antagonist and additional items for the pirates.
+      (lionhunter and the fang.).
+    type: Add
+  id: 347101
+  time: '2026-02-27T16:10:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3471
+- author: wonderfulnewworld
+  changes:
+  - message: (Sepultum) Added protection anchors to the armory and the vault. (With
+      an extra APC in armory for the anchor power.).
+    type: Add
+  - message: (Sepultum) Added a deep fryer to the kitchen.
+    type: Add
+  - message: (Sepultum) Added Performer spawns and slots.
+    type: Add
+  - message: (Sepultum) Removed Brigmedic chem locker.
+    type: Remove
+  id: 348501
+  time: '2026-02-27T16:14:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3485
+- author: Makeshift
+  changes:
+  - message: (Packed) Protection anchors for Vault and Armory.
+    type: Add
+  - message: (Packed) Deep fryers to both kitchens.
+    type: Add
+  - message: (Packed) Performers!
+    type: Add
+  - message: (Packed) Plasma vial from Brigmed.
+    type: Remove
+  id: 348201
+  time: '2026-02-27T16:19:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3482
+- author: wonderfulnewworld
+  changes:
+  - message: (Bagel) Mapped Xenobio.
+    type: Add
+  - message: (Bagel) Added protection anchors to the armory and the vault.
+    type: Add
+  - message: (Bagel) Added Magistrate and IAA lockers.
+    type: Add
+  - message: (Bagel) Added an AI Restoration console to RD's room.
+    type: Add
+  - message: (Bagel) Added Duty Officer spawns and slot.
+    type: Add
+  - message: (Bagel) Added a Nanotrasen Career Trainer office, spawns, and slots.
+    type: Add
+  - message: (Bagel) Added Boxer spawns/slots, and cleaned up the boxing arena.
+    type: Add
+  - message: (Bagel) Added Performer spawns and slots.
+    type: Add
+  - message: (Bagel) Added deep fryers to the kitchen.
+    type: Add
+  - message: (Bagel) Added 1 additional Service Worker spawn. (But not slot.).
+    type: Add
+  - message: (Bagel) Added a Roboticist Toolbox to Robotics.
+    type: Add
+  - message: (Bagel) Removed Brigmed Chem locker.
+    type: Remove
+  id: 348101
+  time: '2026-02-27T16:22:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3481
+- author: wonderfulnewworld
+  changes:
+  - message: (Orwell) Adds spawns and slots for the Performer job.
+    type: Add
+  - message: (Orwell) Adds 1 extra Service Worker spawn point, but not a slot. (It's
+      next to kitchen, so there's a chance you won't spawn in the bathroom now.).
+    type: Add
+  - message: (Orwell) Adds protection anchors to the armory and vault.
+    type: Add
+  - message: (Orwell) Adds a deep fryer to the kitchen.
+    type: Add
+  - message: (Orwell) Removes Chemical locker from Brigmed.
+    type: Remove
+  id: 347901
+  time: '2026-02-27T16:28:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3479
+- author: wonderfulnewworld
+  changes:
+  - message: (Starboard) Adds spawns and slots for the Performer job.
+    type: Add
+  - message: (Starboard) Adds protection anchors to the armory and vault.
+    type: Add
+  id: 347701
+  time: '2026-02-27T16:32:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3477
+- author: deltaVelocity
+  changes:
+  - message: Reverted the Wizard's "Cause Chaos" objective to "Show Off." If you kill
+      everyone, there's nobody left to show off to.
+    type: Remove
+  - message: Increased the price of the Wizard's Rod Form spell from 3 to 7 Wizcoin.
+      No more rod-upgraded jaunt-upgraded blink spam from Wizards, ideally.
+    type: Tweak
+  id: 347801
+  time: '2026-02-27T16:43:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3478
+- author: Rain-enjoyer23
+  changes:
+  - message: The L10 is now chambered in .45 magnum.
+    type: Tweak
+  - message: Reduced the L10's firerate, down from 4.5 to 2.
+    type: Tweak
+  - message: decreased the DMR magazine size, down from 20 to 10.
+    type: Tweak
+  id: 348901
+  time: '2026-02-27T17:38:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3489
+- author: DuckManZach
+  changes:
+  - message: Nanochat.
+    type: Add
+  id: 305901
+  time: '2026-02-27T17:39:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3059
+- author: CrazyPhantom
+  changes:
+  - message: Nanochat emotes.
+    type: Add
+  - message: Spam advertisements to Nanochat.
+    type: Add
+  - message: Changed Nanochat sprites.
+    type: Tweak
+  - message: Nanochat lookup now looks alot better.
+    type: Tweak
+  id: 305902
+  time: '2026-02-27T17:39:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3059
+- author: Scarlet Lightweaver
+  changes:
+  - message: Fixed RSI and access bugs for pirates and added a disposable turret for
+      them (its weaker then the modern syndicate ones).
+    type: Fix
+  id: 349201
+  time: '2026-02-27T20:05:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3492
+- author: redmushie
+  changes:
+  - message: Stationary and handheld crew monitors now visibly and audibly alert you
+      of critical/dead patients after 30 seconds.
+    type: Add
+  - message: Handheld crew monitors now have unpowered sprites for when they have
+      no charge remaining or no battery inserted.
+    type: Add
+  id: 349001
+  time: '2026-02-27T20:28:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3490
+- author: HossHassler
+  changes:
+  - message: Ghosts no longer activate mass drivers.
+    type: Fix
+  id: 340501
+  time: '2026-02-27T20:31:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3405
+- author: Rinary
+  changes:
+  - message: Added terror spiders guidebook.
+    type: Add
+  - message: Added `acid vent` action for Princess of terror which allows you to breach
+      welded vents.
+    type: Add
+  - message: Added evolve objectives, so now you always know what do you need to evolve
+      and how much do you need to evolve.
+    type: Add
+  - message: Added "buildings" for terror spiders. So now some spiders can build interesting
+      things.
+    type: Add
+  - message: Added building action for Black terror, So now it can build web pole.
+    type: Add
+  - message: Added building action for White terror, So now it can build healing cocoon.
+    type: Add
+  - message: Now actions are actually animatable.
+    type: Tweak
+  - message: Changed lay eggs action icon to new animated variant.
+    type: Tweak
+  - message: Fixed bug when you see `Extract eggs` surgery even when body doesn't
+      have terror eggs.
+    type: Fix
+  - message: Fixed collection modified error at `SpawnerSystem` when egg spawns spiderling.
+    type: Fix
+  id: 252301
+  time: '2026-02-27T20:44:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2523
+- author: wonderfulnewworld, RorororoIDK
+  changes:
+  - message: Playtime requirements for Antags has been changed across the board.
+    type: Tweak
+  - message: Many jobs have had their playtimes tweaked.
+    type: Tweak
+  - message: Nukeops - 24h overall, 6h sec > 48h overall, 5h secoff, 5h medical doctor,
+      5h Traitor.
+    type: Tweak
+  - message: NukeopsMedic - 24h overall, 6h chemist, 3h surgeon, 3h sec > 48h overall,
+      6h chemist, 3hr surgeon, 5h Brigmedic, 3h Traitor.
+    type: Tweak
+  - message: NukeopsCommander - 24h overall, 12h sec, 6h command > 72hr overall, 15h
+      secoff, 10h Command, 5hr Nukeops.
+    type: Tweak
+  - message: HeadRev - 24h overall, 6h sec, 6h command > 72h overall, 5h secoff, 12h
+      command.
+    type: Tweak
+  - message: Traitor, Changeling, Vampire - 3h overall > 24h overall.
+    type: Tweak
+  - message: Thief - 3h overall > 8h overall.
+    type: Tweak
+  - message: Initial Infected - 3h overall > 24h overall, 2 medical doctor (To know
+      about treating yourself, but to also know what your Prime Target is.).
+    type: Tweak
+  - message: Dragon - 3h salv > 24hr overall, 8h salv.
+    type: Tweak
+  - message: Ninja - 3h sec > 48h overall, 3h sec officer, 5h Thief.
+    type: Tweak
+  - message: Paradox clone - 24h overall > 48h overall (This is a HARD role. You should
+      be familiar with the server culture if you even want a chance.).
+    type: Tweak
+  - message: Wizard - 24h overall 6h sec > 48h overall, 6h sec.
+    type: Tweak
+  - message: All command except HoS - 20h department time > 30h department time.
+    type: Tweak
+  - message: Paramedic - 2.5h med > 4h doctor.
+    type: Tweak
+  - message: Chemist - 5h med > 6h doctor.
+    type: Tweak
+  - message: Brigmedic - 10h secoff, 8h med > 10h secoff, 4h chem, 4h paramedic, 15hr
+      medical department (Less Chem time since Chem is being phased out of Brigmed.
+      If we had more systems to back it up I'd just bite the bullet right now and
+      fully remove chem time, but we don't currently.).
+    type: Tweak
+  - message: Warden - 16h secoff, 4hr duty officer, 1h det > 15h secoff, 5h duty officer,
+      1hr detective (Didn't want to make HoS drastically harder to unlock).
+    type: Tweak
+  - message: HoS - 5h Ward, 5h det, 5h secoff, 20h sec > 10h ward, 5h det, 15h secoff,
+      60h sec (Highest stress role on the station debatably.).
+    type: Tweak
+  - message: Salvage Specialist - 2.5h cargo > 8h cargo, 12h overall playtime (We've
+      got a unique Salvage system, so I didn't want to make this too high.).
+    type: Tweak
+  - message: Mining Specialist - 3h cargo, 10h overall > 6h cargo, 10h overall.
+    type: Tweak
+  - message: BSO - 20h sec, 20h command > 30h sec, 30h command, 6h brigmed.
+    type: Tweak
+  - message: NTR - 20h command > 40h command (Magi is still higher than ntr for playtime
+      even after this).
+    type: Tweak
+  - message: ERTLeader - 20hr overall, 10h CC, 10h command > 96hr overall, 10h CC,
+      20h command, 15h secoff.
+    type: Tweak
+  - message: ERTEngineer - 20h overall, 5h engineer > 72h overall, 15h station engineer.
+    type: Tweak
+  - message: ERTSecurity - 20h overall, 5h secoff > 72h overall, 15h secoff.
+    type: Tweak
+  - message: ERTMedical - 20h overall, 5h doctor, 5h chemist > 72h overall, 10h doctor,
+      10h chemist, 5hr secoff (You come with ERT Sec. There's a very high chance you'll
+      be fighting.).
+    type: Tweak
+  - message: ERTChaplain - 20h overall, 5h chaplain > 48h overall, 5h chaplain.
+    type: Tweak
+  - message: ERTJanitor - 20h overall, 5h janitor > 48h overall, 5h janitor.
+    type: Tweak
+  - message: CBURN - 20hr overall, 5h medical doctor, 5h secoff > 60hr overall, 10h
+      medical doctor, 10h secoff.
+    type: Tweak
+  id: 347501
+  time: '2026-02-27T21:04:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3475
+- author: Conflee, Scarlet, swonki.
+  changes:
+  - message: Added a craftable traditional reptillian jumpsuit.
+    type: Add
+  id: 348801
+  time: '2026-02-27T21:11:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3488
 Order: -1
 
