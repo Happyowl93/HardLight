@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/27/2026 08:42:26
-  entityCount: 17578
+  time: 02/27/2026 08:50:02
+  entityCount: 17581
 maps:
 - 1
 grids:
@@ -11007,7 +11007,7 @@ entities:
       pos: 7.5,-88.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -157046.47
+      secondsUntilStateChange: -157498.72
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12265,7 +12265,7 @@ entities:
       pos: -11.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -70483.5
+      secondsUntilStateChange: -70935.74
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -89263,6 +89263,23 @@ entities:
       - Experimental
       - CivilianServices
       - Biochemical
+- proto: protectionanchor
+  entities:
+  - uid: 17579
+    components:
+    - type: Transform
+      pos: -5.5,-13.5
+      parent: 2
+  - uid: 17580
+    components:
+    - type: Transform
+      pos: 49.5,3.5
+      parent: 2
+  - uid: 17581
+    components:
+    - type: Transform
+      pos: 49.5,-2.5
+      parent: 2
 - proto: Protolathe
   entities:
   - uid: 556
