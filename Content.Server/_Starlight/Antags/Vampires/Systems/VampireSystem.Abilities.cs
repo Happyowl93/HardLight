@@ -409,7 +409,10 @@ public sealed partial class VampireSystem : EntitySystem
         //    }
         //}
 
-        //if (_damageableSystem.GetDamage(target, comp.MaxDrinkDamage.DamageGroupPrototype) > 10) //TODO test this
+        //var TargetDamage = new DamageSpecifier();
+        //TargetDamage = _damageableSystem.GetDamage(target, _proto.Index<DamageGroupPrototype>(_geneticGroupId));
+
+        //if (_damageableSystem.TryGetDamageGreaterThan(target, FixedPoint2.New(10), out var TempDamage, _proto.Index<DamageGroupPrototype>(_geneticGroupId))) //TODO test this
         //{
         //    _popup.PopupEntity(Loc.GetString("vampire-target-sickly"), uid, uid, Shared.Popups.PopupType.MediumCaution);
         //    comp.IsDrinking = false;
@@ -417,27 +420,27 @@ public sealed partial class VampireSystem : EntitySystem
         //}
 
         var sipInefficiency = 0f;
-        var sipAmount = 0f;
+        var sipAmount = 10f;
         var maxCanDrink = 0f;
         var actualSipAmount = 0f;
         
         if (HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value))
         {
-            if (comp.humanoidEfficiency <= 0) //Lets not divide by zero
+            if (false) //  comp.humanoidEfficiency <= 0) //Lets not divide by zero todo make yml work
             {
                 return;
                 comp.IsDrinking = false;
             }
-            sipInefficiency = 1 / comp.humanoidEfficiency;
-            sipAmount = comp.sipAmount;
+            sipInefficiency = 1f / 0.5f;  //comp.humanoidEfficiency;
+            sipAmount = 10; // comp.sipAmountHuman; //todo make yml work
         } else {
-            if (comp.nonHumanoidEfficiency <= 0) // && comp.humanoidEfficiency <= 0)
+            if (false) // workcomp.nonHumanoidEfficiency <= 0) //todo make yml work
             {
                 comp.IsDrinking = false;
                 return;
             }
-            sipInefficiency = 1 / comp.nonHumanoidEfficiency;
-            sipAmount = comp.sipAmount; // * (comp.nonHumanoidEfficiency / comp.humanoidEfficiency); //had the idea to scale the drinking amount for animals, but I don't like the idea anymore
+            sipInefficiency = 1f / 0.25f; //comp.nonHumanoidEfficiency;
+            sipAmount = 5; //comp.sipAmountNonHuman; //todo make yml work
         }
 
         maxCanDrink = comp.MaxBloodPerTarget - drunkFromTarget;
@@ -448,24 +451,21 @@ public sealed partial class VampireSystem : EntitySystem
         {
             //Blood level reduction success
             comp.DrunkBlood += (int)actualSipAmount;
-            
+
             //Confirm target is a humanoid before progressing objectives
-            if (HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value)) 
+            if (HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value))
             {
                 comp.TotalBlood += (int)actualSipAmount;
             }
 
-            //Biting Damage
-            //if (HasComp<DrinkDamage>(comp)) //Check if DrinkDamage exists
-            //{                
-            //    //Little bit of additional damage to disincentivize blood donations
-            //    _damageableSystem.TryChangeDamage(target, comp.DrinkDamage, ignoreResistances: true, origin: uid);
-            //}
-
             //Biting Damage              
             //Little bit of additional damage to disincentivize blood donations
-            _damageableSystem.TryChangeDamage(target, comp.drinkDamage, ignoreResistances: true);
-            
+            var BiteDamage = new DamageSpecifier();
+            BiteDamage += new DamageSpecifier(_proto.Index<DamageTypePrototype>(_cellularTypeId), FixedPoint2.New(1));
+            BiteDamage += new DamageSpecifier(_proto.Index<DamageTypePrototype>(_pierceTypeId), FixedPoint2.New(0.5));
+            _damageableSystem.TryChangeDamage(target, BiteDamage, ignoreResistances: true);
+            _blood.TryModifyBleedAmount(target, 1);
+
             RaiseLocalEvent(uid, new VampireProgressionChangedEvent());
 
             if (!comp.BloodDrunkFromTargets.ContainsKey(target))
