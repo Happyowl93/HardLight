@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/27/2026 06:56:49
-  entityCount: 16920
+  time: 02/27/2026 07:19:21
+  entityCount: 16922
 maps:
 - 1
 grids:
@@ -46660,8 +46660,6 @@ entities:
       pos: 59.5,39.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -59957.523
-      state: Closing
 - proto: d6Dice
   entities:
   - uid: 316
@@ -52414,8 +52412,6 @@ entities:
       pos: 26.5,37.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -107251.305
-      state: Closing
   - uid: 9362
     components:
     - type: Transform
@@ -91820,6 +91816,18 @@ entities:
     components:
     - type: Transform
       pos: 46.5,3.5
+      parent: 2
+- proto: SpawnPointPerformer
+  entities:
+  - uid: 16921
+    components:
+    - type: Transform
+      pos: 23.5,-10.5
+      parent: 2
+  - uid: 16922
+    components:
+    - type: Transform
+      pos: 26.5,2.5
       parent: 2
 - proto: SpawnPointQuartermaster
   entities:
