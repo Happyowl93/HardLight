@@ -32499,5 +32499,87 @@ Entries:
   id: 252301
   time: '2026-02-27T20:44:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2523
+- author: wonderfulnewworld, RorororoIDK
+  changes:
+  - message: Playtime requirements for Antags has been changed across the board.
+    type: Tweak
+  - message: Many jobs have had their playtimes tweaked.
+    type: Tweak
+  - message: Nukeops - 24h overall, 6h sec > 48h overall, 5h secoff, 5h medical doctor,
+      5h Traitor.
+    type: Tweak
+  - message: NukeopsMedic - 24h overall, 6h chemist, 3h surgeon, 3h sec > 48h overall,
+      6h chemist, 3hr surgeon, 5h Brigmedic, 3h Traitor.
+    type: Tweak
+  - message: NukeopsCommander - 24h overall, 12h sec, 6h command > 72hr overall, 15h
+      secoff, 10h Command, 5hr Nukeops.
+    type: Tweak
+  - message: HeadRev - 24h overall, 6h sec, 6h command > 72h overall, 5h secoff, 12h
+      command.
+    type: Tweak
+  - message: Traitor, Changeling, Vampire - 3h overall > 24h overall.
+    type: Tweak
+  - message: Thief - 3h overall > 8h overall.
+    type: Tweak
+  - message: Initial Infected - 3h overall > 24h overall, 2 medical doctor (To know
+      about treating yourself, but to also know what your Prime Target is.).
+    type: Tweak
+  - message: Dragon - 3h salv > 24hr overall, 8h salv.
+    type: Tweak
+  - message: Ninja - 3h sec > 48h overall, 3h sec officer, 5h Thief.
+    type: Tweak
+  - message: Paradox clone - 24h overall > 48h overall (This is a HARD role. You should
+      be familiar with the server culture if you even want a chance.).
+    type: Tweak
+  - message: Wizard - 24h overall 6h sec > 48h overall, 6h sec.
+    type: Tweak
+  - message: All command except HoS - 20h department time > 30h department time.
+    type: Tweak
+  - message: Paramedic - 2.5h med > 4h doctor.
+    type: Tweak
+  - message: Chemist - 5h med > 6h doctor.
+    type: Tweak
+  - message: Brigmedic - 10h secoff, 8h med > 10h secoff, 4h chem, 4h paramedic, 15hr
+      medical department (Less Chem time since Chem is being phased out of Brigmed.
+      If we had more systems to back it up I'd just bite the bullet right now and
+      fully remove chem time, but we don't currently.).
+    type: Tweak
+  - message: Warden - 16h secoff, 4hr duty officer, 1h det > 15h secoff, 5h duty officer,
+      1hr detective (Didn't want to make HoS drastically harder to unlock).
+    type: Tweak
+  - message: HoS - 5h Ward, 5h det, 5h secoff, 20h sec > 10h ward, 5h det, 15h secoff,
+      60h sec (Highest stress role on the station debatably.).
+    type: Tweak
+  - message: Salvage Specialist - 2.5h cargo > 8h cargo, 12h overall playtime (We've
+      got a unique Salvage system, so I didn't want to make this too high.).
+    type: Tweak
+  - message: Mining Specialist - 3h cargo, 10h overall > 6h cargo, 10h overall.
+    type: Tweak
+  - message: BSO - 20h sec, 20h command > 30h sec, 30h command, 6h brigmed.
+    type: Tweak
+  - message: NTR - 20h command > 40h command (Magi is still higher than ntr for playtime
+      even after this).
+    type: Tweak
+  - message: ERTLeader - 20hr overall, 10h CC, 10h command > 96hr overall, 10h CC,
+      20h command, 15h secoff.
+    type: Tweak
+  - message: ERTEngineer - 20h overall, 5h engineer > 72h overall, 15h station engineer.
+    type: Tweak
+  - message: ERTSecurity - 20h overall, 5h secoff > 72h overall, 15h secoff.
+    type: Tweak
+  - message: ERTMedical - 20h overall, 5h doctor, 5h chemist > 72h overall, 10h doctor,
+      10h chemist, 5hr secoff (You come with ERT Sec. There's a very high chance you'll
+      be fighting.).
+    type: Tweak
+  - message: ERTChaplain - 20h overall, 5h chaplain > 48h overall, 5h chaplain.
+    type: Tweak
+  - message: ERTJanitor - 20h overall, 5h janitor > 48h overall, 5h janitor.
+    type: Tweak
+  - message: CBURN - 20hr overall, 5h medical doctor, 5h secoff > 60hr overall, 10h
+      medical doctor, 10h secoff.
+    type: Tweak
+  id: 347501
+  time: '2026-02-27T21:04:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3475
 Order: -1
 
