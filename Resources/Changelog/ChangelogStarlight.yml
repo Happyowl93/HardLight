@@ -32393,5 +32393,25 @@ Entries:
   id: 347901
   time: '2026-02-27T16:28:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3479
+- author: wonderfulnewworld
+  changes:
+  - message: (Starboard) Adds spawns and slots for the Performer job.
+    type: Add
+  - message: (Starboard) Adds protection anchors to the armory and vault.
+    type: Add
+  id: 347701
+  time: '2026-02-27T16:32:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3477
+- author: deltaVelocity
+  changes:
+  - message: Reverted the Wizard's "Cause Chaos" objective to "Show Off." If you kill
+      everyone, there's nobody left to show off to.
+    type: Remove
+  - message: Increased the price of the Wizard's Rod Form spell from 3 to 7 Wizcoin.
+      No more rod-upgraded jaunt-upgraded blink spam from Wizards, ideally.
+    type: Tweak
+  id: 347801
+  time: '2026-02-27T16:43:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3478
 Order: -1
 
