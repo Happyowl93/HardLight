@@ -644,3 +644,17 @@
     - type: Clothing
       sprite: _Starlight/Clothing/Uniforms/Jumpsuit/belpero.rsi
 # Fashion-O-Mat End
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitTraditionalReptilian
+  name: traditional reptilian clothes
+  description: Traditional garments crafted from cloth, worn by the reptilians. This does not stop you from wearing it, if you want.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/traditional_reptilian.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/traditional_reptilian.rsi
+  - type: Construction
+    graph: TraditionalReptilianClothesGraph
+    node: jumpsuit
