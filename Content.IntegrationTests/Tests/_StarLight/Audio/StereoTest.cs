@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Content.Shared.Audio;
 using Robust.Client.Audio;
-using Robust.Client.ResourceManagement;
 using Robust.Shared.Audio;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
@@ -13,6 +12,13 @@ namespace Content.IntegrationTests.Tests._Starlight.Audio;
 [TestFixture]
 public sealed class StereoTest
 {
+    // Mark specific files as ignored if they not using positioning, for example: Ambience, Announcements.
+    public List<ResPath> IgnoredFiles = [];
+
+    public List<ResPath> IgnoredPaths = [
+            new ResPath("/Audio/Announcements"), // Announcements can be stereo because they don't have positioning.
+        ];
+
     [Test]
     public async Task TestAudioFiles()
     {
@@ -49,6 +55,10 @@ public sealed class StereoTest
         {
             if (ambienceTracks.Contains(file))
                 continue; // Ambience tracks can be stereo, so we skip them.
+
+            if (IgnoredFiles.Contains(file) || IgnoredPaths.Any(p => file.ToString().StartsWith(p.ToString()))) // We can ignore some files/paths if we want to, for example if they are stereo on purpose or if we just don't care about them.
+                continue;
+
             var ext = file.Extension.ToLowerInvariant();
             if (ext is not "ogg" and not "wav")
                 continue;
@@ -59,10 +69,9 @@ public sealed class StereoTest
                 var audioStream = ext == "ogg" ? audioMan.LoadAudioOggVorbis(stream) : audioMan.LoadAudioWav(stream);
                 if (audioStream.ChannelCount != 1)
                 {
-                    if (audioStream.ChannelCount == 2)
-                        badFiles[file.ToString()] = ($"This audio is stereo!");
-                    else
-                        badFiles[file.ToString()] = ($"Incorrect channels count! Channel count: {audioStream.ChannelCount}");
+                    badFiles[file.ToString()] = audioStream.ChannelCount == 2
+                        ? $"This audio is STEREO but NEEDS to be MONO!"
+                        : $"Incorrect channels count! Channel count: {audioStream.ChannelCount}, but it should have only 1 channel.";
                 }
             }
             catch (Exception e)
