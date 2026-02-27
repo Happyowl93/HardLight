@@ -32452,5 +32452,16 @@ Entries:
   id: 349201
   time: '2026-02-27T20:05:39.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3492
+- author: redmushie
+  changes:
+  - message: Stationary and handheld crew monitors now visibly and audibly alert you
+      of critical/dead patients after 30 seconds.
+    type: Add
+  - message: Handheld crew monitors now have unpowered sprites for when they have
+      no charge remaining or no battery inserted.
+    type: Add
+  id: 349001
+  time: '2026-02-27T20:28:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3490
 Order: -1
 
