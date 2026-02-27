@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/27/2026 08:50:02
-  entityCount: 17581
+  time: 02/27/2026 09:01:31
+  entityCount: 17584
 maps:
 - 1
 grids:
@@ -11007,7 +11007,7 @@ entities:
       pos: 7.5,-88.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -157498.72
+      secondsUntilStateChange: -158183.58
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12265,7 +12265,7 @@ entities:
       pos: -11.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -70935.74
+      secondsUntilStateChange: -71620.6
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -99198,6 +99198,16 @@ entities:
       - SurveillanceCameraCommand
       nameSet: True
       id: AI Bridge
+  - uid: 17582
+    components:
+    - type: Transform
+      pos: -29.5,-30.5
+      parent: 2
+  - uid: 17583
+    components:
+    - type: Transform
+      pos: -25.5,-30.5
+      parent: 2
 - proto: SurveillanceCameraEngineering
   entities:
   - uid: 4329
@@ -99745,6 +99755,12 @@ entities:
       - SurveillanceCameraMedical
       nameSet: True
       id: Chemistry
+  - uid: 17584
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -8.5,-43.5
+      parent: 2
 - proto: SurveillanceCameraRouterCommand
   entities:
   - uid: 5347
