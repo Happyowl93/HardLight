@@ -66,7 +66,7 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly ILogManager _log = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    //[Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly FlammableSystem _flammable = default!;
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;

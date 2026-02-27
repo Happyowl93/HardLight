@@ -31,7 +31,7 @@
           Piercing: 0.2
       MaxDrinkDamage: 
         types:
-          Cellular: 20
+          Cellular: 10
 
 - type: entity
   parent: BaseAction

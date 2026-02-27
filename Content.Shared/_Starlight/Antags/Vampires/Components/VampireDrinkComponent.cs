@@ -1,7 +1,7 @@
 namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
-using Content.Shared._Starlight.Antags.Vampires.Prototypes;
-using Robust.Shared.Prototypes;
+using Content.Shared._Starlight.Antags.Vampires.Components;
+using Content.Shared.Damage;
 
 /// <summary>
 /// Attach to a spawned action entity to define Vampire-specific drink related effects
@@ -25,6 +25,6 @@ public sealed partial class VampireDrinkComponent : Component
     public float NonHumanoidSipAmount = 5f;
 
     [DataField]
-    public float DamageSpecifier MaxDrinkDamage = new();
+    public DamageSpecifier MaxDrinkDamage = new();
     
 }

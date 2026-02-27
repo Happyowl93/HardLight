@@ -399,59 +399,52 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        if (_damageableSystem.TryGetDamageGreaterThan(target, comp.MaxDrinkDamage) //TODO test this
-        {
-            _popup.PopupEntity(Loc.GetString("vampire-target-sickly"), uid, uid, Shared.Popups.PopupType.MediumCaution);
-            comp.IsDrinking = false;
-            return;
-        }
+        //foreach (var MaxDmg in comp.MaxDrinkDamage)
+        //{
+        //    if (_damageableSystem.TryGetDamageGreaterThan(target, MaxDmg.FixedPoint2, MaxDmg.DamageSpecifier)) //TODO test this
+        //    {
+        //        _popup.PopupEntity(Loc.GetString("vampire-target-sickly"), uid, uid, Shared.Popups.PopupType.MediumCaution);
+        //        comp.IsDrinking = false;
+        //        break;
+        //    }
+        //}
 
-        var sipInefficiency
-        var sipAmount
+        //if (_damageableSystem.GetDamage(target, comp.MaxDrinkDamage.DamageGroupPrototype) > 20) //TODO test this
+        //{
+        //    _popup.PopupEntity(Loc.GetString("vampire-target-sickly"), uid, uid, Shared.Popups.PopupType.MediumCaution);
+        //    comp.IsDrinking = false;
+        //    return;
+        //}
+
+        var sipInefficiency = 0f;
+        var sipAmount = 0f;
+        var maxCanDrink = 0f;
+        var actualSipAmount = 0f;
         
-        if (HasComp<HumanoidEfficiency>(comp)
-            && HasComp<NonHumanoidEfficiency>(comp)
         if (HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value))
         {
-            if (HasComp<HumanoidEfficiency>(comp) && HasComp<SipAmount>(comp))
-            {
-                if (comp.HumanoidEfficiency <= 0) //Lets not divide by zero
-                {
-                    return;
-                    comp.IsDrinking = false;
-                }
-                sipInefficiency = 1 / comp.HumanoidEfficiency;
-                sipAmount = comp.SipAmount;
-            }
-            else //fall back to original hard-coded vlue
-            {
-                sipInefficiency = 2;
-                sipAmount = 10;
-            }
-        }
-        else
-        {
-            if (HasComp<NonHumanoidEfficiency>(comp) && HasComp<SipAmount>(comp))
-                if (comp.NonHumanoidEfficiency <= 0) // && comp.HumanoidEfficiency <= 0)
-                {
-                    return;
-                    comp.IsDrinking = false;
-                }
-                sipInefficiency = 1 / comp.NonHumanoidEfficiency;
-                sipAmount = comp.SipAmount; // * (comp.NonHumanoidEfficiency / comp.HumanoidEfficiency); //had the idea to scale the drinking amount for animals, but I don't like the idea anymore
-            }
-            else //fall back to original system where drinking from animals was not allowed
+            if (comp.HumanoidEfficiency <= 0) //Lets not divide by zero
             {
                 return;
                 comp.IsDrinking = false;
             }
+            sipInefficiency = 1 / comp.HumanoidEfficiency;
+            sipAmount = comp.SipAmount;
+        } else {
+            if (comp.NonHumanoidEfficiency <= 0) // && comp.HumanoidEfficiency <= 0)
+            {
+                comp.IsDrinking = false;
+                return;
+            }
+            sipInefficiency = 1 / comp.NonHumanoidEfficiency;
+            sipAmount = comp.SipAmount; // * (comp.NonHumanoidEfficiency / comp.HumanoidEfficiency); //had the idea to scale the drinking amount for animals, but I don't like the idea anymore
         }
 
-        var maxCanDrink = comp.MaxBloodPerTarget - drunkFromTarget;
-        var actualSipAmount = MathF.Min(SipAmount, maxCanDrink);
+        maxCanDrink = comp.MaxBloodPerTarget - drunkFromTarget;
+        actualSipAmount = MathF.Min(sipAmount, maxCanDrink);
         
         //attempt to drain the target's blood level
-        if (_blood.TryModifyBloodLevel(target, -actualSipAmount * sipInefficiency)) 
+        if (_blood.TryModifyBloodLevel(target, -actualSipAmount * sipInefficiency))
         {
             //Blood level reduction success
             comp.DrunkBlood += (int)actualSipAmount;
@@ -460,14 +453,18 @@ public sealed partial class VampireSystem : EntitySystem
             if (HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value)) 
             {
                 comp.TotalBlood += (int)actualSipAmount;
-            ]
+            }
 
             //Biting Damage
-            if (HasComp<DrinkDamage>(comp)) //Check if DrinkDamage exists
-            {                
-                //Little bit of additional damage to disincentivize blood donations
-                _damageableSystem.TryChangeDamage(target, comp.DrinkDamage, ignoreResistances: true, origin: uid);
-            }
+            //if (HasComp<DrinkDamage>(comp)) //Check if DrinkDamage exists
+            //{                
+            //    //Little bit of additional damage to disincentivize blood donations
+            //    _damageableSystem.TryChangeDamage(target, comp.DrinkDamage, ignoreResistances: true, origin: uid);
+            //}
+
+            //Biting Damage              
+            //Little bit of additional damage to disincentivize blood donations
+            _damageableSystem.TryChangeDamage(target, comp.DrinkDamage, ignoreResistances: true);
             
             RaiseLocalEvent(uid, new VampireProgressionChangedEvent());
 
@@ -516,8 +513,10 @@ public sealed partial class VampireSystem : EntitySystem
             }
         }
         else
+        {
             //Blood level reduction failed
             comp.IsDrinking = false;
+        }
     }
 
     partial void UpdateVampireAlert(EntityUid uid)

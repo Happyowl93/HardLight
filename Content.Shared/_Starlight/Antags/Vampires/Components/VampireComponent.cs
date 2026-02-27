@@ -2,6 +2,8 @@ using Content.Shared.Chemistry.Reagent;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Content.Shared.Damage;
+
 
 namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
@@ -10,6 +12,9 @@ namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
 public sealed partial class VampireComponent : Component
 {
+    //[DataField]
+    //public Component VampireDrinkComponent = new();
+
     /// <summary>
     /// Chosen vampire class prototype id, once selected.
     /// </summary>
@@ -58,7 +63,7 @@ public sealed partial class VampireComponent : Component
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public bool FangsExtended = false;
 
-    //public float SipAmount = 10f; //moved to VampireDrinkComponent.cs
+    public float SipAmount = 10f;
 
     /// <summary>
     /// Current blood fullness used instead of normal food needs.
@@ -141,6 +146,24 @@ public sealed partial class VampireComponent : Component
 
     [DataField]
     public TimeSpan UpdateDelay = TimeSpan.FromSeconds(1);
+
+    [DataField]
+    public float HumanoidEfficiency = 0.5f;
+
+    [DataField]
+    public float NonHumanoidEfficiency = 0f; //Default to zero incase the line was removed from the yml
+
+    [DataField]
+    public DamageSpecifier DrinkDamage = new();
+
+    //[DataField]
+    //public float HumanoidSipAmount = 10f;
+    //
+    //[DataField]
+    //public float NonHumanoidSipAmount = 5f;
+
+    [DataField]
+    public DamageSpecifier MaxDrinkDamage = new();
 }
 
 [RegisterComponent]
