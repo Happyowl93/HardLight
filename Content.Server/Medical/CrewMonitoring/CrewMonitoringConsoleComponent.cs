@@ -46,11 +46,13 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     /// <summary>
     ///     STARLIGHT: Paging sound audio parameters.
     /// </summary>
+    [DataField]
     public AudioParams PagingSoundParams = AudioParams.Default.WithVolume(-2f);
 
     /// <summary>
     ///     STARLIGHT: Whether the paging sound should play local to the entity that contains the component. Used for AI.
     /// </summary>
+    [DataField]
     public bool PagingSoundLocal = false;
     
     /// <summary>
