@@ -32424,5 +32424,25 @@ Entries:
   id: 348901
   time: '2026-02-27T17:38:06.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3489
+- author: DuckManZach
+  changes:
+  - message: Nanochat.
+    type: Add
+  id: 305901
+  time: '2026-02-27T17:39:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3059
+- author: CrazyPhantom
+  changes:
+  - message: Nanochat emotes.
+    type: Add
+  - message: Spam advertisements to Nanochat.
+    type: Add
+  - message: Changed Nanochat sprites.
+    type: Tweak
+  - message: Nanochat lookup now looks alot better.
+    type: Tweak
+  id: 305902
+  time: '2026-02-27T17:39:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3059
 Order: -1
 
