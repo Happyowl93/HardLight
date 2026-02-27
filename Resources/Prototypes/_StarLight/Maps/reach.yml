@@ -24,6 +24,7 @@
             Botanist: [ 1, 1 ]
             Chef: [ 1, 1 ]
             Janitor: [ 1, 1 ]
+            ServiceWorker: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 1, 1 ]
@@ -58,6 +59,7 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
+            Performer: [ 1, 1 ]
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 1, 2 ]
