@@ -40,6 +40,26 @@
 # Terror spiders
 
 - type: entity
+  id: ActionAcidVent
+  name: Acid Vent
+  description: Unwelds vents.
+  components:
+  - type: Action
+    useDelay: 30
+    itemIconStyle: BigAction
+    raiseOnUser: true
+    sound:
+      path: /Audio/Effects/pop.ogg
+    icon:
+      sprite: _Starlight/Interface/Actions/actions_spider.rsi
+      state: acid_vent
+  - type: TargetAction
+    range: 2
+    checkCanAccess: true
+  - type: EntityTargetAction
+    event: !type:AcidVentEvent
+
+- type: entity
   id: ActionEvolve
   name: Evolve
   description: evolve into a new entity.
@@ -84,7 +104,7 @@
     sound: /Audio/Effects/pop.ogg
     icon:
       sprite:  _Starlight/Interface/Actions/actions_spider.rsi
-      state: egg
+      state: lay_eggs
   - type: TargetAction
     interactOnMiss: false
   - type: EntityTargetAction
@@ -104,7 +124,7 @@
     useDelay: 5
     icon:
       sprite: _Starlight/Interface/Actions/actions_spider.rsi
-      state: egg
+      state: lay_eggs
   - type: LimitedCharges
     maxCharges: 3
   - type: AutoRecharge
@@ -130,3 +150,45 @@
     rechargeDuration: 90
   - type: InstantAction
     event: !type:SpawnOnActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionSpiderBuildingPole
+  name: Web pole
+  description: Spawns a web pole that spawns webs around at free tiles.
+  components:
+  - type: Action
+    icon: 
+      sprite: _Starlight/Structures/Specific/TerrorSpiders/buildings_48.rsi
+      state: pole
+    useDelay: 3
+  # Starlight-start
+  - type: LimitedCharges
+    maxCharges: 1
+  - type: AutoRecharge
+    rechargeDuration: 300 # 5 mins
+  # Starlight-end
+  - type: InstantAction
+    event: !type:SpiderWebBuildingActionEvent
+      building: WebEntityBeacon
+
+- type: entity
+  parent: BaseAction
+  id: ActionSpiderBuildingCocoon
+  name: Web cocoon
+  description: Spawns a web cocoon that heals spider which entered in it.
+  components:
+  - type: Action
+    icon: 
+      sprite: _Starlight/Structures/Specific/TerrorSpiders/buildings.rsi
+      state: cocoon
+    useDelay: 3
+  # Starlight-start
+  - type: LimitedCharges
+    maxCharges: 1
+  - type: AutoRecharge
+    rechargeDuration: 300 # 5 mins
+  # Starlight-end
+  - type: InstantAction
+    event: !type:SpiderWebBuildingActionEvent
+      building: WebCocoon

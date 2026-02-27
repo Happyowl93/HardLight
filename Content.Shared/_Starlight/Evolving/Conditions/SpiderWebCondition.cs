@@ -1,6 +1,6 @@
 using Content.Shared._Starlight.Evolving;
 
-namespace Content.Server._Starlight.Evolving.Conditions;
+namespace Content.Shared._Starlight.Evolving.Conditions;
 
 /// <summary>
 /// Condition that checks if the entity created a certain amount of spider web.
@@ -15,7 +15,11 @@ public sealed partial class SpiderWebCondition : EvolvingCondition
 
     private int _createdWebs = 0;
 
+    public override EvolveType Type => EvolveType.SpiderWebsSpawned;
+
     public override bool Condition(EvolvingConditionArgs args) => _createdWebs >= TargetWebAmount;
+
+    public override int GetTarget() => TargetWebAmount;
 
     public bool Condition() => _createdWebs >= TargetWebAmount;
 
