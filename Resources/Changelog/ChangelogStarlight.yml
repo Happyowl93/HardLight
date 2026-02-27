@@ -32296,5 +32296,14 @@ Entries:
   id: 347401
   time: '2026-02-27T06:33:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3474
+- author: neomoth
+  changes:
+  - message: Added the blue jumpsuit/skirt and tie to the list of valid security uniforms
+      for the security dress code SOP as they are available options when picking your
+      loadout for security officers.
+    type: Add
+  id: 347301
+  time: '2026-02-27T08:11:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3473
 Order: -1
 
