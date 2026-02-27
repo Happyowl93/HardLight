@@ -31,6 +31,19 @@ public sealed class StereoTest
             new ResPath("/Audio/Misc/paradox_clone_greeting.ogg"), // Global
             new ResPath("/Audio/Misc/ratvar_reveal.ogg"), // Global
             new ResPath("/Audio/Misc/ratvar_rises.ogg"), // Global
+            new ResPath("/Audio/Mecha/powerup.ogg"), // Global
+            new ResPath("/Audio/Mecha/skyfall_power_up.ogg"), // Global
+            new ResPath("/Audio/_Starlight/Admeme/announcement_horror.ogg"), // Global
+            new ResPath("/Audio/_Starlight/Effects/sov_choir_global.ogg"), // Global
+            new ResPath("/Audio/_Starlight/Misc/bluealert.ogg"), // Global
+            new ResPath("/Audio/_Starlight/Misc/omega.ogg"), // Global
+            new ResPath("/Audio/_Starlight/Misc/omega_alt.ogg"), // Global
+            new ResPath("/Audio/_Starlight/Misc/orange.ogg"), // Global
+            new ResPath("/Audio/_Starlight/Misc/redalert.ogg"), // Global
+            new ResPath("/Audio/_Starlight/Misc/rev_end.ogg"), // Global
+            new ResPath("/Audio/_Starlight/Misc/sov_win.ogg"), // Global
+            new ResPath("/Audio/_Starlight/Thaven/moods_changed.ogg"), // Global
+            new ResPath("/Audio/_Starlight/Effects/vampire/sound_hallucinations_im_here1.ogg"), // Global
         ];
 
     public List<ResPath> IgnoredPaths = [
@@ -41,8 +54,10 @@ public sealed class StereoTest
             new ResPath("/Audio/_Starlight/Lobby"),
             new ResPath("/Audio/Effects/Weather/"),
             new ResPath("/Audio/StationEvents/"),
+            new ResPath("/Audio/_Starlight/StationEvents/"),
             new ResPath("/Audio/Ambience/Antag/"),
             new ResPath("/Audio/_Starlight/Ambience/Antag/"),
+            new ResPath("/Audio/_Starlight/Effects/Radio/"),
         ];
 
     [Test]
