@@ -12,7 +12,7 @@ uplink-stechkin-name = Stechkin pistol
 uplink-stechkin-desc = A small, easily concealable 10mm handgun. Has a threaded barrel for suppressors.
 
 uplink-stechkin-bundle-name = Solid Operative Bundle
-uplink-stechkin-bundle-desc = A stealth box containing a slew of equipment for only the most solid of operatives.
+uplink-stechkin-bundle-desc = A mysterious cardboard box containing a slew of equipment for only the most solid of operatives.
 
 uplink-pistol-magnum-magazine-name = Pistol Magazine (.45 magnum)
 uplink-pistol-magnum-magazine-desc = Pistol magazine with 10 cartridges. Compatible with the Desert Eagle.
