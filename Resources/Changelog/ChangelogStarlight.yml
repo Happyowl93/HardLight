@@ -32305,5 +32305,13 @@ Entries:
   id: 347301
   time: '2026-02-27T08:11:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3473
+- author: R3v3l4t1on
+  changes:
+  - message: Xenoborg's heavy laser cannon is no longer overtuned to all hell (firecost
+      40 increased from 100)
+    type: Fix
+  id: 348701
+  time: '2026-02-27T15:36:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3487
 Order: -1
 
