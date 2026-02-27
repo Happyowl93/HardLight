@@ -24,7 +24,7 @@
   id: ClothingUniformJumpsuitAtmosSyndie
   name: Contortionist's Jumpsuit
   components:
-  - type: VentCrawClothing
+  - type: VentCrawlClothing
 
 - type: entity
   parent: [ ClothingUniformBase, BaseCommandContraband ]
@@ -207,6 +207,83 @@
   - type: Clothing
     sprite: _Starlight/Clothing/Uniforms/Jumpsuit/dutyofficer.rsi
 
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  id: ClothingUniformJumpsuitServiceWorkerBartender
+  name: waiter jumpsuit
+  description: A sharp and tidy uniform for the bartender's footsoldiers.
+  components:
+  - type: RollUpSleeves
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/serviceworker_bartender.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/serviceworker_bartender.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  id: ClothingUniformJumpsuitServiceWorkerBotany
+  name: gardener jumpsuit
+  description: Has a light earthy smell to it. Has to be routinely bleached.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/serviceworker_botany.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/serviceworker_botany.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitServiceWorkerChef
+  name: sous chef jumpsuit
+  description: The noble jumpsuit of the chef's co-conspirator.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/serviceworker_chef.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/serviceworker_chef.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPerformerClown
+  name: assistant clown jumpsuit
+  description: Yet to be worthy of honking.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/performer_clown.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/performer_clown.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPerformerMime
+  name: mime apprentice jumpsuit
+  description: Still have to learn how to be quiet...
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/performer_mime.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/performer_mime.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPerformerMusician
+  name: session musician jumpsuit
+  description: A formal suit with a luxurious pair of pants. It's time to act!
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/performer_musician.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/performer_musician.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitClownFormal
+  name: distinguished clown suit
+  description: Why, I daresay, HONK!
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/clown_distinguished.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/clown_distinguished.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseCentcommContraband]
