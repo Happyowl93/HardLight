@@ -32313,5 +32313,13 @@ Entries:
   id: 348701
   time: '2026-02-27T15:36:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3487
+- author: Scarlet Lightweaver, lynatikr20.
+  changes:
+  - message: Added a proper pirate antagonist and additional items for the pirates.
+      (lionhunter and the fang.).
+    type: Add
+  id: 347101
+  time: '2026-02-27T16:10:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3471
 Order: -1
 
