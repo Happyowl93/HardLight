@@ -68,6 +68,7 @@ public sealed class CrewMonitoringServerSystem : EntitySystem
     private void OnRemove(EntityUid uid, CrewMonitoringServerComponent component, ComponentRemove args)
     {
         //component.SensorStatus.Clear(); // Starlight: Don't instantly wipe sensor list, let it time out instead.
+        component.PagingStatus.Clear(); // Starlight
     }
 
     /// <summary>
@@ -130,7 +131,7 @@ public sealed class CrewMonitoringServerSystem : EntitySystem
             }, device: device);
         }
         
-        // Increment unseen counter on all sensors we didn't see.
+        // Check for pagers we've tracked but not seen.
         foreach (var (address, pagingTracker) in component.PagingStatus)
         {
             if (seen.Contains(address))
