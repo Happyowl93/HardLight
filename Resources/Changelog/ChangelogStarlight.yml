@@ -32581,5 +32581,12 @@ Entries:
   id: 347501
   time: '2026-02-27T21:04:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3475
+- author: Conflee, Scarlet, swonki.
+  changes:
+  - message: Added a craftable traditional reptillian jumpsuit.
+    type: Add
+  id: 348801
+  time: '2026-02-27T21:11:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3488
 Order: -1
 
