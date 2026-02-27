@@ -280,7 +280,7 @@
   name: L10 DMR
   parent: [ BaseWeaponRifle, BaseSecurityContraband ]
   id: WeaponRifleL10
-  description: "A scoped marksman rifle for medium range engagements, built on the Lecter platform.\nChambered in .30 rifle."
+  description: "A scoped marksman rifle for medium range engagements, built on the Lecter platform.\nChambered in .45 magnum."
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Rifles/L10.rsi
@@ -292,7 +292,7 @@
   - type: Clothing
     sprite: _Starlight/Objects/Weapons/Guns/Rifles/L10.rsi
   - type: Gun
-    fireRate: 4.5
+    fireRate: 2
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -316,11 +316,11 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeLightRifleSP
+        startingItem: CartridgeMagnumSP
         priority: 1
         whitelist:
           tags:
-          - CartridgeLightRifle
+          - CartridgeMagnum
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot ""
