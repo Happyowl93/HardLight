@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 270.1.0
+  engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/28/2026 17:17:50
-  entityCount: 29476
+  time: 02/27/2026 09:44:31
+  entityCount: 29482
 maps:
 - 1
 grids:
@@ -10403,7 +10403,7 @@ entities:
       pos: -63.5,-31.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -181328.8
+      secondsUntilStateChange: -181815.98
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10428,7 +10428,7 @@ entities:
       pos: -58.5,-45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -179726.3
+      secondsUntilStateChange: -180213.48
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10563,7 +10563,7 @@ entities:
       pos: -32.5,-52.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -186981.33
+      secondsUntilStateChange: -187468.52
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11026,7 +11026,7 @@ entities:
       pos: -71.5,-38.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -181839.12
+      secondsUntilStateChange: -182326.31
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -11221,7 +11221,7 @@ entities:
       pos: -83.5,-42.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6400.384
+      secondsUntilStateChange: -6887.574
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11233,7 +11233,7 @@ entities:
       pos: -83.5,-46.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6400.984
+      secondsUntilStateChange: -6888.1743
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11245,7 +11245,7 @@ entities:
       pos: -83.5,-50.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6401.7505
+      secondsUntilStateChange: -6888.941
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11257,7 +11257,7 @@ entities:
       pos: -83.5,-32.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6398.984
+      secondsUntilStateChange: -6886.1743
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11269,7 +11269,7 @@ entities:
       pos: -83.5,-28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6398.417
+      secondsUntilStateChange: -6885.6074
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11281,7 +11281,7 @@ entities:
       pos: -83.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6397.917
+      secondsUntilStateChange: -6885.1074
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11293,7 +11293,7 @@ entities:
       pos: 47.5,53.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6423.2173
+      secondsUntilStateChange: -6910.4077
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11305,7 +11305,7 @@ entities:
       pos: 47.5,57.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6422.5835
+      secondsUntilStateChange: -6909.774
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11319,7 +11319,7 @@ entities:
       addComponents: []
       path: /Maps/_Starlight/Shuttles/KillerTamashi-SecShuttle.yml
     - type: Door
-      secondsUntilStateChange: -62210.492
+      secondsUntilStateChange: -62697.684
       state: Opening
 - proto: AirlockExternalGlassShuttleLocked
   entities:
@@ -12627,7 +12627,7 @@ entities:
       pos: 34.5,43.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -260186.8
+      secondsUntilStateChange: -260673.98
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -110121,9 +110121,13 @@ entities:
   - uid: 17233
     components:
     - type: Transform
+      anchored: False
       rot: 1.5707963267948966 rad
       pos: 29.5,34.5
       parent: 2
+    - type: Physics
+      canCollide: True
+      bodyType: Dynamic
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 17234
@@ -120748,6 +120752,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -1.4829488,-4.6610336
       parent: 2
+    - type: IntrinsicRadioTransmitter
+      channels: []
     - type: StockLimitedProcessing
       processingListings: {}
 - proto: GravityGenerator
@@ -131175,16 +131181,6 @@ entities:
       parent: 2
 - proto: LockerChemistryFilled
   entities:
-  - uid: 78
-    components:
-    - type: Transform
-      pos: 24.5,-21.5
-      parent: 2
-    - type: AccessReader
-      accessListsOriginal:
-      - - Chemistry
-      access:
-      - - Medical
   - uid: 20498
     components:
     - type: Transform
@@ -133390,6 +133386,8 @@ entities:
     - type: Transform
       pos: -77.49177,-2.4420576
       parent: 2
+    - type: IntrinsicRadioTransmitter
+      channels: []
 - proto: PetCarrier
   entities:
   - uid: 12025
@@ -133662,6 +133660,9 @@ entities:
   entities:
   - uid: 20863
     components:
+    - type: Transform
+      pos: -50.5,-57.5
+      parent: 2
     - type: StationAiCore
       lawConsole: 24271
     - type: DeviceLinkSource
@@ -133669,9 +133670,6 @@ entities:
         24271:
         - - AiLawConsoleSender
           - AiLawConsoleReceiver
-    - type: Transform
-      pos: -50.5,-57.5
-      parent: 2
 - proto: PlushieAtmosian
   entities:
   - uid: 20864
@@ -137970,6 +137968,23 @@ entities:
       - Experimental
       - CivilianServices
       - Biochemical
+- proto: protectionanchor
+  entities:
+  - uid: 78
+    components:
+    - type: Transform
+      pos: 45.5,-11.5
+      parent: 2
+  - uid: 29478
+    components:
+    - type: Transform
+      pos: 51.5,-11.5
+      parent: 2
+  - uid: 29479
+    components:
+    - type: Transform
+      pos: 51.5,-15.5
+      parent: 2
 - proto: Protolathe
   entities:
   - uid: 21574
@@ -152269,6 +152284,23 @@ entities:
     - type: Transform
       pos: 36.5,50.5
       parent: 2
+- proto: SpawnPointPerformer
+  entities:
+  - uid: 29480
+    components:
+    - type: Transform
+      pos: -28.5,15.5
+      parent: 2
+  - uid: 29481
+    components:
+    - type: Transform
+      pos: -35.5,20.5
+      parent: 2
+  - uid: 29482
+    components:
+    - type: Transform
+      pos: -35.5,22.5
+      parent: 2
 - proto: SpawnPointPsychologist
   entities:
   - uid: 24106
@@ -153206,12 +153238,12 @@ entities:
   entities:
   - uid: 24271
     components:
-    - type: SiliconLawUpdater
-      core: 20863
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -43.5,-59.5
       parent: 2
+    - type: SiliconLawUpdater
+      core: 20863
 - proto: StationAnchor
   entities:
   - uid: 24273
@@ -158866,6 +158898,13 @@ entities:
       parent: 1149
     - type: Physics
       canCollide: False
+- proto: TP14KitchenDeepFryerTabletop
+  entities:
+  - uid: 29477
+    components:
+    - type: Transform
+      pos: -27.5,3.5
+      parent: 2
 - proto: TrashBananaPeel
   entities:
   - uid: 25176
