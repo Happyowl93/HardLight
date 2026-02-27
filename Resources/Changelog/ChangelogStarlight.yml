@@ -32377,5 +32377,21 @@ Entries:
   id: 348101
   time: '2026-02-27T16:22:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3481
+- author: wonderfulnewworld
+  changes:
+  - message: (Orwell) Adds spawns and slots for the Performer job.
+    type: Add
+  - message: (Orwell) Adds 1 extra Service Worker spawn point, but not a slot. (It's
+      next to kitchen, so there's a chance you won't spawn in the bathroom now.).
+    type: Add
+  - message: (Orwell) Adds protection anchors to the armory and vault.
+    type: Add
+  - message: (Orwell) Adds a deep fryer to the kitchen.
+    type: Add
+  - message: (Orwell) Removes Chemical locker from Brigmed.
+    type: Remove
+  id: 347901
+  time: '2026-02-27T16:28:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3479
 Order: -1
 
