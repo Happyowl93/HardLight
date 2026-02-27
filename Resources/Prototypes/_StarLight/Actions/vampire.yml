@@ -22,10 +22,10 @@
       bloodToUnlock: 0
       bloodCost: 0
     - type: VampireDrink
-      HumanoidEfficiency: 0.5 #amount of progression for a given amount of blood drained from target. 0 = cannot drink
-      NonHumanoidEfficiency: 0.25 #animals are far less efficient to drink from
-      SipAmount: 10
-      DrinkDamage:
+      humanoidEfficiency: 0.5 #amount of progression for a given amount of blood drained from target. 0 = cannot drink
+      nonHumanoidEfficiency: 0.25 #animals are far less efficient to drink from
+      sipAmount: 10
+      drinkDamage:
         effects:
           - !type:ModifyBleed
             amount: 0.5
@@ -36,10 +36,9 @@
      #   types:
      #     Cellular: 1
      #     Piercing: 0.2
-      MaxDrinkDamage: 
+      maxDrinkDamage: 
         types:
           Cellular: 10
-
 - type: entity
   parent: BaseAction
   id: ActionVampireGlare

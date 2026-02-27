@@ -409,7 +409,7 @@ public sealed partial class VampireSystem : EntitySystem
         //    }
         //}
 
-        //if (_damageableSystem.GetDamage(target, comp.MaxDrinkDamage.DamageGroupPrototype) > 20) //TODO test this
+        //if (_damageableSystem.GetDamage(target, comp.MaxDrinkDamage.DamageGroupPrototype) > 10) //TODO test this
         //{
         //    _popup.PopupEntity(Loc.GetString("vampire-target-sickly"), uid, uid, Shared.Popups.PopupType.MediumCaution);
         //    comp.IsDrinking = false;
@@ -423,21 +423,21 @@ public sealed partial class VampireSystem : EntitySystem
         
         if (HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value))
         {
-            if (comp.HumanoidEfficiency <= 0) //Lets not divide by zero
+            if (comp.humanoidEfficiency <= 0) //Lets not divide by zero
             {
                 return;
                 comp.IsDrinking = false;
             }
-            sipInefficiency = 1 / comp.HumanoidEfficiency;
-            sipAmount = comp.SipAmount;
+            sipInefficiency = 1 / comp.humanoidEfficiency;
+            sipAmount = comp.sipAmount;
         } else {
-            if (comp.NonHumanoidEfficiency <= 0) // && comp.HumanoidEfficiency <= 0)
+            if (comp.nonHumanoidEfficiency <= 0) // && comp.humanoidEfficiency <= 0)
             {
                 comp.IsDrinking = false;
                 return;
             }
-            sipInefficiency = 1 / comp.NonHumanoidEfficiency;
-            sipAmount = comp.SipAmount; // * (comp.NonHumanoidEfficiency / comp.HumanoidEfficiency); //had the idea to scale the drinking amount for animals, but I don't like the idea anymore
+            sipInefficiency = 1 / comp.nonHumanoidEfficiency;
+            sipAmount = comp.sipAmount; // * (comp.nonHumanoidEfficiency / comp.humanoidEfficiency); //had the idea to scale the drinking amount for animals, but I don't like the idea anymore
         }
 
         maxCanDrink = comp.MaxBloodPerTarget - drunkFromTarget;
@@ -464,7 +464,7 @@ public sealed partial class VampireSystem : EntitySystem
 
             //Biting Damage              
             //Little bit of additional damage to disincentivize blood donations
-            _damageableSystem.TryChangeDamage(target, comp.DrinkDamage, ignoreResistances: true);
+            _damageableSystem.TryChangeDamage(target, comp.drinkDamage, ignoreResistances: true);
             
             RaiseLocalEvent(uid, new VampireProgressionChangedEvent());
 
