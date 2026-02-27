@@ -32470,5 +32470,34 @@ Entries:
   id: 340501
   time: '2026-02-27T20:31:32.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3405
+- author: Rinary
+  changes:
+  - message: Added terror spiders guidebook.
+    type: Add
+  - message: Added `acid vent` action for Princess of terror which allows you to breach
+      welded vents.
+    type: Add
+  - message: Added evolve objectives, so now you always know what do you need to evolve
+      and how much do you need to evolve.
+    type: Add
+  - message: Added "buildings" for terror spiders. So now some spiders can build interesting
+      things.
+    type: Add
+  - message: Added building action for Black terror, So now it can build web pole.
+    type: Add
+  - message: Added building action for White terror, So now it can build healing cocoon.
+    type: Add
+  - message: Now actions are actually animatable.
+    type: Tweak
+  - message: Changed lay eggs action icon to new animated variant.
+    type: Tweak
+  - message: Fixed bug when you see `Extract eggs` surgery even when body doesn't
+      have terror eggs.
+    type: Fix
+  - message: Fixed collection modified error at `SpawnerSystem` when egg spawns spiderling.
+    type: Fix
+  id: 252301
+  time: '2026-02-27T20:44:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2523
 Order: -1
 
