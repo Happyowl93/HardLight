@@ -10,11 +10,11 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 48h
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 9h
   - !type:RoleTimeRequirement
-    role: AntagThief
+    role: JobSecurityOfficer # It's better than nothing.
+    time: 3h
+  - !type:RoleTimeRequirement
+    role: AntagThief # You are a glorified Thief without Pax.
     time: 5h
   playTimeTracker: AntagNinja
   # Starlight end
