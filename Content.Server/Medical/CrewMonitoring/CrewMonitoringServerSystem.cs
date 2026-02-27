@@ -43,9 +43,9 @@ public sealed class CrewMonitoringServerSystem : EntitySystem
             if (!_singletonServerSystem.IsActiveServer(id))
                 continue;
 
-            UpdateTimeout(id, server);
+            UpdateTimeout(id);
             BroadcastSensorStatus(id, server);
-            UpdatePager(id, server);
+            UpdatePager(id, server); // Starlight
         }
     }
 
@@ -125,7 +125,6 @@ public sealed class CrewMonitoringServerSystem : EntitySystem
             _deviceNetworkSystem.QueuePacket(uid, null, new NetworkPayload()
             {
                 [DeviceNetworkConstants.Command] = DeviceNetworkConstants.CmdUpdatedState,
-                [SuitSensorConstants.NET_PAGING_SENSOR_UID] = sensor.SuitSensorUid,
                 [SuitSensorConstants.NET_PAGING_SINCE] = pagingStatus.FirstSeen,
                 [SuitSensorConstants.NET_JOB_DEPARTMENTS] = sensor.JobDepartments,
             }, device: device);

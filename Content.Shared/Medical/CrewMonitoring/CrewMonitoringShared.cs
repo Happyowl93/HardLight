@@ -40,7 +40,7 @@ public sealed partial class CrewMonitoringWarpRequestMessage : BoundUserInterfac
 public enum CrewMonitorLayers
 {
     /// <summary>
-    ///     Renders as black screen.
+    ///     Renders as frame with an 'off' screen.
     /// </summary>
     Frame,
     /// <summary>
@@ -56,7 +56,6 @@ public enum CrewMonitorLayers
 [Serializable, NetSerializable]
 public enum CrewMonitorVisuals
 {
-    Powered,
     Alert,
 }
 // Starlight-end

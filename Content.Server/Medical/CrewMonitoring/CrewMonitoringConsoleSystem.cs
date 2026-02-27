@@ -11,8 +11,7 @@ using Content.Shared.Pinpointer;
 using Content.Server.Silicons.StationAi;
 using Robust.Server.GameObjects;
 using Content.Shared.Silicons.StationAi;
-using Robust.Server.Audio;
-using Robust.Shared.Audio; // Starlight
+using Robust.Shared.Audio.Systems; // Starlight
 using Robust.Shared.Map; // Starlight
 using Robust.Shared.Timing; // Starlight
 
@@ -24,7 +23,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly StationAiSystem _stationAiSystem = default!; // Starlight
     [Dependency] private readonly IGameTiming _gameTiming = default!; // Starlight
-    [Dependency] private readonly AudioSystem _audioSystem = default!; // Starlight
+    [Dependency] private readonly SharedAudioSystem _audioSystem = default!; // Starlight
     [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!; // Starlight
 
     private readonly ISawmill _sawmill = Logger.GetSawmill("crewmonitoring"); // Starlight
@@ -78,7 +77,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             return;
         
         // Starlight START
-        if (payload.ContainsKey(SuitSensorConstants.NET_PAGING_SENSOR_UID)) // Branch off for custom packet.
+        if (payload.ContainsKey(SuitSensorConstants.NET_PAGING_SINCE)) // Branch off for custom packet.
         {
             OnPagingPacketReceived(uid, component, args);
             return;
@@ -107,8 +106,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             return;
         
         var payload = args.Data;
-        if (!payload.TryGetValue(SuitSensorConstants.NET_PAGING_SENSOR_UID, out NetEntity? sensorUid) ||
-            !payload.TryGetValue(SuitSensorConstants.NET_PAGING_SINCE, out TimeSpan? since) ||
+        if (!payload.TryGetValue(SuitSensorConstants.NET_PAGING_SINCE, out TimeSpan? since) ||
             !payload.TryGetValue(SuitSensorConstants.NET_JOB_DEPARTMENTS, out List<string>? jobDepartments))
             return;
         
@@ -169,7 +167,6 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
         var allSensors = component.ConnectedSensors.Values.ToList();
         _uiSystem.SetUiState(uid, CrewMonitoringUIKey.Key, new CrewMonitoringState(_gameTiming.CurTime, component.LastSensorDataReceivedAt, allSensors)); // Starlight: Add two timestamps
     }
-    
     // Starlight-start
     private void OnWarpRequest(EntityUid uid, CrewMonitoringConsoleComponent component, ref CrewMonitoringWarpRequestMessage args)
     {

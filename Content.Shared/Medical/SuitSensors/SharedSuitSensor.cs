@@ -93,7 +93,6 @@ public static class SuitSensorConstants
     ///Used by the CrewMonitoringServerSystem to send the status of all connected suit sensors to each crew monitor
     public const string NET_STATUS_COLLECTION = "suit-status-collection";
     // STARLIGHT: Trigger paging on console
-    public const string NET_PAGING_SENSOR_UID = "paging-sensor-uid";
     public const string NET_PAGING_SINCE = "paging-since";
 }
 
