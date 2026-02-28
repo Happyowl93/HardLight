@@ -32,7 +32,7 @@ public abstract class SharedNullLinkPlayerResourcesManager : ISharedNullLinkPlay
 
         var diff = value - data.Resources[id];
 
-        if (diff == 0) // If we don't have any difference - we don't need to call null link.
+        if (data.Resources.TryGetValue(id, our var oldValue) && value - oldValue == 0) // If we don't have any difference - we don't need to call null link.
             return false;
 
         data.Resources[id] = value;
