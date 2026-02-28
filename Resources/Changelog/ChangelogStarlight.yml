@@ -32642,5 +32642,12 @@ Entries:
   id: 349301
   time: '2026-02-28T03:38:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3493
+- author: Swonki
+  changes:
+  - message: Added BSO Hardsuit to Smart Corgi
+    type: Add
+  id: 349801
+  time: '2026-02-28T03:42:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3498
 Order: -1
 
