@@ -32597,5 +32597,19 @@ Entries:
   id: 348401
   time: '2026-02-27T23:45:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3484
+- author: wonderfulnewworld
+  changes:
+  - message: (Ming) Added protection anchors to the armory and the vault. (With 2
+      more APCs in armory to sustain the 3 anchors.).
+    type: Add
+  - message: (Ming) Added a deep fryer to the kitchen.
+    type: Add
+  - message: (Ming) Added Performer spawns and slots.
+    type: Add
+  - message: (Ming) Removed Brigmedic chem locker.
+    type: Remove
+  id: 348601
+  time: '2026-02-27T23:57:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3486
 Order: -1
 
