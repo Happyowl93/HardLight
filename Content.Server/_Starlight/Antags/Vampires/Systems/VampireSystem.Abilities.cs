@@ -35,6 +35,7 @@ using Content.Shared.Popups;
 using Content.Server.EUI;
 using Robust.Shared.Player;
 using Content.Shared.Flash;
+using Content.Shared.Bed.Sleep;
 
 namespace Content.Server._Starlight.Antags.Vampires.Systems;
 
@@ -577,10 +578,11 @@ public sealed partial class VampireSystem : EntitySystem
 
             var dot = Vector2.Dot(ourDirection, vectorToTarget);
 
+            var duration = TimeSpan.FromSeconds(10);
+            _statusEffects.TryAddStatusEffectDuration(target, SleepingSystem.StatusEffectForcedSleeping, duration);
+
             if (!TryComp<StaminaComponent>(target, out var stam))
                 continue;
-                
-            if (OnFlashImmunityFlashAttempt(target, ))
 
             var knockedDown = HasComp<KnockedDownComponent>(target);
 
