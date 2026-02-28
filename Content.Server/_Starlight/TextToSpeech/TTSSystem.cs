@@ -93,7 +93,7 @@ public sealed partial class TTSSystem : EntitySystem
             var voice = GetOrAssignVoice(args.Source);
             var channel = new ProtoId<RadioChannelPrototype>(args.Channel.ID);
 
-            await GenerateAndStream(TTSType.Radio, voice, text, filter, TTSEffect.Walkie, chime, args.Source, channel);
+            await GenerateAndStream(TTSType.Radio, voice, text, filter, TTSEffect.Walkie, chime, null, channel);
         }
         catch (Exception ex)
         {
