@@ -32709,5 +32709,55 @@ Entries:
   id: 349501
   time: '2026-02-28T12:45:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3495
+- author: redmushie
+  changes:
+  - message: Crew monitor paging no longer pages before a person crits.
+    type: Fix
+  id: 351101
+  time: '2026-02-28T16:21:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3511
+- author: Magniras
+  changes:
+  - message: reduced heat damage from one to 0.25.
+    type: Tweak
+  id: 351501
+  time: '2026-02-28T17:45:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3515
+- author: redmushie
+  changes:
+  - message: Cyborgs and AIs once again show their identifiers in their communications.
+    type: Fix
+  id: 351401
+  time: '2026-02-28T17:52:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3514
+- author: redmushie
+  changes:
+  - message: Paramedic and Senior Paramedic PDAs now come with NanoChat.
+    type: Fix
+  id: 351201
+  time: '2026-02-28T18:02:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3512
+- author: Swonki
+  changes:
+  - message: Added Radiation Suit to Corgi.
+    type: Add
+  - message: Added Carp Suit to Corgi.
+    type: Add
+  id: 350701
+  time: '2026-02-28T18:12:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3507
+- author: STARLIGHT TEAM
+  changes:
+  - message: The radio queue has been disabled because under Alpha load it unexpectedly
+      turned into choppy helium speech.
+    type: Remove
+  - message: The voice now plays correctly on the entity.
+    type: Fix
+  - message: The TTS model expressiveness has been increased, caching has been improved,
+      and the voices have been made louder.
+    type: Fix
+  id: 352001
+  time: '2026-02-28T21:40:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3520
 Order: -1
 
