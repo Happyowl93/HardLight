@@ -32716,5 +32716,12 @@ Entries:
   id: 351101
   time: '2026-02-28T16:21:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3511
+- author: Magniras
+  changes:
+  - message: reduced heat damage from one to 0.25.
+    type: Tweak
+  id: 351501
+  time: '2026-02-28T17:45:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3515
 Order: -1
 
