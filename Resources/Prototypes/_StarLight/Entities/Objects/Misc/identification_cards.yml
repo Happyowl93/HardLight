@@ -36,6 +36,8 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: CentralCommandOperator
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: [ IDCardStandard, BaseScienceContraband ]
@@ -133,6 +135,8 @@
       state: NTNCBlueShield
   - type: PresetIdCard
     job: NTNCBlueShield
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: [ IDCardStandard, BaseCargoContraband ]
@@ -247,6 +251,8 @@
     - state: sovietid
   - type: IdCard
     jobIcon: JobIconSoviet
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: [ IDCardStandard, BaseSyndicateContraband ]
@@ -273,6 +279,8 @@
       interfaces:
         enum.AgentIDCardUiKey.Key:
           type: AgentIDCardBoundUserInterface
+    - type: NanoChatCard
+      listNumber: false
 
 - type: entity
   parent: [ IDCardStandard, BaseSyndicateContraband ]
@@ -299,6 +307,8 @@
       interfaces:
         enum.AgentIDCardUiKey.Key:
           type: AgentIDCardBoundUserInterface
+    - type: NanoChatCard
+      listNumber: false
 
 - type: entity
   parent: [ IDCardStandard, BaseSyndicateContraband ]
@@ -325,6 +335,8 @@
       interfaces:
         enum.AgentIDCardUiKey.Key:
           type: AgentIDCardBoundUserInterface
+    - type: NanoChatCard
+      listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -351,6 +363,8 @@
     - Research
     - Engineering
     - Atmospherics
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -374,6 +388,8 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: NanoTrasenSpecialForces
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -387,6 +403,8 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: Decimus
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: [IDCardStandard, BaseTSFContraband]
@@ -462,6 +480,8 @@
       state: Cluwne
   - type: IdCard
     jobTitle: job-title-cluwne
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: [ IDCardStandard, BaseCommandContraband ]
