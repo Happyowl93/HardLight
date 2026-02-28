@@ -151,6 +151,10 @@
   - type: HideLayerClothing
     slots:
     - Tail
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 # TODO - Make infiltration decloak on damage, idk how
 - type: entity
@@ -325,6 +329,10 @@
   - type: HideLayerClothing
     slots:
     - Tail
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 - type: entity
   parent: ClothingOuterSuitCarp
@@ -342,4 +350,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitCarp
   - type: StaticPrice
     price: 1500
-
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
