@@ -32620,5 +32620,15 @@ Entries:
   id: 349101
   time: '2026-02-28T00:03:15.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3491
+- author: wonderfulnewworld
+  changes:
+  - message: (Bagel) Added a lot of cameras to Engineering.
+    type: Add
+  - message: (Bagel) Fixed a tile in sci's new xenobio corridor being the wrong type,
+      and moved the locker so it's no longer blocking the door.
+    type: Fix
+  id: 349401
+  time: '2026-02-28T00:22:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3494
 Order: -1
 
