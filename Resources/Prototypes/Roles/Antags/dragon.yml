@@ -6,7 +6,7 @@
   # Starlight start
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 24h
+    time: 16h
   - !type:RoleTimeRequirement
     role: JobSalvageSpecialist
     time: 6h
