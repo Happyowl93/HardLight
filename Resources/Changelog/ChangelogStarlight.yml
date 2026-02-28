@@ -32630,5 +32630,17 @@ Entries:
   id: 349401
   time: '2026-02-28T00:22:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3494
+- author: wonderfulnewworld
+  changes:
+  - message: Added a Syndicate Satchel. It's slightly larger than the base satchel.
+    type: Add
+  - message: Added the Syndicate Backpack, Satchel, and Duffel to the SyndiDrobe.
+    type: Add
+  - message: Blood-red magboots can now hold a sidearm, and have the same slowdown
+      resist as combat boots.
+    type: Tweak
+  id: 349301
+  time: '2026-02-28T03:38:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3493
 Order: -1
 
