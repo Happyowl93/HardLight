@@ -19,7 +19,7 @@ public sealed class NullLinkPlayerResourcesManager : SharedNullLinkPlayerResourc
     {
         base.Initialize();
 
-        _cfg.OnValueChanged(NullLinkCCVars.ResourcesEnabled, UpdateResources);
+        _cfg.OnValueChanged(NullLinkCCVars.ResourcesEnabled, UpdateResources, true);
     }
 
     private void UpdateResources(bool obj) 
@@ -36,7 +36,8 @@ public sealed class NullLinkPlayerResourcesManager : SharedNullLinkPlayerResourc
 
         data.Resources[id] += value;
 
-        if (skipNullLink
+        if (!_resourcesEnabled
+            || skipNullLink
             || !_actors.Enabled
             || !_actors.TryGetServerGrain(out var serverGrain))
             return true;

@@ -49,7 +49,7 @@ public sealed partial class NullLinkPlayerManager : INullLinkPlayerManager
         _cfg.OnValueChanged(NullLinkCCVars.TitleBuild, UpdateTitleBuilder, true);
         _cfg.OnValueChanged(NullLinkCCVars.Project, UpdateProject, true);
         _cfg.OnValueChanged(NullLinkCCVars.Server, UpdateServer, true);
-        _cfg.OnValueChanged(NullLinkCCVars.ResourcesEnabled, UpdateResources);
+        _cfg.OnValueChanged(NullLinkCCVars.ResourcesEnabled, UpdateResources, true);
 
         _actors.OnConnected += OnNullLinkConnected;
     }
