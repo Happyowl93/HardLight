@@ -74,7 +74,7 @@ public sealed partial class VampireSystem : EntitySystem
     private static readonly ProtoId<DamageGroupPrototype> _bruteGroupId = "Brute";
     private static readonly ProtoId<DamageGroupPrototype> _burnGroupId = "Burn";
     private static readonly ProtoId<DamageGroupPrototype> _geneticGroupId = "Genetic";
-    private static readonly ProtoId<DamageGroupPrototype> _cellularTypeId = "Cellular";
+    private static readonly ProtoId<DamageTypePrototype> _cellularTypeId = "Cellular";
     private static readonly ProtoId<DamageTypePrototype> _poisonTypeId = "Poison";
     private static readonly ProtoId<DamageTypePrototype> _oxyLossTypeId = "Asphyxiation";
     private static readonly ProtoId<DamageTypePrototype> _heatTypeId = "Heat";
