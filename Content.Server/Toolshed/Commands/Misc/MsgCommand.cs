@@ -50,7 +50,6 @@ public sealed class MsgCommand : ToolshedCommand
         }
     }
     
-    //Starlight begin
     [CommandImplementation("chat")]
     public IEnumerable<ICommonSession> Chat([PipedArgument] IEnumerable<ICommonSession> targets, string message)
     {
@@ -60,7 +59,6 @@ public sealed class MsgCommand : ToolshedCommand
             yield return session;
         }
     }
-    //Starlight end
 
     [CommandImplementation("popup")]
     public IEnumerable<EntityUid> Popup([PipedArgument] IEnumerable<EntityUid> targets, string popup, PopupType type, bool recipientOnly)
@@ -93,7 +91,6 @@ public sealed class MsgCommand : ToolshedCommand
         }
     }
     
-    //Starlight begin
     [CommandImplementation("tippy")]
     public IEnumerable<ICommonSession> Tippy([PipedArgument] IEnumerable<ICommonSession> targets, string message, EntProtoId prototype, float speakTime, float slideTime, float waddleInterval)
     {
@@ -106,5 +103,4 @@ public sealed class MsgCommand : ToolshedCommand
             yield return session;
         }
     }
-    //Starlight end
 }
