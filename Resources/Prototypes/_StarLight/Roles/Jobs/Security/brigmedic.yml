@@ -9,7 +9,7 @@
       time: 36000 # 10 hrs
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 3h # 4 hrs
+      time: 3h
     - !type:RoleTimeRequirement
       role: JobParamedic
       time: 5h
