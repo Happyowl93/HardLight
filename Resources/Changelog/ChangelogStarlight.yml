@@ -32660,5 +32660,61 @@ Entries:
   id: 349601
   time: '2026-02-28T03:51:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3496
+- author: neomoth
+  changes:
+  - message: I did it. I fixed him. Big fucked up evil multi-directional Tippy is
+      no more.
+    type: Fix
+  id: 350401
+  time: '2026-02-28T05:55:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3504
+- author: TaserTheFox
+  changes:
+  - message: Description to some cyber limbs.
+    type: Add
+  id: 350601
+  time: '2026-02-28T07:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3506
+- author: Darkrell, Rinary, CringeCursed, ilovehans10
+  changes:
+  - message: TTS streaming mode. The first packet is sent within 150 ms.
+    type: Add
+  - message: If the announcement sender is able to speak, their voice is used with
+      a megaphone effect.
+    type: Add
+  - message: The radio effect has been reworked.
+    type: Tweak
+  - message: The voice in the collective mind now sounds with a new "underwater" effect.
+    type: Add
+  - message: The wizard’s spells now have a voice effect.
+    type: Add
+  - message: If the face is visible, you can now examine the character and find out
+      their voice.
+    type: Add
+  - message: Toggles have been added to disable TTS for specific channels.
+    type: Add
+  - message: The TTS queue on the radio can be reset in the same menu, and the queue
+      also attempts to rebalance itself by dynamically increasing the pitch.
+    type: Add
+  - message: Around 150 voices, more are still being added.
+    type: Tweak
+  - message: Accents have been reworked. TTS corruption now happens extremely rarely,
+      but as a result many accents no longer affect TTS.
+    type: Tweak
+  - message: The stuttering accent has been restored, as it no longer interferes with
+      TTS.
+    type: Tweak
+  - message: The whisper distance for TTS and text is now identical.
+    type: Tweak
+  id: 349501
+  time: '2026-02-28T12:45:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3495
+- author: redmushie
+  changes:
+  - message: Crew monitor paging no longer pages before a person crits.
+    type: Fix
+  id: 351101
+  time: '2026-02-28T16:21:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3511
 Order: -1
 
