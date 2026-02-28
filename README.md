@@ -37,7 +37,7 @@ Space-Station 14 has [docs site](https://docs.spacestation14.io/) documentation 
 
 > [!NOTE]
 > **Relicensing in progress.** The Starlight Fork License (`LICENSE-Starlight.TXT`) was applied to Starlight contributions
-> from **2024-11-04** (commit `84205e38`) through **2026-02-28** (commit TODO).
+> from **2024-11-04** (commit `84205e38`) through **2026-02-28** (commit `01eff0f7`).
 > This license **remains in effect** for contributions made during that period until explicit relicensing
 > consent is received from the respective authors. Once consent is given, those contributions are relicensed under MIT.
 > All contributions outside of that range are licensed under MIT (`LICENSE.TXT`).
