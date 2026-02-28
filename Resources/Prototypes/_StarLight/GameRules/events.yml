@@ -338,7 +338,7 @@
       briefing:
         text: brighteye-role-greeting
         color: "#F200FF"
-        sound: "/Audio/_Starlight/Ambiance/Antag/brighteye.ogg"
+        sound: "/Audio/_Starlight/Ambience/Antag/brighteye.ogg"
       components:
       - type: Brighteye
         energy: 200 # THIS IS HARDCODED BULLSHIT... i wish i could set this auto to MaxEnergy.
@@ -348,6 +348,8 @@
       - type: CombatMode
         disarmFailChance: 0.5
         canDisarm: true
+      - type: Railroadable
+        important: true
       mindRoles:
       - MindRoleBrighteye
       tags:
@@ -367,3 +369,46 @@
   - type: LoadMapRule
     mapPath: /Maps/_Starlight/TheDark/Hideout.yml
     mapTag: TheDark
+
+# Teapot's Nanotrasen Battlecruiser
+- type: entity
+  parent: BaseGameRule
+  id: NTSF_MinosBattlecruiser
+  components:
+    - type: RuleGrids
+    - type: LoadMapRule
+      gridPath: /Maps/_Starlight/Shuttles/CC-NT/NTSF_Minos_Battlecruiser.yml
+
+# Teapot's Decimus Shuttle
+- type: entity
+  parent: BaseGameRule
+  id: Decimus_MagnusBreachingCraft
+  components:
+    - type: RuleGrids
+    - type: LoadMapRule
+      gridPath: /Maps/_Starlight/Shuttles/CC-NT/Decimus_Shuttle_Magnus.yml
+
+
+# Derelict Cyborgs
+
+- type: entity
+  parent: BaseGameRule
+  id: DerelictPurrfusCyborgSpawn
+  components:
+  - type: StationEvent
+    globalAnnouncement: false # Starlight
+    weight: 2.5
+    earliestStart: 15
+    reoccurrenceDelay: 20
+    minimumPlayers: 4
+    duration: null
+  - type: SpaceSpawnRule
+    spawnDistance: 0
+  - type: AntagSpawner
+    prototype: PlayerPurrfusBorgDerelictGhostRole
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointGhostDerelictPurrfusCyborg
+      min: 1
+      max: 1
+      pickPlayer: false

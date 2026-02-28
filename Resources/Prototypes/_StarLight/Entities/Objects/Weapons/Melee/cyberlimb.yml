@@ -279,8 +279,9 @@
   - type: Prying
     speedModifier: 1.5
     pryPowered: true
-    useSound: /Audio/Machines/airlock_creaking.ogg
+    useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
     playSoundOnDoafter: true
+    useSound: /Audio/Items/jaws_pry.ogg
   - type: Tag
     tags:
     - CyberHandItem
