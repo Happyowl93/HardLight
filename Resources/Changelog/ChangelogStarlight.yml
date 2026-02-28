@@ -32649,5 +32649,16 @@ Entries:
   id: 349801
   time: '2026-02-28T03:42:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3498
+- author: wonderfulnewworld
+  changes:
+  - message: (Saltern) Added protection anchors to the armory and the vault.
+    type: Add
+  - message: (Saltern) Added a deep fryer to the kitchen.
+    type: Add
+  - message: (Saltern) Added Performer spawns and slots.
+    type: Add
+  id: 349601
+  time: '2026-02-28T03:51:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3496
 Order: -1
 
