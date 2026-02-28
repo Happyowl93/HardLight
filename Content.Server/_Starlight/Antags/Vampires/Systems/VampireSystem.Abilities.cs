@@ -413,8 +413,8 @@ public sealed partial class VampireSystem : EntitySystem
         }
         else
         {
-            sipInefficiency = 1f / 0.25f; //comp.nonHumanoidEfficiency;
-            sipAmount = comp.sipAmount / 2; //comp.sipAmountNonHuman; //todo make yml work
+            sipInefficiency = 1f / 0.125f; //comp.nonHumanoidEfficiency;
+            sipAmount = comp.sipAmount / 4; //comp.sipAmountNonHuman; //todo make yml work
         }
 
         var maxCanDrink = comp.MaxBloodPerTarget - drunkFromTarget;
