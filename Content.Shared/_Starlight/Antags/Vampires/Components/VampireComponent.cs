@@ -54,6 +54,12 @@ public sealed partial class VampireComponent : Component
     public int DrunkBlood = 0;
 
     /// <summary>
+    /// bites since last time blindness was applied.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public int BlindInc = 0;
+
+    /// <summary>
     /// Determines whether the fangs are extended or not.
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
