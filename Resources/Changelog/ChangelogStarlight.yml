@@ -32660,5 +32660,13 @@ Entries:
   id: 349601
   time: '2026-02-28T03:51:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3496
+- author: neomoth
+  changes:
+  - message: I did it. I fixed him. Big fucked up evil multi-directional Tippy is
+      no more.
+    type: Fix
+  id: 350401
+  time: '2026-02-28T05:55:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3504
 Order: -1
 
