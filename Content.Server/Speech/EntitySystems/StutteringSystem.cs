@@ -1,4 +1,6 @@
-// Starlight: the entire file is commented out by us, not upstream
+// Starlight: Starlightified. Moved to Content.Server._Starlight.Speech.EntitySystems.StutteringSystem
+// From this point on, all accents must be ported and mostly reimplemented from scratch with TTS in mind.
+// This file is no longer synced with upstream.
 //using System.Text;
 //using System.Text.RegularExpressions;
 //using Content.Server.Speech.Components;

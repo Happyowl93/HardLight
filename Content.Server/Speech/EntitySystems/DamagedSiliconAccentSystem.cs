@@ -1,4 +1,7 @@
-﻿//using System.Text;
+﻿// Starlight: Starlightified. Moved to Content.Server._Starlight.Speech.EntitySystems.DamagedSiliconAccentSystem
+// From this point on, all accents must be ported and mostly reimplemented from scratch with TTS in mind.
+// This file is no longer synced with upstream.
+//using System.Text;
 //using Content.Server.Destructible;
 //using Content.Shared.Speech.Components;
 //using Content.Shared.Damage.Components;

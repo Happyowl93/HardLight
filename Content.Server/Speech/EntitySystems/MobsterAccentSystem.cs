@@ -1,3 +1,6 @@
+// Starlight: Starlightified. Moved to Content.Server._Starlight.Speech.EntitySystems.MobsterAccentSystem
+// From this point on, all accents must be ported and mostly reimplemented from scratch with TTS in mind.
+// This file is no longer synced with upstream.
 //using System.Linq;
 //using System.Text.RegularExpressions;
 //using Content.Server.Speech.Components;

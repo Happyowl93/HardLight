@@ -1,3 +1,6 @@
+// Starlight: Starlightified. Moved to Content.Server._Starlight.Speech.EntitySystems.RussianAccentSystem
+// From this point on, all accents must be ported and mostly reimplemented from scratch with TTS in mind.
+// This file is no longer synced with upstream.
 //using System.Text;
 //using Content.Server.Speech.Components;
 //using Content.Shared.Speech;
