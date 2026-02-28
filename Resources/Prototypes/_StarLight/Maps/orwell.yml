@@ -63,6 +63,7 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 2, 2 ]
+            Performer: [ 3, 4 ]
             Boxer: [ 2, 2 ]
             #silicon
             StationAi: [ 1, 1 ]

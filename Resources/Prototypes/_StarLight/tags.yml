@@ -1,4 +1,6 @@
 # PLEASE, KEEP THIS FILE ALPHABETIZED
+- type: Tag
+  id: AnomalyCoreShadow
 
 - type: Tag
   id: AbductedTraitBackground
@@ -71,6 +73,9 @@
 
 - type: Tag
   id: CantInteract
+
+- type: Tag
+  id: Cartridge48Rifle
 
 - type: Tag
   id: CartridgeBattery
@@ -467,6 +472,9 @@
   id: ShellShotgunToz
 
 - type: Tag
+  id: Shield
+
+- type: Tag
   id: ShipWreck
 
 - type: Tag
@@ -486,6 +494,9 @@
 
 - type: Tag
   id: SpeedLoaderMagnumImprovised
+
+- type: Tag
+  id: SpeedLoader48Rifle
 
 - type: Tag
   id: SpeedLoaderShotgun

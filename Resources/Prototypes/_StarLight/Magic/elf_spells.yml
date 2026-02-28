@@ -21,6 +21,8 @@
   - type: SpeakOnAction
     sentence: action-speech-cantrip-glow
     whisper: true
+    tts: action-speech-cantrip-glow-tts
+    modifier: Spell
   - type: ColorObjectToEyeColor
 
 # Magic Ember
@@ -46,6 +48,8 @@
   - type: SpeakOnAction
     sentence: action-speech-cantrip-spark
     whisper: true
+    tts: action-speech-cantrip-spark-tts
+    modifier: Spell
 
 # Rejuvenation/Antidote
 
@@ -70,6 +74,8 @@
   - type: SpeakOnAction
     sentence: action-speech-cantrip-antidote
     whisper: true
+    tts: action-speech-cantrip-antidote-tts
+    modifier: Spell
 
 # Cleanse
 
@@ -93,6 +99,8 @@
   - type: SpeakOnAction
     sentence: action-speech-cantrip-mop
     whisper: true
+    tts: action-speech-cantrip-mop-tts
+    modifier: Spell
 
 # Hemostasis
 
@@ -117,6 +125,8 @@
   - type: SpeakOnAction
     sentence: action-speech-cantrip-bandage
     whisper: true
+    tts: action-speech-cantrip-bandage-tts
+    modifier: Spell
 
 # Psychic Whisper - disabled in store until i figure out how to make it work properly
 
