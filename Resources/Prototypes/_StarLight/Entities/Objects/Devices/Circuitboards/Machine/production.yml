@@ -1193,15 +1193,18 @@
       prototype: MachineDarkBreacher
       stackRequirements:
         Steel: 5
+        Glass: 2
         Manipulator: 2
         Cable: 5
-        BluespaceCrystal: 5
-        Plasma: 5
-        Glass: 2
+        BluespaceCrystal: 10
+        Plasma: 10
       tagRequirements:
-        ShadekinCore:
+        DamagedShadekinCore:
           amount: 1
-          defaultPrototype: OrganShadekinCoreUndamaged
+          defaultPrototype: OrganShadekinCore
+        AnomalyCoreShadow:
+          amount: 1
+          defaultPrototype: CraftingAnomalyCoreShadow
     - type: Tag
       tags:
         - FlatpackBlacklist
