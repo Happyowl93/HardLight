@@ -32768,5 +32768,12 @@ Entries:
   id: 352101
   time: '2026-02-28T22:20:53.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3521
+- author: STARLIGHT TEAM
+  changes:
+  - message: Localization for some voices has been fixed.
+    type: Fix
+  id: 352501
+  time: '2026-02-28T23:40:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3525
 Order: -1
 
