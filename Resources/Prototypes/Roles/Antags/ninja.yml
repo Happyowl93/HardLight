@@ -14,8 +14,8 @@
     role: JobSecurityOfficer # It's better than nothing.
     time: 3h
   - !type:RoleTimeRequirement
-    role: AntagThief # You are a glorified Thief without Pax.
-    time: 3h
+    role: AntagTraitor # Learn how to be subversive and aggressive.
+    time: 2h
   playTimeTracker: AntagNinja
   # Starlight end
 
