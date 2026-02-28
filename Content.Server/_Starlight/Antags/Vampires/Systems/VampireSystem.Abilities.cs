@@ -480,10 +480,7 @@ public sealed partial class VampireSystem : EntitySystem
             }
         }
         else
-        {
-            //Blood level reduction failed
-            comp.IsDrinking = false;
-        }
+            comp.IsDrinking = false; //Blood level reduction failed
     }
 
     partial void UpdateVampireAlert(EntityUid uid)
