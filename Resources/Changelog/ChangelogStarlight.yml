@@ -32737,5 +32737,14 @@ Entries:
   id: 351201
   time: '2026-02-28T18:02:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3512
+- author: Swonki
+  changes:
+  - message: Added Radiation Suit to Corgi.
+    type: Add
+  - message: Added Carp Suit to Corgi.
+    type: Add
+  id: 350701
+  time: '2026-02-28T18:12:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3507
 Order: -1
 
