@@ -32597,5 +32597,68 @@ Entries:
   id: 348401
   time: '2026-02-27T23:45:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3484
+- author: wonderfulnewworld
+  changes:
+  - message: (Ming) Added protection anchors to the armory and the vault. (With 2
+      more APCs in armory to sustain the 3 anchors.).
+    type: Add
+  - message: (Ming) Added a deep fryer to the kitchen.
+    type: Add
+  - message: (Ming) Added Performer spawns and slots.
+    type: Add
+  - message: (Ming) Removed Brigmedic chem locker.
+    type: Remove
+  id: 348601
+  time: '2026-02-27T23:57:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3486
+- author: wonderfulnewworld
+  changes:
+  - message: (Space Mall) Adds Performer slots and spawns.
+    type: Add
+  - message: (Kiloton) Adds Performer slots and spawns.
+    type: Add
+  id: 349101
+  time: '2026-02-28T00:03:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3491
+- author: wonderfulnewworld
+  changes:
+  - message: (Bagel) Added a lot of cameras to Engineering.
+    type: Add
+  - message: (Bagel) Fixed a tile in sci's new xenobio corridor being the wrong type,
+      and moved the locker so it's no longer blocking the door.
+    type: Fix
+  id: 349401
+  time: '2026-02-28T00:22:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3494
+- author: wonderfulnewworld
+  changes:
+  - message: Added a Syndicate Satchel. It's slightly larger than the base satchel.
+    type: Add
+  - message: Added the Syndicate Backpack, Satchel, and Duffel to the SyndiDrobe.
+    type: Add
+  - message: Blood-red magboots can now hold a sidearm, and have the same slowdown
+      resist as combat boots.
+    type: Tweak
+  id: 349301
+  time: '2026-02-28T03:38:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3493
+- author: Swonki
+  changes:
+  - message: Added BSO Hardsuit to Smart Corgi
+    type: Add
+  id: 349801
+  time: '2026-02-28T03:42:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3498
+- author: wonderfulnewworld
+  changes:
+  - message: (Saltern) Added protection anchors to the armory and the vault.
+    type: Add
+  - message: (Saltern) Added a deep fryer to the kitchen.
+    type: Add
+  - message: (Saltern) Added Performer spawns and slots.
+    type: Add
+  id: 349601
+  time: '2026-02-28T03:51:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3496
 Order: -1
 
