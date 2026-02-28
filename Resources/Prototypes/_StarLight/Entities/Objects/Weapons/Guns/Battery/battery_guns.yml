@@ -862,8 +862,8 @@
 
 - type: entity
   name: proto-5x energy gun
-  parent: [BaseWeaponBattery, BaseGrandTheftContraband]
-  id: WeaponEnergySMG
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseGrandTheftContraband]
+  id: WeaponSubMachineGunEnergy
   description: A one-of-a-kind prototype energy sub-machine gun. It offers high energy firepower and a powerful self recharge.
   components:
   - type: Appearance

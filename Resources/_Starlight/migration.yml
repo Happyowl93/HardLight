@@ -57,3 +57,8 @@ CrateStarterXenobiology: null
 
 #2026-02-15
 ClothingOuterArmorSovietFlak: ClothingOuterArmorSovietPlate
+
+#2026-02-28
+WeaponLr30: WeaponRifleLr30
+WeaponEnergySMG: WeaponSubMachineGunEnergy
+WeaponIK60: WeaponRifleIK60
