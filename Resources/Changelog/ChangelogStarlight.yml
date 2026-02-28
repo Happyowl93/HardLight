@@ -32709,5 +32709,12 @@ Entries:
   id: 349501
   time: '2026-02-28T12:45:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3495
+- author: redmushie
+  changes:
+  - message: Crew monitor paging no longer pages before a person crits.
+    type: Fix
+  id: 351101
+  time: '2026-02-28T16:21:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3511
 Order: -1
 
