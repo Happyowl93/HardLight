@@ -639,7 +639,7 @@ public abstract partial class SharedChatSystem : EntitySystem
     /// <param name="colorOverride">Optional color for the announcement message.</param>
     public virtual void DispatchFilteredAnnouncement(
         Filter filter,
-        SpeechMessage message,
+        SpeechMessage message, // Starlight
         EntityUid? source = null,
         string? sender = null,
         bool playSound = true,
@@ -658,7 +658,7 @@ public abstract partial class SharedChatSystem : EntitySystem
     /// <param name="colorOverride">Optional color for the announcement message.</param>
     public virtual void DispatchStationAnnouncement(
         EntityUid source,
-        SpeechMessage message,
+        SpeechMessage message, // Starlight
         string? sender = null,
         bool playDefaultSound = true,
         SoundSpecifier? announcementSound = null,

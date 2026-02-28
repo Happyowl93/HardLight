@@ -23,7 +23,7 @@ namespace Content.Server.Speech.EntitySystems
         private readonly Dictionary<ProtoId<ReplacementAccentPrototype>, (Regex regex, string replacement)[]>
             _cachedReplacements = [];
         private readonly Dictionary<ProtoId<ReplacementAccentPrototype>, (Regex regex, string replacement)[]>
-            _cachedTTSReplacements = [];
+            _cachedTTSReplacements = []; // Starlight
 
         public override void Initialize()
         {

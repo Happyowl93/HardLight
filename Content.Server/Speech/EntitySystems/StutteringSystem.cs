@@ -1,3 +1,4 @@
+// Starlight: the entire file is commented out by us, not upstream
 //using System.Text;
 //using System.Text.RegularExpressions;
 //using Content.Server.Speech.Components;

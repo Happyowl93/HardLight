@@ -2,7 +2,6 @@
 using Content.Client.Resources;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface.Controls;
-using Content.Client._Starlight.TextToSpeech;
 
 namespace Content.Client.UserInterface.Systems.Chat.Controls;
 
@@ -34,7 +33,6 @@ public sealed class ChannelFilterButton : ChatPopupButton<ChannelFilterPopup>
         _chatUIController.FilterableChannelsChanged += Popup.SetChannels;
         _chatUIController.UnreadMessageCountsUpdated += Popup.UpdateUnread;
         Popup.SetChannels(_chatUIController.FilterableChannels);
-
     }
 
     protected override UIBox2 GetPopupPosition()
