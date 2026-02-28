@@ -9,6 +9,6 @@
     time: 24h
   - !type:RoleTimeRequirement
     role: JobSalvageSpecialist
-    time: 8h
+    time: 6h
   playTimeTracker: AntagDragon
   # Starlight end

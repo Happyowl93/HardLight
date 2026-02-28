@@ -15,7 +15,7 @@
     time: 3h
   - !type:RoleTimeRequirement
     role: AntagThief # You are a glorified Thief without Pax.
-    time: 5h
+    time: 3h
   playTimeTracker: AntagNinja
   # Starlight end
 

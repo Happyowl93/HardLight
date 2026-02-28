@@ -12,7 +12,7 @@
       time: 30h # You're expected to be mature, at least a little.
     - !type:RoleTimeRequirement
       role: JobBrigmedic
-      time: 6h # Lower stakes version of the same role, and forces you to get Paramed time too. Totals to about 10 hours paramed+brigmed combined.
+      time: 5h # Lower stakes version of the same role, and forces you to get Paramed time too. Totals to about 10 hours paramed+brigmed combined.
     - !type:RolesRequirement
       proto: ExtRolesReq
   startingGear: BlueShieldGear
