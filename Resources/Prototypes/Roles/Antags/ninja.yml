@@ -14,8 +14,8 @@
     role: JobSecurityOfficer # It's better than nothing.
     time: 3h
   - !type:RoleTimeRequirement
-    role: AntagTraitor # Learn how to be subversive and aggressive.
-    time: 2h
+    role: AntagThief # Learn how to be subversive and stealthy.
+    time: 1h
   playTimeTracker: AntagNinja
   # Starlight end
 
