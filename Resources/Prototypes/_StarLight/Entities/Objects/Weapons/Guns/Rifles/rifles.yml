@@ -280,7 +280,7 @@
   name: L10 DMR
   parent: [ BaseWeaponRifle, BaseSecurityContraband ]
   id: WeaponRifleL10
-  description: "A scoped marksman rifle for medium range engagements, built on the Lecter platform.\nChambered in .30 rifle."
+  description: "A scoped marksman rifle for medium range engagements, built on the Lecter platform.\nChambered in .45 magnum."
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Rifles/L10.rsi
@@ -292,7 +292,7 @@
   - type: Clothing
     sprite: _Starlight/Objects/Weapons/Guns/Rifles/L10.rsi
   - type: Gun
-    fireRate: 4.5
+    fireRate: 2
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -316,11 +316,11 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeLightRifleSP
+        startingItem: CartridgeMagnumSP
         priority: 1
         whitelist:
           tags:
-          - CartridgeLightRifle
+          - CartridgeMagnum
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot ""
@@ -489,3 +489,57 @@
     - type: EyeCursorOffset
       maxOffset: 0.5
       pvsIncrease: 1.4
+
+# Starlight start
+- type: entity
+  name: SPC-Lionhunter
+  parent: [ BaseWeaponSniper, BaseGunWieldable, BaseMajorContraband ]
+  id: WeaponRifleLionhunter
+  description: A one of a kind bolt-action rifle fitted with an integrated scope. Chambered for a proprietary .48 round developed by parties unknown. Built to drop targets at range with authority. Each shot demands a deliberate recycle of the action.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Weapons/Guns/Rifles/lionhunter_icons.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,3,2
+    sprite: _Starlight/Objects/Weapons/Guns/Rifles/lionhunter_inhands.rsi
+  - type: Clothing
+    sprite: _Starlight/Objects/Weapons/Guns/Rifles/lionhunter_inhands.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Gun
+    fireRate: 1
+    pump: true
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - Cartridge48Rifle
+    capacity: 10
+    proto: Cartridge48Rifle
+    soundRack:
+      path: /Audio/_Starlight/Weapons/Guns/Cock/cycle_bolt.ogg
+      params:
+        variation: 0.1
+  - type: GunRequiresWield
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 5.4
+    pvsIncrease: 0.54
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+      firing_pin: !type:Container
+  - type: Appearance
+# Starlight end

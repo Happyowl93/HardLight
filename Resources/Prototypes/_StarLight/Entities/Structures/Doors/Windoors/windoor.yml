@@ -1,3 +1,4 @@
+# Mining
 - type: entity
   parent: WindoorSecureCargoLocked
   id: WindoorSecureMiningLocked
@@ -7,6 +8,7 @@
     containers:
       board: [ DoorElectronicsMining ]
 
+# Salvage
 - type: entity
   parent: WindoorSecureCargoLocked
   id: WindoorSecureSalvageMiningLocked
@@ -15,3 +17,26 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsSalvageMining ]
+
+# Robotics
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureRoboticsLocked
+  suffix: Robotics, Locked
+  components:
+    - type: ContainerFill
+      containers:
+        board: [ DoorElectronicsRobotics ]
+    - type: Wires
+      layoutId: AirlockScience
+
+- type: entity
+  parent: WindoorSecurePlasma
+  id: PlasmaWindoorSecureRoboticsLocked
+  suffix: Robotics, Locked, Plasma
+  components:
+    - type: ContainerFill
+      containers:
+        board: [ DoorElectronicsRobotics ]
+    - type: Wires
+      layoutId: AirlockScience
