@@ -41,7 +41,7 @@ Space-Station 14 has [docs site](https://docs.spacestation14.io/) documentation 
 > This license **remains in effect** for contributions made during that period until explicit relicensing
 > consent is received from the respective authors. Once consent is given, those contributions are relicensed under MIT.
 > All contributions outside of that range are licensed under MIT (`LICENSE.TXT`).
-> Relicensing requests are tracked in issues — TODO: link issue here.
+> Relicensing requests are tracked in [issue #3499](https://github.com/ss14Starlight/space-station-14/issues/3499).
 
 ### Click each banner for further information
 
