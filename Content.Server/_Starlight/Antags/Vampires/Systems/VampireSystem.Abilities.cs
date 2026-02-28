@@ -305,7 +305,6 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (target == uid
             || !HasComp<BloodstreamComponent>(target)
-            //|| !HasComp<HumanoidAppearanceComponent>(target)  // comment this out to let them drink from non-humanoid?
             )
             return;
 
@@ -337,7 +336,6 @@ public sealed partial class VampireSystem : EntitySystem
         if (!Exists(target)
             || target == uid
             || !HasComp<BloodstreamComponent>(target)
-            //|| !HasComp<HumanoidAppearanceComponent>(target) // comment this out to let them drink from non-humanoid?
             )
             return;
 
@@ -376,7 +374,6 @@ public sealed partial class VampireSystem : EntitySystem
         if (!comp.FangsExtended
             || args.Args.Target == null
             || !HasComp<BloodstreamComponent>(args.Args.Target.Value)
-            //|| !HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value)// comment this out to let them drink from non-humanoid?
             )
         {
             comp.IsDrinking = false;
@@ -401,42 +398,20 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        //var TargetDamage = new DamageSpecifier();
-        //TargetDamage = _damageableSystem.GetDamage(target, _proto.Index<DamageGroupPrototype>(_geneticGroupId));
-
-        //if (_damageableSystem.TryGetDamageGreaterThan(target, FixedPoint2.New(10), out var TempDamage, _proto.Index<DamageGroupPrototype>(_geneticGroupId))) //TODO test this
-        //{
-        //    _popup.PopupEntity(Loc.GetString("vampire-target-sickly"), uid, uid, Shared.Popups.PopupType.MediumCaution);
-        //    comp.IsDrinking = false;
-        //    return;
-        //}
-
         var sipInefficiency = 0f;
-        var sipAmount = 10f;
-        var maxCanDrink = 0f;
-        var actualSipAmount = 0f;
+        var sipAmount = comp.sipAmount;
         
         if (HasComp<HumanoidAppearanceComponent>(args.Args.Target.Value))
         {
-            if (false) //  comp.humanoidEfficiency <= 0) //Lets not divide by zero todo make yml work
-            {
-                return;
-                comp.IsDrinking = false;
-            }
             sipInefficiency = 1f / 0.5f;  //comp.humanoidEfficiency;
-            sipAmount = 10; // comp.sipAmountHuman; //todo make yml work
+            sipAmount = comp.sipAmount; // comp.sipAmountHuman; //todo make yml work
         } else {
-            if (false) // workcomp.nonHumanoidEfficiency <= 0) //todo make yml work
-            {
-                comp.IsDrinking = false;
-                return;
-            }
             sipInefficiency = 1f / 0.25f; //comp.nonHumanoidEfficiency;
-            sipAmount = 5; //comp.sipAmountNonHuman; //todo make yml work
+            sipAmount = comp.sipAmount / 2; //comp.sipAmountNonHuman; //todo make yml work
         }
 
-        maxCanDrink = comp.MaxBloodPerTarget - drunkFromTarget;
-        actualSipAmount = MathF.Min(sipAmount, maxCanDrink);
+        var maxCanDrink = comp.MaxBloodPerTarget - drunkFromTarget;
+        var actualSipAmount = MathF.Min(sipAmount, maxCanDrink);
         
         //attempt to drain the target's blood level
         if (_blood.TryModifyBloodLevel(target, -actualSipAmount * sipInefficiency))

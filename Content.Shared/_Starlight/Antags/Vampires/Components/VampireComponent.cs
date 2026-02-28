@@ -2,7 +2,6 @@ using Content.Shared.Chemistry.Reagent;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
-using Content.Shared.Damage;
 
 
 namespace Content.Shared._Starlight.Antags.Vampires.Components;
@@ -12,9 +11,6 @@ namespace Content.Shared._Starlight.Antags.Vampires.Components;
 
 public sealed partial class VampireComponent : Component
 {
-    //[DataField]
-    //public Component VampireDrinkComponent = new();
-
     /// <summary>
     /// Chosen vampire class prototype id, once selected.
     /// </summary>
@@ -62,6 +58,7 @@ public sealed partial class VampireComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public bool FangsExtended = false;
+    public float sipAmount = 10f;
 
 
     /// <summary>
