@@ -76,7 +76,7 @@ public sealed partial class ATMSystem : SharedATMSystem
 
     private void OnTransfer(EntityUid uid, ATMComponent component, ATMTransferBuiMsg args)
     {
-        if (!_playerResources.TryGetResource(args.Actor, "credits", out var balance))
+        if (!_playerResources.TryGetResource(args.Actor, "credits", out var balance) || balance < args.Amount || args.Amount < 0)
             return;
 
         if (string.IsNullOrWhiteSpace(args.Recipient))

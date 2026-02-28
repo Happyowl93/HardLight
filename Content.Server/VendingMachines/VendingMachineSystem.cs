@@ -245,7 +245,7 @@ namespace Content.Server.VendingMachines
                     {
                         _playerResources.TryUpdateResource(buyerUid, "credits", -price);
                         vendComponent.DebitApplied = true;
-                        Popup.PopupEntity($"Debited {price}\u20a1. Balance: {balance}\u20a1", uid, buyerUid);
+                        Popup.PopupEntity($"Debited {price}\u20a1. Balance: {balance -= price}\u20a1", uid, buyerUid);
                         SendBalanceUpdate(uid, buyerUid, (int)(balance -= price));
 
                         // Alogs
@@ -267,7 +267,10 @@ namespace Content.Server.VendingMachines
                     }
                 }
                 else
-                    Popup.PopupEntity($"Insufficient funds. Required: {price}\u20a1", uid, buyerUid);
+                    }
+                    else
+                        Popup.PopupEntity($"Insufficient funds. Required: {price}\u20a1", uid, buyerUid);
+                }
             }
             // Starlight-end
 

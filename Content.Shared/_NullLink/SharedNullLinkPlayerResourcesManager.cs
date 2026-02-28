@@ -50,8 +50,11 @@ public abstract class SharedNullLinkPlayerResourcesManager : ISharedNullLinkPlay
     {
         if (_sharedPlayers.GetPlayerData(session) is not { } data)
             return false;
-
-        data.Resources[id] += value;
+        
+        if (data.Resources.TryGetValue(id, out var current))
+            data.Resources[id] = current + value;
+        else
+            data.Resources[id] = value;
 
         return true;
     }

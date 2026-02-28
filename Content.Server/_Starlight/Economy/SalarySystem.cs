@@ -133,7 +133,7 @@ public sealed partial class SalarySystem : SharedSalarySystem
 
     internal void Donate(ICommonSession session, int amount)
     {
-        if (_playerResources.TryGetResource(session, "credits", out var balance))
+        if (!_playerResources.TryGetResource(session, "credits", out var balance))
             return;
 
         _playerResources.TryUpdateResource(session, "credits", amount);

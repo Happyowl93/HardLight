@@ -34,7 +34,14 @@ public sealed class NullLinkPlayerResourcesManager : SharedNullLinkPlayerResourc
 
         var oldValue = data.Resources[id];
 
-        data.Resources[id] += value;
+        double oldValue = 0;
+        if (data.Resources.TryGetValue(id, out var current))
+        {
+            data.Resources[id] = current + value;
+            oldValue = current + value;
+        }
+        else
+            data.Resources[id] = value;
 
         if (!_resourcesEnabled
             || skipNullLink
