@@ -13,9 +13,9 @@
   - !type:RoleTimeRequirement
     role: JobSalvageSpecialist # Teaches you close quarters combat and gives good combat practice. (+jetpack, self-treatment)
     time: 3h
-  - !type:RoleTimeRequirement # At the very least please know basic med. Cannot be department since you can bypass that with Psychologist.
-    role: JobMedicalDoctor
-    time: 3h
+  - !type:DepartmentTimeRequirement # At the very least please know basic med.
+    department: Medical
+    time: 4h
   - !type:RoleTimeRequirement # Tradeoff for not having too high Sec time; You should know how to use your uplink. 
     role: AntagTraitor
     time: 1h # 1 shift, to teach you how to use an uplink. Starlight end
