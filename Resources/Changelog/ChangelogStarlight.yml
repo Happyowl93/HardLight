@@ -32730,5 +32730,12 @@ Entries:
   id: 351401
   time: '2026-02-28T17:52:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3514
+- author: redmushie
+  changes:
+  - message: Paramedic and Senior Paramedic PDAs now come with NanoChat.
+    type: Fix
+  id: 351201
+  time: '2026-02-28T18:02:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3512
 Order: -1
 
