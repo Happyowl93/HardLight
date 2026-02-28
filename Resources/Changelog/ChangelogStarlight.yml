@@ -32716,5 +32716,35 @@ Entries:
   id: 351101
   time: '2026-02-28T16:21:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3511
+- author: Magniras
+  changes:
+  - message: reduced heat damage from one to 0.25.
+    type: Tweak
+  id: 351501
+  time: '2026-02-28T17:45:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3515
+- author: redmushie
+  changes:
+  - message: Cyborgs and AIs once again show their identifiers in their communications.
+    type: Fix
+  id: 351401
+  time: '2026-02-28T17:52:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3514
+- author: redmushie
+  changes:
+  - message: Paramedic and Senior Paramedic PDAs now come with NanoChat.
+    type: Fix
+  id: 351201
+  time: '2026-02-28T18:02:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3512
+- author: Swonki
+  changes:
+  - message: Added Radiation Suit to Corgi.
+    type: Add
+  - message: Added Carp Suit to Corgi.
+    type: Add
+  id: 350701
+  time: '2026-02-28T18:12:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3507
 Order: -1
 
