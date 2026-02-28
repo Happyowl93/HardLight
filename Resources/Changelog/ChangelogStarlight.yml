@@ -32611,5 +32611,14 @@ Entries:
   id: 348601
   time: '2026-02-27T23:57:06.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3486
+- author: wonderfulnewworld
+  changes:
+  - message: (Space Mall) Adds Performer slots and spawns.
+    type: Add
+  - message: (Kiloton) Adds Performer slots and spawns.
+    type: Add
+  id: 349101
+  time: '2026-02-28T00:03:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3491
 Order: -1
 
