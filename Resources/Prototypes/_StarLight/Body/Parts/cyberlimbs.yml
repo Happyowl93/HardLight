@@ -234,7 +234,7 @@
   id: LeftArmCyberReaper
   name: "left reaper arm"
   parent: [PartCyber, BaseLeftArm]
-  description: Augmented arm for the surgerons of the modern age.
+  description: Augmented arm for the surgeons of the modern age.
   components:
     - type: BaseLayerId
       layers:
@@ -254,7 +254,7 @@
   id: LeftHandCyberReaper
   name: "left reaper hand"
   parent: [PartCyber, BaseLeftHand]
-  description: Augmented hand for the surgerons of the modern age.
+  description: Augmented hand for the surgeons of the modern age.
   components:
     - type: BaseLayerId
       layers:
@@ -292,7 +292,7 @@
   id: RightArmCyberReaper
   name: "right reaper arm"
   parent: [PartCyber, BaseRightArm]
-  description: Augmented arm for the surgerons of the modern age.
+  description: Augmented arm for the surgeons of the modern age.
   components:
     - type: BaseLayerId
       layers:
@@ -312,7 +312,7 @@
   id: RightHandCyberReaper
   name: "right reaper hand"
   parent: [PartCyber, BaseRightHand]
-  description: Augmented hand for the surgerons of the modern age.
+  description: Augmented hand for the surgeons of the modern age.
   components:
     - type: BaseLayerId
       layers:
@@ -771,7 +771,7 @@
   id: LeftArmCyberRipper
   name: "left ripperdoc arm"
   parent: [PartCyber, BaseLeftArm]
-  description: Augmented arm for the surgerons of the modern age.
+  description: Augmented arm for the surgeons of the modern age.
   components:
     - type: BaseLayerId
       layers:
@@ -794,7 +794,7 @@
   id: LeftHandCyberRipper
   name: "left ripperdoc hand"
   parent: [PartCyber, BaseLeftHand]
-  description: Augmented hand for the surgerons of the modern age.
+  description: Augmented hand for the surgeons of the modern age.
 
   components:
     - type: BaseLayerId
@@ -833,7 +833,7 @@
   id: RightArmCyberRipper
   name: "right ripperdoc arm"
   parent: [PartCyber, BaseRightArm]
-  description: Augmented arm for the surgerons of the modern age.
+  description: Augmented arm for the surgeons of the modern age.
   components:
     - type: BaseLayerId
       layers:
@@ -856,7 +856,7 @@
   id: RightHandCyberRipper
   name: "right ripperdoc hand"
   parent: [PartCyber, BaseRightHand]
-  description: Augmented hand for the surgerons of the modern age.
+  description: Augmented hand for the surgeons of the modern age.
   components:
     - type: BaseLayerId
       layers:
