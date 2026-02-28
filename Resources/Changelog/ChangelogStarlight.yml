@@ -32668,5 +32668,12 @@ Entries:
   id: 350401
   time: '2026-02-28T05:55:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3504
+- author: TaserTheFox
+  changes:
+  - message: Description to some cyber limbs.
+    type: Add
+  id: 350601
+  time: '2026-02-28T07:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3506
 Order: -1
 
