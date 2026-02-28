@@ -32759,5 +32759,14 @@ Entries:
   id: 352001
   time: '2026-02-28T21:40:33.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3520
+- author: Conflee
+  changes:
+  - message: Added the Spotted Clown Jumpsuit, for a more classical clown look. Also
+      added the assistant clown, candy clown, striped clown, and spotted clown jumpsuits
+      to the Clown's loadout.
+    type: Add
+  id: 352101
+  time: '2026-02-28T22:20:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3521
 Order: -1
 
