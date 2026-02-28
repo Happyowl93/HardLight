@@ -265,9 +265,6 @@ namespace Content.Server.VendingMachines
                                 _cargoSystem.UpdateBankAccount((stationUid.Value, bank), toCredit, bank.PrimaryAccount);
                         }
                     }
-                }
-                else
-                    }
                     else
                         Popup.PopupEntity($"Insufficient funds. Required: {price}\u20a1", uid, buyerUid);
                 }
