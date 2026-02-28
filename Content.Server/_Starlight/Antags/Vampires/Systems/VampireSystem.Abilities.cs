@@ -399,16 +399,6 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         }
 
-        //foreach (var MaxDmg in comp.MaxDrinkDamage)
-        //{
-        //    if (_damageableSystem.TryGetDamageGreaterThan(target, MaxDmg.FixedPoint2, MaxDmg.DamageSpecifier)) //TODO test this
-        //    {
-        //        _popup.PopupEntity(Loc.GetString("vampire-target-sickly"), uid, uid, Shared.Popups.PopupType.MediumCaution);
-        //        comp.IsDrinking = false;
-        //        break;
-        //    }
-        //}
-
         //var TargetDamage = new DamageSpecifier();
         //TargetDamage = _damageableSystem.GetDamage(target, _proto.Index<DamageGroupPrototype>(_geneticGroupId));
 
@@ -461,8 +451,8 @@ public sealed partial class VampireSystem : EntitySystem
             //Biting Damage              
             //Little bit of additional damage to disincentivize blood donations
             var BiteDamage = new DamageSpecifier();
-            BiteDamage += new DamageSpecifier(_proto.Index<DamageTypePrototype>(_cellularTypeId), FixedPoint2.New(1));
-            BiteDamage += new DamageSpecifier(_proto.Index<DamageTypePrototype>(_pierceTypeId), FixedPoint2.New(0.5));
+            BiteDamage += new DamageSpecifier(_proto.Index<DamageTypePrototype>(_cellularTypeId), FixedPoint2.New(0.1) * actualSipAmount); //1 cellular per 10u
+            BiteDamage += new DamageSpecifier(_proto.Index<DamageTypePrototype>(_pierceTypeId), FixedPoint2.New(0.05) * actualSipAmount); //5 pierce per 10u
             _damageableSystem.TryChangeDamage(target, BiteDamage, ignoreResistances: true);
             _blood.TryModifyBleedAmount(target, 1);
 
