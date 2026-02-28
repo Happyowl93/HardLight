@@ -34,6 +34,7 @@ using System.Numerics;
 using Content.Shared.Popups;
 using Content.Server.EUI;
 using Robust.Shared.Player;
+using Content.Shared.Flash;
 
 namespace Content.Server._Starlight.Antags.Vampires.Systems;
 
@@ -575,19 +576,13 @@ public sealed partial class VampireSystem : EntitySystem
             var vectorToTarget = Vector2.Normalize(targetPosition - ourPosition);
 
             var dot = Vector2.Dot(ourDirection, vectorToTarget);
-            
+
             if (!TryComp<StaminaComponent>(target, out var stam))
                 continue;
+                
+            if (OnFlashImmunityFlashAttempt(target, ))
 
             var knockedDown = HasComp<KnockedDownComponent>(target);
-
-            //logic for target to get a pop up that they have memory loss
-            //Removed for now since this is contentious 
-            //if (!_mind.TryGetMind(target, out var MindId, out var Mind))
-            //    return;
-            //    
-            //if (_player.TryGetSessionById(Mind.UserId, out var session))
-            //    _euiMan.OpenEui(new VampireGlareEui(), session);
 
             // If target in front
             if (dot > 0.7f && !knockedDown)
