@@ -16,7 +16,7 @@ public sealed class RadarConsoleSystem : SharedRadarConsoleSystem
 {
     [Dependency] private readonly ShuttleConsoleSystem _console = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+    [Dependency] private readonly SharedTransformSystem _transformSystem = default!; // _Starlight
     [Dependency] private readonly RadarLaserSystem _laserSystem = default!; // _Starlight
     [Dependency] private readonly IGameTiming _timing = default!; // _Starlight
 
@@ -31,7 +31,7 @@ public sealed class RadarConsoleSystem : SharedRadarConsoleSystem
         SubscribeLocalEvent<RadarConsoleComponent, ComponentStartup>(OnRadarStartup);
     }
 
-    public override void Update(float frameTime)
+    public override void Update(float frameTime) // _Starlight
     {
         base.Update(frameTime);
         _blipUpdateTimer += frameTime;

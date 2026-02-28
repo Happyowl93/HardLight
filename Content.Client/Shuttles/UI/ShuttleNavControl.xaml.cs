@@ -37,7 +37,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     private Angle? _rotation;
 
     private Dictionary<NetEntity, List<DockingPortState>> _docks = new();
-    private List<RadarBlipData> _blips = new();
+    private List<RadarBlipData> _blips = new(); // _Starlight
     private List<RadarLaserData> _lasers = new(); // _Starlight
 
     public bool ShowIFF { get; set; } = true;
@@ -125,7 +125,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         RotateWithEntity = state.RotateWithEntity;
 
         _docks = state.Docks;
-        _blips = state.Blips;
+        _blips = state.Blips; // _Starlight
         _lasers = state.Lasers; // _Starlight
     }
 
