@@ -32746,5 +32746,18 @@ Entries:
   id: 350701
   time: '2026-02-28T18:12:32.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3507
+- author: STARLIGHT TEAM
+  changes:
+  - message: The radio queue has been disabled because under Alpha load it unexpectedly
+      turned into choppy helium speech.
+    type: Remove
+  - message: The voice now plays correctly on the entity.
+    type: Fix
+  - message: The TTS model expressiveness has been increased, caching has been improved,
+      and the voices have been made louder.
+    type: Fix
+  id: 352001
+  time: '2026-02-28T21:40:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3520
 Order: -1
 
