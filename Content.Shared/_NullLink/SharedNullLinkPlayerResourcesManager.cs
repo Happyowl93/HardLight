@@ -30,8 +30,6 @@ public abstract class SharedNullLinkPlayerResourcesManager : ISharedNullLinkPlay
         if (_sharedPlayers.GetPlayerData(session) is not { } data)
             return false;
 
-        var diff = value - data.Resources[id];
-
         if (data.Resources.TryGetValue(id, our var oldValue) && value - oldValue == 0) // If we don't have any difference - we don't need to call null link.
             return false;
 
