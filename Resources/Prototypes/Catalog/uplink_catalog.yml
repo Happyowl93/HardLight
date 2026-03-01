@@ -129,9 +129,6 @@
   description: uplink-gloves-knuckleduster-desc
   icon: { sprite: Clothing/Hands/Gloves/KnuckleDusters/syndicateknuckleduster.rsi, state: syndicateknuckleduster }
   productEntity: ClothingHandsKnuckleDustersSyndicate
-  discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 1
   cost:
     Telecrystal: 1 # Starlight-edit: 6 -> 1
   categories:
@@ -678,29 +675,6 @@
         components:
           - SurplusBundle
 
-# SL: for the china lake 
-- type: listing
-  id: UplinkMagazineGrenadeFrag
-  name: uplink-grenade-launcher-frag-ammo-name
-  description: uplink-grenade-launcher-frag-ammo-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi, state: icon }
-  productEntity: MagazineGrenadeFrag 
-
-  cost:
-    Telecrystal: 3
-  categories:
-  - UplinkAmmo
-
-- type: listing
-  id: UplinkMagazineGrenadeBlast
-  name: uplink-grenade-launcher-blast-ammo-name
-  description: uplink-grenade-launcher-blast-ammo-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi, state: icon }
-  productEntity: MagazineGrenadeBlast 
-  cost:
-    Telecrystal: 6
-  categories:
-  - UplinkAmmo
 
 #Chemicals
 
@@ -2404,9 +2378,6 @@
   description: uplink-cane-blade-desc
   icon: { sprite:  Objects/Weapons/Melee/cane.rsi, state: cane}
   productEntity: CaneSheathFilled
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 1
   cost:
     Telecrystal: 1 # Starlight-edit: 3 -> 1
   categories:
