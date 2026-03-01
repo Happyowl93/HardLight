@@ -109,8 +109,6 @@ public sealed class SharedDualWieldSystem : EntitySystem
         _popup.PopupClient(Loc.GetString("dual-wield-interrupted"), args.User, args.User);
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
-
     /// <summary>
     /// Returns true if the user has exactly one gun in each hand (left and right).
     /// </summary>
