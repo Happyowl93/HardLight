@@ -32588,5 +32588,163 @@ Entries:
   id: 348801
   time: '2026-02-27T21:11:14.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3488
+- author: Rinary
+  changes:
+  - message: '(Re)Added new ambience: ambigen13.ogg.'
+    type: Add
+  - message: '(Re)Added new ambience: grid background noise(shipambience.ogg).'
+    type: Add
+  id: 348401
+  time: '2026-02-27T23:45:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3484
+- author: wonderfulnewworld
+  changes:
+  - message: (Ming) Added protection anchors to the armory and the vault. (With 2
+      more APCs in armory to sustain the 3 anchors.).
+    type: Add
+  - message: (Ming) Added a deep fryer to the kitchen.
+    type: Add
+  - message: (Ming) Added Performer spawns and slots.
+    type: Add
+  - message: (Ming) Removed Brigmedic chem locker.
+    type: Remove
+  id: 348601
+  time: '2026-02-27T23:57:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3486
+- author: wonderfulnewworld
+  changes:
+  - message: (Space Mall) Adds Performer slots and spawns.
+    type: Add
+  - message: (Kiloton) Adds Performer slots and spawns.
+    type: Add
+  id: 349101
+  time: '2026-02-28T00:03:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3491
+- author: wonderfulnewworld
+  changes:
+  - message: (Bagel) Added a lot of cameras to Engineering.
+    type: Add
+  - message: (Bagel) Fixed a tile in sci's new xenobio corridor being the wrong type,
+      and moved the locker so it's no longer blocking the door.
+    type: Fix
+  id: 349401
+  time: '2026-02-28T00:22:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3494
+- author: wonderfulnewworld
+  changes:
+  - message: Added a Syndicate Satchel. It's slightly larger than the base satchel.
+    type: Add
+  - message: Added the Syndicate Backpack, Satchel, and Duffel to the SyndiDrobe.
+    type: Add
+  - message: Blood-red magboots can now hold a sidearm, and have the same slowdown
+      resist as combat boots.
+    type: Tweak
+  id: 349301
+  time: '2026-02-28T03:38:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3493
+- author: Swonki
+  changes:
+  - message: Added BSO Hardsuit to Smart Corgi
+    type: Add
+  id: 349801
+  time: '2026-02-28T03:42:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3498
+- author: wonderfulnewworld
+  changes:
+  - message: (Saltern) Added protection anchors to the armory and the vault.
+    type: Add
+  - message: (Saltern) Added a deep fryer to the kitchen.
+    type: Add
+  - message: (Saltern) Added Performer spawns and slots.
+    type: Add
+  id: 349601
+  time: '2026-02-28T03:51:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3496
+- author: neomoth
+  changes:
+  - message: I did it. I fixed him. Big fucked up evil multi-directional Tippy is
+      no more.
+    type: Fix
+  id: 350401
+  time: '2026-02-28T05:55:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3504
+- author: TaserTheFox
+  changes:
+  - message: Description to some cyber limbs.
+    type: Add
+  id: 350601
+  time: '2026-02-28T07:56:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3506
+- author: Darkrell, Rinary, CringeCursed, ilovehans10
+  changes:
+  - message: TTS streaming mode. The first packet is sent within 150 ms.
+    type: Add
+  - message: If the announcement sender is able to speak, their voice is used with
+      a megaphone effect.
+    type: Add
+  - message: The radio effect has been reworked.
+    type: Tweak
+  - message: The voice in the collective mind now sounds with a new "underwater" effect.
+    type: Add
+  - message: The wizard’s spells now have a voice effect.
+    type: Add
+  - message: If the face is visible, you can now examine the character and find out
+      their voice.
+    type: Add
+  - message: Toggles have been added to disable TTS for specific channels.
+    type: Add
+  - message: The TTS queue on the radio can be reset in the same menu, and the queue
+      also attempts to rebalance itself by dynamically increasing the pitch.
+    type: Add
+  - message: Around 150 voices, more are still being added.
+    type: Tweak
+  - message: Accents have been reworked. TTS corruption now happens extremely rarely,
+      but as a result many accents no longer affect TTS.
+    type: Tweak
+  - message: The stuttering accent has been restored, as it no longer interferes with
+      TTS.
+    type: Tweak
+  - message: The whisper distance for TTS and text is now identical.
+    type: Tweak
+  id: 349501
+  time: '2026-02-28T12:45:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3495
+- author: redmushie
+  changes:
+  - message: Crew monitor paging no longer pages before a person crits.
+    type: Fix
+  id: 351101
+  time: '2026-02-28T16:21:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3511
+- author: Magniras
+  changes:
+  - message: reduced heat damage from one to 0.25.
+    type: Tweak
+  id: 351501
+  time: '2026-02-28T17:45:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3515
+- author: redmushie
+  changes:
+  - message: Cyborgs and AIs once again show their identifiers in their communications.
+    type: Fix
+  id: 351401
+  time: '2026-02-28T17:52:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3514
+- author: redmushie
+  changes:
+  - message: Paramedic and Senior Paramedic PDAs now come with NanoChat.
+    type: Fix
+  id: 351201
+  time: '2026-02-28T18:02:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3512
+- author: Swonki
+  changes:
+  - message: Added Radiation Suit to Corgi.
+    type: Add
+  - message: Added Carp Suit to Corgi.
+    type: Add
+  id: 350701
+  time: '2026-02-28T18:12:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3507
 Order: -1
 
