@@ -1,3 +1,4 @@
+using Content.Shared._Starlight.Weapons.DualWield;
 using Content.Shared.Actions;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
@@ -30,7 +31,28 @@ public abstract partial class SharedGunSystem
 
     private void OnAltVerb(EntityUid uid, GunComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
-        if (!args.CanAccess || !args.CanInteract || !args.CanComplexInteract || args.Hands == null || component.SelectedMode == component.AvailableModes)
+        if (!args.CanAccess || !args.CanInteract || !args.CanComplexInteract || args.Hands == null)
+            return;
+
+        // 🌟Starlight🌟 — dual-wield verb: show when holding a gun in each hand
+        var dualWield = EntitySystem.Get<SharedDualWieldSystem>();
+        if (dualWield.TryGetBothGuns(args.User, args.Hands, out var leftGun, out var rightGun)
+            && (uid == leftGun || uid == rightGun))
+        {
+            var isActive = TryComp<DualWieldComponent>(args.User, out var dw) && dw.Active;
+            args.Verbs.Add(new AlternativeVerb
+            {
+                Text = isActive
+                    ? Loc.GetString("dual-wield-disable")
+                    : Loc.GetString("dual-wield-enable"),
+                Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/fold.svg.192dpi.png")),
+                Priority = 2,
+                Act = () => dualWield.ToggleDualWield(args.User, leftGun, rightGun, isActive),
+            });
+        }
+
+        // Fire-mode cycling verb
+        if (component.SelectedMode == component.AvailableModes)
             return;
 
         var nextMode = GetNextMode(component);
