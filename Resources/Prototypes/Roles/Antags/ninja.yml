@@ -9,7 +9,7 @@
   previewStartingGear: SpaceNinjaGear
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 48h
+    time: 24h
   - !type:RoleTimeRequirement
     role: JobSecurityOfficer # It's better than nothing.
     time: 3h
