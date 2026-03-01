@@ -26,8 +26,9 @@ public sealed class SharedDualWieldSystem : EntitySystem
         SubscribeLocalEvent<GunComponent, GotUnequippedHandEvent>(OnGunUnequipped);
     }
 
-    // ── Accuracy penalty ──────────────────────────────────────────────────────────
-
+    /// <summary>
+    /// Accuracy penalty
+    /// </summary>
     private void OnGunRefreshModifiers(Entity<CanDualWieldComponent> gun, ref GunRefreshModifiersEvent args)
     {
         if (gun.Comp.DualWieldInaccuracyPenalty <= 0f)
