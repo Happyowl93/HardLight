@@ -42,6 +42,8 @@
       - Prying
   - type: ToolTileCompatible
   - type: Prying
+    useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
+    playSoundOnDoafter: true
   - type: UseDelay
     delay: 1
   - type: StealTarget

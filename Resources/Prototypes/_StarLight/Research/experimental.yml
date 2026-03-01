@@ -55,7 +55,6 @@
   recipeUnlocks:
     - ArtificialBluespaceCrystal
     - NullspaceAnchorMachineCircuitboard
-    - DarkBreacherMachineCircuitboard
 
 - type: technology
   id: ScienceCyberLimbsTech
@@ -75,3 +74,21 @@
     - CyberLimbsTech
     - AdvancedAnomalyResearch
 # Tier 3
+
+# Tier 4
+- type: technology
+  id: DarkBreacher
+  name: research-technology-darkbreacher
+  icon:
+    sprite: _Starlight/Structures/Machines/darkbreacher.rsi
+    state: base
+  discipline: Experimental
+  tier: 4
+  cost: 30000
+  recipeUnlocks:
+    - DarkBreacherMachineCircuitboard
+  technologyPrerequisites:
+    - BluespaceManipulation
+    - AdvancedAnomalyResearch
+  radioChannels:
+  - Command

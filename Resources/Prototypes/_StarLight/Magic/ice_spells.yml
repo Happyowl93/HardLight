@@ -25,6 +25,8 @@
       spreadDegrees: 12  # Starlight: Tight spread like a shotgun
   - type: SpeakOnAction
     sentence: action-speech-spell-icestorm
+    tts: action-speech-spell-icestorm-tts
+    modifier: Spell
 
 # Starlight: Ice Storm projectile
 - type: entity

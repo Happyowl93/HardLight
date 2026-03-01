@@ -1,4 +1,6 @@
 # PLEASE, KEEP THIS FILE ALPHABETIZED
+- type: Tag
+  id: AnomalyCoreShadow
 
 - type: Tag
   id: AbductedTraitBackground
@@ -71,6 +73,9 @@
 
 - type: Tag
   id: CantInteract
+
+- type: Tag
+  id: Cartridge48Rifle
 
 - type: Tag
   id: CartridgeBattery
@@ -297,9 +302,6 @@
 # Used for the jet injector and advanced jet injector
 - type: Tag
   id: JetInjector
-  
-- type: Tag
-  id: Labelable
 
 - type: Tag
   id: L6Saw
@@ -382,6 +384,9 @@
 
 - type: Tag
   id: Nexus
+  
+- type: Tag
+  id: NotLabelable
 
 - type: Tag
   id: NukiePlanet
@@ -467,6 +472,9 @@
   id: ShellShotgunToz
 
 - type: Tag
+  id: Shield
+
+- type: Tag
   id: ShipWreck
 
 - type: Tag
@@ -479,10 +487,16 @@
   id: SovietDungeon
 
 - type: Tag
+  id: SovietDungeonWeh
+
+- type: Tag
   id: SovietWarehouse
 
 - type: Tag
   id: SpeedLoaderMagnumImprovised
+
+- type: Tag
+  id: SpeedLoader48Rifle
 
 - type: Tag
   id: SpeedLoaderShotgun

@@ -36,6 +36,8 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: CentralCommandOperator
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: [ IDCardStandard, BaseScienceContraband ]
@@ -133,6 +135,8 @@
       state: NTNCBlueShield
   - type: PresetIdCard
     job: NTNCBlueShield
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: [ IDCardStandard, BaseCargoContraband ]
@@ -198,6 +202,24 @@
     job: MailTech
 
 - type: entity
+  parent: IDCardStandard
+  id: PerformerIDCard
+  name: performer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: stripe_top
+      color: &color-service-top "#639137"
+    - state: stripe_bottom
+      color: &color-service-bottom "#446326"
+    - sprite: *starlight-icon-rsi
+      offset: *icon-offset
+      state: Performer
+  - type: PresetIdCard
+    job: Performer
+
+- type: entity
   parent: [ IDCardStandard, BaseSecurityContraband ]
   id: DutyOfficerIDCard
   name: duty officer ID card
@@ -229,6 +251,8 @@
     - state: sovietid
   - type: IdCard
     jobIcon: JobIconSoviet
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: [ IDCardStandard, BaseSyndicateContraband ]
@@ -255,6 +279,8 @@
       interfaces:
         enum.AgentIDCardUiKey.Key:
           type: AgentIDCardBoundUserInterface
+    - type: NanoChatCard
+      listNumber: false
 
 - type: entity
   parent: [ IDCardStandard, BaseSyndicateContraband ]
@@ -281,6 +307,8 @@
       interfaces:
         enum.AgentIDCardUiKey.Key:
           type: AgentIDCardBoundUserInterface
+    - type: NanoChatCard
+      listNumber: false
 
 - type: entity
   parent: [ IDCardStandard, BaseSyndicateContraband ]
@@ -307,6 +335,8 @@
       interfaces:
         enum.AgentIDCardUiKey.Key:
           type: AgentIDCardBoundUserInterface
+    - type: NanoChatCard
+      listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -333,6 +363,8 @@
     - Research
     - Engineering
     - Atmospherics
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -356,6 +388,8 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: NanoTrasenSpecialForces
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -369,6 +403,8 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: Decimus
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: [IDCardStandard, BaseTSFContraband]
@@ -444,6 +480,8 @@
       state: Cluwne
   - type: IdCard
     jobTitle: job-title-cluwne
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: [ IDCardStandard, BaseCommandContraband ]
