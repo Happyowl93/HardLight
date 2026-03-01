@@ -1511,10 +1511,10 @@
   - type: SolutionContainerManager
     solutions:
       bolt:
-        maxVol: 4
+        maxVol: 4 # Starlight-edit: 1.5 -> 4
         reagents:
         - ReagentId: Impedrezene # SL edit
           Quantity: 4
   - type: SolutionInjectOnProjectileHit
-    transferAmount: 4
+    transferAmount: 4 # Starlight-edit: 1.5 -> 4
     solution: bolt

@@ -86,10 +86,10 @@
   description: uplink-energycrossbow-desc
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 2 # Starlight-edit: 3 -> 2
   productEntity: WeaponEnergyCrossbow
   cost:
-    Telecrystal: 3
+    Telecrystal: 3 # Starlight-edit: 5 -> 3
   categories:
   - UplinkWeaponry
   conditions:
@@ -133,7 +133,7 @@
   discountDownTo:
     Telecrystal: 1
   cost:
-    Telecrystal: 1
+    Telecrystal: 1 # Starlight-edit: 6 -> 1
   categories:
   - UplinkWeaponry
 
@@ -196,9 +196,9 @@
   productEntity: FireAxeFlaming
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 4 # Starlight-edit: 10 -> 4
   cost:
-    Telecrystal: 6
+    Telecrystal: 6 # Starlight-edit: 15 -> 6
   categories:
   - UplinkWeaponry
 
@@ -238,9 +238,9 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledRifle
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 9
+    Telecrystal: 9 # Starlight-edit: 11 -> 9
   cost:
-    Telecrystal: 16
+    Telecrystal: 16 # Starlight-edit: 18 -> 16
   categories:
   - UplinkWeaponry
 
@@ -266,9 +266,9 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledGrenadeLauncher
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 20
+    Telecrystal: 20 # Starlight-edit: 24 -> 20
   cost:
-    Telecrystal: 26
+    Telecrystal: 26 # Starlight-edit: 30 -> 26
   categories:
   - UplinkWeaponry
 
@@ -2408,7 +2408,7 @@
   discountDownTo:
     Telecrystal: 1
   cost:
-    Telecrystal: 1
+    Telecrystal: 1 # Starlight-edit: 3 -> 1
   categories:
   - UplinkJob
   conditions:
