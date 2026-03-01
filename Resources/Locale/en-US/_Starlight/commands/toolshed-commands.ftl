@@ -69,3 +69,5 @@ command-description-vector2dataconstructor-add =
     Add a new Vector2 to the existing definition. Call vector2dataconstructor:new before using this.
 command-description-vector2dataconstructor-clean =
     Clean up an unused Vector2 list definition on the entity.
+command-description-job-set = 
+    Changes the job of the piped entity.

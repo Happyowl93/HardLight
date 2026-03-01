@@ -5,6 +5,11 @@
   name: blue shield hardsuit
   description: A high-tech hardsuit perfect for diving in front of Mr. Pre- Er, Captain.
   components:
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+    - CorgiWearable
   - type: Sprite
     sprite: _Starlight/Clothing/OuterClothing/Hardsuits/blueshield.rsi
   - type: Clothing
@@ -700,7 +705,9 @@
   - type: Clothing
     sprite: _Starlight/Clothing/OuterClothing/Hardsuits/tsf.rsi
   - type: ExplosionResistance
-    damageCoefficient: 0.3
+    damageCoefficient: 0.2
+  - type: StaminaResistance
+    damageCoefficient: 0.75
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.5
   - type: FireProtection
@@ -708,10 +715,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.4
-        Slash: 0.4
-        Piercing: 0.3
-        Heat: 0.5
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.2
+        Heat: 0.4
         Caustic: 0
   - type: ClothingSpeedModifier
     walkModifier: 0.9

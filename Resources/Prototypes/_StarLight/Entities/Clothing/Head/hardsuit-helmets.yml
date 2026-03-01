@@ -22,6 +22,10 @@
         Blunt: 0.8
         Slash: 0.8
         Piercing: 0.8
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - CorgiWearable
 
 #NTREP Hardsuit
 - type: entity
@@ -679,6 +683,7 @@
   - type: EyeProtection
     protectionTime: 5
   - type: FlashImmunity
+  - type: ClothesNightVision
 
 #Thanatos Helmet (Starlight version of Deathsquad)
 - type: entity

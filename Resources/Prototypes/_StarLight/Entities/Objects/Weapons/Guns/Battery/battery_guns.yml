@@ -181,7 +181,7 @@
     zeroVisible: true
   - type: Lock
   - type: AccessReader
-    access: [["Security"]]
+    access: [["Security"], ["Cadet"]]
   - type: BatteryAmmoProvider
     proto: DisablerBolt
     fireCost: 50
@@ -220,7 +220,7 @@
 
 - type: entity
   name: X-01 multiphase energy gun
-  parent: [ BaseWeaponBatterySmall, BaseGrandTheftContraband ]
+  parent: [ BaseWeaponBatterySmall, BaseBlueShieldContraband, BaseGrandTheftContraband ]
   id: WeaponMultiphaseGun
   description: This is an expensive, modern version of the antique laser pistol, with several unique fire modes.
   components:
@@ -238,6 +238,8 @@
       shader: unshaded
   - type: Lock
     mindShieldLock: true
+    autoUnlock: true
+    autoLock: true
   - type: AccessReader
     access: [["BlueShield"]]
   - type: Item
@@ -484,6 +486,10 @@
     - proto: DestroyBeam
       fireCost: 100
       magState: destroy
+  - type: GunFireModeSounds
+    sounds:
+      2:
+        path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
 
 - type: entity
   name: pulse pistol
@@ -530,6 +536,10 @@
       fireCost: 200
       magState: destroy
       visualState: destroy
+  - type: GunFireModeSounds
+    sounds:
+      2:
+        path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: Battery
     maxCharge: 2600
     startingCharge: 2600
@@ -702,6 +712,10 @@
       fireCost: 100
       magState: destroy
       visualState: destroy
+  - type: GunFireModeSounds
+    sounds:
+      2:
+        path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: Battery
     maxCharge: 3300
     startingCharge: 3300
@@ -759,6 +773,10 @@
       fireCost: 10
       magState: destroy
       visualState: destroy
+  - type: GunFireModeSounds
+    sounds:
+      2:
+        path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: Battery
     maxCharge: 2640
     startingCharge: 2640

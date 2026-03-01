@@ -17,9 +17,13 @@
   - type: InstantAction
     event: !type:SpawnItemInHandEvent
       spawned: ElfLuminousOrb
+      requiresFreeHand: false
   - type: SpeakOnAction
     sentence: action-speech-cantrip-glow
     whisper: true
+    tts: action-speech-cantrip-glow-tts
+    modifier: Spell
+  - type: ColorObjectToEyeColor
 
 # Magic Ember
 
@@ -40,9 +44,12 @@
   - type: InstantAction
     event: !type:SpawnItemInHandEvent
       spawned: ElfMagicEmber
+      requiresFreeHand: true
   - type: SpeakOnAction
     sentence: action-speech-cantrip-spark
     whisper: true
+    tts: action-speech-cantrip-spark-tts
+    modifier: Spell
 
 # Rejuvenation/Antidote
 
@@ -63,9 +70,12 @@
   - type: InstantAction
     event: !type:SpawnItemInHandEvent
       spawned: ElfAntidoteSeed
+      requiresFreeHand: true
   - type: SpeakOnAction
     sentence: action-speech-cantrip-antidote
     whisper: true
+    tts: action-speech-cantrip-antidote-tts
+    modifier: Spell
 
 # Cleanse
 
@@ -73,7 +83,7 @@
   parent: BaseAction
   id: ActionCantripMop
   name: Cleanse
-  description: Removes filth around you. Like a tiny cleanade. Has a weird shape.
+  description: Removes filth around you. Like a tiny cleanade. Only affects tiles adjacent to where you stand.
   components:
   - type: Magic
     requiresClothes: false
@@ -89,6 +99,8 @@
   - type: SpeakOnAction
     sentence: action-speech-cantrip-mop
     whisper: true
+    tts: action-speech-cantrip-mop-tts
+    modifier: Spell
 
 # Hemostasis
 
@@ -101,7 +113,7 @@
   - type: Magic
     requiresClothes: false
   - type: Action
-    useDelay: 30
+    useDelay: 45
     itemIconStyle: BigAction
     icon:
       sprite: _Starlight/Objects/Magic/bandage.rsi
@@ -109,9 +121,12 @@
   - type: InstantAction
     event: !type:SpawnItemInHandEvent
       spawned: ElfRuneHaemostatic
+      requiresFreeHand: true
   - type: SpeakOnAction
     sentence: action-speech-cantrip-bandage
     whisper: true
+    tts: action-speech-cantrip-bandage-tts
+    modifier: Spell
 
 # Psychic Whisper - disabled in store until i figure out how to make it work properly
 

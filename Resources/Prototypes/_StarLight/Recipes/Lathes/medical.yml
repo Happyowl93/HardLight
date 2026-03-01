@@ -130,6 +130,28 @@
     Steel: 200
 
 - type: latheRecipe
+  id: LeftLegCyberSpeed
+  result: LeftLegCyberSpeed
+  categories:
+  - Cyberlimbs
+  completetime: 3
+  materials:
+    Steel: 1500
+    Plastic: 1000
+    Silver: 500
+
+- type: latheRecipe
+  id: RightLegCyberSpeed
+  result: RightLegCyberSpeed
+  categories:
+  - Cyberlimbs
+  completetime: 3
+  materials:
+    Steel: 1500
+    Plastic: 1000
+    Silver: 500
+
+- type: latheRecipe
   id: LeftFootCyber
   result: LeftFootCyber
   categories:
@@ -730,3 +752,17 @@
   materials:
     Plastic: 200
   name: lathe-recipe-PatchPack-name
+
+- type: latheRecipe
+  id: GoldenJug
+  result: GoldenJug
+  completetime: 2
+  materials:
+    Gold: 50
+
+- type: latheRecipe
+  id: SilverJug
+  result: SilverJug
+  completetime: 2
+  materials:
+    Silver: 50
