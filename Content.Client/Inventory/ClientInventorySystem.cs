@@ -138,15 +138,10 @@ namespace Content.Client.Inventory
 
         public void ReloadInventory(InventorySlotsComponent? component = null)
         {
-            Log.Log(LogLevel.Info, "reloading");
             var player = _playerManager.LocalEntity;
             if (player == null || !Resolve(player.Value, ref component, false))
-            {
-                Log.Log(LogLevel.Info, "wow epic fail");
                 return;
-            }
-
-            Log.Log(LogLevel.Info, "yuppers");
+            
             OnUnlinkInventory?.Invoke();
             OnLinkInventorySlots?.Invoke(player.Value, component);
         }

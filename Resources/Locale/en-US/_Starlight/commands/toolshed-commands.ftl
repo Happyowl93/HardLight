@@ -71,3 +71,9 @@ command-description-vector2dataconstructor-clean =
     Clean up an unused Vector2 list definition on the entity.
 command-description-job-set = 
     Changes the job of the piped entity.
+command-description-clientcomp-ensure =
+    Ensures that all clients add the component with the specified name to an entity, assuming it exists.
+command-description-clientcomp-write =
+    Attempt to make all clients vvwrite something into a client component.
+command-description-clientcomp-rm =
+    Ensures that all clients delete the component with the specified name from an entity, assuming it exists.
