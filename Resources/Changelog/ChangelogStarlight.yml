@@ -32825,5 +32825,27 @@ Entries:
   id: 349701
   time: '2026-03-01T09:37:52.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3497
+- author: Born Stellar
+  changes:
+  - message: pop-up to inform thralls of their status and how to access the hivemind.
+    type: Add
+  - message: stacking blindness/piercing damage to vampire bites.
+    type: Add
+  - message: Cannibalism law has been updated to disallow drinking blood from crew
+      unless it is on the floor or part of an official cult.
+    type: Tweak
+  - message: Security Vampire briefing now includes a bit more details on how to handle
+      vampires in a more harsh way (Minor Security buff vs Vampires).
+    type: Tweak
+  - message: glare causes 10 seconds of sleep, to be more inline with other memory
+      loss mechanics.
+    type: Tweak
+  - message: Vampires may drink the blood of animals. This is about half as fast as
+      normal drinking and does not progress overall blood for progression. It just
+      cures your debilitating slowness.
+    type: Tweak
+  id: 344201
+  time: '2026-03-01T09:42:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3442
 Order: -1
 
