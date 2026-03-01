@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/01/2026 09:11:08
-  entityCount: 18705
+  time: 03/01/2026 23:08:10
+  entityCount: 18707
 maps:
 - 1
 grids:
@@ -5539,7 +5539,7 @@ entities:
             4: 26208
           -5,-17:
             0: 32768
-            6: 102
+            5: 102
           -8,-11:
             0: 65535
           -8,-10:
@@ -5572,16 +5572,16 @@ entities:
             1: 44714
           -5,-20:
             1: 3
-            5: 24576
+            6: 24576
             0: 128
           -5,-21:
             1: 13107
-            5: 34944
+            6: 34944
           -5,-19:
-            5: 24678
+            6: 24678
           -5,-18:
-            5: 102
-            6: 24576
+            6: 102
+            5: 24576
           -4,-20:
             0: 65528
           -4,-19:
@@ -5601,7 +5601,7 @@ entities:
           -4,-22:
             1: 65520
           -4,-21:
-            5: 13104
+            6: 13104
             0: 34944
           -3,-20:
             0: 65535
@@ -5943,11 +5943,11 @@ entities:
             Oxygen: 6666.982
         - volume: 2500
           temperature: 293.15
-          moles: {}
-        - volume: 2500
-          temperature: 293.15
           moles:
             Plasma: 6666.982
+        - volume: 2500
+          temperature: 293.15
+          moles: {}
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
@@ -8907,7 +8907,7 @@ entities:
       pos: 42.5,-45.5
       parent: 3
     - type: Door
-      secondsUntilStateChange: -97750.42
+      secondsUntilStateChange: -97941.45
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9297,7 +9297,7 @@ entities:
       pos: 13.5,13.5
       parent: 3
     - type: Door
-      secondsUntilStateChange: -157065.14
+      secondsUntilStateChange: -157256.17
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -39834,6 +39834,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 13.597293,96.50001
       parent: 3
+  - uid: 8542
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 6.5492706,-11.243682
+      parent: 3
   - uid: 10733
     components:
     - type: Transform
@@ -39867,19 +39873,13 @@ entities:
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 6.742363,-11.400858
+      pos: 5.697708,-10.415557
       parent: 3
   - uid: 18408
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 7.4533005,-12.307108
-      parent: 3
-  - uid: 18411
-    components:
-    - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 8.3283,-11.37742
+      pos: 7.4867706,-10.478057
       parent: 3
   - uid: 18583
     components:
@@ -87937,6 +87937,18 @@ entities:
       - Experimental
       - CivilianServices
       - Biochemical
+- proto: protectionanchor
+  entities:
+  - uid: 18706
+    components:
+    - type: Transform
+      pos: 14.5,65.5
+      parent: 3
+  - uid: 18707
+    components:
+    - type: Transform
+      pos: 11.5,110.5
+      parent: 3
 - proto: Protolathe
   entities:
   - uid: 8390
@@ -100800,6 +100812,18 @@ entities:
     - type: Transform
       pos: 6.5,46.5
       parent: 3
+- proto: SpawnPointPerformer
+  entities:
+  - uid: 18409
+    components:
+    - type: Transform
+      pos: -2.5,-10.5
+      parent: 3
+  - uid: 18411
+    components:
+    - type: Transform
+      pos: 3.5,-10.5
+      parent: 3
 - proto: SpawnPointQuartermaster
   entities:
   - uid: 10754
@@ -100992,16 +101016,6 @@ entities:
       parent: 3
 - proto: SpawnPointServiceWorker
   entities:
-  - uid: 8540
-    components:
-    - type: Transform
-      pos: -6.5,2.5
-      parent: 3
-  - uid: 8542
-    components:
-    - type: Transform
-      pos: -6.5,-1.5
-      parent: 3
   - uid: 8543
     components:
     - type: Transform
@@ -104461,6 +104475,11 @@ entities:
       rot: 3.141592653589793 rad
       pos: 4.5,127.5
       parent: 3
+  - uid: 8540
+    components:
+    - type: Transform
+      pos: 6.5,-10.5
+      parent: 3
   - uid: 9698
     components:
     - type: Transform
@@ -104582,11 +104601,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 11.5,-7.5
-      parent: 3
-  - uid: 18409
-    components:
-    - type: Transform
-      pos: 7.5,-11.5
       parent: 3
   - uid: 18581
     components:
@@ -121545,7 +121559,7 @@ entities:
       pos: -8.5,41.5
       parent: 3
     - type: Door
-      secondsUntilStateChange: -25453.809
+      secondsUntilStateChange: -25644.84
       state: Opening
   - uid: 17720
     components:
@@ -121553,7 +121567,7 @@ entities:
       pos: -8.5,40.5
       parent: 3
     - type: Door
-      secondsUntilStateChange: -25453.441
+      secondsUntilStateChange: -25644.473
       state: Opening
 - proto: WoodenBench
   entities:
