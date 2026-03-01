@@ -32861,5 +32861,48 @@ Entries:
   id: 351701
   time: '2026-03-01T10:00:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3517
+- author: Scarlet lightweaver
+  changes:
+  - message: Changed the breaching hammers damage to be 5 blunt and 25 structural
+      without wield.
+    type: Tweak
+  - message: Changed the breaching hammers damage to be 25 blunt and 135 structural
+      when wielding.
+    type: Tweak
+  id: 353401
+  time: '2026-03-01T10:11:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3534
+- author: Scarlet Lightweaver
+  changes:
+  - message: Buffed the pirate captains hardsuit. Yarr.
+    type: Tweak
+  id: 351801
+  time: '2026-03-01T10:15:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3518
+- author: Conflee
+  changes:
+  - message: Added Medical Jaws of Life, a round start tool for entering locked areas
+      to recover corpses. It is slower than the Sci Researched Jaws of Life, but can
+      be found round start in the Paramedic, Brigmedic, and CMO's lockers.
+    type: Add
+  - message: Changed the sound of opening an airlock/firelock with a crowbar etc to
+      be slightly quieter and a bit quicker.
+    type: Tweak
+  - message: Fixed the duplicate RD Diploma in their locker. Someone added a second
+      one fixing a merge conflict at some point I suspect, since it was listed both
+      above and below an SL comment block.
+    type: Fix
+  id: 352901
+  time: '2026-03-01T10:19:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3529
+- author: SiTW
+  changes:
+  - message: Added 15 new replacements for the nerd accent.
+    type: Add
+  - message: Fixed 2 broken ones.
+    type: Fix
+  id: 341401
+  time: '2026-03-01T10:51:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3414
 Order: -1
 
