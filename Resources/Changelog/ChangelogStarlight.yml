@@ -32861,5 +32861,16 @@ Entries:
   id: 351701
   time: '2026-03-01T10:00:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3517
+- author: Scarlet lightweaver
+  changes:
+  - message: Changed the breaching hammers damage to be 5 blunt and 25 structural
+      without wield.
+    type: Tweak
+  - message: Changed the breaching hammers damage to be 25 blunt and 135 structural
+      when wielding.
+    type: Tweak
+  id: 353401
+  time: '2026-03-01T10:11:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3534
 Order: -1
 
