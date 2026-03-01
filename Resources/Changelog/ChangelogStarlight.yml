@@ -32904,5 +32904,19 @@ Entries:
   id: 341401
   time: '2026-03-01T10:51:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3414
+- author: CrazyPhantom
+  changes:
+  - message: PipeDocking manifolds only connecting the primary pipe when anchored.
+    type: Fix
+  - message: CableDocking infinite power glitch.
+    type: Fix
+  - message: PipeDocking now works with 5 pipe layers.
+    type: Tweak
+  - message: Issues with cables and pipes having large delays before they connect
+      should be greatly reduced.
+    type: Fix
+  id: 353901
+  time: '2026-03-01T21:07:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3539
 Order: -1
 
