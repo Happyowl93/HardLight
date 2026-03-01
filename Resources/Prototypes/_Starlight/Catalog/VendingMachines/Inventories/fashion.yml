@@ -558,3 +558,47 @@
   conditions:
     - !type:ListingLimitedStockCondition
       stock: 1
+
+- type: listing
+  id: ClothingHeadHatTophatBig
+  productEntity: ClothingHeadHatTophatBig
+  cost:
+    NTCredit: 900
+  categories:
+    - SLFashionHead
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: ClothingHeadHatTophatBigWhite
+  productEntity: ClothingHeadHatTophatBigWhite
+  cost:
+    NTCredit: 900
+  categories:
+    - SLFashionHead
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: ClothingHeadHatTophatBrass
+  productEntity: ClothingHeadHatTophatBrass
+  cost:
+    NTCredit: 900
+  categories:
+    - SLFashionHead
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: ClothingHeadHatStrawHatWide
+  productEntity: ClothingHeadHatStrawHatWide
+  cost:
+    NTCredit: 400
+  categories:
+    - SLFashionHead
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
