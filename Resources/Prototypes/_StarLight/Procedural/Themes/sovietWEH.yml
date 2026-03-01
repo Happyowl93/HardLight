@@ -272,3 +272,12 @@
   offset: 32,34
   tags:
     - SovietDungeonWeh
+
+# - LargeSovietSlopRoom17x9
+- type: dungeonRoom
+  id: NewSovietDungeonSlopKitchen17x9
+  size: 17, 9
+  atlas: /Maps/_Starlight/Dungeon/sovietWEH.yml
+  offset: 32,24
+  tags:
+    - SovietDungeonWeh
