@@ -4,7 +4,6 @@ using Content.Server.GameTicking;
 using Content.Server.Ghost;
 using Content.Shared._Starlight.Components;
 using Content.Shared.Administration;
-using Content.Shared.GameTicking;
 using Content.Shared.Mind;
 using Robust.Server.Player;
 using Robust.Shared.Toolshed;
@@ -37,7 +36,6 @@ public sealed class ClientCompCommand : ToolshedCommand
             {
                 log.Log(LogLevel.Debug, $"result from {result.Key}: {result.Value!.ControlType}, {result.Value!.ControlSuccess}, {result.Value?.Message}");
             }
-            RefreshEntity(targetEntity);
         }
         catch (Exception e)
         {
@@ -62,7 +60,6 @@ public sealed class ClientCompCommand : ToolshedCommand
             {
                 log.Log(LogLevel.Debug, $"result from {result.Key}: {result.Value!.ControlType}, {result.Value!.ControlSuccess}, {result.Value?.Message}");
             }
-            RefreshEntity(targetEntity);
         }
         catch (Exception e)
         {
@@ -85,32 +82,10 @@ public sealed class ClientCompCommand : ToolshedCommand
             {
                 log.Log(LogLevel.Debug, $"result from {result.Key}: {result.Value!.ControlType}, {result.Value!.ControlSuccess}, {result.Value?.Message}");
             }
-            RefreshEntity(targetEntity);
         }
         catch (Exception e)
         {
             throw; // TODO handle exception
         }
-    }
-
-    /// <summary>
-    /// Ghost then transfer mind back into entity to refresh things like input component.
-    /// </summary>
-    private void RefreshEntity(EntityUid uid)
-    {
-        _mind ??= GetSys<SharedMindSystem>();
-        _ghost ??= GetSys<GhostSystem>();
-        _ticker ??= GetSys<GameTicker>();
-        log ??= LogManager.GetSawmill("ccomp");
-        if(!_playerManager.TryGetSessionByEntity(uid, out var player))
-            return;
-        if (!_ticker.PlayerGameStatuses.TryGetValue(player.UserId, out var playerStatus) ||
-            playerStatus is not PlayerGameStatus.JoinedGame)
-            return;
-        if (!_mind.TryGetMind(player, out var mindId, out var mind))
-            (mindId, mind) = _mind.CreateMind(player.UserId);
-        _ghost.OnGhostAttempt(mindId, false, true, true, mind);
-        _mind.TransferTo(mindId, uid, true, false);
-        log.Log(LogLevel.Info, "refreshed entity!");
     }
 }
