@@ -120,6 +120,8 @@
           amount: 2
         - id: PlushieMorgana
         - id: PlushieKiller
+        - id: JawsOfLifeMed #Starlight
+        - id: JawsOfLifeMed #Starlight
 
 
 - type: entity

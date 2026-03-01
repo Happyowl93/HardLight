@@ -29,7 +29,7 @@
     speedModifier: 2
     useSound:
       path: /Audio/Items/crowbar.ogg
-    useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
+    useSoundOnDoafter: /Audio/_Starlight/Machines/airlock_pry.ogg #SL
     playSoundOnDoafter: true
   - type: Reactive
     groups:

@@ -279,7 +279,7 @@
   - type: Prying
     speedModifier: 1.5
     pryPowered: true
-    useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
+    useSoundOnDoafter: /Audio/_Starlight/Machines/airlock_pry.ogg #SL
     playSoundOnDoafter: true
     useSound: /Audio/Items/jaws_pry.ogg
   - type: Tag

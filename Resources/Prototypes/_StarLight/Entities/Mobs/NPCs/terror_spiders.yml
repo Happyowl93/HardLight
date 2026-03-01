@@ -114,7 +114,7 @@
     speedModifier: 1.5
     useSound:
       path: /Audio/Items/crowbar.ogg
-    useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
+    useSoundOnDoafter: /Audio/_Starlight/Machines/airlock_pry.ogg #SL
     playSoundOnDoafter: true
   - type: PassiveDamage
     allowedStates:
@@ -252,7 +252,7 @@
     speedModifier: 1.5
     useSound:
       path: /Audio/Items/crowbar.ogg
-    useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
+    useSoundOnDoafter: /Audio/_Starlight/Machines/airlock_pry.ogg #SL
     playSoundOnDoafter: true
   - type: MovementSpeedModifier
     baseWalkSpeed : 3.00
@@ -326,7 +326,7 @@
     speedModifier: 1.5
     useSound:
       path: /Audio/Items/crowbar.ogg
-    useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
+    useSoundOnDoafter: /Audio/_Starlight/Machines/airlock_pry.ogg #SL
     playSoundOnDoafter: true
   - type: MovementSpeedModifier
     baseWalkSpeed : 3.00
@@ -558,7 +558,7 @@
     speedModifier: 1.5
     useSound:
       path: /Audio/Items/crowbar.ogg
-    useSoundOnDoafter: /Audio/Machines/airlock_creaking.ogg
+    useSoundOnDoafter: /Audio/_Starlight/Machines/airlock_pry.ogg #SL
     playSoundOnDoafter: true
   - type: MovementSpeedModifier
     baseWalkSpeed : 3.00
