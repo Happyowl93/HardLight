@@ -63,3 +63,4 @@ WeaponLr30: WeaponRifleLr30
 WeaponEnergySMG: WeaponSubMachineGunEnergy
 WeaponIK60: WeaponRifleIK60
 WeaponPDW9: WeaponPistolPDW9
+WeaponEnergySniper: WeaponSniperEnergy

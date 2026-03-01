@@ -325,7 +325,40 @@
     autoRechargePauseTime: 44
 
 - type: entity
-  parent: [ BaseWeaponBattery, BaseGunWieldable, BaseCentcommContraband ]
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseSecurityContraband, BaseCentcommContraband ]
+  id: WeaponIonCarbine
+  name: ion carbine
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Weapons/Guns/Battery/ion_carbine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Item
+    size: Normal
+    shape:
+    - 0, 0, 3, 1
+  - type: BatterySelfRecharger
+    autoRechargeRate: 40 #100sec+60Sec Pause
+    autoRechargePauseTime: 60
+  - type: BatteryAmmoProvider
+    proto: EmpPulse
+    fireCost: 250
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
+  - type: EmpImmune
+  - type: GunWieldBonus
+    maxAngle: -10
+    minAngle: -10
+
+- type: entity
+  parent: WeaponIonCarbine
   id: WeaponIonRifle
   name: ion rifle
   components:
@@ -343,57 +376,16 @@
     quickEquip: false
     slots:
     - Back
-  - type: Gun
-    fireRate: 0.6
-  - type: BatterySelfRecharger
-    autoRechargeRate: 40 #100sec+60Sec Pause
-    autoRechargePauseTime: 60
-  - type: BatteryAmmoProvider
-    proto: EmpPulse
-    fireCost: 250
   - type: MagazineVisuals
     magState: mag
     steps: 5
     zeroVisible: true
   - type: Appearance
   - type: EmpImmune
-  - type: GunRequiresWield
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
     maxOffset: 8
     pvsIncrease: 0.3
-
-- type: entity
-  parent: [BaseWeaponBattery, BaseSecurityContraband ]
-  id: WeaponIonCarbine
-  name: ion carbine
-  components:
-  - type: Sprite
-    sprite: _Starlight/Objects/Weapons/Guns/Battery/ion_carbine.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-unshaded-4
-      map: ["enum.GunVisualLayers.MagUnshaded"]
-      shader: unshaded
-  - type: Item
-    size: Normal
-    shape:
-    - 0, 0, 3, 1
-  - type: Gun
-    fireRate: 0.6
-  - type: BatterySelfRecharger
-    autoRechargeRate: 40 #100sec+60Sec Pause
-    autoRechargePauseTime: 60
-  - type: BatteryAmmoProvider
-    proto: EmpPulse
-    fireCost: 250
-  - type: MagazineVisuals
-    magState: mag
-    steps: 5
-    zeroVisible: true
-  - type: Appearance
-  - type: EmpImmune
 
 - type: entity
   name: immolator laser gun
@@ -624,7 +616,7 @@
 
 - type: entity
   parent: [ BaseWeaponBattery, BaseGunWieldable, BaseCentcommContraband ]
-  id: WeaponEnergySniper
+  id: WeaponSniperEnergy
   name: LWAP
   components:
   - type: Sprite
@@ -642,16 +634,20 @@
     slots:
     - Back
   - type: Gun
+    minAngle: 30
+    maxAngle: 50
     fireRate: 0.5
   - type: BatteryAmmoProvider
     proto: SniperBolt
     fireCost: 100
+  - type: GunWieldBonus
+    maxAngle: -30
+    minAngle: -20
   - type: MagazineVisuals
     magState: mag
     steps: 5
     zeroVisible: true
   - type: Appearance
-  - type: GunRequiresWield
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
     maxOffset: 5

@@ -1,6 +1,6 @@
 - type: entity
   name: BasePistol
-  parent: [ BaseItem, BaseGunWieldable ]
+  parent: [ BaseItem, BaseGunWieldable ] # Starlight-edit
   id: BaseWeaponPistol
   description: A rooty tooty point and shooty.
   abstract: true
@@ -32,10 +32,12 @@
     - suitStorage
     - Belt
   - type: Gun
+    # Starlight-start
     minAngle: 5
     maxAngle: 20
     angleDecay: 22.5
     angleIncrease: 15
+    # Starlight-end
     fireRate: 6
     selectedMode: SemiAuto
     availableModes:
