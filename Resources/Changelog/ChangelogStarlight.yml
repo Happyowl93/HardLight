@@ -32847,5 +32847,12 @@ Entries:
   id: 344201
   time: '2026-03-01T09:42:31.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3442
+- author: STARLIGHT TEAM
+  changes:
+  - message: Added credits synchronization between servers.
+    type: Add
+  id: 287401
+  time: '2026-03-01T09:46:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2874
 Order: -1
 
