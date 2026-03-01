@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Threading.Tasks;
 using Content.Server._Starlight.Components;
 using Content.Server.Administration;
 using Content.Server.GameTicking;
@@ -23,13 +25,13 @@ public sealed class ClientCompCommand : ToolshedCommand
     private ISawmill? log;
 
     [CommandImplementation("ensure")]
-    public async void Ensure([PipedArgument] EntityUid targetEntity, string compName)
+    public async Task<EntityUid> Ensure([PipedArgument] EntityUid targetEntity, string compName)
     {
         try
         {
             log ??= LogManager.GetSawmill("ccomp");
             _cc ??= GetSys<ClientComponentControlSystem>();
-            if (!EntityManager.TryGetNetEntity(targetEntity, out var netEntity)) return;
+            if (!EntityManager.TryGetNetEntity(targetEntity, out var netEntity)) return targetEntity;
             var ev = new CreateClientComponentEvent { NetEntityUid = netEntity.Value, ComponentName = compName, };
             var results = await _cc.SendToAllClients(ev);
             foreach (var result in results)
@@ -41,16 +43,17 @@ public sealed class ClientCompCommand : ToolshedCommand
         {
             throw; // TODO handle exception
         }
+        return targetEntity;
     }
 
     [CommandImplementation("write")]
-    public async void Write([PipedArgument] EntityUid targetEntity, string compName, string path, string data)
+    public async Task<EntityUid> Write([PipedArgument] EntityUid targetEntity, string compName, string path, string data)
     {
         try
         {
             log ??= LogManager.GetSawmill("ccomp");
             _cc ??= GetSys<ClientComponentControlSystem>();
-            if (!EntityManager.TryGetNetEntity(targetEntity, out var netEntity)) return;
+            if (!EntityManager.TryGetNetEntity(targetEntity, out var netEntity)) return targetEntity;
             var ev = new WriteClientComponentEvent
             {
                 NetEntityUid = netEntity.Value, ComponentName = compName, ValuePath = path, NewValue = data,
@@ -65,16 +68,17 @@ public sealed class ClientCompCommand : ToolshedCommand
         {
             throw; // TODO handle exception
         }
+        return targetEntity;
     }
     
     [CommandImplementation("rm")]
-    public async void Remove([PipedArgument] EntityUid targetEntity, string compName)
+    public async Task<EntityUid> Remove([PipedArgument] EntityUid targetEntity, string compName)
     {
         try
         {
             log ??= LogManager.GetSawmill("ccomp");
             _cc = GetSys<ClientComponentControlSystem>();
-            if (!EntityManager.TryGetNetEntity(targetEntity, out var netEntity)) return;
+            if (!EntityManager.TryGetNetEntity(targetEntity, out var netEntity)) return targetEntity;
             var ev = new RemoveClientComponentEvent { NetEntityUid = netEntity.Value, ComponentName = compName, };
             var results = await _cc.SendToAllClients(ev);
             
@@ -87,5 +91,19 @@ public sealed class ClientCompCommand : ToolshedCommand
         {
             throw; // TODO handle exception
         }
+
+        return targetEntity;
     }
+
+    [CommandImplementation("ensure")]
+    public async Task<IEnumerable<Task<EntityUid>>> Ensure([PipedArgument] IEnumerable<EntityUid> targetEntity, string compName)
+        => targetEntity.Select(x => Ensure(x, compName));
+
+    [CommandImplementation("write")]
+    public async Task<IEnumerable<Task<EntityUid>>> Write([PipedArgument] IEnumerable<EntityUid> targetEntity, string compName, string path, string data)
+        => targetEntity.Select(x => Write(x, compName, path, data));
+
+    [CommandImplementation("rm")]
+    public async Task<IEnumerable<Task<EntityUid>>> Remove([PipedArgument] IEnumerable<EntityUid> targetEntity, string compName)
+        => targetEntity.Select(x => Remove(x, compName));
 }
