@@ -46,9 +46,6 @@ public sealed class SharedDualWieldSystem : EntitySystem
         args.MinAngle += penalty;
         args.MaxAngle += penalty;
     }
-
-    // ── Toggle ────────────────────────────────────────────────────────────────
-
     public void ToggleDualWield(EntityUid user, EntityUid leftGun, EntityUid rightGun, bool isCurrentlyActive)
     {
         if (isCurrentlyActive)
