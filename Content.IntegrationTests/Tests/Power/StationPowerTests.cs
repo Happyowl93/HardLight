@@ -67,7 +67,8 @@ public sealed class StationPowerTests
         "StarlightCluster",
         "StarlightStationBuilding",
         "StarlightPlasma",
-        "StarlightSepultum"
+        "StarlightSepultum",
+        "StarlightBoxcars"
         #endregion
     ];
 
