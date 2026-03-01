@@ -2,8 +2,8 @@
   id: StarlightBoxcars
   mapName: 'Boxcars'
   mapPath: /Maps/_Starlight/Stations/Boxcars.yml
-  minPlayers: 40
-  maxPlayers: 150
+  minPlayers: 25
+  maxPlayers: 95
   stations:
     StarlightBoxcars:
       stationProto: StandardNanotrasenStation
