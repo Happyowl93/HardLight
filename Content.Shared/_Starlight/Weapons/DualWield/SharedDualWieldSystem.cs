@@ -22,10 +22,7 @@ public sealed class SharedDualWieldSystem : EntitySystem
     {
         base.Initialize();
 
-        // Accuracy penalty while dual-wielding
         SubscribeLocalEvent<CanDualWieldComponent, GunRefreshModifiersEvent>(OnGunRefreshModifiers);
-
-        // Deactivate dual-wield if a gun leaves the user's hand
         SubscribeLocalEvent<GunComponent, GotUnequippedHandEvent>(OnGunUnequipped);
     }
 
