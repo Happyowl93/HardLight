@@ -46,6 +46,7 @@
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
+  - type: StationLimitedNetwork
   - type: WirelessNetworkConnection
     range: 500
   - type: StealTarget

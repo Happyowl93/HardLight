@@ -32675,5 +32675,202 @@ Entries:
   id: 350601
   time: '2026-02-28T07:56:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3506
+- author: Darkrell, Rinary, CringeCursed, ilovehans10
+  changes:
+  - message: TTS streaming mode. The first packet is sent within 150 ms.
+    type: Add
+  - message: If the announcement sender is able to speak, their voice is used with
+      a megaphone effect.
+    type: Add
+  - message: The radio effect has been reworked.
+    type: Tweak
+  - message: The voice in the collective mind now sounds with a new "underwater" effect.
+    type: Add
+  - message: The wizard’s spells now have a voice effect.
+    type: Add
+  - message: If the face is visible, you can now examine the character and find out
+      their voice.
+    type: Add
+  - message: Toggles have been added to disable TTS for specific channels.
+    type: Add
+  - message: The TTS queue on the radio can be reset in the same menu, and the queue
+      also attempts to rebalance itself by dynamically increasing the pitch.
+    type: Add
+  - message: Around 150 voices, more are still being added.
+    type: Tweak
+  - message: Accents have been reworked. TTS corruption now happens extremely rarely,
+      but as a result many accents no longer affect TTS.
+    type: Tweak
+  - message: The stuttering accent has been restored, as it no longer interferes with
+      TTS.
+    type: Tweak
+  - message: The whisper distance for TTS and text is now identical.
+    type: Tweak
+  id: 349501
+  time: '2026-02-28T12:45:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3495
+- author: redmushie
+  changes:
+  - message: Crew monitor paging no longer pages before a person crits.
+    type: Fix
+  id: 351101
+  time: '2026-02-28T16:21:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3511
+- author: Magniras
+  changes:
+  - message: reduced heat damage from one to 0.25.
+    type: Tweak
+  id: 351501
+  time: '2026-02-28T17:45:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3515
+- author: redmushie
+  changes:
+  - message: Cyborgs and AIs once again show their identifiers in their communications.
+    type: Fix
+  id: 351401
+  time: '2026-02-28T17:52:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3514
+- author: redmushie
+  changes:
+  - message: Paramedic and Senior Paramedic PDAs now come with NanoChat.
+    type: Fix
+  id: 351201
+  time: '2026-02-28T18:02:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3512
+- author: Swonki
+  changes:
+  - message: Added Radiation Suit to Corgi.
+    type: Add
+  - message: Added Carp Suit to Corgi.
+    type: Add
+  id: 350701
+  time: '2026-02-28T18:12:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3507
+- author: STARLIGHT TEAM
+  changes:
+  - message: The radio queue has been disabled because under Alpha load it unexpectedly
+      turned into choppy helium speech.
+    type: Remove
+  - message: The voice now plays correctly on the entity.
+    type: Fix
+  - message: The TTS model expressiveness has been increased, caching has been improved,
+      and the voices have been made louder.
+    type: Fix
+  id: 352001
+  time: '2026-02-28T21:40:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3520
+- author: Conflee
+  changes:
+  - message: Added the Spotted Clown Jumpsuit, for a more classical clown look. Also
+      added the assistant clown, candy clown, striped clown, and spotted clown jumpsuits
+      to the Clown's loadout.
+    type: Add
+  id: 352101
+  time: '2026-02-28T22:20:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3521
+- author: STARLIGHT TEAM
+  changes:
+  - message: Localization for some voices has been fixed.
+    type: Fix
+  id: 352501
+  time: '2026-02-28T23:40:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3525
+- author: teapoterror
+  changes:
+  - message: The "Giant Soviet Slop Room" now spawns correctly in Soviet Dungeons.
+    type: Fix
+  - message: Added a boatload more ore to the Soviet Ore Rooms.
+    type: Add
+  - message: Altered the empty SSF Crates in the "Soviet Radiation Death Trap Room"
+      to have actual loot in them.
+    type: Tweak
+  - message: Several other minor additions/fixes.
+    type: Tweak
+  id: 352201
+  time: '2026-03-01T09:25:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3522
+- author: wonderfulnewworld
+  changes:
+  - message: (Leth) Added protection anchors to the armory and the vault.
+    type: Add
+  - message: (Leth) Added AI restoration console to RD's room.
+    type: Add
+  - message: (Leth) Added Duty Officer spawns and 1 slot.
+    type: Add
+  - message: (Leth) Added NCT room and slots.
+    type: Add
+  - message: (Leth) The Boxers Association has reclaimed the area in mains around
+      the boxing ring. Added Boxer slots and spawns.
+    type: Add
+  - message: (Leth) Added Psychology room and slot.
+    type: Add
+  - message: (Leth) Added deep fryers to the kitchen.
+    type: Add
+  - message: (Leth) Added Performer spawns and 1 slot.
+    type: Add
+  id: 348301
+  time: '2026-03-01T09:32:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3483
+- author: wonderfulnewworld
+  changes:
+  - message: (Reach) Mapped Xenobio, somehow.
+    type: Add
+  - message: (Reach) Protection anchor added next to SecFab.
+    type: Add
+  - message: (Reach) Added deep fryer to kitchen.
+    type: Add
+  - message: (Reach) Added 1 spawn for Service Worker and Performer, and 1 slot for
+      each too.
+    type: Add
+  id: 349701
+  time: '2026-03-01T09:37:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3497
+- author: Born Stellar
+  changes:
+  - message: pop-up to inform thralls of their status and how to access the hivemind.
+    type: Add
+  - message: stacking blindness/piercing damage to vampire bites.
+    type: Add
+  - message: Cannibalism law has been updated to disallow drinking blood from crew
+      unless it is on the floor or part of an official cult.
+    type: Tweak
+  - message: Security Vampire briefing now includes a bit more details on how to handle
+      vampires in a more harsh way (Minor Security buff vs Vampires).
+    type: Tweak
+  - message: glare causes 10 seconds of sleep, to be more inline with other memory
+      loss mechanics.
+    type: Tweak
+  - message: Vampires may drink the blood of animals. This is about half as fast as
+      normal drinking and does not progress overall blood for progression. It just
+      cures your debilitating slowness.
+    type: Tweak
+  id: 344201
+  time: '2026-03-01T09:42:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3442
+- author: STARLIGHT TEAM
+  changes:
+  - message: Added credits synchronization between servers.
+    type: Add
+  id: 287401
+  time: '2026-03-01T09:46:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2874
+- author: redmushie
+  changes:
+  - message: Station AI's crew monitor now correctly displays data.
+    type: Fix
+  id: 351701
+  time: '2026-03-01T10:00:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3517
+- author: Scarlet lightweaver
+  changes:
+  - message: Changed the breaching hammers damage to be 5 blunt and 25 structural
+      without wield.
+    type: Tweak
+  - message: Changed the breaching hammers damage to be 25 blunt and 135 structural
+      when wielding.
+    type: Tweak
+  id: 353401
+  time: '2026-03-01T10:11:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3534
 Order: -1
 
