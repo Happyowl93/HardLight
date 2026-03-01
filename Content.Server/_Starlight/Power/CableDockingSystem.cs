@@ -13,7 +13,7 @@ using Content.Server.NodeContainer.EntitySystems;
 using Content.Shared.Starlight.CCVar;
 using Robust.Shared.Configuration;
 
-namespace Content.Server.Power.EntitySystems
+namespace Content.Server._Starlight.Power.EntitySystems
 {
     /// <summary>
     /// Allows cables to connect over docks.
@@ -199,12 +199,10 @@ namespace Content.Server.Power.EntitySystems
 
         #endregion
 
-
         private bool IsAnchored(EntityUid uid)
         {
             return Transform(uid).Anchored;
         }
-
 
         private void LinkCables(CableNode a, CableNode b)
         {
@@ -243,6 +241,5 @@ namespace Content.Server.Power.EntitySystems
             _nodeGroupSystem.QueueReflood(a);
             _nodeGroupSystem.QueueReflood(b);
         }
-
     }
 }

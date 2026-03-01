@@ -114,7 +114,7 @@ namespace Content.Server.Power.Nodes
         {
             base.OnAnchorStateChanged(entityManager, anchored);
 
-            var dockCableSystem = entityManager.System<Content.Server.Power.EntitySystems.CableDockingSystem>();
+            var dockCableSystem = entityManager.System<Server._Starlight.Power.EntitySystems.CableDockingSystem>();
             if (anchored)
             {
                 dockCableSystem.TryConnectDockedCable(this);

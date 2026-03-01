@@ -12,7 +12,7 @@ using Robust.Shared.Utility;
 using Content.Shared.Starlight.CCVar;
 using Robust.Shared.Configuration;
 
-namespace Content.Server.Atmos.EntitySystems
+namespace Content.Server._Starlight.Atmos.EntitySystems
 {
     /// <summary>
     /// Allows pipes to connect over docks.
@@ -286,7 +286,6 @@ namespace Content.Server.Atmos.EntitySystems
 
         #endregion
 
-
         public void RemoveDockConnections(EntityUid pipeEntity)
         {
             if (!EntityManager.TryGetComponent<NodeContainerComponent>(pipeEntity, out var nodeContainer))
@@ -309,7 +308,6 @@ namespace Content.Server.Atmos.EntitySystems
             }
         }
 
-
         private bool IsAnchored(EntityUid uid)
         {
             return Transform(uid).Anchored;
@@ -331,6 +329,5 @@ namespace Content.Server.Atmos.EntitySystems
             a.RemoveAlwaysReachable(b);
             b.RemoveAlwaysReachable(a);
         }
-
     }
 }
