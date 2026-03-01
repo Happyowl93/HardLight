@@ -259,6 +259,29 @@
         tags:
           - NukeOpsUplink
 
+#For the China-Lake
+- type: listing
+  id: UplinkMagazineGrenadeFrag
+  name: uplink-grenade-launcher-frag-ammo-name
+  description: uplink-grenade-launcher-frag-ammo-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi, state: icon }
+  productEntity: MagazineGrenadeFrag 
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazineGrenadeBlast
+  name: uplink-grenade-launcher-blast-ammo-name
+  description: uplink-grenade-launcher-blast-ammo-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi, state: icon }
+  productEntity: MagazineGrenadeBlast 
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkAmmo
+
 # Cybernetics
 
 - type: listing
