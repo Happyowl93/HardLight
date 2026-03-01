@@ -32,8 +32,6 @@ public sealed class NullLinkPlayerResourcesManager : SharedNullLinkPlayerResourc
             || value == 0) // If we don't have any difference - we don't need to call null link.
             return false;
 
-        var oldValue = data.Resources[id];
-
         double oldValue = 0;
         if (data.Resources.TryGetValue(id, out var current))
         {
