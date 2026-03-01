@@ -30,6 +30,10 @@
     sprite: _Starlight/Clothing/Uniforms/candy_clown.rsi
   - type: Clothing
     sprite: _Starlight/Clothing/Uniforms/candy_clown.rsi
+  - type: Tag
+    tags:
+    - ClownSuit
+    - WhitelistChameleon
 
 - type: entity
   parent: ClothingUniformBase
@@ -217,6 +221,10 @@
     sprite: _Starlight/Clothing/Uniforms/striped_clown.rsi
   - type: Clothing
     sprite: _Starlight/Clothing/Uniforms/striped_clown.rsi
+  - type: Tag
+    tags:
+    - ClownSuit
+    - WhitelistChameleon
 
 - type: entity
   parent: ClothingUniformBase
@@ -294,3 +302,18 @@
     sprite: _Starlight/Clothing/Uniforms/red_regalia.rsi
   - type: Clothing
     sprite: _Starlight/Clothing/Uniforms/red_regalia.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: SpottedClownUniformSuit
+  name: spotted clown
+  description: An older clown suit from a more civilized time.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/clown_spots.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/clown_spots.rsi
+  - type: Tag
+    tags:
+    - ClownSuit
+    - WhitelistChameleon
