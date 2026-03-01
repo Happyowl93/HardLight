@@ -94,6 +94,7 @@
         - Medkit # BSO can do it
         - BodyBag # From Paramedic
         - ParaKnife # From Paramedic
+        - JawsOfLife #Starlight
       components:
         - Stunbaton
         - FlashOnTrigger
