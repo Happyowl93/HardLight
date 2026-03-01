@@ -32895,5 +32895,14 @@ Entries:
   id: 352901
   time: '2026-03-01T10:19:31.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3529
+- author: SiTW
+  changes:
+  - message: Added 15 new replacements for the nerd accent.
+    type: Add
+  - message: Fixed 2 broken ones.
+    type: Fix
+  id: 341401
+  time: '2026-03-01T10:51:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3414
 Order: -1
 
