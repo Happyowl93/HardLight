@@ -70,7 +70,7 @@
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
     transmitFrequencyId: ShuttleTimer
-  - type: StationLimitedNetwork
+  - type: StationLimitedNetwork # Starlight
   - type: RadarConsole
     followEntity: false
   - type: CommunicationsConsole
