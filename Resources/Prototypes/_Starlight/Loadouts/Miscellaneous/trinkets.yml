@@ -623,6 +623,18 @@
         !type:OverallPlaytimeRequirement
         time: 144000 # 40 hr
   equipment:
+    gloves: ClothingHandsMaidGlovesElegant
+  groupBy: "maid outfit"
+
+- type: loadout
+  id: TacticalMaidGloves
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:DepartmentTimeRequirement
+        department: Security
+        time: 216000 # 60 hours of charging batong
+  equipment:
     gloves: ClothingHandsTacticalMaidGlovesDelicate
   groupBy: "maid outfit"
 
