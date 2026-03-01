@@ -32775,5 +32775,19 @@ Entries:
   id: 352501
   time: '2026-02-28T23:40:32.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3525
+- author: teapoterror
+  changes:
+  - message: The "Giant Soviet Slop Room" now spawns correctly in Soviet Dungeons.
+    type: Fix
+  - message: Added a boatload more ore to the Soviet Ore Rooms.
+    type: Add
+  - message: Altered the empty SSF Crates in the "Soviet Radiation Death Trap Room"
+      to have actual loot in them.
+    type: Tweak
+  - message: Several other minor additions/fixes.
+    type: Tweak
+  id: 352201
+  time: '2026-03-01T09:25:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3522
 Order: -1
 
