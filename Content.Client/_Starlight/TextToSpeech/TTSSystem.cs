@@ -125,39 +125,6 @@ public sealed class TextToSpeechSystem : EntitySystem
         var volume = SharedAudioSystem.GainToVolume(entry.volume);
         var finalParams = AudioParams.Default.WithVolume(volume);
 
-        // adaptive pitch scaling
-        switch (_ttsQueue.Count)
-        {
-            case int x when x < 2:
-                break;
-            case 2:
-                finalParams = finalParams.WithPitchScale(1.01f);
-                break;
-            case 3:
-                finalParams = finalParams.WithPitchScale(1.03f);
-                break;
-            case 4:
-                finalParams = finalParams.WithPitchScale(1.09f);
-                break;
-            case 5:
-                finalParams = finalParams.WithPitchScale(1.12f);
-                break;
-            case 6:
-                finalParams = finalParams.WithPitchScale(1.21f);
-                break;
-            case 7:
-                finalParams = finalParams.WithPitchScale(1.33f);
-                break;
-            case 8:
-                finalParams = finalParams.WithPitchScale(1.54f);
-                break;
-            case 9:
-                finalParams = finalParams.WithPitchScale(1.87f);
-                break;
-            default:
-                return;
-        }
-
         if (entry.specifier == null || !TryPlayChime(entry.data, finalParams, null, entry.specifier))
             _currentPlaying = PlayTTS(entry.data, null, finalParams);
     }
@@ -174,7 +141,7 @@ public sealed class TextToSpeechSystem : EntitySystem
             _ => _volume
         };
 
-        if (ev.Type == TTSType.Announcement || (ev.Type == TTSType.Radio && _ttsQueueEnabled))
+        if (ev.Type == TTSType.Announcement)
         {
             _ttsQueue.Enqueue((ev.Data, !_chime.IsMuted ? ev.Chime : null, _radioVolume));
         }
