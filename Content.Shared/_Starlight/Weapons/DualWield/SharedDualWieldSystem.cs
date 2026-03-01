@@ -84,8 +84,6 @@ public sealed class SharedDualWieldSystem : EntitySystem
         }
     }
 
-    // ── Cleanup ───────────────────────────────────────────────────────────────
-
     private void OnGunUnequipped(Entity<GunComponent> gun, ref GotUnequippedHandEvent args)
     {
         // If the user that was holding this gun had dual-wield active, disable it
