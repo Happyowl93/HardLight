@@ -12,16 +12,16 @@
     attackRate: 0.7
     damage:
       types:
-        Blunt: 15
-        Structural: 20
+        Blunt: 10
+        Structural: 25
     soundHit:
       collection: MetalThud
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 25
-        Structural: 100
+        Blunt: 22
+        Structural: 105
   - type: Item
     size: Normal
     shape:
