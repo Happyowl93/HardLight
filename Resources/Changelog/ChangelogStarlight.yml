@@ -32872,5 +32872,12 @@ Entries:
   id: 353401
   time: '2026-03-01T10:11:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3534
+- author: Scarlet Lightweaver
+  changes:
+  - message: Buffed the pirate captains hardsuit. Yarr.
+    type: Tweak
+  id: 351801
+  time: '2026-03-01T10:15:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3518
 Order: -1
 
