@@ -77,3 +77,5 @@ command-description-clientcomp-write =
     Attempt to make all clients vvwrite something into a client component.
 command-description-clientcomp-rm =
     Ensures that all clients delete the component with the specified name from an entity, assuming it exists.
+command-description-globalsound-play =
+    Play a sound globally for the piped entities or sessions.
