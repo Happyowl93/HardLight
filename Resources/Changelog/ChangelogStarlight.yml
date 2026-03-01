@@ -32879,5 +32879,21 @@ Entries:
   id: 351801
   time: '2026-03-01T10:15:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3518
+- author: Conflee
+  changes:
+  - message: Added Medical Jaws of Life, a round start tool for entering locked areas
+      to recover corpses. It is slower than the Sci Researched Jaws of Life, but can
+      be found round start in the Paramedic, Brigmedic, and CMO's lockers.
+    type: Add
+  - message: Changed the sound of opening an airlock/firelock with a crowbar etc to
+      be slightly quieter and a bit quicker.
+    type: Tweak
+  - message: Fixed the duplicate RD Diploma in their locker. Someone added a second
+      one fixing a merge conflict at some point I suspect, since it was listed both
+      above and below an SL comment block.
+    type: Fix
+  id: 352901
+  time: '2026-03-01T10:19:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3529
 Order: -1
 
