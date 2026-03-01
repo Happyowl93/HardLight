@@ -1,3 +1,4 @@
+// 🌟Starlight🌟
 using Content.Shared._Starlight.Weapons.DualWield;
 using Content.Shared.Actions;
 using Content.Shared.Examine;
@@ -40,6 +41,7 @@ public abstract partial class SharedGunSystem
             && (uid == leftGun || uid == rightGun))
         {
             var isActive = TryComp<DualWieldComponent>(args.User, out var dw) && dw.Active;
+            var canDual = HasComp<CanDualWieldComponent>(leftGun) && HasComp<CanDualWieldComponent>(rightGun);
             args.Verbs.Add(new AlternativeVerb
             {
                 Text = isActive
@@ -47,6 +49,8 @@ public abstract partial class SharedGunSystem
                     : Loc.GetString("dual-wield-enable"),
                 Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/fold.svg.192dpi.png")),
                 Priority = 2,
+                Disabled = !canDual && !isActive,
+                Message = (!canDual && !isActive) ? Loc.GetString("dual-wield-too-heavy") : null,
                 Act = () => dualWield.ToggleDualWield(args.User, leftGun, rightGun, isActive),
             });
         }

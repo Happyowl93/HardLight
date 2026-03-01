@@ -25,6 +25,7 @@
   - type: Tag
     tags:
     - Sidearm
+  - type: CanDualWield # 🌟Starlight🌟
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
     quickEquip: false
