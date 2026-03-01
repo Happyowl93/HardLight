@@ -32854,5 +32854,12 @@ Entries:
   id: 287401
   time: '2026-03-01T09:46:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2874
+- author: redmushie
+  changes:
+  - message: Station AI's crew monitor now correctly displays data.
+    type: Fix
+  id: 351701
+  time: '2026-03-01T10:00:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3517
 Order: -1
 
