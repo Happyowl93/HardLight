@@ -32976,5 +32976,25 @@ Entries:
   id: 353501
   time: '2026-03-02T10:10:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3535
+- author: Citrea
+  changes:
+  - message: Restored Maid Outfit and Tactical Maid Outfit to trinket loadouts.
+    type: Add
+  - message: Added Elegant Maid Gloves to trinket loadouts.
+    type: Add
+  - message: Service workers, Bartenders and Chefs are now officially approved to
+      run a maid cafe. Assistants may join them with the proper paperwork. You may
+      bring a second one from home, if you wish to preempt needing a shift change.
+    type: Add
+  - message: Removed maid outfits from fashion vendor, as they are now loadout options.
+    type: Remove
+  - message: The elegant maid set now has a glove counterpart to the tactical set.
+    type: Add
+  - message: 'Four new hats can be found in the fashion-o-mat: Very big tophats, a
+      fancy tophat and a wide straw hat with a ribbon.'
+    type: Add
+  id: 351601
+  time: '2026-03-02T10:15:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3516
 Order: -1
 
