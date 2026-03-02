@@ -9,6 +9,7 @@
   - CaptainOuterClothing
   - CaptainShoes # 🌟Starlight🌟
   - CaptainEyewear
+  - InsulsCaptain # Starlight
   - SurvivalExtended
   - Trinkets
   - Scarves # Starlight
@@ -95,7 +96,8 @@
   id: JobServiceWorker
   groups:
   - GroupTankHarness
-  - BartenderJumpsuit
+  - ServiceWorkerHead # Starlight
+  - ServiceWorkerJumpsuit # Starlight
   - CommonBackpack
   - CivilianShoes # 🌟Starlight🌟
   - Glasses
@@ -132,7 +134,7 @@
   - GroupTankHarness
   - LibrarianJumpsuit
   - CommonBackpack
-  - CivilianShoes # 🌟Starlight🌟
+  - CivilianShoes # Starlight
   - Glasses
   - Survival
   - Trinkets
@@ -188,6 +190,7 @@
   - JanitorGloves
   - CommonBackpack
   - JanitorOuterClothing
+  - JanitorNeck # Starlight
   - Glasses
   - Survival
   - Trinkets
@@ -244,6 +247,7 @@
   - MimeBackpack
   - MimeOuterClothing
   - MimeBelt
+  - MimeShoes # Starlight
   - Glasses
   - SurvivalMime
   - Trinkets
@@ -260,13 +264,13 @@
   - MusicianJumpsuit
   - CommonBackpack
   - MusicianOuterClothing
-  - CivilianShoes # 🌟Starlight🌟
+  - CivilianShoes # Starlight
   - Glasses
   - Survival
   - Trinkets
-  - Scarves # Starlight
-  - Pins # Starlight
-  - Pens # Starlight
+  - Scarves # Starlight start
+  - Pins
+  - Pens # Starlight end
   - MusicianJobTrinkets
   - Instruments
   - GroupSpeciesBreathTool
@@ -340,6 +344,7 @@
   - ChiefEngineerOuterClothing
   - ChiefEngineerShoes
   - SurvivalExtended
+  - Insuls # Starlight
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
@@ -353,6 +358,8 @@
   - GroupTankHarness
   - TechnicalAssistantJumpsuit
   - StationEngineerBackpack
+  - StationEngineerOuterClothing # Starlight start
+  - StationEngineerShoes # Starlight end
   - SurvivalExtended
   - Trinkets
   - Scarves # Starlight
@@ -441,8 +448,13 @@
   id: JobResearchAssistant
   groups:
   - GroupTankHarness
-  - ResearchAssistantJumpsuit
+  - ScientistHead # starlight start
+  - ScientistNeck
+  - ScientistJumpsuit
   - ScientistBackpack
+  - ScientistOuterClothing
+  - ScientistGloves
+  - ScientistShoes # starlight end
   - Glasses
   - Survival
   - Trinkets
@@ -457,6 +469,7 @@
   id: JobHeadOfSecurity
   groups:
   - HeadofSecurityHead
+  - SecurityMask # Starlight
   - HeadofSecurityNeck
   - HeadofSecurityJumpsuit
   - SecurityBackpack
@@ -466,6 +479,7 @@
   - SecurityEyewear
   - SecurityShoes
   - SurvivalSecurity
+  - InsulsCombat # Starlight
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
@@ -477,6 +491,8 @@
   id: JobWarden
   groups:
   - WardenHead
+  - SecurityMask # Starlight
+  - WardenNeck # Starlight
   - WardenJumpsuit
   - SecurityBackpack
   - SecurityBelt
@@ -484,6 +500,7 @@
   - SecurityEyewear
   - SecurityShoes
   - SurvivalSecurity
+  - InsulsCombat # Starlight
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
@@ -499,9 +516,11 @@
   - SecurityBackpack
   - SecurityEyewear
   - SecurityOuterClothing
+  - SecurityGloves # Starlight
   - SecurityShoes
   - SecurityPDA
   - SecurityBelt
+  - SecurityTie # Starlight
   - SecurityNonLethalWeapon #Starlight
   - SecuritySidearm #Starlight
   - SurvivalSecurity
@@ -521,6 +540,7 @@
   - SecurityBackpack
   - SecurityEyewear
   - DetectiveOuterClothing
+  - SecurityGloves # Starlight
   - DetectiveShoes # 🌟Starlight🌟
   - SurvivalSecurity
   - Trinkets
@@ -538,6 +558,7 @@
   - SecurityNonLethalWeapon
   - SecurityEyewear
   - SurvivalSecurity
+  - SecurityGloves # Starlight
   - Trinkets
   - Scarves # Starlight
   - Pins # Starlight
@@ -592,8 +613,14 @@
   id: JobMedicalIntern
   groups:
   - GroupTankHarness
-  - MedicalInternJumpsuit
+  - MedicalDoctorHead # Starlight start
+  - MedicalMask
+  - MedicalDoctorJumpsuit
+  - MedicalGloves
   - MedicalBackpack
+  - MedicalDoctorOuterClothing
+  - MedicalShoes # Starlight end
+#  - MedicalBackpack # Starlight, moved up
   - MedicalEyewear
   - SurvivalMedical
   - Trinkets
@@ -612,13 +639,13 @@
   - ChemistJumpsuit
   - MedicalGloves
   - ChemistBackpack
-  - ChemistBag # Starlight
   - ChemistOuterClothing
-  - ChemistShoes # Starlight
-  - ChemistPDA # Starlight
-  - ChemistEyewear # Starlight
-  - ChemistBeaker # Starlight
-  - ChemistLabeler # Starlight
+  - ChemistBag # Starlight start
+  - ChemistShoes
+  - ChemistPDA
+  - ChemistEyewear
+  - ChemistBeaker
+  - ChemistLabeler # Starlight end
   - SurvivalMedical
   - Trinkets
   - Scarves # Starlight
@@ -655,7 +682,7 @@
   - GroupTankHarness
   - ReporterJumpsuit
   - CommonBackpack
-  - CivilianShoes # 🌟Starlight🌟
+  - CivilianShoes # Starlight
   - Glasses
   - Survival
   - Trinkets
@@ -671,7 +698,10 @@
   - GroupTankHarness
   - PsychologistJumpsuit
   - MedicalBackpack
-  - CivilianShoes # 🌟Starlight🌟
+  - MedicalDoctorHead # Starlight start
+  - MedicalGloves
+  - MedicalDoctorOuterClothing
+  - CivilianShoes # Starlight end
   - Glasses
   - Survival
   - Trinkets
