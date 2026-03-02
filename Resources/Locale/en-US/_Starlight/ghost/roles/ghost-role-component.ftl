@@ -43,6 +43,8 @@ ghost-role-information-tsf-leader-name = Solar Federation Marine Team Leader
 ghost-role-information-tsf-Phantom-name = Solar Federation Phantom Marine
 ghost-role-information-tsf-MARSOC-name = Solar Federation MARSOC Marine
 ghost-role-information-tsf-crew-name = Solar Federation Crewmember
+ghost-role-information-tsf-borg-name = Solgov Cyborg
+ghost-role-information-tsf-borg-desc = Your a Solgov Cyborg. Perform your assigned task.
 ghost-role-information-tsf-marine-desc = You are a Solar Federation Marine. Perform your assigned task.
 
 ghost-role-information-xenomoproach-name = Xenomoproach

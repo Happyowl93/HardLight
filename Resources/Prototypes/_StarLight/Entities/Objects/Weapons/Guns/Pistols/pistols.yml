@@ -558,3 +558,26 @@
         path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
     - type: StealTarget
       stealGroup: OfficerHandgun
+
+- type: entity
+  parent: WeaponPistolTSFModel17
+  id: WeaponPistolTSFBorg
+  description: A cyborg-mounted weapon system based on the Model 17 pistol. Creates ammunition on the fly from an internal fabricator, which slowly self-charges.
+  components:
+  - type: Gun
+    fireRate: 5
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+      - FullAuto
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgePistol
+    capacity: 10
+    proto: CartridgePistolSP
+    cycleable: false # No synthesizing ammo.
+  - type: BallisticAmmoSelfRefiller
+    autoRefillRate: 4s
+    affectedByEmp: true
+  - type: AmmoCounter

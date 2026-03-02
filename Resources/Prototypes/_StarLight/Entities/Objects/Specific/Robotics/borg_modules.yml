@@ -189,6 +189,7 @@
     hands:
     - item: AccessOverider
     - item: TSFBatonModel5
+    - item: WeaponPistolTSFBorg
     - item: WeaponAdvancedLaser
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-weapon-module }
