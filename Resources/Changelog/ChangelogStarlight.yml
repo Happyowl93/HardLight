@@ -33030,5 +33030,16 @@ Entries:
   id: 353801
   time: '2026-03-02T13:54:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3538
+- author: redmushie
+  changes:
+  - message: The ID card computer no longer refuses to work when the donor ID is missing
+      one or more accesses of the receiving ID.
+    type: Fix
+  - message: Enter Genpop and Leave Genpop permissions are now assignable in ID card
+      computers (various IDs have them!).
+    type: Fix
+  id: 355801
+  time: '2026-03-02T14:51:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3558
 Order: -1
 
