@@ -33049,5 +33049,21 @@ Entries:
   id: 354601
   time: '2026-03-02T17:04:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3546
+- author: Sparlight
+  changes:
+  - message: Smart corgis can now wear the advanced mining hardsuit.
+    type: Fix
+  id: 356001
+  time: '2026-03-02T19:12:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3560
+- author: STARLIGHT TEAM
+  changes:
+  - message: A more elegant version of the raidsuit.
+    type: Add
+  - message: MURDER socks! blood-red noslip thigh highs.
+    type: Add
+  id: 355901
+  time: '2026-03-02T19:17:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3559
 Order: -1
 
