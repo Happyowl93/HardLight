@@ -33008,5 +33008,12 @@ Entries:
   id: 350901
   time: '2026-03-02T10:18:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3509
+- author: AndrewTateOfficialSS14
+  changes:
+  - message: Nitrium now removes stun and knockdown effect (nitrosyl plasmide).
+    type: Fix
+  id: 355301
+  time: '2026-03-02T12:44:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3553
 Order: -1
 
