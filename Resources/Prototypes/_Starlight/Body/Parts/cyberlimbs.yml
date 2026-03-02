@@ -109,7 +109,7 @@
       state: "l_leg"
     - type: MovementBodyPart
       sprintSpeed : 4.725 # +5%
-      maxdensity: 155
+      maxDensity: 155
     - type: WithAttachedBodyParts
       parts:
         left foot: LeftFootCyber
@@ -133,7 +133,7 @@
       state: "r_leg"
     - type: MovementBodyPart
       sprintSpeed : 4.725 # +5%
-      maxdensity: 155
+      maxDensity: 155
     - type: WithAttachedBodyParts
       parts:
         right foot: RightFootCyber
@@ -196,7 +196,7 @@
     - type: MovementBodyPart
       walkSpeed: 3.75 # 1.5x of base
       sprintSpeed: 6.75 # 1.5x of base
-      maxdensity: 155
+      maxDensity: 155
     - type: WithAttachedBodyParts
       parts:
         left foot: LeftFootCyber
@@ -222,7 +222,7 @@
     - type: MovementBodyPart
       walkSpeed: 3.75 # 1.5x of base
       sprintSpeed: 6.75 # 1.5x of base
-      maxdensity: 155
+      maxDensity: 155
     - type: WithAttachedBodyParts
       parts:
         right foot: RightFootCyber
@@ -1921,7 +1921,7 @@
       state: "l_leg_pilebunker"
     - type: MovementBodyPart
       sprintSpeed : 4.5
-      maxdensity: 155
+      maxDensity: 155
     - type: WithAttachedBodyParts
       parts:
         left foot: LeftFootCyber
@@ -1945,7 +1945,7 @@
       state: "r_leg_pilebunker"
     - type: MovementBodyPart
       sprintSpeed : 4.5
-      maxdensity: 155
+      maxDensity: 155
     - type: WithAttachedBodyParts
       parts:
         right foot: RightFootCyber
@@ -1971,7 +1971,7 @@
       state: "l_leg_cargo"
     - type: MovementBodyPart
       sprintSpeed : 4.05
-      maxdensity: 155
+      maxDensity: 155
     - type: WithAttachedBodyParts
       parts:
         left foot: LeftFootCyber
@@ -2025,7 +2025,7 @@
       state: "r_leg_cargo"
     - type: MovementBodyPart
       sprintSpeed : 4.05
-      maxdensity: 155
+      maxDensity: 155
     - type: WithAttachedBodyParts
       parts:
         right foot: RightFootCyber
