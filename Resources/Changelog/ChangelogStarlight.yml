@@ -32954,5 +32954,12 @@ Entries:
   id: 354901
   time: '2026-03-02T09:24:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3549
+- author: Citrea
+  changes:
+  - message: Hats fit cargoborgs and purrfus properly now.
+    type: Fix
+  id: 355001
+  time: '2026-03-02T10:01:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3550
 Order: -1
 
