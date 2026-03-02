@@ -32926,5 +32926,13 @@ Entries:
   id: 354301
   time: '2026-03-02T05:49:49.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3543
+- author: DuckManZach
+  changes:
+  - message: Added displacements for Monkeys and Kobolds so they can wear uniform
+      slot clothing properly.
+    type: Add
+  id: 354401
+  time: '2026-03-02T05:57:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3544
 Order: -1
 
