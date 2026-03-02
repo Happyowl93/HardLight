@@ -33041,5 +33041,13 @@ Entries:
   id: 355801
   time: '2026-03-02T14:51:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3558
+- author: STARLIGHT TEAM
+  changes:
+  - message: Changed Voice Selector to window, so now you can search voices by name
+      or filter them by sex.
+    type: Tweak
+  id: 354601
+  time: '2026-03-02T17:04:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3546
 Order: -1
 
