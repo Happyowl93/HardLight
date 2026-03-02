@@ -550,7 +550,7 @@
       spriteHasMindState: real_tech_e
       spriteNoMindState: real_tech_e_r
       spriteToggleLightState: real_tech_l
-      inventoryTemplateId: borgDutch
+      inventoryTemplateId: borgTall
 
 # region Purrfus
 
