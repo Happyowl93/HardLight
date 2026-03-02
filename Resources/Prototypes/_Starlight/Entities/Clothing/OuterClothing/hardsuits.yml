@@ -527,6 +527,11 @@
       - 1.025689525 # nitrogen
   - type: Jetpack
     moleUsage: 0.00085
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+    - CorgiWearable
 
 #Mining Hardsuit
 - type: entity
