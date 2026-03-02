@@ -32996,5 +32996,17 @@ Entries:
   id: 351601
   time: '2026-03-02T10:15:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3516
+- author: Scarlet Lightweaver
+  changes:
+  - message: Added a system that tracks ship artillery for specialized ship guns  (AKA
+      ADMEME SHIP GUNS) part of the naval update pt2.
+    type: Add
+  - message: Added a new railgun for admemes/events part of the naval update pt2.
+    type: Add
+  - message: Fixed pirate faction making hostile mobs ignore you.
+    type: Fix
+  id: 350901
+  time: '2026-03-02T10:18:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3509
 Order: -1
 
