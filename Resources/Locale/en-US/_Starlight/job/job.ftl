@@ -17,9 +17,8 @@ job-name-salvagelead = Salvage Lead
 job-name-dutyofficer = Duty Officer
 job-name-abductor = Abductor
 job-title-borgi = Borgi
-job-title-tsf-trader = TSF Trader
-job-title-tsf-marine = TSF Marine
-job-title-tsf-marine-leader = TSF Team Leader
+
+job-title-tsf-trader = TSF Trader # ! Will replace this when we have an actual job for them.
 job-title-tsf-Phantom = Phantom Marine
 job-title-tsf-MARSOC = MARSOC Marine
 

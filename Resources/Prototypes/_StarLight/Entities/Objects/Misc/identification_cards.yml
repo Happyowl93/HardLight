@@ -427,6 +427,14 @@
     jobTitle: job-title-tsf-trader
 
 - type: entity
+  parent: TSFIdCard
+  id: TSFIdCardCrew
+  name: TSF Crew ID card
+  components:
+  - type: PresetIdCard
+    job: TSFMCCrew
+
+- type: entity
   parent: [BaseTSFContraband, IDCardStandard]
   id: TSFIdCardMarine
   name: dog tags
@@ -441,40 +449,18 @@
     slots:
     - idcard
     sprite: _Starlight/Clothing/Neck/Misc/dogtags.rsi
-  - type: IdCard
-    jobTitle: job-title-tsf-marine
-    jobIcon: JobIconTSF
-  - type: Access
-    groups:
-    - AllAccess
+  - type: PresetIdCard
+    job: TSFMarine
+  - type: NanoChatCard
+    listNumber: false
 
 - type: entity
   parent: TSFIdCardMarine
-  id: TSFIdCardLeader
-  suffix: TSF
-  name: team leader dog tags
+  id: TSFIdCardSpecOps
+  suffix: SpecOps
   components:
-  - type: IdCard
-    jobTitle: job-title-tsf-marine-leader
-
-
-- type: entity
-  parent: TSFIdCardMarine
-  id: TSFIdCardPhantom
-  name: Phantom dog tags
-  suffix: TSF
-  components:
-  - type: IdCard
-    jobTitle: job-title-tsf-Phantom
-
-- type: entity
-  parent: TSFIdCardMarine
-  id: TSFIdCardMARSOC
-  name: MARSOC dog tags
-  suffix: TSF
-  components:
-  - type: IdCard
-    jobTitle: job-title-tsf-MARSOC
+  - type: PresetIdCard
+    job: TSFMarineElite
 
 - type: entity
   parent: IDCardStandard

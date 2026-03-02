@@ -41,7 +41,7 @@
 
 - type: job
   id: TSFMarineElite
-  name: ghost-role-information-tsf-leader-name
+  name: ghost-role-information-tsf-specops-name
   description: ghost-role-information-tsf-marine-desc
   playTimeTracker: TSFMarineElite
   requirements:
@@ -58,7 +58,7 @@
     - Solgov
   special:
     - !type:AddImplantSpecial
-      implants: [TSFMindShieldImplant, DeathRattleImplantTSF]
+      implants: [TSFMindShieldImplant, DeathRattleImplantTSF, DeathAcidifierImplant, FreedomImplant]
 
 - type: startingGear
   id: TSFCrewGear
@@ -68,7 +68,7 @@
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatBeretTSF
     gloves: ClothingHandsGlovesCombat
-    id: TSFIdCardMarine
+    id: TSFIdCardCrew
     ears: ClothingHudTSF
     belt: ClothingBeltUtilityEngineering
     pocket1: FlashlightSeclite
@@ -143,7 +143,6 @@
     neck: Whistle
     head: ClothingHeadHelmetTSFLeader
     outerClothing: ClothingOuterArmorTSFLeader
-    id: TSFIdCardLeader
   storage:
     back:
       - BoxZiptie
@@ -167,12 +166,12 @@
     shoes: ClothingShoesBootsMagERT
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitTSFPhantom
-    id: TSFIdCardPhantom
+    id: TSFIdCardSpecOps
     ears: ClothingHudTSF
     belt: ClothingBeltTSFMarineWebbing
     pocket1: EnergyShield
     pocket2: WeaponPistolTSFModel17
-    suitstorage: WeaponRifleL10
+    suitstorage: WeaponSubMachineGunAtreides
   storage:
     back:
       - BoxZiptie
@@ -183,11 +182,11 @@
       - AccessOveriderUnlimited
       - ToolDebug
     belt:
-      - LightRifleHeavyMagazineFMJ
-      - MagazineDMRFMJ
-      - MagazineDMRFMJ
-      - MagazineDMRFMJ
-      - MagazineDMRFMJ
+      - MagazineBoxPistolFMJ
+      - MagazinePistolSubMachineGunFMJ
+      - MagazinePistolSubMachineGunFMJ
+      - MagazinePistolSubMachineGunFMJ
+      - MagazinePistolSubMachineGunFMJ
       - MagazineBoxPistolAP
       - MagazinePistolAP
       - MagazinePistolAP
@@ -200,7 +199,7 @@
     shoes: ClothingShoesBootsMagERT
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitTSFMARSOC
-    id: TSFIdCardMARSOC
+    id: TSFIdCardSpecOps
     ears: ClothingHudTSF
     belt: ClothingBeltTSFMarineWebbing
     pocket1: AccessOveriderUnlimited
