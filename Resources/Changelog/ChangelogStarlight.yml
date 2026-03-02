@@ -32961,5 +32961,13 @@ Entries:
   id: 355001
   time: '2026-03-02T10:01:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3550
+- author: CawsForConcern
+  changes:
+  - message: L6 SAW firerate and accuracy were set incorrectly, corrected to the pre-nerf
+      values again.
+    type: Fix
+  id: 354801
+  time: '2026-03-02T10:05:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3548
 Order: -1
 
