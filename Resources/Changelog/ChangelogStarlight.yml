@@ -32918,5 +32918,13 @@ Entries:
   id: 353901
   time: '2026-03-01T21:07:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3539
+- author: neomoth
+  changes:
+  - message: Communications consoles will no longer cause duplicate announcements
+      to appear in replays.
+    type: Fix
+  id: 354301
+  time: '2026-03-02T05:49:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3543
 Order: -1
 
