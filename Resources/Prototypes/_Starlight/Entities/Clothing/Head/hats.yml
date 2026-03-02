@@ -341,6 +341,65 @@
       sprite: _Starlight/Clothing/Head/Hats/belpero.rsi
     - type: Clothing
       sprite: _Starlight/Clothing/Head/Hats/belpero.rsi
+
+- type: entity
+  parent: [ClothingHeadBase]
+  id: ClothingHeadHatTophatBig
+  name: big tophat
+  description: This hat clearly belongs to someone very, very important.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Head/Hats/tophatbig.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Head/Hats/tophatbig.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.45"
+
+- type: entity
+  parent: [ClothingHeadHatTophatBig]
+  id: ClothingHeadHatTophatBigWhite
+  name: big tophat
+  description: This hat clearly belongs to someone very, very important.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Head/Hats/tophatbigcolorable.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Head/Hats/tophatbigcolorable.rsi
+
+- type: entity
+  parent: [ClothingHeadHatTophat]
+  id: ClothingHeadHatTophatBrass
+  name: clockwork tophat
+  description: This hat draws attention with it's whirly gizmos!
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Head/Hats/tophatbrass.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Head/Hats/tophatbrass.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.47"
+      head-hamster:
+      - state: equipped-HELMET-hamster
+        offset: "0, 0.27"
+
+- type: entity
+  parent: [ClothingHeadBase]
+  id: ClothingHeadHatStrawHatWide
+  name: wide straw hat
+  description: Makes you look mysterious.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Head/Hats/widestrawhat.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Head/Hats/widestrawhat.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.08"
 # Fashion-O-Mat-End
     
 - type: entity
