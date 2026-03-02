@@ -32969,5 +32969,12 @@ Entries:
   id: 354801
   time: '2026-03-02T10:05:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3548
+- author: Citrea
+  changes:
+  - message: Cyberlegs can carry Cyclorites and Diona again.
+    type: Fix
+  id: 353501
+  time: '2026-03-02T10:10:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3535
 Order: -1
 
