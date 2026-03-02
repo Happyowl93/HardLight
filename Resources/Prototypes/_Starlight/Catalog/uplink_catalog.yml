@@ -501,6 +501,32 @@
   categories:
     - UplinkWearables
 
+- type: listing
+  id: UplinkClothingOuterArmorElegantRaid
+  name: uplink-syndie-elegant-raid-name
+  description: uplink-syndie-elegant-raid-desc
+  icon: { sprite: /Textures/_Starlight/Clothing/OuterClothing/Armor/elegant-raid-suit.rsi, state: icon }
+  productEntity: ClothingBackpackSyndicateElegantRaidBundle
+  cost:
+    Telecrystal: 10
+  categories:
+    - UplinkPointless
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
+
+- type: listing
+  id: UplinkClothingMurderShocks
+  name: uplink-clothing-murder-socks-name
+  description: uplink-clothing-murder-socks-desc
+  productEntity: ClothingUnderSocksMurder
+  cost:
+    Telecrystal: 1
+  categories:
+    - UplinkWearables
+
 # Allies
 - type: listing
   id: UplinkSyndicateBorgi
