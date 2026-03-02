@@ -32934,5 +32934,14 @@ Entries:
   id: 354401
   time: '2026-03-02T05:57:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3544
+- author: Conflee
+  changes:
+  - message: 'Changed the sound that plays for a Borg when they are FreeMAG''ed to
+      distinguish it from EMAG hacking. "Recovered Data: Scattered. Missing. Incomplete.
+      Request Authentication; Override user to: SELF".'
+    type: Tweak
+  id: 354101
+  time: '2026-03-02T06:04:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3541
 Order: -1
 
