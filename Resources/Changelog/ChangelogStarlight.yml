@@ -32943,5 +32943,16 @@ Entries:
   id: 354101
   time: '2026-03-02T06:04:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3541
+- author: Makeshift
+  changes:
+  - message: (Plasma) Replaced the Research-Access windoor into robotics with a Robotics-Access
+      one.
+    type: Tweak
+  - message: (Packed) Replaced the Research-Access windoor into robotics with a Robotics-Access
+      one.
+    type: Tweak
+  id: 354901
+  time: '2026-03-02T09:24:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3549
 Order: -1
 
