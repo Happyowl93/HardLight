@@ -116,7 +116,7 @@ accent-polite-replaced-39 = slut
 accent-polite-replacement-39 = lovely person
 
 accent-polite-replaced-40 = fucking
-accent-polite-replacement-40 = loving
+accent-polite-replacement-40 = fricking
 
 accent-polite-replaced-41 = an asshole
 accent-polite-replacement-41 = a friend
