@@ -33163,5 +33163,14 @@ Entries:
   id: 356201
   time: '2026-03-03T10:04:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3562
+- author: SevenShades
+  changes:
+  - message: Added Boxcars station.
+    type: Add
+  - message: Added the Violet parallax.
+    type: Add
+  id: 353601
+  time: '2026-03-03T10:14:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3536
 Order: -1
 
