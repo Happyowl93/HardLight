@@ -296,7 +296,7 @@
     sprite: _Starlight/Objects/Weapons/Guns/Rifles/L10.rsi
   - type: Gun
     fireRate: 2
-    increaseAngle: 2
+    angleIncrease: 2
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
