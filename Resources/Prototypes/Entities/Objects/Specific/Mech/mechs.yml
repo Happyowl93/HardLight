@@ -205,7 +205,7 @@
       types:
         Blunt: 25 #Starlight - Ripley gets to punch, but is *not* safe
   - type: MovementSpeedModifier
-    basewalkspeed: 2 #Starlight - All mechs walk at the same speed
+    baseWalkSpeed: 2 #Starlight - All mechs walk at the same speed
     baseSprintSpeed: 3.6
   - type: PointLight
     mask: /Textures/Effects/LightMasks/cone.png
@@ -266,7 +266,7 @@
   #Starlight Start
         Blunt: 25 #brought in line with Ripley
   - type: MovementSpeedModifier
-    basewalkspeed: 2 #All mechs walk at the same speed
+    baseWalkSpeed: 2 #All mechs walk at the same speed
     baseSprintSpeed: 3.0 #Mk II is still slower, but not unusably slow
   #Starlight End
   - type: Damageable
@@ -341,7 +341,7 @@
       types:
         Blunt: 30 #Decent for a loader, but without the high structural damage of a combat mech. # 
   - type: MovementSpeedModifier
-    basewalkspeed: 2 #Starlight - All mechs walk at the same speed
+    baseWalkSpeed: 2 #Starlight - All mechs walk at the same speed
     baseSprintSpeed: 4
   - type: PointLight
     mask: /Textures/Effects/LightMasks/cone.png
@@ -406,7 +406,7 @@
       types:
         Blunt: 26
   - type: MovementSpeedModifier
-    basewalkspeed: 2 #Starlight - All mechs walk at the same speed
+    baseWalkSpeed: 2 #Starlight - All mechs walk at the same speed
     baseSprintSpeed: 4.5
   - type: MechThrusters
   - type: PointLight
@@ -513,7 +513,7 @@
         Blunt: 10 #thwack
         Structural: 2
   - type: MovementSpeedModifier
-    basewalkspeed: 2 #Starlight - All mechs walk at the same speed
+    baseWalkSpeed: 2 #Starlight - All mechs walk at the same speed
     baseSprintSpeed: 3.7
 
 - type: entity
@@ -578,7 +578,7 @@
         Blunt: 10 #thwack
         Structural: 2
   - type: MovementSpeedModifier
-    basewalkspeed: 2 #Starlight - All mechs walk at the same speed
+    baseWalkSpeed: 2 #Starlight - All mechs walk at the same speed
     baseSprintSpeed: 3.6
   - type: Access
     tags:
@@ -636,7 +636,7 @@
         Structural: 180
   - type: MovementSpeedModifier
 # 🌟Starlight-start🌟
-    basewalkspeed: 2 #All mechs walk at the same speed
+    baseWalkSpeed: 2 #All mechs walk at the same speed
     baseSprintSpeed: 4.0
 # 🌟Starlight-end🌟
   - type: Damageable
@@ -696,7 +696,7 @@
         Blunt: 40
         Structural: 220
   - type: MovementSpeedModifier
-    basewalkspeed: 2 #Starlight - All mechs walk at the same speed
+    baseWalkSpeed: 2 #Starlight - All mechs walk at the same speed
     baseSprintSpeed: 3 #Starlight - No longer unusably slow
   - type: Damageable
     damageModifierSet: DurandArmor
@@ -761,7 +761,7 @@
         Blunt: 40
         Structural: 200
   - type: MovementSpeedModifier
-    basewalkspeed: 2 #Starlight - All mechs walk at the same speed
+    baseWalkSpeed: 2 #Starlight - All mechs walk at the same speed
     baseSprintSpeed: 2.8 #Starlight - No longer unusably slow
   - type: Damageable
     damageModifierSet: HeavyArmorNT
@@ -830,7 +830,7 @@
         Blunt: 60
         Structural: 400
   - type: MovementSpeedModifier
-    basewalkspeed: 2 #Starlight - All mechs walk at the same speed
+    baseWalkSpeed: 2 #Starlight - All mechs walk at the same speed
     baseSprintSpeed: 3.7
   - type: Damageable
     damageModifierSet: HeavyArmorNT
@@ -902,7 +902,7 @@
         Blunt: 30
         Structural: 200
   - type: MovementSpeedModifier
-    basewalkspeed: 2 #Starlight - All mechs walk at the same speed
+    baseWalkSpeed: 2 #Starlight - All mechs walk at the same speed
     baseSprintSpeed: 4.5 # 🌟Starlight-Change - Faster than regular Gygax
   - type: Damageable
     damageModifierSet: MediumArmorSyndi
@@ -977,7 +977,7 @@
         Blunt: 50
         Structural: 400
   - type: MovementSpeedModifier
-    basewalkspeed: 2 #Starlight - All mechs walk at the same speed
+    baseWalkSpeed: 2 #Starlight - All mechs walk at the same speed
     baseSprintSpeed: 2.8 #Starlight - No longer unusably slow
   - type: Damageable
     damageModifierSet: MaulerArmor
