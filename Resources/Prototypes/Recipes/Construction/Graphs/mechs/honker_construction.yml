@@ -70,12 +70,14 @@
 #i omitted the steps involving inserting machine parts because
 #currently mechs don't support upgrading. add them back in once that's squared away.
 
-      - component: PowerCell
+      - tag: MechReactor #Starlight - Mech Reactors
         name: construction-graph-component-power-cell
         store: battery-container
         icon:
-          sprite: Objects/Power/power_cells.rsi
-          state: small
+        #Starlight Start
+          sprite: _Starlight/Objects/Power/mech_reactors.rsi
+          state: medium
+        #Starlight End
         completed:
         - !type:VisualizerDataInt
           key: "enum.MechAssemblyVisuals.State"

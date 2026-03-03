@@ -86,12 +86,14 @@
           key: "enum.MechAssemblyVisuals.State"
           data: 10
 
-      - component: PowerCell
+      - tag: MechReactor #Starlight - Mech Reactors
         name: construction-graph-tag-power-cell
         store: battery-container
         icon:
-          sprite: Objects/Power/power_cells.rsi
-          state: small
+        #Starlight Start
+          sprite: _Starlight/Objects/Power/mech_reactors.rsi
+          state: medium
+        #Starlight End
         completed:
         - !type:VisualizerDataInt
           key: "enum.MechAssemblyVisuals.State"
