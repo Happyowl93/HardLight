@@ -45,7 +45,7 @@ public sealed class WriteClientComponentEvent : ClientComponentControlEvent
     public string ValuePath = default!;
     public string NewValue = default!;
 }
-
+[Serializable, NetSerializable]
 public abstract class ClientComponentControlEvent : EntityEventArgs
 {
     public NetUserId Target;
