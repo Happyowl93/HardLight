@@ -33147,5 +33147,13 @@ Entries:
   id: 356101
   time: '2026-03-03T09:43:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3561
+- author: teapoterror
+  changes:
+  - message: Removed the funny Soviet Papers, sorry Salvage you kept all turning into
+      revolutionaries, so now you don't get them anymore
+    type: Remove
+  id: 356301
+  time: '2026-03-03T10:01:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3563
 Order: -1
 
