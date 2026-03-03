@@ -33179,5 +33179,56 @@ Entries:
   id: 353201
   time: '2026-03-03T10:35:14.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3532
+- author: wonderfulnewworld
+  changes:
+  - message: Tweaks playtimes again, in response feedback.
+    type: Tweak
+  - message: 'NukeOps: SecOff time -4h, Salvage time +3h, Doctor time replaced with
+      4h medical department (it''s still less than 2h doctor), Traitor time =1h (1
+      shift).'
+    type: Tweak
+  - message: 'NukeMedic: Brigmed time -1.5h, Traitor time =1h (1 shift).'
+    type: Tweak
+  - message: 'NukeCommander: SecOff time -5h, NukeOp time =0.5h (1 nukie shift).'
+    type: Tweak
+  - message: 'HeadRev: SecOff time -4h.'
+    type: Tweak
+  - message: 'Traitor: Playtime -12h.'
+    type: Tweak
+  - message: 'Thief: Playtime -3h.'
+    type: Tweak
+  - message: 'Initial Infected: Doctor time replaced with 4h medical department (it''s
+      still less than 2h doctor).'
+    type: Tweak
+  - message: 'Ninja: Overall -24h, SecOff -2h, Thief -4h (1 shift now).'
+    type: Tweak
+  - message: 'Dragon: Overall -12h, Salvage -5h.'
+    type: Tweak
+  - message: 'Mining Specialist: Overall -5h, Cargo -3h.'
+    type: Tweak
+  - message: 'Salvage Specialist: Overall -4h, Cargo -3h.'
+    type: Tweak
+  - message: 'Brigmedic: Chemist -1h, Paramedic +1h.'
+    type: Tweak
+  - message: 'BlueShield: Command -5h, Brigmedic -3h.'
+    type: Tweak
+  - message: 'All Command except HoS: -10h Departmental (20h).'
+    type: Tweak
+  - message: 'HoS: -10h sec.'
+    type: Tweak
+  - message: 'NT Rep: Command -10h.'
+    type: Tweak
+  - message: 'Paramedic: Reverted to 2.5 medical department hours.'
+    type: Tweak
+  - message: 'Chemist: Reverted to 5h medical department hours.'
+    type: Tweak
+  - message: 'Psychologist: +2.5 medical department hours. (Up from 0.).'
+    type: Tweak
+  - message: Undoes the 20% ratio increase for Traitors/Thieves, since they're required
+      for Nukie/Ninja now. Traitors now scale 1:10 again, Thieves now scale 1:21 again.
+    type: Remove
+  id: 350201
+  time: '2026-03-03T10:38:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3502
 Order: -1
 
