@@ -217,5 +217,5 @@
     autoRechargeRate: 20
     autoRechargePauseTime: 5
   - type: MechSpeedModifier
-    sprintModifier: 3
-    walkModifier: 3
+    sprintModifier: 1.5
+    walkModifier: 1
