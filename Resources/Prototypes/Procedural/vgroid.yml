@@ -31,19 +31,19 @@
     # Ores
     - !type:OreDunGen
       replacement: IronRock
-      entity: IronRockIronCrab20 #Starlight - Stay on your toes miners >:3
+      entity: IronRockIronCrab5 #Starlight - Stay on your toes miners >:3
       count: 50
       minGroupSize: 10
       maxGroupSize: 15
     - !type:OreDunGen
       replacement: IronRock
-      entity: IronRockCoalCrab20 #Starlight - Stay on your toes miners >:3
+      entity: IronRockCoalCrab5 #Starlight - Stay on your toes miners >:3
       count: 50
       minGroupSize: 8
       maxGroupSize: 12
     - !type:OreDunGen
       replacement: IronRock
-      entity: IronRockQuartzCrab20 #Starlight - Stay on your toes miners >:3
+      entity: IronRockQuartzCrab5 #Starlight - Stay on your toes miners >:3
       count: 50
       minGroupSize: 10
       maxGroupSize: 15
@@ -55,13 +55,13 @@
       maxGroupSize: 12
     - !type:OreDunGen
       replacement: IronRock
-      entity: IronRockGoldCrab20 #Starlight - Stay on your toes miners >:3
+      entity: IronRockGoldCrab5 #Starlight - Stay on your toes miners >:3
       count: 40
       minGroupSize: 8
       maxGroupSize: 12
     - !type:OreDunGen
       replacement: IronRock
-      entity: IronRockSilverCrab20 #Starlight - Stay on your toes miners >:3
+      entity: IronRockSilverCrab5 #Starlight - Stay on your toes miners >:3
       count: 40
       minGroupSize: 8
       maxGroupSize: 12
@@ -73,7 +73,7 @@
       maxGroupSize: 8
     - !type:OreDunGen
       replacement: IronRock
-      entity: IronRockUraniumCrab20 #Starlight - Stay on your toes miners >:3
+      entity: IronRockUraniumCrab5 #Starlight - Stay on your toes miners >:3
       count: 35
       minGroupSize: 4
       maxGroupSize: 8
