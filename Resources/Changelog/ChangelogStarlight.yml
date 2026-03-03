@@ -33261,5 +33261,18 @@ Entries:
   id: 357701
   time: '2026-03-03T14:13:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3577
+- author: Swonki
+  changes:
+  - message: Added Corgi Biosuits.
+    type: Add
+  - message: Added Corgi Luxmax & Brigmed Hardsuits.
+    type: Add
+  - message: Added Corgi Monkey & Chicken Suits.
+    type: Add
+  - message: Added Corgi Bulletproof, Riot, and Bombsuits.
+    type: Add
+  id: 357301
+  time: '2026-03-03T20:53:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3573
 Order: -1
 
