@@ -33115,5 +33115,12 @@ Entries:
   id: 356801
   time: '2026-03-03T09:11:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3568
+- author: STARLIGHT TEAM
+  changes:
+  - message: 33 voices have been added.
+    type: Add
+  id: 356901
+  time: '2026-03-03T09:09:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3569
 Order: -1
 
