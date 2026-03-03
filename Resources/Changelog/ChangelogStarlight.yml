@@ -33065,5 +33065,170 @@ Entries:
   id: 355901
   time: '2026-03-02T19:17:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3559
+- author: cvlancer
+  changes:
+  - message: (Oasis) Salvage and Mining Docking arm.
+    type: Add
+  - message: (Oasis) GenPop mining now has pickaxes behind SEC access.
+    type: Add
+  - message: (Oasis) A couple of prisoner lockers added further into SEC.
+    type: Add
+  - message: (Oasis) Public facing AutoDrobe (Theater Wardrobe).
+    type: Add
+  - message: (Oasis) Xenobio station beacon.
+    type: Add
+  - message: (Oasis) Air vent in Solitary airlock hallway.
+    type: Add
+  - message: (Oasis) SEC Shuttle ('Briggle') is now connected at shift start via cable
+      docking.
+    type: Tweak
+  - message: (Oasis) Replaced passive vents with scrubbers in Artifact room.
+    type: Tweak
+  - message: (Oasis) Small solar's plating.
+    type: Tweak
+  - message: (Oasis) AI Core no longer has an internal SMES.
+    type: Tweak
+  - message: (Oasis) AI's protection grille is now double-layed with HV and MV. If
+      the AI is cutoff from station power, the HV won't protect them but the MV will.
+    type: Tweak
+  - message: (Oasis) Doors in GenPop now have tiles under them.
+    type: Fix
+  - message: (Oasis) Document printer in GenPop is no longer inside a table.
+    type: Fix
+  - message: (Oasis) AI Upload is linked to AI Core.
+    type: Fix
+  - message: (Oasis) Solitary firelocks are now SEC access.
+    type: Fix
+  - message: (Oasis) Armory's protection anchors have been doubled to cover the space
+      better.
+    type: Fix
+  - message: (Oasis) EVA is labeled correctly now.
+    type: Fix
+  - message: (Oasis) Fixed mining conveyor.
+    type: Fix
+  - message: (Oasis) BSO Locker now correctly spawns their items.
+    type: Fix
+  - message: (Oasis) Redundant buttons.
+    type: Remove
+  - message: (Oasis) Butterflies from AI Core.
+    type: Remove
+  id: 356801
+  time: '2026-03-03T09:11:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3568
+- author: STARLIGHT TEAM
+  changes:
+  - message: 33 voices have been added.
+    type: Add
+  id: 356901
+  time: '2026-03-03T09:09:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3569
+- author: neomoth
+  changes:
+  - message: Most VGroid ores now have a small chance to spawn an ore crab. Stay on
+      your toes mining specialists!
+    type: Add
+  id: 354701
+  time: '2026-03-03T09:18:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3547
+- author: '@RobinRoy06'
+  changes:
+  - message: Changed polite accent swear 'fuck' to be 'frick'.
+    type: Tweak
+  id: 356401
+  time: '2026-03-03T09:33:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3564
+- author: teapoterror
+  changes:
+  - message: Fixed Battlecruiser Minos Powergrid.
+    type: Fix
+  - message: Added the new Artillery guns from Scarlets updates to the NTSF and Decimus
+      ship.
+    type: Add
+  id: 356101
+  time: '2026-03-03T09:43:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3561
+- author: teapoterror
+  changes:
+  - message: Removed the funny Soviet Papers, sorry Salvage you kept all turning into
+      revolutionaries, so now you don't get them anymore
+    type: Remove
+  id: 356301
+  time: '2026-03-03T10:01:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3563
+- author: neomoth
+  changes:
+  - message: You can no longer be converted to a Head Revolutionary by signing a worker's
+      rights paper if you are currently mindshielded.
+    type: Fix
+  id: 356201
+  time: '2026-03-03T10:04:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3562
+- author: SevenShades
+  changes:
+  - message: Added Boxcars station.
+    type: Add
+  - message: Added the Violet parallax.
+    type: Add
+  id: 353601
+  time: '2026-03-03T10:14:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3536
+- author: Scarlet lightweaver
+  changes:
+  - message: Added dual weilding for pistols.
+    type: Add
+  id: 353201
+  time: '2026-03-03T10:35:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3532
+- author: wonderfulnewworld
+  changes:
+  - message: Tweaks playtimes again, in response feedback.
+    type: Tweak
+  - message: 'NukeOps: SecOff time -4h, Salvage time +3h, Doctor time replaced with
+      4h medical department (it''s still less than 2h doctor), Traitor time =1h (1
+      shift).'
+    type: Tweak
+  - message: 'NukeMedic: Brigmed time -1.5h, Traitor time =1h (1 shift).'
+    type: Tweak
+  - message: 'NukeCommander: SecOff time -5h, NukeOp time =0.5h (1 nukie shift).'
+    type: Tweak
+  - message: 'HeadRev: SecOff time -4h.'
+    type: Tweak
+  - message: 'Traitor: Playtime -12h.'
+    type: Tweak
+  - message: 'Thief: Playtime -3h.'
+    type: Tweak
+  - message: 'Initial Infected: Doctor time replaced with 4h medical department (it''s
+      still less than 2h doctor).'
+    type: Tweak
+  - message: 'Ninja: Overall -24h, SecOff -2h, Thief -4h (1 shift now).'
+    type: Tweak
+  - message: 'Dragon: Overall -12h, Salvage -5h.'
+    type: Tweak
+  - message: 'Mining Specialist: Overall -5h, Cargo -3h.'
+    type: Tweak
+  - message: 'Salvage Specialist: Overall -4h, Cargo -3h.'
+    type: Tweak
+  - message: 'Brigmedic: Chemist -1h, Paramedic +1h.'
+    type: Tweak
+  - message: 'BlueShield: Command -5h, Brigmedic -3h.'
+    type: Tweak
+  - message: 'All Command except HoS: -10h Departmental (20h).'
+    type: Tweak
+  - message: 'HoS: -10h sec.'
+    type: Tweak
+  - message: 'NT Rep: Command -10h.'
+    type: Tweak
+  - message: 'Paramedic: Reverted to 2.5 medical department hours.'
+    type: Tweak
+  - message: 'Chemist: Reverted to 5h medical department hours.'
+    type: Tweak
+  - message: 'Psychologist: +2.5 medical department hours. (Up from 0.).'
+    type: Tweak
+  - message: Undoes the 20% ratio increase for Traitors/Thieves, since they're required
+      for Nukie/Ninja now. Traitors now scale 1:10 again, Thieves now scale 1:21 again.
+    type: Remove
+  id: 350201
+  time: '2026-03-03T10:38:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3502
 Order: -1
 
