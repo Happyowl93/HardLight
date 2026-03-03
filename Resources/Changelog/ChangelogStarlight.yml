@@ -33274,5 +33274,12 @@ Entries:
   id: 357301
   time: '2026-03-03T20:53:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3573
+- author: SevenShades
+  changes:
+  - message: New emergency rollerbed sprites.
+    type: Add
+  id: 355401
+  time: '2026-03-03T21:24:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3554
 Order: -1
 
