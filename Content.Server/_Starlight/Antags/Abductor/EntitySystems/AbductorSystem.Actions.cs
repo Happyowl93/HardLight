@@ -120,7 +120,12 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         despawnComp.Lifetime = 3.0f;
         _audioSystem.PlayPvs(_alienTeleport, effect);
 
-        var doAfter = new DoAfterArgs(EntityManager, ev.Performer, TimeSpan.FromSeconds(3), new AbductorReturnDoAfterEvent(), ev.Performer);
+        var doAfter = new DoAfterArgs(EntityManager, ev.Performer, TimeSpan.FromSeconds(3), new AbductorReturnDoAfterEvent(), ev.Performer)
+        {
+            BreakOnDamage = true
+        };
+
+        
         _doAfter.TryStartDoAfter(doAfter);
         ev.Handled = true;
     }
