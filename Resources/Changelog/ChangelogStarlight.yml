@@ -33122,5 +33122,13 @@ Entries:
   id: 356901
   time: '2026-03-03T09:09:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3569
+- author: neomoth
+  changes:
+  - message: Most VGroid ores now have a small chance to spawn an ore crab. Stay on
+      your toes mining specialists!
+    type: Add
+  id: 354701
+  time: '2026-03-03T09:18:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3547
 Order: -1
 
