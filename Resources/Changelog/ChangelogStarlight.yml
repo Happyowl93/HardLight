@@ -33065,5 +33065,55 @@ Entries:
   id: 355901
   time: '2026-03-02T19:17:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3559
+- author: cvlancer
+  changes:
+  - message: (Oasis) Salvage and Mining Docking arm.
+    type: Add
+  - message: (Oasis) GenPop mining now has pickaxes behind SEC access.
+    type: Add
+  - message: (Oasis) A couple of prisoner lockers added further into SEC.
+    type: Add
+  - message: (Oasis) Public facing AutoDrobe (Theater Wardrobe).
+    type: Add
+  - message: (Oasis) Xenobio station beacon.
+    type: Add
+  - message: (Oasis) Air vent in Solitary airlock hallway.
+    type: Add
+  - message: (Oasis) SEC Shuttle ('Briggle') is now connected at shift start via cable
+      docking.
+    type: Tweak
+  - message: (Oasis) Replaced passive vents with scrubbers in Artifact room.
+    type: Tweak
+  - message: (Oasis) Small solar's plating.
+    type: Tweak
+  - message: (Oasis) AI Core no longer has an internal SMES.
+    type: Tweak
+  - message: (Oasis) AI's protection grille is now double-layed with HV and MV. If
+      the AI is cutoff from station power, the HV won't protect them but the MV will.
+    type: Tweak
+  - message: (Oasis) Doors in GenPop now have tiles under them.
+    type: Fix
+  - message: (Oasis) Document printer in GenPop is no longer inside a table.
+    type: Fix
+  - message: (Oasis) AI Upload is linked to AI Core.
+    type: Fix
+  - message: (Oasis) Solitary firelocks are now SEC access.
+    type: Fix
+  - message: (Oasis) Armory's protection anchors have been doubled to cover the space
+      better.
+    type: Fix
+  - message: (Oasis) EVA is labeled correctly now.
+    type: Fix
+  - message: (Oasis) Fixed mining conveyor.
+    type: Fix
+  - message: (Oasis) BSO Locker now correctly spawns their items.
+    type: Fix
+  - message: (Oasis) Redundant buttons.
+    type: Remove
+  - message: (Oasis) Butterflies from AI Core.
+    type: Remove
+  id: 356801
+  time: '2026-03-03T09:11:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3568
 Order: -1
 
