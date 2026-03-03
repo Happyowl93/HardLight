@@ -160,9 +160,9 @@ command-description-mind-wipe =
 command-description-mind-takeover =
     Directly takeover a mob, creating a mind if it does not exist, and forcing the entity to become sentient.
 command-description-mind-takeoverwipe =
-	Wipe your own mind then takeover the entity. This will clear all mindroles and objectives n such.
+    Wipe your own mind then takeover the entity. This will clear all mindroles and objectives n such.
 command-description-mind-controlwipe =
-	Wipe the target player's mind and make them control the piped entity, creating a new mind and making the entity sentient.
+    Wipe the target player's mind and make them control the piped entity, creating a new mind and making the entity sentient.
 command-description-killsign-kill =
     Apply a killsign to the entity using the kill sprite.
 command-description-killsign-stinky =
