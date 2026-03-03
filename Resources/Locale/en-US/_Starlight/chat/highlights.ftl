@@ -27,7 +27,7 @@ highlights-roboticist = Roboticist, Science, Robo, "Sci", Robotics
 highlights-boxer = Boxer
 highlights-zookeeper = Zookeeper, Zoo
 highlights-performer = Performer
-highlights-assistant = Assistant, Greytider, "Tider"
+highlights-assistant = Assistant
 
 # Law
 highlights-internal-affairs-agent = Internal Affairs Agent, "IAA", "Law", "SOP", Standard Operating Procedure, Lawyer
