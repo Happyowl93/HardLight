@@ -33122,5 +33122,113 @@ Entries:
   id: 356901
   time: '2026-03-03T09:09:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3569
+- author: neomoth
+  changes:
+  - message: Most VGroid ores now have a small chance to spawn an ore crab. Stay on
+      your toes mining specialists!
+    type: Add
+  id: 354701
+  time: '2026-03-03T09:18:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3547
+- author: '@RobinRoy06'
+  changes:
+  - message: Changed polite accent swear 'fuck' to be 'frick'.
+    type: Tweak
+  id: 356401
+  time: '2026-03-03T09:33:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3564
+- author: teapoterror
+  changes:
+  - message: Fixed Battlecruiser Minos Powergrid.
+    type: Fix
+  - message: Added the new Artillery guns from Scarlets updates to the NTSF and Decimus
+      ship.
+    type: Add
+  id: 356101
+  time: '2026-03-03T09:43:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3561
+- author: teapoterror
+  changes:
+  - message: Removed the funny Soviet Papers, sorry Salvage you kept all turning into
+      revolutionaries, so now you don't get them anymore
+    type: Remove
+  id: 356301
+  time: '2026-03-03T10:01:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3563
+- author: neomoth
+  changes:
+  - message: You can no longer be converted to a Head Revolutionary by signing a worker's
+      rights paper if you are currently mindshielded.
+    type: Fix
+  id: 356201
+  time: '2026-03-03T10:04:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3562
+- author: SevenShades
+  changes:
+  - message: Added Boxcars station.
+    type: Add
+  - message: Added the Violet parallax.
+    type: Add
+  id: 353601
+  time: '2026-03-03T10:14:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3536
+- author: Scarlet lightweaver
+  changes:
+  - message: Added dual weilding for pistols.
+    type: Add
+  id: 353201
+  time: '2026-03-03T10:35:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3532
+- author: wonderfulnewworld
+  changes:
+  - message: Tweaks playtimes again, in response feedback.
+    type: Tweak
+  - message: 'NukeOps: SecOff time -4h, Salvage time +3h, Doctor time replaced with
+      4h medical department (it''s still less than 2h doctor), Traitor time =1h (1
+      shift).'
+    type: Tweak
+  - message: 'NukeMedic: Brigmed time -1.5h, Traitor time =1h (1 shift).'
+    type: Tweak
+  - message: 'NukeCommander: SecOff time -5h, NukeOp time =0.5h (1 nukie shift).'
+    type: Tweak
+  - message: 'HeadRev: SecOff time -4h.'
+    type: Tweak
+  - message: 'Traitor: Playtime -12h.'
+    type: Tweak
+  - message: 'Thief: Playtime -3h.'
+    type: Tweak
+  - message: 'Initial Infected: Doctor time replaced with 4h medical department (it''s
+      still less than 2h doctor).'
+    type: Tweak
+  - message: 'Ninja: Overall -24h, SecOff -2h, Thief -4h (1 shift now).'
+    type: Tweak
+  - message: 'Dragon: Overall -12h, Salvage -5h.'
+    type: Tweak
+  - message: 'Mining Specialist: Overall -5h, Cargo -3h.'
+    type: Tweak
+  - message: 'Salvage Specialist: Overall -4h, Cargo -3h.'
+    type: Tweak
+  - message: 'Brigmedic: Chemist -1h, Paramedic +1h.'
+    type: Tweak
+  - message: 'BlueShield: Command -5h, Brigmedic -3h.'
+    type: Tweak
+  - message: 'All Command except HoS: -10h Departmental (20h).'
+    type: Tweak
+  - message: 'HoS: -10h sec.'
+    type: Tweak
+  - message: 'NT Rep: Command -10h.'
+    type: Tweak
+  - message: 'Paramedic: Reverted to 2.5 medical department hours.'
+    type: Tweak
+  - message: 'Chemist: Reverted to 5h medical department hours.'
+    type: Tweak
+  - message: 'Psychologist: +2.5 medical department hours. (Up from 0.).'
+    type: Tweak
+  - message: Undoes the 20% ratio increase for Traitors/Thieves, since they're required
+      for Nukie/Ninja now. Traitors now scale 1:10 again, Thieves now scale 1:21 again.
+    type: Remove
+  id: 350201
+  time: '2026-03-03T10:38:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3502
 Order: -1
 

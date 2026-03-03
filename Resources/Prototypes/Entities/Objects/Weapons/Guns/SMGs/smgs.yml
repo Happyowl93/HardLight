@@ -22,6 +22,7 @@
     - Back
     - suitStorage
   - type: AmmoCounter
+  - type: CanDualWield # 🌟Starlight🌟
   - type: Gun
     minAngle: 2
     maxAngle: 16
