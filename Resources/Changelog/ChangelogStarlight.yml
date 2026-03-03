@@ -33137,5 +33137,15 @@ Entries:
   id: 356401
   time: '2026-03-03T09:33:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3564
+- author: teapoterror
+  changes:
+  - message: Fixed Battlecruiser Minos Powergrid.
+    type: Fix
+  - message: Added the new Artillery guns from Scarlets updates to the NTSF and Decimus
+      ship.
+    type: Add
+  id: 356101
+  time: '2026-03-03T09:43:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3561
 Order: -1
 
