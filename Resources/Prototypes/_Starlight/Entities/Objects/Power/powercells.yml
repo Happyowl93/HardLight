@@ -99,6 +99,9 @@
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: high
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
   - type: Battery
     maxCharge: 1080
     startingCharge: 1080
@@ -116,6 +119,9 @@
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: hyper
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
   - type: Battery
     maxCharge: 1800
     startingCharge: 1800
@@ -133,6 +139,9 @@
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: microreactor
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
   - type: Battery
     maxCharge: 720
     startingCharge: 720
@@ -150,6 +159,9 @@
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: antique
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
   - type: Battery
     maxCharge: 1200
     startingCharge: 1200
@@ -167,6 +179,9 @@
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: paladin
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
   - type: Battery
     maxCharge: 1200
     startingCharge: 1200
@@ -199,6 +214,9 @@
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: burnout
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
   - type: Battery
     maxCharge: 40000
     startingCharge: 40000
@@ -213,6 +231,9 @@
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: cavalier
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
   - type: BatterySelfRecharger
     autoRechargeRate: 20
     autoRechargePauseTime: 5
