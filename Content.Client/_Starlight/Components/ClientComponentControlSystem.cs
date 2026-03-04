@@ -33,8 +33,7 @@ public sealed class ClientComponentControlSystem : EntitySystem
         foreach (var c in comp.RemovedComponents)
         {
             if (!_factory.TryGetRegistration(c, out var registration, true)) continue;
-            var toRemove = _factory.GetComponent(registration);
-            if (!HasComp(uid, toRemove.GetType())) continue;
+            if (!EntityManager.TryGetComponent(uid, registration, out var toRemove)) continue;
             RemComp(uid, toRemove.GetType());
         }
 
