@@ -5,7 +5,7 @@
   - type: StationEvent
     weight: 1
     endAnnouncement: station-event-psychicscreach-announcement
-    entAudio:
+    endAudio:
       path: /Audio/_Starlight/Announcements/attention.ogg
     duration: 20
     maxDuration: 30
