@@ -33349,5 +33349,14 @@ Entries:
   id: 359501
   time: '2026-03-04T15:59:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3595
+- author: CrazyPhantom
+  changes:
+  - message: Consoles no longer try to connect to desktops.
+    type: Fix
+  - message: Crew monitoring consoles now properly connect to computers next to them.
+    type: Fix
+  id: 360001
+  time: '2026-03-04T18:35:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3600
 Order: -1
 
