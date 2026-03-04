@@ -1,13 +1,7 @@
 using System.Linq;
-using System.Threading.Tasks;
-using Content.Server._Starlight.Components;
 using Content.Server.Administration;
-using Content.Server.GameTicking;
-using Content.Server.Ghost;
 using Content.Shared._Starlight.Components;
 using Content.Shared.Administration;
-using Content.Shared.Mind;
-using Robust.Server.Player;
 using Robust.Shared.Toolshed;
 
 namespace Content.Server._Starlight.Administration.Systems.Commands;
@@ -15,13 +9,6 @@ namespace Content.Server._Starlight.Administration.Systems.Commands;
 [ToolshedCommand(Name="ccomp"), AdminCommand(AdminFlags.Fun)]
 public sealed class ClientCompCommand : ToolshedCommand
 {
-    [Dependency] private readonly ILogManager LogManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    private GameTicker? _ticker;
-    private SharedMindSystem? _mind;
-    private GhostSystem? _ghost;
-    private ClientComponentControlSystem? _cc;
-
     private static readonly string AddedPrefix = "Attempted to add component with the name";
     private static readonly string AddedSuffix = "to the entity all clients.";
     private static readonly string WritePrefix = "Attempted to vvwrite";

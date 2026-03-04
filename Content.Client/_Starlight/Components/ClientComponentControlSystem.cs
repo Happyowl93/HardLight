@@ -1,5 +1,4 @@
 using Content.Shared._Starlight.Components;
-using Robust.Shared.Network;
 
 namespace Content.Client._Starlight.Components;
 
@@ -7,7 +6,6 @@ public sealed class ClientComponentControlSystem : EntitySystem
 {
     [Dependency] private readonly IViewVariablesManager _vvm = default!;
     [Dependency] private readonly IComponentFactory _factory = default!;
-    [Dependency] private readonly IClientNetManager _net = default!;
 
     public override void Initialize()
     {

@@ -1,14 +1,19 @@
+using Content.Shared._Starlight.Input;
 using Robust.Client.GameObjects;
 using Robust.Shared.Console;
 
 namespace Content.Client._Starlight.Input;
 
-public sealed class FixInputCommand : LocalizedEntityCommands
+public sealed class FixInputSystem : EntitySystem
 {
-    [Dependency] private readonly IEntitySystemManager _system = default!;
+    [Dependency] private readonly InputSystem _input = default!;
     
-    public override string Command => "fixinput";
+    public override void Initialize()
+    {
+        base.Initialize();
+        
+        SubscribeNetworkEvent<FixInputEvent>(OnFixInput);
+    }
 
-    public override void Execute(IConsoleShell shell, string argStr, string[] args) =>
-        _system.GetEntitySystem<InputSystem>().SetEntityContextActive();
+    private void OnFixInput(FixInputEvent ev) => _input.SetEntityContextActive();
 }
