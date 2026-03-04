@@ -221,3 +221,5 @@ command-description-killsign-admin =
     Apply a killsign to the entity using the admin sprite.
 command-description-killsign-rm =
     Remove a killsign from the entity
+command-description-aitakeover =
+    Make the piped entity take over the target AI core.
