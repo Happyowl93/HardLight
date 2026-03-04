@@ -12,7 +12,7 @@
     - CanPilot
     - BypassInteractionRangeChecks
     - BypassDropChecks
-    - BypassUserTagChecks
+    - BypassUserTagChecks # Starlight-edit
     - NoConsoleSound
     - SilentStorageUser
     - PreventAccessLogging
