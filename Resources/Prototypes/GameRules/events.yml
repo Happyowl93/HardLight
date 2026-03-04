@@ -25,6 +25,7 @@
     - id: SpiderSpawn
     - id: VentClog
     - id: PsychicScreach # SL
+    - id: SecurityDrill # SL
 
 - type: entityTable
   id: BasicAntagEventsTable

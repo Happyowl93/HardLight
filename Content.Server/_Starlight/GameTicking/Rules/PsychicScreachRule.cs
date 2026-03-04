@@ -69,7 +69,7 @@ public sealed class PsychicScreachRule : StationEventSystem<PsychicScreachRuleCo
             else
             {
                 _light.ToggleBlinkingLight(ent, light, true);
-                Timer.Spawn(TimeSpan.FromSeconds(9), () => _light.ToggleBlinkingLight(ent, light, false));
+                Timer.Spawn(TimeSpan.FromSeconds(10), () => _light.ToggleBlinkingLight(ent, light, false));
             }
         }
 

@@ -6,7 +6,7 @@
     weight: 1
     endAnnouncement: station-event-psychicscreach-announcement
     endAudio:
-      path: /Audio/_Starlight/Announcements/attention.ogg
+      path: /Audio/Announcements/announce.ogg
     duration: 20
     maxDuration: 30
   - type: PsychicScreachRule
@@ -21,3 +21,14 @@
     - Service
     - Supply
     - Law
+
+- type: entity
+  parent: BaseGameRule
+  id: SecurityDrill
+  components:
+  - type: StationEvent
+    globalAnnouncement: false
+    weight: 6
+    startAudio:
+      path: /Audio/Announcements/announce.ogg
+  - type: SecurityDrillRule
