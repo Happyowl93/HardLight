@@ -415,7 +415,7 @@
   - type: Sprite
     sprite: _Starlight/Objects/Misc/id_cards.rsi
     layers:
-    - state: TSF
+    - state: tsf
     - sprite: *id-rsi
       state: stripe_top
       color: "#22a7ff"
@@ -440,7 +440,7 @@
   components:
   - type: Sprite
     layers:
-    - state: TSF
+    - state: tsf
     - sprite: *id-rsi
       state: stripe_top
       color: "#22a7ff"
