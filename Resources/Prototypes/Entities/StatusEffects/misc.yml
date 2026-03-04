@@ -82,7 +82,7 @@
     whitelist:
       components:
       - MobState
-  maximumRemainingDuration: 3m # <-- The only change relative to parent component definition
+    maximumRemainingDuration: 3m # <-- The only change relative to parent component definition
   # Starlight END
 
 # Adds drugs overlay
