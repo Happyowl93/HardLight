@@ -8,7 +8,7 @@ using Content.Shared._Starlight.BreathOrgan.Components;
 
 namespace Content.Shared._Starlight.BreathOrgan;
 
-public abstract partial class SharedHeldBreathSystem : EntitySystem
+public sealed partial class HeldBreathSystem : EntitySystem
 {
     public static readonly EntProtoId HeldBreathId = "StatusEffectHeldBreath";
 

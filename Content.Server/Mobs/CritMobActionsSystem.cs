@@ -52,7 +52,7 @@ public sealed class CritMobActionsSystem : EntitySystem
             return;
 
         //Starlight Start
-        _status.TrySetStatusEffectDuration(uid, SharedHeldBreathSystem.HeldBreathId, out _);
+        _status.TrySetStatusEffectDuration(uid, HeldBreathSystem.HeldBreathId, out _);
 
         if (HasComp<MutedComponent>(uid))
         {
