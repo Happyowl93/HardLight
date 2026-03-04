@@ -346,8 +346,8 @@ namespace Content.Server.Communications
                     if (gridUid == Transform(uid).GridUid) return false; // They already got the announcement from the dispatch above this
                     return gridUid == grid;
                 });
-                
-                _chatSystem.DispatchFilteredAnnouncement(allPlayersOnGrid, msg.Text, announcementSound: comp.Sound, colorOverride: comp.Color, sender: title);
+                // These are not recorded in replays since they are unnecessary and cause multiple to send at once in the replay, which is annoying as shit.
+                _chatSystem.DispatchFilteredAnnouncement(allPlayersOnGrid, msg.Text, announcementSound: comp.Sound, colorOverride: comp.Color, sender: title, recordToReplay: false);
             }
             //Starlight end
 

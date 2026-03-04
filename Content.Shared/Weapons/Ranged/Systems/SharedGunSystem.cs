@@ -39,6 +39,7 @@ using Robust.Shared.Utility;
 using Content.Shared.VentCrawl;
 
 #region Starlight
+using Content.Shared._Starlight.Weapons.DualWield;
 using Content.Shared.Mech.Components;
 using Content.Shared.Starlight.Utility;
 using Content.Shared.Weapons.Hitscan.Events;
@@ -171,6 +172,13 @@ public abstract partial class SharedGunSystem : EntitySystem
         gun.Comp.ShootCoordinates = GetCoordinates(msg.Coordinates);
         gun.Comp.Target = GetEntity(msg.Target);
         AttemptShoot(user.Value, gun);
+
+        // 🌟Starlight🌟 — dual-wield: alternate which gun fires next
+        if (TryComp<DualWieldComponent>(user.Value, out var dualWield) && dualWield.Active)
+        {
+            dualWield.NextIsLeft = !dualWield.NextIsLeft;
+            Dirty(user.Value, dualWield);
+        }
     }
 
     private void OnStopShootRequest(RequestStopShootEvent ev, EntitySessionEventArgs args)
@@ -207,6 +215,20 @@ public abstract partial class SharedGunSystem : EntitySystem
     public bool TryGetGun(EntityUid entity, out Entity<GunComponent> gun)
     {
         gun = default;
+
+        // 🌟Starlight🌟 — dual-wield: return the alternating gun instead of the active-hand gun
+        if (TryComp<DualWieldComponent>(entity, out var dualWieldComp) && dualWieldComp.Active)
+        {
+            var dwGunUid = dualWieldComp.NextIsLeft ? dualWieldComp.LeftGun : dualWieldComp.RightGun;
+            if (TryComp<GunComponent>(dwGunUid, out var dwGunComp))
+            {
+                gun = (dwGunUid, dwGunComp);
+                return true;
+            }
+            // Gun no longer valid — disable dual-wield and fall through
+            dualWieldComp.Active = false;
+            Dirty(entity, dualWieldComp);
+        }
 
         if (_hands.GetActiveItem(entity) is { } held &&
             TryComp(held, out GunComponent? gunComp))
