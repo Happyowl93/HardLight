@@ -239,3 +239,5 @@ command-description-npc-sethtn =
     Creates an NPC on the entity and sets it's HTN compound.
 command-description-npc-setenabled =
     Enable or disable this npc's HTN behaviors.
+command-description-aitakeover =
+    Make the piped entity take over the target AI core.
