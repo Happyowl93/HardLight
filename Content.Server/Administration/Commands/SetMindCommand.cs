@@ -83,6 +83,8 @@ namespace Content.Server.Administration.Commands
                     return;
                 }
                 var brain = EntityManager.SpawnInContainerOrDrop("StationAiBrainConstructed", (EntityUid)eUid, StationAiCoreComponent.Container);
+                _mindSystem.TransferTo(mind, brain);
+                return;
             }
             // Starlight-end
 
