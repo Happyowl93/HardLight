@@ -59,7 +59,10 @@ namespace Content.Client._Starlight.Lobby.UI
                 FilterAndUpdateVoices();
             }
             else
+            {
                 _filter = null;
+                FilterAndUpdateVoices();
+            }
         }
 
         private void OnItemSelected(ItemList.ItemListSelectedEventArgs obj)
