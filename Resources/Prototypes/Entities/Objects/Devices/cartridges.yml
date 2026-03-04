@@ -94,7 +94,7 @@
     - type: NetProbeCartridge
 
 - type: entity
-  parent: [ BasePDACartridge, BaseSecurityEngineeringContraband ] #SL Edit added Engie-Sec Contra
+  parent: [ BasePDACartridge, BaseSecurityContraband ] #SL Edit added Security Contra
   id: LogProbeCartridge
   name: LogProbe cartridge
   description: A program for getting access logs from devices.
