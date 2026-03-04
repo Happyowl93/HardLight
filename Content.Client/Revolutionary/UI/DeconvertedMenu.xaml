@@ -1,8 +1,8 @@
 <controls:FancyWindow xmlns="https://spacestation14.io"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       Title="{Loc 'rev-deconverted-title'}"
-                      MinSize="660 300"
-                      MaxSize="660 400">
+                      MinSize="660 340"
+                      MaxSize="660 340">
     <BoxContainer Orientation="Vertical" Margin="5">
         <Label Text="{Loc 'rev-deconverted-text'}"/>
         <PanelContainer StyleClasses="BackgroundDark" Margin="0 0 0 10">
