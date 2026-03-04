@@ -99,7 +99,7 @@ public abstract partial class SharedMechSystem : EntitySystem
         if (component.LifeStage > ComponentLifeStage.Running || !TryComp<MechComponent>(component.Mech, out var mech))
             return;
 
-        if (mech.Broken || mech.Integrity <= 0 || (int) (mech.Energy / mech.MaxEnergy * 100) == 0 || mech.MaintenanceMode) //Starlight Edit: Mechs stop moving at 0% power, rather than *fully* empty battery
+        if (mech.Broken || mech.Integrity <= 0 || mech.MaxEnergy == 0 || (int) (mech.Energy / mech.MaxEnergy * 100) == 0 || mech.MaintenanceMode) //Starlight Edit: Mechs stop moving at 0% power, rather than *fully* empty battery
             args.Cancel();
     }
 
@@ -108,7 +108,7 @@ public abstract partial class SharedMechSystem : EntitySystem
         if (component.LifeStage > ComponentLifeStage.Running)
             return;
 
-        if (component.Broken || component.Integrity <= 0 || (int) (component.Energy / component.MaxEnergy * 100) == 0 || component.MaintenanceMode) //Starlight Edit: Mechs stop moving at 0% power, rather than *fully* empty battery
+        if (component.Broken || component.Integrity <= 0 || component.MaxEnergy == 0 || (int) (component.Energy / component.MaxEnergy * 100) == 0 || component.MaintenanceMode) //Starlight Edit: Mechs stop moving at 0% power, rather than *fully* empty battery
             args.Cancel();
     }
 
