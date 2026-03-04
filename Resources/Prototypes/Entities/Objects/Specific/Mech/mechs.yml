@@ -697,7 +697,7 @@
         Structural: 220
   - type: MovementSpeedModifier
     baseWalkSpeed: 2 #Starlight - All mechs walk at the same speed
-    baseSprintSpeed: 3 #Starlight - No longer unusably slow
+    baseSprintSpeed: 2.8 #Starlight - No longer unusably slow
   - type: Damageable
     damageModifierSet: DurandArmor
   - type: MechThrusters
@@ -762,7 +762,7 @@
         Structural: 200
   - type: MovementSpeedModifier
     baseWalkSpeed: 2 #Starlight - All mechs walk at the same speed
-    baseSprintSpeed: 2.8 #Starlight - No longer unusably slow
+    baseSprintSpeed: 2.2 #Starlight - No longer unusably slow
   - type: Damageable
     damageModifierSet: HeavyArmorNT
   - type: MechThrusters
@@ -978,7 +978,7 @@
         Structural: 400
   - type: MovementSpeedModifier
     baseWalkSpeed: 2 #Starlight - All mechs walk at the same speed
-    baseSprintSpeed: 2.8 #Starlight - No longer unusably slow
+    baseSprintSpeed: 2.2 #Starlight - No longer unusably slow
   - type: Damageable
     damageModifierSet: MaulerArmor
   - type: MechThrusters
