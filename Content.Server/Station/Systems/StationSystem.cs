@@ -331,38 +331,34 @@ public sealed partial class StationSystem : SharedStationSystem
     }
 
     //SL start
-    public EntityUid InitializeNewStationMidRound(EntityUid gridId, EntProtoId stationProtoId,
-        BecomesStationMidRoundComponent? comp = null) => InitializeNewStationMidRound(gridId, [stationProtoId], comp);
+    // public EntityUid InitializeNewStationMidRound(EntityUid gridId, EntProtoId stationProtoId,
+    //     BecomesStationMidRoundComponent? comp = null) => InitializeNewStationMidRound(gridId, [stationProtoId], comp);
     
-    public EntityUid InitializeNewStationMidRound(EntityUid gridId, List<EntProtoId>? stationProtoIds, BecomesStationMidRoundComponent? comp = null)
+    public EntityUid InitializeNewStationMidRound(EntityUid gridId, List<EntProtoId> stationProtoIds, BecomesStationMidRoundComponent? comp = null)
     {
-        if (stationProtoIds is null) return EntityUid.Invalid;
+        if (!Resolve(gridId, ref comp)) return EntityUid.Invalid;
+        if (stationProtoIds.Count == 0) stationProtoIds = [comp.DefaultBaseStationPrototype];
         //logic for if was initialized via BecomesStationMidRoundComponent
         ComponentRegistry? registry = null;
-        if (comp is not null)
+        registry = new ComponentRegistry();
+        if (comp.AvailableJobs.Count > 0)
         {
-            registry = new ComponentRegistry();
-            if (comp.AvailableJobs is not null)
-            {
-                var jobs = new StationJobsComponent { SetupAvailableJobs = [] };
-                foreach (var job in comp.AvailableJobs) jobs.SetupAvailableJobs.Add(job.Key, [job.Value, job.Value]);
-                // from what I can tell the MappingDataNode doesn't actually need to have anything in it and from the looks of things seems to be primarily for setting up the entry in the first place.
-                // no idea why it's needed in the constructor but oh well
-                registry.Add("StationJobs", new EntityPrototype.ComponentRegistryEntry(jobs, new MappingDataNode()));
-            }
+            var jobs = new StationJobsComponent { SetupAvailableJobs = [] };
+            foreach (var job in comp.AvailableJobs) jobs.SetupAvailableJobs.Add(job.Key, [job.Value, job.Value]);
+            // from what I can tell the MappingDataNode doesn't actually need to have anything in it and from the looks of things seems to be primarily for setting up the entry in the first place.
+            // no idea why it's needed in the constructor but oh well
+            registry.Add("StationJobs", new EntityPrototype.ComponentRegistryEntry(jobs, new MappingDataNode()));
+        }
 
-            if (comp.EmergencyShuttleOverridePath is not null && comp.UseEmergencyShuttle) // no need to do this if its disabled anyway
+        if (comp.EmergencyShuttleOverridePath is not null && comp.UseEmergencyShuttle) // no need to do this if its disabled anyway
+        {
+            var shuttle = new StationEmergencyShuttleComponent
             {
-                var shuttle = new StationEmergencyShuttleComponent
-                {
-                    EmergencyShuttlePath = new ResPath(comp.EmergencyShuttleOverridePath)
-                };
-                registry.Add("StationEmergencyShuttle", new EntityPrototype.ComponentRegistryEntry(shuttle, new MappingDataNode()));
-            }
+                EmergencyShuttlePath = new ResPath(comp.EmergencyShuttleOverridePath)
+            };
+            registry.Add("StationEmergencyShuttle", new EntityPrototype.ComponentRegistryEntry(shuttle, new MappingDataNode()));
         }
         
-        // var station = EntityManager.SpawnEntity(stationProtoId, MapCoordinates.Nullspace, registry);
-        comp ??= EnsureComp<BecomesStationMidRoundComponent>(gridId);
         var station = CreateCustomStation(stationProtoIds, MapCoordinates.Nullspace, registry, comp);
         var data = EnsureComp<StationDataComponent>(station);
         RenameStation(station, MetaData(gridId).EntityName, false);
@@ -378,13 +374,16 @@ public sealed partial class StationSystem : SharedStationSystem
     private EntityUid CreateCustomStation(List<EntProtoId> protoIds, MapCoordinates? coords, ComponentRegistry? registry, BecomesStationMidRoundComponent? data = null)
     {
         var ent = EntityManager.CreateEntityUninitialized(null); // dummy entity
+
+        var regTypes = registry is not null ? registry.Values.Select(c => _factory.GetRegistration(c.Component).Name).ToHashSet() : [];
+        
         // do parents first
         foreach (var protoId in protoIds)
         {
             if (!_prototype.TryIndex(protoId, out var proto)) continue;
             foreach (var comp in proto.Components.Values.Where(comp => !HasComp(ent, comp.Component.GetType())))
             {
-                if(registry is not null && registry.Values.Any(c=>c.GetType() == comp.GetType())) continue; // this will be overridden later, skip it.
+                if (regTypes.Contains(_factory.GetRegistration(comp.Component).Name)) continue;
                 var newcomp = _factory.GetComponent(comp);
                 AddComp(ent, newcomp);
             }
@@ -392,8 +391,7 @@ public sealed partial class StationSystem : SharedStationSystem
         // now any of the extra overrides
         if (registry is not null)
         {
-            Log.Log(LogLevel.Info, "NOT NULL!!");
-            foreach (var comp in registry.Values.Where(comp => !HasComp(ent, comp.Component.GetType())))
+            foreach (var comp in registry.Values)
             {
                 var newcomp = _factory.GetComponent(comp);
                 AddComp(ent, newcomp);
