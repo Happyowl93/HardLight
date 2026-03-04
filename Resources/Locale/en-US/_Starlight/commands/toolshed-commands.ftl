@@ -223,3 +223,5 @@ command-description-killsign-rm =
     Remove a killsign from the entity
 command-description-fixinput =
     Refreshes the input context of the entity's session.
+command-description-aitakeover =
+    Make the piped entity take over the target AI core.
