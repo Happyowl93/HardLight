@@ -267,3 +267,5 @@ command-description-stationinit-initialize =
     Finish setup and initialize the station.
 command-description-stationinit-initializeget =
     Finish setup and initialize the station, and return the newly created station entity.
+command-description-aitakeover =
+    Make the piped entity take over the target AI core.
