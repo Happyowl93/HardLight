@@ -219,4 +219,21 @@ command-description-killsign-admin =
     Apply a killsign to the entity using the admin sprite.
 command-description-killsign-rm =
     Remove a killsign from the entity
-    Marks this polymorph setup chain as complete, cleaning up and removing the component.
+command-description-faction-add =
+    Add a faction to this entity.
+command-description-faction-remove =
+    Remove a faction from this entity.
+command-description-faction-aggro =
+    Make this entity aggessive to the target entity.
+command-description-faction-deaggro =
+    Make this entity no longer aggressive to the target entity.
+command-description-faction-ignore =
+    Make this entity and the target entity ignore each other.
+command-description-faction-unignore =
+    Make this entity and the target entity no longer ignore each other.
+command-description-faction-clear =
+    Clear this entity's factions.
+command-description-npc-sethtn =
+    Creates an NPC on the entity and sets it's HTN compound.
+command-description-npc-setenabled =
+    Enable or disable this npc's HTN behaviors.
