@@ -297,7 +297,7 @@ public sealed partial class StatusEffectsSystem : EntitySystem
         // Starlight START
         var uncappedEndTime = effect.Comp.EndEffectTime + delta;
         var exceedsMaximumDuration = effect.Comp.MaximumRemainingDuration != null
-            && uncappedEndTime - _timing.CurTime > effect.Comp.EndEffectTime;
+            && uncappedEndTime - _timing.CurTime > effect.Comp.MaximumRemainingDuration;
         var endTime = exceedsMaximumDuration ? _timing.CurTime + effect.Comp.MaximumRemainingDuration : uncappedEndTime;
         // Starlight END
 
