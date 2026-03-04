@@ -49,6 +49,13 @@
   id: StatusEffectForcedSleeping
   name: forced sleep
   components:
+  # Starlight START
+  - type: StatusEffect
+    whitelist:
+      components:
+        - MobState
+    maximumRemainingDuration: 2m # <-- The only change relative to parent component definition
+  # Starlight END
   - type: ForcedSleepingStatusEffect
   - type: StunnedStatusEffect
   - type: KnockdownStatusEffect
