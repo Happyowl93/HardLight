@@ -135,6 +135,8 @@ command-description-polymorph-rmcopycomp =
     Remove an entry from the list of components to copy to the polymorph.
 command-description-polymorph-apply =
     Instantly apply the polymorph and finish.
+command-description-polymorph-applyget =
+    Instantly apply the polymorph and finish, returning the new entity.
 command-description-polymorph-addaction =
     Add a polymorph action to the entity using the current polymorph setup chain. You should probably call polymorph:apply or polymorph:finish afterward.
 command-description-polymorph-addactionproto =
@@ -219,4 +221,3 @@ command-description-killsign-admin =
     Apply a killsign to the entity using the admin sprite.
 command-description-killsign-rm =
     Remove a killsign from the entity
-    Marks this polymorph setup chain as complete, cleaning up and removing the component.
