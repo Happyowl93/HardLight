@@ -87,7 +87,6 @@
       - Syndicate
       - Silicon
       - Xenoborg
-      - Solgov
       overridesTargetRestrictions: true
       privilegedIdSlot:
         name: AccessOverrider-privilegedId # Starlight-edit
