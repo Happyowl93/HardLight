@@ -33289,5 +33289,14 @@ Entries:
   id: 358301
   time: '2026-03-03T21:29:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3583
+- author: Shades
+  changes:
+  - message: Solgov has arrived with better equipement and Access.
+    type: Add
+  - message: Wizard Sound Intro + Annoncement Changed.
+    type: Tweak
+  id: 358701
+  time: '2026-03-04T05:33:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3587
 Order: -1
 
