@@ -219,4 +219,5 @@ command-description-killsign-admin =
     Apply a killsign to the entity using the admin sprite.
 command-description-killsign-rm =
     Remove a killsign from the entity
-    Marks this polymorph setup chain as complete, cleaning up and removing the component.
+command-description-aitakeover =
+    Make the piped entity take over the target AI core.
