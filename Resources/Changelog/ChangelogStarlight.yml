@@ -33340,5 +33340,14 @@ Entries:
   id: 358801
   time: '2026-03-04T06:33:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3588
+- author: Scarlet Lightweaver
+  changes:
+  - message: Added inital spread penalty for dualweilding til public testing is done.
+    type: Add
+  - message: Fixed not being able to dual weild revolvers. Go wild cowboy.
+    type: Fix
+  id: 359501
+  time: '2026-03-04T15:59:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3595
 Order: -1
 
