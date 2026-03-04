@@ -14,7 +14,7 @@ public abstract partial class SharedRestrictSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     
-    private static readonly ProtoId<TagPrototype> BypassUserTagChecks = "BypassUserTagChecks";
+    private const ProtoId<TagPrototype> BypassUserTagChecks = "BypassUserTagChecks";
     
     public override void Initialize()
     {
