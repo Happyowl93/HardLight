@@ -50,7 +50,7 @@ namespace Content.Server.Administration.Commands
                 return;
             }
 
-            if (!EntityManager.HasComponent<MindContainerComponent>(eUid))
+            if (!EntityManager.HasComponent<MindContainerComponent>(eUid)&&!EntityManager.HasComponent<StationAiCoreComponent>(eUid))
             {
                 shell.WriteLine(Loc.GetString("cmd-setmind-target-has-no-mind-message"));
                 return;
