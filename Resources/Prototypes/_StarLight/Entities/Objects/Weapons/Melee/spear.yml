@@ -2,7 +2,7 @@
   name: steel spear
   parent: Spear
   id: SpearSteel
-  description: A spear with a plasma shard as a tip.
+  description: A solid steel spear.
   components:
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Melee/steel_spear.rsi
