@@ -33320,5 +33320,25 @@ Entries:
   id: 359001
   time: '2026-03-04T06:23:55.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3590
+- author: Conflee
+  changes:
+  - message: Added the Steel Spear, made in the Anvil, rarely found in Maints Weapon
+      Pools, and rarely delivered to Revs by the USSP. It's slightly better than the
+      Plasma Spear, doing 15 pierce, 5 slash, 5 structural. Intended to be a spear
+      counterpart to the forged swords.
+    type: Add
+  - message: Added the Makeshift ID, made in the Anvil. Only contains Maintenance
+      access, shows no name or job icon, and can not be inserted into an ID Card Console.
+      Lets you move through maints while concealing your identity, but it is contraband.
+    type: Add
+  - message: Added the Improvised Jetpack, crafted anywhere out of 1 fire extinguisher,
+      2 gas tanks, some cables, and 2 plasteel. Works as a wearable mini-jetpack and
+      is contraband. Allows antags like Revs, Thieves, Changelings, Vampires, and
+      SELF Agents easier access to space, as the core game balance is built around
+      this being true and Sec being limited in space.
+    type: Add
+  id: 358801
+  time: '2026-03-04T06:33:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3588
 Order: -1
 
