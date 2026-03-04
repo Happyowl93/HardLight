@@ -41,6 +41,7 @@ using Robust.Shared.Utility;
 using Content.Server._Starlight.Station;
 using Content.Shared._Starlight.CustomObjectiveSummary;
 using Content.Shared.Station.Components;
+using Robust.Shared.Audio;
 // Starlight End
 
 namespace Content.Server.Shuttles.Systems;
@@ -83,6 +84,8 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
 
     //starlight
     private static readonly ProtoId<TagPrototype> DockEscapeTag = "DockEscape";
+    private static readonly LocId SpaceStragglerAnnouncement = "emergency-shuttle-straggler";
+    private static readonly SoundSpecifier SpaceStragglerAudio = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
     //starlight end
 
     public override void Initialize()
@@ -380,24 +383,18 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
     /// <summary>
     /// Do post-shuttle-dock setup. Announce to the crew and set up shuttle timers.
     /// </summary>
-    public void AnnounceShuttleDock(ShuttleDockResult result, bool extended)
+    public void AnnounceShuttleDock(ShuttleDockResult result, bool extended, Filter filter) // Starlight-edit
     {
         var stationShuttleComp = result.Station.Comp;
         var shuttle = result.Station.Comp.EmergencyShuttle;
 
         DebugTools.Assert(shuttle != null);
 
+        //Starlight begin
         if (result.ResultType == ShuttleDockResultType.GoodLuck)
-        {
-            _chatSystem.DispatchStationAnnouncement(
-                result.Station,
-                Loc.GetString(stationShuttleComp.FailureAnnouncement),
-                playDefaultSound: false);
-
-            // TODO: Need filter extensions or something don't blame me.
-            _audio.PlayGlobal(stationShuttleComp.FailureAudio, Filter.Broadcast(), true);
-            return;
-        }
+            SendShuttleAnnouncement(stationShuttleComp.FailureAnnouncement, result.Station,
+                stationShuttleComp.FailureAudio, filter);
+        //Starlight end
 
         DebugTools.Assert(result.TargetGrid != null);
 
@@ -419,15 +416,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             ? stationShuttleComp.NearbyAnnouncement
             : stationShuttleComp.DockedAnnouncement;
 
-        _chatSystem.DispatchStationAnnouncement(
-            result.Station,
-            Loc.GetString(
-                locKey,
-                ("time", $"{_consoleAccumulator:0}"),
-                ("direction", direction),
-                ("location", location),
-                ("extended", extendedText)),
-            playDefaultSound: false);
+        //Starlight begin
 
         // Trigger shuttle timers on the shuttle.
 
@@ -453,8 +442,14 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             ? stationShuttleComp.NearbyAudio
             : stationShuttleComp.DockedAudio;
 
-        // TODO: Need filter extensions or something don't blame me.
-        _audio.PlayGlobal(audioFile, Filter.Broadcast(), true);
+        SendShuttleAnnouncement(Loc.GetString(
+                locKey,
+                ("time", $"{_consoleAccumulator:0}"),
+                ("direction", direction),
+                ("location", location),
+                ("extended", extendedText)), result.Station,
+            audioFile, filter);
+        //Starlight end
     }
 
     private void OnStationInit(EntityUid uid, StationCentcommComponent component, MapInitEvent args)
@@ -537,11 +532,17 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
 
         _consoleAccumulator *= multiplier;
 
+        var filter = Filter.Broadcast(); // Starlight
+        
         foreach (var shuttleDockResult in dockResults)
         {
-            AnnounceShuttleDock(shuttleDockResult, multiplier > 1);
+            AnnounceShuttleDock(shuttleDockResult, multiplier > 1, filter);
         }
 
+        //Starlight begin - announce to all stragglers that round will end soon as shuttles have docked.
+        SendShuttleAnnouncement(SpaceStragglerAnnouncement, SpaceStragglerAudio, filter);
+        //Starlight end
+        
         _commsConsole.UpdateCommsConsoleInterface();
     }
 
@@ -803,4 +804,30 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         /// </summary>
         GoodLuck,
     }
+    
+    //Starlight begin
+    /// <summary>
+    /// Sends shuttle dock announcement to all players on a station, removing all recipients from a filter.
+    /// </summary>
+    private void SendShuttleAnnouncement(LocId announcementText, Entity<StationEmergencyShuttleComponent> station,
+        SoundSpecifier sound, Filter filter)
+    {
+        var allPlayersOnStation = Filter.Empty().AddWhere(session =>
+        {
+            if (session.AttachedEntity is null) return false;
+            if (!TryComp<StationMemberComponent>(Transform(session.AttachedEntity.Value).GridUid,
+                    out var stationGrid)) return false;
+            return stationGrid.Station == station.Owner;
+        });
+        filter.RemoveWhere(x => allPlayersOnStation.Recipients.Contains(x));
+        _chatSystem.DispatchFilteredAnnouncement(allPlayersOnStation, Loc.GetString(announcementText),
+            announcementSound: sound);
+    }
+
+    /// <summary>
+    /// Sends a separate shuttle dock announcement to all remaining players, so anyone in space, salvie planet, etc.
+    /// </summary>
+    private void SendShuttleAnnouncement(LocId announcementText, SoundSpecifier sound, Filter filter) =>
+        _chatSystem.DispatchFilteredAnnouncement(filter, Loc.GetString(announcementText), announcementSound: sound);
+    //Starlight end
 }

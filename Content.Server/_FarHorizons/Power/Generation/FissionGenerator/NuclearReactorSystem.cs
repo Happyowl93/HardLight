@@ -527,7 +527,7 @@ public sealed class NuclearReactorSystem : EntitySystem
         var comp = ent.Comp;
         var uid = ent.Owner;
 
-        var stationUid = _station.GetStationInMap(Transform(uid).MapID);
+        var stationUid = _station.GetOwningStation(uid);
         if (stationUid != null)
             _alertLevel.SetLevel(stationUid.Value, comp.MeltdownAlertLevel, true, true, true);
 
