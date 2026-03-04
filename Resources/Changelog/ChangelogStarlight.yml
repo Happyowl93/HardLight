@@ -33289,5 +33289,56 @@ Entries:
   id: 358301
   time: '2026-03-03T21:29:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3583
+- author: Shades
+  changes:
+  - message: Solgov has arrived with better equipement and Access.
+    type: Add
+  - message: Wizard Sound Intro + Annoncement Changed.
+    type: Tweak
+  id: 358701
+  time: '2026-03-04T05:33:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3587
+- author: Conflee
+  changes:
+  - message: Changed the Contraband Level of many 'harmless' Syndicate items to reflect
+      how they should be treated per Corporate Law. Namely, all harmless items like
+      clothing are now Minor Contraband not Syndicate Contraband. Items with utility
+      as weapons or armor, as well as Gorlex Flippo and Matchbox, remain Syndicate
+      Contraband.
+    type: Tweak
+  - message: Changed the Contraband Level of the NetProbe Cartridge to be Engineering
+      Contra, the Log Probe Cartridge to be Security Contra, and the Wanted List Cartridge
+      to be Security Contra, to reflect their intended status as restricted items.
+      Programs that act as 'safety' features like medscanner and coordinates remain
+      non-contra.
+    type: Tweak
+  - message: Changed all 'safe' AI Law Boards to be Command-Security-Science Contraband.
+      SELF Agents explicitly target these items to complete an objective, and only
+      Command and arguably Sci/Sec should ever be touching them, so their status as
+      non-contra no longer made sense and arguably never made sense.
+    type: Tweak
+  id: 359001
+  time: '2026-03-04T06:23:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3590
+- author: Conflee
+  changes:
+  - message: Added the Steel Spear, made in the Anvil, rarely found in Maints Weapon
+      Pools, and rarely delivered to Revs by the USSP. It's slightly better than the
+      Plasma Spear, doing 15 pierce, 5 slash, 5 structural. Intended to be a spear
+      counterpart to the forged swords.
+    type: Add
+  - message: Added the Makeshift ID, made in the Anvil. Only contains Maintenance
+      access, shows no name or job icon, and can not be inserted into an ID Card Console.
+      Lets you move through maints while concealing your identity, but it is contraband.
+    type: Add
+  - message: Added the Improvised Jetpack, crafted anywhere out of 1 fire extinguisher,
+      2 gas tanks, some cables, and 2 plasteel. Works as a wearable mini-jetpack and
+      is contraband. Allows antags like Revs, Thieves, Changelings, Vampires, and
+      SELF Agents easier access to space, as the core game balance is built around
+      this being true and Sec being limited in space.
+    type: Add
+  id: 358801
+  time: '2026-03-04T06:33:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3588
 Order: -1
 
