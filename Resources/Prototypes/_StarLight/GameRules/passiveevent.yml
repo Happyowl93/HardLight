@@ -1,0 +1,23 @@
+- type: entity
+  parent: BaseGameRule
+  id: PsychicScreach
+  components:
+  - type: StationEvent
+    weight: 1
+    endAnnouncement: station-event-psychicscreach-announcement
+    entAudio:
+      path: /Audio/_Starlight/Announcements/attention.ogg
+    duration: 20
+    maxDuration: 30
+  - type: PsychicScreachRule
+  - type: SolarFlareRule
+    affectedChannels:
+    - Common
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    - Law
