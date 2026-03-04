@@ -82,7 +82,7 @@ namespace Content.Server.Administration.Commands
                     _mindSystem.TransferTo(mind, entity);
                     return;
                 }
-                var brain = EntitySystem.SpawnInContainerOrDrop("StationAiBrainConstructed", eUid, StationAiCoreComponent.Container);
+                var brain = EntityManager.SpawnInContainerOrDrop("StationAiBrainConstructed", (EntityUid)eUid, StationAiCoreComponent.Container);
             }
             // Starlight-end
 
