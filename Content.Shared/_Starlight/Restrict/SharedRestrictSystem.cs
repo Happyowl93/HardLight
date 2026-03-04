@@ -1,11 +1,8 @@
-﻿using System.Linq;
-using Content.Shared.Interaction.Events;
+﻿using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
-using Content.Shared.Turrets;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Systems;
-using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
