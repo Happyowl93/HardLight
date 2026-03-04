@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "taken from the game, Abductor ID by Walksanator | Salvage Lead/Medic/Specialist icons by mikeysaurus",
+  "copyright": "taken from the game, Abductor ID by Walksanator | Salvage Lead/Medic/Specialist icons by mikeysaurus, makeshift by conf using TG base sprites",
   "size": {
     "x": 32,
     "y": 32
@@ -38,7 +38,10 @@
     },
     {
       "name": "green-inhand-right",
-      "directions": 4
+	  "directions": 4
+    },
+	  {
+      "name": "makeshift"
     }
   ]
 }
