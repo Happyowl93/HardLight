@@ -220,6 +220,38 @@
 
 # TSF
 - type: entity
+  id: RandomHumanoidSpawnerTSFOfficer
+  name: SolGov Patrol Officer
+  components:
+    - type: Sprite
+      sprite: _Starlight/Markers/jobs.rsi
+      state: TSFOfficer
+    - type: RandomHumanoidSpawner
+      settings: SolgovOfficer
+
+- type: entity
+  id: RandomHumanoidSpawnerTSFOfficerSheriff
+  name: SolGov Patrol Officer
+  suffix: Sheriff
+  components:
+    - type: Sprite
+      sprite: _Starlight/Markers/jobs.rsi
+      state: TSFOfficer
+    - type: RandomHumanoidSpawner
+      settings: SolgovOfficerSheriff
+
+- type: entity
+  id: RandomHumanoidSpawnerTSFOfficerRiot
+  name: SolGov Patrol Officer
+  suffix: Riot
+  components:
+    - type: Sprite
+      sprite: _Starlight/Markers/jobs.rsi
+      state: TSFOfficer
+    - type: RandomHumanoidSpawner
+      settings: SolgovOfficerRiot
+
+- type: entity
   id: RandomHumanoidSpawnerTSFMarine
   name: Solar Federation Marine
   components:
@@ -285,6 +317,46 @@
       settings: TSFMarineMARSOC
 
 - type: randomHumanoidSettings
+  id: SolgovOfficer
+  parent: EventHumanoid
+  components:
+    - type: GhostRole
+      name: ghost-role-information-tsf-officer-name
+      description: ghost-role-information-tsf-officer-desc
+      rules: ghost-role-information-tsf-aligned-rules
+      raffle:
+        settings: default
+      mindRoles:
+        - MindRoleGhostTSFAligned
+      job: SolGovOfficer
+    - type: Loadout
+      prototypes: [SolGovOfficerGear]
+      roleLoadout: [RoleSurvivalSecurity]
+    - type: AntagImmune
+
+- type: randomHumanoidSettings
+  id: SolgovOfficerSheriff
+  parent: SolgovOfficer
+  components:
+    - type: GhostRole
+      name: ghost-role-information-tsf-officer-Sheriff-name
+      mindRoles:
+        - MindRoleGhostTSFAligned
+      job: SolGovOfficerSheriff
+    - type: Loadout
+      prototypes: [SolGovOfficerSheriffGear]
+    - type: AutoImplant
+      implants:
+        - TSFMindShieldImplant
+
+- type: randomHumanoidSettings
+  id: SolgovOfficerRiot
+  parent: SolgovOfficer
+  components:
+    - type: Loadout
+      prototypes: [SolGovOfficerRiotGear]
+
+- type: randomHumanoidSettings
   id: TSFCrew
   parent: EventHumanoid
   components:
@@ -299,7 +371,7 @@
       job: TSFMCCrew
     - type: Loadout
       prototypes: [TSFCrewGear]
-      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+      roleLoadout: [RoleSurvivalMilitaryDouble]
     - type: RandomMetadata
       nameSegments:
         - NamesMilitaryFirst
@@ -342,7 +414,7 @@
       job: TSFMarine
     - type: Loadout
       prototypes: [TSFMarineGear]
-      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+      roleLoadout: [RoleSurvivalMilitaryDouble]
     - type: RandomMetadata
       nameSegments:
         - NamesMilitaryLast
@@ -359,7 +431,7 @@
   components:
     - type: Loadout
       prototypes: [TSFMarineCorpsmanGear]
-      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+      roleLoadout: [RoleSurvivalMilitaryDouble]
     - type: RandomMetadata
       nameSegments:
         - NamesMilitaryLast
@@ -374,7 +446,7 @@
       job: TSFMarine
     - type: Loadout
       prototypes: [TSFMarineLeaderGear]
-      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+      roleLoadout: [RoleSurvivalMilitaryDouble]
     - type: RandomMetadata
       nameSegments:
         - NamesMilitaryLast
@@ -389,7 +461,7 @@
       job: TSFMarineElite
     - type: Loadout
       prototypes: [TSFPhantomGear]
-      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+      roleLoadout: [RoleSurvivalMilitaryDouble]
     - type: RandomMetadata
       nameSegments:
         - NamesSyndicateElite
@@ -410,7 +482,7 @@
       job: TSFMarineElite
     - type: Loadout
       prototypes: [TSFMARSOCGear]
-      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+      roleLoadout: [RoleSurvivalMilitaryDouble]
     - type: RandomMetadata
       nameSegments:
         - NamesSyndicateElite

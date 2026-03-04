@@ -47,6 +47,10 @@ ghost-role-information-tsf-borg-name = Solgov Cyborg
 ghost-role-information-tsf-borg-desc = Your a Solgov Cyborg. Perform your assigned task.
 ghost-role-information-tsf-marine-desc = You are a Solar Federation Marine. Perform your assigned task.
 
+ghost-role-information-tsf-officer-name = Solgov Patrol Officer
+ghost-role-information-tsf-officer-Sheriff-name = Solgov Sheriff
+ghost-role-information-tsf-officer-desc = You are a Solar Federation Patrol Officer. Perform your assigned task.
+
 ghost-role-information-xenomoproach-name = Xenomoproach
 ghost-role-information-xenomoproach-description = You are a small Xenoborg wearing the skin of a moproach as a disguise.
 ghost-role-information-xenomoproach-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with all other xenoborgs. Your goal is not to attack organic beings, rather you are tasked with being cute and distracting the organics while gathering intel.

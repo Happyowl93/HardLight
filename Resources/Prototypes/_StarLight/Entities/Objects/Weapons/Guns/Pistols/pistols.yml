@@ -563,6 +563,7 @@
   parent: WeaponPistolTSFModel17
   id: WeaponPistolTSFBorg
   description: A cyborg-mounted weapon system based on the Model 17 pistol. Creates ammunition on the fly from an internal fabricator, which slowly self-charges.
+  suffix: Cyborg
   components:
   - type: Gun
     fireRate: 5

@@ -47,6 +47,9 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 72000 # 20h
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 18000 # 5h
     - !type:RolesRequirement
       proto: ExtRolesReq
   setPreference: false
@@ -68,7 +71,7 @@
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatBeretTSF
     gloves: ClothingHandsGlovesCombat
-    id: TSFIdCardCrew
+    id: SolGovPDACrew
     ears: ClothingHudTSF
     belt: ClothingBeltUtilityEngineering
     pocket1: FlashlightSeclite
@@ -80,9 +83,10 @@
     back: ClothingBackpackTSF
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetTSF
+    neck: ClothingDogTags
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterArmorTSF
-    id: TSFIdCardMarine
+    id: SolGovPDAMarine
     ears: ClothingHudTSF
     belt: ClothingBeltTSFMarineWebbing
     pocket1: FlashlightSeclite
@@ -94,7 +98,7 @@
       - MedkitCombatFilled
       - AccessOverider
       - TSFBatonModel5
-      - BoxZiptie
+      - TSFZiptiePack
     belt:
       - MagazineBoxLightRifleFMJ
       - MagazineLightRifleFMJ
@@ -140,12 +144,11 @@
   parent: TSFMarineGear
   equipment:
     back: ClothingBackpackRadioTSF
-    neck: Whistle
     head: ClothingHeadHelmetTSFLeader
     outerClothing: ClothingOuterArmorTSFLeader
   storage:
     back:
-      - BoxZiptie
+      - TSFZiptiePack
       - MedkitCombatFilled
       - TSFBatonModel5
     belt:
@@ -164,9 +167,10 @@
     jumpsuit: ClothingUniformJumpsuitTSFElite
     back: ClothingBackpackThermalCloakTSF
     shoes: ClothingShoesBootsMagERT
+    neck: ClothingDogTags
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitTSFPhantom
-    id: TSFIdCardSpecOps
+    id: SolGovPDASpecOps
     ears: ClothingHudTSF
     belt: ClothingBeltTSFMarineWebbing
     pocket1: EnergyShield
@@ -174,7 +178,7 @@
     suitstorage: WeaponSubMachineGunAtreides
   storage:
     back:
-      - BoxZiptie
+      - TSFZiptiePack
       - MedkitCombatFilled
       - TSFBatonModel5
       - Hypospray
@@ -197,9 +201,10 @@
     jumpsuit: ClothingUniformJumpsuitTSFElite
     back: ClothingBackpackRadioTSF
     shoes: ClothingShoesBootsMagERT
+    neck: ClothingDogTags
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitTSFMARSOC
-    id: TSFIdCardSpecOps
+    id: SolGovPDASpecOps
     ears: ClothingHudTSF
     belt: ClothingBeltTSFMarineWebbing
     pocket1: AccessOveriderUnlimited
@@ -228,10 +233,11 @@
     jumpsuit: ClothingUniformJumpsuitTSFElite
     back: ClothingBackpackRadioTSF
     shoes: ClothingShoesBootsCombatFilled
+    neck: ClothingDogTags
     gloves: ClothingHandsGlovesCombat
     belt: ClothingBeltTSFMarineWebbing
     head: ClothingHeadHatBeretTSFElite
-    outerClothing: ClothingOuterVestWeb
+    outerClothing: ClothingOuterVestRetroOfficer
     id: TSFIdCard
     ears: ClothingHudTSF
     pocket1: WeaponShotgunGA12
