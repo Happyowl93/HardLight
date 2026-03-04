@@ -33403,5 +33403,17 @@ Entries:
   id: 356601
   time: '2026-03-04T18:52:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3566
+- author: teapoterror
+  changes:
+  - message: Artyom stole all the Uranium Ammunition.
+    type: Remove
+  - message: The USSP's failed efforts in Laser Replication Technology has led to
+      the firing lens of the Immolator Prototype being even more inaccurate than before.
+    type: Tweak
+  - message: Replaced the DP-28 with the C-20.
+    type: Tweak
+  id: 357001
+  time: '2026-03-04T18:55:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3570
 Order: -1
 
