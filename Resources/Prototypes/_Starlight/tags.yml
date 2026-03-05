@@ -72,6 +72,9 @@
   id: BurnedTraitBackground
 
 - type: Tag
+  id: BypassUserTagChecks
+
+- type: Tag
   id: CantInteract
 
 - type: Tag

@@ -33415,5 +33415,114 @@ Entries:
   id: 357001
   time: '2026-03-04T18:55:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3570
+- author: SevenShades
+  changes:
+  - message: (Boxcars) Added a space cleaner dispenser to jani
+    type: Add
+  - message: (Boxcars) Added a robotics access windoor to robotics
+    type: Add
+  - message: (Boxcars) Rearranged bridge a bit
+    type: Tweak
+  - message: (Boxcars) Fixed the BSO locker using the unfilled variant
+    type: Fix
+  - message: (Boxcars) Fixed Gravity generator blocking the windoor to access it
+    type: Fix
+  id: 360901
+  time: '2026-03-05T05:23:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3609
+- author: Conflee
+  changes:
+  - message: Added toggleable light signs- Bar, Open, Open Tilted, Clinic, and On
+      Air.
+    type: Add
+  - message: Added the Deli Stall. It works like a more secure table for kitchen,
+      being unclimbable but with items and bullets passing through freely. Is also
+      a storage for edible only items.
+    type: Add
+  - message: Added the Cash Register, a decorative storage that sits on tables and
+      accepts small items.
+    type: Add
+  - message: Added Standing Microphone, a microphone on a stand for decorating the
+      theater.
+    type: Add
+  - message: Added several new ominous graffiti decals, which can be placed by crayons
+      and generate from decal spawners round start.
+    type: Add
+  id: 361001
+  time: '2026-03-05T05:38:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3610
+- author: Citrea
+  changes:
+  - message: Bureaucratic errors can no longer remove job slots.
+    type: Tweak
+  id: 360501
+  time: '2026-03-05T05:55:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3605
+- author: neomoth
+  changes:
+  - message: Lowered the spawn chance of an ore crab from ironrock ores from 5% to
+      2%.
+    type: Tweak
+  id: 360301
+  time: '2026-03-05T06:00:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3603
+- author: CrazyPhantom
+  changes:
+  - message: Evacuation Pods no longer dock to Central Command. Instead they are sent
+      close to each-other on a planet.
+    type: Tweak
+  id: 359601
+  time: '2026-03-05T06:07:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3596
+- author: idkAnAlliasYetTbh
+  changes:
+  - message: Added a reminder about Rule 3 on a popup that displays when all revolutionaries
+      are deconverted simultaneously.
+    type: Tweak
+  id: 360401
+  time: '2026-03-05T06:19:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3604
+- author: Rinary
+  changes:
+  - message: Fixed voice selector. So now it works wilth multiple characters.
+    type: Fix
+  id: 360201
+  time: '2026-03-05T06:22:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3602
+- author: redmushie
+  changes:
+  - message: 'Admin ghosts now bypass user tag checks (e.g.: on Abductor equipment).'
+    type: Add
+  id: 359801
+  time: '2026-03-05T06:32:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3598
+- author: Citrea & ScorchFollower
+  changes:
+  - message: You can now hold your breath when pretending to die.
+    type: Add
+  id: 338101
+  time: '2026-03-05T06:37:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3381
+- author: CommanderAlex365
+  changes:
+  - message: Stopped holoclown AI randomly attacking people.
+    type: Fix
+  id: 361301
+  time: '2026-03-05T06:41:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3613
+- author: CaptainFothel
+  changes:
+  - message: Fixed bad conditional in CookingDeviceSystem that prevented batch cooking.
+    type: Fix
+  id: 361101
+  time: '2026-03-05T06:45:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3611
+- author: STARLIGHT TEAM
+  changes:
+  - message: Fixed radioactive artifacts activating their own radiation nodes.
+    type: Fix
+  id: 361201
+  time: '2026-03-05T06:49:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3612
 Order: -1
 
