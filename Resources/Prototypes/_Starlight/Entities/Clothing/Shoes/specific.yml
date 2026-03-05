@@ -55,3 +55,35 @@
     sprite: _Starlight/Clothing/Shoes/Specific/schoolwhiteshoes.rsi
   - type: Clothing
     sprite: _Starlight/Clothing/Shoes/Specific/schoolwhiteshoes.rsi
+    
+- type: entity
+  parent: Clothing # cannot inherent from Clothing shoes as they don't have protectedfromsteptriggers
+  id: ClothingShoesPaws
+  name: Paw boots
+  description: Special boots made specifically for Felionoid paws, the thin soles do not protect against sharp objects
+  components:
+    - type: Clothing
+      sprite: Clothing/Shoes/Boots/workboots.rsi
+      slots:
+        - FEET
+    - type: Sprite
+      sprite: Clothing/Shoes/Boots/workboots.rsi
+      state: icon
+    - type: Item
+      size: Normal
+    - type: Edible
+      requiresSpecialDigestion: true
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 10
+          reagents:
+            - ReagentId: Fiber
+              Quantity: 10
+    - type: OverrideShoesHinder
+      HinderModifier: 0 # times speed reduction by zero
+    - type: Tag
+      tags:
+        - ClothMade
+        - Recyclable
+        - WhitelistChameleon
