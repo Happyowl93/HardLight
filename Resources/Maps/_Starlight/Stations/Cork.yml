@@ -6464,7 +6464,6 @@ entities:
     - type: NavMap
     - type: GravityShake
       shakeTimes: 10
-    - type: ImplicitRoof
     - type: ExplosionAirtightGrid
   - uid: 10258
     components:
@@ -6576,7 +6575,6 @@ entities:
     - type: RadiationGridResistance
     - type: IFF
       flags: Hide
-    - type: ImplicitRoof
     - type: NavMap
     - type: ExplosionAirtightGrid
   - uid: 10586
@@ -6607,7 +6605,6 @@ entities:
     - type: SpreaderGrid
     - type: Shuttle
       dampingModifier: 0.25
-    - type: ImplicitRoof
     - type: NavMap
     - type: GridPathfinding
     - type: Gravity
