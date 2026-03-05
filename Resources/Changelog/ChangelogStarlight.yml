@@ -33474,5 +33474,13 @@ Entries:
   id: 359601
   time: '2026-03-05T06:07:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3596
+- author: idkAnAlliasYetTbh
+  changes:
+  - message: Added a reminder about Rule 3 on a popup that displays when all revolutionaries
+      are deconverted simultaneously.
+    type: Tweak
+  id: 360401
+  time: '2026-03-05T06:19:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3604
 Order: -1
 
