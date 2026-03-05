@@ -33563,5 +33563,14 @@ Entries:
   id: 360101
   time: '2026-03-05T12:51:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3601
+- author: CawsForConcern
+  changes:
+  - message: (Boxcars) Fixed invalid devices that caused the map to fail to load.
+    type: Fix
+  - message: (Cork) Fixed invalid vehicles that caused the map to fail to load.
+    type: Fix
+  id: 361601
+  time: '2026-03-05T18:09:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3616
 Order: -1
 
