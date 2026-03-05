@@ -6,9 +6,10 @@
     weight: 1
     endAnnouncement: station-event-psychicscreach-announcement
     endAudio:
-      path: /Audio/Announcements/announce.ogg
+      path: /Audio/_Starlight/Announcements/announce_broken.ogg
     duration: 20
     maxDuration: 30
+    maxOccurrences: 1
   - type: PsychicScreachRule
   - type: SolarFlareRule
     affectedChannels:
@@ -32,3 +33,21 @@
     startAudio:
       path: /Audio/Announcements/announce.ogg
   - type: SecurityDrillRule
+
+- type: entity
+  parent: BaseGameRule
+  id: DoorRuntime
+  components:
+  - type: StationEvent
+    weight: 2
+    startAnnouncementColor: Red
+    startAnnouncement: station-event-doorrunetime-start-announcement
+    startAudio:
+      path: /Audio/Misc/notice1.ogg
+    endAnnouncement: station-event-doorrunetime-end-announcement
+    endAudio:
+      path: /Audio/Announcements/announce.ogg
+    duration: 90
+    reoccurrenceDelay: 20
+    maxOccurrences: 2
+  - type: DoorRunetimeRule

@@ -9,6 +9,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Light.Components;
 using Content.Shared.Medical;
+using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.Power.Components;
@@ -78,6 +79,9 @@ public sealed class PsychicScreachRule : StationEventSystem<PsychicScreachRuleCo
         while (mobquery.MoveNext(out var ent, out var mob, out var xform))
         {
             if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != comp.chosenStation)
+                continue;
+
+            if (mob.CurrentState == MobState.Dead)
                 continue;
 
             if (HasComp<BloodstreamComponent>(ent))
