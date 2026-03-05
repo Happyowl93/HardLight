@@ -33537,5 +33537,31 @@ Entries:
   id: 360701
   time: '2026-03-05T12:36:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3607
+- author: redmushie
+  changes:
+  - message: Status effects can now have caps configured to prevent stacking infinitely.
+    type: Add
+  - message: '"Drunk" effect now has 25 minute stack limit.'
+    type: Add
+  - message: '"Hallucination" effect now has a 25 minute stack limit.'
+    type: Add
+  - message: '"Drowsiness" effect now has a 3 minute stack limit.'
+    type: Add
+  - message: '"Forced sleep" effect now has a 2 minute stack limit.'
+    type: Add
+  - message: '"Muted" effect now has a 4 minute stack limit.'
+    type: Add
+  - message: '"The dark" effect now has a 2 minute stack limit.'
+    type: Add
+  - message: Liquid frezon is now 50% more potent.
+    type: Tweak
+  - message: Reduced Healium drunk effect stacking to sane levels.
+    type: Tweak
+  - message: '"The dark" effect is now properly applied to non-Shadekin when visiting
+      The Dark or metabolizing dark blood.'
+    type: Fix
+  id: 360101
+  time: '2026-03-05T12:51:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3601
 Order: -1
 
