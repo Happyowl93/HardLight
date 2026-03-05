@@ -14,7 +14,7 @@
   - type: TemporaryBlindness
 
 # Upstream also does not have an updated status effect for muted. Delete this when they do,
-# but keep the "maximumRemainingDuration", that's a Starlight change.
+# but keep the "maximumDuration", that's a Starlight change.
 - type: entity
   parent: MobStatusEffectDebuff
   id: StatusEffectMuted
@@ -26,7 +26,7 @@
           - MobState
           - Blindable
         requireAll: true
-      maximumRemainingDuration: 4m
+      maximumDuration: 4m
     - type: Muted
     - type: StatusEffectAlert
       alert: Muted
@@ -44,7 +44,7 @@
       components:
       - Shadekin
       - TheDarkImmune
-    maximumRemainingDuration: 2m 
+    maximumDuration: 2m 
   - type: DrunkStatusEffect
   - type: DrowsinessStatusEffect
     sleepIncident: false
