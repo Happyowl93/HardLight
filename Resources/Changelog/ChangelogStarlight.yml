@@ -33489,5 +33489,12 @@ Entries:
   id: 360201
   time: '2026-03-05T06:22:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3602
+- author: redmushie
+  changes:
+  - message: 'Admin ghosts now bypass user tag checks (e.g.: on Abductor equipment).'
+    type: Add
+  id: 359801
+  time: '2026-03-05T06:32:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3598
 Order: -1
 
