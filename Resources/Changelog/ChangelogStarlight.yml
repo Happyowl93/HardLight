@@ -33482,5 +33482,12 @@ Entries:
   id: 360401
   time: '2026-03-05T06:19:28.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3604
+- author: Rinary
+  changes:
+  - message: Fixed voice selector. So now it works wilth multiple characters.
+    type: Fix
+  id: 360201
+  time: '2026-03-05T06:22:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3602
 Order: -1
 
