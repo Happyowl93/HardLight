@@ -73,11 +73,11 @@ command-description-job-set =
     Changes the job of the piped entity.
 command-description-job-delset =
     Changes the job of the piped entity by deleting then setting the job, so that the briefing plays.
-command-description-clientcomp-ensure =
+command-description-ccomp-ensure =
     Ensures that all clients add the component with the specified name to an entity, assuming it exists.
-command-description-clientcomp-write =
+command-description-ccomp-write =
     Attempt to make all clients vvwrite something into a client component.
-command-description-clientcomp-rm =
+command-description-ccomp-rm =
     Ensures that all clients delete the component with the specified name from an entity, assuming it exists.
 command-description-globalsound-play =
     Play a sound globally for the piped entities or sessions.
@@ -223,6 +223,8 @@ command-description-killsign-admin =
     Apply a killsign to the entity using the admin sprite.
 command-description-killsign-rm =
     Remove a killsign from the entity
+command-description-fixinput =
+    Refreshes the input context of the entity's session.
 command-description-faction-add =
     Add a faction to this entity.
 command-description-faction-remove =
