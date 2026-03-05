@@ -392,8 +392,11 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
 
         //Starlight begin
         if (result.ResultType == ShuttleDockResultType.GoodLuck)
+        {
             SendShuttleAnnouncement(stationShuttleComp.FailureAnnouncement, result.Station,
                 stationShuttleComp.FailureAudio, filter);
+            return;
+        }
         //Starlight end
 
         DebugTools.Assert(result.TargetGrid != null);
@@ -540,7 +543,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         }
 
         //Starlight begin - announce to all stragglers that round will end soon as shuttles have docked.
-        SendShuttleAnnouncement(SpaceStragglerAnnouncement, SpaceStragglerAudio, filter);
+        SendShuttleAnnouncement(Loc.GetString(SpaceStragglerAnnouncement, ("time", $"{_consoleAccumulator:0}")), SpaceStragglerAudio, filter);
         //Starlight end
         
         _commsConsole.UpdateCommsConsoleInterface();

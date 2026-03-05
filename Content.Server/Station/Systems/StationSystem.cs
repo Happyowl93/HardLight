@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Numerics;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Station.Components;
@@ -17,6 +18,7 @@ using Robust.Shared.Utility;
 // Starlight Start
 using Content.Server._Starlight.Station;
 using Content.Server.Shuttles.Components;
+using Content.Shared.Shuttles.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Markdown.Mapping;
@@ -557,6 +559,34 @@ public sealed partial class StationSystem : SharedStationSystem
         // Starlight End
         QueueDel(station);
     }
+    
+    //Starlight begin
+    /// <summary>
+    /// Gets the closest station grid
+    /// </summary>
+    /// <param name="uid">Entity whose position to check against</param>
+    /// <param name="excludeShuttles">Should shuttles be excluded from the search?</param>
+    public Entity<StationDataComponent?> GetNearestStation(EntityUid uid, bool excludeShuttles = false)
+    {
+        var station = GetOwningStation(uid);
+        return station ?? GetNearestStation(_transform.GetMapCoordinates(uid), excludeShuttles);
+    }
+
+    /// <summary>
+    /// Gets the closest station grid
+    /// </summary>
+    /// <param name="coordinates">Coordinates to check against</param>
+    /// <param name="excludeShuttles">Should shuttles be excluded from the search?</param>
+    public Entity<StationDataComponent?> GetNearestStation(MapCoordinates coordinates, bool excludeShuttles = false)
+    {
+        var stations = GetStations().SelectMany(s => Comp<StationDataComponent>(s).Grids);
+        var list = excludeShuttles ? stations.Where(s => !HasComp<ShuttleComponent>(s)) : stations;
+        list = list.Where(s => _transform.GetMapCoordinates(s).MapId == coordinates.MapId);
+        var closest = list.OrderBy(s =>
+            Vector2.DistanceSquared(coordinates.Position, _transform.GetMapCoordinates(s).Position));
+        return closest.FirstOrNull() ?? EntityUid.Invalid;
+    }
+    //Starlight end
 }
 
 /// <summary>
