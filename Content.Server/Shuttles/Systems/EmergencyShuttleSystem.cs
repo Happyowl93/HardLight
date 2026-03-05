@@ -41,6 +41,10 @@ using Robust.Shared.Utility;
 using Content.Server._Starlight.Station;
 using Content.Shared._Starlight.CustomObjectiveSummary;
 using Content.Shared.Station.Components;
+using Content.Server.Parallax;
+using Content.Shared.Parallax.Biomes;
+using Content.Server.Procedural;
+using Robust.Shared.Map;
 // Starlight End
 
 namespace Content.Server.Shuttles.Systems;
@@ -72,6 +76,12 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+    // Starlight Start
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly IPrototypeManager _protoManager = default!;
+    [Dependency] private readonly BiomeSystem _biomes = default!;
+    [Dependency] private readonly DungeonSystem _dungeon = default!;
+    // Starlight End
 
     private const float ShuttleSpawnBuffer = 1f;
 
@@ -80,10 +90,6 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
     private bool _emergencyShuttleEnabled;
 
     private static readonly ProtoId<TagPrototype> DockTag = "DockEmergency";
-
-    //starlight
-    private static readonly ProtoId<TagPrototype> DockEscapeTag = "DockEscape";
-    //starlight end
 
     public override void Initialize()
     {
@@ -100,7 +106,6 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         SubscribeLocalEvent<StationCentcommComponent, MapInitEvent>(OnStationInit);
 
         SubscribeLocalEvent<EmergencyShuttleComponent, FTLStartedEvent>(OnEmergencyFTL);
-        SubscribeLocalEvent<EscapePodComponent, FTLStartedEvent>(OnEmergencyPodFTL); //starlight
         SubscribeLocalEvent<EmergencyShuttleComponent, FTLCompletedEvent>(OnEmergencyFTLComplete);
         SubscribeNetworkEvent<EmergencyShuttleRequestPositionMessage>(OnShuttleRequestPosition);
         SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEnded);
@@ -228,17 +233,6 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             Position = config.Area,
         });
     }
-
-    //starlight
-    private void OnEmergencyPodFTL(EntityUid uid, EscapePodComponent component, ref FTLStartedEvent args)
-    {
-        //set the priority tag
-        if (TryComp<ShuttleComponent>(uid, out var shuttleComp))
-        {
-            shuttleComp.PriorityTag = DockEscapeTag;
-        }
-    }
-    //starlight end
 
     /// <summary>
     ///     Escape shuttle FTL event handler. The only escape shuttle FTL transit should be from station to centcomm at round end
