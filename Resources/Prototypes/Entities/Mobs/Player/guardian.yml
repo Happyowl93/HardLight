@@ -248,7 +248,7 @@
       soundHit:
         collection: BikeHorn
       damage:
-        types: 
+        types:
           Blunt: 5
     - type: Loadout
       prototypes: [ HoloClownGear ]
