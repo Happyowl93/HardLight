@@ -248,13 +248,16 @@
       soundHit:
         collection: BikeHorn
       damage:
-        types:
+        types: 
           Blunt: 5
     - type: Loadout
       prototypes: [ HoloClownGear ]
     - type: RandomMetadata
       nameSegments:
       - NamesClown
+    # - type: NpcFactionMember
+    #  factions:
+    #     - Syndicate
     - type: HTN
       rootTask:
         task: SimpleHumanoidHostileCompound
