@@ -33572,5 +33572,14 @@ Entries:
   id: 361601
   time: '2026-03-05T18:09:31.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3616
+- author: Makeshift
+  changes:
+  - message: (Plasma) Added Performers.
+    type: Add
+  - message: (Elkridge) Added Performers.
+    type: Add
+  id: 361801
+  time: '2026-03-05T20:15:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3618
 Order: -1
 
