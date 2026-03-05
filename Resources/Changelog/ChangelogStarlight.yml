@@ -33517,5 +33517,12 @@ Entries:
   id: 361101
   time: '2026-03-05T06:45:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3611
+- author: STARLIGHT TEAM
+  changes:
+  - message: Fixed radioactive artifacts activating their own radiation nodes.
+    type: Fix
+  id: 361201
+  time: '2026-03-05T06:49:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3612
 Order: -1
 
