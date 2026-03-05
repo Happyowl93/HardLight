@@ -817,7 +817,7 @@ namespace Content.Server.Kitchen.EntitySystems
                 {
                     int targetTime = (int)recipe.CookTime; // Starlight-edit
 
-                    if (Math.Abs(targetTime - actualTime) <= 1) // Starlight-edit
+                    if (actualTime >= (targetTime * availableAmount - 1)) // Afterlight-edit
                     {
                         for (var i = 0; i < availableAmount; i++) // Starlight-edit
                         {
