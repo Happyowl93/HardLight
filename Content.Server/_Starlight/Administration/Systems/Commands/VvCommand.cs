@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Administration;
+using Content.Shared._Starlight.ViewVariables;
 using Content.Shared.Administration;
 using Robust.Shared.Toolshed;
 
@@ -10,6 +11,23 @@ namespace Content.Server._Starlight.Administration.Systems.Commands;
 public sealed class VvCommand : ToolshedCommand
 {
     [Dependency] private readonly IViewVariablesManager _vvm = default!;
+    [Dependency] private readonly IEntityNetworkManager _net = default!;
+
+    [CommandImplementation("open")]
+    public EntityUid Vv(IInvocationContext ctx, [PipedArgument] EntityUid uid)
+    {
+        _net.SendSystemNetworkMessage(new OpenViewVariablesEvent($"{EntityManager.GetNetEntity(uid).Id}"),
+            ctx.Session!.Channel);
+        return uid;
+    }
+    
+    [CommandImplementation("open")]
+    public void Vv(IInvocationContext ctx, [PipedArgument] string path)
+    {
+        if (path.StartsWith('/')) path = path[1..];
+        _net.SendSystemNetworkMessage(new OpenViewVariablesEvent($"/{path}"),
+            ctx.Session!.Channel);
+    }
     
     [CommandImplementation("write")]
     public EntityUid Write(IInvocationContext ctx, [PipedArgument] EntityUid uid, string path, string value)
@@ -41,6 +59,16 @@ public sealed class VvCommand : ToolshedCommand
         return val;
     }
 
+    [CommandImplementation("open")]
+    public IEnumerable<EntityUid> Vv(IInvocationContext ctx, [PipedArgument] IEnumerable<EntityUid> uid) =>
+        uid.Select(x => Vv(ctx, x));
+
+    [CommandImplementation("open")]
+    public void Vv(IInvocationContext ctx, [PipedArgument] IEnumerable<string> path)
+    {
+        foreach(var s in path) Vv(ctx, s);
+    }
+    
     [CommandImplementation("write")]
     public IEnumerable<EntityUid> Write(IInvocationContext ctx, [PipedArgument] IEnumerable<EntityUid> uid, string path, string value)
         => uid.Select(x => Write(ctx, x, path, value));
