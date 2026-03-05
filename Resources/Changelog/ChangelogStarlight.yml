@@ -33466,5 +33466,13 @@ Entries:
   id: 360301
   time: '2026-03-05T06:00:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3603
+- author: CrazyPhantom
+  changes:
+  - message: Evacuation Pods no longer dock to Central Command. Instead they are sent
+      close to each-other on a planet.
+    type: Tweak
+  id: 359601
+  time: '2026-03-05T06:07:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3596
 Order: -1
 
