@@ -33510,5 +33510,12 @@ Entries:
   id: 361301
   time: '2026-03-05T06:41:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3613
+- author: CaptainFothel
+  changes:
+  - message: Fixed bad conditional in CookingDeviceSystem that prevented batch cooking.
+    type: Fix
+  id: 361101
+  time: '2026-03-05T06:45:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3611
 Order: -1
 
