@@ -38,3 +38,16 @@
   components:
   - type: StatusEffectAlert
     alert: ShadekinTheDarkAlert
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectHeldBreath
+  name: holding breath
+  components:
+  - type: StatusEffect
+    whitelist:
+      components:
+      - Respirator
+  - type: StatusEffectAlert
+    alert: BreathHeld
+  - type: HeldBreathStatusEffect
