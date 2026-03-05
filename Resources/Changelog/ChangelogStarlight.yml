@@ -33458,5 +33458,13 @@ Entries:
   id: 360501
   time: '2026-03-05T05:55:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3605
+- author: neomoth
+  changes:
+  - message: Lowered the spawn chance of an ore crab from ironrock ores from 5% to
+      2%.
+    type: Tweak
+  id: 360301
+  time: '2026-03-05T06:00:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3603
 Order: -1
 
