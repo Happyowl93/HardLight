@@ -34,8 +34,13 @@ public sealed class WeatherRule : StationEventSystem<WeatherRuleComponent>
                 
         comp.Map = Transform(grid).MapID;
 
-        var endTime = comp.Duration == null ? null : comp.Duration + _timing.CurTime;
+        Timer.Spawn(comp.Delay, () => _weather.SetWeather(comp.Map, weatherPrototype, null));
+    }
 
-        Timer.Spawn(comp.Delay, () => _weather.SetWeather(comp.Map, weatherPrototype, endTime));
+    protected override void Ended(EntityUid uid, WeatherRuleComponent comp, GameRuleComponent gameRule, GameRuleEndedEvent args)
+    {
+        base.Ended(uid, comp, gameRule, args);
+
+        _weather.SetWeather(comp.Map, null, null);
     }
 }

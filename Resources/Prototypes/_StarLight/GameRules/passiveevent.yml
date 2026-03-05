@@ -65,9 +65,29 @@
     endAnnouncement: station-event-radstorm-end-announcement
     endAudio:
       path: /Audio/Announcements/announce.ogg
-    duration: 115
+    duration: 110
     maxOccurrences: 1
   - type: WeatherRule
     weather: RadStorm
-    duration: 100
+    delay: 10
+
+- type: entity
+  parent: BaseGameRule
+  id: SolarFlare
+  components:
+  - type: StationEvent
+    weight: 2
+    startAnnouncementColor: Red
+    startAnnouncement: station-event-solarflare-start-announcement
+    startAudio:
+      path: /Audio/Misc/notice1.ogg
+    endAnnouncement: station-event-solarflare-end-announcement
+    endAudio:
+      path: /Audio/Announcements/announce.ogg
+    duration: 70
+    maxDuration: 130
+    reoccurrenceDelay: 20
+    maxOccurrences: 2
+  - type: WeatherRule
+    weather: SolarFlare
     delay: 10

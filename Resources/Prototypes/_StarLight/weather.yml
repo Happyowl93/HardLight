@@ -14,3 +14,25 @@
     damage:
       types:
         Radiation: 1
+
+- type: weather
+  id: SolarFlare
+  sprite:
+    sprite: /Textures/Effects/weather.rsi
+    state: ashfall_light
+  color: yellow
+  sound:
+    path: /Audio/_Starlight/Effects/Weather/blobalarm.ogg
+    params:
+      loop: true
+      volume: -10
+  effects:
+  - !type:Flash
+  - !type:Flammable
+    multiplier: 3.75
+    multiplierOnExisting: 0.75
+  - !type:Ignite
+  - !type:HealthChange
+    damage:
+      types:
+        Heat: 1

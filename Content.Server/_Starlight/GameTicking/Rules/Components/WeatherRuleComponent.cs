@@ -15,12 +15,6 @@ public sealed partial class WeatherRuleComponent : Component
     public ProtoId<WeatherPrototype> Weather;
 
     /// <summary>
-    /// How long the delay before the weather should appear.
-    /// </summary>
-    [DataField]
-    public TimeSpan? Duration;
-
-    /// <summary>
     /// How long the weather should last. Null for forever.
     /// </summary>
     [DataField]
