@@ -54,7 +54,7 @@
     whitelist:
       components:
         - MobState
-    maximumRemainingDuration: 2m # <-- The only change relative to parent component definition
+    maximumDuration: 2m # <-- The only change relative to parent component definition
   # Starlight END
   - type: ForcedSleepingStatusEffect
   - type: StunnedStatusEffect
@@ -82,7 +82,7 @@
     whitelist:
       components:
       - MobState
-    maximumRemainingDuration: 3m # <-- The only change relative to parent component definition
+    maximumDuration: 3m # <-- The only change relative to parent component definition
   # Starlight END
 
 # Adds drugs overlay
@@ -97,7 +97,7 @@
     whitelist:
       components:
         - MobState
-    maximumRemainingDuration: 25m # <-- The only change relative to parent component definition
+    maximumDuration: 25m # <-- The only change relative to parent component definition
   # Starlight END
 
 # Causes your vision to become blurry and gives me a headache.
@@ -112,7 +112,7 @@
     whitelist:
       components:
         - MobState
-    maximumRemainingDuration: 25m # <-- The only change relative to parent component definition
+    maximumDuration: 25m # <-- The only change relative to parent component definition
   # Starlight END
 
 # Causes you to get drunk

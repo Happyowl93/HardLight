@@ -227,8 +227,8 @@ public sealed partial class StatusEffectsSystem : EntitySystem
         statusEffect = effect;
 
         // Starlight START
-        if (effectComp.MaximumRemainingDuration != null && duration > effectComp.MaximumRemainingDuration)
-            duration = effectComp.MaximumRemainingDuration;
+        if (effectComp.MaximumDuration != null && duration > effectComp.MaximumDuration)
+            duration = effectComp.MaximumDuration;
         // Starlight END
         
         var endTime = delay == null ? _timing.CurTime + duration : _timing.CurTime + delay + duration;
@@ -296,9 +296,9 @@ public sealed partial class StatusEffectsSystem : EntitySystem
         
         // Starlight START
         var uncappedEndTime = effect.Comp.EndEffectTime + delta;
-        var exceedsMaximumDuration = effect.Comp.MaximumRemainingDuration != null
-            && uncappedEndTime - _timing.CurTime > effect.Comp.MaximumRemainingDuration;
-        var endTime = exceedsMaximumDuration ? _timing.CurTime + effect.Comp.MaximumRemainingDuration : uncappedEndTime;
+        var exceedsMaximumDuration = effect.Comp.MaximumDuration != null
+            && uncappedEndTime - _timing.CurTime > effect.Comp.MaximumDuration;
+        var endTime = exceedsMaximumDuration ? _timing.CurTime + effect.Comp.MaximumDuration : uncappedEndTime;
         // Starlight END
 
         // Add to the current end effect time, if we're here we should have one set already, and if it's null it's probably infinite.
