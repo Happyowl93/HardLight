@@ -33451,5 +33451,12 @@ Entries:
   id: 361001
   time: '2026-03-05T05:38:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3610
+- author: Citrea
+  changes:
+  - message: Bureaucratic errors can no longer remove job slots.
+    type: Tweak
+  id: 360501
+  time: '2026-03-05T05:55:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3605
 Order: -1
 
