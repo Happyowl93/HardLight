@@ -51,3 +51,23 @@
     reoccurrenceDelay: 20
     maxOccurrences: 2
   - type: DoorRunetimeRule
+
+- type: entity
+  parent: BaseGameRule
+  id: RadStorm
+  components:
+  - type: StationEvent
+    weight: 2
+    startAnnouncementColor: Red
+    startAnnouncement: station-event-radstorm-start-announcement
+    startAudio:
+      path: /Audio/Misc/notice1.ogg
+    endAnnouncement: station-event-radstorm-end-announcement
+    endAudio:
+      path: /Audio/Announcements/announce.ogg
+    duration: 115
+    maxOccurrences: 1
+  - type: WeatherRule
+    weather: RadStorm
+    duration: 100
+    delay: 10

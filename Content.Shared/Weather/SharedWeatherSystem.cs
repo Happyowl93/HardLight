@@ -40,17 +40,20 @@ public abstract class SharedWeatherSystem : EntitySystem
         }
     }
 
-    public bool CanWeatherAffect(EntityUid uid, MapGridComponent grid, TileRef tileRef, RoofComponent? roofComp = null)
+    public bool CanWeatherAffect(EntityUid uid, MapGridComponent grid, TileRef tileRef, bool checkTileWeather = true, RoofComponent? roofComp = null)
     {
         if (tileRef.Tile.IsEmpty)
             return true;
+
+        if (_blockQuery.HasComponent(uid))
+            return false;
 
         if (Resolve(uid, ref roofComp, false) && _roof.IsRooved((uid, grid, roofComp), tileRef.GridIndices))
             return false;
 
         var tileDef = (ContentTileDefinition) _tileDefManager[tileRef.Tile.TypeId];
 
-        if (!tileDef.Weather)
+        if (checkTileWeather && !tileDef.Weather)
             return false;
 
         var anchoredEntities = _mapSystem.GetAnchoredEntitiesEnumerator(uid, grid, tileRef.GridIndices);
@@ -140,6 +143,10 @@ public abstract class SharedWeatherSystem : EntitySystem
                     if (elapsed < WeatherComponent.StartupTime)
                     {
                         SetState(uid, WeatherState.Starting, comp, weather, weatherProto);
+                    }
+                    else
+                    {
+                        SetState(uid, WeatherState.Running, comp, weather, weatherProto); // SL
                     }
                 }
 

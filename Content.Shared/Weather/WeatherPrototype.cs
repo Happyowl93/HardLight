@@ -1,3 +1,4 @@
+using Content.Shared.EntityEffects; // SL
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -20,4 +21,18 @@ public sealed partial class WeatherPrototype : IPrototype
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("sound")]
     public SoundSpecifier? Sound;
+
+    /// <summary>
+    /// Starlight
+    /// List of effects that should be applied.
+    /// </summary>
+    [DataField]
+    public List<EntityEffect> Effects = default!;
+
+    /// <summary>
+    /// Starlight
+    /// Should weather check weather tile checks?
+    /// </summary>
+    [DataField]
+    public bool CheckTileWeather = true;
 }
