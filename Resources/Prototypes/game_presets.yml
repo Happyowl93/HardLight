@@ -100,7 +100,6 @@
     - ThiefGamerule # Starlight, Event Light
     - RailroadingTerminator # Starlight
     - RailroadingMinor # Starlight
-    - NanoChatSpam # Starlight 
 
 - type: gamePreset
   id: Extended
