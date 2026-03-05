@@ -33430,5 +33430,26 @@ Entries:
   id: 360901
   time: '2026-03-05T05:23:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3609
+- author: Conflee
+  changes:
+  - message: Added toggleable light signs- Bar, Open, Open Tilted, Clinic, and On
+      Air.
+    type: Add
+  - message: Added the Deli Stall. It works like a more secure table for kitchen,
+      being unclimbable but with items and bullets passing through freely. Is also
+      a storage for edible only items.
+    type: Add
+  - message: Added the Cash Register, a decorative storage that sits on tables and
+      accepts small items.
+    type: Add
+  - message: Added Standing Microphone, a microphone on a stand for decorating the
+      theater.
+    type: Add
+  - message: Added several new ominous graffiti decals, which can be placed by crayons
+      and generate from decal spawners round start.
+    type: Add
+  id: 361001
+  time: '2026-03-05T05:38:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3610
 Order: -1
 
