@@ -33524,5 +33524,18 @@ Entries:
   id: 361201
   time: '2026-03-05T06:49:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3612
+- author: neomoth
+  changes:
+  - message: You will now be notified of emergency shuttles docking in chat if you
+      are not on a station.
+    type: Add
+  - message: Emergency shuttle announcements have been altered slightly.
+    type: Tweak
+  - message: Rift announcements now declare which station they are closest to before
+      declaring which beacon is is closest to for clarity purposes.
+    type: Tweak
+  id: 360701
+  time: '2026-03-05T12:36:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3607
 Order: -1
 
