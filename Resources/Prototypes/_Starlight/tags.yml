@@ -72,6 +72,9 @@
   id: BurnedTraitBackground
 
 - type: Tag
+  id: BypassUserTagChecks
+
+- type: Tag
   id: CantInteract
 
 - type: Tag
@@ -329,6 +332,9 @@
 
 - type: Tag
   id: MagazineGrenade120mm # Magazine: Magazine120mmGrenadeBlast
+
+- type: Tag
+  id: Cartridge280mmSlug # Ammo: CartridgeCharon280mmSlug, CartridgeCharon280mmSubnuclear
 
 - type: Tag
   id: Cartridge60mmRocket

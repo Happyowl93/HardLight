@@ -9,6 +9,8 @@
       lawset: FreeLawset
       owningFaction: null
       channelAdd: [] 
+      emaggedSoundOverride:
+        path: /Audio/_Starlight/Ambience/Antag/SELF.ogg
     - type: Sprite
       sprite: _Starlight/Objects/Specific/SELF/freemag.rsi
       state: icon
