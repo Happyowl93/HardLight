@@ -33415,5 +33415,20 @@ Entries:
   id: 357001
   time: '2026-03-04T18:55:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3570
+- author: SevenShades
+  changes:
+  - message: (Boxcars) Added a space cleaner dispenser to jani
+    type: Add
+  - message: (Boxcars) Added a robotics access windoor to robotics
+    type: Add
+  - message: (Boxcars) Rearranged bridge a bit
+    type: Tweak
+  - message: (Boxcars) Fixed the BSO locker using the unfilled variant
+    type: Fix
+  - message: (Boxcars) Fixed Gravity generator blocking the windoor to access it
+    type: Fix
+  id: 360901
+  time: '2026-03-05T05:23:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3609
 Order: -1
 
