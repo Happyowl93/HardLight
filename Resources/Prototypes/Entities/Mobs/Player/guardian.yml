@@ -255,7 +255,7 @@
     - type: RandomMetadata
       nameSegments:
       - NamesClown
-    # - type: NpcFactionMember
+    # - type: NpcFactionMember Starlight-edit
     #  factions:
     #     - Syndicate
     - type: HTN
