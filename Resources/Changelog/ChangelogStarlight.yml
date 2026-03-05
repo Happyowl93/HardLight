@@ -33503,5 +33503,12 @@ Entries:
   id: 338101
   time: '2026-03-05T06:37:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3381
+- author: CommanderAlex365
+  changes:
+  - message: Stopped holoclown AI randomly attacking people.
+    type: Fix
+  id: 361301
+  time: '2026-03-05T06:41:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3613
 Order: -1
 
