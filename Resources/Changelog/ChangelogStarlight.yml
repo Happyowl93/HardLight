@@ -33496,5 +33496,12 @@ Entries:
   id: 359801
   time: '2026-03-05T06:32:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3598
+- author: Citrea & ScorchFollower
+  changes:
+  - message: You can now hold your breath when pretending to die.
+    type: Add
+  id: 338101
+  time: '2026-03-05T06:37:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3381
 Order: -1
 
