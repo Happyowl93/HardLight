@@ -13,5 +13,5 @@ vampire-gamemode-description = Blood-drinkers in space! Don't let it get out of 
 vamptraitorling-title = Vamptraitorlings
 vamptraitorling-description = What a horrible night to have a curse
 
-all-at-once-except-zombies-title = Almost All at Once
-all-at-once-except-zombies-title = It's almost just not your day...
+all-at-once-except-zombieteors-title = Almost All at Once
+all-at-once-except-zombieteors-title = It's almost just not your day...
