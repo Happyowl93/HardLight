@@ -26,6 +26,7 @@
   alias:
   - almostall
   - allnt
+  - allexceptroundenders
   name: all-at-once-except-zombies-title
   minPlayers: 15 # Starlight, for Delta
   description: all-at-once-except-zombies-title
@@ -36,7 +37,6 @@
     - Revolutionary
     - Wizard
     - Xenoborgs
-    - KesslerSyndromeScheduler
     - RampingStationEventScheduler
     - SLChangeling #Starlight
     - SpaceTrafficControlEventScheduler
