@@ -877,3 +877,20 @@
     icon: { sprite: _Starlight/Interface/Actions/actions_borg.rsi, state: knife-module }
 
 # Makeshift End
+
+- type: entity
+  id: BorgModuleTeaMag
+  parent: [ BaseBorgModule, BaseProviderBorgModule, BaseMajorContraband ]
+  name: TeaMAG cyborg module
+  components:
+  - type: Sprite
+      layers:
+      - state: xenoborg_engi
+      - state: icon-xenoborg-access-breaker
+  - type: ItemBorgModule
+    hands:
+    - item: TeaMAG
+  - type: BorgModuleIcon
+    icon: { sprite: _Starlight/Objects/Specific/SELF/freemag.rsi, state: xenoborg-access-breaker-module }
+  
+  
