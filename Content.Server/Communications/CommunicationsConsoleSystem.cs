@@ -175,7 +175,7 @@ namespace Content.Server.Communications
                         levels = new();
                         foreach (var (id, detail) in alertComp.AlertLevels.Levels)
                         {
-                            if (detail.Selectable)
+                            if (detail.Selectable && (comp.SettableAlertLevels == null || comp.SettableAlertLevels.Contains(id))) // Starlight
                             {
                                 levels.Add(id);
                             }
@@ -262,11 +262,17 @@ namespace Content.Server.Communications
                 _popupSystem.PopupCursor(Loc.GetString("comms-console-permission-denied"), message.Actor, PopupType.Medium);
                 return;
             }
+            
+            // Starlight BEGIN
+            var tryGetIdentityShortInfoEvent = new TryGetIdentityShortInfoEvent(uid, mob);
+            RaiseLocalEvent(tryGetIdentityShortInfoEvent);
+            var author = tryGetIdentityShortInfoEvent.Title;
+            // Starlight END
 
             var stationUid = _stationSystem.GetOwningStation(uid);
             if (stationUid != null)
             {
-                _alertLevelSystem.SetLevel(stationUid.Value, message.Level, true, true);
+                _alertLevelSystem.SetLevel(stationUid.Value, message.Level, true, true, actor: comp.AnnounceSentBy ? author : null); // Starlight: +actor
                 _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(message.Actor):player} has set {message.Level} alert level");  // Starlight (Far-Horizons)
             }
         }

@@ -15,6 +15,10 @@
     },
     {
       "name": "xenoborg_door_electronics"
+    },
+    {
+      "name": "cpu_law",
+      "copyright": "todo"
     }
   ]
 }

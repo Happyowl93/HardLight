@@ -82,6 +82,11 @@ namespace Content.Server.Communications
         /// Upon map init, this will attempt to find this station's Central Command and automatically append it.
         /// </summary>
         [ViewVariables] public List<EntityUid> AdditionalGrids = [];
+
+        /// <summary>
+        /// Alert levels that can be set from this console.
+        /// </summary>
+        [DataField] public List<string>? SettableAlertLevels;
         //Starlight end
     }
 }
