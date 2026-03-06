@@ -154,11 +154,15 @@ command-description-polymorph-finish =
 command-description-vv-open =
     Open the ViewVariables window of the piped entity or path.
 command-description-vv-write =
-    Modify a path's value using VV (View Variables). Can use a variable for the value but it must be wrapped in quotes.
+    Modify a path's value using VV (View Variables). Can use a variable for the value, but it must be a serialized string.
+command-description-vv-owrite =
+    Modify a path's value using VV (View Variables). Can use a raw variable for the value.
 command-description-vv-read =
     Print a path's value using VV (View Variables).
 command-description-vv-rsave =
     Retrieve a path's value using VV (View Variables). Can be saved to a variable.
+command-description-vv-rsaveraw =
+    Retrieve a path's value using VV (View Variables). Can be saved to a variable. Saves the raw value instead of the serialized string.
 command-description-mind-wipe =
     Wipes a player or entity's mind. Note that this will make their game unplayable until you give them a new mind.
 command-description-mind-takeover =
