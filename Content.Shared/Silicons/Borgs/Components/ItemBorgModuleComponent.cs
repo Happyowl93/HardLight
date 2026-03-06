@@ -74,6 +74,7 @@ public partial record struct BorgHand
 
     [DataField]
     public bool ForceRemovable = false;
+    
     public BorgHand(EntProtoId? item, Hand hand, bool forceRemovable = false)
     {
         Item = item;
