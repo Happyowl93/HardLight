@@ -1,0 +1,14 @@
+- type: parallax
+  id: AuroraCaelus
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Starlight/Parallaxes/PlanetViolet.png"
+      slowness: 0.995
+      scale: "0.3, 0.3"
+      controlHomePosition: "320, 150"
+      worldHomePosition: "0, 0"
+      tiled: false
+    - sprite:
+        sprite: /Textures/Effects/weather.rsi
+        state: ashfall_heavy

@@ -37,6 +37,10 @@ public sealed class WeatherEntityEffect : EntitySystem
                     continue;
 
                 var weather = _prototypeManager.Index(id);
+
+                if (weather == null || weather.Effects == null)
+                    continue;
+
                 var mobquery = EntityQueryEnumerator<MobStateComponent, TransformComponent>();
                 while (mobquery.MoveNext(out var mob, out var _, out var xform))
                 {
@@ -46,7 +50,7 @@ public sealed class WeatherEntityEffect : EntitySystem
                         if (TryComp<MapGridComponent>(gridUid, out var grid))
                         {
                             var tile = _map.GetTileRef((gridUid.Value, grid), xform.Coordinates);
-                            if (!_weather.CanWeatherAffect(gridUid.Value, grid, tile, weather.CheckTileWeather))
+                            if (!_weather.CanWeatherAffect(gridUid.Value, grid, tile, weather.OnlySpace, weather.CheckTileWeather))
                                 continue;
                         }
                     }

@@ -40,7 +40,7 @@ public abstract class SharedWeatherSystem : EntitySystem
         }
     }
 
-    public bool CanWeatherAffect(EntityUid uid, MapGridComponent grid, TileRef tileRef, bool checkTileWeather = true, RoofComponent? roofComp = null)
+    public bool CanWeatherAffect(EntityUid uid, MapGridComponent grid, TileRef tileRef, bool onlySpace = false, bool checkTileWeather = true, RoofComponent? roofComp = null)
     {
         if (tileRef.Tile.IsEmpty)
             return true;
@@ -48,10 +48,13 @@ public abstract class SharedWeatherSystem : EntitySystem
         if (_blockQuery.HasComponent(uid))
             return false;
 
-        if (Resolve(uid, ref roofComp, false) && _roof.IsRooved((uid, grid, roofComp), tileRef.GridIndices))
+        var tileDef = (ContentTileDefinition) _tileDefManager[tileRef.Tile.TypeId];
+
+        if (onlySpace && !tileDef.MapAtmosphere)
             return false;
 
-        var tileDef = (ContentTileDefinition) _tileDefManager[tileRef.Tile.TypeId];
+        if (Resolve(uid, ref roofComp, false) && _roof.IsRooved((uid, grid, roofComp), tileRef.GridIndices))
+            return false;
 
         if (checkTileWeather && !tileDef.Weather)
             return false;
@@ -134,6 +137,8 @@ public abstract class SharedWeatherSystem : EntitySystem
                 {
                     SetState(uid, WeatherState.Ending, comp, weather, weatherProto);
                 }
+                else if (endTime != null && remainingTime > WeatherComponent.ShutdownTime)
+                    SetState(uid, WeatherState.Ended, comp, weather, weatherProto);
                 // Starting up
                 else
                 {

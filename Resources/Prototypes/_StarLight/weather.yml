@@ -10,10 +10,10 @@
       loop: true
       volume: -10
   effects:
-  - !type:HealthChange
-    damage:
-      types:
-        Radiation: 1
+    - !type:HealthChange
+      damage:
+        types:
+          Radiation: 1
 
 - type: weather
   id: SolarFlare
@@ -26,13 +26,27 @@
     params:
       loop: true
       volume: -10
+  onlySpace: true
   effects:
-  - !type:Flash
-  - !type:Flammable
-    multiplier: 3.75
-    multiplierOnExisting: 0.75
-  - !type:Ignite
-  - !type:HealthChange
-    damage:
-      types:
-        Heat: 1
+    - !type:Flash
+    - !type:Flammable
+      multiplier: 3.75
+      multiplierOnExisting: 0.75
+    - !type:Ignite
+    - !type:HealthChange
+      damage:
+        types:
+          Heat: 1
+
+
+- type: weather
+  id: AuroraCaelus
+  sprite:
+    sprite: /Textures/Effects/weather.rsi
+    state: ashfall_light
+  sound:
+    path: /Audio/_Starlight/Effects/Weather/aurora_caelus.ogg
+    params:
+      volume: 0
+  onlySpace: true
+  parallax: AuroraCaelus

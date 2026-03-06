@@ -1,4 +1,5 @@
 using System.Numerics;
+using Robust.Shared.Utility;
 
 namespace Content.Client.Parallax.Data;
 

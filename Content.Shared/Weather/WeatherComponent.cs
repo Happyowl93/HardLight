@@ -58,4 +58,5 @@ public enum WeatherState : byte
     Starting,
     Running,
     Ending,
+    Ended, // SL
 }

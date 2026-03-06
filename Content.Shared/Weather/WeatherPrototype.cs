@@ -31,8 +31,22 @@ public sealed partial class WeatherPrototype : IPrototype
 
     /// <summary>
     /// Starlight
+    /// Will affect only SpaceTiles.
+    /// </summary>
+    [DataField]
+    public bool OnlySpace = false;
+
+    /// <summary>
+    /// Starlight
     /// Should weather check weather tile checks?
     /// </summary>
     [DataField]
     public bool CheckTileWeather = true;
+
+    /// <summary>
+    /// Starlight
+    /// Put an Overlay on the Parallax.
+    /// </summary>
+    [DataField]
+    public string? Parallax;
 }
