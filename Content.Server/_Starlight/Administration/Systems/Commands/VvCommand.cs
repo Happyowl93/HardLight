@@ -3,6 +3,8 @@ using Content.Server.Administration;
 using Content.Shared._Starlight.ViewVariables;
 using Content.Shared.Administration;
 using Robust.Shared.Toolshed;
+using Robust.Shared.Toolshed.Syntax;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Starlight.Administration.Systems.Commands;
 
@@ -34,6 +36,37 @@ public sealed class VvCommand : ToolshedCommand
     {
         if (path.StartsWith('/')) path = path[1..];
         _vvm.WritePath($"/entity/{uid}/{path}", value);
+        return uid;
+    }
+
+    [CommandImplementation("owrite")]
+    public EntityUid ObjectWrite(IInvocationContext ctx, [PipedArgument] EntityUid uid, string path, VarRef<object?> value)
+    {
+        if (path.StartsWith('/')) path = path[1..];
+        var resPath = _vvm.ResolvePath($"/entity/{uid}/{path}");
+        if (resPath is null)
+        {
+            ctx.WriteLine("Could not find path.");
+            return uid;
+        }
+        
+        var val = ctx.ReadVar(value.VarName);
+        var targetType = resPath.Get()?.GetType();
+
+        if (targetType is null)
+        {
+            ctx.WriteLine("Path leads to a null type.");
+            return uid;
+        }
+        
+        if (targetType != val?.GetType())
+            if (!targetType.IsNullable() && val is null)
+            {
+                ctx.WriteLine("Type is not nullable.");
+                return uid;
+            }
+
+        resPath.Set(Convert.ChangeType(val, targetType));
         return uid;
     }
 

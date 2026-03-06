@@ -154,7 +154,9 @@ command-description-polymorph-finish =
 command-description-vv-open =
     Open the ViewVariables window of the piped entity or path.
 command-description-vv-write =
-    Modify a path's value using VV (View Variables). Can use a variable for the value but it must be wrapped in quotes.
+    Modify a path's value using VV (View Variables). Can use a variable for the value, but it must be a serialized string.
+command-description-vv-owrite =
+    Modify a path's value using VV (View Variables). Can use a raw variable for the value.
 command-description-vv-read =
     Print a path's value using VV (View Variables).
 command-description-vv-rsave =
