@@ -91,12 +91,12 @@
     - type: ComputerBoard
       prototype: XenobiologyConsole
 
-# Departmental communications computers
+# Departmental communications consoles
 
 - type: entity
   parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
   id: EngineeringCommsComputerCircuitboard
-  name: engineering communications computer board
+  name: engineering communications console board
   description: A computer printed circuit board for a engineering communications console.
   components:
     - type: Sprite
@@ -107,7 +107,7 @@
 - type: entity
   parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
   id: MedicalCommsComputerCircuitboard
-  name: medical communications computer board
+  name: medical communications console board
   description: A computer printed circuit board for a medical communications console.
   components:
     - type: Sprite
@@ -118,7 +118,7 @@
 - type: entity
   parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
   id: ScienceCommsComputerCircuitboard
-  name: science communications computer board
+  name: science communications console board
   description: A computer printed circuit board for a science communications console.
   components:
     - type: Sprite
@@ -129,7 +129,7 @@
 - type: entity
   parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
   id: SecurityCommsComputerCircuitboard
-  name: security communications computer board
+  name: security communications console board
   description: A computer printed circuit board for a security communications console.
   components:
     - type: Sprite
@@ -140,7 +140,7 @@
 - type: entity
   parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
   id: ServiceCommsComputerCircuitboard
-  name: service communications computer board
+  name: service communications console board
   description: A computer printed circuit board for a service communications console.
   components:
     - type: Sprite
@@ -151,7 +151,7 @@
 - type: entity
   parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
   id: CargoCommsComputerCircuitboard
-  name: cargo communications computer board
+  name: cargo communications console board
   description: A computer printed circuit board for a cargo communications console.
   components:
     - type: Sprite
@@ -162,7 +162,7 @@
 - type: entity
   parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
   id: LawCommsComputerCircuitboard
-  name: law communications computer board
+  name: law communications console board
   description: A computer printed circuit board for a law communications console.
   components:
     - type: Sprite

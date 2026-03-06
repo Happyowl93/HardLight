@@ -465,7 +465,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsEngineering
-  name: engineering communications computer
+  name: engineering communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
     - type: Sprite
@@ -491,6 +491,8 @@
         - green
         - yellow
         - orange
+      canBroadcast: false
+      canShuttle: false
     - type: Computer
       board: EngineeringCommsComputerCircuitboard
     - type: PointLight
@@ -501,7 +503,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsMedical
-  name: medical communications computer
+  name: medical communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
     - type: Sprite
@@ -526,6 +528,8 @@
       settableAlertLevels:
         - green
         - violet
+      canBroadcast: false
+      canShuttle: false
     - type: Computer
       board: MedicalCommsComputerCircuitboard
     - type: PointLight
@@ -536,7 +540,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsScience
-  name: science communications computer
+  name: science communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
     - type: Sprite
@@ -559,6 +563,8 @@
       sound: /Audio/_Starlight/Announcements/announce2.ogg
       color: "#cd7ccd"
       settableAlertLevels: []
+      canBroadcast: false
+      canShuttle: false
     - type: Computer
       board: ScienceCommsComputerCircuitboard
     - type: PointLight
@@ -570,7 +576,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsSecurity
-  name: security communications computer
+  name: security communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
     - type: Sprite
@@ -596,6 +602,8 @@
         - green
         - blue
         - red
+      canBroadcast: false
+      canShuttle: false
     - type: Computer
       board: SecurityCommsComputerCircuitboard
     - type: PointLight
@@ -606,7 +614,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsService
-  name: service communications computer
+  name: service communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
     - type: Sprite
@@ -629,6 +637,8 @@
       sound: /Audio/_Starlight/Announcements/announce2.ogg
       color: "#539c00"
       settableAlertLevels: []
+      canBroadcast: false
+      canShuttle: false
     - type: Computer
       board: ServiceCommsComputerCircuitboard
     - type: PointLight
@@ -639,7 +649,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsCargo
-  name: cargo communications computer
+  name: cargo communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
     - type: Sprite
@@ -662,6 +672,8 @@
       sound: /Audio/_Starlight/Announcements/announce2.ogg
       color: "#b48b57"
       settableAlertLevels: []
+      canBroadcast: false
+      canShuttle: false
     - type: Computer
       board: CargoCommsComputerCircuitboard
     - type: PointLight
@@ -672,7 +684,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsLaw
-  name: law communications computer
+  name: law communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
     - type: Sprite
@@ -695,6 +707,8 @@
       sound: /Audio/_Starlight/Announcements/announce2.ogg
       color: "#ff178b"
       settableAlertLevels: []
+      canBroadcast: false
+      canShuttle: false
     - type: Computer
       board: LawCommsComputerCircuitboard
     - type: PointLight
