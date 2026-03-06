@@ -159,6 +159,8 @@ command-description-vv-read =
     Print a path's value using VV (View Variables).
 command-description-vv-rsave =
     Retrieve a path's value using VV (View Variables). Can be saved to a variable.
+command-description-vv-rsaveraw =
+    Retrieve a path's value using VV (View Variables). Can be saved to a variable. Saves the raw value instead of the serialized string.
 command-description-mind-wipe =
     Wipes a player or entity's mind. Note that this will make their game unplayable until you give them a new mind.
 command-description-mind-takeover =

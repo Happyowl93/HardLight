@@ -52,6 +52,14 @@ public sealed class VvCommand : ToolshedCommand
         return val ?? "null";
     }
 
+    [CommandImplementation("rsaveraw")]
+    public object? RSaveRaw(IInvocationContext ctx, [PipedArgument] EntityUid uid, string path)
+    {
+        if (path.StartsWith('/')) path = path[1..];
+        var val = _vvm.ReadPath($"/entity/{uid}/{path}");
+        return val;
+    }
+
     private string? GetViewVariable(IInvocationContext ctx, EntityUid uid, string path)
     {
         if (path.StartsWith('/')) path = path[1..];
@@ -80,4 +88,8 @@ public sealed class VvCommand : ToolshedCommand
     [CommandImplementation("rsave")]
     public IEnumerable<string> RSave(IInvocationContext ctx, [PipedArgument] IEnumerable<EntityUid> uid, string path)
         => uid.Select(x=>RSave(ctx, x, path));
+    
+    [CommandImplementation("rsaveraw")]
+    public IEnumerable<object?> RSaveRaw(IInvocationContext ctx, [PipedArgument] IEnumerable<EntityUid> uid, string path)
+        => uid.Select(x=>RSaveRaw(ctx, x, path));
 }
