@@ -4,11 +4,13 @@ using Content.Shared.Interaction.Components;
 using Content.Shared.Localizations;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Shared.Containers;
-using Content.Shared.Tag; // Starlight
-using Content.Shared.Interaction; // Starlight
-using Content.Shared.Tools.Components; // Starlight
-using Content.Shared.Tools.Systems; // Starlight
-using System.Linq; // Starlight
+#region Starlight
+using Content.Shared.Tag;
+using Content.Shared.Interaction;
+using Content.Shared.Tools.Components;
+using Content.Shared.Tools.Systems;
+using System.Linq;
+#endregion Starlight
 
 namespace Content.Shared.Silicons.Borgs;
 
