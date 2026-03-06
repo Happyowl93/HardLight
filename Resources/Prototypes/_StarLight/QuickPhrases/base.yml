@@ -1,0 +1,5 @@
+- type: quickPhrase
+  id: BaseCentralcommandPhrase
+  group: CentralCommand
+  styleClass: CentralCommandButton #Coloring seems missing for all buttons, someone else needs to add them.
+  abstract: true

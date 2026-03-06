@@ -1,9 +1,110 @@
 - type: quickPhrase
+  parent: [ BaseCentralcommandPhrase, BaseJobPhrase ]
+  id: BaseCentralcommandJobPhrase
+  abstract: true
+
+
+
+#Science (Epistemics)
+
+- type: quickPhrase
   parent: BaseEpistemicsJobPhrase
   id: SAIPhrase
   text: job-name-station-ai
 
 - type: quickPhrase
+  parent: BaseEpistemicsJobPhrase
+  id: RoboticistPhrase
+  text: job-name-roboticist
+
+
+#Security
+
+- type: quickPhrase
   parent: BaseSecurityJobPhrase
   id: BrigmedicPhrase
   text: job-name-brigmedic
+
+- type: quickPhrase
+  parent: BaseSecurityJobPhrase
+  id: DutyofficerPhrase
+  text: job-name-dutyofficer
+
+
+
+#Cargo (Logistics)
+
+- type: quickPhrase
+  parent: BaseLogisticsJobPhrase
+  id: SalvageleadPhrase
+  text: job-name-salvagelead
+
+- type: quickPhrase
+  parent: BaseLogisticsJobPhrase
+  id: MiningspecialistPhrase
+  text: job-name-miningspec
+
+- type: quickPhrase
+  parent: BaseLogisticsJobPhrase
+  id: MailtrchnicianPhrase
+  text: job-name-mailtech
+
+
+
+#Law (Justice)
+
+- type: quickPhrase
+  parent: BaseJusticeJobPhrase
+  id: MagistratePhrase
+  text: job-name-magistrate
+
+- type: quickPhrase
+  parent: BaseJusticeJobPhrase
+  id: InternalaffairsagentPhrase
+  text: job-name-iaa
+
+
+
+#Medical
+
+- type: quickPhrase
+  parent: BaseMedicalJobPhrase
+  id: SurgeonPhrase
+  text: job-name-surgeon
+
+
+#Service
+
+- type: quickPhrase
+  parent: BaseServiceJobPhrase
+  id: PerformerPhrase
+  text: job-name-performer
+
+- type: quickPhrase
+  parent: BaseServiceJobPhrase
+  id: ServiceworkerPhrase
+  text: job-name-serviceworker
+
+- type: quickPhrase
+  parent: BaseServiceJobPhrase
+  id: ChaplainPhrase
+  text: job-name-chaplain
+
+
+
+#Central Command
+
+- type: quickPhrase
+  parent: BaseCentralcommandJobPhrase
+  id: NanotrasencareertrainerPhrase
+  text: job-name-nct
+
+- type: quickPhrase
+  parent: BaseCentralcommandJobPhrase
+  id: NanotrasenrepresensativePhrase
+  text: job-name-ntrep
+
+- type: quickPhrase
+  parent: BaseCentralcommandJobPhrase
+  id: BlueshieldofficerPhrase
+  text: job-name-blueshield
