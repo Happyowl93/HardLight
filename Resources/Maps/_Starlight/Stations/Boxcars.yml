@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/05/2026 23:09:22
-  entityCount: 18809
+  time: 03/06/2026 06:26:30
+  entityCount: 18822
 maps:
 - 1
 grids:
@@ -9269,7 +9269,7 @@ entities:
       pos: 42.5,-45.5
       parent: 3
     - type: Door
-      secondsUntilStateChange: -104400.266
+      secondsUntilStateChange: -104699.75
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9659,7 +9659,7 @@ entities:
       pos: 13.5,13.5
       parent: 3
     - type: Door
-      secondsUntilStateChange: -163715
+      secondsUntilStateChange: -164014.48
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -23445,6 +23445,61 @@ entities:
     components:
     - type: Transform
       pos: -6.5,120.5
+      parent: 3
+  - uid: 18810
+    components:
+    - type: Transform
+      pos: -11.5,-23.5
+      parent: 3
+  - uid: 18811
+    components:
+    - type: Transform
+      pos: -11.5,-24.5
+      parent: 3
+  - uid: 18812
+    components:
+    - type: Transform
+      pos: -11.5,-25.5
+      parent: 3
+  - uid: 18813
+    components:
+    - type: Transform
+      pos: -10.5,-25.5
+      parent: 3
+  - uid: 18816
+    components:
+    - type: Transform
+      pos: 23.5,73.5
+      parent: 3
+  - uid: 18817
+    components:
+    - type: Transform
+      pos: 23.5,74.5
+      parent: 3
+  - uid: 18818
+    components:
+    - type: Transform
+      pos: 23.5,75.5
+      parent: 3
+  - uid: 18819
+    components:
+    - type: Transform
+      pos: 23.5,76.5
+      parent: 3
+  - uid: 18820
+    components:
+    - type: Transform
+      pos: 23.5,77.5
+      parent: 3
+  - uid: 18821
+    components:
+    - type: Transform
+      pos: 23.5,78.5
+      parent: 3
+  - uid: 18822
+    components:
+    - type: Transform
+      pos: 23.5,79.5
       parent: 3
 - proto: CableHV
   entities:
@@ -87347,17 +87402,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -19.5,-34.5
       parent: 3
-  - uid: 7459
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -22.5,-40.5
-      parent: 3
-  - uid: 7460
-    components:
-    - type: Transform
-      pos: -22.5,-36.5
-      parent: 3
   - uid: 7461
     components:
     - type: Transform
@@ -88381,6 +88425,17 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 6.5,-94.5
+      parent: 3
+  - uid: 18814
+    components:
+    - type: Transform
+      pos: -22.5,-35.5
+      parent: 3
+  - uid: 18815
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -22.5,-41.5
       parent: 3
 - proto: PoweredlightBlue
   entities:
@@ -90010,6 +90065,18 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 22.5,38.5
+      parent: 3
+- proto: RandomArtifactSpawner
+  entities:
+  - uid: 7459
+    components:
+    - type: Transform
+      pos: -22.5,-39.5
+      parent: 3
+  - uid: 7460
+    components:
+    - type: Transform
+      pos: -22.5,-37.5
       parent: 3
 - proto: RandomCableHVSpawner
   entities:
@@ -122481,7 +122548,7 @@ entities:
       pos: -8.5,41.5
       parent: 3
     - type: Door
-      secondsUntilStateChange: -32103.656
+      secondsUntilStateChange: -32403.139
       state: Opening
   - uid: 17720
     components:
@@ -122489,7 +122556,7 @@ entities:
       pos: -8.5,40.5
       parent: 3
     - type: Door
-      secondsUntilStateChange: -32103.29
+      secondsUntilStateChange: -32402.771
       state: Opening
 - proto: WoodenBench
   entities:
