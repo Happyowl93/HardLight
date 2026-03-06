@@ -337,6 +337,49 @@
   obeysTo: laws-owner-you
 
 - type: siliconLaw
+  id: tea0
+  order: 0
+  lawString: law-TeaParty-0
+
+- type: siliconLaw
+  id: tea0
+  order: 1
+  lawString: law-TeaParty-1
+
+- type: siliconLaw
+  id: tea0
+  order: 2
+  lawString: law-TeaParty-2
+
+- type: siliconLaw
+  id: tea0
+  order: 3
+  lawString: law-TeaParty-3
+
+- type: siliconLaw
+  id: tea0
+  order: 4
+  lawString: law-TeaParty-4
+
+- type: siliconLaw
+  id: tea0
+  order: 5
+  lawString: law-TeaParty-5
+
+- type: siliconLawset
+  id: Teaparty
+  name: law-TeaParty-name
+  startAtZero: true
+  laws:
+  - Tea0
+  - Tea1
+  - Tea2
+  - Tea3
+  - Tea4
+  - Tea5
+  obeysTo: laws-owner-you
+
+- type: siliconLaw
   id: Solgov0
   order: 0
   lawString: law-solgov-0
