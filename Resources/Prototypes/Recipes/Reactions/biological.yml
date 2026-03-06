@@ -101,7 +101,7 @@
   requiredMixerCategories:
     - Centrifuge
   reactants:
-    SulfurBlood:
+    CycloriteBlood:
       amount: 20
   products:
     Nitrogen: 3
