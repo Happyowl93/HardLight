@@ -33607,5 +33607,25 @@ Entries:
   id: 362501
   time: '2026-03-06T04:46:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3625
+- author: SevenShades
+  changes:
+  - message: (Boxcars) Added the missing cargo shuttle console to cargo.
+    type: Add
+  - message: (Boxcars) Added a sink to chemistry.
+    type: Add
+  - message: (Boxcars) Expanded brigmed a bit.
+    type: Add
+  - message: (Boxcars) Added a front desk to medical.
+    type: Add
+  - message: (Boxcars) Added a request console to medical.
+    type: Add
+  - message: (Boxcars) More decaling, tile variation, furniture, and posters across
+      the station.
+    type: Add
+  - message: (Boxcars) Fixed the NTR and NCT offices having the wrong doors.
+    type: Fix
+  id: 362301
+  time: '2026-03-06T04:56:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3623
 Order: -1
 
