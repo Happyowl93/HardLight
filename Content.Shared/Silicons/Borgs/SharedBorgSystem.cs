@@ -74,8 +74,6 @@ public abstract partial class SharedBorgSystem : EntitySystem
     [Dependency] private readonly SharedAccessSystem _access = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly TagSystem _tag = default!; // Starlight
-    [Dependency] private readonly StarlightEntitySystem _starlightEntitySystem = default!; // Starlight
-    ISawmill _sawmill = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
