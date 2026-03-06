@@ -17,10 +17,10 @@
         - suitStorage
         - Belt
 #Starlight Start
-  - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 1.0
-  - type: HeldSpeedModifier
+    - type: ClothingSpeedModifier
+      walkModifier: 1.0
+      sprintModifier: 1.0
+    - type: HeldSpeedModifier
 #Starlight End
 
 - type: entity
