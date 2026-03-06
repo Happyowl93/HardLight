@@ -33599,5 +33599,13 @@ Entries:
   id: 362201
   time: '2026-03-06T00:08:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3622
+- author: neomoth
+  changes:
+  - message: The Hat That Kills You If You Take It Off no longer kills you if you
+      equip and unequip it to a slot other than your head.
+    type: Fix
+  id: 362501
+  time: '2026-03-06T04:46:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3625
 Order: -1
 
