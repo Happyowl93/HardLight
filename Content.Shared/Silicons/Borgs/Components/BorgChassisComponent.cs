@@ -1,4 +1,3 @@
-using Content.Shared.Alert;
 using Content.Shared.StatusIcon;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
