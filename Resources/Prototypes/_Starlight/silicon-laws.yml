@@ -367,7 +367,7 @@
   lawString: law-TeaParty-5
 
 - type: siliconLawset
-  id: Teaparty
+  id: TeapartyLawset
   name: law-TeaParty-name
   startAtZero: true
   laws:
