@@ -381,18 +381,23 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
 
         if (args.EmagComponent == null)
             return;
-        
+
         if (!_tag.HasTag(args.EmagComponent.Owner, "CanAffectLawBoards")) //TODO test, changed from "FreeMAG"
             return;
 
-        if (args.EmagComponent.lawset == null) //TODO test
-            return;
 
         if (!ent.Comp.IsLawboard)
             return;
-        ent.Comp.Laws = args.EmagComponent.lawset; //"FreeLawset"; TODO test
-        ent.Comp.Lawset = GetLawset(args.EmagComponent.lawset); //"FreeLawset"); TODO test
-
+        
+        var emag = args.EmagComponent;
+        var lawset = emag.Lawset.Value;
+        if (lawset != null) //if() block encapsulating it or a .HasValue? [text].Value : [fallback] TODO make work
+        {
+            ent.Comp.Laws = lawset; //"FreeLawset"; TODO test
+            ent.Comp.Lawset = GetLawset(lawset); //"FreeLawset"); TODO test
+        } else {
+            return;
+        }
         _popup.PopupEntity(Loc.GetString("lawboard-emag-popup"), ent);
         
         args.Repeatable = true;
