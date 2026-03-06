@@ -3,15 +3,12 @@ using Content.Shared.Inventory;
 using Content.Shared.Body.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared._Starlight.Movement.Components;
-using Content.Shared.Tag;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.Movement;
 
 public sealed class MovementHinderedByShoesSystem : EntitySystem
 {
     [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly TagSystem _tagSystem = default!;
 
     public override void Initialize()
     {
