@@ -252,6 +252,7 @@ public abstract partial class SharedBorgSystem
         Dirty(module);
     }
 
+    #region Starlight
     private void OnInteractUsing(EntityUid uid, ItemBorgModuleComponent component, ref AfterInteractUsingEvent args)
     {
         if (args.Handled)
@@ -270,4 +271,5 @@ public abstract partial class SharedBorgSystem
             }
         }
     }
+    #endregion Starlight
 }
