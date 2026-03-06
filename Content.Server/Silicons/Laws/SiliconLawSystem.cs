@@ -390,14 +390,10 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
             return;
         
         var emag = args.EmagComponent;
-        var lawset = emag.Lawset.Value;
-        if (lawset != null) //if() block encapsulating it or a .HasValue? [text].Value : [fallback] TODO make work
-        {
-            ent.Comp.Laws = lawset; //"FreeLawset"; TODO test
-            ent.Comp.Lawset = GetLawset(lawset); //"FreeLawset"); TODO test
-        } else {
-            return;
-        }
+        var lawset = emag.Lawset.HasValue ? emag.Lawset.Value : "FreeLawset"; //Fallback to FreeLawSet because clearly something is going on
+        ent.Comp.Laws = lawset; //"FreeLawset"; TODO test
+        ent.Comp.Lawset = GetLawset(lawset); //"FreeLawset"); TODO test
+        
         _popup.PopupEntity(Loc.GetString("lawboard-emag-popup"), ent);
         
         args.Repeatable = true;
