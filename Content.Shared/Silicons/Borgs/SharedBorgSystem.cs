@@ -394,22 +394,6 @@ public abstract partial class SharedBorgSystem : EntitySystem
 
     private void OnBeingGibbed(Entity<BorgChassisComponent> chassis, ref GibbedBeforeDeletionEvent args)
     {
-        //region Starlight: Drop contents from ALL modules on gib.
-        if (chassis.Comp.ModuleContainer == null)
-                return;
-        foreach (var ent in chassis.Comp.ModuleContainer.ContainedEntities.ToList())
-        {
-            if (!TryComp<ItemBorgModuleComponent>(ent, out var module)) continue;
-            if (!TryComp<ContainerManagerComponent>(ent, out var manager)) continue;
-            if (!_container.TryGetContainer(ent, module.HoldingContainer, out var container, manager)) continue;
-            foreach (var item in container.ContainedEntities.ToList())
-            {
-                if (_tag.HasTag(item, chassis.Comp.ModuleItemTag)) continue;
-                while (_container.TryGetContainingContainer(item, out var containing))
-                    if (!_container.Remove(item, containing)) break;
-            }
-        }
-        //end region Starlight
         // Don't use the ItemSlotsSystem eject method since we don't want to play a sound and want we to eject the battery even if the slot is locked.
         if (TryComp<PowerCellSlotComponent>(chassis, out var slotComp) &&
             _container.TryGetContainer(chassis, slotComp.CellSlotId, out var slotContainer))
