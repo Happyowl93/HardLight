@@ -216,6 +216,9 @@
   id: FreeMag
 
 - type: Tag
+  id: CanAffectLawBoards
+
+- type: Tag
   id: FestiveDinner
 
 - type: Tag
