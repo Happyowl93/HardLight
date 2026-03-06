@@ -199,6 +199,7 @@ namespace Content.Server.Communications
             // Starlight edit Start
             _uiSystem.SetUiState(uid, CommunicationsConsoleUiKey.Key, new CommunicationsConsoleInterfaceState(
                 canAnnounce: CanAnnounce(comp),
+                canBroadcast: comp.CanBroadcast,
                 canCall: CanCallOrRecall(comp),
                 alertLevels: levels,
                 currentAlert: currentLevel,
@@ -365,6 +366,9 @@ namespace Content.Server.Communications
         {
             if (!TryComp<DeviceNetworkComponent>(uid, out var net))
                 return;
+            
+            if (!component.CanBroadcast) // Starlight
+                return; // Starlight
 
             var payload = new NetworkPayload
             {
