@@ -33670,5 +33670,16 @@ Entries:
   id: 362701
   time: '2026-03-06T15:17:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3627
+- author: R3v3l4t1on
+  changes:
+  - message: Cyborg modules can now be screwdrivered to drop all appropriate contents
+      from the module onto the ground.
+    type: Add
+  - message: Cyborgs no longer dump their entire inventory onto the ground when they
+      are crit.
+    type: Remove
+  id: 362801
+  time: '2026-03-06T15:55:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3628
 Order: -1
 
