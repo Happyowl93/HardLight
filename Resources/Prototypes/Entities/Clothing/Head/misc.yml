@@ -37,6 +37,12 @@
     - Hair
     - HeadTop
     - HeadSide
+#Starlight
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
+#Starlight End
 
 - type: entity
   parent: ClothingHeadBase
@@ -255,7 +261,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatDogEars
   name: doggy ears
-  description: Only for good boys.
+  description: Only for good dogs. # SL: we gender neutral in this mf spacestation
   categories: [ DoNotMap ]
   components:
   - type: Sprite

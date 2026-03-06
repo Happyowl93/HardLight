@@ -44,6 +44,7 @@ using Robust.Shared.Utility;
 using Content.Shared.Rounding;
 using Robust.Shared.Collections;
 using Robust.Shared.Map.Enumerators;
+using Content.Shared.Starlight.Medical.Surgery.Steps.Parts; // Starlight
 
 namespace Content.Shared.Storage.EntitySystems;
 
@@ -147,6 +148,7 @@ public abstract class SharedStorageSystem : EntitySystem
         SubscribeLocalEvent<StorageComponent, InteractUsingEvent>(OnInteractUsing, after: new[] { typeof(ItemSlotsSystem) });
         SubscribeLocalEvent<StorageComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<StorageComponent, OpenStorageImplantEvent>(OnImplantActivate);
+        SubscribeLocalEvent<StorageComponent, OpenStorageOrganEvent>(OnOrganActivate);//Starlight
         SubscribeLocalEvent<StorageComponent, AfterInteractEvent>(AfterInteract);
         SubscribeLocalEvent<StorageComponent, DestructionEventArgs>(OnDestroy);
         SubscribeLocalEvent<StorageComponent, BoundUserInterfaceMessageAttempt>(OnBoundUIAttempt);
@@ -577,6 +579,29 @@ public abstract class SharedStorageSystem : EntitySystem
 
         args.Handled = true;
     }
+
+    //Starlight Start
+    /// <summary>
+    /// Specifically for storage organs.
+    /// </summary>
+    private void OnOrganActivate(EntityUid uid, StorageComponent storageComp, OpenStorageOrganEvent args)
+    {
+        if (args.Handled)
+            return;
+        
+        if(!TryComp(uid, out StorageOrganComponent? organ) || organ.ActionKey != args.Key)
+            return;
+
+        var uiOpen = UI.IsUiOpen(uid, StorageComponent.StorageUiKey.Key, args.Performer);
+
+        if (uiOpen)
+            UI.CloseUi(uid, StorageComponent.StorageUiKey.Key, args.Performer);
+        else
+            OpenStorageUI(uid, args.Performer, storageComp, false);
+
+        args.Handled = true;
+    }
+    //Starlight End
 
     /// <summary>
     /// Allows a user to pick up entities by clicking them, or pick up all entities in a certain radius
@@ -1708,7 +1733,7 @@ public abstract class SharedStorageSystem : EntitySystem
     /// <summary>
     /// Updates the occupied grid mask for the entity.
     /// </summary>
-    protected void UpdateOccupied(Entity<StorageComponent> ent)
+    public void UpdateOccupied(Entity<StorageComponent> ent) // Starlight edit - Need this public for toolshed command otherwise i will go insane
     {
         ent.Comp.OccupiedGrid.Clear();
         RemoveOccupied(ent.Comp.Grid, ent.Comp.OccupiedGrid);

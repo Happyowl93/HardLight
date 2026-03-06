@@ -36,6 +36,21 @@ public sealed partial class PryingComponent : Component
     /// </summary>
     [DataField]
     public bool Enabled = true;
+
+    #region Starlight
+
+    /// <summary>
+    /// Whether to play the use sound when prying is started.
+    /// </summary>
+    [DataField]
+    public bool PlaySoundOnDoafter = false;
+
+    /// <summary>
+    /// What sound to play when prying is started.
+    /// </summary>
+    [DataField] 
+    public SoundSpecifier useSoundOnDoafter = new SoundPathSpecifier("/Audio/_Starlight/Machines/airlock_pry.ogg");
+    #endregion Starlight
 }
 
 /// <summary>

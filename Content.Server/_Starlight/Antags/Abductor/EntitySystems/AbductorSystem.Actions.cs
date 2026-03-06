@@ -76,7 +76,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
     private void OnReturn(AbductorReturnToShipEvent ev)
     {
-        // Check if abductor is stunned, cuffed, or dead - if so, cancel the return
+        // Check if abductor is stunned or cuffed- if so, cancel the return
         if (HasComp<StunnedComponent>(ev.Performer))
         {
             _popup.PopupEntity(Loc.GetString("abductor-return-stunned"), ev.Performer, ev.Performer);
@@ -88,9 +88,6 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
             _popup.PopupEntity(Loc.GetString("abductor-return-cuffed"), ev.Performer, ev.Performer);
             return;
         }
-
-        if (_mobState.IsIncapacitated(ev.Performer))
-            return;
           
         AbductorAgentComponent? agentComp = null;
         if (!TryComp<AbductorScientistComponent>(ev.Performer, out var scientistComp) && !TryComp<AbductorAgentComponent>(ev.Performer, out agentComp))
@@ -120,7 +117,12 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         despawnComp.Lifetime = 3.0f;
         _audioSystem.PlayPvs(_alienTeleport, effect);
 
-        var doAfter = new DoAfterArgs(EntityManager, ev.Performer, TimeSpan.FromSeconds(3), new AbductorReturnDoAfterEvent(), ev.Performer);
+        var doAfter = new DoAfterArgs(EntityManager, ev.Performer, TimeSpan.FromSeconds(3), new AbductorReturnDoAfterEvent(), ev.Performer)
+        {
+            BreakOnDamage = true
+        };
+
+        
         _doAfter.TryStartDoAfter(doAfter);
         ev.Handled = true;
     }
@@ -156,17 +158,19 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
     private void Return(EntityUid uid, AbductorScientistComponent? scientistComp, AbductorAgentComponent? agentComp)
     {
 
-        _color.RaiseEffect(Color.FromHex("#BA0099"), new List<EntityUid>(1) { uid }, Filter.Pvs(uid, entityManager: EntityManager));
-        if (TryComp<PullerComponent>(uid, out var pullerComp)
-            && (pullerComp.Pulling == null
-            || !TryComp<PullableComponent>(pullerComp.Pulling.Value, out var pulledComp)
-            || !_pullingSystem.TryStopPull(pullerComp.Pulling.Value, pulledComp))) 
-            return;
+        if (_pullingSystem.IsPulling(uid))
+        {
+            if (!TryComp<PullerComponent>(uid, out var pullerComp)
+                || pullerComp.Pulling == null
+                || !TryComp<PullableComponent>(pullerComp.Pulling.Value, out var pullableComp)
+                || !_pullingSystem.TryStopPull(pullerComp.Pulling.Value, pullableComp)) return;
+        }
 
-        if (_pullingSystem.IsPulled(uid) 
-            && (!TryComp<PullableComponent>(uid, out var pullableComp) 
-            || !_pullingSystem.TryStopPull(uid, pullableComp)))
-            return;
+        if (_pullingSystem.IsPulled(uid))
+        {
+            if (!TryComp<PullableComponent>(uid, out var pullableComp)
+                || !_pullingSystem.TryStopPull(uid, pullableComp)) return;
+        }
 
         EntityCoordinates? spawnPosition = null;
 

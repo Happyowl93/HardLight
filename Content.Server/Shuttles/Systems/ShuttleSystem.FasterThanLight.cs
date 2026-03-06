@@ -109,7 +109,7 @@ public sealed partial class ShuttleSystem
             foreach (var grid in station.Grids)
             {
                 if (!TryComp<BecomesStationMidRoundComponent>(grid, out var becomesStation)) continue;
-                if (!becomesStation.UseArmories)
+                if (!becomesStation.AllowFTLDestination)
                     return;
                 break; // can break, we already found the grid that created this station
             }
@@ -251,7 +251,7 @@ public sealed partial class ShuttleSystem
             }
         }
 
-        if (HasComp<PreventPilotComponent>(shuttleUid) || HasComp<PreventFTLComponent>(shuttleUid))
+        if (HasComp<PreventPilotComponent>(shuttleUid) || HasComp<PreventFTLComponent>(shuttleUid) || HasComp<PreventFTLComponent>(Transform(shuttleUid).MapUid)) // SL - Prevent FTL if map has PreventFTLComponent.
         {
             reason = Loc.GetString("shuttle-console-prevent");
             return false;
