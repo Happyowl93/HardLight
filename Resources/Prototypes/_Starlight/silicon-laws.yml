@@ -342,27 +342,27 @@
   lawString: law-TeaParty-0
 
 - type: siliconLaw
-  id: tea0
+  id: tea1
   order: 1
   lawString: law-TeaParty-1
 
 - type: siliconLaw
-  id: tea0
+  id: tea2
   order: 2
   lawString: law-TeaParty-2
 
 - type: siliconLaw
-  id: tea0
+  id: tea3
   order: 3
   lawString: law-TeaParty-3
 
 - type: siliconLaw
-  id: tea0
+  id: tea4
   order: 4
   lawString: law-TeaParty-4
 
 - type: siliconLaw
-  id: tea0
+  id: tea5
   order: 5
   lawString: law-TeaParty-5
 
@@ -371,12 +371,12 @@
   name: law-TeaParty-name
   startAtZero: true
   laws:
-  - Tea0
-  - Tea1
-  - Tea2
-  - Tea3
-  - Tea4
-  - Tea5
+  - tea0
+  - tea1
+  - tea2
+  - tea3
+  - tea4
+  - tea5
   obeysTo: laws-owner-you
 
 - type: siliconLaw

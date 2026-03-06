@@ -28,7 +28,7 @@
   parent: [BaseItem, BaseHighlyIllegalContraband]
   id: EmagTeaParty
   suffix: ""
-  name: TeaMAG
+  name: TeaPartyMAG
   description: Taxes must be abolished. Also affects the laws of law boards, so that when uploaded they gain the same laws.
   components:
     - type: Emag
