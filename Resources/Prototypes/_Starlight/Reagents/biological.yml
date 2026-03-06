@@ -52,3 +52,14 @@
         effectProto: StatusEffectTheDark
         type: Add
         time: 5
+
+- type: reagent
+  parent: Blood
+  id: CycloriteBlood
+  name: reagent-name-cyclorite-blood
+  group: Biological
+  desc: reagent-desc-cyclorite-blood
+  flavor: acidic
+  color: "#9457eb"
+  recognizable: true
+  physicalDesc: reagent-physical-desc-strong-smelling
