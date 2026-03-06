@@ -33627,5 +33627,20 @@ Entries:
   id: 362301
   time: '2026-03-06T04:56:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3623
+- author: STARLIGHT TEAM
+  changes:
+  - message: Corgi ERT Armour.
+    type: Add
+  - message: Corgi DS Armour.
+    type: Add
+  - message: Corgi BSO Vest.
+    type: Add
+  - message: Corgi Reflective Vest.
+    type: Add
+  - message: Corgi Stabproof Vest.
+    type: Add
+  id: 361901
+  time: '2026-03-06T05:10:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3619
 Order: -1
 
