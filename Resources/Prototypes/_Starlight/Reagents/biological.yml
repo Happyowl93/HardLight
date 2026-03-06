@@ -50,4 +50,5 @@
           reagent: DarkBlood
           min: 10
         effectProto: StatusEffectTheDark
-        time: 1
+        type: Add
+        time: 5
