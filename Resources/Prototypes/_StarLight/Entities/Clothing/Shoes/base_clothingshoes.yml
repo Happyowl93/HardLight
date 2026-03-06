@@ -20,7 +20,7 @@
             - ReagentId: Fiber
               Quantity: 10
     - type: OverrideShoesHinder
-      HinderModifier: 0 # remove hinder debuff by default
+      Modifier: 0 # remove hinder debuff by default
     - type: Tag
       tags:
         - ClothMade
