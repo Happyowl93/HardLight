@@ -61,8 +61,8 @@
     # id: BlueShieldPDA
     ears: ClothingHeadsetAltBSO # Starlight
     # belt: ClothingBeltBlueShieldWebbingFilled
-    pocket1: WeaponMultiphaseGun
-    pocket2: HandheldBSOCrewMonitor
+    pocket1: HandheldBSOCrewMonitor
+    pocket2: WeaponPistolSP8T
   storage:
     back:
     - Flash
