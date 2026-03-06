@@ -1294,13 +1294,13 @@
 - type: entity
   id: DestroyBeam
   name: destroying beam
-  parent: BasicHitscanNoBeam
+  parent: EnergyTrace
   categories: [ HideSpawnMenu ]
   components:
   - type: HitscanBasicDamage
     damage:
       types:
-        Heat: 60
+        Structural: 100
   - type: HitscanBasicVisuals
     muzzleFlash:
       sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
