@@ -1,9 +1,9 @@
 ﻿using Content.Shared.Hands.Components;
-using Content.Shared.Tag;
-using Content.Shared.Tools;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Content.Shared.Tag; // Starlight
+using Content.Shared.Tools; // Starlight
 
 namespace Content.Shared.Silicons.Borgs.Components;
 
