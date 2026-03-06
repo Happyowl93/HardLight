@@ -33642,5 +33642,14 @@ Entries:
   id: 361901
   time: '2026-03-06T05:10:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3619
+- author: Scarlet Lightweaver.
+  changes:
+  - message: Changed the spread penalty for dualweild guns.
+    type: Tweak
+  - message: Fixed dualweilding mechanic and improper shooting.
+    type: Fix
+  id: 361501
+  time: '2026-03-06T05:34:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3615
 Order: -1
 
