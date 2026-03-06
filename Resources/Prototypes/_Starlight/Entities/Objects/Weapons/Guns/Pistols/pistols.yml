@@ -180,8 +180,8 @@
         - ""
         - dust
     - type: StealTarget
-      stealGroup: BSOWeapon
-
+      stealGroup: OfficerHandgun
+      
 - type: entity
   name: sp-8ar
   parent: [WeaponPistolDP, BaseSecurityContraband]
