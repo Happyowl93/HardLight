@@ -161,7 +161,11 @@ public abstract partial class SharedGunSystem : EntitySystem
             return;
         }
 
-        if (gun.Owner != GetEntity(msg.Gun))
+        // 🌟Starlight🌟 — in dual-wield mode, TryGetGun already picks the correct alternating gun;
+        // skip the gun-ID match check so the server fires the right gun even when the client's
+        // NextIsLeft state hasn't synced back yet.
+        var isDualWield = TryComp<DualWieldComponent>(user.Value, out var dualWield) && dualWield.Active;
+        if (!isDualWield && gun.Owner != GetEntity(msg.Gun))
             return;
 
         if (TryComp(user, out VentCrawlerComponent? crawlerComp) //🌟Starlight🌟
@@ -170,12 +174,12 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         gun.Comp.ShootCoordinates = GetCoordinates(msg.Coordinates);
         gun.Comp.Target = GetEntity(msg.Target);
-        AttemptShoot(user.Value, gun);
+        var fired = AttemptShoot(user.Value, gun);
 
-        // 🌟Starlight🌟 — dual-wield: alternate which gun fires next
-        if (TryComp<DualWieldComponent>(user.Value, out var dualWield) && dualWield.Active)
+        // 🌟Starlight🌟 — dual-wield: only alternate after an actual shot so both guns stay in sync
+        if (isDualWield && fired)
         {
-            dualWield.NextIsLeft = !dualWield.NextIsLeft;
+            dualWield!.NextIsLeft = !dualWield.NextIsLeft;
             Dirty(user.Value, dualWield);
         }
     }
