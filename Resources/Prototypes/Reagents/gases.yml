@@ -233,6 +233,9 @@
         damage:
           types:
             Cold: 0.5 # liquid nitrogen is cold
+        conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Cyclorite ]
     Gas:
       effects:
       - !type:Oxygenate
@@ -254,6 +257,13 @@
         ratios:
           NitrousOxide: 1.0
           Nitrogen: -1.0
+    Medicine:
+      effects:
+        - !type:ModifyBloodLevel
+          conditions:
+            - !type:MetabolizerTypeCondition
+              type: [ Cyclorite ]
+          amount: 0.4
 
 - type: reagent
   id: NitrousOxide
