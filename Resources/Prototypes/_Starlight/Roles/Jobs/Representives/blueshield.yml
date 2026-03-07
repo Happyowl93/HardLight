@@ -67,6 +67,8 @@
     back:
     - Flash
     - ClothingMaskGasBSO
+    belt:
+    - GuardianJetInjector
 
 - type: chameleonOutfit
   id: BlueShieldChameleonOutfit
