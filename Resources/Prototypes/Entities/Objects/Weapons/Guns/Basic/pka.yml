@@ -29,3 +29,8 @@
   - type: ContainerContainer
     containers:
       upgrades: !type:Container
+  # Starlight begin
+  - type: Tag 
+    tags:
+    - PKA
+  # Starlight end

@@ -419,6 +419,9 @@
   id: PettyCriminalTraitBackground
 
 - type: Tag
+  id: PKA # Whitelist for WeaponProtoKineticAccelerator in the Mining Defense Module
+
+- type: Tag
   id: PlasteelFilament
 
 - type: Tag

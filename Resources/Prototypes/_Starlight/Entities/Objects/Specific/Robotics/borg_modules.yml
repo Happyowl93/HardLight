@@ -821,3 +821,43 @@
     icon: { sprite: _Starlight/Interface/Actions/actions_borg.rsi, state: knife-module }
 
 # Makeshift End
+
+- type: entity
+  id: BorgModuleMiningDefense
+  parent: [ BaseBorgModuleMining, BaseProviderBorgModule ]
+  name: mining defense cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: mining 
+    - state: icon-salvage-defense
+  - type: ItemBorgModule
+    hands:
+    - item: WeaponProtoKineticAccelerator
+      hand: 
+        emptyRepresentative: WeaponProtoKineticAccelerator
+        emptyLabel: borg-slot-pka-empty
+        whitelist:
+          tags:
+          - PKA
+    - hand:
+        emptyRepresentative: PKAUpgradeDamage
+        emptyLabel: borg-slot-pkaupgrade-empty
+        whitelist:
+          tags:
+          - PKAUpgrade
+    - item: KitchenKnife
+      hand:
+        emptyRepresentative: KitchenKnife
+        emptyLabel: borg-slot-knives-empty
+        whitelist:
+          tags:
+          - Knife
+    - hand:
+        emptyRepresentative: MaterialGoliathHide
+        emptyLabel: borg-slot-goliath-empty
+        whitelist:
+          tags:
+          - GoliathPlate
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: salvage-defense-module }
