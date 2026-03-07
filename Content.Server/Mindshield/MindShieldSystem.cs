@@ -5,6 +5,7 @@ using Content.Server.Roles;
 using Content.Shared.Database;
 using Content.Shared.Implants;
 using Content.Shared.Mindshield.Components;
+using Content.Shared.Popups;
 using Content.Shared.Revolutionary.Components;
 using Content.Shared.Roles.Components;
 
@@ -40,7 +41,10 @@ public sealed class MindShieldSystem : EntitySystem
     private void OnAttemptImplant(EntityUid uid, MindShieldImplantComponent comp, AddImplantAttemptEvent args)
     {
         if (HasComp<MindControlComponent>(args.Target)) // this SHOULD just be a yml blacklist on the implanter, but it refuses to work T-T
+        {
+            _popupSystem.PopupEntity(Loc.GetString("mind-control-prevents-mindshield"), args.User, args.User, PopupType.Small);
             args.Cancel();
+        } 
     }
     // Starlight-edit end
 
