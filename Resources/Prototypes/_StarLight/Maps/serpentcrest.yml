@@ -1,9 +1,9 @@
 - type: gameMap
-  id: Serpentcrest
+  id: StarlightSerpentcrest
   mapName: 'Serpentcrest'
-  mapPath: /Maps/serpentcrest.yml
+  mapPath: /Maps/_Starlight/Stations/Serpentcrest.yml
   minPlayers: 60
-  maxPlayers: 120
+  maxPlayers: 150
   stations:
     Serpentcrest:
       stationProto: StandardNanotrasenStation
