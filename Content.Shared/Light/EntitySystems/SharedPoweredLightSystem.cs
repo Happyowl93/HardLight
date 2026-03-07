@@ -438,6 +438,7 @@ public abstract class SharedPoweredLightSystem : EntitySystem
         UpdateLight(uid, light);
     }
 
+    // Starlight - NightShift
     public void SetNightMode(EntityUid uid, bool state, PoweredLightComponent? light = null)
     {
         if (!Resolve(uid, ref light))

@@ -40,7 +40,7 @@ public abstract class SharedWeatherSystem : EntitySystem
         }
     }
 
-    public bool CanWeatherAffect(EntityUid uid, MapGridComponent grid, TileRef tileRef, bool onlySpace = false, bool checkTileWeather = true, RoofComponent? roofComp = null)
+    public bool CanWeatherAffect(EntityUid uid, MapGridComponent grid, TileRef tileRef, bool onlySpace = false, bool checkTileWeather = true, RoofComponent? roofComp = null) // SL - Edit
     {
         if (tileRef.Tile.IsEmpty)
             return true;

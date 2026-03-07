@@ -24,9 +24,8 @@ public sealed class ParallaxOverlay : Overlay
     [Dependency] private readonly IParallaxManager _manager = default!;
     private readonly SharedMapSystem _mapSystem;
     private readonly ParallaxSystem _parallax;
-    private readonly WeatherSystem _weather;
-    private readonly SpriteSystem _sprite;
-    private readonly SpriteSpecifier test = new SpriteSpecifier.Rsi(new ResPath("/Textures/Effects/weather.rsi"), "ashfall_light");
+    private readonly WeatherSystem _weather; // SL
+    private readonly SpriteSystem _sprite; // SL
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowWorld;
 
@@ -36,8 +35,8 @@ public sealed class ParallaxOverlay : Overlay
         IoCManager.InjectDependencies(this);
         _mapSystem = _entManager.System<SharedMapSystem>();
         _parallax = _entManager.System<ParallaxSystem>();
-        _weather = _entManager.System<WeatherSystem>();
-        _sprite = _entManager.System<SpriteSystem>();
+        _weather = _entManager.System<WeatherSystem>(); // SL
+        _sprite = _entManager.System<SpriteSystem>(); // SL
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

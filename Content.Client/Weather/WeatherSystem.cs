@@ -82,7 +82,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
                 if (!visited.Add(node.GridIndices))
                     continue;
 
-                if (!CanWeatherAffect(entXform.GridUid.Value, grid, node, weatherProto.OnlySpace, weatherProto.CheckTileWeather, roofComp))
+                if (!CanWeatherAffect(entXform.GridUid.Value, grid, node, weatherProto.OnlySpace, weatherProto.CheckTileWeather, roofComp)) // SL - Edit
                 {
                     // Add neighbors
                     // TODO: Ideally we pick some deterministically random direction and use that
