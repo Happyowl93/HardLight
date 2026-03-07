@@ -33777,5 +33777,15 @@ Entries:
   id: 364101
   time: '2026-03-07T10:25:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3641
+- author: neurovermi
+  changes:
+  - message: Mech cabin pressurization and air filtration mechanics.
+    type: Remove
+  - message: Mech gas tanks now act like hardsuit internals. Wearing additional internals
+      while inside is still possible.
+    type: Tweak
+  id: 284301
+  time: '2026-03-07T10:31:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2843
 Order: -1
 
