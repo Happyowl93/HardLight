@@ -33744,5 +33744,13 @@ Entries:
   id: 364401
   time: '2026-03-07T06:38:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3644
+- author: Kirb
+  changes:
+  - message: Paw boots for felionoids, changes their step sound without speed debuff,
+      no protection.
+    type: Add
+  id: 363301
+  time: '2026-03-07T06:55:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3633
 Order: -1
 
