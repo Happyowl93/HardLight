@@ -71,7 +71,7 @@
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
-      - ReagentId: NitricAcidBlood
+      - ReagentId: CycloriteBlood
         Quantity: 300
   - type: MovementSpeedModifierScale
     movementSpeedScale: 0.5
