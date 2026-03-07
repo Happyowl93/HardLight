@@ -899,6 +899,7 @@
   id: BorgModuleMiningDefense
   parent: [ BaseBorgModuleMining, BaseProviderBorgModule ]
   name: mining defense cyborg module
+  description: Enables the borg to provide some measaure of defense. Is Law 1 still intact?
   components:
   - type: Sprite
     layers:
@@ -907,12 +908,12 @@
   - type: ItemBorgModule
     hands:
     - item: WeaponProtoKineticAccelerator
-      hand: 
-        emptyRepresentative: WeaponProtoKineticAccelerator
-        emptyLabel: borg-slot-pka-empty
-        whitelist:
-          tags:
-          - PKA
+      # hand: 
+      #   emptyRepresentative: WeaponProtoKineticAccelerator
+      #   emptyLabel: borg-slot-pka-empty
+      #   whitelist:
+      #     tags:
+      #     - PKA
     - hand:
         emptyRepresentative: PKAUpgradeDamage
         emptyLabel: borg-slot-pkaupgrade-empty
