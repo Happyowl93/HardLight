@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "license": null,
+    "copyright": null,
+    "size": {
+        "x": 736,
+        "y": 736
+    },
+    "states": [
+        {
+            "name": "space_dog",
+            "delays": [
+                [
+                    10,
+                    0.1,
+                    1,
+                    0.1
+                ]
+            ]
+        }
+    ]
+}

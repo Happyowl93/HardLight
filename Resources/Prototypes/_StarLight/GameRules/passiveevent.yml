@@ -65,11 +65,11 @@
       endAnnouncement: station-event-radstorm-end-announcement
       endAudio:
         path: /Audio/Announcements/announce.ogg
-      duration: 110
+      duration: 130
       maxOccurrences: 1
     - type: WeatherRule
       weather: RadStorm
-      delay: 10
+      delay: 30
 
 - type: entity
   parent: BaseGameRule
@@ -85,12 +85,12 @@
       endAudio:
         path: /Audio/Announcements/announce.ogg
       duration: 70
-      maxDuration: 130
+      maxDuration: 150
       reoccurrenceDelay: 30
       maxOccurrences: 2
     - type: WeatherRule
       weather: SolarFlare
-      delay: 10
+      delay: 30
 
 - type: entity
   parent: BaseGameRule
@@ -109,3 +109,60 @@
     - type: WeatherRule
       weather: AuroraCaelus
       delay: 120
+
+- type: entity
+  parent: BaseGameRule
+  id: SpaceWhale
+  components:
+    - type: StationEvent
+      weight: 5
+      duration: 300
+      maxDuration: 600
+    - type: WeatherRule
+      weather: SpaceWhale
+
+- type: entity
+  parent: BaseGameRule
+  id: CommunicationBlackout
+  components:
+  - type: StationEvent
+    weight: 8
+    startAnnouncement: station-event-communicationblackout-start-announcement
+    startAudio:
+      path: /Audio/_Starlight/Announcements/announce_broken.ogg
+    duration: 120
+    maxDuration: 240
+  - type: SolarFlareRule
+    onlyJamHeadsets: true
+    affectedChannels:
+    - Common
+    extraChannels:
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    extraCount: 2
+    lightBreakChancePerSecond: 0.0003
+    doorToggleChancePerSecond: 0.001
+
+- type: entity
+  parent: BaseGameRule
+  id: NightShift
+  components:
+  - type: StationEvent
+    occursDuringRoundEnd: false
+    globalAnnouncement: false
+    weight: 10
+    startAnnouncement: station-event-nightshift-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    endAnnouncement: station-event-nightshift-end-announcement
+    endAudio:
+      path: /Audio/Announcements/attention.ogg
+    duration: 1200
+    maxDuration: 1800
+    maxOccurrences: 1
+  - type: NightShiftRule

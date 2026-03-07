@@ -38,7 +38,6 @@
         types:
           Heat: 1
 
-
 - type: weather
   id: AuroraCaelus
   sprite:
@@ -50,3 +49,13 @@
       volume: 0
   onlySpace: true
   parallax: AuroraCaelus
+
+- type: weather
+  id: SpaceWhale
+  onlySpace: true
+  parallax: SpaceWhale
+
+- type: weather
+  id: SpaceDog
+  onlySpace: true
+  parallax: SpaceDog
