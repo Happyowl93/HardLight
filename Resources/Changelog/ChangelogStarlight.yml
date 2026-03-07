@@ -33688,5 +33688,16 @@ Entries:
   id: 363601
   time: '2026-03-06T16:50:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3636
+- author: Born Stellar
+  changes:
+  - message: Added R.A.D. (Rapid Advert Device).
+    type: Add
+  - message: TeaMag.
+    type: Add
+  - message: The hat that kills you if you take it off damage reduced by 80%.
+    type: Tweak
+  id: 363001
+  time: '2026-03-07T00:34:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3630
 Order: -1
 
