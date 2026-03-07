@@ -33770,5 +33770,33 @@ Entries:
   id: 230701
   time: '2026-03-07T10:04:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/2307
+- author: redmushie
+  changes:
+  - message: Added hard cap on how much damage Voxes can take per oxygen breath.
+    type: Add
+  id: 364101
+  time: '2026-03-07T10:25:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3641
+- author: neurovermi
+  changes:
+  - message: Mech cabin pressurization and air filtration mechanics.
+    type: Remove
+  - message: Mech gas tanks now act like hardsuit internals. Wearing additional internals
+      while inside is still possible.
+    type: Tweak
+  id: 284301
+  time: '2026-03-07T10:31:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2843
+- author: redmushie
+  changes:
+  - message: Stationary crew monitors no longer alert from paging events when unpowered.
+    type: Fix
+  - message: All crew monitor screens are now illuminated when powered.
+    type: Fix
+  - message: Reduced screen contrast for unpowered handheld crew monitors.
+    type: Tweak
+  id: 365201
+  time: '2026-03-07T14:17:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3652
 Order: -1
 
