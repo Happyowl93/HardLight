@@ -33737,5 +33737,12 @@ Entries:
   id: 363801
   time: '2026-03-07T06:33:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3638
+- author: TaserTheFox
+  changes:
+  - message: AAC tablets can now say more jobs.
+    type: Add
+  id: 364401
+  time: '2026-03-07T06:38:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3644
 Order: -1
 
