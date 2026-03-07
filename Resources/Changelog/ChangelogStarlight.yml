@@ -33722,5 +33722,13 @@ Entries:
   id: 364501
   time: '2026-03-07T06:08:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3645
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Swapped out suit storage locker that spawned with a void jetpack
+      in Medical maints for a suit storage locker with an emergency EVA suit.
+    type: Tweak
+  id: 364301
+  time: '2026-03-07T06:12:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3643
 Order: -1
 
