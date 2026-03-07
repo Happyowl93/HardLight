@@ -238,7 +238,7 @@
         },
         {
             "name": "comm",
-            "copyright": "TODO",
+            "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/bd6873fd4dd6a61d7e46f1d75cd4d90f64c40894, updated for departmental edits by redmushie (disord, github).",
             "directions": 4,
             "delays": [
                 [
@@ -261,7 +261,7 @@
         },
         {
             "name": "comm-eng",
-            "copyright": "TODO",
+            "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/bd6873fd4dd6a61d7e46f1d75cd4d90f64c40894, updated for departmental edits by redmushie (disord, github).",
             "directions": 4,
             "delays": [
                 [
@@ -284,7 +284,7 @@
         },
         {
             "name": "comm-med",
-            "copyright": "TODO",
+            "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/bd6873fd4dd6a61d7e46f1d75cd4d90f64c40894, updated for departmental edits by redmushie (disord, github).",
             "directions": 4,
             "delays": [
                 [
@@ -307,7 +307,7 @@
         },
         {
             "name": "comm-sci",
-            "copyright": "TODO",
+            "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/bd6873fd4dd6a61d7e46f1d75cd4d90f64c40894, updated for departmental edits by redmushie (disord, github).",
             "directions": 4,
             "delays": [
                 [
@@ -330,7 +330,7 @@
         },
         {
             "name": "comm-sec",
-            "copyright": "TODO",
+            "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/bd6873fd4dd6a61d7e46f1d75cd4d90f64c40894, updated for departmental edits by redmushie (disord, github).",
             "directions": 4,
             "delays": [
                 [
@@ -353,7 +353,7 @@
         },
         {
             "name": "comm-srv",
-            "copyright": "TODO",
+            "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/bd6873fd4dd6a61d7e46f1d75cd4d90f64c40894, updated for departmental edits by redmushie (disord, github).",
             "directions": 4,
             "delays": [
                 [
@@ -376,7 +376,7 @@
         },
         {
             "name": "comm-sup",
-            "copyright": "TODO",
+            "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/bd6873fd4dd6a61d7e46f1d75cd4d90f64c40894, updated for departmental edits by redmushie (disord, github).",
             "directions": 4,
             "delays": [
                 [
@@ -399,7 +399,7 @@
         },
         {
             "name": "comm-law",
-            "copyright": "TODO",
+            "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/bd6873fd4dd6a61d7e46f1d75cd4d90f64c40894, updated for departmental edits by redmushie (disord, github).",
             "directions": 4,
             "delays": [
                 [
