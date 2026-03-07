@@ -91,7 +91,8 @@
     - type: ComputerBoard
       prototype: XenobiologyConsole
 
-# Departmental communications consoles
+
+## Departmental Communications Consoles BEGIN
 
 - type: entity
   parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
@@ -170,3 +171,5 @@
       state: cpu_law
     - type: ComputerBoard
       prototype: ComputerCommsLaw
+
+## Departmental Communications Consoles END
