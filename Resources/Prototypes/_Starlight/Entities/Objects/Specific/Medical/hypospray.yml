@@ -31,7 +31,7 @@
 - type: entity
   parent: [AdvancedJetInjector, BaseSecurityContraband]
   id: GuardianJetInjector
-  name: tactical jet injector
+  name: guardian jet injector
   description: A cool, modern, ultra high quality injector. Allows for a fast injection, with a smaller capacity as a tradeoff. Guard it until your last breath.
   components:
   - type: Sprite
