@@ -161,7 +161,7 @@ public abstract class SharedTicketMachineSystem : EntitySystem
         _appearanceSystem.SetData(uid, TicketMachineVisuals.DisplayNumber, component.displayNumber);
     }
 
-    private void UpdateTicketVisuals(EntityUid uid, TicketComponent component) => _appearanceSystem.SetData(uid, TicketVisuals.Number, component.Number == null ? 0 : component.Number.Value);
+    private void UpdateTicketVisuals(EntityUid uid, TicketComponent component) => _appearanceSystem.SetData(uid, TicketVisuals.Number, component.Number);
 
     private int CalculatePaperState(int maxTickets, int currentAmount, int paperStates)
     {
@@ -190,7 +190,7 @@ public abstract class SharedTicketMachineSystem : EntitySystem
     {
         if (!args.IsInDetailsRange)
             return;
-        args.PushMarkup(Loc.GetString("ticket-machine-ticket-number", ("number", component.Number == null ? "Unknown" : component.Number.Value.ToString())));
+        args.PushMarkup(Loc.GetString("ticket-machine-ticket-number", ("number", component.Number.ToString())));
     }
 
     private void OnEjected(EntityUid uid, TicketMachineComponent component, EntRemovedFromContainerMessage args)
