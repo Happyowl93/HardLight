@@ -460,8 +460,9 @@
     global: true
     sound: /Audio/_Starlight/Announcements/tsf_announce.ogg
 
-# Departmental announcement consoles
+## Departmental Communications Consoles BEGIN
 
+# Engineering
 - type: entity
   parent: ComputerComms
   id: ComputerCommsEngineering
@@ -500,6 +501,7 @@
       energy: 4.0
       color: "#ff733c"
 
+# Medical
 - type: entity
   parent: ComputerComms
   id: ComputerCommsMedical
@@ -537,6 +539,7 @@
       energy: 4.0
       color: "#57b8f0"
 
+# Science
 - type: entity
   parent: ComputerComms
   id: ComputerCommsScience
@@ -572,7 +575,7 @@
       energy: 4.0
       color: "#cd7ccd"
 
-
+# Security
 - type: entity
   parent: ComputerComms
   id: ComputerCommsSecurity
@@ -611,6 +614,7 @@
       energy: 4.0
       color: "#ff4242"
 
+# Service
 - type: entity
   parent: ComputerComms
   id: ComputerCommsService
@@ -646,6 +650,7 @@
       energy: 4.0
       color: "#539c00"
 
+# Cargo
 - type: entity
   parent: ComputerComms
   id: ComputerCommsCargo
@@ -681,6 +686,7 @@
       energy: 4.0
       color: "#b48b57"
 
+# Law
 - type: entity
   parent: ComputerComms
   id: ComputerCommsLaw
@@ -715,3 +721,5 @@
       radius: 1.5
       energy: 4.0
       color: "#ff178b"
+
+## Departmental Communications Consoles END
