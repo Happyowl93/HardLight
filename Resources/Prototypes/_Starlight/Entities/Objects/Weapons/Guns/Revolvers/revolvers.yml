@@ -145,3 +145,32 @@
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-inanimate 
     weight: 0.01 
+
+- type: entity
+  name: ZOZ-82 'Jupiter'
+  parent: [BaseWeaponRevolver, BaseSecuritySalvageContraband]
+  id: WeaponRevolverZOZ
+  description: An oversized survival revolver whose design was smuggled out of the USSP. You might need both hands for this one. It's got a built in bayonet, but the hinge hasn't been lubricated and won't budge. Loads 6 rounds of .45 magnum.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Weapons/Guns/Shotguns/ZOZ82.rsi
+  - type: Clothing
+    sprite: _Starlight/Objects/Weapons/Guns/Shotguns/ZOZ82.rsi
+  - type: Item
+    storedOffset: 0,-2
+  - type: Wieldable
+      unwieldOnUse: false
+  - type: GunWieldBonus
+    minAngle: -4
+    maxAngle: -8
+  - type: Gun
+    minAngle: 4
+    maxAngle: 8
+    fireRate: 2.4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+      params:
+        volume: 2.25
