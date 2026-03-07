@@ -221,10 +221,10 @@
 
 - type: entity
   parent: BaseTraitorSecurityStealObjective
-  id: EnergyShotgunStealObjective
+  id: SecurityRareGunsStealObjective
   components:
   - type: StealCondition
-    stealGroup: WeaponEnergyShotgun
+    stealGroup: SecurityRareGuns
   - type: Objective
     difficulty: 1
 

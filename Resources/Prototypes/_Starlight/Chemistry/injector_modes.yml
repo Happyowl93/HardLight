@@ -11,3 +11,17 @@
 - type: injectorMode
   parent: [ BaseTacticalJetInjectorMode, BaseDynamicMode ]
   id: TacticalJetInjectorDynamicMode
+
+- type: injectorMode
+  abstract: true
+  parent: BaseJetInjectorMode
+  id: BaseGuardianJetInjectorMode
+  mobTime: 2.5
+
+- type: injectorMode
+  parent: [ BaseGuardianJetInjectorMode, BaseInjectMode ]
+  id: GuardianJetInjectorInjectMode
+
+- type: injectorMode
+  parent: [ BaseGuardianJetInjectorMode, BaseDynamicMode ]
+  id: GuardianJetInjectorDynamicMode
