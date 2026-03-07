@@ -33699,5 +33699,21 @@ Entries:
   id: 363001
   time: '2026-03-07T00:34:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3630
+- author: Conflee
+  changes:
+  - message: Gave most Jetpacks (excluding the Black, Captain, and Soviet Marine)
+      5% slowdown when worn of carried. This only applies when under the effects of
+      gravity, and shouldn't change flight speeds. This is to discourage carrying
+      jetpacks constantly.
+    type: Tweak
+  - message: Added the Chief Engineer's Void Jetpack. It spawns in their lockers,
+      has no slowdown, and is a steal target.
+    type: Add
+  - message: Adding duplicates of equip slot textures for the Improvised Jetpack so
+      they actually render on the back and suit slots both.
+    type: Fix
+  id: 363901
+  time: '2026-03-07T00:40:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3639
 Order: -1
 
