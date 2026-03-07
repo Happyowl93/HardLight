@@ -33715,5 +33715,12 @@ Entries:
   id: 363901
   time: '2026-03-07T00:40:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3639
+- author: Coolsurf6
+  changes:
+  - message: Thieves can now steal Enforcers and Due Process as officer handguns.
+    type: Fix
+  id: 364501
+  time: '2026-03-07T06:08:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3645
 Order: -1
 
