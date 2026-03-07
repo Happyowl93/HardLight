@@ -293,7 +293,3 @@ command-description-stationinit-initializeget =
     Finish setup and initialize the station, and return the newly created station entity.
 command-description-aitakeover =
     Make the piped entity take over the target AI core.
-command-description-yaml-serialize =
-    Serialize an object into a yaml string.
-command-description-yaml-deserialize =
-    Deserialize a yaml string into an object.
