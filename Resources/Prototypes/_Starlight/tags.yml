@@ -72,6 +72,9 @@
   id: BurnedTraitBackground
 
 - type: Tag
+  id: BypassUserTagChecks
+
+- type: Tag
   id: CantInteract
 
 - type: Tag
@@ -211,6 +214,9 @@
 
 - type: Tag
   id: FreeMag
+
+- type: Tag
+  id: CanAffectLawBoards
 
 - type: Tag
   id: FestiveDinner
