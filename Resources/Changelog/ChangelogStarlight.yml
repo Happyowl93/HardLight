@@ -33798,5 +33798,15 @@ Entries:
   id: 365201
   time: '2026-03-07T14:17:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3652
+- author: Coolsurf6
+  changes:
+  - message: Cyclorites now come with diluted nitric acid blood.
+    type: Add
+  - message: Cyclorites now need nitrogen instead of iron to regenerate blood and
+      don't take cold damage from it.
+    type: Tweak
+  id: 363201
+  time: '2026-03-07T17:26:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3632
 Order: -1
 
