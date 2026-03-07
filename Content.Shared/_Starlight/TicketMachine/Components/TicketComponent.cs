@@ -10,7 +10,7 @@ namespace Content.Shared._Starlight.TicketMachine.Components;
 public sealed partial class TicketComponent : Component
 {
     [AutoNetworkedField, DataField("number")]
-    public int? Number { get; set; }
+    public int Number = 0;
 
     /// <summary>
     /// State tag prefix for the ticket number visual state.
