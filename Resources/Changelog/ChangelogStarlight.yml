@@ -33730,5 +33730,12 @@ Entries:
   id: 364301
   time: '2026-03-07T06:12:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3643
+- author: neomoth
+  changes:
+  - message: Removed TTS debug logs from the console.
+    type: Tweak
+  id: 363801
+  time: '2026-03-07T06:33:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3638
 Order: -1
 
