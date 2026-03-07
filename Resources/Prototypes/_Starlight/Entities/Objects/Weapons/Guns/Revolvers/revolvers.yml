@@ -165,12 +165,12 @@
     maxAngle: -8
   - type: Gun
     minAngle: 4
-    maxAngle: 8
-    fireRate: 2.4
+    maxAngle: 16
+    fireRate: 2.3
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+      path: /Audio/Weapons/Guns/Gunshots/revolver_stronger.ogg
       params:
         volume: 2.25
