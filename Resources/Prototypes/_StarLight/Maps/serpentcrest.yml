@@ -5,7 +5,7 @@
   minPlayers: 60
   maxPlayers: 150
   stations:
-    Serpentcrest:
+    StarlightSerpentcrest:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
@@ -14,9 +14,9 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'B'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_syndicate.yml
+          emergencyShuttlePath: /Maps/_Starlight/Shuttles/emergency_syndicate.yml
         - type: StationCargoShuttle
-          path: /Maps/Shuttles/cargo_syndicate.yml
+          path: /Maps/_Starlight/Shuttles/cargo_syndicate.yml
         - type: StationJobs
           availableJobs: 
             #command (7)
