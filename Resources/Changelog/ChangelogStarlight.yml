@@ -33752,5 +33752,12 @@ Entries:
   id: 363301
   time: '2026-03-07T06:55:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3633
+- author: Xale
+  changes:
+  - message: Chickens will now attempt to eat and drink on their own.
+    type: Fix
+  id: 364601
+  time: '2026-03-07T09:51:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3646
 Order: -1
 
