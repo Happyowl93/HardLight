@@ -104,7 +104,8 @@
       endAnnouncement: station-event-auroracaelus-end-announcement
       endAudio:
         path: /Audio/Announcements/announce.ogg
-      duration: 120
+      duration: 240
       maxOccurrences: 1
     - type: WeatherRule
       weather: AuroraCaelus
+      delay: 120

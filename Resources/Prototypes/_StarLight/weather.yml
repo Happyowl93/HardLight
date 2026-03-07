@@ -42,8 +42,8 @@
 - type: weather
   id: AuroraCaelus
   sprite:
-    sprite: /Textures/Effects/weather.rsi
-    state: ashfall_light
+    sprite: /Textures/_Starlight/Effects/weather.rsi
+    state: starry_night
   sound:
     path: /Audio/_Starlight/Effects/Weather/aurora_caelus.ogg
     params:

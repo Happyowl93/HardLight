@@ -4,12 +4,14 @@ using Content.Client.Weather;
 using Content.Shared.CCVar;
 using Content.Shared.Parallax.Biomes;
 using Content.Shared.Weather;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Client.Parallax;
 
@@ -23,6 +25,8 @@ public sealed class ParallaxOverlay : Overlay
     private readonly SharedMapSystem _mapSystem;
     private readonly ParallaxSystem _parallax;
     private readonly WeatherSystem _weather;
+    private readonly SpriteSystem _sprite;
+    private readonly SpriteSpecifier test = new SpriteSpecifier.Rsi(new ResPath("/Textures/Effects/weather.rsi"), "ashfall_light");
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowWorld;
 
@@ -33,6 +37,7 @@ public sealed class ParallaxOverlay : Overlay
         _mapSystem = _entManager.System<SharedMapSystem>();
         _parallax = _entManager.System<ParallaxSystem>();
         _weather = _entManager.System<WeatherSystem>();
+        _sprite = _entManager.System<SpriteSystem>();
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
@@ -60,6 +65,7 @@ public sealed class ParallaxOverlay : Overlay
         foreach (var layer in layers)
             Render(position, worldHandle, layer, realTime, args);
 
+        // Starlight - Start
         var mapUid = _mapSystem.GetMapOrInvalid(args.MapId);
         if (_entManager.TryGetComponent<WeatherComponent>(mapUid, out var comp))
         {
@@ -73,10 +79,12 @@ public sealed class ParallaxOverlay : Overlay
                     Render(position, worldHandle, layer, realTime, args, Color.White.WithAlpha(alpha));
             }
         }
+        // Starlight - End
 
         worldHandle.UseShader(null);
     }
 
+    // Starlight - Yeah this is his own private function now.
     private void Render(Vector2 position, DrawingHandleWorld worldHandle, ParallaxLayerPrepared layer, float realTime, OverlayDrawArgs args, Color? modulate = null)
     {
         ShaderInstance? shader;
@@ -87,7 +95,13 @@ public sealed class ParallaxOverlay : Overlay
             shader = null;
 
         worldHandle.UseShader(shader);
-        var tex = layer.Texture;
+
+        // SL - Allow supporting Sprites to we can use Frames!
+        Texture tex;
+        if (layer.Config.Sprite)
+            tex = _sprite.GetFrame(layer.Sprite, _timing.CurTime);
+        else
+            tex = layer.Texture;
 
         // Size of the texture in world units.
         var size = (tex.Size / (float)EyeManager.PixelsPerMeter) * layer.Config.Scale;
@@ -124,17 +138,11 @@ public sealed class ParallaxOverlay : Overlay
             flooredBL += originBL;
 
             for (var x = flooredBL.X; x < args.WorldAABB.Right; x += size.X)
-            {
                 for (var y = flooredBL.Y; y < args.WorldAABB.Top; y += size.Y)
-                {
                     worldHandle.DrawTextureRect(tex, Box2.FromDimensions(new Vector2(x, y), size), modulate);
-                }
-            }
         }
         else
-        {
             worldHandle.DrawTextureRect(tex, Box2.FromDimensions(originBL, size), modulate);
-        }
     }
 }
 

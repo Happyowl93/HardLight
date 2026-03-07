@@ -16,6 +16,20 @@ public sealed partial class ParallaxLayerConfig
     public IParallaxTextureSource Texture { get; set; } = default!;
 
     /// <summary>
+    /// Starlight
+    /// Replace texture source with a sprite (will still load texture above)
+    /// </summary>
+    [DataField("sprite")]
+    public bool Sprite { get; set; } = false;
+
+    /// <summary>
+    /// Starlight
+    /// The sprite used for this layer, Sprite must be true to render.
+    /// </summary>
+    [DataField("rsi")]
+    public SpriteSpecifier RSI { get; set; } = default!;
+
+    /// <summary>
     /// A scaling factor for the texture.
     /// In the interest of simplifying maths, this is rounded down to integer for ParallaxControl, so be careful.
     /// </summary>

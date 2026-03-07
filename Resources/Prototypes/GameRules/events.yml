@@ -29,6 +29,7 @@
     - id: DoorRuntime # SL
     - id: RadStorm # SL
     - id: SolarFlare # SL
+    - id: AuroraCaelus # SL
 
 - type: entityTable
   id: BasicAntagEventsTable
