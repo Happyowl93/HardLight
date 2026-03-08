@@ -5,7 +5,6 @@ using Content.Server.Roles;
 using Content.Shared.Database;
 using Content.Shared.Implants;
 using Content.Shared.Mindshield.Components;
-using Content.Shared.Popups;
 using Content.Shared.Revolutionary.Components;
 using Content.Shared.Roles.Components;
 
