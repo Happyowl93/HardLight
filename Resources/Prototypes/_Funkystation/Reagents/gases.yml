@@ -123,29 +123,19 @@
   metabolisms:
     Gas:
       effects:
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentCondition
-          reagent: Healium
-          max: 24
+      # Starlight BEGIN
+      - !type:EvenHealthChange
         ignoreResistances: true
+        maxScale: 7
         damage:
-          groups:
-            Burn: -2
-            Toxin: -5
-            Brute: -2
-
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentCondition
-          reagent: Healium
-          min: 24
+          Brute: -2
+          Burn: -1.5
+          Toxin: -1
+      - !type:ModifyBleed
         ignoreResistances: true
-        damage:
-          groups:
-            Burn: -20
-            Toxin: -50
-            Brute: -20
+        maxScale: 5
+        amount: -0.15
+      # Starlight END
 
       - !type:PopupMessage
         conditions:
@@ -248,6 +238,7 @@
           min: 6
         reagent: NitrosylPlasmide
         amount: 2.5
+        maxScale: 2 # Starlight
 
       - !type:GenericStatusEffect
         conditions:
