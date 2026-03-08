@@ -33854,5 +33854,12 @@ Entries:
   id: 365701
   time: '2026-03-08T09:10:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3657
+- author: IrkallaEpsilon
+  changes:
+  - message: Reverts Shadekin Light Damage back to original value.
+    type: Tweak
+  id: 365401
+  time: '2026-03-08T09:18:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3654
 Order: -1
 
