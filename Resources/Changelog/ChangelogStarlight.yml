@@ -33885,5 +33885,22 @@ Entries:
   id: 363101
   time: '2026-03-08T09:56:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3631
+- author: redmushie
+  changes:
+  - message: Departmental communications consoles! Every department head receives
+      a board for their corresponding console in their circuit tote.
+    type: Add
+  - message: The Magistrate now also gets their own circuit tote.
+    type: Add
+  - message: Alert level changes now announce who did them.
+    type: Tweak
+  - message: Smart LMG firing pin steal objective now actually exists.
+    type: Fix
+  - message: The mapping preset telecomms server with "All" keys now actually includes
+      Law.
+    type: Fix
+  id: 364201
+  time: '2026-03-08T09:59:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3642
 Order: -1
 
