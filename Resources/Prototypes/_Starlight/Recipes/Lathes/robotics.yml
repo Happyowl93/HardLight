@@ -130,9 +130,3 @@
   parent: BaseBorgModuleRecipe
   id: BorgModuleMiningDefense
   result: BorgModuleMiningDefense
-  # completetime: 10
-  # materials: # cost of PKA plus cost of kitchen knife plus cost of base module
-  #   Steel: 1450
-  #   Plastic: 300
-  #   Glass: 750
-  #   Silver: 100

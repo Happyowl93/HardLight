@@ -908,12 +908,6 @@
   - type: ItemBorgModule
     hands:
     - item: WeaponProtoKineticAccelerator
-      # hand: 
-      #   emptyRepresentative: WeaponProtoKineticAccelerator
-      #   emptyLabel: borg-slot-pka-empty
-      #   whitelist:
-      #     tags:
-      #     - PKA
     - hand:
         emptyRepresentative: PKAUpgradeDamage
         emptyLabel: borg-slot-pkaupgrade-empty
