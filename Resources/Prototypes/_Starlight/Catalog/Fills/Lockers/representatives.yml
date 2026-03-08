@@ -62,6 +62,7 @@
         - id: BoxFolderNanoTrasenClipboard
         - id: PrinterDocFlatpack
         - id: FaxMachineFlatpack
+        - id: BoxMagiCircuitBoards
         - !type:NestedSelector
           tableId: SecureDocumentTable
 
