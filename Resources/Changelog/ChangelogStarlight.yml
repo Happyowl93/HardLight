@@ -33651,5 +33651,162 @@ Entries:
   id: 361501
   time: '2026-03-06T05:34:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3615
+- author: SevenShades
+  changes:
+  - message: (Boxcars) Added artifacts to the arti chambers round start.
+    type: Add
+  - message: (Boxcars) Added more radiation and fire suits to science.
+    type: Add
+  - message: (Boxcars) Added three more hydroponics trays to botany
+    type: Add
+  - message: (Boxcars) Floating lights in arti.
+    type: Fix
+  - message: (Boxcars) Sci front desk windoors unpowered.
+    type: Fix
+  - message: (Boxcars) Some of genpop not being in range of lv.
+    type: Fix
+  - message: (Boxcars) Missing seed extractor in botany
+    type: Fix
+  id: 362701
+  time: '2026-03-06T15:17:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3627
+- author: R3v3l4t1on
+  changes:
+  - message: Cyborg modules can now be screwdrivered to drop all appropriate contents
+      from the module onto the ground.
+    type: Add
+  - message: Cyborgs no longer dump their entire inventory onto the ground when they
+      are crit.
+    type: Remove
+  id: 362801
+  time: '2026-03-06T15:55:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3628
+- author: Scarlet Lightweaver
+  changes:
+  - message: Changed the ship railguns name.
+    type: Tweak
+  id: 363601
+  time: '2026-03-06T16:50:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3636
+- author: Born Stellar
+  changes:
+  - message: Added R.A.D. (Rapid Advert Device).
+    type: Add
+  - message: TeaMag.
+    type: Add
+  - message: The hat that kills you if you take it off damage reduced by 80%.
+    type: Tweak
+  id: 363001
+  time: '2026-03-07T00:34:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3630
+- author: Conflee
+  changes:
+  - message: Gave most Jetpacks (excluding the Black, Captain, and Soviet Marine)
+      5% slowdown when worn of carried. This only applies when under the effects of
+      gravity, and shouldn't change flight speeds. This is to discourage carrying
+      jetpacks constantly.
+    type: Tweak
+  - message: Added the Chief Engineer's Void Jetpack. It spawns in their lockers,
+      has no slowdown, and is a steal target.
+    type: Add
+  - message: Adding duplicates of equip slot textures for the Improvised Jetpack so
+      they actually render on the back and suit slots both.
+    type: Fix
+  id: 363901
+  time: '2026-03-07T00:40:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3639
+- author: Coolsurf6
+  changes:
+  - message: Thieves can now steal Enforcers and Due Process as officer handguns.
+    type: Fix
+  id: 364501
+  time: '2026-03-07T06:08:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3645
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Swapped out suit storage locker that spawned with a void jetpack
+      in Medical maints for a suit storage locker with an emergency EVA suit.
+    type: Tweak
+  id: 364301
+  time: '2026-03-07T06:12:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3643
+- author: neomoth
+  changes:
+  - message: Removed TTS debug logs from the console.
+    type: Tweak
+  id: 363801
+  time: '2026-03-07T06:33:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3638
+- author: TaserTheFox
+  changes:
+  - message: AAC tablets can now say more jobs.
+    type: Add
+  id: 364401
+  time: '2026-03-07T06:38:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3644
+- author: Kirb
+  changes:
+  - message: Paw boots for felionoids, changes their step sound without speed debuff,
+      no protection.
+    type: Add
+  id: 363301
+  time: '2026-03-07T06:55:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3633
+- author: Xale
+  changes:
+  - message: Chickens will now attempt to eat and drink on their own.
+    type: Fix
+  id: 364601
+  time: '2026-03-07T09:51:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3646
+- author: Rinary
+  changes:
+  - message: Added ticket machine for queue management.
+    type: Add
+  - message: Added tickets.
+    type: Add
+  - message: 'Added new material: labeller refill paper.'
+    type: Add
+  id: 230701
+  time: '2026-03-07T10:04:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2307
+- author: redmushie
+  changes:
+  - message: Added hard cap on how much damage Voxes can take per oxygen breath.
+    type: Add
+  id: 364101
+  time: '2026-03-07T10:25:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3641
+- author: neurovermi
+  changes:
+  - message: Mech cabin pressurization and air filtration mechanics.
+    type: Remove
+  - message: Mech gas tanks now act like hardsuit internals. Wearing additional internals
+      while inside is still possible.
+    type: Tweak
+  id: 284301
+  time: '2026-03-07T10:31:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2843
+- author: redmushie
+  changes:
+  - message: Stationary crew monitors no longer alert from paging events when unpowered.
+    type: Fix
+  - message: All crew monitor screens are now illuminated when powered.
+    type: Fix
+  - message: Reduced screen contrast for unpowered handheld crew monitors.
+    type: Tweak
+  id: 365201
+  time: '2026-03-07T14:17:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3652
+- author: Coolsurf6
+  changes:
+  - message: Cyclorites now come with diluted nitric acid blood.
+    type: Add
+  - message: Cyclorites now need nitrogen instead of iron to regenerate blood and
+      don't take cold damage from it.
+    type: Tweak
+  id: 363201
+  time: '2026-03-07T17:26:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3632
 Order: -1
 
