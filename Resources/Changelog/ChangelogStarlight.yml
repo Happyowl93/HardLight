@@ -33909,5 +33909,17 @@ Entries:
   id: 366001
   time: '2026-03-08T10:07:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3660
+- author: wonderfulnewworld
+  changes:
+  - message: The Energy Shotgun Steal objective is now the Energy Shotgun OR the Energy
+      Magnum. In exchange, 3 people can get this target now instead of 2. More options.
+    type: Tweak
+  - message: Removed the Energy Magnum steal objective.
+    type: Remove
+  - message: Fixes a duplicate loc for almost all at once's gamemode that I missed.
+    type: Fix
+  id: 366101
+  time: '2026-03-08T11:34:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3661
 Order: -1
 
