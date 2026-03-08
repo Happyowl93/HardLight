@@ -33808,5 +33808,14 @@ Entries:
   id: 363201
   time: '2026-03-07T17:26:46.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3632
+- author: Shades
+  changes:
+  - message: Nerfed Gorilla Disarm chance and by stam damage by 10.
+    type: Tweak
+  - message: Fixed NukeOps Uplink not showing Gorilla Implant.
+    type: Fix
+  id: 365801
+  time: '2026-03-08T09:01:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3658
 Order: -1
 
