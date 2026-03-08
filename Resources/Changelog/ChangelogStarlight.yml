@@ -33902,5 +33902,12 @@ Entries:
   id: 364201
   time: '2026-03-08T09:59:44.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3642
+- author: redmushie
+  changes:
+  - message: Admin chat window no longer errors from bad markup.
+    type: Fix
+  id: 366001
+  time: '2026-03-08T10:07:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3660
 Order: -1
 
