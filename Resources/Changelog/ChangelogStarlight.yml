@@ -33861,5 +33861,29 @@ Entries:
   id: 365401
   time: '2026-03-08T09:18:06.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3654
+- author: Coolsurf6
+  changes:
+  - message: BSO Belts have been cleaned up.
+    type: Tweak
+  - message: BSOs now spawn with their SP-8T instead of their X-01.
+    type: Tweak
+  - message: Two pistol mags of .40 now spawn in BSO belts rather than their locker.
+    type: Tweak
+  - message: X-01 now spawns in the BSO lockers.
+    type: Tweak
+  - message: X-01 Destroy Beam now does 100 structural with 15 shots to take down
+      walls and airlocks.
+    type: Tweak
+  - message: BSO Lockers now spawn with jackboots instead of combat boots.
+    type: Tweak
+  - message: BSOs can now spawn with Jackboots.
+    type: Add
+  - message: Stealing the BSO weapon now only allows for the X-01 as the target.
+    type: Tweak
+  - message: Stealing officer weapons now accepts the sp-8t as a valid target.
+    type: Tweak
+  id: 363101
+  time: '2026-03-08T09:56:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3631
 Order: -1
 
