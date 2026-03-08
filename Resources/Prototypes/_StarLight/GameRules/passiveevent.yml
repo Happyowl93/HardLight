@@ -29,6 +29,7 @@
   components:
     - type: StationEvent
       globalAnnouncement: false
+      globalAnnouncement: false
       weight: 6
       startAudio:
         path: /Audio/Announcements/announce.ogg
