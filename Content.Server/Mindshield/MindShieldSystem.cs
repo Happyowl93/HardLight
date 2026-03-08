@@ -11,6 +11,7 @@ using Content.Shared.Roles.Components;
 #region Starlight
 using Content.Shared._Starlight.Antags.Vampires.Components;
 using Content.Shared._Starlight.Implants.Components;
+using Content.Shared.Popups;
 #endregion
 
 
