@@ -39,6 +39,7 @@
   id: DoorRuntime
   components:
     - type: StationEvent
+      globalAnnouncement: false
       weight: 2
       startAnnouncementColor: Red
       startAnnouncement: station-event-doorrunetime-start-announcement
