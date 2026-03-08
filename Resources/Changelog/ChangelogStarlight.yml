@@ -33817,5 +33817,42 @@ Entries:
   id: 365801
   time: '2026-03-08T09:01:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3658
+- author: Awriko
+  changes:
+  - message: (Cork) patched AI-Anchor room blast doors not networking
+    type: Fix
+  - message: (Cork) patched an unanchored firelock in the hall north of bridge fixed
+      sec front desk windoor access
+    type: Fix
+  - message: (Cork) patched security front desk windoor access
+    type: Fix
+  - message: (Cork) re-added an erroneously removed scrubber from engineering
+    type: Fix
+  - message: (Cork) added a late join spawn point for arrivals
+    type: Fix
+  - message: (Cork) reconfigured cryosleep for late join spawners
+    type: Tweak
+  - message: (Cork) re-condemned xenobiology until it is fixed and ready for deployment
+    type: Tweak
+  - message: (Cork) added two anomaly vessels to science as there were none before...
+    type: Add
+  - message: (Cork) added scrubbers to the artifact chambers for easier spacing on
+      an otherwise atmospheric planet
+    type: Add
+  - message: (Cork) added an additional canister of plasma to engineering storage
+      for TEG per early round budget and power concerns
+    type: Add
+  - message: (Cork) added two thermo-machine boards to secure storage for TEG optimization
+      and atmos enrichment
+    type: Add
+  - message: (Cork) added signage to the electric fence by engineering
+    type: Add
+  - message: (Cork) added missing genpop signs
+    type: Add
+  - message: (Cork) removed some stuck-in-wall lights
+    type: Fix
+  id: 365701
+  time: '2026-03-08T09:10:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3657
 Order: -1
 
