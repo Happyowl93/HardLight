@@ -8,7 +8,7 @@
     - type: DamageOnEquip
       unequipDamage:
         types:
-          Slash: 2000
+          Slash: 400
       targetSlots: HEAD
       ignoreResistances: true
       delay: 4
