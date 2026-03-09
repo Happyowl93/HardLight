@@ -26,7 +26,7 @@ public sealed class ScreenshakeSystem : EntitySystem
         SubscribeLocalEvent<ScreenshakeComponent, GetEyeOffsetEvent>(OnGetEyeOffset);
         SubscribeLocalEvent<ScreenshakeComponent, EntityUnpausedEvent>(OnEntityUnpaused);
     }
-
+    
     public override void Update(float frameTime)
     {
         base.Update(frameTime);

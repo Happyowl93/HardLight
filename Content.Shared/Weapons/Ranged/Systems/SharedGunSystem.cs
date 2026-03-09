@@ -76,7 +76,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
     [Dependency] protected readonly TagSystem TagSystem = default!;
     [Dependency] protected readonly ThrowingSystem ThrowingSystem = default!;
-    [Dependency] private readonly ScreenshakeSystem _shake = default!;
+    [Dependency] private readonly ScreenshakeSystem _shake = default!; // Starlight | ES Screenshake
 
     /// <summary>
     /// Default projectile speed

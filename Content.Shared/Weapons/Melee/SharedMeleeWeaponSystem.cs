@@ -587,7 +587,6 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         if (damageResult.GetTotal() > FixedPoint2.Zero)
         {
             DoDamageEffect(targets, user, targetXform);
-
             DoScreenshake(user, targets); // Starlight | ES Screenshake
         }
 
