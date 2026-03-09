@@ -65,7 +65,7 @@ public sealed class ShakeOnStairsSystem : EntitySystem
         }
     }
 
-    private void OnTerminating(EntityTerminatingEvent ev)
+    private void OnTerminating(ref EntityTerminatingEvent ev)
     {
         _shakeCooldowns.Remove(ev.Entity);
         _lastShakeCoords.Remove(ev.Entity);
