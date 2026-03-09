@@ -33921,5 +33921,17 @@ Entries:
   id: 366101
   time: '2026-03-08T11:34:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3661
+- author: Kirb
+  changes:
+  - message: being EMPed while having a mind control implant will drain your stamina
+      and stun you.
+    type: Add
+  - message: new popup for trying to mindshield a person who has a mind control implant.
+    type: Tweak
+  - message: Mind control implanter is less expensive and now available to nukeops.
+    type: Tweak
+  id: 365301
+  time: '2026-03-09T05:07:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3653
 Order: -1
 
