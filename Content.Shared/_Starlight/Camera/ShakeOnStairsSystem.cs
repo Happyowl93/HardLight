@@ -25,6 +25,7 @@ public sealed class ShakeOnStairsSystem : EntitySystem
         base.Initialize();
 
         _xform.OnGlobalMoveEvent += OnMoveEvent;
+        SubscribeLocalEvent<EntityTerminatingEvent>(OnTerminating);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnCleanup);
     }
     
@@ -62,6 +63,12 @@ public sealed class ShakeOnStairsSystem : EntitySystem
                 _shake.Screenshake(uid, translation, rotation);
             }
         }
+    }
+
+    private void OnTerminating(EntityTerminatingEvent ev)
+    {
+        _shakeCooldowns.Remove(ev.Entity);
+        _lastShakeCoords.Remove(ev.Entity);
     }
 
     private void OnCleanup(RoundRestartCleanupEvent ev)
