@@ -33953,5 +33953,18 @@ Entries:
   id: 366501
   time: '2026-03-09T05:18:48.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3665
+- author: Ohelig
+  changes:
+  - message: Added Mining Defense Cyborg Module.
+    type: Add
+  - message: Unlocks with Salvage Weapons Research (T1 Arsenal).
+    type: Add
+  - message: Has PKA, PKA Upgrade hand, Knife hand, and Goliath Plate hand.
+    type: Add
+  - message: Restricted to Mining Cyborgs.
+    type: Add
+  id: 364701
+  time: '2026-03-09T05:22:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3647
 Order: -1
 
