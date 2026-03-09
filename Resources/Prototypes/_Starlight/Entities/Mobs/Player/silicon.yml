@@ -177,7 +177,6 @@
           - XenoborgModuleTool
           - XenoborgModuleSword
           - XenoborgModuleSpaceMovement
-          - BorgModuleFireExtinguisher
     - type: ItemSlots
       slots:
         cell_slot:
