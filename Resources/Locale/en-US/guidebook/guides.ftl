@@ -129,7 +129,6 @@ guide-entry-pie-recipes = Pies & Tarts
 guide-entry-barsandcookies-recipes = Bars & Cookies
 guide-entry-cake-recipes = Cakes
 guide-entry-salad-recipes = Salads
-guide-entry-deepfried-recipes = Deep Fried
 guide-entry-medicinal-recipes = Medicinal
 guide-entry-other-recipes = Other
 guide-entry-secret-recipes = Secret

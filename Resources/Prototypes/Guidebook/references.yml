@@ -34,7 +34,7 @@
   - BarsAndCookiesRecipes
   - CakeRecipes
   - SaladRecipes
-  - DeepFriedRecipes
+  - DeepFriedRecipes # Starlight-edit
   - OtherRecipes
   - MedicinalRecipes
   - SecretRecipes
@@ -109,12 +109,6 @@
   id: SaladRecipes
   name: guide-entry-salad-recipes
   text: "/ServerInfo/Guidebook/Service/SaladRecipes.xml"
-  filterEnabled: True
-
-- type: guideEntry
-  id: DeepFriedRecipes
-  name: guide-entry-deepfried-recipes
-  text: "/ServerInfo/Guidebook/Service/DeepFriedRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry

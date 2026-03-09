@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Client.Guidebook.Controls;
 using Content.Client.Guidebook.Richtext;
 using Content.Client.Message;
 using Content.Client.UserInterface.ControlExtensions;
@@ -11,7 +12,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Client.Guidebook.Controls;
+namespace Content.Client._Starlight.Guidebook.Controls;
 
 /// <summary>
 /// Control for embedding a deep fryer recipe into a guidebook.
