@@ -26,7 +26,6 @@ public sealed class NightShiftRule : StationEventSystem<NightShiftRuleComponent>
 
         if (TryComp<AlertLevelComponent>(chosenStation, out var alert) && !(alert.CurrentLevel == "green" || alert.CurrentLevel == "blue"))
         {
-            if (!TryComp<StationEventComponent>(uid, out var stationEvent)) return;
             if(comp.Announcement is {} locId)
                 Announce(stationEvent, Loc.GetString(locId), true);
 
