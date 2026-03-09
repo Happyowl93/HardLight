@@ -33941,5 +33941,17 @@ Entries:
   id: 366601
   time: '2026-03-09T05:13:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3666
+- author: Xale
+  changes:
+  - message: Corndogs are now twice as large, with roughly double the nutritional
+      value.
+    type: Tweak
+  - message: Funnel cakes are now twice as large.
+    type: Tweak
+  - message: Corndogs are now classified as a meat food.
+    type: Fix
+  id: 366501
+  time: '2026-03-09T05:18:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3665
 Order: -1
 
