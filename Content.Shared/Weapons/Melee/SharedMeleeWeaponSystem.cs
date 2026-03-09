@@ -42,6 +42,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using ItemToggleMeleeWeaponComponent = Content.Shared.Item.ItemToggle.Components.ItemToggleMeleeWeaponComponent;
+using Content.Shared.Wieldable.Components; // Starlight
 using Content.Shared._Starlight.Combat.Disarming; // Starlight
 
 namespace Content.Shared.Weapons.Melee;
@@ -857,6 +858,12 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         {
             chance += malus.Malus;
         }
+        
+        //Starlight begin
+        if (TryComp<WieldableComponent>(inTargetHand, out var wieldable))
+            if (wieldable.Wielded)
+                chance += wieldable.DisarmMalus;
+        //Starlight end
 
         return Math.Clamp(chance, 0f, 1f);
     }
