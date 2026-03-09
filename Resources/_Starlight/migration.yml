@@ -63,3 +63,6 @@ WeaponEnergySMG: WeaponSubMachineGunEnergy
 WeaponIK60: WeaponRifleIK60
 WeaponPDW9: WeaponPistolPDW9
 WeaponEnergySniper: WeaponSniperEnergy
+
+#2026-03-06
+LockerBSOFilled: LockerBlueshieldFilled

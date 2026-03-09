@@ -55,7 +55,7 @@
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
   - type: CanDualWield # 🌟Starlight🌟
-    dualWieldInaccuracyPenalty: 25
+    dualWieldInaccuracyPenalty: 27
   - type: StaticPrice
     price: 500
   # Starlight-start
