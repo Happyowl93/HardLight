@@ -33998,5 +33998,19 @@ Entries:
   id: 366401
   time: '2026-03-09T08:56:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3664
+- author: redmushie
+  changes:
+  - message: Healium heals more at lower concentrations.
+    type: Tweak
+  - message: Healium now has a cap on how much it heals. This only affects high concentrations.
+    type: Tweak
+  - message: Nitrosyl plasmide no longer makes it impossible to stun and cuff (but
+      still reduces stun time).
+    type: Tweak
+  - message: Healium now has a minor bleed-staunching effect.
+    type: Add
+  id: 366301
+  time: '2026-03-09T14:06:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3663
 Order: -1
 
