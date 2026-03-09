@@ -95,8 +95,9 @@ public sealed partial class GunSystem : SharedGunSystem
     }
 
     public override void Shoot(Entity<GunComponent> gun, List<(EntityUid? Entity, IShootable Shootable)> ammo,
-        EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates, out bool userImpulse, EntityUid? user = null, bool throwItems = false)
+        EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates, out bool userImpulse, out bool fired, EntityUid? user = null, bool throwItems = false) // Starlight-edit
     {
+        fired = false; // Starlight
         userImpulse = true;
 
         if (user != null)
@@ -137,6 +138,7 @@ public sealed partial class GunSystem : SharedGunSystem
             if (throwItems && ent != null)
             {
                 ShootOrThrow(ent.Value, mapDirection, gunVelocity, gun, user);
+                fired = true; // Starlight
                 continue;
             }
 
@@ -159,6 +161,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
                         if (cartridge.DeleteOnSpawn)
                             Del(ent.Value);
+                        fired = true; // Starlight
                     }
                     else
                     {
@@ -178,6 +181,7 @@ public sealed partial class GunSystem : SharedGunSystem
                         break;
                     CreateAndFireProjectiles(ent.Value, newAmmo);
 
+                    fired = true; // Starlight
                     break;
                 case HitscanAmmoComponent:
                     if (ent == null)
@@ -197,6 +201,7 @@ public sealed partial class GunSystem : SharedGunSystem
                     Del(ent);
 
                     Audio.PlayPredicted(gun.Comp.SoundGunshotModified, gun, user);
+                    fired = true; // Starlight
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

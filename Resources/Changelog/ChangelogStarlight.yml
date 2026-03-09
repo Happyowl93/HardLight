@@ -33941,5 +33941,62 @@ Entries:
   id: 366601
   time: '2026-03-09T05:13:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3666
+- author: Xale
+  changes:
+  - message: Corndogs are now twice as large, with roughly double the nutritional
+      value.
+    type: Tweak
+  - message: Funnel cakes are now twice as large.
+    type: Tweak
+  - message: Corndogs are now classified as a meat food.
+    type: Fix
+  id: 366501
+  time: '2026-03-09T05:18:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3665
+- author: Ohelig
+  changes:
+  - message: Added Mining Defense Cyborg Module.
+    type: Add
+  - message: Unlocks with Salvage Weapons Research (T1 Arsenal).
+    type: Add
+  - message: Has PKA, PKA Upgrade hand, Knife hand, and Goliath Plate hand.
+    type: Add
+  - message: Restricted to Mining Cyborgs.
+    type: Add
+  id: 364701
+  time: '2026-03-09T05:22:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3647
+- author: Conflee
+  changes:
+  - message: Moved the Changeling section of the Corporate Law guidebook page into
+      a new page, accessed by clicking a link where the old section used to be. The
+      link/page it sends you to both state that only characters with Secure Knowledge
+      know the information. This is so the main page, opened by a book in game, can
+      be 99% IC/Canon and not break metashield.
+    type: Tweak
+  id: 362601
+  time: '2026-03-09T05:26:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3626
+- author: Shades
+  changes:
+  - message: 'Added more station events: PsychicScreach, SecurityDrill, DoorRuntime,
+      RadStorm, SolarFlare, AuroraCaelus, SpaceWhale, CommunicationBlackout, NightShift.'
+    type: Add
+  - message: Previous SolarFlare event got changed into CommunicationBlackout.
+    type: Tweak
+  id: 359901
+  time: '2026-03-09T05:33:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3599
+- author: neomoth
+  changes:
+  - message: Adds better screenshake to the game when shooting guns, getting hit,
+      explosions, etc.
+    type: Add
+  - message: Gravity screenshake can no longer occur in the first 10 seconds of the
+      round.
+    type: Tweak
+  id: 366401
+  time: '2026-03-09T08:56:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3664
 Order: -1
 
