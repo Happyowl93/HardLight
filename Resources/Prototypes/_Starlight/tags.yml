@@ -322,6 +322,9 @@
   id: Locker
   
 - type: Tag
+  id: LabellerRefillPaper
+  
+- type: Tag
   id: LoneOpsUplink
 
 - type: Tag

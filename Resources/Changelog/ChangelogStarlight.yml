@@ -33730,5 +33730,196 @@ Entries:
   id: 364301
   time: '2026-03-07T06:12:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3643
+- author: neomoth
+  changes:
+  - message: Removed TTS debug logs from the console.
+    type: Tweak
+  id: 363801
+  time: '2026-03-07T06:33:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3638
+- author: TaserTheFox
+  changes:
+  - message: AAC tablets can now say more jobs.
+    type: Add
+  id: 364401
+  time: '2026-03-07T06:38:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3644
+- author: Kirb
+  changes:
+  - message: Paw boots for felionoids, changes their step sound without speed debuff,
+      no protection.
+    type: Add
+  id: 363301
+  time: '2026-03-07T06:55:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3633
+- author: Xale
+  changes:
+  - message: Chickens will now attempt to eat and drink on their own.
+    type: Fix
+  id: 364601
+  time: '2026-03-07T09:51:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3646
+- author: Rinary
+  changes:
+  - message: Added ticket machine for queue management.
+    type: Add
+  - message: Added tickets.
+    type: Add
+  - message: 'Added new material: labeller refill paper.'
+    type: Add
+  id: 230701
+  time: '2026-03-07T10:04:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2307
+- author: redmushie
+  changes:
+  - message: Added hard cap on how much damage Voxes can take per oxygen breath.
+    type: Add
+  id: 364101
+  time: '2026-03-07T10:25:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3641
+- author: neurovermi
+  changes:
+  - message: Mech cabin pressurization and air filtration mechanics.
+    type: Remove
+  - message: Mech gas tanks now act like hardsuit internals. Wearing additional internals
+      while inside is still possible.
+    type: Tweak
+  id: 284301
+  time: '2026-03-07T10:31:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/2843
+- author: redmushie
+  changes:
+  - message: Stationary crew monitors no longer alert from paging events when unpowered.
+    type: Fix
+  - message: All crew monitor screens are now illuminated when powered.
+    type: Fix
+  - message: Reduced screen contrast for unpowered handheld crew monitors.
+    type: Tweak
+  id: 365201
+  time: '2026-03-07T14:17:09.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3652
+- author: Coolsurf6
+  changes:
+  - message: Cyclorites now come with diluted nitric acid blood.
+    type: Add
+  - message: Cyclorites now need nitrogen instead of iron to regenerate blood and
+      don't take cold damage from it.
+    type: Tweak
+  id: 363201
+  time: '2026-03-07T17:26:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3632
+- author: Shades
+  changes:
+  - message: Nerfed Gorilla Disarm chance and by stam damage by 10.
+    type: Tweak
+  - message: Fixed NukeOps Uplink not showing Gorilla Implant.
+    type: Fix
+  id: 365801
+  time: '2026-03-08T09:01:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3658
+- author: Awriko
+  changes:
+  - message: (Cork) patched AI-Anchor room blast doors not networking
+    type: Fix
+  - message: (Cork) patched an unanchored firelock in the hall north of bridge fixed
+      sec front desk windoor access
+    type: Fix
+  - message: (Cork) patched security front desk windoor access
+    type: Fix
+  - message: (Cork) re-added an erroneously removed scrubber from engineering
+    type: Fix
+  - message: (Cork) added a late join spawn point for arrivals
+    type: Fix
+  - message: (Cork) reconfigured cryosleep for late join spawners
+    type: Tweak
+  - message: (Cork) re-condemned xenobiology until it is fixed and ready for deployment
+    type: Tweak
+  - message: (Cork) added two anomaly vessels to science as there were none before...
+    type: Add
+  - message: (Cork) added scrubbers to the artifact chambers for easier spacing on
+      an otherwise atmospheric planet
+    type: Add
+  - message: (Cork) added an additional canister of plasma to engineering storage
+      for TEG per early round budget and power concerns
+    type: Add
+  - message: (Cork) added two thermo-machine boards to secure storage for TEG optimization
+      and atmos enrichment
+    type: Add
+  - message: (Cork) added signage to the electric fence by engineering
+    type: Add
+  - message: (Cork) added missing genpop signs
+    type: Add
+  - message: (Cork) removed some stuck-in-wall lights
+    type: Fix
+  id: 365701
+  time: '2026-03-08T09:10:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3657
+- author: IrkallaEpsilon
+  changes:
+  - message: Reverts Shadekin Light Damage back to original value.
+    type: Tweak
+  id: 365401
+  time: '2026-03-08T09:18:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3654
+- author: Coolsurf6
+  changes:
+  - message: BSO Belts have been cleaned up.
+    type: Tweak
+  - message: BSOs now spawn with their SP-8T instead of their X-01.
+    type: Tweak
+  - message: Two pistol mags of .40 now spawn in BSO belts rather than their locker.
+    type: Tweak
+  - message: X-01 now spawns in the BSO lockers.
+    type: Tweak
+  - message: X-01 Destroy Beam now does 100 structural with 15 shots to take down
+      walls and airlocks.
+    type: Tweak
+  - message: BSO Lockers now spawn with jackboots instead of combat boots.
+    type: Tweak
+  - message: BSOs can now spawn with Jackboots.
+    type: Add
+  - message: Stealing the BSO weapon now only allows for the X-01 as the target.
+    type: Tweak
+  - message: Stealing officer weapons now accepts the sp-8t as a valid target.
+    type: Tweak
+  id: 363101
+  time: '2026-03-08T09:56:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3631
+- author: redmushie
+  changes:
+  - message: Departmental communications consoles! Every department head receives
+      a board for their corresponding console in their circuit tote.
+    type: Add
+  - message: The Magistrate now also gets their own circuit tote.
+    type: Add
+  - message: Alert level changes now announce who did them.
+    type: Tweak
+  - message: Smart LMG firing pin steal objective now actually exists.
+    type: Fix
+  - message: The mapping preset telecomms server with "All" keys now actually includes
+      Law.
+    type: Fix
+  id: 364201
+  time: '2026-03-08T09:59:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3642
+- author: redmushie
+  changes:
+  - message: Admin chat window no longer errors from bad markup.
+    type: Fix
+  id: 366001
+  time: '2026-03-08T10:07:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3660
+- author: wonderfulnewworld
+  changes:
+  - message: The Energy Shotgun Steal objective is now the Energy Shotgun OR the Energy
+      Magnum. In exchange, 3 people can get this target now instead of 2. More options.
+    type: Tweak
+  - message: Removed the Energy Magnum steal objective.
+    type: Remove
+  - message: Fixes a duplicate loc for almost all at once's gamemode that I missed.
+    type: Fix
+  id: 366101
+  time: '2026-03-08T11:34:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3661
 Order: -1
 
