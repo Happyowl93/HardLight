@@ -143,6 +143,6 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/revolver_stronger.ogg
+      path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
       params:
         volume: 2.25
