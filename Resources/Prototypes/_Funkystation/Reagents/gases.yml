@@ -126,15 +126,15 @@
       # Starlight BEGIN
       - !type:EvenHealthChange
         ignoreResistances: true
-        maxScale: 7
+        maxScale: 10
         damage:
-          Brute: -2
-          Burn: -1.5
-          Toxin: -1
+          Brute: -1.4
+          Burn: -1.1
+          Toxin: -0.8
       - !type:ModifyBleed
         ignoreResistances: true
-        maxScale: 5
-        amount: -0.15
+        maxScale: 7
+        amount: -0.12
       # Starlight END
 
       - !type:PopupMessage
