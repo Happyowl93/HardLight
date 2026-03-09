@@ -33933,5 +33933,13 @@ Entries:
   id: 365301
   time: '2026-03-09T05:07:52.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3653
+- author: neomoth
+  changes:
+  - message: Items that are actively being wielded are now slightly harder to knock
+      out of someone's hand via shoving them.
+    type: Tweak
+  id: 366601
+  time: '2026-03-09T05:13:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3666
 Order: -1
 
