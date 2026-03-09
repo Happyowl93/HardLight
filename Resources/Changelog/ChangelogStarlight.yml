@@ -33987,5 +33987,16 @@ Entries:
   id: 359901
   time: '2026-03-09T05:33:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3599
+- author: neomoth
+  changes:
+  - message: Adds better screenshake to the game when shooting guns, getting hit,
+      explosions, etc.
+    type: Add
+  - message: Gravity screenshake can no longer occur in the first 10 seconds of the
+      round.
+    type: Tweak
+  id: 366401
+  time: '2026-03-09T08:56:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3664
 Order: -1
 
