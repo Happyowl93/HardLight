@@ -14,6 +14,7 @@ using Content.Shared.Tag;
 using Content.Shared.Popups;
 using System;
 using Content.Shared.ActionBlocker;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server.Starlight.Antags.Abductor;
 
@@ -89,6 +90,10 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         EnsureComp<AbductorVictimComponent>(args.Target.Value, out var victimComponent);
         victimComponent.LastActivation = _time.CurTime + TimeSpan.FromMinutes(5);
 
-        victimComponent.Position ??= EnsureComp<TransformComponent>(args.Target.Value).Coordinates;
+        var transform = EnsureComp<TransformComponent>(args.Target.Value);
+        while (!TryComp<MapGridComponent>(transform.ParentUid, out _) && !TryComp<MapComponent>(transform.ParentUid, out _))
+            transform = EnsureComp<TransformComponent>(transform.ParentUid);
+
+        victimComponent.Position ??= transform.Coordinates;
     }
 }
