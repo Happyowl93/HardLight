@@ -123,3 +123,40 @@
     reregister: false
     job: Borg
   - type: GhostTakeoverAvailable
+
+- type: entity
+  id: TSFAiHeld
+  parent: AiHeld
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Common
+    - TSF
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+    - TSF
+  - type: UserInterface
+    interfaces:
+      enum.RadarConsoleUiKey.Key:
+        type: RadarConsoleBoundUserInterface
+      enum.SiliconLawsUiKey.Key:
+        type: SiliconLawBoundUserInterface
+  - type: IntrinsicUI
+    uis:
+      enum.RadarConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowRadar
+  - type: ShowMindShieldIcons
+
+- type: entity
+  id: TSFtationAi
+  parent: PlayerStationAiEmpty
+  name: Solgov AI core
+  suffix: Solgov
+  components:
+  - type: ContainerComp
+    proto: TSFAiHeld
+    container: station_ai_mind_slot
