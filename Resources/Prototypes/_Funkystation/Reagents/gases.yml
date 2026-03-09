@@ -132,7 +132,6 @@
           Burn: -1.1
           Toxin: -0.8
       - !type:ModifyBleed
-        ignoreResistances: true
         maxScale: 7
         amount: -0.12
       # Starlight END
