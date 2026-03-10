@@ -466,6 +466,6 @@
       storagebase: !type:AllSelector
         children:
         - id: WeaponShotgunHushpup
-          amount: 2 #SL 1 > 2
+        - id: SpeedLoaderMagnumBasic # SL - Speedload > Extra box
         - id: BoxLethalshot
         - id: TreasureCoinIron
