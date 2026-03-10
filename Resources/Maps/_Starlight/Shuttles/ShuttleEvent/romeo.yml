@@ -24,7 +24,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: grid
+      name: TSF Dropshuttle "Romeo"
     - type: Transform
       pos: -0.484375,-0.53125
       parent: invalid
