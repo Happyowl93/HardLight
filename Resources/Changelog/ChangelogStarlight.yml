@@ -34020,5 +34020,14 @@ Entries:
   id: 367401
   time: '2026-03-10T02:20:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3674
+- author: wonderfulnewworld
+  changes:
+  - message: Wizard can no longer warp to the mothership.
+    type: Tweak
+  - message: Fixed Solgov cyborg loc error.
+    type: Fix
+  id: 367101
+  time: '2026-03-10T03:44:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3671
 Order: -1
 
