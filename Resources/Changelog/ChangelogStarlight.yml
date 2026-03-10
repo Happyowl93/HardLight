@@ -34137,5 +34137,33 @@ Entries:
   id: 365901
   time: '2026-03-10T08:59:14.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3659
+- author: Citrea
+  changes:
+  - message: Added Mech Reactors. Mechs will only accept mech reactors as power cells,
+      and (almost) every one of them is self-charging. As the tier goes up, they charge
+      faster and take less time to cool down after power is used.
+    type: Add
+  - message: Added high-end mech reactors to salvage loot pool.
+    type: Add
+  - message: Mechs energy bar is now "reactor heat".
+    type: Tweak
+  - message: Mech Guns use the mech's internal battery now.
+    type: Tweak
+  - message: All armoured mechs now fully protect the pilot from damage.
+    type: Tweak
+  - message: Ripley now deals 25 blunt damage per punch, in trade for keeping it's
+      lackluster damage protection. Make Ripley proud.
+    type: Tweak
+  - message: All mechs now walk at the same speed. You are cleared to walk in formation.
+    type: Tweak
+  - message: Ripley MK II now sprints at useable speeds (2 -> 3 vs MK I's 3.6).
+    type: Tweak
+  - message: Durand now has a sprinting speed of 2.8 (from 2.2).
+    type: Tweak
+  - message: Marauder and Mauler now have a sprinting speed of 2.2 (from 1.5).
+    type: Tweak
+  id: 358101
+  time: '2026-03-10T09:58:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3581
 Order: -1
 
