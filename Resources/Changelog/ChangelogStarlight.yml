@@ -34029,5 +34029,16 @@ Entries:
   id: 367101
   time: '2026-03-10T03:44:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3671
+- author: CawsForConcern
+  changes:
+  - message: (Lobster) Cryogenic sleep unit in GenPop.
+    type: Add
+  - message: (Lobster) Performer job slots.
+    type: Add
+  - message: (Lobster) Moved the Medical Dispenser out of Surgery and into the Medbay.
+    type: Tweak
+  id: 367701
+  time: '2026-03-10T05:28:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3677
 Order: -1
 
