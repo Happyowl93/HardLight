@@ -34165,5 +34165,14 @@ Entries:
   id: 358101
   time: '2026-03-10T09:58:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3581
+- author: Huaqas
+  changes:
+  - message: The Hushpup Bundle no longer includes an additional pup.
+    type: Fix
+  - message: The Hushpup Bundle now includes a speed loader.
+    type: Add
+  id: 368501
+  time: '2026-03-10T11:50:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3685
 Order: -1
 
