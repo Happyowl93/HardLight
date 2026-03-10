@@ -98,11 +98,10 @@
         borg_brain:
           - MMIFilled
         borg_module:
-          - XenoborgModuleBasic
+          - DerelictXenoborgModuleBasic
           - XenoborgModuleTool
           - XenoborgModuleLaser
           - XenoborgModuleJammer
-          - BorgModuleFireExtinguisher
     - type: ItemSlots
       slots:
         cell_slot:
@@ -134,14 +133,13 @@
         borg_brain:
           - MMIFilled
         borg_module:
-          - XenoborgModuleBasic
+          - DerelictXenoborgModuleBasic
           - BorgModuleAdvancedTool
           - BorgModuleConstruction
           - XenoborgModuleRCD # Starlight
           - BorgModuleCable
           - XenoborgModuleAccessBreaker
           - XenoborgModuleFireExtinguisher
-          - BorgModuleFireExtinguisher
     - type: ItemSlots
       slots:
         cell_slot:
@@ -173,10 +171,10 @@
         borg_brain:
           - MMIFilled
         borg_module:
-          - XenoborgModuleBasic
+          - DerelictXenoborgModuleBasic
           - XenoborgModuleTool
           - XenoborgModuleSword
-          - XenoborgModuleSpaceMovement
+          - DerelictXenoborgModuleSpaceMovement
     - type: ItemSlots
       slots:
         cell_slot:
@@ -210,12 +208,11 @@
           - MMIFilled
         # Starlight edit End
         borg_module:
-          - XenoborgModuleBasic
+          - DerelictXenoborgModuleBasic
           - XenoborgModuleTool
           - XenoborgModuleHypo
           - XenoborgModuleChameleonProjector
           - XenoborgModuleCloakDevice
-          - BorgModuleFireExtinguisher
     - type: ItemSlots
       slots:
         cell_slot:
