@@ -34040,5 +34040,12 @@ Entries:
   id: 367701
   time: '2026-03-10T05:28:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3677
+- author: Xale
+  changes:
+  - message: Added deep fried recipes category to the guidebook.
+    type: Add
+  id: 366901
+  time: '2026-03-10T05:27:06.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3669
 Order: -1
 
