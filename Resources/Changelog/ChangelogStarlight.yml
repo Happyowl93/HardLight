@@ -34197,5 +34197,20 @@ Entries:
   id: 366801
   time: '2026-03-10T12:50:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3668
+- author: jhrushbe
+  changes:
+  - message: Guidebook entries for the nuclear reactor and reactor part materials
+      will now update to follow CVars.
+    type: Add
+  - message: Made kelvin the default temperature display in the nuclear reactor UI.
+    type: Tweak
+  - message: Fixed a bug where the nuclear reactor would send alerts to the first
+      station in a map rather than the station it was on.
+    type: Fix
+  - message: Fixed a bug where a value in the gas pump guidebook page was invalid.
+    type: Fix
+  id: 367901
+  time: '2026-03-10T15:37:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3679
 Order: -1
 
