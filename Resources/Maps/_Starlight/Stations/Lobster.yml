@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/06/2026 21:18:01
-  entityCount: 24898
+  time: 03/10/2026 03:58:38
+  entityCount: 24905
 maps:
 - 1
 grids:
@@ -9409,7 +9409,7 @@ entities:
       pos: -1.5,5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -26623.586
+      secondsUntilStateChange: -26964.393
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9642,7 +9642,7 @@ entities:
       pos: 67.5,48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -63443.918
+      secondsUntilStateChange: -63784.723
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10104,7 +10104,7 @@ entities:
       pos: 87.5,-23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -114584.11
+      secondsUntilStateChange: -114924.914
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -69718,6 +69718,13 @@ entities:
     - type: Transform
       pos: -56.43009,32.4647
       parent: 2
+- proto: CryogenicSleepUnit
+  entities:
+  - uid: 24900
+    components:
+    - type: Transform
+      pos: 3.5,-5.5
+      parent: 2
 - proto: CryogenicSleepUnitSpawner
   entities:
   - uid: 11484
@@ -109036,6 +109043,21 @@ entities:
     - type: Transform
       pos: 37.5,6.5
       parent: 2
+- proto: LockerBlueshieldFilled
+  entities:
+  - uid: 17439
+    components:
+    - type: Transform
+      pos: -26.5,47.5
+      parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
 - proto: LockerBoozeFilled
   entities:
   - uid: 17432
@@ -109077,21 +109099,6 @@ entities:
     - type: Transform
       pos: 11.5,4.5
       parent: 2
-- proto: LockerBSOFilled
-  entities:
-  - uid: 17439
-    components:
-    - type: Transform
-      pos: -26.5,47.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-          Oxygen: 1.7459903
-          Nitrogen: 6.568249
 - proto: LockerCaptain
   entities:
   - uid: 17440
@@ -128869,6 +128876,38 @@ entities:
     - type: Transform
       pos: -27.5,4.5
       parent: 2
+- proto: SpawnPointPerformer
+  entities:
+  - uid: 24899
+    components:
+    - type: Transform
+      pos: 10.5,45.5
+      parent: 2
+  - uid: 24901
+    components:
+    - type: Transform
+      pos: 23.5,-2.5
+      parent: 2
+  - uid: 24902
+    components:
+    - type: Transform
+      pos: 39.5,2.5
+      parent: 2
+  - uid: 24903
+    components:
+    - type: Transform
+      pos: 47.5,-31.5
+      parent: 2
+  - uid: 24904
+    components:
+    - type: Transform
+      pos: 22.5,-1.5
+      parent: 2
+  - uid: 24905
+    components:
+    - type: Transform
+      pos: 24.5,-1.5
+      parent: 2
 - proto: SpawnPointPsychologist
   entities:
   - uid: 20620
@@ -130385,14 +130424,14 @@ entities:
       parent: 2
 - proto: SuitStorageEVAEmergency
   entities:
-  - uid: 20853
+  - uid: 20852
     components:
     - type: Transform
       pos: -39.5,-13.5
       parent: 2
 - proto: SuitStorageHOS
   entities:
-  - uid: 20852
+  - uid: 20853
     components:
     - type: Transform
       pos: -1.5,-13.5
@@ -151004,7 +151043,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -3135.9617
+      secondsUntilStateChange: -3476.7678
       state: Opening
     - type: Airlock
       autoClose: False
