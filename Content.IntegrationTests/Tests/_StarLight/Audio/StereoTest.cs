@@ -36,7 +36,6 @@ public sealed class StereoTest
             new ResPath("/Audio/_Starlight/Admeme/announcement_horror.ogg"), // Global
             new ResPath("/Audio/_Starlight/Effects/sov_choir_global.ogg"), // Global
             new ResPath("/Audio/_Starlight/Misc/bluealert.ogg"), // Global
-            new ResPath("/Audio/_Starlight/Misc/omega.ogg"), // Global
             new ResPath("/Audio/_Starlight/Misc/omega_alt.ogg"), // Global
             new ResPath("/Audio/_Starlight/Misc/orange.ogg"), // Global
             new ResPath("/Audio/_Starlight/Misc/redalert.ogg"), // Global
