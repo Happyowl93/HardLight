@@ -34063,5 +34063,19 @@ Entries:
   id: 367201
   time: '2026-03-10T06:31:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3672
+- author: deltaVelocity
+  changes:
+  - message: Adds the ZOZ-82 'Jupiter', an unwieldy bullpup revolver, to the Salvage
+      vendor.
+    type: Add
+  - message: Adds .45 Magnum SP autoloaders to the salvage vendor to go with it.
+    type: Add
+  - message: Removes the Snub Revolver. It went mostly unused anyways, was broken
+      (no firing sounds) and in the two places it was mapped it has been replaced
+      by a Python (on Geiger) and the DIspatcher (on Lagan).
+    type: Remove
+  id: 367001
+  time: '2026-03-10T07:24:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3670
 Order: -1
 
