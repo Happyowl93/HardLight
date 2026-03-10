@@ -34054,5 +34054,14 @@ Entries:
   id: 367301
   time: '2026-03-10T06:23:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3673
+- author: neomoth
+  changes:
+  - message: Fixed a bug where using an abductor gizmo on someone who was parented
+      to another entity (such as being buckled) would result in erroneous behavior
+      upon teleporting them back from the abductor shuttle.
+    type: Fix
+  id: 367201
+  time: '2026-03-10T06:31:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3672
 Order: -1
 
