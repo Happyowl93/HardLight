@@ -216,6 +216,9 @@
   id: FreeMag
 
 - type: Tag
+  id: CanAffectLawBoards
+
+- type: Tag
   id: FestiveDinner
 
 - type: Tag
@@ -317,6 +320,9 @@
 
 - type: Tag
   id: Locker
+  
+- type: Tag
+  id: LabellerRefillPaper
   
 - type: Tag
   id: LoneOpsUplink
@@ -506,6 +512,9 @@
 
 - type: Tag
   id: SpeedLoaderShotgun
+
+- type: Tag
+  id: Stairs
 
 - type: Tag
   id: StoveMachineBoard
