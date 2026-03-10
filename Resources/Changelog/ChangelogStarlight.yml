@@ -34012,5 +34012,13 @@ Entries:
   id: 366301
   time: '2026-03-09T14:06:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3663
+- author: Conflee
+  changes:
+  - message: un-fucks the theif gamemode so it doesnt crash the round every time thief
+      rolls.
+    type: Fix
+  id: 367401
+  time: '2026-03-10T02:20:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3674
 Order: -1
 
