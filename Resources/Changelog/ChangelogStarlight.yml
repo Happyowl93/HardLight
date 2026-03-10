@@ -34130,5 +34130,12 @@ Entries:
   id: 367801
   time: '2026-03-10T07:32:44.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3678
+- author: Kirb
+  changes:
+  - message: Derelict Xenoborgs.
+    type: Add
+  id: 365901
+  time: '2026-03-10T08:59:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3659
 Order: -1
 
