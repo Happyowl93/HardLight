@@ -13,10 +13,11 @@
     maxItemSize: Small
     grid:
     - 0,0,1,1
-  - type: StorageFill
-    contents:
-    - id: Zipties
-      amount: 10
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: Zipties
+        amount: 10
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
