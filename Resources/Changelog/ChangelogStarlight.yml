@@ -34212,5 +34212,12 @@ Entries:
   id: 367901
   time: '2026-03-10T15:37:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3679
+- author: deltaVelocity
+  changes:
+  - message: Redesignated mining shuttle.
+    type: Tweak
+  id: 369201
+  time: '2026-03-11T01:48:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3692
 Order: -1
 
