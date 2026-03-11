@@ -34242,5 +34242,12 @@ Entries:
   id: 369701
   time: '2026-03-11T10:06:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3697
+- author: Citrea
+  changes:
+  - message: Mech Reactors should only fit into mechs now, as was intended.
+    type: Fix
+  id: 369901
+  time: '2026-03-11T15:22:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3699
 Order: -1
 
