@@ -2016,15 +2016,6 @@
   license: CC0-1.0
 
 - type: voice
-  id: borgOliveOffender
-  voice: 1004
-  name: tts-voice-name-4
-  sex: Unsexed
-  silicon: true
-  copyright: OliveOffender
-  license: The use of the voice is authorized by the voice holder
-
-- type: voice
   id: borgTalkBox
   voice: 1005
   name: tts-voice-name-1005
