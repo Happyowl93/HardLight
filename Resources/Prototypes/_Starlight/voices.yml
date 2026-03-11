@@ -35,14 +35,6 @@
   license: The use of the voice is authorized by the voice holder
 
 - type: voice
-  id: oliveOffender
-  voice: 4
-  name: tts-voice-name-4
-  sex: Male
-  silicon: false
-  license: The use of the voice is authorized by the voice holder
-
-- type: voice
   id: felinoid
   voice: 5
   name: tts-voice-name-5
