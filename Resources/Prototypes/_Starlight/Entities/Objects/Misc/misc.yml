@@ -15,7 +15,7 @@
     - 0,0,4,1
     whitelist:
       components:
-      - HandCuff
+      - HandCuffs
   - type: EntityTableContainerFill
     containers:
       storagebase:
