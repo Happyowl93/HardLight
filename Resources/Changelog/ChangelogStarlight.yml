@@ -34249,5 +34249,13 @@ Entries:
   id: 369901
   time: '2026-03-11T15:22:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3699
+- author: CawsForConcern
+  changes:
+  - message: Fixed custom / event admin grids failing to load due to the recently
+      removed snub-nose revolver being mapped onto them.
+    type: Fix
+  id: 370001
+  time: '2026-03-11T17:30:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3700
 Order: -1
 
