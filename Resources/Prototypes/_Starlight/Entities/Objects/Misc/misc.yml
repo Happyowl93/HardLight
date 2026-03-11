@@ -10,9 +10,12 @@
   - type: Item
     size: Small
   - type: Storage
-    maxItemSize: Small
+    maxItemSize: Tiny
     grid:
-    - 0,0,1,1
+    - 0,0,4,1
+    whitelist:
+      components:
+      - HandCuff
   - type: EntityTableContainerFill
     containers:
       storagebase:
