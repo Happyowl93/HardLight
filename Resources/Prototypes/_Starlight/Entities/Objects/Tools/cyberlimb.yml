@@ -653,6 +653,9 @@
           whitelist:
             components:
               - PowerCell
+          blacklist:
+            tags:
+            - MechReactor
             requireAll: true
           name: power-cell-slot-component-slot-name-default
           startingItem: PowerCellTinyCyber
@@ -713,6 +716,9 @@
           whitelist:
             components:
               - PowerCell
+          blacklist:
+            tags:
+            - MechReactor
             requireAll: true
           name: power-cell-slot-component-slot-name-default
           startingItem: PowerCellMedium

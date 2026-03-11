@@ -82,3 +82,6 @@
           whitelist:
             tags:
               - PowerCell
+          blacklist:
+            tags:
+            - MechReactor
