@@ -34235,5 +34235,12 @@ Entries:
   id: 368901
   time: '2026-03-11T05:09:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3689
+- author: CrazyPhantom
+  changes:
+  - message: AAC tablets now use the johnson voice instead of a random one
+    type: Fix
+  id: 369701
+  time: '2026-03-11T10:06:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3697
 Order: -1
 
