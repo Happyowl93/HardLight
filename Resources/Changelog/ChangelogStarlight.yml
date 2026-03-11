@@ -34063,5 +34063,161 @@ Entries:
   id: 367201
   time: '2026-03-10T06:31:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3672
+- author: deltaVelocity
+  changes:
+  - message: Adds the ZOZ-82 'Jupiter', an unwieldy bullpup revolver, to the Salvage
+      vendor.
+    type: Add
+  - message: Adds .45 Magnum SP autoloaders to the salvage vendor to go with it.
+    type: Add
+  - message: Removes the Snub Revolver. It went mostly unused anyways, was broken
+      (no firing sounds) and in the two places it was mapped it has been replaced
+      by a Python (on Geiger) and the DIspatcher (on Lagan).
+    type: Remove
+  id: 367001
+  time: '2026-03-10T07:24:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3670
+- author: Cvlancer & CawsForConcern
+  changes:
+  - message: (Oasis) Maints expansion west & north of Atmospherics (Warehouse, Syndieshop,
+      Scrapyard, Evil AI).
+    type: Add
+  - message: (Oasis) Robotics Wardrobe in Robotics.
+    type: Add
+  - message: (Oasis) Reflective vest care in Armory.
+    type: Add
+  - message: (Oasis) "ON AIR" sign for Reporter.
+    type: Add
+  - message: (Oasis) HV wires to Perma Exile Security Dock (cable docking).
+    type: Add
+  - message: (Oasis) New web equipment in Spider Cave.
+    type: Add
+  - message: (Oasis) Two new classes added to Maints LARP.
+    type: Add
+  - message: (Oasis) Small easter egg to Salvage/Mining Dock.
+    type: Add
+  - message: (Oasis) Cleanbot in Artifact.
+    type: Add
+  - message: (Oasis) Artifact chambers now have scrubbers linked to air alarms.
+    type: Add
+  - message: (Oasis) Added one metal hydrogen bar to Atmos to remind Atmos techs that
+      they exist.
+    type: Add
+  - message: (Oasis) Firelocks to Perma Exile Medical.
+    type: Fix
+  - message: (Oasis) Perma Exile Medical defibs now spawn correctly.
+    type: Fix
+  - message: (Oasis) Security's Dock at Perma Exile is no longer backwards.
+    type: Fix
+  - message: (Oasis) Tesla cameras should no longer get shot by emitters.
+    type: Fix
+  - message: (Oasis) AI Core is now protected by MV wires in addition to HV wires.
+    type: Fix
+  - message: (Oasis) Walls around the Abyss are now invincible.
+    type: Fix
+  - message: (Oasis) Re-added makeshift laser pistol.
+    type: Fix
+  - message: (Oasis) Fixed NCT doors not having floor tiles under them.
+    type: Fix
+  - message: (Oasis) Artifact pads are now linked to their science consoles.
+    type: Fix
+  - message: (Oasis) Fixed around 200 invalid entities on the map.
+    type: Fix
+  - message: (Oasis) Locked pickaxes at Perma Exile behind Security access.
+    type: Tweak
+  - message: (Oasis) Removed some Security equipment that spawns on Perma Exile.
+    type: Tweak
+  id: 367801
+  time: '2026-03-10T07:32:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3678
+- author: Kirb
+  changes:
+  - message: Derelict Xenoborgs.
+    type: Add
+  id: 365901
+  time: '2026-03-10T08:59:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3659
+- author: Citrea
+  changes:
+  - message: Added Mech Reactors. Mechs will only accept mech reactors as power cells,
+      and (almost) every one of them is self-charging. As the tier goes up, they charge
+      faster and take less time to cool down after power is used.
+    type: Add
+  - message: Added high-end mech reactors to salvage loot pool.
+    type: Add
+  - message: Mechs energy bar is now "reactor heat".
+    type: Tweak
+  - message: Mech Guns use the mech's internal battery now.
+    type: Tweak
+  - message: All armoured mechs now fully protect the pilot from damage.
+    type: Tweak
+  - message: Ripley now deals 25 blunt damage per punch, in trade for keeping it's
+      lackluster damage protection. Make Ripley proud.
+    type: Tweak
+  - message: All mechs now walk at the same speed. You are cleared to walk in formation.
+    type: Tweak
+  - message: Ripley MK II now sprints at useable speeds (2 -> 3 vs MK I's 3.6).
+    type: Tweak
+  - message: Durand now has a sprinting speed of 2.8 (from 2.2).
+    type: Tweak
+  - message: Marauder and Mauler now have a sprinting speed of 2.2 (from 1.5).
+    type: Tweak
+  id: 358101
+  time: '2026-03-10T09:58:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3581
+- author: Huaqas
+  changes:
+  - message: The Hushpup Bundle no longer includes an additional pup.
+    type: Fix
+  - message: The Hushpup Bundle now includes a speed loader.
+    type: Add
+  id: 368501
+  time: '2026-03-10T11:50:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3685
+- author: Huaqas
+  changes:
+  - message: The Dark Gygax now costs 40 TC for Lone Operatives.
+    type: Tweak
+  - message: The Mauler now costs 65 TC for Lone Operatives, requiring you to kill
+      and butcher Renault or acquire additional TC from a Traitor or another Lone
+      Operative to purchase.
+    type: Tweak
+  id: 368201
+  time: '2026-03-10T12:46:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3682
+- author: Scarlet Lightweaver
+  changes:
+  - message: Added the gunnery controll for shuttle artillery, soon availbe for your
+      stations RESEARCHABLE cannons.
+    type: Add
+  - message: Added the SSG-TARNYX EMP Grenade Cannon.
+    type: Add
+  - message: Added EMP rockets for the RPG-7.
+    type: Add
+  id: 366801
+  time: '2026-03-10T12:50:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3668
+- author: jhrushbe
+  changes:
+  - message: Guidebook entries for the nuclear reactor and reactor part materials
+      will now update to follow CVars.
+    type: Add
+  - message: Made kelvin the default temperature display in the nuclear reactor UI.
+    type: Tweak
+  - message: Fixed a bug where the nuclear reactor would send alerts to the first
+      station in a map rather than the station it was on.
+    type: Fix
+  - message: Fixed a bug where a value in the gas pump guidebook page was invalid.
+    type: Fix
+  id: 367901
+  time: '2026-03-10T15:37:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3679
+- author: deltaVelocity
+  changes:
+  - message: Redesignated mining shuttle.
+    type: Tweak
+  id: 369201
+  time: '2026-03-11T01:48:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3692
 Order: -1
 
