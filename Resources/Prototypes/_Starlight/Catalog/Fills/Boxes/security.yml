@@ -7,9 +7,10 @@
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
-      - id: CassetteTape
-        amount: 4
-      - id: TapeRecorder
+        children:
+        - id: CassetteTape
+          amount: 4
+        - id: TapeRecorder
   - type: Sprite
     layers:
       - state: box_security
