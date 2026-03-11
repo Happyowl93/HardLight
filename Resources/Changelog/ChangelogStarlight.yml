@@ -34219,5 +34219,12 @@ Entries:
   id: 369201
   time: '2026-03-11T01:48:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3692
+- author: Swonki
+  changes:
+  - message: Corgi Sci Biosuit.
+    type: Add
+  id: 368601
+  time: '2026-03-11T05:05:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3686
 Order: -1
 
