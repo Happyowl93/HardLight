@@ -6,7 +6,7 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      storagebase:
+      entity_storage:
         id: CerenkiteReactorFuelRod
         amount: 3
 
@@ -18,7 +18,7 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      storagebase:
+      entity_storage:
         id: BohrumReactorControlRod
         amount: 2
 
@@ -30,7 +30,7 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      storagebase:
+      entity_storage:
         id: SteelReactorGasChannel
         amount: 4
 
@@ -42,6 +42,6 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      storagebase:
+      entity_storage:
         id: SteelReactorHeatExchanger
         amount: 4

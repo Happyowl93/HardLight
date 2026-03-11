@@ -6,6 +6,6 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      storagebase:
+      entity_storage:
         id: MagazineGrenadeCleanade
         amount: 2
