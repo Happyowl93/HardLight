@@ -47,6 +47,9 @@
         - Handcuff
         - BallisticAmmoProvider
         - Ammo
+    blacklist:
+      tags:
+      - MechReactor
   - type: Appearance
   - type: StaticPrice
     price: 1000
@@ -246,6 +249,9 @@
         - Handcuff
         - BallisticAmmoProvider
         - Ammo
+    blacklist:
+      tags:
+      - MechReactor
   - type: ItemMapper
     mapLayers:
       flashbang:
