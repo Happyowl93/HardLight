@@ -34226,5 +34226,14 @@ Entries:
   id: 368601
   time: '2026-03-11T05:05:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3686
+- author: Conflee
+  changes:
+  - message: Fland upkeep. Added performer, adjusted Ai visibility into maints, added
+      lattice to prevent Evac docking at the AI Core exterior dock, minor maints loot
+      shuffle.
+    type: Tweak
+  id: 368901
+  time: '2026-03-11T05:09:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3689
 Order: -1
 
