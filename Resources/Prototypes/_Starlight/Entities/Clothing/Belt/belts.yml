@@ -350,7 +350,7 @@
   parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseCentcommContraband]
   id: ClothingBeltNTNCRig
   name: ntnc rig
-  description: A military rig worn by NTNC Officers
+  description: A military rig worn by NanoTrasen Navy Marines.
   components:
   - type: Storage #Starlight
     grid:
@@ -367,6 +367,15 @@
     damageCoefficient: 0.1
   - type: StaticPrice
     price: 900
+
+- type: entity
+  parent: ClothingBeltNTNC
+  name: ntnc belt
+  description: A military belt worn by NanoTrasen Navy Marines.
+  - type: Sprite
+    sprite: _Starlight/Clothing/Belt/ntnc_belt.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Belt/ntnc_belt.rsi
 
 - type: entity
   parent: [BaseTSFContraband, ClothingBeltStorageBase, ContentsExplosionResistanceBase]
