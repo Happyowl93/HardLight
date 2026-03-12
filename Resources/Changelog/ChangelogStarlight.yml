@@ -34279,5 +34279,21 @@ Entries:
   id: 370201
   time: '2026-03-12T05:49:54.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3702
+- author: neomoth
+  changes:
+  - message: Added a new screenshake effect for when shuttles FTL.
+    type: Add
+  - message: Added back the camera kick to explosions so you can tell which direction
+      they came from again.
+    type: Tweak
+  - message: Made so you only get screenshake when hitting another player if you are
+      two-handing the weapon or if it deals 20 or more blunt in a single hit.
+    type: Tweak
+  - message: Made so you only get screenshake when being hit by another player if
+      the total damage dealt is above 6.
+    type: Tweak
+  id: 370701
+  time: '2026-03-12T06:56:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3707
 Order: -1
 
