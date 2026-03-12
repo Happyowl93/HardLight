@@ -44,8 +44,7 @@ using Robust.Shared.Timing;
 using ItemToggleMeleeWeaponComponent = Content.Shared.Item.ItemToggle.Components.ItemToggleMeleeWeaponComponent;
 using Content.Shared.Wieldable.Components; // Starlight
 using Content.Shared._Starlight.Combat.Disarming; // Starlight
-using Content.Shared._Starlight.Camera; // Starlight
-using Content.Shared.Damage.Prototypes; // Starlight | ES Screenshake
+using Content.Shared._Starlight.Camera; // Starlight | ES Screenshake
 
 namespace Content.Shared.Weapons.Melee;
 
