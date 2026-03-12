@@ -628,7 +628,7 @@
     sprite: _Starlight/Clothing/Head/Hats/retro_officer_cap.rsi
 
 - type: entity
-  parent: [ClothingHeadBase, BaseCentCommContraband]
+  parent: [ClothingHeadBase, BaseCentcommContraband]
   id: ClothingHeadHatNTNC
   name: nanotrasen navy marine hat.
   components:
@@ -638,7 +638,7 @@
     sprite: _Starlight/Clothing/Head/Hats/ntnchat.rsi
 
 - type: entity
-  parent: [ClothingHeadBase, BaseCentCommContraband]
+  parent: [ClothingHeadBase, BaseCentcommContraband]
   id: ClothingHeadHatNTNCGrey
   name: nanotrasen grey navy marine hat.
   components:
@@ -648,7 +648,7 @@
     sprite: _Starlight/Clothing/Head/Hats/ntncgreyhat.rsi
 
 - type: entity
-  parent: [ClothingHeadBase, BaseCentCommContraband]
+  parent: [ClothingHeadBase, BaseCentcommContraband]
   id: ClothingHeadHatNTNCEnsign
   name: nanotrasen navy ensign hat.
   components:
