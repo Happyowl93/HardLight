@@ -29,7 +29,7 @@
   components:
     - type: StationEvent
       globalAnnouncement: false
-      weight: 6
+      weight: 8
       startAudio:
         path: /Audio/Announcements/announce.ogg
     - type: SecurityDrillRule
@@ -77,7 +77,7 @@
   id: SolarFlare
   components:
     - type: StationEvent
-      weight: 3
+      weight: 8
       startAnnouncementColor: Red
       startAnnouncement: station-event-solarflare-start-announcement
       startAudio:
@@ -116,7 +116,7 @@
   id: SpaceWhale
   components:
     - type: StationEvent
-      weight: 5
+      weight: 8
       duration: 300
       maxDuration: 600
     - type: WeatherRule
@@ -156,7 +156,7 @@
   - type: StationEvent
     occursDuringRoundEnd: false
     globalAnnouncement: false
-    weight: 10
+    weight: 50
     startAnnouncement: station-event-nightshift-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
