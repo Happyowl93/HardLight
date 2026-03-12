@@ -126,7 +126,7 @@ public sealed class PsychicScreachRule : StationEventSystem<PsychicScreachRuleCo
                 var todrain = battery.LastCharge;
 
                 if (HasComp<BatteryInterfaceComponent>(ent)) // Only SMES/SubStation has BatteryInterface.
-                    todrain /= 2;
+                    todrain /= 3;
                 else
                     todrain = 0;
 
