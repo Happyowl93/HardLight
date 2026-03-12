@@ -372,6 +372,7 @@
   parent: ClothingBeltNTNC
   name: ntnc belt
   description: A military belt worn by NanoTrasen Navy Marines.
+  components:
   - type: Sprite
     sprite: _Starlight/Clothing/Belt/ntnc_belt.rsi
   - type: Clothing
