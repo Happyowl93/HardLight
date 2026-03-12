@@ -283,9 +283,21 @@
       reduction: 0.85
 
 - type: entity
+  parent:
+    [BaseCentcommContraband, ClothingOuterVestWeb]
+  id: ClothingOuterVestWebNTNCEnsign
+  name: nanotrasen navy marine ensign's carapace.
+  description: An armoured carapace designed for the best of the best within the navy, allowing the wearer to remain protected and stylish.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Clothing/OuterClothing/Vests/ntnc-ensign.rsi
+    - type: Clothing
+      sprite: _Starlight/Clothing/OuterClothing/Vests/ntnc-ensign.rsi
+
+- type: entity
   parent: [ClothingOuterArmorBase, BaseCentcommContraband]
   id: ClothingOuterVestNTNC
-  name: nt-nc naval officer's vest
+  name: nanotrasen navy marine's vest
   description: Much better than a standard type-1 security vest. Don't lose it, you will NOT get a replacement.
   components:
     - type: Sprite
