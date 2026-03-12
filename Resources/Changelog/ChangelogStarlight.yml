@@ -34257,5 +34257,12 @@ Entries:
   id: 370001
   time: '2026-03-11T17:30:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3700
+- author: Scarlet Lightweaver
+  changes:
+  - message: Added the soviet soft suit to the USSP rift.
+    type: Add
+  id: 370301
+  time: '2026-03-12T04:29:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3703
 Order: -1
 
