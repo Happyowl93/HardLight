@@ -43,7 +43,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
-    lifetime: 1.2
+    lifetime: 0.4
   - type: Sprite
     drawdepth: Effects
     sprite: _Starlight/Effects/impact_sparks.rsi
