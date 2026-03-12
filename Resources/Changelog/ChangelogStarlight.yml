@@ -34317,5 +34317,12 @@ Entries:
   id: 370401
   time: '2026-03-12T08:16:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3704
+- author: DjBoom
+  changes:
+  - message: Fixed the crafting of Atmosian Armor.
+    type: Fix
+  id: 370801
+  time: '2026-03-12T08:36:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3708
 Order: -1
 
