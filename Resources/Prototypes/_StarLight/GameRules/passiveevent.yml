@@ -68,10 +68,10 @@
       endAnnouncement: station-event-radstorm-end-announcement
       endAudio:
         path: /Audio/Announcements/announce.ogg
-      duration: 130
+      duration: 150
       maxOccurrences: 1
     - type: WeatherRule
-      weather: RadStorm
+      weather: WeatherRadStorm
       delay: 30
 
 - type: entity
@@ -87,12 +87,12 @@
       endAnnouncement: station-event-solarflare-end-announcement
       endAudio:
         path: /Audio/Announcements/announce.ogg
-      duration: 70
+      duration: 90
       maxDuration: 150
       reoccurrenceDelay: 30
       maxOccurrences: 2
     - type: WeatherRule
-      weather: SolarFlare
+      weather: WeatherSolarFlare
       delay: 30
 
 - type: entity
@@ -110,7 +110,7 @@
       duration: 240
       maxOccurrences: 1
     - type: WeatherRule
-      weather: AuroraCaelus
+      weather: WeatherAuroraCaelus
       delay: 120
 
 - type: entity
@@ -122,7 +122,7 @@
       duration: 300
       maxDuration: 600
     - type: WeatherRule
-      weather: SpaceWhale
+      weather: WeatherSpaceWhale
 
 - type: entity
   parent: BaseGameRule
