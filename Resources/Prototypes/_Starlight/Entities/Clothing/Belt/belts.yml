@@ -369,7 +369,8 @@
     price: 900
 
 - type: entity
-  parent: ClothingBeltNTNC
+  parent: ClothingBeltNTNCRig
+  id: ClothingBeltNTNC
   name: ntnc belt
   description: A military belt worn by NanoTrasen Navy Marines.
   components:
