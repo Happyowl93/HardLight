@@ -34295,5 +34295,27 @@ Entries:
   id: 370701
   time: '2026-03-12T06:56:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3707
+- author: SevenShades
+  changes:
+  - message: (Boxcars) Added an all comms intercom next to the AI core.
+    type: Add
+  - message: (Boxcars) Added bells to most department desks.
+    type: Add
+  - message: (Boxcars) Added a missed station beacon to EVA storage.
+    type: Add
+  - message: (Boxcars) Added borg chargers to the AI core.
+    type: Add
+  - message: (Boxcars) Added some empty storage cannisters to atmos.
+    type: Add
+  - message: (Boxcars) Disposals not landing on the recycler conveyor.
+    type: Fix
+  - message: (Boxcars) Fixed South east solars having unpowered airlocks.
+    type: Fix
+  - message: (Boxcars) Fixed the cryopod loop in medbay (please don't check with a
+      t-ray).
+    type: Fix
+  id: 370401
+  time: '2026-03-12T08:16:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3704
 Order: -1
 
