@@ -34324,5 +34324,23 @@ Entries:
   id: 370801
   time: '2026-03-12T08:36:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3708
+- author: Cvlancer
+  changes:
+  - message: (Oasis) Made it slightly easier to mine towards the pickaxes with the
+      starting shovels in Perma Exile.
+    type: Tweak
+  - message: (Oasis) Slightly increased the number of loot spawns in Perma Exile mines.
+    type: Tweak
+  - message: (Oasis) Quartermater's locker should no longer be missing items.
+    type: Fix
+  - message: (Oasis) Missing items in Mafia and Mob Boss Maints area have been restored.
+    type: Fix
+  - message: (Oasis) The (imitation) druid staff has been returned to the Maints LARP.
+    type: Fix
+  - message: (Oasis) Unpowered light in Perma Exile fixed.
+    type: Fix
+  id: 370901
+  time: '2026-03-12T13:37:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3709
 Order: -1
 
