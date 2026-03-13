@@ -34364,5 +34364,16 @@ Entries:
   id: 371801
   time: '2026-03-13T08:23:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3718
+- author: katte, FeralCreature
+  changes:
+  - message: Consoles now have slots for pAI.
+    type: Add
+  - message: pAI can now open consoles they're in.
+    type: Add
+  - message: pAI camera snaps to grids now.
+    type: Tweak
+  id: 371701
+  time: '2026-03-13T08:45:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3717
 Order: -1
 
