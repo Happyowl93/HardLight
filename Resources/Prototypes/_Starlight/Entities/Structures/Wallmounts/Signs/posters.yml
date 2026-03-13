@@ -21,7 +21,7 @@
 - type: entity
   parent: PosterBase
   id: PosterLegitEyeChart
-  name: "A chart for eye exams"
+  name: "Eye chart"
   description: "Is that third letter a P or an F?"
   components:
   - type: Sprite
