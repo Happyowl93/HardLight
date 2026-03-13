@@ -27,11 +27,9 @@
             ChiefEngineer: [ 1, 1 ]
             ResearchDirector: [ 1, 1 ]
             Quartermaster: [ 1, 1 ]
-            NanoTrasenRepresentative: [ 1, 1 ]
-            BlueShield: [ 1, 1 ]
+            #Law
             Magistrate: [ 1, 1 ]
             IAA: [ 1, 2 ]
-            NanotrasenCareerTrainer: [ 1, 2 ]
             #service 
             Bartender: [ 2, 2 ]
             Botanist: [ 3, 3 ]
@@ -62,7 +60,7 @@
             DutyOfficer: [ 1, 2 ]
             Detective: [ 1, 1 ]
             SecurityCadet: [ 4, 5 ] #intern, not counted
-            Lawyer: [ 2, 2 ]
+            #Lawyer: [ 2, 2 ]
             #supply 
             SalvageSpecialist: [ 5, 5 ]
             CargoTechnician: [ 6, 7 ]
@@ -79,3 +77,7 @@
             #silicon 
             Borg: [ 4, 5 ]
             StationAi: [ 1, 1 ]
+            #Representatives
+            NanoTrasenRepresentative: [ 1, 1 ]
+            BlueShield: [ 1, 1 ]
+            NanotrasenCareerTrainer: [ 1, 2 ]
