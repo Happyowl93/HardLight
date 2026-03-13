@@ -34350,5 +34350,19 @@ Entries:
   id: 370501
   time: '2026-03-12T16:02:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3705
+- author: salarua
+  changes:
+  - message: 'Changed name of "A chart for eye exams" to shorter version: "Eye chart".'
+    type: Tweak
+  id: 371501
+  time: '2026-03-12T20:04:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3715
+- author: Ohelig
+  changes:
+  - message: Syndicate Paperwork Cyborg Module
+    type: Add
+  id: 371801
+  time: '2026-03-13T08:23:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3718
 Order: -1
 
