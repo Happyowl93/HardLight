@@ -34375,5 +34375,14 @@ Entries:
   id: 371701
   time: '2026-03-13T08:45:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3717
+- author: Coolsurf6
+  changes:
+  - message: The Dark Gygax has had it's price reverted to 30 TC for Lone Operatives.
+    type: Tweak
+  - message: The Mauler has had it's price reverted to 45 TC for Lone Operatives.
+    type: Tweak
+  id: 372101
+  time: '2026-03-13T12:22:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3721
 Order: -1
 
