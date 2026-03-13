@@ -68,8 +68,7 @@
     - Xenoborgs
     - BasicStationEventScheduler
     - BasicStationEventScheduler # Starlight, ShitStation
-    - MeteorSwarmMildScheduler
-    - MeteorSwarmScheduler
+    - MeteorSwarmScheduler # Meteor mild isn't included in almost aller because in theory the idea is to have a round last more than 10 minutes.
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - SpaceTrafficControlFriendlyEventScheduler
@@ -85,6 +84,7 @@
     - CockroachMigration # Starlight, ShitStation
     - MouseMigration # Starlight, ShitStation
     - SLChangeling # Starlight
+    - Vampire #Starlight
     - SiliconLiberation #Starlight
     - Brighteye #Starlight
     - ThiefGamerule # Starlight, Event Light
