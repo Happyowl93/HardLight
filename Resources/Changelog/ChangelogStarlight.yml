@@ -34384,5 +34384,20 @@ Entries:
   id: 372101
   time: '2026-03-13T12:22:10.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3721
+- author: Shades, teapoterror
+  changes:
+  - message: TSF Arrived with their own ship.
+    type: Add
+  - message: Improvement to the Gunnery System.
+    type: Tweak
+  - message: Fix TSF Loadout.
+    type: Fix
+  - message: Point Defense now target also shells.
+    type: Tweak
+  - message: Military Point Defense.
+    type: Add
+  id: 371901
+  time: '2026-03-13T18:22:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3719
 Order: -1
 
