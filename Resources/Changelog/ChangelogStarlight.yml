@@ -34399,5 +34399,18 @@ Entries:
   id: 371901
   time: '2026-03-13T18:22:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3719
+- author: Shades
+  changes:
+  - message: Psychic Screach does not fully drains Substation/SMES now.
+    type: Tweak
+  - message: Fixed Weather inpacting all spacemaps.
+    type: Fix
+  - message: Changed the Weight chances of some events.
+    type: Tweak
+  - message: Door Runtime Event will not space the station anymore.
+    type: Tweak
+  id: 371601
+  time: '2026-03-13T19:56:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3716
 Order: -1
 
