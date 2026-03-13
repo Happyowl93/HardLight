@@ -32669,20 +32669,6 @@ entities:
     - type: Transform
       pos: 4.5,-17.5
       parent: 1
-- proto: LightBulbCrystalRed
-  entities:
-  - uid: 4999
-    components:
-    - type: Transform
-      parent: 4998
-    - type: Physics
-      canCollide: False
-  - uid: 5004
-    components:
-    - type: Transform
-      parent: 5003
-    - type: Physics
-      canCollide: False
 - proto: LiquidNitrogenCanister
   entities:
   - uid: 5005
@@ -34935,11 +34921,6 @@ entities:
     - type: Transform
       pos: -11.5,-6.5
       parent: 1
-  - uid: 5362
-    components:
-    - type: Transform
-      pos: -19.500492,-6.4628625
-      parent: 1
 - proto: PottedPlantRandom
   entities:
   - uid: 5363
@@ -35900,38 +35881,6 @@ entities:
     - type: Transform
       pos: -23.5,-4.5
       parent: 1
-- proto: PoweredStrobeLightSolgov
-  entities:
-  - uid: 4998
-    components:
-    - type: Transform
-      pos: 19.5,-0.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        light_bulb: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 4999
-    - type: ApcPowerReceiver
-      powerLoad: 0
-    - type: DamageOnInteract
-      isDamageActive: False
-  - uid: 5003
-    components:
-    - type: Transform
-      pos: 0.5,-14.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        light_bulb: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 5004
-    - type: ApcPowerReceiver
-      powerLoad: 0
-    - type: DamageOnInteract
-      isDamageActive: False
 - proto: PrinterDoc
   entities:
   - uid: 5528
