@@ -20,4 +20,5 @@ public sealed partial class DamageOnEquipComponent : Component
     [DataField] public LocId? PopupLocId;
     [DataField] public bool DropOnKill;
     [DataField] public bool ForceDrop;
+    [DataField] public bool CanDamageDead;
 }

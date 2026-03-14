@@ -36,6 +36,7 @@ public sealed class DamageOnEquipSystem : EntitySystem
     {
         if(_pendingDeaths.ContainsKey(target)) return;
         if (_ignore.Remove(target)) return;
+        if (!comp.CanDamageDead && _state.IsDead(target)) return;
         var popupDelay = comp.PopupLocId is not null ? comp.PopupDelay : TimeSpan.Zero;
         var damageDelay = comp.PopupDelay + comp.Delay;
 
