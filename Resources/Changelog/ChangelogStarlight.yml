@@ -34472,5 +34472,12 @@ Entries:
   id: 371401
   time: '2026-03-14T16:18:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3714
+- author: CawsForConcern
+  changes:
+  - message: (Oasis) Added a 3rd Chemist job slot.
+    type: Add
+  id: 372901
+  time: '2026-03-14T17:18:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3729
 Order: -1
 
