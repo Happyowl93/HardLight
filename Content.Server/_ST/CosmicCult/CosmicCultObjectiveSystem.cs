@@ -1,6 +1,5 @@
 using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
-using Content.Shared.Ninja.Components;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Roles;
 using Content.Shared.Warps;
@@ -36,8 +35,8 @@ public sealed class CosmicCultObjectiveSystem : EntitySystem
             return;
 
         var warps = new List<EntityUid>();
-        var query = EntityQueryEnumerator<BombingTargetComponent, WarpPointComponent>();
-        while (query.MoveNext(out var warpUid, out _, out var warp))
+        var query = EntityQueryEnumerator<WarpPointComponent>();
+        while (query.MoveNext(out var warpUid, out var warp))
         {
             if (warp.Location != null)
             {

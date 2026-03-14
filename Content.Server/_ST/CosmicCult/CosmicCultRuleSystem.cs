@@ -13,7 +13,7 @@ using Content.Server.Ghost;
 using Content.Server.Light.Components;
 using Content.Server.Objectives.Components;
 using Content.Server.Popups;
-using Content.Server.Radio.Components;
+using Content.Shared.Radio.Components;
 using Content.Server.Roles;
 using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Systems;
@@ -30,6 +30,7 @@ using Content.Shared.Audio;
 using Content.Shared.Body.Systems;
 using Content.Shared.Coordinates;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Database;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Humanoid;
@@ -42,6 +43,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Parallax;
 using Content.Shared.Popups;
 using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Temperature.Components;
 using Robust.Server.Audio;
@@ -58,6 +60,9 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Collections.Immutable;
 using System.Linq;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Gibbing;
+using Content.Shared.Light.Components;
 
 namespace Content.Server._ST.CosmicCult;
 
@@ -89,7 +94,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
     [Dependency] private readonly ServerGlobalSoundSystem _sound = default!;
-    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly GibbingSystem _gibbing = default!;
     [Dependency] private readonly SharedEyeSystem _eye = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
@@ -368,7 +373,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         Spawn(cultRule.WarpVFX, spawnTgt);
         Spawn(cultRule.WarpVFX, Transform(player).Coordinates);
         _audio.PlayPvs(cultRule.WarpSFX, spawnTgt, AudioParams.Default.WithVolume(3f));
-        _body.GibBody(player); // you don't need that body anymore
+        _gibbing.Gib(player); // you don't need that body anymore
     }
 
     private static void SetWinType(Entity<CosmicCultRuleComponent> ent, WinType type)
@@ -750,7 +755,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
             return;
         var cosmicGamerule = cult.Comp;
 
-        _stun.TryKnockdown(uid, TimeSpan.FromSeconds(2), true);
+        _stun.TryAddStunDuration(uid.Owner, TimeSpan.FromSeconds(2));
         foreach (var actionEnt in uid.Comp.ActionEntities) _actions.RemoveAction(actionEnt);
 
         if (TryComp<IntrinsicRadioTransmitterComponent>(uid, out var transmitter))
@@ -778,7 +783,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
             _euiMan.OpenEui(new CosmicDeconvertedEui(), session);
         }
         _eye.SetVisibilityMask(uid, 1);
-        _alerts.ClearAlert(uid, uid.Comp.EntropyAlert);
+        _alerts.ClearAlert(uid.Owner, uid.Comp.EntropyAlert);
         cosmicGamerule.TotalCult--;
         cosmicGamerule.Cultists.Remove(uid);
         AdjustCultObjectiveConversion(-1);

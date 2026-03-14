@@ -6,6 +6,7 @@ using Content.Server.Station.Systems;
 using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared._ST.CosmicCult;
 using Content.Shared.Maps;
+using Content.Shared.Station.Components;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -120,11 +121,9 @@ public sealed class CosmicMonumentSystem : EntitySystem
 
         //CHECK IF WE'RE ON THE STATION OR IF SOMEONE'S TRYING TO SNEAK THIS ONTO SOMETHING SMOL
         var station = _station.GetStationInMap(xform.MapID);
-
         EntityUid? stationGrid = null;
-
-        if (TryComp<StationDataComponent>(station, out var stationData))
-            stationGrid = _station.GetLargestGrid(stationData);
+        if (station is { } stationUid)
+            stationGrid = _station.GetLargestGrid((stationUid, (StationDataComponent?) null));
 
         if (stationGrid is not null && stationGrid != xform.GridUid)
         {

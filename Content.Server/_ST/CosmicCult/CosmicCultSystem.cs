@@ -15,7 +15,7 @@ using Content.Shared.Hands;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Server._ST.CosmicCult.EntitySystems;
 using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared._ST.CosmicCult;
@@ -53,7 +53,7 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly SharedStatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!;
 
     private readonly ResPath _mapPath = new("Maps/_ST/Other/cosmicvoid.yml");
 
@@ -131,7 +131,7 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
             uid.Comp.ActionEntities.Add(actionEnt);
         }
         _eye.RefreshVisibilityMask(uid.Owner);
-        _alerts.ShowAlert(uid, uid.Comp.EntropyAlert);
+        _alerts.ShowAlert(uid.Owner, uid.Comp.EntropyAlert);
     }
 
     /// <summary>

@@ -9,6 +9,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Robust.Shared.Timing;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._ST.CosmicCult.Abilities;
 
@@ -64,9 +65,9 @@ public sealed class CosmicConversionSystem : EntitySystem
             }
             else
             {
-                _stun.TryStun(target, TimeSpan.FromSeconds(4f), false);
-                _damageable.TryChangeDamage(target, uid.Comp.ConversionHeal * -1);
-                _cultRule.CosmicConversion(uid, target);
+                _stun.TryAddStunDuration(target.Owner, TimeSpan.FromSeconds(4f));
+                _damageable.TryChangeDamage(target.Owner, uid.Comp.ConversionHeal * -1);
+                _cultRule.CosmicConversion(uid, target.Owner);
             }
         }
     }

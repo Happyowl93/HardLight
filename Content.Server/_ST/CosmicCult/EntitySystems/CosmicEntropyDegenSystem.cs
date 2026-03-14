@@ -5,6 +5,7 @@ using Content.Shared.StatusEffectNew;
 using Content.Shared._ST.CosmicCult.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._ST.CosmicCult.EntitySystems;
 

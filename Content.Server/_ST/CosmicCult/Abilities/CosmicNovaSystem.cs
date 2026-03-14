@@ -13,6 +13,7 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._ST.CosmicCult.Abilities;
 
@@ -63,7 +64,7 @@ public sealed class CosmicNovaSystem : EntitySystem
         if (_cosmicCult.EntityIsCultist(args.OtherEntity) || HasComp<BibleUserComponent>(args.OtherEntity) || !HasComp<MobStateComponent>(args.OtherEntity))
             return;
         if (uid.Comp.DoStun)
-            _stun.TryParalyze(args.OtherEntity, TimeSpan.FromSeconds(2f), false);
+            _stun.TryAddParalyzeDuration(args.OtherEntity, TimeSpan.FromSeconds(2f));
         _damageable.TryChangeDamage(args.OtherEntity, uid.Comp.CosmicNovaDamage); // This'll probably trigger two or three times because of how collision works. I'm not being lazy here, it's a feature (kinda /s)
         _color.RaiseEffect(Color.Red, new List<EntityUid>() { args.OtherEntity }, Filter.Pvs(args.OtherEntity, entityManager: EntityManager));
     }

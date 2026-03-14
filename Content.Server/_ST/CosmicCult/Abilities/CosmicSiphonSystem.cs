@@ -13,6 +13,7 @@ using Content.Shared.Popups;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Content.Shared.Light.Components;
 
 namespace Content.Server._ST.CosmicCult.Abilities;
 
@@ -25,7 +26,7 @@ public sealed class CosmicSiphonSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedStatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly CosmicCultSystem _cosmicCult = default!;
 
     private readonly HashSet<Entity<PoweredLightComponent>> _lights = [];
@@ -89,7 +90,7 @@ public sealed class CosmicSiphonSystem : EntitySystem
         else
         {
             _popup.PopupEntity(Loc.GetString("cosmicability-siphon-success", ("target", Identity.Entity(target, EntityManager))), uid, uid);
-            _alerts.ShowAlert(uid, uid.Comp.EntropyAlert);
+            _alerts.ShowAlert(uid.Owner, uid.Comp.EntropyAlert);
             _cultRule.IncrementCultObjectiveEntropy(uid);
         }
 

@@ -5,10 +5,12 @@ using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared.Audio;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Station.Components;
 using Content.Shared.Throwing;
 using Content.Shared.Warps;
 using Robust.Server.GameObjects;
@@ -16,6 +18,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._ST.CosmicCult.EntitySystems;
 
@@ -82,9 +85,11 @@ public sealed class CosmicColossusSystem : EntitySystem
     {
         ent.Comp.DeathTimer = _timing.CurTime + ent.Comp.DeathWait;
         var station = _station.GetStationInMap(Transform(ent).MapID);
-        if (TryComp<StationDataComponent>(station, out var stationData))
+        if (station is { } stationUid)
         {
-            var stationGrid = _station.GetLargestGrid(stationData);
+            var stationGrid = _station.GetLargestGrid((stationUid, (StationDataComponent?) null));
+            if (stationGrid is null)
+                return;
             _throw.TryThrow(ent, Transform(stationGrid!.Value).Coordinates, baseThrowSpeed: 30, null, 0, 0, false, false, false, false, false);
         }
         if (ent.Comp.Timed)

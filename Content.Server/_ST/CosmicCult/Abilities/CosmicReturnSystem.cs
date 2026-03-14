@@ -5,6 +5,7 @@ using Content.Shared._ST.CosmicCult.Components.Examine;
 using Content.Shared.Damage;
 using Content.Shared.Mind;
 using Content.Shared.Stunnable;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._ST.CosmicCult.Abilities;
 

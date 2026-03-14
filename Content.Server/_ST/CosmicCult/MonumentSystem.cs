@@ -12,6 +12,7 @@ using Content.Shared._ST.CosmicCult;
 using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared._ST.CosmicCult.Prototypes;
 using Content.Shared.Audio;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
@@ -23,6 +24,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._ST.CosmicCult;
 

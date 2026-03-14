@@ -13,6 +13,7 @@ using Content.Shared.Physics;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
+using Content.Shared.Light.Components;
 
 namespace Content.Server._ST.CosmicCult.Abilities;
 
@@ -71,7 +72,7 @@ public sealed class CosmicGlareSystem : EntitySystem
 
             if (HasComp<BorgChassisComponent>(targetEnt))
             {
-                _stun.TryParalyze(targetEnt, uid.Comp.CosmicGlareDuration / 2, true);
+                _stun.TryAddParalyzeDuration(targetEnt, uid.Comp.CosmicGlareDuration / 2);
             }
 
             _color.RaiseEffect(Color.CadetBlue, new List<EntityUid>() { targetEnt }, Filter.Pvs(targetEnt, entityManager: EntityManager));

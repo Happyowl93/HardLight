@@ -10,6 +10,7 @@ using Content.Shared.Mobs.Systems;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._ST.CosmicCult;
 
@@ -68,7 +69,7 @@ public sealed class CosmicGlyphSystem : EntitySystem
         var damage = uid.Comp.ActivationDamage / cultists.Count;
         foreach (var cultist in cultists)
         {
-            _damageable.TryChangeDamage(cultist, damage, true);
+            _damageable.TryChangeDamage(cultist.Owner, damage, true);
         }
 
         _audio.PlayPvs(uid.Comp.GylphSFX, tgtpos, AudioParams.Default.WithVolume(+1f));

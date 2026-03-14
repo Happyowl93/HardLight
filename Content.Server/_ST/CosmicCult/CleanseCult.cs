@@ -1,21 +1,22 @@
 using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared.EntityEffects;
+using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._ST.CosmicCult;
 
-public sealed partial class CleanseCult : EntityEffect
+public sealed partial class CleanseCult : EntityEffectBase<CleanseCult>
 {
-    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+    public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         return Loc.GetString("reagent-effect-guidebook-cleanse-cultist", ("chance", Probability));
     }
 
-    public override void Effect(EntityEffectBaseArgs args)
+    public override void RaiseEvent(EntityUid target, IEntityEffectRaiser raiser, float scale, EntityUid? user)
     {
-        var entityManager = args.EntityManager;
-        var uid = args.TargetEntity;
-        if (entityManager.HasComponent<CosmicCultComponent>(uid))
-            entityManager.EnsureComponent<CleanseCultComponent>(uid); // We just slap them with the component and let the Deconversion system handle the rest.
+        var entityManager = IoCManager.Resolve<IEntityManager>();
+        if (entityManager.HasComponent<CosmicCultComponent>(target))
+            entityManager.EnsureComponent<CleanseCultComponent>(target); // We just slap them with the component and let the Deconversion system handle the rest.
     }
 }
