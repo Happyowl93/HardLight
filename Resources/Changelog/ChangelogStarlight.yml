@@ -34412,5 +34412,24 @@ Entries:
   id: 371601
   time: '2026-03-13T19:56:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3716
+- author: wonderfulnewworld
+  changes:
+  - message: Adds a new gamemode, Almost Aller at Once. It's Aller at Once without
+      Zombies/Kessler. Admin only.
+    type: Add
+  - message: Adds Almost All at Once (All at Once minus Zombies and Kessler) to Alpha's
+      Secret Pool at a 1% chance. It requires 60pop.
+    type: Add
+  - message: Alpha Secret NukeOps/Revolutionary chance -0.5%.
+    type: Tweak
+  - message: LoneOps and Vampires will now show up in Aller/Almost Aller at Once.
+      Enjoy.
+    type: Tweak
+  - message: Changed All/Aller's min players to 50 (not Almost All/Aller), since Vampires
+      and Zombies require 50 players.
+    type: Fix
+  id: 372401
+  time: '2026-03-14T03:29:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3724
 Order: -1
 
