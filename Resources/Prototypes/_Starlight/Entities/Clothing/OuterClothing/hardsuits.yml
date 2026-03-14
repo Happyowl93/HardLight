@@ -187,20 +187,6 @@
         - WhitelistChameleon
         - HardsuitSpatio #can now be used to make goliath hardsuit
 
-#CCNT Consortium BSOs
-- type: entity
-  parent: [BaseCentcommContraband, ClothingOuterHardsuitSyndieElite] #sl Change
-  id: ClothingOuterHardsuitNTNCConsortium
-  name: nt-nc marine hardsuit
-  description: A protective hardsuit worn by NT-NC Naval Officers.
-  components:
-    - type: Sprite
-      sprite: _Starlight/Clothing/OuterClothing/Hardsuits/ntnc_hardsuit.rsi
-    - type: Clothing
-      sprite: _Starlight/Clothing/OuterClothing/Hardsuits/ntnc_hardsuit.rsi
-    - type: ToggleableClothing
-      clothingPrototype: ClothingHeadHelmetHardsuitNTNCConsortium
-
 #Syndicate Infiltration Suit
 - type: entity
   parent:

@@ -1,0 +1,23 @@
+- type: entity
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
+  id: ClothingHeadHelmetHardsuitNTNCConsortium
+  name: nanotrasen navy marine hardsuit helmet
+  description: A protective hardsuit helmet worn by NanoTrasen Navy Marines.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Head/Hardsuits/ntnc_hardsuit_helmet.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Head/Hardsuits/ntnc_hardsuit_helmet.rsi
+  - type: Item
+    size: Small
+  - type: PointLight
+    color: "#addbff"
+  - type: Pierceable
+    level: HardenedMetal
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9

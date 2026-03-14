@@ -1,0 +1,13 @@
+#CCNT Consortium BSOs
+- type: entity
+  parent: [BaseCentcommContraband, ClothingOuterHardsuitSyndieElite] #sl Change
+  id: ClothingOuterHardsuitNTNCConsortium
+  name: nanotrasen navy marine hardsuit
+  description: A protective hardsuit worn by NanoTrasen Navy Marines.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Clothing/OuterClothing/Hardsuits/ntnc_hardsuit.rsi
+    - type: Clothing
+      sprite: _Starlight/Clothing/OuterClothing/Hardsuits/ntnc_hardsuit.rsi
+    - type: ToggleableClothing
+      clothingPrototype: ClothingHeadHelmetHardsuitNTNCConsortium
