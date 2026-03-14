@@ -34431,5 +34431,14 @@ Entries:
   id: 372401
   time: '2026-03-14T03:29:33.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3724
+- author: CawsForConcern
+  changes:
+  - message: (CBURN) Moved many items out of the wall lockers on the CBURN shuttle.
+      This makes it much easier to spot beakers & plasma in Chemistry and biomass
+      in the Clone Bay when playing an CBURN ghost roles.
+    type: Tweak
+  id: 372601
+  time: '2026-03-14T14:34:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3726
 Order: -1
 
