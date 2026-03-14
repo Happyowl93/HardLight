@@ -34479,5 +34479,21 @@ Entries:
   id: 372901
   time: '2026-03-14T17:18:33.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3729
+- author: neomoth
+  changes:
+  - message: Removed "the" from the hat that kills you when you take it off.
+    type: Tweak
+  - message: The hat that kills you when you take it off now drops from your body
+      when you die.
+    type: Tweak
+  - message: The hat that kills you when you take it off can no longer damage people
+      who are already dead.
+    type: Tweak
+  - message: Made so putting on and taking off the hat that kills you when you take
+      it off repeatedly no longer stacks the damage.
+    type: Fix
+  id: 372501
+  time: '2026-03-14T17:23:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3725
 Order: -1
 
