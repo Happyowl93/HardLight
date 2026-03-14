@@ -60,12 +60,12 @@
 - type: startingGear
   id: NTNCMedicGear
   equipment:
-    jumpsuit: ClothingEyesGlassesNTNC
+    jumpsuit: ClothingUniformNTNCFatigues
     back: ClothingBackpackNTNC
     shoes: ClothingShoesBootsJackFilled
     outerClothing: ClothingOuterHardsuitNTNCConsortiumMedic
     id: NTNCCSPDA
-    eyes: ClothingEyesGlassesBlueShield
+    eyes: ClothingEyesGlassesNTNC
     ears: ClothingHeadsetAltNTNC
     mask: ClothingMaskGasSecurity
     belt: ClothingBeltNTNCRigFilledMed
