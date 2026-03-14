@@ -9,7 +9,7 @@
   "states": [
     {
       "name": "slime_key",
-      "directions": 4,
+      "directions": 4
     },
     {
       "name": "slime",
