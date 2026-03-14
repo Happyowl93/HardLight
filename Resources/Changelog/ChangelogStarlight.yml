@@ -34440,5 +34440,13 @@ Entries:
   id: 372601
   time: '2026-03-14T14:34:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3726
+- author: CawsForConcern
+  changes:
+  - message: The Syndicate 'Evac Pod' (used for Syndicate Visitors/Refugees) now has
+      braking thrusters.
+    type: Tweak
+  id: 372701
+  time: '2026-03-14T14:38:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3727
 Order: -1
 
