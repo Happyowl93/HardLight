@@ -80,6 +80,8 @@ public sealed class GridPowerTests
         new("/Maps/_Starlight/Shuttles/mothership.yml"),
         new("/Maps/_Starlight/Shuttles/ShuttleEvent/montague.yml"),
         new("/Maps/_Starlight/Shuttles/ShuttleEvent/romeo.yml"),
+        new("/Maps/_Starlight/Shuttles/cargo_syndicate.yml"),
+        new("/Maps/_Starlight/Shuttles/emergency_syndicate.yml"),
     ];
 
     [Test, TestCaseSource(nameof(GridPaths))]
