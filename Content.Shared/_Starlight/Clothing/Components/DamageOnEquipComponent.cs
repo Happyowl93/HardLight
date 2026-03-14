@@ -49,6 +49,7 @@ public sealed partial class DamageOnEquipComponent : Component
     
     /// <summary>
     /// How long until the damage is applied?
+    /// Adding a <see cref="PopupDelay"/> will have that delay added to this.
     /// </summary>
     [DataField] public TimeSpan DamageDelay = TimeSpan.Zero;
     

@@ -36,9 +36,7 @@ public sealed class DamageOnEquipSystem : EntitySystem
         if (!comp.CanDamageDead && _state.IsDead(target)) return;
         if (!comp.CanDamageCrit && _state.IsCritical(target)) return;
         var popupDelay = comp.PopupLocId is not null ? comp.PopupDelay : TimeSpan.Zero;
-        Log.Info($"popupDelay: {popupDelay}");
         var damageDelay = comp.PopupDelay + comp.DamageDelay;
-        Log.Info($"damageDelay: {damageDelay}");
 
         if (popupDelay == TimeSpan.Zero && comp.PopupLocId is not null)
             _popup.PopupEntity(Loc.GetString(comp.PopupLocId), target, target, PopupType.MediumCaution);
