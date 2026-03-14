@@ -34431,5 +34431,88 @@ Entries:
   id: 372401
   time: '2026-03-14T03:29:33.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3724
+- author: CawsForConcern
+  changes:
+  - message: (CBURN) Moved many items out of the wall lockers on the CBURN shuttle.
+      This makes it much easier to spot beakers & plasma in Chemistry and biomass
+      in the Clone Bay when playing an CBURN ghost roles.
+    type: Tweak
+  id: 372601
+  time: '2026-03-14T14:34:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3726
+- author: CawsForConcern
+  changes:
+  - message: The Syndicate 'Evac Pod' (used for Syndicate Visitors/Refugees) now has
+      braking thrusters.
+    type: Tweak
+  id: 372701
+  time: '2026-03-14T14:38:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3727
+- author: Tytos
+  changes:
+  - message: Added new station, Serpentcrest, along with its evac and cargo shuttle
+    type: Add
+  id: 365501
+  time: '2026-03-14T15:04:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3655
+- author: R3v3l4t1on, ItsAbby
+  changes:
+  - message: NTNC toolbelt, officer/ensign jumpsuit/jumpskirt/hat, glasses, hud, headset,
+      pauldrons.
+    type: Add
+  - message: Changed sprites for the existing NTNC hardsuit, hardsuit helmet, webbing,
+      outer vest, fatigues.
+    type: Tweak
+  - message: (hopefully) replaced all instances of 'ntnc naval officer' with 'NanoTrasen
+      Navy Marine' per Abby's request.
+    type: Tweak
+  - message: Fixed some random NTNC stuff having command contra tags and not CC contra
+      tags.
+    type: Fix
+  id: 371401
+  time: '2026-03-14T16:18:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3714
+- author: CawsForConcern
+  changes:
+  - message: (Oasis) Added a 3rd Chemist job slot.
+    type: Add
+  id: 372901
+  time: '2026-03-14T17:18:33.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3729
+- author: neomoth
+  changes:
+  - message: Removed "the" from the hat that kills you when you take it off.
+    type: Tweak
+  - message: The hat that kills you when you take it off now drops from your body
+      when you die.
+    type: Tweak
+  - message: The hat that kills you when you take it off can no longer damage people
+      who are already dead.
+    type: Tweak
+  - message: Made so putting on and taking off the hat that kills you when you take
+      it off repeatedly no longer stacks the damage.
+    type: Fix
+  id: 372501
+  time: '2026-03-14T17:23:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3725
+- author: redmushie
+  changes:
+  - message: Added 'Custom' split option to item stacks.
+    type: Add
+  - message: Added several large default split options for use with larger stacks.
+    type: Add
+  - message: Split options can be pressed multiple times without closing the menu.
+    type: Tweak
+  id: 373101
+  time: '2026-03-14T19:17:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3731
+- author: deltaVelocity
+  changes:
+  - message: Adds the Svalinn Laser Pistol to the maints locker loot pool, at a rate
+      comparable to makeshift weapons.
+    type: Add
+  id: 373201
+  time: '2026-03-14T19:21:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3732
 Order: -1
 
