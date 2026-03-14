@@ -34506,5 +34506,13 @@ Entries:
   id: 373101
   time: '2026-03-14T19:17:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3731
+- author: deltaVelocity
+  changes:
+  - message: Adds the Svalinn Laser Pistol to the maints locker loot pool, at a rate
+      comparable to makeshift weapons.
+    type: Add
+  id: 373201
+  time: '2026-03-14T19:21:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3732
 Order: -1
 
