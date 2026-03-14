@@ -34455,5 +34455,22 @@ Entries:
   id: 365501
   time: '2026-03-14T15:04:44.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3655
+- author: R3v3l4t1on, ItsAbby
+  changes:
+  - message: NTNC toolbelt, officer/ensign jumpsuit/jumpskirt/hat, glasses, hud, headset,
+      pauldrons.
+    type: Add
+  - message: Changed sprites for the existing NTNC hardsuit, hardsuit helmet, webbing,
+      outer vest, fatigues.
+    type: Tweak
+  - message: (hopefully) replaced all instances of 'ntnc naval officer' with 'NanoTrasen
+      Navy Marine' per Abby's request.
+    type: Tweak
+  - message: Fixed some random NTNC stuff having command contra tags and not CC contra
+      tags.
+    type: Fix
+  id: 371401
+  time: '2026-03-14T16:18:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3714
 Order: -1
 
