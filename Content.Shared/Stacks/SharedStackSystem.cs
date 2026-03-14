@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._Starlight.Stack;
 using Content.Shared.Examine;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
@@ -30,9 +31,22 @@ public abstract partial class SharedStackSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
+    
+    // Starlight BEGIN
+    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
+    private const string StackCustomSplitBoundUserInterface = "StackCustomSplitBoundUserInterface";
 
-    // TODO: These should be in the prototype.
-    public static readonly int[] DefaultSplitAmounts = { 1, 5, 10, 20, 30, 50 };
+    public static readonly int[] DefaultSplitAmounts =
+    {
+        1, 5, 10, 20, 30, 50, // Default
+        100, 250, 500, // From here onwards is only really relevant for spesos/credits.
+        1_000, 2_500, 5_000,
+        10_000, 25_000, 50_000,
+        100_000, 250_000, 500_000,
+        1_000_000, 2_500_000, 5_000_000,
+        10_000_000, 25_000_000, 50_000_000,
+    };
+    // Starlight END
 
     public override void Initialize()
     {
@@ -47,6 +61,7 @@ public abstract partial class SharedStackSystem : EntitySystem
         SubscribeLocalEvent<StackComponent, BeforeIngestedEvent>(OnBeforeEaten);
         SubscribeLocalEvent<StackComponent, IngestedEvent>(OnEaten);
         SubscribeLocalEvent<StackComponent, GetVerbsEvent<AlternativeVerb>>(OnStackAlternativeInteract);
+        SubscribeLocalEvent<StackComponent, StackCustomSplitMessage>(OnSplitAmountMessage); // Starlight
 
         _vvm.GetTypeHandler<StackComponent>()
             .AddPath(nameof(StackComponent.Count), (_, comp) => comp.Count, SetCount);
@@ -115,6 +130,11 @@ public abstract partial class SharedStackSystem : EntitySystem
         Appearance.SetData(ent.Owner, StackVisuals.Actual, ent.Comp.Count, appearance);
         Appearance.SetData(ent.Owner, StackVisuals.MaxCount, GetMaxCount(ent.Comp), appearance);
         Appearance.SetData(ent.Owner, StackVisuals.Hide, false, appearance);
+        
+        // Starlight BEGIN
+        var userInterfaceComp = EnsureComp<UserInterfaceComponent>(ent);
+        _ui.SetUi((ent, userInterfaceComp), StackCustomSplitUiKey.Key, new InterfaceData(StackCustomSplitBoundUserInterface));
+        // Starlight END
     }
 
     private void OnStackGetState(Entity<StackComponent> ent, ref ComponentGetState args)
@@ -140,7 +160,7 @@ public abstract partial class SharedStackSystem : EntitySystem
 
         args.PushMarkup(
             Loc.GetString("comp-stack-examine-detail-count",
-                ("count", ent.Comp.Count),
+                ("count", ent.Comp.Count.ToString("N0")), // Starlight: Add separators
                 ("markupCountColor", "lightgray")
             )
         );
@@ -189,7 +209,18 @@ public abstract partial class SharedStackSystem : EntitySystem
             return;
 
         var user = args.User; // Can't pass ref events into verbs
-
+        
+        // Starlight BEGIN
+        var @event = args;
+        args.Verbs.Add(new AlternativeVerb()
+        {
+            Text = Loc.GetString("comp-stack-split-custom"),
+            Category = VerbCategory.Split,
+            Act = () => _ui.OpenUi(ent.Owner, StackCustomSplitUiKey.Key, @event.User),
+            Priority = 2
+        });
+        // Starlight END
+        
         AlternativeVerb halve = new()
         {
             Text = Loc.GetString("comp-stack-split-halve"),
@@ -207,7 +238,7 @@ public abstract partial class SharedStackSystem : EntitySystem
 
             AlternativeVerb verb = new()
             {
-                Text = amount.ToString(),
+                Text = amount.ToString("N0"), // Starlight: Add separators
                 Category = VerbCategory.Split,
                 Act = () => UserSplit(ent, user, amount),
                 // we want to sort by size, not alphabetically by the verb text.
@@ -230,6 +261,17 @@ public abstract partial class SharedStackSystem : EntitySystem
     protected virtual void UserSplit(Entity<StackComponent> stack, Entity<TransformComponent?> user, int amount)
     {
 
+    }
+    
+    /// <summary>
+    /// STARLIGHT: Handle custom split size messages from the UI.
+    /// </summary>
+    private void OnSplitAmountMessage(EntityUid uid, StackComponent stack, StackCustomSplitMessage msg)
+    {
+        if (stack.Count <= 0 || msg.Value <= 0)
+            return;
+        
+        UserSplit((uid, stack), msg.Actor, Math.Min(msg.Value, stack.Count));
     }
 }
 
