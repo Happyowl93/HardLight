@@ -34495,5 +34495,16 @@ Entries:
   id: 372501
   time: '2026-03-14T17:23:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3725
+- author: redmushie
+  changes:
+  - message: Added 'Custom' split option to item stacks.
+    type: Add
+  - message: Added several large default split options for use with larger stacks.
+    type: Add
+  - message: Split options can be pressed multiple times without closing the menu.
+    type: Tweak
+  id: 373101
+  time: '2026-03-14T19:17:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3731
 Order: -1
 
