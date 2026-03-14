@@ -1,6 +1,6 @@
 using System.Linq;
-using Content.Stellar.Server.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult.Components;
+using Content.Server._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared.Maps;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
@@ -8,7 +8,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Stellar.Server.CosmicCult.EntitySystems;
+namespace Content.Server._ST.CosmicCult.EntitySystems;
 
 public sealed class CosmicCorruptingSystem : EntitySystem
 {

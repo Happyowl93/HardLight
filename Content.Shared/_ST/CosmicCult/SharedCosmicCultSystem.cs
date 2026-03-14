@@ -1,13 +1,13 @@
-using Content.Stellar.Shared.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared.Antag;
 using Content.Shared.Ghost;
 using Content.Shared.Mind;
 using Content.Shared.Roles;
-using Content.Stellar.Shared.CosmicCult.Roles;
+using Content.Shared._ST.CosmicCult.Roles;
 using Robust.Shared.GameStates;
 using Robust.Shared.Player;
 
-namespace Content.Stellar.Shared.CosmicCult;
+namespace Content.Shared._ST.CosmicCult;
 
 public abstract class SharedCosmicCultSystem : EntitySystem
 {

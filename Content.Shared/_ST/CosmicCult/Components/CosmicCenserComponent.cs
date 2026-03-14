@@ -4,7 +4,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Stellar.Shared.CosmicCult.Components;
+namespace Content.Shared._ST.CosmicCult.Components;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class CosmicCenserComponent : Component

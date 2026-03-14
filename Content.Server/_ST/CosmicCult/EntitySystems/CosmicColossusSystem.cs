@@ -1,9 +1,9 @@
-using Content.Stellar.Server.CosmicCult.Components;
+using Content.Server._ST.CosmicCult.Components;
 using Content.Server.Actions;
 using Content.Server.Popups;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
-using Content.Stellar.Shared.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared.Audio;
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
@@ -17,7 +17,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 
-namespace Content.Stellar.Server.CosmicCult.EntitySystems;
+namespace Content.Server._ST.CosmicCult.EntitySystems;
 
 public sealed class CosmicColossusSystem : EntitySystem
 {

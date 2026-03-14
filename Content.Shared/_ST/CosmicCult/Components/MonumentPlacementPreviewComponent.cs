@@ -1,4 +1,4 @@
-namespace Content.Stellar.Shared.CosmicCult.Components;
+namespace Content.Shared._ST.CosmicCult.Components;
 
 /// <summary>
 /// a marker component used as an extra flag for an event to toggle the monument preview.

@@ -5,8 +5,8 @@ using Content.Shared.Actions.Events;
 using Content.Shared.Actions;
 using Content.Shared.Maps;
 using Content.Shared.Maps;
-using Content.Stellar.Shared.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult;
+using Content.Shared._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
@@ -17,7 +17,7 @@ using Robust.Shared.Timing;
 
 using Timer = Robust.Shared.Timing.Timer;
 
-namespace Content.Stellar.Client.CosmicCult.Visuals;
+namespace Content.Client._ST.CosmicCult.Visuals;
 
 /// <summary>
 /// This handles rendering a preview of where the monument will be placed

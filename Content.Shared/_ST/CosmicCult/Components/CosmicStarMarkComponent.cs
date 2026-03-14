@@ -2,7 +2,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
-namespace Content.Stellar.Shared.CosmicCult.Components;
+namespace Content.Shared._ST.CosmicCult.Components;
 
 /// <summary>
 /// Component for revealing cosmic cultists to the crew.

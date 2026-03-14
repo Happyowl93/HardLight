@@ -1,11 +1,11 @@
-using Content.Stellar.Shared.CosmicCult;
-using Content.Stellar.Shared.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult.Prototypes;
+using Content.Shared._ST.CosmicCult;
+using Content.Shared._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Prototypes;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 
-namespace Content.Stellar.Client.CosmicCult.UI.Monument;
+namespace Content.Client._ST.CosmicCult.UI.Monument;
 
 [UsedImplicitly]
 public sealed class MonumentBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)

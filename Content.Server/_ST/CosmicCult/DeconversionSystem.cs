@@ -1,8 +1,8 @@
-using Content.Stellar.Server.CosmicCult.Components;
+using Content.Server._ST.CosmicCult.Components;
 using Content.Server.Bible.Components;
-using Content.Stellar.Shared.CosmicCult.Components.Examine;
-using Content.Stellar.Shared.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult;
+using Content.Shared._ST.CosmicCult.Components.Examine;
+using Content.Shared._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
@@ -16,7 +16,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 
-namespace Content.Stellar.Server.CosmicCult;
+namespace Content.Server._ST.CosmicCult;
 
 public sealed class DeconversionSystem : EntitySystem
 {

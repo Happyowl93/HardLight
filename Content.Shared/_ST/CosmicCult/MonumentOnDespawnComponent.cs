@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Stellar.Shared.CosmicCult;
+namespace Content.Shared._ST.CosmicCult;
 
 /// <summary>
 /// When a <c>MonumentOnDespawnComponent</c> despawns, a monument will spawn in its place with the same cult association

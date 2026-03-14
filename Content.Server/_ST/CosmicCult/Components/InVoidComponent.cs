@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Stellar.Server.CosmicCult.Components;
+namespace Content.Server._ST.CosmicCult.Components;
 
 [RegisterComponent]
 [AutoGenerateComponentPause]

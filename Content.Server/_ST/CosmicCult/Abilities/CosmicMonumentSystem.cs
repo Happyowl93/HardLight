@@ -3,14 +3,14 @@ using Content.Server.Actions;
 using Content.Server.Popups;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
-using Content.Stellar.Shared.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult;
+using Content.Shared._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult;
 using Content.Shared.Maps;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
-namespace Content.Stellar.Server.CosmicCult.Abilities;
+namespace Content.Server._ST.CosmicCult.Abilities;
 
 public sealed class CosmicMonumentSystem : EntitySystem
 {

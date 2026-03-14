@@ -1,16 +1,16 @@
 using System.Linq;
-using Content.Stellar.Server.CosmicCult.Components;
-using Content.Stellar.Server.CosmicCult.EntitySystems;
+using Content.Server._ST.CosmicCult.Components;
+using Content.Server._ST.CosmicCult.EntitySystems;
 using Content.Server.Actions;
 using Content.Server.Atmos.Components;
 using Content.Server.Audio;
 using Content.Server.Chat.Systems;
 using Content.Server._ST.Shuttles;
 using Content.Server._ST.Silicons;
-using Content.Stellar.Shared.CCVars;
-using Content.Stellar.Shared.CosmicCult;
-using Content.Stellar.Shared.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult.Prototypes;
+using Content.Shared._ST.CCVars;
+using Content.Shared._ST.CosmicCult;
+using Content.Shared._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Prototypes;
 using Content.Shared.Audio;
 using Content.Shared.Damage;
 using Content.Shared.Interaction;
@@ -24,7 +24,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Stellar.Server.CosmicCult;
+namespace Content.Server._ST.CosmicCult;
 
 public sealed class MonumentSystem : SharedMonumentSystem
 {

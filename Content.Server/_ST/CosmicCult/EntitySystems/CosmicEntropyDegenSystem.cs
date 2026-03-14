@@ -1,10 +1,10 @@
-using Content.Stellar.Shared.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Components;
 using Robust.Shared.Timing;
 using Content.Shared.Damage;
 using Content.Shared.Popups;
 using Robust.Shared.Random;
 
-namespace Content.Stellar.Server.CosmicCult.EntitySystems;
+namespace Content.Server._ST.CosmicCult.EntitySystems;
 
 /// <summary>
 /// Makes the person with this component take damage over time.

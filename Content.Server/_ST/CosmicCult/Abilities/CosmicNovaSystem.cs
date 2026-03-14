@@ -1,7 +1,7 @@
 using System.Numerics;
 using Content.Server.Bible.Components;
-using Content.Stellar.Shared.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult;
+using Content.Shared._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult;
 using Content.Shared.Damage;
 using Content.Shared.Effects;
 using Content.Shared.Mobs.Components;
@@ -14,7 +14,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
-namespace Content.Stellar.Server.CosmicCult.Abilities;
+namespace Content.Server._ST.CosmicCult.Abilities;
 
 public sealed class CosmicNovaSystem : EntitySystem
 {

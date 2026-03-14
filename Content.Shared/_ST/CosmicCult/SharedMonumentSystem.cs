@@ -1,6 +1,6 @@
-using Content.Stellar.Shared.CosmicCult;
-using Content.Stellar.Shared.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult.Prototypes;
+using Content.Shared._ST.CosmicCult;
+using Content.Shared._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Prototypes;
 using Content.Shared.Actions;
 using Content.Shared.Movement.Components;
 using Content.Shared.Nutrition.Components;
@@ -11,7 +11,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Spawners;
 using Robust.Shared.Timing;
 
-namespace Content.Stellar.Shared.CosmicCult;
+namespace Content.Shared._ST.CosmicCult;
 
 public abstract class SharedMonumentSystem : EntitySystem
 {

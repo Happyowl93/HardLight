@@ -4,11 +4,11 @@ using Content.Shared.Administration;
 using Content.Shared.Database;
 using Content.Shared.Mind.Components;
 using Content.Shared.Verbs;
-using Content.Stellar.Server.CosmicCult.Components;
+using Content.Server._ST.CosmicCult.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
-namespace Content.Stellar.Server.Administration;
+namespace Content.Server._ST.Administration;
 
 public sealed partial class StellarAdminVerbSystem : EntitySystem
 {

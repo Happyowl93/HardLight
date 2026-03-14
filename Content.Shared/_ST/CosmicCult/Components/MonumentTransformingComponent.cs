@@ -1,7 +1,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Stellar.Shared.CosmicCult.Components;
+namespace Content.Shared._ST.CosmicCult.Components;
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedMonumentSystem))]
 [AutoGenerateComponentState, AutoGenerateComponentPause]

@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Stellar.Shared.CosmicCult.Components;
+namespace Content.Shared._ST.CosmicCult.Components;
 
 /// <summary>
 /// Indicates that an entity will be converted to the given prototype when corrupted by the Cosmic Cult

@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Stellar.Shared.CosmicCult;
+namespace Content.Shared._ST.CosmicCult;
 
 [Serializable, NetSerializable]
 public sealed partial class CosmicSiphonIndicatorEvent(NetEntity target) : EntityEventArgs

@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Stellar.Shared.CosmicCult.Components.Examine;
+namespace Content.Shared._ST.CosmicCult.Components.Examine;
 
 /// <summary>
 /// Marker component for targets under the effect of Abberant Lapse.

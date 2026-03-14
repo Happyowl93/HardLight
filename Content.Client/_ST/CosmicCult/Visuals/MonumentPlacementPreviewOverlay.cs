@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
-namespace Content.Stellar.Client.CosmicCult.Visuals;
+namespace Content.Client._ST.CosmicCult.Visuals;
 
 public sealed class MonumentPlacementPreviewOverlay : Overlay
 {

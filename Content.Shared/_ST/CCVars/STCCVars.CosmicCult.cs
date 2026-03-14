@@ -1,6 +1,6 @@
 using Robust.Shared.Configuration;
 
-namespace Content.Stellar.Shared.CCVars;
+namespace Content.Shared._ST.CCVars;
 
 [CVarDefs]
 public sealed partial class STCCVars

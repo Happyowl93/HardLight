@@ -1,9 +1,9 @@
-using Content.Stellar.Server.CosmicCult.EntitySystems;
+using Content.Server._ST.CosmicCult.EntitySystems;
 using Content.Shared.Maps;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Stellar.Server.CosmicCult.Components;
+namespace Content.Server._ST.CosmicCult.Components;
 
 [RegisterComponent, Access(typeof(CosmicCorruptingSystem))]
 [AutoGenerateComponentPause]

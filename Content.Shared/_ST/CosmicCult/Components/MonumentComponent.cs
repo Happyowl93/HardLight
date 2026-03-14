@@ -1,4 +1,4 @@
-using Content.Stellar.Shared.CosmicCult.Prototypes;
+using Content.Shared._ST.CosmicCult.Prototypes;
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -6,7 +6,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Stellar.Shared.CosmicCult.Components;
+namespace Content.Shared._ST.CosmicCult.Components;
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedMonumentSystem))]
 [AutoGenerateComponentState, AutoGenerateComponentPause]

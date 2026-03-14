@@ -3,7 +3,7 @@ using Content.Server.Audio;
 using Content.Server.Chat.Systems;
 using Content.Server.Pinpointer;
 using Content.Server.Popups;
-using Content.Stellar.Shared.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared.Mind;
 using Content.Shared.Roles;
 using Robust.Shared.Audio.Systems;
@@ -11,7 +11,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
-namespace Content.Stellar.Server.CosmicCult.EntitySystems;
+namespace Content.Server._ST.CosmicCult.EntitySystems;
 
 public sealed class CosmicChantrySystem : EntitySystem
 {

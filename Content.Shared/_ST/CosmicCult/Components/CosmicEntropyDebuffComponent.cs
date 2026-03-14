@@ -1,7 +1,7 @@
 using Content.Shared.Damage;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Stellar.Shared.CosmicCult.Components;
+namespace Content.Shared._ST.CosmicCult.Components;
 
 /// <summary>
 /// Makes the target take damage over time.

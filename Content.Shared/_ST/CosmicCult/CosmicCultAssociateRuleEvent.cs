@@ -1,4 +1,4 @@
-namespace Content.Stellar.Shared.CosmicCult;
+namespace Content.Shared._ST.CosmicCult;
 
 /// <summary>
 ///     Event dispatched from shared into server code where something creates another thing that should be associated with the gamerule

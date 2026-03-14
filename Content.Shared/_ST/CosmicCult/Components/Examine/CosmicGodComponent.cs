@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Stellar.Shared.CosmicCult.Components.Examine;
+namespace Content.Shared._ST.CosmicCult.Components.Examine;
 
 /// <summary>
 /// Marker component for The Unknown. We also use this to detect its spawn through CultRule!

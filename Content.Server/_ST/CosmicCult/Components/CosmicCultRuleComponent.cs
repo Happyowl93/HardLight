@@ -1,10 +1,10 @@
 using Content.Server.RoundEnd;
-using Content.Stellar.Shared.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Stellar.Server.CosmicCult.Components;
+namespace Content.Server._ST.CosmicCult.Components;
 
 /// <summary>
 /// Component for the CosmicCultRuleSystem that should store gameplay info.

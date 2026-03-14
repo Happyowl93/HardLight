@@ -1,9 +1,9 @@
-using Content.Stellar.Shared.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult.Prototypes;
+using Content.Shared._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Stellar.Shared.CosmicCult;
+namespace Content.Shared._ST.CosmicCult;
 
 [Serializable, NetSerializable]
 public enum MonumentKey : byte

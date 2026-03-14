@@ -2,7 +2,7 @@ using Content.Shared.Atmos;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Stellar.Shared.CosmicCult.Components;
+namespace Content.Shared._ST.CosmicCult.Components;
 
 [RegisterComponent]
 public sealed partial class CosmicSpireComponent : Component

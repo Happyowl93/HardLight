@@ -1,7 +1,7 @@
 using Content.Server.Ghost;
 using Content.Server.Light.Components;
-using Content.Stellar.Shared.CosmicCult;
-using Content.Stellar.Shared.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult;
+using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared.Alert;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
@@ -14,7 +14,7 @@ using Content.Shared.StatusEffect;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 
-namespace Content.Stellar.Server.CosmicCult.Abilities;
+namespace Content.Server._ST.CosmicCult.Abilities;
 
 public sealed class CosmicSiphonSystem : EntitySystem
 {

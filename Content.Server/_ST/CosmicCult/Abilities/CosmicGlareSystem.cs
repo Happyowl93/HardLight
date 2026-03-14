@@ -4,8 +4,8 @@ using Content.Server.Flash;
 using Content.Server.Light.Components;
 using Content.Server.Light.EntitySystems;
 using Content.Server.Stunnable;
-using Content.Stellar.Shared.CosmicCult;
-using Content.Stellar.Shared.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult;
+using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared.Effects;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
@@ -14,7 +14,7 @@ using Content.Shared.Silicons.Borgs.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 
-namespace Content.Stellar.Server.CosmicCult.Abilities;
+namespace Content.Server._ST.CosmicCult.Abilities;
 
 public sealed class CosmicGlareSystem : EntitySystem
 {

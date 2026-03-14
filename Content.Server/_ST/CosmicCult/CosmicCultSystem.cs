@@ -16,9 +16,9 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
-using Content.Stellar.Server.CosmicCult.EntitySystems;
-using Content.Stellar.Shared.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult;
+using Content.Server._ST.CosmicCult.EntitySystems;
+using Content.Shared._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.EntitySerialization.Systems;
@@ -28,7 +28,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
-namespace Content.Stellar.Server.CosmicCult;
+namespace Content.Server._ST.CosmicCult;
 
 public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
 {

@@ -1,10 +1,10 @@
 using System.Linq;
-using Content.Stellar.Shared.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared.Popups;
 using Content.Shared.Whitelist;
 using Robust.Shared.Random;
 
-namespace Content.Stellar.Server.CosmicCult.Abilities;
+namespace Content.Server._ST.CosmicCult.Abilities;
 
 public sealed class CosmicTransmuteSystem : EntitySystem
 {

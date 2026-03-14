@@ -2,7 +2,7 @@ using Content.Shared.Damage;
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Stellar.Server.CosmicCult.Components;
+namespace Content.Server._ST.CosmicCult.Components;
 
 [RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class CosmicFinaleComponent : Component

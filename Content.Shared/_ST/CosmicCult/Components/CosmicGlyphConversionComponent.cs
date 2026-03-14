@@ -1,6 +1,6 @@
-using Content.Shared.Damage;
+CosmicEntropyDebuffComponent using Content.Shared.Damage;
 
-namespace Content.Stellar.Shared.CosmicCult.Components;
+namespace Content.Shared._ST.CosmicCult.Components;
 
 /// <summary>
 ///     Indicates a glyph entity as performing conversion effects

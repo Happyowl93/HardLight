@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Stellar.Shared.CosmicCult.Components;
+namespace Content.Shared._ST.CosmicCult.Components;
 
 /// <summary>
 /// Component for handling The Monument's collision.

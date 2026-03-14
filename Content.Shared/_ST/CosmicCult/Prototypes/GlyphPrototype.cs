@@ -1,7 +1,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Stellar.Shared.CosmicCult.Prototypes;
+namespace Content.Shared._ST.CosmicCult.Prototypes;
 
 [Prototype]
 public sealed partial class GlyphPrototype : IPrototype

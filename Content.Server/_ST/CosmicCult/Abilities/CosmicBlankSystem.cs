@@ -1,10 +1,10 @@
 using System.Collections.Immutable;
-using Content.Stellar.Server.CosmicCult.Components;
+using Content.Server._ST.CosmicCult.Components;
 using Content.Server.Bible.Components;
 using Content.Server.Popups;
-using Content.Stellar.Shared.CosmicCult;
-using Content.Stellar.Shared.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult.Components.Examine;
+using Content.Shared._ST.CosmicCult;
+using Content.Shared._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Components.Examine;
 using Content.Shared.DoAfter;
 using Content.Shared.Effects;
 using Content.Shared.IdentityManagement;
@@ -18,7 +18,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Stellar.Server.CosmicCult.Abilities;
+namespace Content.Server._ST.CosmicCult.Abilities;
 
 public sealed class CosmicBlankSystem : EntitySystem
 {

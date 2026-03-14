@@ -1,5 +1,5 @@
-using Content.Stellar.Shared.CosmicCult;
+using Content.Shared._ST.CosmicCult;
 
-namespace Content.Stellar.Client.CosmicCult;
+namespace Content.Client._ST.CosmicCult;
 
 public sealed class MonumentSystem : SharedMonumentSystem;

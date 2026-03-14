@@ -1,6 +1,6 @@
-using Content.Stellar.Server.CosmicCult.Abilities;
+using Content.Server._ST.CosmicCult.Abilities;
 
-namespace Content.Stellar.Server.CosmicCult.Components;
+namespace Content.Server._ST.CosmicCult.Components;
 
 [RegisterComponent, Access(typeof(CosmicReturnSystem))]
 public sealed partial class CosmicAstralBodyComponent : Component

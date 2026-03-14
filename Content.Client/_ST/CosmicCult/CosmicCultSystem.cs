@@ -1,10 +1,10 @@
-using Content.Stellar.Shared.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult;
+using Content.Shared._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult;
 using Content.Shared.StatusIcon.Components;
 using Robust.Shared.Prototypes;
 using Robust.Client.GameObjects;
 using Robust.Shared.Utility;
-using Content.Stellar.Shared.CosmicCult.Components.Examine;
+using Content.Shared._ST.CosmicCult.Components.Examine;
 using System.Numerics;
 using Timer = Robust.Shared.Timing.Timer;
 using Robust.Client.Audio;
@@ -12,7 +12,7 @@ using Robust.Shared.Audio;
 using Content.Client.Alerts;
 using Content.Client.UserInterface.Systems.Alerts.Controls;
 
-namespace Content.Stellar.Client.CosmicCult;
+namespace Content.Client._ST.CosmicCult;
 
 public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
 {

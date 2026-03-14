@@ -1,6 +1,6 @@
 using Content.Client.Eui;
 
-namespace Content.Stellar.Client.CosmicCult.UI;
+namespace Content.Client._ST.CosmicCult.UI;
 
 public sealed class CosmicRoundStartEui : BaseEui
 {

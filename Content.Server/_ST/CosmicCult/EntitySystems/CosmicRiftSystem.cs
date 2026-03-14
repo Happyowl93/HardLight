@@ -1,10 +1,10 @@
-using Content.Stellar.Server.CosmicCult.Components;
+using Content.Server._ST.CosmicCult.Components;
 using Content.Server.Actions;
 using Content.Server.Atmos.Components;
 using Content.Server.Bible.Components;
 using Content.Server.Popups;
-using Content.Stellar.Shared.CosmicCult;
-using Content.Stellar.Shared.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult;
+using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -12,7 +12,7 @@ using Content.Shared.Popups;
 using Content.Shared.Temperature.Components;
 using Robust.Shared.Audio.Systems;
 
-namespace Content.Stellar.Server.CosmicCult.EntitySystems;
+namespace Content.Server._ST.CosmicCult.EntitySystems;
 
 public sealed class CosmicRiftSystem : EntitySystem
 {

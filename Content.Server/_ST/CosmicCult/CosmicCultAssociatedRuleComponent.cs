@@ -1,4 +1,4 @@
-namespace Content.Stellar.Server.CosmicCult;
+namespace Content.Server._ST.CosmicCult;
 
 /// <summary>
 ///     Associates an entity with a specific cosmic cult gamerule

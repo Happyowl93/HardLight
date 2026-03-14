@@ -1,12 +1,12 @@
-using Content.Stellar.Server.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult;
-using Content.Stellar.Shared.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult.Components.Examine;
+using Content.Server._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult;
+using Content.Shared._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Components.Examine;
 using Content.Shared.Damage;
 using Content.Shared.Mind;
 using Content.Shared.Stunnable;
 
-namespace Content.Stellar.Server.CosmicCult.Abilities;
+namespace Content.Server._ST.CosmicCult.Abilities;
 
 public sealed class CosmicReturnSystem : EntitySystem
 {

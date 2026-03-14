@@ -1,8 +1,8 @@
-using Content.Stellar.Shared.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Components;
 using Content.Shared.EntityEffects;
 using Robust.Shared.Prototypes;
 
-namespace Content.Stellar.Server.CosmicCult;
+namespace Content.Server._ST.CosmicCult;
 
 public sealed partial class CleanseCult : EntityEffect
 {

@@ -1,4 +1,4 @@
-using Content.Stellar.Server.CosmicCult.Components;
+using Content.Server._ST.CosmicCult.Components;
 using Content.Server.Actions;
 using Content.Server.Administration.Logs;
 using Content.Server.Antag;
@@ -19,12 +19,12 @@ using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Voting.Managers;
 using Content.Server.Voting;
-using Content.Stellar.Shared.CCVars;
-using Content.Stellar.Shared.CosmicCult.Components.Examine;
-using Content.Stellar.Shared.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult.Prototypes;
-using Content.Stellar.Shared.CosmicCult;
-using Content.Stellar.Shared.CosmicCult.Roles;
+using Content.Shared._ST.CCVars;
+using Content.Shared._ST.CosmicCult.Components.Examine;
+using Content.Shared._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Prototypes;
+using Content.Shared._ST.CosmicCult;
+using Content.Shared._ST.CosmicCult.Roles;
 using Content.Shared.Alert;
 using Content.Shared.Audio;
 using Content.Shared.Body.Systems;
@@ -59,7 +59,7 @@ using Robust.Shared.Timing;
 using System.Collections.Immutable;
 using System.Linq;
 
-namespace Content.Stellar.Server.CosmicCult;
+namespace Content.Server._ST.CosmicCult;
 
 /// <summary>
 /// Where all the main stuff for Cosmic Cultists happens.

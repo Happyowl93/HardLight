@@ -4,11 +4,11 @@ using Content.Shared.Ninja.Components;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Roles;
 using Content.Shared.Warps;
-using Content.Stellar.Server.CosmicCult.Components;
-using Content.Stellar.Shared.CosmicCult.Roles;
+using Content.Server._ST.CosmicCult.Components;
+using Content.Shared._ST.CosmicCult.Roles;
 using Robust.Shared.Random;
 
-namespace Content.Stellar.Server.CosmicCult;
+namespace Content.Server._ST.CosmicCult;
 
 public sealed class CosmicCultObjectiveSystem : EntitySystem
 {
