@@ -2,28 +2,32 @@ using System.Linq;
 using Content.Server._Starlight.Plumbing.Components;
 using Content.Shared._Starlight.Plumbing;
 using Content.Shared._Starlight.Plumbing.Components;
+using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Labels.Components;
 using Content.Shared.Popups;
 using Content.Shared.UserInterface;
+using Robust.Shared.Containers;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Server._Starlight.Plumbing.EntitySystems;
 
 /// <summary>
 ///     Handles the plumbing smart dispenser: pulls all reagents from the network,
-///     stores up to a per-reagent cap, and fills labeled jugs on interaction.
+///     stores up to a per-reagent cap, supports inserted container dispensing and label matching dispensing
 /// </summary>
 [UsedImplicitly]
 public sealed class PlumbingSmartDispenserSystem : EntitySystem
 {
+    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -46,8 +50,13 @@ public sealed class PlumbingSmartDispenserSystem : EntitySystem
 
         SubscribeLocalEvent<PlumbingSmartDispenserComponent, PlumbingDeviceUpdateEvent>(OnDeviceUpdate);
         SubscribeLocalEvent<PlumbingSmartDispenserComponent, PlumbingPullIntoAttemptEvent>(OnPullInto);
-        SubscribeLocalEvent<PlumbingSmartDispenserComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<PlumbingSmartDispenserComponent, InteractUsingEvent>(OnInteractUsing, before: [typeof(ItemSlotsSystem)]);
+        SubscribeLocalEvent<PlumbingSmartDispenserComponent, EntInsertedIntoContainerMessage>(OnSlotChanged);
+        SubscribeLocalEvent<PlumbingSmartDispenserComponent, EntRemovedFromContainerMessage>(OnSlotChanged);
         SubscribeLocalEvent<PlumbingSmartDispenserComponent, AfterActivatableUIOpenEvent>(OnUIOpened);
+        SubscribeLocalEvent<PlumbingSmartDispenserComponent, PlumbingSmartDispenserSetDispenseAmountMessage>(OnSetDispenseAmountMessage);
+        SubscribeLocalEvent<PlumbingSmartDispenserComponent, PlumbingSmartDispenserDispenseReagentMessage>(OnDispenseReagentMessage);
+        SubscribeLocalEvent<PlumbingSmartDispenserComponent, ReagentDispenserClearContainerSolutionMessage>(OnClearContainerMessage);
 
         _prototypeManager.PrototypesReloaded += OnPrototypesReloaded;
     }
@@ -96,57 +105,69 @@ public sealed class PlumbingSmartDispenserSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (!TryComp<LabelComponent>(args.Used, out var label) || string.IsNullOrEmpty(label.CurrentLabel))
-        {
-            _popup.PopupEntity(Loc.GetString("plumbing-smart-dispenser-no-label"), ent.Owner, args.User);
+        if (!TryComp<LabelComponent>(args.Used, out var label) || string.IsNullOrWhiteSpace(label.CurrentLabel))
             return;
-        }
 
         if (!TryMatchLabelToReagent(label.CurrentLabel, out var reagentId))
-        {
-            _popup.PopupEntity(Loc.GetString("plumbing-smart-dispenser-no-match"), ent.Owner, args.User);
             return;
-        }
-
-        if (!_solutionSystem.TryGetSolution(ent.Owner, ent.Comp.SolutionName, out var fridgeSolnEnt, out var fridgeSolution))
-            return;
-
-        var sourceReagent = fridgeSolution.Contents.FirstOrDefault(r => r.Reagent.Prototype == reagentId);
-        var available = sourceReagent.Quantity;
-
-        if (available <= FixedPoint2.Zero)
-        {
-            _popup.PopupEntity(Loc.GetString("plumbing-smart-dispenser-not-in-stock",
-                ("reagent", _prototypeManager.Index<ReagentPrototype>(reagentId).LocalizedName)),
-                ent.Owner, args.User);
-            return;
-        }
-
-        if (!_solutionSystem.TryGetRefillableSolution(args.Used, out var jugSolnEnt, out var jugSolution))
-            return;
-
-        var jugAvailable = jugSolution.AvailableVolume;
-        if (jugAvailable <= FixedPoint2.Zero)
-        {
-            _popup.PopupEntity(Loc.GetString("plumbing-smart-dispenser-jug-full"), ent.Owner, args.User);
-            return;
-        }
-
-        var transferAmount = FixedPoint2.Min(available, jugAvailable);
-        var removed = _solutionSystem.RemoveReagent(fridgeSolnEnt.Value, sourceReagent.Reagent, transferAmount);
-
-        if (removed > FixedPoint2.Zero)
-        {
-            _solutionSystem.TryAddReagent(jugSolnEnt.Value, sourceReagent.Reagent, removed, out _);
-
-            var reagentName = _prototypeManager.Index<ReagentPrototype>(reagentId).LocalizedName;
-            _popup.PopupEntity(Loc.GetString("plumbing-smart-dispenser-filled",
-                ("reagent", reagentName),
-                ("amount", removed)),
-                ent.Owner, args.User);
-        }
 
         args.Handled = true;
+
+        TryDispenseReagent(ent, reagentId, args.Used, null, args.User, true);
+        UpdateUiState(ent);
+    }
+
+    private void OnSlotChanged<T>(Entity<PlumbingSmartDispenserComponent> ent, ref T args)
+    {
+        UpdateUiState(ent);
+    }
+
+    private void OnSetDispenseAmountMessage(Entity<PlumbingSmartDispenserComponent> ent, ref PlumbingSmartDispenserSetDispenseAmountMessage args)
+    {
+        ent.Comp.DispenseAmount = args.DispenseAmount;
+        UpdateUiState(ent);
+    }
+
+    private void OnDispenseReagentMessage(Entity<PlumbingSmartDispenserComponent> ent, ref PlumbingSmartDispenserDispenseReagentMessage args)
+    {
+        var outputContainer = _itemSlots.GetItemOrNull(ent.Owner, SharedReagentDispenser.OutputSlotName);
+        if (outputContainer is not { Valid: true })
+        {
+            if (args.Actor is { Valid: true } actor)
+                _popup.PopupEntity(Loc.GetString("plumbing-smart-dispenser-no-container"), ent.Owner, actor);
+
+            return;
+        }
+
+        TryDispenseReagent(
+            ent,
+            args.ReagentId,
+            outputContainer.Value,
+            FixedPoint2.New((int) ent.Comp.DispenseAmount),
+            args.Actor,
+            true);
+
+        UpdateUiState(ent);
+    }
+
+    private void OnClearContainerMessage(Entity<PlumbingSmartDispenserComponent> ent, ref ReagentDispenserClearContainerSolutionMessage args)
+    {
+        var outputContainer = _itemSlots.GetItemOrNull(ent.Owner, SharedReagentDispenser.OutputSlotName);
+        if (outputContainer is not { Valid: true })
+            return;
+
+        Entity<SolutionComponent>? targetEnt = null;
+
+        if (!_solutionSystem.TryGetFitsInDispenser(outputContainer.Value, out targetEnt, out _)
+            && !_solutionSystem.TryGetRefillableSolution(outputContainer.Value, out targetEnt, out _)
+            && (!TryComp<InjectorComponent>(outputContainer.Value, out var injector)
+                || !TryComp<SolutionContainerManagerComponent>(outputContainer.Value, out var manager)
+                || !_solutionSystem.TryGetSolution((outputContainer.Value, manager), injector.SolutionName, out targetEnt, out _)))
+        {
+            return;
+        }
+
+        _solutionSystem.RemoveAllSolution(targetEnt.Value);
         UpdateUiState(ent);
     }
 
@@ -171,8 +192,6 @@ public sealed class PlumbingSmartDispenserSystem : EntitySystem
 
         var stripped = StripBrackets(label);
         var token = ExtractFirstAlphaToken(stripped);
-
-        Log.Debug($"SmartFridge label match: raw='{label}' stripped='{stripped}' token='{token}'");
 
         if (string.IsNullOrEmpty(token) || token.Length < 2)
             return false;
@@ -216,7 +235,6 @@ public sealed class PlumbingSmartDispenserSystem : EntitySystem
 
         reagentId = bestMatch;
         _labelCache[label] = reagentId;
-        Log.Debug($"SmartFridge matched token='{token}' to reagent='{reagentId}'");
         return true;
     }
 
@@ -337,6 +355,103 @@ public sealed class PlumbingSmartDispenserSystem : EntitySystem
         UpdateUiState(ent);
     }
 
+    private bool TryDispenseReagent(
+        Entity<PlumbingSmartDispenserComponent> ent,
+        string reagentId,
+        EntityUid targetContainer,
+        FixedPoint2? requestedAmount,
+        EntityUid? user,
+        bool showPopup)
+    {
+        if (!_solutionSystem.TryGetSolution(ent.Owner, ent.Comp.SolutionName, out var sourceEnt, out var sourceSolution))
+            return false;
+
+        if (sourceEnt is not { } sourceSolutionEnt)
+            return false;
+
+        var sourceReagent = sourceSolution.Contents.FirstOrDefault(r => r.Reagent.Prototype == reagentId);
+        var available = sourceReagent.Quantity;
+
+        if (available <= FixedPoint2.Zero)
+        {
+            if (showPopup && user is { Valid: true })
+            {
+                _popup.PopupEntity(
+                    Loc.GetString("plumbing-smart-dispenser-not-in-stock",
+                        ("reagent", _prototypeManager.Index<ReagentPrototype>(reagentId).LocalizedName)),
+                    ent.Owner,
+                    user.Value);
+            }
+
+            return false;
+        }
+
+        Entity<SolutionComponent>? targetEnt = null;
+        Solution? targetSolution = null;
+
+        if (!_solutionSystem.TryGetFitsInDispenser(targetContainer, out targetEnt, out targetSolution)
+            && !_solutionSystem.TryGetRefillableSolution(targetContainer, out targetEnt, out targetSolution)
+            && (!TryComp<InjectorComponent>(targetContainer, out var injector)
+                || !TryComp<SolutionContainerManagerComponent>(targetContainer, out var manager)
+                || !_solutionSystem.TryGetSolution((targetContainer, manager), injector.SolutionName, out targetEnt, out targetSolution)))
+        {
+            return false;
+        }
+
+        var transferAmount = FixedPoint2.Min(available, targetSolution!.AvailableVolume);
+        if (requestedAmount is { } requested)
+            transferAmount = FixedPoint2.Min(transferAmount, requested);
+
+        if (transferAmount <= FixedPoint2.Zero)
+        {
+            if (showPopup && user is { Valid: true })
+                _popup.PopupEntity(Loc.GetString("plumbing-smart-dispenser-jug-full"), ent.Owner, user.Value);
+
+            return false;
+        }
+
+        var removed = _solutionSystem.RemoveReagent(sourceSolutionEnt, sourceReagent.Reagent, transferAmount);
+        if (removed <= FixedPoint2.Zero)
+            return false;
+
+        _solutionSystem.TryAddReagent(targetEnt!.Value, sourceReagent.Reagent, removed, out var accepted);
+
+        if (showPopup && accepted > FixedPoint2.Zero && user is { Valid: true })
+        {
+            var reagentName = _prototypeManager.Index<ReagentPrototype>(reagentId).LocalizedName;
+            _popup.PopupEntity(
+                Loc.GetString("plumbing-smart-dispenser-filled",
+                    ("reagent", reagentName),
+                    ("amount", accepted)),
+                ent.Owner,
+                user.Value);
+        }
+
+        return accepted > FixedPoint2.Zero;
+    }
+
+    private ContainerInfo? BuildOutputContainerInfo(EntityUid? container)
+    {
+        if (container is not { Valid: true })
+            return null;
+
+        Solution? solution = null;
+
+        if (!_solutionSystem.TryGetFitsInDispenser(container.Value, out _, out solution)
+            && !_solutionSystem.TryGetRefillableSolution(container.Value, out _, out solution)
+            && (!TryComp<InjectorComponent>(container.Value, out var injector)
+                || !TryComp<SolutionContainerManagerComponent>(container.Value, out var manager)
+                || !_solutionSystem.TryGetSolution((container.Value, manager), injector.SolutionName, out _, out solution)))
+        {
+            return null;
+        }
+
+        return new ContainerInfo(Name(container.Value), solution!.Volume, solution.MaxVolume)
+        {
+            Reagents = solution.Contents,
+        };
+    }
+
     private void UpdateUiState(Entity<PlumbingSmartDispenserComponent> ent)
     {
         var entries = new List<PlumbingSmartDispenserReagentEntry>();
@@ -362,7 +477,13 @@ public sealed class PlumbingSmartDispenserSystem : EntitySystem
             entries.Sort((a, b) => string.Compare(a.LocalizedName, b.LocalizedName, StringComparison.OrdinalIgnoreCase));
         }
 
-        var state = new PlumbingSmartDispenserBuiState(entries, ent.Comp.MaxPerReagent.Float());
+        var outputContainer = _itemSlots.GetItemOrNull(ent.Owner, SharedReagentDispenser.OutputSlotName);
+        var state = new PlumbingSmartDispenserBuiState(
+            entries,
+            ent.Comp.MaxPerReagent.Float(),
+            BuildOutputContainerInfo(outputContainer),
+            GetNetEntity(outputContainer),
+            ent.Comp.DispenseAmount);
         _uiSystem.SetUiState(ent.Owner, PlumbingSmartDispenserUiKey.Key, state);
     }
 }
