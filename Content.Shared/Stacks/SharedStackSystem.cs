@@ -61,7 +61,7 @@ public abstract partial class SharedStackSystem : EntitySystem
         SubscribeLocalEvent<StackComponent, BeforeIngestedEvent>(OnBeforeEaten);
         SubscribeLocalEvent<StackComponent, IngestedEvent>(OnEaten);
         SubscribeLocalEvent<StackComponent, GetVerbsEvent<AlternativeVerb>>(OnStackAlternativeInteract);
-        SubscribeLocalEvent<StackComponent, StackCustomSplitMessage>(OnSplitAmountMessage); // Starlight
+        SubscribeLocalEvent<StackComponent, StackCustomSplitMessage>(OnCustomSplitMessage); // Starlight
 
         _vvm.GetTypeHandler<StackComponent>()
             .AddPath(nameof(StackComponent.Count), (_, comp) => comp.Count, SetCount);
@@ -266,7 +266,7 @@ public abstract partial class SharedStackSystem : EntitySystem
     /// <summary>
     /// STARLIGHT: Handle custom split size messages from the UI.
     /// </summary>
-    private void OnSplitAmountMessage(EntityUid uid, StackComponent stack, StackCustomSplitMessage msg)
+    private void OnCustomSplitMessage(EntityUid uid, StackComponent stack, StackCustomSplitMessage msg)
     {
         if (stack.Count <= 0 || msg.Value <= 0)
             return;
