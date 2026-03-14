@@ -34350,5 +34350,39 @@ Entries:
   id: 370501
   time: '2026-03-12T16:02:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3705
+- author: salarua
+  changes:
+  - message: 'Changed name of "A chart for eye exams" to shorter version: "Eye chart".'
+    type: Tweak
+  id: 371501
+  time: '2026-03-12T20:04:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3715
+- author: Ohelig
+  changes:
+  - message: Syndicate Paperwork Cyborg Module
+    type: Add
+  id: 371801
+  time: '2026-03-13T08:23:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3718
+- author: katte, FeralCreature
+  changes:
+  - message: Consoles now have slots for pAI.
+    type: Add
+  - message: pAI can now open consoles they're in.
+    type: Add
+  - message: pAI camera snaps to grids now.
+    type: Tweak
+  id: 371701
+  time: '2026-03-13T08:45:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3717
+- author: Coolsurf6
+  changes:
+  - message: The Dark Gygax has had it's price reverted to 30 TC for Lone Operatives.
+    type: Tweak
+  - message: The Mauler has had it's price reverted to 45 TC for Lone Operatives.
+    type: Tweak
+  id: 372101
+  time: '2026-03-13T12:22:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3721
 Order: -1
 
