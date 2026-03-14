@@ -1,4 +1,4 @@
-CosmicEntropyDebuffComponent using Content.Shared.Damage;
+using Content.Shared.Damage;
 
 namespace Content.Shared._ST.CosmicCult.Components;
 
