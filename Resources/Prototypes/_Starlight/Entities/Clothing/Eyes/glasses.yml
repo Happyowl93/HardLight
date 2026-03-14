@@ -166,8 +166,6 @@
   - type: StealTarget
     stealGroup: RareGlassesCollection
 
-
-
 # Prescription Glasses
 
 - type: entity
