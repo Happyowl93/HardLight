@@ -34448,5 +34448,12 @@ Entries:
   id: 372701
   time: '2026-03-14T14:38:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3727
+- author: Tytos
+  changes:
+  - message: Added new station, Serpentcrest, along with its evac and cargo shuttle
+    type: Add
+  id: 365501
+  time: '2026-03-14T15:04:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3655
 Order: -1
 
