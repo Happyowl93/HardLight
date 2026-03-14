@@ -263,24 +263,6 @@
       - WhitelistChameleon
       - CorgiWearable
 
-#CCNT Consortium medics
-- type: entity
-  parent: [BaseCentcommContraband, ClothingOuterHardsuitSyndieMedic] #sl Change
-  id: ClothingOuterHardsuitNTNCConsortiumMedic
-  name: nt-nc naval medic hardsuit
-  description: A protective hardsuit worn by NT-NC Naval medical personnel.
-  components:
-    - type: Sprite
-      sprite: _Starlight/Clothing/OuterClothing/Hardsuits/ntnc_med_hardsuit.rsi
-    - type: Clothing
-      sprite: _Starlight/Clothing/OuterClothing/Hardsuits/ntnc_med_hardsuit.rsi
-    - type: ToggleableClothing
-      clothingPrototype: ClothingHeadHelmetHardsuitNTNCConsortiumMedic
-    - type: Tag
-      tags:
-        - Hardsuit
-        - WhitelistChameleon
-
 #USSP
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSovietContraband]
