@@ -669,7 +669,7 @@
   parent: [BaseTSFContraband, ClothingHeadHardsuitBase]
   id: ClothingHeadHelmetHardsuitTSFPhantom
   name: Phantom helmet
-  description: A helmet worn by marines of the Trans-Solar Federation's Marine pecial Operations Phantom. Armored, space ready, and stealthy.
+  description: A helmet worn by marines of the Trans-Solar Federation's Marine special Operations Phantom. Armored, space ready and stealthy.
   components:
   - type: Sprite
     sprite: _Starlight/Clothing/Head/Hardsuits/tsf_phantom.rsi

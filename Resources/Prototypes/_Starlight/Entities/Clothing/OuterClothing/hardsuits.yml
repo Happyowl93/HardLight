@@ -717,7 +717,7 @@
   parent: [BaseTSFContraband, ClothingOuterHardsuitNTSF]
   id: ClothingOuterHardsuitTSFPhantom
   name: Phantom hardsuit
-  description: A suit worn by marines of the Trans-Solar Federation's Marine pecial Operations Phantom. Armored, space ready, and stealthy.
+  description: A suit worn by marines of the Trans-Solar Federation's Marine special Operations Phantom. Armored, space ready and stealthy.
   components:
     - type: Sprite
       sprite: _Starlight/Clothing/OuterClothing/Hardsuits/tsf_phantom.rsi
