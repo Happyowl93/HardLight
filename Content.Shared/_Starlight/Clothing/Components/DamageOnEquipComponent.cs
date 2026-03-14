@@ -15,7 +15,9 @@ public sealed partial class DamageOnEquipComponent : Component
     [DataField] public bool IgnoreGlobalModifiers;
     [DataField] public float ArmorPenetration;
     [DataField] public bool CanHeal;
-    [DataField] public TimeSpan? Delay;
-    [DataField] public TimeSpan? PopupDelay;
+    [DataField] public TimeSpan Delay = TimeSpan.Zero;
+    [DataField] public TimeSpan PopupDelay = TimeSpan.Zero;
     [DataField] public LocId? PopupLocId;
+    [DataField] public bool DropOnKill;
+    [DataField] public bool ForceDrop;
 }
