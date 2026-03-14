@@ -38,8 +38,8 @@ public abstract partial class SharedStackSystem : EntitySystem
 
     public static readonly int[] DefaultSplitAmounts =
     {
-        1, 5, 10, 20, 30, 50, // Default
-        100, 250, 500, // From here onwards is only really relevant for spesos/credits.
+        1, 5, 10, 20, 30, 50,
+        100, 250, 500,
         1_000, 2_500, 5_000,
         10_000, 25_000, 50_000,
         100_000, 250_000, 500_000,
