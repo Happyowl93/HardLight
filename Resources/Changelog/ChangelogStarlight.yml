@@ -34539,5 +34539,12 @@ Entries:
   id: 373701
   time: '2026-03-15T15:44:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3737
+- author: redmushie
+  changes:
+  - message: Ghost theme no longer reverts to white when you use certain actions.
+    type: Fix
+  id: 374101
+  time: '2026-03-15T15:49:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3741
 Order: -1
 
