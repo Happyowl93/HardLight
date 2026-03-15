@@ -34546,5 +34546,15 @@ Entries:
   id: 374101
   time: '2026-03-15T15:49:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3741
+- author: R3v3l4t1on
+  changes:
+  - message: Custom sprite for lizzards for the Navy hardsuit.
+    type: Add
+  - message: Resomi's no longer have their body and skull squished trying to fit into
+      Navy armor.
+    type: Fix
+  id: 373901
+  time: '2026-03-15T15:54:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3739
 Order: -1
 
