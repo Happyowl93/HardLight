@@ -34556,5 +34556,13 @@ Entries:
   id: 373901
   time: '2026-03-15T15:54:34.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3739
+- author: CrazyPhantom
+  changes:
+  - message: Salvage will no longer accidentally FTL to the Nukie Outpost, Central
+      Command or The Brighteyes dark map after an expedition.
+    type: Fix
+  id: 374001
+  time: '2026-03-15T15:58:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3740
 Order: -1
 
