@@ -6,6 +6,7 @@ using Content.Shared.Warps;
 using Content.Server._ST.CosmicCult.Components;
 using Content.Shared._ST.CosmicCult.Roles;
 using Robust.Shared.Random;
+using Content.Server.Station.Systems; // Starlight
 
 namespace Content.Server._ST.CosmicCult;
 
@@ -15,6 +16,7 @@ public sealed class CosmicCultObjectiveSystem : EntitySystem
     [Dependency] private readonly NumberObjectiveSystem _number = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedRoleSystem _roles = default!;
+    [Dependency] private readonly StationSystem _station = default!; // Starlight
 
     public override void Initialize()
     {
@@ -34,11 +36,25 @@ public sealed class CosmicCultObjectiveSystem : EntitySystem
         if (args.Cancelled || !_roles.MindHasRole<CosmicColossusRoleComponent>(args.MindId))
             return;
 
+        // Starlight Start
+        // Only pick beacons on the same owning station as the colossus.
+        // This avoids selecting CentCom or unrelated grids that happen to have warp beacons.
+        var station = args.Mind.CurrentEntity is { } currentEntity
+            ? _station.GetOwningStation(currentEntity)
+            : null;
+
+        if (station is null)
+        {
+            args.Cancelled = true;
+            return;
+        }
+        // Starlight End
+
         var warps = new List<EntityUid>();
         var query = EntityQueryEnumerator<WarpPointComponent>();
         while (query.MoveNext(out var warpUid, out var warp))
         {
-            if (warp.Location != null)
+            if (warp.Location != null && _station.GetOwningStation(warpUid) == station) // Starlight Edit: Added GetOwningStation
             {
                 warps.Add(warpUid);
             }
