@@ -574,11 +574,6 @@ public abstract class SharedRoleSystem : EntitySystem
                 continue;
             }
 
-            // Starlight start
-            if (comp.FallbackPlayTimeTracker is not null)
-                playTimeTracker = comp.FallbackPlayTimeTracker;
-            // Starlight end
-
             if (comp.AntagPrototype is not null)
                 prototype = comp.AntagPrototype;
 
@@ -614,6 +609,22 @@ public abstract class SharedRoleSystem : EntitySystem
             {
                 Log.Error($" Mind Role Prototype '{role.Id}' contains both Job and Antagonist prototypes");
             }
+            
+            // Starlight start
+            if (!valid && comp.FallbackPlayTimeTracker is not null)
+            {
+                if (!_prototypes.TryIndex(comp.FallbackPlayTimeTracker, out var fallback))
+                {
+                    Log.Error($" Fallback Playtime Tracker '{comp.FallbackPlayTimeTracker}' not found");
+                    continue;
+                }
+                
+                playTimeTracker = fallback.ID;
+                prototype = fallback.ID;
+                name = fallback.Name;
+                valid = true;
+            }
+            // Starlight end
 
             if (valid)
                 roleInfo.Add(new RoleInfo(name, comp.Antag, playTimeTracker, prototype));
