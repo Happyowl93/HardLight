@@ -232,7 +232,7 @@
     price: 550
 
 
-# Starlight - Leviathan 240mm Artillery Shell Ammunition
+# Leviathan 240mm Artillery Shell Ammunition
 
 # Base Leviathan 240mm shell (abstract)
 - type: entity
