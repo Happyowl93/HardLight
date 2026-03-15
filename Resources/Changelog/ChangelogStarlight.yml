@@ -34574,5 +34574,17 @@ Entries:
   id: 372201
   time: '2026-03-15T16:51:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3722
+- author: walksanator
+  changes:
+  - message: Ghost (including admin ghost) can now see cosmic cult monument
+    type: Tweak
+  - message: Cosmic cult ghost now have universal language
+    type: Fix
+  - message: Cosmic cult Chantry no longer gives you a weird name when you are inside
+      it.
+    type: Fix
+  id: 374501
+  time: '2026-03-15T20:21:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3745
 Order: -1
 
