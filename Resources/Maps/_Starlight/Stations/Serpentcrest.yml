@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/13/2026 03:04:36
-  entityCount: 29357
+  time: 03/15/2026 06:48:36
+  entityCount: 29359
 maps:
 - 1
 grids:
@@ -154319,6 +154319,13 @@ entities:
     - type: Transform
       pos: -7.5,-44.5
       parent: 2
+- proto: SLVendingMachineSalvage
+  entities:
+  - uid: 29358
+    components:
+    - type: Transform
+      pos: 56.5,-37.5
+      parent: 2
 - proto: SLVendingMachineSecurity
   entities:
   - uid: 21840
@@ -166302,6 +166309,16 @@ entities:
     - type: Transform
       pos: -44.5,-3.5
       parent: 2
+- proto: VendingMachineClown
+  entities:
+  - uid: 29359
+    components:
+    - type: Transform
+      pos: -30.5,-32.5
+      parent: 2
+    - type: AccessReader
+      accessListsOriginal:
+      - - Theatre
 - proto: VendingMachineCoffee
   entities:
   - uid: 5073
