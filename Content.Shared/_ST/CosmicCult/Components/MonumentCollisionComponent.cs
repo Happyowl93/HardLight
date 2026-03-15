@@ -6,11 +6,7 @@ namespace Content.Shared._ST.CosmicCult.Components;
 /// Component for handling The Monument's collision.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-[AutoGenerateComponentState]
 public sealed partial class MonumentCollisionComponent : Component
 {
-    /// <summary>
-    /// Determines whether The Monument is tangible to non-cultists.
-    /// </summary>
-    [DataField, AutoNetworkedField] public bool HasCollision;
+    // Starlight Edit: Changed this to an empty component with Comp Checks instead of a ``HasCollision`` bool
 }

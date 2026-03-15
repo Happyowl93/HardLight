@@ -13,8 +13,6 @@ public sealed class CosmicTransmuteSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
-    private readonly HashSet<EntityUid> _entities = [];
-
     public override void Initialize()
     {
         base.Initialize();
@@ -49,9 +47,9 @@ public sealed class CosmicTransmuteSystem : EntitySystem
     /// </summary>
     private HashSet<EntityUid> GatherEntities(Entity<CosmicGlyphTransmuteComponent> ent)
     {
-        _entities.Clear();
-        _lookup.GetEntitiesInRange(Transform(ent).Coordinates, ent.Comp.TransmuteRange, _entities);
-        _entities.RemoveWhere(item => !_entityWhitelist.IsValid(ent.Comp.Whitelist, item));
-        return _entities;
+        var entities = new HashSet<EntityUid>();
+        _lookup.GetEntitiesInRange(Transform(ent).Coordinates, ent.Comp.TransmuteRange, entities);
+        entities.RemoveWhere(item => !_entityWhitelist.IsValid(ent.Comp.Whitelist, item));
+        return entities;
     }
 }

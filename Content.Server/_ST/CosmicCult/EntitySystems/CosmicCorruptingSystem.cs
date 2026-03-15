@@ -65,8 +65,7 @@ public sealed class CosmicCorruptingSystem : EntitySystem
                 }
 
                 if (comp.CorruptionTicks >= comp.CorruptionMaxTicks && comp.AutoDisable)
-                    comp.Enabled =
-                        false; //maybe just remComp this? atm nothing re-enables a corruptor so that should be safe to do?
+                    RemCompDeferred<CosmicCorruptingComponent>(uid); // Starlight Edit: Changed to RemComp
             }
         }
     }

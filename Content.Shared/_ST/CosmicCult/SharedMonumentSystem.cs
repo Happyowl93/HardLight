@@ -61,9 +61,9 @@ public abstract class SharedMonumentSystem : EntitySystem
     /// <summary>
     /// Ensures that Cultists can't walk through The Monument and allows non-cultists to walk through the space.
     /// </summary>
-    private void OnPreventCollide(EntityUid uid, MonumentCollisionComponent comp, ref PreventCollideEvent args)
+    private void OnPreventCollide(EntityUid uid, MonumentCollisionComponent _, ref PreventCollideEvent args) // Starlight Edit: comp -> _
     {
-        if (!_cosmicCult.EntitySeesCult(args.OtherEntity) && !comp.HasCollision)
+        if (!_cosmicCult.EntitySeesCult(args.OtherEntity)) // Starlight Edit: Removed ``&& !comp.HasCollision``
             args.Cancelled = true;
     }
 

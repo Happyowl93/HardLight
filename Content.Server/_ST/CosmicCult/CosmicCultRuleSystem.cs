@@ -223,10 +223,9 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
             }
 
             var collideQuery = EntityQueryEnumerator<MonumentCollisionComponent>();
-            while (collideQuery.MoveNext(out var collideEnt, out var collideComp))
+            while (collideQuery.MoveNext(out var collideEnt, out _)) // Starlight Edit: var collideComp -> _
             {
-                collideComp.HasCollision = true;
-                Dirty(collideEnt, collideComp);
+                RemComp<MonumentCollisionComponent>(collideEnt); // Starlight Edit: Changed to RemComp
             }
 
             if (TryComp<VisibilityComponent>(component.MonumentInGame, out var visComp))

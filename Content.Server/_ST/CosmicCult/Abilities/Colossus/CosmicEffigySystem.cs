@@ -63,13 +63,16 @@ public sealed class CosmicEffigySystem : EntitySystem
 
         // CHECK IF IT'S BEING PLACED CHEESILY CLOSE TO SPACE
         var spaceDistance = 2;
-        var worldPos = _transform.GetWorldPosition(xform);
-        foreach (var tile in _map.GetTilesIntersecting(xform.GridUid.Value, grid, new Circle(worldPos, spaceDistance)))
+        for (var x = -spaceDistance; x <= spaceDistance; x++)
         {
-            if (_turf.IsSpace(tile))
+            for (var y = -spaceDistance; y <= spaceDistance; y++)
             {
-                _popup.PopupEntity(Loc.GetString("ghost-role-colossus-effigy-error-space", ("DISTANCE", spaceDistance)), ent, ent);
-                return false;
+                var checkTile = _map.GetTileRef(xform.GridUid.Value, grid, targetIndices + new Vector2i(x, y));
+                if (_turf.IsSpace(checkTile))
+                {
+                    _popup.PopupEntity(Loc.GetString("ghost-role-colossus-effigy-error-space", ("DISTANCE", spaceDistance)), ent, ent);
+                    return false;
+                }
             }
         }
 

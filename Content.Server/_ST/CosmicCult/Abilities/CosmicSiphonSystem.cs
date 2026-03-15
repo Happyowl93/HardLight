@@ -29,8 +29,6 @@ public sealed class CosmicSiphonSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly CosmicCultSystem _cosmicCult = default!;
 
-    private readonly HashSet<Entity<PoweredLightComponent>> _lights = [];
-
     public override void Initialize()
     {
         base.Initialize();
@@ -96,9 +94,9 @@ public sealed class CosmicSiphonSystem : EntitySystem
 
         if (uid.Comp.CosmicEmpowered) // if you're empowered there's a 50% chance to flicker lights on siphon
         {
-            _lights.Clear();
-            _lookup.GetEntitiesInRange<PoweredLightComponent>(Transform(uid).Coordinates, 5, _lights, LookupFlags.StaticSundries);
-            foreach (var light in _lights) // static range of 5. because.
+            var lights = new HashSet<Entity<PoweredLightComponent>>();
+            _lookup.GetEntitiesInRange<PoweredLightComponent>(Transform(uid).Coordinates, 5, lights, LookupFlags.StaticSundries);
+            foreach (var light in lights) // static range of 5. because.
             {
                 if (!_random.Prob(0.5f))
                     continue;
