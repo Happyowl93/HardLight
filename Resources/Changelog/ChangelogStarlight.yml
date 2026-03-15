@@ -34532,5 +34532,12 @@ Entries:
   id: 373501
   time: '2026-03-15T07:56:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3735
+- author: Tytos
+  changes:
+  - message: Added salv ticket vendor to serpentcrest.
+    type: Add
+  id: 373701
+  time: '2026-03-15T15:44:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3737
 Order: -1
 
