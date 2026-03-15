@@ -775,7 +775,19 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         if (!_mind.TryGetMind(uid, out var mindId, out var mind))
             return;
 
-        _mind.ClearObjectives((mindId, mind));
+        // Starlight Edit
+        // _mind.ClearObjectives((mindId, mind)); // Starlight edit: Removed in favour of only removing Cult Obejctives. With Helper function also removed.
+        // Starlight Start
+        if (_mind.TryFindObjective((mindId, mind), "CosmicFinalityObjective", out var finalityObjective) && finalityObjective != null)
+            _mind.TryRemoveObjective(mindId, mind, finalityObjective.Value);
+        if (_mind.TryFindObjective((mindId, mind), "CosmicMonumentObjective", out var monumentObjective) && monumentObjective != null)
+            _mind.TryRemoveObjective(mindId, mind, monumentObjective.Value);
+        if (_mind.TryFindObjective((mindId, mind), "CosmicConversionObjective", out var conversionObjective) && conversionObjective != null)
+            _mind.TryRemoveObjective(mindId, mind, conversionObjective.Value);
+        if (_mind.TryFindObjective((mindId, mind), "CosmicEntropyObjective", out var entropyObjective) && entropyObjective != null)
+            _mind.TryRemoveObjective(mindId, mind, entropyObjective.Value);
+        // Starlight End
+
         _role.MindRemoveRole<CosmicCultRoleComponent>(mindId);
         _role.MindRemoveRole<RoleBriefingComponent>(mindId);
         if (_playerMan.TryGetSessionById(mind.UserId, out var session))
