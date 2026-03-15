@@ -2,12 +2,12 @@
                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                xmlns:chemUi="clr-namespace:Content.Client.Chemistry.UI"
-               MinSize="760 560"
-               SetSize="760 560"
+               MinSize="440 560"
+               SetSize="440 560"
                Title="{Loc plumbing-smart-dispenser-window-title}">
     <BoxContainer Orientation="Vertical" Margin="5 5 5 5" SeparationOverride="4">
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True" SeparationOverride="6">
-            <BoxContainer Orientation="Vertical" MinWidth="220">
+            <BoxContainer Name="DispensePane" Access="Public" Orientation="Vertical" MinWidth="220" Visible="False">
                 <Label Text="{Loc reagent-dispenser-window-amount-to-dispense-label}" HorizontalAlignment="Center" />
                 <chemUi:ButtonGrid Name="AmountGrid"
                                    Access="Public"
@@ -34,13 +34,10 @@
                     </PanelContainer>
                 </ScrollContainer>
 
-                <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4 0 0">
-                    <Button Name="ClearButton" Access="Public" Text="{Loc reagent-dispenser-window-clear-button}" StyleClasses="OpenRight" />
-                    <Button Name="EjectButton" Access="Public" Text="{Loc reagent-dispenser-window-eject-button}" StyleClasses="OpenLeft" />
-                </BoxContainer>
+                <Button Name="ClearButton" Access="Public" Text="{Loc reagent-dispenser-window-clear-button}" HorizontalAlignment="Center" Margin="0 4 0 0" />
             </BoxContainer>
 
-            <PanelContainer StyleClasses="LowDivider" SetWidth="1" VerticalExpand="True" />
+            <PanelContainer Name="DispensePaneDivider" Access="Public" StyleClasses="LowDivider" SetWidth="1" VerticalExpand="True" Visible="False" />
 
             <ScrollContainer HScrollEnabled="False" VerticalExpand="True" HorizontalExpand="True" MinHeight="320" MinWidth="380">
                 <BoxContainer Name="ReagentList" Orientation="Vertical" HorizontalExpand="True"

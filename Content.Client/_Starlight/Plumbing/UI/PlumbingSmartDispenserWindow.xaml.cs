@@ -1,4 +1,6 @@
+using System.Numerics;
 using Content.Client.Stylesheets;
+using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared._Starlight.Plumbing;
 using Content.Shared.FixedPoint;
@@ -16,9 +18,16 @@ namespace Content.Client._Starlight.Plumbing.UI;
 public sealed partial class PlumbingSmartDispenserWindow : DefaultWindow
 {
     private const int ReagentRowHeight = 32;
+    private static readonly Vector2 CompactWindowSize = new(440, 560);
+    private static readonly Vector2 FullWindowSize = new(760, 560);
 
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
+
+    private PlumbingSmartDispenserBuiState? _sharedState;
+    private bool _showDispensePane;
+    private ContainerInfo? _outputContainer;
+    private NetEntity? _outputContainerEntity;
 
     public event Action<string>? OnDispenseReagentPressed;
 
@@ -26,19 +35,49 @@ public sealed partial class PlumbingSmartDispenserWindow : DefaultWindow
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
+        ApplyWindowSizing(false);
     }
 
-    public void UpdateState(PlumbingSmartDispenserBuiState state)
+    public void UpdateSharedState(PlumbingSmartDispenserBuiState state)
     {
-        AmountGrid.Selected = ((int) state.SelectedDispenseAmount).ToString();
-        UpdateContainerInfo(state);
+        _sharedState = state;
+        RefreshReagentList();
+    }
 
-        _entityManager.TryGetEntity(state.OutputContainerEntity, out var outputContainerEnt);
+    public void UpdateActorState(PlumbingSmartDispenserActorStateMessage state)
+    {
+        _showDispensePane = state.ShowDispensePane;
+        _outputContainer = state.OutputContainer;
+        _outputContainerEntity = state.OutputContainerEntity;
+
+        AmountGrid.Selected = ((int) state.SelectedDispenseAmount).ToString();
+        DispensePane.Visible = _showDispensePane;
+        DispensePaneDivider.Visible = _showDispensePane;
+        ApplyWindowSizing(_showDispensePane);
+
+        UpdateContainerInfo(_outputContainer);
+
+        _entityManager.TryGetEntity(_outputContainerEntity, out var outputContainerEnt);
         View.SetEntity(outputContainerEnt);
 
-        var hasContainer = state.OutputContainer != null;
-        ClearButton.Disabled = !hasContainer;
-        EjectButton.Disabled = !hasContainer;
+        ClearButton.Disabled = !_showDispensePane || _outputContainer == null;
+        RefreshReagentList();
+    }
+
+    private void ApplyWindowSizing(bool showDispensePane)
+    {
+        var size = showDispensePane ? FullWindowSize : CompactWindowSize;
+        MinSize = size;
+        SetSize = size;
+    }
+
+    private void RefreshReagentList()
+    {
+        if (_sharedState == null)
+            return;
+
+        var state = _sharedState;
+        var canDispense = _showDispensePane && _outputContainer != null;
 
         ReagentList.RemoveAllChildren();
 
@@ -54,7 +93,7 @@ public sealed partial class PlumbingSmartDispenserWindow : DefaultWindow
         {
             totalVolume += entry.Quantity;
 
-            var chart = BuildReagentRow(entry, state);
+            var chart = BuildReagentRow(entry, state.MaxPerReagent, canDispense);
             chart.OnChartPressed += reagentId => OnDispenseReagentPressed?.Invoke(reagentId);
             ReagentList.AddChild(chart);
         }
@@ -64,15 +103,16 @@ public sealed partial class PlumbingSmartDispenserWindow : DefaultWindow
             ("count", state.Entries.Count));
     }
 
-    private ClickableBeakerBarChart BuildReagentRow(PlumbingSmartDispenserReagentEntry entry, PlumbingSmartDispenserBuiState state)
+    private ClickableBeakerBarChart BuildReagentRow(PlumbingSmartDispenserReagentEntry entry, float maxPerReagent, bool canDispense)
     {
         var chart = new ClickableBeakerBarChart
         {
             ReagentId = entry.ReagentId,
-            Capacity = state.MaxPerReagent,
+            Capacity = maxPerReagent,
             HorizontalExpand = true,
             MinHeight = ReagentRowHeight,
             MaxHeight = ReagentRowHeight,
+            Disabled = !canDispense,
         };
 
         chart.Clear();
@@ -83,7 +123,7 @@ public sealed partial class PlumbingSmartDispenserWindow : DefaultWindow
                 ("amount", entry.Quantity)),
             entry.Quantity.Float(),
             entry.Color,
-            tooltip: BuildReagentTooltip(entry, state.MaxPerReagent));
+            tooltip: BuildReagentTooltip(entry, maxPerReagent));
 
         return chart;
     }
@@ -97,11 +137,11 @@ public sealed partial class PlumbingSmartDispenserWindow : DefaultWindow
             ("max", maxPerReagent));
     }
 
-    private void UpdateContainerInfo(PlumbingSmartDispenserBuiState state)
+    private void UpdateContainerInfo(ContainerInfo? outputContainer)
     {
         ContainerInfo.RemoveAllChildren();
 
-        if (state.OutputContainer == null)
+        if (outputContainer == null)
         {
             ContainerInfoName.Text = string.Empty;
             ContainerInfoFill.Text = string.Empty;
@@ -109,10 +149,10 @@ public sealed partial class PlumbingSmartDispenserWindow : DefaultWindow
             return;
         }
 
-        ContainerInfoName.Text = state.OutputContainer.DisplayName;
-        ContainerInfoFill.Text = $"{state.OutputContainer.CurrentVolume}/{state.OutputContainer.MaxVolume}u";
+        ContainerInfoName.Text = outputContainer.DisplayName;
+        ContainerInfoFill.Text = $"{outputContainer.CurrentVolume}/{outputContainer.MaxVolume}u";
 
-        foreach (var (reagent, quantity) in state.OutputContainer.Reagents ?? [])
+        foreach (var (reagent, quantity) in outputContainer.Reagents ?? [])
         {
             var localizedName = _prototypeManager.TryIndex(reagent.Prototype, out ReagentPrototype? proto)
                 ? proto.LocalizedName

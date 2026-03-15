@@ -38,23 +38,40 @@ public sealed class PlumbingSmartDispenserBuiState : BoundUserInterfaceState
 {
     public readonly List<PlumbingSmartDispenserReagentEntry> Entries;
     public readonly float MaxPerReagent;
+
+    public PlumbingSmartDispenserBuiState(
+        List<PlumbingSmartDispenserReagentEntry> entries,
+        float maxPerReagent)
+    {
+        Entries = entries;
+        MaxPerReagent = maxPerReagent;
+    }
+}
+
+[Serializable, NetSerializable]
+public sealed class PlumbingSmartDispenserActorStateMessage : BoundUserInterfaceMessage
+{
+    public readonly bool ShowDispensePane;
     public readonly ContainerInfo? OutputContainer;
     public readonly NetEntity? OutputContainerEntity;
     public readonly ReagentDispenserDispenseAmount SelectedDispenseAmount;
 
-    public PlumbingSmartDispenserBuiState(
-        List<PlumbingSmartDispenserReagentEntry> entries,
-        float maxPerReagent,
+    public PlumbingSmartDispenserActorStateMessage(
+        bool showDispensePane,
         ContainerInfo? outputContainer,
         NetEntity? outputContainerEntity,
         ReagentDispenserDispenseAmount selectedDispenseAmount)
     {
-        Entries = entries;
-        MaxPerReagent = maxPerReagent;
+        ShowDispensePane = showDispensePane;
         OutputContainer = outputContainer;
         OutputContainerEntity = outputContainerEntity;
         SelectedDispenseAmount = selectedDispenseAmount;
     }
+}
+
+[Serializable, NetSerializable]
+public sealed class PlumbingSmartDispenserRequestActorStateMessage : BoundUserInterfaceMessage
+{
 }
 
 [Serializable, NetSerializable]

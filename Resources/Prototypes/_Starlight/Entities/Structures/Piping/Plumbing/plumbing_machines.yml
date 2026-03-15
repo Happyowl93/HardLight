@@ -429,7 +429,7 @@
   parent: PlumbingMachineBase
   id: PlumbingSmartDispenser
   name: plumbing smart dispenser
-  description: Pulls in all reagents from its inlets and stores up to 200u of each type. Insert a container to dispense selected reagents, or use a labeled jug as a shortcut for direct matching fills. Requires power.
+  description: Pulls in all reagents from its inlets and stores up to 200u of each type. Use a labeled container to auto-dispense a matching reagent, or use a refillable container on it to manually dispense. Requires power.
   components:
   - type: Sprite
     sprite: Structures/Machines/smartfridge.rsi
@@ -485,19 +485,6 @@
     interfaces:
       enum.PlumbingSmartDispenserUiKey.Key:
         type: PlumbingSmartDispenserBoundUserInterface
-  - type: ItemSlots
-    slots:
-      beakerSlot:
-        name: plumbing-smart-dispenser-container-slot
-        whitelistFailPopup: reagent-dispenser-component-cannot-put-entity-message
-        whitelist:
-          components:
-          - FitsInDispenser
-          tags:
-          - ChemDispensable
-  - type: ContainerContainer
-    containers:
-      beakerSlot: !type:ContainerSlot
   - type: ActivatableUI
     key: enum.PlumbingSmartDispenserUiKey.Key
   - type: ApcPowerReceiver
