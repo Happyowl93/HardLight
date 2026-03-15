@@ -107,6 +107,9 @@ public sealed class MonumentSystem : SharedMonumentSystem
         var monumentQuery = EntityQueryEnumerator<MonumentComponent>();
         while (monumentQuery.MoveNext(out var uid, out var comp))
         {
+            if (comp.CurrentGlyph is { } glyph && Deleted(glyph))
+                comp.CurrentGlyph = null;
+
             if (comp.PhaseOutTimer is { } timer && _timing.CurTime >= timer)
             {
                 OnMonumentPhaseOut((uid, comp));
@@ -155,7 +158,10 @@ public sealed class MonumentSystem : SharedMonumentSystem
         _transform.SetParent(ent, EnsureStorageMapExists());
 
         if (ent.Comp.CurrentGlyph is not null) //delete the scribed glyph as well
+        {
             QueueDel(ent.Comp.CurrentGlyph);
+            ent.Comp.CurrentGlyph = null;
+        }
 
         //close the UI for everyone who has it open
         _ui.CloseUi(ent.Owner, MonumentKey.Key);

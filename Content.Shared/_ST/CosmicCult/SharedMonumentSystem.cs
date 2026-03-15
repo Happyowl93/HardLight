@@ -95,7 +95,10 @@ public abstract class SharedMonumentSystem : EntitySystem
         var targetIndices = localTile.GridIndices + new Vector2i(0, -1);
 
         if (ent.Comp.CurrentGlyph is not null)
+        {
             QueueDel(ent.Comp.CurrentGlyph);
+            ent.Comp.CurrentGlyph = null;
+        }
 
         var glyphEnt = Spawn(proto.Entity, _map.ToCenterCoordinates(xform.GridUid.Value, targetIndices, grid));
         ent.Comp.CurrentGlyph = glyphEnt;
@@ -108,7 +111,10 @@ public abstract class SharedMonumentSystem : EntitySystem
     private void OnGlyphRemove(Entity<MonumentComponent> ent, ref GlyphRemovedMessage args)
     {
         if (ent.Comp.CurrentGlyph is not null)
+        {
             QueueDel(ent.Comp.CurrentGlyph);
+            ent.Comp.CurrentGlyph = null;
+        }
 
         _ui.SetUiState(ent.Owner, MonumentKey.Key, new MonumentBuiState(ent.Comp));
     }

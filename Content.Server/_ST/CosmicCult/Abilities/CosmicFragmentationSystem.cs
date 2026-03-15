@@ -57,7 +57,7 @@ public sealed class CosmicFragmentationSystem : EntitySystem
 
     private void OnCosmicFragmentation(Entity<CosmicCultComponent> ent, ref EventCosmicFragmentation args)
     {
-        if (args.Handled || HasComp<ActiveNPCComponent>(args.Target) || _mobStateSystem.IsIncapacitated(args.Target))
+        if (args.Handled || !ent.Comp.CosmicEmpowered || HasComp<ActiveNPCComponent>(args.Target) || _mobStateSystem.IsIncapacitated(args.Target))
         {
             _popup.PopupEntity(Loc.GetString("cosmicability-generic-fail"), ent, ent);
             return;
@@ -75,7 +75,6 @@ public sealed class CosmicFragmentationSystem : EntitySystem
         args.Handled = true;
         _doAfter.TryStartDoAfter(doargs);
         _cult.MalignEcho(ent);
-        UnEmpower(ent);
     }
 
     private void OnCosmicFragmentationDoAfter(Entity<CosmicCultComponent> ent, ref EventCosmicFragmentationDoAfter args)
@@ -88,6 +87,14 @@ public sealed class CosmicFragmentationSystem : EntitySystem
 
         var evt = new MalignFragmentationEvent(ent, target);
         RaiseLocalEvent(target, ref evt);
+
+        if (!evt.Succeeded)
+        {
+            _popup.PopupEntity(Loc.GetString("cosmicability-generic-fail"), ent, ent);
+            return;
+        }
+
+        UnEmpower(ent);
     }
 
     private void OnFragmentBorg(Entity<BorgChassisComponent> ent, ref MalignFragmentationEvent args)
@@ -105,6 +112,7 @@ public sealed class CosmicFragmentationSystem : EntitySystem
         var mins = chantryComponent.EventTime.Minutes;
         var secs = chantryComponent.EventTime.Seconds;
         _antag.SendBriefing(wisp, Loc.GetString("cosmiccult-silicon-chantry-briefing", ("minutesandseconds", $"{mins} minutes and {secs} seconds")), Color.FromHex("#4cabb3"), null);
+        args.Succeeded = true;
     }
 
     private void OnFragmentAi(Entity<SiliconLawUpdaterComponent> ent, ref MalignFragmentationEvent args)
@@ -115,6 +123,7 @@ public sealed class CosmicFragmentationSystem : EntitySystem
             return;
         _container.EmptyContainer(container, true);
         _container.Insert(lawboard, container, Transform(args.Target), true);
+        args.Succeeded = true;
     }
 
     private void OnLawInserted(ref AILawUpdatedEvent args)
@@ -136,4 +145,7 @@ public sealed class CosmicFragmentationSystem : EntitySystem
 }
 
 [ByRefEvent]
-public record struct MalignFragmentationEvent(Entity<CosmicCultComponent> User, EntityUid Target);
+public record struct MalignFragmentationEvent(Entity<CosmicCultComponent> User, EntityUid Target)
+{
+    public bool Succeeded;
+}
