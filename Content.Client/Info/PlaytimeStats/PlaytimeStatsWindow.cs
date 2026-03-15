@@ -113,6 +113,7 @@ public sealed partial class PlaytimeStatsWindow : FancyWindow
 
         //starlight
         var departmentPlaytimes = _jobRequirementsManager.FetchPlaytimeByDepartments();
+        var miscellaneousPlaytimes = _jobRequirementsManager.FetchPlaytimeMiscellaneous(rolePlaytimes);
         //starlight end
 
         RolesPlaytimeList.RemoveAllChildren();
@@ -131,6 +132,12 @@ public sealed partial class PlaytimeStatsWindow : FancyWindow
             var department = departmentPlaytime.Key;
             var playtime = departmentPlaytime.Value;
             AddRolePlaytimeEntryToTable(Loc.GetString(department.Name), playtime.ToString(), textColor: department.Color); //starlight edit
+        }
+        foreach (var miscellaneousPlaytime in miscellaneousPlaytimes)
+        {
+            var role = miscellaneousPlaytime.Key;
+            var playtime = miscellaneousPlaytime.Value;
+            AddRolePlaytimeEntryToTable(Loc.GetString(role.Name), playtime.ToString(), textColor: Color.LightGray);
         }
         //starlight end
     }

@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Content.Shared.CCVar;
 using Content.Shared.Players;
 using Content.Shared.Players.JobWhitelist;
@@ -373,6 +374,28 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
                 continue;
 
             yield return new KeyValuePair<DepartmentPrototype, TimeSpan>(department, departmentTime);
+        }
+    }
+
+    /// <summary>
+    /// Fetches playtime for all PlayTimeTracker prototypes that we don't see in any regular job.
+    /// This covers everything from ghost roles, to antags, to admeme spawns.
+    /// </summary>
+    public IEnumerable<KeyValuePair<PlayTimeTrackerPrototype, TimeSpan>> FetchPlaytimeMiscellaneous(
+        IEnumerable<KeyValuePair<JobPrototype, TimeSpan>> jobPlaytimes)
+    {
+        var trackers = _prototypes.EnumeratePrototypes<PlayTimeTrackerPrototype>();
+        var exclude = new HashSet<string> { "Overall" };
+        exclude.UnionWith(jobPlaytimes.Select(pair => pair.Key.PlayTimeTracker));
+        foreach (var tracker in trackers)
+        {
+            if (exclude.Contains(tracker.ID))
+                continue;
+
+            if (!_mergedRoles.TryGetValue(tracker.ID, out var rolePlaytime))
+                continue;
+            
+            yield return new KeyValuePair<PlayTimeTrackerPrototype, TimeSpan>(tracker, rolePlaytime);
         }
     }
     //starlight end
