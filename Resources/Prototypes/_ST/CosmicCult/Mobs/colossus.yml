@@ -67,7 +67,6 @@
         sunder:
           Running: { visible: true }
           Stopped: { visible: false }
-
   - type: Physics
     bodyType: KinematicController
   - type: Fixtures
@@ -242,6 +241,10 @@
   - type: GuideHelp
     guides:
     - CosmicColossus
+  #region Starlight languages
+  - type: LanguageKnowledge
+  - type: UniversalLanguageSpeaker
+  #endregion
 
 - type: entity
   parent: [ MobCosmicColossusBase ]
