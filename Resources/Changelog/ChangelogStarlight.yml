@@ -34593,5 +34593,12 @@ Entries:
   id: 374301
   time: '2026-03-15T20:25:28.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3743
+- author: walksanatora
+  changes:
+  - message: Fixed Chantry wisp and Collusus now have language properly
+    type: Fix
+  id: 374601
+  time: '2026-03-15T21:23:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3746
 Order: -1
 
