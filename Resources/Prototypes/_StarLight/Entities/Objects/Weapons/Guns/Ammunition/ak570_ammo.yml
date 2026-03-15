@@ -1,0 +1,80 @@
+# Starlight - AK570 90mm Artillery Shell Ammunition
+
+# Base AK570 90mm shell (abstract)
+- type: entity
+  abstract: true
+  parent: [BaseItem, BaseMajorContraband]
+  id: BaseAK570_90mmShell
+  name: base 90mm AK570 shell
+  components:
+  - type: Tag
+    tags:
+    - Cartridge90mmAK570
+  - type: Item
+    size: Normal
+
+# AK570 90mm HE Shell
+- type: entity
+  parent: BaseAK570_90mmShell
+  id: CartridgeAK570_90mmHE
+  name: AK-90 90mm HE shell
+  description: >-
+    A 90mm high-explosive artillery shell for the AK570 cannon system.
+    Heavier than the Dravon's 75mm round, with a larger explosive yield.
+  suffix: HE
+  components:
+  - type: CartridgeAmmo
+    proto: BulletAK570_90mmHE
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: blast
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: blast
+    suffix: false
+  - type: StaticPrice
+    price: 200
+
+# 20-Round Magazine for AK570 90mm HE
+- type: entity
+  parent: BaseMagazineGrenade
+  id: MagazineAK570_90mmHE
+  name: AK-90 90mm HE shell magazine
+  description: A 20-round magazine of 90mm HE shells for the AK570 cannon system.
+  components:
+  - type: Tag
+    tags:
+    - MagazineAK570_90mm
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge90mmAK570
+    proto: CartridgeAK570_90mmHE
+    capacity: 20
+    soundRack:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        variation: 0.05
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+      params:
+        variation: 0.05
+  - type: Item
+    size: Huge
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-4
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: StaticPrice
+    price: 550

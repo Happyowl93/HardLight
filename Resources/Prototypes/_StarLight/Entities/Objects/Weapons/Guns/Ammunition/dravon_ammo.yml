@@ -1,0 +1,80 @@
+# Starlight - Dravon 75mm Artillery Shell Ammunition
+
+# Base Dravon 75mm shell (abstract)
+- type: entity
+  abstract: true
+  parent: [BaseItem, BaseMajorContraband]
+  id: BaseDravon75mmShell
+  name: base 75mm Dravon shell
+  components:
+  - type: Tag
+    tags:
+    - Cartridge75mmDravon
+  - type: Item
+    size: Normal
+
+# Dravon 75mm HE Shell
+- type: entity
+  parent: BaseDravon75mmShell
+  id: CartridgeDravon75mmHE
+  name: DVN-75 75mm HE shell
+  description: >-
+    A 75mm high-explosive artillery shell for the Dravon cannon system.
+    Detonates on impact with a solid area-of-effect blast.
+  suffix: HE
+  components:
+  - type: CartridgeAmmo
+    proto: BulletDravon75mmHE
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: blast
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: blast
+    suffix: false
+  - type: StaticPrice
+    price: 150
+
+# 15-Round Magazine for Dravon 75mm HE
+- type: entity
+  parent: BaseMagazineGrenade
+  id: MagazineDravon75mmHE
+  name: DVN-75 75mm HE shell magazine
+  description: A 15-round magazine of 75mm HE shells for the Dravon cannon system.
+  components:
+  - type: Tag
+    tags:
+    - MagazineDravon75mm
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge75mmDravon
+    proto: CartridgeDravon75mmHE
+    capacity: 15
+    soundRack:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        variation: 0.05
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+      params:
+        variation: 0.05
+  - type: Item
+    size: Huge
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-4
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: StaticPrice
+    price: 400
