@@ -105,7 +105,7 @@
 
 # 60mm Rocket Ammunition
 
-# Starlight override of the base 60mm rocket projectile with radar blip.
+# Override of the base 60mm rocket projectile with radar blip.
 - type: entity
   parent: Bullet60mmRocket
   id: Bullet60mmRocketStarlight
