@@ -34514,5 +34514,15 @@ Entries:
   id: 373201
   time: '2026-03-14T19:21:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3732
+- author: mikeysaurus
+  changes:
+  - message: Tweaked CC Outpost G24 to have CC's stamp boxes readily available.
+    type: Tweak
+  - message: Tweaked CC Outpost SC17's disposals, made stamp boxes readily available,
+      and updated fax naming.
+    type: Tweak
+  id: 373601
+  time: '2026-03-15T05:42:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3736
 Order: -1
 
