@@ -120,10 +120,12 @@
     damageContainer: StructuralInorganic
     damageModifierSet: Metallic
   - type: Bloodstream
-    bloodMaxVolume: 650
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Entropy
+        Quantity: 650
     maxBleedAmount: 0.1
     bleedReductionAmount: 0.1
-    bloodReagent: Entropy
     bloodlossDamage:
       types:
         Bloodloss:
