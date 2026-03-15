@@ -34524,5 +34524,13 @@ Entries:
   id: 373601
   time: '2026-03-15T05:42:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3736
+- author: R3v3l4t1on
+  changes:
+  - message: The NTNC fatigues and belt will now actually work and have sprites and
+      shit. Oops.
+    type: Fix
+  id: 373501
+  time: '2026-03-15T07:56:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3735
 Order: -1
 
