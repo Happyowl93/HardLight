@@ -34634,5 +34634,13 @@ Entries:
   id: 374201
   time: '2026-03-16T16:04:48.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3742
+- author: redmushie
+  changes:
+  - message: The Playtime Stats window now shows all your tracked playtime, including
+      antagonists and tracked ghost roles.
+    type: Add
+  id: 375001
+  time: '2026-03-16T16:06:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3750
 Order: -1
 
