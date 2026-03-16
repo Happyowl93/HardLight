@@ -34600,5 +34600,15 @@ Entries:
   id: 374601
   time: '2026-03-15T21:23:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3746
+- author: mikeysaurus
+  changes:
+  - message: Centcomm has fixed their source of death rattle implants for their CentDrobes
+      to a CentComm approved variant instead of suspicious Syndicate ones.
+    type: Fix
+  - message: Adds Bluespace Implanters to the CentDrobe.
+    type: Add
+  id: 374401
+  time: '2026-03-16T11:11:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3744
 Order: -1
 
