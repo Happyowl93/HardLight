@@ -34625,5 +34625,14 @@ Entries:
   id: 375201
   time: '2026-03-16T15:22:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3752
+- author: redmushie
+  changes:
+  - message: Various miscellaneous roles now track playtime correctly.
+    type: Fix
+  - message: Bright-eye playtime is now tracked.
+    type: Fix
+  id: 374201
+  time: '2026-03-16T16:04:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3742
 Order: -1
 
