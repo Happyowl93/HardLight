@@ -378,15 +378,37 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
     }
 
     /// <summary>
-    /// Fetches playtime for all PlayTimeTracker prototypes that we don't see in any regular job.
-    /// This covers everything from ghost roles, to antags, to admeme spawns.
+    /// Fetches playtime per antag prototype.
+    /// </summary>b
+    public IEnumerable<KeyValuePair<AntagPrototype, TimeSpan>> FetchPlaytimeByAntags()
+    {
+        var antagsToMap = _prototypes.EnumeratePrototypes<AntagPrototype>();
+        foreach (var antag in antagsToMap)
+        {
+            if (antag.PlayTimeTracker == null)
+                continue;
+            
+            if (_mergedRoles.TryGetValue(antag.PlayTimeTracker, out var time))
+                yield return new KeyValuePair<AntagPrototype, TimeSpan>(antag, time);
+        }
+    }
+
+    /// <summary>
+    /// Fetches playtime for all PlayTimeTracker prototypes that we don't see in any job or antag.
+    /// This covers ghost roles and various admin spawns.
     /// </summary>
     public IEnumerable<KeyValuePair<PlayTimeTrackerPrototype, TimeSpan>> FetchPlaytimeMiscellaneous(
-        IEnumerable<KeyValuePair<JobPrototype, TimeSpan>> jobPlaytimes)
+        IEnumerable<KeyValuePair<JobPrototype, TimeSpan>> jobPlaytimes,
+        IEnumerable<KeyValuePair<AntagPrototype, TimeSpan>> antagPlaytimes)
     {
         var trackers = _prototypes.EnumeratePrototypes<PlayTimeTrackerPrototype>();
         var exclude = new HashSet<string> { "Overall" };
-        exclude.UnionWith(jobPlaytimes.Select(pair => pair.Key.PlayTimeTracker));
+        foreach (var jobPlaytime in jobPlaytimes)
+            exclude.Add(jobPlaytime.Key.PlayTimeTracker);
+        foreach (var antagPlaytime in antagPlaytimes)
+            if (antagPlaytime.Key.PlayTimeTracker != null)
+                exclude.Add(antagPlaytime.Key.PlayTimeTracker);
+        
         foreach (var tracker in trackers)
         {
             if (exclude.Contains(tracker.ID))
