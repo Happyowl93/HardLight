@@ -1,6 +1,7 @@
 using System.Numerics;
 using System.Linq; // Carpmosia-edit - AI Navmap
 using Content.Client.Pinpointer.UI; // Carpmosia-edit - AI Navmap
+using Content.Shared.Movement.Components;
 using Content.Client.Graphics;
 using Content.Shared.Silicons.StationAi;
 using Robust.Client.Graphics;
@@ -29,6 +30,9 @@ public sealed class StationAiOverlay : Overlay
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
     private readonly HashSet<Vector2i> _visibleTiles = new();
+    // Starlight - start
+    private readonly Dictionary<Vector2i, HashSet<string>> _visibleTileTags = new();
+    // Starlight - end
     private readonly NavMapControl _navMap = new(); // Carpmosia-edit - AI Navmap
 
     private readonly OverlayResourceCache<CachedResources> _resources = new();
@@ -49,8 +53,9 @@ public sealed class StationAiOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
         // Carpmosia-start - AI Navmap
-        _navMap.WallColor = new(102, 102, 102);
-        _navMap.TileColor = new(30, 30, 30);
+        //starlight change, colors are adjusted to be green tints
+        _navMap.WallColor = new(0, 131, 0);
+        _navMap.TileColor = new(0, 60, 0);
         // Carpmosia-end - AI Navmap
     }
 
@@ -75,11 +80,24 @@ public sealed class StationAiOverlay : Overlay
 
         var worldBounds = args.WorldBounds;
 
+        // Starlight-start: moved to be after new playerEnt definition with edit
         var playerEnt = _player.LocalEntity;
+
+        // Check for cross-grid viewing (e.g., Abductor remote eye) BEFORE getting gridUid
+        if (_entManager.TryGetComponent(playerEnt, out StationAiOverlayComponent? stationAiOverlay)
+            && stationAiOverlay.AllowCrossGrid
+            && _entManager.TryGetComponent(playerEnt, out RelayInputMoverComponent? relay))
+            playerEnt = relay.RelayEntity;
+
+        // Starlight - start
+        _entManager.TryGetComponent(playerEnt, out StationAiOverlayComponent? relayStationAiOverlay);
+        // Starlight - end
+
         _entManager.TryGetComponent(playerEnt, out TransformComponent? playerXform);
         var gridUid = playerXform?.GridUid ?? EntityUid.Invalid;
         _entManager.TryGetComponent(gridUid, out MapGridComponent? grid);
         _entManager.TryGetComponent(gridUid, out BroadphaseComponent? broadphase);
+        // Starlight-end
 
         var invMatrix = args.Viewport.GetWorldToLocalMatrix();
         _accumulator -= (float)_timing.FrameTime.TotalSeconds;
@@ -89,12 +107,19 @@ public sealed class StationAiOverlay : Overlay
             var lookups = _entManager.System<EntityLookupSystem>();
             var xforms = _entManager.System<SharedTransformSystem>();
 
+            var color = Color.White; // 🌟Starlight🌟
+            if (stationAiOverlay is not null) // 🌟Starlight🌟
+                color = color.WithAlpha(stationAiOverlay.Alfa); // 🌟Starlight🌟
+
             _navMap.AiFrameUpdate((float)_timing.FrameTime.TotalSeconds, gridUid); // Carpmosia-edit - AI Navmap
             if (_accumulator <= 0f)
             {
                 _accumulator = MathF.Max(0f, _accumulator + UpdateRate); // Carpmosia-edit - AI Navmap
                 _visibleTiles.Clear();
-                _entManager.System<StationAiVisionSystem>().GetView((gridUid, broadphase, grid), worldBounds, _visibleTiles);
+                // Starlight - start
+                _visibleTileTags.Clear();
+                _entManager.System<StationAiVisionSystem>().GetView((gridUid, broadphase, grid), worldBounds, _visibleTiles, _visibleTileTags);
+                // Starlight - end
             }
 
             var gridMatrix = xforms.GetWorldMatrix(gridUid);
@@ -107,8 +132,27 @@ public sealed class StationAiOverlay : Overlay
 
                 foreach (var tile in _visibleTiles)
                 {
-                    var aabb = lookups.GetLocalBounds(tile, grid.TileSize);
-                    worldHandle.DrawRect(aabb, Color.White);
+                    // Starlight-start: Only render tiles that have all required render tags
+                    var allTagsPresent = true;
+                    if (relayStationAiOverlay is not null)
+                    {
+                        foreach (var requiredTag in relayStationAiOverlay.RequiredTags)
+                        {
+                            if (_visibleTileTags.TryGetValue(tile, out var tag))
+                                if (!tag.Contains(requiredTag))
+                                {
+                                    allTagsPresent = false;
+                                    break;
+                                }
+                        }
+                    }
+
+                    if (allTagsPresent)
+                    {
+                        var aabb = lookups.GetLocalBounds(tile, grid.TileSize);
+                        worldHandle.DrawRect(aabb, Color.White);
+                    }
+                    // Starlight-end
                 }
             },
             Color.Transparent);
