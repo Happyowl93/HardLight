@@ -242,7 +242,6 @@
     guides:
     - CosmicColossus
   #region Starlight languages
-  - type: LanguageKnowledge
   - type: UniversalLanguageSpeaker
   #endregion
 
