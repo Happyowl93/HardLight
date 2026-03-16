@@ -18,7 +18,8 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Roles;
 
-public abstract class SharedRoleSystem : EntitySystem
+public abstract class 
+    SharedRoleSystem : EntitySystem
 {
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -573,6 +574,11 @@ public abstract class SharedRoleSystem : EntitySystem
                 Log.Error($"Encountered mind role entity {ToPrettyString(role)} without a {nameof(MindRoleComponent)}");
                 continue;
             }
+            
+            // Starlight start
+            if (comp.FallbackPlayTimeTracker is not null)
+                playTimeTracker = comp.FallbackPlayTimeTracker;
+            // Starlight end
 
             if (comp.AntagPrototype is not null)
                 prototype = comp.AntagPrototype;
@@ -596,7 +602,7 @@ public abstract class SharedRoleSystem : EntitySystem
                 prototype = comp.AntagPrototype;
                 if (_prototypes.TryIndex(comp.AntagPrototype, out var antag))
                 {
-                    playTimeTracker = antag.PlayTimeTracker ?? comp.FallbackPlayTimeTracker; // Starlight
+                    playTimeTracker = antag.PlayTimeTracker ?? playTimeTracker; // Starlight
                     name = antag.Name;
                     valid = true;
                 }
