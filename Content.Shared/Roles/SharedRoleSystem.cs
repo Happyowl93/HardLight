@@ -574,11 +574,6 @@ public abstract class
                 Log.Error($"Encountered mind role entity {ToPrettyString(role)} without a {nameof(MindRoleComponent)}");
                 continue;
             }
-            
-            // Starlight start
-            if (comp.FallbackPlayTimeTracker is not null)
-                playTimeTracker = comp.FallbackPlayTimeTracker;
-            // Starlight end
 
             if (comp.AntagPrototype is not null)
                 prototype = comp.AntagPrototype;
@@ -602,7 +597,7 @@ public abstract class
                 prototype = comp.AntagPrototype;
                 if (_prototypes.TryIndex(comp.AntagPrototype, out var antag))
                 {
-                    playTimeTracker = antag.PlayTimeTracker ?? playTimeTracker; // Starlight
+                    playTimeTracker = antag.PlayTimeTracker ?? comp.FallbackPlayTimeTracker; // Starlight
                     name = antag.Name;
                     valid = true;
                 }
