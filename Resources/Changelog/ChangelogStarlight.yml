@@ -34564,5 +34564,51 @@ Entries:
   id: 374001
   time: '2026-03-15T15:58:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3740
+- author: CrazyPhantom, AftrLite, TGRCDev, Toby, beckthompson, Darkmajia, ruddygreat,
+    widgetbeck, KipDotNet, formlessnameless, TheElement, Hivehum, Nahu Pyrope, Octofoss,
+    correspond, JoulesBerg, sowelipililimute, deltanedas, ferynn, Currot, Terkala,
+    neadsy and more!
+  changes:
+  - message: Cultists. Of the Cosmic Kind.
+    type: Add
+  id: 372201
+  time: '2026-03-15T16:51:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3722
+- author: walksanator
+  changes:
+  - message: Ghost (including admin ghost) can now see cosmic cult monument
+    type: Tweak
+  - message: Cosmic cult ghost now have universal language
+    type: Fix
+  - message: Cosmic cult Chantry no longer gives you a weird name when you are inside
+      it.
+    type: Fix
+  id: 374501
+  time: '2026-03-15T20:21:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3745
+- author: Shades
+  changes:
+  - message: Fix where Night Shift Event toggle EVERY LIGHTS instead of only station.
+    type: Fix
+  id: 374301
+  time: '2026-03-15T20:25:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3743
+- author: walksanatora
+  changes:
+  - message: Fixed Chantry wisp and Collusus now have language properly
+    type: Fix
+  id: 374601
+  time: '2026-03-15T21:23:37.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3746
+- author: mikeysaurus
+  changes:
+  - message: Centcomm has fixed their source of death rattle implants for their CentDrobes
+      to a CentComm approved variant instead of suspicious Syndicate ones.
+    type: Fix
+  - message: Adds Bluespace Implanters to the CentDrobe.
+    type: Add
+  id: 374401
+  time: '2026-03-16T11:11:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3744
 Order: -1
 
