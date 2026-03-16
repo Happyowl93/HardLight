@@ -34617,5 +34617,13 @@ Entries:
   id: 375101
   time: '2026-03-16T14:47:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3751
+- author: CringeCursed
+  changes:
+  - message: Fixed problem when TTS plays on radio when you shouldn't understand the
+      language being spoken.
+    type: Fix
+  id: 375201
+  time: '2026-03-16T15:22:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3752
 Order: -1
 
