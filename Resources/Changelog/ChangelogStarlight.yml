@@ -34610,5 +34610,12 @@ Entries:
   id: 374401
   time: '2026-03-16T11:11:15.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3744
+- author: R3v3l4t1on
+  changes:
+  - message: Fixed the fatigues for REAL this time.
+    type: Fix
+  id: 375101
+  time: '2026-03-16T14:47:30.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3751
 Order: -1
 
