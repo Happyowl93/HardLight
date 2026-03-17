@@ -24,24 +24,27 @@ public sealed class NightShiftRule : StationEventSystem<NightShiftRuleComponent>
         SubscribeLocalEvent<NightShiftDimmedLightComponent, GetDimmedLightLevelEvent>(OnGetDimmedLightLevel);
         SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
     }
-
+    
+    /// <summary>
+    /// React to alert level changes. Only used for disabling night shift dimming prematurely.
+    /// </summary>
     private void OnAlertLevelChanged(AlertLevelChangedEvent ev)
     {
         var nightShiftQuery = EntityQueryEnumerator<NightShiftRuleComponent, GameRuleComponent>();
         while (nightShiftQuery.MoveNext(out var shift, out var nightShift, out var gameRule))
         {
-            if (!_gameTicker.IsGameRuleActive(shift, gameRule))
-                continue;
-            if (nightShift.PermittedAlertLevels.Contains(ev.AlertLevel))
-                continue;
+            if (!_gameTicker.IsGameRuleActive(shift, gameRule)) continue;
+            if (nightShift.PermittedAlertLevels.Contains(ev.AlertLevel)) continue;
             
             var affectedLightQuery = EntityQueryEnumerator<PoweredLightComponent, NightShiftDimmedLightComponent>();
             var announced = false;
             while (affectedLightQuery.MoveNext(out var uid, out var poweredLight, out var dimmed))
             {
+                // Remove our dimming component from currently dimmed lights.
                 RemComp<NightShiftDimmedLightComponent>(uid);
                 _poweredLightSystem.UpdateLight(uid, poweredLight);
 
+                // Announce that we are ending early, once.
                 if (!announced && TryComp<StationEventComponent>(shift, out var stationEvent))
                 {
                     announced = true;
