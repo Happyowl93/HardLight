@@ -82,6 +82,7 @@ public sealed class NightShiftRule : StationEventSystem<NightShiftRuleComponent>
         {
             if (!_gameTicker.IsGameRuleActive(shift, gameRule)) continue;
             if (!TryComp<StationEventComponent>(shift, out var stationEvent)) continue;
+            if (stationEvent.TargetStation != ev.Station) continue;
             
             if (nightShift.PermittedAlertLevels.Contains(ev.AlertLevel))
             {
