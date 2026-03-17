@@ -116,7 +116,7 @@ public sealed class NightShiftRule : StationEventSystem<NightShiftRuleComponent>
             if (!announced)
             {
                 announced = true;
-                Announce(stationEvent, Loc.GetString(comp.EndAnnouncement), false);
+                Announce(stationEvent, Loc.GetString(comp.EndAnnouncement), true);
             }
         }
     }
