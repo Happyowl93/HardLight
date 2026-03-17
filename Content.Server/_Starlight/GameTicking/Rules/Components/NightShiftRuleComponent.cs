@@ -25,5 +25,5 @@ public sealed partial class NightShiftRuleComponent : Component
     /// <summary>
     /// The light energy modifier while the night shift is active.
     /// </summary>
-    [DataField] public float LightEnergyMultiplier = 0.5f;
+    [DataField] public float LightEnergyMultiplier;
 }

@@ -170,7 +170,7 @@
   - type: NightShiftRule
     endAnnouncement: station-event-nightshift-end-announcement
     emergencyEndAnnouncement: station-event-nightshift-alert
-    dimmedLightEnergy: 0.5
+    lightEnergyMultiplier: 0.5
     permittedAlertLevels:
       - green
       - blue
