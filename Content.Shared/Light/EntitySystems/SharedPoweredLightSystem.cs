@@ -305,7 +305,7 @@ public abstract class SharedPoweredLightSystem : EntitySystem
 
         if (lightBulb.Dimmable)
         {
-            var lightLevelEv = new GetDimmedLightLevelEvent();
+            var lightLevelEv = new GetDimmedLightLevelEvent(lightEnergy, lightRadius, powerUse);
             RaiseLocalEvent(uid, lightLevelEv);
             
             lightEnergy = lightLevelEv.LightEnergy;

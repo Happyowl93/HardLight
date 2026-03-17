@@ -162,7 +162,6 @@
     startAnnouncement: station-event-nightshift-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    # endAnnouncement is managed in logic
     endAudio:
       path: /Audio/Announcements/attention.ogg
     duration: 1200

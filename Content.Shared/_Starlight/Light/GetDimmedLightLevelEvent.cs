@@ -19,4 +19,11 @@ public sealed class GetDimmedLightLevelEvent : EntityEventArgs
     /// The amount of power used by the light when it's active.
     /// </summary>
     public float PowerUse { get; set; }
+
+    public GetDimmedLightLevelEvent(float lightEnergy, float lightRadius, float powerUse)
+    {
+        LightEnergy = lightEnergy;
+        LightRadius = lightRadius;
+        PowerUse = powerUse;
+    }
 }
