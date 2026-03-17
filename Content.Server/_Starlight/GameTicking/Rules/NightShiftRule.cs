@@ -35,6 +35,7 @@ public sealed class NightShiftRule : StationEventSystem<NightShiftRuleComponent>
         var success = false;
         while (query.MoveNext(out var ent, out var light, out var xform))
         {
+            // Ignore lights not on our station.
             if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != station)
                 continue;
             
@@ -53,24 +54,19 @@ public sealed class NightShiftRule : StationEventSystem<NightShiftRuleComponent>
     /// </summary>
     private bool DisableNightShiftDimming(EntityUid station)
     {
+        // Find all dimmed lights.
         var affectedLightQuery = EntityQueryEnumerator<PoweredLightComponent, NightShiftDimmedLightComponent, TransformComponent>();
         var success = false;
         while (affectedLightQuery.MoveNext(out var uid, out var poweredLight, out _, out var xform))
         {
-            // Ignore lights that aren't part of the station whose alert level changed.
+            // Ignore lights not on our station.
             if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != station)
                 continue;
                 
             // Remove our dimming component from currently dimmed lights.
             RemComp<NightShiftDimmedLightComponent>(uid);
             _poweredLightSystem.UpdateLight(uid, poweredLight);
-
-            // Announce that we are ending early, once.
-            // if (!success && TryComp<StationEventComponent>(uid, out var stationEvent))
-            // {
-                success = true;
-                //Announce(stationEvent, Loc.GetString(nightShift.EmergencyEndAnnouncement), true);
-            // }
+            success = true;
         }
 
         return success;
