@@ -34642,5 +34642,16 @@ Entries:
   id: 375001
   time: '2026-03-16T16:06:26.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3750
+- author: CrazyPhantom
+  changes:
+  - message: Cosmic Cult objects now have the magical Contraband level.
+    type: Add
+  - message: Entropic Armor's light now works.
+    type: Fix
+  - message: Cosmic Creatures now have the correct blood type.
+    type: Fix
+  id: 375901
+  time: '2026-03-17T06:37:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3759
 Order: -1
 
