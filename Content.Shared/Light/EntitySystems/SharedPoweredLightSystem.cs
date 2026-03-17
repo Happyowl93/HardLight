@@ -317,7 +317,7 @@ public abstract class SharedPoweredLightSystem : EntitySystem
         switch (lightBulb.State)
         {
             case LightBulbState.Normal:
-                if (powerReceiver.Powered && light.On)
+                if (powerReceiver.Powered && light.On && lightEnergy > 0)
                 {
                     SetLight(uid, true, lightBulb.Color, light, lightRadius, lightEnergy, lightBulb.LightSoftness, HasComp<DarkLightComponent>(bulbUid.Value)); // Starlight
                     _appearance.SetData(uid, PoweredLightVisuals.BulbState, PoweredLightState.On, appearance);

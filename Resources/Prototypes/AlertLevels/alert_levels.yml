@@ -71,7 +71,7 @@
       emergencyLightColor: '#938aff' #Starlight
       forceEnableEmergencyLights: true
       shuttleTime: 1200
-      dimmedLightMultiplier: 0.2 # Starlight
+      dimmedLightMultiplier: 0 # Starlight
     omega: # begin starlight
       announcement: alert-level-omega-announcement
       selectable: false
