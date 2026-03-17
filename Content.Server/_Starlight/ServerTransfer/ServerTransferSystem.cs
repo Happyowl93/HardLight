@@ -6,8 +6,6 @@ namespace Content.Server._Starlight.ServerTransfer;
 
 public sealed class ServerTransferSystem : EntitySystem
 {
-    [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
-
     private string? _targetAddress;
     private ISawmill _sawmill = default!;
 
@@ -26,7 +24,7 @@ public sealed class ServerTransferSystem : EntitySystem
 
     private void OnRunLevelChanged(GameRunLevelChangedEvent ev)
     {
-        if (ev.New != GameRunLevel.PostRound)
+        if (ev.New != GameRunLevel.PreRoundLobby || ev.Old != GameRunLevel.PostRound)
             return;
 
         if (string.IsNullOrEmpty(_targetAddress))
