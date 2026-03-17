@@ -26,6 +26,7 @@ public sealed partial class DamagedThroatComponent : Component
     public List<ProtoId<LanguagePrototype>> ExcludedLanguages = new()
     {
         "Sign"
+           "Chittin"
     };
 
     /// <summary>
