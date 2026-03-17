@@ -34667,5 +34667,14 @@ Entries:
   id: 375501
   time: '2026-03-17T13:44:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3755
+- author: CawsForConcern
+  changes:
+  - message: (Serpentcrest) BSO Hardsuit Locker to BSO's Room.
+    type: Add
+  - message: (Serpentcrest) Centcomm items from NTR's Room.
+    type: Remove
+  id: 376701
+  time: '2026-03-17T18:43:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3767
 Order: -1
 
