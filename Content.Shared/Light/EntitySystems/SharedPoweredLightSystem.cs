@@ -58,10 +58,10 @@ public abstract class SharedPoweredLightSystem : EntitySystem
         SubscribeLocalEvent<PoweredLightComponent, DamageChangedEvent>(HandleLightDamaged);
         SubscribeLocalEvent<PoweredLightComponent, EmpPulseEvent>(OnEmpPulse);
 
-        SubscribeLocalEvent<AlertLevelDimmedLightComponent, GetDimmedLightLevelEvent>(OnGetAlertLevelDim);
+        SubscribeLocalEvent<AlertLevelDimmedLightComponent, GetDimmedLightLevelEvent>(OnGetDimmedLightLevel);
     }
 
-    private void OnGetAlertLevelDim(EntityUid uid, AlertLevelDimmedLightComponent component, GetDimmedLightLevelEvent args)
+    private void OnGetDimmedLightLevel(EntityUid uid, AlertLevelDimmedLightComponent component, GetDimmedLightLevelEvent args)
     {
         args.LightEnergy *= component.LightEnergyMultiplier;
         args.PowerUse *= component.LightEnergyMultiplier;
