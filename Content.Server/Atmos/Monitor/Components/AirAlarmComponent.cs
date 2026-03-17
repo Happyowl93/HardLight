@@ -8,7 +8,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 
 namespace Content.Server.Atmos.Monitor.Components;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent] // Starlight Edit: Added NetworkedComponent
 public sealed partial class AirAlarmComponent : Component
 {
     [DataField] public AirAlarmMode CurrentMode { get; set; } = AirAlarmMode.Filtering;
