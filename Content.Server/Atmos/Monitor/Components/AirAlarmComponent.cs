@@ -5,7 +5,7 @@ using Content.Shared.Atmos.Piping.Unary.Components;
 using Content.Shared.DeviceLinking;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.GameObjects; // Starlight
+using Robust.Shared.GameStates; // Starlight
 
 namespace Content.Server.Atmos.Monitor.Components;
 
