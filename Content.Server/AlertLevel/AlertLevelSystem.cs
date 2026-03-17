@@ -211,7 +211,7 @@ public sealed class AlertLevelSystem : EntitySystem
                 colorOverride: detail.Color, sender: stationName);
         }
 
-        RaiseLocalEvent(new AlertLevelChangedEvent(station, level, oldLevel)); // Starlight-edit: Add Old Level
+        RaiseLocalEvent(new AlertLevelChangedEvent(station, level, oldLevel)); // Starlight-edit: Add Old LightMultiplier
     }
 }
 
@@ -227,10 +227,10 @@ public sealed class AlertLevelChangedEvent : EntityEventArgs
     public string AlertLevel { get; }
     public string OldAlertLevel { get;  } //Starlight
 
-    public AlertLevelChangedEvent(EntityUid station, string alertLevel, string oldAlertLevel) // Starlight-edit: Add Old Level
+    public AlertLevelChangedEvent(EntityUid station, string alertLevel, string oldAlertLevel) // Starlight-edit: Add Old LightMultiplier
     {
         Station = station;
         AlertLevel = alertLevel;
-        OldAlertLevel = oldAlertLevel; // Starlight-edit: Add Old Level
+        OldAlertLevel = oldAlertLevel; // Starlight-edit: Add Old LightMultiplier
     }
 }
