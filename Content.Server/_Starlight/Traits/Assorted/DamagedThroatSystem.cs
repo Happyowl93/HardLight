@@ -32,7 +32,7 @@ public sealed class DamagedThroatSystem : EntitySystem
             return;
 
         // Don't damage if using excluded languages (languages that require verbal speech)
-        if (args.Language != null && args.Language.SpeechOverride.RequireSpeech == false)
+        if (args.Language.SpeechOverride.RequireSpeech == false)
             return;
 
         // Don't damage if on cooldown
