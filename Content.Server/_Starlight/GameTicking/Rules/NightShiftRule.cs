@@ -26,6 +26,57 @@ public sealed class NightShiftRule : StationEventSystem<NightShiftRuleComponent>
     }
     
     /// <summary>
+    /// Enables night shift dimming on a station. The return value indicates if something happened or not.
+    /// </summary>
+    private bool EnableNightShiftDimming(EntityUid station, NightShiftRuleComponent nightShift)
+    {
+        // Find eligible powered lights.
+        var query = EntityQueryEnumerator<PoweredLightComponent, TransformComponent>();
+        var success = false;
+        while (query.MoveNext(out var ent, out var light, out var xform))
+        {
+            if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != station)
+                continue;
+            
+            // Add our dimmer component.
+            var dimmer = EnsureComp<NightShiftDimmedLightComponent>(ent);
+            dimmer.LightEnergyMultiplier = nightShift.LightEnergyMultiplier;
+            _poweredLightSystem.UpdateLight(ent, light);
+            success = true;
+        }
+
+        return success;
+    }
+
+    /// <summary>
+    /// Disables night shift dimming on a station. The return value indicates if something happened or not.
+    /// </summary>
+    private bool DisableNightShiftDimming(EntityUid station)
+    {
+        var affectedLightQuery = EntityQueryEnumerator<PoweredLightComponent, NightShiftDimmedLightComponent, TransformComponent>();
+        var success = false;
+        while (affectedLightQuery.MoveNext(out var uid, out var poweredLight, out _, out var xform))
+        {
+            // Ignore lights that aren't part of the station whose alert level changed.
+            if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != station)
+                continue;
+                
+            // Remove our dimming component from currently dimmed lights.
+            RemComp<NightShiftDimmedLightComponent>(uid);
+            _poweredLightSystem.UpdateLight(uid, poweredLight);
+
+            // Announce that we are ending early, once.
+            // if (!success && TryComp<StationEventComponent>(uid, out var stationEvent))
+            // {
+                success = true;
+                //Announce(stationEvent, Loc.GetString(nightShift.EmergencyEndAnnouncement), true);
+            // }
+        }
+
+        return success;
+    }
+    
+    /// <summary>
     /// React to alert level changes. Only used for disabling night shift dimming prematurely.
     /// </summary>
     private void OnAlertLevelChanged(AlertLevelChangedEvent ev)
@@ -34,22 +85,19 @@ public sealed class NightShiftRule : StationEventSystem<NightShiftRuleComponent>
         while (nightShiftQuery.MoveNext(out var shift, out var nightShift, out var gameRule))
         {
             if (!_gameTicker.IsGameRuleActive(shift, gameRule)) continue;
-            if (nightShift.PermittedAlertLevels.Contains(ev.AlertLevel)) continue;
+            if (!TryComp<StationEventComponent>(shift, out var stationEvent)) continue;
             
-            var affectedLightQuery = EntityQueryEnumerator<PoweredLightComponent, NightShiftDimmedLightComponent>();
-            var announced = false;
-            while (affectedLightQuery.MoveNext(out var uid, out var poweredLight, out var dimmed))
+            if (nightShift.PermittedAlertLevels.Contains(ev.AlertLevel))
             {
-                // Remove our dimming component from currently dimmed lights.
-                RemComp<NightShiftDimmedLightComponent>(uid);
-                _poweredLightSystem.UpdateLight(uid, poweredLight);
-
-                // Announce that we are ending early, once.
-                if (!announced && TryComp<StationEventComponent>(shift, out var stationEvent))
-                {
-                    announced = true;
-                    Announce(stationEvent, Loc.GetString(nightShift.EmergencyEndAnnouncement), true);
-                }
+                // If the alert level is permitted, enable night shift dimming, and announce if that changed anything.
+                if (EnableNightShiftDimming(ev.Station, nightShift))
+                    Announce(stationEvent, Loc.GetString(nightShift.EnableAnnouncement), true);
+            }
+            else
+            {
+                // If the alert level is not permitted, disable night shift dimming, and announce if that changed anything.
+                if (DisableNightShiftDimming(ev.Station))
+                    Announce(stationEvent, Loc.GetString(nightShift.DisableAnnouncement), true);
             }
         }
     }
@@ -64,6 +112,7 @@ public sealed class NightShiftRule : StationEventSystem<NightShiftRuleComponent>
     {
         base.Started(uid, comp, gameRule, args);
 
+        // Determine what station to target.
         EntityUid? chosenStation;
         if (!TryComp<StationEventComponent>(uid, out var stationEvent)) return;
         chosenStation = stationEvent.TargetStation;
@@ -71,53 +120,14 @@ public sealed class NightShiftRule : StationEventSystem<NightShiftRuleComponent>
             if (!TryGetRandomStation(out chosenStation))
                 return;
         
-        // If station alert level doesn't allow night light, don't announce we're starting, just say "Disabling ...".
-        if (TryComp<AlertLevelComponent>(chosenStation, out var alert)
-            && !comp.PermittedAlertLevels.Contains(alert.CurrentLevel))
-        {
-            Announce(stationEvent, Loc.GetString(comp.EmergencyEndAnnouncement), true);
-            return;
-        }
-        
-        // Find eligible powered lights.
-        var query = AllEntityQuery<PoweredLightComponent, TransformComponent>();
-        while (query.MoveNext(out var ent, out var light, out var xform))
-        {
-            if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != chosenStation)
-                continue;
-            
-            // Add our dimmer component.
-            var nightLightComp = EnsureComp<NightShiftDimmedLightComponent>(ent);
-            nightLightComp.LightEnergyMultiplier = comp.LightEnergyMultiplier;
-            _poweredLightSystem.UpdateLight(ent, light);
-        }
+        EnableNightShiftDimming(chosenStation.Value, comp);
     }
 
     protected override void Ended(EntityUid uid, NightShiftRuleComponent comp, GameRuleComponent gameRule, GameRuleEndedEvent args)
     {
         base.Ended(uid, comp, gameRule, args);
-        
         if (!TryComp<StationEventComponent>(uid, out var stationEvent)) return;
 
-        var query = AllEntityQuery<PoweredLightComponent, NightShiftDimmedLightComponent, TransformComponent>();
-        var announced = false;
-        while (query.MoveNext(out var ent, out var light, out _, out var xform))
-        {
-            // Ignore lights that aren't part of the station this event affectec.
-            if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != stationEvent.TargetStation)
-                continue;
-            
-            // Remove and update light.
-            if (!RemComp<NightShiftDimmedLightComponent>(ent)) continue;
-            _poweredLightSystem.UpdateLight(ent, light);
-
-            // Announce the event ended, once. If the event ended early (due to alert level),
-            // we won't find any NightShiftDimmedLightComponents and thus never get here.
-            if (!announced)
-            {
-                announced = true;
-                Announce(stationEvent, Loc.GetString(comp.EndAnnouncement), true);
-            }
-        }
+        DisableNightShiftDimming(stationEvent.TargetStation!.Value);
     }
 }

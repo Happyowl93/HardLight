@@ -9,5 +9,6 @@ namespace Content.Shared._Starlight.GameTicking.Components;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class NightShiftDimmedLightComponent : Component
 {
-    [DataField] public float LightEnergyMultiplier = 1.0f;
+    [DataField]
+    public float LightEnergyMultiplier;
 }

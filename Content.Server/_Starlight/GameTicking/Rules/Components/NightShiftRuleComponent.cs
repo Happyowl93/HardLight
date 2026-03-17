@@ -7,14 +7,14 @@ namespace Content.Server._Starlight.GameTicking.Rules.Components;
 public sealed partial class NightShiftRuleComponent : Component
 {
     /// <summary>
-    /// The announcement when the event ends normally.
+    /// The announcement when the effect is disabled due to a too-high alert leve.
     /// </summary>
-    [DataField] public LocId EndAnnouncement;
-
+    [DataField] public LocId DisableAnnouncement;
+    
     /// <summary>
-    /// The announcement when the event ends prematurely.
+    /// The announcement when the effect is enabled due to a no-longer too-high alert level.
     /// </summary>
-    [DataField] public LocId EmergencyEndAnnouncement;
+    [DataField] public LocId EnableAnnouncement;
 
     /// <summary>
     /// Which alert levels are permissible for this event. This is checked against when initiating the event, and on
