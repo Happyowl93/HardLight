@@ -62,7 +62,7 @@ public abstract class SharedPoweredLightSystem : EntitySystem
     }
     
     /// <summary>
-    /// STARLIGHT: Handle alert level light dimming.
+    /// STARLIGHT: Handle light dimming during higher alert levels.
     /// </summary>
     private void OnGetDimmedLightLevel(EntityUid uid, AlertLevelDimmedLightComponent component, GetDimmedLightLevelEvent args)
     {
@@ -297,7 +297,7 @@ public abstract class SharedPoweredLightSystem : EntitySystem
             _appearance.SetData(uid, PoweredLightVisuals.BulbState, PoweredLightState.Empty, appearance);
             return;
         }
-        
+
         // Starlight BEGIN: Light dimming
         var lightEnergy = lightBulb.LightEnergy;
         var lightRadius = lightBulb.LightRadius;
