@@ -34676,5 +34676,12 @@ Entries:
   id: 376701
   time: '2026-03-17T18:43:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3767
+- author: CrazyPhantom
+  changes:
+  - message: Mappers can now save the state of pumps, air alarms, mixers, ect.
+    type: Add
+  id: 375401
+  time: '2026-03-17T19:01:21.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3754
 Order: -1
 
