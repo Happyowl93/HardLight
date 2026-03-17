@@ -58,9 +58,12 @@ public abstract class SharedPoweredLightSystem : EntitySystem
         SubscribeLocalEvent<PoweredLightComponent, DamageChangedEvent>(HandleLightDamaged);
         SubscribeLocalEvent<PoweredLightComponent, EmpPulseEvent>(OnEmpPulse);
 
-        SubscribeLocalEvent<AlertLevelDimmedLightComponent, GetDimmedLightLevelEvent>(OnGetDimmedLightLevel);
+        SubscribeLocalEvent<AlertLevelDimmedLightComponent, GetDimmedLightLevelEvent>(OnGetDimmedLightLevel); // Starlight
     }
-
+    
+    /// <summary>
+    /// STARLIGHT: Handle alert level light dimming.
+    /// </summary>
     private void OnGetDimmedLightLevel(EntityUid uid, AlertLevelDimmedLightComponent component, GetDimmedLightLevelEvent args)
     {
         args.LightEnergy *= component.LightEnergyMultiplier;
@@ -262,7 +265,7 @@ public abstract class SharedPoweredLightSystem : EntitySystem
         return true;
     }
 
-    public void UpdateLight(EntityUid uid,
+    public void UpdateLight(EntityUid uid, // Starlight: public
         PoweredLightComponent? light = null,
         SharedApcPowerReceiverComponent? powerReceiver = null,
         AppearanceComponent? appearance = null,
@@ -295,9 +298,7 @@ public abstract class SharedPoweredLightSystem : EntitySystem
             return;
         }
         
-        // Starlight BEGIN
-
-        // SL - NightShift Mode!
+        // Starlight BEGIN: Light dimming
         var lightEnergy = lightBulb.LightEnergy;
         var lightRadius = lightBulb.LightRadius;
         var powerUse = lightBulb.PowerUse;
@@ -311,13 +312,14 @@ public abstract class SharedPoweredLightSystem : EntitySystem
             lightRadius = lightBulb.LightRadius;
             powerUse = (int) Math.Ceiling((double) lightBulb.PowerUse);
         }
+        // Starlight END
 
         switch (lightBulb.State)
         {
             case LightBulbState.Normal:
                 if (powerReceiver.Powered && light.On)
                 {
-                    SetLight(uid, true, lightBulb.Color, light, lightRadius, lightEnergy, lightBulb.LightSoftness, HasComp<DarkLightComponent>(bulbUid.Value));
+                    SetLight(uid, true, lightBulb.Color, light, lightRadius, lightEnergy, lightBulb.LightSoftness, HasComp<DarkLightComponent>(bulbUid.Value)); // Starlight
                     _appearance.SetData(uid, PoweredLightVisuals.BulbState, PoweredLightState.On, appearance);
                     var time = GameTiming.CurTime;
                     if (time > light.LastThunk + ThunkDelay)
@@ -343,7 +345,7 @@ public abstract class SharedPoweredLightSystem : EntitySystem
                 break;
         }
 
-        powerReceiver.Load = (light.On && lightBulb.State == LightBulbState.Normal) ? powerUse : 0;
+        powerReceiver.Load = (light.On && lightBulb.State == LightBulbState.Normal) ? powerUse : 0; // Starlight
     }
 
     /// <summary>
