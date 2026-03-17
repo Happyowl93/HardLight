@@ -1,4 +1,4 @@
-# Starlight - Shuttle Explosive & Rocket Ammunition
+# Explosive & Rocket Ammunition
 # Covers: cleanade (override), 120mm grenades, 60mm rockets, 50mm rockets, 60mm EMP rockets
 
 - type: entity
@@ -11,7 +11,7 @@
   - type: Contraband
     severity: Syndicate
 
-# Starlight 120mm Ammunition
+# 120mm Ammunition
 
 # Base 120mm Grenade
 - type: entity
@@ -103,9 +103,9 @@
     capacity: 20
 
 
-# Starlight 60mm Rocket Ammunition
+# 60mm Rocket Ammunition
 
-# Starlight override of the base 60mm rocket projectile with radar blip.
+# Override of the base 60mm rocket projectile with radar blip.
 - type: entity
   parent: Bullet60mmRocket
   id: Bullet60mmRocketStarlight
