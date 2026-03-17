@@ -31,7 +31,7 @@ public sealed class DamagedThroatSystem : EntitySystem
         if (args.IsWhisper)
             return;
 
-        // Don't damage if using excluded languages (languages that require verbal speech)
+        // Don't damage if using excluded languages (languages that don't require verbal speech)
         if (args.Language.SpeechOverride.RequireSpeech == false)
             return;
 
