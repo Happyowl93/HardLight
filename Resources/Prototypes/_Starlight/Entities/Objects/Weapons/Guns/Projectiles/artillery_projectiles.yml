@@ -1,4 +1,4 @@
-# Starlight - Dravon 75mm & AK570 90mm Projectiles
+# Dravon 75mm & AK570 90mm Projectiles
 
 # --- DRAVON 75mm HE ---
 - type: entity
@@ -105,7 +105,6 @@
 
 
 # --- CYERXA 120mm ---
-# Starlight 120mm Projectiles
 
 - type: entity
   id: BulletGrenade120mmBlast

@@ -241,7 +241,6 @@
     sprintModifier: 1.5
     walkModifier: 1
 
-# Starlight start - Omega Power Cage (3x High capacity, for heavy shuttle weapons)
 - type: entity
   id: PowerCageOmega
   parent: BasePowerCage
@@ -274,4 +273,3 @@
   components:
   - type: Battery
     startingCharge: 0
-# Starlight end

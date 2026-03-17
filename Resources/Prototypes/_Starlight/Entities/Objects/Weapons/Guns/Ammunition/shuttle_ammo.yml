@@ -1,4 +1,4 @@
-# Starlight - Shuttle Artillery Ammunition
+# Shuttle Artillery Ammunition
 # Covers: M321-CHARYBDIS 280mm, Dravon 75mm, AK570 90mm, Leviathan 240mm
 
 # Base Charybdis 280mm cartridge (abstract)
@@ -68,7 +68,7 @@
   - type: StaticPrice
     price: 8000
 
-# Starlight - Dravon 75mm Artillery Shell Ammunition
+# Dravon 75mm Artillery Shell Ammunition
 
 # Base Dravon 75mm shell (abstract)
 - type: entity
@@ -150,7 +150,7 @@
     price: 400
 
 
-# Starlight - AK570 90mm Artillery Shell Ammunition
+# AK570 90mm Artillery Shell Ammunition
 
 # Base AK570 90mm shell (abstract)
 - type: entity
@@ -232,7 +232,7 @@
     price: 550
 
 
-# Starlight - Leviathan 240mm Artillery Shell Ammunition
+# Leviathan 240mm Artillery Shell Ammunition
 
 # Base Leviathan 240mm shell (abstract)
 - type: entity
