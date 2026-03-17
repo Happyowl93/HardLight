@@ -34653,5 +34653,12 @@ Entries:
   id: 375901
   time: '2026-03-17T06:37:14.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3759
+- author: BigfootBravo
+  changes:
+  - message: Chittin language no longer triggers damaged throat.
+    type: Fix
+  id: 375801
+  time: '2026-03-17T07:03:31.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3758
 Order: -1
 
