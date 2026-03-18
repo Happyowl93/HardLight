@@ -34739,5 +34739,25 @@ Entries:
   id: 378301
   time: '2026-03-18T16:01:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3783
+- author: STARLIGHT TEAM
+  changes:
+  - message: Cosmic Cult metashield
+    type: Add
+  - message: Cosmic Cult corporate secrets which can now be found in NTRep's locker
+      and count for the steal objective.
+    type: Tweak
+  - message: Guidebook mentions of Epistemics are now Science
+    type: Fix
+  - message: The Mystagogue (RD's Alter Ego) is not a licenced chaplain and cannot
+      make holy water.
+    type: Fix
+  - message: The cosmic cult's ghost form no longer cryos them after being used too
+      long
+    type: Fix
+  - message: The Cosmic Colossi guidebook is now in it's propper place
+    type: Fix
+  id: 377401
+  time: '2026-03-18T16:14:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3774
 Order: -1
 
