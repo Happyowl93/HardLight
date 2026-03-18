@@ -195,7 +195,7 @@
     capacity: 30
 
 
-# Starlight 50mm Rocket Ammunition
+# 50mm Rocket Ammunition
 
 # Starlight override of the base 60mm rocket projectile with radar blip.
 - type: entity
