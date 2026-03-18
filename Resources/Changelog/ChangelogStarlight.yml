@@ -34732,5 +34732,12 @@ Entries:
   id: 377901
   time: '2026-03-18T13:30:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3779
+- author: redmushie
+  changes:
+  - message: Crystal shards actually spawn from their recipe.
+    type: Fix
+  id: 378301
+  time: '2026-03-18T16:01:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3783
 Order: -1
 
