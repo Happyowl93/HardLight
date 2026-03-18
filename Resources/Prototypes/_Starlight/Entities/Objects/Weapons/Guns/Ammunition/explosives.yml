@@ -286,7 +286,7 @@
     capacity: 26
 
 
-# Starlight EMP Rocket Ammunition
+# EMP Rocket Ammunition
 
 # EMP rocket projectile - delivers an electromagnetic pulse on impact, no explosive damage.
 - type: entity
