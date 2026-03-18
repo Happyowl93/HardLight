@@ -40,7 +40,6 @@
       tags:
         - ConstructionMaterial
         - CableCoil
-        - Tile
   - type: Dumpable
   - type: Appearance
   - type: GenericVisualizer
