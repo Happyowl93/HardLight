@@ -34775,5 +34775,12 @@ Entries:
   id: 368801
   time: '2026-03-18T18:40:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3688
+- author: redmushie
+  changes:
+  - message: The blacklight box loadout option has been removed.
+    type: Remove
+  id: 377801
+  time: '2026-03-18T18:51:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3778
 Order: -1
 
