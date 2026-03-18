@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/18/2026 15:23:03
-  entityCount: 29408
+  time: 03/18/2026 18:27:34
+  entityCount: 29419
 maps:
 - 1
 grids:
@@ -8751,7 +8751,7 @@ entities:
             0: 61423
           8,-1:
             0: 12320
-            4: 34944
+            2: 34944
           -8,-4:
             0: 30583
           -8,-5:
@@ -9109,7 +9109,7 @@ entities:
             0: 30583
           6,-12:
             1: 4369
-            2: 204
+            4: 204
             3: 49152
           6,-11:
             1: 61713
@@ -9118,10 +9118,10 @@ entities:
             0: 29424
           6,-13:
             1: 4369
-            2: 49152
+            4: 49152
             3: 204
           7,-12:
-            2: 17
+            4: 17
             3: 4096
             1: 17476
           7,-11:
@@ -9130,7 +9130,7 @@ entities:
           7,-10:
             0: 61680
           7,-13:
-            2: 4096
+            4: 4096
             1: 17476
             3: 17
           8,-12:
@@ -9168,7 +9168,7 @@ entities:
             1: 34816
           8,0:
             0: 63523
-            4: 8
+            2: 8
           8,1:
             0: 61440
           8,2:
@@ -9448,24 +9448,24 @@ entities:
             1: 35064
             3: 771
           9,0:
-            4: 15
+            2: 15
             0: 65296
           9,1:
             0: 47232
           9,2:
             0: 48955
           9,-1:
-            4: 65520
+            2: 65520
             0: 1
           10,0:
-            4: 1
+            2: 1
             0: 65292
           10,1:
             0: 56789
           10,2:
             0: 64961
           10,-1:
-            4: 4368
+            2: 4368
             0: 57548
           11,0:
             0: 30543
@@ -11325,17 +11325,17 @@ entities:
           immutable: True
           moles: {}
         - volume: 2500
-          temperature: 293.15
-          moles:
-            Plasma: 6666.982
-        - volume: 2500
-          temperature: 293.15
-          moles: {}
-        - volume: 2500
           temperature: 235
           moles:
             Oxygen: 27.225372
             Nitrogen: 102.419266
+        - volume: 2500
+          temperature: 293.15
+          moles: {}
+        - volume: 2500
+          temperature: 293.15
+          moles:
+            Plasma: 6666.982
         - volume: 2500
           temperature: 293.15
           moles:
@@ -22516,6 +22516,18 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 17.5,27.5
+      parent: 2
+- proto: BarSignLights
+  entities:
+  - uid: 21875
+    components:
+    - type: Transform
+      pos: -32.5,11.5
+      parent: 2
+  - uid: 29409
+    components:
+    - type: Transform
+      pos: 28.5,-2.5
       parent: 2
 - proto: BarSignMaidCafe
   entities:
@@ -66162,6 +66174,16 @@ entities:
     - type: Transform
       pos: -8.5,-14.5
       parent: 2
+- proto: CashRegister
+  entities:
+  - uid: 29418
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 29.5,-8.5
+      parent: 2
+    - type: Physics
+      bodyType: Static
 - proto: Catwalk
   entities:
   - uid: 10083
@@ -71611,7 +71633,7 @@ entities:
   - uid: 11110
     components:
     - type: Transform
-      pos: 28.5,-4.5
+      pos: 28.547821,-8.286762
       parent: 2
   - uid: 11111
     components:
@@ -72013,6 +72035,13 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: ClinicSignLights
+  entities:
+  - uid: 29417
+    components:
+    - type: Transform
+      pos: 63.5,10.5
+      parent: 2
 - proto: ClosetBombFilled
   entities:
   - uid: 11163
@@ -90462,18 +90491,9 @@ entities:
   - uid: 13780
     components:
     - type: Transform
-      pos: 28.5,-11.5
+      rot: 3.141592653589793 rad
+      pos: 17.5,-4.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        cabinetSlot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        ItemCabinet: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
     - type: Fixtures
       fixtures: {}
   - uid: 13781
@@ -90748,6 +90768,14 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 62.5,-0.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 29412
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 32.5,-15.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -138778,6 +138806,20 @@ entities:
     - type: Transform
       pos: 2.429234,-24.146116
       parent: 2
+- proto: OnAirSignLights
+  entities:
+  - uid: 21928
+    components:
+    - type: Transform
+      pos: -19.5,-13.5
+      parent: 2
+- proto: OpenBarSignLights
+  entities:
+  - uid: 29414
+    components:
+    - type: Transform
+      pos: 21.5,-11.5
+      parent: 2
 - proto: OperatingTable
   entities:
   - uid: 20523
@@ -147513,11 +147555,6 @@ entities:
     - type: Transform
       pos: -44.5,8.5
       parent: 2
-  - uid: 21875
-    components:
-    - type: Transform
-      pos: -32.5,11.5
-      parent: 2
   - uid: 21876
     components:
     - type: Transform
@@ -147743,6 +147780,11 @@ entities:
     - type: Transform
       pos: 78.5,10.5
       parent: 2
+  - uid: 23307
+    components:
+    - type: Transform
+      pos: -30.5,11.5
+      parent: 2
 - proto: RandomPosterContraband
   entities:
   - uid: 21921
@@ -147781,11 +147823,6 @@ entities:
     components:
     - type: Transform
       pos: 64.5,-51.5
-      parent: 2
-  - uid: 21928
-    components:
-    - type: Transform
-      pos: -19.5,-13.5
       parent: 2
   - uid: 21929
     components:
@@ -155538,6 +155575,19 @@ entities:
           - Toggle
     - type: Fixtures
       fixtures: {}
+  - uid: 29410
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 31.5,-2.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        29409:
+        - - Pressed
+          - Toggle
+    - type: Fixtures
+      fixtures: {}
 - proto: SignalButtonDirectional
   entities:
   - uid: 23292
@@ -155648,6 +155698,57 @@ entities:
         165:
         - - Pressed
           - DoorBolt
+    - type: Fixtures
+      fixtures: {}
+  - uid: 23424
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 61.5,11.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        29417:
+        - - Pressed
+          - Toggle
+    - type: Fixtures
+      fixtures: {}
+  - uid: 29411
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 28.5,-11.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        29414:
+        - - Pressed
+          - Toggle
+    - type: Fixtures
+      fixtures: {}
+  - uid: 29415
+    components:
+    - type: Transform
+      pos: -33.5,13.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        21875:
+        - - Pressed
+          - Toggle
+    - type: Fixtures
+      fixtures: {}
+  - uid: 29416
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -25.5,-11.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        21928:
+        - - Pressed
+          - Toggle
     - type: Fixtures
       fixtures: {}
 - proto: SignalSwitch
@@ -155848,10 +155949,10 @@ entities:
       fixtures: {}
 - proto: SignBar
   entities:
-  - uid: 23307
+  - uid: 29413
     components:
     - type: Transform
-      pos: 21.5,-11.5
+      pos: 23.5,-11.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -156805,13 +156906,6 @@ entities:
     components:
     - type: Transform
       pos: 24.5,-15.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 23424
-    components:
-    - type: Transform
-      pos: 63.5,10.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -159374,6 +159468,18 @@ entities:
       rot: 3.141592653589793 rad
       pos: 44.5,-43.5
       parent: 2
+  - uid: 27526
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 34.5,-2.5
+      parent: 2
+  - uid: 27528
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 33.5,-1.5
+      parent: 2
 - proto: SpaceVillainArcadeComputerCircuitboard
   entities:
   - uid: 23840
@@ -160680,6 +160786,15 @@ entities:
     - type: Transform
       pos: 11.456799,-78.42873
       parent: 2
+- proto: StandingMicrophone
+  entities:
+  - uid: 29419
+    components:
+    - type: Transform
+      pos: 21.5,-2.5
+      parent: 2
+    - type: Physics
+      bodyType: Static
 - proto: StasisBed
   entities:
   - uid: 24044
@@ -180149,20 +180264,10 @@ entities:
     - type: Transform
       pos: 34.5,-1.5
       parent: 2
-  - uid: 27526
-    components:
-    - type: Transform
-      pos: 34.5,-2.5
-      parent: 2
   - uid: 27527
     components:
     - type: Transform
       pos: 34.5,-3.5
-      parent: 2
-  - uid: 27528
-    components:
-    - type: Transform
-      pos: 33.5,-1.5
       parent: 2
   - uid: 27529
     components:
@@ -190195,7 +190300,7 @@ entities:
       pos: 73.5,-3.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -14013.919
+      secondsUntilStateChange: -14482.953
       state: Opening
   - uid: 29380
     components:
