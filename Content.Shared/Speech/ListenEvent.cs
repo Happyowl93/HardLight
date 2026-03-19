@@ -6,13 +6,13 @@ public sealed class ListenEvent : EntityEventArgs
 {
     public readonly string Message;
     public readonly EntityUid Source;
-    public readonly LanguagePrototype? Language;
+    public readonly LanguagePrototype? Language; //Starlight
 
-    public ListenEvent(string message, EntityUid source, LanguagePrototype? language)
+    public ListenEvent(string message, EntityUid source, LanguagePrototype? language) //Starlight
     {
         Message = message;
         Source = source;
-        Language = language;
+        Language = language; //Starlight
     }
 }
 

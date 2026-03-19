@@ -101,13 +101,13 @@ public sealed class SurveillanceCameraSpeechSendEvent : EntityEventArgs
 {
     public EntityUid Speaker { get; }
     public string Message { get; }
-    public LanguagePrototype? Language { get; }
+    public LanguagePrototype? Language { get; } //Starlight
 
-    public SurveillanceCameraSpeechSendEvent(EntityUid speaker, string message, LanguagePrototype? language)
+    public SurveillanceCameraSpeechSendEvent(EntityUid speaker, string message, LanguagePrototype? language) //Starlight
     {
         Speaker = speaker;
         Message = message;
-        Language = language;
+        Language = language; //Starlight
     }
 }
 
