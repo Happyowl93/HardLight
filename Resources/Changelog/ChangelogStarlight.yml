@@ -34879,5 +34879,12 @@ Entries:
   id: 379601
   time: '2026-03-19T07:11:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3796
+- author: STARLIGHT TEAM
+  changes:
+  - message: Made Rule 2 more explicit, closing a loophole with Antag Rolling.
+    type: Tweak
+  id: 380501
+  time: '2026-03-19T16:20:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3805
 Order: -1
 
