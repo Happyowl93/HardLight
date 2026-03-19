@@ -34833,5 +34833,25 @@ Entries:
   id: 378801
   time: '2026-03-19T06:54:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3788
+- author: Way & Cvlancer
+  changes:
+  - message: (Ming) Added new department communications consoles. - Cvlancer.
+    type: Add
+  - message: (Sepultum) Added new department communications consoles. - Cvlancer.
+    type: Add
+  - message: (Orwell) Added new department communications consoles. - Way.
+    type: Add
+  - message: (Lobster) Added new department communications consoles. - Way.
+    type: Add
+  - message: (Lagan) Added new department communications consoles. - Way.
+    type: Add
+  - message: (Lagan) Moved the Exofabs inside Robotics to hopefully prevent objects
+      from getting stuck. - Way.
+    type: Fix
+  - message: (Ming & Sepultum) Added botany tools, changed AI cores around. -Cvlancer.
+    type: Tweak
+  id: 378501
+  time: '2026-03-19T07:00:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3785
 Order: -1
 
