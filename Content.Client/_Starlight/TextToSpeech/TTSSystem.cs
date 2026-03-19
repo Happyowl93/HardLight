@@ -20,7 +20,8 @@ namespace Content.Client._Starlight.TTS;
 /// </summary>
 public sealed class TextToSpeechSystem : EntitySystem
 {
-    private const float CrossFade = 0.010f;
+    protected override string SawmillName => "tts";
+
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
@@ -29,10 +30,10 @@ public sealed class TextToSpeechSystem : EntitySystem
     [Dependency] private readonly RadioChimeSystem _chime = default!;
 
     private readonly ConcurrentQueue<(Queue<byte[]> data, SoundSpecifier? specifier, float volume)> _ttsQueue = [];
-    private ISawmill _sawmill = default!;
     private readonly MemoryContentRoot _contentRoot = new();
     private (EntityUid Entity, AudioComponent Component)? _currentPlaying;
 
+    private const float CrossFade = 0.010f;
     private float _volume;
     private float _radioVolume;
     private float _announceVolume;
@@ -54,11 +55,6 @@ public sealed class TextToSpeechSystem : EntitySystem
 
     public override void Initialize()
     {
-        _sawmill = Logger.GetSawmill("tts");
-
-        if (_player.LocalSession?.Name == "neomoth")
-            _sawmill.Level = LogLevel.Info;
-
         _cfg.OnValueChanged(StarlightCCVars.TTSVolume, OnTtsVolumeChanged, true);
         _cfg.OnValueChanged(StarlightCCVars.TTSAnnounceVolume, OnTtsAnnounceVolumeChanged, true);
         _cfg.OnValueChanged(StarlightCCVars.TTSRadioVolume, OnTtsRadioVolumeChanged, true);
@@ -183,7 +179,7 @@ public sealed class TextToSpeechSystem : EntitySystem
             if (previous is var (eid, audio, tts))
                 silencePadding = Math.Clamp(1f - (float)(tts.AudioLength.TotalSeconds - audio.PlaybackPosition) - CrossFade, 0f, 1f);
 
-            _sawmill.Debug($"Play TTS chunk: {audioBytes.Length}, prependSilence: {silencePadding:F3}s");
+            Log.Debug($"Play TTS chunk: {audioBytes.Length}, prependSilence: {silencePadding:F3}s");
             @params = @params.WithPlayOffset(silencePadding);
             var ent = sourceUid != null && sourceUid != _player.LocalEntity
                 ? _audio.PlayEntity(audioStream, sourceUid.Value, null, @params)
@@ -206,7 +202,7 @@ public sealed class TextToSpeechSystem : EntitySystem
         }
         catch (Exception ex)
         {
-            _sawmill.Error($"Error playing TTS audio: {ex.Message}", ex);
+            Log.Error($"Error playing TTS audio: {ex.Message}", ex);
         }
 
         return null;
