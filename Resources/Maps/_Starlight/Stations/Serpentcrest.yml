@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/17/2026 18:03:21
-  entityCount: 29370
+  time: 03/19/2026 06:38:04
+  entityCount: 29371
 maps:
 - 1
 grids:
@@ -139000,6 +139000,16 @@ entities:
     - type: Transform
       pos: -2.5,77.5
       parent: 2
+    - type: StationAiCore
+      lawConsole: 24080
+    - type: DeviceLinkSource
+      linkedPorts:
+        24081:
+        - - AiLawConsoleSender
+          - AiLawConsoleReceiver
+        24080:
+        - - AiLawConsoleSender
+          - AiLawConsoleReceiver
 - proto: PlushieLizard
   entities:
   - uid: 20606
@@ -157094,6 +157104,13 @@ entities:
     - type: Transform
       pos: -7.5,-44.5
       parent: 2
+- proto: SLVendingMachineMining
+  entities:
+  - uid: 29371
+    components:
+    - type: Transform
+      pos: 56.5,-36.5
+      parent: 2
 - proto: SLVendingMachineSalvage
   entities:
   - uid: 23460
@@ -160889,12 +160906,16 @@ entities:
     - type: Transform
       pos: -6.5,73.5
       parent: 2
+    - type: SiliconLawUpdater
+      core: 20605
   - uid: 24081
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -6.5,70.5
       parent: 2
+    - type: SiliconLawUpdater
+      core: 20605
 - proto: StationAnchor
   entities:
   - uid: 24082
