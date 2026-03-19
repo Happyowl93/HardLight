@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/18/2026 13:03:58
-  entityCount: 25912
+  time: 03/19/2026 00:22:08
+  entityCount: 25911
 maps:
 - 1
 grids:
@@ -67675,7 +67675,7 @@ entities:
   - uid: 10378
     components:
     - type: Transform
-      pos: -16.5,44.5
+      pos: -16.5,42.5
       parent: 2
 - proto: DefaultStationBeaconTelecoms
   entities:
@@ -81597,6 +81597,13 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#947507FF'
+  - uid: 778
+    components:
+    - type: Transform
+      pos: -17.5,45.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#087CA7FF'
   - uid: 779
     components:
     - type: Transform
@@ -81627,6 +81634,13 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#087CA7FF'
+  - uid: 785
+    components:
+    - type: Transform
+      pos: -15.5,45.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#EF6F6CFF'
   - uid: 786
     components:
     - type: Transform
@@ -99068,14 +99082,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#087CA7FF'
-  - uid: 785
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -17.5,45.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#087CA7FF'
   - uid: 795
     components:
     - type: Transform
@@ -101812,14 +101818,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#EF6F6CFF'
-  - uid: 16211
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -15.5,45.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#EF6F6CFF'
   - uid: 18213
     components:
     - type: Transform
@@ -102380,16 +102378,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#F2E408FF'
-- proto: GasPressureRegulator
-  entities:
-  - uid: 783
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -16.5,45.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#AA7DCEFF'
 - proto: GasThermoMachineFreezer
   entities:
   - uid: 13855
@@ -115130,7 +115118,7 @@ entities:
   - uid: 17276
     components:
     - type: Transform
-      pos: -16.5,43.5
+      pos: -16.5,42.5
       parent: 2
     - type: Pullable
       prevFixedRotation: True
@@ -145123,7 +145111,7 @@ entities:
       parent: 25591
 - proto: TegCenter
   entities:
-  - uid: 791
+  - uid: 774
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -145131,18 +145119,18 @@ entities:
       parent: 2
 - proto: TegCirculator
   entities:
-  - uid: 774
+  - uid: 783
+    components:
+    - type: Transform
+      pos: -15.5,44.5
+      parent: 2
+    - type: PointLight
+      color: '#FF3300FF'
+  - uid: 791
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -17.5,44.5
-      parent: 2
-    - type: PointLight
-      color: '#FF3300FF'
-  - uid: 778
-    components:
-    - type: Transform
-      pos: -15.5,44.5
       parent: 2
     - type: PointLight
       color: '#FF3300FF'
