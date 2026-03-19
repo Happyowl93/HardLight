@@ -72,7 +72,7 @@ public sealed class SurveillanceCameraMicrophoneSystem : EntitySystem
         if (!TryComp(uid, out SurveillanceCameraComponent? camera))
             return;
 
-        var ev = new SurveillanceCameraSpeechSendEvent(args.Source, args.Message, args.Language);
+        var ev = new SurveillanceCameraSpeechSendEvent(args.Source, args.Message, args.Language); //Starlight
 
         foreach (var monitor in camera.ActiveMonitors)
         {
