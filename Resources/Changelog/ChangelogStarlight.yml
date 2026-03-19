@@ -34886,5 +34886,20 @@ Entries:
   id: 380501
   time: '2026-03-19T16:20:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3805
+- author: STARLIGHT TEAM
+  changes:
+  - message: A new batch of voices has been added.
+    type: Add
+  - message: The logs command allows you to persistently change the log level for
+      specific sawmills.
+    type: Add
+  - message: Crossfade has been applied to the audio chunks, and clicks and pops have
+      been removed.
+    type: Tweak
+  - message: The ogg quality has been increased from 3 to 6.
+    type: Tweak
+  id: 380801
+  time: '2026-03-19T22:21:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3808
 Order: -1
 
