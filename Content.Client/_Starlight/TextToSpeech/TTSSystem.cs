@@ -20,6 +20,7 @@ namespace Content.Client._Starlight.TTS;
 /// </summary>
 public sealed class TextToSpeechSystem : EntitySystem
 {
+    private const float CrossFade = 0.010f;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
@@ -54,6 +55,10 @@ public sealed class TextToSpeechSystem : EntitySystem
     public override void Initialize()
     {
         _sawmill = Logger.GetSawmill("tts");
+
+        if (_player.LocalSession?.Name == "neomoth")
+            _sawmill.Level = LogLevel.Info;
+
         _cfg.OnValueChanged(StarlightCCVars.TTSVolume, OnTtsVolumeChanged, true);
         _cfg.OnValueChanged(StarlightCCVars.TTSAnnounceVolume, OnTtsAnnounceVolumeChanged, true);
         _cfg.OnValueChanged(StarlightCCVars.TTSRadioVolume, OnTtsRadioVolumeChanged, true);
@@ -176,9 +181,9 @@ public sealed class TextToSpeechSystem : EntitySystem
             var audioStream = _audioManager.LoadAudioOggVorbis(new MemoryStream(audioBytes));
 
             if (previous is var (eid, audio, tts))
-                silencePadding = Math.Clamp(1f - (float)(tts.AudioLength.TotalSeconds - audio.PlaybackPosition), 0f, 1f);
+                silencePadding = Math.Clamp(1f - (float)(tts.AudioLength.TotalSeconds - audio.PlaybackPosition) - CrossFade, 0f, 1f);
 
-            // _sawmill.Debug($"Play TTS chunk: {audioBytes.Length}, prependSilence: {silencePadding:F3}s");
+            _sawmill.Debug($"Play TTS chunk: {audioBytes.Length}, prependSilence: {silencePadding:F3}s");
             @params = @params.WithPlayOffset(silencePadding);
             var ent = sourceUid != null && sourceUid != _player.LocalEntity
                 ? _audio.PlayEntity(audioStream, sourceUid.Value, null, @params)
@@ -220,7 +225,7 @@ public sealed class TextToSpeechSystem : EntitySystem
                 continue;
             var timeRemaining = despawnComponent.Lifetime - SharedAudioSystem.AudioDespawnBuffer - 1f;
 
-            if (timeRemaining < 0.066f)
+            if (timeRemaining < 0.066f && (ttsComp.AudioLength.TotalSeconds - audio.PlaybackPosition) < 0.096f)
                 toPlay.Add((uid, audio, ttsComp));
         }
 
