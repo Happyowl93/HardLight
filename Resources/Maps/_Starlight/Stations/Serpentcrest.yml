@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/19/2026 06:38:04
-  entityCount: 29371
+  time: 03/19/2026 06:50:47
+  entityCount: 29373
 maps:
 - 1
 grids:
@@ -70548,6 +70548,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: 8.91502,-55.369053
       parent: 2
+  - uid: 22105
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 60.57201,-29.393112
+      parent: 2
 - proto: ChairOfficeLight
   entities:
   - uid: 11125
@@ -74894,21 +74900,6 @@ entities:
           ent: null
 - proto: ComputerAlert
   entities:
-  - uid: 11818
-    components:
-    - type: Transform
-      pos: -59.5,27.5
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        pai_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
   - uid: 11819
     components:
     - type: Transform
@@ -75192,22 +75183,6 @@ entities:
           ent: null
 - proto: ComputerCargoOrders
   entities:
-  - uid: 11840
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 59.5,-29.5
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        pai_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
   - uid: 11841
     components:
     - type: Transform
@@ -75501,6 +75476,130 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+- proto: ComputerCommsCargo
+  entities:
+  - uid: 11840
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 59.5,-29.5
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        pai_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+- proto: ComputerCommsEngineering
+  entities:
+  - uid: 11818
+    components:
+    - type: Transform
+      pos: -59.5,27.5
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        pai_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+- proto: ComputerCommsLaw
+  entities:
+  - uid: 29372
+    components:
+    - type: Transform
+      pos: -8.5,-2.5
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        pai_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+- proto: ComputerCommsMedical
+  entities:
+  - uid: 11861
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 14.5,-56.5
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        pai_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+- proto: ComputerCommsScience
+  entities:
+  - uid: 29373
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 55.5,19.5
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        pai_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+- proto: ComputerCommsSecurity
+  entities:
+  - uid: 11925
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -19.5,10.5
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        pai_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+- proto: ComputerCommsService
+  entities:
+  - uid: 13511
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 31.5,47.5
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        pai_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: ComputerCrewMonitoring
   entities:
   - uid: 11859
@@ -75524,22 +75623,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,6.5
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        pai_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-  - uid: 11861
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 14.5,-56.5
       parent: 2
     - type: ContainerContainer
       containers:
@@ -76853,22 +76936,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 28.5,48.5
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        pai_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-  - uid: 11925
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -19.5,10.5
       parent: 2
     - type: ContainerContainer
       containers:
@@ -87104,11 +87171,6 @@ entities:
     components:
     - type: Transform
       pos: 46.5,-17.5
-      parent: 2
-  - uid: 13511
-    components:
-    - type: Transform
-      pos: 31.5,47.5
       parent: 2
   - uid: 13512
     components:
@@ -147675,11 +147737,6 @@ entities:
     - type: Transform
       pos: -10.5,8.5
       parent: 2
-  - uid: 22105
-    components:
-    - type: Transform
-      pos: -8.5,7.5
-      parent: 2
   - uid: 22106
     components:
     - type: Transform
@@ -165835,7 +165892,7 @@ entities:
   - uid: 24663
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: -8.5,7.5
       parent: 2
   - uid: 24664
