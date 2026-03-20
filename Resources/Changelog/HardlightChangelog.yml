@@ -1870,3 +1870,11 @@ Entries:
       message: Synth eye placement has been slightly adjusted.
   id: 203
   time: '2026-03-20T22:42:35.0000000+00:00'
+- author: Generic_Eagle
+  changes:
+    - type: Fix
+      message: >-
+        Fixes the SRD by adding the - type: InitRepairSnapshot component to
+        ships
+  id: 204
+  time: '2026-03-20T23:10:38.0000000+00:00'
