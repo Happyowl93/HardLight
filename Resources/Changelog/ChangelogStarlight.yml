@@ -34915,5 +34915,14 @@ Entries:
   id: 380701
   time: '2026-03-20T06:03:59.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3807
+- author: Tytos
+  changes:
+  - message: serpentcrest, added salv ticket vendor and dept comms pc.
+    type: Add
+  - message: serpentcrest, linked ai core and upload.
+    type: Fix
+  id: 380001
+  time: '2026-03-20T06:08:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3800
 Order: -1
 
