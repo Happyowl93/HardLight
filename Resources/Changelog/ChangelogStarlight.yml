@@ -34939,5 +34939,15 @@ Entries:
   id: 381401
   time: '2026-03-20T11:22:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3814
+- author: FeralCreature
+  changes:
+  - message: The plumbing smart dispenser now supports manual reagent dispensing to
+      held unlabelled containers.
+    type: Tweak
+  - message: Fixed a bug preventing some plumbing machines from being dragged around.
+    type: Fix
+  id: 373401
+  time: '2026-03-20T11:23:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3734
 Order: -1
 
