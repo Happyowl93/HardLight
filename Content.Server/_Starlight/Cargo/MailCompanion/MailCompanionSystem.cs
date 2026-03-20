@@ -1,15 +1,13 @@
-using Content.Server.Medical.SuitSensors;
-using Content.Shared.Access.Systems;
+using Content.Server.DeviceNetwork.Systems;
+using Content.Server.Medical.CrewMonitoring;
 using Content.Shared.Delivery;
+using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.Examine;
-using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Medical.SuitSensor;
-using Content.Shared.Medical.SuitSensors;
 using Content.Shared.Popups;
 using Content.Shared._Starlight.Cargo.MailCompanion;
 using Robust.Server.GameObjects;
-using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Starlight.Cargo.MailCompanion;
@@ -17,22 +15,14 @@ namespace Content.Server._Starlight.Cargo.MailCompanion;
 public sealed class MailCompanionSystem : EntitySystem
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedIdCardSystem _idCard = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SuitSensorSystem _suitSensors = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SingletonDeviceNetServerSystem _singletonServerSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
-
-    private EntityQuery<SuitSensorComponent> _sensorQuery;
-    private EntityQuery<TransformComponent> _transformQuery;
 
     public override void Initialize()
     {
         base.Initialize();
-
-        _sensorQuery = GetEntityQuery<SuitSensorComponent>();
-        _transformQuery = GetEntityQuery<TransformComponent>();
 
         SubscribeLocalEvent<MailCompanionComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<MailCompanionComponent, BoundUIOpenedEvent>(OnUiOpened);
@@ -163,41 +153,31 @@ public sealed class MailCompanionSystem : EntitySystem
         var fallback = MailCompanionStatus.RecipientUnavailable;
         var foundMatchingRecipient = false;
 
-        var sensors = EntityQueryEnumerator<SuitSensorComponent, TransformComponent>();
-        while (sensors.MoveNext(out var uid, out var sensor, out var xform))
+        if (delivery.Comp.RecipientStation is not { } stationId)
+            return false;
+
+        if (!TryGetCrewMonitoringServer(stationId, out _, out var server))
+            return false;
+
+        foreach (var sensorStatus in server.SensorStatus.Values)
         {
-            if (sensor.User is not { } wearer)
+            if (!string.Equals(sensorStatus.Name, delivery.Comp.RecipientName, StringComparison.Ordinal))
                 continue;
 
-            if (delivery.Comp.RecipientStation != null && sensor.StationId != delivery.Comp.RecipientStation)
-                continue;
-
-            if (!string.Equals(GetWearerName(wearer), delivery.Comp.RecipientName, StringComparison.Ordinal))
+            if (!EntityManager.TryGetEntity(sensorStatus.OwnerUid, out var wearer) ||
+                !EntityManager.TryGetEntity(sensorStatus.SuitSensorUid, out var resolvedSensorUid))
                 continue;
 
             foundMatchingRecipient = true;
 
-            if (sensor.Mode == SuitSensorMode.SensorOff)
-            {
-                fallback = MailCompanionStatus.SensorsOff;
-                continue;
-            }
-
-            if (sensor.Mode != SuitSensorMode.SensorCords)
-            {
-                fallback = MailCompanionStatus.TrackingUnavailable;
-                continue;
-            }
-
-            var state = _suitSensors.GetSensorState((uid, sensor, xform));
-            if (state?.Coordinates == null)
+            if (sensorStatus.Coordinates == null)
             {
                 fallback = MailCompanionStatus.TrackingUnavailable;
                 continue;
             }
 
             target = wearer;
-            sensorUid = uid;
+            sensorUid = resolvedSensorUid;
             status = MailCompanionStatus.Tracking;
             return true;
         }
@@ -227,22 +207,13 @@ public sealed class MailCompanionSystem : EntitySystem
                 return;
         }
 
-        if (component.TrackedSensor is not { } sensorUid || !_sensorQuery.TryGetComponent(sensorUid, out var sensor))
-            return;
-
-        if (sensor.User is null)
+        if (!TryGetTrackedSensorStatus(component, out var sensorStatus))
         {
             SetStatus(uid, component, MailCompanionStatus.RecipientUnavailable);
             return;
         }
 
-        if (sensor.Mode == SuitSensorMode.SensorOff)
-        {
-            SetStatus(uid, component, MailCompanionStatus.SensorsOff);
-            return;
-        }
-
-        if (sensor.Mode != SuitSensorMode.SensorCords)
+        if (sensorStatus?.Coordinates == null)
         {
             SetStatus(uid, component, MailCompanionStatus.TrackingUnavailable);
             return;
@@ -290,13 +261,8 @@ public sealed class MailCompanionSystem : EntitySystem
         else if (component.Status == MailCompanionStatus.Cooldown && component.CooldownEndsAt is { } cooldownEndsAt)
             remaining = cooldownEndsAt > _timing.CurTime ? cooldownEndsAt - _timing.CurTime : TimeSpan.Zero;
 
-        if (component.Status == MailCompanionStatus.Tracking &&
-            component.TrackedSensor is { } sensorUid &&
-            _sensorQuery.TryGetComponent(sensorUid, out var sensor) &&
-            _transformQuery.TryGetComponent(sensorUid, out var xform))
-        {
-            trackedSensor = _suitSensors.GetSensorState((sensorUid, sensor, xform));
-        }
+        if (component.Status == MailCompanionStatus.Tracking)
+            TryGetTrackedSensorStatus(component, out trackedSensor);
 
         _ui.SetUiState(uid,
             MailCompanionUiKey.Key,
@@ -318,12 +284,54 @@ public sealed class MailCompanionSystem : EntitySystem
         UpdateUi(uid, component);
     }
 
-    private string GetWearerName(EntityUid uid)
+    private bool TryGetTrackedSensorStatus(MailCompanionComponent component, out SuitSensorStatus? sensorStatus)
     {
-        if (_idCard.TryFindIdCard(uid, out var card) && card.Comp.FullName != null)
-            return card.Comp.FullName;
+        sensorStatus = null;
 
-        return Identity.Name(uid, EntityManager);
+        if (component.TrackedSensor is not { } trackedSensor ||
+            component.TrackedDelivery is not { } trackedDelivery ||
+            !TryComp<DeliveryComponent>(trackedDelivery, out var delivery) ||
+            delivery.RecipientStation is not { } stationId ||
+            !TryGetCrewMonitoringServer(stationId, out _, out var server))
+        {
+            return false;
+        }
+
+        foreach (var status in server.SensorStatus.Values)
+        {
+            if (!EntityManager.TryGetEntity(status.SuitSensorUid, out var sensorUid) || sensorUid != trackedSensor)
+                continue;
+
+            sensorStatus = status;
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool TryGetCrewMonitoringServer(
+        EntityUid stationId,
+        out EntityUid serverUid,
+        out CrewMonitoringServerComponent server)
+    {
+        serverUid = EntityUid.Invalid;
+        server = default!;
+
+        if (!_singletonServerSystem.TryGetActiveServerAddress<CrewMonitoringServerComponent>(stationId, out var address))
+            return false;
+
+        var query = EntityQueryEnumerator<CrewMonitoringServerComponent, DeviceNetworkComponent>();
+        while (query.MoveNext(out var uid, out var serverComp, out var device))
+        {
+            if (device.Address != address)
+                continue;
+
+            serverUid = uid;
+            server = serverComp;
+            return true;
+        }
+
+        return false;
     }
 
     private string GetPopupForStatus(MailCompanionStatus status)

@@ -35,6 +35,7 @@ public sealed partial class MailCompanionWindow : FancyWindow
         _transformSystem = _entManager.System<SharedTransformSystem>();
         _spriteSystem = _entManager.System<SpriteSystem>();
         NavMap.ShowFocusedEntityPanel = false;
+        NavMap.AllowManualRecentering = false;
         JobIcon.TextureScale = new Vector2(2f, 2f);
     }
 
