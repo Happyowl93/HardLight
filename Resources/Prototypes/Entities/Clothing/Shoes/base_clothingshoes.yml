@@ -9,8 +9,8 @@
 
 - type: entity
   abstract: true
-  parent: ClothingShoesBase
-  id: ClothingShoesBaseButcherable
+  parent: ClothingShoesBaseUntieable # Starlight-edit
+  id: ClothingShoesBaseButcherableUntieable # Starlight-edit
   components:
   - type: Butcherable
     butcheringType: Knife
@@ -24,8 +24,8 @@
 # stuff common to all military boots
 - type: entity
   abstract: true
-  parent: [ClothingShoesBase, ClothingSlotBase]
-  id: ClothingShoesMilitaryBase
+  parent: [ClothingShoesBaseUntieable, ClothingSlotBase] # Starlight-edit
+  id: ClothingShoesMilitaryBaseUntieable # Starlight-edit
   components:
   - type: Matchbox
   - type: ItemSlots

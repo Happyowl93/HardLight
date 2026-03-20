@@ -198,8 +198,8 @@ public sealed class SharedShoelacesSystem : EntitySystem
             Dirty(ent, ent.Comp);
             RemComp<ShoelaceTiedComponent>(parentUid);
             _popup.PopupPredicted(Loc.GetString("shoelaces-popup-tying-success-user"), args.Args.User, args.Args.User, PopupType.Medium);
-            if (args.Args.User != parentUid && _net.IsServer)
-                _popup.PopupEntity(Loc.GetString("shoelaces-popup-tying-success-target", ("user", args.Args.User)), ent, Filter.Entities(parentUid), true, PopupType.MediumCaution);
+            if (args.Args.User != parentUid)
+                _popup.PopupPredicted(Loc.GetString("shoelaces-popup-tying-success-target", ("user", args.Args.User)), ent, null, Filter.Entities(parentUid), true, PopupType.MediumCaution);
         }
         else
         {
@@ -207,8 +207,8 @@ public sealed class SharedShoelacesSystem : EntitySystem
             Dirty(ent, ent.Comp);
             _alerts.ShowAlert(parentUid, ent.Comp.AlertTiedTogether);
             _popup.PopupPredicted(Loc.GetString("shoelaces-popup-tying-together-success-user"), args.Args.User, args.Args.User, PopupType.Medium);
-            if (args.Args.User != parentUid && _net.IsServer)
-                _popup.PopupEntity(Loc.GetString("shoelaces-popup-tying-together-success-target", ("user", args.Args.User)), ent, Filter.Entities(parentUid), true, PopupType.MediumCaution);
+            if (args.Args.User != parentUid)
+                _popup.PopupPredicted(Loc.GetString("shoelaces-popup-tying-together-success-target", ("user", args.Args.User)), ent, null, Filter.Entities(parentUid), true, PopupType.MediumCaution);
         }
 
         args.Handled = true;
