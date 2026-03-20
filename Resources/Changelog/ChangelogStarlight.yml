@@ -34908,5 +34908,12 @@ Entries:
   id: 381001
   time: '2026-03-20T05:53:55.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3810
+- author: redmushie
+  changes:
+  - message: Tracking implanters now also activate a radio callout on death.
+    type: Add
+  id: 380701
+  time: '2026-03-20T06:03:59.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3807
 Order: -1
 
