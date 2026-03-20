@@ -545,11 +545,12 @@
   name: plastitanium wall
   suffix: ""
   components:
+    # Starlight start - plastitanium HP buffed 2x
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 1000
+            damage: 2000
           behaviors:
             - !type:SpawnEntitiesBehavior
               spawn:
@@ -558,6 +559,7 @@
                   max: 1
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
+    # Starlight end
     # Starlight start - destructible walls are edible
     - type: Tag
       tags:
@@ -602,11 +604,12 @@
   - type: Icon
     sprite: Structures/Walls/plastitanium_diagonal.rsi
     state: state0
+  # Starlight start - plastitanium HP buffed 2x
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1000
+        damage: 2000
       behaviors:
         - !type:SpawnEntitiesBehavior
           spawn:
@@ -618,6 +621,7 @@
         - !type:PlaySoundBehavior
           sound:
             collection: MetalSlam
+  # Starlight end
   # Starlight start - destructible walls are edible
   - type: Tag
     tags:
@@ -921,11 +925,12 @@
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
+  # Starlight start - shuttle wall HP buffed 1.5x
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 600
+        damage: 900
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
@@ -934,7 +939,7 @@
             collection: MetalSlam
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 450
       behaviors:
       - !type:ChangeConstructionNodeBehavior
         node: girder
@@ -943,6 +948,7 @@
           collection: MetalSlam
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  # Starlight end
   - type: Construction
     graph: Girder
     node: diagonalshuttleWall
@@ -959,11 +965,12 @@
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
+  # Starlight start - shuttle wall HP buffed 1.5x
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 600
+        damage: 900
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
@@ -972,7 +979,7 @@
           collection: MetalSlam
     - trigger:
         !type:DamageTrigger
-        damage: 400
+        damage: 600
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -981,6 +988,7 @@
         node: girder
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  # Starlight end
   - type: StaticPrice
     price: 250
   - type: RadiationBlocker
