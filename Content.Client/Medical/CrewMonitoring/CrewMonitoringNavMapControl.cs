@@ -11,6 +11,7 @@ public sealed partial class CrewMonitoringNavMapControl : NavMapControl
 {
     public NetEntity? Focus;
     public Dictionary<NetEntity, string> LocalizedNames = new();
+    public bool ShowFocusedEntityPanel = true;
     public event Action<EntityCoordinates>? MapClicked; // Starlight
 
     private Label _trackedEntityLabel;
@@ -53,6 +54,13 @@ public sealed partial class CrewMonitoringNavMapControl : NavMapControl
     protected override void FrameUpdate(FrameEventArgs args)
     {
         base.FrameUpdate(args);
+
+        if (!ShowFocusedEntityPanel)
+        {
+            _trackedEntityLabel.Text = string.Empty;
+            _trackedEntityPanel.Visible = false;
+            return;
+        }
 
         if (Focus == null)
         {
