@@ -81,7 +81,7 @@
 - type: entity
   parent: StaminaModifierStatusEffect
   id: StatusEffectStimulantsStamina
-  name: status-effect-body-1.5x-max-stamina # Starlight: Localize
+  name: "status-effect-body-1.5-max-stamina" # Starlight: Localize (in quotes due to the period)
   components:
   - type: StaminaModifierStatusEffect
     modifier: 1.5
