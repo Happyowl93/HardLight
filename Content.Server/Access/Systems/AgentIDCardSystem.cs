@@ -132,10 +132,10 @@ namespace Content.Server.Access.Systems
                 }
             }
             // End CD
-
+/* starlight start
             if (addedLength == 0)
             {
-                _popupSystem.PopupEntity(Loc.GetString("agent-id-new", ("number", 0), ("card", args.Target)), args.Target.Value, args.User);
+                _popupSystem.PopupEntity(Loc.GetString("agent-id-no-new", ("card", args.Target)), args.Target.Value, args.User);
                 return;
             }
 
@@ -143,10 +143,10 @@ namespace Content.Server.Access.Systems
 
             if (addedLength == 1)
             {
-                _popupSystem.PopupEntity(Loc.GetString("agent-id-new", ("number", 1), ("card", args.Target)), args.Target.Value, args.User);
+                _popupSystem.PopupEntity(Loc.GetString("agent-id-new-1", ("card", args.Target)), args.Target.Value, args.User);
                 return;
             }
-
+*/  // Starlight end. Deleting 2 if statements did more than fixing ever could.
             _popupSystem.PopupEntity(Loc.GetString("agent-id-new", ("number", addedLength), ("card", args.Target)), args.Target.Value, args.User);
             if (addedLength > 0)
                 Dirty(uid, access);
