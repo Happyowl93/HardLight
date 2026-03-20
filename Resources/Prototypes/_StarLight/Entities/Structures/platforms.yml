@@ -15,6 +15,7 @@
   parent: CMPlatformBase
   id: CMPlatform
   name: platform
+  suffix: Steel
   description: A raised surface. Wait, thats illegal!
   placement:
     mode: SnapgridCenter
@@ -42,6 +43,7 @@
   parent: CMPlatformBase
   id: CMPlatformCorner
   name: platform
+  suffix: Steel, Corner
   description: A raised surface. Wait, thats illegal!
   placement:
     mode: SnapgridCenter
@@ -78,6 +80,7 @@
   parent: CMPlatformBase
   id: RMCPlatformCornerSmall
   name: platform
+  suffix: Steel, Corner Small
   description: A raised surface. Wait, thats illegal!
   placement:
     mode: SnapgridCenter
@@ -104,6 +107,7 @@
 - type: entity
   parent: CMPlatform
   id: RMCPlatformStairRight
+  suffix: Steel, Stairs, Right
   components:
   - type: Sprite
     sprite: _Starlight/Structures/platforms.rsi
@@ -112,6 +116,7 @@
 - type: entity
   parent: CMPlatform
   id: RMCPlatformStairLeft
+  suffix: Steel, Stairs, Left
   components:
   - type: Sprite
     sprite: _Starlight/Structures/platforms.rsi
@@ -123,6 +128,7 @@
   parent: CMPlatformBase
   id: CMPlatformDark
   name: platform
+  suffix: Dark
   description: A raised surface. Wait, thats illegal!
   placement:
     mode: SnapgridCenter
@@ -150,6 +156,7 @@
   parent: CMPlatformBase
   id: CMPlatformCornerDark
   name: platform
+  suffix: Dark, Corner
   description: A raised surface. Wait, thats illegal!
   placement:
     mode: SnapgridCenter
@@ -186,6 +193,7 @@
   parent: CMPlatformBase
   id: RMCPlatformCornerSmallDark
   name: platform
+  suffix: Dark, Corner Small
   description: A raised surface. Wait, thats illegal!
   placement:
     mode: SnapgridCenter
@@ -212,6 +220,7 @@
 - type: entity
   parent: CMPlatform
   id: RMCPlatformStairRightDark
+  suffix: Dark, Stairs, Right
   components:
   - type: Sprite
     sprite: _Starlight/Structures/platforms.rsi
@@ -220,6 +229,7 @@
 - type: entity
   parent: CMPlatform
   id: RMCPlatformStairLeftDark
+  suffix: Dark, Stairs, Left
   components:
   - type: Sprite
     sprite: _Starlight/Structures/platforms.rsi
@@ -231,6 +241,7 @@
   parent: CMPlatformBase
   id: CMPlatformWood
   name: platform
+  suffix: Wood
   description: A raised surface. Wait, thats illegal!
   placement:
     mode: SnapgridCenter
@@ -258,6 +269,7 @@
   parent: CMPlatformBase
   id: CMPlatformCornerWood
   name: platform
+  suffix: Wood, Corner
   description: A raised surface. Wait, thats illegal!
   placement:
     mode: SnapgridCenter
@@ -294,6 +306,7 @@
   parent: CMPlatformBase
   id: RMCPlatformCornerSmallWood
   name: platform
+  suffix: Wood, Corner Small
   description: A raised surface. Wait, thats illegal!
   placement:
     mode: SnapgridCenter
@@ -320,6 +333,7 @@
 - type: entity
   parent: CMPlatform
   id: RMCPlatformStairRightWood
+  suffix: Wood, Stairs, Right
   components:
   - type: Sprite
     sprite: _Starlight/Structures/platforms.rsi
@@ -328,28 +342,8 @@
 - type: entity
   parent: CMPlatform
   id: RMCPlatformStairLeftWood
+  suffix: Wood, Stairs, Left
   components:
   - type: Sprite
     sprite: _Starlight/Structures/platforms.rsi
     state: platform_stair_wood_alt
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
