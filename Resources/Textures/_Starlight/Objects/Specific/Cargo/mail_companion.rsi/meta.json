@@ -27,7 +27,9 @@
         },
         {
             "name": "icon",
-            "directions": 1
+            "directions": 1,
+            "copyright": "TG Station, wonderfulnewworld",
+            "license": "CC-BY-SA-3.0"
         }
     ]
 }
