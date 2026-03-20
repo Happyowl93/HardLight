@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingShoesBase, BaseToggleClothing]
+  parent: [ClothingShoesBaseUntieable, BaseToggleClothing] # Starlight-edit: untieable mag boots
   id: ClothingShoesBootsMagBase
   name: magboots
   description: Magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle.

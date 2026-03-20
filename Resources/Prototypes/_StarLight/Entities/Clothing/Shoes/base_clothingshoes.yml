@@ -1,7 +1,7 @@
 ﻿- type: entity
   abstract: true
   parent: Clothing
-  id: ClothingShoesBaseUnprotected 
+  id: ClothingShoesBaseUnprotected
   components:
     - type: Clothing
       slots:
@@ -26,3 +26,31 @@
         - ClothMade
         - Recyclable
         - WhitelistChameleon
+
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: ClothingShoesBaseUntieable
+  components:
+  - type: Clothing
+    slots:
+    - FEET
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Normal
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+  - type: ProtectedFromStepTriggers
