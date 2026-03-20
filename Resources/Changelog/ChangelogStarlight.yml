@@ -34931,5 +34931,13 @@ Entries:
   id: 378701
   time: '2026-03-20T07:19:28.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3787
+- author: STARLIGHT TEAM
+  changes:
+  - message: Fixed panic bunker bypass for mentors, staff, extRoles, and the new PBB
+      role.
+    type: Fix
+  id: 381401
+  time: '2026-03-20T11:22:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3814
 Order: -1
 
