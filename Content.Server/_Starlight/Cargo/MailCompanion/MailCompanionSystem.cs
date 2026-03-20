@@ -1,7 +1,6 @@
-using Content.Server.DeviceNetwork.Systems;
-using Content.Server.Medical.CrewMonitoring;
+using Content.Shared.DeviceNetwork;
 using Content.Shared.Delivery;
-using Content.Shared.DeviceNetwork.Components;
+using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Medical.SuitSensor;
@@ -14,9 +13,10 @@ namespace Content.Server._Starlight.Cargo.MailCompanion;
 
 public sealed class MailCompanionSystem : EntitySystem
 {
+    private static readonly TimeSpan SensorDataTimeout = TimeSpan.FromSeconds(10);
+
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SingletonDeviceNetServerSystem _singletonServerSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
 
@@ -26,6 +26,7 @@ public sealed class MailCompanionSystem : EntitySystem
 
         SubscribeLocalEvent<MailCompanionComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<MailCompanionComponent, BoundUIOpenedEvent>(OnUiOpened);
+        SubscribeLocalEvent<MailCompanionComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
         SubscribeLocalEvent<MailCompanionComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<DeliveryComponent, DeliveryOpenedEvent>(OnDeliveryOpened);
     }
@@ -62,6 +63,23 @@ public sealed class MailCompanionSystem : EntitySystem
         UpdateUi(uid, component);
     }
 
+    private void OnPacketReceived(EntityUid uid, MailCompanionComponent component, DeviceNetworkPacketEvent args)
+    {
+        var payload = args.Data;
+
+        if (!payload.TryGetValue(DeviceNetworkConstants.Command, out string? command) ||
+            command != DeviceNetworkConstants.CmdUpdatedState)
+        {
+            return;
+        }
+
+        if (!payload.TryGetValue(SuitSensorConstants.NET_STATUS_COLLECTION, out Dictionary<string, SuitSensorStatus>? sensorStatus))
+            return;
+
+        component.ConnectedSensors = sensorStatus;
+        component.LastSensorDataReceivedAt = _timing.CurTime;
+    }
+
     private void OnExamined(EntityUid uid, MailCompanionComponent component, ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)
@@ -90,6 +108,8 @@ public sealed class MailCompanionSystem : EntitySystem
 
     private void ScanDelivery(EntityUid uid, MailCompanionComponent component, EntityUid user, Entity<DeliveryComponent> delivery)
     {
+        ExpireSensorData(component);
+
         if (component.CooldownEndsAt is { } cooldownEndsAt && cooldownEndsAt > _timing.CurTime)
         {
             component.LastUser = user;
@@ -120,7 +140,7 @@ public sealed class MailCompanionSystem : EntitySystem
             return;
         }
 
-        var result = TryResolveDeliveryTarget(delivery, out var target, out var sensor, out var status);
+        var result = TryResolveDeliveryTarget(component, delivery, out var target, out var sensor, out var status);
         if (!result)
         {
             SetStatus(uid, component, status);
@@ -138,6 +158,7 @@ public sealed class MailCompanionSystem : EntitySystem
     }
 
     private bool TryResolveDeliveryTarget(
+        MailCompanionComponent component,
         Entity<DeliveryComponent> delivery,
         out EntityUid? target,
         out EntityUid? sensorUid,
@@ -153,13 +174,7 @@ public sealed class MailCompanionSystem : EntitySystem
         var fallback = MailCompanionStatus.RecipientUnavailable;
         var foundMatchingRecipient = false;
 
-        if (delivery.Comp.RecipientStation is not { } stationId)
-            return false;
-
-        if (!TryGetCrewMonitoringServer(stationId, out _, out var server))
-            return false;
-
-        foreach (var sensorStatus in server.SensorStatus.Values)
+        foreach (var sensorStatus in component.ConnectedSensors.Values)
         {
             if (!string.Equals(sensorStatus.Name, delivery.Comp.RecipientName, StringComparison.Ordinal))
                 continue;
@@ -188,6 +203,8 @@ public sealed class MailCompanionSystem : EntitySystem
 
     private void RefreshTracking(EntityUid uid, MailCompanionComponent component, bool showPopup = false)
     {
+        ExpireSensorData(component);
+
         if (component.ExpiresAt is { } expiresAt && expiresAt <= _timing.CurTime)
         {
             StartCooldown(uid, component, popupUser: showPopup ? component.LastUser : null);
@@ -284,50 +301,34 @@ public sealed class MailCompanionSystem : EntitySystem
         UpdateUi(uid, component);
     }
 
+    private void ExpireSensorData(MailCompanionComponent component)
+    {
+        if (component.LastSensorDataReceivedAt == TimeSpan.Zero)
+            return;
+
+        if (component.LastSensorDataReceivedAt + SensorDataTimeout > _timing.CurTime)
+            return;
+
+        component.ConnectedSensors.Clear();
+        component.LastSensorDataReceivedAt = TimeSpan.Zero;
+    }
+
     private bool TryGetTrackedSensorStatus(MailCompanionComponent component, out SuitSensorStatus? sensorStatus)
     {
         sensorStatus = null;
 
         if (component.TrackedSensor is not { } trackedSensor ||
-            component.TrackedDelivery is not { } trackedDelivery ||
-            !TryComp<DeliveryComponent>(trackedDelivery, out var delivery) ||
-            delivery.RecipientStation is not { } stationId ||
-            !TryGetCrewMonitoringServer(stationId, out _, out var server))
+            component.ConnectedSensors.Count == 0)
         {
             return false;
         }
 
-        foreach (var status in server.SensorStatus.Values)
+        foreach (var status in component.ConnectedSensors.Values)
         {
             if (!EntityManager.TryGetEntity(status.SuitSensorUid, out var sensorUid) || sensorUid != trackedSensor)
                 continue;
 
             sensorStatus = status;
-            return true;
-        }
-
-        return false;
-    }
-
-    private bool TryGetCrewMonitoringServer(
-        EntityUid stationId,
-        out EntityUid serverUid,
-        out CrewMonitoringServerComponent server)
-    {
-        serverUid = EntityUid.Invalid;
-        server = default!;
-
-        if (!_singletonServerSystem.TryGetActiveServerAddress<CrewMonitoringServerComponent>(stationId, out var address))
-            return false;
-
-        var query = EntityQueryEnumerator<CrewMonitoringServerComponent, DeviceNetworkComponent>();
-        while (query.MoveNext(out var uid, out var serverComp, out var device))
-        {
-            if (device.Address != address)
-                continue;
-
-            serverUid = uid;
-            server = serverComp;
             return true;
         }
 

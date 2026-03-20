@@ -1,6 +1,6 @@
 using Content.Client.Pinpointer.UI;
 using Robust.Client.Graphics;
-using Robust.Client.UserInterface;
+using Robust.Client.UserInterface; // Starlight
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 using Robust.Shared.Map; // Starlight
@@ -12,13 +12,13 @@ public sealed partial class CrewMonitoringNavMapControl : NavMapControl
 {
     public NetEntity? Focus;
     public Dictionary<NetEntity, string> LocalizedNames = new();
-    public bool ShowFocusedEntityPanel = true;
-    public bool AllowManualRecentering = true;
+    public bool ShowFocusedEntityPanel = true; // Starlight
+    public bool AllowManualRecentering = true; // Starlight
     public event Action<EntityCoordinates>? MapClicked; // Starlight
 
     private Label _trackedEntityLabel;
     private PanelContainer _trackedEntityPanel;
-    private Button? _recenterButton;
+    private Button? _recenterButton; // Starlight
     private readonly SharedTransformSystem _transformSystem; //FarHorizons
 
     public CrewMonitoringNavMapControl() : base()

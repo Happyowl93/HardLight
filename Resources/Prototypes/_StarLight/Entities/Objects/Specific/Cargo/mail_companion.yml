@@ -27,3 +27,9 @@
       enum.MailCompanionUiKey.Key:
         type: MailCompanionBoundUserInterface
   - type: MailCompanion
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: CrewMonitor
+  - type: WirelessNetworkConnection
+    range: 500
+  - type: StationLimitedNetwork
