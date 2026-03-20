@@ -13,7 +13,9 @@
         },
         {
             "name": "scanner-inhand-left",
-            "directions": 4
+            "directions": 4,
+            "copyright": "TG Station, SeamLesss, wonderfulnewworld",
+            "license": "CC-BY-SA-3.0"
         },
         {
             "name": "scanner-inhand-right",
