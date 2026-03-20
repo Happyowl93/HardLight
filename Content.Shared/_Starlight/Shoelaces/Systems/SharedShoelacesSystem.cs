@@ -347,7 +347,7 @@ public sealed class SharedShoelacesSystem : EntitySystem
 
     private void OnShoesEquipped(Entity<ShoelaceTieableComponent> ent, ref GotEquippedEvent args)
     {
-        if (args.Slot != "shoes")
+        if (args.Slot != "shoes" || !_gameTiming.IsFirstTimePredicted)
             return;
 
         if (IsShoelaceTieBlocked(ent.Owner))
