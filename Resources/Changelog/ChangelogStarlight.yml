@@ -34931,5 +34931,37 @@ Entries:
   id: 378701
   time: '2026-03-20T07:19:28.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3787
+- author: STARLIGHT TEAM
+  changes:
+  - message: Fixed panic bunker bypass for mentors, staff, extRoles, and the new PBB
+      role.
+    type: Fix
+  id: 381401
+  time: '2026-03-20T11:22:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3814
+- author: FeralCreature
+  changes:
+  - message: The plumbing smart dispenser now supports manual reagent dispensing to
+      held unlabelled containers.
+    type: Tweak
+  - message: Fixed a bug preventing some plumbing machines from being dragged around.
+    type: Fix
+  id: 373401
+  time: '2026-03-20T11:23:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3734
+- author: Rinary
+  changes:
+  - message: Fixed shoelaces tooltips.
+    type: Fix
+  - message: Fixed untie shoelaces verb.
+    type: Fix
+  - message: Fixed prediction crash when trying to unequip shoes with shoelaces.
+    type: Fix
+  - message: Fixed bug when magboots, moon boots, speed boots, socks and other specific
+      types of shoes have shoelaces.
+    type: Fix
+  id: 381501
+  time: '2026-03-20T12:54:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3815
 Order: -1
 
