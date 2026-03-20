@@ -34924,5 +34924,12 @@ Entries:
   id: 380001
   time: '2026-03-20T06:08:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3800
+- author: Tess the Evil
+  changes:
+  - message: Adjusted minimum player counts for round-ending antags on beta.
+    type: Tweak
+  id: 378701
+  time: '2026-03-20T07:19:28.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3787
 Order: -1
 
