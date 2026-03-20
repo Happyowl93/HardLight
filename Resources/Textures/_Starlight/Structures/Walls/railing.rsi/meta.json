@@ -78,6 +78,14 @@
 	{
         "name": "wood_side_end_alt",
         "directions": 4
+    },
+	{
+      "name": "boxing_side",
+      "directions": 4
+    },
+    {
+      "name": "boxing_corner",
+      "directions": 4
     }
   ]
 }
