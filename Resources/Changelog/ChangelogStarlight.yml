@@ -34901,5 +34901,12 @@ Entries:
   id: 380801
   time: '2026-03-19T22:21:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3808
+- author: TaserTheFox
+  changes:
+  - message: Missing localization strings for agent ID card copy function.
+    type: Fix
+  id: 381001
+  time: '2026-03-20T05:53:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3810
 Order: -1
 
