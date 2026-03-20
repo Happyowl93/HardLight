@@ -1,0 +1,36 @@
+- type: entity
+  name: DreadTalon
+  id: dreadtalonbase
+  parent: MobSpaceBasic
+  description: It looks friendly. Why don't you give it a hug?
+#  categories: [ HideSpawnMenu ] # Frontier
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _HL/Mobs/Aliens/dreadtalon.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: dreadtalon
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: dreadtalonglow
+      shader: unshaded
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: dreadtalon
+        BaseUnshaded: glow
+      Critical:
+        Base: crit
+      Dead:
+        Base: dead
+  - type: ReplacementAccent
+    accent: genericAggressive
+  - type: Vocal
+    sounds:
+      Unsexed: Bear
+  - type: InteractionPopup
+    successChance: 0.25
+    interactSuccessString: petting-success-bear
+    interactFailureString: petting-failure-bear
+    interactSuccessSound:
+      path: /Audio/Animals/sloth_squeak.ogg

@@ -344,7 +344,7 @@
         ]
     },
     {
-        "name": "apex_moving",
+        "name": "Apex_moving",
         "directions": 4,
         "delays": [
             [
@@ -388,6 +388,306 @@
     {
         "name": "Apexballz",
         "directions": 4
+    },
+	{
+        "name": "dogborg",
+        "directions": 4
+    },
+    {
+        "name": "dogborgballz",
+        "directions": 4
+    },
+    {
+        "name": "dogborgl",
+        "directions": 4
+    },
+	{
+        "name": "dogborgr",
+        "directions": 4
+    },
+	{
+        "name": "dogborg_moving",
+        "directions": 4,
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+    {
+        "name": "dogborg_movingballz",
+        "directions": 4,
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+		{
+        "name": "glitz",
+        "directions": 4
+    },
+    {
+        "name": "glitzballz",
+        "directions": 4
+    },
+    {
+        "name": "glitzl",
+        "directions": 4
+    },
+	{
+        "name": "glitzr",
+        "directions": 4
+    },
+	{
+        "name": "glitzmoving",
+        "directions": 4,
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+    {
+        "name": "glitzmovingballz",
+        "directions": 4,
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+		{
+        "name": "petalborg",
+        "directions": 4
+    },
+    {
+        "name": "petalborgballz",
+        "directions": 4
+    },
+    {
+        "name": "petalborgl",
+        "directions": 4
+    },
+	{
+        "name": "petalborgr",
+        "directions": 4
+    },
+	{
+        "name": "petalborg_moving",
+        "directions": 4,
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+    {
+        "name": "petalborg_movingballz",
+        "directions": 4,
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+		{
+        "name": "XenoQuadfeathered",
+        "directions": 4
+    },
+    {
+        "name": "XenoQuadfeatheredballz",
+        "directions": 4
+    },
+    {
+        "name": "XenoQuadfeatheredglow",
+        "directions": 4
+    },
+	{
+        "name": "XenoQuadfeathered_moving",
+        "directions": 4,
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+    {
+        "name": "XenoQuadfeathered_movingballz",
+        "directions": 4,
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
     },
     {
         "name": "quadsprite_movingballz",
@@ -720,15 +1020,45 @@
         ]
     },
     {
-        "name": "Chip",
+        "name": "chip_quadsprite",
         "directions": 4
     },
     {
-        "name": "quadspritechip",
+        "name": "chip_quadspriteballz",
         "directions": 4
     },
     {
-        "name": "chip_moving",
+        "name": "chip_quadsprite_moving",
+        "directions": 4,
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ],
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+    {
+        "name": "chip_quadsprite_movingballz",
         "directions": 4,
         "delays": [
             [
