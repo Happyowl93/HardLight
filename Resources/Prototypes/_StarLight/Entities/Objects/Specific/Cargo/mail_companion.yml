@@ -29,3 +29,5 @@
   - type: MailCompanion
   - type: StaticPrice
     price: 250
+  - type: StealTarget
+    stealGroup: CrewMonitorCollection
