@@ -60,9 +60,9 @@ public sealed class SharedShoelacesSystem : EntitySystem
         var user = args.User;
         var parent = Transform(ent).ParentUid;
 
-        if (CanManipulate(user, ent))
+        if (CanManipulate(user, ent) && (ent.Comp.Tied || ent.Comp.TiedTogether))
         {
-            if (user == parent && ent.Comp.Tied)
+            if (user == parent)
             {
                 var selfUntie = new Verb
                 {
@@ -73,7 +73,7 @@ public sealed class SharedShoelacesSystem : EntitySystem
                 args.Verbs.Add(selfUntie);
                 return;
             }
-            else if (ent.Comp.Tied)
+            else
             {
                 var assistUntie = new Verb
                 {
@@ -282,6 +282,8 @@ public sealed class SharedShoelacesSystem : EntitySystem
             _alerts.ShowAlert(parent, ent.Comp.AlertUntied);
             _alerts.ClearAlert(parent, ent.Comp.AlertTiedTogether);
             EnsureComp<ShoelaceTiedComponent>(parent);
+            ent.Comp.Tied = false;
+            ent.Comp.TiedTogether = false;
         }
         _popup.PopupPredicted(Loc.GetString("shoelaces-popup-untie-success"), ent, args.Args.User, PopupType.Medium);
 
