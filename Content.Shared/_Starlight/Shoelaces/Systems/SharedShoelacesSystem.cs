@@ -301,7 +301,8 @@ public sealed class SharedShoelacesSystem : EntitySystem
             return;
 
         // Discount shared random BEGIN
-        // This matches stuff spread around the code base like slip chances.
+        // This matches stuff spread around the code base like slip chances. Try searching for the below comment:
+        // TODO: Replace with RandomPredicted once the engine PR is merged
         var seed = SharedRandomExtensions.HashCodeCombine((int)_gameTiming.CurTick.Value, GetNetEntity(ent).Id);
         var rand = new System.Random(seed);
         var slipOnShoelaces = rand.Prob(tiedShoes.Comp.KnockDownChance);
