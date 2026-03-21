@@ -34996,5 +34996,12 @@ Entries:
   id: 315401
   time: '2026-03-21T04:41:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3154
+- author: CawsForConcern
+  changes:
+  - message: Scurret ghost theme sprite issues with side-facing sprites.
+    type: Fix
+  id: 383101
+  time: '2026-03-21T05:00:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3831
 Order: -1
 
