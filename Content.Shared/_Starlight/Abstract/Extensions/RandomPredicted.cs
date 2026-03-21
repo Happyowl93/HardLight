@@ -1,4 +1,5 @@
-﻿using JetBrains.Annotations;
+﻿using Content.Shared.Random.Helpers;
+using JetBrains.Annotations;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -25,7 +26,7 @@ public static class RandomPredicted
     public static System.Random GetPredictedRandom(this IRobustRandom random, IGameTiming timing, int seed = 0)
     {
         var tickValue = (int) timing.CurTick.Value;
-        var combinedSeed = HashCode.Combine(tickValue, seed);
+        var combinedSeed = SharedRandomExtensions.HashCodeCombine(tickValue, seed);
         return new System.Random(combinedSeed);
     }
 
