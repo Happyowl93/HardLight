@@ -195,7 +195,7 @@ public abstract class SharedWieldableSystem : EntitySystem
 
     private void OnUseInHand(EntityUid uid, WieldableComponent component, UseInHandEvent args)
     {
-        if (args.Handled || (TryComp<ChamberMagazineAmmoProviderComponent>(uid, out var chamber) && !chamber.BoltClosed && _hands.GetEmptyHandCount(args.User) == 0))
+        if (args.Handled || (TryComp<ChamberMagazineAmmoProviderComponent>(uid, out var chamber) && chamber.BoltClosed == false && _hands.GetEmptyHandCount(args.User) == 0))
             return;
 
         if (!component.Wielded)
