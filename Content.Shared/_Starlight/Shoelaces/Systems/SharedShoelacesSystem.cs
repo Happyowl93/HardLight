@@ -298,7 +298,7 @@ public sealed class SharedShoelacesSystem : EntitySystem
 
         if (ent.Comp.TiedShoes is not { } tiedShoes)
             return;
-        
+
         if (!tiedShoes.Comp.Tied
             && _random.Prob(tiedShoes.Comp.KnockDownChance)
             && _stun.TryKnockdown(ent.Owner, TimeSpan.FromSeconds(ent.Comp.TripKnockdownTime), force: true))
