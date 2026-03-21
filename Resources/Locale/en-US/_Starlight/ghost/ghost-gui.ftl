@@ -13,3 +13,5 @@ ghost-role-terror-spider-rules = You are a [color=red][bold]Team Antagonist[/bol
 
 ghost-role-information-ntnc-consortium-officer-name = Nanotrasen Navy Corps Marine
 ghost-role-information-ntnc-consortium-officer-description = You are charged directly from the NanoTrasen Navy Corps to protect and serve the Central Command officials at all costs, nothing else subverts that.
+
+ghost-important-role = [bold]Now looking for candidates to play as {$rolename}[/bold]
