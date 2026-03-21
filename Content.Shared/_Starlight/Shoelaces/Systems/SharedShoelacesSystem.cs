@@ -1,3 +1,4 @@
+using Content.Shared._Starlight.Abstract.Extensions;
 using Content.Shared._Starlight.Shoelaces.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Alert;
@@ -299,23 +300,14 @@ public sealed class SharedShoelacesSystem : EntitySystem
 
         if (ent.Comp.TiedShoes is not { } tiedShoes)
             return;
-
-        // Discount shared random BEGIN
-        // This matches stuff spread around the code base like slip chances. Try searching for the below comment:
-        // TODO: Replace with RandomPredicted once the engine PR is merged
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_gameTiming.CurTick.Value, GetNetEntity(ent).Id);
-        var rand = new System.Random(seed);
-        var slipOnShoelaces = rand.Prob(tiedShoes.Comp.KnockDownChance);
-        var untieTiedTogether = rand.Prob(tiedShoes.Comp.ForceUntieChance);
-        // Discount shared random END
         
         if (!tiedShoes.Comp.Tied
-            && slipOnShoelaces
+            && _random.ProbPredicted(_gameTiming, tiedShoes.Comp.KnockDownChance, GetNetEntity(ent).Id)
             && _stun.TryKnockdown(ent.Owner, TimeSpan.FromSeconds(ent.Comp.TripKnockdownTime), force: true))
             _popup.PopupPredicted(Loc.GetString("shoelaces-popup-trip"), ent, ent, PopupType.MediumCaution);
         else if (tiedShoes.Comp.TiedTogether && _stun.TryKnockdown(ent.Owner, TimeSpan.FromSeconds(ent.Comp.TripKnockdownTime), force: true))
         {
-            if (untieTiedTogether)
+            if (_random.ProbPredicted(_gameTiming, tiedShoes.Comp.ForceUntieChance, GetNetEntity(ent).Id))
             {
                 _alerts.ShowAlert(ent.Owner, tiedShoes.Comp.AlertUntied);
                 _alerts.ClearAlert(ent.Owner, tiedShoes.Comp.AlertTiedTogether);
