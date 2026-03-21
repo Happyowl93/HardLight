@@ -35051,5 +35051,12 @@ Entries:
   id: 382001
   time: '2026-03-21T05:30:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3820
+- author: mikeysaurus
+  changes:
+  - message: changed _StarLight folder instance in Prototypes to _Starlight.
+    type: Tweak
+  id: 383401
+  time: '2026-03-21T05:53:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3834
 Order: -1
 
