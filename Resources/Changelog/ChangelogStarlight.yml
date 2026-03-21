@@ -35201,5 +35201,13 @@ Entries:
   id: 377101
   time: '2026-03-21T19:30:42.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3771
+- author: wonderfulnewworld
+  changes:
+  - message: Fixes a duplicate rocket yaml linter failure that somehow appeared when
+      everything got renamed to /Starlight.
+    type: Fix
+  id: 385201
+  time: '2026-03-21T19:49:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3852
 Order: -1
 
