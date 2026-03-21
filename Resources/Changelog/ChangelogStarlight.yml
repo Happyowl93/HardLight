@@ -35014,5 +35014,28 @@ Entries:
   id: 383301
   time: '2026-03-21T05:09:07.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3833
+- author: Conflee
+  changes:
+  - message: Added boxing ropes, for true boxing rings finally! .
+    type: Add
+  - message: Added Platforms. These function like railings, but the textures imply
+      depth allowing for more convincing false-depth illusions for mappers to play
+      with, for pits or steps up or false flower beds etc.
+    type: Add
+  - message: Changed railing textures to be 3/4ths perspective, using TGstation sprites.
+      This is so they match the platforms and don't stand out next to them.
+    type: Tweak
+  - message: Added Yellow and Wooden railings. More decorative options for mappers
+      to use- Yellow fits better in industrial areas as hazard railing, while the
+      wood fix very well in bar and on stages in the theater.
+    type: Add
+  - message: Fixed the CentComm Flag! It now renders and exists.
+    type: Fix
+  - message: Added shadow decals, to help sell fake depth. Allows mappers to manually
+      place shading similar to the ambient occlusion the game has.
+    type: Add
+  id: 381101
+  time: '2026-03-21T05:15:00.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3811
 Order: -1
 
