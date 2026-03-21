@@ -35110,5 +35110,12 @@ Entries:
   id: 384401
   time: '2026-03-21T16:38:39.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3844
+- author: STARLIGHT TEAM
+  changes:
+  - message: The chime wait time is limited to 3 seconds.
+    type: Fix
+  id: 383801
+  time: '2026-03-21T16:44:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3838
 Order: -1
 
