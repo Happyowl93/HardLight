@@ -285,7 +285,7 @@ public sealed class SharedShoelacesSystem : EntitySystem
 
     private void OnMoveInput(Entity<ShoelaceTiedComponent> ent, ref MoveInputEvent args)
     {
-        if (!args.State || !args.HasDirectionalMovement)
+        if (!args.State || !args.HasDirectionalMovement || !_gameTiming.IsFirstTimePredicted)
             return;
 
         if (!args.Entity.Comp.Sprinting)
