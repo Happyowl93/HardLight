@@ -35096,5 +35096,12 @@ Entries:
   id: 384701
   time: '2026-03-21T15:52:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3847
+- author: Shades
+  changes:
+  - message: Added Ghost Ping for Important Ghost Roles.
+    type: Add
+  id: 384601
+  time: '2026-03-21T16:21:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3846
 Order: -1
 
