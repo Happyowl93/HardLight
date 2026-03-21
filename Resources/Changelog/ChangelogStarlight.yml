@@ -35037,5 +35037,12 @@ Entries:
   id: 381101
   time: '2026-03-21T05:15:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3811
+- author: BigfootBravo
+  changes:
+  - message: New speech and whisper verbs to the chittin language
+    type: Add
+  id: 382901
+  time: '2026-03-21T05:30:48.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3829
 Order: -1
 
