@@ -35117,5 +35117,15 @@ Entries:
   id: 383801
   time: '2026-03-21T16:44:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3838
+- author: redmushie
+  changes:
+  - message: All handheld crew monitors now come with medium batteries.
+    type: Tweak
+  - message: All handheld crew monitors now use 25% less energy per opening of the
+      UI or receiving an alert.
+    type: Tweak
+  id: 385001
+  time: '2026-03-21T17:58:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3850
 Order: -1
 
