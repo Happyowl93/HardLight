@@ -9,6 +9,7 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Stunnable;
 using Content.Shared.Tag;
 using Content.Shared.Verbs;
@@ -299,13 +300,21 @@ public sealed class SharedShoelacesSystem : EntitySystem
         if (ent.Comp.TiedShoes is not { } tiedShoes)
             return;
 
+        // Discount shared random BEGIN
+        // This matches stuff spread around the code base like slip chances.
+        var seed = SharedRandomExtensions.HashCodeCombine((int)_gameTiming.CurTick.Value, GetNetEntity(ent).Id);
+        var rand = new System.Random(seed);
+        var slipOnShoelaces = rand.Prob(tiedShoes.Comp.KnockDownChance);
+        var untieTiedTogether = rand.Prob(tiedShoes.Comp.ForceUntieChance);
+        // Discount shared random END
+        
         if (!tiedShoes.Comp.Tied
-            && _random.Prob(tiedShoes.Comp.KnockDownChance)
+            && slipOnShoelaces
             && _stun.TryKnockdown(ent.Owner, TimeSpan.FromSeconds(ent.Comp.TripKnockdownTime), force: true))
             _popup.PopupPredicted(Loc.GetString("shoelaces-popup-trip"), ent, ent, PopupType.MediumCaution);
         else if (tiedShoes.Comp.TiedTogether && _stun.TryKnockdown(ent.Owner, TimeSpan.FromSeconds(ent.Comp.TripKnockdownTime), force: true))
         {
-            if (_random.Prob(tiedShoes.Comp.ForceUntieChance))
+            if (untieTiedTogether)
             {
                 _alerts.ShowAlert(ent.Owner, tiedShoes.Comp.AlertUntied);
                 _alerts.ClearAlert(ent.Owner, tiedShoes.Comp.AlertTiedTogether);
