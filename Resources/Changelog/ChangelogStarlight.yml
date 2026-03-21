@@ -35044,5 +35044,12 @@ Entries:
   id: 382901
   time: '2026-03-21T05:30:48.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3829
+- author: TaserTheFox
+  changes:
+  - message: Capitalization changes.
+    type: Tweak
+  id: 382001
+  time: '2026-03-21T05:30:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3820
 Order: -1
 
