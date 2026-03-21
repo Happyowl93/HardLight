@@ -35074,5 +35074,12 @@ Entries:
   id: 381901
   time: '2026-03-21T07:33:48.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3819
+- author: redmushie, Rinary
+  changes:
+  - message: Fixed crash from putting shoes on while moving.
+    type: Fix
+  id: 383601
+  time: '2026-03-21T08:46:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3836
 Order: -1
 
