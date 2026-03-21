@@ -10,7 +10,6 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
-using Content.Shared.Random.Helpers;
 using Content.Shared.Stunnable;
 using Content.Shared.Tag;
 using Content.Shared.Verbs;
