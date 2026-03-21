@@ -315,7 +315,7 @@ namespace Content.Server.Connection
                             ("reason", Loc.GetString("panic-bunker-account-reason-overall", ("minutes", minOverallMinutes)))), null);
                 }
 
-                if (!validAccountAge || !haveMinOverallTime && !bypassAllowed)
+                if ((!validAccountAge || !haveMinOverallTime) && !bypassAllowed) // starlight
                 {
                     return (ConnectionDenyReason.Panic, Loc.GetString("panic-bunker-account-denied"), null);
                 }
