@@ -34963,5 +34963,38 @@ Entries:
   id: 381501
   time: '2026-03-20T12:54:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3815
+- author: Rinary
+  changes:
+  - message: Added bullet holes visual effect when shooting in objects like walls.
+    type: Add
+  - message: Added sparks visual effect when shooting in metal piercable objects.
+    type: Add
+  - message: 'Added new options tab: "User Interface".'
+    type: Add
+  - message: Added a lot of options for sights(I bored, pls help me).
+    type: Add
+  - message: Added ability to change crosshair at options.
+    type: Add
+  - message: Changed wielding bonus on all weapons, now when you're wielding weapon
+      it wouldn't be 100% accurate, now it only 50%.
+    type: Tweak
+  - message: Changed wielding bonus, now when you're wielding weapon it would increase
+      current spread angle slower in 2 times.
+    type: Tweak
+  - message: Changed spread, now when you're moving your spread will be bigger(x2
+      for sprint, 1.5x for walk).
+    type: Tweak
+  - message: Changed spread stats of large amount of weapons. (Check PR body for detailed
+      information).
+    type: Tweak
+  - message: Now all pistols are wieldable.
+    type: Tweak
+  - message: Now all smgs are wieldable.
+    type: Tweak
+  - message: Removed cursor visibility when entering at combat for some crosshairs.
+    type: Remove
+  id: 315401
+  time: '2026-03-21T04:41:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3154
 Order: -1
 
