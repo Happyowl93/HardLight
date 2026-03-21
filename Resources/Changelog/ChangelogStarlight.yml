@@ -35103,5 +35103,12 @@ Entries:
   id: 384601
   time: '2026-03-21T16:21:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3846
+- author: CawsForConcern
+  changes:
+  - message: Fixed custom / event admin grids failing to load.
+    type: Fix
+  id: 384401
+  time: '2026-03-21T16:38:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3844
 Order: -1
 
