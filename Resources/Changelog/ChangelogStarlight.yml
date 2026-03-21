@@ -35003,5 +35003,16 @@ Entries:
   id: 383101
   time: '2026-03-21T05:00:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3831
+- author: neomoth
+  changes:
+  - message: Added a new moth wing (Double swirl).
+    type: Add
+  - message: Added a new hairstyle (Cool spikes).
+    type: Add
+  - message: Added a new vulpkanin tail (Extra fluffy).
+    type: Add
+  id: 383301
+  time: '2026-03-21T05:09:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3833
 Order: -1
 
