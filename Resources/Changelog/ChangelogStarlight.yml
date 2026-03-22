@@ -35287,5 +35287,22 @@ Entries:
   id: 386501
   time: '2026-03-22T17:16:38.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3865
+- author: SevenShades
+  changes:
+  - message: (Boxcars) Added a public crew monitoring console to medical.
+    type: Add
+  - message: (Boxcars) Departmental announcement consoles.
+    type: Add
+  - message: (Boxcars) Added more emergency lights.
+    type: Add
+  - message: (Boxcars) Sec front doors are now brig access.
+    type: Fix
+  - message: (Boxcars) AI console is now linked to the core by default.
+    type: Fix
+  - message: (Boxcars) Fixed engineering fax machine name.
+    type: Fix
+  id: 385701
+  time: '2026-03-22T17:23:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3857
 Order: -1
 
