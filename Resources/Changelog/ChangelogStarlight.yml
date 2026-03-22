@@ -35469,5 +35469,32 @@ Entries:
   id: 385801
   time: '2026-03-22T20:49:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3858
+- author: Conflee
+  changes:
+  - message: Added Aquarium, Coat Rack, Grandfather Clock, Junction Boxes, and Piggy
+      Bank as decoration options. Grandfather Clock is animated and plays ticking
+      sounds, Junction Boxes break into LV Coils, and the Piggy Bank can be broken
+      for random coins.
+    type: Add
+  - message: Added Bee Box, Bee Hive, Snake Nest, and Mouse Nest, plus a Random Nest
+      Spawner for mapping in Maints. These nests spawn 1 of their respective mob when
+      hit/broken. The Bee Hive and Box are a source of Honeycomb and Honey Frame.
+    type: Add
+  - message: Added Honey Bar, Honey Frame, Honey Comb, Honey Loaf, Honey Roll, Honey
+      Slice. Prep for future Beekeeping PR.
+    type: Add
+  - message: Added Metal floors and Grates. 3 new grates- Gray, Red, and Brown. 6
+      new Metal floors, Dark, Brown, Blue, Purple, Red, and Green.
+    type: Add
+  - message: Added 4 new posters- Plasma Information, Thunderdome, NanoTrasen Fancy,
+      and 24/7.
+    type: Add
+  - message: Added 2 Safety Signs, with glow in the dark text- EXIT and EVAC.
+    type: Add
+  - message: Starlight-unique tiles can now be crafted in a Tile Cutter.
+    type: Tweak
+  id: 385401
+  time: '2026-03-22T20:52:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3854
 Order: -1
 
