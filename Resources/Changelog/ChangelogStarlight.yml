@@ -35227,5 +35227,12 @@ Entries:
   id: 385901
   time: '2026-03-22T08:06:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3859
+- author: BigfootBravo
+  changes:
+  - message: Chittin now can use the tts system.
+    type: Fix
+  id: 386101
+  time: '2026-03-22T08:14:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3861
 Order: -1
 
