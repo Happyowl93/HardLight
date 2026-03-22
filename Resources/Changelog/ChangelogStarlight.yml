@@ -35433,5 +35433,12 @@ Entries:
   id: 387401
   time: '2026-03-22T20:34:35.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3874
+- author: Conflee
+  changes:
+  - message: Added 9 new AI Screens and 7 new AI Holograms.
+    type: Add
+  id: 387101
+  time: '2026-03-22T20:38:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3871
 Order: -1
 
