@@ -35234,5 +35234,25 @@ Entries:
   id: 386101
   time: '2026-03-22T08:14:52.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3861
+- author: wonderfulnewworld
+  changes:
+  - message: (Bagel) Adds a mail room w/Mail Technician lockers + 1 extra mail tech
+      round start slot.
+    type: Add
+  - message: (Bagel) Adds Cargo Technician lockers.
+    type: Add
+  - message: (Bagel) Adds Departmental Communications Consoles.
+    type: Add
+  - message: (Bagel) Expands Law Department to have a bedroom room for Magistrate.
+    type: Add
+  - message: (Bagel) Removes Chemistry from Brigmed.
+    type: Remove
+  - message: (Bagel) Tweaks Mains around Law to account for Magistrate's room.
+    type: Tweak
+  - message: (Bagel) Adds a couple more emergency lights in the east main hallways.
+    type: Fix
+  id: 385601
+  time: '2026-03-22T08:49:07.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3856
 Order: -1
 
