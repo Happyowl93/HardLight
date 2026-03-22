@@ -35254,5 +35254,38 @@ Entries:
   id: 385601
   time: '2026-03-22T08:49:07.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3856
+- author: wonderfulnewworld and Conflee
+  changes:
+  - message: Added Interdyne Enterprise/Commercial vendors & wall versions. These
+      should replace the NanoMeds on Serpentscrest/can be mapped on Nukie Bases/used
+      for admins. The Enterprise ones can accept Medical or SyndicateAgent access.
+    type: Add
+  - message: Added new posters for Interdyne, Waffle Corp, DONK CO., and Comitas Systems.
+      These can randomly show up in the ContraPoster pool.
+    type: Add
+  - message: Added a new poster for DeForest Medical. This can randomly show up in
+      the LegitPoster pool.
+    type: Add
+  - message: Added new flags for Cybersun, Interdyne, Waffle Corp, and DONK CO.
+    type: Add
+  - message: Adds Interdyne bruise packs/ointments. They use the sprites of the red
+      ones from security, but only stack to 10. They can only be found in the Interdyne
+      vendors.
+    type: Add
+  - message: The SyndieJuice has a unique sprite now.
+    type: Add
+  - message: Added Ominous Pills. These are similar to Strange Pills, but have a much
+      higher chance of killing you. They do, however, have *more* of each chemical,
+      so if you get lucky...
+    type: Add
+  - message: Added Strange Pills to NanoMed MNGR inventories.
+    type: Tweak
+  - message: You can now emag NanoMeds to get some Desoxy and Ominous Pills.
+    type: Tweak
+  - message: You can now emag the ChemVend to get Ominous Pills.
+    type: Tweak
+  id: 386501
+  time: '2026-03-22T17:16:38.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3865
 Order: -1
 
