@@ -35503,5 +35503,13 @@ Entries:
   id: 387301
   time: '2026-03-22T20:56:07.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3873
+- author: mikeysaurus
+  changes:
+  - message: Adds new GitHub workflow to verify that the Prototypes/_StarLight directory
+      no longer exists.
+    type: Add
+  id: 387901
+  time: '2026-03-23T02:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3879
 Order: -1
 
