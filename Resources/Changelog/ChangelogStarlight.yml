@@ -35580,5 +35580,13 @@ Entries:
   id: 377001
   time: '2026-03-23T04:43:53.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3770
+- author: Conflee
+  changes:
+  - message: Made Platforms able to take damage and be broken. They are slightly weaker
+      than solid walls.
+    type: Fix
+  id: 388001
+  time: '2026-03-23T06:11:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3880
 Order: -1
 
