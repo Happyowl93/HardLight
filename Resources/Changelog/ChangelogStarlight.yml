@@ -35625,5 +35625,12 @@ Entries:
   id: 388101
   time: '2026-03-23T09:37:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3881
+- author: Roro
+  changes:
+  - message: Fixed Construction bag not quick opening inhand.
+    type: Fix
+  id: 388401
+  time: '2026-03-23T13:50:39.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3884
 Order: -1
 
