@@ -35616,5 +35616,14 @@ Entries:
   id: 388301
   time: '2026-03-23T09:21:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3883
+- author: wonderfulnewworld & [pcaessayrs](https://github.com/pcaessayrs)
+  changes:
+  - message: The ninja now spawns with a chain sickle. They can use this to grapple
+      to things _very_ quickly, or can be thrown as a bola in a pinch. Also deals
+      solid damage, too, giving ninja an easier to use ranged weapon than the shurikens.
+    type: Add
+  id: 388101
+  time: '2026-03-23T09:37:22.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3881
 Order: -1
 
