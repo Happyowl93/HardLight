@@ -35511,5 +35511,15 @@ Entries:
   id: 387901
   time: '2026-03-23T02:39:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3879
+- author: Tytos
+  changes:
+  - message: Added to serpentcrest, new syndicate corporation banners and interdyne
+      medical vendor.
+    type: Add
+  - message: added to serpentcrest document printers in sec.
+    type: Tweak
+  id: 387201
+  time: '2026-03-23T04:11:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3872
 Order: -1
 
