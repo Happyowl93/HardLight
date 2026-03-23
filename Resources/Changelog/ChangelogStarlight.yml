@@ -35598,5 +35598,15 @@ Entries:
   id: 386601
   time: '2026-03-23T08:42:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3866
+- author: wonderfulnewworld, princess_gurchi, Killer Tamashi
+  changes:
+  - message: You can now carry every species. Bigger species won't even fit in bags
+      of holding.
+    type: Add
+  - message: You can now see when someone is carrying someone.
+    type: Tweak
+  id: 387701
+  time: '2026-03-23T08:47:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3877
 Order: -1
 
