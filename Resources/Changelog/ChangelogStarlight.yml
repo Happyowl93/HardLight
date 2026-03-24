@@ -35802,5 +35802,19 @@ Entries:
   id: 389201
   time: '2026-03-24T21:42:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3892
+- author: redmushie
+  changes:
+  - message: You can see all job and antag requirements by hovering the job/antag
+      names, even if you meet the requirements.
+    type: Add
+  - message: In the Ghost Roles menu, you can now see the requirements of roles you've
+      unlocked by hovering the Request/Join Raffle buttons.
+    type: Add
+  - message: In the Loadout menu, you can now see loadout item requirements, even
+      if you have them unlocked.
+    type: Add
+  id: 388501
+  time: '2026-03-24T21:45:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3885
 Order: -1
 
