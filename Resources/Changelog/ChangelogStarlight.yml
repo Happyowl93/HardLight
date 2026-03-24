@@ -35795,5 +35795,12 @@ Entries:
   id: 390501
   time: '2026-03-24T21:39:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3905
+- author: salarua
+  changes:
+  - message: The guidebook glossary is now easier to read.
+    type: Tweak
+  id: 389201
+  time: '2026-03-24T21:42:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3892
 Order: -1
 
