@@ -917,9 +917,8 @@ namespace Content.Client.Lobby.UI
                 selector.OnOpenGuidebook += OnOpenGuidebook;
 
                 var title = Loc.GetString(antag.Name);
-                var description = Loc.GetString(antag.Objective);
-                selector.Setup(items, title, 250, description, guides: antag.Guides);
-                selector.Select(Profile?.AntagPreferences.Contains(antag.ID) == true ? 0 : 1);
+                var description = FormattedMessage.FromMarkupPermissive(Loc.GetString(antag.Objective)); // Starlight
+                // Starlight: Setup & Select call moved down since we append requirements to the description.
 
                 if (!_requirements.IsAllowed(
                         antag,
@@ -937,6 +936,21 @@ namespace Content.Client.Lobby.UI
                 {
                     selector.UnlockRequirements();
                 }
+                
+                // Starlight BEGIN: Always show job requirements, even when they're met
+                // Append requirement details to description, separated by a clear line
+                if (!reason.IsEmpty)
+                {
+                    if (!description.IsEmpty)
+                    {
+                        description.PushNewline();
+                        description.PushNewline();
+                    }
+                    description.AddMessage(reason);
+                }
+                selector.Setup(items, title, 250, description, guides: antag.Guides);
+                selector.Select(Profile?.AntagPreferences.Contains(antag.ID) == true ? 0 : 1);
+                // Starlight END
 
                 selector.OnSelected += preference =>
                 {
@@ -1218,11 +1232,26 @@ namespace Content.Client.Lobby.UI
                     };
                     var jobIcon = _prototypeManager.Index(job.Icon);
                     icon.Texture = _sprite.Frame0(jobIcon.Icon);
-                    selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
-
-                    if (!_requirements.IsAllowed(job, Profile, out var reason))
+                    // Starlight BEGIN: Always show job requirements
+                    var description = job.LocalizedDescription != null
+                        ? FormattedMessage.FromUnformatted(job.LocalizedDescription)
+                        : FormattedMessage.Empty;
+                    var allowed = _requirements.IsAllowed(job, Profile, out var reason);
+                    
+                    // Append the reason to the description.
+                    if (!description.IsEmpty)
                     {
-                        selector.LockRequirements(reason);
+                        description.PushNewline();
+                        description.PushNewline();
+                    }
+                    description.AddMessage(!reason.IsEmpty ? reason : FormattedMessage.FromMarkupPermissive(Loc.GetString("job-no-requirements")));
+                    
+                    selector.Setup(items, job.LocalizedName, 200, description, icon, job.Guides);
+
+                    if (!allowed)
+                    {
+                        selector.LockRequirements(description);
+                        // Starlight END
                         Profile = Profile?.WithoutJob(job);
                         SetDirty();
                     }
