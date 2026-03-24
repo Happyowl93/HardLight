@@ -35770,5 +35770,30 @@ Entries:
   id: 391301
   time: '2026-03-24T21:31:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3913
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Protection Anchors.
+    type: Add
+  - message: (Cluster) Performers.
+    type: Add
+  - message: (Cluster) Deep fryer.
+    type: Add
+  - message: (Cluster) Departmental Comms Consoles.
+    type: Add
+  - message: (Cluster) HOP Ticket Machine.
+    type: Add
+  - message: (Cluster) More emergency lighting.
+    type: Add
+  - message: (Cluster) One lifeboat, replaces escape pod by Dorms.
+    type: Add
+  - message: (Cluster) Maintenance is now dark.
+    type: Tweak
+  - message: (Cluster) Removed lights in places that had too many.
+    type: Tweak
+  - message: (Cluster) Brigmed Chemical Locker.
+    type: Remove
+  id: 390501
+  time: '2026-03-24T21:39:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3905
 Order: -1
 
