@@ -35659,5 +35659,16 @@ Entries:
   id: 389401
   time: '2026-03-24T06:19:47.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3894
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Added a Lifeboat escape pod dock by Dorms.
+    type: Add
+  - message: (Silica) Updated Maints Bar's stage to use the new platforms.
+    type: Fix
+  - message: (SIlica) Updated some more stairs I missed to the new stair sprites.
+    type: Fix
+  id: 389301
+  time: '2026-03-24T06:52:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3893
 Order: -1
 
