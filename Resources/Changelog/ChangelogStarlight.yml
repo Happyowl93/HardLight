@@ -35650,5 +35650,14 @@ Entries:
   id: 389001
   time: '2026-03-24T06:21:30.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3890
+- author: Born Stellar
+  changes:
+  - message: Corgium and a few other silly chems that can do hard to heal damage have
+      been put on the NT-ISD watch list as illicit chemicals. Use is restricted to
+      Clowns and prescriptions filed by physiologists.
+    type: Tweak
+  id: 389401
+  time: '2026-03-24T06:19:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3894
 Order: -1
 
