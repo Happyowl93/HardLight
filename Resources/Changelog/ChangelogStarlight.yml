@@ -35866,5 +35866,12 @@ Entries:
   id: 393001
   time: '2026-03-25T13:21:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3930
+- author: Vonte
+  changes:
+  - message: (Manor) Fixed turnstiles into genpop sowwy.
+    type: Fix
+  id: 392301
+  time: '2026-03-25T13:26:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3923
 Order: -1
 
