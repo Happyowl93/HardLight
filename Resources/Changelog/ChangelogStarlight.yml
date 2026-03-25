@@ -35852,5 +35852,12 @@ Entries:
   id: 392801
   time: '2026-03-25T01:14:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3928
+- author: BigfootBravo
+  changes:
+  - message: Fixed a few IPC bugs.
+    type: Fix
+  id: 393301
+  time: '2026-03-25T13:05:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3933
 Order: -1
 
