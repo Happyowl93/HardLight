@@ -35893,5 +35893,16 @@ Entries:
   id: 393101
   time: '2026-03-25T13:33:55.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3931
+- author: Conflee, Nyxilath
+  changes:
+  - message: Added Syndicate Dead Drops, a new midround event. This event teleports
+      a Syndicate Briefcase with 3-4 uplink items onto the station, announcing that
+      this has happened to everyone but also telling those with Syndicate Comms the
+      rough location at the same time, creating a rush to secure the loot first. May
+      be anchored under floor tiles, requiring a t-ray to find.
+    type: Add
+  id: 392701
+  time: '2026-03-25T13:45:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3927
 Order: -1
 
