@@ -35859,5 +35859,12 @@ Entries:
   id: 393301
   time: '2026-03-25T13:05:15.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3933
+- author: CawsForConcern
+  changes:
+  - message: (Cog) Fixed the entire mail routing system (eardrums rejoice).
+    type: Fix
+  id: 393001
+  time: '2026-03-25T13:21:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3930
 Order: -1
 
