@@ -35928,5 +35928,13 @@ Entries:
   id: 394201
   time: '2026-03-25T19:14:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3942
+- author: CawsForConcern
+  changes:
+  - message: (Orwell) CentComm clipboard and bedsheet from NTR room, replaced with
+      NT variants instead.
+    type: Remove
+  id: 394001
+  time: '2026-03-25T19:28:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3940
 Order: -1
 
