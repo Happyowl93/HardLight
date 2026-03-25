@@ -35882,5 +35882,16 @@ Entries:
   id: 392401
   time: '2026-03-25T13:29:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3924
+- author: wonderfulnewworld
+  changes:
+  - message: Renames ui-options-tts.ftl to examine.ftl.
+    type: Tweak
+  - message: Moves the examine.ftl and voices.ftl to a new tts folder.
+    type: Tweak
+  - message: Fixes duplicate TTS loc error.
+    type: Fix
+  id: 393101
+  time: '2026-03-25T13:33:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3931
 Order: -1
 
