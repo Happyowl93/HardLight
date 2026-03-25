@@ -35918,5 +35918,15 @@ Entries:
   id: 394401
   time: '2026-03-25T19:03:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3944
+- author: CawsForConcern
+  changes:
+  - message: (Leth) Mailing unit in Cargo.
+    type: Add
+  - message: (Leth) Mail system actually works now - no more 'one way' mail routes.
+      Send as much mail as your heart desires.
+    type: Fix
+  id: 394201
+  time: '2026-03-25T19:14:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3942
 Order: -1
 
