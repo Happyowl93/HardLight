@@ -35873,5 +35873,14 @@ Entries:
   id: 392301
   time: '2026-03-25T13:26:10.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3923
+- author: wonderfulnewworld
+  changes:
+  - message: You can no longer label everyone.
+    type: Fix
+  - message: You can now carry Exterminators.
+    type: Fix
+  id: 392401
+  time: '2026-03-25T13:29:41.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3924
 Order: -1
 
