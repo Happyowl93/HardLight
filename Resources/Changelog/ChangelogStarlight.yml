@@ -35975,5 +35975,13 @@ Entries:
   id: 394601
   time: '2026-03-26T08:12:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3946
+- author: Ohelig
+  changes:
+  - message: Fixes a bug where borgs lose Syndicate radio if emagged before they choose
+      a chassis type.
+    type: Fix
+  id: 392001
+  time: '2026-03-26T08:21:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3920
 Order: -1
 
