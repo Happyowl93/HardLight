@@ -35967,5 +35967,13 @@ Entries:
   id: 394501
   time: '2026-03-26T08:04:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3945
+- author: CawsForConcern
+  changes:
+  - message: (Silica) Missing LV wire between HOP and Vault that was causing the main
+      greenway to be unpowered.
+    type: Fix
+  id: 394601
+  time: '2026-03-26T08:12:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3946
 Order: -1
 
