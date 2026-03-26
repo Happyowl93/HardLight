@@ -1988,3 +1988,9 @@ Entries:
       message: IPCs now have binary built in
   id: 218
   time: '2026-03-26T21:19:27.0000000+00:00'
+- author: VoidedDevNull
+  changes:
+    - type: Fix
+      message: .45 Magnum magazines properly reflect their ammo fill
+  id: 219
+  time: '2026-03-26T21:21:13.0000000+00:00'
