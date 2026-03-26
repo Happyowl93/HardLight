@@ -36017,5 +36017,14 @@ Entries:
   id: 395601
   time: '2026-03-26T21:14:52.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3956
+- author: STARLIGHT TEAM
+  changes:
+  - message: Removed SpaceDog.
+    type: Remove
+  - message: Aurora does not pulse colors anymore (for now).
+    type: Tweak
+  id: 395701
+  time: '2026-03-26T21:18:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3957
 Order: -1
 
