@@ -35951,5 +35951,14 @@ Entries:
   id: 393701
   time: '2026-03-26T07:39:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3937
+- author: CawsForConcern
+  changes:
+  - message: (Bagel) Doors for the Engineering Substation are now correctly marked
+      as Engineering Airlocks instead of Maints Airlocks (access remains the same,
+      but this is for visual clarity).
+    type: Fix
+  id: 393801
+  time: '2026-03-26T07:43:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3938
 Order: -1
 
