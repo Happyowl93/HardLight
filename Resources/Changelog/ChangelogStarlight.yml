@@ -36146,5 +36146,12 @@ Entries:
   id: 397101
   time: '2026-03-27T16:02:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3971
+- author: SiTW
+  changes:
+  - message: Engineering borgs now have the access reader with their hud.
+    type: Tweak
+  id: 397301
+  time: '2026-03-27T16:07:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3973
 Order: -1
 
