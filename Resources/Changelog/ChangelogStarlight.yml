@@ -36139,5 +36139,12 @@ Entries:
   id: 396701
   time: '2026-03-27T13:06:45.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3967
+- author: Shades
+  changes:
+  - message: Disabled IPC.
+    type: Remove
+  id: 397101
+  time: '2026-03-27T16:02:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3971
 Order: -1
 
