@@ -36098,5 +36098,12 @@ Entries:
   id: 393201
   time: '2026-03-27T03:46:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3932
+- author: Coolsurf6
+  changes:
+  - message: Removed Cyclorite Colourblindness for eyestrain and accessibility reasons.
+    type: Remove
+  id: 395101
+  time: '2026-03-27T03:50:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3951
 Order: -1
 
