@@ -36026,5 +36026,22 @@ Entries:
   id: 395701
   time: '2026-03-26T21:18:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3957
+- author: CawsForConcern
+  changes:
+  - message: (Cluster) Cargo maints no longer dead-ends, you can now walk through
+      Engineering all the way to Arrivals maints just like on the original version
+      of Cluster.
+    type: Add
+  - message: (Cluster) Electrolyzer added to Atmos.
+    type: Add
+  - message: (Cluster) Added a new Materials room to Engineering with various supplies.
+    type: Add
+  - message: (Cluster) SUPERPACMAN and uranium added to Engineering.
+    type: Add
+  - message: (Cluster) Moved the Generators from the AME Room to the Materials Room.
+    type: Tweak
+  id: 395901
+  time: '2026-03-27T03:29:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3959
 Order: -1
 
