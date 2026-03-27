@@ -36074,5 +36074,29 @@ Entries:
   id: 396101
   time: '2026-03-27T03:38:00.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3961
+- author: Conflee
+  changes:
+  - message: Changed flashlights and helmet lights so they rotate more smoothly with
+      where you are facing. This means in combat mode you can slowly pan a flashlight
+      around a room much more seamlessly.
+    type: Tweak
+  - message: Added lights to a few objects that previously lacked them, like cloning
+      pods, medical scanners, and active cryopods.
+    type: Add
+  - message: Changed many light sources to no longer cast shadows. This is because
+      the game can only render 20-30 shadow casting lights before it starts culling,
+      causing lights to flicker. It can render over 250 non shadow casting lights
+      however. PDA light and other low radius or low brightness lights were the ones
+      changed mostly.
+    type: Tweak
+  - message: Changed how lights function on many objects to be more realistic. The
+      most notable are all computers and consoles now having a cone mask and custom
+      defined light colors. This means light only projects 'forwards' out the screens,
+      and the color matches the screen colors. These do not cast shadows, for optimization
+      reasons. Fireplaces and a few other light sources got similar treatments.
+    type: Tweak
+  id: 393201
+  time: '2026-03-27T03:46:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3932
 Order: -1
 
