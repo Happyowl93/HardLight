@@ -36169,5 +36169,19 @@ Entries:
   id: 397601
   time: '2026-03-27T18:57:36.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3976
+- author: STARLIGHT TEAM
+  changes:
+  - message: Improved card UI significantly.
+    type: Tweak
+  - message: Added the Captain's mode specific card "War" with a 10% chance to appear.
+      If accepted, a notification will announce the start of the war, along with an
+      evacuation requirement to deliver at least 90% of the crew listed on the manifest
+      to CentCom. In response, a dozen deserter cards are added to the pool, with
+      the objective of hiding on the station. Deserters gain access to a hidden section
+      in vending machines containing tools and smoke grenades.
+    type: Add
+  id: 396001
+  time: '2026-03-27T21:05:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3960
 Order: -1
 
