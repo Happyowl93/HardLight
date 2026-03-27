@@ -36132,5 +36132,12 @@ Entries:
   id: 387801
   time: '2026-03-27T11:09:40.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3878
+- author: Terkala, jhrushbe
+  changes:
+  - message: Reactor code has been optimized to not use as many server resources.
+    type: Tweak
+  id: 396701
+  time: '2026-03-27T13:06:45.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3967
 Order: -1
 
