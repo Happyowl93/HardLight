@@ -36161,5 +36161,13 @@ Entries:
   id: 396201
   time: '2026-03-27T16:12:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3962
+- author: Conflee
+  changes:
+  - message: Fixed Bee Hives, Bee Boxes, and Meatroid Walls test failing due to Material
+      Arbitrage Tests.
+    type: Fix
+  id: 397601
+  time: '2026-03-27T18:57:36.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3976
 Order: -1
 
