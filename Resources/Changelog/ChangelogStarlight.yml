@@ -36124,5 +36124,13 @@ Entries:
   id: 389801
   time: '2026-03-27T10:15:46.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3898
+- author: mikeysaurus
+  changes:
+  - message: Flashes, holding charges ranging from 0 to 5, can now be found randomly
+      in maints lockers.
+    type: Add
+  id: 387801
+  time: '2026-03-27T11:09:40.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3878
 Order: -1
 
