@@ -36153,5 +36153,13 @@ Entries:
   id: 397301
   time: '2026-03-27T16:07:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3973
+- author: Kirb, LankLTE MilonPL, Boaz1111, Aexxie
+  changes:
+  - message: Engraveables items, add things to their description for other players
+      to read, port form cosmatic drift.
+    type: Add
+  id: 396201
+  time: '2026-03-27T16:12:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3962
 Order: -1
 
