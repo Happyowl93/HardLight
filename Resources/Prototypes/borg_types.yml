@@ -180,6 +180,11 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
+  #Start HL
+  - type: SurgerySpeedModifier
+    speedModifier: 1.75
+  - type: Sanitized
+  #End HL
 
   # Visual
   inventoryTemplateId: borgDutchHL # HL
