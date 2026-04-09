@@ -2378,3 +2378,11 @@ Entries:
       message: More aphro descriptions
   id: 261
   time: '2026-04-08T23:35:11.0000000+00:00'
+- author: fenndragon
+  changes:
+    - type: Add
+      message: Added more patron borgs
+    - type: Add
+      message: Added other tweaks and fixes
+  id: 262
+  time: '2026-04-09T01:14:42.0000000+00:00'
