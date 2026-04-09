@@ -2398,3 +2398,23 @@ Entries:
       message: Two recipes for Tiramisu.
   id: 264
   time: '2026-04-09T01:18:43.0000000+00:00'
+- author: NotLivyathan
+  changes:
+    - type: Tweak
+      message: >-
+        Round-end logic no longer forces shuttles not on the station map to FTL
+        to ColComm.
+    - type: Tweak
+      message: >-
+        FTL once again causes a 5.5 second startup delay, instead of occurring
+        instantly.
+    - type: Fix
+      message: >-
+        Round-end logic should no longer cause the server to hang and ultimately
+        crash.
+    - type: Fix
+      message: >-
+        Ending an expedition early from the shuttle console once again announces
+        that the expedition is ending.
+  id: 265
+  time: '2026-04-09T19:46:36.0000000+00:00'
