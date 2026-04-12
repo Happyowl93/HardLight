@@ -54,6 +54,10 @@ CartridgeRifle: CartridgeRifleSP
 SpawnGrayXenobiologySlime: null
 CrateStarterXenobiology: null
 
+# 2026-02-04 - The great turbine rename
+Turbine: GasTurbineNormal
+TurbineSmall: GasTurbineSmall
+
 #2026-02-15
 ClothingOuterArmorSovietFlak: ClothingOuterArmorSovietPlate
 
@@ -67,4 +71,4 @@ ShuttleGunNTSFCyerxa120mm: ShuttleGunCyerxa120mm
 WeaponRevolverSnubRevolver: null
 
 #2026-03-21
-WeaponRifleLionhunter: WeaponSniperLionhunter
+#WeaponRifleLionhunter: WeaponSniperLionhunter Re-enable when Shooting 3.0 is back
