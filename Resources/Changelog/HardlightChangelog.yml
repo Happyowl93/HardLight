@@ -2653,3 +2653,11 @@ Entries:
         borg
   id: 279
   time: '2026-04-13T17:55:24.0000000+00:00'
+- author: TrylobyteWasTaken
+  changes:
+    - type: Tweak
+      message: >-
+        Biogenerator now requires and contains a Manipulator so you can speed it
+        up by upgrading it.
+  id: 280
+  time: '2026-04-13T17:56:16.0000000+00:00'
