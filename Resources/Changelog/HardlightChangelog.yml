@@ -2717,3 +2717,9 @@ Entries:
       message: The AME now generates 180kW per core, instead of 8MW.
   id: 288
   time: '2026-04-16T09:21:19.0000000+00:00'
+- author: IngvarJackal
+  changes:
+    - type: Tweak
+      message: Reduce ship gun HP 5 times
+  id: 289
+  time: '2026-04-16T09:21:57.0000000+00:00'
