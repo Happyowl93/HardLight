@@ -2874,3 +2874,9 @@ Entries:
       message: Reduced lag caused by nuclear reactor simulation under heavy load.
   id: 309
   time: '2026-04-20T21:41:09.0000000+00:00'
+- author: fenndragon
+  changes:
+    - type: Add
+      message: Added hotfixes to previous issues
+  id: 310
+  time: '2026-04-20T22:14:57.0000000+00:00'
