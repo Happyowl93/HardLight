@@ -2842,3 +2842,11 @@ Entries:
         still counting normal ship contents.
   id: 305
   time: '2026-04-20T20:42:27.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Fixed ship saves deleting the live ship before the save file was
+        actually written.
+  id: 306
+  time: '2026-04-20T21:05:15.0000000+00:00'
