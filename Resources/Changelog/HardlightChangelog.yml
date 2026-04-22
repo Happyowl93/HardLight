@@ -2943,3 +2943,11 @@ Entries:
       message: Synthetic trait now gives you access to Trinary.
   id: 318
   time: '2026-04-22T06:05:45.0000000+00:00'
+- author: R3v3l4t1on
+  changes:
+    - type: Add
+      message: Added fun!
+    - type: Remove
+      message: 'Removed the salvage expedition computer from every single map. '
+  id: 319
+  time: '2026-04-22T20:54:06.0000000+00:00'
