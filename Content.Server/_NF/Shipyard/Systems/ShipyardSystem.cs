@@ -598,10 +598,9 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         }
 
         var sanitizedYaml = output.ToString();
-        if (removedEntityUids.Count == 0)
-            return sanitizedYaml;
-
-        // Keep parent containers intact by only pruning references to the removed entities.
+        // Always run the stale-reference prune pass. Even if no prototype blocks were removed,
+        // serialized ships can still contain invalid UID tokens like "0" that should be cleared
+        // from container/storage data before reconstruction.
         return PruneLoadYamlReferencesToRemovedEntities(sanitizedYaml, removedEntityUids);
     }
 
@@ -610,7 +609,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     /// </summary>
     private static string PruneLoadYamlReferencesToRemovedEntities(string yamlData, HashSet<string> removedEntityUids)
     {
-        if (string.IsNullOrWhiteSpace(yamlData) || removedEntityUids.Count == 0)
+        if (string.IsNullOrWhiteSpace(yamlData))
             return yamlData;
 
         // Use a structured pass when the YAML still parses cleanly.

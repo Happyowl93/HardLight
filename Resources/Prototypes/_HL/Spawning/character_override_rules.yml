@@ -101,6 +101,33 @@
   - potato3s
   entity: PlayerBorgQuadengiserv
   
+- type: spawnCharacterOverrideRule
+  id: assaultspawn
+  match: KillSwitch
+  checkProfileName: true
+  checkEntityName: true
+  logins:
+  - KillSwitch
+  entity: PlayerBorgQuadkillswitch
+  
+- type: spawnCharacterOverrideRule
+  id: chewsspawn
+  match: Hammeredmantis
+  checkProfileName: true
+  checkEntityName: true
+  logins:
+  - Hammeredmantis
+  entity: PlayerBorgQuadchews
+  
+- type: spawnCharacterOverrideRule
+  id: wolfspawn
+  match: xiv3n
+  checkProfileName: true
+  checkEntityName: true
+  logins:
+  - xiv3n
+  entity: PlayerBorgQuadxiv3n
+  
 ## Component example
 - type: spawnCharacterOverrideRule
   id: abyssbloodverzi
