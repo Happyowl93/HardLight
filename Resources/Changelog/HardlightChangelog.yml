@@ -3007,3 +3007,15 @@ Entries:
         paths.
   id: 325
   time: '2026-04-23T02:09:28.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Tweak
+      message: >-
+        Reduced hitching and rubberbanding in several hot combat, cleanup, and
+        ship systems by cutting unnecessary per-tick allocations and log spam.
+    - type: Tweak
+      message: >-
+        Reduced client hitching when using repair-tool ghost previews around
+        multiple grids.
+  id: 326
+  time: '2026-04-23T23:33:27.0000000+00:00'
