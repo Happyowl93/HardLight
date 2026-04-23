@@ -19,6 +19,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+#nullable enable
 
 namespace Content.IntegrationTests.Tests.StationRecords;
 

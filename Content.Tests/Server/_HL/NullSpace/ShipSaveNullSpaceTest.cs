@@ -4,6 +4,7 @@ using NUnit.Framework;
 using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Serialization.Markdown.Sequence;
 using Robust.Shared.Serialization.Markdown.Value;
+#nullable enable
 
 namespace Content.Tests.Server._HL.NullSpace;
 

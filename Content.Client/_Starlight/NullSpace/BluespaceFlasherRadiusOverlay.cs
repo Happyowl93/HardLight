@@ -31,7 +31,7 @@ public sealed class BluespaceFlasherRadiusOverlay : global::Robust.Client.Graphi
         var query = _entityManager.EntityQueryEnumerator<BluespaceFlasherVisualsComponent, TransformComponent>();
         while (query.MoveNext(out _, out var visuals, out var xform))
         {
-            if (xform.MapID != mapId)
+            if (xform.MapID != mapId || !xform.Anchored)
                 continue;
 
             var worldPos = _xform.GetWorldPosition(xform);
