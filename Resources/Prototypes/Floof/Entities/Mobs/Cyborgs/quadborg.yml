@@ -330,7 +330,7 @@
     stateOn: assaultquadballz
     movementStateOff: assaultquad_moving
     movementStateOn: assaultquad_movingballz
-    
+
 - type: entity
   id: chewsborg
   parent: [SyndiQuad]
@@ -379,7 +379,7 @@
     stateOn: chewsballz
     movementStateOff: chews_moving
     movementStateOn: chews_movingballz
-    
+
 - type: entity
   id: wolfborg
   parent: [BorgChassisApex]
@@ -397,7 +397,7 @@
     - state: wolfdogl
       shader: unshaded
       map: ["light"]
-      visible: false  
+      visible: false
   - type: BorgChassis
     maxModules: 8
     moduleWhitelist:
@@ -428,6 +428,18 @@
     stateOn: wolfdogballz
     movementStateOff: wolfdog_moving
     movementStateOn: wolfdog_movingballz
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: BarestepHard
+  - type: Speech
+    speechSounds: Vulpkanin
+    speechVerb: Vulpkanin
+    allowedEmotes: [ 'Bark', 'Snarl', 'Whine', 'Pout', 'Howl', 'Growl', 'Yip', 'Awoo', 'Yap', 'Gekker', 'Purr' ]
+  - type: Vocal
+    sounds:
+      Male: MaleVulpkanin
+      Female: FemaleVulpkanin
+      Unsexed: MaleVulpkanin
 
 - type: entity
   id: BorgChassisQuadCC
