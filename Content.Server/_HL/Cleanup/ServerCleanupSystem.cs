@@ -167,10 +167,6 @@ public sealed class ServerCleanupSystem : EntitySystem
             cleanedUp++;
         }
 
-        var staleEntries = _disconnectedPlayers.Keys
-            .Where(userId => !connectedUsers.Contains(userId))
-            .ToList();
-
         if (cleanedUp > 0)
         {
             _sawmill.Info($"Ghost player cleanup: sent {cleanedUp} disconnected player(s) back to lobby.");

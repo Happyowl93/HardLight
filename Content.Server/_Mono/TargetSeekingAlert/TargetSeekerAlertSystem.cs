@@ -19,6 +19,11 @@ public sealed class TargetSeekerAlertSystem : EntitySystem
 
     private EntityQuery<TargetSeekerAlertComponent> _alertQuery = new();
 
+    // Throttle the alert scan: distance bands aren't gameplay-sensitive at sub-200ms resolution
+    // and the inner cost is grids * seekers * alerters * (Transform + TryDistance).
+    private const float UpdateInterval = 0.2f;
+    private float _updateAccumulator;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -42,9 +47,18 @@ public sealed class TargetSeekerAlertSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        _updateAccumulator += frameTime;
+        if (_updateAccumulator < UpdateInterval)
+            return;
+        _updateAccumulator = 0f;
+
         var alertGridEqe = EntityQueryEnumerator<TargetSeekerAlertGridComponent>();
         while (alertGridEqe.MoveNext(out var gridUid, out var alertGridComponent))
         {
+            // Nothing tracking this grid; skip the inner work entirely.
+            if (alertGridComponent.CurrentSeekers.Count == 0 || alertGridComponent.ActiveAlerters.Count == 0)
+                continue;
+
             var gridTransform = Transform(gridUid);
             var closestSeekerDistance = float.MaxValue;
 

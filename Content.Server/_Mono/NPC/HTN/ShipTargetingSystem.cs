@@ -22,6 +22,9 @@ public sealed partial class ShipTargetingSystem : EntitySystem
     private EntityQuery<GunComponent> _gunQuery;
     private EntityQuery<PhysicsComponent> _physQuery;
 
+    // Reused per-tick to avoid allocating a HashSet for every ShipTargeting entity each weapon-check.
+    private readonly HashSet<Entity<FireControllableComponent>> _scratchCannons = new();
+
     public override void Initialize()
     {
         base.Initialize();
@@ -78,9 +81,9 @@ public sealed partial class ShipTargetingSystem : EntitySystem
             if (comp.WeaponCheckAccum < 0f)
             {
                 comp.Cannons.Clear();
-                var cannons = new HashSet<Entity<FireControllableComponent>>();
-                _lookup.GetLocalEntitiesIntersecting(shipUid.Value, shipGrid.LocalAABB, cannons);
-                foreach (var cannon in cannons)
+                _scratchCannons.Clear();
+                _lookup.GetLocalEntitiesIntersecting(shipUid.Value, shipGrid.LocalAABB, _scratchCannons);
+                foreach (var cannon in _scratchCannons)
                 {
                     comp.Cannons.Add(cannon);
                 }
