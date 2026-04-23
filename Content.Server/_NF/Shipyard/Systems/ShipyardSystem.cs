@@ -141,6 +141,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
         SubscribeLocalEvent<StationDeedSpawnerComponent, MapInitEvent>(OnInitDeedSpawner);
         SubscribeLocalEvent<BeforeEntityReadEvent>(OnBeforeEntityRead); // HardLight
+        InitializeShuttleLifecycleCleanup(); // HardLight
     }
 
     public override void Shutdown()
