@@ -34,7 +34,6 @@ public sealed partial class RadarBlipsSystem : EntitySystem
     {
         base.Initialize();
         SubscribeNetworkEvent<GiveBlipsEvent>(HandleReceiveBlips);
-        SubscribeNetworkEvent<GiveHitscanLinesEvent>(HandleReceiveHitscans);
         SubscribeNetworkEvent<BlipRemovalEvent>(RemoveBlip);
     }
 
@@ -44,12 +43,6 @@ public sealed partial class RadarBlipsSystem : EntitySystem
         _blips = ev.Blips;
         _hitscans = ev.HitscanLines;
         _lastUpdatedTime = _timing.CurTime;
-        _lastHitscanUpdatedTime = _timing.CurTime;
-    }
-
-    private void HandleReceiveHitscans(GiveHitscanLinesEvent ev, EntitySessionEventArgs args)
-    {
-        _hitscans = ev.HitscanLines;
         _lastHitscanUpdatedTime = _timing.CurTime;
     }
 

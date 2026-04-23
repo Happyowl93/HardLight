@@ -156,19 +156,11 @@ public sealed partial class HitscanRadarSystem : EntitySystem
         {
             _activeHitscans.Remove(hitscan);
         }
-
-        BroadcastHitscans();
     }
 
     private void QueueHitscan(HitscanNetData hitscan, TimeSpan lifeTime)
     {
         _activeHitscans[hitscan] = _timing.CurTime + lifeTime;
-        BroadcastHitscans();
-    }
-
-    private void BroadcastHitscans()
-    {
-        RaiseNetworkEvent(new GiveHitscanLinesEvent(new List<HitscanNetData>(_activeHitscans.Keys)));
     }
 
     private bool IsHitscanVisible(HitscanNetData hitscan, List<Vector2> sourcePositions, float radarRangeSq)

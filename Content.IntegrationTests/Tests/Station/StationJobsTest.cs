@@ -6,12 +6,14 @@ using System.Reflection;
 using Content.IntegrationTests.Tests._NF;
 using Content.Server._HL.ColComm;
 using Content.Server.GameTicking;
+using Content.Server._NF.CryoSleep;
 using Content.Server._NF.Roles.Systems;
 using Content.Server.Maps;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
+using Content.Shared.Mind;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Station.Components;
@@ -32,7 +34,7 @@ namespace Content.IntegrationTests.Tests.Station;
 public sealed class StationJobsTest
 {
     [TestPrototypes]
-    private const string Prototypes = BasePrototypes + ShipJobPrototypes + DynamicAllocationPrototypes;
+    private const string Prototypes = BasePrototypes + TrackedCrewPrototype + ShipJobPrototypes + DynamicAllocationPrototypes;
 
     private const string BasePrototypes = @"
 - type: playTimeTracker
@@ -90,6 +92,23 @@ public sealed class StationJobsTest
   id: TChaplain
   playTimeTracker: PlayTimeDummyChaplain
 ";
+
+    private const string TrackedCrewPrototype =
+        "- type: entity\n"
+        + "  id: TestTrackedCrewMob\n"
+        + "  components:\n"
+        + "  - type: MindContainer\n"
+        + "  - type: DoAfter\n"
+        + "  - type: Damageable\n"
+        + "    damageContainer: Biological\n"
+        + "  - type: Body\n"
+        + "    prototype: Human\n"
+        + "    requiredLegs: 2\n"
+        + "  - type: MobState\n"
+        + "  - type: MobThresholds\n"
+        + "    thresholds:\n"
+        + "      0: Alive\n"
+        + "      200: Dead\n";
 
         private const string ShipJobPrototypes =
                 "- type: vessel\n"
@@ -558,6 +577,69 @@ public sealed class StationJobsTest
             Assert.That(reopenedSlots, Is.EqualTo(0));
             Assert.That(stationJobs.TryGetJobMidRoundMax(station, freelancerInterview, out configuredMax), Is.True);
             Assert.That(configuredMax, Is.EqualTo(0));
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task CryoTrackedJobReopensSlotWithoutDeletingEntityTest()
+    {
+        await using var pair = await PoolManager.GetServerClient(new PoolSettings { Connected = true });
+        var server = pair.Server;
+
+        var prototypeManager = server.ResolveDependency<IPrototypeManager>();
+        var entityManager = server.ResolveDependency<IEntityManager>();
+        var entitySystemManager = server.ResolveDependency<IEntitySystemManager>();
+        var playerManager = server.ResolveDependency<Robust.Server.Player.IPlayerManager>();
+        var cryoSleep = entitySystemManager.GetEntitySystem<CryoSleepSystem>();
+        var mapLoader = entitySystemManager.GetEntitySystem<MapLoaderSystem>();
+        var mindSystem = entitySystemManager.GetEntitySystem<SharedMindSystem>();
+        var jobTracking = entitySystemManager.GetEntitySystem<JobTrackingSystem>();
+        var stationJobs = entitySystemManager.GetEntitySystem<StationJobsSystem>();
+        var stationSystem = entitySystemManager.GetEntitySystem<StationSystem>();
+
+        var stationProto = prototypeManager.Index<GameMapPrototype>("FooStation");
+        var serverSession = playerManager.Sessions.Single();
+        var trackedUser = serverSession.UserId;
+
+        var station = EntityUid.Invalid;
+        var gridUid = EntityUid.Invalid;
+        var trackedCrew = EntityUid.Invalid;
+        var cryopod = EntityUid.Invalid;
+
+        await server.WaitPost(() =>
+        {
+            Assert.That(mapLoader.TryLoadMap(new ResPath("/Maps/Test/empty.yml"), out _, out var grids), Is.True);
+            Assert.That(grids, Is.Not.Null);
+
+            gridUid = grids!.First().Owner;
+            station = stationSystem.InitializeNewStation(stationProto.Stations["Station"], new[] { gridUid }, "Tracked Cryo Station");
+            entityManager.EnsureComponent<StationMemberComponent>(gridUid).Station = station;
+
+            trackedCrew = entityManager.SpawnEntity("TestTrackedCrewMob", new EntityCoordinates(gridUid, new Vector2(0.5f, 0.5f)));
+            cryopod = entityManager.SpawnEntity("MachineCryoSleepPod", new EntityCoordinates(gridUid, new Vector2(1.5f, 0.5f)));
+
+            jobTracking.EnsureTrackedJob(trackedCrew, "TCaptain", station);
+
+            var mind = mindSystem.CreateMind(trackedUser);
+            mindSystem.TransferTo(mind, trackedCrew, mind: mind);
+            playerManager.SetAttachedEntity(serverSession, trackedCrew);
+
+            Assert.That(stationJobs.TryAssignJob(station, "TCaptain", trackedUser), Is.True);
+            Assert.That(cryoSleep.InsertBody(trackedCrew, (cryopod, entityManager.GetComponent<CryoSleepComponent>(cryopod)), false), Is.True);
+
+            cryoSleep.CryoStoreBody(trackedCrew, cryopod);
+        });
+
+        await server.WaitRunTicks(2);
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(entityManager.EntityExists(trackedCrew), Is.True);
+            Assert.That(stationJobs.IsPlayerJobTracked(station, trackedUser, "TCaptain"), Is.False);
+            Assert.That(stationJobs.TryGetJobSlot(station, "TCaptain", out var slots), Is.True);
+            Assert.That(slots, Is.EqualTo(5));
         });
 
         await pair.CleanReturnAsync();

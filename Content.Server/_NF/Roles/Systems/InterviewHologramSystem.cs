@@ -21,6 +21,7 @@ using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
 using Content.Shared.Verbs;
 using Robust.Server.Player;
+using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -159,16 +160,14 @@ public sealed class InterviewHologramSystem : SharedInterviewHologramSystem
                 ("header", Loc.GetString("interview-notification-pda-header")),
                 ("message", message));
 
-            // Find all people that might receive this message.
-            var mindQuery = EntityQueryEnumerator<MindComponent>();
-            while (mindQuery.MoveNext(out _, out var mindComp))
+            // Only active player sessions can receive PDA notifications.
+            foreach (var playerSession in _player.Sessions)
             {
-                if (mindComp.CurrentEntity == null
-                    || mindComp.UserId == null
-                    || !_player.TryGetSessionById(mindComp.UserId, out var mindSession)
-                    || !_inventory.TryGetSlotEntity(mindComp.CurrentEntity.Value, "id", out var slotItem)
+                if (playerSession.Status is SessionStatus.Disconnected or SessionStatus.Zombie
+                    || playerSession.AttachedEntity is not { Valid: true } currentEntity
+                    || !_inventory.TryGetSlotEntity(currentEntity, "id", out var slotItem)
                     || !HasComp<PdaComponent>(slotItem)
-                    || !IsCaptain(mindComp.CurrentEntity.Value, ent))
+                    || !IsCaptain(currentEntity, ent))
                 {
                     continue;
                 }
@@ -181,7 +180,7 @@ public sealed class InterviewHologramSystem : SharedInterviewHologramSystem
                     wrappedMessage,
                     EntityUid.Invalid,
                     false,
-                    mindSession.Channel);
+                    playerSession.Channel);
             }
 
             ent.Comp.NotificationsSent = true;

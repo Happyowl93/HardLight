@@ -2943,3 +2943,67 @@ Entries:
       message: Synthetic trait now gives you access to Trinary.
   id: 318
   time: '2026-04-22T06:05:45.0000000+00:00'
+- author: R3v3l4t1on
+  changes:
+    - type: Add
+      message: Added fun!
+    - type: Remove
+      message: 'Removed the salvage expedition computer from every single map. '
+  id: 319
+  time: '2026-04-22T20:54:06.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Stopped ghosted IPCs from entering battery-death limbo after their
+        battery is removed or drained.
+    - type: Fix
+      message: >-
+        Stopped tracked cryo entities from being force-deleted just to reopen
+        their job slot.
+  id: 320
+  time: '2026-04-22T21:06:55.0000000+00:00'
+- author: TrylobyteWasTaken
+  changes:
+    - type: Fix
+      message: SmartFridges should work again.
+    - type: Fix
+      message: SmartFridges should no longer block ships from saving.
+  id: 321
+  time: '2026-04-22T21:08:13.0000000+00:00'
+- author: Sully669
+  changes:
+    - type: Add
+      message: more vinyls
+  id: 322
+  time: '2026-04-22T21:23:53.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: Removed a redundant Mono radar hitscan broadcast path.
+    - type: Fix
+      message: >-
+        Kept hitscan radar updates on the normal radar reply path to avoid
+        duplicate client updates.
+  id: 323
+  time: '2026-04-23T00:48:24.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Reduced sensor monitoring console polling load and background
+        device-network spam.
+    - type: Fix
+      message: >-
+        Sensor monitoring consoles now refresh immediately on open without
+        polling every frame.
+  id: 324
+  time: '2026-04-23T02:07:50.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Reduced redundant server-side work in several hot atmos processing
+        paths.
+  id: 325
+  time: '2026-04-23T02:09:28.0000000+00:00'

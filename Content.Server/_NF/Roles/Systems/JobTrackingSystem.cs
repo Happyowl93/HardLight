@@ -102,7 +102,6 @@ public sealed class JobTrackingSystem : SharedJobTrackingSystem
             return;
 
         OpenJob(ent, ev.User); // HardLight: Added ev.User
-        ev.DeleteEntity = true;
     }
 
     public void OpenJob(Entity<JobTrackingComponent> ent, NetUserId? userId = null) // HardLight: Added NetUserId? userId = null

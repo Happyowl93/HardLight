@@ -12,6 +12,7 @@ using Content.Server._NF.Station.Components; // Frontier
 using Content.Server.Administration.Logs; // Frontier
 using Content.Shared.Database; // Frontier
 using Content.Shared._NF.StationRecords; // Frontier
+using Content.Shared._NF.Roles.Components;
 using Content.Shared._NF.Shipyard.Components;
 
 namespace Content.Server.StationRecords.Systems;
@@ -172,13 +173,26 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
                 advertisement = extraVessel.Advertisement;
         }
 
-        if (!_stationRecords.TryGetAuthoritativeRecords(out var stationUid, out var stationRecords)) // HardLight: TryComp<StationRecordsComponent>(owningStation<_stationRecords.TryGetAuthoritativeRecords; added out var stationUid
-        {
-            _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, new GeneralStationRecordConsoleState(null, null, null, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement)); // Frontier: add as many args as we can
-            return;
-        }
+        EntityUid stationUid;
+        StationRecordsComponent? stationRecords;
+        Dictionary<uint, string> listing;
 
-        var listing = _stationRecords.BuildListing((stationUid, stationRecords), console.Filter); // HardLight: owningStation.Value<stationUid
+        if (owningStation != null
+            && TryComp<ExtraShuttleInformationComponent>(owningStation.Value, out _)
+            && TryBuildShipRecordListing(owningStation.Value, console.Filter, out stationUid, out stationRecords, out var shipListing))
+        {
+            listing = shipListing;
+        }
+        else
+        {
+            if (!_stationRecords.TryGetAuthoritativeRecords(out stationUid, out stationRecords)) // HardLight: TryComp<StationRecordsComponent>(owningStation<_stationRecords.TryGetAuthoritativeRecords; added out var stationUid
+            {
+                _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, new GeneralStationRecordConsoleState(null, null, null, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement)); // Frontier: add as many args as we can
+                return;
+            }
+
+            listing = _stationRecords.BuildListing((stationUid, stationRecords), console.Filter); // HardLight: owningStation.Value<stationUid
+        }
 
         switch (listing.Count)
         {
@@ -187,7 +201,7 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
                 _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, consoleState);
                 return;
             default:
-                if (console.ActiveKey == null)
+                if (console.ActiveKey == null || !listing.ContainsKey(console.ActiveKey.Value))
                     console.ActiveKey = listing.Keys.First();
                 break;
         }
@@ -203,6 +217,78 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
 
         GeneralStationRecordConsoleState newState = new(id, record, listing, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement);
         _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, newState);
+    }
+
+    private bool TryBuildShipRecordListing(EntityUid station, StationRecordsFilter? filter, out Dictionary<uint, string> listing)
+    {
+        return TryBuildShipRecordListing(station, filter, out _, out _, out listing);
+    }
+
+    private bool TryBuildShipRecordListing(
+        EntityUid station,
+        StationRecordsFilter? filter,
+        out EntityUid recordsStation,
+        out StationRecordsComponent? stationRecords,
+        out Dictionary<uint, string> listing)
+    {
+        recordsStation = EntityUid.Invalid;
+        stationRecords = null;
+        listing = new Dictionary<uint, string>();
+
+        if (!_stationRecords.TryGetAuthoritativeRecords(out recordsStation, out stationRecords))
+        {
+            recordsStation = station;
+            if (!TryComp(station, out stationRecords))
+                return false;
+        }
+
+        var includedKeys = new HashSet<uint>();
+
+        var trackedCrew = EntityQueryEnumerator<JobTrackingComponent, StationRecordKeyStorageComponent>();
+        while (trackedCrew.MoveNext(out _, out var jobTracking, out var keyStorage))
+        {
+            if (jobTracking.SpawnStation != station
+                || !jobTracking.Active
+                || keyStorage.Key is not { } key)
+            {
+                continue;
+            }
+
+            TryAddShipRecordListingEntry(key, filter, listing, includedKeys, stationRecords);
+        }
+
+        var deedHolders = EntityQueryEnumerator<ShuttleDeedComponent, StationRecordKeyStorageComponent>();
+        while (deedHolders.MoveNext(out _, out var shuttleDeed, out var keyStorage))
+        {
+            if (shuttleDeed.ShuttleUid is not { } shuttleNetEntity
+                || !TryGetEntity(shuttleNetEntity, out var shuttleUid)
+                || _station.GetOwningStation(shuttleUid) != station
+                || keyStorage.Key is not { } key)
+            {
+                continue;
+            }
+
+            TryAddShipRecordListingEntry(key, filter, listing, includedKeys, stationRecords);
+        }
+
+        return true;
+    }
+
+    private void TryAddShipRecordListingEntry(
+        StationRecordKey key,
+        StationRecordsFilter? filter,
+        Dictionary<uint, string> listing,
+        HashSet<uint> includedKeys,
+        StationRecordsComponent stationRecords)
+    {
+        if (!includedKeys.Add(key.Id)
+            || !_stationRecords.TryGetRecord<GeneralStationRecord>(key, out var record, stationRecords)
+            || _stationRecords.IsSkipped(filter, record))
+        {
+            return;
+        }
+
+        listing.Add(key.Id, record.Name);
     }
 
     private bool CanEditStationJobs(EntityUid actor, EntityUid console, EntityUid station, StationJobsComponent stationJobs)
