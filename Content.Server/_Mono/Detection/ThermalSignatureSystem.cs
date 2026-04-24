@@ -31,6 +31,12 @@ public sealed class ThermalSignatureSystem : EntitySystem
     private EntityQuery<GunComponent> _gunQuery;
     private readonly Dictionary<EntityUid, float> _gridHeatAccumulator = new();
     private readonly HashSet<EntityUid> _dirtyGrids = new();
+    // Last value we actually networked per grid. Used to skip Dirty() when the
+    // per-tick change is below an audible threshold for radar UI, since the
+    // half-second cadence × dozens of grids was generating large amounts of
+    // network churn from negligible heat-decay deltas.
+    private readonly Dictionary<EntityUid, float> _lastDirtiedHeat = new();
+    private const float DirtyHeatEpsilon = 0.5f;
 
     public override void Initialize()
     {
@@ -153,8 +159,25 @@ public sealed class ThermalSignatureSystem : EntitySystem
 
         foreach (var gridUid in _dirtyGrids)
         {
-            if (_sigQuery.TryComp(gridUid, out var sigComp))
-                Dirty(gridUid, sigComp); // sync to client
+            if (!_sigQuery.TryComp(gridUid, out var sigComp))
+            {
+                _lastDirtiedHeat.Remove(gridUid);
+                continue;
+            }
+
+            var current = sigComp.TotalHeat;
+            var last = _lastDirtiedHeat.TryGetValue(gridUid, out var prev) ? prev : 0f;
+
+            // Always Dirty when crossing the zero boundary so clients reliably get the on/off
+            // transition; otherwise only Dirty when the change is meaningful for the UI.
+            if (MathF.Abs(current - last) < DirtyHeatEpsilon
+                && (current == 0f) == (last == 0f))
+            {
+                continue;
+            }
+
+            _lastDirtiedHeat[gridUid] = current;
+            Dirty(gridUid, sigComp); // sync to client
         }
     }
 }

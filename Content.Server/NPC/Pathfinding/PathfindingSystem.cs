@@ -77,6 +77,11 @@ namespace Content.Server.NPC.Pathfinding
         private EntityQuery<MapGridComponent> _gridQuery;
         private EntityQuery<TransformComponent> _xformQuery;
 
+        // Cached so the per-tick Update doesn't allocate a fresh ParallelOptions.
+        // MaxDegreeOfParallelism is refreshed from _parallel each tick in case the
+        // CVar changed at runtime (cheap field read).
+        private readonly ParallelOptions _parallelOptions = new();
+
         public override void Initialize()
         {
             base.Initialize();
@@ -105,10 +110,8 @@ namespace Content.Server.NPC.Pathfinding
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
-            var options = new ParallelOptions()
-            {
-                MaxDegreeOfParallelism = _parallel.ParallelProcessCount,
-            };
+            _parallelOptions.MaxDegreeOfParallelism = _parallel.ParallelProcessCount;
+            var options = _parallelOptions;
 
             UpdateGrid(options);
             _stopwatch.Restart();
