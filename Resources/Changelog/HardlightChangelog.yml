@@ -3120,3 +3120,9 @@ Entries:
         power cycle.
   id: 336
   time: '2026-04-24T21:04:55.0000000+00:00'
+- author: Sully669
+  changes:
+    - type: Fix
+      message: Ghost hearing not properly filtering chat messages by distances
+  id: 337
+  time: '2026-04-24T21:37:53.0000000+00:00'
