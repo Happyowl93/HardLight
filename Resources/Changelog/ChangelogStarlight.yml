@@ -1,41 +1,6 @@
 Entries:
 - author: '- add: (Silica) Mailing units for: Botany, Bridge, Cargo, Chemistry, Kitchen, Science, Security.'
   changes:
-  - message: (Silica) Removed redundant camera servers from AI Core.
-    type: Tweak
-  id: 404150
-  time: '2026-04-08T18:20:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4070
-- author: '- add: (Silica) Mailing units for: Botany, Bridge, Cargo, Chemistry, Kitchen, Science, Security.'
-  changes:
-  - message: (Silica) Engineering's scrubbers are now publicly accessible.
-    type: Tweak
-  id: 404151
-  time: '2026-04-08T18:20:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4070
-- author: '- add: (Silica) Mailing units for: Botany, Bridge, Cargo, Chemistry, Kitchen, Science, Security.'
-  changes:
-  - message: (Silica) Removed a turret from AI Core and re-decorated it.
-    type: Tweak
-  id: 404152
-  time: '2026-04-08T18:20:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4070
-- author: '- add: (Silica) Mailing units for: Botany, Bridge, Cargo, Chemistry, Kitchen, Science, Security.'
-  changes:
-  - message: (Silica) Missing Captain's fax machine added.
-    type: Fix
-  id: 404153
-  time: '2026-04-08T18:20:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4070
-- author: '- add: (Silica) Mailing units for: Botany, Bridge, Cargo, Chemistry, Kitchen, Science, Security.'
-  changes:
-  - message: (Silica) Missing Funding Allocation computer added.
-    type: Fix
-  id: 404154
-  time: '2026-04-08T18:20:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4070
-- author: '- add: (Silica) Mailing units for: Botany, Bridge, Cargo, Chemistry, Kitchen, Science, Security.'
-  changes:
   - message: (Silica) Missing decals by Engineering Tools room added.
     type: Fix
   id: 404155
@@ -2799,4 +2764,39 @@ Entries:
   id: 404549
   time: '2026-04-23T19:04:22.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4174
+- author: wonderfulnewworld
+  changes:
+  - message: Added normal and extended golden empty/sp magazines, for the golden mk 58, so you can show off.
+    type: Add
+  id: 404550
+  time: '2026-04-24T12:36:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4240
+- author: wonderfulnewworld
+  changes:
+  - message: The Mk 58/Golden Mk 58 in security's loadout now comes with extended magazines, to make them a little more appealing options, since you can't make extended magazines otherwise.
+    type: Tweak
+  id: 404551
+  time: '2026-04-24T12:36:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4240
+- author: wonderfulnewworld
+  changes:
+  - message: Tweaked the burst fire rate and burst fire cooldown on the Dispatcher and Enforcer, so they're a bit more reasonable and not the default values.
+    type: Tweak
+  id: 404552
+  time: '2026-04-24T12:36:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4240
+- author: wonderfulnewworld
+  changes:
+  - message: The Python can now be burst fired too, firing faster than the Dispatcher, but only 2 shots per burst.
+    type: Tweak
+  id: 404553
+  time: '2026-04-24T12:36:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4240
+- author: wonderfulnewworld
+  changes:
+  - message: The Enforcer has less spread.
+    type: Tweak
+  id: 404554
+  time: '2026-04-24T12:36:20.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4240
 Order: -1
