@@ -1419,7 +1419,13 @@ namespace Content.Server.Shuttles.Save
                     var coords = new EntityCoordinates(targetGrid, entityData.Position + offset);
                     var newEntity = SpawnEntityWithComponents(entityData, coords, clearDefaultsForContainers: false);
                     if (newEntity != null)
+                    {
                         entityIdMapping[entityData.EntityId] = newEntity.Value;
+                        // Room saves filter to Anchored-only entities, but the serialized
+                        // TransformComponent is intentionally skipped. Re-anchor here so
+                        // furniture/walls/etc. don't end up loose on the floor after load.
+                        TryReAnchorRoomEntity(newEntity.Value);
+                    }
                 }
 
                 return;
@@ -1447,7 +1453,12 @@ namespace Content.Server.Shuttles.Save
                 var coords = new EntityCoordinates(targetGrid, entityData.Position + offset);
                 var newEntity = SpawnEntityWithComponents(entityData, coords, clearDefaultsForContainers: true);
                 if (newEntity != null)
+                {
                     entityIdMapping[entityData.EntityId] = newEntity.Value;
+                    // Room saves filter to Anchored-only entities at the top level; re-anchor
+                    // since the serialized TransformComponent (and thus its Anchored flag) is skipped.
+                    TryReAnchorRoomEntity(newEntity.Value);
+                }
             }
 
             foreach (var entityData in contained)
@@ -2521,6 +2532,34 @@ namespace Content.Server.Shuttles.Save
                         }
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Re-anchors a freshly-spawned room/apartment entity. Room saves filter to
+        /// anchored-only entities and intentionally skip the TransformComponent during
+        /// serialization, which previously caused everything to load unanchored. This
+        /// call is silent on failure (some prototypes are not anchorable, e.g. NPCs
+        /// captured as anchored quirks). Should not be called for contained entities.
+        /// </summary>
+        private void TryReAnchorRoomEntity(EntityUid uid)
+        {
+            if (!_entityManager.EntityExists(uid))
+                return;
+            if (!_entityManager.TryGetComponent<TransformComponent>(uid, out var xform))
+                return;
+            if (xform.Anchored)
+                return;
+            if (xform.GridUid == null)
+                return;
+
+            try
+            {
+                _transform.AnchorEntity((uid, xform));
+            }
+            catch (Exception ex)
+            {
+                _sawmill.Debug($"Could not re-anchor room entity {uid}: {ex.Message}");
             }
         }
 
