@@ -3078,3 +3078,11 @@ Entries:
       message: Vampirism trait!
   id: 331
   time: '2026-04-24T01:27:23.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Fixed character editor sometimes showing an empty slot list on connect,
+        requiring a client restart.
+  id: 332
+  time: '2026-04-24T01:31:45.0000000+00:00'
