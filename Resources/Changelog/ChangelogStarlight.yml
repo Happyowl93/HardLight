@@ -1,13 +1,6 @@
 Entries:
 - author: '- add: (Silica) Mailing units for: Botany, Bridge, Cargo, Chemistry, Kitchen, Science, Security.'
   changes:
-  - message: (Silica) Missing decals by Engineering Tools room added.
-    type: Fix
-  id: 404155
-  time: '2026-04-08T18:20:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4070
-- author: '- add: (Silica) Mailing units for: Botany, Bridge, Cargo, Chemistry, Kitchen, Science, Security.'
-  changes:
   - message: (Silica) Stairs from GenPop north exit converted to the new stairs.
     type: Fix
   id: 404156
@@ -2799,4 +2792,11 @@ Entries:
   id: 404554
   time: '2026-04-24T12:36:20.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4240
+- author: teapoterror
+  changes:
+  - message: Added "Skeleton Mage" Ghost Theme for winners of the First Starlight Writing Contest.
+    type: Add
+  id: 404555
+  time: '2026-04-24T12:55:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4202
 Order: -1
