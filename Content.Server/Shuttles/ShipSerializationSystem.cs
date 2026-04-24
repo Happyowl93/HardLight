@@ -1941,11 +1941,16 @@ namespace Content.Server.Shuttles.Save
                         continue;
 
                     var solution = solutionEntity.Comp.Solution;
+                    // Issue #1332: NaN/Infinity temperatures (from in-round bugs)
+                    // would otherwise be persisted into the ship save and spread on load.
+                    var safeTemperature = float.IsFinite(solution.Temperature)
+                        ? solution.Temperature
+                        : Atmospherics.T20C;
                     var solutionInfo = new Dictionary<string, object>
                     {
                         ["Volume"] = solution.Volume,
                         ["MaxVolume"] = solution.MaxVolume,
-                        ["Temperature"] = solution.Temperature,
+                        ["Temperature"] = safeTemperature,
                         ["Reagents"] = solution.Contents?.ToDictionary(
                             reagent => reagent.Reagent.Prototype,
                             reagent => (object)reagent.Quantity
@@ -2254,11 +2259,19 @@ namespace Content.Server.Shuttles.Save
                         if (maxVolume > FixedPoint2.Zero)
                             solution.MaxVolume = maxVolume;
 
-                        // Restore solution properties
+                        // Restore solution properties.
+                        // Issue #1332: guard against NaN/Infinity sneaking in from
+                        // older ship saves and contaminating other containers.
                         if (solutionInfo.TryGetValue("Temperature", out var tempObj)
                             && TryConvertToDouble(tempObj, out var temperature))
                         {
-                            solution.Temperature = (float)temperature;
+                            var temperatureFloat = (float)temperature;
+                            if (!float.IsFinite(temperatureFloat))
+                            {
+                                _sawmill.Warning($"Solution '{solutionName}' on entity {entityUid} had non-finite temperature {temperatureFloat}; resetting to room temperature.");
+                                temperatureFloat = Atmospherics.T20C;
+                            }
+                            solution.Temperature = temperatureFloat;
                         }
 
                         // Restore reagents
