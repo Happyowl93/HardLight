@@ -152,3 +152,4 @@
   components:
     - type: HumanoidAppearance
       species: Shadekin
+    - type: Shadekin # needed so whitelist: components: [Shadekin] works in the character editor
