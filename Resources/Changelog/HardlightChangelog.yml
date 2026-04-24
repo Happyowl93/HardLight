@@ -3134,3 +3134,23 @@ Entries:
       message: Shadekin-exclusive dark regeneration traits
   id: 338
   time: '2026-04-24T21:39:01.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Mob movement no longer spams `KeyNotFoundException` in the server log
+        when an entity's parent grid is deleted out from under it. The mover
+        skips one tick and resumes normally once re-parenting catches up.
+    - type: Fix
+      message: >-
+        A single completing do-after no longer aborts the entire
+        `SharedDoAfterSystem` tick with `Collection was modified` when its
+        completion ends another entity's do-after.
+    - type: Fix
+      message: >-
+        Saving a ship that has stale device links (signallers, buttons, etc.
+        pointing at items that get purged at save time) no longer aborts with
+        `ArgumentException: An item with the same key has already been added.
+        Key: invalid`.
+  id: 339
+  time: '2026-04-24T22:12:52.0000000+00:00'
