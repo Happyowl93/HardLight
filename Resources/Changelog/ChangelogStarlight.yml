@@ -1,18 +1,4 @@
 Entries:
-- author: Way, 12tie.
-  changes:
-  - message: Added 7 new decals sprited by 12tie.
-    type: Add
-  id: 404186
-  time: '2026-04-10T14:23:45.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4082
-- author: Cujo
-  changes:
-  - message: (Lagan) Entire Science department overhaul surrounding the Artifact subdepartment.
-    type: Add
-  id: 404187
-  time: '2026-04-10T14:28:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4039
 - author: Cujo
   changes:
   - message: (Lagan) Added robotics specific airlocks to robotics without blocking RD server access.
@@ -2799,4 +2785,18 @@ Entries:
   id: 404585
   time: '2026-04-24T12:55:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4218
+- author: wonderfulnewworld
+  changes:
+  - message: Extended magazines and .45 SMG magazines now have contra labels.
+    type: Fix
+  id: 404586
+  time: '2026-04-24T13:59:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4243
+- author: wonderfulnewworld
+  changes:
+  - message: Fixes a typo in the dispatcher's description.
+    type: Fix
+  id: 404587
+  time: '2026-04-24T13:59:35.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4243
 Order: -1
