@@ -84,6 +84,7 @@
     - id: reagentslimeVents
     - id: SpaceVents
     - id: CarpVents
+    - id: MedicalBountyTargetsSpawn
     - id: TickVents
     - id: AiVents
     - id: LizardVents
@@ -1692,6 +1693,41 @@
       prob: 0.01
 
 - type: entity
+  id: MedicalBountyTargetsSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-medical-bounty-targets-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 20
+    reoccurrenceDelay: 180
+    minimumPlayers: 15
+    weight: 5
+    duration: 1
+  - type: MedicalBountyTargetsRule
+    departmentId: Medical
+    variance: 0.1
+    entries:
+    - id: SpawnRandomHumanoidCorpseMedicalBounty
+      prob: 0.02
+    - id: SpawnRandomHumanoidCorpseMedicalBountyService
+      prob: 0.015
+    - id: SpawnRandomHumanoidCorpseMedicalBountyEngineering
+      prob: 0.015
+    - id: SpawnRandomHumanoidCorpseMedicalBountyCargo
+      prob: 0.015
+    - id: SpawnRandomHumanoidCorpseMedicalBountyMedical
+      prob: 0.015
+    - id: SpawnRandomHumanoidCorpseMedicalBountyScience
+      prob: 0.015
+    - id: SpawnRandomHumanoidCorpseMedicalBountySecurity
+      prob: 0.015
+    - id: SpawnRandomHumanoidCorpseMedicalBountyCommand
+      prob: 0.01
+
+- type: entity
   id: CarpVents
   parent: [VentCrittersBase, BaseGameRule]
   categories: [ HideSpawnMenu ]
@@ -2225,3 +2261,6 @@
     checkInterval: 600  # Check every 10 minutes (600 seconds)
     mercenaryJob: Mercenary
     mercenaryCap: 40  # Maximum slots
+
+
+
