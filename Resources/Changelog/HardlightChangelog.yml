@@ -3126,3 +3126,11 @@ Entries:
       message: Ghost hearing not properly filtering chat messages by distances
   id: 337
   time: '2026-04-24T21:37:53.0000000+00:00'
+- author: IngvarJackal
+  changes:
+    - type: Add
+      message: Light sensitivity traits (Mild / Standard / Extreme)
+    - type: Add
+      message: Shadekin-exclusive dark regeneration traits
+  id: 338
+  time: '2026-04-24T21:39:01.0000000+00:00'
