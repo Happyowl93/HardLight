@@ -123,6 +123,21 @@ public sealed class HLCCVars
         CVarDef.Create("hardlight.shipload.deferred_usedelay_budget", 32, CVar.SERVERONLY,
             desc: "Per-tick budget for deferred UseDelay resets after ship load. 0 disables deferral (sync reset).");
 
+    // Radar blip system performance controls.
+    // Mono RadarBlipSystem.OnBlipsRequested can dominate server tick under combat / multi-console
+    // load: each request runs EntityLookupSystem.GetEntitiesInRange (B2 broadphase + grid intersect)
+    // around every radar source. The previous hardcoded 75ms cache TTL meant repeated requests from
+    // the same console (or different consoles on the same map within range) re-ran the heavy gather
+    // path roughly 13×/sec. These CVars expose both the per-user request floor and the per-console
+    // cache TTL so server operators can trade radar refresh smoothness for tick budget headroom.
+    public static readonly CVarDef<int> RadarMinRequestMs =
+        CVarDef.Create("hardlight.radar.min_request_ms", 500, CVar.SERVERONLY,
+            desc: "Minimum milliseconds between RadarBlipSystem requests accepted from the same player. Higher = less server work per radar console at the cost of update smoothness.");
+
+    public static readonly CVarDef<int> RadarReportCacheTtlMs =
+        CVarDef.Create("hardlight.radar.cache_ttl_ms", 400, CVar.SERVERONLY,
+            desc: "Milliseconds a per-console assembled blip report is reused before re-running the entity lookup. Bounded by hardlight.radar.min_request_ms in practice; raise to amortize lookups across multiple viewers, lower for tighter freshness.");
+
     /// <summary>
     ///     Goobstation: Whether or not to allow mech weaponry to be used out of mechs.
     /// </summary>
