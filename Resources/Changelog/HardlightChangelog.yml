@@ -3239,3 +3239,11 @@ Entries:
         and salvage.
   id: 348
   time: '2026-04-25T22:17:40.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Fixed ship gun projectiles colliding with the firing ship and appearing
+        to hit the center of the ship.
+  id: 349
+  time: '2026-04-25T22:39:32.0000000+00:00'
