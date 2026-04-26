@@ -3259,3 +3259,21 @@ Entries:
         awareness.
   id: 350
   time: '2026-04-25T22:39:44.0000000+00:00'
+- author: Kronyx
+  changes:
+    - type: Fix
+      message: >-
+        Ship projectiles now inherit firing platform velocity, fixing
+        moving-ship shot origin/range weirdness.
+    - type: Fix
+      message: >-
+        Gunnery radar now keeps projectile/hitscan feedback visible at expected
+        engagement distances.
+    - type: Tweak
+      message: Ship-class hitscan laser range set to 500m.
+    - type: Tweak
+      message: >-
+        Byte AI now scales by rank (small/medium/large) for speed, aim quality,
+        disengage behavior, and spawn distance.
+  id: 351
+  time: '2026-04-26T21:39:37.0000000+00:00'
