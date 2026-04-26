@@ -1,13 +1,6 @@
 Entries:
 - author: Cujo
   changes:
-  - message: (Lagan) Re-arranged TEG room so it is on its own isolated APC.
-    type: Tweak
-  id: 404195
-  time: '2026-04-10T14:28:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4039
-- author: Cujo
-  changes:
   - message: (Lagan) Linked the orphaned scrubbers in Hydroponics to the waste loop.
     type: Fix
   id: 404196
@@ -2799,4 +2792,11 @@ Entries:
   id: 404594
   time: '2026-04-26T06:02:08.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4257
+- author: Caws
+  changes:
+  - message: Atmospheric Network Monitors now work with all 5 pipe layers, Engineers rejoice.
+    type: Fix
+  id: 404595
+  time: '2026-04-26T06:28:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4255
 Order: -1
