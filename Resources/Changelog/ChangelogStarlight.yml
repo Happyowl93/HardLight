@@ -1,13 +1,6 @@
 Entries:
 - author: Cujo
   changes:
-  - message: (Lagan) Redesigned the northern atmos room airlock.
-    type: Tweak
-  id: 404193
-  time: '2026-04-10T14:28:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4039
-- author: Cujo
-  changes:
   - message: (Lagan) Re-arranged atmos to be sleeker near the atmos/waste inlets.
     type: Tweak
   id: 404194
@@ -2799,4 +2792,11 @@ Entries:
   id: 404592
   time: '2026-04-25T18:36:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4251
+- author: CrazyPhantom
+  changes:
+  - message: IPC have been temporarily disabled again.
+    type: Remove
+  id: 404593
+  time: '2026-04-26T05:40:27.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4256
 Order: -1
