@@ -1,13 +1,6 @@
 Entries:
 - author: Cujo
   changes:
-  - message: (Lagan) Re-arranged atmos to be sleeker near the atmos/waste inlets.
-    type: Tweak
-  id: 404194
-  time: '2026-04-10T14:28:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4039
-- author: Cujo
-  changes:
   - message: (Lagan) Re-arranged TEG room so it is on its own isolated APC.
     type: Tweak
   id: 404195
@@ -2799,4 +2792,11 @@ Entries:
   id: 404593
   time: '2026-04-26T05:40:27.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4256
+- author: CrazyPhantom
+  changes:
+  - message: Skeletons healing using topicals.
+    type: Fix
+  id: 404594
+  time: '2026-04-26T06:02:08.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4257
 Order: -1
