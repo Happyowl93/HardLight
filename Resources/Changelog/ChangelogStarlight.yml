@@ -1,39 +1,4 @@
 Entries:
-- author: Unknown
-  changes:
-  - message: Document printers now have player collision.
-    type: Fix
-  id: 404240
-  time: '2026-04-12T07:30:19.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4097
-- author: redmushie
-  changes:
-  - message: Particles (from particle accelerator/decelerators) now hit at most three targets, and dissipate after.
-    type: Tweak
-  id: 404241
-  time: '2026-04-12T07:42:37.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4080
-- author: redmushie
-  changes:
-  - message: Particle decelerators now decelerate 3x as much.
-    type: Tweak
-  id: 404242
-  time: '2026-04-12T07:42:37.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4080
-- author: redmushie
-  changes:
-  - message: Antiparticles do equal damage to regular particles.
-    type: Tweak
-  id: 404243
-  time: '2026-04-12T07:42:37.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4080
-- author: Caws
-  changes:
-  - message: (Silica) Xenobio's airlock doors are now access-locked to Science as intended.
-    type: Fix
-  id: 404244
-  time: '2026-04-12T07:51:35.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4115
 - author: Caws
   changes:
   - message: (Box) Security station beacon.
@@ -2799,4 +2764,39 @@ Entries:
   id: 404639
   time: '2026-04-27T04:57:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3950
+- author: SevenShades
+  changes:
+  - message: Added back loadout options for medical gloves and eyewear.
+    type: Add
+  id: 404640
+  time: '2026-04-27T05:50:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4268
+- author: SevenShades
+  changes:
+  - message: Returned emergency medipens to doctor and EMT belts.
+    type: Add
+  id: 404641
+  time: '2026-04-27T05:50:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4268
+- author: SevenShades
+  changes:
+  - message: Reverted changes made to the NanoMed Plus inventory.
+    type: Tweak
+  id: 404642
+  time: '2026-04-27T05:50:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4268
+- author: SevenShades
+  changes:
+  - message: Added gauze back to NanoMed civilian and band aid inventories.
+    type: Add
+  id: 404643
+  time: '2026-04-27T05:50:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4268
+- author: SevenShades
+  changes:
+  - message: Added back belts to roundstart medical loadouts and other small loadout changes.
+    type: Tweak
+  id: 404644
+  time: '2026-04-27T05:50:50.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4268
 Order: -1
