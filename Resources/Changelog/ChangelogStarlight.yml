@@ -1,13 +1,6 @@
 Entries:
 - author: Caws
   changes:
-  - message: (Box) Security station beacon.
-    type: Add
-  id: 404245
-  time: '2026-04-12T07:52:25.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4116
-- author: Caws
-  changes:
   - message: (Box) Brigmed station beacon.
     type: Add
   id: 404246
@@ -2799,4 +2792,11 @@ Entries:
   id: 404644
   time: '2026-04-27T05:50:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4268
+- author: Bigfoot Bravo
+  changes:
+  - message: IPCs have new radiation warning text.
+    type: Tweak
+  id: 404645
+  time: '2026-04-27T05:50:52.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4266
 Order: -1
