@@ -1,32 +1,4 @@
 Entries:
-- author: Conflee
-  changes:
-  - message: Resprited the SMES, Advanced SMES, and Hyper Advanced SMES to be more polished and clean versions of the old sprites. The SMES is now smaller, with the Advanced SMES and Hyper Advanced SMES being wider and having an animated cooling fan on top.
-    type: Tweak
-  id: 404266
-  time: '2026-04-12T21:50:09.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4143
-- author: Born Stellar
-  changes:
-  - message: Glare now checks directions properly, which should make it feel much more consistent.
-    type: Fix
-  id: 404267
-  time: '2026-04-13T07:13:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4081
-- author: Born Stellar
-  changes:
-  - message: Glare no longer instantly recharges in any direction.
-    type: Fix
-  id: 404268
-  time: '2026-04-13T07:13:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4081
-- author: Born Stellar
-  changes:
-  - message: Glare actually mutes the target for 8 seconds.
-    type: Fix
-  id: 404269
-  time: '2026-04-13T07:13:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4081
 - author: Born Stellar
   changes:
   - message: Glare full trigger no longer stuns targets for 15 seconds due to the immense sustained stamina damage, only the intended 4 seconds plus enough stamina damage to follow up with a stamina stun with only a few swings of a baton afterwards.
@@ -2799,4 +2771,32 @@ Entries:
   id: 404665
   time: '2026-04-27T14:43:21.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4258
+- author: BornStellar
+  changes:
+  - message: Drinking from dead now possible again, but is less efficient than drinking from the living. Rot reduces the efficiency further.
+    type: Tweak
+  id: 404666
+  time: '2026-04-27T18:32:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4210
+- author: BornStellar
+  changes:
+  - message: Vampires don't gain full blood from bites that would drain a target below 0 blood, it now scales as would be expected.
+    type: Fix
+  id: 404667
+  time: '2026-04-27T18:32:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4210
+- author: BornStellar
+  changes:
+  - message: flash protection from glare now scales with vampire level. Baby vamps are fully countered by flash protection while fully powered ones will stun for even longer.
+    type: Tweak
+  id: 404668
+  time: '2026-04-27T18:32:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4210
+- author: BornStellar
+  changes:
+  - message: starvation slowdown changed from 80% to 30%.
+    type: Tweak
+  id: 404669
+  time: '2026-04-27T18:32:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4210
 Order: -1
