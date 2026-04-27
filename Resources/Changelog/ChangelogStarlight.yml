@@ -1,55 +1,6 @@
 Entries:
 - author: Caws
   changes:
-  - message: (Boxcars) Freezer added to Genpop.
-    type: Add
-  id: 404251
-  time: '2026-04-12T07:55:36.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4118
-- author: Caws
-  changes:
-  - message: (Boxcars) CMO fax machine was not named.
-    type: Fix
-  id: 404252
-  time: '2026-04-12T07:55:36.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4118
-- author: Caws
-  changes:
-  - message: (Boxcars) Law fax machine was not named.
-    type: Fix
-  id: 404253
-  time: '2026-04-12T07:55:36.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4118
-- author: Caws
-  changes:
-  - message: (Boxcars) NTR office fax was named 'NCT', fixed.
-    type: Fix
-  id: 404254
-  time: '2026-04-12T07:55:36.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4118
-- author: Caws
-  changes:
-  - message: (Boxcars) NCT office fax was named 'NTR', fixed.
-    type: Fix
-  id: 404255
-  time: '2026-04-12T07:55:36.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4118
-- author: Caws
-  changes:
-  - message: (Boxcars) Three morgue units in Morgue were facing into a wall.
-    type: Fix
-  id: 404256
-  time: '2026-04-12T07:55:36.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4118
-- author: Caws
-  changes:
-  - message: (Boxcars) QM's office no longer starts unpowered.
-    type: Fix
-  id: 404257
-  time: '2026-04-12T07:55:36.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4118
-- author: Caws
-  changes:
   - message: (Boxcars) Atmos' exit airlock now properly bolts / cycles.
     type: Fix
   id: 404258
@@ -2799,4 +2750,53 @@ Entries:
   id: 404650
   time: '2026-04-27T07:17:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4250
+- author: Cvlancer
+  changes:
+  - message: Added Referee and whistle to boxing ring.
+    type: Add
+  id: 404651
+  time: '2026-04-27T07:17:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4219
+- author: Cvlancer
+  changes:
+  - message: Some turn stiles in gen pop that would softlock prisoners from getting their items.
+    type: Remove
+  id: 404652
+  time: '2026-04-27T07:17:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4219
+- author: Cvlancer
+  changes:
+  - message: The spare breaching hammer in armory.
+    type: Remove
+  id: 404653
+  time: '2026-04-27T07:17:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4219
+- author: Cvlancer
+  changes:
+  - message: Some cameras in virology.
+    type: Remove
+  id: 404654
+  time: '2026-04-27T07:17:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4219
+- author: Cvlancer
+  changes:
+  - message: Removed ai core being fed by a random maints wire and also removed the 3 RTG'S making ai completely self sufficient.
+    type: Remove
+  id: 404655
+  time: '2026-04-27T07:17:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4219
+- author: Cvlancer
+  changes:
+  - message: Fixed One of the levers in dispo messing with the recycler.
+    type: Fix
+  id: 404656
+  time: '2026-04-27T07:17:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4219
+- author: Cvlancer
+  changes:
+  - message: Fixed weather spawning in gen pop.
+    type: Fix
+  id: 404657
+  time: '2026-04-27T07:17:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4219
 Order: -1
