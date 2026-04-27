@@ -1,13 +1,6 @@
 Entries:
 - author: Caws
   changes:
-  - message: (Box) "Solars" station beacons updated to use cardinal directions, e.g. "Solars NE / NW / SE / SW".
-    type: Tweak
-  id: 404247
-  time: '2026-04-12T07:52:25.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4116
-- author: Caws
-  changes:
   - message: (Box) GenPop's station beacon is now 'Brig' instead of 'Perma'.
     type: Fix
   id: 404248
@@ -2799,4 +2792,11 @@ Entries:
   id: 404646
   time: '2026-04-27T06:42:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4261
+- author: Wizard Federation (scarlet lightweaver).
+  changes:
+  - message: Fixed wizards wands.
+    type: Fix
+  id: 404647
+  time: '2026-04-27T06:42:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4246
 Order: -1
