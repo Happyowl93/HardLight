@@ -1,46 +1,4 @@
 Entries:
-- author: Caws
-  changes:
-  - message: (Boxcars) Atmos' exit airlock now properly bolts / cycles.
-    type: Fix
-  id: 404258
-  time: '2026-04-12T07:55:36.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4118
-- author: Caws
-  changes:
-  - message: (Boxcars) Chemistry now has a centrifuge.
-    type: Fix
-  id: 404259
-  time: '2026-04-12T07:55:36.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4118
-- author: Caws
-  changes:
-  - message: (Boxcars) Many rooms should no longer partially spaced at roundstart.
-    type: Fix
-  id: 404260
-  time: '2026-04-12T07:55:36.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4118
-- author: Caws
-  changes:
-  - message: (Kiloton) NCT Office now has a document printer.
-    type: Add
-  id: 404261
-  time: '2026-04-12T07:58:00.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4119
-- author: Caws
-  changes:
-  - message: (Lobster) Toolbox altar in Tools Room, vampires rejoice.
-    type: Remove
-  id: 404262
-  time: '2026-04-12T08:01:03.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4120
-- author: Rinary
-  changes:
-  - message: Fixed min players amount on Xenoborgs/Wizards/Traitor presets, now they have the same min players value as their game rules. I.e. fixes bugs when round won't start even without forced game preset.
-    type: Fix
-  id: 404263
-  time: '2026-04-12T10:43:40.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4126
 - author: Conflee
   changes:
   - message: Renamed the Blue SMES to the Hyper Advanced SMES.
@@ -2799,4 +2757,46 @@ Entries:
   id: 404657
   time: '2026-04-27T07:17:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4219
+- author: Caws & CaasGit
+  changes:
+  - message: NT-CC branded paper, complete with new sprites.
+    type: Add
+  id: 404658
+  time: '2026-04-27T07:17:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4176
+- author: Caws & CaasGit
+  changes:
+  - message: The `[datetime]` paperwork tag. Similar to `[signature]`, this will automatically fills out the date & shift time for you when you click it.
+    type: Add
+  id: 404659
+  time: '2026-04-27T07:17:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4176
+- author: Caws & CaasGit
+  changes:
+  - message: All paperwork has been updated to use the new `[datetime]` paperwork tag.
+    type: Tweak
+  id: 404660
+  time: '2026-04-27T07:17:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4176
+- author: Caws & CaasGit
+  changes:
+  - message: All documents printed from a document printer will automagically brand the paper with NT-CC branding.
+    type: Tweak
+  id: 404661
+  time: '2026-04-27T07:17:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4176
+- author: Caws & CaasGit
+  changes:
+  - message: Paperwork "Declaration of Sentience" title is now centered.
+    type: Fix
+  id: 404662
+  time: '2026-04-27T07:17:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4176
+- author: Caws & CaasGit
+  changes:
+  - message: Old NT, CC, and unused Syndicate logo.
+    type: Remove
+  id: 404663
+  time: '2026-04-27T07:17:05.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4176
 Order: -1
