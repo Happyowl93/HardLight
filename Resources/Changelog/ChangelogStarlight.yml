@@ -1,18 +1,4 @@
 Entries:
-- author: redmushie
-  changes:
-  - message: Admin ghosts now see a ton of HUD icons by default.
-    type: Add
-  id: 404238
-  time: '2026-04-12T07:28:42.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4061
-- author: redmushie
-  changes:
-  - message: Admin settings to toggle the HUD icons on or off.
-    type: Add
-  id: 404239
-  time: '2026-04-12T07:28:42.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4061
 - author: Unknown
   changes:
   - message: Document printers now have player collision.
@@ -2799,4 +2785,18 @@ Entries:
   id: 404637
   time: '2026-04-26T07:03:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4241
+- author: NULLLINK TEAM
+  changes:
+  - message: Added cross-project or/and cross-server sync for any types of bans(role or server).
+    type: Add
+  id: 404638
+  time: '2026-04-27T04:57:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3950
+- author: NULLLINK TEAM
+  changes:
+  - message: Fixed admin notes window.
+    type: Fix
+  id: 404639
+  time: '2026-04-27T04:57:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3950
 Order: -1
