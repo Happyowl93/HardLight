@@ -1,13 +1,6 @@
 Entries:
 - author: Conflee
   changes:
-  - message: Renamed the Blue SMES to the Hyper Advanced SMES.
-    type: Tweak
-  id: 404264
-  time: '2026-04-12T21:50:09.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4143
-- author: Conflee
-  changes:
   - message: Added a new circuit board, unlocked from the Industrial Engineering research by Sci alongside the Advanced SMES board. The Hyper Advanced Board costs 2 gold instead of 1, and the Hyper Advanced SMES requires 4 High Capacity Cells to build, but it is 4x more powerful than the Advanced SMES.
     type: Add
   id: 404265
@@ -2799,4 +2792,11 @@ Entries:
   id: 404663
   time: '2026-04-27T07:17:05.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4176
+- author: Citrea
+  changes:
+  - message: Resomi no longer get poisoned by ammonia gas.
+    type: Fix
+  id: 404664
+  time: '2026-04-27T12:31:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4272
 Order: -1
