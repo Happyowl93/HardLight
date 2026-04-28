@@ -1,11 +1,4 @@
 Entries:
-- author: neurovermi
-  changes:
-  - message: Mech Pie Cannon and Air Horn, available to research.
-    type: Add
-  id: 404299
-  time: '2026-04-13T12:39:20.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4096
 - author: Way
   changes:
   - message: Added new steel beam decals for mappers.
@@ -2799,4 +2792,11 @@ Entries:
   id: 404698
   time: '2026-04-28T10:12:11.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4262
+- author: Ohelig
+  changes:
+  - message: Fix borg item duping. No more infinite saxophones for you!
+    type: Fix
+  id: 404699
+  time: '2026-04-28T10:12:13.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4267
 Order: -1
