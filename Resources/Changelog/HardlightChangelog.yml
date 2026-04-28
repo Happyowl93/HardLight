@@ -3318,3 +3318,13 @@ Entries:
       message: Fixed sec borg locales
   id: 356
   time: '2026-04-28T07:36:16.0000000+00:00'
+- author: Illumos
+  changes:
+    - type: Add
+      message: BSO hardsuit
+    - type: Add
+      message: BSO overcoat
+    - type: Add
+      message: BSO magboots
+  id: 357
+  time: '2026-04-28T07:37:31.0000000+00:00'
