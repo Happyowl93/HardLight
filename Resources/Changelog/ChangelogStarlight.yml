@@ -1,11 +1,4 @@
 Entries:
-- author: Way
-  changes:
-  - message: Added new steel beam decals for mappers.
-    type: Add
-  id: 404300
-  time: '2026-04-13T18:49:30.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4113
 - author: mikeysaurus
   changes:
   - message: Adds the AdmiMax vendor, containing everything a CC official needs to respond to faxes.
@@ -2799,4 +2792,11 @@ Entries:
   id: 404699
   time: '2026-04-28T10:12:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4267
+- author: CrazyPhantom
+  changes:
+  - message: The round will now end in 20 seconds after nuke explosion during a nukie round.
+    type: Tweak
+  id: 404700
+  time: '2026-04-28T10:46:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4274
 Order: -1
