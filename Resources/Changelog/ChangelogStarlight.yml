@@ -1,11 +1,4 @@
 Entries:
-- author: mikeysaurus
-  changes:
-  - message: Adds the AdmiMax vendor, containing everything a CC official needs to respond to faxes.
-    type: Add
-  id: 404301
-  time: '2026-04-13T20:15:49.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4151
 - author: JMxm5
   changes:
   - message: Added buttons to the air alarm Sensors tab that allow enabling/disabling all threshold groups of a device at once.
@@ -2799,4 +2792,11 @@ Entries:
   id: 404700
   time: '2026-04-28T10:46:55.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4274
+- author: Bigfoot Bravo
+  changes:
+  - message: IPCs can now be welded if they are only bleeding, and not hurt otherwise.
+    type: Fix
+  id: 404701
+  time: '2026-04-28T11:34:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4265
 Order: -1
