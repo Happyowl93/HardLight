@@ -1,11 +1,4 @@
 Entries:
-- author: redmushie
-  changes:
-  - message: Polymorphing before or after EOR no longer bypasses EORG prevention measures.
-    type: Fix
-  id: 404304
-  time: '2026-04-15T10:29:40.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4129
 - author: CYBERSTARLIGHT TEAM
   changes:
   - message: Added a cyberspace effect.
@@ -2799,4 +2792,11 @@ Entries:
   id: 404703
   time: '2026-04-28T12:05:57.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4276
+- author: Bigfoot Bravo
+  changes:
+  - message: IPCs are now enabled once more for round-start selection and customization.
+    type: Add
+  id: 404704
+  time: '2026-04-28T14:16:19.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4275
 Order: -1
