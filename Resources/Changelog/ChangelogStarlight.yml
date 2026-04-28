@@ -1,18 +1,4 @@
 Entries:
-- author: Born Stellar
-  changes:
-  - message: Glare full trigger no longer stuns targets for 15 seconds due to the immense sustained stamina damage, only the intended 4 seconds plus enough stamina damage to follow up with a stamina stun with only a few swings of a baton afterwards.
-    type: Tweak
-  id: 404270
-  time: '2026-04-13T07:13:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4081
-- author: Born Stellar
-  changes:
-  - message: Glare requires the vampire not be blind to work. Blindfold your vamps to prevent them doing crazy stuff.
-    type: Tweak
-  id: 404271
-  time: '2026-04-13T07:13:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4081
 - author: Shades
   changes:
   - message: Fixed Nullspace being visible... normally.
@@ -2799,4 +2785,18 @@ Entries:
   id: 404669
   time: '2026-04-27T18:32:32.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4210
+- author: Caws
+  changes:
+  - message: Toggling on "Gas pipe sensors" in the Atmospheric Network Monitor no longer breaks the network monitor. Engineers rejoice, again.
+    type: Fix
+  id: 404670
+  time: '2026-04-28T08:34:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4273
+- author: Caws
+  changes:
+  - message: The triangle sprites that represent gas pumps on the Atmospheric Network Monitor now correctly align with their respective gas pipes again.
+    type: Fix
+  id: 404671
+  time: '2026-04-28T08:34:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4273
 Order: -1
