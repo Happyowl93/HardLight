@@ -1,11 +1,4 @@
 Entries:
-- author: JMxm5
-  changes:
-  - message: Added buttons to the air alarm Sensors tab that allow enabling/disabling all threshold groups of a device at once.
-    type: Add
-  id: 404302
-  time: '2026-04-13T20:24:36.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4124
 - author: DocMoth
   changes:
   - message: changed a single letter.
@@ -2799,4 +2792,11 @@ Entries:
   id: 404701
   time: '2026-04-28T11:34:55.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4265
+- author: STARLIGHT TEAM
+  changes:
+  - message: Fixed the Vulpkanin Points Hands marking.
+    type: Fix
+  id: 404702
+  time: '2026-04-28T12:05:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4278
 Order: -1
