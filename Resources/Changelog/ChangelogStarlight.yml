@@ -1,11 +1,4 @@
 Entries:
-- author: DocMoth
-  changes:
-  - message: changed a single letter.
-    type: Fix
-  id: 404303
-  time: '2026-04-15T09:52:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4159
 - author: redmushie
   changes:
   - message: Polymorphing before or after EOR no longer bypasses EORG prevention measures.
@@ -2799,4 +2792,11 @@ Entries:
   id: 404702
   time: '2026-04-28T12:05:55.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4278
+- author: Caws
+  changes:
+  - message: NT-ISD criminal faxes list specific arrest procedures now, both to give players more direction as to what to do with NT-ISD wanted criminals and to help prevent metagaming.
+    type: Tweak
+  id: 404703
+  time: '2026-04-28T12:05:57.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4276
 Order: -1
