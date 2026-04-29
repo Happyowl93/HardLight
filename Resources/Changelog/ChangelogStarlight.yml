@@ -1,32 +1,4 @@
 Entries:
-- author: wonderfulnewworld, Nyxilath, ThatGuyUSA
-  changes:
-  - message: Mid-round Wizards can now use their equipment.
-    type: Fix
-  id: 404329
-  time: '2026-04-16T12:26:26.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4090
-- author: redmushie
-  changes:
-  - message: The shift date and time are now determined by the server, meaning it's now the same for all players.
-    type: Fix
-  id: 404330
-  time: '2026-04-16T12:57:59.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4178
-- author: redmushie
-  changes:
-  - message: CentComm glasses now also have diagnostic HUD features, such as seeing cyborg and IPC health.
-    type: Add
-  id: 404331
-  time: '2026-04-16T13:19:12.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4172
-- author: redmushie
-  changes:
-  - message: CentComm jamjar now behave identically to other CC glasses.
-    type: Fix
-  id: 404332
-  time: '2026-04-16T13:19:12.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4172
 - author: neurovermi
   changes:
   - message: Non-pilots can no longer open the mech stats panel if a pilot is present.
@@ -2799,4 +2771,32 @@ Entries:
   id: 404728
   time: '2026-04-29T11:38:16.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4291
+- author: neomoth, Centronias
+  changes:
+  - message: Added a system for playing cards.
+    type: Add
+  id: 404729
+  time: '2026-04-29T12:03:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3994
+- author: neomoth, Centronias
+  changes:
+  - message: Added standard 54 (52+2 joker) playing card decks. Comes in black, NanoTrasen, and Syndicate flavors! Can be purchased from the local GoodCleanFun vendor.
+    type: Add
+  id: 404730
+  time: '2026-04-29T12:03:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3994
+- author: neomoth, Centronias
+  changes:
+  - message: Added Nuno, an original card game that is totally not based off of Uno.
+    type: Add
+  id: 404731
+  time: '2026-04-29T12:03:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3994
+- author: neomoth, Centronias
+  changes:
+  - message: Added the ability to provide custom visuals for an item in the strip menu in order to obscure information (such as what playing cards someone else is holding to prevent cheating).
+    type: Add
+  id: 404732
+  time: '2026-04-29T12:03:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/3994
 Order: -1
