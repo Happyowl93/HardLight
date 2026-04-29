@@ -94,6 +94,9 @@ namespace Content.Server.Administration.Systems
         private readonly Dictionary<NetUserId, Queue<DiscordRelayedData>> _messageQueues = new();
         private readonly HashSet<NetUserId> _processingChannels = new();
         private readonly Dictionary<NetUserId, (TimeSpan Timestamp, bool Typing)> _typingUpdateTimestamps = new();
+        private TimeSpan _nextTypingCachePrune;
+        private static readonly TimeSpan TypingCachePruneInterval = TimeSpan.FromMinutes(5);
+        private static readonly TimeSpan TypingCacheTtl = TimeSpan.FromMinutes(20);
         private string _overrideClientName = string.Empty;
 
         // Max embed description length is 4096, according to https://discord.com/developers/docs/resources/channel#embed-object-embed-limits
@@ -265,6 +268,8 @@ namespace Content.Server.Administration.Systems
         {
             if (e.NewStatus == SessionStatus.Disconnected)
             {
+                _typingUpdateTimestamps.Remove(e.Session.UserId);
+
                 if (_activeConversations.TryGetValue(e.Session.UserId, out var lastMessageTime))
                 {
                     var timeSinceLastMessage = DateTime.Now - lastMessageTime;
@@ -306,6 +311,12 @@ namespace Content.Server.Administration.Systems
                 return;
 
             RaiseNetworkEvent(new BwoinkDiscordRelayUpdated(!string.IsNullOrWhiteSpace(_webhookUrl)), e.Session);
+        }
+
+        public override void Shutdown()
+        {
+            base.Shutdown();
+            _playerManager.PlayerStatusChanged -= OnPlayerStatusChanged;
         }
 
         private void NotifyAdmins(ICommonSession session, string message, PlayerStatusType statusType)
@@ -716,6 +727,17 @@ namespace Content.Server.Administration.Systems
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
+
+            if (_timing.RealTime >= _nextTypingCachePrune)
+            {
+                _nextTypingCachePrune = _timing.RealTime + TypingCachePruneInterval;
+                var cutoff = _timing.RealTime - TypingCacheTtl;
+                foreach (var (userId, state) in _typingUpdateTimestamps.ToArray())
+                {
+                    if (state.Timestamp < cutoff)
+                        _typingUpdateTimestamps.Remove(userId);
+                }
+            }
 
             foreach (var userId in _messageQueues.Keys.ToArray())
             {
