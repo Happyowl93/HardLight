@@ -1,11 +1,4 @@
 Entries:
-- author: Unknown
-  changes:
-  - message: Fixed the chemicals in the Chemicals guidebook page not linking to each other.
-    type: Fix
-  id: 404339
-  time: '2026-04-18T16:39:50.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4195
 - author: STARLIGHT TEAM
   changes:
   - message: (4 new ghost themes, improvements to 2 older ones, and a panic bunker bypass) for patrons.
@@ -2799,4 +2792,11 @@ Entries:
   id: 404738
   time: '2026-04-29T12:40:25.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4292
+- author: redmushie
+  changes:
+  - message: Startup crash affecting some players who also play on other NullLink-enabled servers.
+    type: Fix
+  id: 404739
+  time: '2026-04-29T14:57:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4294
 Order: -1
