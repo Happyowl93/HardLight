@@ -1,20 +1,6 @@
 Entries:
 - author: wonderfulnewworld, Nyxilath, ThatGuyUSA
   changes:
-  - message: Wizard shuttles now spawn with a Wizard pAI instead of a normal one.
-    type: Tweak
-  id: 404326
-  time: '2026-04-16T12:26:26.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4090
-- author: wonderfulnewworld, Nyxilath, ThatGuyUSA
-  changes:
-  - message: Mid-round Wizards now scale with player ratio. Up to 3 can show up. Beta will never get more than 1.
-    type: Tweak
-  id: 404327
-  time: '2026-04-16T12:26:26.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4090
-- author: wonderfulnewworld, Nyxilath, ThatGuyUSA
-  changes:
   - message: Alpha Traitor Secret Weight -0.01, Wizard Duel Secret Weight +0.01, becoming 0.05 since it inherited the old Wizard mode's 0.04.
     type: Tweak
   id: 404328
@@ -2799,4 +2785,18 @@ Entries:
   id: 404725
   time: '2026-04-29T10:34:50.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4277
+- author: Citrea
+  changes:
+  - message: Diagnostic implants now show IPC health.
+    type: Fix
+  id: 404726
+  time: '2026-04-29T11:38:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4290
+- author: Citrea
+  changes:
+  - message: Blueshield Officers' glasses and HUDs have been upgraded to include diagnostic readouts of IPC integrity.
+    type: Tweak
+  id: 404727
+  time: '2026-04-29T11:38:14.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4290
 Order: -1
