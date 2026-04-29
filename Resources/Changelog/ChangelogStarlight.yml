@@ -1,13 +1,6 @@
 Entries:
 - author: wonderfulnewworld, Nyxilath, ThatGuyUSA
   changes:
-  - message: Alpha Traitor Secret Weight -0.01, Wizard Duel Secret Weight +0.01, becoming 0.05 since it inherited the old Wizard mode's 0.04.
-    type: Tweak
-  id: 404328
-  time: '2026-04-16T12:26:26.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4090
-- author: wonderfulnewworld, Nyxilath, ThatGuyUSA
-  changes:
   - message: Mid-round Wizards can now use their equipment.
     type: Fix
   id: 404329
@@ -2799,4 +2792,11 @@ Entries:
   id: 404727
   time: '2026-04-29T11:38:14.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4290
+- author: Caws
+  changes:
+  - message: Shift Time on paperwork when using the [datetime] tag should now be accurate.
+    type: Fix
+  id: 404728
+  time: '2026-04-29T11:38:16.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4291
 Order: -1
