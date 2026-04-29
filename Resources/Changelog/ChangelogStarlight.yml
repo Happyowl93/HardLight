@@ -1,13 +1,6 @@
 Entries:
 - author: CYBERSTARLIGHT TEAM
   changes:
-  - message: The ai overlay no longer covers cyberspace objects.
-    type: Tweak
-  id: 404306
-  time: '2026-04-15T15:56:30.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4169
-- author: CYBERSTARLIGHT TEAM
-  changes:
   - message: The abductor AI eye no longer fills the screen with black when it steps even slightly into space.
     type: Fix
   id: 404307
@@ -2799,4 +2792,11 @@ Entries:
   id: 404705
   time: '2026-04-29T04:39:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4283
+- author: Bigfoot Bravo
+  changes:
+  - message: Oil packs heal a little more blood loss with each use.
+    type: Tweak
+  id: 404706
+  time: '2026-04-29T05:07:42.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4287
 Order: -1
