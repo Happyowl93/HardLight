@@ -1,13 +1,6 @@
 Entries:
 - author: CYBERSTARLIGHT TEAM
   changes:
-  - message: Added a cyberspace effect.
-    type: Add
-  id: 404305
-  time: '2026-04-15T15:56:30.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4169
-- author: CYBERSTARLIGHT TEAM
-  changes:
   - message: The ai overlay no longer covers cyberspace objects.
     type: Tweak
   id: 404306
@@ -2799,4 +2792,11 @@ Entries:
   id: 404704
   time: '2026-04-28T14:16:19.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4275
+- author: Caws
+  changes:
+  - message: The xenoborg mothership core now is now destroyed at 400 damage (up from 200 damage), the same amount of damage needed to destroy a station AI core.
+    type: Tweak
+  id: 404705
+  time: '2026-04-29T04:39:02.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4283
 Order: -1
