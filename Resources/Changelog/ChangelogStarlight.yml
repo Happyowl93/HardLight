@@ -1,11 +1,4 @@
 Entries:
-- author: neurovermi
-  changes:
-  - message: Mech equipment selection now occurs via a radial menu.
-    type: Add
-  id: 404338
-  time: '2026-04-18T09:02:34.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4160
 - author: Unknown
   changes:
   - message: Fixed the chemicals in the Chemicals guidebook page not linking to each other.
@@ -2799,4 +2792,11 @@ Entries:
   id: 404737
   time: '2026-04-29T12:21:12.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4170
+- author: Caws
+  changes:
+  - message: IPC health alarm now loops seamlessly.
+    type: Tweak
+  id: 404738
+  time: '2026-04-29T12:40:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4292
 Order: -1
