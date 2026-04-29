@@ -1,41 +1,6 @@
 Entries:
 - author: neurovermi
   changes:
-  - message: Non-pilots can no longer open the mech stats panel if a pilot is present.
-    type: Tweak
-  id: 404333
-  time: '2026-04-18T06:09:47.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4192
-- author: neurovermi
-  changes:
-  - message: Mech maintenance panel is tied directly to the maintenance mode state.
-    type: Tweak
-  id: 404334
-  time: '2026-04-18T06:09:47.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4192
-- author: Conflee
-  changes:
-  - message: Added edge sprites for all Kudzu types (Kudzu, Flowering, Flesh, and Clown) so you can see when Kudzu is under a table, airlock, or vending machine. This also makes them look more natural as they aren't locked to grids visually anymore.
-    type: Add
-  id: 404335
-  time: '2026-04-18T07:36:50.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4188
-- author: Way
-  changes:
-  - message: 3 New trees for mappers.
-    type: Add
-  id: 404336
-  time: '2026-04-18T08:09:32.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4177
-- author: Makeshift
-  changes:
-  - message: Added an Astro variant of Asteroid Tiles for mapping use.
-    type: Add
-  id: 404337
-  time: '2026-04-18T08:35:33.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4153
-- author: neurovermi
-  changes:
   - message: Mech equipment selection now occurs via a radial menu.
     type: Add
   id: 404338
@@ -2799,4 +2764,39 @@ Entries:
   id: 404732
   time: '2026-04-29T12:03:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/3994
+- author: Scarlet Lightweaver, Shades
+  changes:
+  - message: Adds the Secure Command Terminal to the station Comm Console (Bridge/Captain One).
+    type: Add
+  id: 404733
+  time: '2026-04-29T12:21:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4170
+- author: Scarlet Lightweaver, Shades
+  changes:
+  - message: Adds the Keycard Authentication Device (That is suposed to be in each head rooms).
+    type: Add
+  id: 404734
+  time: '2026-04-29T12:21:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4170
+- author: Scarlet Lightweaver, Shades
+  changes:
+  - message: Tweaked how code violet is called and its info.
+    type: Tweak
+  id: 404735
+  time: '2026-04-29T12:21:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4170
+- author: Scarlet Lightweaver, Shades
+  changes:
+  - message: Changed the ERT Chaplain loadout.
+    type: Tweak
+  id: 404736
+  time: '2026-04-29T12:21:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4170
+- author: Scarlet Lightweaver, Shades
+  changes:
+  - message: Fixed NCT Terminal being able to store pAI and visual bugs.
+    type: Fix
+  id: 404737
+  time: '2026-04-29T12:21:12.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4170
 Order: -1
