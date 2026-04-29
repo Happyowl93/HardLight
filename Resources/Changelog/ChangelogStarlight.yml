@@ -1,13 +1,6 @@
 Entries:
 - author: wonderfulnewworld, Nyxilath, ThatGuyUSA
   changes:
-  - message: 'Added 2 new Encryption Keys: The Winds of Magic and the Wizard Master Encryption keys.'
-    type: Add
-  id: 404322
-  time: '2026-04-16T12:26:26.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4090
-- author: wonderfulnewworld, Nyxilath, ThatGuyUSA
-  changes:
   - message: The Winds of Magic encryption key now spawns on the Wizard's shuttle.
     type: Add
   id: 404323
@@ -2799,4 +2792,11 @@ Entries:
   id: 404721
   time: '2026-04-29T05:33:11.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4288
+- author: neurovermi
+  changes:
+  - message: Mech pilots are now insulated.
+    type: Add
+  id: 404722
+  time: '2026-04-29T09:33:10.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4282
 Order: -1
