@@ -1,13 +1,6 @@
 Entries:
 - author: wonderfulnewworld, Nyxilath, ThatGuyUSA
   changes:
-  - message: Added a new radio channel available to Wizards and their pAIs; the Winds of Magic.
-    type: Add
-  id: 404321
-  time: '2026-04-16T12:26:26.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4090
-- author: wonderfulnewworld, Nyxilath, ThatGuyUSA
-  changes:
   - message: 'Added 2 new Encryption Keys: The Winds of Magic and the Wizard Master Encryption keys.'
     type: Add
   id: 404322
@@ -2799,4 +2792,11 @@ Entries:
   id: 404720
   time: '2026-04-29T05:33:09.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4286
+- author: neurovermi
+  changes:
+  - message: Mauler repair now works as expected.
+    type: Fix
+  id: 404721
+  time: '2026-04-29T05:33:11.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4288
 Order: -1
