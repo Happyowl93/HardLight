@@ -1,11 +1,4 @@
 Entries:
-- author: AllisonKaur and Rhetorica
-  changes:
-  - message: 73 new TTS voices, based on synthetic audio.
-    type: Add
-  id: 404341
-  time: '2026-04-19T04:38:37.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4186
 - author: antilogical
   changes:
   - message: Fixed EOR Summary Cards.
@@ -2799,4 +2792,11 @@ Entries:
   id: 404740
   time: '2026-04-29T15:16:37.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4285
+- author: wonderfulnewworld
+  changes:
+  - message: Fixed bug when you can insert any item as ammo in heavy capacity mk58.
+    type: Fix
+  id: 404741
+  time: '2026-04-30T13:15:34.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4302
 Order: -1
