@@ -213,8 +213,18 @@ public sealed partial class ShipShieldsSystem : EntitySystem
     /// <returns>The shield entity.</returns>
     private EntityUid ShieldEntity(EntityUid entity, MapGridComponent? mapGrid = null, EntityUid? source = null)
     {
+        // HardLight: Treat a ShipShieldedComponent whose Shield no longer exists as stale and
+        // recreate the bubble. Without this, a ship saved while shielded keeps the marker
+        // component on the grid (Shield field defaults to EntityUid.Invalid after deserialization
+        // since it isn't a DataField); on load, this early-out returned that invalid uid forever
+        // and the emitter never got a real shield, so it just sat powered with no bubble.
         if (TryComp<ShipShieldedComponent>(entity, out var existingShielded))
-            return existingShielded.Shield;
+        {
+            if (Exists(existingShielded.Shield) && HasComp<ShipShieldComponent>(existingShielded.Shield))
+                return existingShielded.Shield;
+
+            RemComp<ShipShieldedComponent>(entity);
+        }
 
         if (!Resolve(entity, ref mapGrid, false))
             return EntityUid.Invalid;
