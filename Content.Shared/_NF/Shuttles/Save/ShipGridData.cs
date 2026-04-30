@@ -131,6 +131,12 @@ namespace Content.Shared.Shuttles.Save
 
         [DataField("is_contained")]
         public bool IsContained { get; set; } = false;
+
+        /// <summary>
+        /// Custom entity name, only populated when it differs from the prototype default.
+        /// </summary>
+        [DataField("entity_name")]
+        public string? EntityName { get; set; } = null;
     }
 
     [Serializable]

@@ -128,7 +128,11 @@ public sealed class RoomGridSpawnerSystem : EntitySystem
             ? _map.LocalToTile(gridUid, anchorGrid, markerXform.Coordinates)
             : new Vector2i((int)MathF.Floor(markerXform.LocalPosition.X), (int)MathF.Floor(markerXform.LocalPosition.Y));
         var anchorPosition = markerXform.LocalPosition;
-        var anchorRotation = markerXform.LocalRotation;
+        // Apartment markers in maps are placed with rot: 0; the console is the entity that
+        // carries the bay's facing direction (it's wall-mounted on the entrance). Use the
+        // console rotation so saved rooms re-orient to match each bay's entrance.
+        // See HardLightSector/HardLight#1493 / #1512.
+        var anchorRotation = consoleXform.LocalRotation;
 
         var pending = new PendingRoomLoad(uid, markerUid, gridUid, bounds, characterKey, anchorTile, anchorPosition, anchorRotation);
         _pendingLoads[mindComp.UserId.Value] = pending;

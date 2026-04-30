@@ -65,6 +65,7 @@ namespace Content.Server.Shuttles.Save
         [Dependency] private readonly DecalSystem _decalSystem = default!;
         [Dependency] private readonly IConfigurationManager _configManager = default!;
         [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
+        [Dependency] private readonly MetaDataSystem _metaData = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
         [Dependency] private readonly IGameTiming _gameManager = default!;
@@ -541,6 +542,60 @@ namespace Content.Server.Shuttles.Save
                     {
                         gridData.Entities.Add(entityData);
                         serializedEntities.Add(childUid);
+                    }
+                }
+
+                // Second pass: unanchored loose items within bounds (plushies, pillows, buttons,
+                // bed sheets, etc.). Exclude mobs/players and items already in containers;
+                // SerializeContainedEntities will handle those.
+                var childEnumerator2 = gridTransform.ChildEnumerator;
+                while (childEnumerator2.MoveNext(out var childUid2))
+                {
+                    if (excludeEntities != null && excludeEntities.Contains(childUid2))
+                        continue;
+
+                    if (serializedEntities.Contains(childUid2))
+                        continue;
+
+                    if (!_entityManager.EntityExists(childUid2) || _entityManager.IsQueuedForDeletion(childUid2))
+                        continue;
+
+                    if (!_entityManager.TryGetComponent<TransformComponent>(childUid2, out var childTransform2))
+                        continue;
+
+                    // Only grab unanchored items; anchored ones already handled above
+                    if (childTransform2.Anchored)
+                        continue;
+
+                    if (!bounds.Contains(childTransform2.LocalPosition))
+                        continue;
+
+                    // Skip mobs and player-minded entities
+                    if (_entityManager.HasComponent<Content.Shared.Mobs.Components.MobStateComponent>(childUid2))
+                        continue;
+                    if (_entityManager.HasComponent<Content.Shared.Mind.Components.MindContainerComponent>(childUid2))
+                        continue;
+
+                    // Skip entities that are inside a container (SerializeContainedEntities covers them)
+                    var xform2 = _entityManager.GetComponent<TransformComponent>(childUid2);
+                    if (_containerSystem.IsEntityInContainer(childUid2))
+                        continue;
+
+                    var meta2 = _entityManager.GetComponentOrNull<MetaDataComponent>(childUid2);
+                    var proto2 = meta2?.EntityPrototype?.ID ?? string.Empty;
+                    if (string.IsNullOrEmpty(proto2))
+                        continue;
+
+                    if (excludeVending && _entityManager.HasComponent<VendingMachineComponent>(childUid2))
+                        continue;
+
+                    var entityData2 = SerializeEntity(childUid2, childTransform2, proto2, gridId);
+                    if (entityData2 != null)
+                    {
+                        gridData.Entities.Add(entityData2);
+                        serializedEntities.Add(childUid2);
+                        if (verbose)
+                            _sawmill.Debug($"Serialized unanchored room item {childUid2} ({proto2})");
                     }
                 }
 
@@ -1803,12 +1858,6 @@ namespace Content.Server.Shuttles.Save
                     return null;
                 }
 
-                // Skip paper components - causes loading lag
-                if (component is Content.Shared.Paper.PaperComponent)
-                {
-                    return null;
-                }
-
                 // Use RobustToolbox's serialization system to serialize the component
                 var node = _serializationManager.WriteValue(componentType, component, notNullableOverride: true);
                 var yamlData = _serializer.Serialize(ScrubRuntimeActionReferences(node));
@@ -2163,12 +2212,6 @@ namespace Content.Server.Shuttles.Save
                     return;
                 }
 
-                // Skip paper components - no longer preserved to reduce loading lag
-                if (componentData.Type == "PaperComponent")
-                {
-                    return;
-                }
-
                 if (string.IsNullOrEmpty(componentData.YamlData))
                     return;
 
@@ -2443,6 +2486,15 @@ namespace Content.Server.Shuttles.Save
                 var position = transform.LocalPosition;
                 var rotation = transform.LocalRotation;
 
+                // Capture custom entity name if it differs from the prototype default
+                string? customName = null;
+                if (meta != null)
+                {
+                    var protoName = meta.EntityPrototype?.Name;
+                    if (!string.IsNullOrEmpty(meta.EntityName) && meta.EntityName != protoName)
+                        customName = meta.EntityName;
+                }
+
                 var entityData = new EntityData
                 {
                     EntityId = uid.ToString(),
@@ -2453,7 +2505,8 @@ namespace Content.Server.Shuttles.Save
                     ParentContainerEntity = parentContainer,
                     ContainerSlot = containerSlot,
                     IsContainer = isContainer,
-                    IsContained = isContained
+                    IsContained = isContained,
+                    EntityName = customName
                 };
 
                 return entityData;
@@ -2631,6 +2684,12 @@ namespace Content.Server.Shuttles.Save
                 if (entityData.Components.Any())
                 {
                     RestoreEntityComponents(newEntity, entityData.Components);
+                }
+
+                // Restore custom entity name
+                if (!string.IsNullOrEmpty(entityData.EntityName))
+                {
+                    _metaData.SetEntityName(newEntity, entityData.EntityName);
                 }
 
                 return newEntity;
