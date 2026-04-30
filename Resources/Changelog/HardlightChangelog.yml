@@ -3428,3 +3428,12 @@ Entries:
         medical assembler using lathe-produced bruise packs and ointments.
   id: 365
   time: '2026-04-30T20:31:44.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Switchable-type cyborgs (SecBorg, MediBorg, etc.) no longer lose their
+        built-in department radio channel when an encryption key is added to or
+        removed from them.
+  id: 366
+  time: '2026-04-30T20:35:57.0000000+00:00'
