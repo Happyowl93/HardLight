@@ -3437,3 +3437,11 @@ Entries:
         removed from them.
   id: 366
   time: '2026-04-30T20:35:57.0000000+00:00'
+- author: IngvarJackal
+  changes:
+    - type: Tweak
+      message: CTLA drives have correct speeds
+    - type: Tweak
+      message: gunnery console has shield status and draws shields
+  id: 367
+  time: '2026-04-30T20:59:38.0000000+00:00'
