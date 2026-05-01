@@ -1,13 +1,6 @@
 Entries:
 - author: Wizden team
   changes:
-  - message: Hyperzine overdose can no longer be negated completely with Omnizine.
-    type: Tweak
-  id: 404351
-  time: '2026-04-19T07:51:58.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4206
-- author: Wizden team
-  changes:
   - message: Hypodarts now have an increased chemical capacity of 10u up from 7u.
     type: Tweak
   id: 404352
@@ -2799,4 +2792,11 @@ Entries:
   id: 404750
   time: '2026-05-01T07:21:52.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4309
+- author: Bigfoot Bravo
+  changes:
+  - message: IPCs can change their screen color via the eye color sliders.
+    type: Fix
+  id: 404751
+  time: '2026-05-01T07:21:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4297
 Order: -1
