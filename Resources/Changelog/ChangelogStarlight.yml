@@ -1,20 +1,6 @@
 Entries:
 - author: Caws
   changes:
-  - message: (Boxcars) Freezer added to Genpop.
-    type: Add
-  id: 404355
-  time: '2026-04-19T12:31:51.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4201
-- author: Caws
-  changes:
-  - message: (Boxcars) A few JR PACMAN generators to maints.
-    type: Add
-  id: 404356
-  time: '2026-04-19T12:31:51.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4201
-- author: Caws
-  changes:
   - message: (Boxcars) CMO fax machine was not named.
     type: Fix
   id: 404357
@@ -2799,4 +2785,18 @@ Entries:
   id: 404754
   time: '2026-05-01T09:48:44.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4242
+- author: Caws
+  changes:
+  - message: The detective's trenchcoats have been renamed "detective armored trenchcoat" and "noir armored trenchcoat" respectively.
+    type: Tweak
+  id: 404755
+  time: '2026-05-01T10:16:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4314
+- author: Caws
+  changes:
+  - message: The detective armored trenchcoat and noir armored trenchcoat now correctly provide armor again.
+    type: Fix
+  id: 404756
+  time: '2026-05-01T10:16:03.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4314
 Order: -1
