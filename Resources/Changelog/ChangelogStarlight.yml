@@ -1,13 +1,6 @@
 Entries:
 - author: Wizden team
   changes:
-  - message: Tazinide and Licoxide now are less effective at shocking and don't last as long.
-    type: Tweak
-  id: 404349
-  time: '2026-04-19T07:51:58.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4206
-- author: Wizden team
-  changes:
   - message: Nocturine now lasts 9 seconds instead of 6 seconds.
     type: Tweak
   id: 404350
@@ -2799,4 +2792,11 @@ Entries:
   id: 404748
   time: '2026-04-30T17:27:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4245
+- author: CommanderAlex365
+  changes:
+  - message: Added recipes for plain and meat donuts.
+    type: Add
+  id: 404749
+  time: '2026-05-01T06:35:32.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4311
 Order: -1
