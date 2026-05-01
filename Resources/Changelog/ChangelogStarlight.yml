@@ -1,13 +1,6 @@
 Entries:
 - author: Caws
   changes:
-  - message: (Boxcars) Atmos' exit airlock now properly bolts / cycles.
-    type: Fix
-  id: 404363
-  time: '2026-04-19T12:31:51.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4201
-- author: Caws
-  changes:
   - message: (Boxcars) Chemistry now has a centrifuge.
     type: Fix
   id: 404364
@@ -2799,4 +2792,11 @@ Entries:
   id: 404762
   time: '2026-05-01T11:36:18.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4303
+- author: Xale
+  changes:
+  - message: Fixed guidebook sorting of chemicals and drinks to once again be in alphabetical order.
+    type: Fix
+  id: 404763
+  time: '2026-05-01T11:54:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4315
 Order: -1
