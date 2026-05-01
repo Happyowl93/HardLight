@@ -1,20 +1,6 @@
 Entries:
 - author: Caws
   changes:
-  - message: (Boxcars) CMO fax machine was not named.
-    type: Fix
-  id: 404357
-  time: '2026-04-19T12:31:51.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4201
-- author: Caws
-  changes:
-  - message: (Boxcars) Law fax machine was not named.
-    type: Fix
-  id: 404358
-  time: '2026-04-19T12:31:51.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4201
-- author: Caws
-  changes:
   - message: (Boxcars) NTR office fax was named 'NCT', fixed.
     type: Fix
   id: 404359
@@ -2799,4 +2785,18 @@ Entries:
   id: 404756
   time: '2026-05-01T10:16:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4314
+- author: wonderfulnewworld, alexalexmax
+  changes:
+  - message: Added a nuke that doesn't end the round to the spawn menu.
+    type: Add
+  id: 404757
+  time: '2026-05-01T10:16:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4308
+- author: wonderfulnewworld, alexalexmax
+  changes:
+  - message: The (normal) nuke going off now starts the end of round sequence, regardless of gamemode.
+    type: Tweak
+  id: 404758
+  time: '2026-05-01T10:16:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4308
 Order: -1
