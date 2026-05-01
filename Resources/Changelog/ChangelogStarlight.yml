@@ -1,25 +1,4 @@
 Entries:
-- author: Wizden team
-  changes:
-  - message: Hypodarts now have an increased chemical capacity of 10u up from 7u.
-    type: Tweak
-  id: 404352
-  time: '2026-04-19T07:51:58.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4206
-- author: Wizden team
-  changes:
-  - message: Combat Medkit and Combat Medipen have had their prices reduced to 3 TC.
-    type: Tweak
-  id: 404353
-  time: '2026-04-19T07:51:58.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4206
-- author: STARLIGHT TEAM
-  changes:
-  - message: Fix the race condition when retrieving playtime from other servers.
-    type: Fix
-  id: 404354
-  time: '2026-04-19T11:52:21.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4204
 - author: Caws
   changes:
   - message: (Boxcars) Freezer added to Genpop.
@@ -2799,4 +2778,25 @@ Entries:
   id: 404751
   time: '2026-05-01T07:21:54.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4297
+- author: "- fix: Fixed handheld translators behaving differently when toggled with the E or Z keys, fixed activating a handheld translator with Z not switching your active spoken language to the translator's language, and fixed handheld translators sometimes immediately turning off after being turned on."
+  changes:
+  - message: Fixed swapping charged batteries on a handheld translator unselecting the translator's language.
+    type: Fix
+  id: 404752
+  time: '2026-05-01T09:48:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4242
+- author: "- fix: Fixed handheld translators behaving differently when toggled with the E or Z keys, fixed activating a handheld translator with Z not switching your active spoken language to the translator's language, and fixed handheld translators sometimes immediately turning off after being turned on."
+  changes:
+  - message: Fixed the handheld translator examine tooltip and interactions being delayed by your ping, which made the examine tooltip bounce.
+    type: Fix
+  id: 404753
+  time: '2026-05-01T09:48:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4242
+- author: "- fix: Fixed handheld translators behaving differently when toggled with the E or Z keys, fixed activating a handheld translator with Z not switching your active spoken language to the translator's language, and fixed handheld translators sometimes immediately turning off after being turned on."
+  changes:
+  - message: Fixed some instances of a handheld translator looking activated but not actually being activated.
+    type: Fix
+  id: 404754
+  time: '2026-05-01T09:48:44.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4242
 Order: -1
