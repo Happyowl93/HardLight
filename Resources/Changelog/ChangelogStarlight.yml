@@ -1,20 +1,6 @@
 Entries:
 - author: Caws
   changes:
-  - message: (Boxcars) Three morgue units in Morgue were facing into a wall.
-    type: Fix
-  id: 404361
-  time: '2026-04-19T12:31:51.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4201
-- author: Caws
-  changes:
-  - message: (Boxcars) QM's office no longer starts unpowered.
-    type: Fix
-  id: 404362
-  time: '2026-04-19T12:31:51.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4201
-- author: Caws
-  changes:
   - message: (Boxcars) Atmos' exit airlock now properly bolts / cycles.
     type: Fix
   id: 404363
@@ -2799,4 +2785,18 @@ Entries:
   id: 404760
   time: '2026-05-01T11:15:41.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4001
+- author: Scarlet Lightweaver
+  changes:
+  - message: Split the security cyborg module up a bit, the contrabag module is its own thing now.
+    type: Tweak
+  id: 404761
+  time: '2026-05-01T11:36:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4303
+- author: Scarlet Lightweaver
+  changes:
+  - message: Fixed security borgs being able to drop and pickup items when crit/PB being inserted.
+    type: Fix
+  id: 404762
+  time: '2026-05-01T11:36:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4303
 Order: -1
