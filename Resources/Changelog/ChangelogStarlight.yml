@@ -1,13 +1,6 @@
 Entries:
 - author: Caws
   changes:
-  - message: (Boxcars) NTR office fax was named 'NCT', fixed.
-    type: Fix
-  id: 404359
-  time: '2026-04-19T12:31:51.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4201
-- author: Caws
-  changes:
   - message: (Boxcars) NCT office fax was named 'NTR', fixed.
     type: Fix
   id: 404360
@@ -2799,4 +2792,11 @@ Entries:
   id: 404758
   time: '2026-05-01T10:16:04.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4308
+- author: Trosling
+  changes:
+  - message: Fixed health scaling for ghost role dragons.
+    type: Fix
+  id: 404759
+  time: '2026-05-01T10:50:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4305
 Order: -1
