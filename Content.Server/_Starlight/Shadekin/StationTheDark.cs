@@ -1,3 +1,4 @@
+using Content.Server.Station.Events;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Utility;
@@ -13,10 +14,10 @@ public sealed class StationTheDarkSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<StationTheDarkComponent, MapInitEvent>(OnStationInit);
+        SubscribeLocalEvent<StationTheDarkComponent, StationPostInitEvent>(OnStationStartup);
     }
 
-    private void OnStationInit(EntityUid uid, StationTheDarkComponent component, MapInitEvent args)
+    private void OnStationStartup(EntityUid uid, StationTheDarkComponent component, StationPostInitEvent args)
     {
         if (_thedark is not null)
             return;

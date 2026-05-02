@@ -1,3 +1,4 @@
+using Content.Shared.Gateway.Components;
 using Content.Shared.Popups;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Warps;
@@ -46,16 +47,18 @@ public sealed class DarkHubSystem : EntitySystem
 
         HashSet<EntityUid> warps = new();
 
-        var query = EntityQueryEnumerator<WarpPointComponent>();
+        var query = EntityQueryEnumerator<GatewayComponent>();
         while (query.MoveNext(out var warpEnt, out var warpPointComp))
         {
-            if (_whitelist.IsWhitelistPass(warpPointComp.Blacklist, warpEnt))
+            if (!warpPointComp.Enabled)
                 continue;
 
             warps.Add(warpEnt);
         }
 
         var target = _random.Pick(warps);
+
+        EnsureComp<PortalTimeoutComponent>(args.Subject);
 
         var coords = Transform(target).Coordinates;
         SpawnAtPosition(component.ShadekinShadow, coords);

@@ -1,14 +1,13 @@
-using Content.Server.Gateway.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.Utility;
 
-namespace Content.Server.Gateway.Components;
+namespace Content.Shared.Gateway.Components;
 
 /// <summary>
 /// Controlling gateway that links to other gateway destinations on the server.
 /// </summary>
-[RegisterComponent, Access(typeof(GatewaySystem)), AutoGenerateComponentPause]
+[RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class GatewayComponent : Component
 {
     /// <summary>
