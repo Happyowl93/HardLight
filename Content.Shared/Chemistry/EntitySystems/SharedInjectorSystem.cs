@@ -236,6 +236,12 @@ public abstract class SharedInjectorSystem : EntitySystem
             injector.Comp.CurrentTransferAmount = selected;
             injector.Comp.TransferAmount = selected.Value;
         }
+        else
+        {
+            // Modes with no transfer amounts (e.g. jet injectors) should always use
+            // runtime fallback volume in GetTransferAmount, not a stale persisted value.
+            injector.Comp.CurrentTransferAmount = null;
+        }
 
         if (mode.Behavior.HasFlag(InjectorBehavior.Draw))
             injector.Comp.ToggleState = InjectorToggleMode.Draw;
