@@ -3493,3 +3493,11 @@ Entries:
         mobs.
   id: 372
   time: '2026-05-02T06:45:36.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Full-reservoir injector modes now clear stale transfer amount state, so
+        Advanced Jet Injectors correctly inject their full contents.
+  id: 373
+  time: '2026-05-02T07:50:25.0000000+00:00'
