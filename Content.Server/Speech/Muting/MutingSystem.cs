@@ -60,7 +60,7 @@ namespace Content.Server.Speech.Muting
 
             // Starlight-start: Cannot mute if there's no speech involved
             var language = _languages.GetLanguage(uid);
-            if (!language.Speech.RequireSpeech)
+            if (!language.SpeechOverride.RequireSpeech)
                 return;
             // Starlight-end
 

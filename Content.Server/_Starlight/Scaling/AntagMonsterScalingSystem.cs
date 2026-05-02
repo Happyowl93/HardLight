@@ -1,5 +1,5 @@
-using Content.Server.Ghost.Roles.Events;
 using Content.Shared._Starlight.Scaling.Components;
+using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Roles;
 using Content.Shared.Starlight.CCVar;
@@ -10,6 +10,8 @@ using Content.Shared.StationRecords;
 using Content.Server.Station.Systems;
 using Robust.Shared.Utility;
 using Content.Shared._Starlight.Scaling;
+using Content.Server.Ghost.Roles.Events;
+using Content.Shared.Mobs;
 
 namespace Content.Server._Starlight.Scaling;
 
@@ -32,7 +34,6 @@ public sealed class ScalingSystem : SharedScalingSystem
     {
         base.Initialize();
         SubscribeLocalEvent<AntagMonsterScalingComponent, MapInitEvent>(OnMobStartup);
-        SubscribeLocalEvent<AntagMonsterScalingComponent, GhostRoleSpawnerUsedEvent>(OnGhostRoleSpawnerUsed);
 
         _cfg.OnValueChanged(StarlightCCVars.ScalingHealthWeight, UpdateUniversalHealthWeight, true);
     }
@@ -42,40 +43,35 @@ public sealed class ScalingSystem : SharedScalingSystem
         _universalHealthWeight = universalHealthWeight;
     }
 
-    private void OnMobStartup(EntityUid mob, AntagMonsterScalingComponent scalingComp, ref MapInitEvent args) =>
-        TryScaling(mob, scalingComp);
-
-
-    private void OnGhostRoleSpawnerUsed(
-        EntityUid mob,
-        AntagMonsterScalingComponent scalingComp,
-        ref GhostRoleSpawnerUsedEvent args) =>
-        TryScaling(args.Spawned, scalingComp);
-
-
-    private void TryScaling(EntityUid mob, AntagMonsterScalingComponent scalingComp)
+    private void OnMobStartup(EntityUid mob, AntagMonsterScalingComponent scalingComp, ref MapInitEvent args)
     {
         if (!TryComp(mob, out MobThresholdsComponent? thresholdsComp))
             return;
 
-        if (scalingComp.IsScaled)
-            return;
-
         scalingComp.OriginalThresholds = new();
 
-        foreach (var threshold in thresholdsComp.Thresholds) scalingComp.OriginalThresholds.Add(threshold.Key, threshold.Value);
+        foreach (var threshold in thresholdsComp.Thresholds)
+        {
+            scalingComp.OriginalThresholds.Add(threshold.Key, threshold.Value);
+        }
 
-        var station = _stationSystem.GetNearestStation(mob);
-
-        if (!UpdatePopulation(station))
+        var nullableStation = _stationSystem.GetStationInMap(Transform(mob).MapID);
+        if (nullableStation == null)
             return;
 
-        ApplyHealthScaling(station, scalingComp, thresholdsComp, _cachedPopulations, _universalHealthWeight);
+        EntityUid station = nullableStation.Value;
 
-        scalingComp.IsScaled = true;
+        UpdatePopulation(station);
+
+        if (scalingComp.IsScaled == false)
+        {
+            ApplyHealthScaling(station, scalingComp, thresholdsComp, _cachedPopulations, _universalHealthWeight);
+
+            scalingComp.IsScaled = true;
+        }
     }
 
-    private bool UpdatePopulation(EntityUid station)
+    private void UpdatePopulation(EntityUid station)
     {
         _populationBase = _cfg.GetCVar(StarlightCCVars.ScalingPopulationBase);
         _securityWeight = _cfg.GetCVar(StarlightCCVars.ScalingSecurityWeight);
@@ -83,12 +79,6 @@ public sealed class ScalingSystem : SharedScalingSystem
         _centcomWeight = _cfg.GetCVar(StarlightCCVars.ScalingCentcomWeight);
 
         double updatedPopulation = 0;
-
-        if (!TryComp<StationRecordsComponent>(station, out var recordsComponent))
-            return false;
-
-        if (!_recordsSystem.TryGetRandomRecord<GeneralStationRecord>(station, out var entry))
-            return false;
 
         var crewMembers = _recordsSystem.GetRecordsOfType<GeneralStationRecord>(station);
 
@@ -118,7 +108,5 @@ public sealed class ScalingSystem : SharedScalingSystem
 
         _cachedPopulations.GetOrNew(station);
         _cachedPopulations[station] = updatedPopulation - _populationBase;
-
-        return true;
     }
 }

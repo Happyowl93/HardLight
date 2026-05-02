@@ -1,37 +1,38 @@
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
-namespace Content.Shared._Starlight.Language.Components;
+namespace Content.Shared._Starlight.Language.Components.Translators;
 
 public abstract partial class BaseTranslatorComponent : Component
 {
     /// <summary>
     ///   The list of additional languages this translator allows the wielder to speak.
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public List<ProtoId<LanguagePrototype>> Spoken = new();
+    [DataField("spoken")]
+    public List<ProtoId<LanguagePrototype>> SpokenLanguages = new();
 
     /// <summary>
     ///   The list of additional languages this translator allows the wielder to understand.
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public List<ProtoId<LanguagePrototype>> Understood = new();
+    [DataField("understood")]
+    public List<ProtoId<LanguagePrototype>> UnderstoodLanguages = new();
 
     /// <summary>
     ///   The languages the wielding MUST know in order for this translator to have effect.
-    ///   The field <see cref="RequiresAll"/> indicates whether all of them are required, or just one.
+    ///   The field [RequiresAllLanguages] indicates whether all of them are required, or just one.
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public List<ProtoId<LanguagePrototype>> Requires = new();
+    [DataField("requires")]
+    public List<ProtoId<LanguagePrototype>> RequiredLanguages = new();
 
     /// <summary>
-    ///   If true, the wielder must understand all languages in <see cref="Requires"/> to speak <see cref="Spoken"/>,
-    ///   and understand all languages in <see cref="Requires"/> to understand <see cref="Understood"/>.
+    ///   If true, the wielder must understand all languages in [RequiredLanguages] to speak [SpokenLanguages],
+    ///   and understand all languages in [RequiredLanguages] to understand [UnderstoodLanguages].
     ///
     ///   Otherwise, at least one Language must be known (or the list must be empty).
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool RequiresAll;
+    [DataField("requiresAll")]
+    public bool RequiresAllLanguages = false;
 
-    [DataField, AutoNetworkedField]
+    [DataField("enabled")]
     public bool Enabled = true;
 }

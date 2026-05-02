@@ -15,7 +15,6 @@
   defaultModules:
   - BorgModuleTool
   - BorgModuleSecurity
-  - BorgModuleSecurityContraband
 
   radioChannels:
   - Command

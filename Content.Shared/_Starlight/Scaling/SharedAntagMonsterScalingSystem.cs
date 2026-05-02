@@ -1,4 +1,5 @@
 using Content.Shared._Starlight.Scaling.Components;
+using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Components;
 
 namespace Content.Shared._Starlight.Scaling;
@@ -28,9 +29,9 @@ public abstract partial class SharedScalingSystem : EntitySystem
             if (scalingPercent < 0.0 - scalingComp.MaximumHealthScaling)
                 scalingPercent = 0.0 - scalingComp.MaximumHealthScaling;
 
-            var scalingValue = key.Double() * scalingPercent;
+            FixedPoint2 scalingValue = key.Double() * scalingPercent;
 
-            var scaledKey = key + scalingValue;
+            FixedPoint2 scaledKey = key + scalingValue;
 
             if (key != scaledKey)
             {
