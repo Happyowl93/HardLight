@@ -3473,3 +3473,11 @@ Entries:
       message: 'Added new world generation system '
   id: 370
   time: '2026-05-01T03:50:13.0000000+00:00'
+- author: Illumos
+  changes:
+    - type: Add
+      message: Added the noble suit to the clothesmate
+    - type: Add
+      message: Added the bloodstained aristocrat suit to clothesmate
+  id: 371
+  time: '2026-05-02T06:14:37.0000000+00:00'
