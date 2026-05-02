@@ -37,26 +37,26 @@ public sealed partial class TowerOfBabelSystem : EntitySystem
 
         var comp = languageKnower.Comp;
 
-        if (comp.Speaks.Count > comp.Understands.Count)
+        if (comp.SpokenLanguages.Count > comp.UnderstoodLanguages.Count)
         {
             _random.Shuffle(allLangs);
-            comp.Speaks = [.. allLangs.Take(comp.Speaks.Count)];
-            var spoken = comp.Speaks.ToList();
+            comp.SpokenLanguages = [.. allLangs.Take(comp.SpokenLanguages.Count)];
+            var spoken = comp.SpokenLanguages.ToList();
             _random.Shuffle(spoken);
-            comp.Understands = [.. spoken.Take(comp.Understands.Count())];
+            comp.UnderstoodLanguages = [.. spoken.Take(comp.UnderstoodLanguages.Count())];
         }
         else
         {
             _random.Shuffle(allLangs);
-            comp.Understands = [.. allLangs.Take(comp.Understands.Count)];
-            var understood = comp.Understands.ToList();
+            comp.UnderstoodLanguages = [.. allLangs.Take(comp.UnderstoodLanguages.Count)];
+            var understood = comp.UnderstoodLanguages.ToList();
             _random.Shuffle(understood);
-            comp.Speaks = [.. understood.Take(comp.Speaks.Count())];
+            comp.SpokenLanguages = [.. understood.Take(comp.SpokenLanguages.Count())];
         }
 
         if (
-            comp.Speaks.Contains(SharedLanguageSystem.UniversalPrototype) ||
-            comp.Understands.Contains(SharedLanguageSystem.UniversalPrototype)
+            comp.SpokenLanguages.Contains(SharedLanguageSystem.UniversalPrototype) ||
+            comp.UnderstoodLanguages.Contains(SharedLanguageSystem.UniversalPrototype)
         )
             EnsureComp<UniversalLanguageSpeakerComponent>(languageKnower);
 

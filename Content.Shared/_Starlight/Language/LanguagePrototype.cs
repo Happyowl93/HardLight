@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starlight.Language;
 
-[Prototype]
+[Prototype("language")]
 public sealed partial class LanguagePrototype : IPrototype
 {
     [IdDataField]
@@ -14,32 +14,32 @@ public sealed partial class LanguagePrototype : IPrototype
     /// <summary>
     /// Icon of the language visible in chat/bubbles.
     /// </summary>
-    [DataField]
+    [DataField("icon")]
     public ProtoId<JobIconPrototype> Icon = "LanguageIconUnknown";
 
     /// <summary>
     /// Show the Icon if understood.
     /// </summary>
-    [DataField]
-    public bool IconUnderstood = true;
+    [DataField("iconUnderstood")]
+    public bool IconVisibleIfUnderstood = true;
 
     /// <summary>
     /// Show the Icon if not understood.
     /// </summary>
-    [DataField]
-    public bool IconNotUnderstood = true;
+    [DataField("iconNotUnderstood")]
+    public bool IconVisibleIfNotUnderstood = true;
 
     /// <summary>
     ///     Obfuscation method used by this language. By default, uses <see cref="ObfuscationMethod.Default"/>.
     /// </summary>
-    [DataField]
+    [DataField("obfuscation")]
     public ObfuscationMethod Obfuscation = ObfuscationMethod.Default;
 
     /// <summary>
     ///     Speech overrides used for messages sent in this language.
     /// </summary>
-    [DataField]
-    public SpeechOverrideInfo Speech = new();
+    [DataField("speech")]
+    public SpeechOverrideInfo SpeechOverride = new();
 
     /// <summary>
     /// Prefix used in chat to send message with this language.

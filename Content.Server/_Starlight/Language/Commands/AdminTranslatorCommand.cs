@@ -3,6 +3,7 @@ using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared._Starlight.Language;
 using Content.Shared._Starlight.Language.Components;
+using Content.Shared._Starlight.Language.Components.Translators;
 using Content.Shared._Starlight.Language.Systems;
 using Robust.Server.Containers;
 using Robust.Shared.Prototypes;
@@ -10,7 +11,6 @@ using Robust.Shared.Toolshed;
 using Robust.Shared.Toolshed.Syntax;
 using Robust.Shared.Toolshed.TypeParsers;
 using System.Linq;
-using HandheldTranslatorComponent = Content.Shared._Starlight.Language.Components.HandheldTranslatorComponent;
 
 namespace Content.Server._Starlight.Language.Commands;
 
@@ -35,12 +35,12 @@ public sealed class AdminTranslatorCommand : ToolshedCommand
         if (!TryGetTranslatorComp(input, out var translator))
             throw new ArgumentException(Loc.GetString("command-language-error-not-a-translator", ("entity", input)));
 
-        if (addSpeak && !translator.Comp.Spoken.Contains(language))
-            translator.Comp.Spoken.Add(language);
-        if (addUnderstand && !translator.Comp.Understood.Contains(language))
-            translator.Comp.Understood.Add(language);
+        if (addSpeak && !translator.SpokenLanguages.Contains(language))
+            translator.SpokenLanguages.Add(language);
+        if (addUnderstand && !translator.UnderstoodLanguages.Contains(language))
+            translator.UnderstoodLanguages.Add(language);
 
-        UpdateTranslatorHolder(translator);
+        UpdateTranslatorHolder(input);
 
         return input;
     }
@@ -65,11 +65,11 @@ public sealed class AdminTranslatorCommand : ToolshedCommand
             throw new ArgumentException(Loc.GetString("command-language-error-not-a-translator", ("entity", input)));
 
         if (removeSpeak)
-            translator.Comp.Spoken.Remove(language);
+            translator.SpokenLanguages.Remove(language);
         if (removeUnderstand)
-            translator.Comp.Understood.Remove(language);
+            translator.UnderstoodLanguages.Remove(language);
 
-        UpdateTranslatorHolder(translator);
+        UpdateTranslatorHolder(input);
 
         return input;
     }
@@ -90,10 +90,10 @@ public sealed class AdminTranslatorCommand : ToolshedCommand
         if (!TryGetTranslatorComp(input, out var translator))
             throw new ArgumentException(Loc.GetString("command-language-error-not-a-translator", ("entity", input)));
 
-        if (!translator.Comp.Requires.Contains(language))
+        if (!translator.RequiredLanguages.Contains(language))
         {
-            translator.Comp.Requires.Add(language);
-            UpdateTranslatorHolder(translator);
+            translator.RequiredLanguages.Add(language);
+            UpdateTranslatorHolder(input);
         }
 
         return input;
@@ -113,8 +113,8 @@ public sealed class AdminTranslatorCommand : ToolshedCommand
         if (!TryGetTranslatorComp(input, out var translator))
             throw new ArgumentException(Loc.GetString("command-language-error-not-a-translator", ("entity", input)));
 
-        if (translator.Comp.Requires.Remove(language))
-            UpdateTranslatorHolder(translator);
+        if (translator.RequiredLanguages.Remove(language))
+            UpdateTranslatorHolder(input);
 
         return input;
     }
@@ -130,7 +130,7 @@ public sealed class AdminTranslatorCommand : ToolshedCommand
     {
         if (!TryGetTranslatorComp(input, out var translator))
             return [];
-        return translator.Comp.Spoken;
+        return translator.SpokenLanguages;
     }
 
     [CommandImplementation("lsunderstood")]
@@ -138,7 +138,7 @@ public sealed class AdminTranslatorCommand : ToolshedCommand
     {
         if (!TryGetTranslatorComp(input, out var translator))
             return [];
-        return translator.Comp.Understood;
+        return translator.UnderstoodLanguages;
     }
 
     [CommandImplementation("lsrequired")]
@@ -146,31 +146,28 @@ public sealed class AdminTranslatorCommand : ToolshedCommand
     {
         if (!TryGetTranslatorComp(input, out var translator))
             return [];
-        return translator.Comp.Requires;
+        return translator.RequiredLanguages;
     }
 
-    private bool TryGetTranslatorComp(EntityUid uid, out Entity<BaseTranslatorComponent> translator)
+    private bool TryGetTranslatorComp(EntityUid uid, [NotNullWhen(true)] out BaseTranslatorComponent? translator)
     {
         if (TryComp<HandheldTranslatorComponent>(uid, out var handheld))
-            translator = (uid, handheld);
+            translator = handheld;
         else if (TryComp<TranslatorImplantComponent>(uid, out var implant))
-            translator = (uid, implant);
+            translator = implant;
         else if (TryComp<IntrinsicTranslatorComponent>(uid, out var intrinsic))
-            translator = (uid, intrinsic);
+            translator = intrinsic;
         else
-            translator = default;
+            translator = null;
 
-        return translator != default;
+        return translator != null;
     }
 
-    private void UpdateTranslatorHolder(Entity<BaseTranslatorComponent> translator)
+    private void UpdateTranslatorHolder(EntityUid translator)
     {
-        // TODO STARLIGHT pass the actual component in, this not breaking is a miracle, not a feature
-        EntityManager.Dirty(translator);
-
         _language ??= GetSys<LanguageSystem>();
         _containers ??= GetSys<ContainerSystem>();
-        if (!_containers.TryGetContainingContainer(translator.Owner, out var cont)
+        if (!_containers.TryGetContainingContainer(translator, out var cont)
             || cont.Owner is not { Valid: true } holder)
             return;
 

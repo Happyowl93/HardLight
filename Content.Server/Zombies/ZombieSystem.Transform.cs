@@ -161,8 +161,8 @@ public sealed partial class ZombieSystem
         EnsureComp<LanguageSpeakerComponent>(target, out var speaker);
         EnsureComp<RestoreLanguageCacheOnCloneComponent>(target);
 
-        knowledge.Speaks.Clear();
-        knowledge.Understands.Clear();
+        knowledge.SpokenLanguages.Clear();
+        knowledge.UnderstoodLanguages.Clear();
 
         speaker.SpokenLanguages.Clear();
         speaker.UnderstoodLanguages.Clear();

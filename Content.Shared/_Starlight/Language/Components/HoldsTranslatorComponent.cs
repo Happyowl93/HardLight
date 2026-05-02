@@ -1,13 +1,11 @@
-using Robust.Shared.GameStates;
-
-namespace Content.Shared._Starlight.Language.Components;
+namespace Content.Shared._Starlight.Language.Components.Translators;
 
 /// <summary>
-///     Applied internally to the holder of an Entity with <see cref="HandheldTranslatorComponent"/>.
+///     Applied internally to the holder of an Entity with [HandheldTranslatorComponent].
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent]
 public sealed partial class HoldsTranslatorComponent : Component
 {
-    [DataField, AutoNetworkedField]
-    public HashSet<EntityUid> Translators = new();
+    [NonSerialized]
+    public HashSet<Entity<HandheldTranslatorComponent>> Translators = new();
 }
