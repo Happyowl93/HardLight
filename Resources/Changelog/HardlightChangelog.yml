@@ -3481,3 +3481,15 @@ Entries:
       message: Added the bloodstained aristocrat suit to clothesmate
   id: 371
   time: '2026-05-02T06:14:37.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Jet injector no longer shows selectable transfer amounts (1u, 5u, etc.)
+        in its right-click menu; it always injects the full reservoir.
+    - type: Fix
+      message: >-
+        Jet injector now plays its unique injection sound when used on humanoid
+        mobs.
+  id: 372
+  time: '2026-05-02T06:45:36.0000000+00:00'
