@@ -3507,3 +3507,11 @@ Entries:
       message: Fixed a test
   id: 374
   time: '2026-05-02T07:51:13.0000000+00:00'
+- author: TrylobyteWasTaken
+  changes:
+    - type: Tweak
+      message: >-
+        The Ionizing Radiation Resistance mutation is now actually able to be
+        researched instead of taunting the geneticist all shift.
+  id: 375
+  time: '2026-05-02T19:05:16.0000000+00:00'
