@@ -3515,3 +3515,9 @@ Entries:
         researched instead of taunting the geneticist all shift.
   id: 375
   time: '2026-05-02T19:05:16.0000000+00:00'
+- author: IngvarJackal
+  changes:
+    - type: Add
+      message: Return anaconda to the exped T2 loot table
+  id: 376
+  time: '2026-05-02T23:21:56.0000000+00:00'
