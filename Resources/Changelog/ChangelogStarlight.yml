@@ -1,25 +1,4 @@
 Entries:
-- author: Caws
-  changes:
-  - message: (Boxcars) Surgery now has an air vent and air scrubber.
-    type: Fix
-  id: 404369
-  time: '2026-04-19T12:31:51.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4201
-- author: CoolSurf6
-  changes:
-  - message: Mech repair-over-time now works on all mechs, as intended.
-    type: Fix
-  id: 404370
-  time: '2026-04-19T12:31:53.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4203
-- author: Makeshift
-  changes:
-  - message: (Plasma) Interior no longer has weather. You'll no longer get ashed for walking into a hallway during a solar flare!
-    type: Fix
-  id: 404371
-  time: '2026-04-19T12:31:55.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4198
 - author: Cvlancer
   changes:
   - message: Nanomed Security to brigmedic.
@@ -2799,4 +2778,25 @@ Entries:
   id: 404768
   time: '2026-05-03T10:42:23.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4337
+- author: Unknown
+  changes:
+  - message: Animals Now Understand Galactic Common.
+    type: Add
+  id: 404769
+  time: '2026-05-03T11:42:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4340
+- author: Unknown
+  changes:
+  - message: Space Carp Now Understand Galactic Common.
+    type: Add
+  id: 404770
+  time: '2026-05-03T11:42:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4340
+- author: Unknown
+  changes:
+  - message: Slimes Now Understand Galactic Common.
+    type: Add
+  id: 404771
+  time: '2026-05-03T11:42:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4340
 Order: -1
