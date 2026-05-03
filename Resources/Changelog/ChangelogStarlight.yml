@@ -1,20 +1,6 @@
 Entries:
 - author: Caws
   changes:
-  - message: (Boxcars) Botany's air vent was connected to waste.
-    type: Fix
-  id: 404367
-  time: '2026-04-19T12:31:51.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4201
-- author: Caws
-  changes:
-  - message: (Boxcars) Morgue now has an air vent and air scrubber.
-    type: Fix
-  id: 404368
-  time: '2026-04-19T12:31:51.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4201
-- author: Caws
-  changes:
   - message: (Boxcars) Surgery now has an air vent and air scrubber.
     type: Fix
   id: 404369
@@ -2799,4 +2785,18 @@ Entries:
   id: 404766
   time: '2026-05-02T09:28:07.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4323
+- author: Caws
+  changes:
+  - message: (Bagel, Box, Cluster, Cog, Cork, Elkridge, Fland, Hotel, Kiloton, Lagan, Manor, Ming, Packed, Plasma, Prism, Reach, Saltern, Sepultum, Silica, Space Mall, Barratry) Keycard Authentication Device to Heads of Staff's offices.
+    type: Add
+  id: 404767
+  time: '2026-05-03T10:42:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4337
+- author: Caws
+  changes:
+  - message: (Lagan, Ming, Sepultum, Barratry) Added Mail Tech lockers and Mail Tech Airlocks.
+    type: Add
+  id: 404768
+  time: '2026-05-03T10:42:23.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4337
 Order: -1
