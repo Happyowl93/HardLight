@@ -1,13 +1,6 @@
 Entries:
 - author: Cvlancer
   changes:
-  - message: Nanomed Security to brigmedic.
-    type: Add
-  id: 404372
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
   - message: Oxygen deprivation treatment kit to brigmedic.
     type: Add
   id: 404373
@@ -2799,4 +2792,11 @@ Entries:
   id: 404771
   time: '2026-05-03T11:42:54.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4340
+- author: neurovermi
+  changes:
+  - message: Vim now can install a singular equipment module, instead of none.
+    type: Tweak
+  id: 404772
+  time: '2026-05-03T15:37:17.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4333
 Order: -1
