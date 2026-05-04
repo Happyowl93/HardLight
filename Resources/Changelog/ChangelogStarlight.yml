@@ -1,13 +1,6 @@
 Entries:
 - author: Cvlancer
   changes:
-  - message: Converted one of the gen pop dorms to solitary.
-    type: Add
-  id: 404393
-  time: '2026-04-19T13:20:33.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4194
-- author: Cvlancer
-  changes:
   - message: Random soap spawner to Bathroom.
     type: Add
   id: 404394
@@ -2799,4 +2792,11 @@ Entries:
   id: 404792
   time: '2026-05-04T05:49:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4321
+- author: Conf & Caws
+  changes:
+  - message: New IAA, Law, Lawyer, Magistrate, and NTR signage.
+    type: Add
+  id: 404793
+  time: '2026-05-04T05:49:58.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4339
 Order: -1
