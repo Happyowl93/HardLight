@@ -1,13 +1,6 @@
 Entries:
 - author: Cvlancer
   changes:
-  - message: Changed changeling targets name to something that does not break metashield.
-    type: Tweak
-  id: 404381
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
   - message: Changed center courtyard class to be more diagonal.
     type: Tweak
   id: 404382
@@ -2799,4 +2792,11 @@ Entries:
   id: 404780
   time: '2026-05-04T05:07:55.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4345
+- author: Karma
+  changes:
+  - message: Updated Magistrate SOP.
+    type: Tweak
+  id: 404781
+  time: '2026-05-04T05:49:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4329
 Order: -1
