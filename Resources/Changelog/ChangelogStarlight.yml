@@ -1,27 +1,6 @@
 Entries:
 - author: Cvlancer
   changes:
-  - message: A Solitary closet to gen pop as a quick place to store extremely unruly prisoners while remaining on station.
-    type: Add
-  id: 404378
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: A blue lawyer suit, briefcase, and luxury pen to bar for a certain inspiring monkey.
-    type: Add
-  id: 404379
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: A dim light to interrogation room and a light switch for the observers in interrogation room.
-    type: Add
-  id: 404380
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
   - message: Changed changeling targets name to something that does not break metashield.
     type: Tweak
   id: 404381
@@ -2799,4 +2778,25 @@ Entries:
   id: 404777
   time: '2026-05-04T05:07:53.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4338
+- author: Centronias, Huaqas
+  changes:
+  - message: Fixed a few subtle bugs with cards causing visual issues and various mispredicts.
+    type: Fix
+  id: 404778
+  time: '2026-05-04T05:07:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4345
+- author: Centronias, Huaqas
+  changes:
+  - message: Fixed a missing localization on one card deck verb.
+    type: Fix
+  id: 404779
+  time: '2026-05-04T05:07:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4345
+- author: Centronias, Huaqas
+  changes:
+  - message: Picking up cards from hands while your hands are full doesn't crash.
+    type: Fix
+  id: 404780
+  time: '2026-05-04T05:07:55.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4345
 Order: -1
