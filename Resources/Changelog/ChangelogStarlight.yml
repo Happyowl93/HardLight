@@ -1,41 +1,6 @@
 Entries:
 - author: Cvlancer
   changes:
-  - message: Oxygen deprivation treatment kit to brigmedic.
-    type: Add
-  id: 404373
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: Station beacon flatpack and multitool to shop maints.
-    type: Add
-  id: 404374
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: A secure empty chemistry crate in drugstore to be able to transport chems safely and securely.
-    type: Add
-  id: 404375
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: Extended the north dock out a little so it might act as a backup evac point if main evac fails.
-    type: Add
-  id: 404376
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: A protective glass window to the light in Solitary.
-    type: Add
-  id: 404377
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
   - message: A Solitary closet to gen pop as a quick place to store extremely unruly prisoners while remaining on station.
     type: Add
   id: 404378
@@ -2799,4 +2764,39 @@ Entries:
   id: 404772
   time: '2026-05-03T15:37:17.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4333
+- author: Caws
+  changes:
+  - message: Central Command has upgraded their turnstile software, allowing only authorized personnel with 'Debrief' access to enter the Debrief room.
+    type: Add
+  id: 404773
+  time: '2026-05-04T05:07:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4338
+- author: Caws
+  changes:
+  - message: Air distribution and waste are now automatically turned on at CentComm.
+    type: Tweak
+  id: 404774
+  time: '2026-05-04T05:07:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4338
+- author: Caws
+  changes:
+  - message: (CentComm G24) Cryopod is now connected to distribution rather than an O2 can, which was incompatible with our nitrogen-breathing employees.
+    type: Tweak
+  id: 404775
+  time: '2026-05-04T05:07:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4338
+- author: Caws
+  changes:
+  - message: (CentComm GNT9) Following a medical incident, turbo chargers and additional stasis beds are now available in the Medical Bay.
+    type: Tweak
+  id: 404776
+  time: '2026-05-04T05:07:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4338
+- author: Caws
+  changes:
+  - message: (CentComm SC17) Lighting in the Afterhours Bar has been replaced and more seating areas have been added.
+    type: Tweak
+  id: 404777
+  time: '2026-05-04T05:07:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4338
 Order: -1
