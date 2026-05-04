@@ -1,83 +1,6 @@
 Entries:
 - author: Cvlancer
   changes:
-  - message: Changed center courtyard class to be more diagonal.
-    type: Tweak
-  id: 404382
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: Made IAA'S tinted windows start transparent at shift start.
-    type: Tweak
-  id: 404383
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: One radiation treatment kit and one toxin treatment kit in brig medic.
-    type: Remove
-  id: 404384
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: A secret door in courtroom.
-    type: Remove
-  id: 404385
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: Mail chute in old courtroom. (Outdated).
-    type: Remove
-  id: 404386
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: Added some plating under some shuttle docks that were outside.
-    type: Fix
-  id: 404387
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: Fixed one wall from "Evil ai" being the wrong material.
-    type: Fix
-  id: 404388
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: Changed asteroid tiles inside the maints shop to dark tiles to stop weather effects.
-    type: Fix
-  id: 404389
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: Fixed several walls that had tiles underneath them. (Thanks to @SuspensionPoint for his useful map editor).
-    type: Fix
-  id: 404390
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: Fixed disposal piping near bridge.
-    type: Fix
-  id: 404391
-  time: '2026-04-19T13:20:31.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4190
-- author: Cvlancer
-  changes:
-  - message: Wood to maints bar.
-    type: Add
-  id: 404392
-  time: '2026-04-19T13:20:33.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4194
-- author: Cvlancer
-  changes:
   - message: Converted one of the gen pop dorms to solitary.
     type: Add
   id: 404393
@@ -2799,4 +2722,81 @@ Entries:
   id: 404781
   time: '2026-05-04T05:49:54.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4329
+- author: Cvlancer.
+  changes:
+  - message: (OASIS) Added "Ipc repair bay." to robotics.
+    type: Add
+  id: 404782
+  time: '2026-05-04T05:49:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4321
+- author: Cvlancer.
+  changes:
+  - message: (OASIS Added Keycard Authentication Device to all head of command offices and bridge.
+    type: Add
+  id: 404783
+  time: '2026-05-04T05:49:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4321
+- author: Cvlancer.
+  changes:
+  - message: (LOBSTER) Added "Ipc repair bay/Anom treatment to science".
+    type: Add
+  id: 404784
+  time: '2026-05-04T05:49:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4321
+- author: Cvlancer.
+  changes:
+  - message: (LOBSTER) Added Wall mounted mass scanners to both evac dock and the dock south of park bar.
+    type: Add
+  id: 404785
+  time: '2026-05-04T05:49:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4321
+- author: Cvlancer.
+  changes:
+  - message: (LOBSTER) Added Keycard Authentication Device to all head of command offices and bridge.
+    type: Add
+  id: 404786
+  time: '2026-05-04T05:49:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4321
+- author: Cvlancer.
+  changes:
+  - message: (LOBSTER) Added Syndicate playing cards near the syndicate area.
+    type: Add
+  id: 404787
+  time: '2026-05-04T05:49:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4321
+- author: Cvlancer.
+  changes:
+  - message: (LOBSTER) Removed WEH room.
+    type: Remove
+  id: 404788
+  time: '2026-05-04T05:49:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4321
+- author: Cvlancer.
+  changes:
+  - message: (ORWELL) Added a few ipc healing items to robotics.
+    type: Add
+  id: 404789
+  time: '2026-05-04T05:49:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4321
+- author: Cvlancer.
+  changes:
+  - message: (ORWELL) Added Nuno playing cards to library.
+    type: Add
+  id: 404790
+  time: '2026-05-04T05:49:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4321
+- author: Cvlancer.
+  changes:
+  - message: (ORWELL) Added Keycard Authentication Device to all head of command offices and bridge.
+    type: Add
+  id: 404791
+  time: '2026-05-04T05:49:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4321
+- author: Cvlancer.
+  changes:
+  - message: (ORWELL) Removed a full engineering toolbelt and two engineering goggles security had access too. (Near gen pop substation).
+    type: Remove
+  id: 404792
+  time: '2026-05-04T05:49:56.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4321
 Order: -1
