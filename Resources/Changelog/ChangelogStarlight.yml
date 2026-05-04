@@ -1,13 +1,6 @@
 Entries:
 - author: Cvlancer
   changes:
-  - message: Tesla to ai core.
-    type: Add
-  id: 404398
-  time: '2026-04-19T13:20:33.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4194
-- author: Cvlancer
-  changes:
   - message: Maints door to botany.
     type: Add
   id: 404399
@@ -2799,4 +2792,11 @@ Entries:
   id: 404797
   time: '2026-05-04T06:14:46.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4343
+- author: neurovermi
+  changes:
+  - message: Mech thrusters now turn off correctly when entering a grid.
+    type: Fix
+  id: 404798
+  time: '2026-05-04T06:14:47.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4331
 Order: -1
