@@ -1,27 +1,6 @@
 Entries:
 - author: Cvlancer
   changes:
-  - message: Random soap spawner to Bathroom.
-    type: Add
-  id: 404394
-  time: '2026-04-19T13:20:33.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4194
-- author: Cvlancer
-  changes:
-  - message: Piggybank to vault.
-    type: Add
-  id: 404395
-  time: '2026-04-19T13:20:33.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4194
-- author: Cvlancer
-  changes:
-  - message: Replaced the railings in boxing area to boxing rope.
-    type: Add
-  id: 404396
-  time: '2026-04-19T13:20:33.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4194
-- author: Cvlancer
-  changes:
   - message: Button to interrogation tinted windows.
     type: Add
   id: 404397
@@ -2799,4 +2778,25 @@ Entries:
   id: 404793
   time: '2026-05-04T05:49:58.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4339
+- author: CrazyPhantom
+  changes:
+  - message: The rules have been changed to match the wiki. Just about every rule has been changed in some capacity, Too many changes to mention each one so it is suggested that players re-read them all.
+    type: Tweak
+  id: 404794
+  time: '2026-05-04T05:50:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4328
+- author: CrazyPhantom
+  changes:
+  - message: Silicon memory loss clause has been added to metashield.
+    type: Add
+  id: 404795
+  time: '2026-05-04T05:50:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4328
+- author: CrazyPhantom
+  changes:
+  - message: Rule 15, "Separation of Character from Player".
+    type: Add
+  id: 404796
+  time: '2026-05-04T05:50:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4328
 Order: -1
