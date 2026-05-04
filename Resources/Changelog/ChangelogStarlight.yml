@@ -1,13 +1,6 @@
 Entries:
 - author: Cvlancer
   changes:
-  - message: Button to interrogation tinted windows.
-    type: Add
-  id: 404397
-  time: '2026-04-19T13:20:33.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4194
-- author: Cvlancer
-  changes:
   - message: Tesla to ai core.
     type: Add
   id: 404398
@@ -2799,4 +2792,11 @@ Entries:
   id: 404796
   time: '2026-05-04T05:50:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4328
+- author: Magwitch
+  changes:
+  - message: Changed `wth` replacement from `what the heck` to `what the hell`.
+    type: Tweak
+  id: 404797
+  time: '2026-05-04T06:14:46.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4343
 Order: -1
