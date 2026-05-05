@@ -3545,3 +3545,9 @@ Entries:
       message: Computer consoles now dynamically blend edges when placed side-by-side.
   id: 380
   time: '2026-05-05T03:42:12.0000000+00:00'
+- author: Aureuix
+  changes:
+    - type: Add
+      message: Added an amputee trait. one for both arms
+  id: 381
+  time: '2026-05-05T05:16:21.0000000+00:00'
