@@ -3561,3 +3561,9 @@ Entries:
       message: Update ClothWarps, they can now go in hands slots too.
   id: 382
   time: '2026-05-05T18:48:05.0000000+00:00'
+- author: Mysterious Bunnyfactor
+  changes:
+    - type: Add
+      message: Bunnysuits!
+  id: 383
+  time: '2026-05-05T18:48:31.0000000+00:00'
