@@ -3551,3 +3551,13 @@ Entries:
       message: Added an amputee trait. one for both arms
   id: 381
   time: '2026-05-05T05:16:21.0000000+00:00'
+- author: Shades
+  changes:
+    - type: Add
+      message: Added new Gaiters! (Look at WinterDrobe).
+    - type: Tweak
+      message: Replaced Old Wizden Gaiters with the new ones.
+    - type: Tweak
+      message: Update ClothWarps, they can now go in hands slots too.
+  id: 382
+  time: '2026-05-05T18:48:05.0000000+00:00'
