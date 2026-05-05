@@ -3521,3 +3521,9 @@ Entries:
       message: Return anaconda to the exped T2 loot table
   id: 376
   time: '2026-05-02T23:21:56.0000000+00:00'
+- author: re-silvered
+  changes:
+    - type: Add
+      message: Added even more vampirism.
+  id: 377
+  time: '2026-05-05T03:30:26.0000000+00:00'
