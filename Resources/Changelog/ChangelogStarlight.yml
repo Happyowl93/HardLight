@@ -1,13 +1,6 @@
 Entries:
 - author: Cvlancer
   changes:
-  - message: Posters to botany.
-    type: Add
-  id: 404400
-  time: '2026-04-19T13:20:33.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4194
-- author: Cvlancer
-  changes:
   - message: Goliath cloak to maints alter and sec shuttle.
     type: Add
   id: 404401
@@ -2799,4 +2792,11 @@ Entries:
   id: 404799
   time: '2026-05-05T07:11:02.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4358
+- author: Ohelig
+  changes:
+  - message: Fixes mining being able to crash the server by queueing up too many ore processor recipes.
+    type: Fix
+  id: 404800
+  time: '2026-05-05T07:11:04.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4344
 Order: -1
