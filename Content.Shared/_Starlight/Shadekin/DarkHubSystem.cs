@@ -1,5 +1,6 @@
 using Content.Shared.Gateway.Components;
 using Content.Shared.Popups;
+using Content.Shared.Station.Components;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Warps;
 using Content.Shared.Whitelist;
@@ -47,11 +48,15 @@ public sealed class DarkHubSystem : EntitySystem
 
         HashSet<EntityUid> warps = new();
 
-        var query = EntityQueryEnumerator<GatewayComponent>();
-        while (query.MoveNext(out var warpEnt, out var warpPointComp))
+        var query = EntityQueryEnumerator<GatewayComponent, TransformComponent>();
+        while (query.MoveNext(out var warpEnt, out var warpPointComp, out var xform))
         {
             if (!warpPointComp.Enabled)
                 continue;
+
+            // HL - We now look for if the gateway is part of the station to avoid issues.
+            if (xform.GridUid == EntityUid.Invalid || !HasComp<StationMemberComponent>(xform.GridUid))
+                return;
 
             warps.Add(warpEnt);
         }

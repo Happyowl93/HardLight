@@ -279,28 +279,3 @@
       enabled: true
     - type: NullSpaceBlocker
       unphaseOnCollide: false
-
-- type: entity
-  name: bluespace anchor
-  parent: BaseMachine
-  id: BluespaceAnchor
-  description: Imposing the physical into Nullspace itself. it brings that of
-    which dwells in between states into the physical. Entities that are
-    travelling using these methods will be anchored and rooted into the world by
-    force, being incapable of reaching through to Nullspace whilst in it’s
-    range.
-  components:
-    - type: Anchorable
-      flags:
-        - Anchorable
-    - type: Transform
-      noRot: true
-      anchored: true
-    - type: Sprite
-      sprite: _HL/Structures/Machines/anchor.rsi
-      snapCardinals: true
-      noRot: true
-      state: anchor
-    - type: BluespacePulseOnTrigger
-      dome: EnergyDomeNullspaceAnchor
-    - type: Godmode
