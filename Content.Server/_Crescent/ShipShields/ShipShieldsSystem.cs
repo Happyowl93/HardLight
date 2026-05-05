@@ -11,6 +11,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Components;
 using Robust.Server.GameObjects;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Server.GameStates;
@@ -278,12 +279,14 @@ public sealed partial class ShipShieldsSystem : EntitySystem
 
         var prototype = ShipShieldPrototype;
 
-        // HardLight: spawn in nullspace first, then parent to the grid before positioning.
-        // Previously the shield was spawned at Transform(entity).Coordinates (map-space) and
-        // SetLocalPosition was called while the shield was still a child of the MAP, so the
-        // AABB-centre value (a small grid-local number) became the shield's map-space position,
-        // placing it near the world origin instead of on the ship.
-        var shield = Spawn(prototype);
+        // HardLight: spawn at the grid's map-space coordinates so the shield is created on the
+        // correct map with a valid broadphase, then move it to the grid's AABB centre via
+        // EntityCoordinates(entity, ...) which both reparents to the grid AND sets the local
+        // position in a single transform update. The previous nullspace-spawn-then-SetParent
+        // path briefly placed the body in nullspace (no broadphase) and SetParent preserves
+        // world position by default, so the shield could land at world origin before
+        // SetLocalPosition corrected it -- causing PVS/render races and visible mis-placement.
+        var shield = Spawn(prototype, Transform(entity).Coordinates);
         var shieldPhysics = EnsureComp<PhysicsComponent>(shield);
         var shieldComp = EnsureComp<ShipShieldComponent>(shield);
         shieldComp.Shielded = entity;
@@ -297,9 +300,12 @@ public sealed partial class ShipShieldsSystem : EntitySystem
             Dirty(shield, shieldVisuals);
         }
 
-        // Parent first so SetLocalPosition is interpreted in grid-local space.
-        _transformSystem.SetParent(shield, entity);
-        _transformSystem.SetLocalPosition(shield, mapGrid.LocalAABB.Center);
+        // Reparent to the grid and place at the grid's local AABB centre in a single call.
+        var gridCenter = new EntityCoordinates(entity, mapGrid.LocalAABB.Center);
+        _transformSystem.SetCoordinates(shield, gridCenter);
+        // Align rotation so the chain-shape oval matches the grid orientation. Without this,
+        // rotated ships render and collide with a mis-aligned shield outline.
+        _transformSystem.SetWorldRotation(shield, _transformSystem.GetWorldRotation(entity));
 
         var chain = GenerateOvalFixture(shield, "shield", shieldPhysics, mapGrid, shieldVisuals.Padding);
 
