@@ -3539,3 +3539,9 @@ Entries:
       message: Removed pirate rules since we lack pirates
   id: 379
   time: '2026-05-05T03:39:51.0000000+00:00'
+- author: NotLivyathan
+  changes:
+    - type: Add
+      message: Computer consoles now dynamically blend edges when placed side-by-side.
+  id: 380
+  time: '2026-05-05T03:42:12.0000000+00:00'
