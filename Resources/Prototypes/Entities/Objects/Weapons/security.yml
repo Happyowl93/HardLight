@@ -226,6 +226,8 @@
       radius: 0
       softness: 0
       enabled: true
+    - type: Climbable
+      disabled: true
     - type: GuideHelp
       guides:
         - Security
@@ -279,3 +281,5 @@
       enabled: true
     - type: NullSpaceBlocker
       unphaseOnCollide: false
+    - type: Climbable
+      disabled: true
