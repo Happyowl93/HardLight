@@ -3567,3 +3567,9 @@ Entries:
       message: Bunnysuits!
   id: 383
   time: '2026-05-05T18:48:31.0000000+00:00'
+- author: R3v3l4t1on
+  changes:
+    - type: Fix
+      message: Fixed invalid entries in cyborg guidebook
+  id: 384
+  time: '2026-05-05T18:50:31.0000000+00:00'
