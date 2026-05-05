@@ -3527,3 +3527,9 @@ Entries:
       message: Added even more vampirism.
   id: 377
   time: '2026-05-05T03:30:26.0000000+00:00'
+- author: Shades
+  changes:
+    - type: Fix
+      message: Fixed The Dark getting deleted.
+  id: 378
+  time: '2026-05-05T03:35:40.0000000+00:00'
