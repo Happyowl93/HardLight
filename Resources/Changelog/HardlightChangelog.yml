@@ -3579,3 +3579,9 @@ Entries:
       message: Some hardsuits are now taser-immune.
   id: 385
   time: '2026-05-05T21:52:03.0000000+00:00'
+- author: R3v3l4t1on
+  changes:
+    - type: Fix
+      message: Knocks another test off the list of failing tests
+  id: 386
+  time: '2026-05-05T21:52:51.0000000+00:00'
