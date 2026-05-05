@@ -210,7 +210,7 @@
     ClothingUniformDama235123: 4
     # End Coats / Hardlight End
   contrabandInventory:
-    ClothingMaskNeckGaiter: 2
+    # ClothingMaskNeckGaiter: 2 - HL
     ClothingUniformJumpsuitTacticool: 1
     ClothingUniformJumpskirtTacticool: 1
     ToyFigurinePassenger: 1
