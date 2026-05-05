@@ -3591,3 +3591,9 @@ Entries:
       message: More lewd clothings~
   id: 387
   time: '2026-05-05T21:53:43.0000000+00:00'
+- author: NotLivyathan
+  changes:
+    - type: Fix
+      message: Fixed expedition disk printer sprite.
+  id: 388
+  time: '2026-05-05T21:55:09.0000000+00:00'
