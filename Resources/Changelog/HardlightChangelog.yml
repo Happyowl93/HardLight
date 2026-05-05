@@ -3573,3 +3573,9 @@ Entries:
       message: Fixed invalid entries in cyborg guidebook
   id: 384
   time: '2026-05-05T18:50:31.0000000+00:00'
+- author: Illumos
+  changes:
+    - type: Add
+      message: Some hardsuits are now taser-immune.
+  id: 385
+  time: '2026-05-05T21:52:03.0000000+00:00'
