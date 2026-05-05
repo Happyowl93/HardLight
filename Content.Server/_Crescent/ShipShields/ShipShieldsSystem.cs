@@ -420,14 +420,25 @@ public sealed partial class ShipShieldsSystem : EntitySystem
             }
         }
 
-        var shieldQuery = EntityQueryEnumerator<ShipShieldComponent>();
-        while (shieldQuery.MoveNext(out var shieldUid, out var shieldComp))
+        // HardLight perf: only run the full-world ShipShieldComponent scan when the targeted
+        // paths above failed to locate a shield. In the common case (emitter map-init, normal
+        // remove) the targeted lookup via emitter.Shield or the grid's ShipShieldedComponent
+        // will find and clean up the shield, and this O(all-shields-in-world) scan finds
+        // nothing. Skipping it makes ship-spawn cost O(1) per emitter instead of O(world-shields)
+        // per emitter, which compounded to O(K^2) when K shielded ships were active.
+        // The scan still runs in the genuine orphan case (no targeted hit) so cleanup
+        // semantics for truly stale runtime shield entities are preserved.
+        if (!removed)
         {
-            if (shieldComp.Source != emitterUid)
-                continue;
+            var shieldQuery = EntityQueryEnumerator<ShipShieldComponent>();
+            while (shieldQuery.MoveNext(out var shieldUid, out var shieldComp))
+            {
+                if (shieldComp.Source != emitterUid)
+                    continue;
 
-            QueueDel(shieldUid);
-            removed = true;
+                QueueDel(shieldUid);
+                removed = true;
+            }
         }
 
         emitter.Shield = null;
