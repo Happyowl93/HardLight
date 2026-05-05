@@ -3597,3 +3597,15 @@ Entries:
       message: Fixed expedition disk printer sprite.
   id: 388
   time: '2026-05-05T21:55:09.0000000+00:00'
+- author: fenndragon
+  changes:
+    - type: Add
+      message: Added new vents to scheduler
+    - type: Add
+      message: Added nightmares
+    - type: Fix
+      message: Fixed meteors
+    - type: Fix
+      message: other general bugfixes
+  id: 389
+  time: '2026-05-05T22:29:15.0000000+00:00'
