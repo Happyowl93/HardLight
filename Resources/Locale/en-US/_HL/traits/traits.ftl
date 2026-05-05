@@ -74,3 +74,15 @@ hl-trait-extreme-shadekin-regeneration-desc = In TOTAL darkness, your essence ra
 
 hl-trait-mild-light-sensitivity-name = Mild Light Sensitivity
 hl-trait-mild-light-sensitivity-desc = You are somewhat sensitive to EXTREME light, just like shadekin.
+
+## Erotic mood trait category
+trait-category-erotic-moods = Erotic Moods
+
+hl-trait-vanilla-erotic-moods-name = Vanilla Moods
+hl-trait-vanilla-erotic-moods-desc = Every half hour or so you receive a private reminder of two randomly drawn erotic preferences — positions, acts, dynamics. They rotate every one to two and a half hours.
+
+hl-trait-kinky-erotic-moods-name = Kinky Moods
+hl-trait-kinky-erotic-moods-desc = Every half hour or so you receive a private reminder of two randomly drawn kink preferences. Consent-gated moods (vore, CnC, brainwashing, etc.) are skipped if you haven't enabled that consent toggle. Preferences rotate every one to two and a half hours.
+
+hl-trait-romantic-moods-name = Romantic Moods
+hl-trait-romantic-moods-desc = Every half hour or so you receive a private reminder of two randomly drawn romantic inclinations — tenderness, dates, closeness. Preferences rotate every one to two and a half hours.
