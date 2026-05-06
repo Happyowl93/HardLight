@@ -1,11 +1,4 @@
 Entries:
-- author: Cvlancer
-  changes:
-  - message: Brigmedic air scrubber.
-    type: Fix
-  id: 404414
-  time: '2026-04-19T13:20:33.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4194
 - author: redmushie
   changes:
   - message: New replays should use significantly less memory to play back.
@@ -2799,4 +2792,11 @@ Entries:
   id: 404813
   time: '2026-05-06T06:15:43.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4369
+- author: Caws
+  changes:
+  - message: Added an EMAG interaction to the ShadyCigs Deluxe vending machine.
+    type: Add
+  id: 404814
+  time: '2026-05-06T06:33:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4365
 Order: -1
