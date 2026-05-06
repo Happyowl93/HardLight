@@ -1,13 +1,6 @@
 Entries:
 - author: wonderfulnewworld, Coolsurf6, Centronias, hollowarc, Pixel8-dev, FreianOfVoid, TheClockman138, davyei, meganerobot, toma1993, Hanzdegloker, whiffets, youtubepoopfuneral, PanzerVo, DuckManZach
   changes:
-  - message: Ported a few outfits from Moff Station.
-    type: Add
-  id: 404428
-  time: '2026-04-21T11:18:03.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4217
-- author: wonderfulnewworld, Coolsurf6, Centronias, hollowarc, Pixel8-dev, FreianOfVoid, TheClockman138, davyei, meganerobot, toma1993, Hanzdegloker, whiffets, youtubepoopfuneral, PanzerVo, DuckManZach
-  changes:
   - message: 'Added the following to the Clothes Mate: Dark Turtleneck (MNGR), Trendy Top, Rugged Clothes.'
     type: Add
   id: 404429
@@ -2799,4 +2792,11 @@ Entries:
   id: 404827
   time: '2026-05-06T13:27:29.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4376
+- author: wonderfulnewworld
+  changes:
+  - message: Outer clothing storage is now 2x3 again.
+    type: Tweak
+  id: 404828
+  time: '2026-05-06T13:48:24.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4375
 Order: -1
