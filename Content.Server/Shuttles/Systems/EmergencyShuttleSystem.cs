@@ -599,14 +599,14 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         var map = _mapSystem.CreateMap(out var mapId);
         if (!_loader.TryLoadGrid(mapId, component.Map, out var grid))
         {
-            Log.Error($"Failed to set up Colcomm grid!");
+            Log.Error($"Failed to set up Colcomm grid from '{component.Map}' for station {ToPrettyString(station)}. Map load returned false (check earlier log lines for the specific prototype/parse error).");
             return;
         }
 
         var xform = Transform(grid.Value);
         if (xform.ParentUid != map || xform.MapUid != map)
         {
-            Log.Error($"Colcomm grid is not parented to its own map?");
+            Log.Error($"Colcomm grid '{component.Map}' is not parented to its own map (grid={ToPrettyString(grid)}, expected map={ToPrettyString(map)}, actual parent={ToPrettyString(xform.ParentUid)}).");
             return;
         }
 
