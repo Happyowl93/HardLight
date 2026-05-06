@@ -3615,3 +3615,12 @@ Entries:
       message: Fixed Avali displacement maps.
   id: 390
   time: '2026-05-05T22:30:02.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Maps referencing HL-renamed prototypes (e.g. `_HL/colcomm.yml`) once
+        again load correctly. The HL prototype migration table is now honored at
+        map load time.
+  id: 391
+  time: '2026-05-06T02:41:00.0000000+00:00'
