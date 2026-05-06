@@ -1,13 +1,6 @@
 Entries:
 - author: STARLIGHT TEAM
   changes:
-  - message: Antagonist cards are temporarily disabled for IPCs until filler cards are added.
-    type: Remove
-  id: 404426
-  time: '2026-04-21T10:38:00.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4214
-- author: STARLIGHT TEAM
-  changes:
   - message: The flashbang, explosive grenade, electrical disruptor kit, and cluster grenade have been returned to the traitor uplink.
     type: Add
   id: 404427
@@ -2799,4 +2792,11 @@ Entries:
   id: 404825
   time: '2026-05-06T06:33:56.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4367
+- author: wonderfulnewworld
+  changes:
+  - message: Desoxyephedrine pills are now properly named, instead of being labeled as lead.
+    type: Fix
+  id: 404826
+  time: '2026-05-06T10:27:01.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4374
 Order: -1
