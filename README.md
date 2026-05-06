@@ -1,6 +1,3 @@
-<p align="center">
-  <img alt="Space Station 14" width="600" src="Resources/Textures/Logo/logo.png" />
-</p>
 
 Space Station 14 content fork. Built on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox).
 
