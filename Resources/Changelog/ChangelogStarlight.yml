@@ -1,13 +1,6 @@
 Entries:
 - author: Cvlancer
   changes:
-  - message: Fixed security being double substationed by cutting two mv wires.
-    type: Fix
-  id: 404413
-  time: '2026-04-19T13:20:33.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4194
-- author: Cvlancer
-  changes:
   - message: Brigmedic air scrubber.
     type: Fix
   id: 404414
@@ -2799,4 +2792,11 @@ Entries:
   id: 404812
   time: '2026-05-05T12:35:03.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4289
+- author: Caws
+  changes:
+  - message: Restocking NanoMed Plus vending machines has been fixed.
+    type: Fix
+  id: 404813
+  time: '2026-05-06T06:15:43.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4369
 Order: -1
