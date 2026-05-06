@@ -8,6 +8,7 @@ using Content.Server.Chat.Systems;
 using Content.Server.Communications;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.GameTicking.Events;
+using Content.Server._HL.Cleanup;
 using Content.Server.Pinpointer;
 using Content.Server.Popups;
 using Content.Server.RoundEnd;
@@ -81,6 +82,8 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     private EntityUid? _singletonColcommMap;
     private EntityUid? _singletonColcommGrid;
     private EntityUid? _singletonColcommShuttle;
+    private TimeSpan _nextColcommValidation;
+    private static readonly TimeSpan ColcommValidationInterval = TimeSpan.FromSeconds(30);
 
     public override void Initialize()
     {
@@ -165,6 +168,72 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     {
         base.Update(frameTime);
         UpdateEmergencyConsole(frameTime);
+        ValidateColcommState();
+    }
+
+    private void ValidateColcommState()
+    {
+        if (_timing.CurTime < _nextColcommValidation)
+            return;
+
+        _nextColcommValidation = _timing.CurTime + ColcommValidationInterval;
+
+        var singletonValid = _singletonColcommMap != null && _singletonColcommGrid != null
+            && Exists(_singletonColcommMap.Value) && Exists(_singletonColcommGrid.Value);
+        var needsRespawn = false;
+
+        var query = AllEntityQuery<StationColcommComponent>();
+        while (query.MoveNext(out var _, out var colcomm))
+        {
+            if (colcomm.Entity != null && Exists(colcomm.Entity.Value))
+            {
+                EnsureComp<CleanupProtectedGridComponent>(colcomm.Entity.Value);
+
+                if (TryComp(colcomm.Entity.Value, out TransformComponent? xform) && xform.MapUid != null)
+                    colcomm.MapEntity = xform.MapUid;
+
+                if (!singletonValid)
+                {
+                    _singletonColcommGrid = colcomm.Entity;
+                    _singletonColcommMap = colcomm.MapEntity;
+                    singletonValid = _singletonColcommMap != null && _singletonColcommGrid != null
+                        && Exists(_singletonColcommMap.Value) && Exists(_singletonColcommGrid.Value);
+                }
+
+                continue;
+            }
+
+            if (singletonValid)
+            {
+                colcomm.Entity = _singletonColcommGrid;
+                colcomm.MapEntity = _singletonColcommMap;
+                continue;
+            }
+
+            colcomm.Entity = null;
+            colcomm.MapEntity = null;
+            needsRespawn = true;
+        }
+
+        if (needsRespawn)
+            RespawnColcommViaSpawnPath();
+    }
+
+    private void RespawnColcommViaSpawnPath()
+    {
+        _singletonColcommMap = null;
+        _singletonColcommGrid = null;
+        _singletonColcommShuttle = null;
+
+        var query = AllEntityQuery<StationColcommComponent>();
+        while (query.MoveNext(out var _, out var colcomm))
+        {
+            colcomm.Entity = null;
+            colcomm.MapEntity = null;
+        }
+
+        // Reuse the normal startup flow to restore ColComm + shuttle consistently.
+        SetupEmergencyShuttle();
     }
 
     /// <summary>
@@ -516,6 +585,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         {
             component.MapEntity = _singletonColcommMap;
             component.Entity = _singletonColcommGrid;
+            EnsureComp<CleanupProtectedGridComponent>(_singletonColcommGrid.Value);
             return;
         }
 
@@ -544,6 +614,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         component.Entity = grid;
         _singletonColcommMap = map;
         _singletonColcommGrid = grid;
+        EnsureComp<CleanupProtectedGridComponent>(grid.Value);
         _metaData.SetEntityName(map, Loc.GetString("map-name-Colcomm"));
         _shuttle.TryAddFTLDestination(mapId, true, out _);
         Log.Info($"Created Colcomm grid {ToPrettyString(grid)} on map {ToPrettyString(map)} for station {ToPrettyString(station)}");
@@ -618,6 +689,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         ent.Comp1.EmergencyShuttle = shuttle;
         _singletonColcommShuttle = shuttle; // Store singleton
         EnsureComp<ProtectedGridComponent>(shuttle.Value);
+        EnsureComp<CleanupProtectedGridComponent>(shuttle.Value);
         EnsureComp<PreventPilotComponent>(shuttle.Value);
         EnsureComp<EmergencyShuttleComponent>(shuttle.Value);
 
