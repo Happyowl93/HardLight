@@ -1,11 +1,4 @@
 Entries:
-- author: STARLIGHT TEAM
-  changes:
-  - message: The flashbang, explosive grenade, electrical disruptor kit, and cluster grenade have been returned to the traitor uplink.
-    type: Add
-  id: 404427
-  time: '2026-04-21T11:18:01.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4215
 - author: wonderfulnewworld, Coolsurf6, Centronias, hollowarc, Pixel8-dev, FreianOfVoid, TheClockman138, davyei, meganerobot, toma1993, Hanzdegloker, whiffets, youtubepoopfuneral, PanzerVo, DuckManZach
   changes:
   - message: Ported a few outfits from Moff Station.
@@ -2799,4 +2792,11 @@ Entries:
   id: 404826
   time: '2026-05-06T10:27:01.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4374
+- author: deltaVelocity
+  changes:
+  - message: Added new menu art featuring a sec department out of chems.
+    type: Add
+  id: 404827
+  time: '2026-05-06T13:27:29.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4376
 Order: -1
