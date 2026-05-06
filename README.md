@@ -1,5 +1,5 @@
 <div class="header" align="center">
-<img alt="Frontier Station" height="300" src="https://github.com/fenndragon/HardLight/blob/master/Resources/Textures/_NF/Logo/logo.png?raw=true" />
+<img alt="NovaSector 14" height="300" src="https://github.com/Happyowl93/NovaSector-14/blob/master/Resources/Textures/_NF/Logo/logo.png?raw=true" />
 </div>
 
 ## License
