@@ -11,15 +11,6 @@ body:
 
         **Important:** Only triage members will apply the `Feature Discussion` label. Discussing does not guarantee implementation.
 
-  - type: input
-    id: summary
-    attributes:
-      label: One-sentence summary
-      description: What is the change, briefly?
-      placeholder: "Example: Add a new welding tool that can repair windows"
-    validations:
-      required: true
-
   - type: textarea
     id: core_goal
     attributes:

@@ -11,15 +11,6 @@ body:
 
         **Before submitting:** Search existing issues (open/closed) to avoid duplicates.
 
-  - type: input
-    id: summary
-    attributes:
-      label: One-sentence summary
-      description: What is the bug, briefly?
-      placeholder: "Example: Welding tool does not repair windows after recent update"
-    validations:
-      required: true
-
   - type: textarea
     id: description
     attributes:
