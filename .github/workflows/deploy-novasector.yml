@@ -1,0 +1,106 @@
+name: Deploy Novasector
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: deploy-novasector
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.meta.outputs.version }}
+      time: ${{ steps.meta.outputs.time }}
+      server_sha: ${{ steps.meta.outputs.server_sha }}
+      client_sha: ${{ steps.meta.outputs.client_sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build packaging tool
+        run: dotnet build Content.Packaging --configuration Release --no-restore /m
+
+      - name: Package server (linux-x64)
+        run: dotnet run --project Content.Packaging -- server --platform linux-x64 --hybrid-acz
+
+      - name: Package client
+        run: dotnet run --project Content.Packaging -- client --no-wipe-release
+
+      - name: Compute version + hashes
+        id: meta
+        run: |
+          set -euo pipefail
+          VERSION="$(date -u +%Y%m%d.%H%M%S).${{ github.run_number }}"
+          TIME="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          SERVER_SHA="$(sha256sum release/SS14.Server_linux-x64.zip | cut -d' ' -f1)"
+          CLIENT_SHA="$(sha256sum release/SS14.Client.zip          | cut -d' ' -f1)"
+          echo "version=$VERSION"        >> "$GITHUB_OUTPUT"
+          echo "time=$TIME"              >> "$GITHUB_OUTPUT"
+          echo "server_sha=$SERVER_SHA"  >> "$GITHUB_OUTPUT"
+          echo "client_sha=$CLIENT_SHA"  >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ steps.meta.outputs.version }}
+          name: build-${{ steps.meta.outputs.version }}
+          files: |
+            release/SS14.Server_linux-x64.zip
+            release/SS14.Client.zip
+          fail_on_unmatched_files: true
+
+      - name: Build Pages site (manifest.json)
+        run: |
+          mkdir -p _site
+          cat > _site/manifest.json <<EOF
+          {
+            "builds": {
+              "${{ steps.meta.outputs.version }}": {
+                "time": "${{ steps.meta.outputs.time }}",
+                "client": {
+                  "url": "https://github.com/${{ github.repository }}/releases/download/build-${{ steps.meta.outputs.version }}/SS14.Client.zip",
+                  "sha256": "${{ steps.meta.outputs.client_sha }}"
+                },
+                "server": {
+                  "linux-x64": {
+                    "url": "https://github.com/${{ github.repository }}/releases/download/build-${{ steps.meta.outputs.version }}/SS14.Server_linux-x64.zip",
+                    "sha256": "${{ steps.meta.outputs.server_sha }}"
+                  }
+                }
+              }
+            }
+          }
+          EOF
+          cat _site/manifest.json
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
