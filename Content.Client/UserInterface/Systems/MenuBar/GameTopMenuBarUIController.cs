@@ -1,4 +1,5 @@
-﻿using Content.Client.UserInterface.Systems.Actions;
+﻿using Content.Client._Common.Consent.UI; // Consent system
+using Content.Client.UserInterface.Systems.Actions;
 using Content.Client.UserInterface.Systems.Admin;
 using Content.Client.UserInterface.Systems.Bwoink;
 using Content.Client.UserInterface.Systems.Character;
@@ -28,6 +29,7 @@ public sealed class GameTopMenuBarUIController : UIController
     [Dependency] private readonly EmotesUIController _emotes = default!;
     [Dependency] private readonly LanguageMenuUIController _language = default!; // Starlight
     [Dependency] private readonly BugReportUIController _bug = default!; // Starlight
+    [Dependency] private readonly ConsentUiController _consent = default!; // Consent system
 
     private GameTopMenuBar? GameTopMenuBar => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>();
 
@@ -53,6 +55,7 @@ public sealed class GameTopMenuBarUIController : UIController
         _emotes.UnloadButton();
         _language.UnloadButton(); // Starlight
         _bug.UnloadButton(); // Starlight
+        _consent.UnloadButton(); // Consent system
     }
 
     public void LoadButtons()
@@ -68,5 +71,6 @@ public sealed class GameTopMenuBarUIController : UIController
         _emotes.LoadButton();
         _language.LoadButton(); // Starlight
         _bug.LoadButton(); // Starlight
+        _consent.LoadButton(); // Consent system
     }
 }

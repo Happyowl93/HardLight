@@ -489,4 +489,6 @@ public enum LogType
     Railroading = 1000,
     BugReport = 1001,
     #endregion
+
+    Consent = 2000, // Consent system
 }

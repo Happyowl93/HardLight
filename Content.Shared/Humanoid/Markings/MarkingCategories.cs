@@ -21,6 +21,7 @@ namespace Content.Shared.Humanoid.Markings
         Legs,
         Tail,
         TailExtras, // Starlight
+        Genital, // Consent system
         Overlay
     }
 

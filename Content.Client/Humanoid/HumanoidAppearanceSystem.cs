@@ -1,5 +1,7 @@
 using System.Numerics; //starlight
+using Content.Client._Common.Consent; // Consent system
 using Content.Client.DisplacementMap;
+using Content.Shared._Common.Consent; // Consent system
 using Content.Shared.CCVar;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -21,6 +23,9 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly DisplacementMapSystem _displacement = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly IClientConsentManager _consentManager = default!; // Consent system
+
+    private static readonly ProtoId<ConsentTogglePrototype> GenitalMarkingsConsent = "GenitalMarkings"; // Consent system
 
     public override void Initialize()
     {
@@ -30,6 +35,17 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         SubscribeLocalEvent<HumanoidAppearanceComponent, AfterAutoHandleStateEvent>(OnHandleState);
         Subs.CVar(_configurationManager, CCVars.AccessibilityClientCensorNudity, OnCvarChanged, true);
         Subs.CVar(_configurationManager, CCVars.AccessibilityServerCensorNudity, OnCvarChanged, true);
+
+        _consentManager.OnServerDataLoaded += OnConsentChanged; // Consent system
+    }
+
+    private void OnConsentChanged() // Consent system
+    {
+        var humanoidQuery = AllEntityQuery<HumanoidAppearanceComponent, SpriteComponent>();
+        while (humanoidQuery.MoveNext(out var uid, out var humanoidComp, out var spriteComp))
+        {
+            UpdateSprite((uid, humanoidComp, spriteComp));
+        }
     }
 
     //Starlight begin
@@ -277,13 +293,22 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         var applyUndergarmentTop = censorNudity;
         var applyUndergarmentBottom = censorNudity;
 
+        // Consent system: hide Genital markings unless the local viewer consents to seeing them.
+        var allowGenitalMarkings = _consentManager.HasLoaded
+            && _consentManager.GetConsentSettings().Toggles.TryGetValue(GenitalMarkingsConsent, out var val)
+            && val == "on";
+
         foreach (var markingList in humanoid.MarkingSet.Markings.Values)
         {
             foreach (var marking in markingList)
             {
                 if (_markingManager.TryGetMarking(marking, out var markingPrototype))
                 {
-                    ApplyMarking(markingPrototype, marking.MarkingColors, marking.IsGlowing, marking.Visible, entity); //starlight, glowing
+                    var visible = marking.Visible;
+                    if (!allowGenitalMarkings && markingPrototype.MarkingCategory == MarkingCategories.Genital)
+                        visible = false;
+
+                    ApplyMarking(markingPrototype, marking.MarkingColors, marking.IsGlowing, visible, entity); //starlight, glowing
                     if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentTop)
                         applyUndergarmentTop = false;
                     else if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentBottom)

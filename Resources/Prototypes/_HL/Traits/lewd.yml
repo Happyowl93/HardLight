@@ -1,0 +1,10 @@
+- type: trait
+  id: CumProducer
+  name: trait-cum-producer-name
+  description: trait-cum-producer-desc
+  category: Physical
+  components:
+    - type: CumProducer
+      maxVol: 25
+      reVol: 5
+      reHunger: 1

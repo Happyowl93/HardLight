@@ -85,6 +85,17 @@
         AppendStyleClass="{x:Static style:StyleClass.ButtonSquare}"
         />
     <!-- Starlight-end -->
+    <!-- Consent system -->
+    <ui:MenuButton
+        Name="ConsentButton"
+        Access="Internal"
+        Icon="{xe:Tex '/Textures/Interface/VerbIcons/settings.svg.192dpi.png'}"
+        BoundKey="{x:Static is:ContentKeyFunctions.OpenConsentWindow}"
+        ToolTip="{Loc 'game-hud-open-consent-window-button-tooltip'}"
+        MinSize="42 64"
+        HorizontalExpand="True"
+        AppendStyleClass="{x:Static style:StyleClass.ButtonSquare}"
+        />
     <ui:MenuButton
         Name="AdminButton"
         Access="Internal"

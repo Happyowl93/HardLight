@@ -175,6 +175,9 @@
   - type: StaticPrice
     price: 150
   - type: PryUnpowered
+  - type: InteractionVerbs # EE interaction system
+    allowedVerbs:
+    - KnockOn
   - type: Tag #Starlight -- minimum arming distance
     tags:
       - BulletUnarmedCollide #Starlight -- Make bullet pre-arming not phase through windoors

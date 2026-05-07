@@ -18,6 +18,7 @@ using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.Players.JobWhitelist;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Players.RateLimiting;
+using Content.Server._Common.Consent; // Consent system
 using Content.Server.Preferences.Managers;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
@@ -60,6 +61,7 @@ internal static class ServerContentIoC
         deps.Register<ISharedChatManager, ChatManager>();
         deps.Register<IChatSanitizationManager, ChatSanitizationManager>();
         deps.Register<IServerPreferencesManager, ServerPreferencesManager>();
+        deps.Register<IServerConsentManager, ServerConsentManager>(); // Consent system
         deps.Register<IServerDbManager, ServerDbManager>();
         deps.Register<RecipeManager, RecipeManager>();
         deps.Register<INodeGroupFactory, NodeGroupFactory>();

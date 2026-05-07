@@ -35,6 +35,7 @@
     defaultRotation: 0
     horizontalRotation: 0
   - type: DoAfter
+  - type: OwnInteractionVerbs # EE interaction system
   - type: Examiner
   - type: Eye
   - type: ContentEye

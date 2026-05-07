@@ -47,6 +47,9 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory Examine =
             new("verb-categories-examine", "/Textures/Interface/VerbIcons/examine.svg.192dpi.png");
 
+        public static readonly VerbCategory Interaction = // EE interaction system
+            new("verb-categories-interaction", null);
+
         public static readonly VerbCategory Debug =
             new("verb-categories-debug", "/Textures/Interface/VerbIcons/debug.svg.192dpi.png");
 
