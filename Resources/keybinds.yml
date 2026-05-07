@@ -199,6 +199,7 @@ binds:
   key: L
 - function: OpenConsentWindow # Consent system
   type: State
+  key: J
 - function: TextCursorSelect
   # TextCursorSelect HAS to be above ExamineEntity
   # So that LineEdit receives it correctly.

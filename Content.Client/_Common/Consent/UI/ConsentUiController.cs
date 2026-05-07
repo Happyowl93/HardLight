@@ -3,28 +3,32 @@
 
 using Content.Client._Common.Consent.UI.Windows;
 using Content.Client.Gameplay;
+using Content.Client.UserInterface.Controls;
+using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using Content.Shared.Input;
-using Robust.Client.Input;
+using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Input.Binding;
-using JetBrains.Annotations;
+using static Robust.Client.UserInterface.Controls.BaseButton;
 
 namespace Content.Client._Common.Consent.UI;
 
 [UsedImplicitly]
-public sealed class ConsentUiController : UIController, IOnStateChanged<GameplayState>
+public sealed class ConsentUiController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
-    [Dependency] private readonly IInputManager _input = default!;
-
     private ConsentWindow? _window;
+
+    private MenuButton? ConsentButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.ConsentButton;
 
     public void OnStateEntered(GameplayState state)
     {
         EnsureWindow();
 
-        _input.SetInputCommand(ContentKeyFunctions.OpenConsentWindow,
-            InputCmdHandler.FromDelegate(_ => ToggleWindow()));
+        CommandBinds.Builder
+            .Bind(ContentKeyFunctions.OpenConsentWindow,
+                InputCmdHandler.FromDelegate(_ => ToggleWindow()))
+            .Register<ConsentUiController>();
     }
 
     public void OnStateExited(GameplayState state)
@@ -34,6 +38,29 @@ public sealed class ConsentUiController : UIController, IOnStateChanged<Gameplay
             _window.Dispose();
             _window = null;
         }
+
+        CommandBinds.Unregister<ConsentUiController>();
+    }
+
+    internal void UnloadButton()
+    {
+        if (ConsentButton == null)
+            return;
+
+        ConsentButton.OnPressed -= ConsentButtonPressed;
+    }
+
+    internal void LoadButton()
+    {
+        if (ConsentButton == null)
+            return;
+
+        ConsentButton.OnPressed += ConsentButtonPressed;
+    }
+
+    private void ConsentButtonPressed(ButtonEventArgs args)
+    {
+        ToggleWindow();
     }
 
     private void EnsureWindow()
@@ -42,8 +69,15 @@ public sealed class ConsentUiController : UIController, IOnStateChanged<Gameplay
             return;
 
         _window = UIManager.CreateWindow<ConsentWindow>();
+        _window.OnOpen += () =>
+        {
+            if (ConsentButton is not null)
+                ConsentButton.Pressed = true;
+        };
         _window.OnClose += () =>
         {
+            if (ConsentButton is not null)
+                ConsentButton.Pressed = false;
             _window?.UpdateUi(); // Discard unsaved changes
         };
     }

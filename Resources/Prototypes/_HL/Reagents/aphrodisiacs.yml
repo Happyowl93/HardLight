@@ -1,0 +1,127 @@
+- type: reagent
+  id: Pomelustine
+  name: reagent-name-pomelustine
+  group: Medicine
+  desc: reagent-desc-pomelustine
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: fruity
+  color: "#45072f"
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.03
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        messages:
+          - "reagent-effect-aphrodisiac-mild1"
+          - "reagent-effect-aphrodisiac-mild2"
+          - "reagent-effect-aphrodisiac-mild3"
+          - "reagent-effect-aphrodisiac-mild4"
+          - "reagent-effect-aphrodisiac-mild5"
+          - "reagent-effect-aphrodisiac-mild6"
+          - "reagent-effect-aphrodisiac-mild7"
+          - "reagent-effect-aphrodisiac-mild8"
+          - "reagent-effect-aphrodisiac-mild9"
+          - "reagent-effect-aphrodisiac-mild10"
+        probability: 0.035
+        conditions:
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
+        - !type:ReagentCondition
+          reagent: Pomelustine
+          max: 50
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        messages:
+          - "reagent-effect-aphrodisiac-mildoverdose1"
+          - "reagent-effect-aphrodisiac-mildoverdose2"
+          - "reagent-effect-aphrodisiac-mildoverdose3"
+          - "reagent-effect-aphrodisiac-mildoverdose4"
+          - "reagent-effect-aphrodisiac-mildoverdose5"
+        probability: 0.06
+        conditions:
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
+        - !type:ReagentCondition
+          reagent: Pomelustine
+          min: 50
+      - !type:PopupMessage
+        type: Local
+        visualType: Small
+        messages:
+          - "reagent-effect-aphrodisiac-fade1"
+          - "reagent-effect-aphrodisiac-fade2"
+          - "reagent-effect-aphrodisiac-fade3"
+        probability: 0.35
+        conditions:
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
+        - !type:ReagentCondition
+          reagent: Pomelustine
+          max: 0.1
+
+- type: reagent
+  id: Philterex
+  name: reagent-name-philterex
+  group: Medicine
+  desc: reagent-desc-philterex
+  physicalDesc: reagent-physical-desc-syrupy
+  flavor: sweet
+  color: "#ae0072"
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.02
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: Large
+        messages:
+          - "reagent-effect-aphrodisiac-normal1"
+          - "reagent-effect-aphrodisiac-normal2"
+          - "reagent-effect-aphrodisiac-normal3"
+          - "reagent-effect-aphrodisiac-normal4"
+          - "reagent-effect-aphrodisiac-normal5"
+          - "reagent-effect-aphrodisiac-normal6"
+          - "reagent-effect-aphrodisiac-normal7"
+          - "reagent-effect-aphrodisiac-normal8"
+          - "reagent-effect-aphrodisiac-normal9"
+          - "reagent-effect-aphrodisiac-normal10"
+        probability: 0.04
+        conditions:
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
+        - !type:ReagentCondition
+          reagent: Philterex
+          max: 16.5
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages:
+          - "reagent-effect-aphrodisiac-normaloverdose1"
+          - "reagent-effect-aphrodisiac-normaloverdose2"
+          - "reagent-effect-aphrodisiac-normaloverdose3"
+          - "reagent-effect-aphrodisiac-normaloverdose4"
+          - "reagent-effect-aphrodisiac-normaloverdose5"
+        probability: 0.06
+        conditions:
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
+        - !type:ReagentCondition
+          reagent: Philterex
+          min: 16.5
+      - !type:PopupMessage
+        type: Local
+        visualType: Small
+        messages:
+          - "reagent-effect-aphrodisiac-fade1"
+          - "reagent-effect-aphrodisiac-fade2"
+          - "reagent-effect-aphrodisiac-fade3"
+        probability: 0.32
+        conditions:
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
+        - !type:ReagentCondition
+          reagent: Philterex
+          max: 0.1

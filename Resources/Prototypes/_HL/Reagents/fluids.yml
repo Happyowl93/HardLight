@@ -1,0 +1,9 @@
+- type: reagent
+  id: Cum
+  name: reagent-name-cum
+  group: Biological
+  desc: reagent-desc-cum
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: salty
+  color: "#EFEFD5"
+  recognizable: true

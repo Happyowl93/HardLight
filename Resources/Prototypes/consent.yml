@@ -7,3 +7,23 @@
   id: GenitalMarkings
   name: See Genital Markings
   description: Turn this on to allow showing/hiding genital markings in-game.
+
+- type: consentToggle
+  id: NonconIcon
+  name: Show non-consent icon
+  description: Opt in to show a non-consent indicator on your HUD and to see it on other opted-in players.
+
+- type: consentToggle
+  id: Aphrodisiacs
+  name: Be affected by aphrodisiacs
+  description: Turn this on to be affected by pomelustine, philterex, and libidozenithine.
+
+- type: consentToggle
+  id: MindControl
+  name: Interact with mind control
+  description: Allow yourself to be mind-controlled / hypnotized / brainwashed.
+
+- type: consentToggle
+  id: Cum
+  name: Interact with cum
+  description: Turn this on for cum to have any meaningful interaction with you.

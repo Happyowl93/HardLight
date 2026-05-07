@@ -14,7 +14,7 @@ consent-window-unsaved-changes = You have unsaved changes
 consent-window-char-limit-warning = Character limit exceeded ({$length} / {$maxLength})
 
 # Guidebook
-reagent-effect-condition-guidebook-consent-condition = the target has consented to "{ $consent }"
+entity-condition-guidebook-consent = the target has consented to "{ $consent }"
 
 # Verb
 consent-examine-verb = Consent Info
