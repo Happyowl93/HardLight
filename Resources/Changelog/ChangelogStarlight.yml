@@ -1,13 +1,6 @@
 Entries:
 - author: wonderfulnewworld, Coolsurf6, Centronias, hollowarc, Pixel8-dev, FreianOfVoid, TheClockman138, davyei, meganerobot, toma1993, Hanzdegloker, whiffets, youtubepoopfuneral, PanzerVo, DuckManZach
   changes:
-  - message: 'Added the following to the Clothes Mate: Dark Turtleneck (MNGR), Trendy Top, Rugged Clothes.'
-    type: Add
-  id: 404429
-  time: '2026-04-21T11:18:03.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4217
-- author: wonderfulnewworld, Coolsurf6, Centronias, hollowarc, Pixel8-dev, FreianOfVoid, TheClockman138, davyei, meganerobot, toma1993, Hanzdegloker, whiffets, youtubepoopfuneral, PanzerVo, DuckManZach
-  changes:
   - message: 'Added the following to WinterDrobe: Field Jacket.'
     type: Add
   id: 404430
@@ -2799,4 +2792,11 @@ Entries:
   id: 404828
   time: '2026-05-06T13:48:24.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4375
+- author: Wizards Den Team
+  changes:
+  - message: (Kowlin) All intern jobs (Besides Cadet) now lock out after 10 hours, up from 5 hours.
+    type: Tweak
+  id: 404829
+  time: '2026-05-07T07:05:26.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4352
 Order: -1
