@@ -2,6 +2,7 @@
 using Content.Client._NullLink; // NullLink
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
+using Content.Client._Common.Consent; // Consent system
 using Content.Client.Chat.Managers;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
@@ -67,6 +68,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly IOverlayManager _overlayManager = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly IClientPreferencesManager _clientPreferencesManager = default!;
+        [Dependency] private readonly IClientConsentManager _clientConsentManager = default!; // Consent system
         [Dependency] private readonly EuiManager _euiManager = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
         [Dependency] private readonly DocumentParsingManager _documentParsingManager = default!;
@@ -179,6 +181,7 @@ namespace Content.Client.Entry
             _overlayManager.AddOverlay(new RadiationPulseOverlay());
             _chatManager.Initialize();
             _clientPreferencesManager.Initialize();
+            _clientConsentManager.Initialize(); // Consent system
             _euiManager.Initialize();
             _voteManager.Initialize();
             _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
