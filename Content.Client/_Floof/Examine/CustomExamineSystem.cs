@@ -36,7 +36,7 @@ public sealed class CustomExamineSystem : SharedCustomExamineSystem
         {
             Act = () => OpenUi(target),
             Text = Loc.GetString("custom-examine-verb"),
-            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/edit.svg.png")),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/settings.svg.192dpi.png")),
             ClientExclusive = true,
             DoContactInteraction = false
         });

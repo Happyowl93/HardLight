@@ -226,7 +226,7 @@ public sealed partial class DoAfterArgs
         NetUsed = entManager.GetNetEntity(Used);
     }
 
-    private DoAfterArgs()
+    public DoAfterArgs() // EE InteractionVerbs system: prototypes need parameterless construction for YAML deserialization
     {
     }
 
