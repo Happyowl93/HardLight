@@ -45,7 +45,7 @@
       checkUser: true
     - !type:EntityWhitelistRequirement
       whitelist:
-        components: [MobState, Anomaly, Food] # TODO check if can be metabolized
+        components: [MobState, Anomaly, Edible] # TODO check if can be metabolized
         tags: [Window] # yes.
     - !type:ConsentRequirement # Consent system: target must allow NSFW for licks
       consent: NSFWDescriptions

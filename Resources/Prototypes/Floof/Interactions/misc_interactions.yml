@@ -17,7 +17,7 @@
       checkUser: true
     - !type:EntityWhitelistRequirement
       whitelist:
-        components: [MobState, Food] # Don't go around biting inanimate objects.
+        components: [MobState, Edible] # Don't go around biting inanimate objects.
   action:
     !type:ComplexAction
     actions:
