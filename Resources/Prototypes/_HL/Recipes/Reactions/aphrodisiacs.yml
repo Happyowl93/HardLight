@@ -1,0 +1,25 @@
+- type: reaction
+  id: Pomelustine
+  reactants:
+    Sugar:
+      amount: 1
+    Ethanol:
+      amount: 1
+    Carbon:
+      amount: 1
+    Hydrogen:
+      amount: 1
+  products:
+    Pomelustine: 4
+
+- type: reaction
+  id: Philterex
+  reactants:
+    Pomelustine:
+      amount: 2
+    Lithium:
+      amount: 1
+    Mercury:
+      amount: 1
+  products:
+    Philterex: 3
