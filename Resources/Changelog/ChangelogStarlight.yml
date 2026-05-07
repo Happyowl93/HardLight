@@ -1,11 +1,4 @@
 Entries:
-- author: wonderfulnewworld, Coolsurf6, Centronias, hollowarc, Pixel8-dev, FreianOfVoid, TheClockman138, davyei, meganerobot, toma1993, Hanzdegloker, whiffets, youtubepoopfuneral, PanzerVo, DuckManZach
-  changes:
-  - message: Grouped Headphone trinkets together.
-    type: Tweak
-  id: 404436
-  time: '2026-04-21T11:18:03.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4217
 - author: Caws
   changes:
   - message: (Saltern) Evac meteor shielding.
@@ -2799,4 +2792,11 @@ Entries:
   id: 404835
   time: '2026-05-07T08:14:28.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4371
+- author: wonderfulnewworld
+  changes:
+  - message: You can no longer insert literally anything into the normal golden mk 58.
+    type: Fix
+  id: 404836
+  time: '2026-05-07T13:29:25.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4385
 Order: -1
