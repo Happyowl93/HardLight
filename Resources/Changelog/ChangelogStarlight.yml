@@ -1,13 +1,6 @@
 Entries:
 - author: Caws
   changes:
-  - message: (Saltern) Screens! Saltern had none. Now you can see what Alert Level it is without checking your PDA.
-    type: Add
-  id: 404440
-  time: '2026-04-21T11:18:06.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4220
-- author: Caws
-  changes:
   - message: (Saltern) Doubled the size of Atmos.
     type: Add
   id: 404441
@@ -2799,4 +2792,11 @@ Entries:
   id: 404839
   time: '2026-05-08T05:49:51.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4388
+- author: Caws
+  changes:
+  - message: Boxes of shotgun ammo are now available on the Syndicate Uplinks. Hushpup enjoys rejoice.
+    type: Add
+  id: 404840
+  time: '2026-05-08T05:49:53.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4368
 Order: -1
