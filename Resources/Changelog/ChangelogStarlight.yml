@@ -1,13 +1,6 @@
 Entries:
 - author: Caws
   changes:
-  - message: (Saltern) Added a second medical bed to Brigmedic.
-    type: Add
-  id: 404448
-  time: '2026-04-21T11:18:06.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/4220
-- author: Caws
-  changes:
   - message: (Saltern) Donut vending machine added to Security.
     type: Add
   id: 404449
@@ -2799,4 +2792,11 @@ Entries:
   id: 404847
   time: '2026-05-08T10:23:13.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/4312
+- author: Huaqas, Centronias
+  changes:
+  - message: Go Fish! A new card game can be found in the Games Clean Fun Vendor!
+    type: Add
+  id: 404848
+  time: '2026-05-08T10:23:15.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/4348
 Order: -1
